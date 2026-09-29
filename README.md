@@ -1,6 +1,10 @@
-# MemDocs community archive
+# MemDocs Change Tracker — unofficial
 
-Microsoft Intune, Configuration Manager, and Windows Autopilot documentation, with a community-maintained history of changes observed on Microsoft Learn.
+**This is an independent, read-only change tracker. It is not the Microsoft MemDocs repository and is not maintained or endorsed by Microsoft.**
+
+Use this repository to review changes observed in public Microsoft Learn documentation for Microsoft Intune, Configuration Manager, and Windows Autopilot. For the official documentation, visit [Microsoft Learn](https://learn.microsoft.com/en-us/intune/).
+
+**External contributions are closed.** Maintainer-controlled automation supplies the documentation updates. This repository does not accept pull requests, issues, or community edits, and changes here do not publish to Microsoft Learn.
 
 - [Microsoft Intune](intune/index.yml)
 - [Configuration Manager](intune/configmgr/index.yml)
@@ -11,7 +15,7 @@ The original public MemDocs history is preserved through September 2, 2026 at th
 
 Articles and media use the MemDocs folder layout. Current article content is reconstructed from Microsoft Learn; unpublished authoring markup, comments, includes, and private files cannot be recovered. Supporting files that have no public equivalent remain from the archive. The first refreshed-content commit establishes this representation; some initial differences are formatting changes.
 
-This is an independent community mirror. Changes here do not publish to Microsoft Learn. The original [September archive](https://github.com/nicholasswhite/memdocs) remains unchanged. Automation and detailed observation records live separately in the [sync engine](https://github.com/nicholasswhite/memdocs-sync-engine).
+The original [September archive](https://github.com/nicholasswhite/memdocs) remains unchanged. Automation and detailed observation records are maintained privately.
 
 ## Attribution and licenses
 
