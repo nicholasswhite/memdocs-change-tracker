@@ -5,7 +5,7 @@ author: sccmavenger
 ms.author: dannygu
 ms.reviewer: paoloma
 ms.topic: concept-article
-ms.date: 06/15/2026
+ms.date: "2026-06-15T00:00:00Z"
 ---
 
 # Security update status dashboard
@@ -14,41 +14,24 @@ The Security update status dashboard provides a fleet-wide view of security upda
 
 At a high level, the dashboard answers one core question: **Where am I at risk?** It gives a concise summary of update posture. Use it as a starting point for triage and situational awareness, not for root-cause analysis.
 
-:::image type="content" source="media/security-update-status-dashboard/dashboard.png" lightbox="media/security-update-status-dashboard/dashboard.png" alt-text="Screenshot of the Security update status dashboard showing Windows client, Windows Server, and M365 applications compliance tiles." border="false":::
+[![Screenshot of the Security update status dashboard showing Windows client, Windows Server, and M365 applications compliance tiles.](media/security-update-status-dashboard/dashboard.png)](media/security-update-status-dashboard/dashboard.png#lightbox)
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [cloud](../includes/requirements/cloud.md)]
+![](../media/icons/16/cloud.svg) **Cloud requirements**
 
-:::column-end:::
-:::column span="3":::
 > This feature is supported in the public cloud environment only.
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../includes/requirements/rbac.md)]
+![](../media/icons/16/rbac.svg) **Roles requirements**
 
-:::column-end:::
-:::column span="3":::
+> To view the dashboard, use an account with at least the permission [Organization/Read](../fundamentals/role-based-access-control/create-custom-role.md#organization) in Intune role-based access control. Grant this access through a built-in Intune role or through a [custom role](../fundamentals/role-based-access-control/create-custom-role.md).
 
->To view the dashboard, use an account with at least the permission [Organization/Read] in Intune role-based access control. Grant this access through a built-in Intune role or through a [custom role].
+![](../media/icons/16/data-sources.svg) **Data sources requirements**
 
-:::column-end:::
-:::row-end:::
-
-:::row:::
-:::column span="1":::
-[!INCLUDE [data-sources](../includes/requirements/data-sources.md)]
-:::column-end:::
-:::column span="3":::
 > The dashboard can draw from multiple Microsoft management and reporting systems to provide a unified view of update posture across workloads. Depending on the workload, sources can include Microsoft Intune, Microsoft Configuration Manager through tenant attach, Microsoft Defender for Endpoint, the Microsoft 365 Apps admin center, and supporting application or device telemetry.
-> 
+>
 > Source-specific prerequisites apply and vary by workload:
-> 
+>
 > - **Windows clients:**
 >   - **Intune-managed devices:** Intune enrollment and the required reporting path for update data.
 >   - **Configuration Manager-managed devices:** Co-management or another supported cloud-connected reporting configuration.
@@ -57,13 +40,10 @@ At a high level, the dashboard answers one core question: **Where am I at risk?*
 >
 > Validate requirements per workload before relying on the dashboard for operational decisions.
 
-:::column-end:::
-:::row-end:::
-
 ## How to access the dashboard
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**Monitor**].
-1. Select [Security update status] to open the dashboard.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**Monitor**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/monitor).
+2. Select [Security update status](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_ManagedDevices/SecurityUpdateStatus.ReactView) to open the dashboard.
 
 ## What the dashboard shows
 
@@ -82,13 +62,13 @@ Color-coding is used to quickly communicate status: green indicates *Current*, o
 
 The dashboard groups devices into status categories that represent how current these devices are relative to expected security update baselines.
 
-|Icon|Risk level | Description |
-|:-:|--|--|
-|![check-icon] | **Current**| Devices have the latest applicable security update installed, or are on the previous update within the short grace period immediately after a new release. |
-|![caution-icon] | **Exposed**| Devices are behind the latest applicable security update and moved beyond the initial grace period. In general, this status begins after roughly the first three days following a newly applicable update release. |
-|![error-icon] | **Critical**| Devices are missing required updates long enough to represent materially higher risk. In general, devices that remain behind for a week or longer can move into this state, and unsupported versions are also treated as critical risk. |
-|![question-icon] | **Unknown build**| The reported device version can't be mapped to a known supported release or update baseline. |
-|![circle-icon] | **Not checked in (90+ days)** | The device didn't report recently and is excluded from primary risk calculations to keep the dashboard focused on active fleet posture.|
+| Icon | Risk level | Description |
+| --- | --- | --- |
+| ![check-icon](../media/icons/16/check.svg) | **Current** | Devices have the latest applicable security update installed, or are on the previous update within the short grace period immediately after a new release. |
+| ![caution-icon](../media/icons/16/caution.svg) | **Exposed** | Devices are behind the latest applicable security update and moved beyond the initial grace period. In general, this status begins after roughly the first three days following a newly applicable update release. |
+| ![error-icon](../media/icons/16/error.svg) | **Critical** | Devices are missing required updates long enough to represent materially higher risk. In general, devices that remain behind for a week or longer can move into this state, and unsupported versions are also treated as critical risk. |
+| ![question-icon](../media/icons/16/question.svg) | **Unknown build** | The reported device version can't be mapped to a known supported release or update baseline. |
+| ![circle-icon](../media/icons/16/circle.svg) | **Not checked in (90+ days)** | The device didn't report recently and is excluded from primary risk calculations to keep the dashboard focused on active fleet posture. |
 
 After a newly released security update becomes applicable, devices on the previous update may remain classified as *Current* for a short period so the dashboard reflects normal deployment propagation instead of immediately treating the entire fleet as newly at risk.
 
@@ -108,9 +88,9 @@ The dashboard shows where risk exists, but additional reporting often explains w
 
 Windows Autopatch reporting helps administrators move from a summary of risk to a clearer view of policy alignment, coverage, and update management status. For supporting guidance, see:
 
-- [Windows Autopatch update readiness overview]
-- [Windows Autopatch management status report]
-- [Windows quality and feature update reports overview]
+- [Windows Autopatch update readiness overview](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/monitor/windows-autopatch-update-readiness-overview)
+- [Windows Autopatch management status report](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/monitor/windows-autopatch-management-status-report)
+- [Windows quality and feature update reports overview](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/monitor/windows-autopatch-windows-quality-and-feature-update-reports-overview)
 
 Devices can also appear as Exposed or Critical during an active phased rollout. The dashboard reflects exposure based on update currency, not whether your deployment schedule is proceeding as planned. Rollout rings and staged deployment strategies aren't modeled directly in the dashboard state.
 
@@ -119,11 +99,11 @@ Devices can also appear as Exposed or Critical during an active phased rollout. 
 To investigate and reduce risk surfaced by the dashboard:
 
 1. Review the Security update status dashboard and identify the workload with the highest risk.
-1. Open Windows Autopatch or Intune reporting to investigate the affected device populations.
-1. Review quality update, feature update, or app update compliance details.
-1. Analyze policy targeting and assignment coverage.
-1. Adjust update policies or remediation steps as needed.
-1. Return to the dashboard to confirm that device currency improves as remediation continues.
+2. Open Windows Autopatch or Intune reporting to investigate the affected device populations.
+3. Review quality update, feature update, or app update compliance details.
+4. Analyze policy targeting and assignment coverage.
+5. Adjust update policies or remediation steps as needed.
+6. Return to the dashboard to confirm that device currency improves as remediation continues.
 
 ## Limitations
 
@@ -135,25 +115,7 @@ To investigate and reduce risk surfaced by the dashboard:
 
 ## Related content
 
-- [Overview of the Security Update Status and Vulnerabilities in the Microsoft 365 Apps admin center](/microsoft-365-apps/admin-center/security-update-status)
-- [View software update status for Microsoft 365 Apps installations](/microsoft-365-apps/updates/software-update-status)
-- [Windows Autopatch management status report]
+- [Overview of the Security Update Status and Vulnerabilities in the Microsoft 365 Apps admin center](https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/security-update-status)
+- [View software update status for Microsoft 365 Apps installations](https://learn.microsoft.com/en-us/microsoft-365-apps/updates/software-update-status)
+- [Windows Autopatch management status report](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/monitor/windows-autopatch-management-status-report)
 - [Software updates for Configuration Manager tenant attach](../configmgr/tenant-attach/software-updates.md)
-
-<!--links-->
-
-[Organization/Read]: /intune/fundamentals/role-based-access-control/create-custom-role#organization
-[custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**Monitor**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/monitor
-[Security update status]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_ManagedDevices/SecurityUpdateStatus.ReactView
-[Windows Autopatch update readiness overview]: /windows/deployment/windows-autopatch/monitor/windows-autopatch-update-readiness-overview
-[Windows Autopatch management status report]: /windows/deployment/windows-autopatch/monitor/windows-autopatch-management-status-report
-[Windows quality and feature update reports overview]: /windows/deployment/windows-autopatch/monitor/windows-autopatch-windows-quality-and-feature-update-reports-overview
-[check-icon]: ../media/icons/16/check.svg
-[error-icon]: ../media/icons/16/error.svg
-[caution-icon]: ../media/icons/16/caution.svg
-[question-icon]: ../media/icons/16/question.svg
-[circle-icon]: ../media/icons/16/circle.svg

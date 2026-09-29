@@ -1,13 +1,15 @@
 ---
-title: SMS_DmInvVersion Class
+title: "SMS_DmInvVersion Client WMI Class"
 description: In Configuration Manager, The SMS_DmInvVersion class is a client Windows Management Instrumentation class that represents the device management inventory version.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DmInvVersion Client WMI Class
+
 The `SMS_DmInvVersion` class is a client Windows Management Instrumentation (WMI) class in Configuration Manager that represents the device management inventory version.
 
 ## Syntax
@@ -20,17 +22,19 @@ Class SMS_DmInvVersion
 ```
 
 ## Methods
- The `SMS_ActiveSyncConnectedDevice` class doesn't define any methods.
+
+The `SMS_ActiveSyncConnectedDevice` class doesn't define any methods.
 
 ## Properties
- `Version`
- Data type: `UInt32`
 
- Access type: Read/Write
+`Version` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The inventory version.
+Qualifiers: [key]
+
+The inventory version.
 
 ## See Also
- [Device Management Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/device-management-client-wmi-classes.md)
+
+[Device Management Client WMI Classes](device-management-client-wmi-classes.md)

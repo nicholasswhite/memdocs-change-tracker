@@ -1,7 +1,7 @@
 ---
-title: What is device enrollment
+title: "What is device enrollment?"
 description: Learn what it means to enroll your device with the Company Portal and Microsoft Intune app.
-ms.date: 01/27/2025
+ms.date: "2025-01-27T00:00:00Z"
 ms.reviewer: esmich
 ---
 
@@ -15,7 +15,7 @@ ms.reviewer: esmich
 - macOS
 - Windows
 
-Device enrollment lets you access your work or school's internal resources (such as apps, Wi-Fi, and email) from your mobile device.  During device enrollment:
+Device enrollment lets you access your work or school's internal resources (such as apps, Wi-Fi, and email) from your mobile device. During device enrollment:
 
 - Your device enrolls in Microsoft Intune, a mobile device-management provider, and registers with your organization. This step ensures that you're authorized to access your organization's email, apps, and Wi-Fi.
 - Your organization's device-management policies are applied to your device. Policies can include requirements for things like device passwords and encryption. The purpose of these requirements is to keep your device and your organization's data secure from unauthorized access.

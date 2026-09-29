@@ -1,16 +1,18 @@
 ---
-title: SMS_MachineSettings Class
+title: "SMS_MachineSettings Server WMI Class"
 description: The SMS_MachineSettings WMI class describes attributes that are specific to a single computer that is managed by Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MachineSettings Server WMI Class
+
 The `SMS_MachineSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes attributes that are specific to a single computer that is managed by Configuration Manager.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,70 +28,70 @@ Class SMS_MachineSettings
 ```
 
 ## Methods
- The `SMS_MachineSettings` class does not define any methods.
+
+The `SMS_MachineSettings` class does not define any methods.
 
 ## Properties
- `LastModificationTime`
- Data type: `DateTime`
 
- Access type: Read-only
+`LastModificationTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The date and time when the computer settings were last modified.
+Qualifiers: [read]
 
- `LocaleID`
- Data type: `UInt32`
+The date and time when the computer settings were last modified.
 
- Access type: Read/Write
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The ID of the locale used to convert the localized name and description of the computer. The default locale ID is 1033, English (United States).
+Qualifiers: None
 
- `MachineVariables`
- Data type: `SMS_MachineVariable` Array
+The ID of the locale used to convert the localized name and description of the computer. The default locale ID is 1033, English (United States).
 
- Access type: Read/Write
+`MachineVariables` Data type: `SMS_MachineVariable` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- The [SMS_MachineVariable Server WMI Class](../../../develop/reference/osd/sms_machinevariable-server-wmi-class.md) objects representing computer variables for the computer resource.
+Qualifiers: [lazy]
 
- `ResourceID`
- Data type: `UInt32`
+The [SMS_MachineVariable Server WMI Class](sms_machinevariable-server-wmi-class.md) objects representing computer variables for the computer resource.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [Key]
+Access type: Read/Write
 
- The unique resource ID for the computer.
+Qualifiers: [Key]
 
- `SourceSite`
- Data type: `String`
+The unique resource ID for the computer.
 
- Access type: Read/Write
+`SourceSite` Data type: `String`
 
- Qualifiers: [SizeLimit("3"), Not_null]
+Access type: Read/Write
 
- The code of the source site. The code length can be up to three characters. The default value is "".
+Qualifiers: [SizeLimit("3"), Not_null]
+
+The code of the source site. The code length can be up to three characters. The default value is "".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Your application can use this class as described in How to Create a Computer Variable in Configuration Manager.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See also
 

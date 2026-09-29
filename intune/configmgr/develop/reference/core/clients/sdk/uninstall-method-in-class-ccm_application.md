@@ -1,16 +1,18 @@
 ---
 description: Learn how to uninstall an application using the Uninstall Windows Management Instrumentation (WMI) class method.
-title: Uninstall Method
-ms.date: 09/20/2016
+title: "Uninstall Method in Class CCM_Application"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Uninstall Method in Class CCM_Application
+
 The `Uninstall` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that uninstalls an application.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -28,74 +30,70 @@ uint32 Uninstall
 ```
 
 ## Parameters
- `Id`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`Id` Data type: `String`
 
- Application identifier.
+Qualifiers: [id("0"), in]
 
- `Revision`
- Data type: `String`
+Application identifier.
 
- Qualifiers: [id("1"), in]
+`Revision` Data type: `String`
 
- Revision.
+Qualifiers: [id("1"), in]
 
- `IsMachineTarget`
- Data type: `Boolean`
+Revision.
 
- Qualifiers: [id("2"), in]
+`IsMachineTarget` Data type: `Boolean`
 
- `true` if the application targets a machine.
+Qualifiers: [id("2"), in]
 
- `EnforcePreference`
- Data type: `UInt32`
+`true` if the application targets a machine.
 
- Qualifiers: [id("3"), in, values]
+`EnforcePreference` Data type: `UInt32`
 
- Enforce preference. Possible values are:
+Qualifiers: [id("3"), in, values]
 
-|Value|Enforce preference|
-|-|-|
-|0|Immediate|
-|1|NonBusinessHours|
-|2|AdminSchedule|
+Enforce preference. Possible values are:
 
- `Priority`
- Data type: `String`
+| Value | Enforce preference |
+| --- | --- |
+| 0 | Immediate |
+| 1 | NonBusinessHours |
+| 2 | AdminSchedule |
 
- Qualifiers: [id("4"), in, valuemap]
+`Priority` Data type: `String`
 
- Priority. Possible values are:
+Qualifiers: [id("4"), in, valuemap]
 
-|Value|
-|-|
-|Foreground|
-|High|
-|Normal|
-|Low|
+Priority. Possible values are:
 
- `IsRebootIfNeeded`
- Data type: `Boolean`
+| Value |
+| --- |
+| Foreground |
+| High |
+| Normal |
+| Low |
 
- Qualifiers: [id("5"), in]
+`IsRebootIfNeeded` Data type: `Boolean`
 
- `true` if a reboot is needed.
+Qualifiers: [id("5"), in]
 
- `JobId`
- Data type: `String`
+`true` if a reboot is needed.
 
- Qualifiers: [id("6"), out]
+`JobId` Data type: `String`
 
- Job identifier.
+Qualifiers: [id("6"), out]
+
+Job identifier.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

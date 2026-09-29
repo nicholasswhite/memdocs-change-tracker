@@ -1,7 +1,7 @@
 ---
-title: Toolkit reference
+title: "Toolkit Reference for the Microsoft Deployment Toolkit"
 description: Reference details for Microsoft Deployment Toolkit (MDT)
-ms.date: 09/09/2016
+ms.date: "2016-09-09T00:00:00Z"
 ms.subservice: mdt
 ms.topic: reference
 ms.collection: tier3
@@ -10,13 +10,13 @@ ms.service: configuration-manager
 
 # Toolkit Reference for the Microsoft Deployment Toolkit
 
-This reference is part of Microsoft&reg; Deployment Toolkit (MDT) 2013 and provides configuration settings that you can use in the deployment process. Review the MDT 2013 documents [Microsoft Deployment Toolkit Samples Guide](samples-guide.md) and [Using the Microsoft Deployment Toolkit](use-the-mdt.md) for help in customizing configuration settings for the deployment environment.
+This reference is part of Microsoft® Deployment Toolkit (MDT) 2013 and provides configuration settings that you can use in the deployment process. Review the MDT 2013 documents [Microsoft Deployment Toolkit Samples Guide](samples-guide.md) and [Using the Microsoft Deployment Toolkit](use-the-mdt.md) for help in customizing configuration settings for the deployment environment.
 
 > [!NOTE]
 >
-> In this document, *Windows* applies to the Windows 8.1, Windows 8, Windows 7, Windows Server&reg; 2012 R2, Windows Server 2012, and Windows Server 2008 R2 operating systems unless otherwise noted. MDT does not support ARM processor-based versions of Windows. Similarly, *MDT* refers to MDT 2013 unless otherwise stated.
+> In this document, *Windows* applies to the Windows 8.1, Windows 8, Windows 7, Windows Server® 2012 R2, Windows Server 2012, and Windows Server 2008 R2 operating systems unless otherwise noted. MDT does not support ARM processor-based versions of Windows. Similarly, *MDT* refers to MDT 2013 unless otherwise stated.
 
-Microsoft&reg; Deployment Toolkit (MDT) 2013 reference articles:
+Microsoft® Deployment Toolkit (MDT) 2013 reference articles:
 
 - [Task Sequence Steps](task-sequence-steps.md).
 - [Properties](properties.md).

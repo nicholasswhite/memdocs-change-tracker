@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_InstallUpdateAction Class
+title: "SMS_TaskSequence_InstallUpdateAction Server WMI Class"
 description: An SMS Provider server class in configuration Manager. It represents a task sequence that installs software updates on a target computer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_InstallUpdateAction Server WMI Class
+
 The `SMS_TaskSequence_InstallUpdateAction` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a task sequence action that installs software updates on a target computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,100 +33,91 @@ Class SMS_TaskSequence_InstallUpdateAction : SMS_TaskSequence_Action
 ```
 
 ## Methods
- The `SMS_TaskSequence_InstallUpdateAction` class does not define any methods.
+
+The `SMS_TaskSequence_InstallUpdateAction` class does not define any methods.
 
 ## Properties
- `Condition`
- Data type: `SMS_TaskSequence_Condition`
 
- Access type: Read/Write
+`Condition` Data type: `SMS_TaskSequence_Condition`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `ContinueOnError`
- Data type: `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`ContinueOnError` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `Description`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [AllowedLen("0-255")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [AllowedLen("0-255")]
 
- `Enabled`
- Data type: `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `Name`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [AllowedLen("1-100")]
+Access type: Read/Write
 
- [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [AllowedLen("1-100")]
 
- `RetryCount`
- Data type: `String`
+[SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`RetryCount` Data type: `String`
 
- Qualifiers: [retrycount]
+Access type: Read/Write
 
- The number of retries. The default value is 2.
+Qualifiers: [retrycount]
 
- `SupportedEnvironment`
- Data type: `String`
+The number of retries. The default value is 2.
 
- Access type: Read/Write
+`SupportedEnvironment` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [Not_Null:ToInstance]
 
- The default value of this property for this task sequence action is FullOS.
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- `Target`
- Data type: `String`
+The default value of this property for this task sequence action is FullOS.
 
- Access type: Read/Write
+`Target` Data type: `String`
 
- Qualifiers: [Not_Null, VariableName("SMSInstallUpdateTarget")]
+Access type: Read/Write
 
- Designator for installing assigned software updates on the target computer. Possible values are:
+Qualifiers: [Not_Null, VariableName("SMSInstallUpdateTarget")]
+
+Designator for installing assigned software updates on the target computer. Possible values are:
 
 - Mandatory. Install all software updates flagged in Configuration Manager as mandatory for the computers targeted by this task sequence action.
-
 - All. Install all software updates for the computers targeted by this task sequence action.
 
   The task sequence variable associated with this property is SMSInstallUpdateTarget. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
 
-  `Timeout`
-  Data type: `UInt32`
+  `Timeout` Data type: `UInt32`
 
   Access type: Read/Write
 
   Qualifiers: None
 
-  See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+  See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
-  `UseCache`
-  Data type: `Boolean`
+  `UseCache` Data type: `Boolean`
 
   Access type: Read/Write
 
@@ -133,21 +126,25 @@ Class SMS_TaskSequence_InstallUpdateAction : SMS_TaskSequence_Action
   Indicates whether the cache is used. The default value is `true`.
 
 ## Remarks
- Class qualifiers for this class include:
 
- [CommandLine("TSInstallSWUpdate.exe /target:%%SMSInstallUpdateTarget%%"),
+Class qualifiers for this class include:
 
- ActionCategory{"Software,3,2"},ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "InstallSoftwareUpdateControl", "TaskSequenceOptionControl"}]
+[CommandLine("TSInstallSWUpdate.exe /target:%%SMSInstallUpdateTarget%%"),
 
- For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+ActionCategory{"Software,3,2"},ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "InstallSoftwareUpdateControl", "TaskSequenceOptionControl"}]
+
+For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md)
+
+[SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md)

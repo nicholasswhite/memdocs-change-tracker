@@ -1,32 +1,33 @@
 ---
 description: Learn how to configure software distribution advertised programs client agent settings in the site control file.
-title: Configure Advertised Programs Client Agent Settings
-ms.date: 09/20/2016
+title: "How to Configure Software Distribution Advertised Programs Client Agent Settings"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Configure Software Distribution Advertised Programs Client Agent Settings
+
 In Configuration Manager, the site control file maintains configuration for the configuration of the site. This topic shows how to configure software distribution advertised programs client agent settings in the site control file. For more information about reading from and writing to the site control file, see [About the site control file](../../understand/about-the-configuration-manager-site-control-file.md).
 
 > [!CAUTION]
->  You should be experienced in managing a site's configuration before using the SMS Provider classes to modify the site configuration. You should use caution or avoid using the `SMS_SCI_FileDefinition` and `SMS_SCI_SiteDefinition` classes altogether. These classes manage the site control file itself. You can cause significant damage to a site by changing some configurable items.
+>
+> You should be experienced in managing a site's configuration before using the SMS Provider classes to modify the site configuration. You should use caution or avoid using the `SMS_SCI_FileDefinition` and `SMS_SCI_SiteDefinition` classes altogether. These classes manage the site control file itself. You can cause significant damage to a site by changing some configurable items.
 
 ### To configure client agent settings
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Make a connection to the software distribution client component section of the site control file by using the [SMS_SCI_ClientComp](../../../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class.
-
-3.  Loop through the array of available properties, making changes as needed.
-
-4.  Commit the property changes to the site control file.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Make a connection to the software distribution client component section of the site control file by using the [SMS_SCI_ClientComp](../../../reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class.
+3. Loop through the array of available properties, making changes as needed.
+4. Commit the property changes to the site control file.
 
 ## Example
- The following example queries for specific items in the software distribution client component section of the site control file, and modifies those specific client agent settings.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example queries for specific items in the software distribution client component section of the site control file, and modifies those specific client agent settings.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -351,51 +352,52 @@ try
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`swbemContext`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|
-|`siteCode`<br /><br /> `siteToChange`|-   Managed: `String`<br />-   VBScript: `String`|The site code.|
-|`enableDisableSWDClientAgent`|-   Managed: `String`<br />-   VBScript: `String`|Flag to enable or disable the client agent.|
-|`setPolicyRefreshInterval`|-   Managed: `String`<br />-   VBScript: `String`|Policy polling interval, in minutes.|
-|`enableDisableRequestUserPolicy`|-   Managed: `String`<br />-   VBScript: `String`|Flag to enable or disable targeted advertisement requests.|
-|`enableDisableVisibleSignalOnAvailable`|-   Managed: `String`<br />-   VBScript: `String`|Flag to enable or disable display of a notification when new advertised programs are available.|
-|`enableDisableAudibleSignalonAvailable`|-   Managed: `String`<br />-   VBScript: `String`|Flag to enable or disable an audible notification when new advertised programs are available.|
-|`enableDisableCountdownSignal`|-   Managed: `String`<br />-   VBScript: `String`|Flag to enable or disable a countdown when a scheduled program is about to run.|
-|`setCountdownMinutes`|-   Managed: `String`<br />-   VBScript: `String`|Countdown length, in minutes.|
-|`enableDisableShowIcon`|-   Managed: `String`<br />-   VBScript: `String`|Flag to enable or disable the display of advertised program notification icons in the notification area.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `swbemContext` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `siteCode`   `siteToChange` | - Managed: `String` - VBScript: `String` | The site code. |
+| `enableDisableSWDClientAgent` | - Managed: `String` - VBScript: `String` | Flag to enable or disable the client agent. |
+| `setPolicyRefreshInterval` | - Managed: `String` - VBScript: `String` | Policy polling interval, in minutes. |
+| `enableDisableRequestUserPolicy` | - Managed: `String` - VBScript: `String` | Flag to enable or disable targeted advertisement requests. |
+| `enableDisableVisibleSignalOnAvailable` | - Managed: `String` - VBScript: `String` | Flag to enable or disable display of a notification when new advertised programs are available. |
+| `enableDisableAudibleSignalonAvailable` | - Managed: `String` - VBScript: `String` | Flag to enable or disable an audible notification when new advertised programs are available. |
+| `enableDisableCountdownSignal` | - Managed: `String` - VBScript: `String` | Flag to enable or disable a countdown when a scheduled program is about to run. |
+| `setCountdownMinutes` | - Managed: `String` - VBScript: `String` | Countdown length, in minutes. |
+| `enableDisableShowIcon` | - Managed: `String` - VBScript: `String` | Flag to enable or disable the display of advertised program notification icons in the notification area. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [About software distribution setup and configuration](about-software-distribution-setup-and-configuration.md)
- [About the Configuration Manager Site Control File](../../../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [About software distribution setup and configuration](about-software-distribution-setup-and-configuration.md) [About the Configuration Manager Site Control File](../../understand/about-the-configuration-manager-site-control-file.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)

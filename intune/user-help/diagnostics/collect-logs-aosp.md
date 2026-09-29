@@ -1,7 +1,7 @@
 ---
 title: Configure logging settings for AOSP
 description: Learn how to adjust app logging levels in the Microsoft Intune app.
-ms.date: 10/08/2024
+ms.date: "2024-10-08T00:00:00Z"
 ms.reviewer:
 ---
 
@@ -18,4 +18,5 @@ The log detail level defaults to **Important** in the Microsoft Intune app. To a
 3. Under **Log level detail**, select **Verbose** to increase the level of details recorded. Select **Off** to turn off logging.
 
 > [!NOTE]
+>
 > The logs that you send to your support team will include your email address.

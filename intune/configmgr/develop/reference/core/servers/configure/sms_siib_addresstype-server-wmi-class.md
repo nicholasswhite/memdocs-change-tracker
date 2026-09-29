@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the sender address type used by the Configuration Manager console with the SMS_SIIB_AddressType class.
-title: SMS_SIIB_AddressType Class
-ms.date: 09/20/2016
+title: "SMS_SIIB_AddressType Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SIIB_AddressType Server WMI Class
+
 The `SMS_SIIB_AddressType` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the Configuration Manager sender address type used by the Configuration Manager console.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,156 +36,143 @@ Class SMS_SIIB_AddressType : SMS_SiteInstallItemBase
 ```
 
 ## Methods
- The `SMS_SIIB_AddressType` class does not define any methods.
+
+The `SMS_SIIB_AddressType` class does not define any methods.
 
 ## Properties
- `AddressType`
- Data type: `String`
 
- Access type: Read-only
+`AddressType` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Address type. See the `AddressType` property of [SMS_SCI_Address Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sci_address-server-wmi-class.md).
+Qualifiers: None
 
- `ChmFile`
- Data type: `String`
+Address type. See the `AddressType` property of [SMS_SCI_Address Server WMI Class](sms_sci_address-server-wmi-class.md).
 
- Access type: Read-only
+`ChmFile` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Compressed .chm file containing the .htm file for the address type. See `HtmFile`.
+Qualifiers: None
 
- `DescriptionID`
- Data type: `UInt32`
+Compressed .chm file containing the .htm file for the address type. See `HtmFile`.
 
- Access type: Read-only
+`DescriptionID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Resource ID of the description text for the sender.
+Qualifiers: None
 
- `DispIconID`
- Data type: `UInt32`
+Resource ID of the description text for the sender.
 
- Access type: Read-only
+`DispIconID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Resource ID of the display icon for the sender.
+Qualifiers: None
 
- `DispNameID`
- Data type: `UInt32`
+Resource ID of the display icon for the sender.
 
- Access type: Read-only
+`DispNameID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Resource ID of the display name for the sender.
+Qualifiers: None
 
- `Flags`
- Data type: `UInt32`
+Resource ID of the display name for the sender.
 
- Access type: Read-only
+`Flags` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read-only
 
- Flags indicating permission status to change Configuration Manager sender address types. Possible values are:
+Qualifiers: [bits]
 
- 0
- ALLOW_ADD
+Flags indicating permission status to change Configuration Manager sender address types. Possible values are:
 
- 1
- ALLOW_DELETE
+0 ALLOW_ADD
 
- 2
- ALLOW_MODIFY
+1 ALLOW_DELETE
 
- 3
- ALLOW_SCHEDULE
+2 ALLOW_MODIFY
 
- 4
- ALLOW_RATE_LIMITING
+3 ALLOW_SCHEDULE
 
- `GUID`
- Data type: `String`
+4 ALLOW_RATE_LIMITING
 
- Access type: Read-only
+`GUID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- GUID representing the Microsoft Management Console node for the property page.
+Qualifiers: None
 
- `HtmFile`
- Data type: `String`
+GUID representing the Microsoft Management Console node for the property page.
 
- Access type: Read-only
+`HtmFile` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Help file (.htm) for the address type.
+Qualifiers: None
 
- `ItemName`
- Data type: `String`
+Help file (.htm) for the address type.
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ResDLL`
- Data type: `String`
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`ResDLL` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the resource DLL containing the resource Strings for `DescriptionID`,`DispIconID`, and `DispNameID`.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Name of the resource DLL containing the resource Strings for `DescriptionID`,`DispIconID`, and `DispNameID`.
 
- Access type: Read-only
+`SiteCode` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [read]
 
- `Units`
- Data type: `String`Array
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`Units` Data type: `String`Array
 
- Qualifiers: None
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md)

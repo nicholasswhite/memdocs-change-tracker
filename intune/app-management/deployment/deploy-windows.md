@@ -1,7 +1,7 @@
 ---
 title: Windows App Deployment by Using Microsoft Intune
 description: Learn about Windows app deployment scenarios available with Microsoft Intune.
-ms.date: 10/02/2025
+ms.date: "2025-10-02T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: priyar
 ms.collection:
@@ -12,11 +12,12 @@ ms.collection:
 
 # Windows App Deployment by Using Microsoft Intune
 
-Microsoft Intune supports a variety of app types and deployment scenarios on Windows devices. After you've added an app to Intune, you can assign the app to users and devices. This article provides more details on the supported Windows scenarios, and also covers key details to note when you're deploying apps to Windows. For information about deploying an app, also known as assigning an app, see [Assign an app](./assign-groups.md#assign-an-app) to a group.
+Microsoft Intune supports a variety of app types and deployment scenarios on Windows devices. After you've added an app to Intune, you can assign the app to users and devices. This article provides more details on the supported Windows scenarios, and also covers key details to note when you're deploying apps to Windows. For information about deploying an app, also known as assigning an app, see [Assign an app](assign-groups.md#assign-an-app) to a group.
 
 A Line-of-business (LOB) app is the app type supported on Windows devices. The file extensions for Windows apps include .msi, .appx, and .appxbundle.
 
 > [!NOTE]
+>
 > To deploy modern apps, you need to use [supported Windows versions](../../fundamentals/ref-supported-platforms.md).
 >
 > LOB app deployment isn't supported on devices running Windows Home editions.
@@ -25,22 +26,23 @@ A Line-of-business (LOB) app is the app type supported on Windows devices. The f
 
 Specific app types are supported based on the version of Windows that your users are running. The following table provides the app type and Windows supportability.
 
-| App type | Home | Pro | Business | Enterprise | Education | S-Mode | HoloLens<sup>1 | Surface Hub |
-|----------------|------|-----|----------|------------|-----------|--------|-----------|------------|
-|  .MSI | No | Yes | Yes | Yes | Yes | No | No | No |
+| App type | Home | Pro | Business | Enterprise | Education | S-Mode | HoloLens<sup>1</sup> | Surface Hub |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| .MSI | No | Yes | Yes | Yes | Yes | No | No | No |
 | .IntuneWin | No | Yes | Yes | Yes | Yes | 19H2+ | No | No |
 | Office C2R | No | Yes | Yes | Yes | Yes | RS4+ | No | No |
 | LOB: APPX/MSIX | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| [Microsoft Store app (new)](./add-microsoft-store.md) | No | Yes | Yes | Yes | Yes | Yes | No | No |
-| Web Apps | Yes | Yes | Yes | Yes | Yes | Yes | Yes<sup>2 | Yes<sup>2 |
+| [Microsoft Store app (new)](add-microsoft-store.md) | No | Yes | Yes | Yes | Yes | Yes | No | No |
+| Web Apps | Yes | Yes | Yes | Yes | Yes | Yes | Yes<sup>2</sup> | Yes<sup>2</sup> |
 | Store Link | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| Microsoft Edge | No | Yes | Yes | Yes | Yes | 19H2+<sup>3 | No | No |
+| Microsoft Edge | No | Yes | Yes | Yes | Yes | 19H2+<sup>3</sup> | No | No |
 
-<sup>1</sup> To unlock app management, upgrade your HoloLens device to [Holographic for Business](../../solutions/windows-holographic.md).<br />
-<sup>2</sup> Launch from the Company Portal only.<br />
-<sup>3</sup> For Edge app to install successfully, devices must also be assigned an S-Mode policy.
+<sup>1</sup> To unlock app management, upgrade your HoloLens device to [Holographic for Business](../../solutions/windows-holographic.md).  
+ <sup>2</sup> Launch from the Company Portal only.  
+ <sup>3</sup> For Edge app to install successfully, devices must also be assigned an S-Mode policy.
 
 > [!NOTE]
+>
 > All Windows app types require enrollment.
 
 ## Windows LOB apps
@@ -59,6 +61,7 @@ Depending on the app type, you can install the app on a Windows device in one of
   - Win32 apps built as Machine Mode or Dual Mode and Microsoft Store apps can be deployed in device context, and support both the Required and Available intents.
 
 > [!NOTE]
+>
 > For Win32 apps built as Dual Mode apps, the admin must choose if the app will install as a User Mode or Machine Mode app for all assignments associated with that instance. The deployment context can't be changed per assignment.
 
 Apps can only be installed in the device context when supported by the device and the Intune app type. Device context installs are supported on Windows desktops and Teams devices, such as the Surface Hub. They aren't supported on devices running Windows Holographic for Business, such as the Microsoft HoloLens.
@@ -76,9 +79,11 @@ Windows LOB apps (specifically APPX and MSIX) that you've selected to install in
 - Error: A user can't be targeted with a device context install.
 
 > [!IMPORTANT]
-> When used in combination with a Windows Autopilot pre-provisioning scenario, there is no requirement for LOB apps deployed in device context to target a device group. For more information, see [Windows Autopilot pre-provisioning deployment](/autopilot/pre-provision).
+>
+> When used in combination with a Windows Autopilot pre-provisioning scenario, there is no requirement for LOB apps deployed in device context to target a device group. For more information, see [Windows Autopilot pre-provisioning deployment](../../../autopilot/pre-provision.md).
 
 > [!NOTE]
+>
 > After you save an app assignment with a specific deployment, you can't change the context for that assignment, except for modern apps. For modern apps, you can change the context from user context to device context.
 
 If there's a conflict in policies on a single user or device, the following priorities apply:
@@ -86,9 +91,9 @@ If there's a conflict in policies on a single user or device, the following prio
 - A device context policy is a higher priority than a user context policy.
 - An install policy is a higher priority than an uninstall policy.
 
-For more information, see [Include and exclude app assignments in Microsoft Intune](./configure-assignment-scope.md). For more information about app types in Intune, see [Add apps to Microsoft Intune](./index.md).
+For more information, see [Include and exclude app assignments in Microsoft Intune](configure-assignment-scope.md). For more information about app types in Intune, see [Add apps to Microsoft Intune](index.md).
 
 ## Next steps
 
-- [Assign apps to groups with Microsoft Intune](./assign-groups.md)
+- [Assign apps to groups with Microsoft Intune](assign-groups.md)
 - [How to monitor apps](../monitor-assignments.md)

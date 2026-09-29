@@ -1,7 +1,7 @@
 ---
-title: iOS/iPadOS device compliance settings in Microsoft Intune
+title: "Device compliance settings for iOS/iPadOS in Intune"
 description: View the device compliance settings for iOS/iPadOS that you can manage with Microsoft Intune compliance policies.
-ms.date: 09/04/2025
+ms.date: "2025-09-04T00:00:00Z"
 ms.topic: reference
 ms.reviewer: tycast
 ---
@@ -18,24 +18,13 @@ Settings in this article are organized by the sections that appear in the admin 
 
 ## Before you begin
 
-- To learn more about compliance policies, and what they do, see [get started with device compliance](./overview.md).
-- To create an iOS/iPadOS device compliance policy, see [Create a compliance policy in Microsoft Intune](./create-policy.md). For **Platform**, select **iOS/iPadOS**.
-
-<!-- Removing section, framework pending review and has been removed
-
-When configuring compliance policies, the broad range of settings enable you to tailor protection to your specific needs. To better understand how to implement specific security configuration scenarios, see the security configuration framework guidance for iOS compliance policies.
-
-The security configuration framework is organized into distinct configuration levels that provide guidance for personally owned and supervised devices, with each level building off the previous level.
-
-For details about the settings for each level:
-
-- For personally owned and for supervised devices, see [iOS/iPadOS device compliance security configurations](../security-configurations/ios-ipados-compliance.md)
-
--->
+- To learn more about compliance policies, and what they do, see [get started with device compliance](overview.md).
+- To create an iOS/iPadOS device compliance policy, see [Create a compliance policy in Microsoft Intune](create-policy.md). For **Platform**, select **iOS/iPadOS**.
 
 ## Email
 
 - **Unable to set up email on the device**
+
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Require** - A managed email account is required. If the user already has an email account on the device, the email account must be removed so Intune can set one up correctly. If no email account exists on the device, the user should contact the IT administrator to configure a managed email account.
 
@@ -49,16 +38,15 @@ For details about email profiles, see [configure access to organization email us
 ## Device health
 
 - **Jailbroken devices**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Block** - Mark rooted (jailbroken) devices as not compliant.
-
 - **Require the device to be at or under the Device Threat Level**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
-   Select the maximum allowed device threat level evaluated by your mobile threat defense service.
-   Use this setting to take the risk assessment as a condition for compliance. Choose the allowed threat level:
+  Select the maximum allowed device threat level evaluated by your mobile threat defense service. Use this setting to take the risk assessment as a condition for compliance. Choose the allowed threat level:
+
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Secured** - This option is the most secure, and means that the device can't have any threats. A device with any level of threats is evaluated as noncompliant.
   - **Low** - The device is evaluated as compliant if only low-level threats are present. Anything higher puts the device in a noncompliant status.
@@ -70,22 +58,19 @@ For details about email profiles, see [configure access to organization email us
 ### Operating system version
 
 - **Minimum OS version**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   A device that doesn't meet the minimum OS version requirement is considered to be noncompliant. The user can view a link with information on how to upgrade and can choose to upgrade their device. After that, they can access organization resources.
-
 - **Maximum OS version**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   When a device uses an OS version later than the version in the rule, access to organization resources is blocked. The end user is asked to contact their IT administrator. The device can't access organization resources until a rule changes to allow the OS version.
-
 - **Minimum OS build version**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   When Apple publishes security updates, the build number is typically updated, not the OS version. Use this feature to specify a minimum allowed build number on the device. For Apple Rapid Security Response updates, enter the supplemental build version, such as `20E772520a`.
-
 - **Maximum OS build version**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   When Apple publishes security updates, the build number is typically updated, not the OS version. Use this feature to enter a maximum allowed build number on the device. For Apple Rapid Security Response updates, enter the supplemental build version, such as `20E772520a`.
 
@@ -94,6 +79,7 @@ For details about email profiles, see [configure access to organization email us
 - **Require the device to be at or under the machine risk score**
 
   Select the maximum allowed machine risk score for devices evaluated by Microsoft Defender for Endpoint. Devices that exceed this score get marked as noncompliant.
+
   - **Not configured** (*default*)
   - **Clear**
   - **Low**
@@ -109,56 +95,49 @@ For details about email profiles, see [configure access to organization email us
 > After a compliance or configuration policy is applied to an iOS/iPadOS device, users are prompted to set a passcode every 15 minutes. Users are continually prompted until a passcode is set. When a passcode is set for the iOS/iPadOS device, the encryption process automatically starts. The device remains encrypted until the passcode is disabled.
 
 - **Require a password to unlock mobile devices**
+
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Require** - Users must enter a password before they can access their device. iOS/iPadOS devices that use a password are encrypted.
-
 - **Simple passwords**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   - **Not configured** (*default*) - Users can create simple passwords like **1234** or **1111**.
   - **Block** - Users can't create simple passwords, such as **1234** or **1111**.
-
 - **Minimum password length**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   Enter the minimum number of digits or characters that the password must have.
-
 - **Required password type**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   Choose the password type required on the device. When set to **Not configured**, which is the default choice, Intune doesn't change or update this setting. Your options:
 
   - **Not configured**: The password is determined by the device's default settings. A user's OS might allow simple passwords, like *0000* and *1234*.
   - **Alphanumeric**: The password must contain a mix of uppercase letters, lowercase letters, and numeric characters.
   - **Numeric**: The password at minimum must be a set of numeric characters, such as *123456789*. Alphabetic passwords and alphanumeric passwords are also supported.
-
 - **Number of non-alphanumeric characters in password**  
-  Enter the minimum number of special characters, such as `&`, `#`, `%`, `!`, and so on, that must be in the password.
+   Enter the minimum number of special characters, such as `&`, `#`, `%`, `!`, and so on, that must be in the password.
 
   Setting a higher number requires the user to create a password that is more complex.
-
 - **Maximum minutes after screen lock before password is required**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   Select how much time is allowed to pass after the screen locks before users have to enter a password to access their device. Options include the default of **Not configured**, **Immediately**, and from **1 minute** to **4 hours**.
-
 - **Maximum minutes of inactivity until screen locks**  
-  Select the amount of idle time allowed before the device locks its screen. Options include the default of **Not configured**, **Immediately**, and from **1 minute** to **15 minutes**.
-
+   Select the amount of idle time allowed before the device locks its screen. Options include the default of **Not configured**, **Immediately**, and from **1 minute** to **15 minutes**.
 - **Password expiration (days)**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   Enter how long, in days, a password is valid before the user must create a new one.
-
 - **Number of previous passwords to prevent reuse**  
-  *Supported for iOS 17.0 and later*
+   *Supported for iOS 17.0 and later*
 
   Enter the number of previously used passwords that can't be used. For example, if you enter 5, users can't reuse their 5 most recent passwords.
 
 ### Device security
 
 - **Restricted apps**  
-  You can restrict apps by adding their bundle IDs to the policy. If a device has the app installed, the device is marked as noncompliant.
+   You can restrict apps by adding their bundle IDs to the policy. If a device has the app installed, the device is marked as noncompliant.
 
   - **App name** - Enter a user-friendly name to help you identify the bundle ID.
   - **App bundle ID** - Enter the unique bundle identifier assigned by the app provider.
@@ -175,6 +154,6 @@ For details about email profiles, see [configure access to organization email us
 
 ## Next steps
 
-- [Add actions for noncompliant devices](./configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
-- [Monitor your compliance policies](./monitor-policy.md).
-- See the [compliance policy settings for macOS](./ref-macos-settings.md) devices.
+- [Add actions for noncompliant devices](configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
+- [Monitor your compliance policies](monitor-policy.md).
+- See the [compliance policy settings for macOS](ref-macos-settings.md) devices.

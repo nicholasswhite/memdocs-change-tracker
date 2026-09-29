@@ -1,16 +1,18 @@
 ---
 description: Learn how to reassign the Configuration Manager site for clients in the list using ReassignClientsToSite class method.
-title: ReassignClientsToSite Method
-ms.date: 09/20/2016
+title: "ReassignClientsToSite Method in Class SMS_Collection"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ReassignClientsToSite Method in Class SMS_Collection
+
 The `ReassignClientsToSite` Windows Management Instrumentation (WMI) class method, in Configuration Manager, reassigns the Configuration Manager site for clients in the list.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,43 +25,45 @@ SInt32 ReassignClientsToSite(
 ```
 
 #### Parameters
- `ResourceIDs`
- Data type: `UInt32` Array
 
- Qualifiers: [in]
+`ResourceIDs` Data type: `UInt32` Array
 
- IDs of member resources.
+Qualifiers: [in]
 
- `NewSiteCode`
- Data type: `String`
+IDs of member resources.
 
- Qualifiers: [in]
+`NewSiteCode` Data type: `String`
 
- The new site code for the clients.
+Qualifiers: [in]
 
- `ReturnValue`
- Data type: `SInt32`
+The new site code for the clients.
 
- Qualifiers: [out]
+`ReturnValue` Data type: `SInt32`
 
- The number of devices that were successfully reassigned.
+Qualifiers: [out]
+
+The number of devices that were successfully reassigned.
 
 > [!IMPORTANT]
->  Even if there is an error, some devices may still get reassigned.
+>
+> Even if there is an error, some devices may still get reassigned.
 
 ## Return Values
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Collection Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Collection Server WMI Class](sms_collection-server-wmi-class.md) [SMS_Site Server WMI Class](../../servers/configure/sms_site-server-wmi-class.md)

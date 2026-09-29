@@ -1,13 +1,15 @@
 ---
 title: "ICCMEvent::RawEvent Property"
 description: "In Configuration Manager, ICcmEvent::RawEvent is a read-only property that indicates information to add to a raw event."
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ICCMEvent::RawEvent Property
+
 `ICcmEvent::RawEvent` is a read-only property in Configuration Manager that indicates information to add to a raw event.
 
 ## Syntax
@@ -18,32 +20,37 @@ HRESULT ICcmEvent::RawEvent([out, retval] IUnknown** ppWmiEvent);
 ```
 
 #### Parameters
- `ppWmiEvent`
- Data type: `IUnknown`
 
- Qualifiers: [out, retval]
+`ppWmiEvent` Data type: `IUnknown`
 
- Pointer to a pointer to the `IUnknown` interface of the internal Windows Management Instrumentation (WMI) event.
+Qualifiers: [out, retval]
+
+Pointer to a pointer to the `IUnknown` interface of the internal Windows Management Instrumentation (WMI) event.
 
 ## Return Values
- The property returns an `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- S_OK
- The method succeeded.
+The property returns an `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S_OK The method succeeded.
 
 ## Remarks
- Use of this property permits information that can't be added through the [SetProperty method](../../../../../develop/reference/core/servers/manage/iccmevent--setproperty-method.md) method to be added to custom events.
 
- This property is recommended only for advanced users who need to add information to custom events that can't be accomplished through the [SetProperty method](../../../../../develop/reference/core/servers/manage/iccmevent--setproperty-method.md) method. It isn't supported in VBScript.
+Use of this property permits information that can't be added through the [SetProperty method](iccmevent--setproperty-method.md) method to be added to custom events.
+
+This property is recommended only for advanced users who need to add information to custom events that can't be accomplished through the [SetProperty method](iccmevent--setproperty-method.md) method. It isn't supported in VBScript.
 
 ## Requirements
- Smscore.dll.
+
+Smscore.dll.
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [SMSEvent Class (client)](../../../../../develop/reference/core/servers/manage/smsevent-class.md)
+
+[SMSEvent Class (client)](smsevent-class.md)

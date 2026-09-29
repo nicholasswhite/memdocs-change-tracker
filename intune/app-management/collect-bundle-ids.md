@@ -1,7 +1,7 @@
 ---
-title: Get App Bundle ID
+title: "Get the App Bundle ID for Your Policies in Microsoft Intune"
 description: Get the app bundle ID in Microsoft Intune for Android, iOS/iPadOS, macOS, and Windows apps. Use the bundle ID in your app policies, device configuration profiles, enrollment policies, and compliance policies in Microsoft Intune.
-ms.date: 04/30/2024
+ms.date: "2024-04-30T00:00:00Z"
 ms.topic: how-to
 ms.reviewer:
 ---
@@ -23,24 +23,18 @@ This article lists the steps to get the app bundle IDs using the Intune admin ce
 
 ## Get the app bundle ID
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Apps** > **All Apps**.
-1. Select **Columns**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Apps** &gt; **All Apps**.
+3. Select **Columns**.
 
-    :::image type="content" source="./media/collect-bundle-ids/all-apps-column.png" alt-text="Screenshot that shows how to select the Columns option in All Apps in Microsoft Intune and the Intune admin center.":::
+   ![Screenshot that shows how to select the Columns option in All Apps in Microsoft Intune and the Intune admin center.](media/collect-bundle-ids/all-apps-column.png)
+4. In the list, select **App identifier** &gt; **Apply**.
 
-1. In the list, select **App identifier** > **Apply**.
-
-    :::image type="content" source="./media/collect-bundle-ids/columns-select-app-identifier.png" alt-text="Screenshot that shows how to select the App Bundle ID column in All Apps in Microsoft Intune and the Intune admin center.":::
-
-1. The **App identifier** column shows the bundle ID of the app.
+   ![Screenshot that shows how to select the App Bundle ID column in All Apps in Microsoft Intune and the Intune admin center.](media/collect-bundle-ids/columns-select-app-identifier.png)
+5. The **App identifier** column shows the bundle ID of the app.
 
 ## Related articles
 
-- [Add apps to Microsoft Intune](./deployment/index.md)
+- [Add apps to Microsoft Intune](deployment/index.md)
 - [Bundle IDs for built-in iOS and iPadOS apps you can use in Intune](../device-configuration/templates/ref-bundle-ids-ios.md)
-- [Add built-in apps to Microsoft Intune](./deployment/add-built-in.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Add built-in apps to Microsoft Intune](deployment/add-built-in.md)

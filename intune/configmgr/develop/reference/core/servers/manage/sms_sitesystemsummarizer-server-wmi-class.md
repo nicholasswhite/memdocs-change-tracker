@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a site system summarizer using the SMS_SiteSystemSummarizer class in Configuration Manager.
-title: SMS_SiteSystemSummarizer Class
-ms.date: 09/20/2016
+title: "SMS_SiteSystemSummarizer Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SiteSystemSummarizer Server WMI Class
+
 The `SMS_SiteSystemSummarizer` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a site system summarizer. The site system summarizer reports physical system health data for each system and each system role in the Configuration Manager site.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,90 +34,80 @@ Class SMS_SiteSystemSummarizer : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SiteSystemSummarizer` class does not define any methods.
+
+The `SMS_SiteSystemSummarizer` class does not define any methods.
 
 ## Properties
- `AvailabilityState`
- Data type: `UInt32`
 
- Access type: Read
+`AvailabilityState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Availability state of the site system. The default value is 0.
+Qualifiers: None
 
- `BytesFree`
- Data type: `SInt64`
+Availability state of the site system. The default value is 0.
 
- Access type: Read
+`BytesFree` Data type: `SInt64`
 
- Qualifiers: None
+Access type: Read
 
- Amount of free, unused storage space, in kilobytes, for the storage object.
+Qualifiers: None
 
- `BytesTotal`
- Data type: `SInt64`
+Amount of free, unused storage space, in kilobytes, for the storage object.
 
- Access type: Read
+`BytesTotal` Data type: `SInt64`
 
- Qualifiers: None
+Access type: Read
 
- Maximum amount of storage space, in kilobytes, of the storage object. A negative value indicates that information is currently unavailable.
+Qualifiers: None
 
- `DownSince`
- Data type: `DateTime`
+Maximum amount of storage space, in kilobytes, of the storage object. A negative value indicates that information is currently unavailable.
 
- Access type: Read
+`DownSince` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read
 
- Date and time when the storage object was first found to be down (inaccessible). The storage object is considered down if the site server fails to connect to the storage object due to network problems, security problems, or other problems. The value is `null` if the storage object is accessible. The time zone is based on the time zone of the `SiteCode` property.
+Qualifiers: None
 
- `ObjectType`
- Data type: `UInt32`
+Date and time when the storage object was first found to be down (inaccessible). The storage object is considered down if the site server fails to connect to the storage object due to network problems, security problems, or other problems. The value is `null` if the storage object is accessible. The time zone is based on the time zone of the `SiteCode` property.
 
- Access type: Read
+`ObjectType` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- Type of object for which the status is being reported. Possible values are:
+Qualifiers: [key]
+
+Type of object for which the status is being reported. Possible values are:
 
 | Value | Object type |
-| ----- | ----------- |
-|0|NALPATH. A directory.|
-|1|SQL_DB. An SQL Server database.|
-|2|SQL_LOG. An SQL Server transaction log.|
+| --- | --- |
+| 0 | NALPATH. A directory. |
+| 1 | SQL_DB. An SQL Server database. |
+| 2 | SQL_LOG. An SQL Server transaction log. |
 
- `PercentFree`
- Data type: `SInt32`
+`PercentFree` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: None
+Qualifiers: None
 
- Percentage of free storage space available on the storage object.
+Percentage of free storage space available on the storage object.
 
- `Role`
- Data type: `String`
+`Role` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Configuration Manager role performed by the site system, for example:
+Configuration Manager role performed by the site system, for example:
 
 - Distribution point
-
 - SQL Server
-
 - Software metering server
-
 - Component server
-
 - Site server
 
-  `SiteCode`
-  Data type: `String`
+  `SiteCode` Data type: `String`
 
   Access type: Read
 
@@ -123,23 +115,18 @@ Class SMS_SiteSystemSummarizer : SMS_BaseClass
 
   Site code of Configuration Manager site.
 
-  `SiteObject`
-  Data type: `String`
+  `SiteObject` Data type: `String`
 
   Access type: Read
 
   Qualifiers: [key]
 
   Network abstraction layer (NAL) path to a storage object that is one of the following:
-
 - Directory that contains files
-
 - Name of the database
-
 - Transaction log
 
-  `SiteSystem`
-  Data type: `String`
+  `SiteSystem` Data type: `String`
 
   Access type: Read
 
@@ -147,8 +134,7 @@ Class SMS_SiteSystemSummarizer : SMS_BaseClass
 
   Name of the computer containing the storage object.
 
-  `Status`
-  Data type: `UInt32`
+  `Status` Data type: `UInt32`
 
   Access type: Read
 
@@ -157,24 +143,27 @@ Class SMS_SiteSystemSummarizer : SMS_BaseClass
   Status value indicating the health of the component. Possible values are:
 
 | Value | Status |
-| ----- | ------ |
-|GREEN(0)|OK. The storage objects are well below their thresholds.|
-|YELLOW(1)|Warning. The storage objects are approaching their thresholds.|
-|RED(2)|Critical. The storage objects have exceeded their thresholds.|
+| --- | --- |
+| GREEN(0) | OK. The storage objects are well below their thresholds. |
+| YELLOW(1) | Warning. The storage objects are approaching their thresholds. |
+| RED(2) | Critical. The storage objects have exceeded their thresholds. |
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   An instance of this class is created for every storage object used by Configuration Manager. Storage objects are defined by the `SiteObject` property.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

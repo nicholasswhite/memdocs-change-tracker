@@ -1,14 +1,14 @@
 ---
-title: Common tasks and features in the settings catalog
+title: "Tasks you can complete using the Settings Catalog in Intune"
 description: Use the settings catalog in Microsoft Intune to configure common features. You can create a Universal Print policy, configure Microsoft Edge and Google Chrome web browsers, and use built in settings instead of plist files for macOS devices.
-ms.date: 03/24/2026
+ms.date: "2026-03-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: laarrizz, mayurjadhav, beflamm
 ---
 
 # Tasks you can complete using the Settings Catalog in Intune
 
-Using the [settings catalog](index.md) in the [Microsoft Intune admin center], you can access many settings that manage apps and features on your devices.
+Using the [settings catalog](index.md) in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), you can access many settings that manage apps and features on your devices.
 
 This article lists and describes some of the features you can configure in the settings catalog.
 
@@ -22,24 +22,20 @@ This feature applies to:
 
 ## Configure Microsoft Edge and Google Chrome
 
-<!-- ms.reviewer: mayurjadhav -->
-
 This feature applies to:
 
 - macOS
 - Windows
 
-These web browser settings are built in, and can be configured & deployed to your managed devices. On Windows devices, you can also configure Google Chrome.
+These web browser settings are built in, and can be configured &amp; deployed to your managed devices. On Windows devices, you can also configure Google Chrome.
 
-:::image type="content" source="./media/common-tasks/google-chrome-settings.png" alt-text="Screenshot that shows the Google Chrome settings in the settings catalog that are built in to Microsoft Intune and Intune admin center. Use these settings to create and configure a Google Chrome policy on Windows devices.":::
+![Screenshot that shows the Google Chrome settings in the settings catalog that are built in to Microsoft Intune and Intune admin center. Use these settings to create and configure a Google Chrome policy on Windows devices.](media/common-tasks/google-chrome-settings.png)
 
 Previously, to configure Google Chrome settings on Windows devices, you created a custom OMA-URI device configuration policy.
 
 For a sample Microsoft Edge scenario, see [Create a Microsoft Edge policy](configure-edge.md).
 
 ## Manage AI features on Android devices
-
-<!-- ms.reviewer: cchristenson -->
 
 This feature applies to:
 
@@ -51,8 +47,6 @@ For more information, go to [Manage AI features on Android devices](../../soluti
 
 ## Enable Recovery Lock on macOS devices
 
-<!-- ms.reviewer: beflamm -->
-
 This feature applies to:
 
 - macOS
@@ -62,8 +56,6 @@ You can configure Recovery Lock on your macOS devices. When you enable Recovery 
 For more information, go to [Protect macOS devices using Recovery Lock with Microsoft Intune](configure-recovery-lock-macos.md).
 
 ## Add Universal Print printers
-
-<!-- ms.reviewer: laarrizz -->
 
 This feature applies to:
 
@@ -75,20 +67,16 @@ For more information, go to [Create a Universal Print policy in Microsoft Intune
 
 ## Use Apple's DDM to manage software updates
 
-<!-- ms.reviewer: beflamm -->
-
 This feature applies to:
 
 - iOS/iPadOS
 - macOS
 
-You can use the settings catalog to configure Apple's declarative device management (DDM) to manage software updates. With DDM, the device handles the entire software update lifecycle. It prompts users that an update is available and also downloads, prepares the device for the installation, & installs the update.
+You can use the settings catalog to configure Apple's declarative device management (DDM) to manage software updates. With DDM, the device handles the entire software update lifecycle. It prompts users that an update is available and also downloads, prepares the device for the installation, &amp; installs the update.
 
 For more information, go to [Managed software updates with the settings catalog](../../device-updates/apple/index.md).
 
 ## Built-in macOS features replacing plist files
-
-<!-- ms.reviewer: beflamm -->
 
 This feature applies to:
 
@@ -96,31 +84,25 @@ This feature applies to:
 
 On macOS, you can use property list (plist) files to configure features and settings that aren't built in to Intune. Some of these feature settings are now available in the settings catalog:
 
-- **Microsoft Edge version 77 and newer**: For a list of the settings you can configure, go to [Microsoft Edge - Policies](/DeployEdge/microsoft-edge-policies) (opens another Microsoft website).
+- **Microsoft Edge version 77 and newer**: For a list of the settings you can configure, go to [Microsoft Edge - Policies](https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-policies) (opens another Microsoft website).
 
-  Previously, you had to [use a property list (plist) file to configure Microsoft Edge](/deployedge/configure-microsoft-edge-on-mac) (opens another Microsoft website).
+  Previously, you had to [use a property list (plist) file to configure Microsoft Edge](https://learn.microsoft.com/en-us/deployedge/configure-microsoft-edge-on-mac) (opens another Microsoft website).
+- **Microsoft Defender for Endpoint**: For a list of the settings you can configure, go to [Set preferences for Microsoft Defender for Endpoint on macOS](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/mac-preferences) (opens another Microsoft website).
 
-- **Microsoft Defender for Endpoint**: For a list of the settings you can configure, go to [Set preferences for Microsoft Defender for Endpoint on macOS](/microsoft-365/security/defender-endpoint/mac-preferences) (opens another Microsoft website).
-
-  Previously, you had to [use a property list (plist) file to configure Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/mac-install-with-intune) (opens another Microsoft website).
-
+  Previously, you had to [use a property list (plist) file to configure Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/mac-install-with-intune) (opens another Microsoft website).
 - **Microsoft AutoUpdate (MAU), Microsoft Office and Microsoft Outlook**: For a list of the settings you can configure, go to:
 
-  - [Use preferences to manage privacy controls for Office for Mac - Deploy Office](/deployoffice/privacy/mac-privacy-preferences)
-  - [Set preferences for Outlook for Mac - Deploy Office](/deployoffice/mac/preferences-outlook)
-  - [Set a deadline for updates from Microsoft AutoUpdate](/deployoffice/mac/mau-deadline)
+  - [Use preferences to manage privacy controls for Office for Mac - Deploy Office](https://learn.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences)
+  - [Set preferences for Outlook for Mac - Deploy Office](https://learn.microsoft.com/en-us/deployoffice/mac/preferences-outlook)
+  - [Set a deadline for updates from Microsoft AutoUpdate](https://learn.microsoft.com/en-us/deployoffice/mac/mau-deadline)
 
-    For a list of apps that support MAU, go to [Update Microsoft applications for Mac by using msupdate](/deployoffice/mac/update-office-for-mac-using-msupdate).
+    For a list of apps that support MAU, go to [Update Microsoft applications for Mac by using msupdate](https://learn.microsoft.com/en-us/deployoffice/mac/update-office-for-mac-using-msupdate).
 
-  Previously, you had to [use a property list (plist) file to configure these features for Mac](/deployoffice/mac/deploy-preferences-for-office-for-mac) (opens another Microsoft website).
+  Previously, you had to [use a property list (plist) file to configure these features for Mac](https://learn.microsoft.com/en-us/deployoffice/mac/deploy-preferences-for-office-for-mac) (opens another Microsoft website).
 
-Be sure macOS is listed as a supported platform. If some settings aren't available in the settings catalog, then we recommend you continue using the [preference file](../../device-configuration/templates/configure-preference-file-macos.md).
+Be sure macOS is listed as a supported platform. If some settings aren't available in the settings catalog, then we recommend you continue using the [preference file](../templates/configure-preference-file-macos.md).
 
 ## Related content
 
 - [Use the settings catalog to configure settings on Windows and macOS devices](index.md)
 - [Create a Universal Print policy in Microsoft Intune](configure-universal-print.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

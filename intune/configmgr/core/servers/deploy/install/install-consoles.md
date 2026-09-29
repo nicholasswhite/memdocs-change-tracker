@@ -1,7 +1,7 @@
 ---
-title: Install console
+title: "Install the Configuration Manager console"
 description: Install the Configuration Manager console to connect to a central administration site or primary site.
-ms.date: 12/04/2024
+ms.date: "2024-12-04T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -19,14 +19,10 @@ The Configuration Manager console is always installed on the site server for the
 ## Prerequisites
 
 - [Supported OS versions for Configuration Manager consoles](../../../plan-design/configs/supported-operating-systems-consoles.md)
-
 - You have local **Administrator** rights on the target computer for the console.
-
 - You have **Read** permissions to the location of the console installation files.
 
 ### .NET version requirements
-
-<!--10402814-->
 
 Starting in version 2403, the console requires Microsoft .NET Framework version 4.8. If you install the console on other devices, make sure to update .NET. If the device doesn't already have it, the console setup doesn't install this prerequisite.
 
@@ -35,11 +31,12 @@ Starting in version 2107, the console requires Microsoft .NET Framework version 
 Starting in version 2103, the ConfigurationManager PowerShell module requires Microsoft .NET version 4.7.2 or later.
 
 > [!NOTE]
+>
 > .NET Framework version 4.6.2 is preinstalled with Windows Server 2016 and Windows 10 version 1607. Later versions of Windows are preinstalled with a later version of the .NET Framework.
 >
 > .NET Framework version 4.8 isn't supported on some OS versions, such as Windows 10 2015 LTSB.
 >
-> For more information, see [.NET Framework system requirements](/dotnet/framework/get-started/system-requirements).
+> For more information, see [.NET Framework system requirements](https://learn.microsoft.com/en-us/dotnet/framework/get-started/system-requirements).
 
 ## Source paths
 
@@ -47,18 +44,18 @@ Decide which source path to use:
 
 - ConsoleSetup folder in the installation path on the site server: `\Tools\ConsoleSetup`
 
-    When you install a site server, it copies the console installation files and supported language packs for the site to the **Tools\ConsoleSetup** subfolder. Optionally, you can copy the **ConsoleSetup** folder to an alternate location to start the installation. When you update the site, it always keeps its local version up to date.
-
+  When you install a site server, it copies the console installation files and supported language packs for the site to the **Tools\ConsoleSetup** subfolder. Optionally, you can copy the **ConsoleSetup** folder to an alternate location to start the installation. When you update the site, it always keeps its local version up to date.
 - Configuration Manager installation media: `\SMSSETUP\BIN\I386`
 
-    Installing the Configuration Manager console from the installation media always installs the English version. This behavior happens even if the site server supports different languages, or the target computer's OS is set to a different language.
+  Installing the Configuration Manager console from the installation media always installs the English version. This behavior happens even if the site server supports different languages, or the target computer's OS is set to a different language.
 
 When possible, start the console installer from the **ConsoleSetup** folder rather than from the source media.
 
 > [!IMPORTANT]
-> Don't install the console using the `CD.Latest` source files. It's an unsupported scenario, and may cause problems with the console installation. For more information, see [The `CD.Latest` folder](../../manage/the-cd.latest-folder.md#unsupported-scenarios).<!-- SCCMDocs issue 1359 -->
+>
+> Don't install the console using the `CD.Latest` source files. It's an unsupported scenario, and may cause problems with the console installation. For more information, see [The `CD.Latest` folder](../../manage/the-cd.latest-folder.md#unsupported-scenarios).
 
-If you create a package for installing the console on other computers, make sure the package includes the following files:<!--3612513-->
+If you create a package for installing the console on other computers, make sure the package includes the following files:
 
 - ConsoleSetup.exe
 - AdminConsole.msi
@@ -69,20 +66,18 @@ If you create a package for installing the console on other computers, make sure
 
 1. Browse to the source path, and open **ConsoleSetup.exe**.
 
-    > [!IMPORTANT]
-    > Always install the console by using **ConsoleSetup.exe**. Although you can install the Configuration Manager console by running AdminConsole.msi, this method doesn't run prerequisites or dependency checks. The installation might not install correctly.
-
-1. In the wizard, select **Next**.
-
-1. On the **Site Server** page, enter the fully qualified domain name (FQDN) of the site server to which the Configuration Manager console connects.
-
-1. On the **Installation Folder** page, enter the installation folder for the Configuration Manager console. The folder path can't include trailing spaces or Unicode characters.
-
-1. On the **Ready to Install** page, select **Install**.
+   > [!IMPORTANT]
+   >
+   > Always install the console by using **ConsoleSetup.exe**. Although you can install the Configuration Manager console by running AdminConsole.msi, this method doesn't run prerequisites or dependency checks. The installation might not install correctly.
+2. In the wizard, select **Next**.
+3. On the **Site Server** page, enter the fully qualified domain name (FQDN) of the site server to which the Configuration Manager console connects.
+4. On the **Installation Folder** page, enter the installation folder for the Configuration Manager console. The folder path can't include trailing spaces or Unicode characters.
+5. On the **Ready to Install** page, select **Install**.
 
 ## Install from a command prompt
 
 > [!TIP]
+>
 > Installing the Configuration Manager console from a command prompt always installs the English version. This behavior happens even if the target computer's OS is set to a different language. To install the Configuration Manager console in a language other than English, [use the Setup Wizard](#use-the-setup-wizard).
 
 ### ConsoleSetup.exe command-line options

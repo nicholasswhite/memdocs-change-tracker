@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot known issues
+title: "Windows Autopilot - known issues"
 description: Be informed about known issues that might occur during Windows Autopilot deployment. # RSS subscription is based on this description so don't change. If the description needs to change, update RSS URL in the Tip in the article.
-ms.date: 09/01/2026
+ms.date: "2026-09-08T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: troubleshooting
@@ -18,19 +18,19 @@ This article describes known issues that can often be resolved with configuratio
 >
 > RSS can be used to notify when new known issues are added to this page. For example, the following RSS link includes this article:
 >
-> ``` url
+> ```url
 > https://learn.microsoft.com/api/search/rss?search=%22Be+informed+about+known+issues+that+might+occur+during+Windows+Autopilot+deployment.%22&locale=en-us&%24filter=
 > ```
 >
 > This example includes the `&locale=en-us` variable. The `locale` variable is required, but it can be changed to another supported locale. For example, `&locale=es-es`.
 >
-> For more information on using RSS for notifications, see [How to use the docs](/intune/use-docs#notifications) in the Intune documentation.
+> For more information on using RSS for notifications, see [How to use the docs](https://learn.microsoft.com/en-us/intune/use-docs#notifications) in the Intune documentation.
 
 > [!NOTE]
 >
-> For issues with Windows Autopilot with Co-management, see [Windows Autopilot with co-management](/intune/configmgr/comanage/autopilot-enrollment).
+> For issues with Windows Autopilot with Co-management, see [Windows Autopilot with co-management](../intune/configmgr/comanage/autopilot-enrollment.md).
 
-## Known issues  
+## Known issues
 
 ### Pre-provisioning fails for Microsoft Entra hybrid join when policy conflict resolution requires domain controller connectivity
 
@@ -44,48 +44,50 @@ This behavior is expected when the device doesn't have line-of-sight to a domain
 
 This scenario is a known limitation of using pre-provisioning with Microsoft Entra hybrid join when assigned policies require conflict resolution in the client DM stack. To avoid the failure, don't assign policies that require domain controller connectivity during the technician flow, or pre-provision the device on a network that has line-of-sight to a domain controller.
 
-### ODJ Connector configuration fails with a SeLogonAsServicePrivilege error when using your own gMSA   
+### ODJ Connector configuration fails with a SeLogonAsServicePrivilege error when using your own gMSA
 
 Date added: *June 18, 2026*
 
-When you configure the Intune Connector for Active Directory, also known as the Offline Domain Join (ODJ) Connector, to use your own group managed service account (gMSA) instead of the account automatically provisioned by the connector, enrollment or configuration might fail. The connector UI or setup logs contain an entry similar to the following example, often surfaced as a `SeLogonAsServicePrivilegeMissing` configuration error:  
+When you configure the Intune Connector for Active Directory, also known as the Offline Domain Join (ODJ) Connector, to use your own group managed service account (gMSA) instead of the account automatically provisioned by the connector, enrollment or configuration might fail. The connector UI or setup logs contain an entry similar to the following example, often surfaced as a `SeLogonAsServicePrivilegeMissing` configuration error:
 
-`System.Security.Principal.WindowsIdentity.KerbS4ULogon(String upn, SafeAccessTokenHandle& safeTokenHandle)`  
+`System.Security.Principal.WindowsIdentity.KerbS4ULogon(String upn, SafeAccessTokenHandle& safeTokenHandle)`
 
-This error occurs when the *Log on as a service* privilege (`SeLogonAsServicePrivilege`) is assigned to the gMSA but hasn't yet propagated to the connector host when the pre-enrollment validation runs.  
+This error occurs when the *Log on as a service* privilege (`SeLogonAsServicePrivilege`) is assigned to the gMSA but hasn't yet propagated to the connector host when the pre-enrollment validation runs.
 
-The issue is resolved in build 6.2604.2000.3, which adds the opt-in `<appSettings>` key `SkipByoMsaPrivilegeCheck`. When this key is set to `true` and the connector is configured to use your own gMSA, the connector skips the `SeLogonAsServicePrivilege` pre-check, which internally performs a [Kerberos Service-for-User (S4U)](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94) logon of the gMSA, writes a trace line confirming the skip, and proceeds with configuration.  
+The issue is resolved in build 6.2604.2000.3, which adds the opt-in `<appSettings>` key `SkipByoMsaPrivilegeCheck`. When this key is set to `true` and the connector is configured to use your own gMSA, the connector skips the `SeLogonAsServicePrivilege` pre-check, which internally performs a [Kerberos Service-for-User (S4U)](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94) logon of the gMSA, writes a trace line confirming the skip, and proceeds with configuration.
 
-To use the workaround, install build 6.2604.2000.3 or later. Add the `SkipByoMsaPrivilegeCheck` key with `value="true"` to the connector `<appSettings>`, and restart the configuration. The default value is `false`, so the pre-check continues to run unless you explicitly add the key.  
+To use the workaround, install build 6.2604.2000.3 or later. Add the `SkipByoMsaPrivilegeCheck` key with `value="true"` to the connector `<appSettings>`, and restart the configuration. The default value is `false`, so the pre-check continues to run unless you explicitly add the key.
 
 ### Microsoft Entra hybrid join Autopilot deployments time out with error code 0x80004005
 
 Date added: *February 9, 2026*
 
-During Microsoft Entra hybrid join Autopilot deployments, devices might experience timeout errors with error code 0x80004005 in the deployment process. The issue is resolved in:  
-- [KB5065789](https://support.microsoft.com/en-us/topic/september-29-2025-kb5065789-os-builds-26200-6725-and-26100-6725-preview-fa03ce47-cec5-4d1c-87d0-cac4195b4b4e) or later for 25H2  
-- [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) or later for 24H2 
-- [KB5070312](https://support.microsoft.com/en-us/topic/november-20-2025-kb5070312-os-build-22631-6276-preview-ac908c2e-c839-46f8-9111-3adfb72caf61) or later for 23H2  
+During Microsoft Entra hybrid join Autopilot deployments, devices might experience timeout errors with error code 0x80004005 in the deployment process. The issue is resolved in:
 
-### Local Autopilot Reset can’t be triggered by local administrator when you deny access from network  
+- [KB5065789](https://support.microsoft.com/en-us/topic/september-29-2025-kb5065789-os-builds-26200-6725-and-26100-6725-preview-fa03ce47-cec5-4d1c-87d0-cac4195b4b4e) or later for 25H2
+- [KB5065426](https://support.microsoft.com/en-us/topic/september-9-2025-kb5065426-os-build-26100-6584-77a41d9b-1b7c-4198-b9a5-3c4b6706dea9) or later for 24H2
+- [KB5070312](https://support.microsoft.com/en-us/topic/november-20-2025-kb5070312-os-build-22631-6276-preview-ac908c2e-c839-46f8-9111-3adfb72caf61) or later for 23H2
+
+### Local Autopilot Reset can’t be triggered by local administrator when you deny access from network
 
 **Date added:** *January 16, 2026*
 
-When a device is configured with an Intune policy that sets **Deny access to this computer from the network** for the local account, the local Windows administrator account can't start a local Windows Autopilot Reset.  
+When a device is configured with an Intune policy that sets **Deny access to this computer from the network** for the local account, the local Windows administrator account can't start a local Windows Autopilot Reset.
 
-This issue affects scenarios where administrators rely on the local administrator account to trigger local Autopilot Reset on a device (for example, from the Windows sign-in screen or after local sign-in). As a workaround, remove the **Deny access to this computer from the network** setting for the local account, or exclude devices that require local Autopilot Reset from this policy. After the device syncs the updated policy, local Autopilot Reset works. 
+This issue affects scenarios where administrators rely on the local administrator account to trigger local Autopilot Reset on a device (for example, from the Windows sign-in screen or after local sign-in). As a workaround, remove the **Deny access to this computer from the network** setting for the local account, or exclude devices that require local Autopilot Reset from this policy. After the device syncs the updated policy, local Autopilot Reset works.
 
 This issue is under investigation.
 
-### Devices don't get quality updates during Microsoft Entra hybrid joined deployments  
+### Devices don't get quality updates during Microsoft Entra hybrid joined deployments
 
 Date added: *January 13, 2026*  
+ Date updated: *September 8, 2026*
 
-Scans for quality updates offered during OOBE might time out during provisioning for Windows Autopilot Microsoft Entra hybrid joined deployments when the **Allow OOBE Updates** policy is configured in the enrollment status page profile. When this occurs, devices don't get the quality updates during OOBE.  
+Scans for quality updates offered during OOBE might time out during provisioning for Windows Autopilot Microsoft Entra hybrid joined deployments when the **Allow OOBE Updates** policy is configured in the enrollment status page profile. When this occurs, devices don't get the quality updates during OOBE.
 
-This issue impacts devices with [KB5041571](https://support.microsoft.com/en-us/topic/august-13-2024-kb5041571-os-build-26100-1457-d218c08d-8de2-4f9a-8fe1-a2c2fd83ca9a) and later.  
+This issue impacts devices with [KB5041571](https://support.microsoft.com/en-us/topic/august-13-2024-kb5041571-os-build-26100-1457-d218c08d-8de2-4f9a-8fe1-a2c2fd83ca9a) and later.
 
-The issue is being investigated.  
+The issue is resolved in [KB5079473](https://support.microsoft.com/en-us/servicing/os/windows-11/2026/03/march-10-2026-kb5079473-os-builds-26200-8037-and-26100-8037) and later Windows updates.
 
 ### Deployment duration in the Windows Autopilot deployment report might include the time for user to sign in at the Windows lock screen
 
@@ -101,8 +103,8 @@ When Windows Autopilot is used in self-deploying mode with Shared PC mode config
 
 ### TPM attestation isn't working for some ST Micro and Nuvoton TPMs
 
-Date added: *May 9, 2025*<br>
-Date updated: *August 1, 2025*
+Date added: *May 9, 2025*  
+ Date updated: *August 1, 2025*
 
 The OEM has resolved the issue. Lenovo customers should work with Lenovo support if they encounter an issue.
 
@@ -110,8 +112,8 @@ Platforms with the latest models of TPMs manufactured by ST Micro and Nuvoton th
 
 ### Known issues with the Intune Connector for AD version 6.2501.2000.5
 
-Date added: *April 8, 2025*<br>
-Date updated: *April 18, 2025*
+Date added: *April 8, 2025*  
+ Date updated: *April 18, 2025*
 
 The following issues are under active investigation:
 
@@ -120,28 +122,24 @@ The following issues are under active investigation:
   This error occurs when the connector successfully creates the MSA but fails to retrieve the data from the domain controller. Various issues can cause the error, including replication delays between domain controllers in single domain, or when the user account exists in a different domain to the connector machine.
 
   This issue is resolved in build **6.2504.2001.8.**
-
 - **Error `Failed to create a managed service account - Element not found`.**
-
 - **Error `Cannot start service ODJConnectorSvc on computer '.'. ---> System.ComponentModel.Win32Exception: The service did not start due to a logon failure` after the MSA is created.**
 
   This error occurs when the service can't run as the MSA. The service not being able to run as the MSA can be caused by various issues, including group or local policy restricting **Log on as a service** privileges. For more information on how to mitigate this error, see [Troubleshooting FAQ](troubleshooting-faq.yml#why-is-the-error--cannot-start-service-odjconnectorsvc-on-computer------occurring-when-setting-up-the-intune-connector-for-active-directory-).
-
 - **Error `System.DirectoryServices.DirectoryServicesCOMException (0x8007202F): A constraint violation occurred.`**
 
   For information on how to mitigate this error, see [Troubleshooting FAQ](troubleshooting-faq.yml#troubleshooting-the-intune-connector-for-active-directory).
 
 ### Setting up keyboard automatically doesn't accurately update keyboard language
 
-Date added: *April 4, 2025*
-Date updated: *December 16, 2025*
+Date added: *April 4, 2025* Date updated: *December 16, 2025*
 
 The Windows Autopilot profile setting which enables automatic configuration of the keyboard language based on the **Language (Region)** setting might fail to apply during provisioning due to a known OS issue. To resolve this issue, use [KB5072033](https://support.microsoft.com/en-us/topic/december-9-2025-kb5072033-os-builds-26200-7462-and-26100-7462-0c1a4334-19ba-406d-bb1e-88fcffc87b79) or above.
 
 ### Windows Autopilot report incorrectly shows failure even though the deployment was successful
 
-Date added: *February 11, 2025*<br>
-Date updated: *March 20, 2025*
+Date added: *February 11, 2025*  
+ Date updated: *March 20, 2025*
 
 This issue is resolved.
 
@@ -157,15 +155,15 @@ During Windows Autopilot pre-provisioning technical flow, if a LAPS policy is ta
 
 Date added: *December 4, 2024*
 
-In Intune's 2411 release, we've updated the backend infrastructure of the Windows Autopilot deployment report for consistency with other Intune reports. With this change, the Windows Autopilot deployment report and the [AutopilotEvents Microsoft Graph API](/graph/api/resources/intune-troubleshooting-devicemanagementautopilotevent) now return 50 records at a time. To show more than 50 records at a time:
+In Intune's 2411 release, we've updated the backend infrastructure of the Windows Autopilot deployment report for consistency with other Intune reports. With this change, the Windows Autopilot deployment report and the [AutopilotEvents Microsoft Graph API](https://learn.microsoft.com/en-us/graph/api/resources/intune-troubleshooting-devicemanagementautopilotevent) now return 50 records at a time. To show more than 50 records at a time:
 
 - Use the `skipToken` parameter to get additional pages of data with the Windows AutopilotEvents Graph API.
-- Use the [export API](/intune/device-management/reports/export-graph-apis) with `reportName` **AutopilotV1DeploymentStatus** to get all records.
+- Use the [export API](../intune/device-management/reports/export-graph-apis.md) with `reportName` **AutopilotV1DeploymentStatus** to get all records.
 
 ### DFCI enrollment fails for Professional editions of Windows 11, version 24H2
 
-Date added: *October 9, 2024*<br>
-Date updated: *January 15, 2025*
+Date added: *October 9, 2024*  
+ Date updated: *January 15, 2025*
 
 DFCI can't currently be configured during the out-of-box experience (OOBE) on devices with Professional editions of Windows 11, version 24H2
 
@@ -183,36 +181,31 @@ Date added: *August 29, 2024*
 
 The Windows Autopilot deployment report was updated to a new infrastructure that doesn't currently support column sorting. The issue will be addressed in the future.
 
-<!-- MAXADO-9270654 -->
-
 ### Auto logon for Kiosk device profile is fixed
 
 Date added: *August 21, 2024*  
-Date updated: *December 15, 2025*
+ Date updated: *December 15, 2025*
 
-The known issue of [Kiosk device profiles not auto logging in when auto logon was enabled](#kiosk-device-profile-not-auto-logging-in) was previously reported as fixed. There were scenarios where the issue could still occur when using autologon with Kiosks and [Assigned Access](/windows/configuration/assigned-access/overview). If multiple reboots or unexpected reboots occur during the Windows out-of-box experience (OOBE) when initially configuring the Kiosk, the autologon entries in the registry might be deleted.
+The known issue of [Kiosk device profiles not auto logging in when auto logon was enabled](#kiosk-device-profile-not-auto-logging-in) was previously reported as fixed. There were scenarios where the issue could still occur when using autologon with Kiosks and [Assigned Access](https://learn.microsoft.com/en-us/windows/configuration/assigned-access/overview). If multiple reboots or unexpected reboots occur during the Windows out-of-box experience (OOBE) when initially configuring the Kiosk, the autologon entries in the registry might be deleted.
 
 **Resolution**: This issue is fixed in Windows 11, version 24H2 on systems that are patched with [KB5058411](https://support.microsoft.com/topic/may-13-2025-kb5058411-os-build-26100-4061-356568c2-c730-469e-819d-b680d43b1265) or later.
 
 Prior to the [KB5058411](https://support.microsoft.com/topic/may-13-2025-kb5058411-os-build-26100-4061-356568c2-c730-469e-819d-b680d43b1265) fix, the following workarounds were available:
 
 1. Apply or reapply the kiosk profile after Windows Autopilot completes.
+2. Apply the autologon registry entries either manually or via a script. For example:
 
-1. Apply the autologon registry entries either manually or via a script. For example:
+   ```cmd
+   reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "AutoAdminLogon" /t REG_SZ /d 1 /f
 
-    ```cmd
-    reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "AutoAdminLogon" /t REG_SZ /d 1 /f
+   reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultDomainName" /t REG_SZ /d "." /f
 
-    reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultDomainName" /t REG_SZ /d "." /f
+   reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultUserName" /t REG_SZ /d "kioskUser0" /f
+   ```
+3. Exclude items the required reboots during OOBE from Windows Autopilot.
+4. Manually enter the kiosk user credentials.
 
-    reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultUserName" /t REG_SZ /d "kioskUser0" /f
-    ```
-
-1. Exclude items the required reboots during OOBE from Windows Autopilot.
-
-1. Manually enter the kiosk user credentials.
-
-For more information, see [Assigned Access recommendations - Automatic sign-in](/windows/configuration/assigned-access/recommendations#automatic-sign-in). For additional assistance, contact support.
+For more information, see [Assigned Access recommendations - Automatic sign-in](https://learn.microsoft.com/en-us/windows/configuration/assigned-access/recommendations#automatic-sign-in). For additional assistance, contact support.
 
 ## BitLocker encryption defaults to 128-bit when 256-bit encryption is configured
 
@@ -234,17 +227,16 @@ The **Enrolled date** in the **Devices | All devices** and **Windows | Windows d
 
 1. Use the Intune Graph API to query the device:
 
-    `devices?$filter=physicalIds/any(p: startswith(p, '[ZTDID]'))&$select=id,deviceId,displayName,physicalIds,createdDateTime`
+   `devices?$filter=physicalIds/any(p: startswith(p, '[ZTDID]'))&$select=id,deviceId,displayName,physicalIds,createdDateTime`
 
-    For more information, see [Intune devices and apps API overview](/graph/intune-concept-overview) and [Working with Intune in Microsoft Graph](/graph/api/resources/intune-graph-overview).
-
-1. Use the Windows Autopilot deployment report for recently deployed devices.
+   For more information, see [Intune devices and apps API overview](https://learn.microsoft.com/en-us/graph/intune-concept-overview) and [Working with Intune in Microsoft Graph](https://learn.microsoft.com/en-us/graph/api/resources/intune-graph-overview).
+2. Use the Windows Autopilot deployment report for recently deployed devices.
 
 ### Filtering Windows Autopilot devices not working as expected
 
 Date added: *July 14, 2023*
 
-Viewing Windows Autopilot devices within Intune might not work as expected if attempting to filter results. While this issue is being worked on, a workaround is to use [Microsoft Graph API](/graph/use-the-api) to properly query and filter necessary devices.
+Viewing Windows Autopilot devices within Intune might not work as expected if attempting to filter results. While this issue is being worked on, a workaround is to use [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api) to properly query and filter necessary devices.
 
 ### TPM attestation isn't working on some platforms with Infineon SLB9672 discrete TPMs
 
@@ -254,8 +246,8 @@ Platforms with the Infineon SLB9672 TPM with firmware release 15.22 with EK cert
 
 ### Kiosk device profile not auto logging in
 
-Date added: *January 30, 2023*<br>
-Date updated: *August 21, 2024*, *December 15, 2025*
+Date added: *January 30, 2023*  
+ Date updated: *August 21, 2024*, *December 15, 2025*
 
 There was a known issue in the following Windows Updates released in January 2023:
 
@@ -305,7 +297,7 @@ In Windows 10, version 21H2 April 2022 and some May 2022 update releases, there'
 
 Date added: *March 28, 2022*
 
-When the [EnableWebSignIn CSP](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) is used, the `defaultuserX` profile might not be deleted.
+When the [EnableWebSignIn CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) is used, the `defaultuserX` profile might not be deleted.
 
 ### Windows Autopilot reset ran into trouble. Could not find the recovery environment
 
@@ -321,22 +313,19 @@ If there isn't an issue with the recovery environment, enter administrator crede
 
 Date added: *March 3, 2022*
 
-1. The Intune Enrollment app must be excluded from any Conditional Access policy requiring **Terms of Use** because it isn't supported. See [Per-device terms of use](/azure/active-directory/conditional-access/terms-of-use#per-device-terms-of-use).
+1. The Intune Enrollment app must be excluded from any Conditional Access policy requiring **Terms of Use** because it isn't supported. See [Per-device terms of use](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/terms-of-use#per-device-terms-of-use).
+2. Exceptions to Conditional Access policies to exclude **Microsoft Intune Enrollment** and **Microsoft Intune** cloud apps are needed to complete Windows Autopilot enrollment in cases where restrictive polices are present such as:
 
-1. Exceptions to Conditional Access policies to exclude **Microsoft Intune Enrollment** and **Microsoft Intune** cloud apps are needed to complete Windows Autopilot enrollment in cases where restrictive polices are present such as:
+   - Conditional Access policy 1: Block all apps except those apps on an exclusion list.
+   - Conditional Access policy 2: Require a compliant device for the apps on the exclusion list.
 
-    - Conditional Access policy 1: Block all apps except those apps on an exclusion list.
-    - Conditional Access policy 2: Require a compliant device for the apps on the exclusion list.
+   In this case, Microsoft Intune Enrollment and Microsoft Intune should be included in that exclusion list of policy 1.
 
-    In this case, Microsoft Intune Enrollment and Microsoft Intune should be included in that exclusion list of policy 1.
+   If a policy is in place such that **all cloud apps** require a compliant device (there's no exclusion list), by default Microsoft Intune Enrollment is excluded, so that the device can register with Microsoft Entra ID and enroll with Intune and avoid a circular dependency.
+3. **Hybrid Microsoft Entra devices**: When Hybrid Microsoft Entra devices are deployed with Windows Autopilot, two device IDs are initially associated with the same device - one Microsoft Entra ID and one hybrid. The hybrid compliance state displays as **N/A** when viewed from the devices list in the [Azure portal](https://portal.azure.com) until a user signs in. Intune only syncs with the Hybrid device ID after a successful user sign-in.
 
-    If a policy is in place such that **all cloud apps** require a compliant device (there's no exclusion list), by default Microsoft Intune Enrollment is excluded, so that the device can register with Microsoft Entra ID and enroll with Intune and avoid a circular dependency.
-
-1. **Hybrid Microsoft Entra devices**: When Hybrid Microsoft Entra devices are deployed with Windows Autopilot, two device IDs are initially associated with the same device - one Microsoft Entra ID and one hybrid. The hybrid compliance state displays as **N/A** when viewed from the devices list in the [Azure portal](https://portal.azure.com) until a user signs in. Intune only syncs with the Hybrid device ID after a successful user sign-in.
-
-    The temporary **N/A** compliance state can cause issues with device based Conditional Access polices that block access based on compliance. In this case, this behavior of Conditional Access is intended. To resolve the conflict, a user must to sign in to the device, or the device-based policy must be modified. For more information, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](/azure/active-directory/conditional-access/howto-conditional-access-policy-compliant-device).
-
-1. Conditional Access policies such as BitLocker compliance require a grace period for Windows Autopilot devices. This grace period is needed because until the device is rebooted, the status of BitLocker and Secure Boot aren't captured. Since the status isn't't captured, it can't be used as part of the Compliance Policy. The grace period can be as short as 0.25 days.
+   The temporary **N/A** compliance state can cause issues with device based Conditional Access polices that block access based on compliance. In this case, this behavior of Conditional Access is intended. To resolve the conflict, a user must to sign in to the device, or the device-based policy must be modified. For more information, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/howto-conditional-access-policy-compliant-device).
+4. Conditional Access policies such as BitLocker compliance require a grace period for Windows Autopilot devices. This grace period is needed because until the device is rebooted, the status of BitLocker and Secure Boot aren't captured. Since the status isn't't captured, it can't be used as part of the Compliance Policy. The grace period can be as short as 0.25 days.
 
 ### Device goes through Windows Autopilot deployment without an assigned profile
 
@@ -399,7 +388,7 @@ Devices are enrolled using Windows Autopilot self-deployment mode or pre-provisi
 To resolve this error, use one of the following work around methods:
 
 - Delete the device record in Intune, and then redeploy the device so that it reruns the Windows Autopilot deployment. For more information, see [Deregister a device](registration-overview.md#deregister-a-device).
-- Remove the device enrollment restriction for **Windows (MDM)** personally owned devices. For more information, see [Set enrollment restrictions in Microsoft Intune](/intune/intune-service/enrollment/enrollment-restrictions-set).<!-- MEMDocs #2748 -->
+- Remove the device enrollment restriction for **Windows (MDM)** personally owned devices. For more information, see [Set enrollment restrictions in Microsoft Intune](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/enrollment-restrictions-set).
 
 For more information on this issue, see [Troubleshooting Windows Autopilot device import and enrollment](troubleshooting-faq.yml#troubleshooting-windows-autopilot-device-import-and-enrollment).
 
@@ -413,7 +402,7 @@ Inactive Intune Connectors for Active Directory will be automatically cleaned up
 
 ### Windows Autopilot sign-in page displays HTML tags from company branding settings
 
-When [customizations are applied to the company branding settings](/azure/active-directory/fundamentals/customize-branding#to-customize-your-branding), the HTML tags might be visible and not rendered correctly on the update password page. This issue should be fixed in future versions of Windows.
+When [customizations are applied to the company branding settings](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding#to-customize-your-branding), the HTML tags might be visible and not rendered correctly on the update password page. This issue should be fixed in future versions of Windows.
 
 ### TPM attestation isn't working on Intel Tiger Lake platforms
 
@@ -460,14 +449,14 @@ To fix this issue:
   C:\Windows\System32\sysprep\sysprep.exe /oobe /reboot
   ```
 
-For more information, see [Modify the task sequence to account for Sysprep command line configuration](tutorial/existing-devices/create-autopilot-task-sequence.md#modify-the-task-sequence-to-account-for-sysprep-command-line-configuration) and [Prepare Windows for Capture](/intune/configmgr/osd/understand/task-sequence-steps#prepare-windows-for-capture).
+For more information, see [Modify the task sequence to account for Sysprep command line configuration](tutorial/existing-devices/create-autopilot-task-sequence.md#modify-the-task-sequence-to-account-for-sysprep-command-line-configuration) and [Prepare Windows for Capture](../intune/configmgr/osd/understand/task-sequence-steps.md#prepare-windows-for-capture).
 
 ### Windows Autopilot self-deploying mode fails with an error code
 
 For more information on this scenario, see [Windows Autopilot self-deploying mode](self-deploying.md).
 
 | Error code | Description |
-| ---------- | ----------- |
+| --- | --- |
 | **0x800705B4** | This general error indicates a timeout. A common cause of this error in self-deploying mode is that the device isn't TPM 2.0 capable. For example, it's a virtual machine. Devices that aren't TPM 2.0 capable can't be used with self-deploying mode. |
 | **0x801c03ea** | This error indicates that TPM attestation failed, causing a failure to join Microsoft Entra ID with a device token. |
 | **0xc1036501** | The device can't do an automatic MDM enrollment because there are multiple MDM configurations in Microsoft Entra ID. |
@@ -496,7 +485,7 @@ Ensure that the JSON profile file is saved in **ANSI/ASCII** format, not Unicode
 
 ### **Something went wrong** is displayed page during OOBE
 
-The client is likely unable to access all the required Microsoft Entra ID/MSA-related URLs. For more information, see [Networking requirements](requirements.md?tabs=networking).
+The client is likely unable to access all the required Microsoft Entra ID/MSA-related URLs. For more information, see [Networking requirements](https://learn.microsoft.com/en-us/autopilot/requirements?tabs=networking).
 
 ### Using a provisioning package in combination with Windows Autopilot can cause issues, especially if the PPKG contains join, enrollment, or device name information
 
@@ -504,5 +493,5 @@ Using PPKGs in combination with Windows Autopilot isn't recommended.
 
 ## Related content
 
-- [Collect MDM logs](/windows/client-management/mdm-collect-logs).
+- [Collect MDM logs](https://learn.microsoft.com/en-us/windows/client-management/mdm-collect-logs).
 - [Troubleshooting Windows Autopilot overview](troubleshooting-faq.yml#troubleshooting-windows-autopilot-overview).

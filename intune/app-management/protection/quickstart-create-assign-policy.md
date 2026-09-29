@@ -1,8 +1,8 @@
 ---
-title: Create and Assign an App Protection Policy
+title: "Step 9 - Create and assign an app protection policy in Microsoft Intune"
 description: Learn how to create and assign an app protection policy in Microsoft Intune to protect your organization's data. Get step-by-step guidance.
 ms.topic: how-to
-ms.date: 01/20/2026
+ms.date: "2026-01-20T00:00:00Z"
 ms.reviewer: dagerrit
 ms.collection:
 - M365-identity-device-management
@@ -13,53 +13,39 @@ ms.collection:
 
 In this article, you learn how to create and assign an app protection policy in Microsoft Intune to protect apps on user devices. App protection policies help ensure your apps meet your organization's data protection requirements, keeping corporate data secure.
 
-[!INCLUDE [intune-evaluate](../../includes/intune-evaluate.md)]
+This article is [part of an Evaluate and Try series](../../fundamentals/try-overview.md) that helps you evaluate Microsoft Intune's capabilities.
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [licensing](../../includes/requirements/licensing.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/licensing.svg) **Licensing requirements**
+
 > - A Microsoft Intune subscription. [Sign up for a free trial account](../../fundamentals/free-trial-sign-up.md).
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
-> Sign in to the [Microsoft Intune admin center] with the following role:
+![](../../media/icons/16/rbac.svg) **Roles requirements**
+
+> Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with the following role:
+>
 > - Built-in **[Application Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#application-manager)** Microsoft Intune role
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
+
 > To complete this step, you must:
+>
 > - [Create a user](../../fundamentals/tenant-administration/quickstart-create-user.md).
 > - [Create a group](../../fundamentals/tenant-administration/quickstart-create-group.md).
 > - [Enroll a device](../../device-enrollment/windows/quickstart-automatic-mdm.md)
 > - [Add and assign an app](../deployment/quickstart-add-assign.md).
-:::column-end:::
-:::row-end:::
 
 ## Create an app protection policy
 
 Use the following steps to create an app protection policy:
 
-1. Sign in to the [Microsoft Intune admin center] and select **Apps** > **Windows** > **Create**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and select **Apps** &gt; **Windows** &gt; **Create**.
 2. Enter the following details:
 
-    - **Name**: *Windows content protection*
-    - **Description**: *Users associated with this policy can't cut, copy, or paste any content between the assigned app and other nonmanaged apps on the device.*
-    - **Enrollment state**: *With enrollment*
-
+   - **Name**: *Windows content protection*
+   - **Description**: *Users associated with this policy can't cut, copy, or paste any content between the assigned app and other nonmanaged apps on the device.*
+   - **Enrollment state**: *With enrollment*
 3. Under **Protected apps**, select **Add**. The **Add apps** pane is displayed.
 4. Choose the apps that must adhere to this policy and select **OK**.
 5. Select **Next** to display the **Required settings**.
@@ -68,8 +54,7 @@ Use the following steps to create an app protection policy:
 8. Select **Next** to display the **Assignments**.
 9. Select **Select groups to include**, select the users group, and select **Select**.
 
-    You can only apply app protection policies to groups that contain users, not groups that contain devices.
-
+   You can only apply app protection policies to groups that contain users, not groups that contain devices.
 10. Select **Next** to display the **Review + create** step.
 11. Select **Create** to create your policy.
 
@@ -77,13 +62,8 @@ You see the app protection policy in Intune.
 
 ## Next steps
 
-In this article, you created and assigned an app protection policy. Users of the app that have this policy assigned can't cut, copy, or paste any content between the assigned app and other unmanaged apps on the device. This type of protection helps protect your organization's data. For more information about app protection policies in Intune, see [What are app protection policies?](./overview.md)
+In this article, you created and assigned an app protection policy. Users of the app that have this policy assigned can't cut, copy, or paste any content between the assigned app and other unmanaged apps on the device. This type of protection helps protect your organization's data. For more information about app protection policies in Intune, see [What are app protection policies?](overview.md)
 
 To continue evaluating Microsoft Intune, go to the next step:
 
-> [!div class="nextstepaction"]
-> [Step 10 - Create and assign a custom role](../../fundamentals/role-based-access-control/quickstart-custom-role.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+[Step 10 - Create and assign a custom role](../../fundamentals/role-based-access-control/quickstart-custom-role.md)

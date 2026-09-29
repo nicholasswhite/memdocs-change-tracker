@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the generic configuration for Configuration Manager components with SMS_SIIB_Generic_Configuration.
-title: SMS_SIIB_Generic_Configuration Class
-ms.date: 09/20/2016
+title: "SMS_SIIB_Generic_Configuration Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SIIB_Generic_Configuration Server WMI Class
+
 The `SMS_SIIB_Generic_Configuration` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents generic configuration for Configuration Manager components.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,89 +30,85 @@ Class SMS_SIIB_Generic_Configuration : SMS_SiteInstallItemBase
 ```
 
 ## Methods
- The `SMS_SIIB_Generic_Configuration` class does not define any methods.
+
+The `SMS_SIIB_Generic_Configuration` class does not define any methods.
 
 ## Properties
- `ConfigurationName`
- Data type: `String`
 
- Access type: Read-only
+`ConfigurationName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the configuration.
+Qualifiers: None
 
- `ItemName`
- Data type: `String`
+Name of the configuration.
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `PropLists`
- Data type: `SMS_SII_PropertyList` Array
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`PropLists` Data type: `SMS_SII_PropertyList` Array
 
- Qualifiers: None
+Access type: Read-only
 
- [SMS_SII_PropertyList Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sii_propertylist-server-wmi-class.md) objects for the component.
+Qualifiers: None
 
- `Props`
- Data type: `SMS_SII_Property` Array
+[SMS_SII_PropertyList Server WMI Class](sms_sii_propertylist-server-wmi-class.md) objects for the component.
 
- Access type: Read-only
+`Props` Data type: `SMS_SII_Property` Array
 
- Qualifiers: None
+Access type: Read-only
 
- [SMS_SII_Property Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sii_property-server-wmi-class.md) objects for the component.
+Qualifiers: None
 
- `Units`
- Data type: `String` Array
+[SMS_SII_Property Server WMI Class](sms_sii_property-server-wmi-class.md) objects for the component.
 
- Access type: Read-only
+`Units` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`SiteCode` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [read]
+
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SII_Property Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sii_property-server-wmi-class.md)
- [SMS_SII_PropertyList Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sii_propertylist-server-wmi-class.md)
- [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SII_Property Server WMI Class](sms_sii_property-server-wmi-class.md) [SMS_SII_PropertyList Server WMI Class](sms_sii_propertylist-server-wmi-class.md) [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md)

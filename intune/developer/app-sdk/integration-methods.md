@@ -1,7 +1,7 @@
 ---
-title: Prepare Apps for Mobile Application Management With Microsoft Intune
+title: "Prepare Line-of-Business Apps for App Protection Policies"
 description: The information in this article helps you decide when you should use the App wrapping tool and the App SDK to enable your custom line-of-business apps to use the mobile app management policies.
-ms.date: 12/03/2025
+ms.date: "2025-12-03T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -20,15 +20,16 @@ The App Wrapping Tool does **not** support apps in or available in the Apple App
 For more information about the App Wrapping Tool for app protection policies on devices that aren't enrolled in Intune, see [Protect line-of-business apps and data on devices not enrolled in Microsoft Intune](../../app-management/deployment/index.md).
 
 > [!IMPORTANT]
+>
 > Intune regularly releases updates to the Intune App Wrapping Tool. Regularly check the [Intune App Wrapping Tool](https://github.com/msintuneappsdk) repositories for updates and incorporate into your software development release cycle to ensure your apps support the latest App Protection Policy settings.
 
 ### Reasons to use the App Wrapping Tool
 
-* Your app doesn't have built-in data protection features
-* Your app is deployed internally and the app isn't available in the Apple App Store or Google Play Store
-* You don't have access to the app's source code
-* You didn't develop the app
-* Your app has minimal user authentication experiences
+- Your app doesn't have built-in data protection features
+- Your app is deployed internally and the app isn't available in the Apple App Store or Google Play Store
+- You don't have access to the app's source code
+- You didn't develop the app
+- Your app has minimal user authentication experiences
 
 ## Intune App SDK
 
@@ -38,11 +39,11 @@ To learn more about the SDK, see the [Overview](index.md). To get started with t
 
 ### Reasons to use the SDK
 
-* Your app doesn't have built-in data protection features
-* Your app is deployed on a public app store such as Google Play or Apple's App Store
-* You're an app developer and have the technical background to use the SDK
-* Your app has other SDK integrations
-* Your app is frequently updated
+- Your app doesn't have built-in data protection features
+- Your app is deployed on a public app store such as Google Play or Apple's App Store
+- You're an app developer and have the technical background to use the SDK
+- Your app has other SDK integrations
+- Your app is frequently updated
 
 ## Not using a previously listed app development platform?
 
@@ -52,45 +53,45 @@ The Intune SDK development team actively tests and maintains support for apps bu
 
 This table lists the settings that are enabled if an app uses the App SDK or the App Wrapping Tool. Some features require app developers to apply some logic outside of basic integration with the Intune SDK, and as such, aren't enabled if the app uses the App Wrapping Tool.
 
-|Feature|App SDK|App Wrapping Tool|
-|-----------|---------------------|-----------|
-|Restrict web content to display in a corporate managed browser|X|X|
-|Prevent Android, iTunes, or iCloud backups|X|X|
-|Allow app to transfer data to other apps|X|X|
-|Allow app to receive data from other apps|X|X|
-|Restrict cut, copy, and paste with other apps|X|X|
-|Specify the number of characters that may be cut or copied from a managed app|X|X|
-|Require simple PIN for access|X|X|
-|Specify the number of attempts before PIN reset|X|X|
-|Allow fingerprint instead of PIN|X|X|
-|Allow facial recognition instead of PIN (iOS only)|X|X|
-|Require corporate credentials for access|X|X|
-|Set a PIN expiry|X|X|
-|Block managed apps from running on jailbroken or rooted devices|X|X|
-|Encrypt app data|X|X|
-|Recheck the access requirements after a specified number of minutes|X|X|
-|Specify the offline grace period|X|X|
-|Block screen capture (Android only)|X|X|
-|Support for MAM without device enrollment|X|X|
-|Full Wipe of app data|X|X|
-|Selective Wipe of work and school data in Multi-Identity scenarios <br><br>**Note:** For iOS/iPadOS, when the management profile is removed, the app is also removed.|X||
-|Prevent "Save as"|X||
-|Targeted Application Configuration (or app config through the "MAM channel")|X||
-|Support for Multi-Identity|X||
-|Customizable Style |X||
-|On-demand application VPN connections with Citrix mVPN|X|X|
-|Disable contact sync|X|X|
-|Disable printing|X|X|
-|Require minimum app version|X|X|
-|Require minimum operating system|X|X|
-|Require minimum Android security patch version (Android only)|X|X|
-|Require minimum Intune SDK for iOS (iOS only)|X|X|
-|Play integrity verdict (Android only)|X|X|
-|Threat scan on apps (Android only)|X|X|
-|Require maximum Mobile Threat Defense vendor device risk level|X||
-|Configure app notification content for organization accounts|X|X|
-|Require use of approved keyboards (Android only)|X|X|
-|Require app protection policy (Conditional Access)|X||
+| Feature | App SDK | App Wrapping Tool |
+| --- | --- | --- |
+| Restrict web content to display in a corporate managed browser | X | X |
+| Prevent Android, iTunes, or iCloud backups | X | X |
+| Allow app to transfer data to other apps | X | X |
+| Allow app to receive data from other apps | X | X |
+| Restrict cut, copy, and paste with other apps | X | X |
+| Specify the number of characters that may be cut or copied from a managed app | X | X |
+| Require simple PIN for access | X | X |
+| Specify the number of attempts before PIN reset | X | X |
+| Allow fingerprint instead of PIN | X | X |
+| Allow facial recognition instead of PIN (iOS only) | X | X |
+| Require corporate credentials for access | X | X |
+| Set a PIN expiry | X | X |
+| Block managed apps from running on jailbroken or rooted devices | X | X |
+| Encrypt app data | X | X |
+| Recheck the access requirements after a specified number of minutes | X | X |
+| Specify the offline grace period | X | X |
+| Block screen capture (Android only) | X | X |
+| Support for MAM without device enrollment | X | X |
+| Full Wipe of app data | X | X |
+| Selective Wipe of work and school data in Multi-Identity scenarios   **Note:** For iOS/iPadOS, when the management profile is removed, the app is also removed. | X |  |
+| Prevent "Save as" | X |  |
+| Targeted Application Configuration (or app config through the "MAM channel") | X |  |
+| Support for Multi-Identity | X |  |
+| Customizable Style | X |  |
+| On-demand application VPN connections with Citrix mVPN | X | X |
+| Disable contact sync | X | X |
+| Disable printing | X | X |
+| Require minimum app version | X | X |
+| Require minimum operating system | X | X |
+| Require minimum Android security patch version (Android only) | X | X |
+| Require minimum Intune SDK for iOS (iOS only) | X | X |
+| Play integrity verdict (Android only) | X | X |
+| Threat scan on apps (Android only) | X | X |
+| Require maximum Mobile Threat Defense vendor device risk level | X |  |
+| Configure app notification content for organization accounts | X | X |
+| Require use of approved keyboards (Android only) | X | X |
+| Require app protection policy (Conditional Access) | X |  |
 
 ## Next steps
 

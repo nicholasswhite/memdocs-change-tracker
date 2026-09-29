@@ -1,16 +1,18 @@
 ---
-title: SMS_MigrationCollectionInfo Class
+title: "SMS_MigrationCollectionInfo Server WMI Class"
 description: The SMS_MigrationCollectionInfo WMI class is an SMS Provider server class that represents the collections created on the current active 2007 hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MigrationCollectionInfo Server WMI Class
+
 The `SMS_MigrationCollectionInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the collections created on the current active Configuration Manager 2007 hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,155 +37,146 @@ Class SMS_MigrationCollectionInfo : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_MigrationCollectionInfo` class.
 
-|Method|Description|
-|------------|-----------------|
-|[GetClientsCountByCollections Method in Class SMS_MigrationCollectionInfo](../../../../develop/reference/core/migration/getclientscountbycollections-method-in-class-sms_migrationcollectioninfo.md)|Retrieves the number of clients in the specified collection. **Warning:**  This method is reserved for future use.|
+The following table lists the methods in the `SMS_MigrationCollectionInfo` class.
+
+| Method | Description |
+| --- | --- |
+| [GetClientsCountByCollections Method in Class SMS_MigrationCollectionInfo](getclientscountbycollections-method-in-class-sms_migrationcollectioninfo.md) | Retrieves the number of clients in the specified collection. **Warning:** This method is reserved for future use. |
 
 ## Properties
- `ChildCount`
- Data type: `UInt32`
 
- Access type: Read-only
+`ChildCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- The count of child collections.
+Qualifiers: none
 
- `Children`
- Data type: `String`
+The count of child collections.
 
- Access type: Read-only
+`Children` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The child collection Ids, separated by ','.
+Qualifiers: none
 
- `CollectionEntityID`
- Data type: `UInt32`
+The child collection Ids, separated by ','.
 
- Access type: Read-only
+`CollectionEntityID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Entity ID of this collection.
+Qualifiers: none
 
- `CollectionName`
- Data type: `String`
+Entity ID of this collection.
 
- Access type: Read-only
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Display name of the collection.
+Qualifiers: none
 
- `CollectionType`
- Data type: `UInt32`
+Display name of the collection.
 
- Access type: Read-only
+`CollectionType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- The type of the collection.
+Qualifiers: none
 
-|Value|Collection type|
-|-|-|
-|0|Mixed|
-|1|User|
-|2|Device|
-|3|UnknownArchitecture|
-|4|UnknownQuery|
-|5|Folder|
+The type of the collection.
 
- `Count`
- Data type: `UInt32`
+| Value | Collection type |
+| --- | --- |
+| 0 | Mixed |
+| 1 | User |
+| 2 | Device |
+| 3 | UnknownArchitecture |
+| 4 | UnknownQuery |
+| 5 | Folder |
 
- Access type: Read-only
+`Count` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- The total number of devices or users in this collection.
+Qualifiers: none
 
- `IsTop`
- Data type: `Boolean`
+The total number of devices or users in this collection.
 
- Access type: Read-only
+`IsTop` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if the collection is a top collection which linked to the root.
+Qualifiers: none
 
- `LimitToCount`
- Data type: `UInt32`
+`true` if the collection is a top collection which linked to the root.
 
- Access type: Read-only
+`LimitToCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- The total number of collections that the collection is limited to.
+Qualifiers: none
 
- `LimitTos`
- Data type: `String`
+The total number of collections that the collection is limited to.
 
- Access type: Read-only
+`LimitTos` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The string that concatenate all ID of collections that the collection is limit to, separated by ','.
+Qualifiers: none
 
- `SiteCodeCount`
- Data type: `UInt32`
+The string that concatenate all ID of collections that the collection is limit to, separated by ','.
 
- Access type: Read-only
+`SiteCodeCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- The count of site codes embedded in the query.
+Qualifiers: none
 
- `SiteCodes`
- Data type: `String`
+The count of site codes embedded in the query.
 
- Access type: Read-only
+`SiteCodes` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The string that concatenate all site codes that embedded in the collection query string, separated by ','.
+Qualifiers: none
 
- `SourceSiteCollectionID`
- Data type: `String`
+The string that concatenate all site codes that embedded in the collection query string, separated by ','.
 
- Access type: Read-only
+`SourceSiteCollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Unique identifier for the collection in the source site.
+Qualifiers: [key]
 
- `SourceSiteID`
- Data type: `UInt32`
+Unique identifier for the collection in the source site.
 
- Access type: Read-only
+`SourceSiteID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Unique identifier for the source site in `SMS_MigrationSourceSite`.
+Qualifiers: [key]
 
- `Status`
- Data type: `UInt32`
+Unique identifier for the source site in `SMS_MigrationSourceSite`.
 
- Access type: Read-only
+`Status` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Status of the collection.
+Qualifiers: none
+
+Status of the collection.
 
 ## Remarks
- Each instance of this class represents a collection.
+
+Each instance of this class represents a collection.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).

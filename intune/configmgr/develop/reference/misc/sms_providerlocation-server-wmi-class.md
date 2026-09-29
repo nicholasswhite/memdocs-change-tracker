@@ -1,16 +1,18 @@
 ---
-title: SMS_ProviderLocation Class
+title: "SMS_ProviderLocation Server WMI Class"
 description: The SMS_ProviderLocation Windows Management Instrumentation (WMI) class, in Configuration Manager, identifies the location of the SMS Provider for a site.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ProviderLocation Server WMI Class
+
 The `SMS_ProviderLocation` Windows Management Instrumentation (WMI) class, in Configuration Manager, identifies the location of the SMS Provider for a site.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,51 +27,51 @@ Class SMS_ProviderLocation
 ```
 
 ## Properties
- `Machine`
- Data type: `String`
 
- Access type: Read/Write
+`Machine` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the computer on which the SMS Provider resides.
+Qualifiers: None
 
- `NamespacePath`
- Data type: `String`
+Name of the computer on which the SMS Provider resides.
 
- Access type: Read/Write
+`NamespacePath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Full WMI path to the SMS Provider namespace.
+Qualifiers: None
 
- `ProviderForLocalSite`
- Data type: `Boolean`
+Full WMI path to the SMS Provider namespace.
 
- Access type: Read/Write
+`ProviderForLocalSite` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the SMS Provider is set as the local site server for the client.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+`true` if the SMS Provider is set as the local site server for the client.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Site code of the site.
+Qualifiers: [key]
+
+Site code of the site.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- For information on using this class, see [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md).
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](class-and-property-qualifiers.md).
+
+For information on using this class, see [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

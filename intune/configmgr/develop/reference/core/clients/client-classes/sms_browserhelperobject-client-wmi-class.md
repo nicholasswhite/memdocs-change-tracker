@@ -1,16 +1,18 @@
 ---
-title: SMS_BrowserHelperObject Class
+title: "SMS_BrowserHelperObject Client WMI Class"
 description: In Configuration Manager, the SMS_BrowserHelperObject class is a client Windows Management Instrumentation class  that enumerates all browser helper objects on a computer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BrowserHelperObject Client WMI Class
+
 The `SMS_BrowserHelperObject` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that enumerates all browser helper objects on a computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,140 +35,127 @@ Class SMS_BrowserHelperObject
 ```
 
 ## Methods
- The `SMS_BrowserHelperObject` class does not define any methods.
+
+The `SMS_BrowserHelperObject` class does not define any methods.
 
 ## Properties
- `BinFileVersion`
- Data type: `String`
 
- Access type: Read-only
+`BinFileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Reserved. For internal use.
+Qualifiers: None
 
- `BinProductVersion`
- Data type: `String`
+Reserved. For internal use.
 
- Access type: Read-only
+`BinProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Reserved. For internal use.
+Qualifiers: None
 
- `CLSID`
- Data type: `String`
+Reserved. For internal use.
 
- Access type: Read-only
+`CLSID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The COM class ID that is associated with the browser helper object.
+Qualifiers: None
 
- `Description`
- Data type: `String`
+The COM class ID that is associated with the browser helper object.
 
- Access type: Read-only
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- File description that can be presented to users, for example, "Groove Shell Extensions Module".
+Qualifiers: None
 
- `FileName`
- Data type: `String`
+File description that can be presented to users, for example, "Groove Shell Extensions Module".
 
- Access type: Read-only
+`FileName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the file, including the extension but excluding the path, for example, "GrooveShellExtensions.dll".
+Qualifiers: None
 
- `FilePropertiesHash`
- Data type: `String`
+Name of the file, including the extension but excluding the path, for example, "GrooveShellExtensions.dll".
 
- Access type: Read-only
+`FilePropertiesHash` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read-only
 
- A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, and `FileName` properties of the file.
+Qualifiers: [key]
 
- `FilePropertiesHashEx`
- Data type: `String`
+A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, and `FileName` properties of the file.
 
- Access type: Read-only
+`FilePropertiesHashEx` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, `FileName`, `FileVersion`, `BinProductVersion`, and `BinFileVersion` properties of the file.
+Qualifiers: None
 
- `FileVersion`
- Data type: `String`
+A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, `FileName`, `FileVersion`, `BinProductVersion`, and `BinFileVersion` properties of the file.
 
- Access type: Read-only
+`FileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The version of the file, for example, "12.0.4518.1014".
+Qualifiers: None
 
- `Product`
- Data type: `String`
+The version of the file, for example, "12.0.4518.1014".
 
- Access type: Read-only
+`Product` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The name of the product with which the file is distributed, for example, "Microsoft Windows".
+Qualifiers: None
 
- `ProductVersion`
- Data type: `String`
+The name of the product with which the file is distributed, for example, "Microsoft Windows".
 
- Access type: Read-only
+`ProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The version of the product with which the file is distributed, for example, "4.2.0.2623".
+Qualifiers: None
 
- `Publisher`
- Data type: `String`
+The version of the product with which the file is distributed, for example, "4.2.0.2623".
 
- Access type: Read-only
+`Publisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The company that produced the file, for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".
+Qualifiers: None
 
- `Version`
- Data type: `String`
+The company that produced the file, for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".
 
- Access type: Read-only
+`Version` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Reserved. For internal use.
+Qualifiers: None
+
+Reserved. For internal use.
 
 ## Remarks
- Many users install applications from the Web unintentionally or through various deceptive practices. Browser helper objects allow extensions to the Internet Explorer browser. These extensions typically appear as toolbars in the user interface. Most software that is considered malware is in this form.
 
- This class enumerates all the subkeys of HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects, gathering a set of class identifiers that are used to retrieve useful information from a second lookup in the HKEY_CLASSES_ROOT\CLSID\\[retrieved bho id]\InprocServer32 hive. Enumeration of the subkeys provides a list of the binaries from which the header information can be retrieved.
+Many users install applications from the Web unintentionally or through various deceptive practices. Browser helper objects allow extensions to the Internet Explorer browser. These extensions typically appear as toolbars in the user interface. Most software that is considered malware is in this form.
+
+This class enumerates all the subkeys of HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects, gathering a set of class identifiers that are used to retrieve useful information from a second lookup in the HKEY_CLASSES_ROOT\CLSID\[retrieved bho id]\InprocServer32 hive. Enumeration of the subkeys provides a list of the binaries from which the header information can be retrieved.
 
 > [!NOTE]
->  When constructing the `FilePropertiesHash` property, if the header data for the executable file is `null` for the company, product, or version field, the file name in uppercase is substituted for the field.
+>
+> When constructing the `FilePropertiesHash` property, if the header data for the executable file is `null` for the company, product, or version field, the file name in uppercase is substituted for the field.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Asset Intelligence Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/asset-intelligence-client-wmi-classes.md)
- [SMS_AutoStartSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_autostartsoftware-client-wmi-class.md)
- [SMS_InstalledExecutable Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedexecutable-client-wmi-class.md)
- [SMS_InstalledSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftware-client-wmi-class.md)
- [SMS_InstalledSoftwareMS Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftwarems-client-wmi-class.md)
- [SMS_Processor Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_processor-client-wmi-class.md)
- [SMS_SoftwareShortcut Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_softwareshortcut-client-wmi-class.md)
- [SMS_SystemConsoleUsage Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleusage-client-wmi-class.md)
- [SMS_SystemConsoleUser Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleuser-client-wmi-class.md)
+
+[Asset Intelligence Client WMI Classes](asset-intelligence-client-wmi-classes.md) [SMS_AutoStartSoftware Client WMI Class](sms_autostartsoftware-client-wmi-class.md) [SMS_InstalledExecutable Client WMI Class](sms_installedexecutable-client-wmi-class.md) [SMS_InstalledSoftware Client WMI Class](sms_installedsoftware-client-wmi-class.md) [SMS_InstalledSoftwareMS Client WMI Class](sms_installedsoftwarems-client-wmi-class.md) [SMS_Processor Client WMI Class](sms_processor-client-wmi-class.md) [SMS_SoftwareShortcut Client WMI Class](sms_softwareshortcut-client-wmi-class.md) [SMS_SystemConsoleUsage Client WMI Class](sms_systemconsoleusage-client-wmi-class.md) [SMS_SystemConsoleUser Client WMI Class](sms_systemconsoleuser-client-wmi-class.md)

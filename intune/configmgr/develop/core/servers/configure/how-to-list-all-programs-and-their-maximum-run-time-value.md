@@ -1,29 +1,29 @@
 ---
-title: List All Programs and Their Maximum Run Time Value
+title: "How to List All Programs and Their Maximum Run Time Value"
 description: Learn how to list all programs with their maximum run time values by using the SMS_Package and SMS_Program classes and class properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to List All Programs and Their Maximum Run Time Value
+
 In Configuration Manager, you can list all programs with their maximum run time values by using the `SMS_Package` and `SMS_Program` classes and class properties.
 
 ### To list all programs and their maximum run times
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the available packages by using the `SMS_Package` class.
-
-3.  Enumerate through each set of programs using the `SMS_Program` class and the `PackageID` property from each package.
-
-4.  Output the package name, program name, and maximum run time value for each program.
+1. Set up a connection to the SMS Provider.
+2. Load the available packages by using the `SMS_Package` class.
+3. Enumerate through each set of programs using the `SMS_Program` class and the `PackageID` property from each package.
+4. Output the package name, program name, and maximum run time value for each program.
 
 ## Example
- The following example method shows how to list all programs, with corresponding package name, program name, and maximum run times.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method shows how to list all programs, with corresponding package name, program name, and maximum run times.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -107,31 +107,36 @@ public void ListPackagesProgramsandMaximumRunTimeValue(WqlConnectionManager conn
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
+
+[Software distribution overview](software-distribution-overview.md)

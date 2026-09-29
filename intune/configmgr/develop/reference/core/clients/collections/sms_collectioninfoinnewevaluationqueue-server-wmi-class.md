@@ -1,7 +1,7 @@
 ---
-title: SMS_CollectionInfoInNewEvaluationQueue class
+title: "SMS_CollectionInfoInNewEvaluationQueue server WMI class"
 description: Show collection info from new evaluation queue.
-ms.date: 11/30/2020
+ms.date: "2020-11-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -117,7 +117,7 @@ Qualifiers: [read]
 Current status of the collection:
 
 | Value | State type |
-|-------|------------|
+| --- | --- |
 | `0` | Not in queue |
 | `1` | In queue |
 | `2` | In array |

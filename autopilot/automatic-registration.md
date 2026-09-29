@@ -1,7 +1,7 @@
 ---
 title: Automatic registration of existing devices
 description: Automatically add devices to Windows Autopilot.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.topic: how-to
 ms.collection:
   - M365-modern-desktop
@@ -18,7 +18,7 @@ appliesto:
 
 An existing device can automatically register if it's:
 
-- Running a [supported version](/windows/release-information/) of Windows
+- Running a [supported version](https://learn.microsoft.com/en-us/windows/release-information/) of Windows
 - Enrolled in a mobile device management (MDM) service such as Intune
 - A corporate device that isn't already registered with Windows Autopilot
 
@@ -26,7 +26,7 @@ For devices that meet these requirements, the MDM service can ask the device for
 
 For more information on how to automatically register devices for Windows Autopilot with Microsoft Intune, see [Create a Windows Autopilot deployment profile](profiles.md#create-a-windows-autopilot-deployment-profile) and review the description of the **Convert all targeted devices to Autopilot** setting. See the following example:
 
-:::image type="content" source="images/convert-devices.png" alt-text="Screenshot that shows how to convert all targeted devices.":::
+![Screenshot that shows how to convert all targeted devices.](images/convert-devices.png)
 
 > [!NOTE]
 >

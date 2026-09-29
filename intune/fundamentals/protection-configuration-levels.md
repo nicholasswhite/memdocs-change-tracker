@@ -1,7 +1,7 @@
 ---
-title: Protection and configuration levels overview in Microsoft Intune
+title: "Levels of protection and configuration in Microsoft Intune"
 description: Learn about the different levels of protection and configuration in Microsoft Intune, including minimum, enhanced, and high levels. Understand the recommended policies for apps, compliance, and device configuration at each level to secure your organization's resources effectively.
-ms.date: 03/17/2026
+ms.date: "2026-03-17T00:00:00Z"
 ms.topic: concept-article
 ---
 
@@ -30,15 +30,16 @@ This level enforces a reasonable amount of data protection and access requiremen
 In this level, Microsoft recommends you configure the following protection and access for apps:
 
 - Enable basic data protection requirements
+
   - Allow app basic data transfer
   - Enforce basic app encryption
   - Allow basic access functionality
-
 - Enable basic access requirements
+
   - Require PIN, face ID, and biometric access
   - Enforce supporting basic access settings
-
 - Enable basic conditional application launch
+
   - Configure app basic access attempts
   - Block app access based on jailbroken or rooted devices
   - Restrict app access based on basic integrity of devices
@@ -52,7 +53,6 @@ In this level, device compliance configures the tenant-wide settings that apply 
 Microsoft recommends that you put these configurations in place before you allow devices to access your organization's resources. Level 1 device compliance includes:
 
 - **Compliance policy settings** are a few tenant-wide settings that affect how the Intune compliance service works with your devices.
-
 - **Platform-specific compliance policies** include settings for common themes across platforms. The actual setting name and implementation can vary with the different platforms:
 
   - Require antivirus, antispyware, and antimalware (Windows only)
@@ -66,7 +66,6 @@ Microsoft recommends that you put these configurations in place before you allow
     - Require complex passwords with combinations of letters, numbers, and symbols
     - Require a password or PIN to unlock devices
     - Require minimum password length
-
 - **Actions for noncompliance** are automatically included with each platform specific policy. These actions are one or more time-ordered actions you configure. They apply to the devices that fail to meet the compliance requirements of your policy. By default, marking a device as noncompliant is an immediate action that comes with each policy.
 
 For more information, see [Level 1 - Minimal device compliance](deploy-compliance-step-3.md#level-1---minimal-device-compliance).
@@ -82,7 +81,6 @@ In this level, include settings that focus on security and resource access. Spec
   - Firewall
   - Strong PIN and password policy
   - Software updates
-
 - Give users access to the network:
 
   - Email
@@ -104,13 +102,14 @@ This level recommends a standard level of application protection for devices whe
 In addition to Level 1 settings, configure the following protection and access for apps:
 
 - Enable enhanced data protection requirements
+
   - Transfer organization related data
   - Exempt selected apps data transfer requirements (iOS/iPadOS)
   - Transfer telecommunication data
   - Restrict cut, copy, and paste between apps
   - Block screen capture (Android)
-
 - Enable enhanced conditional application launch
+
   - Block disabling application accounts
   - Enforce minimum device OS requirements
   - Require minimum patch version (Android)
@@ -125,22 +124,23 @@ For more information, see [Level 2 enhanced app protection](../app-management/pr
 At this level, add more granular options to your compliance policies. Many of the settings at this level have platform-specific names but all deliver similar results. Use the following categories or types of settings when they're available:
 
 - Applications
+
   - Manage where devices get apps, like Google Play for Android
   - Allow apps from specific locations
   - Block apps from unknown sources
-
 - Firewall settings
-  - Firewall settings (macOS, Windows)
 
+  - Firewall settings (macOS, Windows)
 - Encryption
+
   - Require encryption of data storage
   - BitLocker (Windows)
   - FileVault (macOS)
-
 - Passwords
-  - Password expiration and reuse
 
+  - Password expiration and reuse
 - System level file and boot protection
+
   - Block USB debugging (Android)
   - Block rooted or jailbroken devices (Android, iOS)
   - Require system integrity protection (macOS)
@@ -155,7 +155,7 @@ For more information, see [Level 2 - Enhanced device compliance settings](deploy
 In this level, you expand on the settings and features you configured in level 1. Create policies that:
 
 - Add another layer of security by enabling disk encryption, secure boot, and Trusted Platform Module (TPM) on your devices.
-- Configure your PINs & passwords to expire and manage if/when passwords can be reused.
+- Configure your PINs &amp; passwords to expire and manage if/when passwords can be reused.
 - Configure more granular device features, settings, and behaviors.
 - Determine if any on-premises Group Policy Objects (GPOs) are available in Intune.
 
@@ -174,6 +174,7 @@ This level recommends a standard level of application protection for devices whe
 In addition to level 1 and 2 settings, configure the following protection and access for apps:
 
 - Enable high data protection requirements
+
   - High protection when transferring telecommunication data
   - Receive data from only policy managed apps
   - Block opening data into organization documents
@@ -181,14 +182,14 @@ In addition to level 1 and 2 settings, configure the following protection and ac
   - Block unwanted partner or non-Microsoft keyboards
   - Require/select approved keyboards (Android)
   - Block printing organization data
-
 - Enable high access requirements
+
   - Block simple PIN and require specific minimum PIN length
   - Require PIN reset after number of days
   - Require class 3 Biometrics (Android 9.0+)
-  - Require override of Biometrics with PIN after biometric updates (Android)
-
+  - Require override of Biometrics with PIN after biometric updates (Android)
 - Enable high conditional application launch
+
   - Require device lock (Android)
   - Require max allowed threat level
   - Require Max OS version
@@ -200,8 +201,8 @@ For more information, see [Level 3 high app protection](../app-management/protec
 At this level, you can expand on Intune's built-in compliance features through the following capabilities:
 
 - Integrate data from Mobile Threat Defense (MTD) partner
-  - With an MTD partner, your compliance policies can require devices be at or under a *device threat level* or *machine risk score*, as determined by that partner.
 
+  - With an MTD partner, your compliance policies can require devices be at or under a *device threat level* or *machine risk score*, as determined by that partner.
 - Use a non-Microsoft compliance partner with Intune.
 - Use scripts to add custom compliance settings to your policies for settings that aren't available from within the Intune UI. (Windows, Linux)
 - Use compliance policy data with Conditional Access policies to gate access to your organization's resources.
@@ -214,18 +215,16 @@ This level focuses on enterprise-level services and features, and it can require
 
 - Expand password-less authentication to other services in your organization, including certificate-based authentication, single sign-on for apps, multifactor authentication (MFA), and the Microsoft Tunnel VPN gateway.
 - Use multifactor authentication (MFA) for an extra layer of security. MFA can help protect your organization from phishing attacks.
-- Expand Microsoft Tunnel by deploying Microsoft Tunnel for Mobile Application Management (Tunnel for MAM), which extends Tunnel support to iOS/iPadOS and Android devices that aren't enrolled with Intune. Tunnel for MAM is an advanced capability of Intune. For more information, see [Microsoft Intune advanced capabilities](./advanced-capabilities.md).
+- Expand Microsoft Tunnel by deploying Microsoft Tunnel for Mobile Application Management (Tunnel for MAM), which extends Tunnel support to iOS/iPadOS and Android devices that aren't enrolled with Intune. Tunnel for MAM is an advanced capability of Intune. For more information, see [Microsoft Intune advanced capabilities](advanced-capabilities.md).
 - Use Intune policy for Local Administrator Password Solution (LAPS) on macOS and Windows devices. LAPS policies help secure the local administrator account on your managed devices.
 
   For information, see:
 
   - [macOS LAPS in Intune](../device-security/laps/setup-macos.md)
   - [Windows LAPS in Intune](../device-security/laps/overview.md)
-
 - Protect Windows devices using Endpoint Privilege Management (EPM). EPM helps you run your organization's users as standard users (without administrator rights) and enables those same users to complete tasks that require elevated privileges.
 
-  EPM is an advanced capability of Intune. For information, see [Microsoft Intune advanced capabilities](./advanced-capabilities.md).
-
+  EPM is an advanced capability of Intune. For information, see [Microsoft Intune advanced capabilities](advanced-capabilities.md).
 - Configure device features that apply to the Windows firmware layer. Use Android common criteria mode.
 - Configure specialized devices like kiosks and shared devices.
 - Deploy scripts, if needed.

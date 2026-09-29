@@ -1,7 +1,7 @@
 ---
-title: Client notification
+title: "Client notification in Configuration Manager"
 description: Manage clients by taking immediate action from the central Configuration Manager console.
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -64,12 +64,12 @@ This action requires the **Run CMPivot** permission on the **Collection** object
 
 These actions are under the **Client notification** menu, on the ribbon in the Device or Collection group of the Home tab. You can start a **Client Notification** from the **Devices** node or within a collection membership view.
 
-> [!Note]
-> Starting in version 2203, you can perform client notification actions, including **Run Scripts**, from the **Deployment Status** view. Use the right-click menu on either a group of clients in a **Category** or a single client in the **Asset details** pane to display the client notification actions.<!--7079837-->
+> [!NOTE]
+>
+> Starting in version 2203, you can perform client notification actions, including **Run Scripts**, from the **Deployment Status** view. Use the right-click menu on either a group of clients in a **Category** or a single client in the **Asset details** pane to display the client notification actions.
 
 #### Permissions - Client notification
 
-<!--SCCMDocs-pr issue #2972-->
 Client notification actions require the **Notify Resource** permission on the Collection object. This permission applies to all actions under the **Client notification** menu.
 
 The following built-in roles have this permission by default:
@@ -128,20 +128,17 @@ Trigger devices configured to support Wake-on-LAN to wake up using other devices
 Trigger the selected devices to restart. For more information, see [Restart clients](manage-clients.md#restart-clients).
 
 ## Client diagnostics
-<!--4433455-->
 
 Use the following actions to help troubleshoot clients:
 
 - **Enable verbose logging**: Change the global log level for the CCM component to verbose, and enable debug logging.
-
 - **Disable verbose logging**: Change the global log level to default, and disable debug logging.
+- **Collect Client Logs**: The site sends a client notification message to the selected clients to gather the CCM logs. The client sends the logs to the management point using the same channel as software inventory file collection. You don't need to enable software inventory in client settings.
 
-- **Collect Client Logs**: The site sends a client notification message to the selected clients to gather the CCM logs. The client sends the logs to the management point using the same channel as software inventory file collection. <!--4226618--> You don't need to enable software inventory in client settings.<!-- MEMDocs#305 -->
-
-  - The size limit for the compressed client logs is 100 MB. <!--6366098-->
+  - The size limit for the compressed client logs is 100 MB.
   - Use [Resource Explorer](inventory/use-resource-explorer-to-view-software-inventory.md#bkmk_diag) manage and view these files.
 
-  :::image type="content" source="media/4226618-collect-client-logs.png" alt-text="Collect client logs from the console." lightbox="media/4226618-collect-client-logs.png":::
+  [![Collect client logs from the console.](media/4226618-collect-client-logs.png)](media/4226618-collect-client-logs.png#lightbox)
 
 > [!IMPORTANT]
 >
@@ -153,12 +150,12 @@ For more information about these settings, see [About log files](../../plan-desi
 Track the status of the task in the **diagnostics.log** on the client. When client logs are collected, additional information is logged in **MP_SinvCollFile.log** on the management point and **sinvproc.log** on the site server.
 
 > [!NOTE]
-> Starting in version 2107, you can inventory client log file settings such as log levels and size. Enable the hardware inventory class, **Client Diagnostics (CCM_ClientDiagnostics)**. For more information, see [Enable or disable existing hardware inventory classes](inventory/extend-hardware-inventory.md#enable-or-disable-existing-classes).<!--5602449-->
+>
+> Starting in version 2107, you can inventory client log file settings such as log levels and size. Enable the hardware inventory class, **Client Diagnostics (CCM_ClientDiagnostics)**. For more information, see [Enable or disable existing hardware inventory classes](inventory/extend-hardware-inventory.md#enable-or-disable-existing-classes).
 
 ### Prerequisites - Client diagnostics
 
 - Update the target client to the latest version.
-
 - Your Configuration Manager administrative user needs the **Notify resource** permission.
 
   The following built-in roles have this permission by default:
@@ -169,8 +166,6 @@ Track the status of the task in the **diagnostics.log** on the client. When clie
   Add this permission to any custom roles that need to use client notification actions.
 
 ### Cleanup aged client diagnostic files
-
-<!--6503308-->
 
 Collected client logs are stored according to the software inventory file collection settings. The files are stored on the site server in the **Inboxes\sinv.box\FileCol** directory. There's no defined limit to the number of versions.
 
@@ -215,10 +210,9 @@ Trigger Endpoint Protection or Windows Defender to download the latest antimalwa
 
 Monitor the operations sent to clients by using the **Client Operations** node under the **Monitoring** workspace. For some instances, you can cancel the operation by using the **Cancel** option in the ribbon. Use the **Delete** option to remove the operation from the console's view.
 
-:::image type="content" source="media/client-operations-node.png" alt-text="Client Operations node in the Monitoring workspace." lightbox="media/client-operations-node.png":::
+[![Client Operations node in the Monitoring workspace.](media/client-operations-node.png)](media/client-operations-node.png#lightbox)
 
 ## Next steps
 
 - [How to manage clients](manage-clients.md)
-
 - [How to manage collections](collections/manage-collections.md)

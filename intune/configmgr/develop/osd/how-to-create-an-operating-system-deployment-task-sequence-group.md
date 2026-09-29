@@ -1,31 +1,30 @@
 ---
-title: Create an OS Deployment Task Sequence Group
+title: "How to Create an Operating System Deployment Task Sequence Group"
 description: An operating system deployment task sequence group can be added to a task sequence by creating an instance of the SMS_TaskSequence_Group class.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create an Operating System Deployment Task Sequence Group
-An operating system deployment task sequence group, in Configuration Manager, can be added to a task sequence by creating an instance of the [SMS_TaskSequence_Group](../../develop/reference/osd/sms_tasksequence_group-server-wmi-class.md) class. The group is then added to the list of steps of the task sequence. The list of steps is an array of the [SMS_TaskSequence_Step](../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md) derived classes. The array is stored in the task sequence, [SMS_TaskSequence](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md), `Steps` property.
+
+An operating system deployment task sequence group, in Configuration Manager, can be added to a task sequence by creating an instance of the [SMS_TaskSequence_Group](../reference/osd/sms_tasksequence_group-server-wmi-class.md) class. The group is then added to the list of steps of the task sequence. The list of steps is an array of the [SMS_TaskSequence_Step](../reference/osd/sms_tasksequence_step-server-wmi-class.md) derived classes. The array is stored in the task sequence, [SMS_TaskSequence](../reference/osd/sms_tasksequence-server-wmi-class.md), `Steps` property.
 
 ### To create a task sequence group
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Obtain a valid task sequence ([SMS_TaskSequence)](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md) object. For more information, see [How to Create an Operating System Deployment Task Sequence](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence.md).
-
-3.  Create an instance of the `SMS_TaskSequence_Group` class.
-
-4.  Populate the group with the appropriate properties.
-
-5.  Update the task sequence `Steps` property with the new group.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Obtain a valid task sequence ([SMS_TaskSequence)](../reference/osd/sms_tasksequence-server-wmi-class.md) object. For more information, see [How to Create an Operating System Deployment Task Sequence](how-to-create-an-operating-system-deployment-task-sequence.md).
+3. Create an instance of the `SMS_TaskSequence_Group` class.
+4. Populate the group with the appropriate properties.
+5. Update the task sequence `Steps` property with the new group.
 
 ## Example
- The following example method adds a new group to the supplied task sequence. Because the group is added to the end of the task sequence `Steps` array, you might want to reorder its position. For more information, see [How to Reorder an Operating System Deployment Task Sequence](../../develop/osd/how-to-reorder-an-operating-system-deployment-task-sequence.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method adds a new group to the supplied task sequence. Because the group is added to the end of the task sequence `Steps` array, you might want to reorder its position. For more information, see [How to Reorder an Operating System Deployment Task Sequence](how-to-reorder-an-operating-system-deployment-task-sequence.md).
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AddTaskSequenceGroup(connection, taskSequence, name, description)
@@ -82,32 +81,30 @@ public IResultObject AddTaskSequenceGroup(
 }
 ```
 
- This example method has the following parameters:
+This example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`taskSequence`|-   Managed: `IResultObject`<br />-   VBScript: [SWbemObject](/windows/win32/wmisdk/swbemobject)|A valid task sequence (`SMS_TaskSequence`). The group is added to this task sequence.|
-|`Name`|-   Managed: `String`<br />-   VBScript: `String`|A name for the new group.|
-|`Description`|-   Managed: `String`<br />-   VBScript: `String`|A description for the new group.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `taskSequence` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject) | A valid task sequence (`SMS_TaskSequence`). The group is added to this task sequence. |
+| `Name` | - Managed: `String` - VBScript: `String` | A name for the new group. |
+| `Description` | - Managed: `String` - VBScript: `String` | A description for the new group. |
 
-|Parameter|Description|
-|---------------|-----------------|
-|`connection`|A `WqlConnectionManager` object that is a valid connection to the SMS Provider.|
-|`taskSequence`|An `IResultObject` that is a valid task sequence (`SMS_TaskSequence`). The group is added to this task sequence.|
-|`name`|A string name for the new group.|
-|`description`|A string description for the new group.|
+| Parameter | Description |
+| --- | --- |
+| `connection` | A `WqlConnectionManager` object that is a valid connection to the SMS Provider. |
+| `taskSequence` | An `IResultObject` that is a valid task sequence (`SMS_TaskSequence`). The group is added to this task sequence. |
+| `name` | A string name for the new group. |
+| `description` | A string description for the new group. |
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Add a Step to an Operating System Deployment Group](../../develop/osd/how-to-add-a-step-to-an-operating-system-deployment-group.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [How to Create an Operating System Deployment Task Sequence](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
+
+[Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Add a Step to an Operating System Deployment Group](how-to-add-a-step-to-an-operating-system-deployment-group.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [How to Create an Operating System Deployment Task Sequence](how-to-create-an-operating-system-deployment-task-sequence.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md)

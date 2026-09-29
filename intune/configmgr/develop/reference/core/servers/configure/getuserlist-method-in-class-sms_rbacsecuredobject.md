@@ -1,16 +1,18 @@
 ---
 description: Learn how to get the list of users who have been granted permission to this object with the GetUserList method.
-title: GetUserList Method
-ms.date: 09/20/2016
+title: "GetUserList Method in Class SMS_RbacSecuredObject"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetUserList Method in Class SMS_RbacSecuredObject
+
 The `GetUserList` Windows Management Instrumentation (WMI) class method, in Configuration Manager, returns the list of users who have been granted permission to this object.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,37 +25,39 @@ UInt32 GetUserList(
 ```
 
 #### Parameters
- `ObjectPath`
- Data type: `SMS_BaseClass`
 
- Qualifiers: [in]
+`ObjectPath` Data type: `SMS_BaseClass`
 
- The path of the object.
+Qualifiers: [in]
 
- `UserNames`
- Data type: `String` Array
+The path of the object.
 
- Qualifiers: [out]
+`UserNames` Data type: `String` Array
 
- Logon names of the users.
+Qualifiers: [out]
 
- `PermittedOperations`
- Data type: `UInt32` Array
+Logon names of the users.
 
- Qualifiers: [out]
+`PermittedOperations` Data type: `UInt32` Array
 
- Granted permissions.
+Qualifiers: [out]
+
+Granted permissions.
 
 ## Return Values
- A `UInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+A `UInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_RbacSecuredObject Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_rbacsecuredobject-server-wmi-class.md)
+
+[SMS_RbacSecuredObject Server WMI Class](sms_rbacsecuredobject-server-wmi-class.md)

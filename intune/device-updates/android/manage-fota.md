@@ -1,7 +1,7 @@
 ---
-title: Manage Android FOTA updates with Microsoft Intune
+title: "Manage Firmware Over-the-Air updates on Android"
 description: Use Microsoft Intune to manage firmware updates on Android devices. A FOTA update can include software and security patches, feature updates, and other changes to the device's firmware.
-ms.date: 07/23/2026
+ms.date: "2026-07-23T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: jieyan
 ms.subservice: suite
@@ -17,30 +17,17 @@ In the context of FOTA, a *deployment* is an update policy that includes instruc
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > FOTA updates are supported on Android Enterprise devices enrolled in Intune. This includes the following enrollment types:
+>
 > - Android Enterprise corporate-owned dedicated (COSU)
 > - Android Enterprise corporate-owned fully managed (COBO)
 > - Android Enterprise corporate-owned with a work profile (COPE)
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [licensing](../../includes/requirements/licensing.md)]
+![](../../media/icons/16/licensing.svg) **Licensing requirements**
 
-:::column-end:::
-:::column span="3":::
-
->[!INCLUDE [additional-licensing-plan2](../../includes/licensing/additional-licensing-plan2.md)]
-:::column-end:::
-:::row-end:::
+> This feature requires Microsoft Intune Plan 2 or an additional subscription. For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
 
 ## Manage FOTA updates
 
@@ -48,9 +35,9 @@ You have two ways to manage software updates:
 
 - Use Firmware Over-the-Air (FOTA), which works for some OEMs.
 
-    > [!NOTE]
-    > If Zebra updated the available firmware list in the last 24 hours, then the list of firmware available might take up to 24 hours to populate.
-
+  > [!NOTE]
+  >
+  > If Zebra updated the available firmware list in the last 24 hours, then the list of firmware available might take up to 24 hours to populate.
 - If FOTA isn't available you can use Device restrictions profiles, which work for all OEMs.
 
 ### FOTA update management for specific OEMs
@@ -67,18 +54,14 @@ Intune supports FOTA update management for supported devices from the following 
 Device restrictions profiles offer control over how the device handles over-the-air updates and allow you to set a freeze period for these updates. A freeze period is a specified time frame during which over-the-air updates are blocked from being installed on the device. This can be useful for organizations that want to prevent updates from being installed during critical business periods or when devices are in use.
 
 > [!NOTE]
+>
 > Not all device manufacturers support over-the-air updates.
 
 To manage FOTA updates using device restrictions profiles:
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > **Android**.
-1. Select **Manage devices** > **Configuration** > **Create** > **New policy**
-1. Under **Platform**, select **Android Enterprise**.
-1. Under **Policy type**, select **Templates**.
-1. Under **Fully Managed, Dedicated, and Corporate-Owned Work Profile**, select **Device restrictions** > **Create**.
-1. Configure the system update settings as needed. For more information about these settings, see [Device restrictions for Android Enterprise](../../device-configuration/templates/ref-device-restrictions-android-enterprise.md).
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; **Android**.
+2. Select **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**
+3. Under **Platform**, select **Android Enterprise**.
+4. Under **Policy type**, select **Templates**.
+5. Under **Fully Managed, Dedicated, and Corporate-Owned Work Profile**, select **Device restrictions** &gt; **Create**.
+6. Configure the system update settings as needed. For more information about these settings, see [Device restrictions for Android Enterprise](../../device-configuration/templates/ref-device-restrictions-android-enterprise.md).

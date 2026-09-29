@@ -1,16 +1,18 @@
 ---
-title: CheckReferencesShareType Method
+title: "CheckReferencesShareType Method in Class SMS_TaskSequencePackage"
 description: In Configuration Manager, the CheckReferencesShareType WMI class method checks all referred packages for this task sequence and returns all packages that aren't shared.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CheckReferencesShareType Method in Class SMS_TaskSequencePackage
+
 The `CheckReferencesShareType` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that checks all referred packages for this task sequence and returns all packages that aren't shared.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,43 +27,43 @@ uint32 CheckReferencesShareType
 ```
 
 ## Parameters
- `PackageID`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`PackageID` Data type: `String`
 
- Task sequence package identifier.
+Qualifiers: [id("0"), in]
 
- `CanRunFromDP`
- Data type: `Boolean`
+Task sequence package identifier.
 
- Qualifiers: [id("1"), out]
+`CanRunFromDP` Data type: `Boolean`
 
- `true` if the package can be run from the distribution point.
+Qualifiers: [id("1"), out]
 
- `PacakgeIds`
- Data type: `String Array`
+`true` if the package can be run from the distribution point.
 
- Qualifiers: [id("2"), out]
+`PacakgeIds` Data type: `String Array`
 
- Package identifiers for all referred packages for this task sequence that aren't shared.
+Qualifiers: [id("2"), out]
+
+Package identifiers for all referred packages for this task sequence that aren't shared.
 
 > [!NOTE]
->  The incorrect spelling of the variable "PacakgeIds" is hardcoded in WMI.
+>
+> The incorrect spelling of the variable "PacakgeIds" is hardcoded in WMI.
 
- `PackageNames`
- Data type: `String Array`
+`PackageNames` Data type: `String Array`
 
- Qualifiers: [id("3"), out]
+Qualifiers: [id("3"), out]
 
- Package names for all referred packages for this task sequence that aren't shared.
+Package names for all referred packages for this task sequence that aren't shared.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

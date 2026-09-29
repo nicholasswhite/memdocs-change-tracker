@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot device preparation user-driven Microsoft Entra join - Step 5 of 7 - Assign applications and PowerShell scripts to device group
+title: "Windows Autopilot device preparation user-driven Microsoft Entra join: Assign applications and PowerShell scripts to device group"
 description: How to - Windows Autopilot device preparation user-driven Microsoft Entra join - Step 5 of 7 - Assign applications and PowerShell scripts to device group.
-ms.date: 08/07/2026
+ms.date: "2026-08-07T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -16,9 +16,7 @@ Windows Autopilot device preparation user-driven Microsoft Entra join steps:
 - Step 3: [Create an assigned device group](entra-join-device-group.md)
 - Step 4: [Create a user group](entra-join-user-group.md)
 
-> [!div class="checklist"]
->
-> - **Step 5: Assign applications and PowerShell scripts to device group**
+- **Step 5: Assign applications and PowerShell scripts to device group**
 
 - Step 6: [Create Windows Autopilot device preparation policy](entra-join-autopilot-policy.md)
 - Step 7, option 1: [Add Windows corporate identifier to device](entra-join-corporate-identifier.md)
@@ -46,102 +44,73 @@ For applications to install and PowerShell scripts to run successfully during a 
 
 > [!NOTE]
 >
-> The following steps assume that the applications or PowerShell scripts that will be deployed during Windows Autopilot device preparation deployment are already added to Intune. For more information on how to add applications and PowerShell scripts to Intune if they aren't already created, see [Add apps to Microsoft Intune](/intune/app-management/deployment/) and [Use PowerShell scripts on Windows devices in Intune](/intune/device-management/tools/management-extension-windows).
+> The following steps assume that the applications or PowerShell scripts that will be deployed during Windows Autopilot device preparation deployment are already added to Intune. For more information on how to add applications and PowerShell scripts to Intune if they aren't already created, see [Add apps to Microsoft Intune](../../../../intune/app-management/deployment/index.md) and [Use PowerShell scripts on Windows devices in Intune](../../../../intune/device-management/tools/management-extension-windows.md).
 
 ### Applications
 
 The following types of applications are supported for use with Windows Autopilot device preparation:
 
-- [Line-of-business (LOB)](/intune/app-management/deployment/add-lob-windows).
-- [Win32](/intune/app-management/deployment/create-win32-package).
-- [Microsoft Store](/intune/app-management/deployment/add-microsoft-store) - only Microsoft Store apps that support WinGet are supported.
-- [Microsoft 365](/intune/app-management/deployment/add-microsoft-365-windows).
-- [Enterprise App Catalog](/intune/app-management/deployment/add-enterprise-catalog-app).
+- [Line-of-business (LOB)](../../../../intune/app-management/deployment/add-lob-windows.md).
+- [Win32](../../../../intune/app-management/deployment/create-win32-package.md).
+- [Microsoft Store](../../../../intune/app-management/deployment/add-microsoft-store.md) - only Microsoft Store apps that support WinGet are supported.
+- [Microsoft 365](../../../../intune/app-management/deployment/add-microsoft-365-windows.md).
+- [Enterprise App Catalog](../../../../intune/app-management/deployment/add-enterprise-catalog-app.md).
 
 In addition, Windows Autopilot device preparation supports deploying both Win32 and line-of-business (LOB) applications in the same deployment.
 
 To assign the desired applications to the device group created for Windows Autopilot device preparation:
 
-1. Sign in to the [Microsoft Intune admin center].
-
-1. In the **Home** screen, select **Apps** in the left hand pane.
-
-1. In the **Apps | Overview** screen, under **By platform**, select **Windows**.
-
-1. In the **Windows | Windows apps** screen, scroll through the list of applications and then select the desired application that should be installed during the Windows Autopilot device preparation deployment. Alternatively, use the **Search by name or publisher** box to search for the application, and then select it.
-
-1. Once the application is selected, a new screen opens showing the application. Under **Manage**, select **Properties**.
-
-1. In the **Properties** screen, next to **Assignments**, select **Edit**.
-
-1. In the **Edit application** screen:
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Apps** in the left hand pane.
+3. In the **Apps | Overview** screen, under **By platform**, select **Windows**.
+4. In the **Windows | Windows apps** screen, scroll through the list of applications and then select the desired application that should be installed during the Windows Autopilot device preparation deployment. Alternatively, use the **Search by name or publisher** box to search for the application, and then select it.
+5. Once the application is selected, a new screen opens showing the application. Under **Manage**, select **Properties**.
+6. In the **Properties** screen, next to **Assignments**, select **Edit**.
+7. In the **Edit application** screen:
 
    1. Under the **Required** section, select **Add group**. The **Select groups** pane opens.
-
-   1. In the **Select groups** pane:
+   2. In the **Select groups** pane:
 
       1. Scroll through the list of groups. Once the Windows Autopilot device preparation device security group is located, select it. Alternatively, use the **Search** box to locate the Windows Autopilot device preparation device security group and then select it.
-
-      1. Once the Windows Autopilot device preparation device security group is selected, select **Select**.
-
-   1. Verify that the Windows Autopilot device preparation device security group is listed under the **Required** section. Additionally, verify that **Group mode** is set to **Included**. When applicable, also verify that **Install Context** is set to **Device context**.
-
-   1. Once everything is verified, select **Review + save**.
-
-   1. In the **Review + save** screen, select **Save**.
-
-1. Repeat the steps for any additional applications that need to be installed during the Windows Autopilot device preparation deployment.
+      2. Once the Windows Autopilot device preparation device security group is selected, select **Select**.
+   3. Verify that the Windows Autopilot device preparation device security group is listed under the **Required** section. Additionally, verify that **Group mode** is set to **Included**. When applicable, also verify that **Install Context** is set to **Device context**.
+   4. Once everything is verified, select **Review + save**.
+   5. In the **Review + save** screen, select **Save**.
+8. Repeat the steps for any additional applications that need to be installed during the Windows Autopilot device preparation deployment.
 
 ### PowerShell scripts
 
 To assign the desired PowerShell scripts to the device group created for Windows Autopilot device preparation:
 
-1. Sign in to the [Microsoft Intune admin center].
-
-1. In the **Home** screen, select **Devices** in the left hand pane.
-
-1. In the **Devices | Overview** screen, expand **Manage devices**, and then select **Scripts and remediations**.
-
-1. In the **Devices | Scripts and remediations** screen:
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Devices** in the left hand pane.
+3. In the **Devices | Overview** screen, expand **Manage devices**, and then select **Scripts and remediations**.
+4. In the **Devices | Scripts and remediations** screen:
 
    1. Select **Platform scripts**.
-
-   1. Scroll through the list of PowerShell scripts and then select the desired PowerShell script that should run during the Windows Autopilot device preparation deployment. Alternatively, use the **Search** box to search for the PowerShell script, and then select it.
-
-1. Once the PowerShell script is selected, a new screen opens showing the PowerShell script. Under **Manage**, select **Properties**.
-
-1. In the **Properties** screen, next to **Assignments**, select **Edit**.
-
-1. In the **Edit PowerShell script** screen:
+   2. Scroll through the list of PowerShell scripts and then select the desired PowerShell script that should run during the Windows Autopilot device preparation deployment. Alternatively, use the **Search** box to search for the PowerShell script, and then select it.
+5. Once the PowerShell script is selected, a new screen opens showing the PowerShell script. Under **Manage**, select **Properties**.
+6. In the **Properties** screen, next to **Assignments**, select **Edit**.
+7. In the **Edit PowerShell script** screen:
 
    1. Under the **Included groups** section, select **Add groups**. The **Select groups to include** pane opens.
-
-   1. In the **Select groups to include** pane:
+   2. In the **Select groups to include** pane:
 
       1. Scroll through the list of groups. Once the Windows Autopilot device preparation device security group is located, select it. Alternatively, use the **Search** box to locate the Windows Autopilot device preparation device security group and then select it.
-
-      1. Once the Windows Autopilot device preparation device security group is selected, select **Select**.
-
-   1. Verify that the Windows Autopilot device preparation device security group is listed under the **Included groups** section. Make sure that the Windows Autopilot device preparation device security group wasn't accidentally added under the **Excluded groups** section.
-
-   1. Once everything is verified, select **Review + save**.
-
-   1. In the **Review + save** screen, select **Save**.
+      2. Once the Windows Autopilot device preparation device security group is selected, select **Select**.
+   3. Verify that the Windows Autopilot device preparation device security group is listed under the **Included groups** section. Make sure that the Windows Autopilot device preparation device security group wasn't accidentally added under the **Excluded groups** section.
+   4. Once everything is verified, select **Review + save**.
+   5. In the **Review + save** screen, select **Save**.
 
 ## Next step: Create Windows Autopilot device preparation policy
 
-> [!div class="nextstepaction"]
-> [Step 6: Create Windows Autopilot device preparation policy](entra-join-autopilot-policy.md)
+[Step 6: Create Windows Autopilot device preparation policy](entra-join-autopilot-policy.md)
 
 ## Related content
 
-- [Add apps to Microsoft Intune](/intune/app-management/deployment/).
-- [Use PowerShell scripts on Windows devices in Intune](/intune/device-management/tools/management-extension-windows).
-- [Assign apps to groups with Microsoft Intune](/intune/app-management/deployment/assign-groups).
-- [Win32 app management in Microsoft Intune](/intune/app-management/deployment/win32).
-- [Add a Windows line-of-business app to Microsoft Intune](/intune/app-management/deployment/add-lob-windows).
-- [Add an Enterprise App Catalog app to Microsoft Intune](/intune/app-management/deployment/add-enterprise-catalog-app).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Add apps to Microsoft Intune](../../../../intune/app-management/deployment/index.md).
+- [Use PowerShell scripts on Windows devices in Intune](../../../../intune/device-management/tools/management-extension-windows.md).
+- [Assign apps to groups with Microsoft Intune](../../../../intune/app-management/deployment/assign-groups.md).
+- [Win32 app management in Microsoft Intune](../../../../intune/app-management/deployment/win32.md).
+- [Add a Windows line-of-business app to Microsoft Intune](../../../../intune/app-management/deployment/add-lob-windows.md).
+- [Add an Enterprise App Catalog app to Microsoft Intune](../../../../intune/app-management/deployment/add-enterprise-catalog-app.md).

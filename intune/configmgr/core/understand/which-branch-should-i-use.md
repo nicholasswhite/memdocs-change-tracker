@@ -1,7 +1,7 @@
 ---
-title: Which branch should I use
+title: "Which branch of Configuration Manager should I use?"
 description: Learn the differences between available branches of Configuration Manager.
-ms.date: 11/29/2019
+ms.date: "2019-11-29T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -10,7 +10,7 @@ ms.service: configuration-manager
 
 # Which branch of Configuration Manager should I use?
 
-*Applies to: Configuration Manager (current branch & technical preview branch) & System Center Configuration Manager (long-term servicing branch)*
+*Applies to: Configuration Manager (current branch &amp; technical preview branch) &amp; System Center Configuration Manager (long-term servicing branch)*
 
 There are three branches of Configuration Manager available:
 
@@ -21,6 +21,7 @@ There are three branches of Configuration Manager available:
 Use this article to help you choose the right branch.
 
 > [!TIP]
+>
 > All sites in a hierarchy must run the same branch. It isn't supported to have a hierarchy with different branches at different sites.
 
 ## Current branch
@@ -40,13 +41,6 @@ To install the current branch as a new site, use [baseline media](../servers/man
 
 You can also use the baseline media to install a new site that is an evaluation edition of the current branch. The evaluation edition doesn't require a license. You can use the evaluation edition for 180 days. It supports upgrade to a licensed edition of the current branch. To install only an evaluation edition, get it from the [Evaluation Center](https://www.microsoft.com/evalcenter/download-microsoft-endpoint-configuration-manager).
 
-
-<!--
-> [!NOTE]
-<<<<<<< HEAD
-> The Evaluation Center is currently unavailable. As a workaround you can download the ConfigMgr 2203 Current Branch Eval exe here : ( https://aka.ms/MECM2203CB-Eval).
--->
->
 > Use baseline media to install sites for a new Configuration Manager hierarchy. If you previously installed a baseline version, use in-console updates to update your sites to a new version.
 >
 > Sites that are updated using in-console updates result in sites that are the same as the new site installed using the baseline media.
@@ -82,17 +76,12 @@ The LTSB is based on version 1606. This branch doesn't receive in-console update
 To install the LTSB as a new site or as an upgrade from a supported System Center 2012 Configuration Manager site, use the version 1606 [baseline media](../servers/manage/updates.md#bkmk_Baselines) that you get with System Center 2016. You can use baseline media to install a new site that runs version 1606 of the current branch, or a new site that runs the long-term servicing branch.
 
 > [!TIP]
-> To learn about System Center 2016, see [System Center 2016 documentation](/system-center/index). This documentation also identifies how to get System Center 2016, which requires a Microsoft license agreement or similar rights.
+>
+> To learn about System Center 2016, see [System Center 2016 documentation](https://learn.microsoft.com/en-us/system-center/index). This documentation also identifies how to get System Center 2016, which requires a Microsoft license agreement or similar rights.
 >
 > To find Configuration Manager version 1606 in the Volume Licensing Service Center (VLSC), go to the **Downloads and Keys** tab of the [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), search for `System Center 2016`, and then select either **System Center 2016 Datacenter** or **System Center 2016 Standard**.
 
->
 > You can also get an evaluation edition of System Center 2019 from the [Evaluation Center](https://www.microsoft.com/evalcenter/download-system-center-2019).
-
-<!--
-> [!NOTE]
-> The Evaluation Center is currently unavailable. As a workaround you can download the ConfigMgr TP 2202 Baseline here : ( https://aka.ms/MECM2202TP-Baseline).
--->
 
 ### Features of the LTSB
 
@@ -124,9 +113,7 @@ The LTSB is based on the current branch version 1606 and has the following limit
   - [Upgrade the long-term servicing branch to the current branch](convert-to-current-branch.md)
   - [Licensing and branches for Configuration Manager](learn-more-editions.md)
   - [Baseline and update versions](../servers/manage/updates.md#bkmk_Baselines)
-
 - There's no option to convert the LTSB to a technical preview branch. Technical preview branches are separate installations that don't require a license.
-
 - You can't upgrade an evaluation edition of the current branch to an LTSB installation.
 
 ## Technical preview branch
@@ -158,7 +145,6 @@ For more information, see the [Technical preview for Configuration Manager](../g
 ### Technical preview update options
 
 - You can install any in-console update for a new technical preview branch version.
-
 - There's no option to convert a technical preview branch to the current branch or LTSB.
 
 ## Identify your version and branch
@@ -169,6 +155,6 @@ To check the version of your site, in the console go to **About Configuration Ma
 
 ### Branch
 
-To confirm the branch of your site, in the console go to **Administration** > **Site Configuration** > **Sites**, and open **Hierarchy Settings**. If there's an active option to convert to the current branch, the site runs the LTSB version. When the site runs the current branch, the console disables this option.
+To confirm the branch of your site, in the console go to **Administration** &gt; **Site Configuration** &gt; **Sites**, and open **Hierarchy Settings**. If there's an active option to convert to the current branch, the site runs the LTSB version. When the site runs the current branch, the console disables this option.
 
 For more information about the different versions of Configuration Manager, see [Baseline and update versions](../servers/manage/updates.md#bkmk_Baselines).

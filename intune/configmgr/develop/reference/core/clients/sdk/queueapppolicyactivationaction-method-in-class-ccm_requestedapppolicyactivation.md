@@ -1,16 +1,18 @@
 ---
-title: QueueAppPolicyActivationAction Method
+title: "QueueAppPolicyActivationAction Method in Class CCM_RequestedAppPolicyActivation"
 description: The QueueAppPolicyActivationAction WMI class method queues an application policy activation action.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # QueueAppPolicyActivationAction Method in Class CCM_RequestedAppPolicyActivation
+
 The `QueueAppPolicyActivationAction` Windows Management Instrumentation (WMI) class method in Configuration Manager that queues an application policy activation action.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,45 +27,44 @@ uint32 QueueAppPolicyActivationAction
 ```
 
 ## Parameters
- `PolicyId`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`PolicyId` Data type: `String`
 
- Policy identifier.
+Qualifiers: [id("0"), in]
 
- `PolicyRevision`
- Data type: `String`
+Policy identifier.
 
- Qualifiers: [id("1"), in]
+`PolicyRevision` Data type: `String`
 
- Policy revision.
+Qualifiers: [id("1"), in]
 
- `Id`
- Data type: `String`
+Policy revision.
 
- Qualifiers: [id("2"), in]
+`Id` Data type: `String`
 
- Application identifier.
+Qualifiers: [id("2"), in]
 
- `ActivationAction`
- Data type: `UInt32`
+Application identifier.
 
- Qualifiers: [id("3"), in]
+`ActivationAction` Data type: `UInt32`
 
- Activation action. Possible values are:
+Qualifiers: [id("3"), in]
 
-|Value|Activation action|
-|-|-|
-|0|default|
-|1|By-pass activation.|
+Activation action. Possible values are:
+
+| Value | Activation action |
+| --- | --- |
+| 0 | default |
+| 1 | By-pass activation. |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

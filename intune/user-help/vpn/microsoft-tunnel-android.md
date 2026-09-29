@@ -1,7 +1,7 @@
 ---
-title: Use the Microsoft Tunnel client app for Android
+title: "Using Microsoft Tunnel for Android"
 description: Learn how to connect over VPN using Microsoft Tunnel for Android.
-ms.date: 05/26/2026
+ms.date: "2026-05-26T00:00:00Z"
 ai-usage: ai-assisted
 ms.reviewer: shthilla
 ---
@@ -28,47 +28,42 @@ Your organization might require you to stay connected to Microsoft Tunnel. This 
 
 Your organization might also enable *Strict Tunnel Mode*. When Strict Tunnel Mode is active, all internet access is blocked if the VPN connection drops. You must wait for the VPN to reconnect before you can use the internet or apps that require network access. This behavior is expected and helps protect your organization's data.
 
-If the toggle is stuck in the off position, select **Help** > **Send logs** and report the problem to your IT support person. For more details, see the [Send logs](microsoft-tunnel-android.md#send-logs) section in this article.
+If the toggle is stuck in the off position, select **Help** &gt; **Send logs** and report the problem to your IT support person. For more details, see the [Send logs](#send-logs) section in this article.
 
 ## Connection details
 
 The following information appears on the **Connect** screen when Tunnel is connected.
 
-* **Uptime**: How long the VPN connection has been running.
-
-* **Data received**: How much data has been received through the VPN connection.
-
-* **Data sent**: How much data has been sent through the VPN connection.
+- **Uptime**: How long the VPN connection has been running.
+- **Data received**: How much data has been received through the VPN connection.
+- **Data sent**: How much data has been sent through the VPN connection.
 
 Tap **Details** to see the following information:
 
-* **Address**: The server address for your VPN connection.
-
-* **Device-wide connection**: When turned on, all network traffic to and from your device goes through the VPN connection.
-
-* **Apps that use Tunnel**: If apps are listed, only network traffic to and from these apps go through the VPN connection.
-
-* **Always-on**: When turned on, Microsoft Defender for Endpoint will continuously try to establish a connection.
+- **Address**: The server address for your VPN connection.
+- **Device-wide connection**: When turned on, all network traffic to and from your device goes through the VPN connection.
+- **Apps that use Tunnel**: If apps are listed, only network traffic to and from these apps go through the VPN connection.
+- **Always-on**: When turned on, Microsoft Defender for Endpoint will continuously try to establish a connection.
 
 ## App settings
 
 From the **Connect** screen, select the **Settings** gear icon to:
 
-* Allow/block Microsoft from collecting usage and performance data.
-* Turn verbose logging on/off.
+- Allow/block Microsoft from collecting usage and performance data.
+- Turn verbose logging on/off.
 
 ## Get help in the app
 
 Select **Help** from the menu at the bottom of the screen to:
 
-* Access this article.
-* Send logs to IT support to report a problem.
+- Access this article.
+- Send logs to IT support to report a problem.
 
 ### Send logs
 
 Send app logs to IT support to get help with an app or connection problem.
 
-1. Select **Help** > **Send logs**.
+1. Select **Help** &gt; **Send logs**.
 2. Select **Send logs** again. Your logs will be sent to a Microsoft database, from which your organization can access.
 3. Select **EMAIL IT SUPPORT**.
 4. On the Share screen, select your mail app.
@@ -82,5 +77,3 @@ Tap your profile picture, and then select **About** to view the Microsoft Tunnel
 ## Next steps
 
 Need additional help? Contact your IT support person. For contact information, check the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
-
-

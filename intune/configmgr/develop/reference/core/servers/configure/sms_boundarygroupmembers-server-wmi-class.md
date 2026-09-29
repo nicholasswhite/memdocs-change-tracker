@@ -1,16 +1,18 @@
 ---
-title: SMS_BoundaryGroupMembers Class
+title: "SMS_BoundaryGroupMembers Server WMI Class"
 description: Learn how the SMS_BoundaryGroupMembers Windows Management Instrumentation (WMI) class is an SMS Provider server class that represents boundary group members.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BoundaryGroupMembers Server WMI Class
+
 The `SMS_BoundaryGroupMembers` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents boundary group members.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,36 +25,39 @@ Class SMS_BoundaryGroupMembers : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_BoundaryGroupMembers` class does not define any methods.
+
+The `SMS_BoundaryGroupMembers` class does not define any methods.
 
 ## Properties
- `BoundaryID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`BoundaryID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique identifier of the boundary.
+Qualifiers: [key]
 
- `GroupID`
- Data type: `UInt32`
+Unique identifier of the boundary.
 
- Access type: Read/Write
+`GroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique identifier for the boundary group.
+Qualifiers: [key]
+
+Unique identifier for the boundary group.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

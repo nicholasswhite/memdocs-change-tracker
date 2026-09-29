@@ -1,7 +1,7 @@
 ---
 title: Security Copilot in Microsoft Intune
 description: You can use Security Copilot to get information about your Intune data, including devices, apps, policies, and groups managed in Intune. You can also compare policies, get device specific details, and get target info for policies.
-ms.date: 09/17/2025
+ms.date: "2025-09-17T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: ankurgoyal, rashok
 ms.collection:
@@ -12,7 +12,7 @@ ms.collection:
 
 # Security Copilot in Microsoft Intune
 
-Microsoft Security Copilot is a cloud-based AI platform that provides a natural language Copilot experience. It can help support security professionals in different scenarios, like incident response, threat hunting, and intelligence gathering. For more information about what it can do, go to [What is Microsoft Security Copilot?](/copilot/security/microsoft-security-copilot)
+Microsoft Security Copilot is a cloud-based AI platform that provides a natural language Copilot experience. It can help support security professionals in different scenarios, like incident response, threat hunting, and intelligence gathering. For more information about what it can do, go to [What is Microsoft Security Copilot?](https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot)
 
 **Security Copilot integrates with Microsoft Intune**.
 
@@ -20,9 +20,9 @@ If you use [Microsoft Intune](../fundamentals/what-is-intune.md) in the same ten
 
 There are Intune capabilities built into Security Copilot, and you can use prompts to get more information, including:
 
-- Information about your devices, apps, compliance & configuration policies, and policy assignments managed in Intune
+- Information about your devices, apps, compliance &amp; configuration policies, and policy assignments managed in Intune
 - Managed device attributes and hardware details
-- Issue with specific devices and compare a working & non-working device
+- Issue with specific devices and compare a working &amp; non-working device
 - Cloud PC insights on licensing, connection quality, configurations, and performance
 
 This article shows you how to access your Microsoft Intune data in Security Copilot and includes sample prompts.
@@ -31,11 +31,11 @@ This article shows you how to access your Microsoft Intune data in Security Copi
 
 If you're new to Security Copilot, you should familiarize yourself with it by reading these articles:
 
-- [What is Microsoft Security Copilot?](/copilot/security/microsoft-security-copilot)
-- [Microsoft Security Copilot experiences](/copilot/security/experiences-security-copilot)
-- [Get started with Microsoft Security Copilot](/copilot/security/get-started-security-copilot)
-- [Understand authentication in Microsoft Security Copilot](/copilot/security/authentication)
-- [Prompting in Microsoft Security Copilot](/copilot/security/prompting-security-copilot)
+- [What is Microsoft Security Copilot?](https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot)
+- [Microsoft Security Copilot experiences](https://learn.microsoft.com/en-us/copilot/security/experiences-security-copilot)
+- [Get started with Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot)
+- [Understand authentication in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/authentication)
+- [Prompting in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/prompting-security-copilot)
 
 ## Key features
 
@@ -45,7 +45,7 @@ There are several ways to use Copilot in Intune:
 - [Copilot Chat prompt suggestions](index.md#copilot-chat-prompt-suggestions)
 - [Policy and setting management](index.md#policy-and-setting-management)
 - [Device details and troubleshooting](index.md#device-details-and-troubleshooting)
-- [Windows 365 Cloud PC insights](/windows-365/enterprise/copilot-in-intune-for-windows365)
+- [Windows 365 Cloud PC insights](https://learn.microsoft.com/en-us/windows-365/enterprise/copilot-in-intune-for-windows365)
 
 ### Security admin focus
 
@@ -73,11 +73,10 @@ In Microsoft Defender, you can use this information, including the device type, 
 
   For more information on roles and authentication, go to:
 
-  - [Roles and authentication in Microsoft Security Copilot](/copilot/security/authentication)
+  - [Roles and authentication in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/authentication)
   - [Role based access control (RBAC) in Intune](../fundamentals/role-based-access-control/overview.md)
   - [Use RBAC and scope tags for distributed IT in Intune](../fundamentals/role-based-access-control/scope-tags.md)
-
-- You can access your Intune data in the [Security Copilot portal](https://go.microsoft.com/fwlink/?linkid=2247989) and Copilot in the [Microsoft Intune admin center]. For more information on Copilot in Intune vs. Security Copilot, and other common questions, go to the [Microsoft Copilot in Intune FAQ](faq.md).
+- You can access your Intune data in the [Security Copilot portal](https://go.microsoft.com/fwlink/?linkid=2247989) and Copilot in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431). For more information on Copilot in Intune vs. Security Copilot, and other common questions, go to the [Microsoft Copilot in Intune FAQ](faq.md).
 
 ## Enable the Security Copilot integration in Intune
 
@@ -86,18 +85,18 @@ To use the Intune capabilities in Security Copilot, enable the Intune plugin.
 1. Go to [Security Copilot](https://go.microsoft.com/fwlink/?linkid=2247989) and sign in with your credentials.
 2. In the prompt bar, select **Sources** (right corner).
 
-    :::image type="content" source="./media/security-copilot/security-copilot-sources.png" alt-text="Screenshot that shows the plugin sources that are available, enabled, and disabled in Microsoft Security Copilot.":::
-
+   ![Screenshot that shows the plugin sources that are available, enabled, and disabled in Microsoft Security Copilot.](media/security-copilot/security-copilot-sources.png)
 3. In **Manage sources**, turn on Microsoft Intune:
 
-    :::image type="content" source="./media/security-copilot/intune-plug-in-enabled.png" alt-text="Screenshot that shows the Microsoft Intune plug-in source is enabled in  Security Copilot.":::
+   ![Screenshot that shows the Microsoft Intune plug-in source is enabled in  Security Copilot.](media/security-copilot/intune-plug-in-enabled.png)
 
-    > [!NOTE]
-    > Some roles can enable or disable plugins. For more information, go to [Manage plugins in Microsoft Security Copilot](/copilot/security/manage-plugins).
+   > [!NOTE]
+   >
+   > Some roles can enable or disable plugins. For more information, go to [Manage plugins in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/manage-plugins).
 
 ### Use the built-in features
 
-In Security Copilot, there are built in system features that are helpful for Intune admins. For a walkthrough of Security Copilot, go to [Navigating Microsoft Security Copilot](/copilot/security/navigating-security-copilot).
+In Security Copilot, there are built in system features that are helpful for Intune admins. For a walkthrough of Security Copilot, go to [Navigating Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/navigating-security-copilot).
 
 This section describes some of the features that are helpful for Intune admins.
 
@@ -107,21 +106,19 @@ Capabilities are built-in features that can get data from the different plugins 
 
 To view the list of Intune built-in system capabilities for Intune, use the following steps:
 
-1. In the [Security Copilot portal](https://go.microsoft.com/fwlink/?linkid=2247989) prompt bar, select the Copilot prompts icon > **See all system capabilities**.
+1. In the [Security Copilot portal](https://go.microsoft.com/fwlink/?linkid=2247989) prompt bar, select the Copilot prompts icon &gt; **See all system capabilities**.
 
-    :::image type="content" source="./media/security-copilot/security-copilot-system-capabilities.png" alt-text="Screenshot that shows how to select the prompts icon and system capabilities in Security Copilot.":::
-
+   ![Screenshot that shows how to select the prompts icon and system capabilities in Security Copilot.](media/security-copilot/security-copilot-system-capabilities.png)
 2. In the Microsoft Intune section, there's a list of all the built-in capabilities for Intune. You can select any of the capabilities and get more information about that capability.
 
 #### Sessions
 
-When you use prompts in the [Microsoft Intune admin center] or in the Security Copilot portal, the sessions are saved. To see the saved sessions, use the following steps:
+When you use prompts in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) or in the Security Copilot portal, the sessions are saved. To see the saved sessions, use the following steps:
 
-1. In the [Security Copilot portal](https://go.microsoft.com/fwlink/?linkid=2247989), go to the menu at the top left > **My sessions**.
-
+1. In the [Security Copilot portal](https://go.microsoft.com/fwlink/?linkid=2247989), go to the menu at the top left &gt; **My sessions**.
 2. When you select a session, your previous prompts and results are shown. Every session also has a session ID in the URL. You can share this session ID with others to review the same prompt session.
 
-    For example, your session ID is something like `https://securitycopilot.microsoft.com/sessions/023d1c61-f3c7-4702-8924-075a1058900d`.
+   For example, your session ID is something like `https://securitycopilot.microsoft.com/sessions/023d1c61-f3c7-4702-8924-075a1058900d`.
 
 ## Sample Intune prompts
 
@@ -135,13 +132,12 @@ You can create your own prompts in Security Copilot to get information about you
 
   - **According to Intune, how many devices were enrolled this week?**
   - **Tell me about Intune devices for (user name).**
-
 - Experiment with different prompts and variations to see what works best for your use case. Chat AI models vary, so iterate and refine your prompts based on the results you receive.
 
   You can also save your prompts in a promptbook for future use. For more information, go to:
 
-  - [Prompting in Microsoft Security Copilot](/copilot/security/prompting-security-copilot)
-  - [Using promptbooks in Microsoft Security Copilot](/copilot/security/using-promptbooks)
+  - [Prompting in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/prompting-security-copilot)
+  - [Using promptbooks in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/using-promptbooks)
 
 ### General information about your Intune data
 
@@ -195,13 +191,13 @@ Get the **similarities and differences** between two devices, like the complianc
 
 Your feedback on the Intune integration with Security Copilot helps with development. To provide feedback, in Security Copilot, use the feedback buttons at the bottom of each completed prompt.
 
-:::image type="content" source="./media/security-copilot/security-copilot-prompt-feedback.png" alt-text="Screenshot that shows how to submit feedback on the prompt results in Security Copilot.":::
+![Screenshot that shows how to submit feedback on the prompt results in Security Copilot.](media/security-copilot/security-copilot-prompt-feedback.png)
 
 Whenever possible, and when the result isn't what you expect, write a few words explaining what can be done to improve the outcome. If you entered Intune-specific prompts and the results aren't Intune related, then include that information.
 
 ## Privacy and data security in Security Copilot
 
-For more information about data privacy in Security Copilot, go to [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
+For more information about data privacy in Security Copilot, go to [Privacy and data security in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/privacy-data-security).
 
 When you interact with the Security Copilot to get Intune data, the Security Copilot pulls that data from Intune. The prompts, the Intune data that's retrieved, and the output shown in the prompt results is processed and stored within the Security Copilot service.
 
@@ -209,10 +205,6 @@ When you use Security Copilot to get Intune data, Security Copilot also has acce
 
 ## Related articles
 
-- [What is Microsoft Security Copilot?](/copilot/security/microsoft-security-copilot)
-- [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
+- [What is Microsoft Security Copilot?](https://learn.microsoft.com/en-us/copilot/security/microsoft-security-copilot)
+- [Privacy and data security in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/privacy-data-security)
 - [Use Microsoft Copilot in Intune](index.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

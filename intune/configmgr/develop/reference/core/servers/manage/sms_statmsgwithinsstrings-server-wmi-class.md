@@ -1,16 +1,18 @@
 ---
-title: SMS_StatMsgWithInsStrings Class
+title: "SMS_StatMsgWithInsStrings Server WMI Class"
 description: Learn how to use the SMS_StatMsgWithInsStrings class in Configuration Manager to set an individual status message with insertion strings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_StatMsgWithInsStrings Server WMI Class
+
 The `SMS_StatMsgWithInsStrings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an individual status message with insertion strings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -49,267 +51,243 @@ Class SMS_StatMsgWithInsStrings : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_StatMsgWithInsStrings` class does not define any methods.
+
+The `SMS_StatMsgWithInsStrings` class does not define any methods.
 
 ## Properties
- `Component`
- Data type: `String`
 
- Access type: Read
+`Component` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Name of the component that created the message. For user-defined messages, this name comes from the ApplicationName context qualifier that you must set before calling a raise status message method.
+Qualifiers: None
 
- `InsString1`
- Data type: `String`
+Name of the component that created the message. For user-defined messages, this name comes from the ApplicationName context qualifier that you must set before calling a raise status message method.
 
- Access type: Read
+`InsString1` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 1.
+Qualifiers: None
 
- `InsString10`
- Data type: `String`
+Insertion string at position 1.
 
- Access type: Read
+`InsString10` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 10.
+Qualifiers: None
 
- `InsString2`
- Data type: `String`
+Insertion string at position 10.
 
- Access type: Read
+`InsString2` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 2.
+Qualifiers: None
 
- `InsString3`
- Data type: `String`
+Insertion string at position 2.
 
- Access type: Read
+`InsString3` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 3.
+Qualifiers: None
 
- `InsString4`
- Data type: `String`
+Insertion string at position 3.
 
- Access type: Read
+`InsString4` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 4.
+Qualifiers: None
 
- `InsString5`
- Data type: `String`
+Insertion string at position 4.
 
- Access type: Read
+`InsString5` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 5.
+Qualifiers: None
 
- `InsString6`
- Data type: `String`
+Insertion string at position 5.
 
- Access type: Read
+`InsString6` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 6.
+Qualifiers: None
 
- `InsString7`
- Data type: `String`
+Insertion string at position 6.
 
- Access type: Read
+`InsString7` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 7.
+Qualifiers: None
 
- `InsString8`
- Data type: `String`
+Insertion string at position 7.
 
- Access type: Read
+`InsString8` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 8.
+Qualifiers: None
 
- `InsString9`
- Data type: `String`
+Insertion string at position 8.
 
- Access type: Read
+`InsString9` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Insertion string at position 9.
+Qualifiers: None
 
- `MachineName`
- Data type: `String`
+Insertion string at position 9.
 
- Access type: Read
+`MachineName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Name of the computer that created the message. For user-defined messages, this name comes from the MachineName context qualifier that you must set before calling a raise status message method.
+Qualifiers: None
 
- `MessageID`
- Data type: `UInt32`
+Name of the computer that created the message. For user-defined messages, this name comes from the MachineName context qualifier that you must set before calling a raise status message method.
 
- Access type: Read
+`MessageID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Unique ID of message text in a message DLL. See the MessageID property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: None
 
- `MessageType`
- Data type: `UInt32`
+Unique ID of message text in a message DLL. See the MessageID property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Access type: Read
+`MessageType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Type of message. See the MessageType property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: None
 
- `ModuleName`
- Data type: `String`
+Type of message. See the MessageType property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Access type: Read
+`ModuleName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- The DLL that is associated with the status message to raise. This is not the name of the DLL itself, but it is a display string corresponding to the ModuleName property value defined in [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md). You use the ModuleName value to get the DLL name.
+Qualifiers: None
 
- `PerClient`
- Data type: `UInt32`
+The DLL that is associated with the status message to raise. This is not the name of the DLL itself, but it is a display string corresponding to the ModuleName property value defined in [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md). You use the ModuleName value to get the DLL name.
 
- Access type: Read
+`PerClient` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Value indicating if the status message was generated by a client component. See the PerClient property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: None
 
- `ProcessID`
- Data type: `UInt32`
+Value indicating if the status message was generated by a client component. See the PerClient property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Access type: Read
+`ProcessID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- ID of the process that created the message.
+Qualifiers: None
 
- `RecordID`
- Data type: `SInt64`
+ID of the process that created the message.
 
- Access type: Read
+`RecordID` Data type: `SInt64`
 
- Qualifiers: [key]
+Access type: Read
 
- Unique ID of the status message.
+Qualifiers: [key]
 
- `ReportFunction`
- Data type: `UInt32`
+Unique ID of the status message.
 
- Access type: Read
+`ReportFunction` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Report function. See the ReportFunction property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Report function. See the ReportFunction property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Access type: Read
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Resource ID of the client, may be NULL if the message is not associated with a client.
+Qualifiers: None
 
- `Severity`
- Data type: `UInt32`
+Resource ID of the client, may be NULL if the message is not associated with a client.
 
- Access type: Read
+`Severity` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Type of status message. See the Severity property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Type of status message. See the Severity property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Access type: Read
+`SiteCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Site code of the site that reported the status message.
+Qualifiers: None
 
- `SuccessfulTransaction`
- Data type: `UInt32`
+Site code of the site that reported the status message.
 
- Access type: Read
+`SuccessfulTransaction` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Value indicating transaction status. See the SuccessfulTransaction property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: None
 
- `ThreadID`
- Data type: `UInt32`
+Value indicating transaction status. See the SuccessfulTransaction property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Access type: Read
+`ThreadID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Identifier of the thread that created the message.
+Qualifiers: None
 
- `Time`
- Data type: `DateTime`
+Identifier of the thread that created the message.
 
- Access type: Read
+`Time` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read
 
- Date and time, in Universal Coordinated Time (UTC), when the status message was created.
+Qualifiers: None
 
- `TopLevelSiteCode`
- Data type: `String`
+Date and time, in Universal Coordinated Time (UTC), when the status message was created.
 
- Access type: Read
+`TopLevelSiteCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- This property is deprecated.
+Qualifiers: None
 
- `Transaction`
- Data type: `UInt32`
+This property is deprecated.
 
- Access type: Read
+`Transaction` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Value indicating whether transactions are enabled. See the Transaction property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: None
 
- `Win32Error`
- Data type: `UInt32`
+Value indicating whether transactions are enabled. See the Transaction property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Access type: Read
+`Win32Error` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Win32 error code that is associated with the status message.
+Qualifiers: None
+
+Win32 error code that is associated with the status message.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

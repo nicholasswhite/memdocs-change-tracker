@@ -1,16 +1,18 @@
 ---
-title: SMS_ApplicationCondition Class
+title: "SMS_ApplicationCondition Server WMI Class"
 description: An SMS Provider server class that represents relationships between global conditions and applications.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ApplicationCondition Server WMI Class
+
 The `SMS_ApplicationCondition` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents relationships between global conditions and applications.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,49 +27,49 @@ Class SMS_ApplicationCondition : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ApplicationCondition` class does not define any methods.
+
+The `SMS_ApplicationCondition` class does not define any methods.
 
 ## Properties
- `ApplicationGUID`
- Data type: `String`
 
- Access type: Read-only
+`ApplicationGUID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Unique identifier of the application.
+Qualifiers: [not_null, read]
 
- `ConditionDisplayName`
- Data type: `String`
+Unique identifier of the application.
 
- Access type: Read-only
+`ConditionDisplayName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Condition display name.
+Qualifiers: [read]
 
- `ConditionID`
- Data type: `UInt32`
+Condition display name.
 
- Access type: Read-only
+`ConditionID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identifier of the application condition.
+Qualifiers: [not_null, read]
 
- `ConditionModelName`
- Data type: `String`
+Identifier of the application condition.
 
- Access type: Read-only
+`ConditionModelName` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Model name of the condition.
+Qualifiers: [not_null, read]
+
+Model name of the condition.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

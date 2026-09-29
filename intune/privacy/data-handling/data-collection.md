@@ -1,7 +1,7 @@
 ---
 title: Data collection in Intune
 description: Learn about personal data collected in Intune.
-ms.date: 06/25/2025
+ms.date: "2025-06-25T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: bradyw
 ms.collection:
@@ -22,6 +22,7 @@ When users enroll their corporate or personal devices with Intune, Intune collec
 From these sources, Intune collects information that falls into the following two categories: **[required](#required-data)** and **[optional](#optional-data)**.
 
 > [!NOTE]
+>
 > We don't sell any data collected by our service to any third parties for any reason.
 
 ## Required data
@@ -31,7 +32,7 @@ Data in the required category consists of data in the default feature set that i
 Required data collected by Intune includes, but isn't limited to:
 
 | Category | Data | MAM workload <sup>**1**</sup> |
-|--|:-|--|
+| --- | --- | --- |
 | **Access control information** | Private keys for certificates | No |
 |  | Static authenticators (customer's password) | No |
 | **Admin and account information** | Active Directory ID of each customer IT admin | Yes |
@@ -121,7 +122,6 @@ Your organization might enable optional features within Intune which enable coll
 - Device query for Corporate-owned Windows Devices
 
   When a customer enables Device query, the admin can query device details such as File Name and File Path. For a complete list of data, see [Intune data platform schema](../../advanced-analytics/ref-data-platform-schema.md).
-
 - Enhanced device inventory
 
   When a customer enables enhanced device inventory, the admin can see non-sensitive device details such as CPU, disk drive, and memory info. For a complete list of data, see [Intune data platform schema](../../advanced-analytics/ref-data-platform-schema.md).

@@ -1,16 +1,18 @@
 ---
-title: SMS_ST_NonRecurring Class
+title: "SMS_ST_NonRecurring Server WMI Class"
 description: A Windows Management Instrumentation class that that represents a schedule token for non-recurring events.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ST_NonRecurring Server WMI Class
+
 The `SMS_ST_NonRecurring` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a schedule token for non-recurring events.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,68 +28,69 @@ Class SMS_ST_NonRecurring : SMS_ScheduleToken
 ```
 
 ## Methods
- The `SMS_ST_NonRecurring` class does not define any methods.
+
+The `SMS_ST_NonRecurring` class does not define any methods.
 
 ## Properties
- `DayDuration`
- Data type: `UInt32`
 
- Access type: Read/Write
+`DayDuration` Data type: `UInt32`
 
- Qualifiers: [Range("0-31")]
+Access type: Read/Write
 
- See [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md).
+Qualifiers: [Range("0-31")]
 
- `HourDuration`
- Data type: `UInt32`
+See [SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md).
 
- Access type: Read/Write
+`HourDuration` Data type: `UInt32`
 
- Qualifiers: [Range("0-23")]
+Access type: Read/Write
 
- See [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md).
+Qualifiers: [Range("0-23")]
 
- `IsGMT`
- Data type: `Boolean`
+See [SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md).
 
- Access type: Read/Write
+`IsGMT` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md).
+Qualifiers: None
 
- `MinuteDuration`
- Data type: `UInt32`
+See [SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md).
 
- Access type: Read/Write
+`MinuteDuration` Data type: `UInt32`
 
- Qualifiers: [Range("0-59")]
+Access type: Read/Write
 
- See [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md).
+Qualifiers: [Range("0-59")]
 
- `StartTime`
- Data type: `DateTime`
+See [SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md).
 
- Access type: Read/Write
+`StartTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md)
+
+[SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md)

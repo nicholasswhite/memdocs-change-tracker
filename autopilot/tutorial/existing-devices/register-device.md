@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 10 of 10 - Register device for Windows Autopilot
+title: "Windows Autopilot deployment for existing devices: Register device for Windows Autopilot"
 description: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 10 of 10 - Register device for Windows Autopilot.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -22,9 +22,7 @@ Windows Autopilot user-driven Microsoft Entra join steps:
 - Step 8: [Speed up the deployment process (optional)](speed-up-deployment.md)
 - Step 9: [Run Windows Autopilot task sequence on device](run-autopilot-task-sequence.md)
 
-> [!div class="checklist"]
->
-> - **Step 10: Register device for Windows Autopilot**
+- **Step 10: Register device for Windows Autopilot**
 
 For an overview of the Windows Autopilot deployment for existing devices workflow, see [Windows Autopilot deployment for existing devices in Intune and Configuration Manager](existing-devices-workflow.md#workflow).
 
@@ -36,12 +34,11 @@ To ensure that the device can run a Windows Autopilot deployment after a reset, 
 
 1. [Manually register devices with Windows Autopilot](../../add-devices.md): Manually registering a device includes manually registering devices into Intune as a Windows Autopilot device via the hardware hash. The hardware hash of a device can be collected via one of the following methods:
 
-   - [Configuration Manager](/intune/configmgr/comanage/how-to-prepare-Win10#windows-autopilot)
+   - [Configuration Manager](../../../intune/configmgr/comanage/how-to-prepare-Win10.md#windows-autopilot)
    - [PowerShell script](../../add-devices.md#powershell)
    - [Diagnostics page hash export](../../add-devices.md#diagnostics-page-hash-export)
    - [Desktop hash export](../../add-devices.md#desktop-hash-export)
-
-1. In a Windows Autopilot profile that is deployed to a device group that the device is a member of, make sure the option **Convert all targeted devices to Autopilot** is set to **Yes**. For more information on creating and assigning Windows Autopilot profiles, see one of the following articles on creating and assigning a Windows Autopilot profile for each of the different Windows Autopilot scenarios:
+2. In a Windows Autopilot profile that is deployed to a device group that the device is a member of, make sure the option **Convert all targeted devices to Autopilot** is set to **Yes**. For more information on creating and assigning Windows Autopilot profiles, see one of the following articles on creating and assigning a Windows Autopilot profile for each of the different Windows Autopilot scenarios:
 
    - [User-driven Microsoft Entra join: Create and assign user-driven Microsoft Entra join Windows Autopilot profile](../user-driven/azure-ad-join-autopilot-profile.md)
    - [User-driven Microsoft Entra hybrid join: Create and assign user-driven Microsoft Entra hybrid join Windows Autopilot profile](../user-driven/hybrid-azure-ad-join-autopilot-profile.md)
@@ -51,7 +48,30 @@ To ensure that the device can run a Windows Autopilot deployment after a reset, 
 
 ## Importing the hardware hash CSV file for devices into Intune
 
-[!INCLUDE [Importing the hardware hash CSV file for devices into Intune](../includes/import-hardware-hash.md)]
+Several of the methods in the previous section on obtaining the hardware hash when manually registering devices as Windows Autopilot devices produces a CSV file that contains the hardware hash of the device. This CSV file with the hardware hash needs to be imported into Intune to register the device as a Windows Autopilot device.
+
+After the CSV file is created, it can be imported into Intune via the following steps:
+
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Devices** in the left hand pane.
+3. In the **Devices | Overview** screen, under **By platform**, select **Windows**.
+4. In the **Windows | Windows devices** screen, under **Device onboarding**, select **Enrollment**.
+5. In the **Windows | Windows enrollment** screen, under **Windows Autopilot**, select **Devices**.
+6. In the **Windows Autopilot devices** screen that opens, select **Import**.
+
+   1. In the **Add Autopilot devices** window that opens:
+
+      1. Under **Specify the path to the list you want to import.**, select the blue file folder.
+      2. Browse to the CSV file obtained using one of the above methods to obtain the hardware hash of a device.
+      3. After selecting the CSV file, verify that the correct CSV file is selected under **Specify the path to the list you want to import.**, and then select **Import**. Selecting **Import** closes the **Add Autopilot devices** window. Importing can take several minutes.
+   2. After the import is complete, select **Sync**.
+
+      A message displays saying that the sync is in progress. The sync process might take a few minutes to complete, depending on how many devices are being synchronized.
+
+      > [!NOTE]
+      >
+      > If another sync is attempted within 10 minutes after initiating a sync, an error will be displayed. Syncs can only occur once every 10 minutes. To attempt a sync again, wait at least 10 minutes before trying again.
+   3. Select **Refresh** to refresh the view. The newly imported devices should display within a few minutes. If the devices aren't yet displayed, wait a few minutes, and then select **Refresh** again.
 
 ## Ensure domain join profile is assigned to all devices
 
@@ -60,10 +80,9 @@ For Windows Autopilot scenarios that utilize Microsoft Entra hybrid join and run
 - For the [Windows Autopilot user-driven Microsoft Entra hybrid join](../user-driven/hybrid-azure-ad-join-workflow.md) scenario at [Step 8: Configure and assign domain join profile](../user-driven/hybrid-azure-ad-join-domain-join-profile.md).
 - For the [Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join](../pre-provisioning/hybrid-azure-ad-join-workflow.md) scenario at [Step 8: Configure and assign domain join profile](../pre-provisioning/hybrid-azure-ad-join-domain-join-profile.md).
 
- The domain join profile needs to be assigned to **All devices** because:
+The domain join profile needs to be assigned to **All devices** because:
 
 - If the existing device has never joined Microsoft Entra ID before the Windows Autopilot deployment runs, then there isn't a Microsoft Entra ID device object for the device in Intune. The Microsoft Entra ID device object is created in Intune when the device joins Microsoft Entra ID as part of the Windows Autopilot deployment.
-
 - If the existing device has never registered as a Windows Autopilot device before the Windows Autopilot deployment runs, then there isn't a Windows Autopilot device object for the device in Intune. Normally a device has to be a Windows Autopilot device before the Windows Autopilot deployment can run on it. However, for the Windows Autopilot deployment for existing devices scenario, registering the device as a Windows Autopilot device isn't required since it instead uses the Windows Autopilot profile JSON file. The device is instead registered as a Windows Autopilot device after the Windows Autopilot deployment completes via the methods in the [Register device for Windows Autopilot](#register-device-for-windows-autopilot) section.
 
 In both of the above scenarios, there's no device that can be added to a device group before the Windows Autopilot deployment begins. Since there's no device group that contains the device, there's no device group that the domain join profile can be assigned to before the Windows Autopilot deployment begins. Assigning the domain join profile to **All devices** resolves this problem and ensures that the device can pick up the domain join profile before it's either a Microsoft Entra device or Windows Autopilot device.

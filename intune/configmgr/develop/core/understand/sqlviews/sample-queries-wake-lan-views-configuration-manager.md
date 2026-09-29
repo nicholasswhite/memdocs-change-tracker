@@ -1,7 +1,7 @@
 ---
-title: Sample queries for Wake on LAN
+title: "Sample queries for Wake On LAN in Configuration Manager"
 description: Sample queries that show how to join Wake On LAN views to application management, discovery, and compliance settings views.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 

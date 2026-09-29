@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a policy condition in Configuration Manager using CCM_Policy_Condition.
-title: CCM_Policy_Condition Class
-ms.date: 09/20/2016
+title: "CCM_Policy_Condition Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Policy_Condition Client WMI Class
+
 In Configuration Manager, the `CCM_Policy_Condition` class is a client Windows Management Instrumentation (WMI) class that represents a policy condition.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,42 +26,41 @@ Class CCM_Policy_Condition : CCM_Policy_Config
 ```
 
 ## Properties
- `ConditionID`
- Data type: `Boolean`
 
- Access type: Read-only
+`ConditionID` Data type: `Boolean`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Condition ID.
+Qualifiers: [key]
 
- `ConditionState`
- Data type: `Boolean`
+Condition ID.
 
- Access type: Read-only
+`ConditionState` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Current state of the condition. This value indicates the result of the last condition evaluation, or it is `null` if the condition has never been evaluated.
+Qualifiers: [read]
 
- `ConditionExpression`
- Data type: `Object`
+Current state of the condition. This value indicates the result of the last condition evaluation, or it is `null` if the condition has never been evaluated.
 
- Access type: Read-only
+`ConditionExpression` Data type: `Object`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Actual expression to evaluate. The value is a [CCM_Policy_Expression Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_expression-client-wmi-class.md) object for a simple expression or a [CCM_Policy_Operator Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_operator-client-wmi-class.md) object for a compound expression.
+Qualifiers: [read]
+
+Actual expression to evaluate. The value is a [CCM_Policy_Expression Client WMI Class](ccm_policy_expression-client-wmi-class.md) object for a simple expression or a [CCM_Policy_Operator Client WMI Class](ccm_policy_operator-client-wmi-class.md) object for a compound expression.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Policy Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/policy-agent-client-wmi-classes.md)
- [CCM_Policy_Expression Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_expression-client-wmi-class.md)
- [CCM_Policy_Operator Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_operator-client-wmi-class.md)
+
+[Policy Agent Client WMI Classes](policy-agent-client-wmi-classes.md) [CCM_Policy_Expression Client WMI Class](ccm_policy_expression-client-wmi-class.md) [CCM_Policy_Operator Client WMI Class](ccm_policy_operator-client-wmi-class.md)

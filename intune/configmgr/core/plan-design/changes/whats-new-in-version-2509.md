@@ -1,7 +1,7 @@
 ---
-title: What's new in version 2509
+title: "What's new in version 2509 of Configuration Manager current branch"
 description: Get details about changes and new capabilities introduced in version 2509 of Configuration Manager current branch.
-ms.date: 11/11/2025
+ms.date: "2025-11-11T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ms.collection: tier3
@@ -20,15 +20,15 @@ To take full advantage of new Configuration Manager changes, after you update th
 
 ## General enhancements
 
-As part of Microsoft's Secure Future Initiative (SFI) the 2509 version of Configuration Manager focuses on security and quality updates. For more information, see the [Microsoft Trust Center](https://www.microsoft.com/trust-center/security/secure-future-initiative).
-For a list of significant customer-reported issues resolved in this release, see the [Summary of changes in Configuration Manager version 2509](../../../hotfix/2509/35877153.md) knowledge base article.
+As part of Microsoft's Secure Future Initiative (SFI) the 2509 version of Configuration Manager focuses on security and quality updates. For more information, see the [Microsoft Trust Center](https://www.microsoft.com/trust-center/security/secure-future-initiative). For a list of significant customer-reported issues resolved in this release, see the [Summary of changes in Configuration Manager version 2509](../../../hotfix/2509/35877153.md) knowledge base article.
 
 ### Windows 11 25H2 support
-Windows 11, version 25H2 is supported for OS deployment and in-place upgrade scenarios. For more information about Windows 11 25H2, see the [Windows 11 release information](/windows/release-health/windows11-release-information).
+
+Windows 11, version 25H2 is supported for OS deployment and in-place upgrade scenarios. For more information about Windows 11 25H2, see the [Windows 11 release information](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information).
 
 ### Boot images can be automatically updated to use latest Windows Boot Loader
-A new checkbox, *Use Windows Boot Loader signed with Windows UEFI CA 2023*, is available in the Data Source tab of boot image properties. When enabled, it updates the boot image to use the boot loader signed with Windows UEFI CA 2023.
-The checkbox automates the mitigation steps described in [KB5025885](https://support.microsoft.com/topic/how-to-manage-the-windows-boot-manager-revocations-for-secure-boot-changes-associated-with-cve-2023-24932-41a975df-beb2-40c1-99a3-b3ff139f832d).
+
+A new checkbox, *Use Windows Boot Loader signed with Windows UEFI CA 2023*, is available in the Data Source tab of boot image properties. When enabled, it updates the boot image to use the boot loader signed with Windows UEFI CA 2023. The checkbox automates the mitigation steps described in [KB5025885](https://support.microsoft.com/topic/how-to-manage-the-windows-boot-manager-revocations-for-secure-boot-changes-associated-with-cve-2023-24932-41a975df-beb2-40c1-99a3-b3ff139f832d).
 
 The new functionality only works on WDS-Less PXE-enabled Distribution Points.
 
@@ -45,47 +45,38 @@ Starting in **Configuration Manager 2509**, Windows PE–based OSD scenarios now
 ### Service Connection Tool improvements
 
 The Service Connection Tool (SCT) is improved to provide better logging and error handling, specifically in the following areas:
+
 - More detailed information about the actions it performs is recorded in both the console and log file. Error and warning messages in the console are highlighted with colors for better visibility.
 - The SCT explicitly checks for prerequisites and fails if they're not met.
 - Customers are directed to explore the relevant logs, such as ServiceConnectionTool.log and ConfigMgrSetup.log, when there's an error.
 - If there's a download failure, the SCT "Connect" step stops execution thus preventing importing incomplete Update Package payloads.
 
-###  AdminService now rejects NTLM authentication
+### AdminService now rejects NTLM authentication
 
 - AdminService now rejects NTLM authentication attempts. `AdminService.log` should write the below message when NTLM authentication is attempted:
 
 > Rejecting NTLM authentication.
 
- 
 ## Known Issues
 
 - Upgrade SQL 2012 or 2014 Express, Standard, Enterprise edition to SQL 2016 or latest version. **VC++ Redistributable Version** needs to be upgraded to latest version on **Secondary sites**. [Download Latest Microsoft Visual C++ Redistributable Version](https://aka.ms/vs/17/release/vc_redist.x64.exe).
 
 ### Microsoft ODBC redistributable
+
 - The Microsoft ODBC redistributable component is updated to version **18.4.1.1** on all Site servers and Management Points.
 - Prerequisite check throws an error stalling the upgrade if it detects a version lower than 18.4.1.1.
-    
-    > INFO: Microsoft ODBC Driver 18 for SQL Server is installed but it is older than the required version.  
-    > SQL client prerequisite missing for Configuration Manager setup.;    Error;    Install the Microsoft ODBC driver 18 for SQL setup from https://go.microsoft.com/fwlink/?linkid=2299909. More information https://go.microsoft.com/fwlink/?linkid=2226618
 
-
-<!-- ## Deprecated features
-
-Learn about support changes before they're implemented in [removed and deprecated items](deprecated/removed-and-deprecated.md).
-
- - MDT Integration with CM and Standalone is no longer supported with Configuration Manager deprecation first announced in December 2024 and planned end of support the first release after Oct 10, 2025. Customers should remove MDT Task sequence steps, followed by removing MDT integration, to avoid TS corruption and modification failures.
-
-For more information, see [Removed and deprecated features for Configuration Manager.](deprecated/removed-and-deprecated-cmfeatures.md). -->
+  > INFO: Microsoft ODBC Driver 18 for SQL Server is installed but it is older than the required version.  
+  >  SQL client prerequisite missing for Configuration Manager setup.; Error; Install the Microsoft ODBC driver 18 for SQL setup from <https://go.microsoft.com/fwlink/?linkid=2299909>. More information <https://go.microsoft.com/fwlink/?linkid=2226618>
 
 ## Next steps
-<!-- At this time, version 2509 is released for the early update ring. To install this update, you need to opt in. For more information, see [Early update ring](../../servers/manage/checklist-for-installing-update-2509.md#early-update-ring). -->
 
 As of December 8, 2025, version 2509 is globally available for all customers to install.
 
 When you're ready to install this version, see [Installing updates for Configuration Manager](../../servers/manage/updates.md) and [Checklist for installing update 2509](../../servers/manage/checklist-for-installing-update-2509.md).
 
-
 > [!TIP]
+>
 > To install a new site, use a baseline version of Configuration Manager.
 >
 > Learn more about:

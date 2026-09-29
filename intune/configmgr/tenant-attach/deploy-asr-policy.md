@@ -1,29 +1,33 @@
 ---
-title: Tenant attach - Create and deploy Attack surface reduction policies from the admin center
+title: "Tenant attach: Create and deploy Attack surface reduction policies from the admin center"
 description: Create and deploy Attack surface reduction policies from the Microsoft Intune admin center and for Configuration Manager collections.
-ms.date: 05/31/2022
+ms.date: "2022-05-31T00:00:00Z"
 ms.topic: install-set-up-deploy
 ms.subservice: core-infra
 ms.collection: tier3
 ms.service: configuration-manager
 ---
 
-# <a name="bkmk_atp"></a> Tenant attach: Create and deploy Attack surface reduction policies from the admin center
-<!--7323386-->
+# Tenant attach: Create and deploy Attack surface reduction policies from the admin center
+
 *Applies to: Configuration Manager (current branch)*
 
+Create Attack surface reduction policies in the Microsoft Intune admin center and deploy them to Configuration Manager collections.
 
- Create Attack surface reduction policies in the Microsoft Intune admin center and deploy them to Configuration Manager collections.
+## Prerequisites
 
-<!--Adding Include for Prerequisites-->
+- Access to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+- An environment that's [tenant attached with uploaded devices](device-sync-actions.md).
+- A supported version of Configuration Manager and the corresponding version of the console installed.
+  - Upgrade the target devices to the latest version of the Configuration Manager client.
+- At least one Configuration Manager collection that's [available for assigning Endpoint security policies](endpoint-security-get-started.md#bkmk_collections)
+- Windows Devices that [support this profile for tenant attached devices](endpoint-security-get-started.md#bkmk_supportedprofiles)
 
-[!INCLUDE [Profiles for Configuration Manager tenant attached devices](./includes/configmgr-endpoint-security-prerequisties.md)]
+## Assign Attack surface reduction policy to a collection
 
-## <a name="bkmk_asr"></a> Assign Attack surface reduction policy to a collection
-
-1. In a browser, go to the [Microsoft Intune admin center].
-1. Select **Endpoint security** > **Attack surface reduction** then **Create Policy**.
-1. Create a profile with the following settings:
+1. In a browser, go to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint security** &gt; **Attack surface reduction** then **Create Policy**.
+3. Create a profile with the following settings:
 
    - **Platform**: Windows 10 and later (ConfigMgr)
    - **Profile**: Choose one of the following profiles:
@@ -32,21 +36,24 @@ ms.service: configuration-manager
      - Web Protection (ConfigMgr)
 
 > [!NOTE]
->The Microsoft Edge installer, Attack Surface Reduction rules engine for tenant attach, and [CMPivot](../core/servers/manage/cmpivot.md) are currently signed with the **Microsoft Code Signing PCA 2011** certificate. If you set PowerShell execution policy to **AllSigned**, then you need to make sure that devices trust this signing certificate. You can export the certificate from a computer where you've installed the Configuration Manager console. View the certificate on `"C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\CMPivot.exe"`, and then export the code signing certificate from the certification path. Then import it to the _machine_'s **Trusted Publishers** store on managed devices. You can use the process in the following blog, but make sure to export the _code signing certificate_ from the certification path: [Adding a Certificate to Trusted Publishers using Intune](https://techcommunity.microsoft.com/t5/intune-customer-success/adding-a-certificate-to-trusted-publishers-using-intune/ba-p/1974488)
+>
+> The Microsoft Edge installer, Attack Surface Reduction rules engine for tenant attach, and [CMPivot](../core/servers/manage/cmpivot.md) are currently signed with the **Microsoft Code Signing PCA 2011** certificate. If you set PowerShell execution policy to **AllSigned**, then you need to make sure that devices trust this signing certificate. You can export the certificate from a computer where you've installed the Configuration Manager console. View the certificate on `"C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\CMPivot.exe"`, and then export the code signing certificate from the certification path. Then import it to the *machine*'s **Trusted Publishers** store on managed devices. You can use the process in the following blog, but make sure to export the *code signing certificate* from the certification path: [Adding a Certificate to Trusted Publishers using Intune](https://techcommunity.microsoft.com/t5/intune-customer-success/adding-a-certificate-to-trusted-publishers-using-intune/ba-p/1974488)
 
 1. Assign a **Name** and optionally a **Description** on the **Basics** page.
-1. On the **Configuration settings** page, configure the settings you want to manage with this profile. When your done configuring settings, select **Next**. For more information about available settings for both profiles, see [Attack surface reduction policy settings for tenant attached devices](../../device-configuration/endpoint-security/ref-attack-surface-reduction-settings.md?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json#attack-surface-reduction-configmgr).
-1. Assign the policy to a Configuration Manager collection on the **Assignments** page.
+2. On the **Configuration settings** page, configure the settings you want to manage with this profile. When your done configuring settings, select **Next**. For more information about available settings for both profiles, see [Attack surface reduction policy settings for tenant attached devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-attack-surface-reduction-settings?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json#attack-surface-reduction-configmgr).
+3. Assign the policy to a Configuration Manager collection on the **Assignments** page.
 
-[!INCLUDE [Device status for Configuration Manager tenant attached devices](./includes/configmgr-endpoint-security-device-status.md)]
+## Device Status
+
+You can review the status of endpoint security policies for tenant attached devices. The **Device Status** page can be accessed for all endpoint security policy types for tenant-attached clients. To display the **Device Status** page:
+
+1. Select a policy that's targeted to **ConfigMgr** devices to display the **Overview** page for the policy.
+2. Select **Device Status** to display a list of devices targeted by the policy.
+3. The **Device Name**, **Compliance State**, and **SMS ID** are displayed for each of the devices on the **Device Status** page.
 
 ## Next steps
 
-- [Attack surface reduction policy settings for tenant attached devices](../../device-configuration/endpoint-security/ref-attack-surface-reduction-settings.md?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json#attack-surface-reduction-configmgr).
+- [Attack surface reduction policy settings for tenant attached devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-attack-surface-reduction-settings?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json#attack-surface-reduction-configmgr).
 - [Create and deploy endpoint security Antivirus policy to tenant attached devices](deploy-antivirus-policy.md)
 - [Create and deploy endpoint security Endpoint Detection and Response policy to tenant attached devices](atp-onboard.md)
 - [Create and deploy endpoint security Firewall policy to tenant attached devices](deploy-firewall-policy.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

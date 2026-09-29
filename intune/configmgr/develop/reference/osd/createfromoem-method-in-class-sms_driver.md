@@ -1,16 +1,18 @@
 ---
-title: CreateFromOEM Method
+title: "CreateFromOEM Method in Class SMS_Driver"
 description: Creates a set of mass-storage SMS_Driver Server WMI Class objects referenced by the specified Txtsetup.oem file.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# CreateFromOEM Method in Class SMS_Driver
-The `CreateFromOEM` Windows Management Instrumentation (WMI) class method, in Configuration Manager, creates a set of mass-storage [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md) objects referenced by the specified Txtsetup.oem file.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+# CreateFromOEM Method in Class SMS_Driver
+
+The `CreateFromOEM` Windows Management Instrumentation (WMI) class method, in Configuration Manager, creates a set of mass-storage [SMS_Driver Server WMI Class](sms_driver-server-wmi-class.md) objects referenced by the specified Txtsetup.oem file.
+
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,78 +25,75 @@ SInt32 CreateFromOEM(
 ```
 
 #### Parameters
- `DriverPath`
- Data type: `String`
 
- Qualifiers: [in]
+`DriverPath` Data type: `String`
 
- Universal Naming Convention (UNC) path containing the driver content.
+Qualifiers: [in]
 
- `OEMFile`
- Data type: `String`
+Universal Naming Convention (UNC) path containing the driver content.
 
- Qualifiers: [in]
+`OEMFile` Data type: `String`
 
- Relative path of the Txtsetup.oem file.
+Qualifiers: [in]
 
- `Drivers`
- Data type: `SMS_Driver Array`
+Relative path of the Txtsetup.oem file.
 
- Qualifiers: [out]
+`Drivers` Data type: `SMS_Driver Array`
 
- An array of drivers with a complete driver catalog.
+Qualifiers: [out]
+
+An array of drivers with a complete driver catalog.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or nonzero to indicate failure. The error values are available in the [SMS_ExtendedStatus Server WMI Class](../../../develop/reference/misc/sms_extendedstatus-server-wmi-class.md) error object. For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
 
- This method returns successfully if at least one of the files referenced by the Txtsetup.oem file is valid.
+An `SInt32` data type that is 0 to indicate success or nonzero to indicate failure. The error values are available in the [SMS_ExtendedStatus Server WMI Class](../misc/sms_extendedstatus-server-wmi-class.md) error object. For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
- Possible error values include, but aren't limited to, the following:
+This method returns successfully if at least one of the files referenced by the Txtsetup.oem file is valid.
 
- 0
- Success
+Possible error values include, but aren't limited to, the following:
 
- 13
- The Txtsetup.oem file is invalid.
+0 Success
 
- All drivers referenced by the Txtsetup.oem file are invalid.
+13 The Txtsetup.oem file is invalid.
 
- 2
- The SMS provider can't access the Txtsetup.oem file.
+All drivers referenced by the Txtsetup.oem file are invalid.
 
- 1633
- All drivers referenced by the Txtsetup.oem file are valid but don't support any platforms supported by Configuration Manager.
+2 The SMS provider can't access the Txtsetup.oem file.
 
- 183
- All drivers referenced by the Txtsetup.oem file have already been imported.
+1633 All drivers referenced by the Txtsetup.oem file are valid but don't support any platforms supported by Configuration Manager.
 
- All drivers referenced by the Txtsetup.oem file have another type of error. See the OSDDriverCatalog.log file on the provider computer for more information.
+183 All drivers referenced by the Txtsetup.oem file have already been imported.
+
+All drivers referenced by the Txtsetup.oem file have another type of error. See the OSDDriverCatalog.log file on the provider computer for more information.
 
 ## Remarks
- To support pre-Windows Vista operating system deployments, Configuration Manager uses boot-critical mass storage device drivers. This type of driver is furnished in the form of a Txtsetup.oem file supplied on a disk. The file contains the following information:
+
+To support pre-Windows Vista operating system deployments, Configuration Manager uses boot-critical mass storage device drivers. This type of driver is furnished in the form of a Txtsetup.oem file supplied on a disk. The file contains the following information:
 
 - Hardware components supported by the file
-
 - Files to copy from the distribution disk for each component
-
 - Registry keys and values to create for each component
 
   A mass storage device driver file must be installed before setup on a pre-Windows Vista operating system deployment.
 
 > [!NOTE]
->  Your application should create a driver only by calling this method or the [CreateFromINF Method in Class SMS_Driver](../../../develop/reference/osd/createfrominf-method-in-class-sms_driver.md). It should never create a driver directly.
+>
+> Your application should create a driver only by calling this method or the [CreateFromINF Method in Class SMS_Driver](createfrominf-method-in-class-sms_driver.md). It should never create a driver directly.
 
- Your application calls this method with a driver Txtsetup.oem file and file path. The method examines the supplied information and creates an array of new [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md) objects, one for each referenced .inf file.
+Your application calls this method with a driver Txtsetup.oem file and file path. The method examines the supplied information and creates an array of new [SMS_Driver Server WMI Class](sms_driver-server-wmi-class.md) objects, one for each referenced .inf file.
 
- This method generates [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md) objects with System Definition Model (SDM) package XML defined, and allows your application to make property changes before they're saved.
+This method generates [SMS_Driver Server WMI Class](sms_driver-server-wmi-class.md) objects with System Definition Model (SDM) package XML defined, and allows your application to make property changes before they're saved.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md)
+
+[SMS_Driver Server WMI Class](sms_driver-server-wmi-class.md)

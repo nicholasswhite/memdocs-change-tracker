@@ -1,16 +1,18 @@
 ---
-title: RefreshPkgSource Method in SMS_DriverPackage
+title: "RefreshPkgSource Method in Class SMS_DriverPackage"
 description: The RefreshPkgSource Windows Management Instrumentation (WMI) class method, in Configuration Manager, refreshes the package source at all distribution points. The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # RefreshPkgSource Method in Class SMS_DriverPackage
+
 The `RefreshPkgSource` Windows Management Instrumentation (WMI) class method, in Configuration Manager, refreshes the package source at all distribution points.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -19,30 +21,33 @@ SInt32 RefreshPkgSource();
 ```
 
 #### Parameters
- None.
+
+None.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
- This method copies the latest version of the package to all the distribution points of the package. The source version of the package is incremented, and the package content is replicated to child sites.
 
- Using this method is the only way to force an update of the source files, other than by creating a RefreshSchedule value for the package. For information about the RefreshSchedule property, see [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+This method copies the latest version of the package to all the distribution points of the package. The source version of the package is incremented, and the package content is replicated to child sites.
 
- For more information about using this method, see [How to Create a Driver Package for a Windows Driver in Configuration Manager](../../../develop/osd/how-to-create-a-driver-package-for-a-windows-driver.md).
+Using this method is the only way to force an update of the source files, other than by creating a RefreshSchedule value for the package. For information about the RefreshSchedule property, see [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+
+For more information about using this method, see [How to Create a Driver Package for a Windows Driver in Configuration Manager](../../osd/how-to-create-a-driver-package-for-a-windows-driver.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_DriverPackage Server WMI Class](../../../develop/reference/osd/sms_driverpackage-server-wmi-class.md)
- [AddDriverContent Method in Class SMS_DriverPackage](../../../develop/reference/osd/adddrivercontent-method-in-class-sms_driverpackage.md)
- [RemoveDriverContent Method in Class SMS_DriverPackage](../../../develop/reference/osd/removedrivercontent-method-in-class-sms_driverpackage.md)
- [ValidateNewPackageSource Method in Class SMS_DriverPackage](../../../develop/reference/osd/validatenewpackagesource-method-in-class-sms_driverpackage.md)
+
+[SMS_DriverPackage Server WMI Class](sms_driverpackage-server-wmi-class.md) [AddDriverContent Method in Class SMS_DriverPackage](adddrivercontent-method-in-class-sms_driverpackage.md) [RemoveDriverContent Method in Class SMS_DriverPackage](removedrivercontent-method-in-class-sms_driverpackage.md) [ValidateNewPackageSource Method in Class SMS_DriverPackage](validatenewpackagesource-method-in-class-sms_driverpackage.md)

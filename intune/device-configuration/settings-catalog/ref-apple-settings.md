@@ -1,10 +1,10 @@
 ---
-title: Apple configuration list for Intune settings catalog
+title: "Apple device configuration list in the Intune settings catalog"
 description: Use the Microsoft Intune settings catalog to add, configure, or restrict features on Apple devices. This article lists and describes the settings you can configure.
 author: beflamm
 ms.author: beflamm
 ms.topic: reference
-ms.date: 11/13/2024
+ms.date: "2024-11-13T00:00:00Z"
 ms.reviewer: paoloma
 ---
 
@@ -40,6 +40,7 @@ Each section can have links to other documents:
 Some settings are available in device configuration templates and in the settings catalog. To help with a manual policy migration, this article lists the template settings that maps to their equivalent setting in the settings catalog.
 
 > [!IMPORTANT]
+>
 > It's recommended to create all new policies using the settings catalog where possible. Some of the existing device configuration templates are no longer being updated. In a future Intune release, they will be migrated to use the settings catalog policy type and the ability to create new templates will be deprecated. These templates include:
 >
 > - Device features
@@ -67,9 +68,9 @@ This section is specific to the configurations that are under the Declarative De
 
 Use Disk Management setting to install disk management settings on devices. This configuration is located in the **Declarative Device Management (DDM)** category of the settings catalog. You can learn more about Disk Management using the following documentation:
 
-|Apple Platform Guides|Apple Developer|Apple YAML|Intune documentation|
-| -------- | -------- | -------- | -------- |
-|[Storage management declarative configuration](https://support.apple.com/en-tm/guide/deployment/dep2b9f009ed/web)|[Disk Management Settings](https://developer.apple.com/documentation/devicemanagement/diskmanagementsettings)|[Disk Management Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/diskmanagement.settings.yaml)||
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| [Storage management declarative configuration](https://support.apple.com/en-tm/guide/deployment/dep2b9f009ed/web) | [Disk Management Settings](https://developer.apple.com/documentation/devicemanagement/diskmanagementsettings) | [Disk Management Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/diskmanagement.settings.yaml) |  |
 
 **Known issues**
 
@@ -79,20 +80,21 @@ Use Disk Management setting to install disk management settings on devices. This
 
 Use Math Settings to configure the Math and Calculator apps on devices. This configuration is located in the **Declarative Device Management (DDM)** category of the settings catalog. You can learn more about Math Settings using the following documentation:
 
-|Apple Platform Guides|Apple Developer|Apple YAML|Intune documentation|
-| -------- | -------- | -------- | -------- |
-|[Math and Calculator app declarative configuration](https://support.apple.com/en-tm/guide/deployment/dep7881be3bb/web)|[Math Settings](https://developer.apple.com/documentation/devicemanagement/mathsettings)|[Math Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/math.settings.yaml)||
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| [Math and Calculator app declarative configuration](https://support.apple.com/en-tm/guide/deployment/dep7881be3bb/web) | [Math Settings](https://developer.apple.com/documentation/devicemanagement/mathsettings) | [Math Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/math.settings.yaml) |  |
 
 **Known issues**
 
 - None
 
 ### Passcode
+
 Use the passcode configuration to require that devices have a password or passcode that meet your organization's requirements. This configuration is located in the **Declarative Device Management (DDM)** category of the settings catalog. You can learn more about Passcode using the following documentation:
 
-| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation|
-| -------  | ------- | ------- | ------- |
-| <ul><li>[Passcodes and passwords](https://support.apple.com/guide/security/sec20230a10d/web)</li><li>[Passcode declarative configuration](https://support.apple.com/guide/deployment/depf72b010a8/1/web/1.0)</li></ul>| [Passcode](https://developer.apple.com/documentation/devicemanagement/passcode)| [Passcode](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/passcode.settings.yaml)||
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| - [Passcodes and passwords](https://support.apple.com/guide/security/sec20230a10d/web) - [Passcode declarative configuration](https://support.apple.com/guide/deployment/depf72b010a8/1/web/1.0) | [Passcode](https://developer.apple.com/documentation/devicemanagement/passcode) | [Passcode](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/passcode.settings.yaml) |  |
 
 **Known issues**
 
@@ -102,20 +104,21 @@ Use the passcode configuration to require that devices have a password or passco
 
 Use the Safari extensions settings to manage extensions in the Safari browser. This configuration is located in the **Declarative Device Management (DDM)** category of the settings catalog. You can learn more about Safari Extension Settings using the following documentation:
 
-|Apple Platform Guides|Apple Developer|Apple YAML|Intune documentation|
-| -------- | -------- | -------- | -------- |
-|[Safari extensions management declarative configuration](https://support.apple.com/en-tm/guide/deployment/depff7fad9d8/web)|[Safari Extension Settings](https://developer.apple.com/documentation/devicemanagement/safariextensionsettings)|[Safari Extension Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/safari.extensions.settings.yaml)||
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| [Safari extensions management declarative configuration](https://support.apple.com/en-tm/guide/deployment/depff7fad9d8/web) | [Safari Extension Settings](https://developer.apple.com/documentation/devicemanagement/safariextensionsettings) | [Safari Extension Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/safari.extensions.settings.yaml) |  |
 
 **Known issues**
 
 - None
 
 ### Software Update
+
 Use the Software Update configuration to enforce an update to install at a specific time. This configuration is located in the **Declarative Device Management (DDM)** category of the settings catalog. You can learn more about this configuration using the following documentation:
 
-| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation
-| -------  | ------- | ------- | ------- |
-| <ul><li>[Software Update declarative configuration](https://support.apple.com/guide/deployment/depca14ecd4d/1/web/1.0)</li><li>[Installing and enforcing software updates](https://support.apple.com/guide/deployment/depd30715cbb/web)</li></ul>| [Software Update Enforcement Specific](https://developer.apple.com/documentation/devicemanagement/softwareupdateenforcementspecific)| [Software Update Enforcement Specific](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/softwareupdate.enforcement.specific.yaml)| [Use the settings catalog to configure managed software updates](../../device-updates/apple/index.md) |
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| - [Software Update declarative configuration](https://support.apple.com/guide/deployment/depca14ecd4d/1/web/1.0) - [Installing and enforcing software updates](https://support.apple.com/guide/deployment/depd30715cbb/web) | [Software Update Enforcement Specific](https://developer.apple.com/documentation/devicemanagement/softwareupdateenforcementspecific) | [Software Update Enforcement Specific](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/softwareupdate.enforcement.specific.yaml) | [Use the settings catalog to configure managed software updates](../../device-updates/apple/index.md) |
 
 **Known issues**
 
@@ -125,9 +128,9 @@ Use the Software Update configuration to enforce an update to install at a speci
 
 Use the Software Update Settings configuration to defer OS updates and control how users can manually interact with software updates in System Settings. This configuration is located in the **Declarative Device Management (DDM)** category of the settings catalog. You can learn more about Software Update Settings using the following documentation:
 
-|Apple Platform Guides|Apple Developer|Apple YAML|Intune documentation|
-| -------- | -------- | -------- | -------- |
-|[Software Update Settings declarative configuration](https://support.apple.com/en-tm/guide/deployment/dep0578d8b8a/web)|[Software Update Settings](https://developer.apple.com/documentation/devicemanagement/softwareupdatesettings)|[Software Update Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/softwareupdate.settings.yaml)|[Use the settings catalog to configure managed software updates](../../device-updates/apple/index.md)|
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| [Software Update Settings declarative configuration](https://support.apple.com/en-tm/guide/deployment/dep0578d8b8a/web) | [Software Update Settings](https://developer.apple.com/documentation/devicemanagement/softwareupdatesettings) | [Software Update Settings](https://github.com/apple/device-management/blob/release/declarative/declarations/configurations/softwareupdate.settings.yaml) | [Use the settings catalog to configure managed software updates](../../device-updates/apple/index.md) |
 
 **Known issues**
 
@@ -141,9 +144,9 @@ This section is specific to Apple payloads that use the standard MDM channel. A 
 
 Use FileVault configurations to manage disk encryption on macOS devices. These configurations are located in the **Full Disk Encryption** category of the settings catalog. You can learn more about FileVault using the following documentation:
 
-| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation
-| -------  | ------- | ------- | ------- |
-| <ul><li>[Introduction to FileVault](https://support.apple.com/guide/deployment/dep82064ec40/web)</li><li>[FileVault payload for Apple devices](https://support.apple.com/guide/deployment/dep32bf53500/web)| <ul><li>[FDEFileVault](https://developer.apple.com/documentation/devicemanagement/fdefilevault)</li><li>[FDEFileVaultOptions](https://developer.apple.com/documentation/devicemanagement/fdefilevaultoptions)</li><li>[FDERecoveryKeyEscrow](https://developer.apple.com/documentation/devicemanagement/fderecoverykeyescrow)</li></ul>|<ul><li>[FileVault](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.MCX.FileVault2.yaml)</li><li>[FileVault Options](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.MCX(FileVault2).yaml)</li><li>[FileVault Recovery Key Escrow](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.security.FDERecoveryKeyEscrow.yaml)</li></ul> | [Encrypt macOS devices (Microsoft Learn)](../endpoint-security/encrypt-filevault-macos.md)|
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| - [Introduction to FileVault](https://support.apple.com/guide/deployment/dep82064ec40/web) - [FileVault payload for Apple devices](https://support.apple.com/guide/deployment/dep32bf53500/web) | - [FDEFileVault](https://developer.apple.com/documentation/devicemanagement/fdefilevault) - [FDEFileVaultOptions](https://developer.apple.com/documentation/devicemanagement/fdefilevaultoptions) - [FDERecoveryKeyEscrow](https://developer.apple.com/documentation/devicemanagement/fderecoverykeyescrow) | - [FileVault](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.MCX.FileVault2.yaml) - [FileVault Options](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.MCX(FileVault2).yaml) - [FileVault Recovery Key Escrow](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.security.FDERecoveryKeyEscrow.yaml) | [Encrypt macOS devices (Microsoft Learn)](../endpoint-security/encrypt-filevault-macos.md) |
 
 **Known issues**
 
@@ -151,22 +154,22 @@ Use FileVault configurations to manage disk encryption on macOS devices. These c
 
 #### Intune device configuration template to settings catalog mapping
 
-| Endpoint protection template | Settings catalog category| Settings catalog setting |
-| -------- | ------- | ------- |
-| Enable FileVault  | Full Disk Encryption > FileVault | Enable |
-| Escrow location description of personal recovery key | Full Disk Encryption > FileVault Recovery Key Escrow | Location
-| Personal recovery key rotation | Full Disk Encryption > FileVault | Recovery Key Rotation In Months |
-| Hide recovery key  | Full Disk Encryption > FileVault | Show Recovery Key |
-| Disable prompt at sign out | Full Disk Encryption > FileVault | Defer Don't Ask At User Logout |
-| Number of times allowed to bypass | Full Disk Encryption > FileVault | Defer Force At User Login Max Bypass Attempts |
+| Endpoint protection template | Settings catalog category | Settings catalog setting |
+| --- | --- | --- |
+| Enable FileVault | Full Disk Encryption &gt; FileVault | Enable |
+| Escrow location description of personal recovery key | Full Disk Encryption &gt; FileVault Recovery Key Escrow | Location |
+| Personal recovery key rotation | Full Disk Encryption &gt; FileVault | Recovery Key Rotation In Months |
+| Hide recovery key | Full Disk Encryption &gt; FileVault | Show Recovery Key |
+| Disable prompt at sign out | Full Disk Encryption &gt; FileVault | Defer Don't Ask At User Logout |
+| Number of times allowed to bypass | Full Disk Encryption &gt; FileVault | Defer Force At User Login Max Bypass Attempts |
 
 ### Firewall
 
 Use the Firewall configuration to manage the native macOS application firewall. This configuration is located in the **Security** category of the settings catalog. You can learn more about Firewall using the following documentation:
 
 | Apple Platform Guides | Apple Developer | Apple YAML |
-| -------- | ------- | ------- |
-| <ul><li>[Firewall security in macOS](https://support.apple.com/guide/security/seca0e83763f/web) </li><li>[Firewall payload](https://support.apple.com/guide/deployment/dep8d306275f/web)</li></ul> | [Firewall](https://developer.apple.com/documentation/devicemanagement/firewall) | [Firewall (YAML)](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.security.firewall.yaml) |
+| --- | --- | --- |
+| - [Firewall security in macOS](https://support.apple.com/guide/security/seca0e83763f/web) - [Firewall payload](https://support.apple.com/guide/deployment/dep8d306275f/web) | [Firewall](https://developer.apple.com/documentation/devicemanagement/firewall) | [Firewall (YAML)](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.security.firewall.yaml) |
 
 **Known issues**
 
@@ -174,35 +177,37 @@ Use the Firewall configuration to manage the native macOS application firewall. 
 
 #### Intune device configuration template to settings catalog mapping
 
-| Endpoint protection template | Settings catalog category| Settings catalog setting |
-| -------- | ------- | ------- |
-| Enable Firewall  | Networking > Firewall | Enable Firewall |
-| Block all incoming connections | Networking > Firewall | Block All Incoming
-| Apps allowed | Networking > Firewall | Applications (Allowed = True) |
-| Apps blocked  | Networking > Firewall | Applications (Allowed = False) |
-| Enable stealth mode | Networking > Firewall | Enable Stealth Mode |
+| Endpoint protection template | Settings catalog category | Settings catalog setting |
+| --- | --- | --- |
+| Enable Firewall | Networking &gt; Firewall | Enable Firewall |
+| Block all incoming connections | Networking &gt; Firewall | Block All Incoming |
+| Apps allowed | Networking &gt; Firewall | Applications (Allowed = True) |
+| Apps blocked | Networking &gt; Firewall | Applications (Allowed = False) |
+| Enable stealth mode | Networking &gt; Firewall | Enable Stealth Mode |
 
 ### Font
 
 > [!NOTE]
+>
 > Font files being uploaded to Intune must be less than 2MB in size.
 
 Use the Font payload to configure fonts on devices. This configuration is located in the **System Configuration** category of the settings catalog. You can learn more about Font using the following documentation:
 
-|Apple Platform Guides|Apple Developer|Apple YAML|Intune documentation|
-| -------- | -------- | -------- | -------- |
-|[Fonts MDM payload settings](https://support.apple.com/en-tm/guide/deployment/depeba084b8/web)|[Font](https://developer.apple.com/documentation/devicemanagement/font)|[Font](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.font.yaml)||
+| Apple Platform Guides | Apple Developer | Apple YAML | Intune documentation |
+| --- | --- | --- | --- |
+| [Fonts MDM payload settings](https://support.apple.com/en-tm/guide/deployment/depeba084b8/web) | [Font](https://developer.apple.com/documentation/devicemanagement/font) | [Font](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.font.yaml) |  |
 
 **Known issues**
 
 - None
 
 ### System Policy Control (Gatekeeper)
+
 Use the System Policy Control payload to configure Gatekeeper settings. This configuration is located in the **System Policy Control** category of the settings catalog. You can learn more about System Policy Control using the following documentation:
 
 | Apple Platform Guides | Apple Developer | Apple YAML |
-| -------- | ------- | ------- |
-| <ul><li>[Gatekeeper and runtime protection](https://support.apple.com/guide/security/sec5599b66df/web) </li><li>[Security MDM payload](https://support.apple.com/guide/deployment/dep61dc030/web)</li></ul>| [SystemPolicyControl](https://developer.apple.com/documentation/devicemanagement/systempolicycontrol)  | [System Policy Control](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.systempolicy.control.yaml) |
+| --- | --- | --- |
+| - [Gatekeeper and runtime protection](https://support.apple.com/guide/security/sec5599b66df/web) - [Security MDM payload](https://support.apple.com/guide/deployment/dep61dc030/web) | [SystemPolicyControl](https://developer.apple.com/documentation/devicemanagement/systempolicycontrol) | [System Policy Control](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.systempolicy.control.yaml) |
 
 **Known issues**
 
@@ -210,25 +215,28 @@ Use the System Policy Control payload to configure Gatekeeper settings. This con
 
 #### Intune device configuration template to settings catalog mapping
 
-| Endpoint protection template | Settings catalog category| Settings catalog setting |
-| -------- | ------- | ------- |
-| Do not allow user to override Gatekeeper  | System Policy Control > System Policy Control | Enable Assessment |
-| Allow apps downloaded from these locations | System Policy Control > System Policy Control | Allow Identified Developers |
+| Endpoint protection template | Settings catalog category | Settings catalog setting |
+| --- | --- | --- |
+| Do not allow user to override Gatekeeper | System Policy Control &gt; System Policy Control | Enable Assessment |
+| Allow apps downloaded from these locations | System Policy Control &gt; System Policy Control | Allow Identified Developers |
+
 ### System Extensions
+
 Use the System Extensions payload to configure system extensions to be automatically loaded or prevent users from approving specific extensions. This configuration is located in the **System Configuration** category of the settings catalog. You can learn more about System Extensions using the following documentation:
 
 | Apple Platform Guides | Apple Developer | Apple YAML |
-| -------- | ------- | ------- |
-| <ul><li>[System and kernel extensions](https://support.apple.com/guide/deployment/system-and-kernel-extensions-in-macos-depa5fb8376f/web) </li><li> [System Extensions](https://support.apple.com/guide/deployment/dep5d1584ca4/web)</li></ul>| [System Extensions](https://developer.apple.com/documentation/devicemanagement/systemextensions) | [System Extensions](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.system-extension-policy.yaml)|
+| --- | --- | --- |
+| - [System and kernel extensions](https://support.apple.com/guide/deployment/system-and-kernel-extensions-in-macos-depa5fb8376f/web) - [System Extensions](https://support.apple.com/guide/deployment/dep5d1584ca4/web) | [System Extensions](https://developer.apple.com/documentation/devicemanagement/systemextensions) | [System Extensions](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.system-extension-policy.yaml) |
 
 **Known issues**
 
 - None
 
 #### Intune device configuration template to settings catalog mapping
-| Extensions template | Settings catalog category| Settings catalog setting |
-| -------- | ------- | ------- |
-| Block User Overrides  | System Configuration > System Extensions | Allow User Overrides |
-| Allowed team identifiers | System Configuration > System Extensions | Allowed Team Identifiers
-| Allowed system extensions | System Configuration > System Extensions | Allowed System Extensions
-| Allowed system extension types  | System Configuration > System Extensions | Allowed System Extension Types |
+
+| Extensions template | Settings catalog category | Settings catalog setting |
+| --- | --- | --- |
+| Block User Overrides | System Configuration &gt; System Extensions | Allow User Overrides |
+| Allowed team identifiers | System Configuration &gt; System Extensions | Allowed Team Identifiers |
+| Allowed system extensions | System Configuration &gt; System Extensions | Allowed System Extensions |
+| Allowed system extension types | System Configuration &gt; System Extensions | Allowed System Extension Types |

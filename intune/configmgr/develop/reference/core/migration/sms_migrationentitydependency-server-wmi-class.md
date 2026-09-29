@@ -1,16 +1,18 @@
 ---
-title: SMS_MigrationEntityDependency Class
+title: "SMS_MigrationEntityDependency Server WMI Class"
 description: In Configuration Manager, the SMS_MigrationEntityDependency Windows Management Instrumentation class is an SMS Provider server class that represents the dependency relationship between objects in the Configuration Manager 2007 hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MigrationEntityDependency Server WMI Class
+
 The `SMS_MigrationEntityDependency` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the dependency relationship between objects in the Configuration Manager 2007 hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,43 +26,45 @@ Class SMS_MigrationEntityDependency : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MigrationEntityDependency` class does not define any methods.
+
+The `SMS_MigrationEntityDependency` class does not define any methods.
 
 ## Properties
- `Dependant`
- Data type: `UInt32`
 
- Access type: Read-only
+`Dependant` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Dependent entity identifier.
+Qualifiers: [key]
 
- `DependencyType`
- Data type: `UInt32`
+Dependent entity identifier.
 
- Access type: Read-only
+`DependencyType` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Entity dependency type.
+Qualifiers: [key]
 
- `EntityID`
- Data type: `UInt32`
+Entity dependency type.
 
- Access type: Read-only
+`EntityID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Entity ID.
+Qualifiers: [key]
+
+Entity ID.
 
 ## Remarks
- The dependency tree is flattened for performance, which means, if A depends on B, and B depends on C, by querying this class, you can get an instance representing A depends on C. By referring to this class, you can guarantee the data integrity when creating a migration job.
+
+The dependency tree is flattened for performance, which means, if A depends on B, and B depends on C, by querying this class, you can get an instance representing A depends on C. By referring to this class, you can guarantee the data integrity when creating a migration job.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).

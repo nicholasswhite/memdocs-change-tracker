@@ -1,7 +1,7 @@
 ---
-title: How to set up the admin service
+title: "How to set up the administration service in Configuration Manager"
 description: Use the steps in this article to set up the administration service on your SMS Provider
-ms.date: 12/07/2021
+ms.date: "2021-12-07T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -18,13 +18,14 @@ Use the steps in this article to set up the administration service on your SMS P
 
 Configure the administration service to use a secure HTTPS connection to protect the data in transit across the network.
 
-Starting in version 2010,<!--8613105--> you no longer need to enable IIS on the SMS Provider for the administration service. The site creates a self-signed certificate for the SMS Provider, and automatically binds it without requiring IIS. If you previously had IIS installed on the SMS Provider, you can remove it. Then restart the SMS_REST_PROVIDER component. Remember that you need to open HTTPS port 443 on your firewall.
+Starting in version 2010, you no longer need to enable IIS on the SMS Provider for the administration service. The site creates a self-signed certificate for the SMS Provider, and automatically binds it without requiring IIS. If you previously had IIS installed on the SMS Provider, you can remove it. Then restart the SMS_REST_PROVIDER component. Remember that you need to open HTTPS port 443 on your firewall.
 
-The administration service automatically uses the site's self-signed certificate.<!--5728365--> This behavior helps reduce the friction for easier use of the administration service. The site always generates this certificate. The administration service ignores the Enhanced HTTP site setting, as it always uses the site's certificate even if no other site system is using Enhanced HTTP. You can still manually bind a PKI-based server authentication certificate. If you've already bound a PKI certificate to port 443 on the SMS Provider server, the administration service uses that existing certificate.
+The administration service automatically uses the site's self-signed certificate. This behavior helps reduce the friction for easier use of the administration service. The site always generates this certificate. The administration service ignores the Enhanced HTTP site setting, as it always uses the site's certificate even if no other site system is using Enhanced HTTP. You can still manually bind a PKI-based server authentication certificate. If you've already bound a PKI certificate to port 443 on the SMS Provider server, the administration service uses that existing certificate.
 
 ### Use a server authentication certificate
 
 > [!NOTE]
+>
 > By default, the administration service automatically uses the site's self-signed certificate. You can still manually bind a PKI-based server authentication certificate. Before you can bind your PKI-based certificate, manually unbind the site's self-signed certificate from port 443 on the SMS Provider.
 
 There are two primary methods of using a server authentication certificate:
@@ -32,10 +33,8 @@ There are two primary methods of using a server authentication certificate:
 - From your organization's public key infrastructure (PKI)
 
   - If your environment already has a PKI, you can use it to issue a server authentication certificate for the SMS Provider. This certificate is similar to the certificate you would use for a management point or distribution point. For more information, see [PKI certificate requirements](../../core/plan-design/network/pki-certificate-requirements.md#pki-certificates-for-servers).
-
   - Most enterprise PKI implementations add the trusted root CAs to Windows clients. For example, using Active Directory Certificate Services with group policy. If you issue the certificate from a CA that your clients don't automatically trust, add the CA trusted root certificate to clients. You can scope this trust to only the clients that need to access the administration service.
-
-- Use a certificate from a public and globally trusted certificate provider.<!-- memdocs#1668 --> Windows clients include trusted root certificate authorities (CAs) from these providers. By using a server authentication certificate issued by one of these providers, your clients automatically trust it.
+- Use a certificate from a public and globally trusted certificate provider. Windows clients include trusted root certificate authorities (CAs) from these providers. By using a server authentication certificate issued by one of these providers, your clients automatically trust it.
 
 Once you have a server authentication certificate for the SMS Provider, you need to manually bind it to port 443 in IIS on the server that hosts the SMS Provider role.
 
@@ -46,6 +45,7 @@ First, add the certificate to the server. Import the certificate into the local 
 If the server with the SMS Provider role has the IIS Management Console, use the **Edit Bindings** action on the default web site. Add port 443, and specify your certificate from the machine's certificate store.
 
 > [!NOTE]
+>
 > The SMS Provider role doesn't require IIS. This procedure is using the IIS console to bind the certificate. These certificate bindings are for the machine, not any specific service.
 
 #### Bind the certificate with netsh
@@ -57,6 +57,7 @@ Use the netsh command line to bind the certificate:
 Where `<thumbprint>` is the thumbprint of the installed certificate, and `<GUID>` is a random GUID.
 
 > [!TIP]
+>
 > Use the Windows PowerShell cmdlet `New-Guid` to generate a random GUID.
 
 For example:
@@ -72,14 +73,12 @@ Before you can configure the SMS Provider to allow CMG traffic, first set up a C
 Then use the following process to enable the administration service through the CMG:
 
 1. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and select the **Servers and Site System Roles** node.
-
 2. Select the server with the **SMS Provider** role.
 
-    > [!TIP]
-    > On the ribbon, in the **Home** tab, select **Servers with Role** and then select **SMS Provider**. This action shows you the site systems with that role.
-
+   > [!TIP]
+   >
+   > On the ribbon, in the **Home** tab, select **Servers with Role** and then select **SMS Provider**. This action shows you the site systems with that role.
 3. In the details pane, select the **SMS Provider** role, and select **Properties** in the ribbon on the **Site Role** tab.
-
 4. Select the option to **Allow Configuration Manager cloud management gateway traffic for administration service**.
 
 To access the administration service from the internet, replace the SMS Provider FQDN with the CMG endpoint. For example:
@@ -87,27 +86,27 @@ To access the administration service from the internet, replace the SMS Provider
 `https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500/AdminService`
 
 > [!TIP]
+>
 > To get the value for this endpoint, use the following steps:
 >
 > - Create a CMG. For more information, see [Set up a CMG](../../core/clients/manage/cmg/setup-cloud-management-gateway.md).
 > - On an active client, open a Windows PowerShell command prompt as an administrator.
 > - Run the following command:
 >
->    ```PowerShell
->    (Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP
->    ```
+>   ```PowerShell
+>   (Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP
+>   ```
 
 ## Enable console usage
 
 > [!NOTE]
-> Starting in version 2111, the option to **Enable the Configuration Manager console to use the administration service** is removed. The administration service is always on, so the console will use it when needed.<!-- 12377138 -->
+>
+> Starting in version 2111, the option to **Enable the Configuration Manager console to use the administration service** is removed. The administration service is always on, so the console will use it when needed.
 
-<!--4223683-->
 Enable some nodes of the Configuration Manager console to use the administration service. This change allows the console to communicate with the SMS Provider over HTTPS instead of via WMI.
 
 1. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and select the **Sites** node. In the ribbon, select **Hierarchy Settings**.
-
-1. On the **General** page, select the option to **Enable the Configuration Manager console to use the administration service**.
+2. On the **General** page, select the option to **Enable the Configuration Manager console to use the administration service**.
 
 This change only affects the following nodes under the **Security** node in the **Administration** workspace:
 
@@ -144,5 +143,4 @@ Completing request with response code [200] reason [OK]
 
 ## Next steps
 
-> [!div class="nextstepaction"]
-> [How to use the administration service](usage.md)
+[How to use the administration service](usage.md)

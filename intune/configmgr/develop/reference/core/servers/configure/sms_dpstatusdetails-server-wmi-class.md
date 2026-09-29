@@ -1,16 +1,18 @@
 ---
-title: SMS_DPStatusDetails Class
+title: "SMS_DPStatusDetails Server WMI Class"
 description: In Configuration Manager, the SMS_DPStatusDetails WMI class is an SMS Provider server class that represents distribution point status details.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DPStatusDetails Server WMI Class
+
 The `SMS_DPStatusDetails` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents distribution point status details.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -43,223 +45,205 @@ Class SMS_DPStatusDetails : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DPStatusDetails` class does not define any methods.
+
+The `SMS_DPStatusDetails` class does not define any methods.
 
 ## Properties
- `DPName`
- Data type: `String`
 
- Access type: Read-only
+`DPName` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Name of the distribution point.
+Qualifiers: [not_null, read]
 
- `ID`
- Data type: `SInt64`
+Name of the distribution point.
 
- Access type: Read-only
+`ID` Data type: `SInt64`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Identifier for the distribution point.
+Qualifiers: [key, not_null, read]
 
- `InsString1`
- Data type: `String`
+Identifier for the distribution point.
 
- Access type: Read/Write
+`InsString1` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString10`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString10` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString2`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString2` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString3`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString3` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString4`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString4` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString5`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString5` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString6`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString6` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString7`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString7` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString8`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString8` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `InsString9`
- Data type: `String`
+Insertion string for the given status message.
 
- Access type: Read/Write
+`InsString9` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Insertion string for the given status message.
+Qualifiers: none
 
- `LastStatusTime`
- Data type: `DateTime`
+Insertion string for the given status message.
 
- Access type: Read-only
+`LastStatusTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Time of the status message.
+Qualifiers: [read]
 
- `MessageCategory`
- Data type: `UInt32`
+Time of the status message.
 
- Access type: Read-only
+`MessageCategory` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Status message category.
+Qualifiers: [not_null, read]
 
- `MessageFullID`
- Data type: `UInt32`
+Status message category.
 
- Access type: Read-only
+`MessageFullID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Status message full ID with severity.
+Qualifiers: [read]
 
- `MessageID`
- Data type: `UInt32`
+Status message full ID with severity.
 
- Access type: Read-only
+`MessageID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identifier of the status message.
+Qualifiers: [not_null, read]
 
- `MessageSeverity`
- Data type: `UInt32`
+Identifier of the status message.
 
- Access type: Read-only
+`MessageSeverity` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Severity of the status message.
+Qualifiers: [enumeration, read]
 
-|Value|Status message severity|
-|-|-|
-|0x40000000|Success|
-|0x80000000|Warning|
-|0xC0000000|Error|
+Severity of the status message.
 
- `MessageState`
- Data type: `UInt32`
+| Value | Status message severity |
+| --- | --- |
+| 0x40000000 | Success |
+| 0x80000000 | Warning |
+| 0xC0000000 | Error |
 
- Access type: Read-only
+`MessageState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- State of the message.
+Qualifiers: [not_null, read]
 
-|Value|Message state|
-|-|-|
-|1|Success|
-|2|InProgress|
-|3|Error|
+State of the message.
 
- `NALPath`
- Data type: `String`
+| Value | Message state |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 3 | Error |
 
- Access type: Read-only
+`NALPath` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The site's definition of the distribution point's location.
+Qualifiers: [not_null, read]
 
- `PackageID`
- Data type: `String`
+The site's definition of the distribution point's location.
 
- Access type: Read-only
+`PackageID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identifier for the package.
+Qualifiers: [not_null, read]
 
- `SiteCode`
- Data type: `String`
+Identifier for the package.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Source site for this status.
+Qualifiers: none
 
- `StatusMsgID`
- Data type: `SInt64`
+Source site for this status.
 
- Access type: Read-only
+`StatusMsgID` Data type: `SInt64`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Status message instance identifier. Link to `SMS_StatusMessage RecordID`.
+Qualifiers: [not_null, read]
+
+Status message instance identifier. Link to `SMS_StatusMessage RecordID`.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

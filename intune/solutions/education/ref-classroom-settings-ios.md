@@ -1,9 +1,9 @@
 ---
-title: Intune settings for the iOS/iPadOS Classroom app
+title: "How to configure Intune settings for the iOS/iPadOS Classroom app"
 description: Learn the Intune settings you can use to control settings for the Classroom app on iOS/iPadOS devices.
 author: lenewsad
 ms.author: lanewsad
-ms.date: 11/14/2019
+ms.date: "2019-11-14T00:00:00Z"
 ms.topic: archived
 
 ms.reviewer: derriw
@@ -12,9 +12,11 @@ ms.reviewer: derriw
 # How to configure Intune settings for the iOS/iPadOS Classroom app
 
 > [!NOTE]
+>
 > Intune doesn't currently support configuring the Classroom app. This article is only applicable for users with existing iOS/iPadOS education profiles in Intune.
 
 ## Introduction
+
 [Classroom](https://itunes.apple.com/app/id1085319084) is an app that helps teachers to guide learning, and control student devices in the classroom. For example, the app enables teachers to:
 
 - Open apps on student devices
@@ -36,13 +38,9 @@ Consider the following before you begin to configure these settings:
 - The Classroom app runs on supervised iPads running iOS/iPadOS 9.3 or later.
 - In this release, Intune supports managing a 1:1 scenario where each student has their own dedicated iPad.
 
-
-<a name='step-1---import-your-school-data-into-azure-active-directory'></a>
-
 ## Step 1 - Import your school data into Microsoft Entra ID
 
-Use Microsoft's School Data Sync (SDS) to import school records from an existing Student Information System (SIS) to Microsoft Entra ID.
-SDS synchronizes information from your SIS and stores it in Microsoft Entra ID. Microsoft Entra ID is a Microsoft management system that helps you organize users and devices. You can then use this data to help you manage your students and classes. [Learn more about how to deploy SDS](https://support.office.com/article/Overview-of-School-Data-Sync-and-Classroom-f3d1147b-4ade-4905-8518-508e729f2e91).
+Use Microsoft's School Data Sync (SDS) to import school records from an existing Student Information System (SIS) to Microsoft Entra ID. SDS synchronizes information from your SIS and stores it in Microsoft Entra ID. Microsoft Entra ID is a Microsoft management system that helps you organize users and devices. You can then use this data to help you manage your students and classes. [Learn more about how to deploy SDS](https://support.office.com/article/Overview-of-School-Data-Sync-and-Classroom-f3d1147b-4ade-4905-8518-508e729f2e91).
 
 ### How to import data using SDS
 
@@ -54,32 +52,31 @@ You can import information into SDS by using one of the following methods:
 
 ### Find out more
 
-- [Find out more about the full experience of syncing on-premises school data to Microsoft Entra ID](/azure/active-directory/connect/active-directory-aadconnect)
+- [Find out more about the full experience of syncing on-premises school data to Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect)
 - [Find out more about Microsoft School Data Sync](https://sds.microsoft.com/)
-- [Find out more about licensing in Microsoft Entra ID](/azure/active-directory/active-directory-licensing-whatis-azure-portal)
+- [Find out more about licensing in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/active-directory-licensing-whatis-azure-portal)
 
 ## Step 2 - Create and assign an iOS/iPadOS Education profile in Intune
 
 ### Configure general settings
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Go to **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Go to **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
-    - **Platform:** Select **iOS/iPadOS**.
-    - **Profile type**: Select **Templates** > **Secure assessment (Education)**.
+   - **Platform:** Select **iOS/iPadOS**.
+   - **Profile type**: Select **Templates** &gt; **Secure assessment (Education)**.
 
-    Select **Create**.
-
+   Select **Create**.
 4. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the profile. For example, enter **iOS/iPadOS education profile**.
-    - **Description**: Enter a description for the profile. This setting is optional, but recommended.
-
+   - **Name**: Enter a descriptive name for the profile. For example, enter **iOS/iPadOS education profile**.
+   - **Description**: Enter a description for the profile. This setting is optional, but recommended.
 5. In **Configuration settings**, you'll create certificates to establish a trust relationship between teacher and student iPads. Certificates are used to seamlessly and silently authenticate connections between devices without having to enter user names and passwords.
 
->[!IMPORTANT]
->The teacher and student certificates you use must be issued by different certification authorities (CAs). You must create two new subordinate CAs connected to your existing certificate infrastructure; one for teachers, and one for students.
+> [!IMPORTANT]
+>
+> The teacher and student certificates you use must be issued by different certification authorities (CAs). You must create two new subordinate CAs connected to your existing certificate infrastructure; one for teachers, and one for students.
 
 iOS education profiles support only PFX certificates. SCEP certificates are not supported.
 
@@ -92,6 +89,7 @@ On the **Education** pane, choose **Teacher certificates**.
 #### Configure teacher root certificate
 
 Under **Teacher root certificate**, choose the browse button. Select the root certificate with either:
+
 - Extension .cer (DER, or Base64 encoded)
 - Extension .P7B (with or without full chain)
 
@@ -104,8 +102,7 @@ Under **Teacher PKCS#12 certificate**, configure the following values:
 - **Certification authority name** - Enter the name of your certification authority.
 - **Certificate template name** - Enter the name of a certificate template that has been added to an issuing CA.
 - **Renewal threshold (%)** - Specify the percentage of the certificate lifetime that remains before the device requests renewal of the certificate.
-- **Certificate validity period** - Specify the amount of remaining time before the certificate expires.
-You can specify a value that is lower than the validity period in the specified certificate template, but not higher. For example, if the certificate validity period in the certificate template is two years, you can specify a value of one year but not a value of five years. The value must also be lower than the remaining validity period of the issuing CA certificate.
+- **Certificate validity period** - Specify the amount of remaining time before the certificate expires. You can specify a value that is lower than the validity period in the specified certificate template, but not higher. For example, if the certificate validity period in the certificate template is two years, you can specify a value of one year but not a value of five years. The value must also be lower than the remaining validity period of the issuing CA certificate.
 
 When you're finished configuring certificates, choose **OK**.
 
@@ -117,6 +114,7 @@ When you're finished configuring certificates, choose **OK**.
 #### Configure student root certificate
 
 Under **Student root certificate**, choose the browse button. Select the root certificate with either:
+
 - Extension .cer (DER, or Base64 encoded)
 - Extension .P7B (with or without full chain)
 
@@ -129,8 +127,7 @@ Under **Student PKCS#12 certificate**, configure the following values:
 - **Certification authority name** - Enter the name of your certification authority.
 - **Certificate template name** - Enter the name of a certificate template that has been added to an issuing CA.
 - **Renewal threshold (%)** - Specify the percentage of the certificate lifetime that remains before the device requests renewal of the certificate.
-- **Certificate validity period** - Specify the amount of remaining time before the certificate expires.
-You can specify a value that is lower than the validity period in the specified certificate template, but not higher. For example, if the certificate validity period in the certificate template is two years, you can specify a value of one year but not a value of five years. The value must also be lower than the remaining validity period of the issuing CA certificate.
+- **Certificate validity period** - Specify the amount of remaining time before the certificate expires. You can specify a value that is lower than the validity period in the specified certificate template, but not higher. For example, if the certificate validity period in the certificate template is two years, you can specify a value of one year but not a value of five years. The value must also be lower than the remaining validity period of the issuing CA certificate.
 
 When you're finished configuring certificates, choose **OK**.
 
@@ -150,7 +147,3 @@ Now when teachers use the Classroom app, they'll have full control over student 
 For more information about the Classroom app, see [Classroom help](https://help.apple.com/classroom/ipad/2.0/), on the Apple web site.
 
 If you want to configure shared iPad devices for students, see [How to configure Intune education settings for shared iPad devices](ref-classroom-settings-ios-shared.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

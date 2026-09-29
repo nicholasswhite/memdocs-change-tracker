@@ -1,7 +1,7 @@
 ---
-title: "SMS_SUMDeploymentAssetDetails Class"
+title: "SMS_SUMDeploymentAssetDetails Server WMI Class"
 description: "An SMS Provider server class, in Configuration Manager, that represents per-asset details for SUM deployments in-console monitoring."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_SUMDeploymentAssetDetails Server WMI Class
-The `SMS_SUMDeploymentAssetDetails` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents per-asset details for SUM deployments in-console monitoring.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_SUMDeploymentAssetDetails` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents per-asset details for SUM deployments in-console monitoring.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_SUMDeploymentAssetDetails : SMS_BaseClass  
 {  
     UInt32 AssignmentID;  
@@ -47,271 +49,276 @@ Class SMS_SUMDeploymentAssetDetails : SMS_BaseClass
     String UserID;  
     String VMHostName;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_SUMDeploymentAssetDetails` class does not define any methods.  
+## Methods
 
-## Properties  
- `AssignmentID`  
- Data type: `UInt32`  
+The `SMS_SUMDeploymentAssetDetails` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [key, not_null, read]  
+`AssignmentID`  
+ Data type: `UInt32`
 
- The ID of the configuration item assignment. This ID is unique only for the site.  
+Access type: Read-only
 
- `AssignmentName`  
- Data type: `String`  
+Qualifiers: [key, not_null, read]
 
- Access type: Read-only  
+The ID of the configuration item assignment. This ID is unique only for the site.
 
- Qualifiers: [not_null, read]  
+`AssignmentName`  
+ Data type: `String`
 
- The local assignment name.  
+Access type: Read-only
 
- `AssignmentUniqueID`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+The local assignment name.
 
- Qualifiers: [not_null, read]  
+`AssignmentUniqueID`  
+ Data type: `String`
 
- The unique ID of the configuration item assignment. This ID is unique across sites.  
+Access type: Read-only
 
- `CollectionID`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+The unique ID of the configuration item assignment. This ID is unique across sites.
 
- Qualifiers: [not_null, read]  
+`CollectionID`  
+ Data type: `String`
 
- Existing collection to which the deployment is being targeted.  
+Access type: Read-only
 
- `CollectionName`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Existing collection to which the deployment is being targeted.
 
- Qualifiers: [read]  
+`CollectionName`  
+ Data type: `String`
 
- The name of the collection to which the deployment is being targeted.  
+Access type: Read-only
 
- `DeviceName`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The name of the collection to which the deployment is being targeted.
 
- Qualifiers: [read]  
+`DeviceName`  
+ Data type: `String`
 
- Name of the device.  
+Access type: Read-only
 
- `IsCompliant`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Name of the device.
 
- Qualifiers: [not_null, read]  
+`IsCompliant`  
+ Data type: `UInt32`
 
- `true` if the asset is compliant.  
+Access type: Read-only
 
- `IsMachineAssignedToUser`  
- Data type: `Boolean`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+`true` if the asset is compliant.
 
- Qualifiers: [read]  
+`IsMachineAssignedToUser`  
+ Data type: `Boolean`
 
- `true` if the computer is assigned to a user.  
+Access type: Read-only
 
- `IsMachineChangesPersisted`  
- Data type: `Boolean`  
+Qualifiers: [read]
 
- Access type: Read-only  
+`true` if the computer is assigned to a user.
 
- Qualifiers: [read]  
+`IsMachineChangesPersisted`  
+ Data type: `Boolean`
 
- `true` if the virtual machine changes are persisted.  
+Access type: Read-only
 
- `IsVM`  
- Data type: `Boolean`  
+Qualifiers: [read]
 
- Access type: Read-only  
+`true` if the virtual machine changes are persisted.
 
- Qualifiers: [read]  
+`IsVM`  
+ Data type: `Boolean`
 
- `true` if this is a virtual machine.  
+Access type: Read-only
 
- `LastComplianceMessageDesc`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+`true` if this is a virtual machine.
 
- Qualifiers: [not_null, read]  
+`LastComplianceMessageDesc`  
+ Data type: `String`
 
- Last Compliance Message Description.  
+Access type: Read-only
 
- `LastComplianceMessageID`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last Compliance Message Description.
 
- Qualifiers: [not_null, read]  
+`LastComplianceMessageID`  
+ Data type: `UInt32`
 
- Last compliance message ID.  
+Access type: Read-only
 
- `LastComplianceMessageTime`  
- Data type: `DateTime`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last compliance message ID.
 
- Qualifiers: [not_null, read]  
+`LastComplianceMessageTime`  
+ Data type: `DateTime`
 
- Last compliance message time.  
+Access type: Read-only
 
- `LastEnforcementErrorCode`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last compliance message time.
 
- Qualifiers: [not_null, read]  
+`LastEnforcementErrorCode`  
+ Data type: `UInt32`
 
- Last enforcement error code.  
+Access type: Read-only
 
- `LastEnforcementErrorID`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last enforcement error code.
 
- Qualifiers: [not_null, read]  
+`LastEnforcementErrorID`  
+ Data type: `UInt32`
 
- Last enforcement error ID.  
+Access type: Read-only
 
- `LastEnforcementErrorTime`  
- Data type: `DateTime`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last enforcement error ID.
 
- Qualifiers: [not_null, read]  
+`LastEnforcementErrorTime`  
+ Data type: `DateTime`
 
- Last enforcement error time.  
+Access type: Read-only
 
- `LastEnforcementMessageDesc`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last enforcement error time.
 
- Qualifiers: [not_null, read]  
+`LastEnforcementMessageDesc`  
+ Data type: `String`
 
- Last enforcement message description.  
+Access type: Read-only
 
- `LastEnforcementMessageID`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last enforcement message description.
 
- Qualifiers: [not_null, read]  
+`LastEnforcementMessageID`  
+ Data type: `UInt32`
 
- Last enforcement message ID.  
+Access type: Read-only
 
- `LastEnforcementMessageTime`  
- Data type: `DateTime`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last enforcement message ID.
 
- Qualifiers: [not_null, read]  
+`LastEnforcementMessageTime`  
+ Data type: `DateTime`
 
- Last enforcement message time.  
+Access type: Read-only
 
- `ResourceID`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last enforcement message time.
 
- Qualifiers: [key, not_null, read]  
+`ResourceID`  
+ Data type: `UInt32`
 
- Unique Configuration Manager-supplied ID for the resource.  
+Access type: Read-only
 
- `StatusDescription`  
- Data type: `String`  
+Qualifiers: [key, not_null, read]
 
- Access type: Read-only  
+Unique Configuration Manager-supplied ID for the resource.
 
- Qualifiers: [read]  
+`StatusDescription`  
+ Data type: `String`
 
- Description of the status.  
+Access type: Read-only
 
- `StatusEnforcementState`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Description of the status.
 
- Qualifiers: [read]  
+`StatusEnforcementState`  
+ Data type: `UInt32`
 
- Additional enforcement state for progress and error status (0 for others).  
+Access type: Read-only
 
- `StatusErrorCode`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Additional enforcement state for progress and error status (0 for others).
 
- Qualifiers: [read]  
+`StatusErrorCode`  
+ Data type: `UInt32`
 
- Additional error code for error status (0 for others).  
+Access type: Read-only
 
- `StatusTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Additional error code for error status (0 for others).
 
- Qualifiers: [not_null, read]  
+`StatusTime`  
+ Data type: `DateTime`
 
- Status time.  
+Access type: Read-only
 
- `StatusType`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Status time.
 
- Qualifiers: [enumeration, not_null, read]  
+`StatusType`  
+ Data type: `UInt32`
 
- Status type. Possible values are:  
+Access type: Read-only
 
-| Value | Status |  
-| ----- | ------ |  
-|1|Success|  
-|2|InProgress|  
-|4|Unknown|  
-|5|Error|  
+Qualifiers: [enumeration, not_null, read]
 
- `UserID`  
- Data type: `String`  
+Status type. Possible values are:
 
- Access type: Read-only  
+| Value | Status |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 4 | Unknown |
+| 5 | Error |
 
- Qualifiers: [read]  
+`UserID`  
+ Data type: `String`
 
- Identifier of the user.  
+Access type: Read-only
 
- `VMHostName`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Identifier of the user.
 
- Qualifiers: [read]  
+`VMHostName`  
+ Data type: `String`
 
- Name of virtual machine host.  
+Access type: Read-only
 
-## Remarks  
+Qualifiers: [read]
 
-## Requirements  
+Name of virtual machine host.
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+## Remarks
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

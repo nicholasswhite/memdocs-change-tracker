@@ -1,7 +1,7 @@
 ---
-title: Shared or multi-user Windows device settings in Microsoft Intune
+title: "Control access, accounts, and power features on shared PC or multi-user Windows devices using Intune"
 description: Add and use Windows 10/11 and Windows Holographic for Business devices that are shared, or used by multiple users in Microsoft Intune. See a list of all the settings and what they do on the devices, including Microsoft HoloLens. Control guest accounts, manage accounts and delete inactive accounts, allow or prevent saving to local storage, set power and sleep options, choose when updates are installed, and use devices in education environments in a device configuration profile.
-ms.date: 04/22/2024
+ms.date: "2024-04-22T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -36,6 +36,7 @@ This feature applies to:
 - Windows Holographic for Business, such as the HoloLens
 
 > [!TIP]
+>
 > For iOS/iPadOS shared devices, go to [shared device solutions for iOS/iPadOS](../../device-enrollment/apple/shared-device-solutions-ios.md).
 
 ## Prerequisites
@@ -44,47 +45,38 @@ This feature applies to:
 
 ## Create the profile
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
    - **Platform**: Select **Windows 10 and later**.
-   - **Profile type**: Select **Templates** > **Shared multi-user device**.
-
+   - **Profile type**: Select **Templates** &gt; **Shared multi-user device**.
 4. Select **Create**.
 5. In **Basics**, enter the following properties:
 
    - **Name**: Enter a descriptive name for the new profile.
    - **Description**: Enter a description for the profile. This setting is optional, but recommended.
-
 6. Select **Next**.
 7. In **Configuration settings**, depending on the platform you chose, the settings you can configure are different. Choose your platform for detailed settings:
 
-    - [Windows](./ref-shared-device-settings-windows.md)
-    - [Windows Holographic for Business](./ref-shared-device-settings-windows-holographic.md)
-
+   - [Windows](ref-shared-device-settings-windows.md)
+   - [Windows Holographic for Business](ref-shared-device-settings-windows-holographic.md)
 8. Select **Next**.
-
 9. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. For more information about scope tags, go to [Use role based access control (RBAC) and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 
-    Select **Next**.
-
+   Select **Next**.
 10. In **Assignments**, select the devices group that receives your profile. For more information on assigning profiles, go to [Assign user and device profiles](../assign-device-profile.md).
 
     Select **Next**.
 
     > [!NOTE]
+    >
     > Be sure to assign the profile to device groups in your organization.
-
 11. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
 
 The next time each device checks in, the policy is applied.
 
 ## Related articles
 
-- See all the settings for [Windows](./ref-shared-device-settings-windows.md) and [Windows Holographic for Business](./ref-shared-device-settings-windows-holographic.md).
+- See all the settings for [Windows](ref-shared-device-settings-windows.md) and [Windows Holographic for Business](ref-shared-device-settings-windows-holographic.md).
 - [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

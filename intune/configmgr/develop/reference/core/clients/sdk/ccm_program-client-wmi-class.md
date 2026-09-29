@@ -1,16 +1,18 @@
 ---
-title: CCM_Program Class
+title: "CCM_Program Client WMI Class"
 description: A client class, in Configuration Manager, that represents a legacy software distribution program on the client.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Program Client WMI Class
+
 The `CCM_Program` WMI class is a client class, in Configuration Manager, that represents a legacy software distribution program on the client.
 
- The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -50,288 +52,263 @@ class CCM_Program : CCM_SoftwareBase
 ```
 
 ## Methods
- The `CCM_Program` class does not define any methods.
+
+The `CCM_Program` class does not define any methods.
 
 ## Properties
- `ActivationTime`
- Data type: `Datetime`
 
- Access type: Read-only
+`ActivationTime` Data type: `Datetime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Date and time the specified software distribution program is activated.
+Qualifiers: [not_null, read]
 
- `AdvertisedDirectly`
- Data type: `Boolean`
+Date and time the specified software distribution program is activated.
 
- Access type: Read-only
+`AdvertisedDirectly` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the specified software distribution program is advertised directly, otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `Categories[]`
- Data type: `String`
+`true` if the specified software distribution program is advertised directly, otherwise, `false`.
 
- Access type: Read-only
+`Categories[]` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Array of categories associated with the software distribution program.
+Qualifiers: [not_null, read]
 
- `CompletionAction`
- Data type: `UInt32`
+Array of categories associated with the software distribution program.
 
- Access type: Read-only
+`CompletionAction` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Controls the action Configuration Manager takes after a successful installation. The following table shows the list of possible values.
+Qualifiers: [not_null, read]
 
-|Value|Action|
-|-----------|------------|
-|0|Reboot|
-|1|LogOff|
-|2|ProgramReboot|
-|3|No action|
+Controls the action Configuration Manager takes after a successful installation. The following table shows the list of possible values.
 
- `Dependencies[]`
- Data type: `CCM_Program`
+| Value | Action |
+| --- | --- |
+| 0 | Reboot |
+| 1 | LogOff |
+| 2 | ProgramReboot |
+| 3 | No action |
 
- Access type: Read-only
+`Dependencies[]` Data type: `CCM_Program`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Array of software distribution program dependencies.
+Qualifiers: [not_null, read]
 
- `DependentPackageID`
- Data type: `String`
+Array of software distribution program dependencies.
 
- Access type: Read-only
+`DependentPackageID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identifier of the package on which the software distribution program depends.
+Qualifiers: [not_null, read]
 
- `DependentProgramID`
- Data type: `String`
+Identifier of the package on which the software distribution program depends.
 
- Access type: Read-only
+`DependentProgramID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identifier of the program on which the specified software distribution program depends.
+Qualifiers: [not_null, read]
 
- `DiskSpaceRequired`
- Data type: `String`
+Identifier of the program on which the specified software distribution program depends.
 
- Access type: Read-only
+`DiskSpaceRequired` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Amount of disk space required.
+Qualifiers: [not_null, read]
 
- `Duration`
- Data type: `UInt32`
+Amount of disk space required.
 
- Access type: Read-only
+`Duration` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Duration time of the software distribution program.
+Qualifiers: [not_null, read]
 
- `ExpirationTime`
- Data type: `Datetime`
+Duration time of the software distribution program.
 
- Access type: Read-only
+`ExpirationTime` Data type: `Datetime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Date and time the specified software distribution program expires.
+Qualifiers: [not_null, read]
 
- `ForceDependencyToRun`
- Data type: `Boolean`
+Date and time the specified software distribution program expires.
 
- Access type: Read-only
+`ForceDependencyToRun` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the dependent program is forced to run; otherwise, `false.`
+Qualifiers: [not_null, read]
 
- `HighImpact`
- Data type: `Boolean`
+`true` if the dependent program is forced to run; otherwise, `false.`
 
- Access type: Read-only
+`HighImpact` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the specified software distribution program has a high impact, otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `LastExitCode`
- Data type: `UInt32`
+`true` if the specified software distribution program has a high impact, otherwise, `false`.
 
- Access type: Read-only
+`LastExitCode` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Code value of last exit.
+Qualifiers: [not_null, read]
 
- `LastRunStatus`
- Data type: `String`
+Code value of last exit.
 
- Access type: Read-only
+`LastRunStatus` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Status of the last run software distribution program.
+Qualifiers: [not_null, read]
 
- `LastRunTime`
- Data type: `Datetime`
+Status of the last run software distribution program.
 
- Access type: Read-only
+`LastRunTime` Data type: `Datetime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Date and time that the software distribution program was last run.
+Qualifiers: [not_null, read]
 
- `Level`
- Data type: `UInt32`
+Date and time that the software distribution program was last run.
 
- Access type: Read-only
+`Level` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Level of the specified software distribution program.
+Qualifiers: [not_null, read]
 
- `NotifyUser`
- Data type: `Boolean`
+Level of the specified software distribution program.
 
- Access type: Read-only
+`NotifyUser` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if notifications for the software distribution program are shown to the user; otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `PackageID`
- Data type: `String`
+`true` if notifications for the software distribution program are shown to the user; otherwise, `false`.
 
- Access type: Read-only
+`PackageID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identifier of the software distribution package.
+Qualifiers: [not_null, read]
 
- `PackageLanguage`
- Data type: `String`
+Identifier of the software distribution package.
 
- Access type: Read-only
+`PackageLanguage` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Language specified in the software distribution package.
+Qualifiers: [not_null, read]
 
- `PackageName`
- Data type: `String`
+Language specified in the software distribution package.
 
- Access type: Read-only
+`PackageName` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Name of the software distribution package.
+Qualifiers: [not_null, read]
 
- `Published`
- Data type: `Boolean`
+Name of the software distribution package.
 
- Access type: Read-only
+`Published` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the specified software distribution program is published, otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `ProgramID`
- Data type: `String`
+`true` if the specified software distribution program is published, otherwise, `false`.
 
- Access type: Read-only
+`ProgramID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identifier of the software distribution program.
+Qualifiers: [not_null, read]
 
- `RepeatRunBehavior`
- Data type: `String`
+Identifier of the software distribution program.
 
- Access type: Read-only
+`RepeatRunBehavior` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Response of the client when a software distribution program is run more than once on a computer. The following table shows the list of possible values.
+Qualifiers: [not_null, read]
 
-|Value|Description|
-|-----------|-----------------|
-|RerunAlways|Rerun the program regardless of previous execution condition.|
-|RerunIfFail|Rerun the program if the previous attempt to run failed. If there was no previous attempt, do not run.|
-|RerunIfSuccess|Rerun the program if the previous attempt to run succeeded. If there was no previous attempt, do not run.|
-|RerunNever|Do not rerun the program.|
+Response of the client when a software distribution program is run more than once on a computer. The following table shows the list of possible values.
 
- `RequiresUserInput`
- Data type: `Boolean`
+| Value | Description |
+| --- | --- |
+| RerunAlways | Rerun the program regardless of previous execution condition. |
+| RerunIfFail | Rerun the program if the previous attempt to run failed. If there was no previous attempt, do not run. |
+| RerunIfSuccess | Rerun the program if the previous attempt to run succeeded. If there was no previous attempt, do not run. |
+| RerunNever | Do not rerun the program. |
 
- Access type: Read-only
+`RequiresUserInput` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if user input is required; otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `RunAtLogoff`
- Data type: `Boolean`
+`true` if user input is required; otherwise, `false`.
 
- Access type: Read-only
+`RunAtLogoff` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the specified software distribution program runs when user logs off, otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `RunAtLogon`
- Data type: `Boolean`
+`true` if the specified software distribution program runs when user logs off, otherwise, `false`.
 
- Access type: Read-only
+`RunAtLogon` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the specified software distribution program runs when user logs on, otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `RunDependent`
- Data type: `Boolean`
+`true` if the specified software distribution program runs when user logs on, otherwise, `false`.
 
- Access type: Read-only
+`RunDependent` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if software distribution program is dependent on another program, otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `TaskSequence`
- Data type: `Boolean`
+`true` if software distribution program is dependent on another program, otherwise, `false`.
 
- Access type: Read-only
+`TaskSequence` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the specified software distribution program uses a task sequence, otherwise, `false`.
+Qualifiers: [not_null, read]
 
- `Version`
- Data type: `String`
+`true` if the specified software distribution program uses a task sequence, otherwise, `false`.
 
- Access type: Read-only
+`Version` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Version of the software distribution program.
+Qualifiers: [not_null, read]
+
+Version of the software distribution program.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

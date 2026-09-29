@@ -1,14 +1,16 @@
 ---
 description: Learn how CIJobState enumeration defines configuration item agent job states and is used by ICIINFO Interface.
 title: CIJobState Enumeration
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CIJobState Enumeration
-In Configuration Manager, the `CIJobState` enumeration defines configuration item agent job states. This enumeration is used by the [ICIINFO Interface](../../../../../develop/reference/core/clients/client-classes/iciinfo-interface.md).
+
+In Configuration Manager, the `CIJobState` enumeration defines configuration item agent job states. This enumeration is used by the [ICIINFO Interface](iciinfo-interface.md).
 
 ## Syntax
 
@@ -36,56 +38,41 @@ typedef enum tagCIJobState
 ```
 
 ## Elements
- `ciJobStateNone`
- No state.
 
- `ciJobStateAvailable`
- Available.
+`ciJobStateNone` No state.
 
- `ciJobStateSubmitted`
- Submitted.
+`ciJobStateAvailable` Available.
 
- `ciJobStateDetecting`
- Being detected.
+`ciJobStateSubmitted` Submitted.
 
- `ciJobStateDownloadingCIDef`
- Downloading configuration item definition.
+`ciJobStateDetecting` Being detected.
 
- `ciJobStateDownloadingSdmPkg`
- Downloading a System Definition Model (SDM) package.
+`ciJobStateDownloadingCIDef` Downloading configuration item definition.
 
- `ciJobStatePreDownload`
- Pre-download.
+`ciJobStateDownloadingSdmPkg` Downloading a System Definition Model (SDM) package.
 
- `ciJobStateDownloading`
- Downloading.
+`ciJobStatePreDownload` Pre-download.
 
- `ciJobStateWaitInstall`
- Wait for installation.
+`ciJobStateDownloading` Downloading.
 
- `ciJobStateInstalling`
- Installing.
+`ciJobStateWaitInstall` Wait for installation.
 
- `ciJobStatePendingSoftReboot`
- Suspend operation for soft reboot.
+`ciJobStateInstalling` Installing.
 
- `ciJobStatePendingHardReboot`
- Suspend operation for hard reboot.
+`ciJobStatePendingSoftReboot` Suspend operation for soft reboot.
 
- `ciJobStateWaitReboot`
- Wait for reboot.
+`ciJobStatePendingHardReboot` Suspend operation for hard reboot.
 
- `ciJobStateVerifying`
- Verifying.
+`ciJobStateWaitReboot` Wait for reboot.
 
- `ciJobStateInstallComplete`
- Installation complete.
+`ciJobStateVerifying` Verifying.
 
- `ciJobStateError`
- Error.
+`ciJobStateInstallComplete` Installation complete.
 
- `ciJobStateWaitServiceWindow`
- Wait for maintenance window.
+`ciJobStateError` Error.
+
+`ciJobStateWaitServiceWindow` Wait for maintenance window.
 
 ## See Also
- [ICIINFO Interface](../../../../../develop/reference/core/clients/client-classes/iciinfo-interface.md)
+
+[ICIINFO Interface](iciinfo-interface.md)

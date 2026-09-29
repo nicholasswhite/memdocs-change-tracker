@@ -1,21 +1,24 @@
 ---
-title: CCM_SoftwareUpdate Class
-ms.date: 09/20/2016
+title: "CCM_SoftwareUpdate Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 description: Learn how enumerating the CCM_SoftwareUpdate Client WMI Class gives all the updates that are applicable and need to be installed.
 ms.service: configuration-manager
 ---
+
 # CCM_SoftwareUpdate Client WMI Class
+
 The `CCM_SoftwareUpdate` WMI class is a client class, in Configuration Manager, that represents a software update.
 
- Enumerating this class gives all the updates that are applicable and need to be installed.  You can use `GetObject` to query for an individual update based on the `UpdateID` property. Each update object has properties equivalent to the old COM interface `ICCMTargetedUpdate`. For more details on individual properties you can refer to Configuration Manager 2007 ICCMTargetedUpdate interface. We have listed here only the differences between `ICCMTargetedUpdate` and `CCM_SoftwareUpdate` classes.
+Enumerating this class gives all the updates that are applicable and need to be installed. You can use `GetObject` to query for an individual update based on the `UpdateID` property. Each update object has properties equivalent to the old COM interface `ICCMTargetedUpdate`. For more details on individual properties you can refer to Configuration Manager 2007 ICCMTargetedUpdate interface. We have listed here only the differences between `ICCMTargetedUpdate` and `CCM_SoftwareUpdate` classes.
 
 > [!IMPORTANT]
->  The software update client side SDK will only return set of updates which are deployed to client from Configuration Manager site server, and are applicable, and are yet to be installed on the client.
+>
+> The software update client side SDK will only return set of updates which are deployed to client from Configuration Manager site server, and are applicable, and are yet to be installed on the client.
 
- The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -50,277 +53,260 @@ class CCM_SoftwareUpdate : CCM_SoftwareBase
 ```
 
 ## Methods
- The `CCM_SoftwareUpdate` class does not define any methods.
+
+The `CCM_SoftwareUpdate` class does not define any methods.
 
 ## Properties
- `ArticleID`
- Data type: `String`
 
- Access type: Read-only
+`ArticleID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Identifier of the knowledge base article for the software update. The maximum length for this value is 64 characters.
+Qualifiers: [read]
 
- `BulletinID`
- Data type: `String`
+Identifier of the knowledge base article for the software update. The maximum length for this value is 64 characters.
 
- Access type: Read-only
+`BulletinID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Identifier of the bulletin for security updates released by Microsoft. The maximum length for this value is 64 characters. The default value is `None`.
+Qualifiers: [read]
 
- `ComplianceState`
- Data type: `UInt32`
+Identifier of the bulletin for security updates released by Microsoft. The maximum length for this value is 64 characters. The default value is `None`.
 
- Access type: Read-only
+`ComplianceState` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Compliance state of the software update that indicates if the software update is missing and needs to be installed. The `ciNotPresent` state indicates missing updates. The following table shows other possible values for the **ComplianceState** property for software updates. Only values 0, 1, and 2 are used by software update management.
+Qualifiers: [read]
 
-|Value|State|
-|-----------|-----------|
-|0|ciNotPresent|
-|1|ciPresent|
-|2|ciPresenceUnknown (also used for not applicable)|
-|3|ciEvaluationError|
-|4|ciNotEvaluated|
-|5|ciNotUpdated|
-|6|ciNotConfigured|
+Compliance state of the software update that indicates if the software update is missing and needs to be installed. The `ciNotPresent` state indicates missing updates. The following table shows other possible values for the **ComplianceState** property for software updates. Only values 0, 1, and 2 are used by software update management.
 
- `ContentSize`
- Data type: `UInt32`
+| Value | State |
+| --- | --- |
+| 0 | ciNotPresent |
+| 1 | ciPresent |
+| 2 | ciPresenceUnknown (also used for not applicable) |
+| 3 | ciEvaluationError |
+| 4 | ciNotEvaluated |
+| 5 | ciNotUpdated |
+| 6 | ciNotConfigured |
 
- Access type: Read-only
+`ContentSize` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Size of the software update content.
+Qualifiers: [read]
+
+Size of the software update content.
 
 > [!NOTE]
->  This property is only available after the software update is downloaded into Configuration Manager cache, not before.
+>
+> This property is only available after the software update is downloaded into Configuration Manager cache, not before.
 
- `Deadline`
- Data type: `Datetime`
+`Deadline` Data type: `Datetime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Date and time when the software update is installed.
+Date and time when the software update is installed.
 
- `Description`
- Data type: `String`
+`Description` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Description of the software update.
+Description of the software update.
 
- `ErrorCode`
- Data type: `UInt32`
+`ErrorCode` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Error code, if any, associated with the software update.
+Error code, if any, associated with the software update.
 
- `EvaluationState`
- Data type: `UInt32`
+`EvaluationState` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Evaluation state of the software update. Once the **InstallUpdates** method in the `CCM_SoftwareUpdatesManager` class is called to trigger installation of software updates, the **EvaluationState**, **PercentComplete** and **ErrorCode** properties can be used to monitor update progress.
+Evaluation state of the software update. Once the **InstallUpdates** method in the `CCM_SoftwareUpdatesManager` class is called to trigger installation of software updates, the **EvaluationState**, **PercentComplete** and **ErrorCode** properties can be used to monitor update progress.
 
 > [!NOTE]
->  The **EvaluationState** property is only meant to evaluate progress, not to find the compliance state of a software update. When a software update is not in a progress state, the value of **EvaluationState** is `none` or `available`, depending on whether there was any progress at any point in the past. This is not related to compliance state. Also, if a software update was downloaded at activation time, the value of **EvaluationState** is `none`. This value only changes once an install is attempted on the software update.
+>
+> The **EvaluationState** property is only meant to evaluate progress, not to find the compliance state of a software update. When a software update is not in a progress state, the value of **EvaluationState** is `none` or `available`, depending on whether there was any progress at any point in the past. This is not related to compliance state. Also, if a software update was downloaded at activation time, the value of **EvaluationState** is `none`. This value only changes once an install is attempted on the software update.
 
- The following table shows the values for the **EvaluationState** property for software updates.
+The following table shows the values for the **EvaluationState** property for software updates.
 
-|Value|State|
-|-|-|
-|0|ciJobStateNone|
-|1|ciJobStateAvailable|
-|2|ciJobStateSubmitted|
-|3|ciJobStateDetecting|
-|4|ciJobStatePreDownload|
-|5|ciJobStateDownloading|
-|6|ciJobStateWaitInstall|
-|7|ciJobStateInstalling|
-|8|ciJobStatePendingSoftReboot|
-|9|ciJobStatePendingHardReboot|
-|10|ciJobStateWaitReboot|
-|11|ciJobStateVerifying|
-|12|ciJobStateInstallComplete|
-|13|ciJobStateError|
-|14|ciJobStateWaitServiceWindow|
-|15|ciJobStateWaitUserLogon|
-|16|ciJobStateWaitUserLogoff|
-|17|ciJobStateWaitJobUserLogon|
-|18|ciJobStateWaitUserReconnect|
-|19|ciJobStatePendingUserLogoff|
-|20|ciJobStatePendingUpdate|
-|21|ciJobStateWaitingRetry|
-|22|ciJobStateWaitPresModeOff|
-|23|ciJobStateWaitForOrchestration|
+| Value | State |
+| --- | --- |
+| 0 | ciJobStateNone |
+| 1 | ciJobStateAvailable |
+| 2 | ciJobStateSubmitted |
+| 3 | ciJobStateDetecting |
+| 4 | ciJobStatePreDownload |
+| 5 | ciJobStateDownloading |
+| 6 | ciJobStateWaitInstall |
+| 7 | ciJobStateInstalling |
+| 8 | ciJobStatePendingSoftReboot |
+| 9 | ciJobStatePendingHardReboot |
+| 10 | ciJobStateWaitReboot |
+| 11 | ciJobStateVerifying |
+| 12 | ciJobStateInstallComplete |
+| 13 | ciJobStateError |
+| 14 | ciJobStateWaitServiceWindow |
+| 15 | ciJobStateWaitUserLogon |
+| 16 | ciJobStateWaitUserLogoff |
+| 17 | ciJobStateWaitJobUserLogon |
+| 18 | ciJobStateWaitUserReconnect |
+| 19 | ciJobStatePendingUserLogoff |
+| 20 | ciJobStatePendingUpdate |
+| 21 | ciJobStateWaitingRetry |
+| 22 | ciJobStateWaitPresModeOff |
+| 23 | ciJobStateWaitForOrchestration |
 
- `ExclusiveUpdate`
- Data type: `Boolean`
+`ExclusiveUpdate` Data type: `Boolean`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- `true` if software update is EXCLUSIVE; otherwise, `false`. An exclusive update cannot be installed at the same time as other updates.
+`true` if software update is EXCLUSIVE; otherwise, `false`. An exclusive update cannot be installed at the same time as other updates.
 
- `FullName`
- Data type: `String`
+`FullName` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- This property is not used.
+This property is not used.
 
- `IsUpgrade`
- Data type: `Boolean`
+`IsUpgrade` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Indicates whether the software update is an upgrade.
+Indicates whether the software update is an upgrade.
 
- `MaxExecutionTime`
- Data type: `UInt32`
+`MaxExecutionTime` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Maximum time required for the software update to run.
+Maximum time required for the software update to run.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Name of the software update.
+Name of the software update.
 
- `NextUserScheduledTime`
- Data type: `Datetime`
+`NextUserScheduledTime` Data type: `Datetime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Date and time when a user postpones specific software updates to non-business hours (NBH). This property shows the next NBH to be used.
+Date and time when a user postpones specific software updates to non-business hours (NBH). This property shows the next NBH to be used.
 
- `NotifyUser`
- Data type: `Boolean`
+`NotifyUser` Data type: `Boolean`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- `true` if notifications for the software update are shown to the user; otherwise, `false`.
+`true` if notifications for the software update are shown to the user; otherwise, `false`.
 
 > [!NOTE]
->  If `UserUIExperience` is set to `false`, `NotifyUser` is ignored.
+>
+> If `UserUIExperience` is set to `false`, `NotifyUser` is ignored.
 
- `OverrideServiceWindows`
- Data type: `Boolean`
+`OverrideServiceWindows` Data type: `Boolean`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- `true` if the software update can be installed outside of maintenance windows; otherwise, `false`.
+`true` if the software update can be installed outside of maintenance windows; otherwise, `false`.
 
- `PercentComplete`
- Data type: `UInt32`
+`PercentComplete` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Percentage of completion of the installation of the software update.
+Percentage of completion of the installation of the software update.
 
- `Publisher`
- Data type: `String`
+`Publisher` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Publisher of the software update.
+Publisher of the software update.
 
- `RebootOutsideServiceWindows`
- Data type: `Boolean`
+`RebootOutsideServiceWindows` Data type: `Boolean`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- `true` if the software update can restart outside maintenance windows; otherwise, `false`.
+`true` if the software update can restart outside maintenance windows; otherwise, `false`.
 
- `RestartDeadline`
- Data type: `Datetime`
+`RestartDeadline` Data type: `Datetime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Date and time when a computer is restarted after the installation of the software update.
+Date and time when a computer is restarted after the installation of the software update.
 
- `StartTime`
- Data type: `Datetime`
+`StartTime` Data type: `Datetime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Date and time when the software update is made available to the user.
+Date and time when the software update is made available to the user.
 
- `UpdateID`
- Data type: `String`
+`UpdateID` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Identifier of the software update.
+Identifier of the software update.
 
- `URL`
- Data type: `String`
+`URL` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- URL for a software update.
+URL for a software update.
 
- `UserUIExperience`
- Data type: `Boolean`
+`UserUIExperience` Data type: `Boolean`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- `true` if the software update is visible in software center; otherwise, `false`.
+`true` if the software update is visible in software center; otherwise, `false`.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

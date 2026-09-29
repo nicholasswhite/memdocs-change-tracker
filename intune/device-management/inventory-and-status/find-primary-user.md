@@ -1,13 +1,15 @@
 ---
-title: Find the primary user of a Microsoft Intune device.
-description: Find the primary user (or User Device Affinity) of an Intune device.
-ms.date: 02/28/2025
+title: "Change a device's primary user in Microsoft Intune"
+description: "Change or reassign the primary user (device affinity) of a managed device in the Microsoft Intune admin center, and learn how the primary user is assigned."
+ms.date: "2026-07-05T00:00:00Z"
 ms.topic: how-to
 ---
 
-# Primary users on Microsoft Intune devices
+# Change a device's primary user in Microsoft Intune
 
-A primary user is the user who is primarily associated with a specific Intune device. When a device enrolls in Intune, the signed-in user typically becomes the primary user. When the primary user is assigned, the primary user also shows as a device property that you can view and possibly update.
+A primary user is the user who is primarily associated with a specific Intune device. When a device enrolls in Intune, the signed-in user typically becomes the primary user. The primary user also shows as a device property that you can view and update.
+
+You change or remove a device's primary user from the device's **Properties** tab. This article explains how, and describes how Intune assigns the primary user and where it's used.
 
 When a device is associated with a user, then that association is known as **Device Affinity**.
 
@@ -24,14 +26,14 @@ The primary user property maps a licensed Intune user to their devices in:
 Intune automatically adds primary user to devices during or soon after enrollment. The enrollment method determines when the primary user is added to a device.
 
 | Platform | Enrollment method | Primary user assigned | Primary user is assigned |
-| ---- | ---- | ---- | ---- |
+| --- | --- | --- | --- |
 | Windows | Add work or school (user driven) | Enrolling user | During enrollment |
 | Windows | Modern App sign-in (user driven) | Enrolling user | During enrollment |
 | Windows | Enroll in mobile device management (MDM) only (user driven) | Enrolling user | During enrollment |
 | Windows | Microsoft Entra join (out of box experience) | Enrolling user | During enrollment |
 | Windows | Microsoft Entra join (Windows Autopilot out of box experience) | Enrolling user | During enrollment |
 | Windows | Enroll in MDM only | Enrolling user | During enrollment |
-| Windows | Microsoft Entra hybrid join + automatic enrollment GPO | First user to sign in to Windows | When first user signs in to Windows|
+| Windows | Microsoft Entra hybrid join + automatic enrollment GPO | First user to sign in to Windows | When first user signs in to Windows |
 | Windows | Co-management | First user to sign in to Windows | When first user signs in to Windows |
 | Windows | Microsoft Entra join (bulk enrollment token) | None | Not applicable |
 | Windows | Microsoft Entra join (Windows Autopilot self-deploying mode) | None | Not applicable |
@@ -53,7 +55,7 @@ To appear in the Company Portal on shared devices, available apps might be assig
 
 ## Primary user and Microsoft Entra device owner
 
-In some cases, the Intune primary user can be different from the Microsoft Entra Device's **Owner** property (viewable under **Devices** > **Microsoft Entra Devices**). The Microsoft Entra Device owner is added during a device's registration into Microsoft Entra ID.
+In some cases, the Intune primary user can be different from the Microsoft Entra Device's **Owner** property (viewable under **Devices** &gt; **Microsoft Entra Devices**). The Microsoft Entra Device owner is added during a device's registration into Microsoft Entra ID.
 
 For newly enrolled Microsoft Entra devices, the Microsoft Entra ID **Owner** property is automatically set at the same time that the Intune primary user is set.
 
@@ -61,16 +63,16 @@ For newly enrolled Microsoft Entra devices, the Microsoft Entra ID **Owner** pro
 
 Use the following steps to find the primary user of a device:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Choose **Devices** > choose a device.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Choose **Devices** &gt; choose a device.
 3. On the **Overview** page, you can see the primary user listed.
 
-## Change a device's primary user
+## Change the primary user
 
 For Windows devices that are Microsoft Entra joined or Microsoft Entra hybrid joined, the primary user of a device can be updated.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Choose **Devices** > **All devices** > choose a Windows device > **Properties** > **Change primary user**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Choose **Devices** &gt; **All devices** &gt; choose a Windows device &gt; **Properties** &gt; **Change primary user**.
 3. Select a new user and choose **Select**.
 
 After the primary user is updated, it will also be updated in Intune and Microsoft Entra device blades.
@@ -88,7 +90,3 @@ After the primary user is updated, it will also be updated in Intune and Microso
 ## Next steps
 
 [View and manage device details in Intune](device-details.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

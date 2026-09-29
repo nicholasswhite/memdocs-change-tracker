@@ -1,7 +1,7 @@
 ---
-title: Assignment Filter Performance Tips for Intune
+title: "Performance recommendations for grouping, targeting, and filtering in large Microsoft Intune environments"
 description: Optimize Microsoft Intune performance with assignment filters. Learn to use virtual groups, reuse groups, and apply filters effectively. Improve policy deployment speed with incremental group changes, and use assignment filters to include and exclude.
-ms.date: 06/30/2026
+ms.date: "2026-06-30T00:00:00Z"
 ms.topic: article
 ms.reviewer: mattcall
 ---
@@ -14,14 +14,14 @@ When you create assignment filters, there are some performance recommendations y
 
 This article lists and describes recommendations for Intune grouping, targeting, and filtering for your policies and apps. The goal is to help you make architecture and design decisions for Intune deployments in large environments.
 
-These performance recommendations and their implementation can be different and depend on your own environment & other factors, including manageability and simplicity.
+These performance recommendations and their implementation can be different and depend on your own environment &amp; other factors, including manageability and simplicity.
 
 In this article:
 
 - Get an overview of Intune grouping and targeting concepts
 - Get some performance recommendations
 
-For guidance on dynamic groups, go to [Create simpler, more efficient rules for dynamic groups in Microsoft Entra ID](/azure/active-directory/enterprise-users/groups-dynamic-rule-more-efficient).
+For guidance on dynamic groups, go to [Create simpler, more efficient rules for dynamic groups in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-rule-more-efficient).
 
 ## Overview of Intune grouping and targeting concepts
 
@@ -31,7 +31,7 @@ Let's review the grouping, targeting, and filtering features available in Intune
 
 Intune almost exclusively uses Microsoft Entra groups for grouping and targeting. When you select **Groups** in the Microsoft Intune admin center, you're looking at Microsoft Entra groups.
 
-:::image type="content" source="./media/performance-recommendations/admin-center-all-groups.png" alt-text="Screenshot of the Intune admin center, groups, and all groups in Microsoft Intune." lightbox="./media/performance-recommendations/admin-center-all-groups.png":::
+[![Screenshot of the Intune admin center, groups, and all groups in Microsoft Intune.](media/performance-recommendations/admin-center-all-groups.png)](media/performance-recommendations/admin-center-all-groups.png#lightbox)
 
 Microsoft Entra groups are an important part of Intune because these groups are:
 
@@ -50,7 +50,7 @@ After the app or policy is assigned to a Microsoft Entra ID or virtual group, yo
 
 Your assignment filter filters devices in (or out) of that assignment based on device properties.
 
-:::image type="content" source="./media/performance-recommendations/filters-azuread-virtual-groups.png" alt-text="Screenshot of the Intune admin center, the Microsoft Entra groups, virtual groups, and some filter properties in Microsoft Intune."lightbox="./media/performance-recommendations/filters-azuread-virtual-groups.png":::
+[![Screenshot of the Intune admin center, the Microsoft Entra groups, virtual groups, and some filter properties in Microsoft Intune.](media/performance-recommendations/filters-azuread-virtual-groups.png)](media/performance-recommendations/filters-azuread-virtual-groups.png#lightbox)
 
 Filtering is high performance, low latency applicability evaluation at device check-in without any need to precompute group membership.
 
@@ -58,13 +58,13 @@ Filtering is high performance, low latency applicability evaluation at device ch
 
 This section includes some recommendations that can improve performance when assigning your policies in Microsoft Intune.
 
-These recommendations focus on improving performance and reducing latency in workload assignment. They have the most impact when working in large Intune environments, like environments with >100,000 devices. These recommendations should be considered with other design aspects, like manageability, ease of use, role-based administration, and simplicity.
+These recommendations focus on improving performance and reducing latency in workload assignment. They have the most impact when working in large Intune environments, like environments with &gt;100,000 devices. These recommendations should be considered with other design aspects, like manageability, ease of use, role-based administration, and simplicity.
 
 ### Use the built-in virtual groups
 
 | DO | DON'T |
 | --- | --- |
-| :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: Use the **All users** and **All devices** virtual groups instead of creating your own version of all users/all devices using Microsoft Entra dynamic groups. | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: Don't create your own "All users" or "All devices" dynamic groups for policy and app targeting in Intune.
+| ![](../../media/icons/16/check.svg) Use the **All users** and **All devices** virtual groups instead of creating your own version of all users/all devices using Microsoft Entra dynamic groups. | ![](../../media/icons/16/error.svg) Don't create your own "All users" or "All devices" dynamic groups for policy and app targeting in Intune. |
 
 Larger groups take longer to sync membership updates between Microsoft Entra ID and Intune. The **All users** and **All devices** are usually the largest groups you have. If you assign Intune workloads to large Microsoft Entra groups that have many users or devices, then synchronization backlogs can happen in your Intune environment. This backlog impacts policy and app deployments, which take longer to reach managed devices.
 
@@ -73,6 +73,7 @@ The update from Microsoft Entra to Intune typically happens within 5 minutes. It
 The built-in **All users** and **All devices** groups are Intune-only grouping objects that don't exist in Microsoft Entra ID. There isn't a continuous sync between Microsoft Entra ID and Intune. So, group membership is instant.
 
 > [!NOTE]
+>
 > For information on Intune check-in policy refresh intervals, go to [Intune Policy refresh intervals](../../device-configuration/troubleshoot-device-profiles.md#policy-refresh-intervals).
 
 You can also apply this optimization to other large and frequently changing groups you might have, like "All windows devices" or "all iOS devices". Instead of creating and targeting these groups, use the existing "All users" or "All devices" virtual groups, since Intune policies and applications are automatically scoped by platform.
@@ -83,7 +84,7 @@ When using very large groups in Intune (over 100,000 members), expect some initi
 
 | DO | DON'T |
 | --- | --- |
-| :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: Reuse the same group objects for assigning multiple policies. | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: Don't create duplicate copies of the same group to target different policies. <br/><br/> :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: Don't create dedicated "App groups" or "Policy groups". |
+| ![](../../media/icons/16/check.svg) Reuse the same group objects for assigning multiple policies. | ![](../../media/icons/16/error.svg) Don't create duplicate copies of the same group to target different policies.    ![](../../media/icons/16/error.svg) Don't create dedicated "App groups" or "Policy groups". |
 
 Behind the scenes, Intune converts Microsoft Entra group members to assignment targeting messages for each user and device. This process is highly optimized when the group objects are the same.
 
@@ -103,7 +104,7 @@ The admin adds individual user or devices into these groups. These app groups dr
 
 | DO | DON'T |
 | --- | --- |
-| :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: Be careful with large group nesting changes in Microsoft Entra ID.| :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: Don't make large group nesting changes all at once. |
+| ![](../../media/icons/16/check.svg) Be careful with large group nesting changes in Microsoft Entra ID. | ![](../../media/icons/16/error.svg) Don't make large group nesting changes all at once. |
 
 A large group membership change in Microsoft Entra ID can generate bursts of targeting changes in Intune. These bursts can delay targeting of other assignments in your environment.
 
@@ -111,13 +112,13 @@ If a set of admins manage your groups and another set manages Microsoft Entra ID
 
 For example, if a Microsoft Entra admin nests new large groups within an existing group that Intune uses for targeting, then Intune begins syncing all groups and group memberships. The time it takes to process all memberships depends on the number and size of group changes made in Microsoft Entra ID.
 
-This recommendation also applies when groups are "unnested". For more information on nested groups, go to [Manage Microsoft Entra groups and group membership](/azure/active-directory/fundamentals/how-to-manage-groups).
+This recommendation also applies when groups are "unnested". For more information on nested groups, go to [Manage Microsoft Entra groups and group membership](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/how-to-manage-groups).
 
 ### Use assignment filters to include and exclude
 
 | DO | DON'T |
 | --- | --- |
-| :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: Use assignment filters to achieve the correct user+device combination for targeting. | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: Don't mix user groups and device groups when using Include and Exclude groups. |
+| ![](../../media/icons/16/check.svg) Use assignment filters to achieve the correct user+device combination for targeting. | ![](../../media/icons/16/error.svg) Don't mix user groups and device groups when using Include and Exclude groups. |
 
 This recommendation is also a support statement. We don't recommend or support creating assignments to user groups and excluding a device group from that assignment, or vice-versa.
 
@@ -129,7 +130,7 @@ Instead of mixed exclusions, we recommend assigning to a user group. Then, use a
 
 | DO | DON'T |
 | --- | --- |
-| :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: Use filters for simple device properties (OS type, manufacturer, model, ownership, device category). | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: Don't use dynamic groups for simple device properties when the group is only used by Intune. |
+| ![](../../media/icons/16/check.svg) Use filters for simple device properties (OS type, manufacturer, model, ownership, device category). | ![](../../media/icons/16/error.svg) Don't use dynamic groups for simple device properties when the group is only used by Intune. |
 
 Dynamic device groups that use simple property rules (like `device.deviceOSType -eq "Windows"` or `device.deviceOwnership -eq "Company"`) introduce additional processing steps without benefit when the group is only consumed by Intune. Assignment filters evaluate the same properties at device check-in — directly, without requiring group membership evaluation.
 
@@ -142,20 +143,22 @@ Consider migrating dynamic device groups to assignment filters when:
 - You want to **simplify your targeting architecture** and reduce dependencies on group membership evaluation.
 
 > [!NOTE]
-> Dynamic groups remain necessary for Autopilot profile targeting, cross-workload scenarios (Conditional Access, licensing), and user-based grouping. For guidance on dynamic groups, go to [Create simpler, more efficient rules for dynamic groups in Microsoft Entra ID](/azure/active-directory/enterprise-users/groups-dynamic-rule-more-efficient).
+>
+> Dynamic groups remain necessary for Autopilot profile targeting, cross-workload scenarios (Conditional Access, licensing), and user-based grouping. For guidance on dynamic groups, go to [Create simpler, more efficient rules for dynamic groups in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-rule-more-efficient).
 
 ### Avoid `memberOf` in dynamic group rules
 
 | DO | DON'T |
 | --- | --- |
-| :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: Use direct property comparisons (`-eq`, `-startsWith`, `-in`) in dynamic group rules. | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: Don't use the `memberOf` operator in dynamic group rules for Intune targeting. |
+| ![](../../media/icons/16/check.svg) Use direct property comparisons (`-eq`, `-startsWith`, `-in`) in dynamic group rules. | ![](../../media/icons/16/error.svg) Don't use the `memberOf` operator in dynamic group rules for Intune targeting. |
 
 The `memberOf` operator triggers transitive group membership lookups, which adds significant processing complexity. In large environments, `memberOf`-based rules can cause long evaluation times and produce unexpected membership results due to the recursive nature of the lookup.
 
 If you need to target devices based on their membership in another group, evaluate whether the scenario can be redesigned using a direct device property or an assignment filter. For example, instead of `device.memberOf -any (group.objectId -in ['<groupId>'])`, consider whether the devices share a common attribute (like enrollment profile name, device category, or manufacturer) that can be used in a simpler rule or filter.
 
 > [!NOTE]
-> For more information on optimizing rules for dynamic groups, see [Optimize rule efficiency](/entra/identity/users/manage-dynamic-group#optimize-rule-efficiency).
+>
+> For more information on optimizing rules for dynamic groups, see [Optimize rule efficiency](https://learn.microsoft.com/en-us/entra/identity/users/manage-dynamic-group#optimize-rule-efficiency).
 
 ## Summary
 

@@ -1,7 +1,7 @@
 ---
-title: Remove SCEP or PKCS certificates in Microsoft Intune
+title: "Remove SCEP and PKCS certificates in Microsoft Intune"
 description: Learn about the actions that can remove, revoke, or leave untouched the certificates on a device that were provisioned by Intune certificate profiles. Actions include tasks to wipe or retire a managed device, to unenroll a device, manage the certificate profile assignment, and more.
-ms.date: 04/08/2024
+ms.date: "2024-04-08T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -12,13 +12,13 @@ In Microsoft Intune, you can use Simple Certificate Enrollment Protocol (SCEP) a
 These certificates can be removed when you [wipe](../../device-management/actions/wipe.md) or [retire](../../device-management/actions/retire.md) the device. Certificates that were provisioned by Intune are also removed when the profile that provisioned the certificate no longer targets the device or user. There are other scenarios where certificates are automatically removed, and scenarios where certificates stay on the device. This article lists some common scenarios and their effect on PKCS and SCEP certificates.
 
 > [!NOTE]
+>
 > To remove and revoke certificates for a user who's being removed from on-premises Active Directory or Microsoft Entra ID, follow these steps in order:
 >
 > 1. Wipe or retire the user's device.
 > 2. Remove the user from on-premises Active Directory or Microsoft Entra ID.
 
 The majority of this article applies to SCEP and PKCS certificate profiles, but not to imported PKCS certificates. Imported PKCS certificates are removed by Intune when company data is removed from the device or when a device is unenrolled from management.
-
 
 ## Manually deleted certificates
 
@@ -27,6 +27,7 @@ Manual deletion of a certificate is a scenario that applies across platforms and
 In this scenario, after the certificate is deleted, the next time the device checks in with Intune it's found to be out of compliance as it is missing the expected certificate. Intune then issues a new certificate to restore the device to compliance. No other action is needed to restore the certificate.
 
 > [!NOTE]
+>
 > SCEP certificates are [removed but not revoked](../../fundamentals/certificates/third-party-ca-scep.md#removing-certificates) when using a third-party certification authority.
 
 ## Windows devices
@@ -187,10 +188,9 @@ PKCS certificates *stay* on the device (certificates aren't revoked or removed) 
 - An administrator changes or updates the PKCS profile.
 - A certificate profile is removed from the group assignment.
 
-
 > [!NOTE]
-> Android for Work devices are not validated for the preceding scenarios.
-> Android legacy devices (any non-Samsung, non-work profile devices) are not enabled for certificate removal.
+>
+> Android for Work devices are not validated for the preceding scenarios. Android legacy devices (any non-Samsung, non-work profile devices) are not enabled for certificate removal.
 
 ## macOS certificates
 
@@ -214,6 +214,7 @@ SCEP certificates *stay* on the device (certificates aren't revoked or removed) 
 - An administrator removes the user or group from Microsoft Entra ID.
 
 > [!NOTE]
+>
 > Using the [wipe](../../device-management/actions/wipe.md) action to factory reset macOS devices is not supported.
 
 ### PKCS certificates
@@ -238,4 +239,4 @@ PKCS certificates stay on the device (certificates aren't revoked or removed) wh
 
 ## Next steps
 
-[Use certificates for authentication](../../fundamentals/certificates/overview.md)  <!-- Test for second -->
+[Use certificates for authentication](../../fundamentals/certificates/overview.md)

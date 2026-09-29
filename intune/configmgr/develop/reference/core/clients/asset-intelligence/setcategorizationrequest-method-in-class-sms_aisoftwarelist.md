@@ -1,16 +1,18 @@
 ---
-title: SetCategorizationRequest Method
+title: "SetCategorizationRequest Method in Class SMS_AISoftwareList"
 description: In Configuration Manager, the SetCategorizationRequest Windows Management Instrumentation class method initiates a System Center Online software categorization request.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SetCategorizationRequest Method in Class SMS_AISoftwareList
+
 The `SetCategorizationRequest` Windows Management Instrumentation (WMI) class method, in Configuration Manager, initiates a System Center Online software categorization request.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -21,27 +23,31 @@ SInt32 SetCategorizationRequest(
 ```
 
 #### Parameters
- `SoftwareKey`
- Data type: `String`
 
- Qualifiers: [in]
+`SoftwareKey` Data type: `String`
 
- Hash of the software to be categorized. After this method is called, the hash is sent to the System Center Online server to be categorized during its next release.
+Qualifiers: [in]
 
- This property name has changed from `SoftwarePropertiesHash` to `SoftwareKey` in SP1.
+Hash of the software to be categorized. After this method is called, the hash is sent to the System Center Online server to be categorized during its next release.
+
+This property name has changed from `SoftwarePropertiesHash` to `SoftwareKey` in SP1.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_AISoftwareList Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aisoftwarelist-server-wmi-class.md)
+
+[SMS_AISoftwareList Server WMI Class](sms_aisoftwarelist-server-wmi-class.md)

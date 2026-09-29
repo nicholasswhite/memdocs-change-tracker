@@ -1,9 +1,9 @@
 ---
-title: Set up Trustd Mobile Threat Defense integration with Intune
+title: "Integrate Trustd Mobile with Microsoft Intune"
 description: How to set up Trustd Mobile Threat Defense with Microsoft Intune to control mobile device access to your corporate resources.
 author: brenduns
 ms.author: brenduns
-ms.date: 06/24/2026
+ms.date: "2026-06-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ilwu
 ai-usage: ai-assisted
@@ -15,9 +15,6 @@ ms.collection:
 # Integrate Trustd Mobile with Microsoft Intune
 
 Complete the following steps to integrate the Trustd Mobile solution with Intune. The instructions in this article are performed in the [Trustd Mobile console](https://control.traced.app/devices/zero-trust/intune).
-
-> [!NOTE]
-> This Mobile Threat Defense vendor isn't supported for unenrolled devices.
 
 ## Before you begin
 
@@ -42,6 +39,7 @@ The Trustd Mobile app authorization process consists of the following steps:
 5. Authenticate to Microsoft and add the Trustd Mobile Intune Connector app.
 
 > [!IMPORTANT]
+>
 > To perform the Trustd Mobile integration setup, you must sign in with a Microsoft Entra user who has the Global Administrator role. This one-time setup operation uses the Global Administrator rights to grant permission in your organization for the Trustd Mobile apps to communicate with Intune.
 
 ## Set up Trustd Mobile integration
@@ -50,5 +48,5 @@ For step-by-step setup guidance, see [Microsoft Intune – Zero Trust Conditiona
 
 ## Related content
 
-- [Mobile Threat Defense with Microsoft Intune](./overview.md)
-- [Enable mobile threat connectors in Intune](./enable-connector.md)
+- [Mobile Threat Defense with Microsoft Intune](overview.md)
+- [Enable mobile threat connectors in Intune](enable-connector.md)

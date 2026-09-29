@@ -1,14 +1,16 @@
 ---
-title: "IAppManagementHandler::GetPendingComponentList"
+title: "IAppManagementHandler::GetPendingComponentList Method"
 description: "The IAppManagementHandler::GetPendingComponentList method gets the pending component list for a specified deployment type."
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # IAppManagementHandler::GetPendingComponentList Method
-The `IAppManagementHandler::GetPendingComponentList` method, in Configuration Manager, gets the pending component list for a specified deployment type. This is an optional method for the application deployment type handler. It's called if the handler returns a status of "PendingUpdate" for the `EnforceApp` method.  Software Center presents a list of these components to the end user, which need to be closed in order for the `EnforceApp` method to succeed.
+
+The `IAppManagementHandler::GetPendingComponentList` method, in Configuration Manager, gets the pending component list for a specified deployment type. This is an optional method for the application deployment type handler. It's called if the handler returns a status of "PendingUpdate" for the `EnforceApp` method. Software Center presents a list of these components to the end user, which need to be closed in order for the `EnforceApp` method to succeed.
 
 ## Syntax
 
@@ -21,37 +23,37 @@ HRESULT GetPendingComponentList(
 ```
 
 #### Parameters
- `pDeliveryTypeSynclet`
- Data type: `IWbemClassObject`
 
- Qualifiers: [in]
+`pDeliveryTypeSynclet` Data type: `IWbemClassObject`
 
- The WMI object for the installation synclet which is associated with the application deployment type that is being installed.
+Qualifiers: [in]
 
- `pwszPendingComponentList`
- Data type: `LPWSTR`
+The WMI object for the installation synclet which is associated with the application deployment type that is being installed.
 
- Qualifiers: [out]
+`pwszPendingComponentList` Data type: `LPWSTR`
 
- The pending component list in XML format.
+Qualifiers: [out]
+
+The pending component list in XML format.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- S_OK
- The method succeeded. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- E_NOTIMPL
- The method isn't supported by the handler.
+S_OK The method succeeded. All other return values indicate failure.
+
+E_NOTIMPL The method isn't supported by the handler.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Configuration Manager Software Development Kit](../../../../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [Configuration Manager Reference](../../../../../develop/reference/configuration-manager-reference.md)
+
+[Configuration Manager Software Development Kit](../../../../core/misc/system-center-configuration-manager-sdk.md) [Configuration Manager Reference](../../../configuration-manager-reference.md)

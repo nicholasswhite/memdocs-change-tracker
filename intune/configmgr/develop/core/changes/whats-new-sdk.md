@@ -1,7 +1,7 @@
 ---
-title: SDK what's new
+title: "What's new in the Configuration Manager SDK"
 description: Learn about the latest additions or changes to the Configuration Manager software development kit (SDK).
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: sdk
 ms.topic: whats-new
 ms.collection: tier3
@@ -13,8 +13,6 @@ ms.service: configuration-manager
 This article lists any recent additions or changes to the Configuration Manager software development kit (SDK).
 
 ## External dependencies require .NET 4.6.2
-
-<!--10529267-->
 
 Starting in version 2111, all Configuration Manager libraries are built using Microsoft .NET Framework version 4.6.2 or later. If you develop an application or tool that depends upon these libraries, it also needs to support .NET 4.6.2 or later. Microsoft recommends using .NET Framework version 4.8.
 
@@ -33,17 +31,15 @@ If you develop a third-party add-on to Configuration Manager, you should test yo
 The MPAPI contains the management point interface libraries.
 
 - [Microsoft.ConfigurationManagement.MPAPI.i386](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.MPAPI.i386/)
-
 - [Microsoft.ConfigurationManagement.MPAPI.amd64](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.MPAPI.amd64/)
 
-For more information, see the [MPAPI documentation](/previous-versions/system-center/developer/cc144951(v=msdn.10)).
+For more information, see the [MPAPI documentation](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc144951(v=msdn.10)).
 
 ### Install status MIF COM library (ISMIFCOM)
 
 ISMIFCOM is a COM library with a class wrapper for the install status MIF functions.
 
 - [Microsoft.ConfigurationManagement.ISMIFCOM.i386](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.ISMIFCOM.i386/)
-
 - [Microsoft.ConfigurationManagement.ISMIFCOM.amd64](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.ISMIFCOM.amd64/)
 
 For more information, see the [ISMIFCOM documentation](../../reference/core/servers/manage/status-mif-functions.md).
@@ -53,20 +49,17 @@ For more information, see the [ISMIFCOM documentation](../../reference/core/serv
 SMSRsGen and SMSRsGenCtl are legacy COM libraries used to create data discovery records (DDRs).
 
 > [!IMPORTANT]
-> These are legacy libraries. The current recommendation is to use the Client Messaging SDK [DiscoveryDataRecordFile class](/previous-versions/system-center/developer/mt778052(v=cmsdk.12)). Use the latest [Client Messaging SDK package](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.Messaging/) from NuGet.
+>
+> These are legacy libraries. The current recommendation is to use the Client Messaging SDK [DiscoveryDataRecordFile class](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/mt778052(v=cmsdk.12)). Use the latest [Client Messaging SDK package](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.Messaging/) from NuGet.
 
 - [Microsoft.ConfigurationManagement.SMSRsGen.i386](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.SMSRsGen.i386/)
-
 - [Microsoft.ConfigurationManagement.SMSRsGen.amd64](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.SMSRsGen.amd64/)
-
 - [Microsoft.ConfigurationManagement.SMSRsGenCtl.i386](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.SMSRsGenCtl.i386/)
-
 - [Microsoft.ConfigurationManagement.SMSRsGenCtl.amd64](https://www.nuget.org/packages/Microsoft.ConfigurationManagement.SMSRsGenCtl.amd64/)
 
 For more information, see the [SMSResGen documentation](../../reference/core/servers/configure/smsresgen-com-automation-class.md)
 
 ## See also
 
-- [Configuration Manager SDK](../../../develop/core/misc/system-center-configuration-manager-sdk.md)
-
-- [Get started with Configuration Manager cmdlets for Windows PowerShell](/powershell/sccm/configurationmanager/)
+- [Configuration Manager SDK](../misc/system-center-configuration-manager-sdk.md)
+- [Get started with Configuration Manager cmdlets for Windows PowerShell](https://learn.microsoft.com/en-us/powershell/sccm/configurationmanager/)

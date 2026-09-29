@@ -1,16 +1,18 @@
 ---
-title: SMS_OperatingSystemInstallPackage Class
+title: "SMS_OperatingSystemInstallPackage Server WMI Class"
 description: Serves as the unit of distribution for source files. The source files are used in a scripted installation of a valid operating system.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_OperatingSystemInstallPackage Server WMI Class
+
 The `SMS_OperatingSystemInstallPackage` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as the unit of distribution for source files that are used in a scripted installation of a valid operating system, for example, Windows Vista, on a client computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -65,428 +67,388 @@ Class SMS_OperatingSystemInstallPackage : SMS_PackageBaseclass
 ```
 
 ## Methods
- The following table shows the methods in `SMS_OperatingSystemInstallPackage`.
 
-|Method|Description|
-|------------|-----------------|
-|[AddChangeNotification Method in Class SMS_OperatingSystemInstallPackage](../../../develop/reference/osd/addchangenotification-method-in-class-sms_operatingsysteminstallpackage.md)|Adds an operating system install package change notification.|
-|[AddDistributionPoints Method in Class SMS_OperatingSystemInstallPackage](../../../develop/reference/osd/adddistributionpoints-method-in-class-sms_operatingsysteminstallpackage.md)|Adds the distribution points for the operating system install package.|
-|[GetImageProperties Method in Class SMS_OperatingSystemInstallPackage](../../../develop/reference/osd/getimageproperties-method-in-class-sms_operatingsysteminstallpackage.md)|Reads all image properties from the specified WIM file to an XML string.|
-|[RefreshPkgSource Method in Class SMS_OperatingSystemInstallPackage](../../../develop/reference/osd/refreshpkgsource-method-in-class-sms_operatingsysteminstallpackage.md)|Refreshes the package source at all distribution points, when the package properties have not changed.|
-|[ReloadImageProperties Method in Class SMS_OperatingSystemInstallPackage](../../../develop/reference/osd/reloadimageproperties-method-in-class-sms_operatingsysteminstallpackage.md)|Reloads image properties from the source WIM file and updates the database.|
-|[SetSourceSite Method in Class SMS_OperatingSystemInstallPackage](../../../develop/reference/osd/setsourcesite-method-in-class-sms_operatingsysteminstallpackage.md)|Sets the code of the source site for the operating system install package.|
-|[Unlock Method in Class SMS_OperatingSystemInstallPackage](../../../develop/reference/osd/unlock-method-in-class-sms_operatingsysteminstallpackage.md)|Sets the source site to the current site, unlocking the operating system install package.|
+The following table shows the methods in `SMS_OperatingSystemInstallPackage`.
+
+| Method | Description |
+| --- | --- |
+| [AddChangeNotification Method in Class SMS_OperatingSystemInstallPackage](addchangenotification-method-in-class-sms_operatingsysteminstallpackage.md) | Adds an operating system install package change notification. |
+| [AddDistributionPoints Method in Class SMS_OperatingSystemInstallPackage](adddistributionpoints-method-in-class-sms_operatingsysteminstallpackage.md) | Adds the distribution points for the operating system install package. |
+| [GetImageProperties Method in Class SMS_OperatingSystemInstallPackage](getimageproperties-method-in-class-sms_operatingsysteminstallpackage.md) | Reads all image properties from the specified WIM file to an XML string. |
+| [RefreshPkgSource Method in Class SMS_OperatingSystemInstallPackage](refreshpkgsource-method-in-class-sms_operatingsysteminstallpackage.md) | Refreshes the package source at all distribution points, when the package properties have not changed. |
+| [ReloadImageProperties Method in Class SMS_OperatingSystemInstallPackage](reloadimageproperties-method-in-class-sms_operatingsysteminstallpackage.md) | Reloads image properties from the source WIM file and updates the database. |
+| [SetSourceSite Method in Class SMS_OperatingSystemInstallPackage](setsourcesite-method-in-class-sms_operatingsysteminstallpackage.md) | Sets the code of the source site for the operating system install package. |
+| [Unlock Method in Class SMS_OperatingSystemInstallPackage](unlock-method-in-class-sms_operatingsysteminstallpackage.md) | Sets the source site to the current site, unlocking the operating system install package. |
 
 ## Properties
- `ActionInProgress`
- Data type: `UInt32`
 
- Access type: Read-only
+`ActionInProgress` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `AlternateContentProviders`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`AlternateContentProviders` Data type: `String`
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large, lazy]
 
- `Description`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ExtendedData`
- Data type: `UInt8` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ExtendedData` Data type: `UInt8` Array
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large, lazy]
 
- `ExtendedDataSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ExtendedDataSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `ForcedDisconnectDelay`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ForcedDisconnectDelay` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ForcedDisconnectEnabled`
- Data type: `Boolean`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ForcedDisconnectEnabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ForcedDisconnectNumRetries`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ForcedDisconnectNumRetries` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Icon`
- Data type: `UInt8` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Icon` Data type: `UInt8` Array
 
- Qualifiers: [large]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large]
 
- `IconSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IconSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `IgnoreAddressSchedule`
- Data type: `Boolean`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IgnoreAddressSchedule` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ImageProperty`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ImageProperty` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- An XML string holding image properties of the source .wim file. The default value is "".
+Qualifiers: [lazy]
 
- `ISVData`
- Data type: `UInt8` Array
+An XML string holding image properties of the source .wim file. The default value is "".
 
- Access type: Read/Write
+`ISVData` Data type: `UInt8` Array
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large, lazy]
 
- `ISVDataSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ISVDataSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `Language`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Language` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `LastRefreshTime`
- Data type: `DateTime`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LastRefreshTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedCategoryInstanceNames`
- Data type: `String` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedCategoryInstanceNames` Data type: `String` Array
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `Manufacturer`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Manufacturer` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFFilename`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFFilename` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFName`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFPublisher`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFPublisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFVersion`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Name`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `NumOfPrograms`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`NumOfPrograms` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `PackageID`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: [key]
+`PackageID` Data type: `String`
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Access type: [key]
 
- `PackageSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read
+`PackageSize` Data type: `UInt32`
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Access type: Read
 
- `PackageType`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PackageType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the package type is PKG_TYPE_OSINSTALLIMAGE (259).
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- `PkgFlags`
- Data type: `UInt32`
+For this class, the package type is PKG_TYPE_OSINSTALLIMAGE (259).
 
- Access type: Read/Write
+`PkgFlags` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [bits]
 
- `PkgSourceFlag`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PkgSourceFlag` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `PkgSourcePath`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PkgSourcePath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `PreferredAddressType`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PreferredAddressType` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Priority`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Priority` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `RefreshPkgSourceFlag`
- Data type: `Boolean`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`RefreshPkgSourceFlag` Data type: `Boolean`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `RefreshSchedule`
- Data type: `SMS_ScheduleToken` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type:
+`RefreshSchedule` Data type: `SMS_ScheduleToken` Array
 
- Qualifiers: [max(15), lazy]
+Access type:
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [max(15), lazy]
 
- `SecuredScopeNames`
- Data type: `String` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SecuredScopeNames` Data type: `String` Array
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `SedoObjectVersion`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SedoObjectVersion` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `ShareName`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ShareName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ShareType`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ShareType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `SourceDate`
- Data type: `DateTime`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SourceDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `SourceSite`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `SourceVersion`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SourceVersion` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `StoredPkgPath`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`StoredPkgPath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `StoredPkgVersion`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`StoredPkgVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Version`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Version` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
-
 - Icon("Package.ico")
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   To get started using this class, see How to Add an Operating System Install Package in Configuration Manager.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

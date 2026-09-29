@@ -1,7 +1,7 @@
 ---
-title: GetDependent method
+title: "GetDependent method in class SMS_Collection"
 description: Get the collection relationship info which depends on the input collection.
-ms.date: 11/30/2020
+ms.date: "2020-11-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3

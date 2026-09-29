@@ -1,7 +1,7 @@
 ---
-title: SMS_CollectionEvaluationIncremental class
+title: "SMS_CollectionEvaluationIncremental server WMI class"
 description: Show incremental evaluated collections.
-ms.date: 11/30/2020
+ms.date: "2020-11-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3

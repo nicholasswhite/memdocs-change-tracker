@@ -1,7 +1,7 @@
 ---
-title: Collections security and privacy
+title: "Security and privacy for collections in Configuration Manager"
 description: Recommendations for security and privacy with collections in Configuration Manager.
-ms.date: 05/05/2021
+ms.date: "2021-05-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -28,7 +28,7 @@ Collections have the following security issues:
 
 There's no privacy information specifically for collections in Configuration Manager. Collections are containers for resources, such as users and devices. Collection membership often depends on the information that Configuration Manager collects during standard operation.
 
-Configuration Manager can collect resource information from discovery or inventory. Using this information, you can configure a collection to contain the devices that meet your specified criteria. Collections might also be based on the current status information for client management operations.  For example, deploying software or checking for compliance. Along with query-based collections, you can also directly add resources to collections.
+Configuration Manager can collect resource information from discovery or inventory. Using this information, you can configure a collection to contain the devices that meet your specified criteria. Collections might also be based on the current status information for client management operations. For example, deploying software or checking for compliance. Along with query-based collections, you can also directly add resources to collections.
 
 ## Next steps
 

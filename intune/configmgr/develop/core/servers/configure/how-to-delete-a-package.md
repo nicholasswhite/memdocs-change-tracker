@@ -1,30 +1,32 @@
 ---
 description: Learn how to delete a package in Configuration Manager using the SMS_Package class with the following example.
-title: Delete a Package
-ms.date: 09/20/2016
+title: "How to Delete a Package"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete a Package
+
 The following example shows how to delete a package in Configuration Manager by using the `SMS_Package` class.
 
 > [!NOTE]
->  Any reference to this package, such as an advertisement or task sequence, should be cleaned up before deleting the package
+>
+> Any reference to this package, such as an advertisement or task sequence, should be cleaned up before deleting the package
 
 ### To delete a package
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the existing package object by using the `SMS_Package` class.
-
-3.  Delete the package by using the delete method.
+1. Set up a connection to the SMS Provider.
+2. Load the existing package object by using the `SMS_Package` class.
+3. Delete the package by using the delete method.
 
 ## Example
- The following example method deletes an existing package.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method deletes an existing package.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -65,35 +67,39 @@ public void DeleteAPackage(WqlConnectionManager connection, string existingPacka
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the existing package.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPackageID` | - Managed: `String` - VBScript: `String` | The ID of the existing package. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)

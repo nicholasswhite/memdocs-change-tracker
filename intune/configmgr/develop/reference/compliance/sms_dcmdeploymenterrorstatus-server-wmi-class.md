@@ -1,16 +1,18 @@
 ---
-title: SMS_DCMDeploymentErrorStatus Class
+title: "SMS_DCMDeploymentErrorStatus Server WMI Class"
 description: The SMS_DCMDeploymentErrorStatus WMI class is an SMS Provider server class that represents error status for a deployment.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DCMDeploymentErrorStatus Server WMI Class
+
 The `SMS_DCMDeploymentErrorStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents error status for a deployment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -45,259 +47,238 @@ Class SMS_DCMDeploymentErrorStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DCMDeploymentErrorStatus` class does not define any methods.
+
+The `SMS_DCMDeploymentErrorStatus` class does not define any methods.
 
 ## Properties
- `Assets`
- Data type: `UInt32`
 
- Access type: Read-only
+`Assets` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Count of assets related to the status.
+Qualifiers: [not_null, read]
 
- `AssignmentID`
- Data type: `UInt32`
+Count of assets related to the status.
 
- Access type: Read-only
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `AssignmentUniqueID`
- Data type: `String`
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `BL_ID`
- Data type: `UInt32`
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- Access type: Read-only
+`BL_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `BLName`
- Data type: `String`
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- Access type: Read-only
+`BLName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+Qualifiers: [read]
 
- `BLRevision`
- Data type: `UInt32`
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- Access type: Read-only
+`BLRevision` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `CI_ID`
- Data type: `UInt32`
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- Access type: Read-only
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `CIName`
- Data type: `String`
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- Access type: Read-only
+`CIName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+Qualifiers: [read]
 
- `DeploymentTime`
- Data type: `DateTime`
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- Access type: Read-only
+`DeploymentTime` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Time of the deployment.
+Qualifiers: [not_null, read]
 
- `ErrorCode`
- Data type: `UInt32`
+Time of the deployment.
 
- Access type: Read-only
+`ErrorCode` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Error code.
+Qualifiers: [key, not_null, read]
 
- `ErrorDescription`
- Data type: `String`
+Error code.
 
- Access type: Read-only
+`ErrorDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Description of the error.
+Qualifiers: [read]
 
- `ErrorType`
- Data type: `UInt32`
+Description of the error.
 
- Access type: Read-only
+`ErrorType` Data type: `UInt32`
 
- Qualifiers: [enumeration, key, not_null, read]
+Access type: Read-only
 
- Type of error.  Possible value are:
+Qualifiers: [enumeration, key, not_null, read]
 
-|Value|Error type|
-|-|-|
-|1|INFRASTRUCTURAL|
-|2|DISCOVERY|
-|3|CONFLICT|
-|4|ENFORCEMENT|
+Type of error. Possible value are:
 
- `ErrorTypeDisplay`
- Data type: `String`
+| Value | Error type |
+| --- | --- |
+| 1 | INFRASTRUCTURAL |
+| 2 | DISCOVERY |
+| 3 | CONFLICT |
+| 4 | ENFORCEMENT |
 
- Access type: Read-only
+`ErrorTypeDisplay` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
+
+Qualifiers: [read]
 
 The description of the error type.
 
- `ObjectDescription`
- Data type: `String`
+`ObjectDescription` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Description of the object.
+Description of the object.
 
- `ObjectID`
- Data type: `UInt32`
+`ObjectID` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [key, not_null, read]
+Qualifiers: [key, not_null, read]
 
- ID of the object.
+ID of the object.
 
- `ObjectName`
- Data type: `String`
+`ObjectName` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- Name of the object.
+Name of the object.
 
- `ObjectType`
- Data type: `UInt32`
+`ObjectType` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [enumeration, key, not_null, read]
+Qualifiers: [enumeration, key, not_null, read]
 
- Object type. Possible values are:
+Object type. Possible values are:
 
-|Value|Object type|
-|-|-|
-|1|CI|
-|2|SETTING|
-|3|RULE|
+| Value | Object type |
+| --- | --- |
+| 1 | CI |
+| 2 | SETTING |
+| 3 | RULE |
 
- `ObjectTypeName`
- Data type: `String`
+`ObjectTypeName` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- Name of the object type.
+Name of the object type.
 
- `ObjectType`
- Data type: `UInt32`
+`ObjectType` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [enumeration, key, not_null, read]
+Qualifiers: [enumeration, key, not_null, read]
 
- Object type. Possible values are:
+Object type. Possible values are:
 
-|Value|Object type|
-|-|-|
-|1|CI|
-|2|SETTING|
-|3|RULE|
+| Value | Object type |
+| --- | --- |
+| 1 | CI |
+| 2 | SETTING |
+| 3 | RULE |
 
- `Revision`
- Data type: `UInt32`
+`Revision` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- `RuleStateDisplay`
- Data type: `String`
+`RuleStateDisplay` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- `StatusType`
- Data type: `UInt32`
+`StatusType` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [key, not_null, read]
+Qualifiers: [key, not_null, read]
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
- `SummarizationTime`
- Data type: `DateTime`
+`SummarizationTime` Data type: `DateTime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- Time of summarization.
+Time of summarization.
 
- `SummaryType`
- Data type: `UInt32`
+`SummaryType` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- Type of summary.
+Type of summary.
 
- `TargetCollectionID`
- Data type: `String`
+`TargetCollectionID` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](../../../develop/reference/compliance/sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
+See [SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class](sms_dcmdeploymentcompliantdetailsperasset-server-wmi-class.md).
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

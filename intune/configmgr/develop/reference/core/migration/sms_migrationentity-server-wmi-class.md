@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the gathered object entities from the Configuration Manager 2007 hierarchy using SMS_MigrationEntity.
-title: SMS_MigrationEntity Class
-ms.date: 09/20/2016
+title: "SMS_MigrationEntity Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MigrationEntity Server WMI Class
+
 The `SMS_MigrationEntity` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the gathered object entities from the Configuration Manager 2007 hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,165 +37,156 @@ Class SMS_MigrationEntity : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_MigrationEntity` class.
 
-|Method|Description|
-|------------|-----------------|
-|[ExcludeAndInclude Method in Class SMS_MigrationEntity](../../../../develop/reference/core/migration/excludeandinclude-method-in-class-sms_migrationentity.md)|Marks the entities as excluded or included.|
-|[GetEntityReferences Method in Class SMS_MigrationEntity](../../../../develop/reference/core/migration/getentityreferences-method-in-class-sms_migrationentity.md)|Gets the referenced entities of the specified entities.|
+The following table lists the methods in the `SMS_MigrationEntity` class.
+
+| Method | Description |
+| --- | --- |
+| [ExcludeAndInclude Method in Class SMS_MigrationEntity](excludeandinclude-method-in-class-sms_migrationentity.md) | Marks the entities as excluded or included. |
+| [GetEntityReferences Method in Class SMS_MigrationEntity](getentityreferences-method-in-class-sms_migrationentity.md) | Gets the referenced entities of the specified entities. |
 
 ## Properties
- `ChangedAffinity`
- Data type: `Boolean`
 
- Access type: Read-only
+`ChangedAffinity` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this object should be included in changed object type job.
+Qualifiers: none
 
- `DashboardState`
- Data type: `UInt32`
+`true` if this object should be included in changed object type job.
 
- Access type: Read-only
+`DashboardState` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read-only
 
- Entity dashboard state. Possible values are:
+Qualifiers: [enumeration]
 
-|Value|Entity dashboard state|
-|-|-|
-|0|Remaining|
-|1|Migrated|
-|2|Excluded|
+Entity dashboard state. Possible values are:
 
- `EntityID`
- Data type: `UInt32`
+| Value | Entity dashboard state |
+| --- | --- |
+| 0 | Remaining |
+| 1 | Migrated |
+| 2 | Excluded |
 
- Access type: Read-only
+`EntityID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Entity ID.
+Qualifiers: [key]
 
- `EntityKey`
- Data type: `String`
+Entity ID.
 
- Access type: Read-only
+`EntityKey` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Entity key imported from a Configuration Manager 2007 site.
+Qualifiers: none
 
- `EntityName`
- Data type: `String`
+Entity key imported from a Configuration Manager 2007 site.
 
- Access type: Read-only
+`EntityName` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Name of the entity.
+Qualifiers: none
 
- `ExcludedBy`
- Data type: `String`
+Name of the entity.
 
- Access type: Read-only
+`ExcludedBy` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Excluded by user.
+Qualifiers: none
 
- `IsActive`
- Data type: `Boolean`
+Excluded by user.
 
- Access type: Read-only
+`IsActive` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this object is from an active site.
+Qualifiers: none
 
- `JobIDs`
- Data type: `UInt32 Array`
+`true` if this object is from an active site.
 
- Access type: Read-only
+`JobIDs` Data type: `UInt32 Array`
 
- Qualifiers: [lazy]
+Access type: Read-only
 
- Jobs containing this entity.
+Qualifiers: [lazy]
 
- `ObjectTypeID`
- Data type: `UInt32`
+Jobs containing this entity.
 
- Access type: Read-only
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Sub-type of entity.
+Qualifiers: none
 
- `ReferencedEntities`
- Data type: `UInt32 Array`
+Sub-type of entity.
 
- Access type: Read-only
+`ReferencedEntities` Data type: `UInt32 Array`
 
- Qualifiers: [lazy]
+Access type: Read-only
 
- Entities directly referenced by this entity.
+Qualifiers: [lazy]
 
- `ReferencingEntities`
- Data type: `UInt32 Array`
+Entities directly referenced by this entity.
 
- Access type: Read-only
+`ReferencingEntities` Data type: `UInt32 Array`
 
- Qualifiers: [lazy]
+Access type: Read-only
 
- Entities directly referencing this entity.
+Qualifiers: [lazy]
 
- `SourceSiteID`
- Data type: `UInt32`
+Entities directly referencing this entity.
 
- Access type: Read-only
+`SourceSiteID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Source site ID.
+Qualifiers: none
 
- `Status`
- Data type: `UInt32`
+Source site ID.
 
- Access type: Read-only
+`Status` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read-only
 
- Entity migration status. Possible values are:
+Qualifiers: [enumeration]
 
-|Value|Entity migration status|
-|-|-|
-|0|AVAILABLETOMIGRATE|
-|1|MIGRATED|
-|2|RUNNING|
-|3|FAILED|
-|4|EXCLUDED|
-|6|MODIFIED|
-|7|REMOVED|
-|8|PENDINGSCHEDULE|
-|9|SCHEDULED|
+Entity migration status. Possible values are:
 
- `Type`
- Data type: `UInt32`
+| Value | Entity migration status |
+| --- | --- |
+| 0 | AVAILABLETOMIGRATE |
+| 1 | MIGRATED |
+| 2 | RUNNING |
+| 3 | FAILED |
+| 4 | EXCLUDED |
+| 6 | MODIFIED |
+| 7 | REMOVED |
+| 8 | PENDINGSCHEDULE |
+| 9 | SCHEDULED |
 
- Access type: Read-only
+`Type` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Type of entity.
+Qualifiers: none
+
+Type of entity.
 
 ## Remarks
- Each instance represents an object like a collection, a package, or a configuration item, carrying the basic metadata for the entities, such as name, status, and the unique key.
+
+Each instance represents an object like a collection, a package, or a configuration item, carrying the basic metadata for the entities, such as name, status, and the unique key.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).

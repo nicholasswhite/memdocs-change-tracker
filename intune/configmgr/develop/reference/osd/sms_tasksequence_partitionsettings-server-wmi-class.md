@@ -1,16 +1,18 @@
 ---
 description: The SMS_TaskSequence_PartitionSettings WMI class is an SMS Provider server class, in Configuration Manager, that specifies the settings to use when creating and formatting a partition on a hard drive.
-title: SMS_TaskSequence_PartitionSettings Class
-ms.date: 09/20/2016
+title: "SMS_TaskSequence_PartitionSettings Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_PartitionSettings Server WMI Class
+
 The `SMS_TaskSequence_PartitionSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies the settings to use when creating and formatting a partition on a hard disk drive.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,44 +32,41 @@ Class SMS_TaskSequence_PartitionSettings
 ```
 
 ## Methods
- The `SMS_TaskSequence_PartitionSettings` class does not define any methods.
+
+The `SMS_TaskSequence_PartitionSettings` class does not define any methods.
 
 ## Properties
- `AssignVolumeLetter`
- Data type: `Boolean`
 
- Access type: Read/Write
+`AssignVolumeLetter` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if a volume letter will be assigned to the partition. The default value is `true`.
+Qualifiers: None
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+`true` if a volume letter will be assigned to the partition. The default value is `true`.
 
- `Bootable`
- Data type: `Boolean`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`Bootable` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to set the partition as the active partition. The default value is `false`.
+Qualifiers: [not_null]
 
- `FileSystem`
- Data type: `String`
+`true` to set the partition as the active partition. The default value is `false`.
 
- Access type: Read/Write
+`FileSystem` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- File system to use when formatting the partition. Possible values are:
+Qualifiers: None
+
+File system to use when formatting the partition. Possible values are:
 
 - FAT32
-
 - NTFS
 
-  `QuickFormat`
-  Data type: `Boolean`
+  `QuickFormat` Data type: `Boolean`
 
   Access type: Read/Write
 
@@ -75,8 +74,7 @@ Class SMS_TaskSequence_PartitionSettings
 
   `true` to perform a quick format. Set this property to `false` to perform a full format.
 
-  `Size`
-  Data type: `UInt32`
+  `Size` Data type: `UInt32`
 
   Access type: Read/Write
 
@@ -84,8 +82,7 @@ Class SMS_TaskSequence_PartitionSettings
 
   Size of the partition to create. The units are defined by the `SizeUnits` property.
 
-  `SizeUnits`
-  Data type: `String`
+  `SizeUnits` Data type: `String`
 
   Access type: Read/Write
 
@@ -94,34 +91,27 @@ Class SMS_TaskSequence_PartitionSettings
   Units in which the `Size` property is specified. Possible values are:
 
 | Value | Size units |
-| ----- | ---------- |
-|MB|Megabytes|
-|GB|Gigabytes|
-|Percent|Percentage of free space remaining on disk|
+| --- | --- |
+| MB | Megabytes |
+| GB | Gigabytes |
+| Percent | Percentage of free space remaining on disk |
 
- `Type`
- Data type: `String`
+`Type` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [not_null]
+Qualifiers: [not_null]
 
- Type of partition to create. Possible values are:
+Type of partition to create. Possible values are:
 
 - Primary
-
 - Extended
-
 - Logical
-
 - Hidden
-
 - EFI
-
 - MSR
 
-  `VolumeLetterVariable`
-  Data type: `String`
+  `VolumeLetterVariable` Data type: `String`
 
   Access type: Read/Write
 
@@ -129,8 +119,7 @@ Class SMS_TaskSequence_PartitionSettings
 
   Name of a task sequence variable that receives the drive letter of the newly created partition.
 
-  `VolumeName`
-  Data type: `String`
+  `VolumeName` Data type: `String`
 
   Access type: Read/Write
 
@@ -139,12 +128,15 @@ Class SMS_TaskSequence_PartitionSettings
   Name to assign to the volume when it is formatted.
 
 ## Remarks
- There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

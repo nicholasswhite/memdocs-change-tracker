@@ -1,7 +1,7 @@
 ---
-title: Site system roles for clients
+title: "Determine the site system roles for Configuration Manager clients"
 description: Determine site system roles for clients in Configuration Manager.
-ms.date: 01/04/2022
+ms.date: "2022-01-04T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -51,11 +51,8 @@ The fallback status point always communicates with clients over HTTP, which uses
 Install a fallback status point if all the following conditions apply:
 
 - You want client communication errors from Windows computers to be sent to the site, even if these client computers can't communicate with a management point.
-
 - You want to use the Configuration Manager client deployment reports, which display the data that's sent by the fallback status point.
-
 - You have a dedicated server for this site system role and have additional security measures to help protect the server from attack.
-
 - The benefits of using a fallback status point outweigh any security risks associated with unauthenticated connections and clear text transfers over HTTP traffic.
 
 Don't install a fallback status point if the security risks of running a website with unauthenticated connections and clear text transfers outweigh the benefits of identifying client communication problems.
@@ -69,7 +66,8 @@ The reports aren't needed to deploy clients. You can see some deployment informa
 ## Enrollment point and enrollment proxy point
 
 > [!IMPORTANT]
-> With the deprecation of on-premises MDM and the Configuration Manager client for macOS, these site system roles are also deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../../../plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).<!-- 12454901,12927803 -->
+>
+> With the deprecation of on-premises MDM and the Configuration Manager client for macOS, these site system roles are also deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../../../plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
 Configuration Manager requires the enrollment point and the enrollment proxy point to enroll mobile devices and to enroll certificates for Mac computers. You don't need these site system roles in the following situations:
 

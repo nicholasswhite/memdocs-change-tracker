@@ -1,17 +1,20 @@
 ---
-title: InitiateUserInstall Method
+title: "InitiateUserInstall Method in Class SMS_Application"
 description: InitiateUserInstall method is reserved for future use in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# InitiateUserInstall Method in Class SMS_Application
-> [!WARNING]
->  This method is reserved for future use.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+# InitiateUserInstall Method in Class SMS_Application
+
+> [!WARNING]
+>
+> This method is reserved for future use.
+
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,39 +28,41 @@ SInt32 InitiateUserInstall (
 ```
 
 #### Parameters
- `ModelName`
- Data type: `String`
 
- Qualifiers: [in]
+`ModelName` Data type: `String`
 
- Model name of the application.
+Qualifiers: [in]
 
- `Username`
- Data type: `String`
+Model name of the application.
 
- Qualifiers: [in]
+`Username` Data type: `String`
 
- Unique user name.
+Qualifiers: [in]
 
- `ClientGUID`
- Data type: `String`
+Unique user name.
 
- Qualifiers: [in]
+`ClientGUID` Data type: `String`
 
- Unique identifier of a client.
+Qualifiers: [in]
+
+Unique identifier of a client.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Application Server WMI Class](../../../develop/reference/apps/sms_application-server-wmi-class.md)
+
+[SMS_Application Server WMI Class](sms_application-server-wmi-class.md)

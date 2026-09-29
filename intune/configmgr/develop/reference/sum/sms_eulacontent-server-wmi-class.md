@@ -1,7 +1,7 @@
 ---
-title: "SMS_EULAContent Class"
+title: "SMS_EULAContent Server WMI Class"
 description: SMS_EULAContent WMI class is an SMS Provider server class, in Configuration Manager, that provides information about optional configuration item associated with Microsoft Software License Terms.
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_EULAContent Server WMI Class
-The `SMS_EULAContent` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides information about optional configuration item content associated with Microsoft Software License Terms.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_EULAContent` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides information about optional configuration item content associated with Microsoft Software License Terms.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_EULAContent : SMS_BaseClass  
 {  
     UInt32 EULAContentID;  
@@ -24,68 +26,74 @@ Class SMS_EULAContent : SMS_BaseClass
     String EULAText;  
     String SourceSite;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_EULAContent` class does not define any methods.  
+## Methods
 
-## Properties  
- `EULAContentID`  
- Data type: `UInt32`  
+The `SMS_EULAContent` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [key, read]  
+`EULAContentID`  
+ Data type: `UInt32`
 
- The unique ID of license terms content. This ID is unique only for the site.  
+Access type: Read-only
 
- `EULAContentUniqueID`  
- Data type: `String`  
+Qualifiers: [key, read]
 
- Access type: Read/Write  
+The unique ID of license terms content. This ID is unique only for the site.
 
- Qualifiers: [unique]  
+`EULAContentUniqueID`  
+ Data type: `String`
 
- The unique ID of the license terms content. This ID is unique across sites.  
+Access type: Read/Write
 
- `EULAText`  
- Data type: `String`  
+Qualifiers: [unique]
 
- Access type: Read/Write  
+The unique ID of the license terms content. This ID is unique across sites.
 
- Qualifiers: [lazy]  
+`EULAText`  
+ Data type: `String`
 
- Content of the license terms.  
+Access type: Read/Write
 
- `SourceSite`  
- Data type: `String`  
+Qualifiers: [lazy]
 
- Access type: Read-only  
+Content of the license terms.
 
- Qualifiers: [read, SizeLimit("3")]  
+`SourceSite`  
+ Data type: `String`
 
- The site code of the site where the license terms originate. The code string can have a maximum of three characters. For more information, see the `UpdateSource_ID` property in [SMS_CIUpdateSources Server WMI Class](../../../develop/reference/sum/sms_ciupdatesources-server-wmi-class.md).  
+Access type: Read-only
 
-## Remarks  
- Class qualifiers for this class include:  
+Qualifiers: [read, SizeLimit("3")]
 
-- Secured  
+The site code of the site where the license terms originate. The code string can have a maximum of three characters. For more information, see the `UpdateSource_ID` property in [SMS_CIUpdateSources Server WMI Class](sms_ciupdatesources-server-wmi-class.md).
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+## Remarks
 
-  This class is applicable to all types of configuration items, not just software updates. For a discussion of configuration item types, see the `CIType_ID` property of [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).  
+Class qualifiers for this class include:
 
-  Your application should use this class only if the `EulaExists` property is set to `true` in the specified configuration item. This property is defined in the [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).  
+- Secured
 
-  To use this class, the application creates an `SMS_EULAContent` object and sets the properties as required for the software update.  
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-## Requirements  
+  This class is applicable to all types of configuration items, not just software updates. For a discussion of configuration item types, see the `CIType_ID` property of [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+  Your application should use this class only if the `EulaExists` property is set to `true` in the specified configuration item. This property is defined in the [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+  To use this class, the application creates an `SMS_EULAContent` object and sets the properties as required for the software update.
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

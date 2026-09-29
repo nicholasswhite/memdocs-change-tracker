@@ -1,7 +1,7 @@
 ---
-title: Manage apps for on-premises MDM
+title: "Manage apps for on-premises MDM in Configuration Manager"
 description: Manage applications for on-premises mobile device management (MDM) in Configuration Manager.
-ms.date: 01/13/2020
+ms.date: "2020-01-13T00:00:00Z"
 ms.subservice: mdm
 ms.topic: article
 ms.collection: tier3
@@ -14,14 +14,14 @@ ms.service: configuration-manager
 
 When you manage devices with Configuration Manager on-premises mobile device management (MDM), you can manage the following application types:
 
-- Windows Phone app package (*.xap file)
+- Windows Phone app package (\*.xap file)
 - Windows Phone app package (in the Windows Phone Store)
 - Windows Installer through MDM
 - Web Application
 
 For more general information about managing Configuration Manager applications and deployment types, see [Management tasks for Configuration Manager applications](../../apps/deploy-use/management-tasks-applications.md).
 
-## <a name="bkmk_winphone"></a> Create Windows Phone application
+## Create Windows Phone application
 
 A Configuration Manager application has one or more deployment types. The deployment type includes the installation files and information that's required to deploy software to a device. A deployment type also has rules that specify when and how the software is deployed.
 
@@ -29,11 +29,11 @@ For the general steps to create an app and deployment types, see [create an appl
 
 Configuration Manager supports the following app file types For Windows mobile devices:
 
-|Device type|Supported file types|
-|-----------------|---------------------|
-|Windows Phone 8|xap|
-|Windows Phone 8.1|xap, appx, appxbundle|
-|Windows 10 Mobile|xap, appx, appxbundle|
+| Device type | Supported file types |
+| --- | --- |
+| Windows Phone 8 | xap |
+| Windows Phone 8.1 | xap, appx, appxbundle |
+| Windows 10 Mobile | xap, appx, appxbundle |
 
 Deploy Windows Phone apps as **Available** or **Required**. Also use deployments to uninstall apps.
 
@@ -47,7 +47,6 @@ Deploy and monitor applications for mobile devices in Configuration Manager the 
 Review the following limitations specific to mobile devices:
 
 - MDM-enrolled devices don't support simulated deployments, user experience, or scheduling settings.
-
 - Don't add more than 100 locales to a single app. This action prevents the app from installing on the device.
 
 ## Next step

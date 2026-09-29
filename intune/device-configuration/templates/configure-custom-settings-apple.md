@@ -1,7 +1,7 @@
 ---
-title: Add custom settings to Apple devices in Microsoft Intune
+title: "Use custom settings for Apple devices in Microsoft Intune"
 description: Export iOS, iPadOS, and macOS settings from Apple Configurator or Apple Profile Manager tools, and then import these settings into Microsoft Intune. These settings can create, use, and control custom settings and features on iOS, iPadOS, and macOS devices. This custom profile can then be assigned or distributed to iOS, iPadOS, and macOS devices in your organization to create a baseline or standard.
-ms.date: 02/09/2026
+ms.date: "2026-02-09T00:00:00Z"
 ms.topic: article
 ms.reviewer: beflamm
 zone_pivot_groups: platforms-apple
@@ -13,45 +13,30 @@ Using Microsoft Intune, you can add or create custom settings for your iOS/iPadO
 
 This article describes the properties you can configure and provides some guidance on the Apple tools, like Apple Configurator.
 
-The Intune settings catalog has many settings, and more are continually added. Before you create this template profile, look for the settings in the [Intune settings catalog](../../device-configuration/settings-catalog/index.md). It's possible you don't need a custom profile.
+The Intune settings catalog has many settings, and more are continually added. Before you create this template profile, look for the settings in the [Intune settings catalog](../settings-catalog/index.md). It's possible you don't need a custom profile.
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
 > This feature supports the following platforms:
 >
 > - iOS/iPadOS
 > - macOS
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
-> - [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
-> - Create a [custom device configuration profile](./configure-custom-settings.md).
-:::column-end:::
-:::row-end:::
+> - Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
+
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
+
+> - Create a [custom device configuration profile](configure-custom-settings.md).
 
 ## Before you begin
 
 - Don't use custom configuration profiles for sensitive information, such as Wi-Fi connections or authenticating apps, sites, and more. Instead, use the built-in profiles for sensitive information, as they're designed and configured to handle sensitive information.
 
-  For example, use the built-in [Wi-Fi profile](./configure-wifi.md) to deploy a Wi-Fi connection. Use the built-in [certificates profile](../../fundamentals/certificates/overview.md) for authentication.
+  For example, use the built-in [Wi-Fi profile](configure-wifi.md) to deploy a Wi-Fi connection. Use the built-in [certificates profile](../../fundamentals/certificates/overview.md) for authentication.
 
 ::: zone pivot="ios-ipados"
 
@@ -61,17 +46,14 @@ The Intune settings catalog has many settings, and more are continually added. B
   - [Apple Profile Manager](https://support.apple.com/guide/server/intro-to-profile-manager-apd0e2214c6/5.12/mac) (opens Apple's website)
 
   You can use these tools to export settings to a configuration profile. In Intune, you import this file, and then assign the profile to your iOS/iPadOS users and devices. Once assigned, the settings are distributed. They also create a baseline or standard for iOS/iPadOS in your organization.
-
 - When you use **Apple Configurator** to create the configuration profile, be sure the settings you export are compatible with the iOS/iPadOS version on the devices. For information on resolving incompatible settings, search for **Configuration Profile Reference** and **Mobile Device Management Protocol Reference** on the [Apple Developer](https://developer.apple.com/) website.
-
 - When you use **Apple Profile Manager**:
 
   - In Apple Profile Manager, enable [mobile device management](https://help.apple.com/serverapp/mac/5.7/#/apd05B9B761-D390-4A75-9251-E9AD29A61D0C).
   - In Apple Profile Manager, add [iOS/iPadOS devices](https://help.apple.com/profilemanager/mac/5.7/#/pm9onzap1984).
-  - After you add a device in Apple Profile Manager, go to **Under the Library** > **Devices** > select your device > **Settings**. Enter the general settings for the device.
+  - After you add a device in Apple Profile Manager, go to **Under the Library** &gt; **Devices** &gt; select your device &gt; **Settings**. Enter the general settings for the device.
 
     Download and save this file. You enter this file in the Intune profile.
-
   - Be sure the settings you export from the Apple Profile Manager are compatible with the iOS/iPadOS version on the devices. For information on resolving incompatible settings, search for **Configuration Profile Reference** and **Mobile Device Management Protocol Reference** on the [Apple Developer](https://developer.apple.com/) website.
 
 ::: zone-end
@@ -112,7 +94,6 @@ When you configure the profile, enter the following settings:
 - **Deployment channel**: Select the channel you want to use to deploy your configuration profile. If you send the profile to the wrong channel, deployment can fail. After you select a channel and save the profile, you can't change the channel. To select a different channel, create a new profile.
 
   User-targeted payloads don't apply to devices enrolled without user affinity. For more information on whether a payload can be used for a device configuration profile or a user configuration profile, see [Profile-Specific Payload Keys](https://developer.apple.com/documentation/devicemanagement/profile-specific_payload_keys) (opens Apple's developer website).
-
 - **Configuration profile file**: Browse to the `.xml` or `.mobileconfig` file you created. The max file size is `1000000` bytes (just under 1 MB). The imported file is shown. You can also **Remove** a file after you add it.
 
   You can also add device tokens to your `.mobileconfig` files. Use device tokens to add device-specific information. For example, to show the serial number, enter `{{serialnumber}}`. On the device, the text shows similar to `123456789ABC`, which is unique to each device. When entering variables, be sure to use curly brackets `{{ }}`.
@@ -122,9 +103,10 @@ When you configure the profile, enter the following settings:
 ::: zone-end
 
 > [!NOTE]
+>
 > The UI doesn't validate variables, and they're case sensitive. As a result, you might see profiles saved with incorrect input. For example, if you enter `{{DeviceID}}` instead of `{{deviceid}}`, the literal string shows instead of the device's unique ID. Be sure to enter the correct information.
 
 ## Related articles
 
 - [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-- Learn about [custom profiles](./configure-custom-settings.md).
+- Learn about [custom profiles](configure-custom-settings.md).

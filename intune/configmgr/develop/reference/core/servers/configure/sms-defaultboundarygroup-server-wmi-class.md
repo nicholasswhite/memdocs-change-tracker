@@ -1,17 +1,18 @@
 ---
 description: Learn how to represent a default boundary group using SMS_DefaultBoundaryGroup Windows Management Instrumentation (WMI) class.
-title: SMS_DefaultBoundaryGroup Class
-ms.date: 03/13/2017
+title: "SMS_DefaultBoundaryGroup Server WMI Class"
+ms.date: "2017-03-13T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DefaultBoundaryGroup Server WMI Class
 
 The `SMS_DefaultBoundaryGroup` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a default boundary group.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,133 +34,126 @@ Class SMS_DefaultBoundaryGroup : SMS_BaseClass
 ```
 
 ## Methods
- The following table shows the methods in `SMS_DefaultBoundaryGroup`.
 
-|Method|Description|
-|------------|-----------------|
-|[AddBoundary Method in Class SMS_DefaultBoundaryGroup](../../../../../develop/reference/core/servers/configure/addboundary-method-in-class-sms-defaultboundarygroup.md)|Adds one or more boundaries to a default boundary group.|
-|[AddSiteSystem Method in Class SMS_DefaultBoundaryGroup](../../../../../develop/reference/core/servers/configure/addsitesystem-method-in-class-sms-defaultboundarygroup.md)|Adds one or more site system servers to a default boundary group.|
-|[RemoveBoundary Method in Class SMS_DefaultBoundaryGroup](../../../../../develop/reference/core/servers/configure/removeboundary-method-in-class-sms-defaultboundarygroup.md)|Removes one or more boundaries from a default boundary group.|
-|[RemoveSiteSystem Method in Class SMS_DefaultBoundaryGroup](../../../../../develop/reference/core/servers/configure/removesitesystem-method-in-class-sms-defaultboundarygroup.md)|Removes one or more site system servers from a default boundary group.|
+The following table shows the methods in `SMS_DefaultBoundaryGroup`.
+
+| Method | Description |
+| --- | --- |
+| [AddBoundary Method in Class SMS_DefaultBoundaryGroup](addboundary-method-in-class-sms-defaultboundarygroup.md) | Adds one or more boundaries to a default boundary group. |
+| [AddSiteSystem Method in Class SMS_DefaultBoundaryGroup](addsitesystem-method-in-class-sms-defaultboundarygroup.md) | Adds one or more site system servers to a default boundary group. |
+| [RemoveBoundary Method in Class SMS_DefaultBoundaryGroup](removeboundary-method-in-class-sms-defaultboundarygroup.md) | Removes one or more boundaries from a default boundary group. |
+| [RemoveSiteSystem Method in Class SMS_DefaultBoundaryGroup](removesitesystem-method-in-class-sms-defaultboundarygroup.md) | Removes one or more site system servers from a default boundary group. |
 
 ## Properties
- `CreatedBy`
- Data type: `String`
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the user who created the default boundary group.
+Qualifiers: [read]
 
- `CreatedOn`
- Data type: `DateTime`
+Name of the user who created the default boundary group.
 
- Access type: Read-only
+`CreatedOn` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time that the default boundary group was created.
+Qualifiers: [read]
 
- `DefaultSiteCode`
- Data type: `String`
+Date and time that the default boundary group was created.
 
- Access type: Read-only
+`DefaultSiteCode` Data type: `String`
 
- Qualifiers: [read, SizeLimit("3")]
+Access type: Read-only
 
- The site code to which new clients will be automatically assigned.
+Qualifiers: [read, SizeLimit("3")]
 
- `Description`
- Data type: `String`
+The site code to which new clients will be automatically assigned.
 
- Access type: Read-only
+`Description` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- A description for the boundary group.
+Qualifiers: [read]
 
- `GroupID`
- Data type: `UInt32`
+A description for the boundary group.
 
- Access type: Read/Write
+`GroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- An automatically-generated unique ID for the boundary group.
+Qualifiers: [key]
 
- `MemberCount`
- Data type: `UInt32`
+An automatically-generated unique ID for the boundary group.
 
- Access type: Read-only
+`MemberCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of members in the boundary group. The default value is 0.
+Qualifiers: [read]
 
- `ModifiedBy`
- Data type: `String`
+Count of members in the boundary group. The default value is 0.
 
- Access type: Read-only
+`ModifiedBy` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- User who modified the boundary group.
+Qualifiers: [read]
 
- `ModifiedOn`
- Data type: `DateTime`
+User who modified the boundary group.
 
- Access type: Read-only
+`ModifiedOn` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time that the boundary group was modified.
+Qualifiers: [read]
 
- `Name`
- Data type: `String`
+Date and time that the boundary group was modified.
 
- Access type: Read-only
+`Name` Data type: `String`
 
- Qualifiers: [read, unique, not_null]
+Access type: Read-only
 
- Name of the boundary group.
+Qualifiers: [read, unique, not_null]
 
- `Shared`
- Data type: `Boolean`
+Name of the boundary group.
 
- Access type: Read-only
+`Shared` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Indicates whether the boundary group was created by Migration Manager for a shared distribution point.
+Qualifiers: [read]
 
-`SiteSystemCount`
- Data type: `UInt32`
+Indicates whether the boundary group was created by Migration Manager for a shared distribution point.
 
- Access type: Read-only
+`SiteSystemCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of site system servers that are associated with the boundary group. The default value is 0.
+Qualifiers: [read]
 
+Count of site system servers that are associated with the boundary group. The default value is 0.
 
 ## Remarks
 
- Class qualifiers for this class include:
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
 
- ## See Also
- [SMS_BoundaryGroup Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_boundarygroup-server-wmi-class.md)
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+## See Also
+
+[SMS_BoundaryGroup Server WMI Class](sms_boundarygroup-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

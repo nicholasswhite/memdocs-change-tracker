@@ -1,7 +1,7 @@
 ---
-title: Hotfix installer
+title: "Use the Hotfix Installer to install updates for Configuration Manager"
 description: Find out when and how to install updates via the Hotfix Installer for Configuration Manager.
-ms.date: 07/15/2021
+ms.date: "2021-07-15T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -17,8 +17,7 @@ Some updates for Configuration Manager aren't available from the Microsoft cloud
 When you need to install an update that you get from Microsoft:
 
 - If the update has the simple file extension **.exe**: Use the hotfix installer that's included with that download. Install the update directly to the Configuration Manager site server.
-
-- If the hotfix file has the **.update.exe** file extension: [Use the update registration tool to import hotfixes to Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).
+- If the hotfix file has the **.update.exe** file extension: [Use the update registration tool to import hotfixes to Configuration Manager](use-the-update-registration-tool-to-import-hotfixes.md).
 
 ## Overview
 
@@ -33,9 +32,7 @@ If you plan to create deployments to install updates on other computers, install
 When you run the update bundle, the following process happens:
 
 - It extracts the update files for each applicable component from the update bundle.
-
 - Starts a wizard that guides you through a process to configure the updates and deployment options for the updates.
-
 - After you complete the wizard, the updates in the bundle that apply to the site server are installed on the site server.
 
 The wizard also creates deployments that you can use to install the updates on other computers. Deploy the updates to other computers by using a supported deployment method. For example, a software deployment package or System Center Updates Publisher.
@@ -47,30 +44,26 @@ You can update the following three groups in Configuration Manager:
 - Configuration Manager server roles, which include:
 
   - CAS
-
   - Primary site
-
   - Secondary site
-
   - Remote SMS Provider
-
 - Configuration Manager console
-
 - Configuration Manager client
 
 > [!NOTE]
+>
 > Updates for site system roles are installed as part of the update for site servers. They are serviced by the site component manager. This behavior includes updates for the site database and the cloud management gateway (CMG).
 >
 > Pull-distribution points are serviced by distribution manager instead of the site component manager.
 
 Each update bundle for Configuration Manager is a self-extractable .exe file (SFX). This file contains the files that are necessary to install the update on the applicable components of Configuration Manager. Typically, the SFX file can contain the following files:
 
-|File|Details|
-|----------|-------------|
-|`<Product version>-QFE-KB<KB article ID>-<platform>-<language>.exe`|This file is the update. The command line for this file is managed by Updatesetup.exe. For example: `CM1511RTM-QFE-KB123456-X64-ENU.exe`|
-|`Updatesetup.exe`|This MSI wrapper manages the installation of the update bundle. When you run the update, Updatesetup.exe detects the display language of the computer where it runs. By default, the user interface for the update is in English. However, when the display language is supported, the user interface displays in the computer's local language.|
-|`License_<language>.rtf`|When applicable, each update contains one or more license files for supported languages.|
-|`<Product&updatetype>-<product version>-<KB article ID>-<platform>.msp`|When the update applies to the Configuration Manager console or clients, the update bundle includes separate Windows Installer patch (.msp) files. For example: `ConfigMgr1511-AdminUI-KB1234567-i386.msp` for the console or `ConfigMgr1511-client-KB1234567-x64.msp` for the client.|
+| File | Details |
+| --- | --- |
+| `<Product version>-QFE-KB<KB article ID>-<platform>-<language>.exe` | This file is the update. The command line for this file is managed by Updatesetup.exe. For example: `CM1511RTM-QFE-KB123456-X64-ENU.exe` |
+| `Updatesetup.exe` | This MSI wrapper manages the installation of the update bundle. When you run the update, Updatesetup.exe detects the display language of the computer where it runs. By default, the user interface for the update is in English. However, when the display language is supported, the user interface displays in the computer's local language. |
+| `License_<language>.rtf` | When applicable, each update contains one or more license files for supported languages. |
+| `<Product&updatetype>-<product version>-<KB article ID>-<platform>.msp` | When the update applies to the Configuration Manager console or clients, the update bundle includes separate Windows Installer patch (.msp) files. For example: `ConfigMgr1511-AdminUI-KB1234567-i386.msp` for the console or `ConfigMgr1511-client-KB1234567-x64.msp` for the client. |
 
 By default, the update bundle logs its actions to a .log file on the site server. The log file has the same name as the update bundle and is written to the `%SystemRoot%/Temp` folder.
 
@@ -80,33 +73,32 @@ As applicable to the scope of the update, the wizard creates a series of folders
 
 The following table provides details about the folders in the folder structure:
 
-|Folder name|More information|
-|-----------------|----------------------|
-|`<KB Number>`|This folder is the ID number for this update bundle.|
-|`<Update type>`|This folder is the type of update for Configuration Manager. The wizard creates a separate folder for each type of update in the bundle. They include the following types:<br/><br/>- **Server**: Includes updates to site servers, site database servers, and SMS Providers.<br/>- **Client**: Includes updates to the Configuration Manager client.<br />- **AdminConsole**: Includes updates to the Configuration Manager console<br/><br /> The wizard also creates a folder named **SCUP**, which contains the .cab file for Updates Publisher.|
-|`<Platform>`|This folder is platform-specific. It contains update files that are specific to a type of processor. These folders include: **x64** and **I386**.|
+| Folder name | More information |
+| --- | --- |
+| `<KB Number>` | This folder is the ID number for this update bundle. |
+| `<Update type>` | This folder is the type of update for Configuration Manager. The wizard creates a separate folder for each type of update in the bundle. They include the following types:  - **Server**: Includes updates to site servers, site database servers, and SMS Providers. - **Client**: Includes updates to the Configuration Manager client. - **AdminConsole**: Includes updates to the Configuration Manager console   The wizard also creates a folder named **SCUP**, which contains the .cab file for Updates Publisher. |
+| `<Platform>` | This folder is platform-specific. It contains update files that are specific to a type of processor. These folders include: **x64** and **I386**. |
 
 ## How to install updates
 
 To install updates, first install the update bundle on a site server. When you install an update bundle, it starts an install wizard for that update. This wizard does the following actions:
 
 - Extracts the update files
-
 - Helps you configure deployments
-
 - Installs applicable updates on the server components of the local computer
 
 After you install the update bundle on a site server, you can then update other components for Configuration Manager. The following table describes update actions for these various components:
 
-|Component|Instructions|
-|---------------|------------------|
-|Site server|Deploy updates to a remote site server when you don't choose to install the update bundle directly on that remote site server.|
-|Site database|For remote site servers, deploy server updates that include an update to the site database if you don't install the update bundle directly on that remote site server.|
-|Configuration Manager console|After initial installation of the Configuration Manager console, you can install updates for the console on each computer that runs it. You can't modify the console installation files to apply the updates during the initial installation of the console.|
-|Remote SMS Provider|Install updates for each instance of the SMS Provider that runs on a computer other than the site server where you installed the update bundle.|
-|Configuration Manager clients|After initial installation of the Configuration Manager client, you can install updates for the Configuration Manager client on each computer that runs the client.|
+| Component | Instructions |
+| --- | --- |
+| Site server | Deploy updates to a remote site server when you don't choose to install the update bundle directly on that remote site server. |
+| Site database | For remote site servers, deploy server updates that include an update to the site database if you don't install the update bundle directly on that remote site server. |
+| Configuration Manager console | After initial installation of the Configuration Manager console, you can install updates for the console on each computer that runs it. You can't modify the console installation files to apply the updates during the initial installation of the console. |
+| Remote SMS Provider | Install updates for each instance of the SMS Provider that runs on a computer other than the site server where you installed the update bundle. |
+| Configuration Manager clients | After initial installation of the Configuration Manager client, you can install updates for the Configuration Manager client on each computer that runs the client. |
 
 > [!NOTE]
+>
 > You can deploy updates only to computers that run the Configuration Manager client.
 
 If you reinstall a client, Configuration Manager console, or SMS Provider, also reinstall the updates for these components.
@@ -130,9 +122,11 @@ To update the site database, the installation process runs a file named **update
 When you install the update bundle on a site server, you can choose to automatically update the site database when the server update is installed. This decision applies only to the site server where you install the update bundle and doesn't apply to deployments that are created to install the updates on remote site servers.
 
 > [!NOTE]
+>
 > When you choose to automatically update the site database, the process updates a database regardless whether the database is located on the site server or on a remote computer.
 
 > [!IMPORTANT]
+>
 > Before you update the site database, create a backup of the site database. You can't uninstall an update to the site database. For information about how to create a backup for Configuration Manager, see [Backup and recovery for Configuration Manager](backup-and-recovery.md).
 
 ##### Manual update of the site database
@@ -140,18 +134,17 @@ When you install the update bundle on a site server, you can choose to automatic
 If you choose not to automatically update the site database when you install the update bundle on the site server, the server update doesn't modify the database on the site server where the update bundle runs. However, deployments that use the package that is created for software deployment or that installs always update the site database.
 
 > [!WARNING]
+>
 > When the update includes updates to both the site server and the site database, the update isn't functional until the update is completed for both the site server and site database. Until the update is applied to the site database, the site is in an unsupported state.
 
 1. On the site server, stop the **SMS_SITE_COMPONENT_MANAGER** service. Then stop the **SMS_EXECUTIVE** service.
+2. Close the Configuration Manager console.
+3. Run the update script named **update.sql** on that site's database. For information about how to run a script to update a SQL Server database, see the documentation for the version of SQL Server that you use for your site database server.
 
-1. Close the Configuration Manager console.
-
-1. Run the update script named **update.sql** on that site's database. For information about how to run a script to update a SQL Server database, see the documentation for the version of SQL Server that you use for your site database server.
-
-    > [!TIP]
-    > When the update bundle installs, it extracts **update.sql** to the following location on the site server: `\\<Server Name>\SMS_<Site Code>\Hotfix\<KB Number>\update.sql`.
-
-1. Restart the services that you stopped in the previous step.
+   > [!TIP]
+   >
+   > When the update bundle installs, it extracts **update.sql** to the following location on the site server: `\\<Server Name>\SMS_<Site Code>\Hotfix\<KB Number>\update.sql`.
+4. Restart the services that you stopped in the previous step.
 
 #### Update a computer that runs the SMS Provider
 
@@ -166,6 +159,7 @@ When you install an update that includes updates for the Configuration Manager c
 You can deploy updates with Updates Publisher or a software deployment package. You can also manually install the update on each client. For more information about how to use deployments to install updates, see [Deploy updates for Configuration Manager](#deploy-updates-for-configuration-manager).
 
 > [!IMPORTANT]
+>
 > When you install updates for clients and the update bundle includes updates for servers, install the server updates on the primary site to which the clients are assigned.
 
 To manually install the client update, run **Msiexec.exe** on each Configuration Manager client. Include the platform-specific client update MSP file in the command line. For example, you can use the following command line for a client update:
@@ -177,12 +171,12 @@ To manually install the client update, run **Msiexec.exe** on each Configuration
 To update a Configuration Manager console, install the update on the computer that runs the console.
 
 > [!IMPORTANT]
+>
 > When you install updates for the Configuration Manager console, and the update bundle includes updates for servers, also install the server updates on the site that you use with the Configuration Manager console.
 
 If the computer that you update runs the Configuration Manager client:
 
 - You can use a deployment to install the update. For more information about how to use deployments to install updates, see [Deploy updates for Configuration Manager](#deploy-updates-for-configuration-manager).
-
 - If you're signed in to the client computer, run the installation interactively.
 
 To manually install the Configuration Manager console update, run **Msiexec.exe**. Include the Configuration Manager console update MSP file in the command line. For example, you can use the following command line to update a Configuration Manager console:
@@ -200,6 +194,7 @@ When you install the update bundle on a site server, the installation Wizard cre
 The catalog for Updates Publisher is named **SCUPCatalog.cab**. It's in the following location on the computer where you ran the update bundle: `\\<ServerName>\SMS_<SiteCode>\Hotfix\<KB Number>\SCUP\SCUPCatalog.cab`
 
 > [!IMPORTANT]
+>
 > The SCUPCatalog.cab file is created by using paths that are specific to the site server where the update bundle is installed. It can't be used on other site servers.
 
 After the wizard is finished, import the catalog to Updates Publisher. Then use software updates to deploy the updates. For more information, see [System Center Updates Publisher](../../../sum/tools/updates-publisher.md).
@@ -207,18 +202,12 @@ After the wizard is finished, import the catalog to Updates Publisher. Then use 
 #### Import the updates to Updates Publisher
 
 1. Start the Updates Publisher console and select **Import**.
-
-1. On the **Import Type** page of the Import Software Updates Catalog Wizard, select **Specify the path to the catalog to import**. Then specify the SCUPCatalog.cab file.
-
-1. Select **Next**, and then select **Next** again.
-
-1. In the **Security Warning - Catalog Validation** window, select **Accept**. Close the wizard after it's finished.
-
-1. Select the update that you want to deploy, and then select **Publish**.
-
-1. On the **Publish Options** page of the Publish Software Updates Wizard, select **Full Content**, and then select **Next**.
-
-1. Complete the wizard to publish the updates.
+2. On the **Import Type** page of the Import Software Updates Catalog Wizard, select **Specify the path to the catalog to import**. Then specify the SCUPCatalog.cab file.
+3. Select **Next**, and then select **Next** again.
+4. In the **Security Warning - Catalog Validation** window, select **Accept**. Close the wizard after it's finished.
+5. Select the update that you want to deploy, and then select **Publish**.
+6. On the **Publish Options** page of the Publish Software Updates Wizard, select **Full Content**, and then select **Next**.
+7. Complete the wizard to publish the updates.
 
 ### Use software deployment to install updates
 
@@ -227,6 +216,7 @@ When you install the update bundle on the site server of a primary site or CAS, 
 To create a software deployment package, on the **Configure Software Update Deployment** page of the wizard, select each update package type that you want to update. The available types can include servers, Configuration Manager consoles, and clients. A separate package is created for each type of update that you select.
 
 > [!NOTE]
+>
 > The package for servers contains updates for the following components:
 >
 > - Site server
@@ -243,17 +233,18 @@ For more information about how to deploy packages to Configuration Manager clien
 
 You can deploy specific updates to applicable clients. The following information can help you to create device collections for the different components for Configuration Manager.
 
-|Component of Configuration Manager|Instructions|
-|----------------------------------------|------------------|
-|CAS server|Create a direct membership query and add the CAS server.|
-|All primary site servers|Create a direct membership query and add each primary site server.|
-|All secondary site servers|Create a direct membership query and add each secondary site server.|
-|All x86 clients|Create a collection with the following query criteria: `Select * from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X86-based PC"`|
-|All x64 clients|Create a collection with the following query criteria: `Select * from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X64-based PC"`|
-|All computers that run the Configuration Manager console|Create a direct membership query and add each computer.|
-|Remote computers that run an instance of the SMS Provider|Create a direct membership query and add each computer.|
+| Component of Configuration Manager | Instructions |
+| --- | --- |
+| CAS server | Create a direct membership query and add the CAS server. |
+| All primary site servers | Create a direct membership query and add each primary site server. |
+| All secondary site servers | Create a direct membership query and add each secondary site server. |
+| All x86 clients | Create a collection with the following query criteria: `Select * from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X86-based PC"` |
+| All x64 clients | Create a collection with the following query criteria: `Select * from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X64-based PC"` |
+| All computers that run the Configuration Manager console | Create a direct membership query and add each computer. |
+| Remote computers that run an instance of the SMS Provider | Create a direct membership query and add each computer. |
 
 > [!NOTE]
+>
 > To update a site database, deploy the update to the site server for that site.
 
-For more information, see [How to create collections](../../../core/clients/manage/collections/create-collections.md).
+For more information, see [How to create collections](../../clients/manage/collections/create-collections.md).

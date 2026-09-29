@@ -1,13 +1,15 @@
 ---
-title: SMS_CategoryInstance Class
+title: "SMS_CategoryInstance Server WMI Class"
 description: An SMS Provider server class that represents a category instance for replicating information about a category, for example, a product or a classification, to all child sites.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CategoryInstance Server WMI Class
+
 The `SMS_CategoryInstance` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a category instance used to replicate information about a category, for example, a product or a classification, to all child sites. This class is used in settings management monitoring.
 
 ## Syntax
@@ -27,100 +29,95 @@ Class SMS_CategoryInstance : SMS_CategoryInstanceBase
 ```
 
 ## Methods
- The `SMS_CategoryInstance` class does not define any methods.
+
+The `SMS_CategoryInstance` class does not define any methods.
 
 ## Properties
- `CategoryInstance_UniqueID`
- Data type: `String`
 
- Access type: Read/Write
+`CategoryInstance_UniqueID` Data type: `String`
 
- Qualifiers: [unique, SizeLimit("512")
+Access type: Read/Write
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [unique, SizeLimit("512")
 
- `CategoryInstanceID`
- Data type: `UInt32`
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read-only
+`CategoryInstanceID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `CategoryTypeName`
- Data type: `String`
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read/Write
+`CategoryTypeName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: None
 
- `LocalizedCategoryInstanceName`
- Data type: `String`
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedCategoryInstanceName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedInformation`
- Data type: `SMS_Category_LocalizedProperties` Array
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read/Write
+`LocalizedInformation` Data type: `SMS_Category_LocalizedProperties` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `LocalizedPropertyLocaleID`
- Data type: `UInt32`
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedPropertyLocaleID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [read]
 
- `ParentCategoryInstanceID`
- Data type: `UInt32`
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read-only
+`ParentCategoryInstanceID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [read]
 
- `SourceSite`
- Data type: `String`
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [read]
+
+See [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   To use this class, the application creates an `SMS_CategoryInstance` object and sets the properties, as required, for the particular baseline configuration item.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
- [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md)
- [SMS_BaselineAssignment Server WMI Class](../../../develop/reference/compliance/sms_baselineassignment-server-wmi-class.md)
- [SMS_ConfigurationBaselineInfo Server WMI Class](../../../develop/reference/compliance/sms_configurationbaselineinfo-server-wmi-class.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md) [SMS_CategoryInstanceBase Server WMI Class](sms_categoryinstancebase-server-wmi-class.md) [SMS_BaselineAssignment Server WMI Class](sms_baselineassignment-server-wmi-class.md) [SMS_ConfigurationBaselineInfo Server WMI Class](sms_configurationbaselineinfo-server-wmi-class.md)

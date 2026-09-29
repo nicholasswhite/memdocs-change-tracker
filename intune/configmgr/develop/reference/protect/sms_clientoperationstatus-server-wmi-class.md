@@ -1,16 +1,18 @@
 ---
-title: SMS_ClientOperationStatus Class
+title: "SMS_ClientOperationStatus Server WMI Class"
 description: In Configuration Manager, the SMS_ClientOperationStatus WMI class is an SMS Provider server class that summarizes the client operation.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientOperationStatus Server WMI Class
+
 The `SMS_ClientOperationStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that summarizes the client operation.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -42,226 +44,209 @@ Class SMS_ClientOperationStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ClientOperationStatus` class does not define any methods.
+
+The `SMS_ClientOperationStatus` class does not define any methods.
 
 ## Properties
- `CollectionID`
- Data type: `String`
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Target collection identifier of this operation.
+Qualifiers: none
 
- `CompletedClients`
- Data type: `UInt32`
+Target collection identifier of this operation.
 
- Access type: Read/Write
+`CompletedClients` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients that returned a completed result.
+Qualifiers: none
 
- `CreatedBy`
- Data type: `String`
+Count of clients that returned a completed result.
 
- Access type: Read/Write
+`CreatedBy` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- User who created this operation.
+Qualifiers: none
 
- `FailedClients`
- Data type: `UInt32`
+User who created this operation.
 
- Access type: Read/Write
+`FailedClients` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients that returned a failed result.
+Qualifiers: none
 
- `ID`
- Data type: `UInt32`
+Count of clients that returned a failed result.
 
- Access type: Read/Write
+`ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier for the client operation.
+Qualifiers: [key]
 
- `IsExpired`
- Data type: `UInt32`
+Identifier for the client operation.
 
- Access type: Read/Write
+`IsExpired` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Whether the client operation is expired.
+Qualifiers: none
 
- `LastSummaryTime`
- Data type: `DateTime`
+Whether the client operation is expired.
 
- Access type: Read/Write
+`LastSummaryTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last summary time of the client operation.
+Qualifiers: none
 
- `OfflineClients`
- Data type: `UInt32`
+Last summary time of the client operation.
 
- Access type: Read/Write
+`OfflineClients` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients which are always offline when the client operation is performed.
+Qualifiers: none
 
- `PrimaryActionTargetObjectID`
- Data type: `String`
+Count of clients which are always offline when the client operation is performed.
 
- Access type: Read/Write
+`PrimaryActionTargetObjectID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Object ID of the target object of the primary action.
+Qualifiers: none
 
- `PrimaryActionTargetObjectName`
- Data type: `String`
+Object ID of the target object of the primary action.
 
- Access type: Read/Write
+`PrimaryActionTargetObjectName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the target object of the primary action.
+Qualifiers: none
 
- `PrimaryActionTargetObjectType`
- Data type: `UInt32`
+Name of the target object of the primary action.
 
- Access type: Read/Write
+`PrimaryActionTargetObjectType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Target object type of the primary action. Possible values are:
+Qualifiers: none
+
+Target object type of the primary action. Possible values are:
 
 | Value | Object type |
-| ----- | ----------- |
-|1|Threat|
-|8|RequestPolicyNow|
+| --- | --- |
+| 1 | Threat |
+| 8 | RequestPolicyNow |
 
- `PrimaryActionType`
- Data type: `UInt32`
+`PrimaryActionType` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- "Action type of the primary action. Possible values are:
+"Action type of the primary action. Possible values are:
 
 | Value | Action type |
-| ----- | ----------- |
-|1|Full Scan|
-|2|Quick Scan|
-|3|Download Definition|
-|4|Evaluate Software Update|
-|5|Exclude Scan Path|
-|6|Override Default Action|
-|7|Restore Quarantine Items|
+| --- | --- |
+| 1 | Full Scan |
+| 2 | Quick Scan |
+| 3 | Download Definition |
+| 4 | Evaluate Software Update |
+| 5 | Exclude Scan Path |
+| 6 | Override Default Action |
+| 7 | Restore Quarantine Items |
 
- `Priority`
- Data type: `UInt32`
+`Priority` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Operation priority (1 highest, 10 lowest).
+Operation priority (1 highest, 10 lowest).
 
- `RequestedTime`
- Data type: `DateTime`
+`RequestedTime` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Creation time of this operation.
+Creation time of this operation.
 
- `State`
- Data type: `UInt32`
+`State` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- State of this EndPoint Protection client operation. Possible values are:
+State of this EndPoint Protection client operation. Possible values are:
 
 | Value | State |
-| ----- | ----- |
-|0|Action Unknown|
-|1|Action Not Applicable|
-|2|Action Failed|
-|3|Action Succeeded|
+| --- | --- |
+| 0 | Action Unknown |
+| 1 | Action Not Applicable |
+| 2 | Action Failed |
+| 3 | Action Succeeded |
 
- `TargetCollectionName`
- Data type: `String`
+`TargetCollectionName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Target collection name of this operation.
+Target collection name of this operation.
 
- `TimeLastUpdated`
- Data type: `DateTime`
+`TimeLastUpdated` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Latest update time of this client operation.
+Latest update time of this client operation.
 
- `TotalClients`
- Data type: `UInt32`
+`TotalClients` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Count of all clients targeted with this client action.
+Count of all clients targeted with this client action.
 
- `Type`
- Data type: `UInt32`
+`Type` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Operation type.
+Operation type.
 
- `UniqueID`
- Data type: `String`
+`UniqueID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Unique identifier for this client operation.
+Unique identifier for this client operation.
 
- `UnknownClients`
- Data type: `UInt32`
+`UnknownClients` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Count of clients that have not yet reported any result.
+Count of clients that have not yet reported any result.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

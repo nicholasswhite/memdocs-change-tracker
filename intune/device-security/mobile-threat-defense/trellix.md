@@ -1,7 +1,7 @@
 ---
-title: Trellix Mobile Security connector with Intune
+title: "Use Trellix Mobile Security with Intune"
 description: How to set up Trellix Mobile Security with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 08/23/2024
+ms.date: "2024-08-23T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -14,7 +14,6 @@ You can configure Conditional Access policies that are based on Trellix Mobile S
 ## Supported platforms
 
 - **Android 6.0 and later**
-
 - **iOS 11.0 and later**
 
 ## Prerequisites
@@ -31,15 +30,14 @@ The Trellix Mobile Security app for Android and iOS/iPadOS captures file system,
 
 - **Support for enrolled devices** - Intune device compliance policy includes a rule for Mobile Threat Defense (MTD), which can use risk assessment information from Trellix Mobile Security. When the MTD rule is enabled, Intune evaluates device compliance with the policy that you enabled. If the device is found noncompliant, users are blocked access to corporate resources like Exchange Online and SharePoint Online. Users also receive guidance from the Trellix Mobile Security app installed in their devices to resolve the issue and regain access to corporate resources. To support using Trellix Mobile Security with enrolled devices:
 
-  - [Add MTD apps to devices](./assign-apps.md)
-  - [Create a device compliance policy that supports MTD](./create-compliance-policy.md)
-  - [Enable the MTD connector in Intune](./enable-connector.md)
-
+  - [Add MTD apps to devices](assign-apps.md)
+  - [Create a device compliance policy that supports MTD](create-compliance-policy.md)
+  - [Enable the MTD connector in Intune](enable-connector.md)
 - **Support for unenrolled devices** - Intune can use the risk assessment data from the Trellix Mobile Security app on unenrolled devices when you use Intune app protection policies. Admins can use this combination to help protect corporate data within a Microsoft Intune protected app, Admins can also issue a block or selective wipe for corporate data on those unenrolled devices. To support using Trellix Mobile Security with unenrolled devices:
 
-  - [Add the MTD app to unenrolled devices](./add-apps-unenrolled-devices.md)
-  - [Create a Mobile Threat Defense app protection policy](./create-app-protection-policy.md)
-  - [Enable the MTD connector in Intune for unenrolled devices](./enable-unenrolled-devices.md)
+  - [Add the MTD app to unenrolled devices](add-apps-unenrolled-devices.md)
+  - [Create a Mobile Threat Defense app protection policy](create-app-protection-policy.md)
+  - [Enable the MTD connector in Intune for unenrolled devices](enable-unenrolled-devices.md)
 
 ## Sample scenarios
 
@@ -55,11 +53,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected:*
 
-:::image type="content" source="./media/trellix/trellix-malicious-apps-blocked.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/trellix/trellix-malicious-apps-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/trellix/trellix-malicious-apps-unblocked.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/trellix/trellix-malicious-apps-unblocked.png)
 
 ### Control access based on threat to network
 
@@ -67,11 +65,11 @@ Detect threats like **Man-in-the-middle** in network, and protect access to Wi-F
 
 *Block network access through Wi-Fi:*
 
-:::image type="content" source="./media/trellix/trellix-network-wifi-blocked.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/trellix/trellix-network-wifi-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/trellix/trellix-network-wifi-unblocked.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated.](media/trellix/trellix-network-wifi-unblocked.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -79,26 +77,26 @@ Detect threats like **Man-in-the-middle** in network, and prevent synchronizatio
 
 *Block SharePoint Online when network threats are detected:*
 
-:::image type="content" source="./media/trellix/trellix-network-spo-blocked.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/trellix/trellix-network-spo-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/trellix/trellix-network-spo-unblocked.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/trellix/trellix-network-spo-unblocked.png)
 
 ### Control access on unenrolled devices based on threats from malicious apps
 
 When the Trellix Mobile Security mobile threat defense solution considers a device to be infected:
 
-:::image type="content" source="./media/trellix/trellix-mobile-app-policy-block.png" alt-text="Product flow for App protection policies to block access due to malware.":::
+![Product flow for App protection policies to block access due to malware.](media/trellix/trellix-mobile-app-policy-block.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/trellix/trellix-mobile-app-policy-remediated.png" alt-text=" Product flow for App protection policies to grant access after malware is remediated.":::
+![ Product flow for App protection policies to grant access after malware is remediated.](media/trellix/trellix-mobile-app-policy-remediated.png)
 
 ## Next steps
 
-- [Integrate Trellix Mobile Security with Intune](./setup-trellix.md)
-- [Set up Trellix Mobile Security apps](./assign-apps.md)
-- [Create Trellix Mobile Security device compliance policy](./create-compliance-policy.md)
-- [Enable Trellix Mobile Security MTD connector](./enable-connector.md)
-- [Create an MTD app protection policy](./create-app-protection-policy.md)
+- [Integrate Trellix Mobile Security with Intune](setup-trellix.md)
+- [Set up Trellix Mobile Security apps](assign-apps.md)
+- [Create Trellix Mobile Security device compliance policy](create-compliance-policy.md)
+- [Enable Trellix Mobile Security MTD connector](enable-connector.md)
+- [Create an MTD app protection policy](create-app-protection-policy.md)

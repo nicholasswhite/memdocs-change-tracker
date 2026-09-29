@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequenceExecutionStatus Class
+title: "SMS_TaskSequenceExecutionStatus Server WMI Class"
 description: In Configuration Manager, The SMS_TaskSequenceExecutionStatus WMI class is an SMS Provider server class that represents the status of an execution of a task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequenceExecutionStatus Server WMI Class
+
 The `SMS_TaskSequenceExecutionStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the status of an execution of a task sequence.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,114 +34,107 @@ Class SMS_TaskSequenceExecutionStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_TaskSequenceExecutionStatus` class does not define any methods.
+
+The `SMS_TaskSequenceExecutionStatus` class does not define any methods.
 
 ## Properties
- `ActionName`
- Data type: `String`
 
- Access type: Read/Write
+`ActionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the action in the task sequence that was executed.
+Qualifiers: none
 
- `ActionOutput`
- Data type: `String`
+Name of the action in the task sequence that was executed.
 
- Access type: Read/Write
+`ActionOutput` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Console output of the task sequence step that was executed.
+Qualifiers: none
 
- `AdvertisementID`
- Data type: `String`
+Console output of the task sequence step that was executed.
 
- Access type: Read/Write
+`AdvertisementID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Deployment identifier of the task sequence.
+Qualifiers: [key]
 
- `ExecutionTime`
- Data type: `DateTime`
+Deployment identifier of the task sequence.
 
- Access type: Read/Write
+`ExecutionTime` Data type: `DateTime`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Run time of the task sequence.
+Qualifiers: [key]
 
- `ExitCode`
- Data type: `UInt32`
+Run time of the task sequence.
 
- Access type: Read/Write
+`ExitCode` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Exit code of the task sequence step that was executed.
+Qualifiers: none
 
- `GroupName`
- Data type: `String`
+Exit code of the task sequence step that was executed.
 
- Access type: Read/Write
+`GroupName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Group name in the task sequence that was executed.
+Qualifiers: none
 
- `LastStatusMsgID`
- Data type: `UInt32`
+Group name in the task sequence that was executed.
 
- Access type: Read/Write
+`LastStatusMsgID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Identifier for this execution status.
+Qualifiers: none
 
- `LastStatusMsgName`
- Data type: `String`
+Identifier for this execution status.
 
- Access type: Read/Write
+`LastStatusMsgName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name for this execution status.
+Qualifiers: none
 
- `PackageID`
- Data type: `String`
+Name for this execution status.
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Task sequence package identifier.
+Qualifiers: [key]
 
- `ResourceID`
- Data type: `UInt32`
+Task sequence package identifier.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Client computer identifier.
+Qualifiers: [key]
 
- `Step`
- Data type: `UInt32`
+Client computer identifier.
 
- Access type: Read/Write
+`Step` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Step number in the task sequence that was executed.
+Qualifiers: none
+
+Step number in the task sequence that was executed.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

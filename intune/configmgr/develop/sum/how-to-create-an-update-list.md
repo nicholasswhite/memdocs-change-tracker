@@ -1,36 +1,37 @@
 ---
-title: Create an Update List
+title: "How to Create an Update List"
 description: You create an update list that contains a set of software updates, in Configuration Manager, by creating an instance of the SMS_AuthorizationList class and populating the properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create an Update List
-You create an update list that contains a set of software updates, in Configuration Manager, by creating an instance of the [SMS_AuthorizationList](../../develop/reference/sum/sms_authorizationlist-server-wmi-class.md) class and populating the properties.
+
+You create an update list that contains a set of software updates, in Configuration Manager, by creating an instance of the [SMS_AuthorizationList](../reference/sum/sms_authorizationlist-server-wmi-class.md) class and populating the properties.
 
 ### To create an update list
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create the new update list object using the `SMS_AuthorizationList` class.
-
-3.  Populate the new update list properties.
-
-4.  Save the new update list and properties.
+1. Set up a connection to the SMS Provider.
+2. Create the new update list object using the `SMS_AuthorizationList` class.
+3. Populate the new update list properties.
+4. Save the new update list and properties.
 
 ## Example
- The following example method shows how to create an update list that contains a set of software updates by creating an instance of the `SMS_AuthorizationList` class and populating the properties.
+
+The following example method shows how to create an update list that contains a set of software updates by creating an instance of the `SMS_AuthorizationList` class and populating the properties.
 
 > [!IMPORTANT]
->  The `LocalizedInformation` property that is used in this example requires an object array (embedded array) of the description information.
+>
+> The `LocalizedInformation` property that is used in this example requires an object array (embedded array) of the description information.
 
- In the example, the `LocaleID` property is hard-coded to English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../../develop/reference/core/servers/configure/sms_identification-server-wmi-class.md) `LocaleID` property.
+In the example, the `LocaleID` property is hard-coded to English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../reference/core/servers/configure/sms_identification-server-wmi-class.md) `LocaleID` property.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
- The following example shows the subroutine call in Visual Basic:
+The following example shows the subroutine call in Visual Basic:
 
 ```vbscript
 
@@ -57,7 +58,7 @@ Call CreateSUMUpdateList(swbemServices,       _
                          newDescriptionInfo)
 ```
 
- The following example shows the method call in C#:
+The following example shows the method call in C#:
 
 ```csharp
 
@@ -143,40 +144,44 @@ public void CreateSUMUpdateList(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`Connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`newUpdates`|-   Managed: `Integer` array<br />-   VBScript: `Integer` array|An array of the updates that is associated with the Update List.|
-|`newDescriptionInfo`|-   Managed: `Object` array<br />-   VBScript: `Object` array|An object array (embedded properties) of the type `LocalizedInformation`.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `newUpdates` | - Managed: `Integer` array - VBScript: `Integer` array | An array of the updates that is associated with the Update List. |
+| `newDescriptionInfo` | - Managed: `Object` array - VBScript: `Object` array | An object array (embedded properties) of the type `LocalizedInformation`. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See also
 
-[About software update deployments](about-software-updates-deployments.md)
-[SMS_AuthorizationList](../../develop/reference/sum/sms_authorizationlist-server-wmi-class.md)
+[About software update deployments](about-software-updates-deployments.md) [SMS_AuthorizationList](../reference/sum/sms_authorizationlist-server-wmi-class.md)

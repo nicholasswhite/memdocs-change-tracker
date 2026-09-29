@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the settings and properties used by the software updates client agent using SMS_SoftwareUpdatesAgentConfig class.
-title: SMS_SoftwareUpdatesAgentConfig Class
-ms.date: 09/20/2016
+title: "SMS_SoftwareUpdatesAgentConfig Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SoftwareUpdatesAgentConfig Server WMI Class
+
 The `SMS_SoftwareUpdatesAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the settings and properties used by the software updates client agent.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -47,249 +49,227 @@ Class SMS_SoftwareUpdatesAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_SoftwareUpdatesAgentConfig` class does not define any methods.
+
+The `SMS_SoftwareUpdatesAgentConfig` class does not define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Software Updates Agent ID is 9.
+Qualifiers: [key, read]
 
- `AlternateContentProviders`
- Data type: `String`
+Identifies the client agent component. The Software Updates Agent ID is 9.
 
- Access type: Read/Write
+`AlternateContentProviders` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- An XML string to set alternate content provider settings.
+Qualifiers: none
 
- `AssignmentBatchingTimeout`
- Data type: `UInt32`
+An XML string to set alternate content provider settings.
 
- Access type: Read/Write
+`AssignmentBatchingTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The maximum number of seconds between two or more required deployments before those deployments are considered to be a single batch of deployed updates. The default value is 0 (no batching).
+Qualifiers: none
 
- `BrandingSubTitle`
- Data type: `String`
+The maximum number of seconds between two or more required deployments before those deployments are considered to be a single batch of deployed updates. The default value is 0 (no batching).
 
- Access type: Read/Write
+`BrandingSubTitle` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- This property is deprecated in Configuration Manager.
+Qualifiers: none
 
- `BrandingTitle`
- Data type: `String`
+This property is deprecated in Configuration Manager.
 
- Access type: Read/Write
+`BrandingTitle` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- This property is deprecated in Configuration Manager.
+Qualifiers: none
 
- `ContentDownloadTimeout`
- Data type: `UInt32`
+This property is deprecated in Configuration Manager.
 
- Access type: Read/Write
+`ContentDownloadTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates the timeout value for downloading the content.
+Qualifiers: none
 
- `ContentLocationTimeout`
- Data type: `UInt32`
+Indicates the timeout value for downloading the content.
 
- Access type: Read/Write
+`ContentLocationTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates the timeout value for accessing the content location.
+Qualifiers: none
 
- `DayReminderInterval`
- Data type: `UInt32`
+Indicates the timeout value for accessing the content location.
 
- Access type: Read/Write
+`DayReminderInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The day reminder interval. This value is not used by the software updates management feature.
+Qualifiers: none
 
- `Enabled`
- Data type: `Boolean`
+The day reminder interval. This value is not used by the software updates management feature.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the agent is enabled.
+Qualifiers: none
 
- `EvaluationSchedule`
- Data type: `String`
+`true` if the agent is enabled.
 
- Access type: Read/Write
+`EvaluationSchedule` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Deployment re-evaluation schedule.
+Qualifiers: none
 
- `HourReminderInterval`
- Data type: `UInt32`
+Deployment re-evaluation schedule.
 
- Access type: Read/Write
+`HourReminderInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The hour reminder interval. This value is not used by the software updates management feature.
+Qualifiers: none
 
- `MaxRandomDelayMinutes`
- Data type: `UInt32`
+The hour reminder interval. This value is not used by the software updates management feature.
 
- Access type: Read/Write
+`MaxRandomDelayMinutes` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The maximum interval in minutes added to the available after time to prevent a large number of computers from simultaneously downloading the software. This value is not used by the software updates management feature.
+Qualifiers: none
 
- `MaxScanRetryCount`
- Data type: `UInt32`
+The maximum interval in minutes added to the available after time to prevent a large number of computers from simultaneously downloading the software. This value is not used by the software updates management feature.
 
- Access type: Read/Write
+`MaxScanRetryCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- When a software update scan returns any error in the array `WSUSScanRetryCodes`, the scan is retried every  `ScanRetryDelay` minutes for  `MaxScanRetryCount` times.
+Qualifiers: none
 
- `PerDPInactivityTimeout`
- Data type: `UInt32`
+When a software update scan returns any error in the array `WSUSScanRetryCodes`, the scan is retried every `ScanRetryDelay` minutes for `MaxScanRetryCount` times.
 
- Access type: Read/Write
+`PerDPInactivityTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point. If 0 is specified, the timeout value is configured as 8 hours. The default value is 1 hour.
+Qualifiers: none
 
- `ReminderInterval`
- Data type: `UInt32`
+The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point. If 0 is specified, the timeout value is configured as 8 hours. The default value is 1 hour.
 
- Access type: Read/Write
+`ReminderInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The reminder interval. This value is not used by the software updates management feature.
+Qualifiers: none
 
- `ScanRetryDelay`
- Data type: `UInt32`
+The reminder interval. This value is not used by the software updates management feature.
 
- Access type: Read/Write
+`ScanRetryDelay` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- When a software update scan returns any error in the array `WSUSScanRetryCodes`, the scan is retried every `ScanRetryDelay` minutes for `MaxScanRetryCount` times.
+Qualifiers: none
 
- `ScanSchedule`
- Data type: `String`
+When a software update scan returns any error in the array `WSUSScanRetryCodes`, the scan is retried every `ScanRetryDelay` minutes for `MaxScanRetryCount` times.
 
- Access type: Read/Write
+`ScanSchedule` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Software update scan schedule.
+Qualifiers: none
 
- `TotalInactivityTimeout`
- Data type: `UInt32`
+Software update scan schedule.
 
- Access type: Read/Write
+`TotalInactivityTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point from all distribution points supplied for system initiated downloads. The agent attempts to communicate with each distribution point supplied for the `PerDPInactivityTimeout` before attempting to communicate with next distribution point supplied.
+Qualifiers: none
 
- `UpdateStatusRefreshIntervalDays`
- Data type: `UInt32`
+The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point from all distribution points supplied for system initiated downloads. The agent attempts to communicate with each distribution point supplied for the `PerDPInactivityTimeout` before attempting to communicate with next distribution point supplied.
 
- Access type: Read/Write
+`UpdateStatusRefreshIntervalDays` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- This value is not used by the software updates management client.
+Qualifiers: none
 
- `UserExperience`
- Data type: `Boolean`
+This value is not used by the software updates management client.
 
- Access type: Read/Write
+`UserExperience` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- This property is deprecated in Configuration Manager.
+Qualifiers: none
 
- `UserJobPerDPInactivityTimeout`
- Data type: `UInt32`
+This property is deprecated in Configuration Manager.
 
- Access type: Read/Write
+`UserJobPerDPInactivityTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point from all distribution points supplied for user initiated downloads. The agent attempts to communicate with each distribution point supplied for the `PerDPInactivityTimeout` before attempting to communicate with next distribution point supplied. The default timeout is one hour.
+Qualifiers: none
 
- `UserJobTotalInactivityTimeout`
- Data type: `UInt32`
+The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point from all distribution points supplied for user initiated downloads. The agent attempts to communicate with each distribution point supplied for the `PerDPInactivityTimeout` before attempting to communicate with next distribution point supplied. The default timeout is one hour.
 
- Access type: Read/Write
+`UserJobTotalInactivityTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point from all distribution points supplied for user initiated downloads. The agent attempts to communicate with each distribution point supplied for the `PerDPInactivityTimeout` before attempting to communicate with next distribution point supplied. The default timeout is one hour.
+Qualifiers: none
 
- `WSUSLocationTimeout`
- Data type: `UInt32`
+The time before the agent no longer attempts to communicate with an inactive or non-responsive distribution point from all distribution points supplied for user initiated downloads. The agent attempts to communicate with each distribution point supplied for the `PerDPInactivityTimeout` before attempting to communicate with next distribution point supplied. The default timeout is one hour.
 
- Access type: Read/Write
+`WSUSLocationTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The number of seconds before the agent no longer waits to receive a list of Windows Software Update Services servers used to perform a software update scan.
+Qualifiers: none
 
- `WSUSScanRetryCodes`
- Data type: `String Array`
+The number of seconds before the agent no longer waits to receive a list of Windows Software Update Services servers used to perform a software update scan.
 
- Access type: Read/Write
+`WSUSScanRetryCodes` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- An array of error code values. When a software update scan returns any error in the array `WSUSScanRetryCodes`, the scan is retried every `ScanRetryDelay` minutes for `MaxScanRetryCount` times.
+Qualifiers: none
 
- `WUAMaxRebootsWhenOnInternet`
- Data type: `UInt32`
+An array of error code values. When a software update scan returns any error in the array `WSUSScanRetryCodes`, the scan is retried every `ScanRetryDelay` minutes for `MaxScanRetryCount` times.
 
- Access type: Read/Write
+`WUAMaxRebootsWhenOnInternet` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- This property is reserved for internal use.
+Qualifiers: none
 
- `WUASuccessCodes`
- Data type: `String Array`
+This property is reserved for internal use.
 
- Access type: Read/Write
+`WUASuccessCodes` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- This property is reserved for internal use.
+Qualifiers: none
+
+This property is reserved for internal use.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

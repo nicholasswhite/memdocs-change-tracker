@@ -1,34 +1,34 @@
 ---
-title: Create a Query
+title: "How to Create a Configuration Manager Query"
 description: Create an SMS_Query-based query by creating an instance of SMS_Query. The SMS_Query class Expression object defines a WQL query.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a Configuration Manager Query
+
 In Configuration Manager, you create an `SMS_Query`-based query by creating an instance of `SMS_Query`. The `SMS_Query` class `Expression` object defines a WQL query. If you want to limit the query results to a specific collection, specify the collection identifier in the `LimitToCollectionID` property.
 
 > [!NOTE]
->  When you create a query, it is displayed in the Configuration Manager console under **Queries**.
+>
+> When you create a query, it is displayed in the Configuration Manager console under **Queries**.
 
 ### To create a query
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
-
-2.  Create an instance of [SMS_Query](../../../develop/reference/core/clients/manage/sms_query-server-wmi-class.md).
-
-3.  Populate the `SMS_Query` properties.
-
-4.  Commit the `SMS_Query`.
-
-5.  If required, retrieve the query object and get the query identifier.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
+2. Create an instance of [SMS_Query](../../reference/core/clients/manage/sms_query-server-wmi-class.md).
+3. Populate the `SMS_Query` properties.
+4. Commit the `SMS_Query`.
+5. If required, retrieve the query object and get the query identifier.
 
 ## Example
- The following example method creates an `SMS_Query` class query that queries for all systems. The method returns the query identifier, which can be used as input to the example in [How to Run a Configuration Manager Query](../../../develop/core/understand/how-to-run-a-query.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following example method creates an `SMS_Query` class query that queries for all systems. The method returns the query identifier, which can be used as input to the example in [How to Run a Configuration Manager Query](how-to-run-a-query.md).
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```vbs
 Function CreateQuery(connection)
@@ -130,37 +130,42 @@ public string CreateQuery(WqlConnectionManager connection)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|-   A valid connection to the SMS Provider.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | - A valid connection to the SMS Provider. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../servers/configure/role-based-administration.md).
 
 ## See Also
- [About Configuration Manager Queries](../../../develop/core/understand/about-configuration-manager-queries.md)
- [How to Run a Configuration Manager Query](../../../develop/core/understand/how-to-run-a-query.md)
+
+[About Configuration Manager Queries](about-configuration-manager-queries.md) [How to Run a Configuration Manager Query](how-to-run-a-query.md)

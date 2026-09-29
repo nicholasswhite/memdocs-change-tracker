@@ -1,16 +1,18 @@
 ---
-title: SMS_SiteToSubSite_a Class
+title: "SMS_SiteToSubSite_a Server WMI Class"
 description: In Configuration Manager, the SMS_SiteToSubSite_a WMI class is an SMS Provider server class that defines the hierarchy of sites by relating an SMS_Site Server WMI Class object with its subsites.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_SiteToSubSite_a Server WMI Class
-The `SMS_SiteToSubSite_a` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that defines the hierarchy of sites by relating an [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md) object with its subsites.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_SiteToSubSite_a Server WMI Class
+
+The `SMS_SiteToSubSite_a` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that defines the hierarchy of sites by relating an [SMS_Site Server WMI Class](sms_site-server-wmi-class.md) object with its subsites.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,43 +25,46 @@ Class SMS_SiteToSubSite_a : SMS_BaseAssociation
 ```
 
 ## Methods
- The `SMS_SiteToSubSite_a` class does not define any methods.
+
+The `SMS_SiteToSubSite_a` class does not define any methods.
 
 ## Properties
- `childSite`
- Data type: `ref:SMS_Site`
 
- Access type: Read/Write
+`childSite` Data type: `ref:SMS_Site`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Reference to an [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md) object path for the child site.
+Qualifiers: [key]
 
- `parentSite`
- Data type: `ref:SMS_Site`
+Reference to an [SMS_Site Server WMI Class](sms_site-server-wmi-class.md) object path for the child site.
 
- Access type: Read/Write
+`parentSite` Data type: `ref:SMS_Site`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Reference to an `SMS_Site` object path for the parent site.
+Qualifiers: [key]
+
+Reference to an `SMS_Site` object path for the parent site.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Association: ToInstance
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

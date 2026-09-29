@@ -1,7 +1,7 @@
 ---
-title: SMS_Collection class
+title: "SMS_Collection server WMI class"
 description: WMI class for collection objects.
-ms.date: 11/30/2020
+ms.date: "2020-11-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -126,10 +126,10 @@ Access type: Read-only
 
 Qualifiers: [read, enumeration]
 
-The type of the collection. When creating or modifying collections, the collection type must be the same for all included, excluded, and limited collections. Mismatched collection types aren't allowed. <!--SMS442380-->
+The type of the collection. When creating or modifying collections, the collection type must be the same for all included, excluded, and limited collections. Mismatched collection types aren't allowed.
 
 | Value | Collection type |
-| ----- | --------------- |
+| --- | --- |
 | `0` | Other |
 | `1` | User |
 | `2` | Device |
@@ -165,8 +165,8 @@ Qualifiers: [read, enumeration]
 Current status of the collection. Possible values are:
 
 | Value | Current status |
-| ----- | -------------- |
-| `0` | None|
+| --- | --- |
+| `0` | None |
 | `1` | Ready |
 | `2` | Refreshing |
 | `3` | Saving |
@@ -477,7 +477,7 @@ Qualifiers: [lazy, enumeration]
 This value indicates how Configuration Manager refreshes the collection. The default value is manual (`1`). Possible values:
 
 | Value | Refresh type |
-| ----- | ------------ |
+| --- | --- |
 | `1` | Manual |
 | `2` | Periodic |
 | `4` | Constant update |

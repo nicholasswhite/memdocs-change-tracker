@@ -1,13 +1,15 @@
 ---
-title: SMS_PackageToContent Class
+title: "SMS_PackageToContent Server WMI Class"
 description: The SMS_PackageToContent WMI class is an SMS Provider server class, in Configuration Manager, that relates a Configuration Manager package to its content.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PackageToContent Server WMI Class
+
 The `SMS_PackageToContent` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that relates a Configuration Manager package to its content.
 
 ## Syntax
@@ -28,119 +30,114 @@ Class SMS_PackageToContent : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in `SMS_PackageToContent`.
 
-|Method|Description|
-|------------|-----------------|
-|[IsContentValid Method in Class SMS_PackageToContent](../../../../../develop/reference/core/servers/configure/iscontentvalid-method-in-class-sms_packagetocontent.md)|Determines if the package content is valid.|
+The following table lists the methods in `SMS_PackageToContent`.
+
+| Method | Description |
+| --- | --- |
+| [IsContentValid Method in Class SMS_PackageToContent](iscontentvalid-method-in-class-sms_packagetocontent.md) | Determines if the package content is valid. |
 
 ## Properties
- `ContentID`
- Data type: `SInt32`
 
- Access type: Read/Write
+`ContentID` Data type: `SInt32`
 
- Qualifiers: [key, Not_null]
+Access type: Read/Write
 
- The value of the `ContentID` property of the package.
+Qualifiers: [key, Not_null]
 
- `ContentSubFolder`
- Data type: `String`
+The value of the `ContentID` property of the package.
 
- Access type: Read/Write
+`ContentSubFolder` Data type: `String`
 
- Qualifiers: [Not_null]
+Access type: Read/Write
 
- The name of the subfolder in the package source folder that contains the files for the content.
+Qualifiers: [Not_null]
 
- `ContentUniqueID`
- Data type: `String`
+The name of the subfolder in the package source folder that contains the files for the content.
 
- Access type: Read-only
+`ContentUniqueID` Data type: `String`
 
- Qualifiers: [read, Not_null]
+Access type: Read-only
 
- The unique ID for the content.
+Qualifiers: [read, Not_null]
 
- `ContentVersionInPkg`
- Data type: `SInt32`
+The unique ID for the content.
 
- Access type: Read/Write
+`ContentVersionInPkg` Data type: `SInt32`
 
- Qualifiers: [Not_null]
+Access type: Read/Write
 
- The version of the content in the package.
+Qualifiers: [Not_null]
 
- `MinPackageVersion`
- Data type: `SInt32`
+The version of the content in the package.
 
- Access type: Read/Write
+`MinPackageVersion` Data type: `SInt32`
 
- Qualifiers: [Not_null]
+Access type: Read/Write
 
- The minimum package version in which the content appears.
+Qualifiers: [Not_null]
 
- `PackageID`
- Data type: `String`
+The minimum package version in which the content appears.
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key, Not_null]
+Access type: Read/Write
 
- Configuration Manager-specific ID of the package.
+Qualifiers: [key, Not_null]
 
- `PackageType`
- Data type: `UInt32`
+Configuration Manager-specific ID of the package.
 
- Access type: Read/Write
+`PackageType` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- The type of the package. Possible values are:
+Qualifiers: [enumeration]
 
-|Value|Description|
-|-----------|-----------------|
-|0|PKG_TYPE_REGULAR|
-|3|PKG_TYPE_DRIVER|
-|4|PKG_TYPE_TASK_SEQUENCE|
-|5|PKG_TYPE_SWUPDATES|
-|257|PKG_TYPE_IMAGE|
-|258|PKG_TYPE_BOOTIMAGE|
-|259|PKG_TYPE_OSINSTALLIMAGE|
+The type of the package. Possible values are:
 
- `SecuredTypeID`
- Data type: `UInt32`
+| Value | Description |
+| --- | --- |
+| 0 | PKG_TYPE_REGULAR |
+| 3 | PKG_TYPE_DRIVER |
+| 4 | PKG_TYPE_TASK_SEQUENCE |
+| 5 | PKG_TYPE_SWUPDATES |
+| 257 | PKG_TYPE_IMAGE |
+| 258 | PKG_TYPE_BOOTIMAGE |
+| 259 | PKG_TYPE_OSINSTALLIMAGE |
 
- Access type: Read-only
+`SecuredTypeID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Secured type of related package.
+Qualifiers: [read]
 
- `SecureObjectID`
- Data type: `String`
+Secured type of related package.
 
- Access type: Read/Write
+`SecureObjectID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Secure object ID. For app, it is model name. For others, it is package ID.
+Qualifiers: None
+
+Secure object ID. For app, it is model name. For others, it is package ID.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   Your application can query this class to get the list of contents contained by a package or the list of packages that contain specified content.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

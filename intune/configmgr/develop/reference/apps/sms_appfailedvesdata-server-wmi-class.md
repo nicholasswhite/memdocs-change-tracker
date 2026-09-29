@@ -1,7 +1,7 @@
 ---
 description: The SMS_AppFailedVEsData Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager.
-title: SMS_AppFailedVEsData Class
-ms.date: 09/20/2016
+title: "SMS_AppFailedVEsData Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -34,114 +34,107 @@ Class SMS_AppFailedVEsData : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AppFailedVEsData` class does not define any methods.
+
+The `SMS_AppFailedVEsData` class does not define any methods.
 
 ## Properties
- `AssignmentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- AssignmentID
+Qualifiers: [not_null, read]
 
- `AssignmentUniqueID`
- Data type: `String`
+AssignmentID
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- AssignmentUniqueID
+Qualifiers: [not_null, read]
 
- `CollectionID`
- Data type: `String`
+AssignmentUniqueID
 
- Access type: Read-only
+`CollectionID` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- CollectionID
+Qualifiers: [key, not_null, read]
 
- `ComplianceState`
- Data type: `UInt32`
+CollectionID
 
- Access type: Read-only
+`ComplianceState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- ComplianceState
+Qualifiers: [not_null, read]
 
- `DTCI`
- Data type: `UInt32`
+ComplianceState
 
- Access type: Read-only
+`DTCI` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- DTCI
+Qualifiers: [key, not_null, read]
 
- `DTResultID`
- Data type: `UInt64`
+DTCI
 
- Access type: Read-only
+`DTResultID` Data type: `UInt64`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- DTResultID
+Qualifiers: [not_null, read]
 
- `EnforcementState`
- Data type: `UInt32`
+DTResultID
 
- Access type: Read-only
+`EnforcementState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- EnforcementState
+Qualifiers: [not_null, read]
 
- `ErrorValue`
- Data type: `UInt32`
+EnforcementState
 
- Access type: Read-only
+`ErrorValue` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- ErrorValue
+Qualifiers: [read]
 
- `MachineName`
- Data type: `String`
+ErrorValue
 
- Access type: Read-only
+`MachineName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- MachineName
+Qualifiers: [key, not_null, read]
 
- `UserName`
- Data type: `String`
+MachineName
 
- Access type: Read-only
+`UserName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- UserName
+Qualifiers: [key, not_null, read]
 
- `VEDisplayName`
- Data type: `String`
+UserName
 
- Access type: Read-only
+`VEDisplayName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- VEDisplayName
+Qualifiers: [key, not_null, read]
+
+VEDisplayName
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

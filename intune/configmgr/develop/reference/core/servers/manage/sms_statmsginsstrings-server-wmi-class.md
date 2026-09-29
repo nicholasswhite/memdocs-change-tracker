@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent insertion strings in the status message using SMS_StatMsgInsStrings class in Configuration Manager.
-title: SMS_StatMsgInsStrings Class
-ms.date: 09/20/2016
+title: "SMS_StatMsgInsStrings Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_StatMsgInsStrings Server WMI Class
+
 The `SMS_StatMsgInsStrings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents insertion strings that are inserted into the status message.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,56 +26,59 @@ Class SMS_StatMsgInsStrings : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_StatMsgInsStrings` class does not define any methods.
+
+The `SMS_StatMsgInsStrings` class does not define any methods.
 
 ## Properties
- `InsStrIndex`
- Data type: `UInt32`
 
- Access type: Read
+`InsStrIndex` Data type: `UInt32`
 
- Qualifiers: [Description(""), key]
+Access type: Read
 
- The index defining the order of the insertion strings. The index directly relates to the insertion points in the status message.
+Qualifiers: [Description(""), key]
 
- `InsStrValue`
- Data type: `String`
+The index defining the order of the insertion strings. The index directly relates to the insertion points in the status message.
 
- Access type: Read
+`InsStrValue` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Text to insert into the insertion point.
+Qualifiers: None
 
- `RecordID`
- Data type: `SInt64`
+Text to insert into the insertion point.
 
- Access type: Read
+`RecordID` Data type: `SInt64`
 
- Qualifiers: [key]
+Access type: Read
 
- Record ID of the status message to which the insertion point belongs.
+Qualifiers: [key]
+
+Record ID of the status message to which the insertion point belongs.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  This class represents insertion strings for Configuration Manager component messages and user-defined messages. The status message is represented by [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md). Your application can use the [RaiseRawStatusMsg Method in Class SMS_StatusMessage](../../../../../develop/reference/core/servers/manage/raiserawstatusmsg-method-in-class-sms_statusmessage.md) to add insertion strings. To delete insertion strings, the application deletes the associated status message.
+  This class represents insertion strings for Configuration Manager component messages and user-defined messages. The status message is represented by [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md). Your application can use the [RaiseRawStatusMsg Method in Class SMS_StatusMessage](raiserawstatusmsg-method-in-class-sms_statusmessage.md) to add insertion strings. To delete insertion strings, the application deletes the associated status message.
 
 > [!NOTE]
->  Use the [SMS_StatInsStr Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statinsstr-server-wmi-class.md) for a high-performance version of this class.
+>
+> Use the [SMS_StatInsStr Server WMI Class](sms_statinsstr-server-wmi-class.md) for a high-performance version of this class.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md)
- [SMS_StatInsStr Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statinsstr-server-wmi-class.md)
+
+[SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md) [SMS_StatInsStr Server WMI Class](sms_statinsstr-server-wmi-class.md)

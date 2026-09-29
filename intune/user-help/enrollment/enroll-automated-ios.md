@@ -1,7 +1,7 @@
 ---
-title: Set up your iOS/iPadOS device at work or school
+title: "Set up work or school access on company device"
 description: Describes how to enroll a company or school-owned iOS/iPadOS device in Microsoft Intune so that you can access Wi-Fi, files, and apps for work.
-ms.date: 11/21/2023
+ms.date: "2023-11-21T00:00:00Z"
 ms.reviewer:
 ---
 
@@ -14,11 +14,12 @@ Set up and register a work or school-provided device so that you can access Wi-F
 To set up a personal device for work, see [set up personal and bring-your-own devices](enroll-ios.md).
 
 ## Set up your iOS/iPadOS device
+
 1. Turn on your device.
 2. Select your **Language**.
 3. Connect your device to Wi-Fi.
-3. On the **Set up iOS device** screen, choose **Set up as new device**.
-4. When prompted to, sign with your Apple ID.
+4. On the **Set up iOS device** screen, choose **Set up as new device**.
+5. When prompted to, sign with your Apple ID.
 6. Agree to the **Terms and Conditions**. Decide whether you want to send diagnostic information to Apple.
 7. Update any required device settings if prompted.
 

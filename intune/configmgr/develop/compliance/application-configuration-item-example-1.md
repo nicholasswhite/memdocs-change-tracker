@@ -1,13 +1,15 @@
 ---
 title: Application Configuration Item Example 1
 description: The Application Configuration Item Instance example determines whether the Configuration Manager client is installed on the system by using Microsoft Windows Installer-based detection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Application Configuration Item Example 1
+
 The following Application Configuration Item Instance example determines whether the Configuration Manager client is installed on the system by using Microsoft Windows Installer-based detection.
 
 ## Application Configuration Item Example
@@ -84,4 +86,5 @@ This application is discovered via Windows Installer-based discovery. If it does
 ```
 
 ## See Also
+
 [About authoring configuration baselines and items](about-authoring-configuration-baselines-and-configuration-items.md)

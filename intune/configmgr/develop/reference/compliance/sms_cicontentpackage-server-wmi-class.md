@@ -1,16 +1,18 @@
 ---
-title: SMS_CIContentPackage Class
+title: "SMS_CIContentPackage Server WMI Class"
 description: The SMS_CIContentPackage WMI class represents the relationship between configuration item and associated content to SMS Package where the binary content is packaged and distributed.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CIContentPackage Server WMI Class
+
 The `SMS_CIContentPackage` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, represents the relationship between configuration item and associated content to `SMS Package` where the binary content is packaged and distributed.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,60 +28,59 @@ Class SMS_CIContentPackage : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CIContentPackage` class does not define any methods.
+
+The `SMS_CIContentPackage` class does not define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: [key]
 
- `CI_SecuredTypeID`
- Data type: `UInt32`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`CI_SecuredTypeID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- CI_SecuredTypeID is the associated RBAC security object type, depending on which object content (Application, Software Update and so on) is part of this package.
+Qualifiers: none
 
- `CI_UniqueID`
- Data type: `String`
+CI_SecuredTypeID is the associated RBAC security object type, depending on which object content (Application, Software Update and so on) is part of this package.
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `ModelName`
- Data type: `String`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `PackageID`
- Data type: `String`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md)
+Qualifiers: [key]
+
+[SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md)
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: CCM_ClientAgentSettings Class
+title: "CCM_ClientAgentSettings Client WMI Class"
 description: A client class, in Configuration Manager, that contains common client agent settings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_ClientAgentSettings Client WMI Class
+
 The `CCM_ClientAgentSettings` WMI class is a client class, in Configuration Manager, that contains common client agent settings.
 
- The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,104 +32,99 @@ class CCM_ClientAgentSettings
 ```
 
 ## Methods
- The `CCM_ClientAgentSettings` class does not define any methods.
+
+The `CCM_ClientAgentSettings` class does not define any methods.
 
 ## Properties
- `BrandingTitle`
- Data type: `String`
 
- Access type: Read-only
+`BrandingTitle` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Title of the brand displayed in Configuration Manager. It maps to the client agent setting in Computer Agent, called **Organization name displayed in Software Center**
+Qualifiers: [read]
 
- `DayReminderInterval`
- Data type: `UInt32`
+Title of the brand displayed in Configuration Manager. It maps to the client agent setting in Computer Agent, called **Organization name displayed in Software Center**
 
- Access type: Read-only
+`DayReminderInterval` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Interval at which notifications are displayed to the user when there is required software pending and the earliest required deadline is less than 24 hours and greater than 1 hour.
+Qualifiers: [read]
 
- `DisplayNewProgramNotification`
- Data type: `Boolean`
+Interval at which notifications are displayed to the user when there is required software pending and the earliest required deadline is less than 24 hours and greater than 1 hour.
 
- Access type: Read-only
+`DisplayNewProgramNotification` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `false`, if no notifications are shown to the user for software availability or software installations. Only restart notifications are displayed. This property is mapped to the **Suppress notifications for new deployments** client agent setting in the Configuration Manager Admin Console.
+Qualifiers: [read]
 
- `EnableThirdPartyOrchestration`
- Data type: `UInt32`
+`false`, if no notifications are shown to the user for software availability or software installations. Only restart notifications are displayed. This property is mapped to the **Suppress notifications for new deployments** client agent setting in the Configuration Manager Admin Console.
 
- Access type: Read-only
+`EnableThirdPartyOrchestration` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Flag to indicate whether Software Updates and Software Distribution agents wait for third-party components to install updates and applications.
+Qualifiers: [read]
 
- `HourReminderInterval`
- Data type: `UInt32`
+Flag to indicate whether Software Updates and Software Distribution agents wait for third-party components to install updates and applications.
 
- Access type: Read-only
+`HourReminderInterval` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Interval at which notifications are displayed to the user when there is required software pending and the earliest required deadline is less than 1 hour.
+Qualifiers: [read]
 
- `InstallRestriction`
- Data type: `UInt32`
+Interval at which notifications are displayed to the user when there is required software pending and the earliest required deadline is less than 1 hour.
 
- Access type: Read-only
+`InstallRestriction` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Restriction flag to indicate who can initiate the installation. These options can be selected from the UI. The following table shows the list of possible values.
+Qualifiers: [read]
 
-|Value|Permission|
-|-----------|----------------|
-|0|Everyone|
-|1|Local administrators only|
-|2|Not used|
-|3|Local administrators and primary users|
-|4|No one|
+Restriction flag to indicate who can initiate the installation. These options can be selected from the UI. The following table shows the list of possible values.
 
- `ReminderInterval`
- Data type: `UInt32`
+| Value | Permission |
+| --- | --- |
+| 0 | Everyone |
+| 1 | Local administrators only |
+| 2 | Not used |
+| 3 | Local administrators and primary users |
+| 4 | No one |
 
- Access type: Read-only
+`ReminderInterval` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Interval at which notifications are displayed to the user when there is required software pending and the earliest required deadline is greater than 24 hours.
+Qualifiers: [read]
 
- `SuspendBitLocker`
- Data type: `UInt32`
+Interval at which notifications are displayed to the user when there is required software pending and the earliest required deadline is greater than 24 hours.
 
- Access type: Read-only
+`SuspendBitLocker` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Flag to indicate whether to suspend BitLocker Drive Protection PIN protectors for the restart initiated by Configuration Manager.
+Qualifiers: [read]
 
- `SystemRestartTurnaroundTime`
- Data type: `UInt32`
+Flag to indicate whether to suspend BitLocker Drive Protection PIN protectors for the restart initiated by Configuration Manager.
 
- Access type: Read-only
+`SystemRestartTurnaroundTime` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Estimated turnaround time, in seconds, for a system restart.
+Qualifiers: [read]
+
+Estimated turnaround time, in seconds, for a system restart.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

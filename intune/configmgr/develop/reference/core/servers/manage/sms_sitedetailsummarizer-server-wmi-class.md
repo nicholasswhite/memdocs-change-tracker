@@ -1,16 +1,18 @@
 ---
 description: Article detailing the use of SMS_SiteDetailSummarizer to provide per-site status of components and the system.
-title: SMS_SiteDetailSummarizer Class
-ms.date: 09/20/2016
+title: "SMS_SiteDetailSummarizer Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SiteDetailSummarizer Server WMI Class
+
 The `SMS_SiteDetailSummarizer` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides per-site status of components and the system. An instance of this class is created for each site.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,127 +34,121 @@ Class SMS_SiteDetailSummarizer : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SiteDetailSummarizer` class does not define any methods.
+
+The `SMS_SiteDetailSummarizer` class does not define any methods.
 
 ## Properties
- `AvailabilityState`
- Data type: `UInt32`
 
- Access type: Read
+`AvailabilityState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Availability state of the site. The default value is 0.
+Qualifiers: None
 
- `DatabaseFree`
- Data type: `UInt32`
+Availability state of the site. The default value is 0.
 
- Access type: Read
+`DatabaseFree` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Percentage of free storage space available for the site databases.
+Qualifiers: None
 
- `Errors`
- Data type: `UInt32`
+Percentage of free storage space available for the site databases.
 
- Access type: Read
+`Errors` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Total number of error status messages reported by all server components in this site during the tally interval.
+Qualifiers: None
 
- `Infos`
- Data type: `UInt32`
+Total number of error status messages reported by all server components in this site during the tally interval.
 
- Access type: Read
+`Infos` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Total number of informational status messages reported by all server components in this site during the tally interval.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Total number of informational status messages reported by all server components in this site during the tally interval.
 
- Access type: Read
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read
 
- Site code of a Configuration Manager site.
+Qualifiers: [key, SizeLimit("3")]
 
- `SiteName`
- Data type: `String`
+Site code of a Configuration Manager site.
 
- Access type: Read
+`SiteName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Friendly name of the site.
+Qualifiers: None
 
- `Status`
- Data type: `UInt32`
+Friendly name of the site.
 
- Access type: Read
+`Status` Data type: `UInt32`
 
- Qualifiers: [ToInstance]
+Access type: Read
 
- Status value indicating the health of the component. Possible values are:
+Qualifiers: [ToInstance]
+
+Status value indicating the health of the component. Possible values are:
 
 | Value | Status |
-| ----- | ------ |
-|GREEN(0)|OK. There are no warning or error messages.|
-|YELLOW(1)|Warning. Warning messages were generated, but error messages were not generated.|
-|RED(2)|Critical. There are error messages.|
+| --- | --- |
+| GREEN(0) | OK. There are no warning or error messages. |
+| YELLOW(1) | Warning. Warning messages were generated, but error messages were not generated. |
+| RED(2) | Critical. There are error messages. |
 
- `TallyInterval`
- Data type: `String`
+`TallyInterval` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Interval for which the detailed statistics apply. You must specify a tally interval in your WHERE clause to query instances of this class. The statistics are reset to zero each time the schedule elapses. To use this property, see How To Read Tally Intervals.
+Interval for which the detailed statistics apply. You must specify a tally interval in your WHERE clause to query instances of this class. The statistics are reset to zero each time the schedule elapses. To use this property, see How To Read Tally Intervals.
 
- `TransFree`
- Data type: `UInt32`
+`TransFree` Data type: `UInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: None
+Qualifiers: None
 
- Percentage of free storage space available for the transaction logs of the site databases.
+Percentage of free storage space available for the transaction logs of the site databases.
 
- `Version`
- Data type: `String`
+`Version` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: None
+Qualifiers: None
 
- Version of Configuration Manager that is installed on the site, including the service pack if one is installed.
+Version of Configuration Manager that is installed on the site, including the service pack if one is installed.
 
- `Warnings`
- Data type: `UInt32`
+`Warnings` Data type: `UInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: None
+Qualifiers: None
 
- Total number of warning status messages reported by all server components in this site during the tally interval.
+Total number of warning status messages reported by all server components in this site during the tally interval.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   This class summarizes all informational, warning, and error messages for the site. An instance of the class is created for each server component that is running in the site.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

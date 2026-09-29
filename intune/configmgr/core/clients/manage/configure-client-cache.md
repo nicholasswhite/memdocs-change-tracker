@@ -1,7 +1,7 @@
 ---
-title: Configure the client cache
+title: "Configure the content cache for Configuration Manager clients"
 description: Configure the client content cache during or after client install.
-ms.date: 12/16/2024
+ms.date: "2024-12-16T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -19,6 +19,7 @@ You can specify the cache folder size using client settings in the Configuration
 The default location for the Configuration Manager client cache is `%windir%\ccmcache` and the default disk space is 5120 MB.
 
 > [!IMPORTANT]
+>
 > Don't encrypt the folder used for the client cache. Configuration Manager can't download content to an encrypted folder.
 
 ## About
@@ -41,7 +42,8 @@ If you later increase the cache size, the client attempts to download the conten
 Cached content isn't automatically deleted and is only removed if new content requires its disk space. It remains in the cache for the configured number of minutes after the client uses that content. If you configure the content with the option to persist content in the client cache, the client doesn't automatically delete it. If the cache space is used by content that was downloaded within the configured number of minutes, and the client must download new content, either increase the cache size or choose the option to delete persisted cache content. For more information, see [About client settings](../deploy/about-client-settings.md#minimum-duration-before-cached-content-can-be-removed-minutes).
 
 > [!IMPORTANT]
-> Don't manually delete files from the client cache folder using Windows Explorer or the command line. This action can cause issues with the Configuration Manager client. The client manages the cache and tracks the content apart from the file system. Always use a supported method to delete files in the cache.<!-- 5788028 -->
+>
+> Don't manually delete files from the client cache folder using Windows Explorer or the command line. This action can cause issues with the Configuration Manager client. The client manages the cache and tracks the content apart from the file system. Always use a supported method to delete files in the cache.
 
 For applications only, if the content for a related deployment currently exists in the cache, then the client downloads only new or changed files. Related deployments include those deployments for older revisions of the same deployment type and superseded applications.
 
@@ -54,12 +56,11 @@ Use the following procedures to configure the client cache during manual client 
 Run the CCMSetup.exe command from the install source location and specify the following properties that you require, and separated by spaces:
 
 - DISABLECACHEOPT
-
 - SMSCACHEDIR
-
 - SMSCACHEFLAGS
 
 > [!NOTE]
+>
 > Use the cache size settings available in **Client Settings** in the Configuration Manager console instead of SMSCACHESIZE. For more information, see [Client cache settings](../deploy/about-client-settings.md#client-cache-settings).
 
 For more information about how to use these command-line properties for CCMSetup.exe, see [About client installation properties](../deploy/about-client-installation-properties.md).
@@ -67,32 +68,28 @@ For more information about how to use these command-line properties for CCMSetup
 ### Configure the cache during client push installation
 
 1. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and select the **Sites** node.
+2. Select the appropriate site. On the **Home** tab of the ribbon, in the **Settings** group, select **Client Installation Settings**, and choose **Client Push Installation**. Switch to the **Installation Properties** tab.
+3. Specify the following properties, separated by spaces:
 
-1. Select the appropriate site. On the **Home** tab of the ribbon, in the **Settings** group, select **Client Installation Settings**, and choose **Client Push Installation**. Switch to the **Installation Properties** tab.
+   - DISABLECACHEOPT
+   - SMSCACHEDIR
+   - SMSCACHEFLAGS
 
-1. Specify the following properties, separated by spaces:
-
-    - DISABLECACHEOPT
-
-    - SMSCACHEDIR
-
-    - SMSCACHEFLAGS
-
-    > [!NOTE]
-    > Use the cache size settings available in **Client Settings** in the Configuration Manager console instead of SMSCACHESIZE. For more information, see [Client cache settings](../deploy/about-client-settings.md#client-cache-settings).
+   > [!NOTE]
+   >
+   > Use the cache size settings available in **Client Settings** in the Configuration Manager console instead of SMSCACHESIZE. For more information, see [Client cache settings](../deploy/about-client-settings.md#client-cache-settings).
 
 For more information about how to use these command-line properties for CCMSetup.exe, see [About client installation properties](../deploy/about-client-installation-properties.md).
 
 ### Configure the cache on the client computer
 
 1. On the client computer, open the **Configuration Manager** control panel.
+2. Switch to the **Cache** tab. Set the space and location properties. The default location is `%windir%\ccmcache`.
+3. To delete the files in the cache folder, choose **Delete Files**.
 
-1. Switch to the **Cache** tab. Set the space and location properties. The default location is `%windir%\ccmcache`.
-
-1. To delete the files in the cache folder, choose **Delete Files**.
-
-    > [!IMPORTANT]
-    > Don't manually delete files from the ccmcache folder using Windows Explorer or the command line. This action can cause issues with the Configuration Manager client. The client manages the cache and tracks the content apart from the file system. Always use a supported method to delete files in the cache. For example, the **Delete Files** option on the control panel.<!-- 5788028 -->
+   > [!IMPORTANT]
+   >
+   > Don't manually delete files from the ccmcache folder using Windows Explorer or the command line. This action can cause issues with the Configuration Manager client. The client manages the cache and tracks the content apart from the file system. Always use a supported method to delete files in the cache. For example, the **Delete Files** option on the control panel.
 
 ### Configure client cache size in Client Settings
 

@@ -1,30 +1,33 @@
 ---
-title: Handle Synchronous Errors by Using Managed Code
+title: "How to Handle Configuration Manager Synchronous Errors by Using Managed Code"
 description: To handle a Configuration Manager error raised in a synchronous query, catch the SmsQueryException exception.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# How to Handle Configuration Manager Synchronous Errors by Using Managed Code
-To handle a Configuration Manager error that is raised in a synchronous query, you catch the [SmsQueryException](/previous-versions/system-center/developer/cc147436(v=msdn.10)) exception. Because this exception is also caught by SMS_Exception], you can catch it and the [SmsConnectionException](/previous-versions/system-center/developer/cc147431(v=msdn.10)) exception in the same catch block.
 
- If the exception that is caught in an SMS_Exception is an [SmsQueryException](/previous-versions/system-center/developer/cc147436(v=msdn.10)), you can use it to get to the underlying `__ExtendedException` or `SMS_ExtendedException`. Because the managed SMS Provider library does not wrap these exceptions, you will need to use the System.Management namespace [ManagementException](/dotnet/api/system.management.managementexception) object to access them.
+# How to Handle Configuration Manager Synchronous Errors by Using Managed Code
+
+To handle a Configuration Manager error that is raised in a synchronous query, you catch the [SmsQueryException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147436(v=msdn.10)) exception. Because this exception is also caught by SMS_Exception], you can catch it and the [SmsConnectionException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147431(v=msdn.10)) exception in the same catch block.
+
+If the exception that is caught in an SMS_Exception is an [SmsQueryException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147436(v=msdn.10)), you can use it to get to the underlying `__ExtendedException` or `SMS_ExtendedException`. Because the managed SMS Provider library does not wrap these exceptions, you will need to use the System.Management namespace [ManagementException](https://learn.microsoft.com/en-us/dotnet/api/system.management.managementexception) object to access them.
 
 > [!NOTE]
->  For clarity, most examples in this documentation simply re-throw exceptions. You can replace them with the following example if you want more informative exception information.
+>
+> For clarity, most examples in this documentation simply re-throw exceptions. You can replace them with the following example if you want more informative exception information.
 
 ### To handle a synchronous query error
 
-1.  Write code to access the SMS Provider.
-
-2.  Use the following example code to catch the [SmsQueryException](/previous-versions/system-center/developer/cc147436(v=msdn.10)) and [SmsConnectionException](/previous-versions/system-center/developer/cc147431(v=msdn.10)) exceptions.
+1. Write code to access the SMS Provider.
+2. Use the following example code to catch the [SmsQueryException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147436(v=msdn.10)) and [SmsConnectionException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147431(v=msdn.10)) exceptions.
 
 ## Example
- The following C# example function attempts to open a nonexistent `SMS_Package` package. In the exception handler, the code determines what type of error has been raised and displays its information.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following C# example function attempts to open a nonexistent `SMS_Package` package. In the exception handler, the code determines what type of error has been raised and displays its information.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```c#
 public void ExerciseException(WqlConnectionManager connection)
@@ -75,40 +78,44 @@ public void ExerciseException(WqlConnectionManager connection)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   `WqlConnectionManager`|A valid connection to the provider.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - `WqlConnectionManager` | A valid connection to the provider. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
 
- System.Management
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
- System.ComponentModel
+System.Management
+
+System.ComponentModel
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
 
- System.Management
+adminui.wqlqueryengine
+
+System.Management
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## See Also
- [About errors](about-configuration-manager-errors.md)
- [How to Handle Configuration Manager Asynchronous Errors by Using Managed Code](../../../develop/core/understand/how-to-handle-configuration-manager-asynchronous-errors-by-using-managed-code.md)
+
+[About errors](about-configuration-manager-errors.md) [How to Handle Configuration Manager Asynchronous Errors by Using Managed Code](how-to-handle-configuration-manager-asynchronous-errors-by-using-managed-code.md)

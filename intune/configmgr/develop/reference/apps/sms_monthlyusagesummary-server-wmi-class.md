@@ -1,16 +1,18 @@
 ---
-title: SMS_MonthlyUsageSummary Class
+title: "SMS_MonthlyUsageSummary Server WMI Class"
 description: The SMS_MonthlyUsageSummary WMI class is an SMS Provider server class that represents a monthly usage summary for a particular file.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MonthlyUsageSummary Server WMI Class
+
 The `SMS_MonthlyUsageSummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a monthly usage summary for a particular file.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,95 +31,91 @@ Class SMS_MonthlyUsageSummary : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MonthlyUsageSummary` class does not define any methods.
+
+The `SMS_MonthlyUsageSummary` class does not define any methods.
 
 ## Properties
- `FileID`
- Data type: `SInt64`
 
- Access type: Read/Write
+`FileID` Data type: `SInt64`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- File ID for the summarized file.
+Qualifiers: [key]
 
- `LastUsage`
- Data type: `DateTime`
+File ID for the summarized file.
 
- Access type: Read/Write
+`LastUsage` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time when the metered file was last used during the month.
+Qualifiers: None
 
- `MeteredUserID`
- Data type: `UInt32`
+Date and time when the metered file was last used during the month.
 
- Access type: Read/Write
+`MeteredUserID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the user of the metered file. This matches the `MeteredUserID` property in [SMS_MeteredUser Server WMI Class](../../../develop/reference/apps/sms_metereduser-server-wmi-class.md).
+Qualifiers: [key]
 
- `ResourceID`
- Data type: `UInt32`
+ID of the user of the metered file. This matches the `MeteredUserID` property in [SMS_MeteredUser Server WMI Class](sms_metereduser-server-wmi-class.md).
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the computer using the metered file. This ID matches the `ResourceId` property in [SMS_R_System Server WMI Class](../../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md).
+Qualifiers: [key]
 
- `TimeKey`
- Data type: `UInt32`
+ID of the computer using the metered file. This ID matches the `ResourceId` property in [SMS_R_System Server WMI Class](../core/clients/manage/sms_r_system-server-wmi-class.md).
 
- Access type: Read/Write
+`TimeKey` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Month that the summary data represents, encoded as an integer Year*100+Month. This property also matches the time key in the [SMS_SummarizationInterval Server WMI Class](../../../develop/reference/apps/sms_summarizationinterval-server-wmi-class.md) class.
+Qualifiers: [key]
 
- `TSUsageCount`
- Data type: `UInt32`
+Month that the summary data represents, encoded as an integer Year\*100+Month. This property also matches the time key in the [SMS_SummarizationInterval Server WMI Class](sms_summarizationinterval-server-wmi-class.md) class.
 
- Access type: Read/Write
+`TSUsageCount` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Number of times that the summarized file was used under a Terminal Services session during the month.
+Qualifiers: None
 
- `UsageCount`
- Data type: `UInt32`
+Number of times that the summarized file was used under a Terminal Services session during the month.
 
- Access type: Read/Write
+`UsageCount` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Number of times that the summarized file was used in a console session during the month.
+Qualifiers: None
 
- `UsageTime`
- Data type: `UInt32`
+Number of times that the summarized file was used in a console session during the month.
 
- Access type: Read/Write
+`UsageTime` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Total amount of time, in seconds, that the summarized file was used during the month.
+Qualifiers: None
+
+Total amount of time, in seconds, that the summarized file was used during the month.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- This class compiles data about a file running on a particular computer by a particular user during a calendar month. `TSUsageCount` and `UsageCount` represent the number of times the summarized file was used during a month. For example, a file could have been opened in the month of May and terminated in June. In this case, both May and June have a usage count of 1 for this file although it was only started in May.
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
+
+This class compiles data about a file running on a particular computer by a particular user during a calendar month. `TSUsageCount` and `UsageCount` represent the number of times the summarized file was used during a month. For example, a file could have been opened in the month of May and terminated in June. In this case, both May and June have a usage count of 1 for this file although it was only started in May.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_MeteredUser Server WMI Class](../../../develop/reference/apps/sms_metereduser-server-wmi-class.md)
- [SMS_R_System Server WMI Class](../../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md)
- [SMS_SummarizationInterval Server WMI Class](../../../develop/reference/apps/sms_summarizationinterval-server-wmi-class.md)
+
+[SMS_MeteredUser Server WMI Class](sms_metereduser-server-wmi-class.md) [SMS_R_System Server WMI Class](../core/clients/manage/sms_r_system-server-wmi-class.md) [SMS_SummarizationInterval Server WMI Class](sms_summarizationinterval-server-wmi-class.md)

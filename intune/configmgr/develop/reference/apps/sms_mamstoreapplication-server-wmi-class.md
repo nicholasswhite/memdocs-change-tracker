@@ -1,16 +1,18 @@
 ---
-title: SMS_MAMStoreApplication Class
+title: "SMS_MAMStoreApplication Server WMI Class"
 description: The SMS_MAMStoreApplication WMI class is an SMS Provider server class that represents mobile application management store application lists.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MAMStoreApplication Server WMI Class
+
 The `SMS_MAMStoreApplication` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents mobile application management (MAM) store application lists.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,76 +30,74 @@ Class SMS_MAMStoreApplication : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MAMStoreApplication` class does not define any methods.
+
+The `SMS_MAMStoreApplication` class does not define any methods.
 
 ## Properties
- `IdentityIdentifier`
- Data type: `String`
 
- Access type: Read-only
+`IdentityIdentifier` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Identity identifier.
+Qualifiers: [not_null, read]
 
- `IsManagedBrowser`
- Data type: `Boolean`
+Identity identifier.
 
- Access type: Read-only
+`IsManagedBrowser` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- True if managed browser MAM application.
+Qualifiers: [read]
 
- `MAMSDKVersion`
- Data type: `String`
+True if managed browser MAM application.
 
- Access type: Read-only
+`MAMSDKVersion` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Version of the MAM SDK.
+Qualifiers: [not_null, read]
 
- `PinToProfile`
- Data type: `Boolean`
+Version of the MAM SDK.
 
- Access type: Read-only
+`PinToProfile` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- True if this application pin to profile.
+Qualifiers: [read]
 
- `StoreIdentifier`
- Data type: `UInt32`
+True if this application pin to profile.
 
- Access type: Read-only
+`StoreIdentifier` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Store identifier.
+Qualifiers: [not_null, read]
 
- `StoreApplicationIdentifier`
- Data type: `String`
+Store identifier.
 
- Access type: Read-only
+`StoreApplicationIdentifier` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Store application identifier.
+Qualifiers: [not_null, read]
+
+Store application identifier.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

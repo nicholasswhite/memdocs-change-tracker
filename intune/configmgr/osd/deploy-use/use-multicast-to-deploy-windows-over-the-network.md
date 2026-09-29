@@ -1,7 +1,7 @@
 ---
-title: Use multicast to deploy Windows over the network
+title: "Use multicast to deploy Windows over the network with Configuration Manager"
 description: Use multicast in your Configuration Manager environment so that multiple computers can simultaneously download the OS image.
-ms.date: 08/11/2020
+ms.date: "2020-08-11T00:00:00Z"
 ms.subservice: osd
 ms.topic: how-to
 ms.collection: tier3
@@ -17,12 +17,11 @@ Multicast is a network optimization method that you can use when multiple client
 Deploy operating systems over the network by using multicast in the following OS deployment scenarios:
 
 - [Refresh an existing computer with a new version of Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
-
 - [Install a new version of Windows on a new computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)
 
 Complete the steps in one of these OS deployment scenarios. Then use the following sections to support multicast.
 
-## <a name="BKMK_Configure"></a> Configure distribution points for multicast
+## Configure distribution points for multicast
 
 To use multicast, configure at least one distribution point to support multicast. For more information, see [Install and configure distribution points](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_config-multicast).
 
@@ -32,7 +31,7 @@ For a list of ports required to support multicast, see [Ports](../../core/plan-d
 
 You need to configure the OS image to support multicast. For more information, see [Prepare the OS image for multicast deployments](../get-started/manage-operating-system-images.md#BKMK_OSImageMulticast).
 
-## <a name="BKMK_Deploy"></a> Deploy the task sequence
+## Deploy the task sequence
 
 Deploy the OS to a target collection. For more information, see [Deploy a task sequence](deploy-a-task-sequence.md).
 

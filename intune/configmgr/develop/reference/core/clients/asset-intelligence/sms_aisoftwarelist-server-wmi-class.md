@@ -1,16 +1,18 @@
 ---
 description: Learn how to access all known software titles in the Asset Inteligence catalog using SMS_AISoftwareList.
-title: SMS_AISoftwareList Class
-ms.date: 09/20/2016
+title: "SMS_AISoftwareList Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_AISoftwareList Server WMI Class
+
 The `SMS_AISoftwareList` Windows Management Instrumentation (WMI) class, in Configuration Manager, contains all the known software titles in the Asset Intelligence catalog.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -43,258 +45,240 @@ Class SMS_AISoftwareList : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_AISoftwareList` class.
 
-|Method|Description|
-|------------|-----------------|
-|[AddSoftwareHashData Method in Class SMS_AISoftwareList](../../../../../develop/reference/core/clients/asset-intelligence/addsoftwarehashdata-method-in-class-sms_aisoftwarelist.md)|Adds the `SoftwarePropertiesHash` from `SoftwareCode` and `Title`.|
-|[GetCategorizationRequestText Method in Class SMS_AISoftwareList](../../../../../develop/reference/core/clients/asset-intelligence/getcategorizationrequesttext-method-in-class-sms_aisoftwarelist.md)|Retrieves the categorization XML that is used in requesting categorization from System Center Online.|
-|[GetSummary Method in Class SMS_AISoftwareList](../../../../../develop/reference/core/clients/asset-intelligence/getsummary-method-in-class-sms_aisoftwarelist.md)|Retrieves a summary of all class instances based on the `State` property of the class.|
-|[ResolveConflict Method in Class SMS_AISoftwareList](../../../../../develop/reference/core/clients/asset-intelligence/resolveconflict-method-in-class-sms_aisoftwarelist.md)|Resolves the conflict through the Resolution parameter whose values are:<br />1 - Keep local edit and discard latest update from Microsoft.<br />2 - Revert local edit and replace it with latest update from Microsoft.<br />All other values are ignored.|
-|[SetCategorizationRequest Method in Class SMS_AISoftwareList](../../../../../develop/reference/core/clients/asset-intelligence/setcategorizationrequest-method-in-class-sms_aisoftwarelist.md)|Submits a request to System Center Online for software categorization.|
+The following table lists the methods in the `SMS_AISoftwareList` class.
+
+| Method | Description |
+| --- | --- |
+| [AddSoftwareHashData Method in Class SMS_AISoftwareList](addsoftwarehashdata-method-in-class-sms_aisoftwarelist.md) | Adds the `SoftwarePropertiesHash` from `SoftwareCode` and `Title`. |
+| [GetCategorizationRequestText Method in Class SMS_AISoftwareList](getcategorizationrequesttext-method-in-class-sms_aisoftwarelist.md) | Retrieves the categorization XML that is used in requesting categorization from System Center Online. |
+| [GetSummary Method in Class SMS_AISoftwareList](getsummary-method-in-class-sms_aisoftwarelist.md) | Retrieves a summary of all class instances based on the `State` property of the class. |
+| [ResolveConflict Method in Class SMS_AISoftwareList](resolveconflict-method-in-class-sms_aisoftwarelist.md) | Resolves the conflict through the Resolution parameter whose values are: 1 - Keep local edit and discard latest update from Microsoft. 2 - Revert local edit and replace it with latest update from Microsoft. All other values are ignored. |
+| [SetCategorizationRequest Method in Class SMS_AISoftwareList](setcategorizationrequest-method-in-class-sms_aisoftwarelist.md) | Submits a request to System Center Online for software categorization. |
 
 ## Properties
- `CategoryID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`CategoryID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Refers to a [SMS_AICategory Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aicategory-server-wmi-class.md) instance.
+Qualifiers: None
 
- `CategoryName`
- Data type: `String`
+Refers to a [SMS_AICategory Server WMI Class](sms_aicategory-server-wmi-class.md) instance.
 
- Access type: Read Only
+`CategoryName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Category name identified by the `CategoryID` property.
+Qualifiers: None
 
- `CommonName`
- Data type: `String`
+Category name identified by the `CategoryID` property.
 
- Access type: Read Only
+`CommonName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Software title, as it is commonly known.
+Qualifiers: None
 
- `CommonPublisher`
- Data type: `String`
+Software title, as it is commonly known.
 
- Access type: Read Only
+`CommonPublisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Publisher of the software title, as it is commonly known.
+Qualifiers: None
 
- `CommonVersion`
- Data type: `String`
+Publisher of the software title, as it is commonly known.
 
- Access type: Read Only
+`CommonVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Version of the software title, as it is commonly known.
+Qualifiers: None
 
- `Count`
- Data type: `UInt32`
+Version of the software title, as it is commonly known.
 
- Access type: Read Only
+`Count` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- This method/property has been removed or deprecated in Configuration Manager SP1. Use `SoftwareCount` instead.
+Qualifiers: None
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+This method/property has been removed or deprecated in Configuration Manager SP1. Use `SoftwareCount` instead.
 
- `FamilyID`
- Data type: `UInt32`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`FamilyID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Refers to a [SMS_AICategory Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aicategory-server-wmi-class.md) instance.
+Qualifiers: None
 
- `FamilyName`
- Data type: `String`
+Refers to a [SMS_AICategory Server WMI Class](sms_aicategory-server-wmi-class.md) instance.
 
- Access type: Read Only
+`FamilyName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Family name identified by the `FamilyID` property.
+Qualifiers: None
 
- `OfficialCategoryName`
- Data type: `String`
+Family name identified by the `FamilyID` property.
 
- Access type: Read Only
+`OfficialCategoryName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- The `CategoryID` property can be changed, which alters what the `CategoryName` property contains. This is the original name of the category before any changes have occurred.
+Qualifiers: None
 
- `OfficialFamilyName`
- Data type: `String`
+The `CategoryID` property can be changed, which alters what the `CategoryName` property contains. This is the original name of the category before any changes have occurred.
 
- Access type: Read Only
+`OfficialFamilyName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- The `FamilyID` property can be changed, which alters what the `FamilyName` property contains. This is the original name of the family before any changes have occurred.
+Qualifiers: None
 
- `SoftwareCode`
- Data type: `String`
+The `FamilyID` property can be changed, which alters what the `FamilyName` property contains. This is the original name of the family before any changes have occurred.
 
- Access type: Read Only
+`SoftwareCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Identifier of the software title, defined by the publisher of the software title.
+Qualifiers: None
 
- `SoftwareCount`
- Data type: `UInt32`
+Identifier of the software title, defined by the publisher of the software title.
 
- Access type: Read Only
+`SoftwareCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read Only
 
- Count of the software title.
+Qualifiers: [read]
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+Count of the software title.
 
- `SoftwareID`
- Data type: `String`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read Only
+`SoftwareID` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- A Microsoft generated GUID identifying this software title.
+Qualifiers: None
 
- This method/property has been removed or deprecated in Configuration Manager SP1.
+A Microsoft generated GUID identifying this software title.
 
- `SoftwareKey`
- Data type: `String`
+This method/property has been removed or deprecated in Configuration Manager SP1.
 
- Access type: Read Only
+`SoftwareKey` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read Only
 
- A Microsoft generated key identifying this software title.
+Qualifiers: [key, read]
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+A Microsoft generated key identifying this software title.
 
- `SoftwarePropertiesHash`
- Data type: `String`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read Only
+`SoftwarePropertiesHash` Data type: `String`
 
- Qualifiers: key
+Access type: Read Only
 
- An automatically generated hash composed of the Name, Publisher, and Version of the software title.
+Qualifiers: key
 
- This method/property has been removed or deprecated in Configuration Manager SP1.
+An automatically generated hash composed of the Name, Publisher, and Version of the software title.
 
- `State`
- Data type: `UInt32`
+This method/property has been removed or deprecated in Configuration Manager SP1.
 
- Access type: Read Only
+`State` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- Status of this software record.
+Qualifiers: None
 
-|Value|Description|
-|-----------|-----------------|
-|0|Validated, category is defined by Microsoft through System Center Online.|
-|1|User-defined, category was defined or has been changed by a user.|
-|2|Pending, the software is pending categorization by Microsoft through System Center Online.|
-|3|Updatable, the software category can be updated by the user.|
-|4|Uncategorized, the software has not been categorized by Microsoft or the user.|
+Status of this software record.
 
- `Tag1ID`
- Data type: `UInt32`
+| Value | Description |
+| --- | --- |
+| 0 | Validated, category is defined by Microsoft through System Center Online. |
+| 1 | User-defined, category was defined or has been changed by a user. |
+| 2 | Pending, the software is pending categorization by Microsoft through System Center Online. |
+| 3 | Updatable, the software category can be updated by the user. |
+| 4 | Uncategorized, the software has not been categorized by Microsoft or the user. |
 
- Access type: Read/Write
+`Tag1ID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Refers to a [SMS_AICategory Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aicategory-server-wmi-class.md) instance.
+Qualifiers: None
 
- `Tag1Name`
- Data type: `String`
+Refers to a [SMS_AICategory Server WMI Class](sms_aicategory-server-wmi-class.md) instance.
 
- Access type: Read Only
+`Tag1Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Tag name identified by the `CategoryID` property.
+Qualifiers: None
 
- `Tag2ID`
- Data type: `UInt32`
+Tag name identified by the `CategoryID` property.
 
- Access type: Read/Write
+`Tag2ID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Refers to a [SMS_AICategory Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aicategory-server-wmi-class.md) instance.
+Qualifiers: None
 
- `Tag2Name`
- Data type: `String`
+Refers to a [SMS_AICategory Server WMI Class](sms_aicategory-server-wmi-class.md) instance.
 
- Access type: Read Only
+`Tag2Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Tag name identified by the `CategoryID` property.
+Qualifiers: None
 
- `Tag3ID`
- Data type: `UInt32`
+Tag name identified by the `CategoryID` property.
 
- Access type: Read/Write
+`Tag3ID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Refers to a [SMS_AICategory Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aicategory-server-wmi-class.md) instance.
+Qualifiers: None
 
- `Tag3Name`
- Data type: `String`
+Refers to a [SMS_AICategory Server WMI Class](sms_aicategory-server-wmi-class.md) instance.
 
- Access type: Read Only
+`Tag3Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Tag name identified by the `CategoryID` property.
+Qualifiers: None
+
+Tag name identified by the `CategoryID` property.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - DisplayName("AI Software List Table")
-
 - Dynamic
-
 - Provider("ExtnProv")
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
+
 [Initiate Asset Intelligence synchronization](../../../../core/clients/asset-intelligence/how-to-initiate-a-synchronization.md)

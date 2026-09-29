@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot device preparation user-driven Microsoft Entra join - Step 4 of 7 - Create a user group
+title: "Windows Autopilot device preparation user-driven Microsoft Entra join: Create a user group"
 description: How to - Windows Autopilot device preparation user-driven Microsoft Entra join - Step 4 of 7 - Create a user group.
-ms.date: 08/07/2026
+ms.date: "2026-08-07T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -15,9 +15,7 @@ Windows Autopilot device preparation user-driven Microsoft Entra join steps:
 - Step 2: [Allow users to join devices to Microsoft Entra ID](entra-join-allow-users-to-join.md)
 - Step 3: [Create an assigned device group](entra-join-device-group.md)
 
-> [!div class="checklist"]
->
-> - **Step 4: Create a user group**
+- **Step 4: Create a user group**
 
 - Step 5: [Assign applications and PowerShell scripts to device group](entra-join-assign-apps-scripts.md)
 - Step 6: [Create Windows Autopilot device preparation policy](entra-join-autopilot-policy.md)
@@ -41,13 +39,50 @@ Windows Autopilot device preparation uses a user group as part of the Windows Au
 
 To create a user security group for use with Windows Autopilot device preparation, follow these steps:
 
-[!INCLUDE [How to create a user group in Intune](../../../includes/create-user-group.md)]
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Groups** in the left hand pane.
+3. In the **Groups | All groups** screen, make sure **All groups** is selected, and then select **New group**.
+4. In the **New Group** screen that opens:
+
+   1. For **Group type**, select **Security**.
+   2. For **Group name**, enter a name for the user group, such as **Windows Autopilot device preparation user group**.
+   3. For **Group description**, enter a description for the user group.
+   4. For **Microsoft Entra roles can be assigned to the group**, select **No**.
+   5. For **Membership type**:
+
+      - Select **Assigned** to create an assigned user group.
+      - Select **Dynamic User** to create a dynamic user group.
+   6. For **Owners**, select the **No owners selected** link.
+   7. In the **Add owners** screen that opens:
+
+      1. Scroll through the list of objects and select owners for the user group. Alternatively, use the **Search** bar to search for and select owners of the group.
+      2. Once all of the desired owners are selected, select **Select**.
+   8. For assigned user groups:
+
+      1. For **Members**, select the **No members selected** link.
+      2. In the **Add members** screen that opens:
+
+         1. Scroll through the list of objects and select members that the Windows Autopilot device preparation profiles should be deployed to. Alternatively, use the **Search** bar to search for and select members for the group. Make sure to only select users or groups that only contain users.
+         2. Once all of the desired users or user groups are selected that the Windows Autopilot device preparation profiles should be deployed to, select **Select**.
+   9. For dynamic user groups:
+
+      1. For **Dynamic user members**, select the **Add dynamic query** link.
+      2. In the **Dynamic membership rules** screen that opens, create a rule that encompasses the users that should be members of the user group. For more information on creating rules, see [Dynamic membership rules for groups in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership).
+
+      > [!NOTE]
+      >
+      > The linked article is in regards to creating dynamic membership rules in Microsoft Entra ID. However, dynamic user groups in Intune are also dynamic user groups in Microsoft Entra ID, so the rule syntax is the same.
+   10. Select **Create** to finish creating user group.
 
 ## Next step: Assign applications and PowerShell scripts to device group
 
-> [!div class="nextstepaction"]
-> [Step 5: Assign applications and PowerShell scripts to device group](entra-join-assign-apps-scripts.md)
+[Step 5: Assign applications and PowerShell scripts to device group](entra-join-assign-apps-scripts.md)
 
 ## Related content
 
-[!INCLUDE [More information device group](../../../includes/more-info-groups.md)]
+For more information on creating groups in Intune, see the following articles:
+
+- [Create device groups](../../../enrollment-autopilot.md).
+- [Add groups to organize users and devices](../../../../intune/fundamentals/tenant-administration/add-groups.md).
+- [Manage Microsoft Entra groups and group membership](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/how-to-manage-groups).
+- [Dynamic membership rules for groups in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership).

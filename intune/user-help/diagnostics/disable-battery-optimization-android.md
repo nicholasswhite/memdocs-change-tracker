@@ -1,7 +1,7 @@
 ---
-title: Turn off battery optimization in Company Portal app for Android
+title: "Turn off battery optimization in Company Portal app"
 description: Turn off battery optimization in the Company Portal app for Android.
-ms.date: 11/08/2024
+ms.date: "2024-11-08T00:00:00Z"
 ms.reviewer: abstarr
 ---
 

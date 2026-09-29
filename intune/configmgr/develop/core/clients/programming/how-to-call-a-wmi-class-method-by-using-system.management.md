@@ -1,7 +1,7 @@
 ---
-title: "Call a WMI Class Method by Using System.Management"
+title: "How to Call a WMI Class Method by Using System.Management"
 description: "To call a client Windows Management Instrumentation (WMI) class method, call the InvokeMethod of the WMI class's ManagementClass."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,27 +9,26 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Call a WMI Class Method by Using System.Management
-To call a client Windows Management Instrumentation (WMI) class method, in Configuration Manager, you call the `InvokeMethod` of the WMI class's `ManagementClass`.  
 
-### To call a WMI class method  
+To call a client Windows Management Instrumentation (WMI) class method, in Configuration Manager, you call the `InvokeMethod` of the WMI class's `ManagementClass`.
 
-1.  Set up a connection to the Configuration Manager client WMI namespace. For more information, see [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](../../../../develop/core/clients/programming/how-to-connect-to-the-client-wmi-namespace.md).  
+### To call a WMI class method
 
-2.  Create a `ManagementClass` by using the `ManagementScope` path you obtain in step one, and also the name of the class you want to call a method on.  
+1. Set up a connection to the Configuration Manager client WMI namespace. For more information, see [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](how-to-connect-to-the-client-wmi-namespace.md).
+2. Create a `ManagementClass` by using the `ManagementScope` path you obtain in step one, and also the name of the class you want to call a method on.
+3. Create a `ManagementBaseObject` and specify any in parameters for the method.
+4. Call the method by using the `ManagementClass` object `InvokeMethod` method.
+5. Using the returned `ManagementBaseObject`, view the returned parameters.
 
-3.  Create a `ManagementBaseObject` and specify any in parameters for the method.  
+## Example
 
-4.  Call the method by using the `ManagementClass` object `InvokeMethod` method.  
+The following C# code example calls the `ISmsClient::GetAssignedSite` method to get the current assigned site for the client. It then sets the assigned site back to the same value using the `ISmsClient::SetAssignedSite` method.
 
-5.  Using the returned `ManagementBaseObject`, view the returned parameters.  
+For information about calling the sample code, see [How to Call a WMI Class Method by Using System.Management](how-to-call-a-wmi-class-method-by-using-system.management.md).
 
-## Example  
- The following C# code example calls the `ISmsClient::GetAssignedSite` method to get the current assigned site for the client. It then sets the assigned site back to the same value using the `ISmsClient::SetAssignedSite` method.  
-
- For information about calling the sample code, see [How to Call a WMI Class Method by Using System.Management](../../../../develop/core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md).  
-
-```c#  
+```c#
 
 public void CallMethod(ManagementScope scope)  
 {  
@@ -56,31 +55,35 @@ public void CallMethod(ManagementScope scope)
     }  
 }  
 
-```  
+```
 
- This example method has the following parameters:  
+This example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|`scope`|-   `ManagementScope`|A valid connection to the client WMI provider. The path is root\ccm.|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `scope` | - `ManagementScope` | A valid connection to the client WMI provider. The path is root\ccm. |
 
-## Compiling the Code  
+## Compiling the Code
 
-### Namespaces  
- System  
+### Namespaces
 
- System.Management  
+System
 
-### Assembly  
- System.Management  
+System.Management
 
-## Robust Programming  
- The exception that can be raised is [System.Management.ManagementException](/dotnet/api/system.management.managementexception).  
+### Assembly
 
-## See Also  
- [About Configuration Manager WMI Programming](../../../../develop/core/clients/programming/about-configuration-manager-wmi-programming.md)   
- [How to Call a WMI Class Method by Using System.Management](../../../../develop/core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md)   
- [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](../../../../develop/core/clients/programming/how-to-connect-to-the-client-wmi-namespace.md)   
- [How to Perform an Asynchronous Query by Using System.Management](../../../../develop/core/clients/programming/how-to-perform-an-asynchronous-query-by-using-system.management.md)   
- [How to Perform a Synchronous Query by Using System.Management](../../../../develop/core/clients/programming/how-to-perform-a-synchronous-query-by-using-system.management.md)   
- [How to Read a WMI Object by Using System.Management](../../../../develop/core/clients/programming/how-to-read-a-wmi-object-by-using-system.management.md)
+System.Management
+
+## Robust Programming
+
+The exception that can be raised is [System.Management.ManagementException](https://learn.microsoft.com/en-us/dotnet/api/system.management.managementexception).
+
+## See Also
+
+[About Configuration Manager WMI Programming](about-configuration-manager-wmi-programming.md)  
+ [How to Call a WMI Class Method by Using System.Management](how-to-call-a-wmi-class-method-by-using-system.management.md)  
+ [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](how-to-connect-to-the-client-wmi-namespace.md)  
+ [How to Perform an Asynchronous Query by Using System.Management](how-to-perform-an-asynchronous-query-by-using-system.management.md)  
+ [How to Perform a Synchronous Query by Using System.Management](how-to-perform-a-synchronous-query-by-using-system.management.md)  
+ [How to Read a WMI Object by Using System.Management](how-to-read-a-wmi-object-by-using-system.management.md)

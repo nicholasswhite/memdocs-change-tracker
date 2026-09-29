@@ -1,16 +1,18 @@
 ---
 description: Learn how the SMS_Role Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an RBA role.
-title: SMS_Role Class
-ms.date: 09/20/2016
+title: "SMS_Role Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Role Server WMI Class
+
 The `SMS_Role` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an RBA role.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,135 +36,126 @@ Class SMS_Role : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_Role` class.
 
-|Method|Description|
-|------------|-----------------|
-|[ExportRole Method in Class SMS_Role](../../../../../develop/reference/core/servers/configure/exportrole-method-in-class-sms_role.md)|Exports roles to an XML string.|
-|[ImportRole Method in Class SMS_Role](../../../../../develop/reference/core/servers/configure/importrole-method-in-class-sms_role.md)|Imports a role defined by an XML string to the database.|
+The following table lists the methods in the `SMS_Role` class.
+
+| Method | Description |
+| --- | --- |
+| [ExportRole Method in Class SMS_Role](exportrole-method-in-class-sms_role.md) | Exports roles to an XML string. |
+| [ImportRole Method in Class SMS_Role](importrole-method-in-class-sms_role.md) | Imports a role defined by an XML string to the database. |
 
 ## Properties
- `CopiedFromID`
- Data type: `String`
 
- Access type: Read/Write
+`CopiedFromID` Data type: `String`
 
- Qualifiers: [sizelimit("8")]
+Access type: Read/Write
 
- Role ID from which this role was copied.
+Qualifiers: [sizelimit("8")]
 
- `CreatedBy`
- Data type: `String`
+Role ID from which this role was copied.
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [not_null, read, SizeLimit("512")]
+Access type: Read-only
 
- Name of the user that created this role.
+Qualifiers: [not_null, read, SizeLimit("512")]
 
- `CreatedDate`
- Data type: `DateTime`
+Name of the user that created this role.
 
- Access type: Read-only
+`CreatedDate` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Date that the role was created.
+Qualifiers: [not_null, read]
 
- `IsBuiltIn`
- Data type: `Boolean`
+Date that the role was created.
 
- Access type: Read-only
+`IsBuiltIn` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true`, if this is a built-in role.
+Qualifiers: [read]
 
- `IsSecAdminRole`
- Data type: `Boolean`
+`true`, if this is a built-in role.
 
- Access type: Read-only
+`IsSecAdminRole` Data type: `Boolean`
 
- Qualifiers: [read, lazy]
+Access type: Read-only
 
- `true`, if this role as a secured admin role. The role is security admin role if the role has can create or modify admin permission.
+Qualifiers: [read, lazy]
 
- `LastModifiedBy`
- Data type: `String`
+`true`, if this role as a secured admin role. The role is security admin role if the role has can create or modify admin permission.
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [not_null, read, SizeLimit("512")]
+Access type: Read-only
 
- The name of the user that last modified the role.
+Qualifiers: [not_null, read, SizeLimit("512")]
 
- `LastModifiedDate`
- Data type: `DateTime`
+The name of the user that last modified the role.
 
- Access type: Read-only
+`LastModifiedDate` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The time when the role was last modified.
+Qualifiers: [not_null, read]
 
- `NumberOfAdmins`
- Data type: `UInt32`
+The time when the role was last modified.
 
- Access type: Read-only
+`NumberOfAdmins` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The number of admin accounts associated with this role.
+Qualifiers: [read]
 
- `Operations`
- Data type: `SMS_ARoleOperation` Array
+The number of admin accounts associated with this role.
 
- Access type: Read/Write
+`Operations` Data type: `SMS_ARoleOperation` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- The operations granted to this role.
+Qualifiers: [lazy]
 
- `RoleDescription`
- Data type: `String`
+The operations granted to this role.
 
- Access type: Read/Write
+`RoleDescription` Data type: `String`
 
- Qualifiers: [sizelimit("512")]
+Access type: Read/Write
 
- Description of the role.
+Qualifiers: [sizelimit("512")]
 
- `RoleID`
- Data type: `String`
+Description of the role.
 
- Access type: Read-only
+`RoleID` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- The ID of the role. Auto generated when the role was created. This ID will not change during the lifetime of the role and will be unique across sites.
+Qualifiers: [key, read]
 
- `RoleName`
- Data type: `String`
+The ID of the role. Auto generated when the role was created. This ID will not change during the lifetime of the role and will be unique across sites.
 
- Access type: Read/Write
+`RoleName` Data type: `String`
 
- Qualifiers: [not_null, sizelimit("256")]
+Access type: Read/Write
 
- Name of the role.
+Qualifiers: [not_null, sizelimit("256")]
 
- `SourceSite`
- Data type: `String`
+Name of the role.
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [not_null, read, SizeLimit("3")]
+Access type: Read-only
 
- The site code of the site where the role was created.
+Qualifiers: [not_null, read, SizeLimit("3")]
+
+The site code of the site where the role was created.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

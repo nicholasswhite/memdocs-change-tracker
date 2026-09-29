@@ -1,16 +1,18 @@
 ---
-title: SMS_Authority Class
+title: "SMS_Authority Client WMI Class"
 description: In Configuration Manager, the SMS_Authority class is a client Windows Management Instrumentation class that represents the Configuration Manager site that manages the client.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Authority Client WMI Class
+
 The `SMS_Authority` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that represents the Configuration Manager site that manages the client.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,97 +32,93 @@ Class SMS_Authority : CCM_Authority
 ```
 
 ## Methods
- The `SMS_Authority` class does not define any methods.
+
+The `SMS_Authority` class does not define any methods.
 
 ## Properties
- `Capabilities`
- Data type: `String`
 
- Access type: Read/Write
+`Capabilities` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Reserved.
+Qualifiers: None
 
- `CurrentManagementPoint`
- Data type: `String`
+Reserved.
 
- Access type: Read/Write
+`CurrentManagementPoint` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The current management point for the site.
+Qualifiers: None
 
- `Index`
- Data type: `UInt32`
+The current management point for the site.
 
- Access type: Read/Write
+`Index` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- For assigned Management Point rotation.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+For assigned Management Point rotation.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Name of the authority.
+Qualifiers: [key]
 
- `PolicyOrder`
- Data type: `UInt32`
+Name of the authority.
 
- Access type: Read/Write
+`PolicyOrder` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Determines the priority of the authority when resolving policy conflicts. The lower the order, the higher the priority of the authority's policy.
+Qualifiers: None
 
- `PolicyRequestTarget`
- Data type: `String`
+Determines the priority of the authority when resolving policy conflicts. The lower the order, the higher the priority of the authority's policy.
 
- Access type: Read/Write
+`PolicyRequestTarget` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Specifies the target for requesting policy assignments. If this value is NULL, no policy is requested for this authority.
+Qualifiers: None
 
- `Protocol`
- Data type: `String`
+Specifies the target for requesting policy assignments. If this value is NULL, no policy is requested for this authority.
 
- Access type: Read/Write
+`Protocol` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Reserved.
+Qualifiers: None
 
- `SigningCertificate`
- Data type: `String`
+Reserved.
 
- Access type: Read/Write
+`SigningCertificate` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The site signing certificate. This is only relevant in native mode.
+Qualifiers: None
 
- `Version`
- Data type: `UInt32`
+The site signing certificate. This is only relevant in native mode.
 
- Access type: Read/Write
+`Version` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The version of the authority.
+Qualifiers: None
+
+The version of the authority.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md)

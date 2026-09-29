@@ -1,16 +1,18 @@
 ---
-title: ExportDefaultBootImage Method
+title: "ExportDefaultBootImage Method in Class SMS_BootImagePackage"
 description: The ExportDefaultBootImage WMI class method finalizes a boot image and then exports the image from the specified source to the specified location.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ExportDefaultBootImage Method in Class SMS_BootImagePackage
+
 The `ExportDefaultBootImage` Windows Management Instrumentation (WMI) class method, in Configuration Manager, finalizes a boot image and then exports the image from the specified source to the specified location.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,54 +25,57 @@ SInt32 ExportDefaultBootImage(
 ```
 
 #### Parameters
- `Architecture`
- Data type: `String`
 
- Qualifiers: [in]
+`Architecture` Data type: `String`
 
- Operating system architecture of the boot image. Possible values are:
+Qualifiers: [in]
+
+Operating system architecture of the boot image. Possible values are:
 
 | Value | Architecture |
-| ----- | ------------ |
-|x86|I386 32-bit microprocessor|
-|ia64|Itanium 64-bit microprocessor|
-|x64|X86-64 64-bit microprocessor|
+| --- | --- |
+| x86 | I386 32-bit microprocessor |
+| ia64 | Itanium 64-bit microprocessor |
+| x64 | X86-64 64-bit microprocessor |
 
- `ImageIndex`
- Data type: `UInt32`
+`ImageIndex` Data type: `UInt32`
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- The index of the boot image in the Windows Assessment and Deployment Kit source that is used by Configuration Manager setup.
+The index of the boot image in the Windows Assessment and Deployment Kit source that is used by Configuration Manager setup.
 
- `ExportImagePath`
- Data type: `String`
+`ExportImagePath` Data type: `String`
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- The destination path of the boot image to export, for example, c:\winPE\boot.wim.
+The destination path of the boot image to export, for example, c:\winPE\boot.wim.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
 
 > [!NOTE]
->  Because Configuration Manager uses this method in importing the operating system, be sure to use secure programming techniques in your application or script.
+>
+> Because Configuration Manager uses this method in importing the operating system, be sure to use secure programming techniques in your application or script.
 
- The `ExportDefaultBootImage` method is not thread-safe.
+The `ExportDefaultBootImage` method is not thread-safe.
 
- This method finalizes a boot image by adding components or deleting old components to reduce the image size. Each .wim file can contain multiple images, but the export occurs only for the boot image.
+This method finalizes a boot image by adding components or deleting old components to reduce the image size. Each .wim file can contain multiple images, but the export occurs only for the boot image.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_BootImagePackage Server WMI Class](../../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md)
+
+[SMS_BootImagePackage Server WMI Class](sms_bootimagepackage-server-wmi-class.md)

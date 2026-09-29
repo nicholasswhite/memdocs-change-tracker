@@ -1,16 +1,18 @@
 ---
 description: Learn how to use SMS_SoftwareConversionRules to describe rules to convert the company or product name resource string into a standard name.
-title: SMS_SoftwareConversionRules Class
-ms.date: 09/20/2016
+title: "SMS_SoftwareConversionRules Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SoftwareConversionRules Server WMI Class
+
 The `SMS_SoftwareConversionRules` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes the rules to convert the company or product name resource string into a standard name for software inventory. For example, different Microsoft products might contain variations of the Microsoft company name, for example, "Microsoft Corporation" or "Microsoft."
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,22 +27,21 @@ Class SMS_SoftwareConversionRules : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SoftwareConversionRules` class doesn't define any methods.
+
+The `SMS_SoftwareConversionRules` class doesn't define any methods.
 
 ## Properties
- `ConvertType`
- Data type: **String**
 
- Access type: Read/Write
+`ConvertType` Data type: **String**
 
- Type of resource string to convert. Possible values are:
+Access type: Read/Write
+
+Type of resource string to convert. Possible values are:
 
 - Manufacturer (default)
-
 - Product
 
-  `NewName`
-  Data type: **String**
+  `NewName` Data type: **String**
 
   Access type: Read/Write
 
@@ -48,8 +49,7 @@ Class SMS_SoftwareConversionRules : SMS_BaseClass
 
   Name reported to software inventory. The default value is "".
 
-  `OriginalName`
-  Data type: **String**
+  `OriginalName` Data type: **String**
 
   Access type: Read/Write
 
@@ -57,10 +57,9 @@ Class SMS_SoftwareConversionRules : SMS_BaseClass
 
   Original company or product name. The default value is "".
 
-  The original name can contain SQL wildcard characters (&, _, [], and [^]), but the `OriginalName` and `ConvertType`combination must be unique.
+  The original name can contain SQL wildcard characters (&amp;, _, [], and [^]), but the `OriginalName` and `ConvertType`combination must be unique.
 
-  `RuleId`
-  Data type: **UInt32**
+  `RuleId` Data type: **UInt32**
 
   Access type: Read-only
 
@@ -69,12 +68,15 @@ Class SMS_SoftwareConversionRules : SMS_BaseClass
   Unique ID of the rule. The default value is 0.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: SMS_R_UserGroup Class
+title: "SMS_R_UserGroup Server WMI Class"
 description: The SMS_R_UserGroup class is an SMS Provider server class that is generated dynamically at SMS Provider run time and contains discovery data for user group objects.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_R_UserGroup Server WMI Class
+
 The `SMS_R_UserGroup` Windows Management (WMI) class is an SMS Provider server class, in Configuration Manager, that is generated dynamically at SMS Provider run time and contains discovery data for user group objects.
 
- The following syntax is not defined in Managed Object Format (MOF) code.
+The following syntax is not defined in Managed Object Format (MOF) code.
 
 ## Syntax
 
@@ -38,172 +40,161 @@ Class SMS_R_UserGroup : SMS_Resource
 ```
 
 ## Methods
- The `SMS_R_UserGroup` class does not define any methods.
+
+The `SMS_R_UserGroup` class does not define any methods.
 
 ## Properties
- `ActiveDirectoryContainerName`
- Data type: **String** Array
 
- Access type: Read-only
+`ActiveDirectoryContainerName` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- Active Directory container name for the group resource.
+Qualifiers: None
 
- `ActiveDirectoryOrganizationalUnit`
- Data type: **String** Array
+Active Directory container name for the group resource.
 
- Access type: Read-only
+`ActiveDirectoryOrganizationalUnit` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- Active Directory Organizational Unit for the group resource.
+Qualifiers: None
 
- `ADDomainName`
- Data type: **String**
+Active Directory Organizational Unit for the group resource.
 
- Access type: Read-only
+`ADDomainName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the Active Directory domain for the group resource.
+Qualifiers: None
 
- `AgentName`
- Data type: **String** Array
+Name of the Active Directory domain for the group resource.
 
- Access type: Read-only
+`AgentName` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of discovery agents that found this resource.
+Qualifiers: None
 
- `AgentSite`
- Data type: **String** Array
+List of discovery agents that found this resource.
 
- Access type: Read-only
+`AgentSite` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of sites from which the discovery agents ran.
+Qualifiers: None
 
- `AgentTime`
- Data type: **DateTime** Array
+List of sites from which the discovery agents ran.
 
- Access type: Read-only
+`AgentTime` Data type: **DateTime** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of discovery times.
+Qualifiers: None
 
- `Creation Date`
- Data type: **DateTime** Array
+List of discovery times.
 
- Access type: Read-only
+`Creation Date` Data type: **DateTime** Array
 
- Qualifiers: None
+Access type: Read-only
 
- Date and time of creation.
+Qualifiers: None
 
- `GroupType`
- Data type: **UInt32**
+Date and time of creation.
 
- Access type: Read-only
+`GroupType` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read-only
 
- Type of group resources on the site.
+Qualifiers: None
 
- `Name`
- Data type: **String**
+Type of group resources on the site.
 
- Access type: Read-only
+`Name` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Group name displayed in the Configuration Manager console.
+Qualifiers: None
 
- `NetworkOperatingSystem`
- Data type: **String**
+Group name displayed in the Configuration Manager console.
 
- Access type: Read-only
+`NetworkOperatingSystem` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Free-form string describing the operating system.
+Qualifiers: None
 
- `ObjectGUID`
- Data type: **UInt8** Array
+Free-form string describing the operating system.
 
- Access type: Read-only
+`ObjectGUID` Data type: **UInt8** Array
 
- Qualifiers: None
+Access type: Read-only
 
- Object GUID of the group resource retrieved from Active Directory.
+Qualifiers: None
 
- `ResourceID`
- Data type: **UInt32**
+Object GUID of the group resource retrieved from Active Directory.
 
- Access type: Read/Write
+`ResourceID` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md).
+Qualifiers: [key]
 
- `ResourceType`
- Data type: **UInt32**
+See [SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md).
 
- Access type: Read-only
+`ResourceType` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read-only
 
- Type of resources on the site. For more information, see [SMS_ResourceMap Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resourcemap-server-wmi-class.md).
+Qualifiers: None
 
- `SID`
- Data type: **String**
+Type of resources on the site. For more information, see [SMS_ResourceMap Server WMI Class](sms_resourcemap-server-wmi-class.md).
 
- Access type: Read-only
+`SID` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- The Active Directory security ID for the group.
+Qualifiers: None
 
- `UniqueUsergroupName`
- Data type: **String**
+The Active Directory security ID for the group.
 
- Access type: Read-only
+`UniqueUsergroupName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Unique user group name in the form domain\group name.
+Qualifiers: None
 
- `UsergroupName`
- Data type: **String**
+Unique user group name in the form domain\group name.
 
- Access type: Read-only
+`UsergroupName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Unique user group name that represents the resource within the Windows NT domain.
+Qualifiers: None
 
- `WindowsNTDomain`
- Data type: **String**
+Unique user group name that represents the resource within the Windows NT domain.
 
- Access type: Read-only
+`WindowsNTDomain` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- String representing the Windows NT domain associated with the resource.
+Qualifiers: None
+
+String representing the Windows NT domain associated with the resource.
 
 ## Remarks
- You cannot create or update resource instances by using WMI, but must create or update resources using discovery data records. Note, however, that you can delete resource instances by using WMI.
+
+You cannot create or update resource instances by using WMI, but must create or update resources using discovery data records. Note, however, that you can delete resource instances by using WMI.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md)
+
+[SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md)

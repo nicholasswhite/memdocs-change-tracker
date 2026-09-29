@@ -1,7 +1,7 @@
 ---
-title: Deploy OEMConfig profiles to Zebra devices using Microsoft Intune
+title: "Deploy OEMConfig profiles to Zebra devices in Microsoft Intune"
 description: Use Microsoft Intune to create and deploy multiple OEMConfig device configuration profiles on Zebra devices running Android Enterprise. Use Zebra actions and steps to order your profiles.
-ms.date: 06/27/2024
+ms.date: "2024-06-27T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: akritis
 ---
@@ -16,13 +16,13 @@ This feature applies to:
 
 - Zebra devices running Android Enterprise
 
-To learn more about OEMConfig, including what it does, and how to use it, go to [OEMConfig configuration profile](./configure-oemconfig-android.md).
+To learn more about OEMConfig, including what it does, and how to use it, go to [OEMConfig configuration profile](configure-oemconfig-android.md).
 
 This article describes deploying OEMConfig multiple profiles to Zebra devices, describes ordering, and using the reporting features in Microsoft Intune.
 
 ## Prerequisites
 
-- Create an [OEMConfig configuration profile](./configure-oemconfig-android.md). Review the [Before you begin](./configure-oemconfig-android.md#before-you-begin) section for important information, as there's a 500 KB file size limit and other important information.
+- Create an [OEMConfig configuration profile](configure-oemconfig-android.md). Review the [Before you begin](configure-oemconfig-android.md#before-you-begin) section for important information, as there's a 500 KB file size limit and other important information.
 - Zebra devices don't support Android 12.
 
 ## OEMConfig apps for Zebra devices
@@ -31,8 +31,8 @@ To manage Zebra devices, there are two versions of the OEMConfig app:
 
 | OEMConfig app | Supported Android versions | Multiple profile support |
 | --- | --- | --- |
-| **Zebra OEMConfig Powered by MX** (new app) | - Android 13 and later <br/> - Android 11 | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: This new app aligns closely with Google's standards. It's suggested to deploy one profile with all the required configuration settings.<br/><br/>If you use multiple OEMConfig profiles, then don't configure the same top parent group or bundle in multiple profiles. It can cause conflicts. For more important information, go to [OEMConfig overview - Before you begin](./configure-oemconfig-android.md#before-you-begin) <br/><br/>For more information on the new **Zebra OEMConfig Powered by MX** app, go to [New Zebra OEMConfig app for Android](https://techcommunity.microsoft.com/t5/intune-customer-success/new-zebra-oemconfig-app-for-android-11-and-later/ba-p/3846730). |
-| **Legacy Zebra OEMConfig** | - Android 11 and earlier | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: You can split your Zebra OEMConfig settings into smaller profiles. For example, create a baseline profile that affects all devices. Then, create more profiles that configure settings specific to a device. |
+| **Zebra OEMConfig Powered by MX** (new app) | - Android 13 and later   - Android 11 | ![](../../media/icons/16/error.svg) This new app aligns closely with Google's standards. It's suggested to deploy one profile with all the required configuration settings.  If you use multiple OEMConfig profiles, then don't configure the same top parent group or bundle in multiple profiles. It can cause conflicts. For more important information, go to [OEMConfig overview - Before you begin](configure-oemconfig-android.md#before-you-begin)   For more information on the new **Zebra OEMConfig Powered by MX** app, go to [New Zebra OEMConfig app for Android](https://techcommunity.microsoft.com/t5/intune-customer-success/new-zebra-oemconfig-app-for-android-11-and-later/ba-p/3846730). |
+| **Legacy Zebra OEMConfig** | - Android 11 and earlier | ![](../../media/icons/16/check.svg) You can split your Zebra OEMConfig settings into smaller profiles. For example, create a baseline profile that affects all devices. Then, create more profiles that configure settings specific to a device. |
 
 ## Multiple profiles using the Legacy Zebra OEMConfig app
 
@@ -57,7 +57,6 @@ Let's look at some examples:
   Create one Intune profile that has two Transaction Steps. The first step includes Bluetooth settings, and the second step configures the other setting. When Zebra's OEMConfig app receives the profile, it runs the steps in order.
 
   For more information, go to [Zebra's transaction steps](https://techdocs.zebra.com/oemconfig/11-4/mc/#transactionsteps) (opens Zebra's web site).
-
 - You want all Zebra devices to display time in 24-hour format. For some of these devices, you want to turn off the camera. The time and camera settings don't depend on each other.
 
   Create two Intune profiles:
@@ -73,18 +72,14 @@ When you deploy the Intune profile, the Zebra OEMConfig app on the device execut
 
 In the Intune admin center, you can view the status of deployed OEMConfig profiles, and any errors or warnings.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select your Zebra OEMConfig profile > **Monitor** > **Device status**. This option shows the devices that have your OEMConfig profile assigned.
-3. Select a device > **Device configuration** > Select your Zebra OEMConfig profile. This option shows the profile settings that succeeded or failed.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select your Zebra OEMConfig profile &gt; **Monitor** &gt; **Device status**. This option shows the devices that have your OEMConfig profile assigned.
+3. Select a device &gt; **Device configuration** &gt; Select your Zebra OEMConfig profile. This option shows the profile settings that succeeded or failed.
 
-    Select a failed row. Details are shown that have more information on why it failed.
+   Select a failed row. Details are shown that have more information on why it failed.
 
 ## Related articles
 
-- Learn more about [OEMConfig configuration profiles](./configure-oemconfig-android.md).
-- On Android device administrator, configure [Mobility Extensions (MX)](./configure-zebra-mx-android.md).
+- Learn more about [OEMConfig configuration profiles](configure-oemconfig-android.md).
+- On Android device administrator, configure [Mobility Extensions (MX)](configure-zebra-mx-android.md).
 - [Monitor the profile status](../monitor-device-profile.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

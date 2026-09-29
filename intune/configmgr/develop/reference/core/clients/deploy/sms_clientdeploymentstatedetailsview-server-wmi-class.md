@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a clients deployment state using SMS_ClientDeploymentStateDetailsView in Configuration Manager.
-title: SMS_ClientDeploymentStateDetailsView Class
-ms.date: 09/20/2016
+title: "SMS_ClientDeploymentStateDetailsView Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientDeploymentStateDetailsView Server WMI Class
+
 The `SMS_ClientDeploymentStateDetailsView` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a client deployment state details view.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,81 +30,79 @@ Class SMS_ClientDeploymentStateDetailsView: SMS_BaseClass
 ```
 
 ## Methods
- The  `SMS_ClientDeploymentStateDetailsView` class does not define any methods.
+
+The `SMS_ClientDeploymentStateDetailsView` class does not define any methods.
 
 ## Properties
- `BaselineItemID`
- Data type: `UInt32`
 
- Access type: Read
+`BaselineItemID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The client baseline item ID.
+Qualifiers: [key]
 
- `BaselineItemName`
- Data type: `String`
+The client baseline item ID.
 
- Access type: Read
+`BaselineItemName` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The client baseline item name.
+Qualifiers: none
 
- `BaselineItemType`
- Data type: `UInt32`
+The client baseline item name.
 
- Access type: Read
+`BaselineItemType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- The client baseline item type. Possible values are:
+Qualifiers: none
 
-|Value|Baseline item type|
-|-|-|
-|1|Patch or CU|
-|2|Language Pack|
+The client baseline item type. Possible values are:
 
- `NetBiosName`
- Data type: `String`
+| Value | Baseline item type |
+| --- | --- |
+| 1 | Patch or CU |
+| 2 | Language Pack |
 
- Access type: Read
+`NetBiosName` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The NetBIOS name of the client.
+Qualifiers: none
 
- `RecordID`
- Data type: `UInt32`
+The NetBIOS name of the client.
 
- Access type: Read
+`RecordID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The record ID of the client deployment state.
+Qualifiers: [key]
 
- `SMSID`
- Data type: `String`
+The record ID of the client deployment state.
 
- Access type: Read
+`SMSID` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The SMSID of the client.
+Qualifiers: none
+
+The SMSID of the client.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the FileSystemFile Class to represent local file information.
-title: FileSystemFile Class
-ms.date: 09/20/2016
+title: "FileSystemFile Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # FileSystemFile Client WMI Class
+
 In Configuration Manager, the `FileSystemFile` class is a client Windows Management Instrumentation (WMI) class that represents local file information.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -56,336 +58,307 @@ Class FileSystemFile
 ```
 
 ## Methods
- The `FileSystemFile` class does not define any methods.
+
+The `FileSystemFile` class does not define any methods.
 
 ## Properties
- `AgentCreatedWMIPath`
- Data type: `String`
 
- Access type: Read/Write
+`AgentCreatedWMIPath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The WMI path created by the agent.
+Qualifiers: None
 
- `CompanyName`
- Data type: `String`
+The WMI path created by the agent.
 
- Access type: Read/Write
+`CompanyName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Company name stored in the file resource header.
+Qualifiers: [key]
 
- `CreationDate`
- Data type: `DateTime`
+Company name stored in the file resource header.
 
- Access type: Read/Write
+`CreationDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Time the file was created according to the operating system.
+Qualifiers: None
 
- `FileBuildDate`
- Data type: `DateTime`
+Time the file was created according to the operating system.
 
- Access type: Read/Write
+`FileBuildDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Time stamp, from the file resource header, of the files creation.
+Qualifiers: None
 
- `FileDescription`
- Data type: `String`
+Time stamp, from the file resource header, of the files creation.
 
- Access type: Read/Write
+`FileDescription` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- File description stored in the file resource header.
+Qualifiers: [key]
 
- `FileFunctionType`
- Data type: `UInt32`
+File description stored in the file resource header.
 
- Access type: Read/Write
+`FileFunctionType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Function type of the file, dependent on the general type (such as DRV + PRINTER). For more information, see VS_FIXEDFILEINFO in the Platform SDK.
+Qualifiers: None
 
- `FileGeneralType`
- Data type: `UInt32`
+Function type of the file, dependent on the general type (such as DRV + PRINTER). For more information, see VS_FIXEDFILEINFO in the Platform SDK.
 
- Access type: Read/Write
+`FileGeneralType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- General type of the file (such as APP, DLL, and DRV). For more information, see VS_FIXEDFILEINFOin the Platform SDK.
+Qualifiers: None
 
- `FileInternalName`
- Data type: `String`
+General type of the file (such as APP, DLL, and DRV). For more information, see VS_FIXEDFILEINFOin the Platform SDK.
 
- Access type: Read/Write
+`FileInternalName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Internal file name stored in the file resource header.
+Qualifiers: None
 
- `FileOriginalName`
- Data type: `String`
+Internal file name stored in the file resource header.
 
- Access type: Read/Write
+`FileOriginalName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Original file name stored in the file resource header.
+Qualifiers: None
 
- `FileOSFlags`
- Data type: `UInt32`
+Original file name stored in the file resource header.
 
- Access type: Read/Write
+`FileOSFlags` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Bitmask with the operating system values that the file was designed for (such as Windows NT and WIN32). For more information, see VS_FIXEDFILEINFO in the Platform SDK.
+Qualifiers: None
 
- `FileVersion`
- Data type: `String`
+Bitmask with the operating system values that the file was designed for (such as Windows NT and WIN32). For more information, see VS_FIXEDFILEINFO in the Platform SDK.
 
- Access type: Read/Write
+`FileVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- File version stored in the files resource header.
+Qualifiers: [key]
 
- `FileVersionFlags`
- Data type: `UInt32`
+File version stored in the files resource header.
 
- Access type: Read/Write
+`FileVersionFlags` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Bitmask specifying various version attributes of the file (such as DEBUG, PATCHED, and PRIVATE). For more information, see VS_FIXEDFILEINFO in the Platform SDK.
+Qualifiers: None
 
- `IsArchived`
- Data type: `Boolean`
+Bitmask specifying various version attributes of the file (such as DEBUG, PATCHED, and PRIVATE). For more information, see VS_FIXEDFILEINFO in the Platform SDK.
 
- Access type: Read/Write
+`IsArchived` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file archive bit is set.
+Qualifiers: None
 
- `IsCompressed`
- Data type: `Boolean`
+`true` if the file archive bit is set.
 
- Access type: Read/Write
+`IsCompressed` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file is compressed.
+Qualifiers: None
 
- `IsEncrypted`
- Data type: `Boolean`
+`true` if the file is compressed.
 
- Access type: Read/Write
+`IsEncrypted` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file is encrypted.
+Qualifiers: None
 
- `IsHidden`
- Data type: `Boolean`
+`true` if the file is encrypted.
 
- Access type: Read/Write
+`IsHidden` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file is hidden.
+Qualifiers: None
 
- `IsNormal`
- Data type: `Boolean`
+`true` if the file is hidden.
 
- Access type: Read/Write
+`IsNormal` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if no other file attributes are set.
+Qualifiers: None
 
- `IsOffline`
- Data type: `Boolean`
+`true` if no other file attributes are set.
 
- Access type: Read/Write
+`IsOffline` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file data is not immediately available.
+Qualifiers: None
 
- `IsReadOnly`
- Data type: `Boolean`
+`true` if the file data is not immediately available.
 
- Access type: Read/Write
+`IsReadOnly` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file is read-only. An application cannot write to or delete the file.
+Qualifiers: None
 
- `IsReparsePoint`
- Data type: `Boolean`
+`true` if the file is read-only. An application cannot write to or delete the file.
 
- Access type: Read/Write
+`IsReparsePoint` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file has an associated reparse point.
+Qualifiers: None
 
- `IsSparseFile`
- Data type: `Boolean`
+`true` if the file has an associated reparse point.
 
- Access type: Read/Write
+`IsSparseFile` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `True` if the file is a sparse file.
+Qualifiers: None
 
- `IsSystem`
- Data type: `Boolean`
+`True` if the file is a sparse file.
 
- Access type: Read/Write
+`IsSystem` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `True` if the file is a system file.
+Qualifiers: None
 
- `IsTemporary`
- Data type: `Boolean`
+`True` if the file is a system file.
 
- Access type: Read/Write
+`IsTemporary` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file is being used for temporary storage.
+Qualifiers: None
 
- `LastAccessDate`
- Data type: `DateTime`
+`true` if the file is being used for temporary storage.
 
- Access type: Read/Write
+`LastAccessDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Time, according to the operating system, when the file was last accessed.
+Qualifiers: None
 
- `LastWriteDate`
- Data type: `DateTime`
+Time, according to the operating system, when the file was last accessed.
 
- Access type: Read/Write
+`LastWriteDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Time when the file was last written to, according to the operating system.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+Time when the file was last written to, according to the operating system.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Name of the file, with wildcards that are supported in the query (such as drv*.sys). This string is the long file name (if different from the 8.3 representation).
+Qualifiers: [key]
 
- `Path`
- Data type: `String`
+Name of the file, with wildcards that are supported in the query (such as drv\*.sys). This string is the long file name (if different from the 8.3 representation).
 
- Access type: Read/Write
+`Path` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- File path, not including the file name. The provider supports limited wildcards and directory vs. single directory scan syntax for querying based on this property. The provider also supports path queries with unexpanded environment variables, such as %*windir*%.
+Qualifiers: [key]
 
- `ProductLanguage`
- Data type: `UInt32`
+File path, not including the file name. The provider supports limited wildcards and directory vs. single directory scan syntax for querying based on this property. The provider also supports path queries with unexpanded environment variables, such as %*windir*%.
 
- Access type: Read/Write
+`ProductLanguage` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Product language stored in the file resource header.
+Qualifiers: [key]
 
- `ProductName`
- Data type: `String`
+Product language stored in the file resource header.
 
- Access type: Read/Write
+`ProductName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Product name stored in the file resource header.
+Qualifiers: [key]
 
- `ProductVersion`
- Data type: `String`
+Product name stored in the file resource header.
 
- Access type: Read/Write
+`ProductVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Product version stored in the file resource header.
+Qualifiers: [key]
 
- `ReservedFlags0`
- Data type: `UInt32`
+Product version stored in the file resource header.
 
- Access type: Read/Write
+`ReservedFlags0` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Provided for completeness. For more information, see WIN32_FIND_DATA.
+Qualifiers: None
 
- `ReservedFlags1`
- Data type: `UInt32`
+Provided for completeness. For more information, see WIN32_FIND_DATA.
 
- Access type: Read/Write
+`ReservedFlags1` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Provided for completeness. For more information, see WIN32_FIND_DATA.
+Qualifiers: None
 
- `ShortName`
- Data type: `String`
+Provided for completeness. For more information, see WIN32_FIND_DATA.
 
- Access type: Read/Write
+`ShortName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- 8.3 representation of the file name.
+Qualifiers: None
 
- `Size`
- Data type: `UInt64`
+8.3 representation of the file name.
 
- Access type: Read/Write
+`Size` Data type: `UInt64`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- File size, in bytes (a 64-bit value).
+Qualifiers: [key]
 
- `Type`
- Data type: `UInt32`
+File size, in bytes (a 64-bit value).
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- File attribute bitmask, which matches the attribute bitmask returned by the Win32 `GetFileAttributes` function. The individual bits are also broken out into separate Boolean values for ease of querying and filtering.
+Qualifiers: None
+
+File attribute bitmask, which matches the attribute bitmask returned by the Win32 `GetFileAttributes` function. The individual bits are also broken out into separate Boolean values for ease of querying and filtering.
 
 ## Remarks
- This class is used primarily for software inventory, file collection, and IDMIF collection.
 
- To convert properties of this class to their WIN32_FIND_DATA equivalent, consult the WMI SDK.
+This class is used primarily for software inventory, file collection, and IDMIF collection.
+
+To convert properties of this class to their WIN32_FIND_DATA equivalent, consult the WMI SDK.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Inventory Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/inventory-agent-client-wmi-classes.md)
+
+[Inventory Agent Client WMI Classes](inventory-agent-client-wmi-classes.md)

@@ -1,16 +1,18 @@
 ---
-title: UpdateAutoUpgradeConfigs Method
+title: "UpdateAutoUpgradeConfigs Method in Class SMS_Site"
 description: The UpdateAutoUpgradeConfigs Windows Management Instrumentation class method, in Configuration Manager, updates configurations for autoupgrade settings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # UpdateAutoUpgradeConfigs Method in Class SMS_Site
+
 The `UpdateAutoUpgradeConfigs` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates configurations for autoupgrade settings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -31,101 +33,95 @@ SInt32 UpdateAutoUpgradeConfigs(
 ```
 
 #### Parameters
- `ClientVersion`
- Data type: `String`
 
- Qualifiers: [in]
+`ClientVersion` Data type: `String`
 
- The version of the client.
+Qualifiers: [in]
 
- `IsProgramEnabled`
- Data type: `Boolean`
+The version of the client.
 
- Qualifiers: [in]
+`IsProgramEnabled` Data type: `Boolean`
 
- `true` if the program is enabled.
+Qualifiers: [in]
 
- `AdvertisementDuration`
- Data type: `UInt32`
+`true` if the program is enabled.
 
- Qualifiers: [in]
+`AdvertisementDuration` Data type: `UInt32`
 
- Advertisement duration in days.
+Qualifiers: [in]
 
- `ValidationInterval`
- Data type: `UInt32`
+Advertisement duration in days.
 
- Qualifiers: [in]
+`ValidationInterval` Data type: `UInt32`
 
- Validation interval in hours, if the previous validation is successful.
+Qualifiers: [in]
 
- `ValidationFailureInterval`
- Data type: `UInt32`
+Validation interval in hours, if the previous validation is successful.
 
- Qualifiers: [in]
+`ValidationFailureInterval` Data type: `UInt32`
 
- Validation interval in hours, if the previous validation is failed.
+Qualifiers: [in]
 
- `AllowPrestage`
- Data type: `Boolean`
+Validation interval in hours, if the previous validation is failed.
 
- Qualifiers: [in]
+`AllowPrestage` Data type: `Boolean`
 
- `true` if autoupgrade package distributed to pre-stage distribution point is allowed.
+Qualifiers: [in]
 
- `AllowFallbackToContentSource`
- Data type: `Boolean`
+`true` if autoupgrade package distributed to pre-stage distribution point is allowed.
 
- Qualifiers: [in]
+`AllowFallbackToContentSource` Data type: `Boolean`
 
- `true` if fallback to content source is allowed.
+Qualifiers: [in]
 
- `DownloadOptionInSlowNetwork`
- Data type: `UInt32`
+`true` if fallback to content source is allowed.
 
- Qualifiers: [in]
+`DownloadOptionInSlowNetwork` Data type: `UInt32`
 
- Download options in slow network. Possible values are:
+Qualifiers: [in]
 
-|Value|Download option|
-|-|-|
-|0|Do not download.|
-|1|Download from distribution point and run locally.|
-|2|Run from distribution point.|
+Download options in slow network. Possible values are:
 
- `ExcludeServers`
- Data type: `Boolean`
+| Value | Download option |
+| --- | --- |
+| 0 | Do not download. |
+| 1 | Download from distribution point and run locally. |
+| 2 | Run from distribution point. |
 
- Qualifiers: [in]
+`ExcludeServers` Data type: `Boolean`
 
- Indicates whether autoupgrade should be skipped on servers.
+Qualifiers: [in]
 
- `OverrideServiceWindow`
- Data type: `Boolean`
+Indicates whether autoupgrade should be skipped on servers.
 
- Qualifiers: [in]
+`OverrideServiceWindow` Data type: `Boolean`
 
- Indicates whether the upgrade on the client occurs in service window.
+Qualifiers: [in]
 
- `IgnoreNonPersistableVM`
- Data type: `Boolean`
+Indicates whether the upgrade on the client occurs in service window.
 
- Qualifiers: [in]
+`IgnoreNonPersistableVM` Data type: `Boolean`
 
- Indicates whether autoupgrade should be skipped on non-persistent virtual machines.
+Qualifiers: [in]
+
+Indicates whether autoupgrade should be skipped on non-persistent virtual machines.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md)

@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_Step Class
+title: "SMS_TaskSequence_Step Server WMI Class"
 description: In Configuration Manager, the SMS_TaskSequence_Step WMI class is an SMS Provider server class. This class serves as an abstract base class that represents a single step in a task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_Step Server WMI Class
+
 The `SMS_TaskSequence_Step` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager. This class serves as an abstract base class that represents a single step in a task sequence.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,81 +28,77 @@ Class SMS_TaskSequence_Step
 ```
 
 ## Methods
- The `SMS_TaskSequence_Step` class does not define any methods.
+
+The `SMS_TaskSequence_Step` class does not define any methods.
 
 ## Properties
- `Condition`
- Data type: `SMS_TaskSequence_Condition`
 
- Access type: Read/Write
+`Condition` Data type: `SMS_TaskSequence_Condition`
 
- Qualifiers: None
+Access type: Read/Write
 
- Optional. An [SMS_TaskSequence_Condition Server WMI Class](../../../develop/reference/osd/sms_tasksequence_condition-server-wmi-class.md) object representing a condition that can be used to determine if the step should be processed.
+Qualifiers: None
 
- `ContinueOnError`
- Data type: `Boolean`
+Optional. An [SMS_TaskSequence_Condition Server WMI Class](sms_tasksequence_condition-server-wmi-class.md) object representing a condition that can be used to determine if the step should be processed.
 
- Access type: Read/Write
+`ContinueOnError` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` to continue the task sequence even if the step fails.
+Qualifiers: None
 
- `Description`
- Data type: `String`
+`true` to continue the task sequence even if the step fails.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [AllowedLen("0-255")]
+Access type: Read/Write
 
- Optional. The description of the step. The description length can be between 0 and 255 characters.
+Qualifiers: [AllowedLen("0-255")]
 
- `Enabled`
- Data type: `Boolean`
+Optional. The description of the step. The description length can be between 0 and 255 characters.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the step should be run. Set this property to `false` to ignore the step completely.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+`true` if the step should be run. Set this property to `false` to ignore the step completely.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [AllowedLen("1-100")]
+Access type: Read/Write
 
- The name of the step. The name length can be between 1 and 100 characters.
+Qualifiers: [AllowedLen("1-100")]
+
+The name of the step. The name length can be between 1 and 100 characters.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Each step in the task sequence is one of the following:
+- An individual action that is run on a computer, represented by a [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md) or derived class. For example, the [SMS_TaskSequence_InstallSoftwareAction Server WMI Class](sms_tasksequence_installsoftwareaction-server-wmi-class.md) class represents an action that specifies a package and a program to install as part of a task sequence.
+- A set of actions in a group, represented by [SMS_TaskSequence_Group Server WMI Class](sms_tasksequence_group-server-wmi-class.md). Groups are useful ways to organize actions. For example, to conditionally process a set of actions, you could organize the actions into a group and add a condition to the group.
 
-- An individual action that is run on a computer, represented by a [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md) or derived class. For example, the [SMS_TaskSequence_InstallSoftwareAction Server WMI Class](../../../develop/reference/osd/sms_tasksequence_installsoftwareaction-server-wmi-class.md) class represents an action that specifies a package and a program to install as part of a task sequence.
-
-- A set of actions in a group, represented by [SMS_TaskSequence_Group Server WMI Class](../../../develop/reference/osd/sms_tasksequence_group-server-wmi-class.md). Groups are useful ways to organize actions. For example, to conditionally process a set of actions, you could organize the actions into a group and add a condition to the group.
-
-  Each step can be associated with a condition, represented by [SMS_TaskSequence_Condition Server WMI Class](../../../develop/reference/osd/sms_tasksequence_condition-server-wmi-class.md) that determines whether the step is processed.
+  Each step can be associated with a condition, represented by [SMS_TaskSequence_Condition Server WMI Class](sms_tasksequence_condition-server-wmi-class.md) that determines whether the step is processed.
 
   For more information, see Operating System Deployment Task Sequence Object Model.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)
- [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md)
- [SMS_TaskSequence_Condition Server WMI Class](../../../develop/reference/osd/sms_tasksequence_condition-server-wmi-class.md)
- [SMS_TaskSequence_Group Server WMI Class](../../../develop/reference/osd/sms_tasksequence_group-server-wmi-class.md)
+
+[SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md) [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md) [SMS_TaskSequence_Condition Server WMI Class](sms_tasksequence_condition-server-wmi-class.md) [SMS_TaskSequence_Group Server WMI Class](sms_tasksequence_group-server-wmi-class.md)

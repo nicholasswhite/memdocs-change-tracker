@@ -1,7 +1,7 @@
 ---
-title: Assignment filter reports & troubleshooting
+title: "Assignment filter reports and troubleshooting in Microsoft Intune"
 description: Learn how to use assignment filter reports to troubleshoot policies in Microsoft Intune. View filter evaluation results, resolve conflicts, and understand include vs. exclude modes.
-ms.date: 11/19/2025
+ms.date: "2025-11-19T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: mattcall, abalwan
 ---
@@ -12,15 +12,15 @@ When you create an app, compliance policy, or configuration profile, you assign 
 
 You can use assignment filters on **managed devices** (devices enrolled in Intune) and **managed apps** (apps managed by Intune). For more information, go to [Use filters when assigning your apps, policies, and profiles](overview.md).
 
-Managed apps and managed devices are evaluated against these assignment filters to meet the rules you configure. The results of the filter evaluations are logged, and reported in the Microsoft Intune admin center.
-Use this article to learn more about the reporting features, and to help troubleshoot assignment filters and conflicts.
+Managed apps and managed devices are evaluated against these assignment filters to meet the rules you configure. The results of the filter evaluations are logged, and reported in the Microsoft Intune admin center. Use this article to learn more about the reporting features, and to help troubleshoot assignment filters and conflicts.
 
 > [!IMPORTANT]
+>
 > From evaluation time, the filter evaluation results can take up to 30 minutes to show in the Intune admin center.
 
 ## Reports for managed devices
 
-The [Microsoft Intune admin center] has per-device and per-app reporting information. Use this information to help troubleshoot assignment filter evaluation, and determine why a policy applied or didn't apply.
+The [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) has per-device and per-app reporting information. Use this information to help troubleshoot assignment filter evaluation, and determine why a policy applied or didn't apply.
 
 You can use the following reports to get more information on your assignment filters:
 
@@ -33,25 +33,26 @@ This report shows every app or policy with an assignment filter that's been appl
 
 To see this report, use the following steps:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **All Devices** > select a device > **Filter evaluation**. The following information is shown:
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **All Devices** &gt; select a device &gt; **Filter evaluation**. The following information is shown:
 
-    - The assignment filters that were evaluated.
-    - The date and time the evaluation occurred.
-    - The evaluation results: **Match** or **No match**
-    - If the filter is using Include or Exclude mode
-    - The filter name, description, and rules
-    - The properties that were evaluated, such as `deviceName`.
-    - The available apps that can be assigned to the device.
+   - The assignment filters that were evaluated.
+   - The date and time the evaluation occurred.
+   - The evaluation results: **Match** or **No match**
+   - If the filter is using Include or Exclude mode
+   - The filter name, description, and rules
+   - The properties that were evaluated, such as `deviceName`.
+   - The available apps that can be assigned to the device.
 
-    The **Filter information** section is populated with the currently configured filter name, description, and rules. The information isn't populated from log data. The filter name, syntax, and any other metadata can change since the last evaluation time. When troubleshooting, be sure to look at the **Evaluation time** and **Last modified** timestamps.
+   The **Filter information** section is populated with the currently configured filter name, description, and rules. The information isn't populated from log data. The filter name, syntax, and any other metadata can change since the last evaluation time. When troubleshooting, be sure to look at the **Evaluation time** and **Last modified** timestamps.
 
 In the following example, you can see this information for the **TestDevice**:
 
-:::image type="content" source="./media/troubleshoot/filter-properties-single-device.png" alt-text="Screenshot that shows how to see the date, time, evaluation results, and other device filter assignment properties in Microsoft Intune." lightbox="./media/troubleshoot/filter-properties-single-device.png":::
+[![Screenshot that shows how to see the date, time, evaluation results, and other device filter assignment properties in Microsoft Intune.](media/troubleshoot/filter-properties-single-device.png)](media/troubleshoot/filter-properties-single-device.png#lightbox)
 
 > [!IMPORTANT]
-> Filter evaluation reports for devices don't show the results of any Microsoft Entra Conditional Access evaluations. To troubleshoot Conditional Access issues, use the  Microsoft Entra sign-in logs. For more information, go to [Microsoft Entra sign-in logs overview](/entra/identity/monitoring-health/concept-sign-ins).
+>
+> Filter evaluation reports for devices don't show the results of any Microsoft Entra Conditional Access evaluations. To troubleshoot Conditional Access issues, use the Microsoft Entra sign-in logs. For more information, go to [Microsoft Entra sign-in logs overview](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/concept-sign-ins).
 
 ### Workload filter evaluation reports
 
@@ -59,20 +60,20 @@ These reports show filter information for each device that's evaluated in an app
 
 To see these reports, use the following steps:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Apps** > **All Apps** > select an app > **Device install status**.
-3. Select the **Filter** column > **Filters evaluated**. The following information is shown:
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Apps** &gt; **All Apps** &gt; select an app &gt; **Device install status**.
+3. Select the **Filter** column &gt; **Filters evaluated**. The following information is shown:
 
-    - The assignment filters that were evaluated.
-    - The date and time the evaluation occurred.
-    - The evaluation results: **Match** or **No match**, and **App assignment applied** or **App assignment not applied**
-    - If the filter was using Include or Exclude mode
-    - The filter name, description, and rules
-    - The properties that were evaluated, such as `deviceCategory`.
+   - The assignment filters that were evaluated.
+   - The date and time the evaluation occurred.
+   - The evaluation results: **Match** or **No match**, and **App assignment applied** or **App assignment not applied**
+   - If the filter was using Include or Exclude mode
+   - The filter name, description, and rules
+   - The properties that were evaluated, such as `deviceCategory`.
 
 In the following example, you can see this information for the **Microsoft Word** store app:
 
-:::image type="content" source="./media/troubleshoot/filter-properties-single-app.png" alt-text="Screenshot that shows how to see the date, time, evaluation results, and other app filter properties for an app in Microsoft Intune." lightbox="./media/troubleshoot/filter-properties-single-app.png":::
+[![Screenshot that shows how to see the date, time, evaluation results, and other app filter properties for an app in Microsoft Intune.](media/troubleshoot/filter-properties-single-app.png)](media/troubleshoot/filter-properties-single-app.png#lightbox)
 
 > [!IMPORTANT]
 >
@@ -119,12 +120,10 @@ Use the following table to help understand when you include or exclude devices:
   - Time2: A targeted user enrolls a new device and checks in with the Intune service. During the check-in, the category filter evaluates. Since a category isn't set on the device yet, the filter evaluates as a null category, and the app installs.
 
     If a filter was working in "Exclude" mode, then the app could be installed since it might not match the exclusion criteria.
-
   - Time3: In the Company Portal app, the user is prompted to choose a device category. Remember, enrollment and check-in is already completed.
   - Time4: On the next device check-in, the category property updates and now returns a different filter evaluation result. Remember, the app was already installed. And, it won't be automatically removed.
 
   For approximate check-in times, go to [Intune policy refresh intervals](../../device-configuration/troubleshoot-device-profiles.md#policy-refresh-intervals).
-
 - The latest filter evaluation results are stored for 30 days. If the logs are expired, you can see a `We were not able to retrieve any filter evaluation results` message.
 
 ## Filters and assignment conflict resolution
@@ -145,7 +144,7 @@ Intune prevents you from creating multiple assignments to the same Microsoft Ent
 
 An overlap can occur when a user or device is in multiple targeted groups. Conflicting assignments aren't recommended. For more information, go to [conflicts between app intents](../../app-management/deployment/assign-groups.md#how-conflicts-between-app-intents-are-resolved).
 
-:::image type="content" source="./media/troubleshoot/device-multiple-groups.png" alt-text="Screenshot that shows how conflicts can occur when a device is in multiple groups in Microsoft Intune." lightbox="./media/troubleshoot/device-multiple-groups.png":::
+[![Screenshot that shows how conflicts can occur when a device is in multiple groups in Microsoft Intune.](media/troubleshoot/device-multiple-groups.png)](media/troubleshoot/device-multiple-groups.png#lightbox)
 
 When you use assignment filters, conflict resolution is handled using the following methods:
 
@@ -163,7 +162,7 @@ When there's a device with conflicting assignments for the same policy, the foll
 
 When you assign the app or policy, you choose to apply a filter:
 
-:::image type="content" source="./media/troubleshoot/assignment-filter-precedence.png" alt-text="Screenshot that shows filter precedence is excluded, no filter, and then include when assigning policies in Microsoft Intune." lightbox="./media/troubleshoot/assignment-filter-precedence.png":::
+[![Screenshot that shows filter precedence is excluded, no filter, and then include when assigning policies in Microsoft Intune.](media/troubleshoot/assignment-filter-precedence.png)](media/troubleshoot/assignment-filter-precedence.png#lightbox)
 
 For example:
 
@@ -207,11 +206,11 @@ Apps use special behavior when resolving conflicts between **Required** and **Av
 
 In the following example, there's a conflict between assignments because the same user/device is in both assignments:
 
-:::image type="content" source="./media/troubleshoot/example-conflict-same-group-user-policy-assignment.png" alt-text="Screenshot that shows an example assignment conflict when using filters in Microsoft Intune.":::
+![Screenshot that shows an example assignment conflict when using filters in Microsoft Intune.](media/troubleshoot/example-conflict-same-group-user-policy-assignment.png)
 
 The following matrix explains the effect, depending on the conflict scenario:
 
-:::image type="content" source="./media/troubleshoot/conflict-matrix.png" alt-text="Screenshot that shows that the conflict effect depends on the setting configured when using filters in Microsoft Intune." lightbox="./media/troubleshoot/conflict-matrix.png":::
+[![Screenshot that shows that the conflict effect depends on the setting configured when using filters in Microsoft Intune.](media/troubleshoot/conflict-matrix.png)](media/troubleshoot/conflict-matrix.png#lightbox)
 
 ## Related content
 
@@ -219,7 +218,3 @@ The following matrix explains the effect, depending on the conflict scenario:
 - [Supported device properties when creating filters](ref-device-properties.md)
 - [Supported workloads when creating filters](ref-supported-workloads.md)
 - [Filter performance recommendations](performance-recommendations.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

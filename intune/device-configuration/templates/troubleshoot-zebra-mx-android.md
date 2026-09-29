@@ -1,14 +1,14 @@
 ---
-title: Use StageNow logs on Android Zebra devices in Microsoft Intune
+title: "Troubleshoot and see potential issues on Android Zebra devices in Microsoft Intune"
 description: See common issues and resolutions when using StageNow on Android devices with Microsoft Intune. Also learn how to get logs, and see examples of how to read the logs for success or errors.
-ms.date: 06/27/2024
+ms.date: "2024-06-27T00:00:00Z"
 ms.topic: troubleshooting
 ms.reviewer: jieyan
 ---
 
 # Troubleshoot and see potential issues on Android Zebra devices in Microsoft Intune
 
-In Microsoft Intune, you can use [Zebra Mobility Extensions (MX) to manage Android Zebra devices](./configure-zebra-mx-android.md). When using Zebra devices, you create profiles in StageNow to manage settings, and upload them to Intune. Intune uses the StageNow app to apply the settings on the devices. The StageNow app also creates a detailed log file on the device that's used to troubleshoot.
+In Microsoft Intune, you can use [Zebra Mobility Extensions (MX) to manage Android Zebra devices](configure-zebra-mx-android.md). When using Zebra devices, you create profiles in StageNow to manage settings, and upload them to Intune. Intune uses the StageNow app to apply the settings on the devices. The StageNow app also creates a detailed log file on the device that's used to troubleshoot.
 
 This feature applies to:
 
@@ -24,16 +24,17 @@ Some issues aren't related to the contents of the StageNow profile, and aren't r
 
 This article shows you how to read the StageNow logs. It also lists some potential issues with Zebra devices that may not be reflected in the logs.
 
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
- [!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
-
-[Use and manage Zebra devices with Zebra Mobility Extensions](./configure-zebra-mx-android.md) has more information on this feature.
+[Use and manage Zebra devices with Zebra Mobility Extensions](configure-zebra-mx-android.md) has more information on this feature.
 
 ## Get the logs
 
 ### Use the StageNow app on the device
 
-You don't have to use [Intune to deploy the profile](./configure-zebra-mx-android.md#step-4---create-a-device-management-profile-in-stagenow). Instead, you can test a profile directly using StageNow on your computer. The StageNow app on the device saves the logs from the test. To get the log file, use the **More (...)** option in the StageNow app on the device.
+You don't have to use [Intune to deploy the profile](configure-zebra-mx-android.md#step-4---create-a-device-management-profile-in-stagenow). Instead, you can test a profile directly using StageNow on your computer. The StageNow app on the device saves the logs from the test. To get the log file, use the **More (...)** option in the StageNow app on the device.
 
 ### Get logs using Android Debug Bridge
 
@@ -47,7 +48,7 @@ To get logs after the profile is deployed with Intune, end users can email you t
 
 ## Read the logs
 
-When you look at the logs, there's an error whenever you see the `<characteristic-error>` tag. Error details are written to the `<parm-error>` tag > `desc` property.
+When you look at the logs, there's an error whenever you see the `<characteristic-error>` tag. Error details are written to the `<parm-error>` tag &gt; `desc` property.
 
 ## Error types
 
@@ -134,10 +135,10 @@ This error means that Intune suspects a non-Zebra Android device is reporting it
 
 ### Company Portal app is older than minimum required version
 
-Intune may update the minimum required version of the Company Portal app. If Google Play isn't installed on the device, then the Company Portal app doesn't get automatically updated. If the minimum required version is newer than the installed version, then the Company Portal app stops working. Update to the latest Company Portal app using [sideloading on Zebra devices](./configure-zebra-mx-android.md#sideload-the-company-portal-app).
+Intune may update the minimum required version of the Company Portal app. If Google Play isn't installed on the device, then the Company Portal app doesn't get automatically updated. If the minimum required version is newer than the installed version, then the Company Portal app stops working. Update to the latest Company Portal app using [sideloading on Zebra devices](configure-zebra-mx-android.md#sideload-the-company-portal-app).
 
 ## Next steps
 
 [Zebra discussion boards](https://developer.zebra.com/community/home/discussions) (opens Zebra's web site)
 
-[Use and manage Zebra devices with Zebra Mobility Extensions in Intune](./configure-zebra-mx-android.md)
+[Use and manage Zebra devices with Zebra Mobility Extensions in Intune](configure-zebra-mx-android.md)

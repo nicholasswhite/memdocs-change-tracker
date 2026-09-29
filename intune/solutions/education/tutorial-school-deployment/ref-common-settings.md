@@ -2,7 +2,7 @@
 title: Common Education configuration overview
 description: Learn about common configuration used by Education organizations in Intune.
 #zone_pivot_groups: platforms-windows-ios
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 author: yegor-a
 ms.author: egorabr
@@ -26,6 +26,7 @@ Key areas of focus include:
 These policies are commonly used but not mandatory. Schools can tailor their configurations based on their specific needs, and optional policies are provided for more situational use cases.
 
 > [!CAUTION]
+>
 > Adding these settings to your existing Intune tenant and assigning them to devices could potentially cause conflicts with your existing Intune policies. For more information, see [Compliance and device configuration policies that conflict](../../../device-configuration/troubleshoot-device-profiles.md#conflicts) and [Avoiding policy conflicts](policy-conflicts.md).
 
 ## Intune policies for Windows in Education

@@ -1,16 +1,18 @@
 ---
 description: Learn how to add content to the SMS_ContentPackage Server WMI Class content package using AddContent.
-title: AddContent Method
-ms.date: 09/20/2016
+title: "AddContent Method in Class SMS_ContentPackage"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# AddContent Method in Class SMS_ContentPackage
-The `AddContent` Windows Management Instrumentation (WMI) class method, in Configuration Manager, adds content to the [SMS_ContentPackage Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_contentpackage-server-wmi-class.md) content package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+# AddContent Method in Class SMS_ContentPackage
+
+The `AddContent` Windows Management Instrumentation (WMI) class method, in Configuration Manager, adds content to the [SMS_ContentPackage Server WMI Class](sms_contentpackage-server-wmi-class.md) content package.
+
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -26,75 +28,75 @@ sint32 AddContent (
 ```
 
 #### Parameters
- `ContentID`
- Data type: `string` Array
 
- Qualifiers: `[in]`
+`ContentID` Data type: `string` Array
 
- Identifier of the content.
+Qualifiers: `[in]`
 
- `ContentVersion`
- Data type: `UInt32` Array
+Identifier of the content.
 
- Qualifiers: `[in]`
+`ContentVersion` Data type: `UInt32` Array
 
- Version of the content.
+Qualifiers: `[in]`
 
- `ContentSource`
- Data type: `String` Array
+Version of the content.
 
- Qualifiers: `[in]`
+`ContentSource` Data type: `String` Array
 
- Specifies the source location where content files are stored.
+Qualifiers: `[in]`
 
- `ContentFlags`
- Data type: `UInt32` Array
+Specifies the source location where content files are stored.
 
- Qualifiers: `[in]`
+`ContentFlags` Data type: `UInt32` Array
 
- This specifies additional attributes for the content instance.
+Qualifiers: `[in]`
 
-|Value|Content flag|
-|-|-|
-|8|DOWNLOAD_ON_DEMAND_FROM_LOCAL_DP|
-|12|DOWNLOAD_FROM_LOCAL_DISPPOINT|
-|13|DOWNLOAD_LOCAL_PARTIALDOWNLOADTOLOCAL|
-|14|DOWNLOAD_FROM_REMOTE_DISPPOINT|
-|15|DOWNLOAD_REMOTE_PARTIALDOWNLOADTOLOCAL|
-|16|DOWNLOAD_ENABLE_PEER_CACHING|
-|17|DP_NO_FALLBACK_UNPROTECTED|
-|24|DO_NOT_DOWNLOAD|
-|25|PERSIST_IN_CACHE|
+This specifies additional attributes for the content instance.
 
- `ContentType`
- Data type: `UInt32` Array
+| Value | Content flag |
+| --- | --- |
+| 8 | DOWNLOAD_ON_DEMAND_FROM_LOCAL_DP |
+| 12 | DOWNLOAD_FROM_LOCAL_DISPPOINT |
+| 13 | DOWNLOAD_LOCAL_PARTIALDOWNLOADTOLOCAL |
+| 14 | DOWNLOAD_FROM_REMOTE_DISPPOINT |
+| 15 | DOWNLOAD_REMOTE_PARTIALDOWNLOADTOLOCAL |
+| 16 | DOWNLOAD_ENABLE_PEER_CACHING |
+| 17 | DP_NO_FALLBACK_UNPROTECTED |
+| 24 | DO_NOT_DOWNLOAD |
+| 25 | PERSIST_IN_CACHE |
 
- Qualifiers: `[in]`
+`ContentType` Data type: `UInt32` Array
 
- Specifies the type of content.
+Qualifiers: `[in]`
 
- `RelatedContentID`
- Data type: `string` Array
+Specifies the type of content.
 
- Qualifiers: `[in]`
+`RelatedContentID` Data type: `string` Array
 
- Specifies the related content associated with this content.
+Qualifiers: `[in]`
+
+Specifies the related content associated with this content.
 
 ## Return Values
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
- The input parameters are a parallel array for each content element.
+
+The input parameters are a parallel array for each content element.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Application Server WMI Class](../../../../../develop/reference/apps/sms_application-server-wmi-class.md)
+
+[SMS_Application Server WMI Class](../../../apps/sms_application-server-wmi-class.md)

@@ -1,7 +1,7 @@
 ---
-title: Set up device management
+title: "Set up Microsoft Intune"
 description: Learn how to configure the Intune service and set up the environment for education.
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 zone_pivot_groups: platforms-windows-ios
 ---
@@ -15,36 +15,36 @@ The Microsoft Intune service can be managed in different ways.
 - **Intune admin center** is the primary Intune interface that supports the entire device lifecycle, from the enrollment phase through retirement. IT administrators can manage all settings across all Intune supported platforms.
 - **Intune for Education** is a curated view of Intune that supports the entire device lifecycle, from the enrollment phase through retirement. IT administrators can start managing classroom devices with bulk enrollment options and a streamlined deployment. At the end of the school year, IT admins can reset devices, ensuring they're ready for the next year.
 
-    :::image type="content" source="./media/setup-intune/intune-education-portal.png" alt-text="Intune for Education dashboard" lightbox="./media/setup-intune/intune-education-portal.png" border="true":::
+  [![Intune for Education dashboard](media/setup-intune/intune-education-portal.png)](media/setup-intune/intune-education-portal.png#lightbox)
 
-    For more information, see [Intune for Education documentation][INT-1].
+  For more information, see [Intune for Education documentation](https://learn.microsoft.com/en-us/intune-education/what-is-intune-for-education).
 
 > [!TIP]
+>
 > **Intune** and **Intune for Education** both configure the **Intune** service. Changes made in one admin center are reflected in the other. However, **Intune for Education** only supports a subset of policies and apps curated to suit simple K-12 scenarios on Windows and iPadOS.
 
 ---
 
-> [!div class="checklist"]
->In this section you will:
->
-> - Review Intune's licensing prerequisites
-> - Configure the Intune service for education devices
+In this section you will:
+
+- Review Intune's licensing prerequisites
+- Configure the Intune service for education devices
 
 ## Prerequisites
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Check out the requirements for device management
+![](../../../media/icons/16/check.svg) Check out the requirements for device management
 
 Before configuring settings with Intune, consider the following prerequisites:
 
 - **Intune subscription.** Microsoft Intune is licensed in three ways:
   - As a standalone service
-  - As part of [Enterprise Mobility + Security][MSFT-1]
-  - As part of a [Microsoft 365 Education subscription][MSFT-2]
+  - As part of [Enterprise Mobility + Security](https://www.microsoft.com/microsoft-365/microsoft-365-enterprise)
+  - As part of a [Microsoft 365 Education subscription](https://www.microsoft.com/licensing/product-licensing/microsoft-365-education)
 - **Intune for Education device platforms.** Intune for Education can manage devices running a supported version of Windows, Windows 11 SE, and iPadOS
 - **Intune device platforms.** Intune can manage devices running a supported version of Windows, Windows 11 SE, iOS, iPadOS, macOS, Android, and Linux
 - **Network requirements.** Confirm all the required network endpoints can access without SSL inspection or any type of filtering. See [Network endpoints for Microsoft Intune](../../../fundamentals/endpoints.md) for a list of endpoints.
 
-For more information, see [Intune licensing][MEM-1] and [this comparison sheet][MSFT-3], which includes a table detailing the *Microsoft Modern Work Plan for Education*.
+For more information, see [Intune licensing](../../../fundamentals/licensing.md) and [this comparison sheet](https://aka.ms/EDU-Plan-Comparison), which includes a table detailing the *Microsoft Modern Work Plan for Education*.
 
 ## Configure the Intune service for Education devices
 
@@ -52,28 +52,27 @@ The Intune service can be configured in different ways, depending on the needs o
 
 ### Configure enrollment restrictions
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Restrict which devices can be managed
+![](../../../media/icons/16/check.svg) Restrict which devices can be managed
 
 With enrollment restrictions, you control which devices can enroll and be managed by Intune. For example, you can prevent the enrollment of personal devices.
 
 To block personally owned devices from enrolling:
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Devices** > **Enroll devices** > **Device platform restrictions**.
-1. Select the tab for the platform you want to restrict.
-1. Select **Create restriction**.
-1. On the **Basics** page, provide a name for the restriction and, optionally, a description > **Next**.
-1. On the **Platform settings** page, in the **Personally owned devices** field, select **Block** > **Next**.
-    :::image type="content" source="./media/setup-intune/enrollment-restrictions.png" alt-text="This screenshot is of the device enrollment restriction page in Microsoft Intune admin center." lightbox="./media/setup-intune/enrollment-restrictions.png":::
-1. Optionally, on the **Scope tags** page, add scope tags > **Next**.
-1. On the **Assignments** page, select **Add groups**, and then use the search box to find and choose groups to which you want to apply the restriction > **Next**.
-1. On the **Review + create** page, select **Create** to save the restriction.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Enroll devices** &gt; **Device platform restrictions**.
+3. Select the tab for the platform you want to restrict.
+4. Select **Create restriction**.
+5. On the **Basics** page, provide a name for the restriction and, optionally, a description &gt; **Next**.
+6. On the **Platform settings** page, in the **Personally owned devices** field, select **Block** &gt; **Next**.   [![This screenshot is of the device enrollment restriction page in Microsoft Intune admin center.](media/setup-intune/enrollment-restrictions.png)](media/setup-intune/enrollment-restrictions.png#lightbox)
+7. Optionally, on the **Scope tags** page, add scope tags &gt; **Next**.
+8. On the **Assignments** page, select **Add groups**, and then use the search box to find and choose groups to which you want to apply the restriction &gt; **Next**.
+9. On the **Review + create** page, select **Create** to save the restriction.
 
-For more information, see [Create a device platform restriction][MEM-2].
+For more information, see [Create a device platform restriction](../../../device-enrollment/restrictions.md).
 
 ### Optional configuration
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Configure optional tenant configuration
+![](../../../media/icons/16/check.svg) Configure optional tenant configuration
 
 - Customize branding according to organization policies. For more information, see [How to configure the Intune Company Portal apps, Company Portal website, and Intune app](../../../app-management/configuration/configure-company-portal.md).
 - Create Terms and conditions according to organization policies. For more information, see [Terms and conditions for user access](../../../device-enrollment/create-terms-and-conditions.md).
@@ -82,88 +81,87 @@ For more information, see [Create a device platform restriction][MEM-2].
 
 ### Configure Windows enrollment
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Configure which users can enroll Windows devices
+![](../../../media/icons/16/check.svg) Configure which users can enroll Windows devices
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Devices** > **Enroll devices** > **Automatic Enrollment**.
-1. Set the **MDM user scope** to **All** or **Some** and select a group if you want to restrict enrollment to certain users.
-    > [!IMPORTANT]
-    > The MDM user scope must be set to *All* if provisioning packages are used to enroll devices.
-1. Set **MAM user scope** to **None**.
-    :::image type="content" source="./media/setup-intune/intune-windows-enrollment.png" alt-text="A screenshot showing the MDM user scope and MAM user scope." lightbox="./media/setup-intune/intune-windows-enrollment.png":::
-1. Select **Save**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Enroll devices** &gt; **Automatic Enrollment**.
+3. Set the **MDM user scope** to **All** or **Some** and select a group if you want to restrict enrollment to certain users.
+
+   > [!IMPORTANT]
+   >
+   > The MDM user scope must be set to *All* if provisioning packages are used to enroll devices.
+4. Set **MAM user scope** to **None**.   [![A screenshot showing the MDM user scope and MAM user scope.](media/setup-intune/intune-windows-enrollment.png)](media/setup-intune/intune-windows-enrollment.png#lightbox)
+5. Select **Save**.
 
 For more information, see [Enable Windows automatic enrollment](../../../device-enrollment/windows/enable-automatic-mdm.md#enable-windows-automatic-enrollment).
 
 ### Disable Windows Hello for Business
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Disable functionality typically inaccessible to students
+![](../../../media/icons/16/check.svg) Disable functionality typically inaccessible to students
 
 Windows Hello for Business is a biometric authentication feature that allows users to sign in to their devices using a PIN, password, or fingerprint. Windows Hello for Business is enabled by default on Windows devices, and to set it up, users must perform for multifactor authentication (MFA). As a result, this feature might not be ideal for students, who don't have MFA enabled.
 
 > [!TIP]
+>
 > **Passwordless for Students**
 >
-> If you're interested in using Windows Hello for Business with students, then review our guidance on how you can use Temporary Access Pass. For more information, see [Passwordless for Students](/microsoft-365/education/deploy/protect-passwordless-students).
+> If you're interested in using Windows Hello for Business with students, then review our guidance on how you can use Temporary Access Pass. For more information, see [Passwordless for Students](https://learn.microsoft.com/en-us/microsoft-365/education/deploy/protect-passwordless-students).
 
 It's common for Windows Hello for Business to be disabled at the tenant level. Then, a policy can be targeted at users or devices that need it. For example, staff and teachers.
 
 To disable Windows Hello for Business at the tenant level:
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Devices** > **By platform** > **Windows** > **Device onboarding** > **Enrollment**.
-1. Select **Windows Hello for Business**.
-1. Ensure that **Configure Windows Hello for Business** is set to **disabled**.
-1. Select **Save**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **By platform** &gt; **Windows** &gt; **Device onboarding** &gt; **Enrollment**.
+3. Select **Windows Hello for Business**.
+4. Ensure that **Configure Windows Hello for Business** is set to **disabled**.
+5. Select **Save**.
 
-:::image type="content" source="./media/setup-intune/whfb-disable.png" alt-text="Disablement of Windows Hello for Business from Microsoft Intune admin center." lightbox="./media/setup-intune/whfb-disable.png":::
+[![Disablement of Windows Hello for Business from Microsoft Intune admin center.](media/setup-intune/whfb-disable.png)](media/setup-intune/whfb-disable.png#lightbox)
 
-For more information how to enable Windows Hello for Business on specific devices, see [Create a Windows Hello for Business policy][MEM-4].
+For more information how to enable Windows Hello for Business on specific devices, see [Create a Windows Hello for Business policy](../../../device-security/identity-protection/configure-tenant-wide-policy.md).
 
 ### Configure Intune data collection policy
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Configure Endpoint analytics
+![](../../../media/icons/16/check.svg) Configure Endpoint analytics
 
 Intune needs permission to collect data for Endpoint analytics on Windows devices.
 
 To enable data collection:
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Reports** > **Endpoint analytics** > **Settings**.
-1. Under **Intune data collection policy**, select **Intune data collection policy**.
-    :::image type="content" source="./media/setup-intune/intune-data-collection-policy.png" alt-text="Selecting the Intune data collection policy." lightbox="./media/setup-intune/intune-data-collection-policy.png":::
-1. Select **Properties**.
-1. Under **Configuration settings** select **Edit**.
-1. Set **Health Monitoring** to **Enable**.
-1. Select **Scope** and tick **Endpoint analytics**.
-    :::image type="content" source="./media/setup-intune/intune-data-collection-policy-settings.png" alt-text="A screenshot showing the configuration of the Intune data collection policy." lightbox="./media/setup-intune/intune-data-collection-policy-settings.png":::
-1. Select **Review + Save**.
-1. Select **Save**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Reports** &gt; **Endpoint analytics** &gt; **Settings**.
+3. Under **Intune data collection policy**, select **Intune data collection policy**.   [![Selecting the Intune data collection policy.](media/setup-intune/intune-data-collection-policy.png)](media/setup-intune/intune-data-collection-policy.png#lightbox)
+4. Select **Properties**.
+5. Under **Configuration settings** select **Edit**.
+6. Set **Health Monitoring** to **Enable**.
+7. Select **Scope** and tick **Endpoint analytics**.   [![A screenshot showing the configuration of the Intune data collection policy.](media/setup-intune/intune-data-collection-policy-settings.png)](media/setup-intune/intune-data-collection-policy-settings.png#lightbox)
+8. Select **Review + Save**.
+9. Select **Save**.
 
 For more information on data collection, see [Endpoint analytics data collection](../../../endpoint-analytics/ref-data-collection.md).
 
 ### Configure Windows data
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Configure tenant Windows data settings
+![](../../../media/icons/16/check.svg) Configure tenant Windows data settings
 
 Intune needs permission to collect certain data for Windows update reports on Windows devices.
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Tenant administration** > **Connectors and tokens** > **Windows data**
-1. Under **Windows data** select **On**.
-1. Review the **Windows license verification** section and configure as per your licensing.
-    :::image type="content" source="./media/setup-intune/intune-windows-data.png" alt-text="A screenshot showing the configuration of the Intune Windows data settings." lightbox="./media/setup-intune/intune-windows-data.png":::
-1. Select **Save**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Tenant administration** &gt; **Connectors and tokens** &gt; **Windows data**
+3. Under **Windows data** select **On**.
+4. Review the **Windows license verification** section and configure as per your licensing.   [![A screenshot showing the configuration of the Intune Windows data settings.](media/setup-intune/intune-windows-data.png)](media/setup-intune/intune-windows-data.png#lightbox)
+5. Select **Save**.
 
 For more information, see [Enable use of Windows diagnostic data by Intune](../../../privacy/enable-windows-diagnostic-data.md).
 
 ### Configure Windows device diagnostics
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Allow remote retrieval of diagnostic information
+![](../../../media/icons/16/check.svg) Allow remote retrieval of diagnostic information
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Tenant administration** > **Device diagnostics**.
-1. Configure settings as per your requirements.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Tenant administration** &gt; **Device diagnostics**.
+3. Configure settings as per your requirements.
 
 This table provides the settings most commonly set by customers, but can be customized to suit your schools needs.
 
@@ -182,19 +180,19 @@ The enrollment status page (ESP) displays the provisioning status to people enro
 
 Additional information:
 
-- [Windows Autopilot Enrollment Status Page](/autopilot/enrollment-status)
+- [Windows Autopilot Enrollment Status Page](../../../../autopilot/enrollment-status.md)
 - [Set up the Enrollment Status Page](../../../device-enrollment/windows/setup-status-page.md)
 
 This table provides the settings most commonly set by customers, but can be customized to suit your schools needs.
 
 | **Blade** | **Configuration group** | **Setting** | **Value** |
 | --- | --- | --- | --- |
-| [Windows enrollment] | General\Enrollment Status Page | Default\Show app and profile configuration progress | Yes |
-| [Windows enrollment] | General\Enrollment Status Page | Default\Show an error when installation takes longer than specified number of minutes | 120 |
-| [Windows enrollment] | General\Enrollment Status Page | Default\Show custom message when time limit or error occurs | Yes |
-| [Windows enrollment] | General\Enrollment Status Page | Default\Turn on log collection and diagnostics page for end users | Yes |
-| [Windows enrollment] | General\Enrollment Status Page | Default\Only show page to devices provisioned by out-of-box experience (OOBE) | Yes |
-| [Windows enrollment] | General\Enrollment Status Page | Enrollment Status Page\Default\Block device use until required apps are installed if they're assigned to the user/device | *All* or *Selected* with the minimum apps required. <br><br>For example, Microsoft 365 apps or web content filtering software |
+| [Windows enrollment](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/%7E/windowsEnrollment) | General\Enrollment Status Page | Default\Show app and profile configuration progress | Yes |
+| [Windows enrollment](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/%7E/windowsEnrollment) | General\Enrollment Status Page | Default\Show an error when installation takes longer than specified number of minutes | 120 |
+| [Windows enrollment](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/%7E/windowsEnrollment) | General\Enrollment Status Page | Default\Show custom message when time limit or error occurs | Yes |
+| [Windows enrollment](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/%7E/windowsEnrollment) | General\Enrollment Status Page | Default\Turn on log collection and diagnostics page for end users | Yes |
+| [Windows enrollment](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/%7E/windowsEnrollment) | General\Enrollment Status Page | Default\Only show page to devices provisioned by out-of-box experience (OOBE) | Yes |
+| [Windows enrollment](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/%7E/windowsEnrollment) | General\Enrollment Status Page | Enrollment Status Page\Default\Block device use until required apps are installed if they're assigned to the user/device | *All* or *Selected* with the minimum apps required.   For example, Microsoft 365 apps or web content filtering software |
 
 ::: zone-end
 
@@ -202,49 +200,67 @@ This table provides the settings most commonly set by customers, but can be cust
 
 ### Set up Apple MDM Certificate
 
-#### [Intune](#tab/intune)
+- [Intune](#tabpanel_1_intune)
+- [Intune for Education](#tabpanel_1_intune-for-education)
+
+<a id="tabpanel_1_intune"></a>
+
+
 
 To set up an Apple MDM certificate, see [Get an Apple MDM push certificate](../../../device-enrollment/apple/create-mdm-push-certificate.md#steps-to-get-your-certificate).
 
-#### [Intune for Education](#tab/intune-for-education)
+<a id="tabpanel_1_intune-for-education"></a>
 
-To set up an Apple MDM certificate in Intune for Education, see [Add an MDM push certificate](/intune-education/setup-ios-device-management)
 
----
+
+To set up an Apple MDM certificate in Intune for Education, see [Add an MDM push certificate](https://learn.microsoft.com/en-us/intune-education/setup-ios-device-management)
 
 > [!IMPORTANT]
+>
 > The Apple MDM certificate needs to be renewed yearly. Make a note in your calendar to renew the certificate in just under a year from when you add the certificate. You can view the expiry date in the admin center at any time.
 
 ### Configure Volume Purchase Program (VPP)
 
-#### [Intune](#tab/intune)
+- [Intune](#tabpanel_2_intune)
+- [Intune for Education](#tabpanel_2_intune-for-education)
+
+<a id="tabpanel_2_intune"></a>
+
+
 
 To set up an Apple VPP, see [How to manage iOS and macOS apps purchased through Apple Business with Microsoft Intune](../../../app-management/deployment/manage-vpp-apple.md).
 
-#### [Intune for Education](#tab/intune-for-education)
+<a id="tabpanel_2_intune-for-education"></a>
 
-To set up an Apple VPP in Intune for Education, see [Configure VPP tokens](/intune-education/setup-ios-device-management#configure-vpp-tokens).
 
----
+
+To set up an Apple VPP in Intune for Education, see [Configure VPP tokens](https://learn.microsoft.com/en-us/intune-education/setup-ios-device-management#configure-vpp-tokens).
 
 > [!IMPORTANT]
+>
 > The Apple VPP token needs to be renewed yearly. Make a note in your calendar to renew the token in just under a year from when you add the token. You can view the expiry date in the admin center at any time.
 
 ### Configure Automated Device Enrollment (ADE)
 
 If you plan to integrate Apple School Manager and use Automated Device Enrollment, follow these steps.
 
-#### [Intune](#tab/intune)
+- [Intune](#tabpanel_3_intune)
+- [Intune for Education](#tabpanel_3_intune-for-education)
+
+<a id="tabpanel_3_intune"></a>
+
+
 
 To set up an Apple MDM certificate, see [Set up automated device enrollment in Intune](../../../device-enrollment/apple/setup-automated-ios.md).
 
-#### [Intune for Education](#tab/intune-for-education)
+<a id="tabpanel_3_intune-for-education"></a>
 
-To set up an Apple ADE in Intune for Education, see [Configure enrollment program token](/intune-education/setup-ios-device-management#configure-enrollment-program-token).
 
----
+
+To set up an Apple ADE in Intune for Education, see [Configure enrollment program token](https://learn.microsoft.com/en-us/intune-education/setup-ios-device-management#configure-enrollment-program-token).
 
 > [!IMPORTANT]
+>
 > The Apple ADE token needs to be renewed yearly. Make a note in your calendar to renew the token in just under a year from when you add the token. You can view the expiry date in the admin center at any time.
 
 ::: zone-end
@@ -255,21 +271,4 @@ To set up an Apple ADE in Intune for Education, see [Configure enrollment progra
 
 When the Intune service configured, you can configure policies and applications in preparation for the deployment of students' and teachers' devices.
 
-> [!div class="nextstepaction"]
-> [Next: Configure devices >](configure-overview.md)
-
-<!-- Reference links in article -->
-
-[MEM-1]: ../../../fundamentals/licensing.md
-[MEM-2]: ../../../device-enrollment/restrictions.md
-[MEM-4]: ../../../device-security/identity-protection/configure-tenant-wide-policy.md
-[INT-1]: /intune-education/what-is-intune-for-education
-
-[MSFT-1]: https://www.microsoft.com/microsoft-365/microsoft-365-enterprise
-[MSFT-2]: https://www.microsoft.com/licensing/product-licensing/microsoft-365-education
-[MSFT-3]: https://aka.ms/EDU-Plan-Comparison
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[Windows enrollment]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesEnrollmentMenu/~/windowsEnrollment
+[Next: Configure devices &gt;](configure-overview.md)

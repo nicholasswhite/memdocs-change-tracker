@@ -1,7 +1,7 @@
 ---
-title: Create an image for an OEM in factory or a local depot
+title: "Create an image for an OEM in factory or a local depot with Configuration Manager"
 description: Use prestaged media deployments to reduce network traffic while you deploy an OS to a computer that isn't fully provisioned.
-ms.date: 08/11/2020
+ms.date: "2020-08-11T00:00:00Z"
 ms.subservice: osd
 ms.topic: how-to
 ms.collection: tier3
@@ -19,7 +19,6 @@ This method of deployment can reduce network traffic because the boot image and 
 Use prestaged media in the following OS deployment scenarios:
 
 - [Install a new version of Windows on a new computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)
-
 - [Replace an existing computer and transfer settings](replace-an-existing-computer-and-transfer-settings.md)
 
 Complete the steps in one of these OS deployment scenarios. Then use the following sections to prepare for and create the prestaged media.
@@ -29,9 +28,7 @@ Complete the steps in one of these OS deployment scenarios. Then use the followi
 On the **Deployment Settings** page of the deployment, for the **Make available to the following** setting, select one of the following options:
 
 - Configuration Manager clients, media, and PXE
-
 - Only media and PXE
-
 - Only media and PXE (hidden)
 
 ## Create the prestaged media
@@ -47,10 +44,8 @@ Send the media to the OEM or your local depot to prestage on the computers. They
 When you deliver the computer to a user, and turn it on for the first time:
 
 1. The computer starts with the prestaged boot image.
-
-1. It checks a hash on the prestaged media to make sure it's valid.
-
-1. The computer connects to the management point for available task sequences to complete the process.
+2. It checks a hash on the prestaged media to make sure it's valid.
+3. The computer connects to the management point for available task sequences to complete the process.
 
 ## Next steps
 

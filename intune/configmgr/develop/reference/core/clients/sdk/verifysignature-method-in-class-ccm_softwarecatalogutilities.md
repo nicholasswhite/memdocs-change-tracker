@@ -1,16 +1,18 @@
 ---
-title: VerifySignature Method
+title: "VerifySignature Method in Class CCM_SoftwareCatalogUtilities"
 description: In Configuration Manager, the VerifySignature WMI class method verifies the data signature.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # VerifySignature Method in Class CCM_SoftwareCatalogUtilities
+
 The `VerifySignature` Windows Management Instrumentation (WMI) class method in Configuration Manager that verifies the data signature.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -26,47 +28,45 @@ uint32 VerifySignature
 ```
 
 ## Parameters
- `Data`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`Data` Data type: `String`
 
- Data to verify.
+Qualifiers: [id("0"), in]
 
- `DataSignature`
- Data type: `String`
+Data to verify.
 
- Qualifiers: [id("1"), in]
+`DataSignature` Data type: `String`
 
- Data signature.
+Qualifiers: [id("1"), in]
 
- `WebServiceID`
- Data type: `String`
+Data signature.
 
- Qualifiers: [id("2"), in]
+`WebServiceID` Data type: `String`
 
- Web Service identifier.
+Qualifiers: [id("2"), in]
 
- `VerifyUserAndTimestamp`
- Data type: `Boolean`
+Web Service identifier.
 
- Qualifiers: [id("3"), in]
+`VerifyUserAndTimestamp` Data type: `Boolean`
 
- `true` to verify the user and timestamp.
+Qualifiers: [id("3"), in]
 
- `SignatureVerificationPassed`
- Data type: `Boolean`
+`true` to verify the user and timestamp.
 
- Qualifiers: [id("4"), out]
+`SignatureVerificationPassed` Data type: `Boolean`
 
- `true` if the data signature is valid.
+Qualifiers: [id("4"), out]
+
+`true` if the data signature is valid.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

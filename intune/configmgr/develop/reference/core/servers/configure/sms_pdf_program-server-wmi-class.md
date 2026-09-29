@@ -1,16 +1,18 @@
 ---
-title: SMS_PDF_Program Class
+title: "SMS_PDF_Program Server WMI Class"
 description: The SMS_PDF_Program WMI class is an SMS Provider server class that represents a package definition file (PDF) template from which to create an initialized program.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PDF_Program Server WMI Class
+
 The `SMS_PDF_Program` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a package definition file (PDF) template from which to create an initialized program.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,157 +38,147 @@ Class SMS_PDF_Program : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_PDF_Program` class doesn't define any methods.
+
+The `SMS_PDF_Program` class doesn't define any methods.
 
 ## Properties
- `CommandLine`
- Data type: `String`
 
- Access type: Read/Write
+`CommandLine` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Command that executes when the program is launched.
+Qualifiers: None
 
- `Comment`
- Data type: `String`
+Command that executes when the program is launched.
 
- Access type: Read/Write
+`Comment` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Description of the program displayed in the Configuration Manager console.
+Qualifiers: None
 
- `DependentProgram`
- Data type: `String`
+Description of the program displayed in the Configuration Manager console.
 
- Access type: Read/Write
+`DependentProgram` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- A formatted text string defining any program that should be run prior to executing the current program. The format is defined as: \<PackageID>;; \<ProgramName>. The default value is "".
+Qualifiers: None
 
- `Description`
- Data type: `String`
+A formatted text string defining any program that should be run prior to executing the current program. The format is defined as: &lt;PackageID&gt;;; &lt;ProgramName&gt;. The default value is "".
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Description of the program (not displayed in the Configuration Manager console).
+Qualifiers: None
 
- `DiskSpaceReq`
- Data type: `String`
+Description of the program (not displayed in the Configuration Manager console).
 
- Access type: Read/Write
+`DiskSpaceReq` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Approximate disk space that the program requires.
+Qualifiers: None
 
- `DriveLetter`
- Data type: `String`
+Approximate disk space that the program requires.
 
- Access type: Read/Write
+`DriveLetter` Data type: `String`
 
- Qualifiers: [SizeLimit("1"), Range("a-z")]
+Access type: Read/Write
 
- Drive letter (one character in the range from a to z) that the program maps to and runs from. The default value is "".
+Qualifiers: [SizeLimit("1"), Range("a-z")]
 
- `Duration`
- Data type: `UInt32`
+Drive letter (one character in the range from a to z) that the program maps to and runs from. The default value is "".
 
- Access type: Read/Write
+`Duration` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Approximate duration, in minutes, that the program takes to execute.
+Qualifiers: None
 
- `Icon`
- Data type: `UInt8` Array
+Approximate duration, in minutes, that the program takes to execute.
 
- Access type: Read/Write
+`Icon` Data type: `UInt8` Array
 
- Qualifiers: [lazy, large]
+Access type: Read/Write
 
- Icon to associate with the program in the Configuration Manager console.
+Qualifiers: [lazy, large]
 
- `IconSize`
- Data type: `UInt32`
+Icon to associate with the program in the Configuration Manager console.
 
- Access type: Read/Write
+`IconSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Size, in bytes, of the icon. The default value is 0.
+Qualifiers: [lazy]
 
- `PDFID`
- Data type: `UInt32`
+Size, in bytes, of the icon. The default value is 0.
 
- Access type: Read/Write
+`PDFID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the [SMS_PDF_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_pdf_package-server-wmi-class.md) object to which the program belongs.
+Qualifiers: [key]
 
- `ProgramFlags`
- Data type: `UInt32`
+ID of the [SMS_PDF_Package Server WMI Class](sms_pdf_package-server-wmi-class.md) object to which the program belongs.
 
- Access type: Read/Write
+`ProgramFlags` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Flags defining the installation characteristics of the program. See the `ProgramFlags` property of [SMS_Program Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_program-server-wmi-class.md).
+Qualifiers: None
 
- `ProgramName`
- Data type: `String`
+Flags defining the installation characteristics of the program. See the `ProgramFlags` property of [SMS_Program Server WMI Class](sms_program-server-wmi-class.md).
 
- Access type: Read/Write
+`ProgramName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Name that uniquely identifies the program.
+Qualifiers: [key]
 
- `Publisher`
- Data type: `String`
+Name that uniquely identifies the program.
 
- Access type: Read/Write
+`Publisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Manufacturer of the program.
+Qualifiers: None
 
- `Requirements`
- Data type: `String`
+Manufacturer of the program.
 
- Access type: Read/Write
+`Requirements` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Description of any extra requirements of the program. The default value is "".
+Qualifiers: None
 
- `WorkingDirectory`
- Data type: `String`
+Description of any extra requirements of the program. The default value is "".
 
- Access type: Read/Write
+`WorkingDirectory` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The location from which the program executes. This can be an absolute path on the client or a path relative to the distribution point folder that contains the package. The default value is "".
+Qualifiers: None
+
+The location from which the program executes. This can be an absolute path on the client or a path relative to the distribution point folder that contains the package. The default value is "".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   Your application can't delete individual programs from the package definition file store. To delete a program, the application must delete the package template and then reload the package template without the program.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

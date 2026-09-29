@@ -1,30 +1,32 @@
 ---
-title: Delete a Driver Package
+title: "How to Delete a Driver Package in Configuration Manager"
 description: Delete an operating system deployment driver package, in Configuration Manager, by deleting its SMS_DriverPackage.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete a Driver Package in Configuration Manager
-You delete an operating system deployment driver package, in Configuration Manager, by deleting its [SMS_DriverPackage](../../develop/reference/osd/sms_driverpackage-server-wmi-class.md) object.
+
+You delete an operating system deployment driver package, in Configuration Manager, by deleting its [SMS_DriverPackage](../reference/osd/sms_driverpackage-server-wmi-class.md) object.
 
 > [!NOTE]
->  Windows drivers that are referenced by the driver package are not deleted.
+>
+> Windows drivers that are referenced by the driver package are not deleted.
 
 ### To delete a driver package
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the [SMS_DriverPackage](../../develop/reference/osd/sms_driverpackage-server-wmi-class.md) object for the driver that you want to delete.
-
-3.  Delete the SMS_DriverPackage object.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the [SMS_DriverPackage](../reference/osd/sms_driverpackage-server-wmi-class.md) object for the driver that you want to delete.
+3. Delete the SMS_DriverPackage object.
 
 ## Example
- The following example method deletes a driver package identified by its package identifier.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method deletes a driver package identified by its package identifier.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub DeleteDriverPackage(connection,packageID)
@@ -59,34 +61,39 @@ public void DeleteDriverPackage(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`Connection`|-   Managed:`WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`packageID`|-   Managed: `String`<br />-   VBScript: `String`|-   The driver package identifier available in SMS_DriverDriverPackage.PackageID.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection` | - Managed:`WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `packageID` | - Managed: `String` - VBScript: `String` | - The driver package identifier available in SMS_DriverDriverPackage.PackageID. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).

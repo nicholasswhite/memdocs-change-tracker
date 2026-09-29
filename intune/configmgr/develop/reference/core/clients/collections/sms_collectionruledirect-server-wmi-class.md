@@ -1,16 +1,18 @@
 ---
-title: SMS_CollectionRuleDirect Class
+title: "SMS_CollectionRuleDirect Server WMI Class"
 description: An SMS Provider server class that represents a resource. The resource is to be made an unconditional member of the collection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CollectionRuleDirect Server WMI Class
+
 The `SMS_CollectionRuleDirect` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a resource that is to be made an unconditional member of the collection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,47 +26,49 @@ Class SMS_CollectionRuleDirect : SMS_CollectionRule
 ```
 
 ## Methods
- The `SMS_CollectionRuleDirect` class does not define any methods.
+
+The `SMS_CollectionRuleDirect` class does not define any methods.
 
 ## Properties
- `ResourceClassName`
- Data type: `Strin``g`
 
- Access type: Read/Write
+`ResourceClassName` Data type: ``` Strin``g ```
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the resource class to which the resource belongs, for example, [SMS_R_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md). The default value is "".
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Name of the resource class to which the resource belongs, for example, [SMS_R_System Server WMI Class](../manage/sms_r_system-server-wmi-class.md). The default value is "".
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the resource that is to become a member of the collection. The default value is 0.
+Qualifiers: None
 
- `RuleName`
- Data type: `String`
+ID of the resource that is to become a member of the collection. The default value is 0.
 
- Access type: Read/Write
+`RuleName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CollectionRule Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionrule-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_CollectionRule Server WMI Class](sms_collectionrule-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

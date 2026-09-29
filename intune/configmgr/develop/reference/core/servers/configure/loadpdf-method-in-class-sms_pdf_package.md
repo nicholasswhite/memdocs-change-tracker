@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the LoadPDF method to import a specified package definition file into the package definition file store.
-title: LoadPDF Method
-ms.date: 09/20/2016
+title: "LoadPDF Method in Class SMS_PDF_Package"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # LoadPDF Method in Class SMS_PDF_Package
+
 The `LoadPDF` Windows Management Instrumentation (WMI) class method, in Configuration Manager, imports a specified package definition file into the package definition file store.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,56 +26,56 @@ SInt32 LoadPDF(
 ```
 
 #### Parameters
- `PDFFileName`
- Data type: `String`
 
- Qualifiers: [in,SizeLimit("100")]
+`PDFFileName` Data type: `String`
 
- Full path and file name of the package definition file. The SMS Provider copies the file to the \Smsinstalldir\Scripts\\<localeid\>\Pdfstore\\<pdfid\> directory and replaces the .pdf file name extension with an .sms file name extension.
+Qualifiers: [in,SizeLimit("100")]
 
- `PDFFile`
- Data type: `String`
+Full path and file name of the package definition file. The SMS Provider copies the file to the \Smsinstalldir\Scripts\&lt;localeid&gt;\Pdfstore\&lt;pdfid&gt; directory and replaces the .pdf file name extension with an .sms file name extension.
 
- Qualifiers: [in]
+`PDFFile` Data type: `String`
 
- Text of the package definition file itself.
+Qualifiers: [in]
 
- `PDFID`
- Data type: `UInt32`
+Text of the package definition file itself.
 
- Qualifiers: [out]
+`PDFID` Data type: `UInt32`
 
- Assigned package definition file ID.
+Qualifiers: [out]
 
- `RequiredIconNames`
- Data type: `String` Array
+Assigned package definition file ID.
 
- Qualifiers: [out]
+`RequiredIconNames` Data type: `String` Array
 
- List of icons referenced by the package definition file that must be loaded separately through the [LoadIconForPDF Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/loadiconforpdf-method-in-class-sms_pdf_package.md) method.
+Qualifiers: [out]
+
+List of icons referenced by the package definition file that must be loaded separately through the [LoadIconForPDF Method in Class SMS_PDF_Package](loadiconforpdf-method-in-class-sms_pdf_package.md) method.
 
 ## Return Values
- An `SInt32` data type that indicates 0 for success or one of the following bit field warning flags for failure.
 
-|Flag|Description|
-|----------|-----------------|
-|WARN_BAD_RUN (0)|Invalid run information specified.|
-|WARN_BAD_RESTART (1)|Invalid restart information specified.|
-|WARN_BAD_CANRUNWHEN (2)|Invalid CanRunWhen information specified.|
-|WARN_BAD_ASSIGNMENT (3)|Invalid assignment information specified.|
-|WARN_BAD_DEPENDPROG (4)|Invalid DependentProgram information specified.|
-|WARN_BAD_SPECIFYDRIVE (5)|Invalid SpecifyDrive information specified.|
-|WARN_BAD_ESTDISKSPACE (6)|Invalid EstimatedDiskSpace information specified.|
-|WARN_NO_SUPPCLINFO (7)|No SupportedClients information specified.|
-|WARN_BAD_SUPPCLINFO (8)|Invalid SupportedClients information specified.|
-|WARN_VER1PDF (9)|Version 1.0 file used.|
-|WARN_REMPRONOUKEY(10)|The remove program is set but no uninstall key is given.|
+An `SInt32` data type that indicates 0 for success or one of the following bit field warning flags for failure.
+
+| Flag | Description |
+| --- | --- |
+| WARN_BAD_RUN (0) | Invalid run information specified. |
+| WARN_BAD_RESTART (1) | Invalid restart information specified. |
+| WARN_BAD_CANRUNWHEN (2) | Invalid CanRunWhen information specified. |
+| WARN_BAD_ASSIGNMENT (3) | Invalid assignment information specified. |
+| WARN_BAD_DEPENDPROG (4) | Invalid DependentProgram information specified. |
+| WARN_BAD_SPECIFYDRIVE (5) | Invalid SpecifyDrive information specified. |
+| WARN_BAD_ESTDISKSPACE (6) | Invalid EstimatedDiskSpace information specified. |
+| WARN_NO_SUPPCLINFO (7) | No SupportedClients information specified. |
+| WARN_BAD_SUPPCLINFO (8) | Invalid SupportedClients information specified. |
+| WARN_VER1PDF (9) | Version 1.0 file used. |
+| WARN_REMPRONOUKEY(10) | The remove program is set but no uninstall key is given. |
 
 ## Remarks
- When your application imports a package definition file that has the same `Name`, `Publisher`, `Version`, and `Language` properties as an existing package definition file, the existing package definition file is overwritten, including the file icons and programs. The value specified in the `PDFID` parameter is retained.
+
+When your application imports a package definition file that has the same `Name`, `Publisher`, `Version`, and `Language` properties as an existing package definition file, the existing package definition file is overwritten, including the file icons and programs. The value specified in the `PDFID` parameter is retained.
 
 ## Example Code
- The following example shows how to load a package definition file into the package definition file package store.
+
+The following example shows how to load a package definition file into the package definition file package store.
 
 ```
 Const ForReading = 1
@@ -121,10 +123,13 @@ Next
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_PDF_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_pdf_package-server-wmi-class.md)
+
+[SMS_PDF_Package Server WMI Class](sms_pdf_package-server-wmi-class.md)

@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent configuration item rules using SMS_ConfigurationItemRules in Configuration Manager.
-title: SMS_ConfigurationItemRules Class
-ms.date: 09/20/2016
+title: "SMS_ConfigurationItemRules Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ConfigurationItemRules Server WMI Class
+
 The `SMS_ConfigurationItemRules` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents configuration item rules.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,78 +30,75 @@ Class SMS_ConfigurationItemRules : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ConfigurationItemRules` class does not define any methods.
+
+The `SMS_ConfigurationItemRules` class does not define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `CI_UniqueID`
- Data type: `String`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `ModelName`
- Data type: `String`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `Rule_ID`
- Data type: `UInt32`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`Rule_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The database identifier of a rule defined in a configuration item.
+Qualifiers: [key]
 
- `Rule_UniqueID`
- Data type: `String`
+The database identifier of a rule defined in a configuration item.
 
- Access type: Read/Write
+`Rule_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Uniquely identifies a rule defined in the configuration item and is used for reporting rule level details.
+Qualifiers: none
 
- `RuleDescription`
- Data type: `String`
+Uniquely identifies a rule defined in the configuration item and is used for reporting rule level details.
 
- Access type: Read/Write
+`RuleDescription` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description of the rule.
+Qualifiers: none
 
- `RuleName`
- Data type: `String`
+Description of the rule.
 
- Access type: Read/Write
+`RuleName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_CollectionRule Server WMI Class](../../../develop/reference/core/clients/collections/sms_collectionrule-server-wmi-class.md)
+Qualifiers: none
+
+[SMS_CollectionRule Server WMI Class](../core/clients/collections/sms_collectionrule-server-wmi-class.md)
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

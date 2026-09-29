@@ -1,25 +1,26 @@
 ---
-title: Delete a Security Scope
+title: "How to Delete a Security Scope"
 description: Learn how to delete a security scope in Configuration Manager by using the SMS_SecuredCategory class.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete a Security Scope
+
 The following example shows how to delete a security scope in Configuration Manager by using the `SMS_SecuredCategory` class.
 
 ### To delete a security scope
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the existing security scope by using the `SMS_SecuredCategory` WMI class
-
-3.  Delete the security scope by using the delete method.
+1. Set up a connection to the SMS Provider.
+2. Load the existing security scope by using the `SMS_SecuredCategory` WMI class
+3. Delete the security scope by using the delete method.
 
 ## Example
- The following example deletes a security scope by identifier:
+
+The following example deletes a security scope by identifier:
 
 ```vbs
 Sub DeleteSecurityScope(connection, scopeId)
@@ -50,31 +51,33 @@ public void DeleteSecurityScope(WqlConnectionManager connection, string scopeId)
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`scopeId`|`String`|The identifier of the security scope to delete.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `scopeId` | `String` | The identifier of the security scope to delete. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- Microsoft.ConfigurationManagement.ManagementProvider
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [How to Create a New Security Scope](../../../../develop/core/servers/configure/how-to-create-a-new-security-scope.md)
- [How to Associate an Object with a Security Scope](../../../../develop/core/servers/configure/how-to-associate-an-object-with-a-security-scope.md)
- [How to Remove an Object Association with a Security Scope](../../../../develop/core/servers/configure/how-to-remove-an-object-association-with-a-security-scope.md)
- [SMS_SecuredCategory Server WMI Class](../../../../develop/reference/core/servers/configure/sms_securedcategory-server-wmi-class.md)
+
+[How to Create a New Security Scope](how-to-create-a-new-security-scope.md) [How to Associate an Object with a Security Scope](how-to-associate-an-object-with-a-security-scope.md) [How to Remove an Object Association with a Security Scope](how-to-remove-an-object-association-with-a-security-scope.md) [SMS_SecuredCategory Server WMI Class](../../../reference/core/servers/configure/sms_securedcategory-server-wmi-class.md)

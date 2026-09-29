@@ -1,7 +1,7 @@
 ---
-title: Report problems in Company Portal app for Windows
+title: "Report a problem in Company Portal for Windows"
 description: Share app diagnostics with your support person to diagnose a problem with the Company Portal app for Windows.
-ms.date: 12/02/2025
+ms.date: "2025-12-02T00:00:00Z"
 ms.reviewer: scottduf
 ---
 
@@ -12,23 +12,23 @@ ms.reviewer: scottduf
 Report a problem or error that occurs in the Intune Company Portal app for Windows. This article describes how to share app diagnostic logs with your support person.
 
 > [!NOTE]
+>
 > App logs are also shared with Microsoft Support in case the problem requires additional help. Your support person will reach out to Microsoft Support with your incident ID to work with them.
 
 ## Report problem to support person
+
 Complete the following steps to upload Company Portal app logs.
 
 1. Open the **Company Portal** app.
-1. Go to **Help & support**.
-1. Select **Upload logs**.
+2. Go to **Help &amp; support**.
+3. Select **Upload logs**.
 
-   > [!Note]
+   > [!NOTE]
+   >
    > After you select **Upload logs**, the Company Portal sends your logs to Microsoft's support team. This step is a proactive one that makes it easier to troubleshoot and resolve problems that are escalated to Microsoft support.
-
-1. When prompted to choose a program, select the Mail app or another preferred email app.
-
-1. The email app opens an email template for you to fill in. Describe the problem and the steps you took leading up to the problem. Then send the email to your IT support person so that they can follow up on the issue.
-
-1. Follow up with your support person as needed.
+4. When prompted to choose a program, select the Mail app or another preferred email app.
+5. The email app opens an email template for you to fill in. Describe the problem and the steps you took leading up to the problem. Then send the email to your IT support person so that they can follow up on the issue.
+6. Follow up with your support person as needed.
 
 ### Collect logs manually
 
@@ -36,10 +36,9 @@ Or, you can use the following steps to download the Company Portal app logs manu
 
 1. Go to the following folder:
 
-    `%localappdata%\Packages\Microsoft.CompanyPortal_8wekyb3d8bbwe\LocalState`
+   `%localappdata%\Packages\Microsoft.CompanyPortal_8wekyb3d8bbwe\LocalState`
 
-    The `%localappdata%` variable resolves to your local application data folder. By default, this corresponds to `C:\Users\<UserName>\AppData\Local`, where `UserName` is the signed-in user account name. 
-
+   The `%localappdata%` variable resolves to your local application data folder. By default, this corresponds to `C:\Users\<UserName>\AppData\Local`, where `UserName` is the signed-in user account name.
 2. The application logs are stored in files following the `Log_<n>.log` pattern. Attach these logs to the support ticket.
 
 ## Report problem to Microsoft
@@ -47,16 +46,17 @@ Or, you can use the following steps to download the Company Portal app logs manu
 Complete the following steps to report a problem directly to Microsoft in the Feedback Hub app. Microsoft doesn't respond to this type of report but uses it to improve upon the products. You can include screenshots and diagnostic details, but the report should remain anonymous, so don't include information like name, email address, or phone number.
 
 1. Open the **Company Portal** app.
-1. Go to **Help & support**.
-1. Select **Report problem to Microsoft**.
-1. Select **Report problem**. Alternatively, you can send a suggestion or leave a review of the app.
+2. Go to **Help &amp; support**.
+3. Select **Report problem to Microsoft**.
+4. Select **Report problem**. Alternatively, you can send a suggestion or leave a review of the app.
 
 ## What is a diagnostic log?
 
-Events and errors that occur in the Company Portal app are saved on your device in a special document called a _diagnostic log_. Logs can reveal:
-* When the problem happened.
-* The steps leading up to the problem.
-* The state of the app when the problem appeared.
+Events and errors that occur in the Company Portal app are saved on your device in a special document called a *diagnostic log*. Logs can reveal:
+
+- When the problem happened.
+- The steps leading up to the problem.
+- The state of the app when the problem appeared.
 
 ## Next steps
 

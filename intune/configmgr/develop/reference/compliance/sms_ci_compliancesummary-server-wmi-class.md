@@ -1,13 +1,15 @@
 ---
-title: SMS_CI_ComplianceSummary Class
-ms.date: 09/20/2016
+title: "SMS_CI_ComplianceSummary Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 description: Learn about the simplified syntax, methods, properties, and requirements of the SMS_CI_ComplianceSummary server class.
 ms.service: configuration-manager
 ---
+
 # SMS_CI_ComplianceSummary Server WMI Class
+
 The `SMS_CI_ComplianceSummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a compliance summary for a baseline configuration item.
 
 ## Syntax
@@ -29,117 +31,112 @@ Class SMS_CI_ComplianceSummary : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CI_ComplianceSummary` class does not define any methods.
+
+The `SMS_CI_ComplianceSummary` class does not define any methods.
 
 ## Properties
- `ActivatedCount`
- Data type: `UInt32`
 
- Access type: Read
+`ActivatedCount` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The number of computers that evaluate the configuration item.
+Qualifiers: None
 
- `CI_ID`
- Data type: `UInt32`
+The number of computers that evaluate the configuration item.
 
- Access type: Read
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The unique ID of the configuration item. This ID is unique only for the site.
+Qualifiers: [key]
 
- `CI_UniqueID`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site.
 
- Access type: Read
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: [unique]
+Access type: Read
 
- The unique ID of the configuration item. This ID is unique across sites.
+Qualifiers: [unique]
 
- `CountCompliant`
- Data type: `UInt32`
+The unique ID of the configuration item. This ID is unique across sites.
 
- Access type: Read
+`CountCompliant` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The number of computers with which the configuration item is compliant.
+Qualifiers: None
 
- `CountNoncompliant`
- Data type: `UInt32`
+The number of computers with which the configuration item is compliant.
 
- Access type: Read
+`CountNoncompliant` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The number of computers with which the configuration item is not compliant.
+Qualifiers: None
 
- `CountTargeted`
- Data type: `UInt32`
+The number of computers with which the configuration item is not compliant.
 
- Access type: Read
+`CountTargeted` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The number of computers that are targeted for the configuration item.
+Qualifiers: None
 
- `FailureCount`
- Data type: `UInt32`
+The number of computers that are targeted for the configuration item.
 
- Access type: Read
+`FailureCount` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The number of computers that fail to evaluate the configuration item.
+Qualifiers: None
 
- `LastSummaryTime`
- Data type: `DateTime`
+The number of computers that fail to evaluate the configuration item.
 
- Access type: Read
+`LastSummaryTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read
 
- Date and time when the summary task was last run.
+Qualifiers: None
 
- `ModelName`
- Data type: `String`
+Date and time when the summary task was last run.
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Model Name of the configuration item.
+Qualifiers: none
 
- `Severity`
- Data type: `UInt32`
+Model Name of the configuration item.
 
- Access type: Read
+`Severity` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The noncompliance severity reported by the client for the configuration item.
+Qualifiers: None
+
+The noncompliance severity reported by the client for the configuration item.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Your application uses this class for compliance monitoring for a configuration item.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md)

@@ -1,7 +1,7 @@
 ---
-title: ImportMachineEntryToMultipleCollections method
+title: "ImportMachineEntryToMultipleCollections method in class SMS_Site"
 description: ImportMachineEntryToMultipleCollections method
-ms.date: 04/03/2019
+ms.date: "2019-04-03T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3

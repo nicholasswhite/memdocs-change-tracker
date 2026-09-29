@@ -1,7 +1,7 @@
 ---
 title: Add and assign the Windows Company Portal app for Intune managed devices
 description: Add and assign the Windows Company Portal app to Intune managed devices.
-ms.date: 01/06/2025
+ms.date: "2025-01-06T00:00:00Z"
 ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
@@ -10,7 +10,7 @@ ms.collection:
 
 # Add and assign the Windows Company Portal app for Intune managed devices
 
-To manage devices and install apps, your users can optionally use the Company Portal app. You can assign the Windows Company Portal app directly from Intune using [Microsoft Store app (new)](./add-microsoft-store.md) apps.
+To manage devices and install apps, your users can optionally use the Company Portal app. You can assign the Windows Company Portal app directly from Intune using [Microsoft Store app (new)](add-microsoft-store.md) apps.
 
 ## Prerequisites
 
@@ -18,22 +18,18 @@ You can choose to install the **Company Portal** app using the steps below. The 
 
 ## Create and Assign the Company Portal app
 
-1. Sign in to the [Microsoft Intune admin center] with your admin account.
-2. Select **Apps** > **All Apps** > **Create**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with your admin account.
+2. Select **Apps** &gt; **All Apps** &gt; **Create**.
 3. In **Select app type** pane, select **Microsoft Store app (new)** under the **Store app** section.
 4. Choose **Select** at the bottom of the page to begin creating an app from the Microsoft Store.
 5. Select **Search the Microsoft Store app (new)**.
 6. Enter the text **Company Portal**, select **Company Portal**, then choose **Select** at the bottom of the page.
 7. Change **Install behavior** to **System**, then select **Next**.
 8. Select scope tags as necessary, then select **Next**.
-9. To [Assign](./assign-groups.md) the Company Portal app as a required app to your selected device groups, select > **Add Group** (below **Required**) and then select a device group to assign the app. After you've created all the necessary assignments, select **Next**.
+9. To [Assign](assign-groups.md) the Company Portal app as a required app to your selected device groups, select &gt; **Add Group** (below **Required**) and then select a device group to assign the app. After you've created all the necessary assignments, select **Next**.
 10. Review your settings and select **Create**.
 
 ## Next steps
 
-- To learn more about assigning apps, see [Assign apps to groups](./assign-groups.md).
-- To learn more about **Microsoft Store app (new)** apps, see [Add Microsoft Store apps to Microsoft Intune](./add-microsoft-store.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- To learn more about assigning apps, see [Assign apps to groups](assign-groups.md).
+- To learn more about **Microsoft Store app (new)** apps, see [Add Microsoft Store apps to Microsoft Intune](add-microsoft-store.md).

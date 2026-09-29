@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_SoftwareMeteringAgentConfig class to specify how client computers retrieve data about the software they use.
-title: SMS_SoftwareMeteringAgentConfig Class
-ms.date: 09/20/2016
+title: "SMS_SoftwareMeteringAgentConfig Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SoftwareMeteringAgentConfig Server WMI Class
+
 The `SMS_SoftwareMeteringAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies how client computers retrieve data about the software that they use.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,96 +32,91 @@ Class SMS_SoftwareMeteringAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_SoftwareMeteringAgentConfig` class doesn't define any methods.
+
+The `SMS_SoftwareMeteringAgentConfig` class doesn't define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Software Metering Agent ID is 8.
+Qualifiers: [key, read]
 
- `DataCollectionSchedule`
- Data type: `String`
+Identifies the client agent component. The Software Metering Agent ID is 8.
 
- Access type: Read/Write
+`DataCollectionSchedule` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Schedule for data collection.
+Qualifiers: none
 
- `Enabled`
- Data type: `Boolean`
+Schedule for data collection.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the agent is enabled.
+Qualifiers: none
 
- `LastUpdateTimeOfRules`
- Data type: `String`
+`true` if the agent is enabled.
 
- Access type: Read/Write
+`LastUpdateTimeOfRules` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last updated time of the metering rules. This isn't currently used.
+Qualifiers: none
 
- `MaximumUsageInstancesPerReport`
- Data type: `UInt32`
+Last updated time of the metering rules. This isn't currently used.
 
- Access type: Read/Write
+`MaximumUsageInstancesPerReport` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum number of usage instances which is sent from the client to the site server when collecting software usage data.
+Qualifiers: none
 
- `MeterRuleIDList`
- Data type: `String Array`
+Maximum number of usage instances which is sent from the client to the site server when collecting software usage data.
 
- Access type: Read/Write
+`MeterRuleIDList` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- Identifier list of metering rules. This isn't currently used.
+Qualifiers: none
 
- `MRUAgeLimitInDays`
- Data type: `UInt32`
+Identifier list of metering rules. This isn't currently used.
 
- Access type: Read/Write
+`MRUAgeLimitInDays` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The age limit of the mostly recently used applications maintained on the client. Records older than this age limit are removed.
+Qualifiers: none
 
- `MRURefreshInMinutes`
- Data type: `UInt32`
+The age limit of the mostly recently used applications maintained on the client. Records older than this age limit are removed.
 
- Access type: Read/Write
+`MRURefreshInMinutes` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- How often the mostly recently used applications list is refreshed. When the applications list is refreshed, the aged records are removed.
+Qualifiers: none
 
- `ReportTimeout`
- Data type: `UInt32`
+How often the mostly recently used applications list is refreshed. When the applications list is refreshed, the aged records are removed.
 
- Access type: Read/Write
+`ReportTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum time that the client messaging framework attempts to transmit the report if the destination endpoint is unreachable.
+Qualifiers: none
+
+Maximum time that the client messaging framework attempts to transmit the report if the destination endpoint is unreachable.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

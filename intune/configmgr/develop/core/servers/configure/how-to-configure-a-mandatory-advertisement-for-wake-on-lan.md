@@ -1,29 +1,29 @@
 ---
 description: Learn how to configure an existing mandatory advertisement for Wake On LAN by using the SMS_Advertisement class and properties.
-title: Configure a Mandatory Advertisement for Wake On LAN
-ms.date: 09/20/2016
+title: "How to Configure a Software Distribution Mandatory Advertisement for Wake On LAN"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Configure a Software Distribution Mandatory Advertisement for Wake On LAN
+
 You can configure an existing mandatory advertisement for Wake On LAN by using the `SMS_Advertisement` class and properties.
 
 ### To configure a mandatory advertisement for Wake On LAN
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Get the specific advertisement using the provided advertisement ID.
-
-3.  Replace the `AdvertFlags` property value with the value indicating Wake On LAN.
-
-4.  Save the advertisement with the new property
+1. Set up a connection to the SMS Provider.
+2. Get the specific advertisement using the provided advertisement ID.
+3. Replace the `AdvertFlags` property value with the value indicating Wake On LAN.
+4. Save the advertisement with the new property
 
 ## Example
- The following example method configures a software distribution mandatory advertisement for Wake On LAN.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method configures a software distribution mandatory advertisement for Wake On LAN.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -104,33 +104,37 @@ public void SetWOLOnAdvertisment(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swebemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingAdvertisementID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the advertisment.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swebemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingAdvertisementID` | - Managed: `String` - VBScript: `String` | The ID of the advertisment. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [About deployments](about-software-distribution-deployments.md)
- [Software distribution overview](software-distribution-overview.md)
+
+[About deployments](about-software-distribution-deployments.md) [Software distribution overview](software-distribution-overview.md)

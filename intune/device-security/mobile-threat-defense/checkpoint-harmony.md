@@ -1,7 +1,7 @@
 ---
-title: Check Point Harmony Mobile Mobile Threat Defense Intune
+title: "Check Point Harmony Mobile Threat Defense connector with Intune"
 description: How to set up Check Point Harmony Mobile Threat Defense with Microsoft Intune control mobile device access to your corporate resources.
-ms.date: 08/22/2024
+ms.date: "2024-08-22T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -14,16 +14,14 @@ You can configure Conditional Access policies based on Check Point Harmony Mobil
 ## Supported platforms
 
 - **Android 8 and later**
-
 - **iOS 12 and later**
 
 ## Prerequisites
 
 - Microsoft Entra ID P1
-
 - Microsoft Intune Plan 1 subscription
-
 - Check Point Harmony Mobile Threat Defense subscription
+
   - See the [CheckPoint Harmony website](https://www.checkpoint.com/harmony).
 
 ## How do Intune and Check Point Harmony Mobile help protect your company resources?
@@ -39,18 +37,16 @@ Here are some common scenarios:
 When malicious apps such as malware are detected on devices, you can block devices until the threat is resolved:
 
 - Connecting to corporate e-mail
-
 - Syncing corporate files with the OneDrive for Work app
-
 - Accessing company apps
 
 *Block when malicious apps are detected:*
 
-:::image type="content" source="./media/checkpoint-harmony/checkpoint-mtd-2.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/checkpoint-harmony/checkpoint-mtd-2.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/checkpoint-harmony/checkpoint-mtd-3.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/checkpoint-harmony/checkpoint-mtd-3.png)
 
 ### Control access based on threat to network
 
@@ -58,11 +54,11 @@ Detect threats like **Man-in-the-middle** in network, and protect access to Wi-F
 
 *Block network access through Wi-Fi:*
 
-:::image type="content" source="./media/checkpoint-harmony/checkpoint-mtd-4.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/checkpoint-harmony/checkpoint-mtd-4.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/checkpoint-harmony/checkpoint-mtd-5.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated.](media/checkpoint-harmony/checkpoint-mtd-5.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -70,28 +66,25 @@ Detect threats like **Man-in-the-middle** in network, and prevent synchronizatio
 
 *Block SharePoint Online when network threats are detected:*
 
-:::image type="content" source="./media/checkpoint-harmony/checkpoint-mtd-6.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/checkpoint-harmony/checkpoint-mtd-6.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/checkpoint-harmony/checkpoint-mtd-7.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/checkpoint-harmony/checkpoint-mtd-7.png)
 
 ### Control access on unenrolled devices based on threats from malicious apps
 
 When the Check Point Harmony Mobile Threat Defense solution considers a device to be infected:
 
-:::image type="content" source="./media/checkpoint-harmony/harmony-app-policy-block.png" alt-text="Product flow for App protection policies to block access due to malware.":::
+![Product flow for App protection policies to block access due to malware.](media/checkpoint-harmony/harmony-app-policy-block.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/checkpoint-harmony/harmony-app-policy-remediated.png" alt-text=" Product flow for App protection policies to grant access after malware is remediated.":::
+![ Product flow for App protection policies to grant access after malware is remediated.](media/checkpoint-harmony/harmony-app-policy-remediated.png)
 
 ## Next steps
 
-- [Integrate Check Point Harmony Mobile with Intune](./setup-checkpoint-harmony.md)
-
-- [Set up Harmony Mobile Protect app](./assign-apps.md)
-
-- [Create Check Point Harmony Mobile device compliance policy](./create-compliance-policy.md)
-
-- [Enable Check Point Harmony Mobile MTD connector](./enable-connector.md)
+- [Integrate Check Point Harmony Mobile with Intune](setup-checkpoint-harmony.md)
+- [Set up Harmony Mobile Protect app](assign-apps.md)
+- [Create Check Point Harmony Mobile device compliance policy](create-compliance-policy.md)
+- [Enable Check Point Harmony Mobile MTD connector](enable-connector.md)

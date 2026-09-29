@@ -1,31 +1,31 @@
 ---
-title: Create a Schedule Token
+title: "How to Create a Schedule Token"
 description: Create a schedule token in Configuration Manager by creating and populating an instance of the appropriate SMS_ST_ schedule token class.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a Schedule Token
+
 You create a schedule token, in Configuration Manager, by creating and populating an instance of the appropriate `SMS_ST_` schedule token class. `SMS_ST` schedule classes are child classes of the `SMS_ScheduleToken` class and handle the scheduling of events with differing frequencies such as daily, weekly and monthly.
 
- The [SMS_ScheduleMethods](../../../develop/reference/core/servers/configure/sms_schedulemethods-server-wmi-class.md) Windows Management Instrumentation (WMI) class, and the corresponding [ReadFromString](../../../develop/reference/core/servers/configure/readfromstring-method-in-class-sms_schedulemethods.md) and [WriteToString](../../../develop/reference/core/servers/configure/writetostring-method-in-class-sms_schedulemethods.md) methods are used to decode and encode schedule tokens into and from an interval string. The interval strings can then be used to set schedule properties when defining or modifying objects. An example of this can be seen in the [How to Create a Maintenance Window for a Collection](../../../develop/core/servers/configure/how-to-create-a-maintenance-window-for-a-collection.md) topic where the `ServiceWindowSchedules` property is configured.
+The [SMS_ScheduleMethods](../../reference/core/servers/configure/sms_schedulemethods-server-wmi-class.md) Windows Management Instrumentation (WMI) class, and the corresponding [ReadFromString](../../reference/core/servers/configure/readfromstring-method-in-class-sms_schedulemethods.md) and [WriteToString](../../reference/core/servers/configure/writetostring-method-in-class-sms_schedulemethods.md) methods are used to decode and encode schedule tokens into and from an interval string. The interval strings can then be used to set schedule properties when defining or modifying objects. An example of this can be seen in the [How to Create a Maintenance Window for a Collection](../servers/configure/how-to-create-a-maintenance-window-for-a-collection.md) topic where the `ServiceWindowSchedules` property is configured.
 
 ### To create a schedule token and convert it to an interval string
 
-1.  Create a schedule token object by using one of the [SMS_ScheduleToken](../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md) child classes. This example uses the [SMS_ST_RecurInterval](../../../develop/reference/core/servers/configure/sms_st_recurinterval-server-wmi-class.md) class.
-
-2.  Populate the properties of the new schedule token object.
-
-3.  Convert the schedule token object to an interval string by using the `SMS_ScheduleMethods` class and `WriteToString` method.
-
-4.  Use the interval string to populate an object's schedule properties, as needed.
+1. Create a schedule token object by using one of the [SMS_ScheduleToken](../../reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md) child classes. This example uses the [SMS_ST_RecurInterval](../../reference/core/servers/configure/sms_st_recurinterval-server-wmi-class.md) class.
+2. Populate the properties of the new schedule token object.
+3. Convert the schedule token object to an interval string by using the `SMS_ScheduleMethods` class and `WriteToString` method.
+4. Use the interval string to populate an object's schedule properties, as needed.
 
 ## Example
- The following example method shows how to create a schedule token by creating and populating an instance of the `SMS_ST_RecurInterval` schedule token class. In addition, the example shows how to convert the schedule to an interval string by using the `SMS_ScheduleMethods` class and `WriteToString` method.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following example method shows how to create a schedule token by creating and populating an instance of the `SMS_ST_RecurInterval` schedule token class. In addition, the example shows how to convert the schedule to an interval string by using the `SMS_ScheduleMethods` class and `WriteToString` method.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```vbs
 
@@ -113,48 +113,46 @@ public void CreateDailyRecurringScheduleToken(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`hourDuration`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Number of hours during which the scheduled action occurs. Allowable values are in the range 0-23. The default value is 0, indicating no duration.|
-|`daySpan`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Number of days spanning schedule intervals. Allowable values are in the range 0-31. The default value is 0.|
-|`startTime`|-   Managed: `String` (DateTime)<br />-   VBScript: `String` (DateTime)|Date and time when the scheduled action takes place. The default value is "19700201000000.000000+***". This is the format in which (WMI) CIM DATETIME values are stored.|
-|`isGmt`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|`true` if the time is in Coordinated Universal Time (UTC). The default value is `false`, for local time.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `hourDuration` | - Managed: `Integer` - VBScript: `Integer` | Number of hours during which the scheduled action occurs. Allowable values are in the range 0-23. The default value is 0, indicating no duration. |
+| `daySpan` | - Managed: `Integer` - VBScript: `Integer` | Number of days spanning schedule intervals. Allowable values are in the range 0-31. The default value is 0. |
+| `startTime` | - Managed: `String` (DateTime) - VBScript: `String` (DateTime) | Date and time when the scheduled action takes place. The default value is "19700201000000.000000+\*\*\*". This is the format in which (WMI) CIM DATETIME values are stored. |
+| `isGmt` | - Managed: `Boolean` - VBScript: `Boolean` | `true` if the time is in Coordinated Universal Time (UTC). The default value is `false`, for local time. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managmentprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managmentprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../servers/configure/role-based-administration.md).
 
 ## See Also
- [Configuration Manager Software Development Kit](../../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [SMS_ST_NonRecurring Server WMI Class](../../../develop/reference/core/servers/configure/sms_st_nonrecurring-server-wmi-class.md)
- [SMS_ST_RecurInterval Server WMI Class](../../../develop/reference/core/servers/configure/sms_st_recurinterval-server-wmi-class.md)
- [SMS_ST_RecurMonthlyByDate Server WMI Class](../../../develop/reference/core/servers/configure/sms_st_recurmonthlybydate-server-wmi-class.md)
- [SMS_ST_RecurMonthlyByWeekday Server WMI Class](../../../develop/reference/core/servers/configure/sms_st_recurmonthlybyweekday-server-wmi-class.md)
- [SMS_ST_RecurWeekly Server WMI Class](../../../develop/reference/core/servers/configure/sms_st_recurweekly-server-wmi-class.md)
- [SMS_ScheduleMethods Server WMI Class](../../../develop/reference/core/servers/configure/sms_schedulemethods-server-wmi-class.md)
- [ReadFromString Method in Class SMS_ScheduleMethods](../../../develop/reference/core/servers/configure/readfromstring-method-in-class-sms_schedulemethods.md)
- [WriteToString Method in Class SMS_ScheduleMethods](../../../develop/reference/core/servers/configure/writetostring-method-in-class-sms_schedulemethods.md)
+
+[Configuration Manager Software Development Kit](../misc/system-center-configuration-manager-sdk.md) [SMS_ST_NonRecurring Server WMI Class](../../reference/core/servers/configure/sms_st_nonrecurring-server-wmi-class.md) [SMS_ST_RecurInterval Server WMI Class](../../reference/core/servers/configure/sms_st_recurinterval-server-wmi-class.md) [SMS_ST_RecurMonthlyByDate Server WMI Class](../../reference/core/servers/configure/sms_st_recurmonthlybydate-server-wmi-class.md) [SMS_ST_RecurMonthlyByWeekday Server WMI Class](../../reference/core/servers/configure/sms_st_recurmonthlybyweekday-server-wmi-class.md) [SMS_ST_RecurWeekly Server WMI Class](../../reference/core/servers/configure/sms_st_recurweekly-server-wmi-class.md) [SMS_ScheduleMethods Server WMI Class](../../reference/core/servers/configure/sms_schedulemethods-server-wmi-class.md) [ReadFromString Method in Class SMS_ScheduleMethods](../../reference/core/servers/configure/readfromstring-method-in-class-sms_schedulemethods.md) [WriteToString Method in Class SMS_ScheduleMethods](../../reference/core/servers/configure/writetostring-method-in-class-sms_schedulemethods.md)

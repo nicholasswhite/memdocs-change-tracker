@@ -1,16 +1,18 @@
 ---
-title: SMS_ImageUpdateStatus Class
+title: "SMS_ImageUpdateStatus Server WMI Class"
 description: The SMS_ImageUpdateStatus Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents software update installation status of offline servicing image.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ImageUpdateStatus Server WMI Class
+
 The `SMS_ImageUpdateStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents software update installation status of offline servicing image.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,87 +30,84 @@ Class SMS_ImageUpdateStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ImageUpdateStatus` class does not define any methods.
+
+The `SMS_ImageUpdateStatus` class does not define any methods.
 
 ## Properties
- `AppliedDateTime`
- Data type: `DateTime`
 
- Access type: Read/Write
+`AppliedDateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Software update installation date.
+Qualifiers: none
 
- `ImageIndex`
- Data type: `SInt32`
+Software update installation date.
 
- Access type: Read/Write
+`ImageIndex` Data type: `SInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Index for offline servicing image.
+Qualifiers: [key]
 
- `ImagePackageID`
- Data type: `String`
+Index for offline servicing image.
 
- Access type: Read/Write
+`ImagePackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID for offline servicing image.
+Qualifiers: [key]
 
- `UpdateID`
- Data type: `SInt32`
+ID for offline servicing image.
 
- Access type: Read/Write
+`UpdateID` Data type: `SInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID for software update in offline servicing image.
+Qualifiers: [key]
 
- `UpdateInstallationStatus`
- Data type: `SInt32`
+ID for software update in offline servicing image.
 
- Access type: Read/Write
+`UpdateInstallationStatus` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Error code for software update installation.
+Qualifiers: none
 
- `UpdateStatus`
- Data type: `SInt32`
+Error code for software update installation.
 
- Access type: Read/Write
+`UpdateStatus` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Applicability state for software update.
+Qualifiers: none
+
+Applicability state for software update.
 
 | Value | Update status |
-| ----- | ------------- |
-|0|Unknown|
-|1|Not Required|
-|2|Installed|
-|3|Applicable|
-|4|Applicability check not supported|
-|5|Installed applicability check not supported|
+| --- | --- |
+| 0 | Unknown |
+| 1 | Not Required |
+| 2 | Installed |
+| 3 | Applicable |
+| 4 | Applicability check not supported |
+| 5 | Installed applicability check not supported |
 
- `UpdateTitle`
- Data type: `String`
+`UpdateTitle` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Display name for software update.
+Display name for software update.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

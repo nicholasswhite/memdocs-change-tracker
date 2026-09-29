@@ -1,8 +1,8 @@
 ---
-title: Site size and performance guidelines
+title: "Configuration Manager site size and performance guidelines"
 description: Site size-related performance test results, methodology, and guidance.
 ms.topic: concept-article
-ms.date: 04/13/2021
+ms.date: "2021-04-13T00:00:00Z"
 ms.collection: tier3
 ---
 
@@ -23,6 +23,7 @@ This article focuses on the largest contributor to Configuration Manager perform
 You can deploy Configuration Manager in many unique ways, but it's important to understand a few variables in any sizing discussions. One variable is *feature interval*, such as an inventory cycle. Another variable is the number of users, software deployments, or other *objects* the system references or deploys. Performance testing applies these variables as part of a *load*. The load generates objects at a typical rate for enterprise customers using production deployments in different size environments.
 
 > [!NOTE]
+>
 > Customer usage data allows for testing current branch builds with the most common scenarios, configurations, and settings for most customers. The recommendations in this article are based on these averages. Your experiences may vary based on your environment size and configuration. In general, Configuration Manager requires common sense when it comes to objects and intervals. Just because you can collect every file on a system, or set the interval for a cycle to one minute, doesn't mean you should.
 
 The following sections highlight some key settings and configurations to use when testing and modeling processing needs for large enterprises. These guidelines help set basic system performance expectations for the suggested hardware sizes.
@@ -50,6 +51,7 @@ The largest variation comes from the SQL Server versions in use. For more inform
 You can test and measure Configuration Manager performance with different kinds of settings, in different ways, and at different site sizes. The following settings and objects can dramatically affect performance. Be sure to consider them when testing and modeling performance in your environment.
 
 > [!CAUTION]
+>
 > While few aspects of Configuration Manager have official maximums or user interface limits that prevent excessive usage, going beyond the guidelines can have significant adverse effects on a site's performance. Exceeding recommended levels or ignoring sizing guidance typically requires larger hardware, and may render your environment unmaintainable until you reduce the frequency or count of various objects.
 
 ### Hardware inventory
@@ -89,56 +91,55 @@ Discovery data is global data. A common performance-related problem is to miscon
 Based on the preceding [performance test methodology](#performance-test-methodology), the following table gives general *minimum* hardware requirement guidelines for specific numbers of managed clients. These values should allow most customers with the specified number of clients to process objects fast enough to administer the specified site. Computing power continues to decrease in price every year, and some of the requirements below are small for modern server hardware configurations. Hardware that exceeds the following guidelines proportionally increases performance for sites that require more processing power, or have special product usage patterns.
 
 | Desktop clients | Site type/role | Cores <sup>[Note 1](#bkmk_note1)</sup> | Memory (GB) | SQL Server memory allocation <sup>[Note 2](#bkmk_note2)</sup> | IOPS: Inboxes <sup>[Note 3](#bkmk_note3)</sup> | IOPS: SQL Server <sup>[Note 3](#bkmk_note3)</sup> | Storage space required (GB) <sup>[Note 4](#bkmk_note4)</sup> |
-|------|-------------------------------------------------------------|-----|-----|-----|------|------|------|
-| 25k  | Primary or CAS with database site role on the same server   | 6   | 24  | 65% | 600  | 1700 | 350  |
-| 25k  | Primary or CAS                                              | 4   | 8   |     | 600  |      | 100  |
-|      | Remote SQL Server                                           | 4   | 16  | 70% |      | 1700 | 250  |
-|      |                                                             |     |     |     |      |      |      |
-| 50k  | Primary or CAS with database site role on the same server   | 8   | 32  | 70% | 1200 | 2800 | 600  |
-| 50k  | Primary or CAS                                              | 4   | 8   |     | 1200 |      | 200  |
-|      | Remote SQL Server                                           | 8   | 24  | 70% |      | 2800 | 400  |
-|      |                                                             |     |     |     |      |      |      |
-| 100k | Primary or CAS with database site role on the same server   | 12  | 64  | 70% | 1200 | 5000 | 1100 |
-| 100k | Primary or CAS                                              | 6   | 12  |     | 1200 |      | 300  |
-|      | Remote SQL Server                                           | 12  | 48  | 80% |      | 5000 | 800  |
-|      |                                                             |     |     |     |      |      |      |
-| 150k | Primary or CAS with database site role on the same server   | 16  | 96  | 70% | 1800 | 7400 | 1600 |
-| 150k | Primary or CAS                                   | 8   | 16   |     | 1800  |         | 400   |
-|      | Remote SQL Server                                | 16  | 72   | 90% |       | 7400    | 1200  |
-|      |                                                             |     |     |     |      |      |      |
-| 700k | CAS with database site role on the same server   | 20+ | 128+ | 80% | 1800+ | 9000+   | 5000+ |
-| 700k | CAS                                              | 8+  | 16+  |     | 1800+ |         | 500+  |
-|      | Remote SQL Server                                | 16+ | 96+  | 90% |       | 9000+   | 4500+ |
-|      |                                                             |     |     |     |      |      |      |
-| 5k   | Secondary Site                                   | 4   | 8    |     | 500   | -       | 200   |
-| 15k  | Secondary Site                                   | 8   | 16   |     | 500   | -       | 300   |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 25k | Primary or CAS with database site role on the same server | 6 | 24 | 65% | 600 | 1700 | 350 |
+| 25k | Primary or CAS | 4 | 8 |  | 600 |  | 100 |
+|  | Remote SQL Server | 4 | 16 | 70% |  | 1700 | 250 |
+|  |  |  |  |  |  |  |  |
+| 50k | Primary or CAS with database site role on the same server | 8 | 32 | 70% | 1200 | 2800 | 600 |
+| 50k | Primary or CAS | 4 | 8 |  | 1200 |  | 200 |
+|  | Remote SQL Server | 8 | 24 | 70% |  | 2800 | 400 |
+|  |  |  |  |  |  |  |  |
+| 100k | Primary or CAS with database site role on the same server | 12 | 64 | 70% | 1200 | 5000 | 1100 |
+| 100k | Primary or CAS | 6 | 12 |  | 1200 |  | 300 |
+|  | Remote SQL Server | 12 | 48 | 80% |  | 5000 | 800 |
+|  |  |  |  |  |  |  |  |
+| 150k | Primary or CAS with database site role on the same server | 16 | 96 | 70% | 1800 | 7400 | 1600 |
+| 150k | Primary or CAS | 8 | 16 |  | 1800 |  | 400 |
+|  | Remote SQL Server | 16 | 72 | 90% |  | 7400 | 1200 |
+|  |  |  |  |  |  |  |  |
+| 700k | CAS with database site role on the same server | 20+ | 128+ | 80% | 1800+ | 9000+ | 5000+ |
+| 700k | CAS | 8+ | 16+ |  | 1800+ |  | 500+ |
+|  | Remote SQL Server | 16+ | 96+ | 90% |  | 9000+ | 4500+ |
+|  |  |  |  |  |  |  |  |
+| 5k | Secondary Site | 4 | 8 |  | 500 | - | 200 |
+| 15k | Secondary Site | 8 | 16 |  | 500 | - | 300 |
 
 ### Notes on general sizing guidelines
 
-#### <a name="bkmk_note1"></a> Note 1: Cores
+#### Note 1: Cores
 
 Configuration Manager runs many simultaneous processes, so needs a certain minimum number of CPU cores for various site sizes. While cores get faster each year, it's important to ensure that a certain minimum number of cores work in parallel. In general, any server-level CPU produced after 2015 meets the basic performance needs for the cores specified in the table. Configuration Manager takes advantage of other cores beyond the recommendations. Once you have the minimum suggested cores, prioritize CPU resource investment to increase the speed of existing cores. Don't add more, slower cores. For example, Configuration Manager has better performance on key processing tasks with 16 fast cores than with 24 slower cores. This performance assumes that there are enough other system resources like disk IOPS.
 
 The relationship between cores and memory is also important. In general, having less than 3-4 GB of RAM per core reduces the total processing capability on your SQL Servers. You need more RAM per core when SQL Server is colocated with the site server components.
 
 > [!NOTE]
+>
 > All testing sets machine power plans to allow maximum CPU power consumption and performance.
 
-#### <a name="bkmk_note2"></a> Note 2: SQL Server memory allocation
-
-<!-- MEMDocs#570 -->
+#### Note 2: SQL Server memory allocation
 
 Use this value to configure the **Maximum server memory (in MB)** in the properties of the SQL Server. It's the percentage of the total amount of memory available on the server.
 
 Don't configure the minimum and maximum values the same. This guidance is specifically for the maximum memory that you should allow SQL Server to allocate.
 
-#### <a name="bkmk_note3"></a> Note 3: IOPS: Inboxes and IOPS: SQL
+#### Note 3: IOPS: Inboxes and IOPS: SQL
 
 These values refer to the IOPS needs for the Configuration Manager and SQL Server logical drives. The **IOPS: Inboxes** column shows the IOPS requirements for the logical drive with the Configuration Manager inbox directories. The **IOPS: SQL** column shows the total IOPS needs for the logical drive(s) that various SQL Server files use. These columns are different because the two drives should have different formatting. For more information and examples on suggested SQL Server disk configurations and file best practices, including details on splitting files across multiple volumes, see the [Site sizing and performance FAQ](../../understand/site-size-performance-faq.yml).
 
 Both of these IOPS columns use data from the industry-standard tool, **Diskspd**. See [How to measure disk performance](#how-to-measure-disk-performance) for instructions on duplicating these measurements. In general, once you meet basic CPU and memory requirements, the storage subsystem has the largest affect on site performance, and improvements here will give the most payback on investment.
 
-#### <a name="bkmk_note4"></a> Note 4: Storage space required
+#### Note 4: Storage space required
 
 These real-world values may differ from other documented recommendations. We provide these numbers only as a general guideline; individual requirements could vary widely. Carefully plan for disk space needs before site installation. Assume that some amount of this storage remains as free disk space most of the time. You may use this buffer space in a recovery scenario, or for upgrade scenarios that need free disk space for setup package expansion. Your site may require more storage for large amounts of data collection, longer periods of data retention, and large amounts of software distribution content. You can also store these items on separate, lower-throughput volumes.
 
@@ -151,26 +152,23 @@ For test results from different kinds of hardware configurations in lab environm
 ### How to test disk IOPS
 
 1. Download the [Diskspd utility](https://github.com/microsoft/diskspd).
+2. Make sure you have at least 100 GB of free disk space. Disable any apps that might interfere or cause extra load on the disk, such as active antivirus scanning of the directory, SQL, or SMSExec.
+3. Run **Diskspd** from an elevated command prompt.
 
-1. Make sure you have at least 100 GB of free disk space. Disable any apps that might interfere or cause extra load on the disk, such as active antivirus scanning of the directory, SQL, or SMSExec.
+   Run the tool twice in sequence for the volume that you want to test. The first test at 64k size with random write operations for one minute. This test validates controller cache loading and disk space allocation, in case the volume is dynamically expanding. Discard the results of the first test. The second test should *immediately* follow the first test, and do the same load for five minutes.
 
-1. Run **Diskspd** from an elevated command prompt.
+   For example, use the following specific command lines to test the `G:` volume.
 
-    Run the tool twice in sequence for the volume that you want to test. The first test at 64k size with random write operations for one minute. This test validates controller cache loading and disk space allocation, in case the volume is dynamically expanding. Discard the results of the first test. The second test should *immediately* follow the first test, and do the same load for five minutes.
+   ```Command
+   DiskSpd.exe -r -w100 -t8 -o8 -b64K -c100G -d60 -h -L G:\\test\testfile.dat
 
-    For example, use the following specific command lines to test the `G:` volume.
+   del G:\\test\testfile.dat
 
-    ```Command
-    DiskSpd.exe -r -w100 -t8 -o8 -b64K -c100G -d60 -h -L G:\\test\testfile.dat
+   DiskSpd.exe -r -w100 -t8 -o8 -b64K -c100G -d300 -h -L G:\\test\testfile.dat
+   ```
+4. Review the output from the second test to find the total IOPS in the **I/O per s** column. In the following example, the total IOPS are **3929.18**.
 
-    del G:\\test\testfile.dat
-
-    DiskSpd.exe -r -w100 -t8 -o8 -b64K -c100G -d300 -h -L G:\\test\testfile.dat
-    ```
-
-1. Review the output from the second test to find the total IOPS in the **I/O per s** column. In the following example, the total IOPS are **3929.18**.
-
-   ``` Output
+   ```Output
    Total IO
    | thread |  bytes      |  I/Os   |  MB/s  | I/O per s | AvgLat | LatStdDev |
    |--------|-------------|---------|--------|-----------|--------|-----------|
@@ -195,32 +193,32 @@ Hardware is always improving. Expect newer generations of hardware and different
 
 The following table shows the test results across various disk subsystems, including spindle and SSD-based hard drives, in various test lab configurations. All configurations format the disks with 64k clusters and attach them to an enterprise class disk controller. In addition to the RAID array disk count, they each have at least one spare disk.
 
-| Disk type   | Disk count, not including +1 spare disk | RAID     | IOPS measured  |
-|------------------|----------------------------------------------------|---------------|---------------|
-| 15k SAS          | 2                                                  |           1   | 620           |
-| 15k SAS          | 4                                                  |           10  | 1206          |
-| 15k SAS          | 6                                                  |           10  | 1751          |
-| 15k SAS          | 8                                                  |           10  | 2322          |
-| 15k SAS          | 10                                                 |           10  | 2882          |
-| 15k SAS          | 12                                                 |           10  | 3476          |
-| 15k SAS          | 16                                                 |           10  | 4236          |
-| 15k SAS          | 20                                                 |           10  | 5148          |
-| 15k SAS          | 30                                                 |           10  | 7398          |
-| 15k SAS          | 40                                                 |           10  | 9913          |
-| SSD SATA         | 2                                                  |           1   | 3300          |
-| SSD SATA         | 4                                                  |           10  | 5542          |
-| SSD SATA         | 6                                                  |           10  | 7201          |
-| SSD SAS          | 2                                                  |           1   | 7539          |
-| SSD SAS          | 4                                                  |           10  | 14346         |
-| SSD SAS          | 6                                                  |           10  | 15607         |
+| Disk type | Disk count, not including +1 spare disk | RAID | IOPS measured |
+| --- | --- | --- | --- |
+| 15k SAS | 2 | 1 | 620 |
+| 15k SAS | 4 | 10 | 1206 |
+| 15k SAS | 6 | 10 | 1751 |
+| 15k SAS | 8 | 10 | 2322 |
+| 15k SAS | 10 | 10 | 2882 |
+| 15k SAS | 12 | 10 | 3476 |
+| 15k SAS | 16 | 10 | 4236 |
+| 15k SAS | 20 | 10 | 5148 |
+| 15k SAS | 30 | 10 | 7398 |
+| 15k SAS | 40 | 10 | 9913 |
+| SSD SATA | 2 | 1 | 3300 |
+| SSD SATA | 4 | 10 | 5542 |
+| SSD SATA | 6 | 10 | 7201 |
+| SSD SAS | 2 | 1 | 7539 |
+| SSD SAS | 4 | 10 | 14346 |
+| SSD SAS | 6 | 10 | 15607 |
 
 The following table lists the specific devices used in this example. This information isn't a recommendation for any specific hardware model or manufacturer.
 
-| Disk type    | Model      | RAID controller | Cache memory and configuration |
-|-------------------|-----------------|----------------------|-------------------------------------|
-| 15k RPM SAS HD    | HP EH0300JDYTH  | Smart Array P822     | 2 GB, 20% Read / 80% Write           |
-| SSD SATA          | ATA MK0200GCTYV | Smart Array P420i    | 1 GB, 20% Read / 80% Write           |
-| SSD SAS           | HP MO0800 JEFPB | Smart Array P420i    | 1 GB, 20% Read / 80% Write           |
+| Disk type | Model | RAID controller | Cache memory and configuration |
+| --- | --- | --- | --- |
+| 15k RPM SAS HD | HP EH0300JDYTH | Smart Array P822 | 2 GB, 20% Read / 80% Write |
+| SSD SATA | ATA MK0200GCTYV | Smart Array P420i | 1 GB, 20% Read / 80% Write |
+| SSD SAS | HP MO0800 JEFPB | Smart Array P420i | 1 GB, 20% Read / 80% Write |
 
 ### Azure machine and disk performance
 
@@ -228,36 +226,36 @@ Azure disk performance depends on several factors, such as the size of the Azure
 
 All disks are formatted NTFS 64k cluster size, and rows with more than one disk are configured as striped volumes via the Windows Disk Management utility.
 
-| Azure VM| Azure disk| Disk count | Available space | IOPS measured   | Limiting factor   |
-|--------------------------------------------|-------------------------|---------------------|---------------------------|-------|-----------------|
-| **DS2/DS11**                              | P20                     | 1                   | 512 GB                    | 965   | Azure VM size   |
-| **DS2/DS11**                              | P20                     | 2                   | 1024 GB                   | 996   | Azure VM size   |
-| **DS2/DS11**                              | P30                     | 1                   | 1024 GB                   | 996   | Azure VM size   |
-| **DS2/DS11**                              | P30                     | 2                   | 2048 GB                   | 996   | Azure VM size   |
-| **DS3/DS12/F4S**                          | P20                     | 1                   | 512 GB                    | 1994  | Azure VM size   |
-| **DS3/DS12/F4S**                          | P20                     | 2                   | 1024 GB                   | 1992  | Azure VM size   |
-| **DS3/DS12/F4S**                          | P30                     | 1                   | 1024 GB                   | 1993  | Azure VM size   |
-| **DS3/DS12/F4S**                          | P30                     | 2                   | 2048 GB                   | 1992  | Azure VM size   |
-| **DS4/DS13/F8S**                          | P20                     | 1                   | 512 GB                    | 2334  | P20 disk        |
-| **DS4/DS13/F8S**                          | P20                     | 2                   | 1024 GB                   | 3984  | Azure VM size   |
-| **DS4/DS13/F8S**                          | P20                     | 3                   | 1536 GB                   | 3984  | Azure VM size   |
-| **DS4/DS13/F8S**                          | P30                     | 1                   | 1024 GB                   | 3112  | P30 disk        |
-| **DS4/DS13/F8S**                          | P30                     | 2                   | 2048 GB                   | 3984  | Azure VM size   |
-| **DS4/DS13/F8S**                          | P30                     | 3                   | 3072 GB                   | 3996  | Azure VM size   |
-| **DS5/DS14/F16S**                         | P20                     | 1                   | 512 GB                    | 2335  | P20 disk        |
-| **DS5/DS14/F16S**                         | P20                     | 2                   | 1024 GB                   | 4639  | P20 disk        |
-| **DS5/DS14/F16S**                         | P20                     | 3                   | 1536 GB                   | 6913  | P20 disk        |
-| **DS5/DS14/F16S**                         | P20                     | 4                   | 2048 GB                   | 7966  | Azure VM size   |
-| **DS5/DS14/F16S**                         | P30                     | 1                   | 1024 GB                   | 3112  | P30 disk        |
-| **DS5/DS14/F16S**                         | P30                     | 2                   | 2048 GB                   | 6182  | P30 disk        |
-| **DS5/DS14/F16S**                         | P30                     | 3                   | 3072 GB                   | 7963  | Azure VM size   |
-| **DS5/DS14/F16S**                         | P30                     | 4                   | 4096 GB                   | 7968  | Azure VM size   |
-| **DS15**                                  | P30                     | 1                   | 1024 GB                   | 3113  | P30 disk        |
-| **DS15**                                  | P30                     | 2                   | 2048 GB                   | 6184  | P30 disk        |
-| **DS15**                                  | P30                     | 3                   | 3072 GB                   | 9225  | P30 disk        |
-| **DS15**                                  | P30                     | 4                   | 4096 GB                   | 10200 | Azure VM size   |
+| Azure VM | Azure disk | Disk count | Available space | IOPS measured | Limiting factor |
+| --- | --- | --- | --- | --- | --- |
+| **DS2/DS11** | P20 | 1 | 512 GB | 965 | Azure VM size |
+| **DS2/DS11** | P20 | 2 | 1024 GB | 996 | Azure VM size |
+| **DS2/DS11** | P30 | 1 | 1024 GB | 996 | Azure VM size |
+| **DS2/DS11** | P30 | 2 | 2048 GB | 996 | Azure VM size |
+| **DS3/DS12/F4S** | P20 | 1 | 512 GB | 1994 | Azure VM size |
+| **DS3/DS12/F4S** | P20 | 2 | 1024 GB | 1992 | Azure VM size |
+| **DS3/DS12/F4S** | P30 | 1 | 1024 GB | 1993 | Azure VM size |
+| **DS3/DS12/F4S** | P30 | 2 | 2048 GB | 1992 | Azure VM size |
+| **DS4/DS13/F8S** | P20 | 1 | 512 GB | 2334 | P20 disk |
+| **DS4/DS13/F8S** | P20 | 2 | 1024 GB | 3984 | Azure VM size |
+| **DS4/DS13/F8S** | P20 | 3 | 1536 GB | 3984 | Azure VM size |
+| **DS4/DS13/F8S** | P30 | 1 | 1024 GB | 3112 | P30 disk |
+| **DS4/DS13/F8S** | P30 | 2 | 2048 GB | 3984 | Azure VM size |
+| **DS4/DS13/F8S** | P30 | 3 | 3072 GB | 3996 | Azure VM size |
+| **DS5/DS14/F16S** | P20 | 1 | 512 GB | 2335 | P20 disk |
+| **DS5/DS14/F16S** | P20 | 2 | 1024 GB | 4639 | P20 disk |
+| **DS5/DS14/F16S** | P20 | 3 | 1536 GB | 6913 | P20 disk |
+| **DS5/DS14/F16S** | P20 | 4 | 2048 GB | 7966 | Azure VM size |
+| **DS5/DS14/F16S** | P30 | 1 | 1024 GB | 3112 | P30 disk |
+| **DS5/DS14/F16S** | P30 | 2 | 2048 GB | 6182 | P30 disk |
+| **DS5/DS14/F16S** | P30 | 3 | 3072 GB | 7963 | Azure VM size |
+| **DS5/DS14/F16S** | P30 | 4 | 4096 GB | 7968 | Azure VM size |
+| **DS15** | P30 | 1 | 1024 GB | 3113 | P30 disk |
+| **DS15** | P30 | 2 | 2048 GB | 6184 | P30 disk |
+| **DS15** | P30 | 3 | 3072 GB | 9225 | P30 disk |
+| **DS15** | P30 | 4 | 4096 GB | 10200 | Azure VM size |
 
-For more information on the currently available disks, see [Select a disk type for Azure IaaS VMs](/azure/virtual-machines/disks-types).
+For more information on the currently available disks, see [Select a disk type for Azure IaaS VMs](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types).
 
 ## See also
 

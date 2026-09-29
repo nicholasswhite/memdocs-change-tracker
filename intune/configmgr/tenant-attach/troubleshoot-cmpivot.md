@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot CMPivot for devices uploaded to the admin center
 description: Troubleshooting CMPivot for Intune tenant attach
-ms.date: 07/11/2022
+ms.date: "2022-07-11T00:00:00Z"
 ms.topic: troubleshooting
 ms.subservice: core-infra
 ms.collection: tier3
@@ -9,58 +9,55 @@ ms.service: configuration-manager
 ---
 
 # Troubleshoot CMPivot for devices uploaded to the admin center
-<!--6024392-->
+
 *Applies to: Configuration Manager (current branch)*
 
 Use the following to troubleshoot CMPivot in the Microsoft Intune admin center:
 
 ## Common issues
 
-### <a name="bkmk_intune"></a> You don’t have access to view this information
-<!--7980141-->
+### You don’t have access to view this information
+
 **Error message:** You don’t have access to view this information. Make sure a proper user role is assigned from Intune.
 
 **Possible cause:** The user account needs an [Intune role](../../fundamentals/role-based-access-control/overview.md) assigned. In some cases, this error may also occur during replication of information and it resolves without intervention after a few minutes.
 
-### <a name="bkmk_noinfo"></a> Unable to get device information
+### Unable to get device information
 
 **Error message 1:** Unable to get device information. Make sure Microsoft Entra ID and AD user discovery are configured and the user is discovered by both. Verify that the user has proper permissions in Configuration Manager.
 
 **Possible causes:** Typically, this error is caused by an issue with the admin account. Below are the most common issues with the administrative user account:
 
 1. Use the same account to sign in to the admin center. The on-premises identity must be synchronized with and match the cloud identity.
-1. Verify the account has **Read** permission for the device's **Collection** in Configuration Manager.
-1. Make sure that Configuration Manager has discovered the administrative user account you're using to access the tenant attach features within Microsoft Intune admin center. In the Configuration Manager console, go to the **Assets and Compliance** workspace. Select the **Users** node, and find your user account.
+2. Verify the account has **Read** permission for the device's **Collection** in Configuration Manager.
+3. Make sure that Configuration Manager has discovered the administrative user account you're using to access the tenant attach features within Microsoft Intune admin center. In the Configuration Manager console, go to the **Assets and Compliance** workspace. Select the **Users** node, and find your user account.
 
-    If your account isn't listed in the **Users** node, check the configuration of the site's [Active Directory User discovery](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser).
+   If your account isn't listed in the **Users** node, check the configuration of the site's [Active Directory User discovery](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser).
+4. Verify the discovery data. Select your user account. In the ribbon, on the **Home** tab select **Properties**. In the properties window, confirm the following discovery data:
 
-1. Verify the discovery data. Select your user account. In the ribbon, on the **Home** tab select **Properties**. In the properties window, confirm the following discovery data:
+   - **Microsoft Entra tenant ID**: This value should be a GUID for the Microsoft Entra tenant.
+   - **Microsoft Entra user ID**: This value should be a GUID for this account in Microsoft Entra ID.
+   - **User Principal Name**: The format of this value is user@domain. For example, `jqpublic@contoso.com`.
 
-    - **Microsoft Entra tenant ID**: This value should be a GUID for the Microsoft Entra tenant.
-    - **Microsoft Entra user ID**: This value should be a GUID for this account in Microsoft Entra ID.
-    - **User Principal Name**: The format of this value is user@domain. For example, `jqpublic@contoso.com`.
+   If the Microsoft Entra properties are empty, check the configuration of the site's [Microsoft Entra user discovery](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc).
 
-    If the Microsoft Entra properties are empty, check the configuration of the site's [Microsoft Entra user discovery](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc).
-
-
-### <a name="bkmk_rbac"></a> Not authorized to view query results
+### Not authorized to view query results
 
 **Error message:** Not authorized to view query results. Verify that you've been given permissions for CMPivot in Configuration Manager
 
 **Possible causes:** Verify the user account has permissions for CMPivot. For more information see [Permissions for CMPivot](cmpivot-start.md#permissions).
 
-#### <a name="bkmk_other"></a> Other possible causes of unexpected errors
+#### Other possible causes of unexpected errors
 
 Unexpected errors are typically caused by either [service connection point](../core/servers/deploy/configure/about-the-service-connection-point.md), [administration service](../develop/adminservice/overview.md), or connectivity issues.
 
 1. Verify the service connection point has connectivity to the cloud using the **CMGatewayNotificationWorker.log**.
-1. Verify the administrative service is healthy by reviewing the SMS_REST_PROVIDER component from site component monitoring on the central site.
-1. IIS must be installed on provider machine. For more information, see [Prerequisites for the administration service](../develop/adminservice/overview.md#prerequisites).
+2. Verify the administrative service is healthy by reviewing the SMS_REST_PROVIDER component from site component monitoring on the central site.
+3. IIS must be installed on provider machine. For more information, see [Prerequisites for the administration service](../develop/adminservice/overview.md#prerequisites).
 
 ## Known issues
 
-
-### <a name="bkmk_dblhop"></a> When the SMS provider is remote from the CAS, you may encounter an internal server error from the admin console
+### When the SMS provider is remote from the CAS, you may encounter an internal server error from the admin console
 
 **Error message:** On-prem error code: 500 internal server error
 
@@ -68,8 +65,11 @@ Unexpected errors are typically caused by either [service connection point](../c
 
 **Workaround:** Follow the instructions for the [CAS has a remote provider](../core/servers/manage/cmpivot-changes.md#cas-has-a-remote-provider) scenario in the CMPivot article to work around this "double hop" scenario.
 
+### When the Configuration Manager site is configured to require multi-factor authentication, most tenant attach features don't work
 
-[!INCLUDE [Known issues shared across tenant attach features](includes/known-issues-shared.md)]
+**Scenario:** If the [SMS provider](../core/plan-design/hierarchy/plan-for-the-sms-provider.md) machine that communicates with the [service connection point](../core/servers/deploy/configure/about-the-service-connection-point.md) is configured to use multi-factor authentication, you can't install applications, run CMPivot queries, and perform other actions from the admin console. You receive an error code 403, forbidden.
+
+**Workaround:** The current workaround is to configure the on-premises hierarchy to the default authentication level of **Windows authentication**. For more information, see the [Authentication section in the SMS provider article](../core/plan-design/hierarchy/plan-for-the-sms-provider.md#authentication).
 
 ## Next steps
 

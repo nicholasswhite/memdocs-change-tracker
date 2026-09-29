@@ -1,16 +1,18 @@
 ---
-title: SMS_SII_Property Class
+title: "SMS_SII_Property Server WMI Class"
 description: In Configuration Manager, the SMS_SII_Property WMI class is an SMS Provider server class that represents a general-purpose storage object for property data that can be represented as a single integer or two strings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SII_Property Server WMI Class
+
 The `SMS_SII_Property` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a general-purpose storage object for property data that can be represented as a single integer or two strings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,78 +29,77 @@ Class SMS_SII_Property : SMS_SiteInstallItem
 ```
 
 ## Methods
- The `SMS_SII_Property` class does not define any methods.
+
+The `SMS_SII_Property` class does not define any methods.
 
 ## Properties
- `ItemName`
- Data type: `String`
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `PropertyName`
- Data type: `String`
+See [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md).
 
- Access type: Read/Write
+`PropertyName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the property. The name is case sensitive and might contain several words, for example, "Connection Point".
+Qualifiers: None
 
- `Value`
- Data type: `UInt32`
+Name of the property. The name is case sensitive and might contain several words, for example, "Connection Point".
 
- Access type: Read/Write
+`Value` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- A numeric value if the property is numeric.
+Qualifiers: None
 
- `Value1`
- Data type: `String`
+A numeric value if the property is numeric.
 
- Access type: Read/Write
+`Value1` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- A string value if the property is a string. The value is a registry data type if the property comes from the system registry. Otherwise, the value is the actual string for the property.
+Qualifiers: None
 
- `Value2`
- Data type: `String`
+A string value if the property is a string. The value is a registry data type if the property comes from the system registry. Otherwise, the value is the actual string for the property.
 
- Access type: Read/Write
+`Value2` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- A value to indicate the string value of the property if `Value1` indicates a `REG_SZ` registry data type.
+Qualifiers: None
+
+A value to indicate the string value of the property if `Value1` indicates a `REG_SZ` registry data type.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md)

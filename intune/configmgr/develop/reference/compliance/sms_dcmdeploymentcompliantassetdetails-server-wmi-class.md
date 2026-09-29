@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent compliant asset details for a deployment using SMS_DCMDeploymentCompliantAssetDetails class.
-title: SMS_DCMDeploymentCompliantAssetDetails Class
-ms.date: 09/20/2016
+title: "SMS_DCMDeploymentCompliantAssetDetails Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DCMDeploymentCompliantAssetDetails Server WMI Class
+
 The `SMS_DCMDeploymentCompliantAssetDetails` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents compliant asset details for a deployment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -39,193 +41,179 @@ Class SMS_DCMDeploymentCompliantAssetDetails : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DCMDeploymentCompliantAssetDetails` class does not define any methods.
+
+The `SMS_DCMDeploymentCompliantAssetDetails` class does not define any methods.
 
 ## Properties
- `AssetID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AssetID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The ID of the asset.
+Qualifiers: [not_null, read]
 
- `AssetName`
- Data type: `String`
+The ID of the asset.
 
- Access type: Read-only
+`AssetName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Name of the asset.
+Qualifiers: [key, not_null, read]
 
- `AssetType`
- Data type: `UInt32`
+Name of the asset.
 
- Access type: Read-only
+`AssetType` Data type: `UInt32`
 
- Qualifiers: [enumeration, not_null, read]
+Access type: Read-only
 
- Type of the asset. Possible values are:
+Qualifiers: [enumeration, not_null, read]
 
-|Value|Asset type|
-|-|-|
-|0|USER|
-|1|MACHINE|
+Type of the asset. Possible values are:
 
- `AssignmentID`
- Data type: `UInt32`
+| Value | Asset type |
+| --- | --- |
+| 0 | USER |
+| 1 | MACHINE |
 
- Access type: Read-only
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- The ID of the configuration item assignment. This ID is unique only for the site.
+Qualifiers: [key, not_null, read]
 
- `AssignmentUniqueID`
- Data type: `String`
+The ID of the configuration item assignment. This ID is unique only for the site.
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The unique ID of the configuration item assignment. This ID is unique across sites.
+Qualifiers: [not_null, read]
 
- `BL_ID`
- Data type: `UInt32`
+The unique ID of the configuration item assignment. This ID is unique across sites.
 
- Access type: Read-only
+`BL_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Identifier of the baseline deployed using this assignment.
+Qualifiers: [key, not_null, read]
 
- `BLName`
- Data type: `String`
+Identifier of the baseline deployed using this assignment.
 
- Access type: Read-only
+`BLName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the baseline deployed using this assignment.
+Qualifiers: [read]
 
- `BLRevision`
- Data type: `UInt32`
+Name of the baseline deployed using this assignment.
 
- Access type: Read-only
+`BLRevision` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Baseline version that is deployed using this assignment.
+Qualifiers: [not_null, read]
 
- `CI_ID`
- Data type: `UInt32`
+Baseline version that is deployed using this assignment.
 
- Access type: Read-only
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- The unique ID of the configuration item. This ID is unique only for the site.
+Qualifiers: [key, not_null, read]
 
- `CIName`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site.
 
- Access type: Read-only
+`CIName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the configuration item.
+Qualifiers: [read]
 
- `ClientType`
- Data type: `UInt32`
+The name of the configuration item.
 
- Access type: Read-only
+`ClientType` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Type of client. Possible values are:
+Qualifiers: [enumeration, read]
 
-|Value|Client type|
-|-|-|
-|1|WINDOWS_CLIENT|
-|2|WINDOWS_MOBILE|
+Type of client. Possible values are:
 
- `IsMachineAssignedToUser`
- Data type: `Boolean`
+| Value | Client type |
+| --- | --- |
+| 1 | WINDOWS_CLIENT |
+| 2 | WINDOWS_MOBILE |
 
- Access type: Read-only
+`IsMachineAssignedToUser` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the computer is assigned to a user.
+Qualifiers: [read]
 
- `IsMachineChangesPersisted`
- Data type: `Boolean`
+`true` if the computer is assigned to a user.
 
- Access type: Read-only
+`IsMachineChangesPersisted` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the virtual machine changes are persisted.
+Qualifiers: [read]
 
- `IsVM`
- Data type: `Boolean`
+`true` if the virtual machine changes are persisted.
 
- Access type: Read-only
+`IsVM` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if this is a virtual machine.
+Qualifiers: [read]
 
- `Revision`
- Data type: `UInt32`
+`true` if this is a virtual machine.
 
- Access type: Read-only
+`Revision` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Revision number for the configuration item.
+Qualifiers: [not_null, read]
 
- `StatusType`
- Data type: `UInt32`
+Revision number for the configuration item.
 
- Access type: Read-only
+`StatusType` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Status of the deployment to the targeted asset. Possible values are:
+Qualifiers: [key, not_null, read]
 
-|Value|Deployment status|
-|-|-|
-|1|Success|
-|2|InProgress|
-|4|Unknown|
+Status of the deployment to the targeted asset. Possible values are:
 
- `TargetCollectionID`
- Data type: `String`
+| Value | Deployment status |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 4 | Unknown |
 
- Access type: Read-only
+`TargetCollectionID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The ID of the collection to which the assignment is targeted.
+Qualifiers: [not_null, read]
 
- `VMHostName`
- Data type: `String`
+The ID of the collection to which the assignment is targeted.
 
- Access type: Read-only
+`VMHostName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Virtual machine host name.
+Qualifiers: [read]
+
+Virtual machine host name.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

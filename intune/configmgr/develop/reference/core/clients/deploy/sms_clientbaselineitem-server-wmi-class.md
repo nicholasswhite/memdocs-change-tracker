@@ -1,16 +1,18 @@
 ---
-title: SMS_ClientBaselineItem Class
+title: "SMS_ClientBaselineItem Server WMI Class"
 description: In Configuration Manager, the SMS_ClientBaselineItem WMI class is an SMS Provider server class that represents a client deployment baseline item.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientBaselineItem Server WMI Class
+
 The `SMS_ClientBaselineItem` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a client deployment baseline item.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,86 +30,84 @@ Class SMS_ClientBaselineItem: SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ClientBaselineItem` class does not define any methods.
+
+The `SMS_ClientBaselineItem` class does not define any methods.
 
 ## Properties
- `BaselineFlags`
- Data type: `UInt32`
 
- Access type: Read
+`BaselineFlags` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- Baseline flags to indicate which baseline this item belongs to.
+Qualifiers: none
 
- `BaselineItemID`
- Data type: `UInt32`
+Baseline flags to indicate which baseline this item belongs to.
 
- Access type: Read
+`BaselineItemID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- Client baseline item ID.
+Qualifiers: [key]
 
- `Name`
- Data type: `String`
+Client baseline item ID.
 
- Access type: Read
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Client baseline item name.
+Qualifiers: none
 
- `Platform`
- Data type: `UInt32`
+Client baseline item name.
 
- Access type: Read
+`Platform` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- The platform of the client baseline item. Possible values are:
+Qualifiers: none
 
-|Value|Platform|
-|-|-|
-|1|x86|
-|2|x64|
+The platform of the client baseline item. Possible values are:
 
- `Type`
- Data type: `UInt32`
+| Value | Platform |
+| --- | --- |
+| 1 | x86 |
+| 2 | x64 |
 
- Access type: Read
+`Type` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- The client baseline item type. Possible values are:
+Qualifiers: none
 
-|Value|Baseline item type|
-|-|-|
-|1|Patch or CU|
-|2|Language Pack|
+The client baseline item type. Possible values are:
 
- `UniqueID`
- Data type: `String`
+| Value | Baseline item type |
+| --- | --- |
+| 1 | Patch or CU |
+| 2 | Language Pack |
 
- Access type: Read
+`UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The GUID of the client baseline item.
+Qualifiers: none
+
+The GUID of the client baseline item.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

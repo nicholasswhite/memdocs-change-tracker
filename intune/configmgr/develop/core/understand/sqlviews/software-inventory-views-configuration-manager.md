@@ -1,7 +1,7 @@
 ---
-title: Software inventory views
+title: "Software inventory views in Configuration Manager"
 description: Information about the files and their associated products that are found on Configuration Manager clients during software inventory scanning.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 
@@ -40,50 +40,40 @@ Some of the software inventory views created in Configuration Manager store syst
 
 ### v_GS_CollectedFile
 
-Lists the files collected by software inventory on each Configuration Manager client.
-The view can be joined to other views by using the **ResourceID** column.
+Lists the files collected by software inventory on each Configuration Manager client. The view can be joined to other views by using the **ResourceID** column.
 
 ### v_GS_LastSoftwareScan
 
-Lists the last time each Configuration Manager client was scanned for software inventory.
-The view can be joined to other views by using the **ResourceID** column.
+Lists the last time each Configuration Manager client was scanned for software inventory. The view can be joined to other views by using the **ResourceID** column.
 
 ### v_GS_Mapped_Add_Remove_Programs
 
-Lists the software applications on each Configuration Manager client that is mapped to list of installed software in Windows Control Panel.
-The view can be joined to other views by using the **ResourceID** column.
+Lists the software applications on each Configuration Manager client that is mapped to list of installed software in Windows Control Panel. The view can be joined to other views by using the **ResourceID** column.
 
 ### v_GS_SoftwareFile
 
-Lists the files and associated product IDs on each Configuration Manager client.
-The view can be joined to other views by using the **ResourceID** column.
+Lists the files and associated product IDs on each Configuration Manager client. The view can be joined to other views by using the **ResourceID** column.
 
 ### v_GS_SoftwareProduct
 
-Lists the products found on each Configuration Manager client.
-The view can be joined to other views by using the **ResourceID** column.
+Lists the products found on each Configuration Manager client. The view can be joined to other views by using the **ResourceID** column.
 
 ### v_GS_UnknownFile
 
-Lists the files that are not associated with an identified product, on each Configuration Manager client.
-The view can be joined to other views by using the **ResourceID** column.
+Lists the files that are not associated with an identified product, on each Configuration Manager client. The view can be joined to other views by using the **ResourceID** column.
 
 ### v_ProductFileInfo
 
-Lists all of the distinct files, by file ID, that have been inventoried in the site, including file name, description, file size, file version, and so on.
-The view can be joined to other views by using the **FileID** column.
+Lists all of the distinct files, by file ID, that have been inventoried in the site, including file name, description, file size, file version, and so on. The view can be joined to other views by using the **FileID** column.
 
 ### v_SoftwareFile
 
-Lists all of the distinct files, by file ID, that have been inventoried in the site, including file name, file version, description, file size, and associated product.
-The view can be joined to other views by using the **FileID** and **ProductID** columns.
+Lists all of the distinct files, by file ID, that have been inventoried in the site, including file name, file version, description, file size, and associated product. The view can be joined to other views by using the **FileID** and **ProductID** columns.
 
 ### v_SoftwareProduct
 
-Lists all of the distinct software products that have been inventoried in the site.
-The view can be joined to other views by using the **ProductID** column.
+Lists all of the distinct software products that have been inventoried in the site. The view can be joined to other views by using the **ProductID** column.
 
 ## See also
 
-[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md)  
-
+[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md)

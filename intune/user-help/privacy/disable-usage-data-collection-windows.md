@@ -1,26 +1,24 @@
 ---
 title: Turn off Microsoft data collection on Windows device
 description: Learn how to turn off Microsoft data collection in the Microsoft Intune and Company Portal apps for Windows.
-ms.date: 10/16/2024
+ms.date: "2024-10-16T00:00:00Z"
 ms.reviewer: priyar
 ---
 
 # Turn off Microsoft data collection on Windows device
 
 **Applies to**
-- Windows 
+
+- Windows
 
 This article describes how to prevent Microsoft from collecting data about your Company Portal app usage. To turn off data collection in Company Portal:
 
 1. Open the Company Portal app and go to **Settings**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Example screenshot of the Company Portal app homepage, highlighting the Settings option.](../device-actions/media/sync-device-windows/company-portal-windows-settings.png)
+   ![Example screenshot of the Company Portal app homepage, highlighting the Settings option.](../device-actions/media/sync-device-windows/company-portal-windows-settings.png)
+2. Under **Usage data**, switch the toggle to **No**.
 
-1. Under **Usage data**, switch the toggle to **No**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Example screenshot of the Company Portal app settings page, highlighting the usage data toggle that's set to "No".](./media/disable-usage-data-collection-windows/company-portal-windows-usage-data.png)
+   ![Example screenshot of the Company Portal app settings page, highlighting the usage data toggle that's set to "No".](media/disable-usage-data-collection-windows/company-portal-windows-usage-data.png)
 
 ## Allowing Microsoft data collection
 
@@ -31,4 +29,3 @@ For more information about the data we collect, see [Optional diagnostic data fr
 ## Next steps
 
 Still need help? Contact your IT support person. For contact information, check the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
-

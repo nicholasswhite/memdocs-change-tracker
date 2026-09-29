@@ -1,8 +1,8 @@
 ---
-title: Integrate Windows Update client policies
+title: "Integrate Windows Update client policies with Configuration Manager"
 titleSuffix: Configuration Manager
 description: Use Configuration Manager together with Windows Update client policies (formerly Windows Update for Business). Understand co-management scenarios, scan source policies, common pitfalls, and how to troubleshoot update source problems.
-ms.date: 08/31/2026
+ms.date: "2026-08-31T00:00:00Z"
 ms.service: configuration-manager
 ms.subservice: software-updates
 ms.topic: how-to
@@ -23,6 +23,7 @@ appliesto:
 # Integrate Windows Update client policies with Configuration Manager
 
 > [!TIP]
+>
 > **Windows Update for Business** is the former brand name for the **Windows Update client policies** feature, and still appears in some Windows documentation. It isn't the same thing as **Dual Scan**, which is a separate legacy client behavior (described later in this article) where a device scans Windows Update directly for OS updates even while WSUS is configured.
 
 Windows Update client policies keep Windows 10 and later devices up-to-date with security defenses and feature updates when they scan directly against the Windows Update (WU) service. Configuration Manager can differentiate between devices that use Windows Update client policies and devices that use Windows Server Update Services (WSUS), and works alongside Microsoft Intune when devices are co-managed.
@@ -32,14 +33,16 @@ Integrating Windows Update client policies with Configuration Manager means the 
 While a device is in this state, those Windows updates report as **Unknown** in Configuration Manager, and aren't counted toward the overall compliance percentage, because Configuration Manager isn't aware of the updates that Windows Update delivers.
 
 > [!NOTE]
+>
 > The exact compliance state depends on whether Configuration Manager still scans those updates. If the Windows updates are filtered out of the Configuration Manager scan, they show as **Unknown** and aren't counted. If Configuration Manager still scans them and finds them already installed or not applicable, they can instead show as **Compliant** or **Not Required**.
 
 This article covers how Configuration Manager interacts with Windows Update client policies, what happens when co-management workloads move between Configuration Manager and Intune, how the Windows scan source policies affect update behavior, and how to troubleshoot when devices don't scan against the source you expect.
 
-For the Windows-side reference on the scan source policy, see [Use Windows Update client policies and Windows Server Update Services (WSUS) together](/windows/deployment/update/wufb-wsus).
+For the Windows-side reference on the scan source policy, see [Use Windows Update client policies and Windows Server Update Services (WSUS) together](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-wsus).
 
 > [!WARNING]
-> If you're using co-management and you've moved the [Windows Update policies](../../comanage/workloads.md#windows-update-policies) workload to Intune, your devices get their [Windows Update client policies from Intune](/mem/intune-service/protect/windows-update-for-business-configure). The Configuration Manager slider position doesn't automatically clean up the policy settings that Intune, or another authority, previously wrote to the device. See [Co-management with Microsoft Intune](#co-management-with-microsoft-intune).
+>
+> If you're using co-management and you've moved the [Windows Update policies](../../comanage/workloads.md#windows-update-policies) workload to Intune, your devices get their [Windows Update client policies from Intune](https://learn.microsoft.com/en-us/mem/intune-service/protect/windows-update-for-business-configure). The Configuration Manager slider position doesn't automatically clean up the policy settings that Intune, or another authority, previously wrote to the device. See [Co-management with Microsoft Intune](#co-management-with-microsoft-intune).
 
 ## Configuration Manager features affected when clients get updates from Windows Update
 
@@ -50,20 +53,16 @@ Some Configuration Manager features aren't available when clients are configured
   - Configuration Manager isn't aware of the updates that are published to Windows Update. Clients that are configured to receive updates from Windows Update display **Unknown** for those updates in the Configuration Manager console.
   - Troubleshooting overall compliance status is harder, because **Unknown** status previously applied only to clients that hadn't reported scan status back from WSUS. It now also includes clients that receive updates from Windows Update.
   - Definition update compliance is part of overall update compliance reporting, and doesn't work as expected either.
-
 - **Endpoint Protection reporting** for Microsoft Defender that's based on update compliance status doesn't return accurate results, because of the missing scan data.
-
 - **Microsoft app updates**: Configuration Manager can't deploy or report compliance on Microsoft app updates for clients that use Windows Update client policies to receive updates. This limitation includes updates for Microsoft 365 Apps, Internet Explorer, Microsoft Edge, and Visual Studio.
-
 - **Third-party updates**: Configuration Manager can still deploy third-party updates that are published to WSUS and managed through Configuration Manager. If you don't want any third-party updates installed on clients that use Windows Update client policies, disable the [Enable software updates on clients](../../core/clients/deploy/about-client-settings.md#software-updates) client setting.
-
 - **Client deployment**: Configuration Manager full client deployment that uses the software updates infrastructure doesn't work for clients that use Windows Update client policies to receive updates.
 
 ## Windows Update scan source policies
 
 The **scan source policy** lets Windows choose, per update category (Driver, Feature, Quality, Other), whether to fetch that category from WSUS or from Windows Update. Its Group Policy name is **Specify source service for specific classes of Windows Updates**.
 
-It supersedes the older Dual Scan behavior on Windows 11 and Windows Server 2025. On Windows 10 and Windows Server 2022, it works alongside Dual Scan, which still gates it. For the general Windows documentation, see [Use Windows Update client policies and Windows Server Update Services (WSUS) together](/windows/deployment/update/wufb-wsus).
+It supersedes the older Dual Scan behavior on Windows 11 and Windows Server 2025. On Windows 10 and Windows Server 2022, it works alongside Dual Scan, which still gates it. For the general Windows documentation, see [Use Windows Update client policies and Windows Server Update Services (WSUS) together](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-wsus).
 
 ### The scan source primary switch
 
@@ -86,6 +85,7 @@ Each category value takes one of the following values:
 - `0` - get this category from Windows Update / Windows Update client policies.
 
 > [!IMPORTANT]
+>
 > If you configure the scan source policy, configure all four category values. Windows Update doesn't support a partial configuration. For more information, see [Pitfall - Partial scan source configuration](#pitfall---partial-scan-source-configuration).
 
 ### Behavior on Windows 10
@@ -93,13 +93,14 @@ Each category value takes one of the following values:
 On Windows 10, the legacy Dual Scan switch (`DisableDualScan`) still gates whether the scan source policies actually retrieve updates from Windows Update. The following table uses Feature Updates (FU) and Quality Updates (QU) as an example.
 
 | WSUS configured | DisableDualScan | Scan source policy for FU/QU | Behavior |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Yes | `1` (enabled) | Set to Windows Update | Gets the FU/QU from WSUS |
 | Yes | Not configured | Set to Windows Update | Gets the FU/QU from Windows Update |
 | Yes | Not configured | Set to WSUS | Gets the FU/QU from WSUS |
 | Yes | `0` (disabled) | Set to WSUS | Gets the FU/QU from WSUS |
 
 > [!IMPORTANT]
+>
 > On Windows 10, `DisableDualScan` is the switch that controls whether the scan source policies can retrieve updates from Windows Update. Pointing a category at Windows Update is itself what turns on the dual-scan channel the client uses to reach Windows Update, so no separate deferral policy is required.
 >
 > If you also enable `DisableDualScan`, that channel is severed: in-catalog Feature and Quality updates fall back to WSUS, and Windows Update-only content (Features on Demand, RSAT, optional features, language packs) fails to install. Don't enable `DisableDualScan` for a category that you point at Windows Update.
@@ -107,6 +108,7 @@ On Windows 10, the legacy Dual Scan switch (`DisableDualScan`) still gates wheth
 > On devices historically managed by Configuration Manager, `DisableDualScan = 1` is often already present because earlier Configuration Manager versions set it. That's why scan source policies can appear to have no effect until you remove that value.
 
 > [!NOTE]
+>
 > Windows Server 2022 follows the Windows 10 behavior. `DisableDualScan` is honored, and gates whether the scan source policies retrieve updates from Windows Update.
 >
 > The scan source policies require Windows 10, version 2004 or later, or Windows Server 2022. On Windows Server 2016 and Windows Server 2019, they don't apply at all, and only `DisableDualScan` governs whether the client uses WSUS for Windows updates.
@@ -116,7 +118,7 @@ On Windows 10, the legacy Dual Scan switch (`DisableDualScan`) still gates wheth
 #### Feature and Quality update source at a glance
 
 | WSUS wired | Deferral policy or scan source = Windows Update | Operating system | Feature/Quality source |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Yes | No | Any | WSUS |
 | Yes | Yes | Windows 10, `DisableDualScan` not `1` | Windows Update (Dual Scan) |
 | Yes | Yes | Windows 10, `DisableDualScan = 1` | WSUS for in-catalog updates. Windows Update-only content, such as Features on Demand, fails |
@@ -125,23 +127,24 @@ On Windows 10, the legacy Dual Scan switch (`DisableDualScan`) still gates wheth
 Drivers and third-party content are never part of this reroute. They stay on WSUS unless you separately point them at Windows Update.
 
 > [!TIP]
+>
 > **Keep Features on Demand, optional features, and language packs installable from the Windows UI even when WSUS is your update source.**
 >
-> A common admin request is for users to still be able to install optional features from **Settings** > **Optional features** on WSUS-managed devices. The following combination lets Features on Demand and language packs flow from Windows Update while WSUS continues to own feature and quality updates:
+> A common admin request is for users to still be able to install optional features from **Settings** &gt; **Optional features** on WSUS-managed devices. The following combination lets Features on Demand and language packs flow from Windows Update while WSUS continues to own feature and quality updates:
 >
 > - **WSUS server policy**: configured (`UseWUServer`, `WUServer`).
 > - **DisableDualScan**: any value works (`0`, `1`, or not configured).
 > - **Scan source policy**: not configured, or not configured for the Quality Updates category, because Features on Demand are treated as Quality Updates for scan source purposes.
 > - **Specify settings for optional component installation and component repair**: on Windows 10 (non-UUP servicing), configure it to allow Windows Update as the source repository. On UUP-based builds (Windows 11 and later, and Windows Server 2025), leave this policy **Not Configured**. The OS sources optional content from Windows Update by default, and configuring it can interfere with UUP acquisition.
 >
-> For the full policy configuration, see [How to make Features on Demand and language packs available when you're using WSUS or Configuration Manager](/windows/deployment/update/fod-and-lang-packs).
+> For the full policy configuration, see [How to make Features on Demand and language packs available when you're using WSUS or Configuration Manager](https://learn.microsoft.com/en-us/windows/deployment/update/fod-and-lang-packs).
 
 ### Behavior on Windows 11
 
 On Windows 11, `DisableDualScan` has no effect. Only the WSUS configuration and the scan source policy matter:
 
 | WSUS policy configuration | Windows Update client policies configured | Scan source policy | Update behavior |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | WSUS configured (`UseWUServer`, `WUServer`) | Not configured | Not configured | Updates from WSUS |
 | WSUS configured (`UseWUServer`, `WUServer`) | Configured | Not configured | Updates from Windows Update |
 | WSUS configured (`UseWUServer`, `WUServer`) | Configured | Configured | Updates from whichever source the scan source policy specifies, per category |
@@ -163,17 +166,19 @@ Co-managed devices are managed by both Configuration Manager and Intune. The [Wi
 The **Windows Update policies** workload has three positions in the Configuration Manager console: **Configuration Manager**, **Pilot Intune**, and **Intune**. The device's effective co-management capabilities value reflects the slider position. For example, `8197` means Configuration Manager owns updates, and `8213` means Intune owns updates.
 
 | Slider position | Who delivers Windows updates | Who delivers third-party updates (if enabled) |
-|---|---|---|
+| --- | --- | --- |
 | Configuration Manager | Configuration Manager (WSUS) | Configuration Manager |
 | Pilot Intune (piloted collection only) | Intune (Windows Update client policies) | Configuration Manager |
 | Intune | Intune (Windows Update client policies) | Configuration Manager |
 
 > [!IMPORTANT]
+>
 > Starting with Configuration Manager 2503 HFRU and 2509, once [KB 36495448](../../hotfix/2509/36495448.md) is applied, the Configuration Manager client no longer sets or removes Windows Update scan source policies. Ownership of these settings is now yours, through Group Policy or Intune Windows Update client policies.
 >
 > The slider position tells Configuration Manager how to behave, but it doesn't automatically clean up the policy settings that another authority, for example Intune, previously wrote to the device. See [Pitfall - The co-management slider isn't authoritative](#pitfall---the-co-management-slider-isnt-authoritative) for how to verify what's actually in effect on a device.
 
 > [!NOTE]
+>
 > The **Windows Update policies** workload slider governs only Windows updates. Configuration Manager keeps delivering third-party updates as long as the [Software Updates](../../core/clients/deploy/about-client-settings.md#software-updates) client setting stays enabled (**Yes**). Set that client setting to **No** only for Windows Autopatch, which requires Configuration Manager to be out of the update path entirely.
 
 ### Moving the workload back to Configuration Manager
@@ -181,11 +186,8 @@ The **Windows Update policies** workload has three positions in the Configuratio
 When you move the **Windows Update policies** workload from Intune back to Configuration Manager, the Intune-authored Windows Update client policy state on the device isn't automatically removed. Devices might continue to scan against Windows Update or Microsoft Update instead of WSUS.
 
 - **Symptom**: After the slider is moved back to Configuration Manager and a machine policy cycle is complete, the device still scans against Windows Update or Microsoft Update instead of WSUS. Confirm this per update category (Driver, Feature, Quality, Other) rather than relying on `IsDefaultAUService`, which reports only a single default service and is unreliable once scan source policies are configured. For more information, see [Troubleshoot](#troubleshoot).
-
 - **Cause**: The MDM Update CSP state under `HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Update` persists after the Intune assignment is revoked. Before KB 36495448, this behavior was masked because Configuration Manager overwrote scan source policies on every policy cycle.
-
 - **Applies to**: Configuration Manager 2503 HFRU and 2509 with KB 36495448 installed, and later releases that inherit this behavior.
-
 - **Resolution**: See [Clean up after moving the workload back to Configuration Manager](#clean-up-after-moving-the-workload-back-to-configuration-manager). As a best practice, remove or reassign the device's Intune Windows Update client policy assignment before you flip the workload slider. Alternatively, point the affected categories back to WSUS with the scan source policy to override the residual Intune state.
 
 ## Common scenarios
@@ -193,7 +195,7 @@ When you move the **Windows Update policies** workload from Intune back to Confi
 ### Scenario 1 - Configuration Manager manages all updates (no co-management)
 
 - **Slider**: Not applicable, because the device isn't co-managed, or set to **Configuration Manager**.
-- **Setup**: Configuration Manager is configured with a software update point (SUP) backed by WSUS. **Client Settings** > **Software Updates** is enabled.
+- **Setup**: Configuration Manager is configured with a software update point (SUP) backed by WSUS. **Client Settings** &gt; **Software Updates** is enabled.
 - **Windows Update scan source policies**: Leave them unconfigured, or set all four to `1` through Group Policy with `UseUpdateClassPolicySource = 1` under `\AU` for defense in depth.
 - **Result**: All updates flow from WSUS. Configuration Manager reports compliance normally.
 
@@ -207,7 +209,7 @@ When you move the **Windows Update policies** workload from Intune back to Confi
 Per class, this routing is governed by the Intune enrollment rather than by a scan source policy, and no Group Policy gate applies:
 
 | Update class | Source |
-|---|---|
+| --- | --- |
 | Feature | Windows Update |
 | Quality | Windows Update |
 | Driver | Windows Update, or WSUS when drivers are excluded in the Intune configuration |
@@ -217,17 +219,17 @@ To confirm the effective per-category source on a device, check the resolved pol
 ### Scenario 3a - Co-management with third-party updates in Configuration Manager, before KB 36495448
 
 > [!WARNING]
+>
 > If your Configuration Manager site is on 2503 HFRU or 2509 and you use this scenario, install [KB 36495448](../../hotfix/2509/36495448.md). Without the hotfix, Configuration Manager sets a partial scan source configuration that can silently redirect Feature and Quality updates to WSUS.
 
 - **Slider**: **Intune** for the Windows Update policies workload.
-- **Third-party updates**: Enabled in **Client Settings** > **Software Updates** > [Enable third-party software updates](../../core/clients/deploy/about-client-settings.md#enable-third-party-software-updates), delivered through WSUS and Configuration Manager.
+- **Third-party updates**: Enabled in **Client Settings** &gt; **Software Updates** &gt; [Enable third-party software updates](../../core/clients/deploy/about-client-settings.md#enable-third-party-software-updates), delivered through WSUS and Configuration Manager.
 - **Client behavior (defect)**: Configuration Manager writes only two scan source values:
 
   - `HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\UseUpdateClassPolicySource = 1`
   - `HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\SetPolicyDrivenUpdateSourceForOtherUpdates = 1`
 
   The other three category values (Driver, Feature, Quality) aren't set, and are removed if they exist.
-
 - **Impact**: Windows Update doesn't support partial scan source configurations. The Windows Update agent might assume all categories should follow the same source, so Feature Updates and Quality Updates that you intended to come from Intune are silently redirected to WSUS and Configuration Manager.
 - **How to detect**: In the resolved policy state, the gate is on, but `SetPolicyDrivenUpdateSourceForFeatureUpdates` and `SetPolicyDrivenUpdateSourceForQualityUpdates` are absent. For more information, see [Determine the effective update authority per update category](#1-determine-the-effective-update-authority-per-update-category).
 - **Fix**: Install [KB 36495448](../../hotfix/2509/36495448.md), which moves the device into Scenario 3b.
@@ -254,7 +256,8 @@ To confirm the effective per-category source on a device, check the resolved pol
 - **What to check**: Confirm the effective scan source with the [Troubleshoot](#troubleshoot) checks before you deploy software update deployments from Configuration Manager to the device.
 
 > [!NOTE]
-> Using Windows Autopatch? Autopatch requires the **Windows Update policies** workload to be on Intune, and the Configuration Manager software update client setting to be **No** on those devices. For more information, see [Windows Autopatch prerequisites](/windows/deployment/windows-autopatch/prepare/windows-autopatch-prerequisites) and [Co-management workloads](../../comanage/workloads.md#windows-update-policies).
+>
+> Using Windows Autopatch? Autopatch requires the **Windows Update policies** workload to be on Intune, and the Configuration Manager software update client setting to be **No** on those devices. For more information, see [Windows Autopatch prerequisites](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/prepare/windows-autopatch-prerequisites) and [Co-management workloads](../../comanage/workloads.md#windows-update-policies).
 
 ### Scenario 6 - Unintentional Dual Scan
 
@@ -303,7 +306,7 @@ Affected surfaces include:
 - Language packs
 - Microsoft Defender platform updates
 
-If you set the scan source to WSUS, also configure the **Specify settings for optional component installation and component repair** policy, so those components can still reach Windows Update. This guidance applies to Windows 10 (non-UUP) servicing. On UUP-based builds, such as Windows 11 and later, leave that policy **Not Configured**, because the OS already sources optional content from Windows Update by default. For more information, see [How to make Features on Demand and language packs available when you're using WSUS or Configuration Manager](/windows/deployment/update/fod-and-lang-packs).
+If you set the scan source to WSUS, also configure the **Specify settings for optional component installation and component repair** policy, so those components can still reach Windows Update. This guidance applies to Windows 10 (non-UUP) servicing. On UUP-based builds, such as Windows 11 and later, leave that policy **Not Configured**, because the OS already sources optional content from Windows Update by default. For more information, see [How to make Features on Demand and language packs available when you're using WSUS or Configuration Manager](https://learn.microsoft.com/en-us/windows/deployment/update/fod-and-lang-packs).
 
 ### Pitfall - Legacy Dual Scan values still on the device
 
@@ -337,19 +340,15 @@ Don't rely on the slider alone. Always confirm the effective policy on the devic
 `HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Update` shows every enrolled MDM authority that wrote an Update policy. On a single co-managed device, you might see Intune, Windows Autopatch, a third-party MDM, and Group Policy all writing overlapping values. When you troubleshoot, always determine the winning provider for each value. For more information, see [Inspect the MDM PolicyManager](#4-inspect-the-mdm-policymanager-on-co-managed-devices).
 
 ## Identify clients that use Windows Update client policies for Windows updates
-<a name="identify-clients-that-use-wufb-for-windows-updates"></a>
 
 Use this procedure to identify clients that use Windows Update client policies to get Windows updates and upgrades. Then configure those clients to stop scanning WSUS, and disable the Configuration Manager software updates workflow for them.
 
 ### Prerequisites
-<a name="prerequisites-for-wufb"></a>
-<a name="BKMK_WUfB"></a>
 
 - Windows 10 or later (Pro, Enterprise, Education, or Education Pro edition).
-- [Windows Update client policies](/windows/deployment/update/waas-manage-updates-wufb) deployed, and clients configured to get Windows updates and upgrades from Windows Update.
+- [Windows Update client policies](https://learn.microsoft.com/en-us/windows/deployment/update/waas-manage-updates-wufb) deployed, and clients configured to get Windows updates and upgrades from Windows Update.
 
 ### To identify clients that use Windows Update client policies
-<a name="to-identify-clients-that-use-windows-update-for-business"></a>
 
 The most reliable per-device signal that Windows updates come from Windows Update client policies, rather than WSUS, is in `WindowsUpdate.log`:
 
@@ -372,15 +371,16 @@ Create a client agent setting that disables the software update workflow, and de
 Devices managed through Windows Update client policies display **Unknown** in the compliance status, and aren't counted in the overall compliance percentage.
 
 ## Configure deferral policies with Windows Update client policies
-<a name="configure-windows-update-for-business-deferral-policies"></a>
 
-You can configure deferral policies for Windows 10 or later Feature and Quality updates from within the Configuration Manager console. Manage them in the **Windows Update for Business Policies** node under **Software Library** > **Windows Servicing**.
+You can configure deferral policies for Windows 10 or later Feature and Quality updates from within the Configuration Manager console. Manage them in the **Windows Update for Business Policies** node under **Software Library** &gt; **Windows Servicing**.
 
 > [!TIP]
+>
 > For most co-managed environments, deferral configuration is now done more centrally through Intune Windows Update client policies, such as feature update profiles, quality update profiles, and update rings. Use the in-console **Windows Update for Business Policies** node for standalone Configuration Manager environments, or when you must configure deferrals for devices that aren't enrolled in Intune.
 
 > [!NOTE]
-> You can set deferral policies for Windows Insider. For more information, see [Getting started with Windows Insider Program for Business](/windows-insider/business/server-get-started).
+>
+> You can set deferral policies for Windows Insider. For more information, see [Getting started with Windows Insider Program for Business](https://learn.microsoft.com/en-us/windows-insider/business/server-get-started).
 
 ### Prerequisites for deferral policies
 
@@ -388,45 +388,40 @@ You can configure deferral policies for Windows 10 or later Feature and Quality 
 - Devices managed by Windows Update client policies must have internet connectivity.
 
 ### To create a deferral policy
-<a name="to-create-a-windows-update-for-business-deferral-policy"></a>
 
-1. In the Configuration Manager console, go to **Software Library** > **Windows Servicing** > **Windows Update for Business Policies**.
-1. On the **Home** tab, in the **Create** group, select **Create Windows Update for Business Policy**.
-1. On the **General** page, provide a name and description.
-1. On the **Deferral Policies** page, configure whether to defer or pause Feature Updates. Feature Updates are new features for Windows. After you set the **Branch readiness level**, you can specify whether and for how long the device defers receiving Feature Updates after they become available from Microsoft.
+1. In the Configuration Manager console, go to **Software Library** &gt; **Windows Servicing** &gt; **Windows Update for Business Policies**.
+2. On the **Home** tab, in the **Create** group, select **Create Windows Update for Business Policy**.
+3. On the **General** page, provide a name and description.
+4. On the **Deferral Policies** page, configure whether to defer or pause Feature Updates. Feature Updates are new features for Windows. After you set the **Branch readiness level**, you can specify whether and for how long the device defers receiving Feature Updates after they become available from Microsoft.
 
-    - **Branch readiness level**: Semi-Annual Channel (Targeted), Semi-Annual Channel, or a Windows Insider build.
+   - **Branch readiness level**: Semi-Annual Channel (Targeted), Semi-Annual Channel, or a Windows Insider build.
 
-        > [!NOTE]
-        > Semi-Annual Channel and Semi-Annual Channel (Targeted) are Windows 10 legacy branch models. Windows 10, version 22H2 is the final Windows 10 release, and there's no successor. On Windows 11, only the annual servicing channel applies. Set the branch readiness level to the value appropriate for the client OS that you're targeting.
-        >
-        > If you deploy a policy for **Semi-Annual Channel (Targeted)** to Windows 10, version 1903 or later, the deployment fails with the error `0x8004100c`.
+     > [!NOTE]
+     >
+     > Semi-Annual Channel and Semi-Annual Channel (Targeted) are Windows 10 legacy branch models. Windows 10, version 22H2 is the final Windows 10 release, and there's no successor. On Windows 11, only the annual servicing channel applies. Set the branch readiness level to the value appropriate for the client OS that you're targeting.
+     >
+     > If you deploy a policy for **Semi-Annual Channel (Targeted)** to Windows 10, version 1903 or later, the deployment fails with the error `0x8004100c`.
+   - **Deferral period (days)**: Up to 365 days from release.
+   - **Pause Feature Updates starting**: Pauses Feature Updates for up to 35 days from the specified start date. After the pause period expires, the device scans Windows Update for applicable updates. After that scan, you can pause again. Clear the checkbox to unpause.
+5. On the same **Deferral Policies** page, configure whether to defer or pause Quality Updates. Quality Updates are fixes and improvements to existing Windows functionality, and are typically published on the second Tuesday of each month, though Microsoft can release them at any time.
 
-    - **Deferral period (days)**: Up to 365 days from release.
-    - **Pause Feature Updates starting**: Pauses Feature Updates for up to 35 days from the specified start date. After the pause period expires, the device scans Windows Update for applicable updates. After that scan, you can pause again. Clear the checkbox to unpause.
-
-1. On the same **Deferral Policies** page, configure whether to defer or pause Quality Updates. Quality Updates are fixes and improvements to existing Windows functionality, and are typically published on the second Tuesday of each month, though Microsoft can release them at any time.
-
-    - **Deferral period (days)**: Up to 30 days from release.
-    - **Pause Quality Updates starting**: Pauses Quality Updates for up to 35 days from the specified start date. After the pause period expires, the device scans Windows Update for applicable updates. After that scan, you can pause again. Clear the checkbox to unpause.
-
-1. Select **Install updates from other Microsoft Products** to apply deferral settings to Microsoft Update in addition to Windows Update.
-1. Select **Include drivers with Windows Update** to allow driver updates from Windows Update. Clear the setting to exclude drivers.
-1. Complete the wizard.
+   - **Deferral period (days)**: Up to 30 days from release.
+   - **Pause Quality Updates starting**: Pauses Quality Updates for up to 35 days from the specified start date. After the pause period expires, the device scans Windows Update for applicable updates. After that scan, you can pause again. Clear the checkbox to unpause.
+6. Select **Install updates from other Microsoft Products** to apply deferral settings to Microsoft Update in addition to Windows Update.
+7. Select **Include drivers with Windows Update** to allow driver updates from Windows Update. Clear the setting to exclude drivers.
+8. Complete the wizard.
 
 ### To deploy a deferral policy
-<a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>
 
-1. In the Configuration Manager console, go to **Software Library** > **Windows Servicing** > **Windows Update for Business Policies**.
-1. On the **Home** tab, in the **Deployment** group, select **Deploy Windows Update for Business Policy**.
-1. Configure the following settings:
+1. In the Configuration Manager console, go to **Software Library** &gt; **Windows Servicing** &gt; **Windows Update for Business Policies**.
+2. On the **Home** tab, in the **Deployment** group, select **Deploy Windows Update for Business Policy**.
+3. Configure the following settings:
 
-    - **Configuration policy to deploy**: The policy to deploy.
-    - **Collection**: The target collection.
-    - **Allow remediation outside the maintenance window**: Enable this option to let policy settings remediate the value outside of the maintenance window. For more information, see [How to use maintenance windows](../../core/clients/manage/collections/use-maintenance-windows.md).
-    - **Schedule**: The compliance evaluation schedule, either simple or custom.
-
-1. Complete the wizard.
+   - **Configuration policy to deploy**: The policy to deploy.
+   - **Collection**: The target collection.
+   - **Allow remediation outside the maintenance window**: Enable this option to let policy settings remediate the value outside of the maintenance window. For more information, see [How to use maintenance windows](../../core/clients/manage/collections/use-maintenance-windows.md).
+   - **Schedule**: The compliance evaluation schedule, either simple or custom.
+4. Complete the wizard.
 
 ## Troubleshoot
 
@@ -455,6 +450,7 @@ Get-ItemProperty -Path $policyState -ErrorAction SilentlyContinue |
 This state already reflects the Group Policy versus Intune arbitration and the `UseWUServer` requirement, so it shows what the agent actually honors, rather than what was merely authored. In the per-category values, `0` means Windows Update and `1` means WSUS. `IsWUfBDualScanActive` is the client's own verdict on whether Feature and Quality updates are being routed to Windows Update.
 
 > [!NOTE]
+>
 > The `UseUpdateClassPolicySource` gate applies only to Group Policy-authored scan source values. Policy delivered by Intune has no such gate, so a device can honor a scan source that Intune set even when the Group Policy gate is absent.
 >
 > Comparing this resolved state against the authored values under `HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` tells you whether a configured value is actually in effect, or is being ignored because the gate is off or the value is at the wrong path.
@@ -489,6 +485,7 @@ $wuau = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate'
 All four values should be set if you're using scan source policies. If some are set while others aren't, and `UseUpdateClassPolicySource = 1`, you have a partial configuration.
 
 > [!NOTE]
+>
 > After you change any Windows Update policy, either a registry value or a Group Policy setting, restart the Windows Update service with `Restart-Service wuauserv` and trigger a new scan so that the agent rereads the policy. Changes don't take effect until the agent reloads.
 
 ### 4. Inspect the MDM PolicyManager on co-managed devices
@@ -521,7 +518,7 @@ Get-WindowsUpdateLog -LogPath "$env:USERPROFILE\Desktop\WindowsUpdate.log"
 Look for the following fields:
 
 | Field | Interpretation |
-|---|---|
+| --- | --- |
 | `Service ID {7971F918-A847-4430-9279-4A52D1EFE18D}` | Microsoft Update |
 | `Service ID {9482F4B4-E343-43B6-B170-9A65BC822C77}` | Windows Update |
 | `Service ID {3DA21691-E39D-4DA6-8A4B-B43877BCB1B7}` | WSUS or Configuration Manager |
@@ -550,6 +547,7 @@ If `WSUS server:` is set correctly but the agent still calls `sls.update.microso
 Run this script on the affected device after you move the **Windows Update policies** workload from Intune back to Configuration Manager, and after a Configuration Manager machine policy cycle is complete.
 
 > [!CAUTION]
+>
 > This script deletes registry keys under the Windows MDM PolicyManager hive, and removes an MDM WMI instance. Test it in a lab first.
 >
 > If the device is still enrolled in Intune, Intune might reapply the removed policy on its next MDM sync. To avoid a reapply loop, unassign the device from the Windows Update ring in Intune before you run the script, or move the device out of the targeted Intune group.
@@ -592,14 +590,14 @@ Start-Sleep -Seconds 30
 
 The expected result is **Windows Server Update Service**, if WSUS is configured. Once scan source policies are set, `IsDefaultAUService` reports only one default service, so also verify per category by using the checks earlier in this section, or the `Enabling WUA Managed server policy to use server:` entry in `WUAHandler.log`.
 
-Then trigger a **Machine Policy Retrieval & Evaluation Cycle** from the Configuration Manager client, and confirm that `WUAHandler.log` writes the expected `WUServer` value.
+Then trigger a **Machine Policy Retrieval &amp; Evaluation Cycle** from the Configuration Manager client, and confirm that `WUAHandler.log` writes the expected `WUServer` value.
 
 ## Appendix: Configuration Manager version history for scan source policies
 
 Use this table to correlate what a device might currently have on disk with the Configuration Manager version that put it there. This table is primarily useful when you investigate why a device is scanning against an unexpected source, or when you plan an upgrade path.
 
 | Configuration Manager version | Behavior |
-|---|---|
+| --- | --- |
 | 2111 | Wrote the four `SetPolicyDrivenUpdateSourceFor*` values, but didn't set the `UseUpdateClassPolicySource` primary switch. The category policies existed on disk, but had no effect. |
 | 2303 + KB 25073607 | Started setting `UseUpdateClassPolicySource = 1`. The category policies became effective, so for the first time devices actually scanned per category. Customers began seeing Features on Demand, RSAT, optional feature, language pack, and Defender platform update failures, because those components were now pinned to WSUS. |
 | 2403 + KB 28458764 | Stopped writing the category values, but didn't remove existing ones. Devices upgraded from earlier builds still had the values set to `1`, and new installations didn't. Administrators could manage the values themselves. |
@@ -609,12 +607,12 @@ Use this table to correlate what a device might currently have on disk with the 
 
 ## Related content
 
-- [Use Windows Update client policies and Windows Server Update Services (WSUS) together](/windows/deployment/update/wufb-wsus)
+- [Use Windows Update client policies and Windows Server Update Services (WSUS) together](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-wsus)
 - [Co-management workloads](../../comanage/workloads.md#windows-update-policies)
 - [Client settings - Software Updates](../../core/clients/deploy/about-client-settings.md#software-updates)
 - [Client settings - Enable third-party software updates](../../core/clients/deploy/about-client-settings.md#enable-third-party-software-updates)
-- [Manage Windows Update client policies from Intune](/mem/intune-service/protect/windows-update-for-business-configure)
-- [Windows Autopatch prerequisites](/windows/deployment/windows-autopatch/prepare/windows-autopatch-prerequisites)
-- [How to make Features on Demand and language packs available when you're using WSUS or Configuration Manager](/windows/deployment/update/fod-and-lang-packs)
-- [Policy CSP - Update](/windows/client-management/mdm/policy-csp-update)
+- [Manage Windows Update client policies from Intune](https://learn.microsoft.com/en-us/mem/intune-service/protect/windows-update-for-business-configure)
+- [Windows Autopatch prerequisites](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/prepare/windows-autopatch-prerequisites)
+- [How to make Features on Demand and language packs available when you're using WSUS or Configuration Manager](https://learn.microsoft.com/en-us/windows/deployment/update/fod-and-lang-packs)
+- [Policy CSP - Update](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update)
 - [KB 36495448 - Software update management client fix for Configuration Manager versions 2503, 2509](../../hotfix/2509/36495448.md)

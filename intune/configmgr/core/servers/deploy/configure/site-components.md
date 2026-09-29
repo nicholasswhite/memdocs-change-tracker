@@ -1,7 +1,7 @@
 ---
-title: Site components
+title: "Site components for Configuration Manager"
 description: Learn how to configure site components to modify the behavior of site system roles and site status reporting.
-ms.date: 03/28/2024
+ms.date: "2024-03-28T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -29,6 +29,7 @@ In the Configuration Manager console, go to the **Administration** workspace, ex
 Most options for the various site components are self-explanatory when viewed in the Configuration Manager console. However, the following details can help explain some of the more complex configurations, or direct you to other content.
 
 > [!NOTE]
+>
 > The available options for some components vary whether you select the central administration site, a primary site, or a secondary site. Some components are not available at all for certain types of sites.
 
 ### Software distribution
@@ -38,6 +39,7 @@ Most options for the various site components are self-explanatory when viewed in
 On the **General** tab, specify settings that modify how the site server transfers content to its distribution points. When you increase the values you use for concurrent distribution settings, content distribution can use more network bandwidth.
 
 > [!NOTE]
+>
 > Don't increase Maximum number of packages 3 (default) in concurrent distribution settings when the content are distributed to CMG CDP.
 
 #### Pull distribution point
@@ -52,8 +54,8 @@ For more information, see [Network access account](../../../plan-design/hierarch
 
 To programmatically view and configure the **Software distribution** site component, use the following PowerShell cmdlets:
 
-- [Get-CMSoftwareDistributionComponent](/powershell/module/configurationmanager/get-cmsoftwaredistributioncomponent)
-- [Set-CMSoftwareDistributionComponent](/powershell/module/configurationmanager/set-cmsoftwaredistributioncomponent)
+- [Get-CMSoftwareDistributionComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmsoftwaredistributioncomponent)
+- [Set-CMSoftwareDistributionComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/set-cmsoftwaredistributioncomponent)
 
 ### Software update point
 
@@ -63,8 +65,8 @@ For more information, see [Install a software update point](../../../../sum/get-
 
 To programmatically view and configure the **Software update point** site component, use the following PowerShell cmdlets:
 
-- [Get-CMSoftwareUpdatePointComponent](/powershell/module/configurationmanager/get-cmsoftwareupdatepointcomponent)
-- [Set-CMSoftwareUpdatePointComponent](/powershell/module/configurationmanager/set-cmsoftwareupdatepointcomponent)
+- [Get-CMSoftwareUpdatePointComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmsoftwareupdatepointcomponent)
+- [Set-CMSoftwareUpdatePointComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/set-cmsoftwareupdatepointcomponent)
 
 ### OS deployment
 
@@ -91,8 +93,8 @@ For general information about service location, see [Understand how clients find
 
 To programmatically view and configure the **Management point** site component, use the following PowerShell cmdlets:
 
-- [Get-CMManagementPointComponent](/powershell/module/configurationmanager/get-cmmanagementpointcomponent)
-- [Set-CMManagementPointComponent](/powershell/module/configurationmanager/set-cmmanagementpointcomponent)
+- [Get-CMManagementPointComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmmanagementpointcomponent)
+- [Set-CMManagementPointComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/set-cmmanagementpointcomponent)
 
 ### Status reporting
 
@@ -102,8 +104,8 @@ These settings directly set up the level of detail that's included in status rep
 
 To programmatically view and configure the **Status reporting** site component, use the following PowerShell cmdlets:
 
-- [Get-CMStatusReportingComponent](/powershell/module/configurationmanager/get-cmstatusreportingcomponent)
-- [Set-CMStatusReportingComponent](/powershell/module/configurationmanager/set-cmstatusreportingcomponent)
+- [Get-CMStatusReportingComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmstatusreportingcomponent)
+- [Set-CMStatusReportingComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/set-cmstatusreportingcomponent)
 
 ### Email notification
 
@@ -115,10 +117,10 @@ For more information, see [Configure alerts](../../manage/configure-alerts.md#co
 
 To programmatically view and configure the **Email notification** site component, use the following PowerShell cmdlets:
 
-- [Get-CMEmailNotificationComponent](/powershell/module/configurationmanager/get-cmemailnotificationcomponent)
-- [Set-CMEmailNotificationComponent](/powershell/module/configurationmanager/set-cmemailnotificationcomponent)
+- [Get-CMEmailNotificationComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmemailnotificationcomponent)
+- [Set-CMEmailNotificationComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/set-cmemailnotificationcomponent)
 
-### <a name="bkmk_colleval"></a> Collection membership evaluation
+### Collection membership evaluation
 
 Use this component to set how often collection membership is incrementally evaluated. Incremental evaluation updates a collection membership with only new or changed resources.
 
@@ -128,15 +130,14 @@ For more information, see [Best practices for collections](../../../clients/mana
 
 To programmatically view and configure the **Collection membership evaluation** site component, use the following PowerShell cmdlets:
 
-- [Get-CMCollectionMembershipEvaluationComponent](/powershell/module/configurationmanager/get-cmcollectionmembershipevaluationcomponent)
-- [Set-CMCollectionMembershipEvaluationComponent](/powershell/module/configurationmanager/set-cmcollectionmembershipevaluationcomponent)
+- [Get-CMCollectionMembershipEvaluationComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmcollectionmembershipevaluationcomponent)
+- [Set-CMCollectionMembershipEvaluationComponent](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/set-cmcollectionmembershipevaluationcomponent)
 
 ## Configuration Manager Service Manager
 
 You can use the Service Manager to control Configuration Manager services, and to view the status of any Configuration Manager service or working thread. These services and threads are referred to collectively as Configuration Manager components.
 
 - Components can run on any site system.
-
 - Manage components the same way that you manage services in Windows. The following actions apply to Configuration Manager components:
 
   - Start
@@ -150,17 +151,11 @@ A Configuration Manager service runs when there's something for it to do. For ex
 ### Use Service Manager
 
 1. In the Configuration Manager console, go to the **Monitoring** workspace, expand **System Status**, and select the **Component Status** node.
+2. In the **Component** group of the ribbon, select **Start**, and then choose **Configuration Manager Service Manager**.
+3. When the Configuration Manager Service Manager opens, connect to the site that you want to manage.
 
-1. In the **Component** group of the ribbon, select **Start**, and then choose **Configuration Manager Service Manager**.
-
-1. When the Configuration Manager Service Manager opens, connect to the site that you want to manage.
-
-    If you don't see the site that you want to manage, go to the **Site** menu, and select **Connect**. Then enter the name of the site server of the correct site.
-
-1. Expand the site and navigate to **Components** or **Servers**, depending on the location of the components that you want to manage.
-
-1. In the right pane, select one or more components. Then on the **Component** menu, select **Query** to update the status of your selection.
-
-1. After it updates the status of the component, use one of the four action-based options on the **Component** menu. Use these actions to modify the component's operation. After you request an action, query the component again to display the new status of the component.
-
-1. Close the Configuration Manager Service Manager when you're finished modifying the operational status of components.
+   If you don't see the site that you want to manage, go to the **Site** menu, and select **Connect**. Then enter the name of the site server of the correct site.
+4. Expand the site and navigate to **Components** or **Servers**, depending on the location of the components that you want to manage.
+5. In the right pane, select one or more components. Then on the **Component** menu, select **Query** to update the status of your selection.
+6. After it updates the status of the component, use one of the four action-based options on the **Component** menu. Use these actions to modify the component's operation. After you request an action, query the component again to display the new status of the component.
+7. Close the Configuration Manager Service Manager when you're finished modifying the operational status of components.

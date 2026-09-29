@@ -1,16 +1,18 @@
 ---
 description: The SMS_PowerAgentConfig Windows Management Instrumentation class is an SMS Provider server class, in Configuration Manager, that specifies power management settings on client computers.
-title: SMS_PowerAgentConfig Class
-ms.date: 09/20/2016
+title: "SMS_PowerAgentConfig Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PowerAgentConfig Server WMI Class
+
 The `SMS_PowerAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies power management settings on client computers.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,156 +38,145 @@ Class SMS_PowerAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_PowerAgentConfig` class does not define any methods.
+
+The `SMS_PowerAgentConfig` class does not define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Power Management Agent ID is 18.
+Qualifiers: [key, read]
 
- `AllowUserToOptOutFromPowerPlan`
- Data type: `Boolean`
+Identifies the client agent component. The Power Management Agent ID is 18.
 
- Access type: Read/Write
+`AllowUserToOptOutFromPowerPlan` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to allow users to exclude their device from power management.
+Qualifiers: none
 
- `Enabled`
- Data type: `Boolean`
+`true` to allow users to exclude their device from power management.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the agent is enabled.
+Qualifiers: none
 
- `EnableP2PWakeupSolution`
- Data type: `Boolean`
+`true` if the agent is enabled.
 
- Access type: Read/Write
+`EnableP2PWakeupSolution` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- This method/property has been removed or deprecated in Configuration Manager SP1.
+Qualifiers: none
 
- `EnableWakeupProxy`
- Data type: `Boolean`
+This method/property has been removed or deprecated in Configuration Manager SP1.
 
- Access type: Read/Write
+`EnableWakeupProxy` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- EnableWakeupProxy.
+Qualifiers: none
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+EnableWakeupProxy.
 
- `EnableUserIdleMonitoring`
- Data type: `Boolean`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`EnableUserIdleMonitoring` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if user idle status needs to be monitored. The default value is `true`.
+Qualifiers: none
 
- `MaxCPU`
- Data type: `UInt32`
+`true` if user idle status needs to be monitored. The default value is `true`.
 
- Access type: Read/Write
+`MaxCPU` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: none
 
- `MaxMachinesPerManager`
- Data type: `UInt32`
+Reserved for future use.
 
- Access type: Read/Write
+`MaxMachinesPerManager` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: none
 
- `MinimumServersNeeded`
- Data type: `UInt32`
+Reserved for future use.
 
- Access type: Read/Write
+`MinimumServersNeeded` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: none
 
- `NumOfDaysToKeep`
- Data type: `UInt32`
+Reserved for future use.
 
- Access type: Read/Write
+`NumOfDaysToKeep` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum number of days that power data will be kept on the client computer. The default value is 31.
+Qualifiers: none
 
- `NumOfMonthsToKeep`
- Data type: `UInt32`
+Maximum number of days that power data will be kept on the client computer. The default value is 31.
 
- Access type: Read/Write
+`NumOfMonthsToKeep` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum number of months that power data will be kept on the client computer. The default value is 13.
+Qualifiers: none
 
- `Port`
- Data type: `UInt32`
+Maximum number of months that power data will be kept on the client computer. The default value is 13.
 
- Access type: Read/Write
+`Port` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: none
 
- `WakeupProxyDirectAccessPrefixList`
- Data type: `UInt32`
+Reserved for future use.
 
- Access type: Read/Write
+`WakeupProxyDirectAccessPrefixList` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- WakeupProxyDirectAccessPrefixList.
+Qualifiers: none
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+WakeupProxyDirectAccessPrefixList.
 
- `WakeupProxyFirewallFlags`
- Data type: `UInt32`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`WakeupProxyFirewallFlags` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- WakeupProxyFirewallFlags.
+Qualifiers: none
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+WakeupProxyFirewallFlags.
 
- `WolPort`
- Data type: `UInt32`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`WolPort` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: none
+
+Reserved for future use.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

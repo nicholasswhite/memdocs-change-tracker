@@ -1,7 +1,7 @@
 ---
-title: Overview for Windows Autopilot for pre-provisioned deployment Microsoft Entra join in Intune
+title: "Step by step tutorial for Windows Autopilot for pre-provisioned deployment Microsoft Entra join in Intune"
 description: Overview for Windows Autopilot for pre-provisioned deployment Microsoft Entra join in Intune.
-ms.date: 09/13/2024
+ms.date: "2024-09-13T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -14,7 +14,7 @@ This step by step tutorial guides through using Intune to perform a Windows Auto
 
 The purpose of this tutorial is a step by step guide for all the configuration steps required for a successful Windows Autopilot for pre-provisioned deployment Microsoft Entra join deployment using Intune. The tutorial is also designed as a walkthrough in a lab or testing scenario, but can be expanded for use in a production environment.
 
-Before beginning, refer to the [How to: Plan your Microsoft Entra join implementation](/azure/active-directory/devices/azureadjoin-plan) to make sure all requirements are met for joining devices to Microsoft Entra ID.
+Before beginning, refer to the [How to: Plan your Microsoft Entra join implementation](https://learn.microsoft.com/en-us/azure/active-directory/devices/azureadjoin-plan) to make sure all requirements are met for joining devices to Microsoft Entra ID.
 
 > [!NOTE]
 >
@@ -50,11 +50,9 @@ Once the Windows Autopilot for pre-provisioned deployment is complete, the devic
 The main difference between Windows Autopilot user-driven deployment and Windows Autopilot for pre-provisioned deployment is:
 
 - Windows Autopilot user-driven deployment: Both the Device ESP phase and the User ESP phase occur when the end-user goes through the Windows Autopilot deployment after turning on the device for the first time.
-
 - Windows Autopilot for pre-provisioned deployment: Device ESP phase and user ESP phase are split and occur at two different points in time.
 
   - The IT department, OEM, or reseller handles the device ESP phase. This phase is known as the **Technician flow**. Once the Technician flow is complete, the device is powered down and delivered to the end-user.
-
   - When the end-user receives the device, they turn it on for the first time, and the device undergoes the user ESP phase. A portion of device ESP also reruns to ensure there are no new applications or policies assigned to the device since the Technician flow ran. This phase is known as the **User flow**.
 
 The deployment is split up between the Technician flow and User flow phases so that the deployment is faster when the end-user receives the device. The deployment is faster when the end-user receives the device because the IT department, OEM, or reseller completed the first portion of the deployment during the Technician flow.
@@ -65,17 +63,15 @@ Windows Autopilot for pre-provisioned deployment might have one disadvantage ove
 
 The following steps are needed to configure and then perform a Windows Autopilot for pre-provisioned deployment Microsoft Entra join in Intune:
 
-> [!div class="checklist"]
->
-> - Step 1: [Set up Windows automatic Intune enrollment](azure-ad-join-automatic-enrollment.md)
-> - Step 2: [Allow users to join devices to Microsoft Entra ID](azure-ad-join-allow-users-to-join.md)
-> - Step 3: [Register devices as Windows Autopilot devices](azure-ad-join-register-device.md)
-> - Step 4: [Create a device group](azure-ad-join-device-group.md)
-> - Step 5: [Configure and assign Windows Autopilot Enrollment Status Page (ESP)](azure-ad-join-esp.md)
-> - Step 6: [Create and assign Windows Autopilot profile](azure-ad-join-autopilot-profile.md)
-> - Step 7: [Assign Windows Autopilot device to a user (optional)](azure-ad-join-assign-device-to-user.md)
-> - Step 8: [Technician flow](azure-ad-join-technician-flow.md)
-> - Step 9: [User flow](azure-ad-join-user-flow.md)
+- Step 1: [Set up Windows automatic Intune enrollment](azure-ad-join-automatic-enrollment.md)
+- Step 2: [Allow users to join devices to Microsoft Entra ID](azure-ad-join-allow-users-to-join.md)
+- Step 3: [Register devices as Windows Autopilot devices](azure-ad-join-register-device.md)
+- Step 4: [Create a device group](azure-ad-join-device-group.md)
+- Step 5: [Configure and assign Windows Autopilot Enrollment Status Page (ESP)](azure-ad-join-esp.md)
+- Step 6: [Create and assign Windows Autopilot profile](azure-ad-join-autopilot-profile.md)
+- Step 7: [Assign Windows Autopilot device to a user (optional)](azure-ad-join-assign-device-to-user.md)
+- Step 8: [Technician flow](azure-ad-join-technician-flow.md)
+- Step 9: [User flow](azure-ad-join-user-flow.md)
 
 > [!NOTE]
 >
@@ -83,8 +79,7 @@ The following steps are needed to configure and then perform a Windows Autopilot
 
 ## Walkthrough
 
-> [!div class="nextstepaction"]
-> [Step 1: Set up Windows automatic Intune enrollment](azure-ad-join-automatic-enrollment.md)
+[Step 1: Set up Windows automatic Intune enrollment](azure-ad-join-automatic-enrollment.md)
 
 ## Related content
 

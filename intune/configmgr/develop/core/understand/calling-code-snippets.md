@@ -1,18 +1,20 @@
 ---
-title: Calling Code Snippets
+title: "Calling Configuration Manager Code Snippets"
 description: How to set up the calling code for the code examples that are used throughout the Configuration Manager Software Development Kit (SDK).
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Calling Configuration Manager Code Snippets
+
 The following code samples show how to set up the calling code for the code examples that are used throughout the Configuration Manager Software Development Kit (SDK).
 
- Replace the SNIPPETMETHOD snippet with the snippet that you want to run. In most cases you will need to make changes, such as adding parameters, to make the code work.
+Replace the SNIPPETMETHOD snippet with the snippet that you want to run. In most cases you will need to make changes, such as adding parameters, to make the code work.
 
- For more information about remote Windows Management Instrumentation (WMI) connections, see [Connecting to WMI on a Remote Computer](/windows/win32/wmisdk/connecting-to-wmi-on-a-remote-computer).
+For more information about remote Windows Management Instrumentation (WMI) connections, see [Connecting to WMI on a Remote Computer](https://learn.microsoft.com/en-us/windows/win32/wmisdk/connecting-to-wmi-on-a-remote-computer).
 
 ## Example
 
@@ -221,22 +223,27 @@ namespace ConfigurationManagerSnippets
 ## Compiling the Code
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 > [!NOTE]
->  The assemblies are in the \<Program Files>\Microsoft Endpoint Manager\AdminConsole\bin folder.
+>
+> The assemblies are in the &lt;Program Files&gt;\Microsoft Endpoint Manager\AdminConsole\bin folder.
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../reqs/server-runtime-requirements.md).
 
 ## Robust Programming
- The Configuration Manager exceptions that can be raised are [SmsConnectionException](/previous-versions/system-center/developer/cc147431(v=msdn.10)) and [SmsQueryException](/previous-versions/system-center/developer/cc147436(v=msdn.10)). These can be caught together with [SmsException](/previous-versions/system-center/developer/cc147433(v=msdn.10)).
+
+The Configuration Manager exceptions that can be raised are [SmsConnectionException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147431(v=msdn.10)) and [SmsQueryException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147436(v=msdn.10)). These can be caught together with [SmsException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147433(v=msdn.10)).

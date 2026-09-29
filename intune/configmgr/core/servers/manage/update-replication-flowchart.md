@@ -1,16 +1,17 @@
 ---
-title: Flowchart - Update replication
+title: "Flowchart - Update replication for Configuration Manager"
 description: See the process by which an in-console update you select to install replicates to additional sites.
-ms.date: 10/06/2016
+ms.date: "2016-10-06T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Flowchart - Update replication for Configuration Manager
 
 *Applies to: Configuration Manager (current branch)*
 
-These data flows display the process by which an in-console update you  select to install replicates to additional sites. These flows also display the process of extracting the update to run prerequisite checks and to install updates at a central administration site and at primary sites.
+These data flows display the process by which an in-console update you select to install replicates to additional sites. These flows also display the process of extracting the update to run prerequisite checks and to install updates at a central administration site and at primary sites.
 
- ![Flowchart - Replicate updates](media/Flowchart---Replicate-updates.png)
+![Flowchart - Replicate updates](media/flowchart---replicate-updates.png)

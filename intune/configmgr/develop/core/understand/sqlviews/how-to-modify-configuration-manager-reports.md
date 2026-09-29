@@ -1,7 +1,7 @@
 ---
-title: How to modify reports
+title: "How to modify Configuration Manager reports"
 description: Information about viewing the properties of, and modifying Configuration Manager reports.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 
@@ -21,10 +21,10 @@ You can view general properties for a report in the Configuration Manager consol
 ### To view the general properties of a report
 
 1. In the Configuration Manager console, select **Monitoring**.
-1. In the **Monitoring** workspace, expand **Reporting**, and then select **Reports**.
-1. From the list of reports, select the report that you want to view properties for and then, in the **Home** tab, in the **Properties** group, select **Properties**.
-1. In the *report name*�**Properties** dialog box, you can view general information about the report, create and view report subscriptions and view security information about the report.
-1. Close the *report name*�**Properties** dialog box.
+2. In the **Monitoring** workspace, expand **Reporting**, and then select **Reports**.
+3. From the list of reports, select the report that you want to view properties for and then, in the **Home** tab, in the **Properties** group, select **Properties**.
+4. In the *report name*�**Properties** dialog box, you can view general information about the report, create and view report subscriptions and view security information about the report.
+5. Close the *report name*�**Properties** dialog box.
 
 ## How to modify a report
 
@@ -33,10 +33,10 @@ Use SQL Server Report Builder to modify reports. Report Builder can be opened di
 ### To modify a report
 
 1. In the Configuration Manager console, select **Monitoring**.
-1. In the **Monitoring** workspace, expand **Reporting**, and then select **Reports**.
-1. From the list of reports, select the report that you want to view properties for and then, in the **Home** tab, in the **Report Group** group, select **Edit**.
-1. In SQL Server Report builder, make the necessary modifications to the report.
-1. Save your report, and then close Report Builder.
+2. In the **Monitoring** workspace, expand **Reporting**, and then select **Reports**.
+3. From the list of reports, select the report that you want to view properties for and then, in the **Home** tab, in the **Report Group** group, select **Edit**.
+4. In SQL Server Report builder, make the necessary modifications to the report.
+5. Save your report, and then close Report Builder.
 
 ## See also
 

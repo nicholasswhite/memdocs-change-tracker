@@ -1,7 +1,7 @@
 ---
 description: Learn how to represent a distribution point from which a given package has been distributed to clients in Configuration Manager.
-title: SMS_DistributionPoint class
-ms.date: 05/24/2019
+title: "SMS_DistributionPoint server WMI class"
+ms.date: "2019-05-24T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -44,11 +44,10 @@ Class SMS_DistributionPoint : SMS_BaseClass
 
 The following table lists the methods in the `SMS_DistributionPoint` class.
 
-|Method|Description|
-|------------|-----------------|
-|[VerifyPackage method in class SMS_DistributionPoint](verifypackage-method-in-class-sms_distributionpoint.md)|Verifies the integrity of the package.|
-|[CancelDistribution method in class SMS_DistributionPoint](canceldistribution-method-in-class-sms_distributionpoint.md)|Cancels the distribution of a package.|
-
+| Method | Description |
+| --- | --- |
+| [VerifyPackage method in class SMS_DistributionPoint](verifypackage-method-in-class-sms_distributionpoint.md) | Verifies the integrity of the package. |
+| [CancelDistribution method in class SMS_DistributionPoint](canceldistribution-method-in-class-sms_distributionpoint.md) | Cancels the distribution of a package. |
 
 ## Properties
 
@@ -132,15 +131,15 @@ Qualifiers: [enumeration, read]
 
 Secured object class ID.
 
-|Value|Object type|
-|-|-|
-|2|SMS_Package|
-|14|SMS_OperatingSystemInstallPackage|
-|18|SMS_ImagePackage|
-|19|SMS_BootImagePackage|
-|23|SMS_DriverPackage|
-|24|SMS_SoftwareUpdatesPackage|
-|31|SMS_Application|
+| Value | Object type |
+| --- | --- |
+| 2 | SMS_Package |
+| 14 | SMS_OperatingSystemInstallPackage |
+| 18 | SMS_ImagePackage |
+| 19 | SMS_BootImagePackage |
+| 23 | SMS_DriverPackage |
+| 24 | SMS_SoftwareUpdatesPackage |
+| 31 | SMS_Application |
 
 ### `PackageID`
 
@@ -162,16 +161,16 @@ Qualifiers: [enumeration, read]
 
 The type of package.
 
-|Value|Description|
-|-----------|-----------------|
-|0|Regular software distribution package|
-|3|Driver package|
-|4|Task sequence package|
-|5|Software update package|
-|6|Device setting package|
-|257|Image package|
-|258|Boot image package|
-|259|OS upgrade package|
+| Value | Description |
+| --- | --- |
+| 0 | Regular software distribution package |
+| 3 | Driver package |
+| 4 | Task sequence package |
+| 5 | Software update package |
+| 6 | Device setting package |
+| 257 | Image package |
+| 258 | Boot image package |
+| 259 | OS upgrade package |
 
 ### `RefreshNow`
 
@@ -255,12 +254,12 @@ Qualifiers: [read, enumeration]
 
 Current status of the package on the distribution point. Possible values are listed below. For more information, see [Remarks](#remarks).
 
-|Value|DP package status|
-|-|-|
-|0|NONE|
-|1|UPDATED|
-|2|ADDED|
-|3|DELETED|
+| Value | DP package status |
+| --- | --- |
+| 0 | NONE |
+| 1 | UPDATED |
+| 2 | ADDED |
+| 3 | DELETED |
 
 ## Remarks
 

@@ -1,16 +1,18 @@
 ---
 description: Learn how to specify how client computers retrieve software inventory in Configuration Manager using SMS_SoftwareInventoryAgentConfig.
-title: SMS_SoftwareInventoryAgentConfig Class
-ms.date: 09/20/2016
+title: "SMS_SoftwareInventoryAgentConfig Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SoftwareInventoryAgentConfig Server WMI Class
+
 The `SMS_SoftwareInventoryAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies how client computers retrieve software inventory.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,174 +40,161 @@ Class SMS_SoftwareInventoryAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_SoftwareInventoryAgentConfig` class does not define any methods.
+
+The `SMS_SoftwareInventoryAgentConfig` class does not define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Software Updates Agent ID is 2.
+Qualifiers: [key, read]
 
- `CollectableFileExclude`
- Data type: `String Array`
+Identifies the client agent component. The Software Updates Agent ID is 2.
 
- Access type: Read/Write
+`CollectableFileExclude` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if encrypted and compressed files are excluded in the file collection settings. The value in the array should be `true` or `false`.
+Qualifiers: none
 
- `CollectableFileMaxSize`
- Data type: `String Array`
+`true` if encrypted and compressed files are excluded in the file collection settings. The value in the array should be `true` or `false`.
 
- Access type: Read/Write
+`CollectableFileMaxSize` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum size for all collected files (KB).
+Qualifiers: none
 
- `CollectableFilePaths`
- Data type: `String Array`
+Maximum size for all collected files (KB).
 
- Access type: Read/Write
+`CollectableFilePaths` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The list of file paths to collect.
+Qualifiers: none
 
- `CollectableFiles`
- Data type: `String Array`
+The list of file paths to collect.
 
- Access type: Read/Write
+`CollectableFiles` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The list of files to collect.
+Qualifiers: none
 
- `CollectableFileSubdirectories`
- Data type: `String Array`
+The list of files to collect.
 
- Access type: Read/Write
+`CollectableFileSubdirectories` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if files in subfolders are collected in the file collection settings. The value in the array should be `true` or `false`.
+Qualifiers: none
 
- `Enabled`
- Data type: `Boolean`
+`true` if files in subfolders are collected in the file collection settings. The value in the array should be `true` or `false`.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the agent is enabled.
+Qualifiers: none
 
- `Exclude`
- Data type: `String Array`
+`true` if the agent is enabled.
 
- Access type: Read/Write
+`Exclude` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if encrypted and compressed files are excluded in the file inventory settings. The value in the array should be `true` or `false`.
+Qualifiers: none
 
- `ExcludeWindirAndSubfolders`
- Data type: `String Array`
+`true` if encrypted and compressed files are excluded in the file inventory settings. The value in the array should be `true` or `false`.
 
- Access type: Read/Write
+`ExcludeWindirAndSubfolders` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if files in the Windows folder are excluded in the file inventory settings. The value in the array should be `true` or `false`.
+Qualifiers: none
 
- `InventoriableTypes`
- Data type: `String Array`
+`true` if files in the Windows folder are excluded in the file inventory settings. The value in the array should be `true` or `false`.
 
- Access type: Read/Write
+`InventoriableTypes` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The list of file types to inventory.
+Qualifiers: none
 
- `Path`
- Data type: `String Array`
+The list of file types to inventory.
 
- Access type: Read/Write
+`Path` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The list of file path to be inventoried in the file inventory settings.
+Qualifiers: none
 
- `QueryTimeout`
- Data type: `UInt32`
+The list of file path to be inventoried in the file inventory settings.
 
- Access type: Read/Write
+`QueryTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The maximum time, in seconds, for querying file information on the client. The default value is 1 week.
+Qualifiers: none
 
- `ReportOptions`
- Data type: `UInt32`
+The maximum time, in seconds, for querying file information on the client. The default value is 1 week.
 
- Access type: Read/Write
+`ReportOptions` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The reporting details. Possible values are:
+Qualifiers: none
 
-|Value|Report options|
-|-|-|
-|1|Product Only|
-|2|File Only|
-|7|Full Details|
+The reporting details. Possible values are:
 
- `ReportTimeout`
- Data type: `UInt32`
+| Value | Report options |
+| --- | --- |
+| 1 | Product Only |
+| 2 | File Only |
+| 7 | Full Details |
 
- Access type: Read/Write
+`ReportTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum time, in seconds, that the client messaging framework attempts to transmit the report, if the destination endpoint is unreachable. The default value is 1 week.
+Qualifiers: none
 
- `ScanInterval`
- Data type: `UInt32`
+Maximum time, in seconds, that the client messaging framework attempts to transmit the report, if the destination endpoint is unreachable. The default value is 1 week.
 
- Access type: Read/Write
+`ScanInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Delay, in milliseconds, to pass to the software inventory provider for the software scan.
+Qualifiers: none
 
- `Schedule`
- Data type: `String`
+Delay, in milliseconds, to pass to the software inventory provider for the software scan.
 
- Access type: Read/Write
+`Schedule` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Software inventory and file collection schedule.
+Qualifiers: none
 
- `Subdirectories`
- Data type: `String Array`
+Software inventory and file collection schedule.
 
- Access type: Read/Write
+`Subdirectories` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if files in subfolders are inventoried in the file inventory settings. The value in the array should be `true` or `false`.
+Qualifiers: none
+
+`true` if files in subfolders are inventoried in the file inventory settings. The value in the array should be `true` or `false`.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

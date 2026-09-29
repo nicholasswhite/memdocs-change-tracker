@@ -1,13 +1,15 @@
 ---
 title: SendNotifyProgressToCTM Method
 description: The SendNotifyProgressToCTM method notifies Content Transfer Manager of the progress of a job.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SendNotifyProgressToCTM Method
+
 The **SendNotifyProgressToCTM** method notifies Content Transfer Manager of the progress of a job.
 
 ## Syntax
@@ -27,75 +29,71 @@ HRESULT stdcall SendNotifyProgressToCTM(
 ```
 
 #### Parameters
- `szProgressType`
- Data type: LPCWSTR
 
- Qualifiers: [in]
+`szProgressType` Data type: LPCWSTR
 
- Either one of the S_DTS_* constants for status changes or NULL/empty string for a bytes progress only.
+Qualifiers: [in]
 
- `szEndpoint`
- Data type: LPCWSTR
+Either one of the S_DTS_\* constants for status changes or NULL/empty string for a bytes progress only.
 
- Qualifiers: [in]
+`szEndpoint` Data type: LPCWSTR
 
- The notification endpoint. This was passed into the call to **ICcmAlternateDownloadProvider::DownloadContent** (szNotifyEndpoint).
+Qualifiers: [in]
 
- `szID`
- Data type: UInt32
+The notification endpoint. This was passed into the call to **ICcmAlternateDownloadProvider::DownloadContent** (szNotifyEndpoint).
 
- Qualifiers: [in]
+`szID` Data type: UInt32
 
- The job to which the notification corresponds. This is the GUID originally returned by **ICcmAlternateDownloadProvider::DownloadContent**.
+Qualifiers: [in]
 
- `szClientData`
- Data type: LPCWSTR
+The job to which the notification corresponds. This is the GUID originally returned by **ICcmAlternateDownloadProvider::DownloadContent**.
 
- Qualifiers: [in]
+`szClientData` Data type: LPCWSTR
 
- The client-specific data that was passed into the call to **ICcmAlternateDownloadProvider::DownloadContent** (szNotifyData).
+Qualifiers: [in]
 
- `szBytesTotal`
- Data type: LPCWSTR
+The client-specific data that was passed into the call to **ICcmAlternateDownloadProvider::DownloadContent** (szNotifyData).
 
- Qualifiers: [in]
+`szBytesTotal` Data type: LPCWSTR
 
- The total number of bytes in the job.
+Qualifiers: [in]
 
- `szBytesTransferred`
- Data type: LPCWSTR
+The total number of bytes in the job.
 
- Qualifiers: [in]
+`szBytesTransferred` Data type: LPCWSTR
 
- The number of bytes transferred so far.
+Qualifiers: [in]
 
- `ulFilesTotal`
- Data type: ULONG
+The number of bytes transferred so far.
 
- Qualifiers: [in]
+`ulFilesTotal` Data type: ULONG
 
- The total number of files in the job.
+Qualifiers: [in]
 
- `ulFilesTransferred`
- Data type: ULONG
+The total number of files in the job.
 
- Qualifiers: [in]
+`ulFilesTransferred` Data type: ULONG
 
- The number of files transferred so far.
+Qualifiers: [in]
+
+The number of files transferred so far.
 
 ## Remarks
- If the totals aren't yet known, pass 0 for the values. Once the provider has determined the total byte and file count, those values should be used.
+
+If the totals aren't yet known, pass 0 for the values. Once the provider has determined the total byte and file count, those values should be used.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- S_OK
- Success implies that discovery was triggered successfully. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S_OK Success implies that discovery was triggered successfully. All other return values indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_PendingRegistrationRecord Windows Management Instrumentation (WMI) class, in Configuration Manager, that describes hardware conflicts between two computers.
-title: SMS_PendingRegistrationRecord Class
-ms.date: 09/20/2016
+title: "SMS_PendingRegistrationRecord Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PendingRegistrationRecord Server WMI Class
+
 The `SMS_PendingRegistrationRecord` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes hardware conflicts between two computers.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -39,187 +41,174 @@ Class SMS_PendingRegistrationRecord
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_PendingRegistrationRecord` class.
 
-|Method|Description|
-|------------|-----------------|
-|[ResolvePendingRegistrationRecord Method in Class SMS_PendingRegistrationRecord](../../../../../develop/reference/core/clients/manage/resolvependingregistrationrecord-method-in-class-sms_pendingregistrationrecord.md)|Resolves the conflicts for the pending registration records.|
+The following table lists the methods in the `SMS_PendingRegistrationRecord` class.
+
+| Method | Description |
+| --- | --- |
+| [ResolvePendingRegistrationRecord Method in Class SMS_PendingRegistrationRecord](resolvependingregistrationrecord-method-in-class-sms_pendingregistrationrecord.md) | Resolves the conflicts for the pending registration records. |
 
 ## Properties
- `AgentName`
- Data type: `String`
 
- Access type: Read/Write
+`AgentName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The internal agent name of the client.
+Qualifiers: None
 
- `Certificate`
- Data type: `String`
+The internal agent name of the client.
 
- Access type: Read/Write
+`Certificate` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- The encoded certificate of the client.
+Qualifiers: [lazy]
 
- `ClientVersion`
- Data type: `String`
+The encoded certificate of the client.
 
- Access type: Read/Write
+`ClientVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The version of the installed client.
+Qualifiers: None
 
- `ConflictSMSID`
- Data type: `String`
+The version of the installed client.
 
- Access type: Read/Write
+`ConflictSMSID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The Configuration Manager unique identifier of a client that registered on the current site with the same `HardwareID`
+Qualifiers: None
 
- `FQDN`
- Data type: `String`
+The Configuration Manager unique identifier of a client that registered on the current site with the same `HardwareID`
 
- Access type: Read/Write
+`FQDN` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The fully qualified domain name of the computer.
+Qualifiers: None
 
- `HardwareID`
- Data type: `String`
+The fully qualified domain name of the computer.
 
- Access type: Read/Write
+`HardwareID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The calculated hardware identifier of the computer this client belongs to.
+Qualifiers: None
 
- `IsAlwaysInternet`
- Data type: `Boolean`
+The calculated hardware identifier of the computer this client belongs to.
 
- Access type: Read/Write
+`IsAlwaysInternet` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the resource is always associated with the Internet.
+Qualifiers: None
 
- `IsIntegratedAuth`
- Data type: `Boolean`
+`true` if the resource is always associated with the Internet.
 
- Access type: Read/Write
+`IsIntegratedAuth` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if integrated authentication is enabled.
+Qualifiers: None
 
- `IsInternetEnabled`
- Data type: `Boolean`
+`true` if integrated authentication is enabled.
 
- Access type: Read/Write
+`IsInternetEnabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if this client is an Internet-facing client.
+Qualifiers: None
 
- `IssuedTo`
- Data type: `String`
+`true` if this client is an Internet-facing client.
 
- Access type: Read/Write
+`IssuedTo` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The certificate subject name.
+Qualifiers: None
 
- `KeyType`
- Data type: `Sint32`
+The certificate subject name.
 
- Access type: Read/Write
+`KeyType` Data type: `Sint32`
 
- Qualifiers: enumeration("self-sign(1), issued (2)")
+Access type: Read/Write
 
- Public key type of certificate. The following values are possible.
+Qualifiers: enumeration("self-sign(1), issued (2)")
 
-|Value|Description|
-|-----------|-----------------|
-|1|Self-signed certificate.|
-|2|Certificate was issued by a certification authority.|
+Public key type of certificate. The following values are possible.
 
- `NetBiosName`
- Data type: `String`
+| Value | Description |
+| --- | --- |
+| 1 | Self-signed certificate. |
+| 2 | Certificate was issued by a certification authority. |
 
- Access type: Read/Write
+`NetBiosName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The NetBIOS name of the computer.
+Qualifiers: None
 
- `PublicKey`
- Data type: `String`
+The NetBIOS name of the computer.
 
- Access type: Read/Write
+`PublicKey` Data type: `String`
 
- Qualifiers: lazy
+Access type: Read/Write
 
- The public key of the certificate, which reflects the globally unique SHA-1 hash thumbprint indicated by the `Thumbprint` property.
+Qualifiers: lazy
 
- `SiteCode`
- Data type: `String`
+The public key of the certificate, which reflects the globally unique SHA-1 hash thumbprint indicated by the `Thumbprint` property.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The Configuration Manager site this client belongs to.
+Qualifiers: None
 
- `SMSID`
- Data type: `String`
+The Configuration Manager site this client belongs to.
 
- Access type: Read/Write
+`SMSID` Data type: `String`
 
- Qualifiers: key
+Access type: Read/Write
 
- The unique identifier of the client that sent the pending registration record.
+Qualifiers: key
 
- `Thumbprint`
- Data type: `String`
+The unique identifier of the client that sent the pending registration record.
 
- Access type: Read/Write
+`Thumbprint` Data type: `String`
 
- Qualifiers: Lazy
+Access type: Read/Write
 
- The hash value of the certificate.
+Qualifiers: Lazy
 
- `ValidFrom`
- Data type: `Datetime`
+The hash value of the certificate.
 
- Access type: Read/Write
+`ValidFrom` Data type: `Datetime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time when the certificate becomes effective.
+Qualifiers: None
 
- `ValidUntil`
- Data type: `Datetime`
+The date and time when the certificate becomes effective.
 
- Access type: Read/Write
+`ValidUntil` Data type: `Datetime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time when the certificate expires.
+Qualifiers: None
+
+The date and time when the certificate expires.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

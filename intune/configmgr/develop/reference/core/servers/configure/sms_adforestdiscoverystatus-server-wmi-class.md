@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the status of Configuration Manager Active Directory Forest Discovery with SMS_ADForestDiscoveryStatus.
-title: SMS_ADForestDiscoveryStatus Class
-ms.date: 09/20/2016
+title: "SMS_ADForestDiscoveryStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ADForestDiscoveryStatus Server WMI Class
+
 The `SMS_ADForestDiscoveryStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the status of Configuration Manager Active Directory Forest Discovery.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,108 +32,103 @@ Class SMS_ADForestDiscoveryStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ADForestDiscoveryStatus` class does not define any methods.
+
+The `SMS_ADForestDiscoveryStatus` class does not define any methods.
 
 ## Properties
- `DiscoveryEnabled`
- Data type: `Boolean`
 
- Access type: Read-only
+`DiscoveryEnabled` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if forest discovery is enabled.
+Qualifiers: [read]
 
- `DiscoveryStatus`
- Data type: `UInt32`
+`true` if forest discovery is enabled.
 
- Access type: Read-only
+`DiscoveryStatus` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Discovery status. Possible values are:
+Qualifiers: [enumeration, read]
 
-|Value|Discovery status|
-|-|-|
-|0|SUCCEEDED|
-|1|COMPLETED|
-|2|ACCESS_DENIED|
-|3|FAILED|
-|4|STOPPED|
+Discovery status. Possible values are:
 
- `ForestID`
- Data type: `UInt32`
+| Value | Discovery status |
+| --- | --- |
+| 0 | SUCCEEDED |
+| 1 | COMPLETED |
+| 2 | ACCESS_DENIED |
+| 3 | FAILED |
+| 4 | STOPPED |
 
- Access type: Read/Write
+`ForestID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the Active Directory forest.
+Qualifiers: [key]
 
- `LastDiscoveryTime`
- Data type: `DateTime`
+Identifier of the Active Directory forest.
 
- Access type: Read-only
+`LastDiscoveryTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The last time the forest was discovered.
+Qualifiers: [read]
 
- `LastPublishingTime`
- Data type: `DateTime`
+The last time the forest was discovered.
 
- Access type: Read-only
+`LastPublishingTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The last time the forest was published.
+Qualifiers: [read]
 
- `PublishingEnabled`
- Data type: `Boolean`
+The last time the forest was published.
 
- Access type: Read-only
+`PublishingEnabled` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if Active Directory publishing is enabled.
+Qualifiers: [read]
 
- `PublishingStatus`
- Data type: `UInt32`
+`true` if Active Directory publishing is enabled.
 
- Access type: Read-only
+`PublishingStatus` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Publishing status. Possible values are:
+Qualifiers: [enumeration, read]
 
-|Value|Publishing status|
-|-|-|
-|0|UNKNOWN|
-|1|SUCCEEDED|
-|2|FAILED|
+Publishing status. Possible values are:
 
- `SiteCode`
- Data type: `String`
+| Value | Publishing status |
+| --- | --- |
+| 0 | UNKNOWN |
+| 1 | SUCCEEDED |
+| 2 | FAILED |
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The site code where the Active Directory forest was discovered.
+Qualifiers: [key]
 
- `SiteName`
- Data type: `String`
+The site code where the Active Directory forest was discovered.
 
- Access type: Read-only
+`SiteName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The site name where the Active Directory forest was discovered.
+Qualifiers: [read]
+
+The site name where the Active Directory forest was discovered.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,28 +1,31 @@
 ---
-title: Create an Association Between Two Computers
+title: "How to Create an Association Between Two Computers in Configuration Manager"
 description: You create an association between a reference and destination computer, in Configuration Manager, by calling the AddAssociation Method in Class SMS_StateMigration
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create an Association Between Two Computers in Configuration Manager
-You create an association between a reference and destination computer, in Configuration Manager, by calling the [AddAssociation Method in Class SMS_StateMigration](../../develop/reference/osd/addassociation-method-in-class-sms_statemigration.md).
+
+You create an association between a reference and destination computer, in Configuration Manager, by calling the [AddAssociation Method in Class SMS_StateMigration](../reference/osd/addassociation-method-in-class-sms_statemigration.md).
 
 > [!NOTE]
->  You call the [DeleteAssociation Method in Class SMS_StateMigration](../../develop/reference/osd/deleteassociation-method-in-class-sms_statemigration.md) to delete an association.
+>
+> You call the [DeleteAssociation Method in Class SMS_StateMigration](../reference/osd/deleteassociation-method-in-class-sms_statemigration.md) to delete an association.
 
 ### To create an association between two computers
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Call the [AddAssociation Method in Class SMS_StateMigration](../../develop/reference/osd/addassociation-method-in-class-sms_statemigration.md).
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Call the [AddAssociation Method in Class SMS_StateMigration](../reference/osd/addassociation-method-in-class-sms_statemigration.md).
 
 ## Example
- The following example method adds an association between a source and reference computer.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method adds an association between a source and reference computer.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AssociateComputer(connection, referenceComputerResourceId, destinationComputerResourceId)
@@ -71,38 +74,42 @@ public void AssociateComputer(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`referenceComputerResourceID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The Configuration Manager resource identifier for the reference computer. This is available from `SMS_R_System` class `ResourceId` property for the computer.|
-|`destinationComputerResourceID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The Configuration Manager resource identifier for the destination computer. This is available from `SMS_R_System` class `ResourceId` property for the computer.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `referenceComputerResourceID` | - Managed: `Integer` - VBScript: `Integer` | The Configuration Manager resource identifier for the reference computer. This is available from `SMS_R_System` class `ResourceId` property for the computer. |
+| `destinationComputerResourceID` | - Managed: `Integer` - VBScript: `Integer` | The Configuration Manager resource identifier for the destination computer. This is available from `SMS_R_System` class `ResourceId` property for the computer. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About OS deployment computer management](about-computer-management.md)
- [AddAssociation Method in Class SMS_StateMigration](../../develop/reference/osd/addassociation-method-in-class-sms_statemigration.md)
- [DeleteAssociation Method in Class SMS_StateMigration](../../develop/reference/osd/deleteassociation-method-in-class-sms_statemigration.md)
+
+[About OS deployment computer management](about-computer-management.md) [AddAssociation Method in Class SMS_StateMigration](../reference/osd/addassociation-method-in-class-sms_statemigration.md) [DeleteAssociation Method in Class SMS_StateMigration](../reference/osd/deleteassociation-method-in-class-sms_statemigration.md)

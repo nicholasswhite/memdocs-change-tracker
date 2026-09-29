@@ -1,16 +1,18 @@
 ---
-title: EvaluateAppPolicy Method
+title: "EvaluateAppPolicy Method in Class CCM_ApplicationPolicy"
 description: Learn how the EvaluateAppPolicy Windows Management Instrumentation (WMI) class method, in Configuration Manager, that evaluates application policy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # EvaluateAppPolicy Method in Class CCM_ApplicationPolicy
+
 The `EvaluateAppPolicy` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that evaluates application policy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -29,75 +31,70 @@ uint32 EvaluateAppPolicy
 ```
 
 ## Parameters
- `PolicyId`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`PolicyId` Data type: `String`
 
- Policy identifier.
+Qualifiers: [id("0"), in]
 
- `PolicyRevision`
- Data type: `String`
+Policy identifier.
 
- Qualifiers: [id("1"), in]
+`PolicyRevision` Data type: `String`
 
- Policy revision.
+Qualifiers: [id("1"), in]
 
- `IsMachineTarget`
- Data type: `Boolean`
+Policy revision.
 
- Qualifiers: [id("2"), in]
+`IsMachineTarget` Data type: `Boolean`
 
- `True` if this is a device targeted application.
+Qualifiers: [id("2"), in]
 
- `Priority`
- Data type: `String`
+`True` if this is a device targeted application.
 
- Qualifiers: [id("3"), in, valuemap]
+`Priority` Data type: `String`
 
- Priority. Possible values are:
+Qualifiers: [id("3"), in, valuemap]
 
-|Value|
-|-|
-|Foreground|
-|High|
-|Normal|
-|Low|
+Priority. Possible values are:
 
- `IsEnforceAction`
- Data type: `Boolean`
+| Value |
+| --- |
+| Foreground |
+| High |
+| Normal |
+| Low |
 
- Qualifiers: [id("4"), in]
+`IsEnforceAction` Data type: `Boolean`
 
- `True` if the action will be enforced.
+Qualifiers: [id("4"), in]
 
- `MTCToken`
- Data type: `String`
+`True` if the action will be enforced.
 
- Qualifiers: [id("5"), in]
+`MTCToken` Data type: `String`
 
- MTC token.
+Qualifiers: [id("5"), in]
 
- `SDKCallerId`
- Data type: `String`
+MTC token.
 
- Qualifiers: [id("6"), in]
+`SDKCallerId` Data type: `String`
 
- SDK caller identifier.
+Qualifiers: [id("6"), in]
 
- `JobId`
- Data type: `String`
+SDK caller identifier.
 
- Qualifiers: [id("7"), out]
+`JobId` Data type: `String`
 
- Job identifier.
+Qualifiers: [id("7"), out]
+
+Job identifier.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

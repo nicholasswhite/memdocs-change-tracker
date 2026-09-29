@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a group of steps in a task sequence using SMS_TaskSequence_Group class in Configuration Manager.
-title: SMS_TaskSequence_Group Class
-ms.date: 09/20/2016
+title: "SMS_TaskSequence_Group Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_Group Server WMI Class
+
 The `SMS_TaskSequence_Group` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a group of steps in a task sequence.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,79 +29,78 @@ Class SMS_TaskSequence_Group : SMS_TaskSequence_Step
 ```
 
 ## Methods
- The `SMS_TaskSequence_Group` class does not define any methods.
+
+The `SMS_TaskSequence_Group` class does not define any methods.
 
 ## Properties
- `Condition`
- Data type: `SMS_TaskSequence_Condition`
 
- Access type: Read/Write
+`Condition` Data type: `SMS_TaskSequence_Condition`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: None
 
- `ContinueOnError`
- Data type: `Boolean`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`ContinueOnError` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: None
 
- `Description`
- Data type: `String`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [AllowedLen("0-255")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: [AllowedLen("0-255")]
 
- `Enabled`
- Data type: `Boolean`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: None
 
- `Name`
- Data type: `String`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [AllowedLen("1-100")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: [AllowedLen("1-100")]
 
- `Steps`
- Data type: `SMS_TaskSequence_Step` Array
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`Steps` Data type: `SMS_TaskSequence_Step` Array
 
- Qualifiers: None
+Access type: Read/Write
 
- [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md) objects representing the steps in the group.
+Qualifiers: None
+
+[SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md) objects representing the steps in the group.
 
 ## Remarks
- There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- A group is a set of one or more task sequence actions or groups. Because a group can contain further groups, it is possible to create nested groups.
+There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
- You can use groups to associate multiple steps with a condition. For example, you can restrict a group of steps to run only with Windows Vista.
+A group is a set of one or more task sequence actions or groups. Because a group can contain further groups, it is possible to create nested groups.
 
- Your application can set up a group of task sequence steps as described in How to Create an Operating System Deployment Task Sequence Group. Further information is provided in How to Add a Step to an Operating System Deployment Group.
+You can use groups to associate multiple steps with a condition. For example, you can restrict a group of steps to run only with Windows Vista.
+
+Your application can set up a group of task sequence steps as described in How to Create an Operating System Deployment Task Sequence Group. Further information is provided in How to Add a Step to an Operating System Deployment Group.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See also
 

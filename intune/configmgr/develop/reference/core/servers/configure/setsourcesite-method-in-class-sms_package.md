@@ -1,16 +1,18 @@
 ---
 description: Learn how to set the code of the source site of the package using SetSourceSite class method in Configuration Manager.
-title: SetSourceSite method in class SMS_Package
-ms.date: 09/20/2016
+title: "SetSourceSite Method in Class SMS_Package"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SetSourceSite Method in Class SMS_Package
+
 The `SetSourceSite` Windows Management Instrumentation (WMI) class method, in Configuration Manager, sets the code of the source site for the package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -21,25 +23,29 @@ SInt32 SetSourceSite(
 ```
 
 #### Parameters
- `SourceSite`
- Data type: `String`
 
- Qualifiers: [in]
+`SourceSite` Data type: `String`
 
- The site code of the source site for the package.
+Qualifiers: [in]
+
+The site code of the source site for the package.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
+
+[SMS_Package Server WMI Class](sms_package-server-wmi-class.md)

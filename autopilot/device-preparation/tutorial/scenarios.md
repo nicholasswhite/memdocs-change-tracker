@@ -1,7 +1,7 @@
-﻿---
+---
 title: Windows Autopilot device preparation scenarios
 description: Describes the different Windows Autopilot device preparation scenarios.
-ms.date: 11/21/2025
+ms.date: "2025-11-21T00:00:00Z"
 ms.topic: tutorial
 ms.collection:
   - essentials-get-started

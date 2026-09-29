@@ -1,7 +1,7 @@
 ---
-title: Command-line overview
+title: "Use a command line to install Configuration Manager sites"
 description: Learn how to run Configuration Manager setup at a command prompt for different kinds of site installations.
-ms.date: 02/16/2022
+ms.date: "2022-02-16T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: concept-article
 ms.collection: tier3
@@ -17,12 +17,11 @@ You can run Configuration Manager setup at a command prompt to automate the inst
 ## Supported tasks for command-line installations
 
 - Install a central administration site (CAS) or primary site
-
 - Modify the languages in use at a CAS or primary site
-
 - Recovery a site
 
 > [!TIP]
+>
 > You can also install the Configuration Manager client and console from the command prompt. For more information, see the following articles:
 >
 > - [Install consoles](install-consoles.md#install-from-a-command-prompt)
@@ -33,6 +32,7 @@ You can run Configuration Manager setup at a command prompt to automate the inst
 For unattended installations of Configuration Manager, you can specify a script file that contains installation options.
 
 > [!NOTE]
+>
 > You can't use the unattended script file to upgrade an evaluation site to a licensed installation of Configuration Manager.
 
 To use an answer file with setup, first configure the script file with required keys and values. For an unattended installation of a CAS or primary site, the script file requires the following sections:
@@ -51,7 +51,8 @@ To [recover a site](../../manage/recover-sites.md#site-recovery-procedures), the
 For a list of keys and values to use in an unattended installation script file, see [Unattended setup script file keys](command-line-script-file.md).
 
 > [!NOTE]
-> When you run setup from the [`CD.Latest` folder](../../manage/the-cd.latest-folder.md) for a scripted install or recovery, include the `CDLatest` key with a value of  `1`. This value isn't supported with installation media from the Microsoft Volume License site. For more information on how to use this key name in the script file, see [Command-line options](command-line-options-for-setup.md).
+>
+> When you run setup from the [`CD.Latest` folder](../../manage/the-cd.latest-folder.md) for a scripted install or recovery, include the `CDLatest` key with a value of `1`. This value isn't supported with installation media from the Microsoft Volume License site. For more information on how to use this key name in the script file, see [Command-line options](command-line-options-for-setup.md).
 
 ### Create the script
 
@@ -67,6 +68,7 @@ This script file provides the same information as the Setup Wizard, except that 
 When setup creates the unattended installation script, it includes the product key that you entered in the Setup Wizard. This key can be a valid product key, or `EVAL` to install an evaluation version of Configuration Manager. The product key value in the script is required by the prerequisite checker. When setup starts the actual site installation, it clears the product key value in the script. Before using the script for an unattended installation of a new site, edit the script to provide a valid product key or to specify an evaluation installation of Configuration Manager.
 
 > [!TIP]
+>
 > You can also manually create the script file from a plain-text editor like Notepad.
 
 ### Section names, key names, and values
@@ -85,9 +87,7 @@ To view the full set of options, see [Command-line options for setup and scripts
 To use a setup script file, specify the file name after the `/SCRIPT` command-line option.
 
 - The script file name requires the `.ini` extension.
-
 - Provide the full path to the file. For example, if you name the file `setup.ini`, and store it in the `C:\Setup` folder, then use the following command line: `setup.exe /script C:\Setup\setup.ini`
-
 - The account that runs setup must have **Administrator** rights on the computer. When you run setup with the unattended script, open the command prompt window with the **Run as administrator** option.
 
 ## Modify languages

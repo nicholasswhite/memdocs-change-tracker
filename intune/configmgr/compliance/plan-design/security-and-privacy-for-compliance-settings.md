@@ -1,7 +1,7 @@
 ---
-title: Security and privacy for compliance settings
+title: "Security and privacy for compliance settings in Configuration Manager"
 description: Learn about the security guidance and recommendations for compliance settings in Configuration Manager.
-ms.date: 05/05/2021
+ms.date: "2021-05-05T00:00:00Z"
 ms.subservice: compliance
 ms.topic: article
 ms.collection: tier3

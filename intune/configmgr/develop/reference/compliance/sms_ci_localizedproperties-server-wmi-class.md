@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_CI_LocalizedProperties class in Configuration Manager that contains the localized properties for a configuration item.
-title: SMS_CI_LocalizedProperties Class
-ms.date: 09/20/2016
+title: "SMS_CI_LocalizedProperties Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CI_LocalizedProperties Server WMI Class
+
 The `SMS_CI_LocalizedProperties` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains the localized properties for a configuration item.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,73 +27,67 @@ Class SMS_CI_LocalizedProperties
 ```
 
 ## Methods
- The `SMS_CI_LocalizedProperties` class doesn't define any methods.
+
+The `SMS_CI_LocalizedProperties` class doesn't define any methods.
 
 ## Properties
- `Description`
- Data type: `String`
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Description of the configuration item. The default value is "".
+Qualifiers: None
 
- `DisplayName`
- Data type: `String`
+Description of the configuration item. The default value is "".
 
- Access type: Read/Write
+`DisplayName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Display name for the configuration item. The default value is "".
+Qualifiers: None
 
- `InformativeURL`
- Data type: `String`
+Display name for the configuration item. The default value is "".
 
- Access type: Read/Write
+`InformativeURL` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- URL identifying additional information about the configuration item. The default value is "".
+Qualifiers: None
 
- `LocaleID`
- Data type: `UInt32`
+URL identifying additional information about the configuration item. The default value is "".
 
- Access type: Read/Write
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the locale associated with the localized properties for the configuration item.
+Qualifiers: None
+
+ID of the locale associated with the localized properties for the configuration item.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   This class is embedded by the following classes, through the `LocalizedInformation` property:
-
-- [SMS_ConfigurationItem Server WMI Class](../../../develop/reference/compliance/sms_configurationitem-server-wmi-class.md)
-
-- [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md)
-
-- [SMS_SoftwareUpdate Server WMI Class](../../../develop/reference/sum/sms_softwareupdate-server-wmi-class.md)
-
-- [SMS_AuthorizationList Server WMI Class](../../../develop/reference/sum/sms_authorizationlist-server-wmi-class.md)
+- [SMS_ConfigurationItem Server WMI Class](sms_configurationitem-server-wmi-class.md)
+- [SMS_Driver Server WMI Class](../osd/sms_driver-server-wmi-class.md)
+- [SMS_SoftwareUpdate Server WMI Class](../sum/sms_softwareupdate-server-wmi-class.md)
+- [SMS_AuthorizationList Server WMI Class](../sum/sms_authorizationlist-server-wmi-class.md)
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
- [SMS_ConfigurationItem Server WMI Class](../../../develop/reference/compliance/sms_configurationitem-server-wmi-class.md)
- [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md)
- [SMS_SoftwareUpdate Server WMI Class](../../../develop/reference/sum/sms_softwareupdate-server-wmi-class.md)
- [SMS_AuthorizationList Server WMI Class](../../../develop/reference/sum/sms_authorizationlist-server-wmi-class.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md) [SMS_ConfigurationItem Server WMI Class](sms_configurationitem-server-wmi-class.md) [SMS_Driver Server WMI Class](../osd/sms_driver-server-wmi-class.md) [SMS_SoftwareUpdate Server WMI Class](../sum/sms_softwareupdate-server-wmi-class.md) [SMS_AuthorizationList Server WMI Class](../sum/sms_authorizationlist-server-wmi-class.md)

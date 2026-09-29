@@ -1,7 +1,7 @@
 ---
-title: SMS_PolicyAgentConfig class
+title: "SMS_PolicyAgentConfig server WMI class"
 description: Details of the SMS_PolicyAgentConfig server WMI class
-ms.date: 07/26/2019
+ms.date: "2019-07-26T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -60,11 +60,11 @@ Qualifiers: none
 
 Method used by the policy agent to download policy files. Possible values are listed below. This value can only be NULL if PolicyRequestTarget is NULL. This value shouldn't be changed.
 
-|Value|Policy download method|
-|-|-|
-|FILECOPY|Copy policy files using standard file copy operations. Policy paths must be local or Universal Naming Convention (UNC) file paths. This value is intended for testing only.|
-|HTTP|Download policy files synchronously by using direct HTTP. Policy paths must be HTTP URLs.|
-|BITS|Drizzle policy files asynchronously by using the Data Transfer Service. Policy paths must be HTTP URLs.|
+| Value | Policy download method |
+| --- | --- |
+| FILECOPY | Copy policy files using standard file copy operations. Policy paths must be local or Universal Naming Convention (UNC) file paths. This value is intended for testing only. |
+| HTTP | Download policy files synchronously by using direct HTTP. Policy paths must be HTTP URLs. |
+| BITS | Drizzle policy files asynchronously by using the Data Transfer Service. Policy paths must be HTTP URLs. |
 
 ### `PolicyEnableUserAuthForAllUserPolicies`
 
@@ -98,7 +98,6 @@ Qualifiers: none
 
 ### `PolicyEnableUserPolicyOnTS`
 
-<!--3556025-->
 Data type: `Boolean`
 
 Access type: Read/Write

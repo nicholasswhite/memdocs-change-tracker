@@ -1,16 +1,18 @@
 ---
-title: SMS_BoundaryGroup Class
+title: "SMS_BoundaryGroup Server WMI Class"
 description: The SMS_BoundaryGroup WMI class is an SMS Provider server class that represents a boundary group defined in the site hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BoundaryGroup Server WMI Class
+
 The `SMS_BoundaryGroup` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a boundary group defined in the site hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,144 +35,139 @@ Class SMS_BoundaryGroup : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_BoundaryGroup` class.
 
-|Method|Description|
-|------------|-----------------|
-|[AddBoundary Method in Class SMS_BoundaryGroup](../../../../../develop/reference/core/servers/configure/addboundary-method-in-class-sms_boundarygroup.md)|Adds boundaries to this boundary group.|
-|[AddSiteSystem Method in Class SMS_BoundaryGroup](../../../../../develop/reference/core/servers/configure/addsitesystem-method-in-class-sms_boundarygroup.md)|Adds a site system to this boundary group.|
-|[RemoveBoundary Method in Class SMS_BoundaryGroup](../../../../../develop/reference/core/servers/configure/removeboundary-method-in-class-sms_boundarygroup.md)|Removes boundaries from this boundary group.|
-|[RemoveSiteSystem Method in Class SMS_BoundaryGroup](../../../../../develop/reference/core/servers/configure/removesitesystem-method-in-class-sms_boundarygroup.md)|Removes site systems from this boundary group.|
+The following table lists the methods in the `SMS_BoundaryGroup` class.
+
+| Method | Description |
+| --- | --- |
+| [AddBoundary Method in Class SMS_BoundaryGroup](addboundary-method-in-class-sms_boundarygroup.md) | Adds boundaries to this boundary group. |
+| [AddSiteSystem Method in Class SMS_BoundaryGroup](addsitesystem-method-in-class-sms_boundarygroup.md) | Adds a site system to this boundary group. |
+| [RemoveBoundary Method in Class SMS_BoundaryGroup](removeboundary-method-in-class-sms_boundarygroup.md) | Removes boundaries from this boundary group. |
+| [RemoveSiteSystem Method in Class SMS_BoundaryGroup](removesitesystem-method-in-class-sms_boundarygroup.md) | Removes site systems from this boundary group. |
 
 ## Properties
- `CreatedBy`
- Data type: `String`
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- User that created the boundary group.
+Qualifiers: [read]
 
- `CreatedOn`
- Data type: `DateTime`
+User that created the boundary group.
 
- Access type: Read-only
+`CreatedOn` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date the boundary group was created.
+Qualifiers: [read]
 
- `DefaultSiteCode`
- Data type: `String`
+Date the boundary group was created.
 
- Access type: Read/Write
+`DefaultSiteCode` Data type: `String`
 
- Qualifiers: [sizelimit("3")]
+Access type: Read/Write
 
- Site code new clients will be auto assigned to.
+Qualifiers: [sizelimit("3")]
 
- `Description`
- Data type: `String`
+Site code new clients will be auto assigned to.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description for the boundary group.
+Qualifiers: none
 
- `Flags`  
- Data type: `UInt64`  
+Description for the boundary group.
 
- Access type: Read/Write  
+`Flags`  
+ Data type: `UInt64`
 
- Qualifiers: none
+Access type: Read/Write
 
- Boundary group property flags.  
+Qualifiers: none
 
- |Value|Execution context|  
- |-|-|  
- |0|Allow peer downloads in this boundary group|  
- |1|Allow peer downloads in this boundary group **is not enabled**|  
- |2|During peer downloads, only use peers within the same subnet|  
- |4|Prefer distribution points over peers within the same subnet|  
- |8|Prefer cloud based sources over on-premises sources|  
+Boundary group property flags.
 
- > [!NOTE]
- > These are binary flags. So multiple can be set at once. E.g. if a value of 6 is shown, then the first 3 are enabled.
+| Value | Execution context |
+| --- | --- |
+| 0 | Allow peer downloads in this boundary group |
+| 1 | Allow peer downloads in this boundary group **is not enabled** |
+| 2 | During peer downloads, only use peers within the same subnet |
+| 4 | Prefer distribution points over peers within the same subnet |
+| 8 | Prefer cloud based sources over on-premises sources |
 
- `GroupID`
- Data type: `UInt32`
+> [!NOTE]
+>
+> These are binary flags. So multiple can be set at once. E.g. if a value of 6 is shown, then the first 3 are enabled.
 
- Access type: Read/Write
+`GroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Auto-generated unique identifier for the boundary group.
+Qualifiers: [key]
 
- `MemberCount`
- Data type: `UInt32`
+Auto-generated unique identifier for the boundary group.
 
- Access type: Read-only
+`MemberCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of boundaries in the boundary group.
+Qualifiers: [read]
 
- `ModifiedBy`
- Data type: `String`
+Count of boundaries in the boundary group.
 
- Access type: Read-only
+`ModifiedBy` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- User that last modified the boundary group.
+Qualifiers: [read]
 
- `ModifiedOn`
- Data type: `DateTime`
+User that last modified the boundary group.
 
- Access type: Read-only
+`ModifiedOn` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date the boundary group was last modified.
+Qualifiers: [read]
 
- `Name`
- Data type: `String`
+Date the boundary group was last modified.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [not_null, unique]
+Access type: Read/Write
 
- Name of the boundary group.
+Qualifiers: [not_null, unique]
 
- `Shared`
- Data type: `Boolean`
+Name of the boundary group.
 
- Access type: Read-only
+`Shared` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if this boundary group was created by migration manager for a shared distribution point.
+Qualifiers: [read]
 
- `SiteSystemCount`
- Data type: `UInt32`
+`true` if this boundary group was created by migration manager for a shared distribution point.
 
- Access type: Read-only
+`SiteSystemCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Site system count.
+Qualifiers: [read]
+
+Site system count.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

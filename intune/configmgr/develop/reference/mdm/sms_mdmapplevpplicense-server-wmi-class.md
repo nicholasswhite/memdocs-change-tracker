@@ -1,16 +1,18 @@
 ---
-title: SMS_MDMAppleVppLicense Class
+title: "SMS_MDMAppleVppLicense Server WMI Class"
 description: The SMS_MDMAppleVppLicense WMI class represents an Apple Volume Purchase Program (VPP) licensed application.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MDMAppleVppLicense Server WMI Class
+
 The `SMS_MDMAppleVppLicense` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an Apple Volume Purchase Program (VPP) licensed application.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,132 +36,123 @@ Class SMS_MDMAppleVppLicense : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MDMAppleVppLicense`  class does not define any methods.
+
+The `SMS_MDMAppleVppLicense` class does not define any methods.
 
 ## Properties
- `ApplicationID`
- Data type: `String`
 
- Access type: Read
+`ApplicationID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The AppleID of the application.
+Qualifiers: [key]
 
- `AvailableLicenses`
- Data type: `UInt32`
+The AppleID of the application.
 
- Access type: Read
+`AvailableLicenses` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- Current number of available licenses for the application.
+Qualifiers: none
 
- `BundleID`
- Data type: `String`
+Current number of available licenses for the application.
 
- Access type: Read
+`BundleID` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Apple App Store bundle ID.
+Qualifiers: none
 
- `DeepLinkUrl`
- Data type: `String`
+Apple App Store bundle ID.
 
- Access type: Read
+`DeepLinkUrl` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The application VPP link in the Apple App Store.
+Qualifiers: none
 
- `InfoLink`
- Data type: `String`
+The application VPP link in the Apple App Store.
 
- Access type: Read
+`InfoLink` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The link to the application in the Apple App Store.
+Qualifiers: none
 
- `LastUpdateTime`
- Data type: `DateTime`
+The link to the application in the Apple App Store.
 
- Access type: Read
+`LastUpdateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The last time the VPP license data for the application was updated.
+Qualifiers: none
 
- `Publisher`
- Data type: `String`
+The last time the VPP license data for the application was updated.
 
- Access type: Read
+`Publisher` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Publisher of the application in the Apple App Store.
+Qualifiers: none
 
- `ReleaseDate`
- Data type: `DateTime`
+Publisher of the application in the Apple App Store.
 
- Access type: Read
+`ReleaseDate` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The application's release date to the Apple App Store.
+Qualifiers: none
 
- `SupportedDevices`
- Data type: `String`
+The application's release date to the Apple App Store.
 
- Access type: Read
+`SupportedDevices` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The devices supported by the application.
+Qualifiers: none
 
- `Title`
- Data type: `String`
+The devices supported by the application.
 
- Access type: Read
+`Title` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Title of the application in Apple App Store.
+Qualifiers: none
 
- `TotalLicenses`
- Data type: `UInt32`
+Title of the application in Apple App Store.
 
- Access type: Read
+`TotalLicenses` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- Total number of licenses for the application.
+Qualifiers: none
 
- `Version`
- Data type: `String`
+Total number of licenses for the application.
 
- Access type: Read
+`Version` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Application version in the Apple App Store.
+Qualifiers: none
+
+Application version in the Apple App Store.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

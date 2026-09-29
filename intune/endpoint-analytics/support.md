@@ -1,7 +1,7 @@
 ---
-title: Get Support for Endpoint Analytics
+title: "Get support for endpoint analytics"
 description: Get support for Microsoft Intune endpoint analytics, including technical troubleshooting, online help, and product feedback options.
-ms.date: 10/09/2025
+ms.date: "2025-10-09T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -16,15 +16,13 @@ Before contacting Microsoft Support, first review the following articles:
 
 ## Help and support
 
-To request help for endpoint analytics, use the **Help and Support** option in the portal under **Troubleshooting + support**. This action files an online support ticket for endpoint analytics. To create and manage a support incident, your account must have a Microsoft Entra role that includes the action **microsoft.office365.supportTickets/tickets/manage**. For more information about the required roles, see [Administrator roles in Microsoft Entra ID](/azure/active-directory/users-groups-roles/directory-assign-admin-roles).
+To request help for endpoint analytics, use the **Help and Support** option in the portal under **Troubleshooting + support**. This action files an online support ticket for endpoint analytics. To create and manage a support incident, your account must have a Microsoft Entra role that includes the action **microsoft.office365.supportTickets/tickets/manage**. For more information about the required roles, see [Administrator roles in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles).
 
 If the issue is more broadly for Intune than just endpoint analytics, see [How to get support in Microsoft Intune](../fundamentals/it-pro-support/get-support-admin-center.md) to open a new support request. For an issue that is more broadly for Configuration Manager than just endpoint analytics, open a support request at [Microsoft support for Configuration Manager](https://aka.ms/cmcbsupport).
 
-:::image type="content" source="media/support/support-options.png" alt-text="Help and support button location in Microsoft Endpoint Manager admin center." lightbox="media/support/support-options.png" border="false":::
+[![Help and support button location in Microsoft Endpoint Manager admin center.](media/support/support-options.png)](media/support/support-options.png#lightbox)
 
 ## Share product feedback
-
-<!-- 5451636 -->
 
 To share your feedback about endpoint analytics, select the **Feedback** icon at the top of the Intune admin center. Use the text box to provide your feedback and select **Submit** when done.
 

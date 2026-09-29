@@ -1,7 +1,7 @@
 ---
-title: Console extension registration through community hub
+title: "Console extension registration though community hub"
 description: Register a console extension through community hub
-ms.date: 11/19/2021
+ms.date: "2021-11-19T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,20 +9,23 @@ ms.service: configuration-manager
 ---
 
 # Console extension registration though community hub
-<!--9526630, 3555909-->
+
 Console extension authors can contribute extensions they've written to the community hub. Community hub users can download the extensions and manage the installation of them across their Configuration Manager hierarchy. Contributing extensions through Community hub supersedes the [previous deployment process](console-extension-deployment.md).
 
 ## Version information
 
 To download console extensions from the [Community hub](../../../../core/servers/manage/community-hub.md), you'll need either:
+
 - A technical preview version of Configuration Manager
 - Configuration Manager [version 2103](../../../../core/plan-design/changes/whats-new-in-version-2103.md) or later
 
 You can test your own signed extensions by [importing them locally](../../../../core/servers/manage/import-admin-console-extensions.md) with the following versions:
+
 - A technical preview version of Configuration Manager
 - Configuration Manager [version 2103](../../../../core/plan-design/changes/whats-new-in-version-2103.md) or later
 
 You can [import an unsigned extension](../../../../core/servers/manage/import-admin-console-extensions.md) locally. Unsigned extensions are for local import and testing purposes only. Unsigned extensions can't be submitted to Community hub. Importing an unsigned extension requires one of the following versions:
+
 - [Technical preview version 2105.2](../../../../core/get-started/2021/technical-preview-2105-2.md#bkmk_ext) or later.
 - Configuration Manager [version 2107](../../../../core/plan-design/changes/whats-new-in-version-2107.md) or later
 
@@ -30,42 +33,43 @@ Starting in version 2111, you can import both signed and unsigned extensions usi
 
 ## Prerequisites
 
- To register a console extension in the community hub for Configuration Manager admins to download, you'll need the following prerequisites:
-
+To register a console extension in the community hub for Configuration Manager admins to download, you'll need the following prerequisites:
 
 - Meet all of the prerequisites for [contributing to community hub](../../../../core/servers/manage/community-hub-contribute.md)
 - Configuration Manager **Full Administrator** with **All** scope rights.
-
 - A [valid payload](#bkmk_cab) in an authenticode-signed `.cab` file once you're ready to publish. Your `.cab` file must contain the following items:
-   - A manifest file named `manifest.xml`
-   - The author and [version](/dotnet/api/system.version) of the extension must be listed in the `manifest.xml`
-   - All relevant files for the extension must be in the `.cab` file
-     - Each file must be listed in the manifest and have the correct name and SHA256 hash
 
-## <a name="bkmk_create"></a> Create an extension
+  - A manifest file named `manifest.xml`
+  - The author and [version](https://learn.microsoft.com/en-us/dotnet/api/system.version) of the extension must be listed in the `manifest.xml`
+  - All relevant files for the extension must be in the `.cab` file
+    - Each file must be listed in the manifest and have the correct name and SHA256 hash
+
+## Create an extension
 
 Creating your extension for community hub isn't much different from how it was done previously. However, there's no longer a need to install the files in their respective `%ProgramFiles%\Microsoft Endpoint Manager\AdminConsole\XmlStorage\Extensions` folder. This is part of the function of the new `manifest.xml` file. You can still create the following items:
+
 - [Actions](configuration-manager-actions.md)
 - [Forms](about-configuration-manager-console-forms.md)
 - [Management classes](about-configuration-manager-console-management-classes.md)
 - [Nodes](about-configuration-manager-console-nodes.md)
 - [Views](about-configuration-manager-console-views.md)
 - Integrate your own custom wizards into the Configuration Manager console by using a wizard framework of your choice
-   - You can't create wizards by using the existing Configuration Manager console framework.
-   - You can't modify or remove steps from the existing Configuration Manager wizards.
+  - You can't create wizards by using the existing Configuration Manager console framework.
+  - You can't modify or remove steps from the existing Configuration Manager wizards.
 
 > [!TIP]
+>
 > From community hub's GitHub repository, you can download [a sample extension's cab file](https://github.com/microsoft/configmgr-hub/blob/master/objects/ConsoleExtensionCab/AllStatusMessageForTsDeployment.cab).
 
-## <a name="bkmk_cab"></a> Create a valid payload cab file
+## Create a valid payload cab file
 
 Once you have the files for your extension created, you'll create the `manifest.xml` file, then package them all together in an authenticode-signed `.cab` file.
 
 - A valid payload in an authenticode-signed `.cab` file. Your `.cab` file must contain the following items:
-   - A manifest file named `manifest.xml`
-   - The author and [version](/dotnet/api/system.version) of the extension must be listed in the `manifest.xml`
-   - All relevant files for the extension must be in the `.cab` file
-     - Each file must be listed in the manifest and have the correct name and SHA256 hash
+  - A manifest file named `manifest.xml`
+  - The author and [version](https://learn.microsoft.com/en-us/dotnet/api/system.version) of the extension must be listed in the `manifest.xml`
+  - All relevant files for the extension must be in the `.cab` file
+    - Each file must be listed in the manifest and have the correct name and SHA256 hash
 
 Manifest.xml format:
 
@@ -147,47 +151,48 @@ Example manifest.xml file:
 </CustomExtensionManifest>
 ```
 
-## <a name="bkmk_test"></a> Register the extension to a site for testing
+## Register the extension to a site for testing
 
 When you have your extension built and packaged into an authenticode-signed `.cab` file, you can test it in a Configuration Manager lab environment. You'll do this by posting it through the [administration service](../../../adminservice/usage.md). Once the extension is inserted into the site, you can approve it and install it locally from the **Console Extensions** node.
 
-> [!Important]
+> [!IMPORTANT]
+>
 > For local testing, you can import unsigned console extensions when you use version 2107 or later. For more information and additional import methods, see [Import console extensions](../../../../core/servers/manage/import-admin-console-extensions.md).
 
 1. Run the following PowerShell script after editing the `$adminServiceProvider` and `$cabFilePath`:
+
    - `$adminServiceProvider` - The top-level SMSProvider server where the administration service is installed
    - `$cabFilePath` - Path to the extension's authenticode-signed `.cab` file
 
-    ```powershell
-    $adminServiceProvider = "SMSProviderServer.contoso.com"
-    $cabFilePath = "C:\Testing\MyExtension.cab"
-    $adminServiceURL = "https://$adminServiceProvider/AdminService/v1/ConsoleExtensionMetadata/AdminService.UploadExtension"
-    $cabFileName = (Get-Item -Path $cabFilePath).Name
-    $Data = Get-Content $cabFilePath
-    $Bytes = [System.IO.File]::ReadAllBytes($cabFilePath)
-    $base64Content = [Convert]::ToBase64String($Bytes)
+   ```powershell
+   $adminServiceProvider = "SMSProviderServer.contoso.com"
+   $cabFilePath = "C:\Testing\MyExtension.cab"
+   $adminServiceURL = "https://$adminServiceProvider/AdminService/v1/ConsoleExtensionMetadata/AdminService.UploadExtension"
+   $cabFileName = (Get-Item -Path $cabFilePath).Name
+   $Data = Get-Content $cabFilePath
+   $Bytes = [System.IO.File]::ReadAllBytes($cabFilePath)
+   $base64Content = [Convert]::ToBase64String($Bytes)
 
-    $Headers = @{
-        "Content-Type" = "Application/json"
-    }
+   $Headers = @{
+       "Content-Type" = "Application/json"
+   }
 
-    $Body = @{
-                CabFile = @{
-                    FileName = $cabFileName
-                    FileContent = $base64Content
-                }
-            } | ConvertTo-Json
+   $Body = @{
+               CabFile = @{
+                   FileName = $cabFileName
+                   FileContent = $base64Content
+               }
+           } | ConvertTo-Json
 
-    $result = Invoke-WebRequest -Method Post -Uri $adminServiceURL -Body $Body -Headers $Headers -UseDefaultCredentials
+   $result = Invoke-WebRequest -Method Post -Uri $adminServiceURL -Body $Body -Headers $Headers -UseDefaultCredentials
 
-    if ($result.StatusCode -eq 200) {Write-Host "$cabFileName was published successfully."}
-    else {Write-Host "$cabFileName publish failed. Review AdminService.log for more information."}
-    ```
-
-1. In the Configuration Manager console, go to **Administration** >  **Overview** > **Updates and Servicing** > **Console Extensions**.
-1. Select your extension, then choose **Approve Installation**.
-1. To install the extension on the current console, select **Install** under **Local Extension**.
-1. Rerunning the PowerShell script with the same extension and the same version will overwrite the current existing one.
+   if ($result.StatusCode -eq 200) {Write-Host "$cabFileName was published successfully."}
+   else {Write-Host "$cabFileName publish failed. Review AdminService.log for more information."}
+   ```
+2. In the Configuration Manager console, go to **Administration** &gt; **Overview** &gt; **Updates and Servicing** &gt; **Console Extensions**.
+3. Select your extension, then choose **Approve Installation**.
+4. To install the extension on the current console, select **Install** under **Local Extension**.
+5. Rerunning the PowerShell script with the same extension and the same version will overwrite the current existing one.
 
 ## Share your extension on community hub
 
@@ -197,11 +202,12 @@ Make sure you've joined the community hub and that you've accepted the invite af
 
 - **Content URL**: Location for the downloadable `.cab` file
 - **SHA-256 hash of the content**: SHA-256 hash of the `.cab` file
-- **License URL**: URL of the license for the extension, such as [https://mit-license.org/](https://mit-license.org/)
+- **License URL**: URL of the license for the extension, such as <https://mit-license.org/>
 - **Privacy statement URL**: URL of your privacy statement
 
-> [!Important]
-> If you import an extension locally into the console by posting it through the administration service, the download will fail if you attempt to download the same extension from the Community hub. To test the download of your extension from Community hub, delete the imported extension and then download from Community hub. <!--12375723-->
+> [!IMPORTANT]
+>
+> If you import an extension locally into the console by posting it through the administration service, the download will fail if you attempt to download the same extension from the Community hub. To test the download of your extension from Community hub, delete the imported extension and then download from Community hub.
 
 ## Next steps
 

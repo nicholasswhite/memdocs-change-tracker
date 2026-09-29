@@ -1,16 +1,18 @@
 ---
-title: SMS_Resource Class
+title: "SMS_Resource Server WMI Class"
 description: In Configuration Manager, the SMS_Resource WMI class is an SMS Provider server class that serves as an abstract base class for all discovery resource classes.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_Resource Server WMI Class
-The `SMS_Resource` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as an abstract base class for all discovery resource classes, for example, [SMS_R_IPNetwork Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_r_ipnetwork-server-wmi-class.md).
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_Resource Server WMI Class
+
+The `SMS_Resource` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as an abstract base class for all discovery resource classes, for example, [SMS_R_IPNetwork Server WMI Class](sms_r_ipnetwork-server-wmi-class.md).
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -22,34 +24,38 @@ Class SMS_Resource : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_Resource` class doesn't define any methods.
+
+The `SMS_Resource` class doesn't define any methods.
 
 ## Properties
- `ResourceID`
- Data type: **UInt32**
 
- Access type: Read/Write
+`ResourceID` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Configuration Manager-supplied ID that uniquely identifies a Configuration Manager client resource. This ID isn't unique across sites. The default value is ''".
+Qualifiers: [key]
+
+Configuration Manager-supplied ID that uniquely identifies a Configuration Manager client resource. This ID isn't unique across sites. The default value is ''".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
-
 - Read:ToSubClass
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ResourceMap Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resourcemap-server-wmi-class.md)
+
+[SMS_ResourceMap Server WMI Class](sms_resourcemap-server-wmi-class.md)

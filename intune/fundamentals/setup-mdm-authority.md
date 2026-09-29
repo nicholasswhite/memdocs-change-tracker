@@ -1,7 +1,7 @@
 ---
 title: Set the mobile device management authority
 description: Learn about how to set the mobile device management authority in Microsoft Intune and some key considerations.
-ms.date: 09/24/2024
+ms.date: "2024-09-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: dagerrit
 ---
@@ -13,11 +13,8 @@ The mobile device management (MDM) authority setting determines how you manage y
 Possible configurations are:
 
 - **Intune Standalone** - Cloud-only management, which you configure by using the Azure portal. Includes the full set of capabilities that Intune offers. To get started, see [Set the MDM authority in the Microsoft Intune admin center](#set-mdm-authority-to-intune).
-
-- **Intune co-management** - Integration of the Intune cloud solution with Configuration Manager for Windows devices. You configure Intune by using the Configuration Manager console. To get started, see [Configure auto-enrollment of devices to Intune](/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune).
-
+- **Intune co-management** - Integration of the Intune cloud solution with Configuration Manager for Windows devices. You configure Intune by using the Configuration Manager console. To get started, see [Configure auto-enrollment of devices to Intune](https://learn.microsoft.com/en-us/configmgr/comanage/tutorial-co-manage-clients#configure-auto-enrollment-of-devices-to-intune).
 - **Basic Mobility and Security for Microsoft 365** - After this configuration is activated, the MDM authority is set to "Office 365". If you want to start using Intune, you're required to purchase Intune licenses.
-
 - **Basic Mobility and Security for Microsoft 365 [coexistence](#coexistence)** - You can add Intune to your tenant if you're already using Basic Mobility and Security for Microsoft 365. You can set the management authority to either Intune or Basic Mobility and Security for Microsoft 365 for each user to dictate which service is used to manage their MDM-enrolled devices. Each user's management authority is defined based on the license assigned to the user:
 
   - Basic Mobility and Security for Microsoft 365 manages the devices of users who only have a license for Microsoft 365 Basic or Standard.
@@ -26,16 +23,15 @@ Possible configurations are:
 
 ## Set MDM authority to Intune
 
-1. In the [Microsoft Intune admin center], select the orange banner to open the **Mobile Device Management Authority** setting. The orange banner is only displayed if you haven't yet set the MDM authority. If the orange banner is not visible, you can navigate directly to the MDM Authority settings to configure the [MDM authority](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_Enrollment/ChooseMDMAuthorityBlade).
-
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select the orange banner to open the **Mobile Device Management Authority** setting. The orange banner is only displayed if you haven't yet set the MDM authority. If the orange banner is not visible, you can navigate directly to the MDM Authority settings to configure the [MDM authority](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_Enrollment/ChooseMDMAuthorityBlade).
 2. Under **Mobile Device Management Authority**, choose your MDM authority from the following options:
 
-    - **Intune MDM Authority**
-    - **None**
+   - **Intune MDM Authority**
+   - **None**
 
-    :::image type="content" source="./media/setup-mdm-authority/set-mdm-auth.png" alt-text="Screenshot of Intune set mobile device management authority screen." lightbox="./media/setup-mdm-authority/set-mdm-auth.png":::
+   [![Screenshot of Intune set mobile device management authority screen.](media/setup-mdm-authority/set-mdm-auth.png)](media/setup-mdm-authority/set-mdm-auth.png#lightbox)
 
-  A message indicates that you have successfully set your MDM authority to Intune.
+A message indicates that you have successfully set your MDM authority to Intune.
 
 ### Workflow of Intune Administration UI
 
@@ -74,21 +70,21 @@ There are three major steps to enable coexistence:
 
 Before enabling coexistence with Basic Mobility and Security, consider the following points:
 
-- Make sure you have sufficient [Intune licenses](./licensing.md) for the users you intend to manage through Intune.
+- Make sure you have sufficient [Intune licenses](licensing.md) for the users you intend to manage through Intune.
 - Review which users are assigned Intune licenses. After you enable coexistence, any user already assigned an Intune license will have their devices switch to Intune. To avoid unexpected device switches, we recommend not assigning any Intune licenses until you've enabled coexistence.
-- Create and deploy Intune policies to replace device security policies that were originally deployed through the Office 365 Security & Compliance portal. This replacement should be done for any users you expect to move from Basic Mobility and Security to Intune. If there are no Intune policies assigned to those users, enabling coexistence may cause them to lose Basic Mobility and Security settings. These settings are lost without replacement, like managed email profiles. Even when replacing device security policies with Intune policies, users may be prompted to re-authenticate their email profiles after the device is moved to Intune management.
-- You can't unprovision Basic Mobility and Security after you've set it up. However, there are steps you can take to turn off the policies. For more information, see [Turn off Basic Mobility and Security](/microsoft-365/admin/basic-mobility-security/turn-off).
+- Create and deploy Intune policies to replace device security policies that were originally deployed through the Office 365 Security &amp; Compliance portal. This replacement should be done for any users you expect to move from Basic Mobility and Security to Intune. If there are no Intune policies assigned to those users, enabling coexistence may cause them to lose Basic Mobility and Security settings. These settings are lost without replacement, like managed email profiles. Even when replacing device security policies with Intune policies, users may be prompted to re-authenticate their email profiles after the device is moved to Intune management.
+- You can't unprovision Basic Mobility and Security after you've set it up. However, there are steps you can take to turn off the policies. For more information, see [Turn off Basic Mobility and Security](https://learn.microsoft.com/en-us/microsoft-365/admin/basic-mobility-security/turn-off).
 
 ### Add Intune MDM authority
 
 To enable coexistence, you must add Intune as the MDM authority for your environment:
 
-1. Sign in to the [Microsoft Intune admin center] with Microsoft Entra Global or Intune service administrator rights.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with Microsoft Entra Global or Intune service administrator rights.
 2. Navigate to **Devices**.
 3. The **Add MDM Authority blade** banner is displayed.
-4. To switch the MDM authority from *Office 365* to *Intune* and enable coexistence, select **Intune MDM Authority** > **Add**.
+4. To switch the MDM authority from *Office 365* to *Intune* and enable coexistence, select **Intune MDM Authority** &gt; **Add**.
 
-   :::image type="content" alt-text="Screenshot of Add MDM Authority screen." source="./media/setup-mdm-authority/add-mdm-authority.png" lightbox="./media/setup-mdm-authority/add-mdm-authority.png":::
+   [![Screenshot of Add MDM Authority screen.](media/setup-mdm-authority/add-mdm-authority.png)](media/setup-mdm-authority/add-mdm-authority.png#lightbox)
 
 ### Migrate users and devices (optional)
 
@@ -105,15 +101,15 @@ The MDM authority can't be changed back to Unknown. The MDM authority is used by
 ## What to expect after changing the MDM authority
 
 - When the Intune service detects a change in a tenant's MDM authority, it sends a notification message to all enrolled devices. The notification message prompts the devices to check in and synchronize with the service, outside of their regular schedule. As a result, all powered on and online devices connect with the service and receive the new MDM authority. The new authority manages and protects the devices without any interruption. Therefore, after the MDM authority for the tenant is changed from Intune standalone, the devices will continue to function normally under the new MDM authority.
-
 - Devices that are powered on and online during or shortly after the change in MDM authority experience a delay. The delay can last up to eight hours, depending on the timing of the next scheduled regular check-in. During the delay, the devices aren't registered with the service under the new MDM authority. After the delay, the devices are fully registered and operational under the new MDM authority.
 
-   > [!IMPORTANT]
-   > Between the time when you change the MDM authority and when the renewed APNs certificate is uploaded to the new authority, new device enrollments and device check-in for iOS/iPadOS devices fail. Therefore, it's important that you review and upload the APNs certificate to the new authority as soon as possible after the change in MDM authority.
-
+  > [!IMPORTANT]
+  >
+  > Between the time when you change the MDM authority and when the renewed APNs certificate is uploaded to the new authority, new device enrollments and device check-in for iOS/iPadOS devices fail. Therefore, it's important that you review and upload the APNs certificate to the new authority as soon as possible after the change in MDM authority.
 - Users can quickly change to the new MDM authority by manually starting a check-in from the device to the service. Users can easily make this change by using the Company Portal app and starting a device compliance check.
 - To validate that things are working correctly after devices have checked-in and synchronized with the service after the change in MDM authority, look for the devices in the new MDM authority.
 - There's an interim period when a device is offline during the change in MDM authority and when that device checks in to the service. During the interim period, it's important to protect and maintain the functionality of the device. To protect and maintain the functionality of the device, the following profiles remain on the device. These profiles stay on the device up to seven days or until the device connects with the new MDM authority. Once the device connects and receives new settings, the existing profiles are overwritten:
+
   - E-mail profile
   - VPN profile
   - Cert profile
@@ -122,10 +118,11 @@ The MDM authority can't be changed back to Unknown. The MDM authority is used by
 - After you change to the new MDM authority, the compliance data in the Microsoft Intune admin center can take up to a week to accurately report. However, the compliance states in Microsoft Entra ID and on the device are accurate so the device is still protected.
 - Make sure the new settings intended to overwrite existing settings have the same name as the previous ones to ensure that the old settings are overwritten. Otherwise, the devices might end up with redundant profiles and policies.
 
-   > [!TIP]
-   > As a best practice, you should create all management settings and configurations, as well as deployments, shortly after the change to the MDM authority has completed. This helps ensure that devices are protected and actively managed during the interim period.
-
+  > [!TIP]
+  >
+  > As a best practice, you should create all management settings and configurations, as well as deployments, shortly after the change to the MDM authority has completed. This helps ensure that devices are protected and actively managed during the interim period.
 - After you change the MDM authority, perform the following steps to validate that new devices are enrolled successfully to the new authority:
+
   - Enroll a new device
   - Make sure the newly enrolled device shows up in the new MDM authority.
   - Perform an action, such as Remote Lock, from the Microsoft Intune admin center to the device. If it's successful, then the new MDM authority is managing the device.
@@ -135,13 +132,9 @@ The MDM authority can't be changed back to Unknown. The MDM authority is used by
 
 To confirm that your MDM authority is set to Intune, use the following steps:
 
-1. In the [Microsoft Intune admin center], select **Tenant administration** > **Tenant status**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Tenant administration** &gt; **Tenant status**.
 2. Under the **Tenant details** tab, find **MDM authority**.
 
 ## Next steps
 
 With the MDM authority set, you can start [enrolling devices](../device-enrollment/guide.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

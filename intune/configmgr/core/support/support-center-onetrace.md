@@ -1,7 +1,7 @@
 ---
 title: Support Center OneTrace
 description: OneTrace is a new log viewer with Support Center that has improvements over CMTrace.
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -9,8 +9,6 @@ ms.service: configuration-manager
 ---
 
 # Support Center OneTrace
-
-<!--3555962-->
 
 OneTrace is a new log viewer with Support Center. It works similarly to CMTrace, with the following improvements:
 
@@ -22,9 +20,9 @@ OneTrace is a new log viewer with Support Center. It works similarly to CMTrace,
 - Fast log opening for large files
 - Windows jump lists for recently opened files (version 2103 and later)
 - Status messages are displayed in an easy to read format (version 2111 and later)
-   - Entries starting with `>>` are status messages that are automatically converted into a readable format when a log is opened. Search or filter on the `>>` string to find status messages in the log.
+  - Entries starting with `>>` are status messages that are automatically converted into a readable format when a log is opened. Search or filter on the `>>` string to find status messages in the log.
 
-:::image type="content" source="media/3555962-onetrace.png" alt-text="Screenshot of Support Center OneTrace log viewer." lightbox="media/3555962-onetrace.png":::
+[![Screenshot of Support Center OneTrace log viewer.](media/3555962-onetrace.png)](media/3555962-onetrace.png#lightbox)
 
 OneTrace works with many types of log files, such as:
 
@@ -32,11 +30,11 @@ OneTrace works with many types of log files, such as:
 - Configuration Manager server logs
 - Status messages
 - Windows Update ETW log file on Windows 10 or later
-- Windows Update log file on Windows 7 & Windows 8.1
+- Windows Update log file on Windows 7 &amp; Windows 8.1
 
 ## Prerequisites
 
-Starting in version 2107, the all site and client components require .NET version 4.6.2, and version 4.8 is recommended.<!--10402814--> For more information, [Site and site system prerequisites](../../core/plan-design/configs/site-and-site-system-prerequisites.md#net-version-requirements).
+Starting in version 2107, the all site and client components require .NET version 4.6.2, and version 4.8 is recommended. For more information, [Site and site system prerequisites](../plan-design/configs/site-and-site-system-prerequisites.md#net-version-requirements).
 
 In version 2103 and earlier, this tool requires .NET 4.6 or later.
 
@@ -47,11 +45,10 @@ OneTrace installs with Support Center. Find the Support Center installer on the 
 By default, the OneTrace application is installed at `C:\Program Files (x86)\Configuration Manager Support Center\CMPowerLogViewer.exe`.
 
 > [!NOTE]
+>
 > Support Center Log File Viewer and OneTrace use Windows Presentation Foundation (WPF). This component isn't available in Windows PE. Continue to use [CMTrace](cmtrace.md) in boot images with task sequence deployments.
 
 ## Log groups
-
-<!--5559993-->
 
 OneTrace supports customizable log groups, similar to the feature in Support Center. Log groups allow you to open all log files for a single scenario. OneTrace currently includes groups for the following scenarios:
 
@@ -61,7 +58,7 @@ OneTrace supports customizable log groups, similar to the feature in Support Cen
 
 To show log groups, go to the **View** menu, and select **Log groups**.
 
-:::image type="content" source="media/5559993-onetrace-log-groups.png" alt-text="Screenshot of Support Center OneTrace log group for application management.":::
+![Screenshot of Support Center OneTrace log group for application management.](media/5559993-onetrace-log-groups.png)
 
 ### Customize log groups
 
@@ -69,7 +66,7 @@ You can customize these groups by modifying the configuration XML, which by defa
 
 The following example is one portion of the default configuration file:
 
-``` XML
+```XML
 <LogGroups>
   <LogGroup Name="Desired Configuration Management" GroupType="1" GroupFilePath="">
     <LogFile>CIAgent.log</LogFile>
@@ -95,8 +92,6 @@ The `GroupFilePath` property can include an explicit path for the log files. If 
 
 ## Open recent files
 
-<!--6991505-->
-
 Starting in version 2103, OneTrace supports Windows jump lists for recently opened files. Jump lists let you quickly go to previously opened files, so you can work faster.
 
 There are three methods to open recent files in OneTrace:
@@ -109,13 +104,13 @@ There are three methods to open recent files in OneTrace:
 
 When the OneTrace icon is on the Windows taskbar, right-click it, and then select a file from the **Recently opened** list.
 
-:::image type="content" source="media/6991505-onetrace-jump-list.png" alt-text="Support Center OneTrace jump list from Windows taskbar with recently opened list.":::
+![Support Center OneTrace jump list from Windows taskbar with recently opened list.](media/6991505-onetrace-jump-list.png)
 
 ### Windows Start menu recently opened list
 
 Go to the **Start** menu, and type `onetrace`. Select a file from the **Recently opened** list.
 
-:::image type="content" source="media/6991505-onetrace-start-menu.png" alt-text="Support Center OneTrace in Windows Start menu with recently opened list.":::
+![Support Center OneTrace in Windows Start menu with recently opened list.](media/6991505-onetrace-start-menu.png)
 
 ### OneTrace recently opened list
 
@@ -124,7 +119,7 @@ There are two locations in OneTrace that show the list of recently opened files:
 - The **Recently opened** tab in the lower right corner.
 - Go to the **File** menu and select a file at the bottom of the menu.
 
-:::image type="content" source="media/6991505-onetrace-recently-opened.png" alt-text="Support Center OneTrace recently opened lists.":::
+![Support Center OneTrace recently opened lists.](media/6991505-onetrace-recently-opened.png)
 
 ## Next steps
 

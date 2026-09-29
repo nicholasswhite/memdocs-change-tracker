@@ -1,14 +1,14 @@
 ---
-title: Admin checklist for Android software updates in Microsoft Intune
+title: "Software updates planning guide for managed Android Enterprise devices in Microsoft Intune"
 description: Guidance and advice for administrators that create and manage software updated for Android devices using Microsoft Intune. See tasks and settings that can manage updates on corporate owned Android Enterprise devices.
-ms.date: 05/29/2024
+ms.date: "2024-05-29T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ahamil, talima
 ---
 
 # Software updates planning guide for managed Android Enterprise devices in Microsoft Intune
 
-Patches, major & minor updates, and new operating system versions are released frequently. Organizations must keep devices updated to get the latest security updates.
+Patches, major &amp; minor updates, and new operating system versions are released frequently. Organizations must keep devices updated to get the latest security updates.
 
 Devices with Android Google Mobile Services (GMS) include all the Google apps and Google services. These apps and services are on top of the OEMs own firmware features and apps. These devices receive a different type of updates and they're updated randomly, depending on the behaviors by Google, the OEM, and the service carrier/telecommunication company.
 
@@ -21,6 +21,7 @@ This article applies to:
 - Android Enterprise devices enrolled in Intune
 
 > [!TIP]
+>
 > If your devices are personally owned, then go to the [software updates planning guide for personal devices](../byod-planning-guide.md).
 
 ## Before you begin
@@ -49,14 +50,12 @@ Do create policies that update your devices. Don't put this responsibility on en
 When users install their own updates (instead of admins managing the updates), it can disrupt user productivity and business tasks. For example:
 
 - Users can start an update when they want, and might not be able to work while an update is installing.
-
 - Users can apply updates that your organization hasn't approved. This decision can cause issues with application compatibility, changes to the operating system, or changes to the user experience that disrupt device use.
-
 - Users can avoid applying required updates that affect security or app compatibility. This situation can leave the devices at risk and/or prevent the devices from functioning.
 
 ### ✅ Configure the system update setting
 
-Manage OS updates using the **System update** setting in an Intune device configuration profile (**Devices** > **Manage devices** > **Configuration** > **Create** > **Device restrictions** > **General**).
+Manage OS updates using the **System update** setting in an Intune device configuration profile (**Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **Device restrictions** &gt; **General**).
 
 For enrolled Android Enterprise devices, you can configure this setting and choose when the updates are installed. For example, you can:
 
@@ -65,19 +64,19 @@ For enrolled Android Enterprise devices, you can configure this setting and choo
 - Postpone updates for 30 days and then prompt users to install updates. Expect your device manufacturer and/or carrier to prevent important security updates from being postponed.
 - Create a maintenance window to automatically install updates during a specific time frame.
 
-  :::image type="content" source="media/planning-guide/system-update-maintenance-window.png" alt-text="Screenshot that shows the system update setting with a maintenance window for Android Enterprise devices in the Microsoft Intune admin center.":::
+  ![Screenshot that shows the system update setting with a maintenance window for Android Enterprise devices in the Microsoft Intune admin center.](media/planning-guide/system-update-maintenance-window.png)
 
-For more specific information on this setting and the values you can configure, go to [Android template device settings list to restrict features using Intune](../../device-configuration/templates/ref-device-restrictions-android-enterprise.md) > **Corporate-owned** > **General**.
+For more specific information on this setting and the values you can configure, go to [Android template device settings list to restrict features using Intune](../../device-configuration/templates/ref-device-restrictions-android-enterprise.md) &gt; **Corporate-owned** &gt; **General**.
 
 ### ✅ Use freeze periods during critical times
 
-Configure the **Freeze periods for system updates** setting in an Intune device configuration profile (**Devices** > **Manage devices** > **Configuration** > **Create** > **Device restrictions** > **General**).
+Configure the **Freeze periods for system updates** setting in an Intune device configuration profile (**Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **Device restrictions** &gt; **General**).
 
 During critical periods of the year, like holidays and other events, a freeze period prevents devices from receiving system updates, security patches, and notifications about pending updates. Users can't manually check for updates:
 
-:::image type="content" source="media/planning-guide/enterprise-freeze-period-settings.png" alt-text="Screenshot that shows the freeze period start date and end date for Android Enterprise devices in the Microsoft Intune admin center.":::
+![Screenshot that shows the freeze period start date and end date for Android Enterprise devices in the Microsoft Intune admin center.](media/planning-guide/enterprise-freeze-period-settings.png)
 
-For more information on this setting, go to [Android template device settings list to restrict features using Intune](../../device-configuration/templates/ref-device-restrictions-android-enterprise.md) > **Corporate-owned** > **General**.
+For more information on this setting, go to [Android template device settings list to restrict features using Intune](../../device-configuration/templates/ref-device-restrictions-android-enterprise.md) &gt; **Corporate-owned** &gt; **General**.
 
 ### ✅ Use OEMConfig for firmware updates
 

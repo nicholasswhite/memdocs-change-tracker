@@ -1,16 +1,18 @@
 ---
 description: The SMS_R_IPNetwork WMI class is an SMS Provider server class, in Configuration Manager, that is generated dynamically and contains data for resources discovered by the Network Discovery Agent.
-title: SMS_R_IPNetwork Class
-ms.date: 09/20/2016
+title: "SMS_R_IPNetwork Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_R_IPNetwork Server WMI Class
+
 The `SMS_R_IPNetwork` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is generated dynamically at SMS Provider run time and contains discovery data for resources discovered by the Network Discovery Agent.
 
- The following syntax is not defined in the Managed Object Format (MOF) code.
+The following syntax is not defined in the Managed Object Format (MOF) code.
 
 ## Syntax
 
@@ -32,123 +34,117 @@ Class SMS_R_IPNetwork : SMS_Resource
 ```
 
 ## Methods
- The `SMS_R_IPNetwork` class does not define any methods.
+
+The `SMS_R_IPNetwork` class does not define any methods.
 
 ## Properties
- `AgentName`
- Data type: **String** Array
 
- Access type: Read-only
+`AgentName` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- Names of agents that discovered the resource.
+Qualifiers: None
 
- `AgentSite`
- Data type: **String** Array
+Names of agents that discovered the resource.
 
- Access type: Read-only
+`AgentSite` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of sites from which the agent ran.
+Qualifiers: None
 
- `AgentTime`
- Data type: **DateTime** Array
+List of sites from which the agent ran.
 
- Access type: Read-only
+`AgentTime` Data type: **DateTime** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of discovery times.
+Qualifiers: None
 
- `CreationDate`
- Data type: **DateTime**
+List of discovery times.
 
- Access type: Read-only
+`CreationDate` Data type: **DateTime**
 
- Qualifiers: None
+Access type: Read-only
 
- Creation time stamp of the discovered resource.
+Qualifiers: None
 
- `Name`
- Data type: **String**
+Creation time stamp of the discovered resource.
 
- Access type: Read-only
+`Name` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the resource. This value might be blank.
+Qualifiers: None
 
- `ResourceID`
- Data type: **UInt32**
+Name of the resource. This value might be blank.
 
- Access type: Read/Write
+`ResourceID` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md).
+Qualifiers: [key]
 
- `ResourceType`
- Data type: **UInt32**
+See [SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md).
 
- Access type: Read-only
+`ResourceType` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read-only
 
- Type of resources on the site. Because other types of resources might be added before network discovery is enabled, this property might be set to any value equal to or greater than 6.
+Qualifiers: None
 
- `SubnetAddress`
- Data type: **String**
+Type of resources on the site. Because other types of resources might be added before network discovery is enabled, this property might be set to any value equal to or greater than 6.
 
- Access type: Read-only
+`SubnetAddress` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- IP network address. This value can contain wildcards.
+Qualifiers: None
 
- `SubnetMask`
- Data type: **String**
+IP network address. This value can contain wildcards.
 
- Access type: Read-only
+`SubnetMask` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Subnet mask for the subnet number.
+Qualifiers: None
 
- `SubnetName`
- Data type: **String**
+Subnet mask for the subnet number.
 
- Access type: Read-only
+`SubnetName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the subnet.
+Qualifiers: None
 
- `SubnetTopology`
- Data type: **String**
+Name of the subnet.
 
- Access type: Read-only
+`SubnetTopology` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Topology of the subnet.
+Qualifiers: None
+
+Topology of the subnet.
 
 ## Remarks
- This class is not available on sites where the agent is not enabled. The Network Discovery Agent is not enabled at the time Configuration Manager is installed. You must enable the agent by using the Configuration Manager console or by updating the site control file.
 
- Although you can specify an IP network resource type for a collection, you cannot distribute software to its resources.
+This class is not available on sites where the agent is not enabled. The Network Discovery Agent is not enabled at the time Configuration Manager is installed. You must enable the agent by using the Configuration Manager console or by updating the site control file.
 
- You cannot create or update an instance of this class, but you can delete an instance.
+Although you can specify an IP network resource type for a collection, you cannot distribute software to its resources.
+
+You cannot create or update an instance of this class, but you can delete an instance.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md)
- [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md)
+
+[SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md) [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md)

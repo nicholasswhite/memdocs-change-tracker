@@ -1,7 +1,7 @@
 ---
-title: Using Azure Virtual Desktop single-session with Microsoft Intune
+title: "Using Azure Virtual Desktop with Intune"
 description: Guidelines for using Azure Virtual Desktop single-session with Microsoft Intune.
-ms.date: 10/14/2025
+ms.date: "2025-10-14T00:00:00Z"
 ms.topic: article
 ms.reviewer: madakeva
 ms.collection:
@@ -10,22 +10,22 @@ ms.collection:
 
 # Using Azure Virtual Desktop with Intune
 
-[Azure Virtual Desktop](/azure/virtual-desktop/) is a desktop and app virtualization service that runs on Microsoft Azure. It lets end users connect securely to a full desktop from any device. With Microsoft Intune, you can secure and manage your Azure Virtual Desktop VMs with policy and apps at scale, after they're enrolled.
+[Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/) is a desktop and app virtualization service that runs on Microsoft Azure. It lets end users connect securely to a full desktop from any device. With Microsoft Intune, you can secure and manage your Azure Virtual Desktop VMs with policy and apps at scale, after they're enrolled.
 
 ## Prerequisites
 
 For single-session, Intune supports Azure Virtual Desktop VMs that are:
 
 - Running Windows Enterprise.
-- Set up as [personal remote desktops](/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type) in Azure.
-- [Microsoft Entra hybrid joined](/azure/active-directory/devices/hybrid-azuread-join-plan) and enrolled in Intune in one of the following methods:
-  - Configure [Active Directory group policy](/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy) to automatically enroll devices that are Microsoft Entra hybrid joined.
-  - [Configuration Manager co-management](/configmgr/comanage/overview).
+- Set up as [personal remote desktops](https://learn.microsoft.com/en-us/azure/virtual-desktop/configure-host-pool-personal-desktop-assignment-type) in Azure.
+- [Microsoft Entra hybrid joined](https://learn.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-plan) and enrolled in Intune in one of the following methods:
+  - Configure [Active Directory group policy](https://learn.microsoft.com/en-us/windows/client-management/mdm/enroll-a-windows-10-device-automatically-using-group-policy) to automatically enroll devices that are Microsoft Entra hybrid joined.
+  - [Configuration Manager co-management](https://learn.microsoft.com/en-us/configmgr/comanage/overview).
   - [User self-enrollment via Microsoft Entra join](../device-enrollment/windows/guide.md#byod-user-enrollment).
-- Microsoft Entra joined and enrolled in Intune by enabling [Enroll the VM with Intune](/azure/virtual-desktop/deploy-azure-ad-joined-vm#deploy-azure-ad-joined-vms) in the Azure portal.
+- Microsoft Entra joined and enrolled in Intune by enabling [Enroll the VM with Intune](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#deploy-azure-ad-joined-vms) in the Azure portal.
 - Deployed in an Azure subscription associated with the same Entra ID tenant as Intune
 
-For more information on Azure Virtual Desktop licensing requirements, see [Licensing Azure Virtual Desktop](/azure/virtual-desktop/licensing).
+For more information on Azure Virtual Desktop licensing requirements, see [Licensing Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/licensing).
 
 For information about working with multi-session remote desktops, see [Windows Enterprise multi-session remote desktops](azure-virtual-desktop-multi-session.md).
 
@@ -48,15 +48,15 @@ Also, the following profiles aren't currently supported:
 - [Domain Join](../device-configuration/overview.md#domain-join)
 - [Wi-Fi](../device-configuration/overview.md#wi-fi)
 
-Make sure that the [RemoteDesktopServices/AllowUsersToConnectRemotely policy](/windows/client-management/mdm/policy-csp-remotedesktopservices#remotedesktopservices-allowuserstoconnectremotely) isn't disabled.
+Make sure that the [RemoteDesktopServices/AllowUsersToConnectRemotely policy](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-remotedesktopservices#remotedesktopservices-allowuserstoconnectremotely) isn't disabled.
 
 ### Cloning physical and virtual devices
 
 Intune doesn't support using a cloned image of a computer that is already enrolled. This includes both physical and virtual devices such as Azure Virtual Desktop (AVD). When device enrollment or identity tokens are replicated between devices, Intune device enrollment or synchronization failures occur.
 
-- For more information, see [Mobile device enrollment - Windows Client Management](/windows/client-management/mobile-device-enrollment) and [Certificate authentication device enrollment - Windows Client Management](/windows/client-management/certificate-authentication-device-enrollment).
+- For more information, see [Mobile device enrollment - Windows Client Management](https://learn.microsoft.com/en-us/windows/client-management/mobile-device-enrollment) and [Certificate authentication device enrollment - Windows Client Management](https://learn.microsoft.com/en-us/windows/client-management/certificate-authentication-device-enrollment).
 - For information on disabling token roaming in AVD, see [Using Azure Virtual Desktop multi-session with Microsoft Intune](azure-virtual-desktop-multi-session.md#prerequisites).
-- For information on troubleshooting issues related to image cloning, see [Error hr 0x8007064c: The machine is already enrolled](/troubleshoot/mem/intune/troubleshoot-windows-enrollment-errors#error-hr-0x8007064c-the-machine-is-already-enrolled).
+- For information on troubleshooting issues related to image cloning, see [Error hr 0x8007064c: The machine is already enrolled](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-windows-enrollment-errors#error-hr-0x8007064c-the-machine-is-already-enrolled).
 
 ### Remote actions
 
@@ -71,18 +71,18 @@ The following Windows desktop device remote actions aren't supported/recommended
 
 ### Retirement
 
-Deleting VMs from Azure leaves orphaned device records in Intune. They'll be automatically [cleaned up](../governance/configure-cleanup-rules.md) according to the cleanup rules configured for the tenant.
+Deleting VMs from Azure leaves orphaned device records in Intune. They'll be automatically [cleaned up](../governance/configure-cleanup-rules.md) according to the cleanup rules configured for the tenant.
 
 ### Known issues
 
 The following table provides a set of known issues along with more information about each issue.
 
-| Issue | More   information |
-|---|---|
+| Issue | More information |
+| --- | --- |
 | Can't auto-enroll if tenant has more than one MDM provider | This issue will be fixed in the future. |
-| Modern apps, such as Universal Windows Platform (UWP) apps, aren't working correctly if [FSLogix](/fslogix/overview) is configured | Using FSLogix and Modern apps could cause compatibility issues. We recommend that you don't configure Modern apps when FSLogix is configured.|
+| Modern apps, such as Universal Windows Platform (UWP) apps, aren't working correctly if [FSLogix](https://learn.microsoft.com/en-us/fslogix/overview) is configured | Using FSLogix and Modern apps could cause compatibility issues. We recommend that you don't configure Modern apps when FSLogix is configured. |
 
 ## Next steps
 
-* [Learn more about Azure Virtual Desktops](/azure/virtual-desktop/).
-* [Use Azure Virtual Desktop multi-session with Intune](./azure-virtual-desktop-multi-session.md)
+- [Learn more about Azure Virtual Desktops](https://learn.microsoft.com/en-us/azure/virtual-desktop/).
+- [Use Azure Virtual Desktop multi-session with Intune](azure-virtual-desktop-multi-session.md)

@@ -1,29 +1,29 @@
 ---
-title: Enable or Disable a Windows Driver
+title: "How to Enable or Disable a Windows Driver in Configuration Manager"
 description: Enable or disable a Windows driver in the operating system deployment driver catalog by setting the IsEnabled property of the SMS_Driver Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Enable or Disable a Windows Driver in Configuration Manager
-You enable or disable a Windows driver in the operating system deployment driver catalog, in Configuration Manager, by setting the `IsEnabled` property of the [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) object. A driver can be disabled to prevent it from being installed by the Auto Apply Driver action in a task sequence.
+
+You enable or disable a Windows driver in the operating system deployment driver catalog, in Configuration Manager, by setting the `IsEnabled` property of the [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) object. A driver can be disabled to prevent it from being installed by the Auto Apply Driver action in a task sequence.
 
 ### To enable or disable a Windows driver
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the `SMS_Driver` object for the driver you want to enable or disable.
-
-3.  Set the `IsEnabled` property to `true` to enable the driver, or to `false` to disable the driver.
-
-4.  Commit the `SMS_Driver` object changes.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the `SMS_Driver` object for the driver you want to enable or disable.
+3. Set the `IsEnabled` property to `true` to enable the driver, or to `false` to disable the driver.
+4. Commit the `SMS_Driver` object changes.
 
 ## Example
- The following example method enables or disables a driver depending on the value of the `enableDriver` parameter.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method enables or disables a driver depending on the value of the `enableDriver` parameter.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub EnableDriver(connection,driverID,vEnableDriver)
@@ -65,35 +65,40 @@ public void EnableDriver(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`driverID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The Windows driver identifier available in `SMS_Driver.CI_ID`.|
-|`enableDriver`|-   Managed: `String`<br />-   VBScript: `String`|Flag to enable or disable the driver.<br /><br /> `true` - The driver is enabled.<br /><br /> `false` -  The driver is disabled.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `driverID` | - Managed: `Integer` - VBScript: `Integer` | The Windows driver identifier available in `SMS_Driver.CI_ID`. |
+| `enableDriver` | - Managed: `String` - VBScript: `String` | Flag to enable or disable the driver.   `true` - The driver is enabled.   `false` - The driver is disabled. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).

@@ -1,7 +1,7 @@
 ---
-title: "Device Action: Sync"
+title: "Device action: sync"
 description: Learn how to use the device sync action in Intune to apply policy, app, and configuration updates to managed devices.
-ms.date: 08/06/2026
+ms.date: "2026-08-06T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
 zone_pivot_groups: 51e33912-415a-402f-8201-8acebf3e4991
@@ -15,12 +15,7 @@ For more information about the standard Intune policy check-in frequencies, see 
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
@@ -31,31 +26,23 @@ For more information about the standard Intune policy check-in frequencies, see 
 > - visionOS
 > - Windows
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
 > To run this action, use an account with at least one of the following roles:
 >
-> - [Help Desk Operator]
-> - [School Administrator]
-> - [Endpoint Security Manager]
-> - [Custom role] that includes:
+> - [Help Desk Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [School Administrator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#school-administrator)
+> - [Endpoint Security Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#endpoint-security-manager)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Remote tasks/Sync devices**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
-:::column-end:::
-:::row-end:::
+
 ## Sync a device from the Intune admin center
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Sync**.
-1. To confirm, select **Yes**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Sync**.
+4. To confirm, select **Yes**.
 
 ::: zone pivot="windows"
 
@@ -70,7 +57,8 @@ After selecting **Sync**, Intune initiates an on-demand synchronization across m
 
 You can track the progress of the sync action by selecting the **Device sync status** tab in the device overview pane.
 
->[!NOTE]
+> [!NOTE]
+>
 > The described sync behavior, including the **Device sync status** tab, applies only to Windows and iOS/iPadOS devices. To see the new device sync improvements, ensure that the 'Preview new device view' toggle is turned ON. This is at the top right of the Intune admin console screen.
 
 ::: zone-end
@@ -88,7 +76,8 @@ After selecting **Sync**, Intune initiates an on-demand synchronization across m
 
 You can track the progress of the sync action by selecting the **Device sync status** tab in the device overview pane.
 
->[!NOTE]
+> [!NOTE]
+>
 > The described sync behavior, including the **Device sync status** tab, applies only to iOS/iPadOS and Windows devices. To see the new device sync improvements, ensure that the 'Preview new device view' toggle is turned ON. This is at the top right of the Intune admin console screen.
 
 ::: zone-end
@@ -99,42 +88,28 @@ You can track the progress of the sync action by selecting the **Device sync sta
 
 When you run the **Sync** action, apps that fail and raise a retryable error code remain available to the device. Apps that raise a nonretryable error code must wait seven days before they're available to the device.
 
-| Error code  | Suggested description | Retryable |
-|---|---|---|
+| Error code | Suggested description | Retryable |
+| --- | --- | --- |
 | 2016330898 | An unknown error occurred. | No |
 | 2016330897 | Your connection to Intune timed out. Reset your connection. | Yes |
 | 2016330896 | You lost connection to the Internet. Reset your connection. | Yes |
 | 2016330895 | You lost connection to the Internet. Reset your connection. | Yes |
 | 2016330894 | You lost connection to the Internet. Reset your connection. | Yes |
-| 2016330893 | You lost connection to the Internet. Reset your connection. | Yes|
-| 2016330892 | International roaming is disabled. | No|
-| 2016330891 | The cellular data connection for this device can't be accessed while a phone call is being made. Wait for the phone call to complete. | Yes|
-| 2016330890 | The cellular network for this device. These devices couldn't be used at this time. | No|
-| 2016330889 | The secure connection failed. Reset your connection. | Yes|
-| 2016330888 | The server trust evaluation has failed. | No|
+| 2016330893 | You lost connection to the Internet. Reset your connection. | Yes |
+| 2016330892 | International roaming is disabled. | No |
+| 2016330891 | The cellular data connection for this device can't be accessed while a phone call is being made. Wait for the phone call to complete. | Yes |
+| 2016330890 | The cellular network for this device. These devices couldn't be used at this time. | No |
+| 2016330889 | The secure connection failed. Reset your connection. | Yes |
+| 2016330888 | The server trust evaluation has failed. | No |
 
 ::: zone-end
 
 ## Reference links
 
-- Microsoft Graph API: [syncDevice action][GRAPH-1]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[School Administrator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-[Endpoint Security Manager]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#endpoint-security-manager
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-syncdevice
+- Microsoft Graph API: [syncDevice action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-syncdevice)
 
 ::: zone pivot="windows,ios,macos,android"
+
+
+
 ::: zone-end

@@ -1,16 +1,18 @@
 ---
-title: CCM_Service_IISConfiguration Class
+title: "CCM_Service_IISConfiguration Client WMI Class"
 description: In Configuration Manager, the CCM_Service_IISConfiguration class is a client Windows Management Instrumentation class that supports Internet Information Services-related settings used by CCMEXEC for staging and receiving message payloads on a Management Point.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Service_IISConfiguration Client WMI Class
+
 In Configuration Manager, the `CCM_Service_IISConfiguration` class is a client Windows Management Instrumentation (WMI) class that supports Internet Information Services (IIS)-related settings used by CCMEXEC for staging and receiving message payloads on a Management Point.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,118 +34,113 @@ Class CCM_Service_IISConfiguration : CCM_Policy
 ```
 
 ## Methods
- The `CCM_Service_IISConfiguration` class does not define any methods.
+
+The `CCM_Service_IISConfiguration` class does not define any methods.
 
 ## Properties
- `Dummy[key]`
- Data type: `UInt8`
 
- Access type: Read/Write
+`Dummy[key]` Data type: `UInt8`
 
- Qualifiers: [Realkey]
+Access type: Read/Write
 
- Dummy key.
+Qualifiers: [Realkey]
 
- `IncomingPayloadDir`
- Data type: `String`
+Dummy key.
 
- Access type: Read/Write
+`IncomingPayloadDir` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Directory where message payloads are uploaded to the server by clients. The System and Administrators account must have full access to this directory. In addition, the appropriate permissions must be given to allow clients to upload to this directory by means of IIS using the BITS ISAPI component. This directory must be created at install time; it is not automatically created by the service.
+Qualifiers: None
 
- `IncomingPayloadVirtualDir`
- Data type: `String`
+Directory where message payloads are uploaded to the server by clients. The System and Administrators account must have full access to this directory. In addition, the appropriate permissions must be given to allow clients to upload to this directory by means of IIS using the BITS ISAPI component. This directory must be created at install time; it is not automatically created by the service.
 
- Access type: Read/Write
+`IncomingPayloadVirtualDir` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- IIS virtual directory mapped to **IncomingPayloadDir**.
+Qualifiers: None
 
- `OutgoingPayloadDir`
- Data type: `String`
+IIS virtual directory mapped to **IncomingPayloadDir**.
 
- Access type: Read/Write
+`OutgoingPayloadDir` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Directory that is used to hold message payloads that will be downloaded by clients.
+Qualifiers: None
 
- `OutgoingPayloadVirtualDir`
- Data type: `String`
+Directory that is used to hold message payloads that will be downloaded by clients.
 
- Access type: Read/Write
+`OutgoingPayloadVirtualDir` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- IIS virtual directory mapped to **OutgoingPayloadDir**.
+Qualifiers: None
 
- `PolicyID`
- Data type: `String`
+IIS virtual directory mapped to **OutgoingPayloadDir**.
 
- Access type: Read/Write
+`PolicyID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyInstanceID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyInstanceID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyPrecedence`
- Data type: `UInt32`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyPrecedence` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: None
 
- `PolicyRuleID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyRuleID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicySource`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicySource` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyVersion`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
+
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
 ## Remarks
- An instance of this class should exist only if IIS has been configured to work with CCMEXEC, that is, IIS must be installed and the appropriate physical and virtual directories must be set up correctly. If this instance is omitted, CCMEXEC operates without using IIS, thus losing some functionality.
+
+An instance of this class should exist only if IIS has been configured to work with CCMEXEC, that is, IIS must be installed and the appropriate physical and virtual directories must be set up correctly. If this instance is omitted, CCMEXEC operates without using IIS, thus losing some functionality.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md)

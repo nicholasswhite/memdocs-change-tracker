@@ -1,7 +1,7 @@
 ---
-title: Understand Microsoft Intune Management Extension
+title: "Intune Management Extension for Windows"
 description: Understand Microsoft Intune management extension for Windows.
-ms.date: 04/07/2026
+ms.date: "2026-09-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: bryanke
 ms.collection:
@@ -15,13 +15,15 @@ ms.collection:
 The Intune Management Extension (IME) is an installer agent that enhances Windows device management (MDM). It supplements the standard Windows MDM feature by enabling advanced device management capabilities.
 
 > [!NOTE]
-> For details about PowerShell scripts, see [Use PowerShell scripts on Windows devices in Intune](./run-powershell-scripts-windows.md).
+>
+> For details about PowerShell scripts, see [Use PowerShell scripts on Windows devices in Intune](run-powershell-scripts-windows.md).
 
 This feature applies to:
 
 - [Supported Windows versions](../../fundamentals/ref-supported-platforms.md) (excluding Windows Home and Windows devices running in S mode).
 
 > [!NOTE]
+>
 > After the Intune management extension prerequisites are met, the extension installs automatically when you assign any of the following to the user or device:
 >
 > - A PowerShell script
@@ -30,27 +32,24 @@ This feature applies to:
 > - A custom compliance policy setting
 > - A proactive remediation
 >
-> For more information, see Intune Management Extension [prerequisites](./management-extension-windows.md#prerequisites).
+> For more information, see Intune Management Extension [prerequisites](#prerequisites).
 
 ## Prerequisites
 
 > [!IMPORTANT]
+>
 > Devices must run Intune Management Extension version **1.58.103.0** or later. Devices on earlier versions don't receive configurations or updates that depend on the Intune Management Extension, including Win32 app deployments, PowerShell scripts, remediations, and platform scripts. The Intune Management Extension updates automatically, so most managed devices should already have a compatible version. Verify that your devices can sync with Intune to receive updates.
 
 The Intune management extension has the following prerequisites. When the prerequisites are met, the Intune management extension installs automatically when a PowerShell script or Win32 app is assigned to the user or device.
 
 - Devices running a [supported Windows version](../../fundamentals/ref-supported-platforms.md). The Intune management extension doesn't support Windows in S mode because S mode doesn't allow running nonstore apps.
-
 - Devices joined to Microsoft Entra ID, including:
 
-  - Microsoft Entra hybrid joined: Devices joined to Microsoft Entra ID and on-premises Active Directory (AD). See [Plan your Microsoft Entra hybrid join implementation](/azure/active-directory/devices/hybrid-azuread-join-plan) for guidance.
-
-  - Microsoft Entra registered/Workplace joined (WPJ): Devices [registered](/azure/active-directory/user-help/user-help-register-device-on-network) in Microsoft Entra ID. For more information, see [Workplace Join as a seamless second factor authentication](/windows-server/identity/ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications#BKMK_DRS). These are Bring Your Own Device (BYOD) devices with a work or school account added via **Settings** > **Accounts** > **Access work or school**.
-
+  - Microsoft Entra hybrid joined: Devices joined to Microsoft Entra ID and on-premises Active Directory (AD). See [Plan your Microsoft Entra hybrid join implementation](https://learn.microsoft.com/en-us/azure/active-directory/devices/hybrid-azuread-join-plan) for guidance.
+  - Microsoft Entra registered/Workplace joined (WPJ): Devices [registered](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-register-device-on-network) in Microsoft Entra ID. For more information, see [Workplace Join as a seamless second factor authentication](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications#BKMK_DRS). These are Bring Your Own Device (BYOD) devices with a work or school account added via **Settings** &gt; **Accounts** &gt; **Access work or school**.
 - Devices enrolled in Intune, including:
 
-  - Devices enrolled using group policy (GPO). For more information, see [Enroll a Windows device automatically using Group Policy](/windows/client-management/enroll-a-windows-10-device-automatically-using-group-policy).
-
+  - Devices enrolled using group policy (GPO). For more information, see [Enroll a Windows device automatically using Group Policy](https://learn.microsoft.com/en-us/windows/client-management/enroll-a-windows-10-device-automatically-using-group-policy).
   - Devices manually enrolled in Intune, which occurs when:
 
     - [Automatic enrollment to Intune](../../device-enrollment/windows/quickstart-automatic-mdm.md) is enabled in Microsoft Entra ID. Users sign in to devices using a local user account and manually join the device to Microsoft Entra ID. Then, they sign in to the device using their Microsoft Entra account.
@@ -58,24 +57,23 @@ The Intune management extension has the following prerequisites. When the prereq
     OR
 
     - Users sign in to the device using their Microsoft Entra account and then enroll in Intune.
-
   - Co-managed devices using Configuration Manager and Intune. When installing Win32 apps, set the **Apps** workload to **Pilot Intune** or **Intune**. PowerShell scripts run even if the **Apps** workload is set to **Configuration Manager**. The Intune management extension deploys to a device when you target a PowerShell script to the device. The device must be Microsoft Entra ID or Microsoft Entra hybrid joined and running a [supported Windows version](../../fundamentals/ref-supported-platforms.md). See the following articles for guidance:
 
-    - [What is co-management](/configmgr/comanage/overview)
-    - [Client apps workload](/configmgr/comanage/workloads#client-apps)
-    - [How to switch Configuration Manager workloads to Intune](/configmgr/comanage/how-to-switch-workloads)
-
+    - [What is co-management](https://learn.microsoft.com/en-us/configmgr/comanage/overview)
+    - [Client apps workload](https://learn.microsoft.com/en-us/configmgr/comanage/workloads#client-apps)
+    - [How to switch Configuration Manager workloads to Intune](https://learn.microsoft.com/en-us/configmgr/comanage/how-to-switch-workloads)
 - For devices behind firewalls and proxy servers, enable communication for Intune. For more information, see [Network requirements for PowerShell scripts and Win32 apps](../../fundamentals/endpoints.md).
 
 > [!NOTE]
+>
 > For details about using Windows virtual machines, see [Using Windows virtual machines with Microsoft Intune](../../solutions/windows-virtual-machines.md).
 
 ## Understand Intune management extension agent installation
 
 For devices meeting the prerequisites, the Intune management extension installs automatically when certain features are assigned to a user or device. Installation occurs when the following features are assigned:
 
-- [PowerShell scripts](./run-powershell-scripts-windows.md)
-- [Remediations](./deploy-remediations.md)
+- [PowerShell scripts](run-powershell-scripts-windows.md)
+- [Remediations](deploy-remediations.md)
 - [Discovery scripts for custom compliance](../../device-security/compliance/create-custom-script.md)
 - [Win32 apps](../../app-management/deployment/add-win32.md)
 - [Endpoint analytics](../../endpoint-analytics/index.md)
@@ -84,6 +82,7 @@ For devices meeting the prerequisites, the Intune management extension installs 
 - [Update Windows BIOS using configuration MDM policy](../../device-configuration/templates/configure-bios-windows.md)
 
 > [!NOTE]
+>
 > For details about how the IME is rolled out and updated, see [Service information for Microsoft Intune release updates](../../fundamentals/servicing-information.md).
 
 The agent installs at `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs` when applicable and doesn't appear in the start menu on Windows devices. The agent appears as **IntuneManagementExtension** under **Services** in **Task Manager** when running on Windows devices.
@@ -92,22 +91,25 @@ The agent installs at `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs` 
 
 - The IME silently authenticates with Intune services before checking in to receive assigned installations for the Windows device.
 - The IME checks for new or updated installations with Intune services every 8 hours. This check-in process is independent of the MDM check-in.
+- After the Windows [enrollment status page (ESP)](../../device-enrollment/windows/setup-status-page.md) or [Windows Autopilot device preparation](../../../autopilot/device-preparation/overview.md) finishes, the IME immediately checks for new Windows app assignments. This behavior reduces the delay before required Win32 apps that weren't installed during provisioning begin to install.
 - The IME might periodically perform health checks to validate connectivity to Intune services.
 
 ### Manually initiate an Intune management IME check-in from a Windows device
 
-On a Windows device with the IME installed, open **Company Portal**, select **Settings** > **Sync**. This initiates an MDM check-in and an IME check-in.
+On a Windows device with the IME installed, open **Company Portal**, select **Settings** &gt; **Sync**. This initiates an MDM check-in and an IME check-in.
 
 Alternatively, open **Task Manager**, find the service **IntuneManagementExtension**, right-click, and select **Restart**. The `IntuneManagementExtension` service restarts immediately, initiating a check-in with Intune.
 
 > [!NOTE]
+>
 > The **Sync** actions from either the **Settings** app or **Devices** in Microsoft Intune admin center initiate an MDM check-in as well as an IME check-in. After selecting Sync, Intune initiates an on-demand synchronization across multiple workloads to help ensure the device reflects the latest admin intent as quickly as possible. This process includes, but isn't limited to:
->- Configuration policy processing
->- App detection and deployment state updates
->- Script and remediation processing
->- Other device management signals required to align device state with current assignments
->  
->You can track the progress of the sync action by selecting the **Device sync status** tab in the device overview pane.
+>
+> - Configuration policy processing
+> - App detection and deployment state updates
+> - Script and remediation processing
+> - Other device management signals required to align device state with current assignments
+>
+> You can track the progress of the sync action by selecting the **Device sync status** tab in the device overview pane.
 
 ### Intune management extension removal
 
@@ -129,12 +131,12 @@ The IME is removed from the device under the following conditions:
 - The device is in S mode. The Intune management extension doesn't support devices running in S mode.
 - Ensure the configuration file located at `C:\Program Files (x86)\Microsoft Intune Management Extension\Microsoft.Management.Services.IntuneWindowsAgent.exe.config` has not been corrupted or manually altered.
 - Confirm whether the app was installed using a method outside of Intune’s automatic installation (e.g., script, manual install, or repackaging). The only supported mechanism is automatic installation as devices sync with the Intune service.
-- On Windows devices, if the proxy is configured only at the user level (and not machine-wide), make sure a user is signed in to the device. Alternatively, use `bitsadmin /util /setieproxy` to manually configure the proxy for the BITS (Background Intelligent Transfer Service). For more information, see [bitsadmin util and setieproxy](/windows-server/administration/windows-commands/bitsadmin-util-and-setieproxy).
+- On Windows devices, if the proxy is configured only at the user level (and not machine-wide), make sure a user is signed in to the device. Alternatively, use `bitsadmin /util /setieproxy` to manually configure the proxy for the BITS (Background Intelligent Transfer Service). For more information, see [bitsadmin util and setieproxy](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/bitsadmin-util-and-setieproxy).
 
 To check if the device is automatically enrolled:
 
-1. Go to **Settings** > **Accounts** > **Access work or school**.
-2. Select the joined account > **Info**.
+1. Go to **Settings** &gt; **Accounts** &gt; **Access work or school**.
+2. Select the joined account &gt; **Info**.
 3. Under **Advanced Diagnostic Report**, select **Create Report**.
 4. Open the `MDMDiagReport` in a web browser.
 5. Search for the **MDMDeviceWithAAD** property. If the property exists, the device is automatically enrolled. If this property doesn't exist, the device isn't automatically enrolled.
@@ -151,29 +153,29 @@ Under some conditions, the Microsoft Intune Windows Agent app can fail subscript
 
 Delete the service principal from your organization tenant using Microsoft Graph API, preferably through Graph Explorer:
 
-1. Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) using an organization admin account that can delete service principals, like the **[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator)** role. Make sure the top-right corner shows your tenant name, not "sample tenant".
+1. Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) using an organization admin account that can delete service principals, like the **[Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#application-administrator)** role. Make sure the top-right corner shows your tenant name, not "sample tenant".
 
-    For a list of Microsoft Entra built-in roles, and what they can do, see [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference).
-
-2. Select **API Explorer** > `servicePrincipals` > `{servicePrincipal-id}` > `DELETE`.
+   For a list of Microsoft Entra built-in roles, and what they can do, see [Microsoft Entra built-in roles](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference).
+2. Select **API Explorer** &gt; `servicePrincipals` &gt; `{servicePrincipal-id}` &gt; `DELETE`.
 3. In the Graph URL syntax, replace `{servicePrincipal-id}` with the ID of the service principal.
 4. Select **Run Query** to execute the deletion.
 
 > [!NOTE]
-> These steps should be completed by someone who is familiar with Graph Explorer. To learn more about Graph Explorer, see [Use Graph Explorer to try Microsoft Graph APIs](/graph/graph-explorer/graph-explorer-overview).
+>
+> These steps should be completed by someone who is familiar with Graph Explorer. To learn more about Graph Explorer, see [Use Graph Explorer to try Microsoft Graph APIs](https://learn.microsoft.com/en-us/graph/graph-explorer/graph-explorer-overview).
 
 ## Intune management extension logs
 
-IME logs on the client machine are typically in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`. Use [CMTrace.exe](/configmgr/core/support/cmtrace) to view these log files.
+IME logs on the client machine are typically in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`. Use [CMTrace.exe](https://learn.microsoft.com/en-us/configmgr/core/support/cmtrace) to view these log files.
 
-:::image type="content" source="media/management-extension-windows/image.png" alt-text="Screenshot showing Intune Management Extension log files in CMTrace.":::
+![Screenshot showing Intune Management Extension log files in CMTrace.](media/management-extension-windows/image.png)
 
 Also, use the log file *AppWorkload.log* to troubleshoot and analyze Win32 app management events on the client. This log file contains all logging information related to app deployment activities conducted by the IME.
 
 ### IME log files
 
 | Log file | Description |
-|---|---|
+| --- | --- |
 | IntuneManagementExtension.log | The main log file. It contains all the IME check-ins, policy requests, policy processing, and reporting activities. |
 | AgentExecutor.log | Tracks PowerShell script executions (deployed by Intune). |
 | AppActionProcessor.log | Tracks detection and applicability check actions for assigned apps. |

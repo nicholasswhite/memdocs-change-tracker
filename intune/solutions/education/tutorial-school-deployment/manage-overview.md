@@ -1,7 +1,7 @@
 ---
 title: Manage devices with Microsoft Intune
 description: Overview of device management capabilities in Intune for Education, including remote actions, remote assistance, and inventory/reporting.
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 ---
 
@@ -9,49 +9,59 @@ ms.topic: tutorial
 
 Microsoft Intune offers a streamlined remote device management experience throughout the school year. IT administrators can optimize device settings, deploy new applications, updates, ensuring that security and privacy are maintained.
 
-:::image type="content" source="./media/manage-overview/protect-manage.png" alt-text="The device lifecycle for Intune-managed devices - protect and manage devices" border="false":::
+![The device lifecycle for Intune-managed devices - protect and manage devices](media/manage-overview/protect-manage.png)
 
 With Intune, there are several ways to manage students' devices. Groups can be created to organize devices and students, to facilitate remote management. You can determine which applications students have access to, and fine tune device settings and restrictions. You can also monitor which devices students sign in to, and troubleshoot devices remotely.
 
 ## Remote actions
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Remotely trigger actions on devices
+![](../../../media/icons/16/check.svg) Remotely trigger actions on devices
 
 Intune allows you to perform actions on devices without having to sign in to the devices. For example, you can send a command to a device to restart or to turn off, or you can locate a device.
 
-### [Intune](#tab/intune)
+- [Intune](#tabpanel_1_intune)
+- [Intune For Education](#tabpanel_1_intune-for-education)
 
-:::image type="content" source="./media/manage-overview/intune-remote-actions-windows.png" alt-text="Remote actions available in Intune for Education when selecting a Windows device" lightbox="./media/manage-overview/intune-remote-actions-windows.png" border="true":::
+<a id="tabpanel_1_intune"></a>
+
+
+
+[![Remote actions available in Intune for Education when selecting a Windows device](media/manage-overview/intune-remote-actions-windows.png)](media/manage-overview/intune-remote-actions-windows.png#lightbox)
 
 Remote actions can be performed on one or multiple devices at once.
 
-To learn more about remote actions in Intune, see [Remote actions](/intune/intune-service/remote-actions/device-management).
+To learn more about remote actions in Intune, see [Remote actions](https://learn.microsoft.com/en-us/intune/intune-service/remote-actions/device-management).
 
-### [Intune For Education](#tab/intune-for-education)
+<a id="tabpanel_1_intune-for-education"></a>
 
-:::image type="content" source="./media/manage-overview/remote-actions.png" alt-text="Remote actions available in Intune for Education when selecting a Windows device" lightbox="./media/manage-overview/remote-actions.png" border="true":::
+
+
+[![Remote actions available in Intune for Education when selecting a Windows device](media/manage-overview/remote-actions.png)](media/manage-overview/remote-actions.png#lightbox)
 
 With bulk actions, remote actions can be performed on multiple devices at once.
 
-To learn more about remote actions in Intune for Education, see [Remote actions][EDU-1].
-
----
+To learn more about remote actions in Intune for Education, see [Remote actions](https://learn.microsoft.com/en-us/intune-education/edu-device-remote-actions).
 
 ## Remote assistance
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: View and control remote devices
+![](../../../media/icons/16/check.svg) View and control remote devices
 
 With devices managed by Intune, you can remotely assist students and teachers that are having issues with their devices.
 
-For more information, see [Remote assistance for managed devices][EDU-2].
+For more information, see [Remote assistance for managed devices](https://learn.microsoft.com/en-us/intune-education/remote-assist-mobile-devices).
 
 ## Device inventory and reporting
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: View device information and reporting
+![](../../../media/icons/16/check.svg) View device information and reporting
 
 With Intune, it's possible view and report on current devices, applications, settings, and overall health. You can also download reports to review or share offline.
 
-### [Intune](#tab/intune)
+- [Intune](#tabpanel_2_intune)
+- [Intune For Education](#tabpanel_2_intune-for-education)
+
+<a id="tabpanel_2_intune"></a>
+
+
 
 Here are some examples of the reports available in Intune:
 
@@ -64,34 +74,26 @@ Here are some examples of the reports available in Intune:
 
 To learn more about reports in Intune, see [Reports in Intune](../../../device-management/reports/overview.md).
 
-### [Intune For Education](#tab/intune-for-education)
+<a id="tabpanel_2_intune-for-education"></a>
+
+
 
 Here are the steps for generating reports in Intune for Education:
 
 1. Sign in to the [Intune for Education portal](https://intuneeducation.portal.azure.com).
-1. Select **Reports**.
-1. Select between one of the report types:
-    - Device inventory
-    - Device actions
-    - Application inventory
-    - Settings errors
-    - Windows Defender
-    - Windows Autopilot deployment
-1. If needed, use the search box to find specific devices, applications, and settings.
-1. To download a report, select **Download**. The report downloads a comma-separated value (CSV) file, which you can view and modify in a spreadsheet app like Microsoft Excel.
-    :::image type="content" source="./media/manage-overview/inventory-reporting.png" alt-text="Reporting options available in Intune for Education when selecting the reports blade" border="true":::
+2. Select **Reports**.
+3. Select between one of the report types:
+   - Device inventory
+   - Device actions
+   - Application inventory
+   - Settings errors
+   - Windows Defender
+   - Windows Autopilot deployment
+4. If needed, use the search box to find specific devices, applications, and settings.
+5. To download a report, select **Download**. The report downloads a comma-separated value (CSV) file, which you can view and modify in a spreadsheet app like Microsoft Excel.  ![Reporting options available in Intune for Education when selecting the reports blade](media/manage-overview/inventory-reporting.png)
 
-To learn more about reports in Intune for Education, see [Reports in Intune for Education][EDU-3].
+To learn more about reports in Intune for Education, see [Reports in Intune for Education](https://learn.microsoft.com/en-us/intune-education/what-are-reports).
 
 ---
 
-________________________________________________________
-
-> [!div class="nextstepaction"]
-> [Next: Reset and Wipe >](reset-devices.md)
-
-<!-- Reference links in article -->
-
-[EDU-1]: /intune-education/edu-device-remote-actions
-[EDU-2]: /intune-education/remote-assist-mobile-devices
-[EDU-3]: /intune-education/what-are-reports
+[Next: Reset and Wipe &gt;](reset-devices.md)

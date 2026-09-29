@@ -1,16 +1,18 @@
 ---
-title: SMS_ScheduleToken Class
+title: "SMS_ScheduleToken Server WMI Class"
 description: The SMS_ScheduleToken abstract WMI class is an SMS Provider server class that represents a schedule token that is used for the scheduling of events with different frequencies, for example, hourly and daily.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ScheduleToken Server WMI Class
+
 The `SMS_ScheduleToken` abstract Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a schedule token that is used for the scheduling of events with different frequencies, for example, hourly and daily.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,64 +28,61 @@ Class SMS_ScheduleToken
 ```
 
 ## Methods
- The `SMS_ScheduleToken` class does not define any methods.
+
+The `SMS_ScheduleToken` class does not define any methods.
 
 ## Properties
- `DayDuration`
- Data type: `UInt32`
 
- Access type: Read/Write
+`DayDuration` Data type: `UInt32`
 
- Qualifiers: [Range("0-31")]
+Access type: Read/Write
 
- Number of days during which the scheduled action occurs. Allowable values are in the range 0-31. The default value is 0, indicating that the scheduled action continues indefinitely.
+Qualifiers: [Range("0-31")]
 
- `HourDuration`
- Data type: `UInt32`
+Number of days during which the scheduled action occurs. Allowable values are in the range 0-31. The default value is 0, indicating that the scheduled action continues indefinitely.
 
- Access type: Read/Write
+`HourDuration` Data type: `UInt32`
 
- Qualifiers: [Range("0-23")]
+Access type: Read/Write
 
- Number of hours during which the scheduled action occurs. Allowable values are in the range 0-23. The default value is 0, indicating no duration.
+Qualifiers: [Range("0-23")]
 
- `IsGMT`
- Data type: `Boolean`
+Number of hours during which the scheduled action occurs. Allowable values are in the range 0-23. The default value is 0, indicating no duration.
 
- Access type: Read/Write
+`IsGMT` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the time is in Coordinated Universal Time (UTC). The default value is `false`, for local time.
+Qualifiers: None
 
- `MinuteDuration`
- Data type: `UInt32`
+`true` if the time is in Coordinated Universal Time (UTC). The default value is `false`, for local time.
 
- Access type: Read/Write
+`MinuteDuration` Data type: `UInt32`
 
- Qualifiers: [Range("0-59")]
+Access type: Read/Write
 
- Number of minutes during which the scheduled action occurs. Allowable values are in the range 0-59. The default value is 0, indicating no duration.
+Qualifiers: [Range("0-59")]
 
- `StartTime`
- Data type: `DateTime`
+Number of minutes during which the scheduled action occurs. Allowable values are in the range 0-59. The default value is 0, indicating no duration.
 
- Access type: Read/Write
+`StartTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time when the scheduled action takes place. The default value is "19700201000000.000000+***".
+Qualifiers: None
+
+Date and time when the scheduled action takes place. The default value is "19700201000000.000000+\*\*\*".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
-
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  This class is the abstract base class for a number of derived classes representing schedule tokens used for scheduling events with different frequencies, for example, daily. An example of a derived class is [SMS_ST_RecurWeekly Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_st_recurweekly-server-wmi-class.md).
+  This class is the abstract base class for a number of derived classes representing schedule tokens used for scheduling events with different frequencies, for example, daily. An example of a derived class is [SMS_ST_RecurWeekly Server WMI Class](sms_st_recurweekly-server-wmi-class.md).
 
   This class defines several properties related to duration. Network Discovery is the only Configuration Manager component that uses the duration properties. The following is an example showing the use of classes derived from `SMS_ScheduleToken` with an interval string decoded to make a connection to the site server.
 
@@ -125,11 +124,13 @@ instance of SMS_ST_RecurWeekly
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ST_NonRecurring Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_st_nonrecurring-server-wmi-class.md)
- [SMS_ST_RecurWeekly Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_st_recurweekly-server-wmi-class.md)
+
+[SMS_ST_NonRecurring Server WMI Class](sms_st_nonrecurring-server-wmi-class.md) [SMS_ST_RecurWeekly Server WMI Class](sms_st_recurweekly-server-wmi-class.md)

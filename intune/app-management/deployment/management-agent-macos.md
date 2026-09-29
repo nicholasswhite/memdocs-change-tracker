@@ -1,7 +1,7 @@
 ---
-title: Understanding Microsoft Intune Management Agent for macOS
+title: "Microsoft Intune Management Agent for macOS"
 description: Learn about the Microsoft Intune management agent for macOS.
-ms.date: 07/12/2024
+ms.date: "2024-07-12T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: arnab
 ms.collection:
@@ -17,7 +17,7 @@ The Microsoft Intune management agent is necessary to be installed on managed ma
 
 ## How is the agent installed?
 
- The agent is automatically and silently installed on Intune-managed macOS devices that you assign at least one shell script to in [Microsoft Intune admin center]. The agent is installed at `/Library/Intune/Microsoft Intune Agent.app` when applicable and doesn't appear in **Finder** > **Applications** on macOS devices. The agent appears as `IntuneMdmAgent` in **Activity Monitor** when running on macOS devices.
+The agent is automatically and silently installed on Intune-managed macOS devices that you assign at least one shell script to in [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431). The agent is installed at `/Library/Intune/Microsoft Intune Agent.app` when applicable and doesn't appear in **Finder** &gt; **Applications** on macOS devices. The agent appears as `IntuneMdmAgent` in **Activity Monitor** when running on macOS devices.
 
 ## What does the agent do?
 
@@ -32,11 +32,12 @@ On a managed Mac that has the agent installed, open **Company Portal**, select t
 Alternatively, open **Terminal**, run the `sudo killall IntuneMdmAgent` command to terminate the `IntuneMdmAgent` process. The `IntuneMdmAgent` process restarts immediately, which will initiate a check-in with Intune.
 
 > [!NOTE]
+>
 > The **Sync** action for devices in Microsoft Intune admin center initiates an MDM check-in and does not force an agent check-in.
 
 ## When is the agent removed?
 
- There are several conditions that can cause the agent to be removed from the device such as:
+There are several conditions that can cause the agent to be removed from the device such as:
 
 - Shell scripts are no longer assigned to the device.
 - The macOS device is no longer managed.
@@ -44,17 +45,13 @@ Alternatively, open **Terminal**, run the `sudo killall IntuneMdmAgent` command 
 
 ## Why are scripts running even though the Mac is no longer managed?
 
- When a Mac with assigned scripts is no longer managed, the agent isn't removed immediately. The agent detects that the Mac isn't managed at the next agent check-in (usually every 8 hours) and cancels scheduled script-runs. So, any locally stored scripts scheduled to run more frequently than the next scheduled agent check-in will run. When the agent is unable to check in, it retries checking in for up to 24 hours (device-awake time) and then removes itself from the Mac.
+When a Mac with assigned scripts is no longer managed, the agent isn't removed immediately. The agent detects that the Mac isn't managed at the next agent check-in (usually every 8 hours) and cancels scheduled script-runs. So, any locally stored scripts scheduled to run more frequently than the next scheduled agent check-in will run. When the agent is unable to check in, it retries checking in for up to 24 hours (device-awake time) and then removes itself from the Mac.
 
 ## How to turn off usage data sent to Microsoft for shell scripts?
 
- To turn off usage data sent to Microsoft from the Intune management agent, open Company Portal, point to **Menu**, select **Preferences**, and then clear the **allow Microsoft to collect usage data** checkbox. This turns off usage data sent for both the agent and Company Portal.
+To turn off usage data sent to Microsoft from the Intune management agent, open Company Portal, point to **Menu**, select **Preferences**, and then clear the **allow Microsoft to collect usage data** checkbox. This turns off usage data sent for both the agent and Company Portal.
 
 ## Next steps
 
-- The app you've created is displayed in the apps list. You can now assign it to the groups you choose. For help, see [How to assign apps to groups](./assign-groups.md).
+- The app you've created is displayed in the apps list. You can now assign it to the groups you choose. For help, see [How to assign apps to groups](assign-groups.md).
 - Learn more about the ways in which you can monitor the properties and assignment of your app. For more information, see [How to monitor app information and assignments](../monitor-assignments.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

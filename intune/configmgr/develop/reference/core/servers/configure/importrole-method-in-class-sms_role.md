@@ -1,16 +1,18 @@
 ---
-title: ImportRole Method
+title: "ImportRole Method in Class SMS_Role"
 description: The ImportRole Windows Management Instrumentation (WMI) class method imports a role defined by an XML string to the database.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ImportRole Method in Class SMS_Role
+
 The `ImportRole` Windows Management Instrumentation (WMI) class method, in Configuration Manager, imports a role defined by an XML string to the database.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,37 +25,39 @@ SInt32 ImportRole(
 ```
 
 #### Parameters
- `RolesXml`
- Data type: `String`
 
- Qualifiers: [in]
+`RolesXml` Data type: `String`
 
- The id of the role.
+Qualifiers: [in]
 
- `OverwrittenExisted`
- Data type: `Boolean`
+The id of the role.
 
- Qualifiers: [in]
+`OverwrittenExisted` Data type: `Boolean`
 
- `true`, if an existing role should be overwritten. The default value is true.
+Qualifiers: [in]
 
- `ErrorStr`
- Data type: `String`
+`true`, if an existing role should be overwritten. The default value is true.
 
- Qualifiers: [out]
+`ErrorStr` Data type: `String`
 
- The error information if there is any error while importing the role.
+Qualifiers: [out]
+
+The error information if there is any error while importing the role.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Role Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_role-server-wmi-class.md)
+
+[SMS_Role Server WMI Class](sms_role-server-wmi-class.md)

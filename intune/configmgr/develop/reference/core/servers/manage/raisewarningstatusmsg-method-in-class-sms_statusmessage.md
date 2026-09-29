@@ -1,16 +1,18 @@
 ---
-title: RaiseWarningStatusMsg Method
+title: "RaiseWarningStatusMsg Method in Class SMS_StatusMessage"
 description: Learn how to use the RaiseWarningStatusMsg method in Configuration Manager to create a warning status message.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # RaiseWarningStatusMsg Method in Class SMS_StatusMessage
+
 The `RaiseWarningStatusMsg` Windows Management Instrumentation (WMI) class method, in Configuration Manager, creates a warning status message.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -29,79 +31,75 @@ UInt32 RaiseWarningStatusMsg(
 ```
 
 #### Parameters
- `MessageText`
- Data type: `String`
 
- Qualifiers: [in]
+`MessageText` Data type: `String`
 
- Text to use in the message.
+Qualifiers: [in]
 
- `MessageType`
- Data type: `UInt32`
+Text to use in the message.
 
- Qualifiers: [in]
+`MessageType` Data type: `UInt32`
 
- The message type. Possible values are defined by the `MessageType` property of [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: [in]
 
- `Win32Error`
- Data type: `UInt32`
+The message type. Possible values are defined by the `MessageType` property of [SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md).
 
- Qualifiers: [in, optional]
+`Win32Error` Data type: `UInt32`
 
- Win32 error code associated with the status message.
+Qualifiers: [in, optional]
 
- `ProcessID`
- Data type: `UInt32`
+Win32 error code associated with the status message.
 
- Qualifiers: [in, optional]
+`ProcessID` Data type: `UInt32`
 
- ID of the process that created the message. The default value is 0.
+Qualifiers: [in, optional]
 
- `ThreadID`
- Data type: `UInt32`
+ID of the process that created the message. The default value is 0.
 
- Qualifiers: [in, optional]
+`ThreadID` Data type: `UInt32`
 
- ID of the thread that created the message. The default value is 0.
+Qualifiers: [in, optional]
 
- `Time`
- Data type: `DateTime`
+ID of the thread that created the message. The default value is 0.
 
- Qualifiers: [in, optional]
+`Time` Data type: `DateTime`
 
- Date and time, in Universal Coordinated Time (UTC), when the status message was created. The default value indicates current time.
+Qualifiers: [in, optional]
 
- `AttrIDs`
- Data type: `UInt32` Array
+Date and time, in Universal Coordinated Time (UTC), when the status message was created. The default value indicates current time.
 
- Qualifiers: [in, optional]
+`AttrIDs` Data type: `UInt32` Array
 
- IDs of message attributes.
+Qualifiers: [in, optional]
 
- `AttrValues`
- Data type: `String` Array
+IDs of message attributes.
 
- Qualifiers: [in, optional]
+`AttrValues` Data type: `String` Array
 
- Values of message attributes.
+Qualifiers: [in, optional]
 
- `TopLevelSiteCode`
- Data type: `String`
+Values of message attributes.
 
- Qualifiers: [in, optional]
+`TopLevelSiteCode` Data type: `String`
 
- This property is deprecated.
+Qualifiers: [in, optional]
+
+This property is deprecated.
 
 ## Return Values
- A `UInt32` data type.
+
+A `UInt32` data type.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md)
+
+[SMS_StatusMessage Server WMI Class](sms_statusmessage-server-wmi-class.md)

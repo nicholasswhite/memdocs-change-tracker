@@ -1,7 +1,7 @@
 ---
 description: Learn how to represent the client computer compliance status for software updates using SMS_UpdateComplianceStatus class.
-title: "SMS_UpdateComplianceStatus Class"
-ms.date: "09/20/2016"
+title: "SMS_UpdateComplianceStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_UpdateComplianceStatus Server WMI Class
-The `SMS_UpdateComplianceStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the client computer compliance status for software updates.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_UpdateComplianceStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the client computer compliance status for software updates.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_UpdateComplianceStatus : SMS_BaseClass  
 {  
       String ArticleID;  
@@ -36,187 +38,192 @@ Class SMS_UpdateComplianceStatus : SMS_BaseClass
       UInt32 Status;  
       String UpdateLocales;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_UpdateComplianceStatus` class does not define any methods.  
+## Methods
 
-## Properties  
- `ArticleID`  
- Data type: `String`  
+The `SMS_UpdateComplianceStatus` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [read]  
+`ArticleID`  
+ Data type: `String`
 
- Knowledge base article ID for the software update.  
+Access type: Read-only
 
- `BulletinID`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Knowledge base article ID for the software update.
 
- Qualifiers: [read]  
+`BulletinID`  
+ Data type: `String`
 
- Bulletin ID for security updates released by Microsoft.  
+Access type: Read-only
 
- `CI_ID`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Bulletin ID for security updates released by Microsoft.
 
- Qualifiers: [read, key, not_null]  
+`CI_ID`  
+ Data type: `UInt32`
 
- The ID of the software update configuration item. This ID is not unique across sites.  
+Access type: Read-only
 
- `EnforcementSource`  
- Data type: `UInt32`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+The ID of the software update configuration item. This ID is not unique across sites.
 
- Qualifiers: [read]  
+`EnforcementSource`  
+ Data type: `UInt32`
 
- Source of the compliance enforcement action. Possible values are:  
+Access type: Read-only
 
-| Value | Source |  
-| ----- | ------ |  
-|0|NONE|  
-|1|SMS|  
-|2|USER|  
+Qualifiers: [read]
 
- `LastEnforcementMessageID`  
- Data type: `UInt32`  
+Source of the compliance enforcement action. Possible values are:
 
- Access type: Read-only  
+| Value | Source |
+| --- | --- |
+| 0 | NONE |
+| 1 | SMS |
+| 2 | USER |
 
- Qualifiers: [read]  
+`LastEnforcementMessageID`  
+ Data type: `UInt32`
 
- The ID of the last enforcement state message received.  
+Access type: Read-only
 
- `LastEnforcementMessageName`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The ID of the last enforcement state message received.
 
- Qualifiers: [read]  
+`LastEnforcementMessageName`  
+ Data type: `String`
 
- The name of the last enforcement state message.  
+Access type: Read-only
 
- `LastEnforcementMessageTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The name of the last enforcement state message.
 
- Qualifiers: [read]  
+`LastEnforcementMessageTime`  
+ Data type: `DateTime`
 
- Date and time of the last enforcement state message.  
+Access type: Read-only
 
- `LastEnforcementStatusMsgID`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Date and time of the last enforcement state message.
 
- Qualifiers: [read]  
+`LastEnforcementStatusMsgID`  
+ Data type: `UInt32`
 
- The ID of the last enforcement status message received.  
+Access type: Read-only
 
- `LastStatusChangeTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The ID of the last enforcement status message received.
 
- Qualifiers: [read]  
+`LastStatusChangeTime`  
+ Data type: `DateTime`
 
- The date and time of the last compliance status change.  
+Access type: Read-only
 
- `LastStatusCheckTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The date and time of the last compliance status change.
 
- Qualifiers: [read]  
+`LastStatusCheckTime`  
+ Data type: `DateTime`
 
- The date and time of the last compliance status check.  
+Access type: Read-only
 
- `LocalizedDescription`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The date and time of the last compliance status check.
 
- Qualifiers: [read]  
+`LocalizedDescription`  
+ Data type: `String`
 
- Localized description of the configuration item.  
+Access type: Read-only
 
- `LocalizedDisplayName`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Localized description of the configuration item.
 
- Qualifiers: [read]  
+`LocalizedDisplayName`  
+ Data type: `String`
 
- Localized display name of the configuration item.  
+Access type: Read-only
 
- `LocalizedInformativeURL`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Localized display name of the configuration item.
 
- Qualifiers: [read]  
+`LocalizedInformativeURL`  
+ Data type: `String`
 
- URL for additional localized information about the configuration item.  
+Access type: Read-only
 
- `MachineID`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+URL for additional localized information about the configuration item.
 
- Qualifiers: [read, key, not_null]  
+`MachineID`  
+ Data type: `UInt32`
 
- The ID of the target computer.  
+Access type: Read-only
 
- `Status`  
- Data type: `UInt32`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+The ID of the target computer.
 
- Qualifiers: [read, not_null]  
+`Status`  
+ Data type: `UInt32`
 
- The status of the target computer.  Possible values are:  
+Access type: Read-only
 
-| Value | Status |  
-| ----- | ------ |  
-|0|Detection state unknown|  
-|1|Update is not required|  
-|2|Update is required|  
-|3|Update is installed| 
+Qualifiers: [read, not_null]
 
- `UpdateLocales`  
- Data type: `String`  
+The status of the target computer. Possible values are:
 
- Access type: Read-only  
+| Value | Status |
+| --- | --- |
+| 0 | Detection state unknown |
+| 1 | Update is not required |
+| 2 | Update is required |
+| 3 | Update is installed |
 
- Qualifiers: [read]  
+`UpdateLocales`  
+ Data type: `String`
 
- Update locales.   
+Access type: Read-only
 
-## Remarks  
- Class qualifiers for this class include:  
+Qualifiers: [read]
 
-- Secured  
+Update locales.
 
-- Read (read-only)  
+## Remarks
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+Class qualifiers for this class include:
 
-  See About Configuration Baselines and Configuration Items for a discussion of compliance.  
+- Secured
+- Read (read-only)
 
-## Requirements  
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+  See About Configuration Baselines and Configuration Items for a discussion of compliance.
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

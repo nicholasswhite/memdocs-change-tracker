@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent metered files and implement the matching between the meter rule and the file information in Configuration Manager.
-title: SMS_MeteredFiles Class
-ms.date: 09/20/2016
+title: "SMS_MeteredFiles Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MeteredFiles Server WMI Class
+
 The `SMS_MeteredFiles` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents metered files and implements the matching between the meter rule and the file information.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,173 +40,161 @@ Class SMS_MeteredFiles : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MeteredFiles` class does not define any methods.
+
+The `SMS_MeteredFiles` class does not define any methods.
 
 ## Properties
- `ApplyToChildSites`
- Data type: `Boolean`
 
- Access type: Read/Write
-
- Qualifiers: None
-
- `true` if the rule is applied to child sites.
-
- `Comment`
- Data type: `String`
-
- Access type: Read/Write
-
- Qualifiers: None
-
- Optional comment about the rule.
-
- `Enabled`
- Data type: `Boolean`
+`ApplyToChildSites` Data type: `Boolean`
 
 Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the rule is enabled.
+`true` if the rule is applied to child sites.
 
- `FileName`
- Data type: `String`
-
- Access type: Read/Write
-
- Qualifiers: None
-
- Name of the file. This property matches the file name specified in the metering rule.
-
- `FileVersion`
- Data type: `String`
-
- Access type: Read/Write
-
- Qualifiers: None
-
- Version of the file. This property matches the version specified in the metering rule.
-
- `LanguageID`
- Data type: `UInt32`
-
- Access type: Read/Write
-
- Qualifiers: None
-
- Locale of the file. This property matches the locale specified in the metering rule.
-
- `MeteredFileID`
- Data type: `SInt64`
+`Comment` Data type: `String`
 
 Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: None
 
- ID of the file that the rule meters. More information about this file can be found by matching this property value to the `FileID` value in the [SMS_ProductFileInfo Server WMI Class](../../../develop/reference/apps/sms_productfileinfo-server-wmi-class.md) class.
+Optional comment about the rule.
 
- `MeteredFileName`
- Data type: `String`
+`Enabled` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- The metered file name. This property value matches the `FileName` value or the `OriginalFileName` value, depending on which file matched the metered file.
+`true` if the rule is enabled.
 
- `MeteredFileVersion`
- Data type: `String`
+`FileName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Version of the file that the rule meters.
+Name of the file. This property matches the file name specified in the metering rule.
 
- `MeteredProductID`
- Data type: `UInt32`
+`FileVersion` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- ID of the product that the rule meters.
+Version of the file. This property matches the version specified in the metering rule.
 
- `MeteredProductLanguage`
- Data type: `UInt32`
+`LanguageID` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Locale of the product for the file that was metered.
+Locale of the file. This property matches the locale specified in the metering rule.
 
- `OriginalFileName`
- Data type: `String`
+`MeteredFileID` Data type: `SInt64`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: [key]
 
- Original file name to match as specified in the rule.
+ID of the file that the rule meters. More information about this file can be found by matching this property value to the `FileID` value in the [SMS_ProductFileInfo Server WMI Class](sms_productfileinfo-server-wmi-class.md) class.
 
- `ProductName`
- Data type: `String`
+`MeteredFileName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Name of the metering rule.
+The metered file name. This property value matches the `FileName` value or the `OriginalFileName` value, depending on which file matched the metered file.
 
- `RuleID`
- Data type: `UInt32`
+`MeteredFileVersion` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: None
 
- ID of the rule.
+Version of the file that the rule meters.
 
- `SecurityKey`
- Data type: `String`
+`MeteredProductID` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Security key for the rule.
+ID of the product that the rule meters.
 
- `SiteCode`
- Data type: `String`
+`MeteredProductLanguage` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Code of the site to which the rule is targeted.
+Locale of the product for the file that was metered.
 
- `SourceSite`
- Data type: `String`
+`OriginalFileName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Code of the site that created the rule.
+Original file name to match as specified in the rule.
+
+`ProductName` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: None
+
+Name of the metering rule.
+
+`RuleID` Data type: `UInt32`
+
+Access type: Read/Write
+
+Qualifiers: [key]
+
+ID of the rule.
+
+`SecurityKey` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: None
+
+Security key for the rule.
+
+`SiteCode` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: None
+
+Code of the site to which the rule is targeted.
+
+`SourceSite` Data type: `String`
+
+Access type: Read/Write
+
+Qualifiers: None
+
+Code of the site that created the rule.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- Software metering rules instruct the client agent to meter the running of certain applications. The data that the agent reports contains only information about the file that was metered, not the rules that caused it to be metered. This class is used to match the metering rules with metering data by combining information about each rule and its matching properties with files that the system knows about and the properties that were matched.
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
- The matching done by this class works the same way as the matching on the client. Usage data reported in the summary classes can be matched to the metering rules by matching the `FileID` value in the summary data with the `MeteredFileID` value in this class. In a similar manner, software inventory can be matched to the rules that could meter the inventoried applications by matching the `MeteredFileID` value in this class to the `FileID` value in the [SMS_G_System_SoftwareFile Server WMI Class](../../../develop/reference/core/clients/manage/sms_g_system_softwarefile-server-wmi-class.md) class.
+Software metering rules instruct the client agent to meter the running of certain applications. The data that the agent reports contains only information about the file that was metered, not the rules that caused it to be metered. This class is used to match the metering rules with metering data by combining information about each rule and its matching properties with files that the system knows about and the properties that were matched.
+
+The matching done by this class works the same way as the matching on the client. Usage data reported in the summary classes can be matched to the metering rules by matching the `FileID` value in the summary data with the `MeteredFileID` value in this class. In a similar manner, software inventory can be matched to the rules that could meter the inventoried applications by matching the `MeteredFileID` value in this class to the `FileID` value in the [SMS_G_System_SoftwareFile Server WMI Class](../core/clients/manage/sms_g_system_softwarefile-server-wmi-class.md) class.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: "SMS_SUPSyncStatus Class"
+title: "SMS_SUPSyncStatus Server WMI Class"
 description: Learn how to use the SMS_SUPSyncStatus class in Configuration Manager to list sync and replication status for SUM data for participating site/SUP.  
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_SUPSyncStatus Server WMI Class
-The `SMS_SUPSyncStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists sync and replication status for SUM data for participating site/SUP.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_SUPSyncStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists sync and replication status for SUM data for participating site/SUP.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_SUPSyncStatus : SMS_BaseClass  
 {  
     DateTime LastReplicationLinkCheckTime;  
@@ -30,127 +32,132 @@ Class SMS_SUPSyncStatus : SMS_BaseClass
     String WSUSServerName;  
     String WSUSSourceServer;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_SUPSyncStatus` class does not define any methods.  
+## Methods
 
-## Properties  
- `LastReplicationLinkCheckTime`  
- Data type: `DateTime`  
+The `SMS_SUPSyncStatus` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [read]  
+`LastReplicationLinkCheckTime`  
+ Data type: `DateTime`
 
- Last time the replication link status was checked.  
+Access type: Read-only
 
- `LastSuccessfulSyncTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Last time the replication link status was checked.
 
- Qualifiers: [read]  
+`LastSuccessfulSyncTime`  
+ Data type: `DateTime`
 
- Last synchronization success time.  
+Access type: Read-only
 
- `LastSyncErrorCode`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Last synchronization success time.
 
- Qualifiers: [not_null, read]  
+`LastSyncErrorCode`  
+ Data type: `UInt32`
 
- Last synchronization error code.  
+Access type: Read-only
 
- `LastSyncState`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last synchronization error code.
 
- Qualifiers: [read]  
+`LastSyncState`  
+ Data type: `UInt32`
 
- Last synchronization state. Possible values are:
- 
-| Value | Status |  
-| ----- | ------ |  
-| 6702 |	WSUS Synchronization done (Success) |
-| 6703	| WSUS Synchronization failed |
-| 6704	| WSUS Synchronization in progress. Current phase: Synchronizing WSUS Server |
-| 6705	| WSUS Synchronization in progress. Current phase: Synchronizing site database |
-| 6706	| WSUS Synchronization in progress. Current phase: Synchronizing Internet facing WSUS Server |
-| 6707	| Content of WSUS server is out of sync with upstream server |
-| 6708	| WSUS synchronization complete, with pending license terms downloads |
+Access type: Read-only
 
- `LastSyncStateTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Last synchronization state. Possible values are:
 
- Qualifiers: [read]  
+| Value | Status |
+| --- | --- |
+| 6702 | WSUS Synchronization done (Success) |
+| 6703 | WSUS Synchronization failed |
+| 6704 | WSUS Synchronization in progress. Current phase: Synchronizing WSUS Server |
+| 6705 | WSUS Synchronization in progress. Current phase: Synchronizing site database |
+| 6706 | WSUS Synchronization in progress. Current phase: Synchronizing Internet facing WSUS Server |
+| 6707 | Content of WSUS server is out of sync with upstream server |
+| 6708 | WSUS synchronization complete, with pending license terms downloads |
 
- Last time the synchronization state was reported.  
+`LastSyncStateTime`  
+ Data type: `DateTime`
 
- `ReplicationLinkStatus`  
- Data type: `UInt32`  
+Access type: Read-only
 
- Access type: Read-only  
+Qualifiers: [read]
 
- Qualifiers: [enumeration, read]  
+Last time the synchronization state was reported.
 
- Replication link status.  
+`ReplicationLinkStatus`  
+ Data type: `UInt32`
 
-| Value | Status |  
-| ----- | ------ |  
-|0|Healthy|  
-|1|Degraded|  
-|2|Error|  
+Access type: Read-only
 
- `SiteCode`  
- Data type: `String`  
+Qualifiers: [enumeration, read]
 
- Access type: Read-only  
+Replication link status.
 
- Qualifiers: [key, not_null, read]  
+| Value | Status |
+| --- | --- |
+| 0 | Healthy |
+| 1 | Degraded |
+| 2 | Error |
 
- Site code.  
+`SiteCode`  
+ Data type: `String`
 
- `SyncCatalogVersion`  
- Data type: `UInt32`  
+Access type: Read-only
 
- Access type: Read-only  
+Qualifiers: [key, not_null, read]
 
- Qualifiers: [read]  
+Site code.
 
- Synchronization catalog version.  
+`SyncCatalogVersion`  
+ Data type: `UInt32`
 
- `WSUSServerName`  
- Data type: `String`  
+Access type: Read-only
 
- Access type: Read-only  
+Qualifiers: [read]
 
- Qualifiers: [key, not_null, read]  
+Synchronization catalog version.
 
- WSUS server name.  
+`WSUSServerName`  
+ Data type: `String`
 
- `WSUSSourceServer`  
- Data type: `String`  
+Access type: Read-only
 
- Access type: Read-only  
+Qualifiers: [key, not_null, read]
 
- Qualifiers: [not_null, read]  
+WSUS server name.
 
- WSUS source server.  
+`WSUSSourceServer`  
+ Data type: `String`
 
-## Remarks  
+Access type: Read-only
 
-## Requirements  
+Qualifiers: [not_null, read]
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+WSUS source server.
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Remarks
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

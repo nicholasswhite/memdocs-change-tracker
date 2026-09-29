@@ -3,7 +3,7 @@ title: Choose the right targeting method in Microsoft Intune
 description: Learn when to use assignment filters, dynamic groups, static groups, virtual groups, and enrollment time grouping for device and user targeting in Microsoft Intune.
 author: matt-call
 ms.author: mattcall
-ms.date: 06/30/2026
+ms.date: "2026-06-30T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: mattcall
 ms.collection:
@@ -21,7 +21,7 @@ This article describes the available targeting constructs and helps you choose t
 Before choosing a targeting method, understand the principles that guide effective targeting in Intune:
 
 | Principle | Description |
-|---|---|
+| --- | --- |
 | **Start broad, refine narrow** | Instead of building many narrow groups to match each policy, start with the broadest applicable audience and use assignment filters to refine which devices receive the policy. This strategy reduces group sprawl and simplifies management. |
 | **Groups define scope, filters define targeting** | Groups answer *"who is the audience?"*. Assignment filters answer *"which devices in that audience actually receive this policy?"* Combining both concerns into groups alone leads to many nearly-identical groups that are difficult to manage. |
 | **One group, many policies** | You don't need a 1:1 relationship between groups and policies. A single broad group can serve multiple policy assignments. Applicability of the workload or assignment filters can ensure the policies only go to applicable users and devices. |
@@ -35,7 +35,7 @@ Intune targeting is built on two layers: **group types** that define *who* or *w
 ### Group types
 
 | Group type | What it does | Best for |
-|---|---|---|
+| --- | --- | --- |
 | **Virtual groups** | Built-in *All users* and *All devices* groups maintained by Intune | Broad policies that apply to everyone or every device |
 | **Static groups** | Manually managed security groups with fixed membership | Fixed, known sets of users or devices that don't change frequently |
 | **Dynamic groups** | Groups with rule-based membership evaluated by Microsoft Entra ID | Cross-workload targeting (Conditional Access, licensing), Autopilot, user-based grouping |
@@ -45,7 +45,7 @@ Static and dynamic groups are Microsoft Entra security groups — any service th
 ### Intune targeting features
 
 | Construct | What it does | Best for |
-|---|---|---|
+| --- | --- | --- |
 | **Assignment filters** | Intune-evaluated rules applied on top of group assignments | Device property targeting for Intune policies — evaluated at check-in without depending on group membership processing |
 | **Enrollment time grouping** | Adds devices to a security group during enrollment | Fast group-based policy delivery during enrollment without waiting for dynamic group membership processing |
 
@@ -93,6 +93,7 @@ After a device enrolls or a user attribute changes, the group membership require
 - **User-based grouping** — Grouping users by department, location, job title, or other user attributes
 
 > [!NOTE]
+>
 > If your dynamic device group is only consumed by Intune (not Conditional Access, licensing, or other services), evaluate whether an assignment filter can achieve the same targeting. Filters support many of the same device properties — including `enrollmentProfileName` — and evaluate at check-in without depending on group membership processing.
 
 Dynamic groups can also be combined with assignment filters:
@@ -110,9 +111,9 @@ Dynamic groups can also be combined with assignment filters:
 
 For detailed guidance on rule syntax and writing efficient rules, go to:
 
-- [Manage rules for dynamic membership groups in Microsoft Entra ID](/entra/identity/users/groups-dynamic-membership)
-- [Create simpler and faster rules for dynamic membership groups](/entra/identity/users/groups-dynamic-rule-more-efficient)
-- [Understand and manage dynamic group processing](/entra/identity/users/manage-dynamic-group#optimize-rule-efficiency)
+- [Manage rules for dynamic membership groups in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership)
+- [Create simpler and faster rules for dynamic membership groups](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-rule-more-efficient)
+- [Understand and manage dynamic group processing](https://learn.microsoft.com/en-us/entra/identity/users/manage-dynamic-group#optimize-rule-efficiency)
 
 ## Intune targeting features
 
@@ -135,7 +136,9 @@ Assignment filters are Intune-evaluated rules that refine which devices receive 
 - Narrow a policy assigned to *All devices* to only iOS devices owned by the organization
 
 > [!NOTE]
+>
 > Assignment filters are not a replacement for groups in every scenario. Filters can't be used for:
+>
 > - **Autopilot profile assignment** — devices must be group members before enrollment begins
 > - **Conditional Access, licensing, or SharePoint** — these services require Entra group membership
 > - **Workloads that don't support filters** — verify filter support for your specific policy or app type before designing around it
@@ -167,6 +170,7 @@ For most Intune environments, the best approach combines multiple methods:
 3. **Use enrollment time grouping** to remove the wait for group membership processing during enrollment, so policies are delivered on the first check-in.
 
 > [!CAUTION]
+>
 > Broad assignments are powerful but carry risk. Before assigning high-impact policies to *All devices* with a filter, validate the filter against a pilot group first. A misconfigured or deleted filter on a broad assignment can affect every device in scope. Use staged rollout rings and monitor assignment reporting before expanding to production.
 
 ### When a dynamic group can become a filter
@@ -176,7 +180,7 @@ If you have dynamic device groups that use simple property rules and are only co
 The following table shows common dynamic group rules and their equivalent assignment filter syntax:
 
 | Dynamic group rule | Equivalent assignment filter | Notes |
-|---|---|---|
+| --- | --- | --- |
 | `device.deviceOSType -eq "Windows"` | `operatingSystemSKU -eq "Windows"` | OS type targeting |
 | `device.deviceManufacturer -eq "Microsoft"` | `manufacturer -eq "Microsoft Corporation"` | Manufacturer targeting |
 | `device.deviceModel -startsWith "Surface"` | `model -startsWith "Surface"` | Model targeting |
@@ -184,18 +188,21 @@ The following table shows common dynamic group rules and their equivalent assign
 | `device.deviceCategory -eq "Engineering"` | `deviceCategory -eq "Engineering"` | Device category targeting |
 
 > [!NOTE]
-> Property names and values may differ slightly between dynamic group rules and assignment filter syntax. Verify the exact property names and supported values in [Supported device properties when creating filters](./filters/ref-device-properties.md).
+>
+> Property names and values may differ slightly between dynamic group rules and assignment filter syntax. Verify the exact property names and supported values in [Supported device properties when creating filters](filters/ref-device-properties.md).
 
 > [!IMPORTANT]
+>
 > Don't remove dynamic groups that are used by services outside of Intune (Conditional Access, licensing, SharePoint). Those services can't consume assignment filters — they require group membership. Only simplify groups that exist solely for Intune policy targeting.
 
 > [!TIP]
-> Targeting decisions also impact performance — especially in large environments. For guidance on group reuse, avoiding common anti-patterns, and understanding sync behavior, go to [Performance recommendations for grouping, targeting, and filtering](./filters/performance-recommendations.md).
+>
+> Targeting decisions also impact performance — especially in large environments. For guidance on group reuse, avoiding common anti-patterns, and understanding sync behavior, go to [Performance recommendations for grouping, targeting, and filtering](filters/performance-recommendations.md).
 
 ## Related articles
 
-- [Use assignment filters to assign your apps, policies, and profiles in Microsoft Intune](./filters/overview.md)
-- [Supported device properties when creating filters](./filters/ref-device-properties.md)
-- [Performance recommendations for grouping, targeting, and filtering](./filters/performance-recommendations.md)
-- [Use groups to organize users and devices for Microsoft Intune](./tenant-administration/add-groups.md)
+- [Use assignment filters to assign your apps, policies, and profiles in Microsoft Intune](filters/overview.md)
+- [Supported device properties when creating filters](filters/ref-device-properties.md)
+- [Performance recommendations for grouping, targeting, and filtering](filters/performance-recommendations.md)
+- [Use groups to organize users and devices for Microsoft Intune](tenant-administration/add-groups.md)
 - [Enrollment time grouping in Microsoft Intune](../device-enrollment/setup-time-grouping.md)

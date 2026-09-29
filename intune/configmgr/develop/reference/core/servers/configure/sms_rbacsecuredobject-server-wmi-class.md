@@ -1,16 +1,18 @@
 ---
 description: Learn how to use SMS_RbacSecuredObject class, in Configuration Manager, that represents the RBAC Security Object.
-title: SMS_RbacSecuredObject Class
-ms.date: 09/20/2016
+title: "SMS_RbacSecuredObject Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_RbacSecuredObject Server WMI Class
+
 The `SMS_RbacSecuredObject` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the RBAC Security Object.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,74 +29,72 @@ Class SMS_RbacSecuredObject : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_RbacSecuredObject` class.
 
-|Method|Description|
-|------------|-----------------|
-|[UserHasPermissions Method in Class SMS_RbacSecuredObject](../../../../../develop/reference/core/servers/configure/userhaspermissions-method-in-class-sms_rbacsecuredobject.md)|Returns `true` if the current user has all the requested rights to the given object.|
-|[GetCollectionsWithResourcePermissions Method in Class SMS_RbacSecuredObject](../../../../../develop/reference/core/servers/configure/getcollectionswithresourcepermissions-method-in-class-sms_rbacsecuredobject.md)|Retrieves the collections that the given resource is a member of and the requested permissions.|
-|[GetAvailableScopes Method in Class SMS_RbacSecuredObject](../../../../../develop/reference/core/servers/configure/getavailablescopes-method-in-class-sms_rbacsecuredobject.md)|Returns the secured scopes which current user has all the specified roles associated.|
-|[GetUserList Method in Class SMS_RbacSecuredObject](../../../../../develop/reference/core/servers/configure/getuserlist-method-in-class-sms_rbacsecuredobject.md)|Returns the secured scopes which current user has all the specified roles associated.|
+The following table lists the methods in the `SMS_RbacSecuredObject` class.
+
+| Method | Description |
+| --- | --- |
+| [UserHasPermissions Method in Class SMS_RbacSecuredObject](userhaspermissions-method-in-class-sms_rbacsecuredobject.md) | Returns `true` if the current user has all the requested rights to the given object. |
+| [GetCollectionsWithResourcePermissions Method in Class SMS_RbacSecuredObject](getcollectionswithresourcepermissions-method-in-class-sms_rbacsecuredobject.md) | Retrieves the collections that the given resource is a member of and the requested permissions. |
+| [GetAvailableScopes Method in Class SMS_RbacSecuredObject](getavailablescopes-method-in-class-sms_rbacsecuredobject.md) | Returns the secured scopes which current user has all the specified roles associated. |
+| [GetUserList Method in Class SMS_RbacSecuredObject](getuserlist-method-in-class-sms_rbacsecuredobject.md) | Returns the secured scopes which current user has all the specified roles associated. |
 
 ## Properties
- `AvailableInstanceOperations`
- Data type: `UInt32`
 
- Access type: Read/Write
+`AvailableInstanceOperations` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Available instance level permissions. Detail at Operations.
+Qualifiers: None
 
- `AvailableTypeOperations`
- Data type: `UInt32`
+Available instance level permissions. Detail at Operations.
 
- Access type: Read/Write
+`AvailableTypeOperations` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Available permissions. Detail at Operations.
+Qualifiers: None
 
- `GrantedOperations`
- Data type: `UInt32`
+Available permissions. Detail at Operations.
 
- Access type: Read/Write
+`GrantedOperations` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The operations which are granted to the current user for this type of object.
+Qualifiers: None
 
- `ObjectTypeID`
- Data type: `UInt32`
+The operations which are granted to the current user for this type of object.
 
- Access type: Read/Write
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The type of object.
+Qualifiers: [key]
 
- `ObjectTypeName`
- Data type: `String`
+The type of object.
 
- Access type: Read/Write
+`ObjectTypeName` Data type: `String`
 
- Qualifiers: [sizelimit("256")]
+Access type: Read/Write
 
- Name of the object type.
+Qualifiers: [sizelimit("256")]
 
- `Operations`
- Data type: `SMS_Operation` Array
+Name of the object type.
 
- Access type: Read/Write
+`Operations` Data type: `SMS_Operation` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- The list of operations which belong to this type.
+Qualifiers: [lazy]
+
+The list of operations which belong to this type.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

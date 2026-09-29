@@ -1,7 +1,7 @@
 ---
 title: Import PFX certificate profiles
 description: Learn how to import PFX files in Configuration Manager to generate user-specific certificates that support encrypted data exchange.
-ms.date: 11/29/2019
+ms.date: "2019-11-29T00:00:00Z"
 ms.subservice: protect
 ms.topic: how-to
 ms.collection: tier3
@@ -19,35 +19,30 @@ Configuration Manager supports different kinds of certificate stores for differe
 Use Configuration Manager to import certificate credentials and then provision PFX files to devices. You can use these files to generate user-specific certificates to support encrypted data exchange.
 
 > [!TIP]
-> For a step-by-step walk-through of this process, see the blog post [How to Create and Deploy PFX Certificate Profiles in Configuration Manager](/archive/blogs/karanrustagi/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager).
+>
+> For a step-by-step walk-through of this process, see the blog post [How to Create and Deploy PFX Certificate Profiles in Configuration Manager](https://learn.microsoft.com/en-us/archive/blogs/karanrustagi/how-to-create-and-deploy-pfx-certificate-profiles-in-configuration-manager).
 
 ## Create a profile
 
 1. In the Configuration Manager console, go to the **Assets and Compliance** workspace, expand **Compliance Settings**, expand **Company Resource Access**, and then select **Certificate Profiles**.
+2. On the **Home** tab of the ribbon, in the **Create** group, select **Create Certificate Profile**.
+3. On the **General** page of the **Create Certificate Profile Wizard**, specify the following information:
 
-1. On the **Home** tab of the ribbon, in the **Create** group, select **Create Certificate Profile**.
+   - **Name**: Enter a unique name for the certificate profile. You can use a maximum of 256 characters.
+   - **Description**: Provide a description that gives an overview of the certificate profile that helps to identify it in the Configuration Manager console. You can use a maximum of 256 characters.
+4. Select **Personal Information Exchange - PKCS #12 (PFX) settings - Import**. This option imports information from an existing certificate to create a certificate profile.
 
-1. On the **General** page of the **Create Certificate Profile Wizard**, specify the following information:
+   > [!NOTE]
+   >
+   > The **Create** option requests a certificate on behalf of a user from a connected on-premises certificate authority (CA). This process then securely delivers the certificate to clients as PFX files. For more information, see [Create PFX certificate profiles using a certificate authority](create-pfx-certificate-profiles.md).
+5. On the **PFX Certificate** page of the **Create Certificate Profile Wizard**, specify the device key storage provider (KSP):
 
-    - **Name**: Enter a unique name for the certificate profile. You can use a maximum of 256 characters.
-
-    - **Description**: Provide a description that gives an overview of the certificate profile that helps to identify it in the Configuration Manager console. You can use a maximum of 256 characters.
-
-1. Select **Personal Information Exchange - PKCS #12 (PFX) settings - Import**. This option imports information from an existing certificate to create a certificate profile.
-
-    > [!NOTE]
-    > The **Create** option requests a certificate on behalf of a user from a connected on-premises certificate authority (CA). This process then securely delivers the certificate to clients as PFX files. For more information, see [Create PFX certificate profiles using a certificate authority](create-pfx-certificate-profiles.md).
-
-1. On the **PFX Certificate** page of the **Create Certificate Profile Wizard**, specify the device key storage provider (KSP):
-
-    - **Install to Trusted Platform Module (TPM) if present**
-    - **Install to Trusted Platform Module (TPM) otherwise fail**
-    - **Install to Windows Hello for Business otherwise fail**
-    - **Install to Software Key Storage Provider**
-
-1. On the **Supported Platforms** page, choose the supported device platforms.
-
-1. Complete the wizard.
+   - **Install to Trusted Platform Module (TPM) if present**
+   - **Install to Trusted Platform Module (TPM) otherwise fail**
+   - **Install to Windows Hello for Business otherwise fail**
+   - **Install to Software Key Storage Provider**
+6. On the **Supported Platforms** page, choose the supported device platforms.
+7. Complete the wizard.
 
 ## Deploy the profile
 
@@ -61,15 +56,15 @@ Assign the target users as primary users on the Windows 10 devices where you nee
 
 To import a PFX certificate, use the following Configuration Manager PowerShell cmdlets to provision a Create PFX script:
 
-- [Get-CMClientCertificatePfx](/powershell/module/configurationmanager/get-cmclientcertificatepfx)
-- [Import-CMClientCertificatePfx](/powershell/module/configurationmanager/import-cmclientcertificatepfx)
-- [Remove-CMClientCertificatePfx](/powershell/module/configurationmanager/remove-cmclientcertificatepfx)
+- [Get-CMClientCertificatePfx](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmclientcertificatepfx)
+- [Import-CMClientCertificatePfx](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/import-cmclientcertificatepfx)
+- [Remove-CMClientCertificatePfx](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/remove-cmclientcertificatepfx)
 
 ### Example script
 
 To provision a PFX file to a certificate profile for a user, open PowerShell on a computer with the Configuration Manager console. Change the variables with values from your environment.
 
-``` PowerShell
+```PowerShell
 # The display name of your PFX Import certificate profile
 $PfxProfileDisplayName = "ImportPFX"
 

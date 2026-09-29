@@ -1,17 +1,20 @@
 ---
-title: Create a Wi-Fi profile for devices in Microsoft Intune
+title: "Add and use Wi-Fi settings on your devices in Microsoft Intune"
 description: See the steps to create a Wi-Fi device configuration profile in Microsoft Intune. Create profiles for Android device administrator, Android Enterprise, Android kiosk, iOS, iPadOS, macOS, Windows 10/11, and Windows Holographic for Business. Use these profiles to create a WiFi connection to use certificates, choose an EAP type, select an authentication method, enable a proxy, and more.
-ms.date: 07/22/2024
+ms.date: "2024-07-22T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: abalwan
 ---
 
 # Add and use Wi-Fi settings on your devices in Microsoft Intune
 
-[!INCLUDE [windows-phone-81-windows-10-mobile-support](../../includes/windows-phone-81-windows-10-mobile-support.md)]
+> [!IMPORTANT]
+>
+> On October 22, 2022, Microsoft Intune ended support for devices running Windows 8.1. Technical assistance and automatic updates on these devices aren't available.
 
-
-[!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
 Wi-Fi is a wireless network that's used by many mobile devices to get network access. Microsoft Intune includes built-in Wi-Fi settings that can be deployed to users and devices in your organization. This group of settings is called a **profile**, and can be assigned to different users and groups. Once assigned, your users get access your organization's Wi-Fi network without configuring it themselves.
 
@@ -27,7 +30,6 @@ This article lists the steps to create a Wi-Fi profile. It also includes links t
 
 - To create a Wi-Fi profile, you need to know the settings for your Wi-Fi network, including the SSID (service set identifier), security type, and more.
 - To configure the Wi-Fi policy, at a minimum, sign in to the Intune admin center with the **Policy and Profile manager** role. For information on the built-in roles in Intune, and what they can do, go to [Role-based access control (RBAC) with Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
-
 - Wi-Fi profiles support the following device platforms:
 
   - Android device administrator
@@ -42,62 +44,53 @@ This article lists the steps to create a Wi-Fi profile. It also includes links t
 
 ## Create the profile
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
-    - **Platform**: Select the platform of your devices. Your options:
+   - **Platform**: Select the platform of your devices. Your options:
 
-      - **Android device administrator**
-      - **Android (AOSP)**
-      - **Android Enterprise**
-      - **iOS/iPadOS**
-      - **macOS**
-      - **Windows 10 and later**
-      - **Windows 8.1 and later**
+     - **Android device administrator**
+     - **Android (AOSP)**
+     - **Android Enterprise**
+     - **iOS/iPadOS**
+     - **macOS**
+     - **Windows 10 and later**
+     - **Windows 8.1 and later**
+   - **Profile type**: Select **Wi-Fi**. Or, select **Templates** &gt; **Wi-Fi**.
 
-    - **Profile type**: Select **Wi-Fi**. Or, select **Templates** > **Wi-Fi**.
-
-      > [!TIP]
-      >
-      > - For **Android Enterprise** devices running as a dedicated device (kiosk), select **Fully Managed, Dedicated, and Corporate-Owned Work Profile** > **Wi-Fi**.
-      > - For **Windows 8.1 and newer**, you can choose **Wi-Fi import**. This option lets you import Wi-Fi settings as an XML file that you previously exported from a different device.
-
+     > [!TIP]
+     >
+     > - For **Android Enterprise** devices running as a dedicated device (kiosk), select **Fully Managed, Dedicated, and Corporate-Owned Work Profile** &gt; **Wi-Fi**.
+     > - For **Windows 8.1 and newer**, you can choose **Wi-Fi import**. This option lets you import Wi-Fi settings as an XML file that you previously exported from a different device.
 4. Select **Create**.
 5. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the profile. Name your profiles so you can easily identify them later. For example, a good profile name is **WiFi profile for entire company**.
-    - **Description**: Enter a description for the profile. This setting is optional, but recommended.
-
+   - **Name**: Enter a descriptive name for the profile. Name your profiles so you can easily identify them later. For example, a good profile name is **WiFi profile for entire company**.
+   - **Description**: Enter a description for the profile. This setting is optional, but recommended.
 6. Select **Next**.
 7. In **Configuration settings**, depending on the platform you chose, the settings you can configure are different. Select your platform for detailed settings:
 
-    - [Android](./ref-wifi-settings-android-enterprise.md), including dedicated devices
-    - [iOS/iPadOS](./ref-wifi-settings-apple.md)
-    - [macOS](./ref-wifi-settings-apple.md)
-    - [Windows](./ref-wifi-settings-windows.md)
-    - [Windows 8.1 and newer](./import-wifi-settings-windows.md), including Windows Holographic for Business
-    - [Android device administrator](./ref-wifi-settings-android.md)
-
+   - [Android](ref-wifi-settings-android-enterprise.md), including dedicated devices
+   - [iOS/iPadOS](ref-wifi-settings-apple.md)
+   - [macOS](ref-wifi-settings-apple.md)
+   - [Windows](ref-wifi-settings-windows.md)
+   - [Windows 8.1 and newer](import-wifi-settings-windows.md), including Windows Holographic for Business
+   - [Android device administrator](ref-wifi-settings-android.md)
 8. Select **Next**.
 9. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. For more information about scope tags, go to [Use RBAC and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 
-    Select **Next**.
-
+   Select **Next**.
 10. In **Assignments**, select the user or groups that will receive your profile. For more information on assigning profiles, go to [Assign user and device profiles](../assign-device-profile.md).
 
     Select **Next**.
-
 11. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
 
 > [!TIP]
+>
 > If you use certificate based authentication for your Wi-Fi profile, deploy the Wi-Fi profile, certificate profile, and trusted root profile to the same groups. This step makes sure that each device can recognize the legitimacy of your certificate authority. For more information, go to [How to configure certificates with Microsoft Intune](../../fundamentals/certificates/overview.md).
 
 ## Related articles
 
 - [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-- [Troubleshoot Wi-Fi profiles in Intune](/troubleshoot/mem/intune/troubleshoot-wi-fi-profiles).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Troubleshoot Wi-Fi profiles in Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-wi-fi-profiles).

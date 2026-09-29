@@ -1,15 +1,16 @@
 ---
 title: Sync AOSP device with Intune
 description: If you've been disconnected from Wi-Fi for an extended period of time, sync your device to get Intune policies and updates you may have missed.
-ms.date: 11/07/2024
+ms.date: "2024-11-07T00:00:00Z"
 ms.reviewer:
 ---
 
 # Sync AOSP device with Intune
 
- A manual sync forces your device to connect with Intune to get the latest updates, requirements, and communications from your organization. The Microsoft Intune app regularly syncs devices as long as you're connected to Wi-Fi. If you've been disconnected from Wi-Fi for an extended period of time, you can use the manual sync feature to get any policies and updates you missed.
+A manual sync forces your device to connect with Intune to get the latest updates, requirements, and communications from your organization. The Microsoft Intune app regularly syncs devices as long as you're connected to Wi-Fi. If you've been disconnected from Wi-Fi for an extended period of time, you can use the manual sync feature to get any policies and updates you missed.
 
 ## Sync device
+
 To force a sync:
 
 1. Sign in to the Intune app.
@@ -20,7 +21,3 @@ To force a sync:
 ## Sync versus Refresh
 
 The Company Portal **Sync** feature is different from the **Refresh** feature. *Refresh* your device to check device compliance and verify that your settings meet your organization's requirements. For more information, see [Check device compliance for AOSP](../compliance/validate-compliance-aosp.md).
-
-
-
-

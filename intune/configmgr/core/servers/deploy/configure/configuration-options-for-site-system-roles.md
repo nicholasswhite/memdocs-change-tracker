@@ -1,7 +1,7 @@
 ---
-title: Site system role options
+title: "Configuration options for site system roles in Configuration Manager"
 description: Consult this article for details about Configuration Manager site system roles that are not necessarily self-explanatory.
-ms.date: 03/29/2022
+ms.date: "2022-03-29T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -14,14 +14,15 @@ ms.service: configuration-manager
 
 Most configuration options for Configuration Manager site system roles are self-explanatory or are explained in the wizard or dialog boxes when you configure them. The following sections explain site system roles whose settings might require additional information.
 
-## <a name="BKMK_CertificateRegistrationPoint"></a> Certificate registration point
+## Certificate registration point
 
 > [!WARNING]
-> Starting in version 2203, the certificate registration point is no longer supported.<!--13951253--> For more information, see [Frequently asked questions about resource access deprecation](../../../../protect/plan-design/resource-access-deprecation-faq.yml).
+>
+> Starting in version 2203, the certificate registration point is no longer supported. For more information, see [Frequently asked questions about resource access deprecation](../../../../protect/plan-design/resource-access-deprecation-faq.yml).
 
 For more information about how to set up the certificate registration point, see [Introduction to certificate profiles](../../../../protect/deploy-use/introduction-to-certificate-profiles.md).
 
-## <a name="BKMK_Distribution_Point"></a> Distribution point
+## Distribution point
 
 For more information about how to set up the distribution point for content deployment, see [Manage content and content infrastructure](manage-content-and-content-infrastructure.md).
 
@@ -37,13 +38,11 @@ Select this option to let Configuration Manager install and set up IIS on the si
 
 For distribution points that are installed on a site server, only the computer account of the site server is supported for use as the site system installation account. For more information, see [Accounts](../../../plan-design/hierarchy/accounts.md#site-system-installation-account).
 
-
-## <a name="BKMK_Enrollment_Point"></a> Enrollment point
+## Enrollment point
 
 Enrollment points are used to install macOS computers and enroll devices that you manage with on-premises mobile device management. For more information, see the following articles:
 
 - [How to deploy clients to Macs](../../../clients/deploy/deploy-clients-to-macs.md)
-
 - [How users enroll devices with on-premises MDM](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)
 
 ### Allowed connections
@@ -52,8 +51,7 @@ The HTTPS setting is automatically selected and requires a PKI certificate on th
 
 For an example deployment of the server certificate and information about how to configure it in IIS, see [Deploying the web server certificate for site systems that run IIS](../../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012).
 
-
-## <a name="BKMK_Enrollment_Proxy_Point"></a> Enrollment proxy point
+## Enrollment proxy point
 
 For more information about how to set up an enrollment proxy point for mobile devices, see [How users enroll devices with on-premises MDM](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md).
 
@@ -68,15 +66,13 @@ For more information about the certificate requirements, see [PKI certificate re
 
 For an example deployment of the server certificate and information about how to configure it in IIS, see [Deploying the web server certificate for site systems that run IIS](../../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012).
 
-
-## <a name="BKMK_Fallback_Status_Point"></a> Fallback status point
+## Fallback status point
 
 ### Number of state messages and Throttle interval (in seconds)
 
 The default settings for these options are 10,000 state messages and 3,600 seconds for the throttle interval. While these settings are sufficient for most circumstances, you might have to change them when both of the following conditions are true:
 
 - The fallback status point accepts connections only from the intranet.
-
 - You use the fallback status point during a client deployment rollout for many computers.
 
 In this scenario, a continuous stream of state messages might create a backlog of state messages that causes high processor usage on the site server for a sustained period. In addition, you might not see up-to-date information about the client deployment in the Configuration Manager console and in the client deployment reports.
@@ -86,11 +82,8 @@ These fallback status point settings are designed to be set up for state message
 Each computer that successfully installs the Configuration Manager client sends the following four state messages to the fallback status point:
 
 - Client deployment started
-
 - Client deployment succeeded
-
 - Client assignment started
-
 - Client assignment succeeded
 
 Computers that can't be installed or that assign the Configuration Manager client send additional state messages.
@@ -102,7 +95,6 @@ To help prevent these issues, consider an increase in the number of state messag
 Reset the throttle values for the fallback status point if either of the following conditions is true:
 
 - You calculate that the current throttle values are higher than required to process state messages from the fallback status point.
-
 - You find that the current throttle settings create high processor usage on the site server.
 
 Don't change the settings for the fallback status point throttle settings unless you understand the consequences. For example, when you increase the throttle settings to high, the processor usage on the site server can increase to high, which slows down all site operations.

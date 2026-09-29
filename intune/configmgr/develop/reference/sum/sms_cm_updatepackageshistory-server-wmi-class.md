@@ -1,16 +1,18 @@
 ---
-title: SMS_CM_UpdatePackagesHistory Class
+title: "SMS_CM_UpdatePackagesHistory Server WMI Class"
 description: The SMS_CM_UpdatePackagesHistory WMI class is used to get a list of all update packages.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CM_UpdatePackagesHistory Server WMI Class
+
 The `SMS_CM_UpdatePackagesHistory` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get a list of all update packages.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -42,226 +44,210 @@ Class SMS_CM_UpdatePackagesHistory: SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CM_UpdatePackagesHistory` class does not define any methods.
+
+The `SMS_CM_UpdatePackagesHistory` class does not define any methods.
 
 ## Properties
- `ClientVersion`
- Data type: `String`
 
- Access type: Read
+`ClientVersion` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The client version, if there is a client update in the package.
+Qualifiers: none
 
- `DateCreated`
- Data type: `DateTime`
+The client version, if there is a client update in the package.
 
- Access type: Read
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The date  the update package was added to the site.
+Qualifiers: none
 
- `DateReleased`
- Data type: `DateTime`
+The date the update package was added to the site.
 
- Access type: Read
+`DateReleased` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The date the update package was released.
+Qualifiers: none
 
- `Description`
- Data type: `String`
+The date the update package was released.
 
- Access type: Read
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- A description of the update package.
+Qualifiers: none
 
- `FullVersion`
- Data type: `String`
+A description of the update package.
 
- Access type: Read
+`FullVersion` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The full version.
+Qualifiers: none
 
- `Impact`
- Data type: `SInt32`
+The full version.
 
- Access type: Read
+`Impact` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read
 
- Bit to indicate impact. Possible values are:
+Qualifiers: none
+
+Bit to indicate impact. Possible values are:
 
 | Value | Description |
-| ----- | ----------- |
-|0x01|Site server|
-|0x02|Console|
-|0x04|Client|
-|0x08|New features|
-|0x10|Bug fixes|
+| --- | --- |
+| 0x01 | Site server |
+| 0x02 | Console |
+| 0x04 | Client |
+| 0x08 | New features |
+| 0x10 | Bug fixes |
 
- `LastUpdateTime`
- Data type: `DateTime`
+`LastUpdateTime` Data type: `DateTime`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The date and time that the state was last updated.
+The date and time that the state was last updated.
 
- `LocaleID`
- Data type: `SInt32`
+`LocaleID` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The locale ID for the localized data.
+The locale ID for the localized data.
 
- `MaxCMVersion`
- Data type: `String`
+`MaxCMVersion` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The maximum applicable version of Configuration Manager.
+The maximum applicable version of Configuration Manager.
 
- `MinCMVersion`
- Data type: `String`
+`MinCMVersion` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The minimum applicable version of Configuration Manager.
+The minimum applicable version of Configuration Manager.
 
- `MoreInfoLink`
- Data type: `String`
+`MoreInfoLink` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- Link to additional information about the update package.
+Link to additional information about the update package.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The name of the update package.
+The name of the update package.
 
- `PackageGuid`
- Data type: `String`
+`PackageGuid` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- A unique identifier for the package.
+A unique identifier for the package.
 
- `PrereqFlag`
- Data type: `SInt32`
+`PrereqFlag` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- Flag for pre-requisites. Valid values are:
+Flag for pre-requisites. Valid values are:
 
 | Value | Description |
-| ----- | ----------- |
-|0x1|Prereq only|
-|0x2|CONTINUE_ON_PREREQ_WARNING|
+| --- | --- |
+| 0x1 | Prereq only |
+| 0x2 | CONTINUE_ON_PREREQ_WARNING |
 
- `PrereqPackageName`
- Data type: `String`
+`PrereqPackageName` Data type: `String`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The name of the package that the current package depends on.
+The name of the package that the current package depends on.
 
- `PrereqPackageState`
- Data type: `SInt32`
+`PrereqPackageState` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The state of the package that the current package depends on.
+The state of the package that the current package depends on.
 
- `PublisherFlags`
- Data type: `SInt32`
+`PublisherFlags` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- 0x2: update boot image package.
+0x2: update boot image package.
 
- `State`
- Data type: `SInt32`
+`State` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- The overall state of the update package.
+The overall state of the update package.
 
- `UpdateType`
- Data type: `SInt32`
+`UpdateType` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- Package type. Possible values are:
+Package type. Possible values are:
 
 | Value | Description |
-| ----- | ----------- |
-|0|Regular Update|
-|1|Weave|
-|2|QFE|
+| --- | --- |
+| 0 | Regular Update |
+| 1 | Weave |
+| 2 | QFE |
 
- `WarningFlag`
- Data type: `SInt32`
+`WarningFlag` Data type: `SInt32`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: none
+Qualifiers: none
 
- Warning flag. Possible values are:
+Warning flag. Possible values are:
 
 | Value | Description |
-| ----- | ----------- |
-|0|Bypass warning|
-|1|Do not bypass warning|
+| --- | --- |
+| 0 | Bypass warning |
+| 1 | Do not bypass warning |
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

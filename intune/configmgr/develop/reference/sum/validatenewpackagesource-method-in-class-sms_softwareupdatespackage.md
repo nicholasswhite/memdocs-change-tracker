@@ -1,7 +1,7 @@
 ---
 description: Learn how to use the ValidateNewPackageSource class method to validate a new package source location for a software update.
-title: ValidateNewPackageSource method in class SMS_SoftwareUpdatesPackage
-ms.date: "09/20/2016"
+title: "ValidateNewPackageSource Method in Class SMS_SoftwareUpdatesPackage"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,60 +9,66 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # ValidateNewPackageSource Method in Class SMS_SoftwareUpdatesPackage
-The `ValidateNewPackageSource` Windows Management Instrumentation (WMI) class method, in Configuration Manager, validates a new package source location for a software update.  
+
+The `ValidateNewPackageSource` Windows Management Instrumentation (WMI) class method, in Configuration Manager, validates a new package source location for a software update.
 
 > [!NOTE]
->  All of the updates available in the old package source must be available in the new package source for validation to succeed.  
+>
+> All of the updates available in the old package source must be available in the new package source for validation to succeed.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.  
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
-## Syntax  
+## Syntax
 
-```  
+```
 SInt32 ValidateNewPackageSource(  
      String PackageSource  
 );  
-```  
+```
 
-#### Parameters  
- `PackageSource`  
- Data type: `String`  
+#### Parameters
 
- Qualifiers: [in]  
+`PackageSource`  
+ Data type: `String`
 
- The location of the package content to verify.  
+Qualifiers: [in]
 
-## Return Values  
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.  
+The location of the package content to verify.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).  
+## Return Values
 
-## Remarks  
- This method might be used when changing the package source location of a software update package due to infrastructure changes or a server failure.  
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- This method is new in the latest version of Configuration Manager. Note that it is the only way to change the package source for an [SMS_SoftwareUpdate Server WMI Class](../../../develop/reference/sum/sms_softwareupdate-server-wmi-class.md) object. Most other types of packages can be changed in the console, but not the software update package. The access to this package from the console is restricted.  
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
- To use this method:  
+## Remarks
 
-1.  Manually copy the package files from the old source location to the new location.  
+This method might be used when changing the package source location of a software update package due to infrastructure changes or a server failure.
 
-2.  In your application, obtain the [SMS_SoftwareUpdatesPackage Server WMI Class](../../../develop/reference/sum/sms_softwareupdatespackage-server-wmi-class.md) object for the software update.  
+This method is new in the latest version of Configuration Manager. Note that it is the only way to change the package source for an [SMS_SoftwareUpdate Server WMI Class](sms_softwareupdate-server-wmi-class.md) object. Most other types of packages can be changed in the console, but not the software update package. The access to this package from the console is restricted.
 
-3.  Include a call to `ValidateNewPackageSource` on the package.  
+To use this method:
 
-4.  On successful return from the method, have the application change the `StoredPkgPath` property in the package to indicate the new source location.  
+1. Manually copy the package files from the old source location to the new location.
+2. In your application, obtain the [SMS_SoftwareUpdatesPackage Server WMI Class](sms_softwareupdatespackage-server-wmi-class.md) object for the software update.
+3. Include a call to `ValidateNewPackageSource` on the package.
+4. On successful return from the method, have the application change the `StoredPkgPath` property in the package to indicate the new source location.
 
-## Requirements  
+## Requirements
 
-## Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+## Runtime Requirements
 
-## Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
-## See Also  
- [SMS_SoftwareUpdatesPackage Server WMI Class](../../../develop/reference/sum/sms_softwareupdatespackage-server-wmi-class.md)   
- [RefreshPkgSource Method in Class SMS_SoftwareUpdatesPackage](../../../develop/reference/sum/refreshpkgsource-method-in-class-sms_softwareupdatespackage.md)   
- [SetSourceSite Method in Class SMS_SoftwareUpdatesPackage](../../../develop/reference/sum/setsourcesite-method-in-class-sms_softwareupdatespackage.md)   
- [Unlock Method in Class SMS_SoftwareUpdatesPackage](../../../develop/reference/sum/unlock-method-in-class-sms_softwareupdatespackage.md)
+## Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[SMS_SoftwareUpdatesPackage Server WMI Class](sms_softwareupdatespackage-server-wmi-class.md)  
+ [RefreshPkgSource Method in Class SMS_SoftwareUpdatesPackage](refreshpkgsource-method-in-class-sms_softwareupdatespackage.md)  
+ [SetSourceSite Method in Class SMS_SoftwareUpdatesPackage](setsourcesite-method-in-class-sms_softwareupdatespackage.md)  
+ [Unlock Method in Class SMS_SoftwareUpdatesPackage](unlock-method-in-class-sms_softwareupdatespackage.md)

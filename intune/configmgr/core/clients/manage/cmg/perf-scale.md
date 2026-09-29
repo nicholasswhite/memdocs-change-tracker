@@ -1,7 +1,7 @@
 ---
 title: CMG performance and scale
 description: Plan how the design the cloud management gateway (CMG) for the best performance at the appropriate scale.
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -19,29 +19,59 @@ The supported scale and performance of the cloud management gateway (CMG) is bas
 - CMG connection point site system on your internal network
 
 > [!NOTE]
+>
 > Sizing guidance for management points and software update points doesn't change whether they service on-premises or internet-based clients. For more information, see [Size and scale numbers](../../../plan-design/configs/size-and-scale-numbers.md).
 
 ## Size and scale for CMG
 
-[!INCLUDE [Size and scale for cloud management gateway](../../../plan-design/configs/includes/scale-cmg.md)]
+Unless otherwise noted, this guidance is the same for all deployment models and VM sizes.
+
+- You can install multiple instances of the cloud management gateway (CMG) at primary sites, or the central administration site (CAS).
+
+  > [!TIP]
+  >
+  > In a hierarchy, create the CMG at the CAS.
+- One CMG supports up to 16 virtual machine (VM) instances in the Azure cloud service.
+- Simultaneous client connections per each CMG VM instance depend upon the deployment model and VM size. When the CMG is under high load with more than the supported number of clients, it still handles requests but there may be delay.
+
+  - **Virtual machine scale-set** *(version 2107 and later)*
+
+    - **Lab (B2s)**: 10
+    - **Standard (A2_v2)**: 6,000
+    - **Large (A4_v2)**: 10,000
+
+    > [!IMPORTANT]
+    >
+    > The **Lab (B2s)** size VM is only intended for lab testing and small proof-of-concept environments. They aren't intended for production use with the CMG. The B2s VMs are low cost and low performing. The Configuration Manager technical preview branch only supports 10 clients, which is why this size supports that number of clients.
+  - **Virtual machine scale set** *(version 2010 and 2103 for Cloud Service Provider (CSP) subscriptions)*: 2,000
+  - **Cloud service (classic)** *(version 2111 and earlier)*: 6,000
+
+    > [!IMPORTANT]
+    >
+    > Starting in version 2203, the option to deploy a CMG as a **cloud service (classic)** is removed. All CMG deployments should use a [virtual machine scale set](plan-cloud-management-gateway.md#virtual-machine-scale-sets). For more information, see [Removed and deprecated features](../../../plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
 ## Size and scale for CMG connection point
 
-[!INCLUDE [Size and scale for cloud management gateway connection point](../../../plan-design/configs/includes/scale-cmgcp.md)]
+This guidance is the same for all deployment models and VM sizes.
+
+- You can install multiple instances of the CMG connection point at primary sites.
+- One CMG connection point can support a CMG with up to four VM instances. If the CMG has more than four VM instances, add a second CMG connection point for load balancing. A CMG with 16 VM instances should be linked with four CMG connection points.
+
+> [!NOTE]
+>
+> When considering hardware requirements for the CMG connection point, see [Recommended hardware for remote site system servers](../../../plan-design/configs/recommended-hardware.md#remote-site-system-servers).
 
 ## Improve performance
 
 The following recommendations can help you improve CMG performance:
 
 - The connection between the Configuration Manager client and the CMG isn't region-aware. Client communication is largely unaffected by latency and geographic separation. It's generally not necessary to deploy multiple CMG for the purposes of geo-proximity. Deploy the CMG at the top-level site in your hierarchy. To increase scale, add VM instances.
-
 - For high availability of the service, create a CMG with at least two VM instances and two CMG connection points per site.
-
 - Scale the CMG to support more clients by adding more VM instances. The Azure load balancer controls client connections to the service.
-
 - Create more CMG connection points to distribute the load among them. The CMG distributes the traffic to its connecting CMG connection points in a round-robin fashion.
 
 > [!NOTE]
+>
 > The CMG connection point creates a TCP connection to the management point for each client. While Configuration Manager has no hard limit on the number of clients for a CMG connection point, Windows Server has a default maximum TCP dynamic port range of 16,384. If a Configuration Manager site manages more than 16,384 clients with a single CMG connection point, add another site system or increase the Windows Server limit. All clients maintain a channel for client notifications, which holds a port open on the CMG connection point. For more information on how to increase this limit, see [Microsoft Support article 929851](https://support.microsoft.com/help/929851).
 
 ## Content performance
@@ -55,11 +85,11 @@ As with any distribution point design, consider the following factors for a cont
 Depending upon your design, if clients have the option of more than one CMG for any given content, then they naturally randomize across those cloud sources. If you only distribute a certain piece of content to a single CMG, and a large number of clients try to download this content at the same time, it puts higher load on that single CMG. Adding another CMG includes a separate Azure storage service. For more information on how the client communicates with the CMG components and downloads content, see [Data flow](data-flow.md).
 
 > [!NOTE]
-> The Azure storage service supports 500 requests per second for a single file. Performance testing of a single cloud-based content source supported distribution of a single 100-MB file to 50,000 clients in 24 hours.<!--512106-->
+>
+> The Azure storage service supports 500 requests per second for a single file. Performance testing of a single cloud-based content source supported distribution of a single 100-MB file to 50,000 clients in 24 hours.
 
 ## Next steps
 
 Next, understand the costs associated with operating an Azure service for the CMG:
 
-> [!div class="nextstepaction"]
-> [Cost of CMG](cost.md)
+[Cost of CMG](cost.md)

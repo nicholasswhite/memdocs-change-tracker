@@ -1,7 +1,7 @@
 ---
 title: CMG client authentication
 description: Plan for how clients authenticate to the cloud management gateway (CMG).
-ms.date: 08/02/2021
+ms.date: "2021-08-02T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -20,8 +20,8 @@ Clients that connect to a cloud management gateway (CMG) are potentially on the 
 
 The following table summarizes the key factors for each method:
 
-|         | Microsoft Entra ID | PKI certificate | Site token |
-|---------|---------|---------|---------|
+|  | Microsoft Entra ID | PKI certificate | Site token |
+| --- | --- | --- | --- |
 | **ConfigMgr version** | All supported | All supported | All supported |
 | **Windows client version** | Windows 10 or later | All supported | All supported |
 | **Scenario support** | User and device | Device-only | Device-only |
@@ -33,13 +33,11 @@ You can use one or more methods. All clients don't have to use the same method.
 
 Which ever method you choose, you may also need to reconfigure one or more management points. For more information, see [Configure client authentication for CMG](configure-authentication.md#enable-management-point-for-https).
 
-<a name='azure-ad'></a>
-
 ## Microsoft Entra ID
 
 If your internet-based devices are running Windows 10 or later, consider using Microsoft Entra modern authentication with the CMG. This authentication method is the only one that enables user-centric scenarios. For example, deploying apps to a user collection.
 
-First, the devices need to be either cloud domain-joined or Microsoft Entra hybrid joined, and the user also needs a Microsoft Entra identity. If your organization is already using Microsoft Entra identities, then you should be set with this prerequisite. If not, talk with your Azure administrator to plan for cloud-based identities. For more information, see [Microsoft Entra device identity](/azure/active-directory/devices/). Until that process is complete, consider [token-based authentication](#site-token) for internet-based clients with your CMG.
+First, the devices need to be either cloud domain-joined or Microsoft Entra hybrid joined, and the user also needs a Microsoft Entra identity. If your organization is already using Microsoft Entra identities, then you should be set with this prerequisite. If not, talk with your Azure administrator to plan for cloud-based identities. For more information, see [Microsoft Entra device identity](https://learn.microsoft.com/en-us/azure/active-directory/devices/). Until that process is complete, consider [token-based authentication](#site-token) for internet-based clients with your CMG.
 
 There are a few other requirements, depending upon your environment:
 
@@ -50,13 +48,15 @@ There are a few other requirements, depending upon your environment:
 For more information on these prerequisites, see [Install clients using Microsoft Entra ID](../../deploy/deploy-clients-cmg-azure.md).
 
 > [!NOTE]
-> If your devices are in a Microsoft Entra tenant that's separate from the tenant with a subscription for the CMG compute resources, starting in version 2010 you can disable authentication for tenants not associated with users and devices. For more information, see [Configure Azure services](../../../servers/deploy/configure/azure-services-wizard.md#disable-authentication).<!--8537319-->
+>
+> If your devices are in a Microsoft Entra tenant that's separate from the tenant with a subscription for the CMG compute resources, starting in version 2010 you can disable authentication for tenants not associated with users and devices. For more information, see [Configure Azure services](../../../servers/deploy/configure/azure-services-wizard.md#disable-authentication).
 
 ## PKI certificate
 
 If you have a public key infrastructure (PKI) that can issue client authentication certificates to devices, then consider this authentication method for internet-based devices with your CMG. It doesn't support user-centric scenarios, but supports devices running any supported version of Windows.
 
 > [!TIP]
+>
 > Windows devices that are hybrid or cloud domain-joined don't require this certificate because they use [Microsoft Entra ID](#azure-ad) to authenticate.
 
 This certificate may also be required on the CMG connection point.
@@ -73,5 +73,4 @@ If you can't register clients on the internal network, you can create and deploy
 
 Next, design how to use a CMG in your hierarchy:
 
-> [!div class="nextstepaction"]
-> [CMG hierarchy design](plan-hierarchy-design.md)
+[CMG hierarchy design](plan-hierarchy-design.md)

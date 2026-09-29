@@ -1,7 +1,7 @@
 ---
-title: Monitor Microsoft Defender for Endpoint with Microsoft Intune
+title: "Monitor device status for Microsoft Defender for Endpoint with Microsoft Intune"
 description: Learn how to monitor device compliance and onboarding status for Microsoft Defender for Endpoint with Microsoft Intune in the admin center.
-ms.date: 04/28/2026
+ms.date: "2026-04-28T00:00:00Z"
 ms.topic: how-to
 ms.custom: msecd-doc-authoring-1012
 ---
@@ -14,10 +14,8 @@ When you integrate Microsoft Intune and Microsoft Defender for Endpoint, you can
 
 Monitor the state of devices that have the Microsoft Defender for Endpoint compliance policy.
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Select **Devices** > **Compliance**. On the **Monitor** tab, select **Noncompliant devices**.
-
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Compliance**. On the **Monitor** tab, select **Noncompliant devices**.
 3. Find your Microsoft Defender for Endpoint policy in the list, and see which devices are compliant or noncompliant.
 
 For more information about reports, see [Intune reports](../../device-management/reports/overview.md).
@@ -26,15 +24,11 @@ For more information about reports, see [Intune reports](../../device-management
 
 To view the onboarding status of your Intune-managed devices:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Endpoint security** > **Overview**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint security** &gt; **Overview**.
 
    The default *Summary* tab includes a **Windows devices onboarded onto Microsoft Defender for Endpoint** visualization report that displays the count of devices reporting status from the Defender for Endpoint sensor.
 
 ## Next step
 
-- [Enforce compliance for Microsoft Defender for Endpoint with Conditional Access in Intune](./overview.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Enforce compliance for Microsoft Defender for Endpoint with Conditional Access in Intune](overview.md)

@@ -1,7 +1,7 @@
 ---
-title: Prepare site system roles for OSD
+title: "Prepare site system roles for OS deployments with Configuration Manager"
 description: Configure the site system roles before you deploy operating systems in Configuration Manager.
-ms.date: 10/01/2021
+ms.date: "2021-10-01T00:00:00Z"
 ms.subservice: osd
 ms.topic: install-set-up-deploy
 ms.collection: tier3
@@ -56,7 +56,6 @@ To deploy operating systems to Configuration Manager clients that make PXE boot 
 You can customize the RamDisk TFTP block and window sizes for PXE-enabled distribution points. If you've customized your network, a large block or window size could cause the boot image download to fail with a time-out error. The RamDisk TFTP block and window size customizations allow you to optimize TFTP traffic when using PXE to meet your specific network requirements. To determine what configuration is most efficient, test the customized settings in your environment.
 
 - **TFTP block size**: The block size is the size of the data packets that the server sends to the client that is downloading the file. A larger block size allows the server to send fewer packets, so there are fewer round-trip delays between the server and the client. However, a large block size leads to fragmented packets, which most PXE client implementations don't support.
-
 - **TFTP window size**: TFTP requires an acknowledgment (ACK) packet for each block of data that is sent. The server doesn't send the next block in the sequence until it receives the ACK packet for the previous block. TFTP windowing enables you to define how many data blocks it takes to fill a window. The server sends the data blocks back-to-back until the window is filled, and then the client sends an ACK packet. If you increase this window size, it reduces the number of round-trip delays between the client and server, and it decreases the overall required time to download a boot image.
 
 #### Modify the RamDisk TFTP window size
@@ -66,8 +65,7 @@ To customize the RamDisk TFTP window size, add the following registry key on PXE
 - **Location**: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP`
 - **Name**: RamDiskTFTPWindowSize
 - **Type**: REG_DWORD
-- **Value**: (customized window size)
-  The default value is `1` (one data block fills the window).
+- **Value**: (customized window size) The default value is `1` (one data block fills the window).
 
 #### Modify the RamDisk TFTP block size
 
@@ -76,10 +74,10 @@ To customize the RamDisk TFTP block size, add the following registry key on PXE-
 - **Location**: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP`
 - **Name**: RamDiskTFTPBlockSize
 - **Type**: REG_DWORD
-- **Value**: (customized block size)
-  The default value is `4096`.
+- **Value**: (customized block size) The default value is `4096`.
 
 > [!NOTE]
+>
 > Both Windows Deployment Services and the Configuration Manager PXE responder service support these TFTP configurations.
 
 ### Configure distribution points to support multicast
@@ -98,16 +96,15 @@ The size of the user state directly affects disk storage on the state migration 
 
 ### User State Migration Tool
 
-To capture and restore the user state during the deployment of the operating systems, use a User State Migration Tool (USMT) package that points to the USMT source files. Configuration Manager automatically creates this package in the Configuration Manager console in **Software Library** > **Application Management** > **Packages**. Configuration Manager uses USMT to capture the user state from one OS and then restore it to another. The Windows Assessment and Deployment Kit (ADK) for Windows includes USMT.
+To capture and restore the user state during the deployment of the operating systems, use a User State Migration Tool (USMT) package that points to the USMT source files. Configuration Manager automatically creates this package in the Configuration Manager console in **Software Library** &gt; **Application Management** &gt; **Packages**. Configuration Manager uses USMT to capture the user state from one OS and then restore it to another. The Windows Assessment and Deployment Kit (ADK) for Windows includes USMT.
 
-For a description of different migration scenarios for USMT, see [Common migration scenarios](/windows/deployment/usmt/usmt-common-migration-scenarios) in the Windows documentation.
+For a description of different migration scenarios for USMT, see [Common migration scenarios](https://learn.microsoft.com/en-us/windows/deployment/usmt/usmt-common-migration-scenarios) in the Windows documentation.
 
 ### Retention policy
 
 When you configure the state migration point, specify the length of time to keep the user state data that it stores. The length of time to keep the data on the state migration point depends on two considerations:
 
 - The effect that the stored data has on disk storage.
-
 - The potential requirement to keep the data for a time in case you must migrate the data again.
 
 State migration occurs in two phases: capturing the data, and restoring the data. When you capture data, the user state data is collected and saved to the state migration point. When you restore the data, the user state data is retrieved from the state migration point, written to the destination computer, and then the **Release State Store** task sequence step releases the stored data. When the data is released, the retention timer starts. If you select the option to delete migrated data immediately, the user state data is deleted as soon as it's released. If you select the option to keep the data for a certain period of time, the data is deleted when that period of time elapses after the state data is released. The longer you set the retention period, the more disk space you're likely to require.
@@ -121,19 +118,14 @@ When you configure the state migration point, specify the drive on the server to
 Use the following methods to configure a state migration point to store the user state data:
 
 - Use the **Create Site System Server Wizard** to create a new site system server for the state migration point.
-
 - Use the **Add Site System Roles Wizard** to add a state migration point to an existing server.
 
 When you use these wizards, you're prompted to provide the following information for the state migration point:
 
 - The folders to store the user state data.
-
 - The maximum number of clients that can store data on the state migration point.
-
 - The minimum free space for the state migration point to store user state data.
-
 - The deletion policy for the role. Either specify that the user state data is deleted immediately after it's restored on a computer, or after a specific number of days after the user data is restored on a computer.
-
 - Whether the state migration point responds only to requests to restore user state data. When you enable this option, you can't use the state migration point to store user state data.
 
 For the steps to install a site system role, see [Add site system roles](../../core/servers/deploy/configure/add-site-system-roles.md).

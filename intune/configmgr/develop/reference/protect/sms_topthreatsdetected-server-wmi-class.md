@@ -1,16 +1,18 @@
 ---
-title: SMS_TopThreatsDetected Class
+title: "SMS_TopThreatsDetected Server WMI Class"
 description: The SMS_TopThreatsDetected class summarizes the top threats found in the last 24 hours per collection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TopThreatsDetected Server WMI Class
+
 The `SMS_TopThreatsDetected` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that summarizes the top threats found in the last 24 hours per collection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,110 +30,107 @@ Class SMS_TopThreatsDetected : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_TopThreatsDetected` class does not define any methods.
+
+The `SMS_TopThreatsDetected` class does not define any methods.
 
 ## Properties
- `CollectionID`
- Data type: `String`
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the collection summarized.
+Qualifiers: [key]
 
- `MemberCount`
- Data type: `UInt32`
+Identifier of the collection summarized.
 
- Access type: Read/Write
+`MemberCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of members with a threat.
+Qualifiers: none
 
- `Rank`
- Data type: `UInt32`
+Count of members with a threat.
 
- Access type: Read/Write
+`Rank` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Rank of threat exposure in collection (1 is greatest).
+Qualifiers: none
 
- `ThreatCategoryID`
- Data type: `UInt32`
+Rank of threat exposure in collection (1 is greatest).
 
- Access type: Read/Write
+`ThreatCategoryID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Category identifier of threat. Possible values are:
+Qualifiers: none
 
-|CategoryID|Category|
-|----------------|--------------|
-|1|Adware|
-|2|Spyware|
-|3|Password Stealer|
-|4|Trojan Downloader|
-|5|Worm|
-|6|Backdoor|
-|8|Trojan|
-|9|Email Flooder|
-|11|Dialer|
-|12|Monitoring Software|
-|13|Browser Modifier|
-|19|Joke Program|
-|21|Software Bundler|
-|22|Trojan Notifier|
-|23|Settings Modifier|
-|27|Potentially Unwanted Software|
-|30|Exploit|
-|32|Malware Creation Tool|
-|33|Remote Control Software|
-|34|Tool|
-|36|Trojan Denial of Service|
-|37|Trojan Dropper|
-|38|Trojan Mass Mailer|
-|39|Trojan Monitoring Software|
-|40|Trojan Proxy Server|
-|42|Virus|
-|43|Permitted|
-|44|Not Yet Classified|
-|46|Suspicious Behavior|
+Category identifier of threat. Possible values are:
 
- `ThreatID`
- Data type: `UInt64`
+| CategoryID | Category |
+| --- | --- |
+| 1 | Adware |
+| 2 | Spyware |
+| 3 | Password Stealer |
+| 4 | Trojan Downloader |
+| 5 | Worm |
+| 6 | Backdoor |
+| 8 | Trojan |
+| 9 | Email Flooder |
+| 11 | Dialer |
+| 12 | Monitoring Software |
+| 13 | Browser Modifier |
+| 19 | Joke Program |
+| 21 | Software Bundler |
+| 22 | Trojan Notifier |
+| 23 | Settings Modifier |
+| 27 | Potentially Unwanted Software |
+| 30 | Exploit |
+| 32 | Malware Creation Tool |
+| 33 | Remote Control Software |
+| 34 | Tool |
+| 36 | Trojan Denial of Service |
+| 37 | Trojan Dropper |
+| 38 | Trojan Mass Mailer |
+| 39 | Trojan Monitoring Software |
+| 40 | Trojan Proxy Server |
+| 42 | Virus |
+| 43 | Permitted |
+| 44 | Not Yet Classified |
+| 46 | Suspicious Behavior |
 
- Access type: Read/Write
+`ThreatID` Data type: `UInt64`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Threat identifier.
+Qualifiers: [key]
 
- `ThreatName`
- Data type: `String`
+Threat identifier.
 
- Access type: Read/Write
+`ThreatName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the threat.
+Qualifiers: none
 
- `TotalMemberCount`
- Data type: `UInt32`
+Name of the threat.
 
- Access type: Read/Write
+`TotalMemberCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Total count of members in the collection.
+Qualifiers: none
+
+Total count of members in the collection.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot device association FAQ
+title: "Windows Autopilot device association frequently asked questions"
 description: Frequently asked questions about Windows Autopilot device association, including exported CSV content, corporate identifiers, OEM support, and virtual machines.
-ms.date: 08/07/2026
+ms.date: "2026-08-07T00:00:00Z"
 ms.topic: faq
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -21,7 +21,7 @@ A changed CSV doesn't invalidate an existing pre-association on its own. A pre-a
 
 ### How do I get the DeviceLink CSV for a device that's already set up?
 
-For existing devices that are past the out-of-box experience (OOBE), you can export the device information from the device's Autopilot diagnostic logs instead of using the OOBE Autopilot menu. On the device, go to **Settings** > **Accounts** > **Access work or school**, select **Export your management logs** under **Related settings**, and then retrieve the DeviceLink CSV from the exported diagnostics. You can also run `MdmDiagnosticsTool.exe -area Autopilot -cab <path>` from an elevated command prompt, or collect the diagnostics remotely from the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) (**Devices** > select the device > **Collect diagnostics**). Upload the exported CSV in Intune to pre-associate the device. For more information, see [Associate devices](../tutorial/user-driven/entra-join-device-association.md).
+For existing devices that are past the out-of-box experience (OOBE), you can export the device information from the device's Autopilot diagnostic logs instead of using the OOBE Autopilot menu. On the device, go to **Settings** &gt; **Accounts** &gt; **Access work or school**, select **Export your management logs** under **Related settings**, and then retrieve the DeviceLink CSV from the exported diagnostics. You can also run `MdmDiagnosticsTool.exe -area Autopilot -cab <path>` from an elevated command prompt, or collect the diagnostics remotely from the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) (**Devices** &gt; select the device &gt; **Collect diagnostics**). Upload the exported CSV in Intune to pre-associate the device. For more information, see [Associate devices](../tutorial/user-driven/entra-join-device-association.md).
 
 ### Do I need to upload corporate identifiers if my devices are pre-associated?
 

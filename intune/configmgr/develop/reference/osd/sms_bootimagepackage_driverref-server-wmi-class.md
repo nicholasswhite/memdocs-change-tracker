@@ -1,16 +1,18 @@
 ---
-title: SMS_BootImagePackage_DriverRef Class
+title: "SMS_BootImagePackage_DriverRef Server WMI Class"
 description: An SMS Provider server class that represents the association between a boot image package and a referenced driver.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BootImagePackage_DriverRef Server WMI Class
+
 The `SMS_BootImagePackage_DriverRef` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the association between a boot image package and a referenced driver.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,56 +26,58 @@ Class SMS_BootImagePackage_DriverRef : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_BootImagePackage_DriverRef` class doesn't define any methods.
+
+The `SMS_BootImagePackage_DriverRef` class doesn't define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `SInt32`
 
- Access type: Read/Write
+`CI_ID` Data type: `SInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The unique ID of the configuration item associated with the [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md) object. This ID is unique only for the site. The default value is 0.
+Qualifiers: [key]
 
- `PkgID`
- Data type: `String`
+The unique ID of the configuration item associated with the [SMS_Driver Server WMI Class](sms_driver-server-wmi-class.md) object. This ID is unique only for the site. The default value is 0.
 
- Access type: Read-only
+`PkgID` Data type: `String`
 
- Qualifiers: [read, key]
+Access type: Read-only
 
- ID of the boot image package. The default value is "".
+Qualifiers: [read, key]
 
- `SourcePath`
- Data type: `String`
+ID of the boot image package. The default value is "".
 
- Access type: Read/Write
+`SourcePath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Location of the driver content. The default value is "".
+Qualifiers: None
 
- The value of this property is typically the same as the `ContentSourcePath` property for the associated [SMS_Driver Server WMI Class](../../../develop/reference/osd/sms_driver-server-wmi-class.md) object. However, the value can be different if the original content location isn't available.
+Location of the driver content. The default value is "".
+
+The value of this property is typically the same as the `ContentSourcePath` property for the associated [SMS_Driver Server WMI Class](sms_driver-server-wmi-class.md) object. However, the value can be different if the original content location isn't available.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-  The boot image package is represented by an [SMS_BootImagePackage Server WMI Class](../../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md) object. The drivers contained in the package are indicated in the `ReferencedDrivers` property of this object.
+  The boot image package is represented by an [SMS_BootImagePackage Server WMI Class](sms_bootimagepackage-server-wmi-class.md) object. The drivers contained in the package are indicated in the `ReferencedDrivers` property of this object.
 
   Your application uses this class to determine what drivers are maintained with the boot image.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See also
 

@@ -1,16 +1,18 @@
 ---
-title: SMS_MeterData Class
+title: "SMS_MeterData Server WMI Class"
 description: The SMS_MeterData Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents captured software metering data.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MeterData Server WMI Class
+
 The `SMS_MeterData` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents captured software metering data.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,153 +38,143 @@ Class SMS_MeterData : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MeterData` class does not define any methods.
+
+The `SMS_MeterData` class does not define any methods.
 
 ## Properties
- `EndNotCaptured`
- Data type: `Boolean`
 
- Access type: Read/Write
+`EndNotCaptured` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the metering agent could not capture the actual end time of the process.
+Qualifiers: None
 
- `EndTime`
- Data type: `DateTime`
+`true` if the metering agent could not capture the actual end time of the process.
 
- Access type: Read/Write
+`EndTime` Data type: `DateTime`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The date and time, in Universal Coordinated Time (UTC), when the process stopped running, if `StillRunning` is `false`. If it is `true`, `EndTime` represents the time at which the data was reported.
+Qualifiers: [key]
 
- `EndTimeOffset`
- Data type: `UInt32`
+The date and time, in Universal Coordinated Time (UTC), when the process stopped running, if `StillRunning` is `false`. If it is `true`, `EndTime` represents the time at which the data was reported.
 
- Access type: Read/Write
+`EndTimeOffset` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The offset from UTC, in minutes, of the local time for the client at the time the data was reported.
+Qualifiers: None
 
- `FileID`
- Data type: `SInt64`
+The offset from UTC, in minutes, of the local time for the client at the time the data was reported.
 
- Access type: Read/Write
+`FileID` Data type: `SInt64`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the file that was metered. To find the file information, match `FileID` with the ID in [SMS_ProductFileInfo Server WMI Class](../../../develop/reference/apps/sms_productfileinfo-server-wmi-class.md). To find the rules that caused the file to be metered, match `FileID` with the ID in [SMS_MeteredFiles Server WMI Class](../../../develop/reference/apps/sms_meteredfiles-server-wmi-class.md).
+Qualifiers: None
 
- `InTSSession`
- Data type: `Boolean`
+ID of the file that was metered. To find the file information, match `FileID` with the ID in [SMS_ProductFileInfo Server WMI Class](sms_productfileinfo-server-wmi-class.md). To find the rules that caused the file to be metered, match `FileID` with the ID in [SMS_MeteredFiles Server WMI Class](sms_meteredfiles-server-wmi-class.md).
 
- Access type: Read/Write
+`InTSSession` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file was used in a Terminal Server session. Set the property to `false` if the file was used in a console session.
+Qualifiers: None
 
- `MeterDataID`
- Data type: `String`
+`true` if the file was used in a Terminal Server session. Set the property to `false` if the file was used in a console session.
 
- Access type: Read/Write
+`MeterDataID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique ID of a particular instance of a running process on a particular computer. A record with this ID is created every time the client reports on the same instance of a running program.
+Qualifiers: [key]
 
- `MeteredUserID`
- Data type: `UInt32`
+Unique ID of a particular instance of a running process on a particular computer. A record with this ID is created every time the client reports on the same instance of a running program.
 
- Access type: Read/Write
+`MeteredUserID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the Windows user account of the programs user. To find the user name, the application finds the record with the same `MeteredUserID` property in the [SMS_MeteredUser Server WMI Class](../../../develop/reference/apps/sms_metereduser-server-wmi-class.md) class.
+Qualifiers: None
 
- `Released`
- Data type: `Boolean`
+ID of the Windows user account of the programs user. To find the user name, the application finds the record with the same `MeteredUserID` property in the [SMS_MeteredUser Server WMI Class](sms_metereduser-server-wmi-class.md) class.
 
- Access type: Read/Write
+`Released` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- Internal flag used by the metering system and signifying that the record can be deleted by the Delete Aged Software Metering Data site maintenance task.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Internal flag used by the metering system and signifying that the record can be deleted by the Delete Aged Software Metering Data site maintenance task.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the computer that executed the metered program. To find the computer information, your application finds the record with the same resource ID in the [SMS_R_System Server WMI Class](../../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md) class.
+Qualifiers: None
 
- `Started`
- Data type: `Boolean`
+ID of the computer that executed the metered program. To find the computer information, your application finds the record with the same resource ID in the [SMS_R_System Server WMI Class](../core/clients/manage/sms_r_system-server-wmi-class.md) class.
 
- Access type: Read/Write
+`Started` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if this is the first record reporting on a particular instance of a running program. If this property is set to `true`, `StartTime` represents the actual time when the program started.
+Qualifiers: None
 
- `StartNotCaptured`
- Data type: `Boolean`
+`true` if this is the first record reporting on a particular instance of a running program. If this property is set to `true`, `StartTime` represents the actual time when the program started.
 
- Access type: Read/Write
+`StartNotCaptured` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the metering agent was not able to capture the actual start time of the process.
+Qualifiers: None
 
- `StartTime`
- Data type: `DateTime`
+`true` if the metering agent was not able to capture the actual start time of the process.
 
- Access type: Read/Write
+`StartTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time, in Universal Coordinated Time (UTC), when the program started, if `Started` is `true`. If it is `false`, `StartTime` is the end time (`EndTime`) of the previous report for this program.
+Qualifiers: None
 
- `StartTimeOffset`
- Data type: `UInt32`
+The date and time, in Universal Coordinated Time (UTC), when the program started, if `Started` is `true`. If it is `false`, `StartTime` is the end time (`EndTime`) of the previous report for this program.
 
- Access type: Read/Write
+`StartTimeOffset` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The offset from UTC, in minutes, of the local time for the client at the time the data was reported.
+Qualifiers: None
 
- `StillRunning`
- Data type: `Boolean`
+The offset from UTC, in minutes, of the local time for the client at the time the data was reported.
 
- Access type: Read/Write
+`StillRunning` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the program is still running. Set this property to `false` if `EndTime` represents the actual end time of the metered program.
+Qualifiers: None
 
- `TimeSerial`
- Data type: `UInt32`
+`true` if the program is still running. Set this property to `false` if `EndTime` represents the actual end time of the metered program.
 
- Access type: Read/Write
+`TimeSerial` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- A rough ordering of the time used to process the record. Records with a smaller `TimeSerial` value were processed before a record with a larger `TimeSerial` value. This property is not unique across records.
+Qualifiers: None
+
+A rough ordering of the time used to process the record. Records with a smaller `TimeSerial` value were processed before a record with a larger `TimeSerial` value. This property is not unique across records.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- Each record represents a report of a running program on a computer. If a program runs over several reporting cycles, there are several instances of `SMS_MeterData` that report on it, all with the same `MeterDataID` value. The time periods specified by `StartTime` and `EndTime` are consecutive and do not overlap. The full period of program execution can be found by the earliest `StartTime` value (where `Started` = 1) and the latest `EndTime` value (where `StillRunning` = 0).
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
+
+Each record represents a report of a running program on a computer. If a program runs over several reporting cycles, there are several instances of `SMS_MeterData` that report on it, all with the same `MeterDataID` value. The time periods specified by `StartTime` and `EndTime` are consecutive and do not overlap. The full period of program execution can be found by the earliest `StartTime` value (where `Started` = 1) and the latest `EndTime` value (where `StillRunning` = 0).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

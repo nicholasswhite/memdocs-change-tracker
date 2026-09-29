@@ -1,16 +1,18 @@
 ---
-title: InitiateClientOperation Method
+title: "InitiateClientOperation Method in Class SMS_ClientOperation"
 description: In Configuration Manager, the InitiateClientOperation WMI class method initiates a client operation.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # InitiateClientOperation Method in Class SMS_ClientOperation
+
 The `InitiateClientOperation` Windows Management Instrumentation (WMI) class method in Configuration Manager that initiates a client operation.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -26,47 +28,45 @@ uint32 InitiateClientOperation
 ```
 
 ## Parameters
- `Type`
- Data type: `UInt32`
 
- Qualifiers: [id("0"), in]
+`Type` Data type: `UInt32`
 
- Type.
+Qualifiers: [id("0"), in]
 
- `TargetCollectionID`
- Data type: `String`
+Type.
 
- Qualifiers: [id("1"), in]
+`TargetCollectionID` Data type: `String`
 
- TargetCollectionID.
+Qualifiers: [id("1"), in]
 
- `RandomizationWindow`
- Data type: `UInt32`
+TargetCollectionID.
 
- Qualifiers: [id("2"), in, optional]
+`RandomizationWindow` Data type: `UInt32`
 
- RandomizationWindow.
+Qualifiers: [id("2"), in, optional]
 
- `TargetResourceIDs`
- Data type: `UInt32 Array`
+RandomizationWindow.
 
- Qualifiers: [id("3"), in, optional]
+`TargetResourceIDs` Data type: `UInt32 Array`
 
- TargetResourceIDs.
+Qualifiers: [id("3"), in, optional]
 
- `OperationID`
- Data type: `UInt32`
+TargetResourceIDs.
 
- Qualifiers: [id("4"), out]
+`OperationID` Data type: `UInt32`
 
- OperationID.
+Qualifiers: [id("4"), out]
+
+OperationID.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

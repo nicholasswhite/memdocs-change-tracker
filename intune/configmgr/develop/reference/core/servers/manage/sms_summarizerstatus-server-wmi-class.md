@@ -1,16 +1,18 @@
 ---
-title: SMS_SummarizerStatus Class
+title: "SMS_SummarizerStatus Server WMI Class"
 description: Learn how the SMS_SummarizerStatus class is an SMS Provider server class that identifies registered summarizers, without defining any specific status information.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SummarizerStatus Server WMI Class
+
 The `SMS_SummarizerStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that identifies registered summarizers, without defining any specific status information.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,80 +29,79 @@ Class SMS_SummarizerStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SummarizerStatus` class does not define any methods.
+
+The `SMS_SummarizerStatus` class does not define any methods.
 
 ## Properties
- `GUID_ID`
- Data type: `String`
 
- Access type: Read
+`GUID_ID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- GUID under which the summarizer is registered in the registry.
+Qualifiers: [key]
 
- `MessageDLL`
- Data type: `String`
+GUID under which the summarizer is registered in the registry.
 
- Access type: Read
+`MessageDLL` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Resource DLL containing the localized name of the summarizer.
+Qualifiers: None
 
- `MessageID`
- Data type: `String`
+Resource DLL containing the localized name of the summarizer.
 
- Access type: Read
+`MessageID` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- ID the string resource in the `MessageDLL` property that contains the localized name of the summarizer.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+ID the string resource in the `MessageDLL` property that contains the localized name of the summarizer.
 
- Access type: Read
+`SiteCode` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- Site code of the Configuration Manager site.
+Qualifiers: [key]
 
- `Status`
- Data type: `UInt32`
+Site code of the Configuration Manager site.
 
- Access type: Read
+`Status` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Value indicating the health of the data associated with the registered summarizer. Possible values are:
+Qualifiers: None
+
+Value indicating the health of the data associated with the registered summarizer. Possible values are:
 
 | Value | Status |
-| ----- | ------ |
-|GREEN(0)|OK. There are no warning or error messages.|
-|YELLOW(1)|Warning. Warning messages were generated, but error messages were not generated. This status also indicates that the storage objects are approaching their threshold.|
-|RED(2)|Critical. There are error messages, or the storage objects have exceeded their thresholds.|
+| --- | --- |
+| GREEN(0) | OK. There are no warning or error messages. |
+| YELLOW(1) | Warning. Warning messages were generated, but error messages were not generated. This status also indicates that the storage objects are approaching their threshold. |
+| RED(2) | Critical. There are error messages, or the storage objects have exceeded their thresholds. |
 
- `Updated`
- Data type: `DateTime`
+`Updated` Data type: `DateTime`
 
- Access type: Read
+Access type: Read
 
- Qualifiers: None
+Qualifiers: None
 
- Date and time when the registration was last updated.
+Date and time when the registration was last updated.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

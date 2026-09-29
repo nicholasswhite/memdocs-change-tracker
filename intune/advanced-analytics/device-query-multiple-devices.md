@@ -1,7 +1,7 @@
 ---
-title: Device Query for Multiple Devices
+title: "Device query for multiple devices"
 description: Use device query for multiple devices in Microsoft Intune to run KQL queries, analyze inventory trends, and start querying your managed fleet now.
-ms.date: 09/01/2026
+ms.date: "2026-09-01T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1026
@@ -14,18 +14,14 @@ Use Device query for multiple devices in Microsoft Intune to run Kusto Query Lan
 
 ## Before you begin
 
-> [!div class="checklist"]
-> - Confirm that your environment meets all [prerequisites](index.md#prerequisites).
+- Confirm that your environment meets all [prerequisites](index.md#prerequisites).
 
 Additional prerequisites for device query for multiple devices:
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../includes/requirements/platform.md)]
+![](../media/icons/16/devices.svg) **Device platform requirements**
 
-:::column-end:::
-:::column span="3":::
 > Device query for multiple devices supports:
+>
 > - Windows
 > - Android
 >   - Android Enterprise corporate owned dedicated devices (COSU)
@@ -34,48 +30,36 @@ Additional prerequisites for device query for multiple devices:
 > - Apple
 >   - iOS/iPadOS
 >   - macOS
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
+![](../media/icons/16/configuration.svg) **Device configuration requirements**
+
 > Device query for multiple devices supports devices that are:
 >
 > - Managed by Intune and marked as corporate owned.
-> - Windows devices must have a [properties catalog policy](../device-configuration/collect-device-properties.md) deployed to them to collect inventory data.\
->   For iOS/iPadOS, Android, and macOS, data is automatically collected and a separate properties catalog policy doesn't need to be deployed.
-:::column-end:::
-:::row-end:::
+> - Windows devices must have a [properties catalog policy](../device-configuration/collect-device-properties.md) deployed to them to collect inventory data.  
+>    For iOS/iPadOS, Android, and macOS, data is automatically collected and a separate properties catalog policy doesn't need to be deployed.
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../includes/requirements/rbac.md)]
+![](../media/icons/16/rbac.svg) **Roles requirements**
 
-:::column-end:::
-:::column span="3":::
 > To use device query for multiple devices, use an account with at least one of these roles:
-> - [Help Desk Operator]
-> - [Custom role] with permissions to view and access managed devices in Intune (for example, Organization/Read and Managed devices/Read)
-
-:::column-end:::
-:::row-end:::
+>
+> - [Help Desk Operator](../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [Custom role](../fundamentals/role-based-access-control/create-custom-role.md) with permissions to view and access managed devices in Intune (for example, Organization/Read and Managed devices/Read)
 
 ## Use device query for multiple devices
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**Device query**].
-1. Enter a query in the query box by using the supported properties and operators.
-1. Select **Run** to execute the query.
-1. View the results in the **Results** tab.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**Device query**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/DeviceQuery).
+2. Enter a query in the query box by using the supported properties and operators.
+3. Select **Run** to execute the query.
+4. View the results in the **Results** tab.
    - To run part of a query or a single query when multiple queries are present, highlight the query you want to run and select **Run**. Only the highlighted query runs.
 
 You can expand the view on the left side to see all available properties that you can query. Select a property to insert it into your query. You can also resize the left pane and the query window to adjust the layout.
 
-For more information about Kusto Query Language (KQL), see [Learn more about Kusto Query Language](/azure/data-explorer/kusto/query/).
+For more information about Kusto Query Language (KQL), see [Learn more about Kusto Query Language](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/).
 
 > [!TIP]
+>
 > Use Copilot in Intune to generate KQL queries for device query by using natural language requests. To learn more, see [Query with Copilot in device query](../copilot/index.md#-use-copilot-to-create-kql-queries-to-get-device-details).
 
 ### Query results and actions
@@ -85,7 +69,6 @@ After you run a query, results appear in the **Results** tab. You can interact w
 - When a query returns **50 items or fewer**, you can search across all rows in the results and apply filters by using column headers.
 - Create Microsoft Entra security groups directly from a query's results by selecting **Add all items to a group**. This action helps you target specific devices with Microsoft Entra Conditional Access policies or Microsoft Intune policies.
 - Select **Export** to save results to a .csv file. You can export all columns or only selected columns. You can export up to **50,000** results to a file.
-
 
 ## Sample queries
 
@@ -191,7 +174,7 @@ Table operators can be used to filter, summarize, and transform data streams. Th
 | --- | --- |
 | `count` | Returns a table with a single record containing the number of records. |
 | `distinct` | Produces a table with distinct combinations of the provided columns from the input table. |
-| `join` | Merges rows from two tables to form a new table based on matching values in the specified columns. The following join types are supported:<br>- `innerunique` (default)<br>- `inner`<br>- `leftouter`<br>- `rightouter`<br>- `fullouter`<br>- `leftsemi`<br>- `rightsemi`<br>- `leftanti`<br>- `rightanti`<br><br>Join statements support an optional `on` clause. In device query scenarios, you typically use `on Device` when joining tables that contain a `Device` entity. Common syntax for `join` is: `LeftTable | join [hints] (RightTable) on Conditions`.<br><br> **Important:** Joins that use `on Device.DeviceID` are no longer supported. Queries that currently specify `on Device.DeviceId` should switch to using `on Device`, or omit the `on` clause when joining on the `Device` entity.<br><br>For more information, see [Join operator](/kusto/query/join-operator). |
+| `join` | Merges rows from two tables to form a new table based on matching values in the specified columns. The following join types are supported: - `innerunique` (default) - `inner` - `leftouter` - `rightouter` - `fullouter` - `leftsemi` - `rightsemi` - `leftanti` - `rightanti`  Join statements support an optional `on` clause. In device query scenarios, you typically use `on Device` when joining tables that contain a `Device` entity. Common syntax for `join` is: `LeftTable | join [hints] (RightTable) on Conditions`.   **Important:** Joins that use `on Device.DeviceID` are no longer supported. Queries that currently specify `on Device.DeviceId` should switch to using `on Device`, or omit the `on` clause when joining on the `Device` entity.  For more information, see [Join operator](https://learn.microsoft.com/en-us/kusto/query/join-operator). |
 | `order by` | Sorts the rows of the input table by one or more columns. |
 | `project` | Selects columns to include, rename, or drop, and inserts new computed columns. |
 | `take` | Returns up to the specified number of rows. |
@@ -200,6 +183,7 @@ Table operators can be used to filter, summarize, and transform data streams. Th
 | `summarize` | Produces a table that aggregates the contents of the input table. |
 
 > [!NOTE]
+>
 > `Device` is an entity-type and can't be used directly in operators that require scalar values (such as `distinct`, `summarize`, and `order by`). For these operators, use a specific scalar property of the device (for example, `Device.SerialNumber` or `Device.OSVersion`).
 
 ### Scalar operators
@@ -302,7 +286,7 @@ Device query supports the following entities. To learn more about what propertie
 Device query for multiple devices supports a linked entity. The Device entity can be used with all other supported entities. The device entity supports the following properties:
 
 | Property | Type | Description |
-|--|--|--|
+| --- | --- | --- |
 | `DeviceId` | String | A unique ID generated by Intune as part of device enrollment. |
 | `EntraDeviceId` | String | Unique ID generated by Microsoft Entra as part of Microsoft Entra registration or join. |
 | `ManagementName` | String | An easily recognizable device name used only in the Intune admin center. Changing this name doesn't change the device name or the name in the Company Portal. |
@@ -323,7 +307,6 @@ Device query for multiple devices supports a linked entity. The Device entity ca
 | `LastSeenDateTime` | String | The date and time that the device last connected to Intune. |
 | `Ownership` | String | Ownership of the device. |
 
-
 The `Device` entity allows you to reference device information associated with each resulting row without needing to explicitly join to a device table.
 
 By default, query results include a `Device` entity column that provides device context for each row. Operators such as `project`, `summarize`, or `distinct` can change which columns are returned.
@@ -339,7 +322,6 @@ DiskDrive
 | where Device.SerialNumber == "123"
 ```
 
-
 The following query projects the `Device` entity and the `Manufacturer` property from the `DiskDrive` entity:
 
 ```kusto
@@ -349,8 +331,7 @@ DiskDrive
 
 ```
 
-By default, query results include a `Device` entity that represents the device associated with each row. The `Device` entity is an entity-type column and does not implicitly resolve to a specific scalar property.
-When sorting or filtering results, explicitly reference the device property you want to use. For example, this query orders results by device name:
+By default, query results include a `Device` entity that represents the device associated with each row. The `Device` entity is an entity-type column and does not implicitly resolve to a specific scalar property. When sorting or filtering results, explicitly reference the device property you want to use. For example, this query orders results by device name:
 
 ```kusto
 
@@ -370,14 +351,12 @@ Cpu
 
 ## Known limitations
 
-
 - Using entity-type columns such as `Device` in aggregation functions can show a red underline in the editor because aggregation functions require scalar values. To avoid this, reference a specific scalar property of the entity. For example:
 
   ```kusto
   Cpu
   | summarize max(CpuUsage) by Device.Manufacturer
   ```
-
 - Queries that use the `join` operator with `$left` and `$right` parameters may show a red underline in the editor. However, the query can still run and return results as expected.
 - A single query can contain a maximum of three `join` operators. Queries with more joins fail.
 - A maximum of ~50,000 records are returned for a query.
@@ -385,16 +364,7 @@ Cpu
 - A maximum of 1,000 queries can be submitted per month.
 - Negative values for the `amount` parameter of the `datetime_add()` function aren't supported.
 - Referencing a variable that was generated by an aggregation function without explicitly naming it can cause a query to fail. Explicitly naming the variable allows the query to succeed. For example:
+
   - The query `Device | summarize dcount(DeviceId) | order by dcount_DeviceId` fails.
   - The query `Device | summarize DCountDeviceIdRename = dcount(DeviceId) | order by DCountDeviceIdRename` succeeds.
   - NL2KQL assistance for the "Local AI Agent" entity is currently unsupported.
-
-
-<!--Role links-->
-
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Device query**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/DeviceQuery
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview

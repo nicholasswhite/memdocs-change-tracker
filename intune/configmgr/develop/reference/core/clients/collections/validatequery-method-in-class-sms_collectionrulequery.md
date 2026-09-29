@@ -1,16 +1,18 @@
 ---
 description: Learn how to verify that the query collection rule is a valid WQL or Extended WQL statement using ValidateQuery class method.
-title: ValidateQuery Method
-ms.date: 09/20/2016
+title: "ValidateQuery Method in Class SMS_CollectionRuleQuery"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ValidateQuery Method in Class SMS_CollectionRuleQuery
+
 The `ValidateQuery` Windows Management Instrumentation (WMI) class method, in Configuration Manager, verifies that the query collection rule is a valid WQL or Extended WQL statement.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -21,25 +23,29 @@ Boolean ValidateQuery(
 ```
 
 #### Parameters
- `WQLQuery`
- Data type: `String`
 
- Qualifiers: [in]
+`WQLQuery` Data type: `String`
 
- Query statement to validate.
+Qualifiers: [in]
+
+Query statement to validate.
 
 ## Return Values
- A `Boolean` data type that is `true` if the query is validated.
+
+A `Boolean` data type that is `true` if the query is validated.
 
 ## Remarks
- Your application calls this method before adding a query rule to a collection. An invalid query rule results in no members being added to the collection for that query. This can be misleading and hard to debug.
 
- In addition to being syntactically correct, the query rule must specify resource class names in the FROM clause. For example, the FROM clause must specify [SMS_R_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md), [SMS_R_User Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_r_user-server-wmi-class.md), [SMS_R_UserGroup Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_r_usergroup-server-wmi-class.md), or a user-defined resource class name.
+Your application calls this method before adding a query rule to a collection. An invalid query rule results in no members being added to the collection for that query. This can be misleading and hard to debug.
+
+In addition to being syntactically correct, the query rule must specify resource class names in the FROM clause. For example, the FROM clause must specify [SMS_R_System Server WMI Class](../manage/sms_r_system-server-wmi-class.md), [SMS_R_User Server WMI Class](../manage/sms_r_user-server-wmi-class.md), [SMS_R_UserGroup Server WMI Class](../manage/sms_r_usergroup-server-wmi-class.md), or a user-defined resource class name.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

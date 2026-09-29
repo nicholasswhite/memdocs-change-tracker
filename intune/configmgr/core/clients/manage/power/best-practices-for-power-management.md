@@ -1,7 +1,7 @@
 ---
-title: Recommendations for power management
+title: "Recommendations for power management in Configuration Manager"
 description: Learn Microsoft recommendations for power management in Configuration Manager.
-ms.date: 09/10/2019
+ms.date: "2019-09-10T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -38,6 +38,7 @@ Before you apply a power management plan to a collection of computers, run the *
 Power management for computers that run Windows Server isn't supported. Add servers to a collection and exclude it from power management.
 
 > [!NOTE]
+>
 > Although Configuration Manager doesn't support power management of Windows Server, it still collects power usage data for analysis and reporting.
 
 ## Exclude other computers
@@ -47,13 +48,9 @@ If you have computers that you don't want to manage with power management, add t
 You might want to exclude from power management the following types of computers:
 
 - Computers that must remain turned on.
-
 - Computers that users need to connect to remotely.
-
 - Computers that can't use power management.
-
 - Computers that have the distribution point site system role.
-
 - Public computers such as kiosk computers, information displays, or monitoring consoles where the computer and the monitor must always be turned on.
 
 For more information, see [Configuring power management](configuring-power-management.md).
@@ -75,7 +72,6 @@ Power management includes a report that displays computers that have more than o
 If a computer is a member of multiple collections, each applying different power plans, then the following behaviors apply:
 
 - **Power plan**: If you apply multiple values for power settings to a computer, it uses the least restrictive value.
-
 - **Wakeup time**: If you apply multiple wakeup times to a desktop computer, it uses the time closest to midnight.
 
 For more information, see [Computers with multiple power plans](monitor-and-plan-for-power-management.md#BKMK_Multiple).
@@ -87,5 +83,4 @@ When you run reports during the monitoring and compliance phases, save or export
 Configuration Manager keeps in the site database the following power management information:
 
 - Power management information used by daily reports: 31 days
-
 - Power management information used by monthly reports: 13 months

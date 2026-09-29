@@ -1,7 +1,7 @@
 ---
-title: SMS provider WMI schema reference
+title: "SMS provider WMI schema reference in Configuration Manager"
 description: How Configuration�Manager uses Windows Management Instrumentation (WMI) to manage its objects.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 
@@ -35,11 +35,11 @@ For example, if you wanted to convert the WMI class **SMS_Advertisement** to the
 
 In this example, the query returns the following rows.
 
-|AdvertismentID|PackageID|CollectionID|SourceSite|
-|--- |--- |--- |--- |
-|MCM20000|MCM00003|SMS00001|MCM|
-|MCM20001|MCM00002|SMS00004|MCM|
-|MCM20002|MCM00006|SMS00001|MCM|
+| AdvertismentID | PackageID | CollectionID | SourceSite |
+| --- | --- | --- | --- |
+| MCM20000 | MCM00003 | SMS00001 | MCM |
+| MCM20001 | MCM00002 | SMS00004 | MCM |
+| MCM20002 | MCM00006 | SMS00001 | MCM |
 
 ## WQL query
 
@@ -55,13 +55,14 @@ In this example, the query returns identical rows to the SQL view query above.
 When there is no direct mapping for a SQL view and the SMS Provider WMI schema class and you want to determine where the data in the SQL view comes from, you can look at the SQL view design. This helps determine whether a SQL view is retrieving data from a single SQL table, from another SQL view, or from more than one table or view. When the SQL view retrieves data from more than one table or view, the SQL view will most likely map to more than one class in the SMS Provider WMI schema. Use the following procedure to display the SQL view design.
 
 > [!WARNING]
+>
 > Do not modify the design of built-in Configuration Manager SQL views as this might result in errors in reporting and in your site functionality.
 
 ### To display the SQL view design
 
 1. Start Microsoft SQL Server Management Studio on the server that hosts the Configuration Manager site database.
-1. Navigate to *\<Computer Name\>*�**\\ Databases \\**�*\<Configuration Manager database name\>* **\\ Views**.
-1. Right-click the SQL view in which you want to see the design, and then select **Design**. The **SQL** pane displays the SQL statement. Look at the table or view name just after the FROM clause to figure out where the view is retrieving its data. When the view retrieves data from more than one source, the table or views will use JOINS.
+2. Navigate to *&lt;Computer Name&gt;*�**\ Databases \**�*&lt;Configuration Manager database name&gt;* **\ Views**.
+3. Right-click the SQL view in which you want to see the design, and then select **Design**. The **SQL** pane displays the SQL statement. Look at the table or view name just after the FROM clause to figure out where the view is retrieving its data. When the view retrieves data from more than one source, the table or views will use JOINS.
 
 ## See also
 

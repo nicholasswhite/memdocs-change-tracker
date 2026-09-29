@@ -2,7 +2,7 @@
 title: Settings insight
 description: Settings insight provides peer benchmarking information during security baseline configuration, showing when organizations similar to yours use Microsoft's recommended default values.
 ms.author: lanewsad
-ms.date: 02/10/2026
+ms.date: "2026-02-10T00:00:00Z"
 ms.topic: overview
 ms.reviewer: Lavanya.lakshman
 ---
@@ -40,23 +40,17 @@ Settings insight is informational. You remain responsible for evaluating each se
 
 ## View insights during baseline configuration
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Select **Endpoint security** > **Security baselines** to view the list of available baselines.
-
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint security** &gt; **Security baselines** to view the list of available baselines.
 3. Select **Microsoft Edge Baseline** or **Microsoft 365 Apps for Enterprise Security Baseline**, and then select **Create profile**.
-
 4. On the **Basics** tab, specify the **Name** and **Description** properties.
-
 5. Select **Next** to go to the **Configuration settings** tab.
-
 6. Expand the groups of **Settings** to view individual configuration options. Light bulb icons appear next to settings where peer benchmarking data is available.
 
-    :::image type="content" source="./media/settings-insight/createprofile-settingsinsight.png" alt-text="Settings insight shown while creating a profile" lightbox="./media/settings-insight/createprofile-settingsinsight.png":::
-
+   [![Settings insight shown while creating a profile](media/settings-insight/createprofile-settingsinsight.png)](media/settings-insight/createprofile-settingsinsight.png#lightbox)
 7. Insights are also visible when editing existing baseline profiles.
 
-    :::image type="content" source="./media/settings-insight/editprofile-settingsinsight.png" alt-text="Settings insight shown while editing a profile" lightbox="./media/settings-insight/editprofile-settingsinsight.png":::
+   [![Settings insight shown while editing a profile](media/settings-insight/editprofile-settingsinsight.png)](media/settings-insight/editprofile-settingsinsight.png#lightbox)
 
 ## Understanding the recommendations
 
@@ -125,7 +119,3 @@ Settings insight provides supplemental peer benchmarking information during base
 
 - [Security baselines overview](../device-security/security-baselines/overview.md)
 - [Create and manage security baseline profiles in Microsoft Intune](../device-security/security-baselines/configure-baselines.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

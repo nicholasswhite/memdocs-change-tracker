@@ -1,7 +1,7 @@
 ---
-title: Windows VPN settings in Microsoft Intune
+title: "Windows and Windows Holographic device settings to add VPN connections using Intune"
 description: Learn and read about all the available VPN settings in Microsoft Intune, what they're used for, and what they do. See the traffic rules, Conditional Access, and DNS and proxy settings for Windows 10/11 and Windows Holographic for Business devices.
-ms.date: 10/14/2025
+ms.date: "2025-10-14T00:00:00Z"
 ms.topic: reference
 ms.reviewer: abalwan
 ---
@@ -9,7 +9,8 @@ ms.reviewer: abalwan
 # Windows and Windows Holographic device settings to add VPN connections using Intune
 
 > [!NOTE]
-> [!INCLUDE [not-all-settings-are-documented](../includes/not-all-settings-are-documented.md)]
+>
+> Intune might support more settings than the settings listed in this article. Not all settings are documented, and won't be documented. To see the settings you can configure, create a device configuration policy, and select **Settings catalog**. For more information, go to [settings catalog](../settings-catalog/index.md).
 
 You can add and configure VPN connections for devices using Microsoft Intune. This article describes some of the settings and features you can configure when creating virtual private networks (VPNs). These VPN settings are used in device configuration profiles, and then pushed or deployed to devices.
 
@@ -22,11 +23,21 @@ These settings apply to devices running:
 
 ## Before you begin
 
-- [Deploy your VPN app](../../app-management/deployment/index.md), and create a [Windows client VPN device configuration profile](./configure-vpn.md). The available settings depend on the VPN client app you choose. Some settings are only available for specific VPN clients.
+- [Deploy your VPN app](../../app-management/deployment/index.md), and create a [Windows client VPN device configuration profile](configure-vpn.md). The available settings depend on the VPN client app you choose. Some settings are only available for specific VPN clients.
+- Some Microsoft 365 services, such as Outlook, might not perform well using third party or partner VPNs. If you're using a third party or partner VPN, and experience a latency or performance issue, then remove the VPN.
 
-- [!INCLUDE [partner-vpns](../includes/partner-vpns.md)]
+  If removing the VPN resolves the behavior, then you can:
 
-- These settings use the [VPNv2 CSP](/windows/client-management/mdm/vpnv2-csp).
+  - Work with the third party or partner VPN for possible resolutions. Microsoft doesn't provide technical support for third party or partner VPNs.
+  - Don't use a VPN with Outlook traffic.
+  - If you need to use a VPN, then use a split-tunnel VPN. And, allow the Outlook traffic to bypass the VPN.
+
+  For more information, go to:
+
+  - [Overview: VPN split tunneling for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-vpn-split-tunnel)
+  - [Using third-party network devices or solutions with Microsoft 365](https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/office-suite-issues/office-365-third-party-network-devices)
+  - [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles)
+- These settings use the [VPNv2 CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/vpnv2-csp).
 
 ## User scope or Device scope
 
@@ -65,10 +76,9 @@ The following settings are shown depending on the connection type you select. No
   - **Description**: Enter a descriptive name for the server, such as **Contoso VPN server**.
   - **VPN server address**: Enter the IP address or fully qualified domain name (FQDN) of the VPN server that devices connect to, such as **192.168.1.1** or **vpn.contoso.com**.
   - **Default server**: **True** enables this server as the default server that devices use to establish the connection. Set only one server as the default. **False** (default) doesn't use this VPN server as the default server.
-
 - **Register IP addresses with internal DNS**: Select **Enable** to configure the VPN profile to dynamically register the IP addresses assigned to the VPN interface with the internal DNS. Select **Disable** to not dynamically register the IP addresses.
-
 - **Always On**: **Enable** automatically connects to the VPN connection when the following events happen:
+
   - Users sign in to their devices.
   - The network on the device changes.
   - The screen on the device turns back on after being turned off.
@@ -76,36 +86,30 @@ The following settings are shown depending on the connection type you select. No
   To use device tunnel connections, such as IKEv2, **Enable** this setting.
 
   **Disable** doesn't automatically turn on the VPN connection. Users might have to turn on the VPN manually.
-
 - **Authentication method**: Select how you want users to authenticate to the VPN server. Your options:
 
   - **Certificates**: Select an existing user client certificate profile to authenticate the user. This option provides enhanced features, such as zero-touch experience, on-demand VPN, and per-app VPN.
 
     To create certificate profiles in Intune, see [Use certificates for authentication](../../fundamentals/certificates/overview.md).
-
   - **Username and password**: Require users to enter their domain username and password to authenticate, such as `user@contoso.com`, or `contoso\user`.
-
   - **Derived credential**: Use a certificate that's derived from a user's smart card. If no derived credential issuer is configured, Intune prompts you to add one. For more information, see [Use derived credentials in Intune](../../device-security/certificates/derived-credentials.md).
 
     > [!NOTE]
+    >
     > Currently, derived credentials as an authentication method for VPN profiles isn't working as expected on Windows devices. This behavior only impacts VPN profiles on Windows devices and will be fixed in a future release (no ETA).
-
   - **EAP** (IKEv2 only): Select an existing Extensible Authentication Protocol (EAP) client certificate profile to authenticate. Enter the authentication parameters in the **EAP XML** setting.
 
-    For more information on EAP authentication, see [Extensible Authentication Protocol (EAP) for network access](/windows-server/networking/technologies/extensible-authentication-protocol/network-access) and [EAP configuration](/windows/client-management/mdm/eap-configuration).
-
+    For more information on EAP authentication, see [Extensible Authentication Protocol (EAP) for network access](https://learn.microsoft.com/en-us/windows-server/networking/technologies/extensible-authentication-protocol/network-access) and [EAP configuration](https://learn.microsoft.com/en-us/windows/client-management/mdm/eap-configuration).
   - **Machine certificates** (IKEv2 only): Select an existing device client certificate profile to authenticate the device.
 
-    If you use [device tunnel connections](/windows-server/remote/remote-access/vpn/vpn-device-tunnel-config), you must select **Machine certificates**.
+    If you use [device tunnel connections](https://learn.microsoft.com/en-us/windows-server/remote/remote-access/vpn/vpn-device-tunnel-config), you must select **Machine certificates**.
 
     To create certificate profiles in Intune, see [Use certificates for authentication](../../fundamentals/certificates/overview.md).
-
 - **Remember credentials at each logon**: **Enable** caches the authentication credentials. When set to **Not configured**, Intune doesn't change or update this setting. By default, the OS might not cache the authentication credentials.
 - **Custom XML**: Enter any custom XML commands that configure the VPN connection.
 - **EAP XML**: Enter any EAP XML commands that configure the VPN connection.
 
-  For more information, including creating custom EAP XML, see [EAP configuration](/windows/client-management/mdm/eap-configuration).
-
+  For more information, including creating custom EAP XML, see [EAP configuration](https://learn.microsoft.com/en-us/windows/client-management/mdm/eap-configuration).
 - **Device tunnel** (IKEv2 only): **Enable** connects the device to the VPN automatically without any user interaction or sign in. This setting applies to devices joined to Microsoft Entra ID.
 
   To use this feature, you must configure the following settings:
@@ -119,12 +123,12 @@ The following settings are shown depending on the connection type you select. No
 ### IKE Security Association Parameters (IKEv2 only)
 
 > [!IMPORTANT]
+>
 > Windows 11 requires that:
 >
 > - All of the [IKE Security Association Parameters](#ike-security-association-parameters-ikev2-only) and [Child Security Association Parameters](#child-security-association-parameters-ikev2-only) settings are configured.
 >
 >   **OR**
->
 > - None of the [IKE Security Association Parameters](#ike-security-association-parameters-ikev2-only) and [Child Security Association Parameters](#child-security-association-parameters-ikev2-only) settings are configured.
 
 These cryptography settings are used during IKE security association negotiations (also known as `main mode` or `phase 1`) for IKEv2 connections. These settings must match the VPN server settings. If the settings don't match, the VPN profile won't connect.
@@ -132,11 +136,9 @@ These cryptography settings are used during IKE security association negotiation
 - **Encryption algorithm**: Select the encryption algorithm used on the VPN server. For example, if your VPN server uses AES 128 bit, then select **AES-128** from the list.
 
   When set to **Not configured**, Intune doesn't change or update this setting.
-
 - **Integrity check algorithm**: Select the integrity algorithm used on the VPN server. For example, if your VPN server uses SHA1-96, then select **SHA1-96** from the list.
 
   When set to **Not configured**, Intune doesn't change or update this setting.
-
 - **Diffie-Hellman group**: Select the Diffie-Hellman computation group used on the VPN server. For example, if your VPN server uses Group2 (1024 bits), then select **2** from the list.
 
   When set to **Not configured**, Intune doesn't change or update this setting.
@@ -144,12 +146,12 @@ These cryptography settings are used during IKE security association negotiation
 ### Child Security Association Parameters (IKEv2 only)
 
 > [!IMPORTANT]
+>
 > Windows 11 requires that:
 >
 > - All of the [IKE Security Association Parameters](#ike-security-association-parameters-ikev2-only) and [Child Security Association Parameters](#child-security-association-parameters-ikev2-only) settings are configured.
 >
 >   **OR**
->
 > - None of the [IKE Security Association Parameters](#ike-security-association-parameters-ikev2-only) and [Child Security Association Parameters](#child-security-association-parameters-ikev2-only) settings are configured.
 
 These cryptography settings are used during child security association negotiations (also known as `quick mode` or `phase 2`) for IKEv2 connections. These settings must match the VPN server settings. If the settings don't match, the VPN profile won't connect.
@@ -157,11 +159,9 @@ These cryptography settings are used during child security association negotiati
 - **Cipher transform algorithm**: Select the algorithm used on the VPN server. For example, if your VPN server uses AES-CBC 128 bit, then select **CBC-AES-128** from the list.
 
   When set to **Not configured**, Intune doesn't change or update this setting.
-
 - **Authentication transform algorithm**: Select the algorithm used on the VPN server. For example, if your VPN server uses AES-GCM 128 bit, then select **GCM-AES-128** from the list.
 
   When set to **Not configured**, Intune doesn't change or update this setting.
-
 - **Perfect forward secrecy (PFS) group**: Select the Diffie-Hellman computation group used for perfect forward secrecy (PFS) on the VPN server. For example, if your VPN server uses Group2 (1024 bits), then select **2** from the list.
 
   When set to **Not configured**, Intune doesn't change or update this setting.
@@ -195,6 +195,7 @@ Example:
 ```
 
 > [!TIP]
+>
 > For more information about writing custom XML commands, see the manufacturer's VPN documentation.
 
 ## Apps and Traffic Rules
@@ -208,19 +209,17 @@ Example:
     - **Restrict VPN connection to these apps**: **Disable** (default) allows all apps to use the VPN connection. **Enable** restricts the VPN connection to the apps you enter (per-app VPN). Traffic rules for the apps you add are automatically added to the **Network traffic rules for this VPN connection** setting.
 
       When you select **Enable**, the app identifier list becomes read-only. Before you enable this setting, add your associated apps.
-
     - **Associated Apps**: Select **Import** to import a `.csv` file with your list of apps. Your `.csv` looks similar to the following file:
 
-      `%windir%\system32\notepad.exe,desktop
-      Microsoft.Office.OneNote_8wekyb3d8bbwe,universal`
+      `%windir%\system32\notepad.exe,desktop Microsoft.Office.OneNote_8wekyb3d8bbwe,universal`
 
       The type of app determines the app identifier. For a universal app, enter the package family name, such as `Microsoft.Office.OneNote_8wekyb3d8bbwe`. For a desktop app, enter the file path of the app, such as `%windir%\system32\notepad.exe`.
 
-      To get the package family name, you can use the `Get-AppxPackage` Windows PowerShell cmdlet. For example, to get the OneNote package family name, open Windows PowerShell, and enter `Get-AppxPackage *OneNote`. For more information, see [Find a PFN for an app that's installed on a Windows client computer](../../configmgr/protect/deploy-use/find-a-pfn-for-per-app-vpn.md#find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer) and [Get-AppxPackage cmdlet](/powershell/module/appx/get-appxpackage).
+      To get the package family name, you can use the `Get-AppxPackage` Windows PowerShell cmdlet. For example, to get the OneNote package family name, open Windows PowerShell, and enter `Get-AppxPackage *OneNote`. For more information, see [Find a PFN for an app that's installed on a Windows client computer](../../configmgr/protect/deploy-use/find-a-pfn-for-per-app-vpn.md#find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer) and [Get-AppxPackage cmdlet](https://learn.microsoft.com/en-us/powershell/module/appx/get-appxpackage).
 
   > [!IMPORTANT]
+  >
   > We recommend that you secure all app lists created for per-app VPNs. If an unauthorized user changes this list, and you import it into the per-app VPN app list, then you potentially authorize VPN access to apps that shouldn't have access. One way you can secure app lists is using an access control list (ACL).
-
 - **Network traffic rules for this VPN connection**: You can add network rules that apply to this VPN connection. Use this feature to filter network traffic to this VPN connection.
 
   - If you do create a network traffic rule, then the VPN only uses the protocols, ports, and IP address ranges that you enter in this rule.
@@ -232,34 +231,31 @@ Example:
 
   - **Name**: Enter a name for the network traffic rule.
   - **Rule type**: Enter the tunnel method for this rule. This setting only applies when this rule is associated with an app. Your options:
+
     - **None** (default)
     - **Split tunnel**: This option gives client devices two connections simultaneously. One connection is secure and is designed to keep the network traffic private. The second connection is open to the network and lets Internet traffic go through.
     - **Force tunnel**: All network traffic in this rule goes through the VPN. No network traffic in this rule goes directly to the Internet.
-
   - **Direction**: Select the flow of network traffic your VPN connection allows. Your options:
+
     - **Inbound**: Only allows traffic from external sites through the VPN. Outbound traffic is blocked from entering the VPN.
     - **Outbound** (default): Only allows traffic to external sites through the VPN. Inbound traffic is blocked from entering the VPN.
 
     To allow inbound and outbound, create two separate rules. Create one rule for inbound, and another rule for outbound.
-
   - **Protocol**: Enter the port number of the network protocol you want the VPN to use, from 0-255. For example, enter `6` for TCP, or `17` for UDP.
 
-    When you enter a protocol, you're connecting two networks over this same protocol. If you use the TPC (`6`) or UDP (`17`) protocols, you also need to enter the allowed local & remote port ranges and the allowed local & remote IP address ranges.
+    When you enter a protocol, you're connecting two networks over this same protocol. If you use the TPC (`6`) or UDP (`17`) protocols, you also need to enter the allowed local &amp; remote port ranges and the allowed local &amp; remote IP address ranges.
 
     You can also **Import** a `.csv` file with this information.
-
   - **Local port ranges**: If you use the TPC (`6`) or UDP (`17`) protocols, then enter the allowed local network port ranges. For example, enter `100` for the lower port and `120` for the upper port.
 
     You can create a list of allowed port ranges, such as 100-120, 200, 300-320. For a single port, enter the same port number in both fields.
 
     You can also **Import** a `.csv` file with this information.
-
   - **Remote port ranges**: If you use the TPC (`6`) or UDP (`17`) protocols, then enter the allowed remote network port ranges. For example, enter `100` for the lower port and `120` for the upper port.
 
     You can create a list of allowed port ranges, such as 100-120, 200, 300-320. For a single port, enter the same port number in both fields.
 
     You can also **Import** a `.csv` file with this information.
-
   - **Local address ranges**: Enter the allowed local network IPv4 address ranges that can use the VPN. Only client device IP addresses in this range use this VPN.
 
     For example, enter `10.0.0.22` for the lower port and `10.0.0.122` for the upper port.
@@ -267,7 +263,6 @@ Example:
     You can create a list of allowed IP addresses. For a single IP address, enter the same IP address in both fields.
 
     You can also **Import** a `.csv` file with this information.
-
   - **Remote address ranges**: Enter the allowed remote network IPv4 address ranges that can use the VPN. Only IP addresses in this range use this VPN.
 
     For example, enter `10.0.0.22` for the lower port and `10.0.0.122` for the upper port.
@@ -279,7 +274,6 @@ Example:
 ## Conditional Access
 
 - **Conditional Access for this VPN connection**: Enables device compliance flow from the client. When enabled, the VPN client communicates with Microsoft Entra ID to get a certificate to use for authentication. The VPN should be set up to use certificate authentication, and the VPN server must trust the server returned by Microsoft Entra ID.
-
 - **Single sign-on (SSO) with alternate certificate**: For device compliance, use a certificate different from the VPN authentication certificate for Kerberos authentication. Enter the certificate with the following settings:
 
   - **Name**: Name for extended key usage (EKU)
@@ -296,8 +290,7 @@ Example:
 
   To change the order, select the dots to the left of the DNS suffix, and then drag the suffix to the top:
 
-  ![Select the three dots, and click-and-drag to move the dns suffix](./media/ref-vpn-settings-windows/vpn-settings-windows10-move-dns-suffix.png)
-
+  ![Select the three dots, and click-and-drag to move the dns suffix](media/ref-vpn-settings-windows/vpn-settings-windows10-move-dns-suffix.png)
 - **Name Resolution Policy table (NRPT) rules**: Name Resolution Policy table (NRPT) rules define how DNS resolves names when connected to the VPN. After the VPN connection is established, you choose which DNS servers the VPN connection uses.
 
   You can add rules that include the domain, DNS server, proxy, and other details. These rules resolve the domain you enter. The VPN connection uses these rules when users connect to the domains you enter.
@@ -340,4 +333,4 @@ For example, if the user is already connected to a trusted DNS suffix, then the 
 
 Be sure to [assign the profile](../assign-device-profile.md), and [monitor its status](../monitor-device-profile.md).
 
-Configure VPN settings on [Android](./ref-vpn-settings-android.md), and [iOS/iPadOS and macOS](./ref-vpn-settings-apple.md) devices.
+Configure VPN settings on [Android](ref-vpn-settings-android.md), and [iOS/iPadOS and macOS](ref-vpn-settings-apple.md) devices.

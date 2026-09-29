@@ -1,16 +1,18 @@
 ---
-title: SMS_CM_UpdatePackageSiteStatus Class
+title: "SMS_CM_UpdatePackageSiteStatus Server WMI Class"
 description: The  `SMS_CM_UpdatePackageSiteStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get the update package installation status per site.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_CM_UpdatePackageSiteStatus Server WMI Class
-The  `SMS_CM_UpdatePackageSiteStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get the update package installation status per site.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_CM_UpdatePackageSiteStatus Server WMI Class
+
+The `SMS_CM_UpdatePackageSiteStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get the update package installation status per site.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,121 +34,115 @@ Class SMS_CM_UpdatePackageSiteStatus : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_CM_UpdatePackageSiteStatus` class.
 
-|Method|Description|
-|------------|-----------------|
-|[UpdatePackageSiteState Method in Class SMS_CM_UpdatePackageSiteStatus](../../../develop/reference/sum/updatepackagesitestate-method-in-class-sms_cm_updatepackagesitestatus.md)|Updates the package installation state of the site.|
+The following table lists the methods in the `SMS_CM_UpdatePackageSiteStatus` class.
+
+| Method | Description |
+| --- | --- |
+| [UpdatePackageSiteState Method in Class SMS_CM_UpdatePackageSiteStatus](updatepackagesitestate-method-in-class-sms_cm_updatepackagesitestatus.md) | Updates the package installation state of the site. |
 
 ## Properties
- `LastUpdateTime`
- Data type: `DateTime`
 
- Access type: Read-only
+`LastUpdateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read-only
 
- The date and time that the state was last updated.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+The date and time that the state was last updated.
 
- Access type: Read-only
+`Name` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the update package.
+Qualifiers: [read]
 
- `PackageGuid`
- Data type: `String`
+The name of the update package.
 
- Access type: Read-only
+`PackageGuid` Data type: `String`
 
- Qualifiers: [read, key, not_null]
+Access type: Read-only
 
- The unique identifier of the package.
+Qualifiers: [read, key, not_null]
 
- `PrereqFlag`
- Data type: `SInt32`
+The unique identifier of the package.
 
- Access type: Read-only
+`PrereqFlag` Data type: `SInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Prerequisite flag. Possible values are: bits:
+Qualifiers: [read]
+
+Prerequisite flag. Possible values are: bits:
 
 | Value | Description |
-| ----- | ----------- |
-|0x1|Prereq only|
-|0x2|CONTINUE_ON_PREREQ_WARNING|
+| --- | --- |
+| 0x1 | Prereq only |
+| 0x2 | CONTINUE_ON_PREREQ_WARNING |
 
- `SiteCode`
- Data type: `String`
+`SiteCode` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- The site code.
+The site code.
 
- `SiteName`
- Data type: `String`
+`SiteName` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- The name of the site.
+The name of the site.
 
- `SiteNumber`
- Data type: `SInt32`
+`SiteNumber` Data type: `SInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read, key, not_null]
+Qualifiers: [read, key, not_null]
 
- The unique identifier of the site.
+The unique identifier of the site.
 
- `SiteServerName`
- Data type: `String`
+`SiteServerName` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- The site server name.
+The site server name.
 
- `SiteType`
- Data type: `SInt32`
+`SiteType` Data type: `SInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- The site type.
+The site type.
 
- `State`
- Data type: `SInt32`
+`State` Data type: `SInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: none
+Qualifiers: none
 
- The state of the installation.
+The state of the installation.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

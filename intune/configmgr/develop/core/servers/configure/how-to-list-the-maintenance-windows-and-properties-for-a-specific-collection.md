@@ -1,30 +1,32 @@
 ---
-title: List Maintenance Windows and Properties for a Collection
-ms.date: 09/20/2016
+title: "How to List the Maintenance Windows and Properties for a Specific Collection"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: Learn how to list the maintenance windows and properties for a specific collection with provided examples and links.
 ms.service: configuration-manager
 ---
+
 # How to List the Maintenance Windows and Properties for a Specific Collection
-The following example shows how to list the maintenance windows for a specific collection by using the [SMS_CollectionSettings Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionsettings-server-wmi-class.md) class. Maintenance windows are created by using the [SMS_ServiceWindow Server WMI Class](../../../../develop/reference/core/servers/configure/sms_servicewindow-server-wmi-class.md) class and then stored as embedded objects in [SMS_CollectionSettings](../../../../develop/reference/core/clients/collections/sms_collectionsettings-server-wmi-class.md) instances, one per collection.
+
+The following example shows how to list the maintenance windows for a specific collection by using the [SMS_CollectionSettings Server WMI Class](../../../reference/core/clients/collections/sms_collectionsettings-server-wmi-class.md) class. Maintenance windows are created by using the [SMS_ServiceWindow Server WMI Class](../../../reference/core/servers/configure/sms_servicewindow-server-wmi-class.md) class and then stored as embedded objects in [SMS_CollectionSettings](../../../reference/core/clients/collections/sms_collectionsettings-server-wmi-class.md) instances, one per collection.
 
 ### To list the maintenance windows and properties for a collection
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Get the existing collection settings instance by using the collection ID provided.
-
-3.  Enumerate the existing service window objects and properties.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Get the existing collection settings instance by using the collection ID provided.
+3. Enumerate the existing service window objects and properties.
 
 > [!NOTE]
->  The example method includes additional steps, primarily to handle the overhead of dealing with the service window objects, which are stored as embedded objects in the collection settings instance.
+>
+> The example method includes additional steps, primarily to handle the overhead of dealing with the service window objects, which are stored as embedded objects in the collection settings instance.
 
 ## Example
- The following example method lists the maintenance windows and properties for a collection.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method lists the maintenance windows and properties for a collection.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -128,44 +130,43 @@ public void ListMaintenanceWindowsAndPropertiesForASpecificCollection(WqlConnect
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swebemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`targetCollectionID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the collection.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swebemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `targetCollectionID` | - Managed: `String` - VBScript: `String` | The ID of the collection. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).
 
 ## See also
- [About maintenance windows](about-maintenance-windows.md)
- [Software distribution overview](software-distribution-overview.md)
- [About deployments](about-software-distribution-deployments.md)
- [Objects overview](../../understand/configuration-manager-objects-overview.md)
- [How to Connect to a Configuration Manager Provider using Managed Code](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to a Configuration Manager Provider Using WMI](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [SMS_CollectionSettings Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionsettings-server-wmi-class.md)
- [SMS_ServiceWindow Server WMI Class](../../../../develop/reference/core/servers/configure/sms_servicewindow-server-wmi-class.md)
+
+[About maintenance windows](about-maintenance-windows.md) [Software distribution overview](software-distribution-overview.md) [About deployments](about-software-distribution-deployments.md) [Objects overview](../../understand/configuration-manager-objects-overview.md) [How to Connect to a Configuration Manager Provider using Managed Code](../../understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to a Configuration Manager Provider Using WMI](../../understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [SMS_CollectionSettings Server WMI Class](../../../reference/core/clients/collections/sms_collectionsettings-server-wmi-class.md) [SMS_ServiceWindow Server WMI Class](../../../reference/core/servers/configure/sms_servicewindow-server-wmi-class.md)

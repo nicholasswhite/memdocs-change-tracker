@@ -1,7 +1,7 @@
 ---
 title: Compare Windows Autopilot device preparation and Windows Autopilot
 description: Compare Windows Autopilot device preparation and Windows Autopilot features and when to use each.
-ms.date: 08/07/2026
+ms.date: "2026-08-07T00:00:00Z"
 ms.topic: overview
 ms.collection:
   - M365-modern-desktop
@@ -14,18 +14,18 @@ appliesto:
 
 ## Windows Autopilot device preparation vs. Windows Autopilot
 
-| Feature | **Windows Autopilot<br>device preparation** | **Windows Autopilot** |
+| Feature | **Windows Autopilot device preparation** | **Windows Autopilot** |
 | --- | --- | --- |
-| Features | <ul><li>Support for Government Community Cloud High (GCCH) and Department of Defense (DoD) environments.</li><li>Faster, more consistent provisioning experience.</li><li>Near real-time monitoring and troubleshooting info.</li></ul> | <ul><li>Support for multiple device types ([HoloLens](/hololens/hololens2-autopilot), [Teams Meeting Room](/microsoftteams/rooms/autopilot-autologin)).</li><li>Many customization options for the provisioning experience.</li></ul> |
-| Supported modes | <ul><li>[User-driven](tutorial/user-driven/entra-join-workflow.md).</li><li>Automatic.</li></ul> | <ul><li>[User-driven](../tutorial/user-driven/azure-ad-join-workflow.md).</li><li>[Pre-provisioned](../tutorial/pre-provisioning/azure-ad-join-workflow.md).</li><li>[Self-deploying](../tutorial/self-deploying/self-deploying-workflow.md).</li><li>[Existing devices](../tutorial/existing-devices/existing-devices-workflow.md).</li></ul>|
-| Join types supported | <ul><li>Microsoft Entra join.</li></ul> | <ul><li>Microsoft Entra join.</li><li>Microsoft Entra hybrid join.</li></ul> |
+| Features | - Support for Government Community Cloud High (GCCH) and Department of Defense (DoD) environments. - Faster, more consistent provisioning experience. - Near real-time monitoring and troubleshooting info. | - Support for multiple device types ([HoloLens](https://learn.microsoft.com/en-us/hololens/hololens2-autopilot), [Teams Meeting Room](https://learn.microsoft.com/en-us/microsoftteams/rooms/autopilot-autologin)). - Many customization options for the provisioning experience. |
+| Supported modes | - [User-driven](tutorial/user-driven/entra-join-workflow.md). - Automatic. | - [User-driven](../tutorial/user-driven/azure-ad-join-workflow.md). - [Pre-provisioned](../tutorial/pre-provisioning/azure-ad-join-workflow.md). - [Self-deploying](../tutorial/self-deploying/self-deploying-workflow.md). - [Existing devices](../tutorial/existing-devices/existing-devices-workflow.md). |
+| Join types supported | - Microsoft Entra join. | - Microsoft Entra join. - Microsoft Entra hybrid join. |
 | Device registration required? | No. | Yes. |
 | Is it possible to bind devices to my tenant before enrollment? | Yes, you can [associate devices](tutorial/user-driven/entra-join-device-association.md). | Yes, you can [register devices](../registration-overview.md). |
-| What do admins need to configure? | <ul><li>Windows Autopilot device preparation policy.</li><li>Device security group with **Intune Provisioning Client** as owner.</li></ul> | <ul><li>Windows Autopilot deployment profile.</li><li>Enrollment Status Page (ESP).</li></ul> |
-| What configurations can be delivered during provisioning? | <ul><li>Device-based only during the out-of-box experience (OOBE).</li><li>Up to 25 essential applications (line-of-business (LOB), Win32, Microsoft Store, Microsoft 365).</li><li>Up to 10 essential PowerShell scripts.</li></ul> | <ul><li>Device-based during device ESP.</li><li>User-based during user ESP.</li><li>Up to [100 applications](/intune/intune-service/enrollment/windows-enrollment-status#block-access-to-a-device-until-a-specific-application-is-installed).</li></ul> |
-| Reporting & troubleshooting |  Windows Autopilot device preparation deployment report:<ul><li>Shows all Windows Autopilot device preparation deployments.</li><li>More data available.</li><li>Near real-time.</li></ul> | Windows Autopilot deployment report:<ul><li>Only shows Windows Autopilot registered devices.</li><li>Not real-time.</li></ul> |
+| What do admins need to configure? | - Windows Autopilot device preparation policy. - Device security group with **Intune Provisioning Client** as owner. | - Windows Autopilot deployment profile. - Enrollment Status Page (ESP). |
+| What configurations can be delivered during provisioning? | - Device-based only during the out-of-box experience (OOBE). - Up to 25 essential applications (line-of-business (LOB), Win32, Microsoft Store, Microsoft 365). - Up to 10 essential PowerShell scripts. | - Device-based during device ESP. - User-based during user ESP. - Up to [100 applications](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-enrollment-status#block-access-to-a-device-until-a-specific-application-is-installed). |
+| Reporting &amp; troubleshooting | Windows Autopilot device preparation deployment report:  - Shows all Windows Autopilot device preparation deployments. - More data available. - Near real-time. | Windows Autopilot deployment report:  - Only shows Windows Autopilot registered devices. - Not real-time. |
 | Supports LOB and Win32 applications in same deployment? | Yes. | No. |
-| Supported versions of Windows | <ul><li>Windows 11, version 24H2 or later.</li><li>Windows 11, version 23H2 with [KB5035942](https://support.microsoft.com/topic/march-26-2024-kb5035942-os-builds-22621-3374-and-22631-3374-preview-3ad9affc-1a91-4fcb-8f98-1fe3be91d8df) or later.</li><li> Windows 11, version 22H2 with [KB5035942](https://support.microsoft.com/topic/march-26-2024-kb5035942-os-builds-22621-3374-and-22631-3374-preview-3ad9affc-1a91-4fcb-8f98-1fe3be91d8df) or later.</li></ul> | <ul><li>All [currently supported](/windows/release-health/supported-versions-windows-client#windows-11-supported-versions-by-servicing-option) versions of Windows 11 General Availability Channel.</li><li>All [currently supported](/windows/release-health/supported-versions-windows-client#windows-10-supported-versions-by-servicing-option) versions of Windows 10 General Availability Channel.</li></ul> |
+| Supported versions of Windows | - Windows 11, version 24H2 or later. - Windows 11, version 23H2 with [KB5035942](https://support.microsoft.com/topic/march-26-2024-kb5035942-os-builds-22621-3374-and-22631-3374-preview-3ad9affc-1a91-4fcb-8f98-1fe3be91d8df) or later. - Windows 11, version 22H2 with [KB5035942](https://support.microsoft.com/topic/march-26-2024-kb5035942-os-builds-22621-3374-and-22631-3374-preview-3ad9affc-1a91-4fcb-8f98-1fe3be91d8df) or later. | - All [currently supported](https://learn.microsoft.com/en-us/windows/release-health/supported-versions-windows-client#windows-11-supported-versions-by-servicing-option) versions of Windows 11 General Availability Channel. - All [currently supported](https://learn.microsoft.com/en-us/windows/release-health/supported-versions-windows-client#windows-10-supported-versions-by-servicing-option) versions of Windows 10 General Availability Channel. |
 
 ## Which Windows Autopilot solution to use
 
@@ -33,9 +33,9 @@ Which version of Windows Autopilot to use is dependent on many factors and varia
 
 In general, the following are some of the major factors when considering between Windows Autopilot device preparation or Windows Autopilot:
 
-| Requirement | **Windows Autopilot<br>device preparation** | **Windows<br>Autopilot** |
+| Requirement | **Windows Autopilot device preparation** | **Windows Autopilot** |
 | --- | --- | --- |
-| Government Community Cloud High (GCCH) and<br>Department of Defense (DoD) environments | ✅ | ❌ |
+| Government Community Cloud High (GCCH) and Department of Defense (DoD) environments | ✅ | ❌ |
 | User-driven scenario | ✅ | ✅ |
 | Pre-provisioned scenario | ❌ | ✅ |
 | Self-deploying scenario | ❌ | ✅ |
@@ -47,18 +47,18 @@ In general, the following are some of the major factors when considering between
 | [Windows Autopilot Reset](../tutorial/reset/autopilot-reset-overview.md) | ❌ | ✅ |
 | Windows 11 | ✅ | ✅ |
 | Windows 10 | ❌ | ✅ |
-| Deploy Win32 and LOB applications<br>in the same deployment | ✅ | ❌ |
+| Deploy Win32 and LOB applications in the same deployment | ✅ | ❌ |
 | Simpler deployment configuration and experience | ✅ | ❌ |
-| Extensive customization of deployment<br>and OOBE experience | ❌ | ✅ |
+| Extensive customization of deployment and OOBE experience | ❌ | ✅ |
 | No requirement to pre-stage devices | ✅ | ❌ |
 | Install more than 10 applications during OOBE | ❌ | ✅ |
 | Run more than 10 PowerShell scripts during OOBE | ❌ | ✅ |
 | Near real-time monitoring | ✅ | ❌ |
-| Block user from accessing desktop until<br>user based configurations are applied | ❌ | ✅ |
-| [HoloLens](/hololens/hololens2-autopilot) support | ❌ | ✅ |
-| [Teams Meeting Room](/microsoftteams/rooms/autopilot-autologin) support | ❌ | ✅ |
-| Device Firmware Configuration Interface<br>([DFCI](../dfci-management.md)) Management support | ❌ | ✅ |
-| [Windows Autopilot into co-management](/intune/configmgr/comanage/autopilot-enrollment) | ❌ | ✅ |
+| Block user from accessing desktop until user based configurations are applied | ❌ | ✅ |
+| [HoloLens](https://learn.microsoft.com/en-us/hololens/hololens2-autopilot) support | ❌ | ✅ |
+| [Teams Meeting Room](https://learn.microsoft.com/en-us/microsoftteams/rooms/autopilot-autologin) support | ❌ | ✅ |
+| Device Firmware Configuration Interface ([DFCI](../dfci-management.md)) Management support | ❌ | ✅ |
+| [Windows Autopilot into co-management](../../intune/configmgr/comanage/autopilot-enrollment.md) | ❌ | ✅ |
 
 ## Using Windows Autopilot device preparation and Windows Autopilot concurrently
 

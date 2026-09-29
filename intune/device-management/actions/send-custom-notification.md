@@ -1,7 +1,7 @@
 ---
-title: "Device Action: Send Custom Notification"
+title: "Device action: send custom notification"
 description: Use Intune to create and send custom notifications to users of iOS/iPadOS and Android devices.
-ms.date: 10/27/2025
+ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 zone_pivot_groups: 22f7442d-9384-49c8-abff-aaa058b30589
 ---
@@ -17,29 +17,14 @@ You can send notifications to individual devices or to users in groups. Custom n
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
 > - Android Enterprise personally-owned work profile (BYOD)
 > - iOS/iPadOS
 
-:::column-end:::
-:::row-end:::
-
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
 
 ::: zone pivot="android"
 
@@ -48,10 +33,12 @@ You can send notifications to individual devices or to users in groups. Custom n
 > - The Company Portal app or Microsoft Intune app is installed.
 > - Push notification permissions for the apps are granted by the user.
 >
-> >[!NOTE]
+> > [!NOTE]
+> >
 > > Battery optimization settings on some devices can prevent notifications from being delivered. Consider disabling battery optimization for the Company Portal or Intune app to ensure reliable notification delivery.
 
 ::: zone-end
+
 ::: zone pivot="ios"
 
 > To use this action, make sure devices meet the following requirements:
@@ -61,27 +48,15 @@ You can send notifications to individual devices or to users in groups. Custom n
 
 ::: zone-end
 
-:::column-end:::
-:::row-end:::
-
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
 > To run this action, use an account with at least one of the following roles:
 >
-> - [Help Desk Operator]
-> - [Custom role] that includes:
+> - [Help Desk Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Remote tasks/Send custom notifications**—to send notifications to devices
 >   - The permission **Organization/Update**—to send notifications to groups
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
-
-:::column-end:::
-:::row-end:::
 
 ## How to send custom notifications from the Intune admin center
 
@@ -97,19 +72,20 @@ You can send custom notifications in Intune to individual devices or to users in
 ::: zone pivot="android"
 
 > [!CAUTION]
+>
 > Other apps might have access to the data in your custom notifications. Avoid using them for sensitive communications.
 
 ::: zone-end
 
 ### Send a custom notification to a single device
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Send Custom Notification**.
-1. On the **Send Custom Notification** pane, specify the following message details:
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Send Custom Notification**.
+4. On the **Send Custom Notification** pane, specify the following message details:
    - **Title**: Specify a title for this notification. Titles are limited to 50 characters.
    - **Body**: Specify the message. Messages are limited to 500 characters.
-1. Select **Send** to send the custom notification to the device. Unlike notifications you send to groups, you don't configure an assignment or review the message before sending it.
+5. Select **Send** to send the custom notification to the device. Unlike notifications you send to groups, you don't configure an assignment or review the message before sending it.
 
 Intune processes the message immediately. The only confirmation is a notification in the admin center showing the message content.
 
@@ -117,73 +93,49 @@ Intune processes the message immediately. The only confirmation is a notificatio
 
 Group notifications target users, not devices. Each supported device enrolled by the user receives the message. Devices that are member of the group are ignored.
 
-1. In the [Microsoft Intune admin center], select **Tenant administration** > **Custom notifications**.
-1. On the **Basics** tab, specify the following, and then select **Next** to continue.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Tenant administration** &gt; **Custom notifications**.
+2. On the **Basics** tab, specify the following, and then select **Next** to continue.
    - **Title**: Specify a title for this notification. Titles are limited to 50 characters.
    - **Body**: Specify the message. Messages are limited to 500 characters.
-1. On the **Assignments** tab, select the groups to which you'd like to send this custom notification, and then select **Next** to continue.
-1. On the **Review + Create** tab, review the information and when ready to send the notification, select **Create**.
+3. On the **Assignments** tab, select the groups to which you'd like to send this custom notification, and then select **Next** to continue.
+4. On the **Review + Create** tab, review the information and when ready to send the notification, select **Create**.
 
 Intune processes the message immediately. A confirmation appears in the admin center once the notification is sent.
 
 > [!NOTE]
+>
 > Intune doesn't track sent custom notifications, and devices don't log receipt outside of the notification center. The message might appear in a temporary diagnostic log if the user requests support through the Company Portal or Intune app.
 
 ## User experience
 
 ::: zone pivot="ios"
+
 When a custom notification is sent, users receive it as a push alert from the Company Portal on their enrolled device. The experience varies slightly depending on the app state.
-:::row:::
-:::column span="3":::
+
 - Intune sends messages to the Company Portal app, which then generates the push notification. Users don't need to be signed in to the app, but the device must be enrolled by the targeted user.
 - Delivery isn't guaranteed. Notifications might be delayed or not delivered at all, so they shouldn't be used for urgent communication.
 - Users might still receive notifications even after being removed from a group or unenrolling a device. Similarly, users added to a group after a notification is sent might receive that previously sent message.
 - Notification visibility depends on device settings. Messages might appear on the lock screen or within the app.
 - If the app is open when the notification is received, it displays in-app rather than as a push notification. Users can view it by navigating to the **Notifications** tab and pulling to refresh.
 
-:::column-end:::
-:::column span="1":::
-:::image type="content" source="media/send-custom-notification/ios-custom-notification.png" lightbox="media/send-custom-notification/ios-custom-notification.png" alt-text="Locked device iOS/iPadOS custom notification." border="false":::
-:::column-end:::
-:::row-end:::
+[![Locked device iOS/iPadOS custom notification.](media/send-custom-notification/ios-custom-notification.png)](media/send-custom-notification/ios-custom-notification.png#lightbox)
 
 ::: zone-end
 
 ::: zone pivot="android"
+
 When a custom notification is sent, users receive it as a push alert from the Company Portal or Intune app on their enrolled device. The experience varies slightly depending on platform and app state.
-:::row:::
-:::column span="3":::
+
 - Intune sends messages to the user's Company Portal or Intune app, which then generates the push notification. Users don't need to be signed in to the app, but the device must be enrolled by the targeted user.
 - Delivery isn't guaranteed. Notifications might be delayed or not delivered at all, so they shouldn't be used for urgent communication.
 - Users might still receive notifications even after being removed from a group or unenrolling a device. Similarly, users added to a group after a notification is sent might receive that previously sent message.
 - Notification visibility depends on device settings. Messages might appear on the lock screen or within the app.
 - If the app is open when the notification is received, it displays in-app rather than as a push notification.
 
-:::column-end:::
-:::column span="1":::
-:::image type="content" source="media/send-custom-notification/android-custom-notification.png" lightbox="media/send-custom-notification/android-custom-notification.png" alt-text="Locked device Android custom notification.":::
-
-:::column-end:::
-:::row-end:::
+[![Locked device Android custom notification.](media/send-custom-notification/android-custom-notification.png)](media/send-custom-notification/android-custom-notification.png#lightbox)
 
 ::: zone-end
 
 ## Reference links
 
-- Microsoft Graph API: [sendCustomNotificationToCompanyPortal action][GRAPH-1]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[School Administrator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-sendcustomnotificationtocompanyportal
+- Microsoft Graph API: [sendCustomNotificationToCompanyPortal action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-sendcustomnotificationtocompanyportal)

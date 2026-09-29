@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the  SMS_ConfigurationPolicyAssignment to represent the deployment of an instance of SMS_ConfigurationPolicy in Configuration Manager.
-title: SMS_ConfigurationPolicyAssignment Class
-ms.date: 09/20/2016
+title: "SMS_ConfigurationPolicyAssignment Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ConfigurationPolicyAssignment Server WMI Class
+
 The `SMS_ConfigurationPolicyAssignment` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the deployment of an instance of `SMS_ConfigurationPolicy`. It is similar to `SMS_BaselineAssignment`, except that `SMS_ConfigurationPolicy` is deployed directly, instead of being collected into a baseline first.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -62,384 +64,347 @@ Class SMS_ConfigurationPolicyAssignment : SMS_CIAssignmentBaseClass
 ```
 
 ## Methods
- The `SMS_ConfigurationPolicyAssignment` class does not define any methods.
+
+The `SMS_ConfigurationPolicyAssignment` class does not define any methods.
 
 ## Properties
- `ApplyToSubTargets`
- Data type: `Boolean`
 
- Access type: Read/Write
+`ApplyToSubTargets` Data type: `Boolean`
 
- Qualifiers: [deprecated]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [deprecated]
 
- `AssignedCI_UniqueID`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read-only
+`AssignedCI_UniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Unique identifier of the assigned baseline configuration item.
+Qualifiers: [not_null, read]
 
- `AssignedCIs`
- Data type: `SInt32 Array`
+Unique identifier of the assigned baseline configuration item.
 
- Access type: Read/Write
+`AssignedCIs` Data type: `SInt32 Array`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `AssignmentAction`
- Data type: `SInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`AssignmentAction` Data type: `SInt32`
 
- Qualifiers: [enumeration, not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [enumeration, not_null]
 
- `AssignmentDescription`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`AssignmentDescription` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
+Qualifiers: none
 
- `AssignmentID`
- Data type: `SInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`AssignmentID` Data type: `SInt32`
 
- Qualifiers: [key, key]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [key, key]
 
- `AssignmentName`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`AssignmentName` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `AssignmentType`
- Data type: `SInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`AssignmentType` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `AssignmentUniqueID`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null, read]
 
- `ContainsExpiredUpdates`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read-only
+`ContainsExpiredUpdates` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null, read]
 
- `CreationTime`
- Data type: `DateTime`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read-only
+`CreationTime` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null, read]
 
- `DesiredConfigType`
- Data type: `SInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`DesiredConfigType` Data type: `SInt32`
 
- Qualifiers: [enumeration, not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [enumeration, not_null]
 
- `DisableMomAlerts`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`DisableMomAlerts` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `DPLocality`
- Data type: `UInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`DPLocality` Data type: `UInt32`
 
- Qualifiers: [bits, not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [bits, not_null]
 
- `Enabled`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `EnforcementDeadline`
- Data type: `DateTime`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`EnforcementDeadline` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `EnforcementEnabled`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`EnforcementEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_BaselineAssignment Server WMI Class](../../../develop/reference/compliance/sms_baselineassignment-server-wmi-class.md).
+Qualifiers: none
 
- `EvaluationSchedule`
- Data type: `String`
+See [SMS_BaselineAssignment Server WMI Class](sms_baselineassignment-server-wmi-class.md).
 
- Access type: Read/Write
+`EvaluationSchedule` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `ExpirationTime`
- Data type: `DateTime`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`ExpirationTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `LastModificationTime`
- Data type: `DateTime`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read-only
+`LastModificationTime` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null, read]
 
- `LastModifiedBy`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `LimitStateMessageVerbosity`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`LimitStateMessageVerbosity` Data type: `Boolean`
 
- Qualifiers: [not_null, obsoleted]
+Access type: Read/Write
 
- This method/property has been removed or deprecated in Configuration Manager SP1.
+Qualifiers: [not_null, obsoleted]
 
- `LocaleID`
- Data type: `UInt32`
+This method/property has been removed or deprecated in Configuration Manager SP1.
 
- Access type: Read-only
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null, read]
 
- `LogComplianceToWinEvent`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`LogComplianceToWinEvent` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `NonComplianceCriticality`
- Data type: `SInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`NonComplianceCriticality` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `NotifyUser`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`NotifyUser` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `OverrideServiceWindows`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`OverrideServiceWindows` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `PersistOnWriteFilterDevices`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`PersistOnWriteFilterDevices` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `RaiseMomAlertsOnFailure`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`RaiseMomAlertsOnFailure` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `RandomizationMinutes`
- Data type: `UInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`RandomizationMinutes` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Random time in minutes that is used when evaluating an assignment automatically once it arrives at the client. The random evaluation interval distributes the processing load when multiple assignments arrive at the client at same time.
+Qualifiers: none
 
- `RebootOutsideOfServiceWindows`
- Data type: `Boolean`
+Random time in minutes that is used when evaluating an assignment automatically once it arrives at the client. The random evaluation interval distributes the processing load when multiple assignments arrive at the client at same time.
 
- Access type: Read/Write
+`RebootOutsideOfServiceWindows` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `SendDetailedNonComplianceStatus`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`SendDetailedNonComplianceStatus` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `SourceSite`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null, read]
 
- `StartTime`
- Data type: `DateTime`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`StartTime` Data type: `DateTime`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `StateMessagePriority`
- Data type: `UInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`StateMessagePriority` Data type: `UInt32`
 
- Qualifiers: [valuemap, values]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [valuemap, values]
 
- `StateMessageVerbosity`
- Data type: `UInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`StateMessageVerbosity` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- See [SMS_UpdateGroupAssignment Server WMI Class](../../../develop/reference/sum/sms_updategroupassignment-server-wmi-class.md).
+Qualifiers: [enumeration]
 
- `SuppressReboot`
- Data type: `UInt32`
+See [SMS_UpdateGroupAssignment Server WMI Class](../sum/sms_updategroupassignment-server-wmi-class.md).
 
- Access type: Read/Write
+`SuppressReboot` Data type: `UInt32`
 
- Qualifiers: [bits, not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [bits, not_null]
 
- `TargetCollectionID`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`TargetCollectionID` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `UseGMTTimes`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`UseGMTTimes` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: [not_null]
 
- `UserUIExperience`
- Data type: `Boolean`
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`UserUIExperience` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if user notification is displayed; otherwise, `false`.
+Qualifiers: [not_null]
 
- `WoLEnabled`
- Data type: `Boolean`
+`true` if user notification is displayed; otherwise, `false`.
 
- Access type: Read/Write
+`WoLEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md)
+Qualifiers: none
+
+See [SMS_CIAssignmentBaseClass Server WMI Class](sms_ciassignmentbaseclass-server-wmi-class.md)
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

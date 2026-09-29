@@ -1,16 +1,18 @@
 ---
-title: SMS_EndpointProtectionAgentConfig Class
+title: "SMS_EndpointProtectionAgentConfig Server WMI Class"
 description: An SMS Provider server class that specifies the settings for the Endpoint Protection client.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_EndpointProtectionAgentConfig Server WMI Class
+
 The `SMS_EndpointProtectionAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies the settings for the Endpoint Protection client.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,137 +36,129 @@ Class SMS_EndpointProtectionAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_EndpointProtectionAgentConfig` class doesn't define any methods.
+
+The `SMS_EndpointProtectionAgentConfig` class doesn't define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Endpoint Protection Agent ID is 20.
+Qualifiers: [key, read]
 
- `DisableFirstSignatureUpdate`
- Data type: `Boolean`
+Identifies the client agent component. The Endpoint Protection Agent ID is 20.
 
- Access type: Read/Write
+`DisableFirstSignatureUpdate` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Disable the first signature update on client from a remote source (Windows Update, WSUS, or UNC Path).
+Qualifiers: none
 
- `EnableBlueProvider`
- Data type: `Boolean`
+Disable the first signature update on client from a remote source (Windows Update, WSUS, or UNC Path).
 
- Access type: Read/Write
+`EnableBlueProvider` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the Windows R2 provider is enabled. This value isn't visible/available in the console. The default value is `true`.
+Qualifiers: none
 
- `EnableEP`
- Data type: `Boolean`
+`true` if the Windows R2 provider is enabled. This value isn't visible/available in the console. The default value is `true`.
 
- Access type: Read/Write
+`EnableEP` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the agent is enabled.
+Qualifiers: none
 
- `ForceRebootPeriod`
- Data type: `UInt32`
+`true` if the agent is enabled.
 
- Access type: Read/Write
+`ForceRebootPeriod` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Pending reboot window in hours.
+Qualifiers: none
 
- `InstallRetryPeriod`
- Data type: `UInt32`
+Pending reboot window in hours.
 
- Access type: Read/Write
+`InstallRetryPeriod` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Client-side verify common client existence interval.
+Qualifiers: none
 
- `InstallSCEPClient`
- Data type: `Boolean`
+Client-side verify common client existence interval.
 
- Access type: Read/Write
+`InstallSCEPClient` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client agent will install the common client.
+Qualifiers: none
 
- `LicenseAgreed`
- Data type: `Boolean`
+`true` if the client agent will install the common client.
 
- Access type: Read/Write
+`LicenseAgreed` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the Endpoint Protection License Agreement is approved.
+Qualifiers: none
 
- `OverrideMaintenanceWindow`
- Data type: `Boolean`
+`true` if the Endpoint Protection License Agreement is approved.
 
- Access type: Read/Write
+`OverrideMaintenanceWindow` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if maintenance windows shouldn't be respected.
+Qualifiers: none
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+`true` if maintenance windows shouldn't be respected.
 
- `PersistInstallation`
- Data type: `Boolean`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`PersistInstallation` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if. EndPoint Protection should be installed on persisted storage. This only applied to embedded operating systems.
+Qualifiers: none
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+`true` if. EndPoint Protection should be installed on persisted storage. This only applied to embedded operating systems.
 
- `PolicyEnforcePeriod`
- Data type: `UInt32`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`PolicyEnforcePeriod` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Client-side enforce anti-malware policy interval.
+Qualifiers: none
 
- `Remove3rdParty`
- Data type: `Boolean`
+Client-side enforce anti-malware policy interval.
 
- Access type: Read/Write
+`Remove3rdParty` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Remove existing 3rd party anti-malware solution when the Endpoint Protection client installs.
+Qualifiers: none
 
- `SuppressReboot`
- Data type: `Boolean`
+Remove existing 3rd party anti-malware solution when the Endpoint Protection client installs.
 
- Access type: Read/Write
+`SuppressReboot` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Suppress potential reboot after Endpoint Protection client installation.
+Qualifiers: none
+
+Suppress potential reboot after Endpoint Protection client installation.
 
 ## Remarks
- Enabling the Endpoint Protection client may uninstall existing antivirus solutions.  The Endpoint Protection client can't be enabled until an Endpoint Protection role is added to the hierarchy.
+
+Enabling the Endpoint Protection client may uninstall existing antivirus solutions. The Endpoint Protection client can't be enabled until an Endpoint Protection role is added to the hierarchy.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

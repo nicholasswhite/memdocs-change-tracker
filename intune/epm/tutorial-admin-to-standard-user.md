@@ -1,7 +1,7 @@
 ---
 title: Use Endpoint Privilege Management to transition users from administrator to standard user
 description: Understand the steps and phases for using Endpoint Privilege Management to transition users from administrators to standard users.
-ms.date: 09/10/2025
+ms.date: "2025-09-10T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -14,12 +14,13 @@ A common scenario for customers who want to use Endpoint Privilege Management is
 Regardless of whether you're migrating from another endpoint privilege management product or starting fresh, we recommend enabling auditing as the first step. Enabling auditing enables the EPM client and devices to send diagnostic data to Intune, where it can be viewed in various reports. Gathering this elevation data provides insights into which processes users are seeking to elevate, and help to identify common patterns. Ideally, these align to your personas, such as developers, IT support technicians, etc. The deployment of this policy for auditing is seamless, and can be targeted to a group of users or devices of your choosing, as per any regular Intune policy assignment.
 
 > [!NOTE]
+>
 > Once enabled, usage data can take 24 hrs to be returned and for the Intune portal reports to be updated. Depending on usage patterns, you might want to view reporting data over a period of many weeks to gather a better understanding of your environment.
 
 **Steps to create the policy:**
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Endpoint Security** > **Endpoint Privilege Management** > **Policies**
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint Security** &gt; **Endpoint Privilege Management** &gt; **Policies**
 3. Select **Create Policy**. Enter the following details:
    - **Platform:** Windows
    - **Profile:** Elevation settings policy
@@ -40,22 +41,23 @@ Regardless of whether you're migrating from another endpoint privilege managemen
 **To confirm that the rule is functioning as expected:**
 
 - Sign in to the Windows device with the standard user credentials.
-- **Start** > **Run** > **Services.msc** > Ok
+- **Start** &gt; **Run** &gt; **Services.msc** &gt; Ok
 - Check that the *'Microsoft EPM Agent Service'* is present, Running, and set to Automatic startup type.
 - Close the Services snap-in.
-- **Start** > **Run** > `C:\Program Files\` > Ok
+- **Start** &gt; **Run** &gt; `C:\Program Files\` &gt; Ok
 - Verify that there's a folder called: *Microsoft EPM Agent*
 
 **After 24 hrs or more have passed:**
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Endpoint Security** > **Endpoint Privilege Management** > **Reports**
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint Security** &gt; **Endpoint Privilege Management** &gt; **Reports**
 3. Select **Elevation report**
 4. Review the details of the elevation report
 
 Identify groups of users (ideally aligning with the personas you identified earlier) who have similar elevation requirements. Identifying both usage patterns and user groups assists with subsequent steps.
 
 > [!TIP]
+>
 > This report includes some default Windows processes in the File column (for example `C:\Windows\System32\Dism\dismhost and c:\Windows\System32\conhost.exe`) which can be ignored.
 
 ## Phase 2: Persona identification
@@ -68,11 +70,11 @@ User personas are data-driven representations of different user types within you
 
 Example persona mapping:
 
-| Persona Type     | Example Roles             | Elevation Strategy                                | Default Elevation |
-|------------------|---------------------------|---------------------------------------------------|-------------------|
-| Power Users      | IT Support Technicians, IT Power Users | Automatic elevation for defined rules             | Deny all requests |
-| Developers       | Engineering               | Automatic elevation for defined low risk apps; User justified for higher risk apps | Support Approved  |
-| Standard Users   | Finance, HR               | Automatic elevation for defined rules             | Deny all requests or support approved |
+| Persona Type | Example Roles | Elevation Strategy | Default Elevation |
+| --- | --- | --- | --- |
+| Power Users | IT Support Technicians, IT Power Users | Automatic elevation for defined rules | Deny all requests |
+| Developers | Engineering | Automatic elevation for defined low risk apps; User justified for higher risk apps | Support Approved |
+| Standard Users | Finance, HR | Automatic elevation for defined rules | Deny all requests or support approved |
 
 ### How do personas help design elevation settings and rules?
 
@@ -89,12 +91,12 @@ Detections are defined as the set of attributes used to identify an application 
 - Use strong attributes or multiple attributes to increase detection strength.
 - Either a file hash or certificate is mandatory.
 
-For more security recommendations, see [Security Recommendations](./deployment-planning.md#security-recommendations).
+For more security recommendations, see [Security Recommendations](deployment-planning.md#security-recommendations).
 
 ### Steps to create a rule using elevation report data
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Endpoint Security** > **Endpoint Privilege Management** > **Policies**
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint Security** &gt; **Endpoint Privilege Management** &gt; **Policies**
 3. Select **Elevation report**
 4. Select an application or process (for example. `C:\Program Files\Notepad++\`)
 5. Select **Create a rule with these details**:
@@ -111,7 +113,7 @@ For more security recommendations, see [Security Recommendations](./deployment-p
 12. Assign to a group (for example Developers)
 13. **Select**, **Review**, and **Save**
 
-For more details on creating a rule, see [Create elevation rules](./create-elevation-rules.md).
+For more details on creating a rule, see [Create elevation rules](create-elevation-rules.md).
 
 ### Confirm the rule is functioning
 
@@ -122,23 +124,24 @@ For more details on creating a rule, see [Create elevation rules](./create-eleva
 
 ## Phase 4: Remove local admin rights
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Endpoint Security** > **Account protection**
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint Security** &gt; **Account protection**
 3. Select Create Policy:
+
    - **Platform:** Windows
    - **Profile:** Local user group membership
 4. Provide name for the policy (for example `Remove local admin rights (developers)`)
 5. Select Add:
+
    - **Local group**: Administrators
    - **Group and user action**: Add (Replace)
    - **User selection type:** Manual
 6. Select **users(s)**
 7. Add the two Security Identifiers (SIDs) for:
+
    - Global Administrator
    - Microsoft Entra Joined Device Local Administrator
-
-    > Use Lusrmgr.msc on an Entra-joined device to find SIDs starting with S-1-12-1-
-
+   > Use Lusrmgr.msc on an Entra-joined device to find SIDs starting with S-1-12-1-
 8. Assign to a group (for example `Developers`)
 9. Select **Save**
 
@@ -156,9 +159,4 @@ For more information on the Local Users and Groups profiles, see [Account protec
 
 ## Next steps
 
-> [!div class="nextstepaction"]
-> [Next: Support approved requests >](./manage-support-approvals.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+[Next: Support approved requests &gt;](manage-support-approvals.md)

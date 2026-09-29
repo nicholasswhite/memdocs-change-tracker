@@ -1,7 +1,7 @@
 ---
 title: Conditional Access with co-management
 description: Control user access to organizational resources based on compliance rules from Intune
-ms.date: 11/08/2021
+ms.date: "2021-11-08T00:00:00Z"
 ms.subservice: co-management
 ms.topic: article
 ms.collection: tier3
@@ -14,23 +14,21 @@ Conditional Access makes sure that only trusted users can access organizational 
 
 In the following video, senior program manager Joey Glocke and product marketing manager Locky Ainley discuss and demo Conditional Access with co-management:
 
-> [!VIDEO https://aka.ms/docs/player?id=18f4da94-2409-4a4e-86c1-b74262fea18a]
+[Embedded video](https://aka.ms/docs/player?id=18f4da94-2409-4a4e-86c1-b74262fea18a)
 
 With co-management, Intune evaluates every device in your network to determine how trustworthy it is. It does this evaluation in the following two ways:
 
 1. Intune makes sure a device or app is managed and securely configured. This check depends on how you set your organization's compliance policies. For example, make sure all devices have encryption enabled and aren't jailbroken.
 
-    - This evaluation is pre-security breach and configuration-based
+   - This evaluation is pre-security breach and configuration-based
+   - For co-managed devices, Configuration Manager also does configuration-based evaluation. For example, required updates or apps compliance. Intune combines this evaluation along with its own assessment.
+2. Intune detects active security incidents on a device. It uses the intelligent security of [Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint) and other [mobile threat defense providers](https://www.lookout.com/partners/microsoft). These partners run ongoing behavioral analysis on devices. This analysis detects active incidents, and then passes this information to Intune for real-time compliance evaluation.
 
-    - For co-managed devices, Configuration Manager also does configuration-based evaluation. For example, required updates or apps compliance. Intune combines this evaluation along with its own assessment.
-
-2. Intune detects active security incidents on a device. It uses the intelligent security of [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint) and other [mobile threat defense providers](https://www.lookout.com/partners/microsoft). These partners run ongoing behavioral analysis on devices. This analysis detects active incidents, and then passes this information to Intune for real-time compliance evaluation.
-
-    - This evaluation is post-security breach and incident-based
+   - This evaluation is post-security breach and incident-based
 
 Microsoft corporate vice president Brad Anderson discusses Conditional Access in depth with live demos during the Ignite 2018 keynote.
 
-> [!VIDEO https://www.youtube.com/embed/7tDbUhVCX_I?start=1071]
+[Embedded video](https://www.youtube-nocookie.com/embed/7tDbUhVCX_I?start=1071)
 
 Conditional Access also provides you a centralized place to see the health of all network-connected devices. You get the advantages of cloud scale, which is especially valuable for testing Configuration Manager production instances.
 
@@ -47,7 +45,7 @@ Conditional Access combines granular control over organizational data with a use
 
 The following video shows how Microsoft Defender for Endpoint (formerly known as Advanced Threat Protection) is integrated into common scenarios that you regularly experience:
 
-> [!VIDEO https://www.youtube.com/embed/A7IrxAH87wc?start=178]
+[Embedded video](https://www.youtube-nocookie.com/embed/A7IrxAH87wc?start=178)
 
 With co-management, Intune can incorporate Configuration Manager's responsibilities for assessing your security standards compliance of required updates or apps. This behavior is important for any IT organization that wants to continue using Configuration Manager for complex app and patch management.
 
@@ -59,13 +57,11 @@ For more information, see the blog post on [Enhancing Conditional Access with ma
 
 The IT consulting firm Wipro uses Conditional Access to protect and manage the devices used by all 91,000 employees. In a recent case study, the vice president of IT at Wipro noted:
 
-> *Achieving Conditional Access is a big win for Wipro. Now, all our employees have mobile access to information on demand.*
-> *We enhanced our security posture and employee productivity. Now 91,000 employees benefit from highly secure access to more than 100 apps from any device, anywhere.*
+> *Achieving Conditional Access is a big win for Wipro. Now, all our employees have mobile access to information on demand.* *We enhanced our security posture and employee productivity. Now 91,000 employees benefit from highly secure access to more than 100 apps from any device, anywhere.*
 
 Other examples include:
 
 - Nestlé, who uses app-based Conditional Access for over 150,000 employees
-
 - The automation software company, Cadence, who can now make sure that "only managed devices have access to Microsoft 365 Apps like Teams and the company's intranet." They can also offer their workforce "safer access to other cloud-based apps, such as Workday and Salesforce."
 
 Intune is also fully integrated with partners like Cisco ISE, Aruba Clear Pass, and Citrix NetScaler. With these partners, you can maintain access controls based on the Intune enrollment and the device compliance state across these other platforms.
@@ -91,11 +87,10 @@ Conditional Access is easy to use when you [enable co-management](how-to-enable.
 
 For more information about using Conditional Access, see the following articles:
 
-- [Conditional Access in Microsoft Entra ID](/azure/active-directory/conditional-access/overview)
-
+- [Conditional Access in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/overview)
 - [Use compliance policies to set rules for devices you manage with Intune](../../device-security/compliance/overview.md)
-
 - [App-based Conditional Access with Intune](../../device-security/conditional-access-integration/app-based-policies.md)
 
 > [!NOTE]
+>
 > Conditional Access features become available immediately for Microsoft Entra hybrid joined devices. These features include multi-factor authentication and Microsoft Entra hybrid join access control. This behavior is because they're based on Microsoft Entra properties. To leverage configuration-based assessment from Intune and Configuration Manager, enable co-management. This configuration gives you access control directly from Intune for compliant devices. It also gives you Intune's compliance policies evaluation feature.

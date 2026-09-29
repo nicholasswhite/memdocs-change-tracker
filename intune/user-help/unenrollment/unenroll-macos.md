@@ -1,7 +1,7 @@
 ---
-title: Unenroll device in Company Portal for macOS app
+title: "Remove device from Company Portal for macOS app"
 description: Describes how to unenroll a device in the Company Portal for macOS app.
-ms.date: 10/08/2024
+ms.date: "2024-10-08T00:00:00Z"
 ms.reviewer: elocholi
 ---
 
@@ -23,14 +23,11 @@ This article describes how to remove a device from within the Company Portal app
 
 ## Remove a device
 
-Follow these steps to remove a device from Company Portal that you no longer need for work or school. For these steps to work, you must still have access to your work or school account.  If you no longer have access to your account, see [Remove management profile](unenroll-macos.md#remove-management-profile) (in this article) to unenroll your device.
+Follow these steps to remove a device from Company Portal that you no longer need for work or school. For these steps to work, you must still have access to your work or school account. If you no longer have access to your account, see [Remove management profile](#remove-management-profile) (in this article) to unenroll your device.
 
 1. Sign in to Company Portal for macOS.
-
 2. Go to **Devices** and select the device you want to unenroll.
-
-3. From the app toolbar, select the **Devices** menu > **Remove**.
-
+3. From the app toolbar, select the **Devices** menu &gt; **Remove**.
 4. When asked to confirm the removal, select **Remove**. The device is immediately removed from Intune.
 
 After you complete these steps, you can uninstall Company Portal from your device.
@@ -40,6 +37,7 @@ After you complete these steps, you can uninstall Company Portal from your devic
 To remove a device after you've left your workplace or school, you have to remove the *management profile* that was installed during enrollment. For steps specific to your version of macOS, see [Remove a configuration profile from your Mac](https://support.apple.com/guide/mac-help/configuration-profiles-standardize-settings-mh35561/mac) on the Apple Support website. After you remove the management profile, you can uninstall Company Portal from your device.
 
 ## Uninstall Company Portal app
+
 To uninstall the Company Portal app from a macOS device, select and drag the Company Portal app to the trashcan located in your dock. For more information, see [Uninstall apps on your Mac](https://support.apple.com/en-us/102610) on the Apple Support website.
 
 ## Next steps

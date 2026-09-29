@@ -1,16 +1,18 @@
 ---
-title: QueueRequestedAppPolicy Method
+title: "QueueRequestedAppPolicy Method in Class CCM_RequestedAppPolicy"
 description: In Configuration Manager, the QueueRequestedAppPolicy Windows Management Instrumentation class method that queues an application policy request.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # QueueRequestedAppPolicy Method in Class CCM_RequestedAppPolicy
+
 The `QueueRequestedAppPolicy` Windows Management Instrumentation (WMI) class method in Configuration Manager that queues and application policy request.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,46 +27,45 @@ uint32 QueueRequestedAppPolicy
 ```
 
 ## Parameters
- `PolicyId`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`PolicyId` Data type: `String`
 
- Policy identifier.
+Qualifiers: [id("0"), in]
 
- `PolicyRevision`
- Data type: `String`
+Policy identifier.
 
- Qualifiers: [id("1"), in]
+`PolicyRevision` Data type: `String`
 
- Policy revision.
+Qualifiers: [id("1"), in]
 
- `Id`
- Data type: `String`
+Policy revision.
 
- Qualifiers: [id("2"), in]
+`Id` Data type: `String`
 
- Identifier.
+Qualifiers: [id("2"), in]
 
- `EnforcePreference`
- Data type: `UInt32`
+Identifier.
 
- Qualifiers: [id("3"), in]
+`EnforcePreference` Data type: `UInt32`
 
- Enforce preference. Possible values are:
+Qualifiers: [id("3"), in]
 
-|Value|Enforce preference|
-|-|-|
-|0|Immediate|
-|1|Non-Business Hours|
-|2|Admin Schedule|
+Enforce preference. Possible values are:
+
+| Value | Enforce preference |
+| --- | --- |
+| 0 | Immediate |
+| 1 | Non-Business Hours |
+| 2 | Admin Schedule |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

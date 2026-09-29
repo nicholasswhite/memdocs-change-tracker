@@ -1,16 +1,18 @@
 ---
 description: Learn how to use SMS_TaskSequence_Action class which serves as the abstract base class for all task sequence actions in Configuration Manager.
-title: SMS_TaskSequence_Action Class
-ms.date: 09/20/2016
+title: "SMS_TaskSequence_Action Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_Action Server WMI Class
+
 The `SMS_TaskSequence_Action` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as the abstract base class for all task sequence actions.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,73 +30,66 @@ Class SMS_TaskSequence_Action : SMS_TaskSequence_Step
 ```
 
 ## Methods
- The `SMS_TaskSequence_Action` class does not define any methods.
+
+The `SMS_TaskSequence_Action` class does not define any methods.
 
 ## Properties
- `Condition`
- Data type: `SMS_TaskSequence_Condition`
 
- Access type: Read/Write
+`Condition` Data type: `SMS_TaskSequence_Condition`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: None
 
- `ContinueOnError`
- Data type: `Boolean`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`ContinueOnError` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: None
 
- `Description`
- Data type: `String`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [AllowedLen("0-255")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: [AllowedLen("0-255")]
 
- `Enabled`
- Data type: `Boolean`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: None
 
- `Name`
- Data type: `String`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [AllowedLen("1-100")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Step Server WMI Class](../../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md).
+Qualifiers: [AllowedLen("1-100")]
 
- `SupportedEnvironment`
- Data type: `String`
+See [SMS_TaskSequence_Step Server WMI Class](sms_tasksequence_step-server-wmi-class.md).
 
- Access type: Read/Write
+`SupportedEnvironment` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- The environment required to run the task sequence action. Possible values are:
+Qualifiers: [Not_Null:ToInstance]
+
+The environment required to run the task sequence action. Possible values are:
 
 - WinPE
-
 - FullOS
-
 - WinPEandFullOS
 
   The default value is WinPEandFullOS.
 
-  `Timeout`
-  Data type: `UInt32`
+  `Timeout` Data type: `UInt32`
 
   Access type: Read/Write
 
@@ -103,13 +98,14 @@ Class SMS_TaskSequence_Action : SMS_TaskSequence_Step
   The user-specified timeout value, in seconds. If the step does not finish in the specified time period, the client execution engine explicitly terminates the step.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-  Configuration Manager supports a number of built-in action classes that are derived from `SMS_TaskSequence_Action` that represent operations available to the administrator in the Configuration Manager console. An example is [SMS_TaskSequence_ApplyDataImageAction Server WMI Class](../../../develop/reference/osd/sms_tasksequence_applydataimageaction-server-wmi-class.md).
+  Configuration Manager supports a number of built-in action classes that are derived from `SMS_TaskSequence_Action` that represent operations available to the administrator in the Configuration Manager console. An example is [SMS_TaskSequence_ApplyDataImageAction Server WMI Class](sms_tasksequence_applydataimageaction-server-wmi-class.md).
 
   By using the Operating System Deployment task sequence object model, your application can create and use task sequences that use the built-in actions. For more information, see About Operating System Deployment Task Sequences.
 
@@ -118,10 +114,12 @@ Class SMS_TaskSequence_Action : SMS_TaskSequence_Step
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See also
 

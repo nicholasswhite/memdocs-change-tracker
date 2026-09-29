@@ -1,16 +1,18 @@
 ---
 description: The SMS_PackageAccessByUsers WMI class is an SMS Provider server class, in Configuration Manager, that controls which users are granted access rights to a package folder or to distribution points.
-title: SMS_PackageAccessByUsers Class
-ms.date: 09/20/2016
+title: "SMS_PackageAccessByUsers Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PackageAccessByUsers Server WMI Class
+
 The `SMS_PackageAccessByUsers` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that controls which users are granted access rights to a package folder or to distribution points.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,59 +26,61 @@ Class SMS_PackageAccessByUsers : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_PackageAccessByUsers` class doesn't define any methods.
+
+The `SMS_PackageAccessByUsers` class doesn't define any methods.
 
 ## Properties
- `Access`
- Data type: `UInt32`
 
- Access type: Read/Write
+`Access` Data type: `UInt32`
 
- Qualifiers:
+Access type: Read/Write
 
- [bits]
+Qualifiers:
 
- Access rights for the user. Possible values are listed below. The default value is 0x65.
+[bits]
 
-|Value|Access right|
-|-|-|
-|0|READ|
-|1|WRITE|
-|2|EXECUTE|
-|3|CREATE|
-|4|DELETE|
-|5|VIEW_FOLDERS|
-|6|VIEW_FILES|
-|7|CHANGE_PERMISSIONS|
-|8|CHANGE_ATTRIBUTES|
+Access rights for the user. Possible values are listed below. The default value is 0x65.
 
- `PackageID`
- Data type: `String`
+| Value | Access right |
+| --- | --- |
+| 0 | READ |
+| 1 | WRITE |
+| 2 | EXECUTE |
+| 3 | CREATE |
+| 4 | DELETE |
+| 5 | VIEW_FOLDERS |
+| 6 | VIEW_FILES |
+| 7 | CHANGE_PERMISSIONS |
+| 8 | CHANGE_ATTRIBUTES |
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the package to which the privileges apply. The default value is "".
+Qualifiers: [key]
 
- `UserName`
- Data type: `String`
+ID of the package to which the privileges apply. The default value is "".
 
- Access type: Read/Write
+`UserName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- User name or group name in the network abstraction layer (NAL) path format. The default value is "". For more information about the NAL path format, see `PackNALPath`.
+Qualifiers: [key]
+
+User name or group name in the network abstraction layer (NAL) path format. The default value is "". For more information about the NAL path format, see `PackNALPath`.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- This class controls client access to package folders and distribution points by using Windows NT or Novell security.
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
+
+This class controls client access to package folders and distribution points by using Windows NT or Novell security.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

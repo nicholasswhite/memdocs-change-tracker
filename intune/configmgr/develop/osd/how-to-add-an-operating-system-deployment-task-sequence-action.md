@@ -1,36 +1,36 @@
 ---
-title: Add an OS Deployment Task Sequence Action
+title: "How to Add an Operating System Deployment Task Sequence Action"
 description: Add an OS deployment task sequence action to a task sequence by creating an instance of an SMS_TaskSequence_Action derived class, and then add it to the steps of the task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Add an Operating System Deployment Task Sequence Action
-An operating system deployment task sequence action is added to a task sequence, in Configuration Manager, by creating an instance of an [SMS_TaskSequence_Action](../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md) derived class and then adding it to the steps of the task sequence.
+
+An operating system deployment task sequence action is added to a task sequence, in Configuration Manager, by creating an instance of an [SMS_TaskSequence_Action](../reference/osd/sms_tasksequence_action-server-wmi-class.md) derived class and then adding it to the steps of the task sequence.
 
 > [!NOTE]
->  Configuration Manager has a number of built-in actions that you can use. For example the command-line action class is [SMS_TaskSequence_RunCommandLineAction](../../develop/reference/osd/sms_tasksequence_runcommandlineaction-server-wmi-class.md). These classes derive from the [SMS_TaskSequence_Action](../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md) class.
+>
+> Configuration Manager has a number of built-in actions that you can use. For example the command-line action class is [SMS_TaskSequence_RunCommandLineAction](../reference/osd/sms_tasksequence_runcommandlineaction-server-wmi-class.md). These classes derive from the [SMS_TaskSequence_Action](../reference/osd/sms_tasksequence_action-server-wmi-class.md) class.
 
- [SMS_TaskSequenceAction](../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md) derives from the  [SMS_TaskSequence_Step](../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md) class, which is the base class for both actions and groups. The task sequence stores its steps in an array of [SMS_TaskSequence_Step](../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md), thus allowing actions and groups to be stored together.
+[SMS_TaskSequenceAction](../reference/osd/sms_tasksequence_action-server-wmi-class.md) derives from the [SMS_TaskSequence_Step](../reference/osd/sms_tasksequence_step-server-wmi-class.md) class, which is the base class for both actions and groups. The task sequence stores its steps in an array of [SMS_TaskSequence_Step](../reference/osd/sms_tasksequence_step-server-wmi-class.md), thus allowing actions and groups to be stored together.
 
 ### To add a task sequence action
 
-1.  Set up a connection to the SMS Provider. For more information see, [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Create a task sequence ([SMS_TaskSequence](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)) object. For more information, see [How to Create an Operating System Deployment Task Sequence](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence.md).
-
-3.  Create an [SMS_TaskSequenceAction](../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md) derived class instance, for example, [SMS_TaskSequence_RunCommandLineAction](../../develop/reference/osd/sms_tasksequence_runcommandlineaction-server-wmi-class.md), for the action you want.
-
-4.  Populate the action as appropriate.
-
-5.  Add the action to the task sequences steps. This is stored the [SMS_TaskSequence](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)) class Steps property.
+1. Set up a connection to the SMS Provider. For more information see, [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Create a task sequence ([SMS_TaskSequence](../reference/osd/sms_tasksequence-server-wmi-class.md)) object. For more information, see [How to Create an Operating System Deployment Task Sequence](how-to-create-an-operating-system-deployment-task-sequence.md).
+3. Create an [SMS_TaskSequenceAction](../reference/osd/sms_tasksequence_action-server-wmi-class.md) derived class instance, for example, [SMS_TaskSequence_RunCommandLineAction](../reference/osd/sms_tasksequence_runcommandlineaction-server-wmi-class.md), for the action you want.
+4. Populate the action as appropriate.
+5. Add the action to the task sequences steps. This is stored the [SMS_TaskSequence](../reference/osd/sms_tasksequence-server-wmi-class.md)) class Steps property.
 
 ## Example
- The following example method creates a command-line action and adds it to the supplied task sequence.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method creates a command-line action and adds it to the supplied task sequence.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AddTaskSequenceActionCommandLine(connection, taskSequence, name, description)
@@ -96,45 +96,45 @@ public IResultObject AddTaskSequenceActionCommandLine(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`taskSequence`|-   Managed: `IResultObject`<br />-   VBScript: [SWbemObject](/windows/win32/wmisdk/swbemobject)|A valid task sequence.|
-|`Name`|-   Managed: `String`<br />-   VBScript: `String`|A name for the new action.|
-|`Description`|-   Managed: `String`<br />-   VBScript: `String`|A description for the action.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `taskSequence` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject) | A valid task sequence. |
+| `Name` | - Managed: `String` - VBScript: `String` | A name for the new action. |
+| `Description` | - Managed: `String` - VBScript: `String` | A description for the action. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Add a Condition to an Operating System Deployment Task Sequence Step](../../develop/osd/how-to-add-a-condition-to-an-operating-system-deployment-task-sequence-step.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager  by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [How to Create an Operating System Deployment Task Sequence Group](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence-group.md)
- [How to Delete an Operating System Deployment Task Sequence Action](../../develop/osd/how-to-delete-an-operating-system-deployment-task-sequence-action.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
+
+[Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Add a Condition to an Operating System Deployment Task Sequence Step](how-to-add-a-condition-to-an-operating-system-deployment-task-sequence-step.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [How to Create an Operating System Deployment Task Sequence Group](how-to-create-an-operating-system-deployment-task-sequence-group.md) [How to Delete an Operating System Deployment Task Sequence Action](how-to-delete-an-operating-system-deployment-task-sequence-action.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md)

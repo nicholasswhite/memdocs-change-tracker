@@ -1,16 +1,18 @@
 ---
-title: AddSource Method
-ms.date: 09/20/2016
+title: "AddSource Method in Class SMS_UserMachineRelationship"
+ms.date: "2016-09-20T00:00:00Z"
 description: In Configuration Manager, the AddSource Windows Management Instrumentation class method adds a source for the relationship between the user and the device.
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # AddSource Method in Class SMS_UserMachineRelationship
+
 The `AddSource` Windows Management Instrumentation (WMI) class method, in Configuration Manager, adds a source for the relationship between the user and the device.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -21,25 +23,29 @@ sint32 AddSource(
 ```
 
 #### Parameters
- `SourceId`
- Data type: `UInt32`
 
- Qualifiers: `[in]`
+`SourceId` Data type: `UInt32`
 
- Source object identifier for dependency.
+Qualifiers: `[in]`
+
+Source object identifier for dependency.
 
 ## Return Values
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Application Server WMI Class](../../../../../develop/reference/apps/sms_application-server-wmi-class.md)
+
+[SMS_Application Server WMI Class](../../../apps/sms_application-server-wmi-class.md)

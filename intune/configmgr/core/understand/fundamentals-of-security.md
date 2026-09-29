@@ -1,7 +1,7 @@
 ---
-title: Fundamentals of security
+title: "Fundamentals of security for Configuration Manager"
 description: Learn about the layers of security in Configuration Manager.
-ms.date: 04/15/2021
+ms.date: "2021-04-15T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection:
@@ -37,17 +37,11 @@ Security for Configuration Manager consists of the following layers:
 The first layer is provided by Windows security features for both the OS and the network. This layer includes the following components:
 
 - File sharing to transfer files between Configuration Manager components.
-
 - Access Control Lists (ACLs) to help secure files and registry keys.
-
 - Internet Protocol Security (IPsec) to help secure communications.
-
 - Group policy to set security policy.
-
 - Distributed Component Object Model (DCOM) permissions for distributed applications, like the Configuration Manager console.
-
 - Active Directory Domain Services to store security principals.
-
 - Windows account security, including some groups that Configuration Manager creates during setup.
 
 ### Network infrastructure
@@ -64,7 +58,7 @@ The next layer of security is based on access to the SMS Provider. The SMS Provi
 
 By default, access to the provider is restricted to members of the local **SMS Admins** group. This group at first contains only the user who installed Configuration Manager. To grant other accounts permission to the Common Information Model (CIM) repository and the SMS Provider, add the other accounts to the SMS Admins group.
 
-You can specify the minimum authentication level for administrators to access Configuration Manager sites. This feature enforces administrators to sign in to Windows with the required level. <!--1357013--> For more information, see [Plan for the SMS Provider](../plan-design/hierarchy/plan-for-the-sms-provider.md#authentication).
+You can specify the minimum authentication level for administrators to access Configuration Manager sites. This feature enforces administrators to sign in to Windows with the required level. For more information, see [Plan for the SMS Provider](../plan-design/hierarchy/plan-for-the-sms-provider.md#authentication).
 
 ### Site database permissions
 
@@ -89,7 +83,8 @@ Configuration Manager secures client communication to site system roles by using
 You can configure the site system roles to which clients connect for either HTTPS or HTTP client communication. Client computers always communicate by using the most secure method that's available. Client computers only fall back to using the less secure communication method if you have site systems roles that allow HTTP communication.
 
 > [!IMPORTANT]
-> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).<!-- 9390933,9572265 -->
+>
+> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).
 
 For more information, see [Plan for security](../plan-design/security/plan-for-security.md).
 

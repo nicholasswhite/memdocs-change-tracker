@@ -1,16 +1,18 @@
 ---
-title: MoveFolders Method
+title: "MoveFolders Method in Class SMS_ObjectContainerNode"
 description: Learn how the MoveFolders Windows Management (WMI) class method, in Configuration Manager, moves folders to another folder location.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # MoveFolders Method in Class SMS_ObjectContainerNode
+
 The `MoveFolders` Windows Management (WMI) class method, in Configuration Manager, moves folders to another folder location.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,32 +24,35 @@ SInt32 MoveFolders(
 ```
 
 #### Parameters
- `ContainerNodeIDs`
- Data type: `UInt32` Array
 
- Qualifiers: [in]
+`ContainerNodeIDs` Data type: `UInt32` Array
 
- IDs of the folders, or nodes, to move.
+Qualifiers: [in]
 
- `TargetContainerNodeID`
- Data type: `UInt32`
+IDs of the folders, or nodes, to move.
 
- Qualifiers: [in]
+`TargetContainerNodeID` Data type: `UInt32`
 
- The ID for the destination folder, or node.
+Qualifiers: [in]
+
+The ID for the destination folder, or node.
 
 ## Return Value
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ObjectContainerNode Server WMI Class](../../../../../develop/reference/core/servers/console/sms_objectcontainernode-server-wmi-class.md)
+
+[SMS_ObjectContainerNode Server WMI Class](sms_objectcontainernode-server-wmi-class.md)

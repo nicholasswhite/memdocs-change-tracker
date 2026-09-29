@@ -1,7 +1,7 @@
 ---
-title: Technical preview 2302
+title: "Features in Configuration Manager technical preview version 2302"
 description: Learn about new features available in the Configuration Manager technical preview branch version 2302.
-ms.date: 02/22/2023
+ms.date: "2023-02-22T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ROBOTS: NOINDEX
@@ -13,32 +13,34 @@ ms.service: configuration-manager
 
 *Applies to: Configuration Manager (technical preview branch)*
 
-This article introduces the features that are available in the technical preview for Configuration Manager, version 2302. Install this version to update and add new features to your technical preview site.<!-- baseline only statement: When you install a new technical preview site, this release is also available as a baseline version.-->
+This article introduces the features that are available in the technical preview for Configuration Manager, version 2302. Install this version to update and add new features to your technical preview site.
 
 Review the [technical preview](../technical-preview.md) article before installing this update. That article familiarizes you with the general requirements and limitations for using a technical preview, how to update between versions, and how to provide feedback.
 
 The following sections describe the new features to try out in this version:
 
-<!-- [!INCLUDE [Example feature name](includes/2201/1234567.md)] -->
+## Dark theme extended to delete secondary site wizard
 
-[!INCLUDE [Dark theme extended to delete secondary site wizard](includes/2302/15942599.md)]
-[!INCLUDE [Enable Windows features introduced via Windows servicing that are off by default](includes/2302/16834520.md)]
+The Configuration Manager console now extends the dark theme for the delete secondary site wizard. This wizard will also have a new look for the normal theme. This is part of the ongoing effort to make dark theme and overall admin console experience better.
 
-<!--## General known issues-->
-<!--16822959-->
-<!--Update to the default value of supersedence age in months for software updates.-->
+![Screenshot of dark theme for the delete secondary site wizard.](media/15942599-console-dark-theme.png)
 
-<!--Removing SUP role in Admin Console does not reset the supersedence age property in WMI. As a result, while reconfiguring the role, the previously configured value is shown in the configuration window. This property needs to be reset to default value on role removal.-->
-<!--  [!INCLUDE [11018755](includes/2112/known-issue-11018755.md)] -->
-<!--## Other Updates
-<!--15358429-->
-<!--Offset for recurring monthly maintenance window schedules.-->
-<!--Based upon your feedback, you can now offset monthly maintenance window schedules to better align deployments with the release of monthly security updates. For example, using a maximum offset of seven days after the second Tuesday of the month, sets the maintenance window for next Monday.-->
+To use the theme, select the arrow from the top left of the ribbon, then choose **Switch console theme**. Select **Switch console theme** again to return to the light theme.
+
+### Known issue
+
+Console restart is required on doing the theme switch, as the node navigation pane might not properly render when you move to a new workspace.
+
+## Enable Windows features introduced via Windows servicing that are off by default
+
+To learn more about the settings: “Enable Windows features introduced via Windows servicing that are off by default”, please read this [blog](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/commercial-control-for-continuous-innovation/ba-p/3737575). The post describes the Commercial control for continuous innovation in Windows. The setting for this policy is now integrated with the Configuration Manager 2302 Technical Preview. More information on the Commercial control timeline and versions of Windows 11 supported by the setting can be found in the blog.
+
+The Windows features that the policy will control will be released in later part of 2023. This ConfigMgr Technical Preview feature is for awareness and not for testing in February 2023.
+
+[![Screenshot of setting properties. It displays the behavior of software updates enable windows features settings.](media/16834520-wincom-servicing.png)](media/16834520-wincom-servicing.png#lightbox)
 
 ## Next steps
 
 For more information about installing or updating the technical preview branch, see [Technical preview](../technical-preview.md).
 
 For more information about the different branches of Configuration Manager, see [Which branch of Configuration Manager should I use?](../../understand/which-branch-should-i-use.md).
-
-

@@ -1,7 +1,7 @@
 ---
-title: Introduction to certificate profiles
+title: "Introduction to certificate profiles in Configuration Manager"
 description: Learn how certificate profiles in Configuration Manager work with Active Directory Certificate Services.
-ms.date: 03/29/2022
+ms.date: "2022-03-29T00:00:00Z"
 ms.subservice: protect
 ms.topic: article
 ms.collection: tier3
@@ -13,7 +13,8 @@ ms.service: configuration-manager
 *Applies to: Configuration Manager (current branch)*
 
 > [!IMPORTANT]
-> Starting in version 2203, this company resource access feature is no longer supported.<!-- 9315387 --> For more information, see [Frequently asked questions about resource access deprecation](../plan-design/resource-access-deprecation-faq.yml).
+>
+> Starting in version 2203, this company resource access feature is no longer supported. For more information, see [Frequently asked questions about resource access deprecation](../plan-design/resource-access-deprecation-faq.yml).
 
 Certificate profiles work with Active Directory Certificate Services and the Network Device Enrollment Service (NDES) role. Create and deploy authentication certificates for managed devices so that users can easily access organizational resources. For example, you can create and deploy certificate profiles to provide the necessary certificates for users to connect to VPN and wireless connections.
 
@@ -22,9 +23,7 @@ Certificate profiles can automatically configure user devices for access to orga
 Certificate profiles provide the following management capabilities:
 
 - Certificate enrollment and renewal from a certification authority (CA) for devices that run different OS types and versions. These certificates can then be used for Wi-Fi and VPN connections.
-
 - Deployment of trusted root CA certificates and intermediate CA certificates. These certificates configure a chain of trust on devices for VPN and Wi-Fi connections when server authentication is required.
-
 - Monitor and report about the installed certificates.
 
 **Example 1**: All employees need to connect to Wi-Fi hotspots in multiple office locations. To enable easy user connection, first deploy the certificates needed to connect to Wi-Fi. Then deploy Wi-Fi profiles that reference the certificate.
@@ -36,40 +35,37 @@ Certificate profiles provide the following management capabilities:
 There are three types of certificate profiles:
 
 - **Trusted CA certificate**: Deploy a trusted root CA or intermediate CA certificate. These certificates form a chain of trust when the device must authenticate a server.
-
 - **Simple Certificate Enrollment Protocol (SCEP)**: Request a certificate for a device or user by using the SCEP protocol. This type requires the Network Device Enrollment Service (NDES) role on a server running Windows Server 2012 R2 or later.
 
-    To create a **Simple Certificate Enrollment Protocol (SCEP)** certificate profile, first create a **Trusted CA certificate** profile.
-
-- **Personal information exchange (.pfx)**: Request a .pfx (also known as PKCS #12) certificate for a device or user.<!--1321368--> There are two methods to create PFX certificate profiles:
+  To create a **Simple Certificate Enrollment Protocol (SCEP)** certificate profile, first create a **Trusted CA certificate** profile.
+- **Personal information exchange (.pfx)**: Request a .pfx (also known as PKCS #12) certificate for a device or user. There are two methods to create PFX certificate profiles:
 
   - [Import credentials](../../mdm/deploy-use/import-pfx-certificate-profiles.md) from existing certificates
   - [Define a certificate](../../mdm/deploy-use/create-pfx-certificate-profiles.md) authority to process requests
 
-  > [!Note]
-  > Configuration Manager doesn't enable this optional feature by default. You must enable this feature before using it. For more information, see [Enable optional features from updates](../../core/servers/manage/optional-features.md).<!--505213-->
+  > [!NOTE]
+  >
+  > Configuration Manager doesn't enable this optional feature by default. You must enable this feature before using it. For more information, see [Enable optional features from updates](../../core/servers/manage/optional-features.md).
 
   You can use Microsoft or Entrust as certificate authorities for **Personal information exchange (.pfx)** certificates.
 
 ## Requirements
 
-To deploy certificate profiles that use SCEP, install the certificate registration point on a site system server. Also install a policy module for NDES, the Configuration Manager Policy Module, on a server that runs Windows Server 2012 R2 or later. This server requires the Active Directory Certificate Services role. It also requires a working NDES that's accessible to the devices that require the certificates. If your devices need to enroll for certificates from the internet, then your NDES server must be accessible from the internet. For example, to safely enable traffic to the NDES server from the internet, you can use [Azure Application Proxy](/entra/identity/app-proxy/).
+To deploy certificate profiles that use SCEP, install the certificate registration point on a site system server. Also install a policy module for NDES, the Configuration Manager Policy Module, on a server that runs Windows Server 2012 R2 or later. This server requires the Active Directory Certificate Services role. It also requires a working NDES that's accessible to the devices that require the certificates. If your devices need to enroll for certificates from the internet, then your NDES server must be accessible from the internet. For example, to safely enable traffic to the NDES server from the internet, you can use [Azure Application Proxy](https://learn.microsoft.com/en-us/entra/identity/app-proxy/).
 
 PFX certificates also require a certificate registration point. Also specify the certificate authority (CA) for the certificate and the relevant access credentials. You can specify either Microsoft or Entrust as certificate authorities.
 
-For more information about how NDES supports a policy module so that Configuration Manager can deploy certificates, see [Using a Policy Module with the Network Device Enrollment Service](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn473016\(v=ws.11\)).
+For more information about how NDES supports a policy module so that Configuration Manager can deploy certificates, see [Using a Policy Module with the Network Device Enrollment Service](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn473016(v=ws.11)).
 
 Depending on the requirements, Configuration Manager supports deploying certificates to different certificate stores on various device types and operating systems. The following devices and operating systems are supported:
 
 - Windows 10
-
 - Windows 10 Mobile
-
 - Windows 8.1
-
 - Windows Phone 8.1
 
 > [!NOTE]
+>
 > Use Configuration Manager on-premises MDM to manage Windows Phone 8.1 and Windows 10 Mobile. For more information, see [On-premises MDM](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).
 
 A typical scenario for Configuration Manager is to install trusted root CA certificates to authenticate Wi-Fi and VPN servers. Typical connections use the following protocols:
@@ -98,12 +94,12 @@ You can monitor certificate profile deployments by viewing compliance results or
 Configuration Manager automatically revokes user and computer certificates that were deployed by using certificate profiles in the following circumstances:
 
 - The device is retired from Configuration Manager management.
-
 - The device is blocked from the Configuration Manager hierarchy.
 
 To revoke the certificates, the site server sends a revocation command to the issuing certification authority. The reason for the revocation is **Cease of Operation**.
 
 > [!NOTE]
+>
 > To properly revoke a certificate, the computer account for the top-level site in the hierarchy needs the permission to **issue and manage certificates** on the CA.
 >
 > For improved security, you can also restrict CA managers on the CA. Then only give this account permissions on the specific certificate template that you use for the SCEP profiles on the site.
@@ -111,5 +107,4 @@ To revoke the certificates, the site server sends a revocation command to the is
 ## Next steps
 
 - [Create certificate profiles](create-certificate-profiles.md)
-
 - [Configure certificate infrastructure](certificate-infrastructure.md)

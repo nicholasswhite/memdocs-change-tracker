@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_ADDomain class which contains Active Directory domains discovered by Configuration Manager Forest Discovery.
-title: SMS_ADDomain Class
-ms.date: 09/20/2016
+title: "SMS_ADDomain Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ADDomain Server WMI Class
+
 The `SMS_ADDomain` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains Active Directory domains discovered by Configuration Manager Forest Discovery.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,75 +29,73 @@ Class SMS_ADDomain : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ADDomain` class does not define any methods.
+
+The `SMS_ADDomain` class does not define any methods.
 
 ## Properties
- `DomainID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`DomainID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the Active Directory domain.
+Qualifiers: [key]
 
- `DomainMode`
- Data type: `String`
+Identifier of the Active Directory domain.
 
- Access type: Read-only
+`DomainMode` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The functional level of the Active Directory forest.
+Qualifiers: [read]
 
-|Forest Functional Level|
-|-----------------------------|
-|Windows 2000|
-|Windows Server 2003 interim|
-|Windows Server 2003|
-|Windows Server 2008|
-|Windows Server 2008 R2|
+The functional level of the Active Directory forest.
 
- `DomainName`
- Data type: `String`
+| Forest Functional Level |
+| --- |
+| Windows 2000 |
+| Windows Server 2003 interim |
+| Windows Server 2003 |
+| Windows Server 2008 |
+| Windows Server 2008 R2 |
 
- Access type: Read-only
+`DomainName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the Active Directory domain.
+Qualifiers: [read]
 
- `Flags`
- Data type: `UInt32`
+The name of the Active Directory domain.
 
- Access type: Read-only
+`Flags` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Flags.
+Qualifiers: [read]
 
- `ForestID`
- Data type: `UInt32`
+Flags.
 
- Access type: Read/Write
+`ForestID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The identifier of Active Directory forest.
+Qualifiers: [key]
 
- `LastDiscoveryTime`
- Data type: `DateTime`
+The identifier of Active Directory forest.
 
- Access type: Read-only
+`LastDiscoveryTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The last time this domain was discovered by Active Directory forest discovery.
+Qualifiers: [read]
+
+The last time this domain was discovered by Active Directory forest discovery.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

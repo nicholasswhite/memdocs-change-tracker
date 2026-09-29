@@ -1,13 +1,15 @@
 ---
-title: "ICIINFO::GetProperty"
+title: "ICIINFO::GetProperty Method"
 description: Learn how the ICIINFO::GetProperty method, in Configuration Manager, gets a named property value from the configuration item.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ICIINFO::GetProperty Method
+
 The `ICIINFO::GetProperty` method, in Configuration Manager, gets a named property value from the configuration item.
 
 ## Syntax
@@ -22,40 +24,41 @@ HRESULT GetProperty(
 ```
 
 #### Parameters
- `pLanguageId`
- Data type: `LanguageId`
 
- Qualifiers: [in, out]
+`pLanguageId` Data type: `LanguageId`
 
- Pointer to the language ID that is used to obtain the property. If there's no localized name for this ID, the method attempts to obtain the language-independent version of the property. If this doesn't exist, the method returns an error. On successful return from the method, this parameter indicates the language ID for the property retrieved.
+Qualifiers: [in, out]
 
- `pszPropName`
- Data type: `LPCWSTR`
+Pointer to the language ID that is used to obtain the property. If there's no localized name for this ID, the method attempts to obtain the language-independent version of the property. If this doesn't exist, the method returns an error. On successful return from the method, this parameter indicates the language ID for the property retrieved.
 
- Qualifiers: [in]
+`pszPropName` Data type: `LPCWSTR`
 
- Pointer to a null-terminated string specifying the name of the property.
+Qualifiers: [in]
 
- `ppszPropValue`
- Data type: `LPWSTR`
+Pointer to a null-terminated string specifying the name of the property.
 
- Qualifiers: [out]
+`ppszPropValue` Data type: `LPWSTR`
 
- Pointer to a null-terminated string specifying the property value.
+Qualifiers: [out]
+
+Pointer to a null-terminated string specifying the property value.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- S_OK
- The method succeeded. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S_OK The method succeeded. All other return values indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [ICIINFO Interface](../../../../../develop/reference/core/clients/client-classes/iciinfo-interface.md)
+
+[ICIINFO Interface](iciinfo-interface.md)

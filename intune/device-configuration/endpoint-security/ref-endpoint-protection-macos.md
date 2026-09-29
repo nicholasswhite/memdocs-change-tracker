@@ -1,7 +1,7 @@
 ---
-title: Configure endpoint protection on macOS devices with Microsoft Intune
+title: "macOS endpoint protection settings in Intune"
 description: Use Intune to configure macOS devices use the built-in firewall to allow or block specific apps or to use stealth mode, to use Gatekeeper to determine where apps install, and to use FileVault disk encryption.
-ms.date: 10/25/2024
+ms.date: "2024-10-25T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mattcall
 ms.collection:
@@ -13,21 +13,24 @@ ms.collection:
 # macOS endpoint protection settings in Intune
 
 > [!IMPORTANT]
-> The macOS endpoint protection template has been deprecated. Existing policies remain unchanged, but you can no longer create new policies using this template. > Instead, use one of the following options:
-> - Use Endpoint security policies like [disk encryption](./disk-encryption.md) for Filevault, or [Firewall](./firewall.md) policy.
+>
+> The macOS endpoint protection template has been deprecated. Existing policies remain unchanged, but you can no longer create new policies using this template. &gt; Instead, use one of the following options:
+>
+> - Use Endpoint security policies like [disk encryption](disk-encryption.md) for Filevault, or [Firewall](firewall.md) policy.
 > - Use the Settings catalog to create new configuration policies for FileVault, Firewall, and System Policy Control (Gatekeeper) payloads. For more information, see [macOS settings catalog](../settings-catalog/index.md).
 
-This article shows you the endpoint protection settings that you can configure for devices that run macOS. You configure these settings by using a macOS device configuration profile for [endpoint protection](./configure-endpoint-protection.md) in Intune.
+This article shows you the endpoint protection settings that you can configure for devices that run macOS. You configure these settings by using a macOS device configuration profile for [endpoint protection](configure-endpoint-protection.md) in Intune.
 
 ## Before you begin
 
-[Create a macOS endpoint protection profile](./configure-endpoint-protection.md).
+[Create a macOS endpoint protection profile](configure-endpoint-protection.md).
 
 ## FileVault
 
 For more information about Apple FileVault settings, see [FDEFileVault](https://developer.apple.com/documentation/devicemanagement/fdefilevault) in the Apple developer content.
 
 > [!IMPORTANT]
+>
 > As of macOS 10.15, FileVault configuration requires user approved MDM enrollment.
 
 - **Enable FileVault**
@@ -42,33 +45,30 @@ For more information about Apple FileVault settings, see [FDEFileVault](https://
   - **Escrow location description of personal recovery key**
 
     Specify a short message to the user that explains how and where they can retrieve their personal recovery key. This text is inserted into the message the user sees on their sign-in screen when prompted to enter their personal recovery key if a password is forgotten.
-
   - **Personal recovery key rotation**
 
     Specify how frequently the personal recovery key for a device will rotate. You can select the default of **Not configured**, or a value of **1** to **12** months.
-
   - **Hide recovery key**
 
     Choose to hide the personal key from a device user during FileVault 2 encryption.
 
-    - **Not configured**  (*default*) – The personal key is visible to the device user during encryption.
+    - **Not configured** (*default*) – The personal key is visible to the device user during encryption.
     - **Yes** - The personal key is hidden from the device user during encryption.
 
     After encryption, device users can view their personal recovery key for an encrypted macOS device from the following locations:
+
     - iOS/iPadOS company portal app
     - Intune app
     - company portal website
     - Android company portal app
 
     To view the key, from the app or website, go to device details of the encrypted macOS device and select *get recovery key*.
-
   - **Disable prompt at sign out**
 
-    Prevent the prompt to the user that requests they enable FileVault when they sign out.  When set to Disable, the prompt at sign-out is disabled and instead, the user is prompted when they sign in.
+    Prevent the prompt to the user that requests they enable FileVault when they sign out. When set to Disable, the prompt at sign-out is disabled and instead, the user is prompted when they sign in.
 
     - **Not configured** (*default*)
     - **Yes** - Disable the prompt at sign-out.
-
   - **Number of times allowed to bypass**
 
     Set the number of times a user can ignore prompts to enable FileVault before FileVault is required for the user to sign in.
@@ -91,7 +91,6 @@ Use the firewall to control connections per-application, rather than per-port. U
 
   - **Not configured** (*default*)
   - **Yes**
-
 - **Block all incoming connections**
 
   Block all incoming connections except the connections required for basic Internet services, such as DHCP, Bonjour, and IPSec. This feature also blocks all sharing services, such as File Sharing and Screen Sharing. If you're using sharing services, then keep this setting as *Not configured*.
@@ -110,7 +109,6 @@ Use the firewall to control connections per-application, rather than per-port. U
     - Use the Terminal app and AppleScript: `osascript -e 'id of app "AppName"`.
     - Apple's web site has a list of [built-in Apple apps](https://support.apple.com/HT211833).
     - For apps added to Intune, [you can use the Intune admin center](../../app-management/collect-bundle-ids.md).
-
   - **Add store app**: Select a store app you previously added in Intune. For more information, see [Add apps to Microsoft Intune](../../app-management/deployment/index.md).
 
   **Apps blocked**: Configure a list of apps that have incoming connections blocked.
@@ -122,9 +120,7 @@ Use the firewall to control connections per-application, rather than per-port. U
     - Use the Terminal app and AppleScript: `osascript -e 'id of app "AppName"`.
     - Apple's web site has a list of [built-in Apple apps](https://support.apple.com/HT211833).
     - For apps added to Intune, [you can use the Intune admin center](../../app-management/collect-bundle-ids.md).
-
   - **Add store app**: Select a store app you previously added in Intune. For more information, see [Add apps to Microsoft Intune](../../app-management/deployment/index.md).
-
 - **Enable stealth mode**
 
   To prevent the computer from responding to probing requests, enable stealth mode. The device continues to answer incoming requests for authorized apps. Unexpected requests, such as ICMP (ping), are ignored.
@@ -142,7 +138,6 @@ Use the firewall to control connections per-application, rather than per-port. U
   - **Mac App Store**
   - **Mac App Store and identified developers**
   - **Anywhere**
-
 - **Do not allow user to override Gatekeeper**
 
   Prevents users from overriding the Gatekeeper setting, and prevents users from Control-clicking to install an app. When enabled, users can't Control-click any app to install it.
@@ -154,4 +149,4 @@ Use the firewall to control connections per-application, rather than per-port. U
 
 [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
 
-You can also [configure endpoint protection for Windows](./ref-endpoint-protection-settings-windows.md).
+You can also [configure endpoint protection for Windows](ref-endpoint-protection-settings-windows.md).

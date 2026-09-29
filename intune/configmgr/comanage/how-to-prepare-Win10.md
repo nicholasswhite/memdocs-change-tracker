@@ -1,7 +1,7 @@
 ---
-title: Co-manage internet-based devices
+title: "How to prepare internet-based devices for co-management"
 description: Learn how to prepare your Windows internet-based devices for co-management.
-ms.date: 12/16/2024
+ms.date: "2024-12-16T00:00:00Z"
 ms.topic: how-to
 ms.subservice: co-management
 ms.collection: tier3
@@ -19,38 +19,36 @@ For new Windows devices, use the Windows Autopilot service to configure the out 
 For more information, see [How to enroll with Windows Autopilot](autopilot-enrollment.md).
 
 > [!NOTE]
+>
 > As we talk with our customers that are using Microsoft Intune to deploy, manage, and secure their client devices, we often get questions regarding co-managing devices and Microsoft Entra hybrid joined devices. Many customers confuse these two topics. Co-management is a management option, while Microsoft Entra ID is an identity option. For more information, see [Understanding hybrid Microsoft Entra ID and co-management scenarios](https://techcommunity.microsoft.com/t5/microsoft-endpoint-manager-blog/understanding-hybrid-azure-ad-join-and-co-management/ba-p/2221201). This blog post aims to clarify Microsoft Entra hybrid join and co-management, how they work together, but aren't the same thing.
 >
-> You can't deploy the Configuration Manager client while provisioning a new computer in Windows Autopilot user-driven mode for Microsoft Entra hybrid join. This limitation is due to the identity change of the device during the Microsoft Entra hybrid join process. Deploy the Configuration Manager client after the Windows Autopilot process.<!-- CMADO-10205503 --> For alternative options to install the client, see [Client installation methods in Configuration Manager](../core/clients/deploy/plan/client-installation-methods.md).
+> You can't deploy the Configuration Manager client while provisioning a new computer in Windows Autopilot user-driven mode for Microsoft Entra hybrid join. This limitation is due to the identity change of the device during the Microsoft Entra hybrid join process. Deploy the Configuration Manager client after the Windows Autopilot process. For alternative options to install the client, see [Client installation methods in Configuration Manager](../core/clients/deploy/plan/client-installation-methods.md).
 
 ### Gather information from Configuration Manager
 
 Use Configuration Manager to collect and report the device information required by Intune. This information includes the device serial number, Windows product identifier, and a hardware identifier. It's used to register the device in Intune to support Windows Autopilot.
 
 1. In the Configuration Manager console, go to the **Monitoring** workspace, expand the **Reporting** node, expand **Reports**, and select the **Hardware - General** node.
-
 2. Run the report, **Windows Autopilot Device Information**, and view the results.
-
 3. In the report viewer, select the **Export** icon, and choose the **CSV (comma-delimited)** option.
-
 4. After saving the file, upload the data to Intune.
 
-For more information, see [Manually register devices with Windows Autopilot](/autopilot/add-devices).
+For more information, see [Manually register devices with Windows Autopilot](../../../autopilot/add-devices.md).
 
 ### Windows Autopilot for existing devices
-<!--1358333-->
 
-*Windows Autopilot for existing devices* allows you to reimage and provision a Windows devices for [Windows Autopilot user-driven mode](/autopilot/user-driven) using a single, native Configuration Manager task sequence.
+*Windows Autopilot for existing devices* allows you to reimage and provision a Windows devices for [Windows Autopilot user-driven mode](../../../autopilot/user-driven.md) using a single, native Configuration Manager task sequence.
 
-For more information, see [Windows Autopilot for existing devices](/autopilot/existing-devices).
+For more information, see [Windows Autopilot for existing devices](../../../autopilot/existing-devices.md).
 
 ## Install the Configuration Manager client
 
-You no longer need to create and assign an Intune app to install the Configuration Manager client. The Intune enrollment policy automatically installs the Configuration Manager client as a first-party app. The device gets the client content from the Configuration Manager cloud management gateway (CMG), so you don't need to provide and manage the client content in Intune. For more information, see [How to enroll with Windows Autopilot](autopilot-enrollment.md).<!-- Intune 11300628 -->
+You no longer need to create and assign an Intune app to install the Configuration Manager client. The Intune enrollment policy automatically installs the Configuration Manager client as a first-party app. The device gets the client content from the Configuration Manager cloud management gateway (CMG), so you don't need to provide and manage the client content in Intune. For more information, see [How to enroll with Windows Autopilot](autopilot-enrollment.md).
 
 You do still specify the Configuration Manager client command-line parameters in Intune.
 
 > [!NOTE]
+>
 > Make sure that the devices trust the CMG server authentication certificate. For more information, see [CMG server authentication certificate](../core/clients/manage/cmg/server-auth-cert.md). If a device doesn't trust the CMG server authentication certificate, you'll see a WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CA error in the ccmsetup.log on the client.
 
 ### Get the command line from Configuration Manager
@@ -58,42 +56,33 @@ You do still specify the Configuration Manager client command-line parameters in
 1. In the Configuration Manager console, go to the **Administration** workspace, expand **Cloud Services**, and select the **Cloud Attach** node.
 
    > [!TIP]
+   >
    > For version 2103 and earlier, select the **Co-management** node.
+2. Select the co-management object, and then choose **Properties** in the ribbon.
+3. On the **Enablement** tab, copy the command line. Paste it into Notepad to save for the next process. The command line only shows if you've met all of the prerequisites, such as a cloud management gateway.
 
-1. Select the co-management object, and then choose **Properties** in the ribbon.
+The following command line is an example: `CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSITECODE=ABC"`
 
-1. On the **Enablement** tab, copy the command line. Paste it into Notepad to save for the next process. The command line only shows if you've met all of the prerequisites, such as a cloud management gateway.<!-- MEMDocs#635 -->
-
-The following command line is an example:
-`CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSITECODE=ABC"`
-
-<!--1358215-->
 Decide which command-line properties you require for your environment:
 
 - The following command-line properties are required in all scenarios:
 
   - `CCMHOSTNAME`
-
   - `SMSSITECODE`
-
-- If devices use Microsoft Entra ID for client authentication and also have a PKI-based client authentication certificate, specify the following properties to use Microsoft Entra ID:<!-- MEMDocs#1483 -->
+- If devices use Microsoft Entra ID for client authentication and also have a PKI-based client authentication certificate, specify the following properties to use Microsoft Entra ID:
 
   - `AADCLIENTAPPID`
-
   - `AADRESOURCEURI`
-
 - If the client roams back to the intranet, use the `SMSMP` property.
-
 - If you use your own PKI certificate, and your CRL isn't published to the internet, use the `/NoCRLCheck` parameter. For more information, see [About client installation properties: /NoCRLCheck](../core/clients/deploy/about-client-installation-properties.md#nocrlcheck).
 
   > [!IMPORTANT]
-  > Microsoft recommends publishing the CRL. For more information, see [Planning for CRLs](../core/plan-design/security/plan-for-certificates.md#pki-certificate-revocation).<!-- memdocs#1942 -->
-
+  >
+  > Microsoft recommends publishing the CRL. For more information, see [Planning for CRLs](../core/plan-design/security/plan-for-certificates.md#pki-certificate-revocation).
 - To bootstrap a task sequence immediately after client registration, use the `PROVISIONTS` property. For more information, see [About client installation properties: PROVISIONTS](../core/clients/deploy/about-client-installation-properties.md#provisionts).
+- To make sure that internet-based devices get the latest version of the Configuration Manager client, use the `UPGRADETOLATEST` property. For more information, see [About client installation properties: `UPGRADETOLATEST`](../core/clients/deploy/about-client-installation-properties.md#upgradetolatest).
 
-- To make sure that internet-based devices get the latest version of the Configuration Manager client, use the `UPGRADETOLATEST` property. For more information, see [About client installation properties: `UPGRADETOLATEST`](../core/clients/deploy/about-client-installation-properties.md#upgradetolatest).<!-- Intune 13745717 -->
-
-The site publishes other Microsoft Entra information to the cloud management gateway (CMG). A Microsoft Entra joined client gets this information from the CMG during the ccmsetup process, using the same tenant to which it's joined. This behavior further simplifies enrolling devices to co-management in an environment with more than one Microsoft Entra tenant. The only two required ccmsetup properties are `CCMHOSTNAME` and `SMSSITECODE`.<!--3607731-->
+The site publishes other Microsoft Entra information to the cloud management gateway (CMG). A Microsoft Entra joined client gets this information from the CMG during the ccmsetup process, using the same tenant to which it's joined. This behavior further simplifies enrolling devices to co-management in an environment with more than one Microsoft Entra tenant. The only two required ccmsetup properties are `CCMHOSTNAME` and `SMSSITECODE`.
 
 The following example includes all of these properties:
 
@@ -102,6 +91,7 @@ The following example includes all of these properties:
 For more information, see [Client installation properties](../core/clients/deploy/about-client-installation-properties.md).
 
 > [!IMPORTANT]
+>
 > If you customize this command line, make sure it isn't more than 1024 characters long. When the command line length is greater than 1024 characters, the client installation fails.
 
 ## Next steps

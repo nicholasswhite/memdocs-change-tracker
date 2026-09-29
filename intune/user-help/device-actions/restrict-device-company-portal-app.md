@@ -1,7 +1,7 @@
 ---
-title: Remotely lock device in Intune Company Portal app for Windows
+title: "Lock your device from the Company Portal app for Windows"
 description: Remotely lock a lost or stolen Android, iOS, or macOS device from the Company Portal app for Windows.
-ms.date: 11/08/2024
+ms.date: "2024-11-08T00:00:00Z"
 ms.reviewer: jieyan
 ---
 
@@ -13,18 +13,19 @@ Remotely lock a lost or stolen device from the Company Portal app for Windows. T
 
 Remote lock is supported on devices running:
 
-* Android
-* iOS
+- Android
+- iOS
 
 ## Remote lock device
+
 Complete the following steps to lock a missing device from the Company Portal app.
 
 1. Sign in to the Intune Company Portal app for Windows.
-1. Go to **Devices**.
-1. Select the device that you want to lock.
-1. Choose **Actions**, and then select **Remote lock**.
-1. Select **Lock** to confirm that you want to lock the device. The app tries to lock your device, and then redirects you to **Home**.
-1. Should you find your device, enter your passcode to unlock it.
+2. Go to **Devices**.
+3. Select the device that you want to lock.
+4. Choose **Actions**, and then select **Remote lock**.
+5. Select **Lock** to confirm that you want to lock the device. The app tries to lock your device, and then redirects you to **Home**.
+6. Should you find your device, enter your passcode to unlock it.
 
 ## Next steps
 

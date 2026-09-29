@@ -1,16 +1,18 @@
 ---
-title: CCM_Scheduler_History Class
+title: "CCM_Scheduler_History Client WMI Class"
 description: A client Windows Management Instrumentation class that represents the history for a schedule.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Scheduler_History Client WMI Class
+
 In Configuration Manager, the `CCM_Scheduler_History` class is a client Windows Management Instrumentation (WMI) class that represents the history for a schedule.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,94 +31,89 @@ Class CCM_Scheduler_History {
 ```
 
 ## Properties
- `ScheduleID`
- Data type: `String`
 
- Access type: Read-only
+`ScheduleID` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance, Key]
+Access type: Read-only
 
- ID of the schedule to which this history item refers.
+Qualifiers: [Not_Null:ToInstance, Key]
 
- `UserSID`
- Data type: `String`
+ID of the schedule to which this history item refers.
 
- Access type: Read-only
+`UserSID` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance, Key]
+Access type: Read-only
 
- User owning the schedule.
+Qualifiers: [Not_Null:ToInstance, Key]
 
- `FirstEvalTime`
- Data type: `DateTime`
+User owning the schedule.
 
- Access type: Read-only
+`FirstEvalTime` Data type: `DateTime`
 
- Qualifiers: [Not_Null:ToInstance, Key]
+Access type: Read-only
 
- Date and time when the schedule was first evaluated by the scheduler.
+Qualifiers: [Not_Null:ToInstance, Key]
 
- `ActivationMessageSent`
- Data type: `DateTime`
+Date and time when the schedule was first evaluated by the scheduler.
 
- Access type: Read-only
+`ActivationMessageSent` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read-only
 
- Last time the activation message was sent for the schedule.
+Qualifiers: None
 
- `ActivationMessageSentIsGMT`
- Data type: `Boolean`
+Last time the activation message was sent for the schedule.
 
- Access type: Read-only
+`ActivationMessageSentIsGMT` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if the time indicated by `ActivationMessageSent` is in Universal Coordinated Time (UTC).
+Qualifiers: None
 
- `ExpirationMessageSent`
- Data type: `DateTime`
+`true` if the time indicated by `ActivationMessageSent` is in Universal Coordinated Time (UTC).
 
- Access type: Read-only
+`ExpirationMessageSent` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read-only
 
- Last date and time when the expiration message was sent for the schedule.
+Qualifiers: None
 
- `ExpirationMessageSentIsGMT`
- Data type: `Boolean`
+Last date and time when the expiration message was sent for the schedule.
 
- Access type: Read-only
+`ExpirationMessageSentIsGMT` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if the time indicated by `ExpirationMessageSent` is in Universal Coordinated Time (UTC).
+Qualifiers: None
 
- `LastTriggerTime`
- Data type: `DateTime`
+`true` if the time indicated by `ExpirationMessageSent` is in Universal Coordinated Time (UTC).
 
- Access type: Read-only
+`LastTriggerTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read-only
 
- Last date and time when a trigger on the schedule fired. A NULL value indicates that a trigger has not yet fired on the schedule.
+Qualifiers: None
 
- `TriggerState`
- Data type: `String`
+Last date and time when a trigger on the schedule fired. A NULL value indicates that a trigger has not yet fired on the schedule.
 
- Access type: Read-only
+`TriggerState` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- State information that individual triggers can set and query.
+Qualifiers: None
+
+State information that individual triggers can set and query.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Scheduling Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/scheduling-client-wmi-classes.md)
+
+[Scheduling Client WMI Classes](scheduling-client-wmi-classes.md)

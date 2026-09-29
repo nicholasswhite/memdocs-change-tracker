@@ -1,7 +1,7 @@
 ---
-title: Upgrade to current branch
+title: "Upgrade to Configuration Manager current branch"
 description: Learn the steps for running a successful in-place upgrade from a site and hierarchy that runs System Center 2012 Configuration Manager.
-ms.date: 04/11/2022
+ms.date: "2022-04-11T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -13,11 +13,13 @@ ms.service: configuration-manager
 *Applies to: Configuration Manager (current branch)*
 
 > [!IMPORTANT]
-> Starting in April 2022, this feature of Configuration Manager is [deprecated](../../../plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).<!-- 13846745 --> The baseline media for version 2203 is the last version of Configuration Manager current branch that will support upgrade from any version of System Center 2012 Configuration Manager. Current branch version 2303 media will only support new installs of current branch.
+>
+> Starting in April 2022, this feature of Configuration Manager is [deprecated](../../../plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md). The baseline media for version 2203 is the last version of Configuration Manager current branch that will support upgrade from any version of System Center 2012 Configuration Manager. Current branch version 2303 media will only support new installs of current branch.
 
 Do an in-place upgrade to Configuration Manager current branch from a site and hierarchy that runs System Center 2012 Configuration Manager. Before upgrading from System Center 2012 Configuration Manager, you must prepare the sites. This preparation requires you to remove specific configurations that can prevent a successful upgrade. Then follow the upgrade sequence when more than a single site is involved.
 
 > [!TIP]
+>
 > When managing Configuration Manager site and hierarchy infrastructure, the terms *upgrade*, *update*, and *install* are used to describe three separate concepts. To learn how each term is used, see [About upgrade, update, and install](../../../understand/upgrade-update-install.md).
 
 ## In-place upgrade paths
@@ -34,18 +36,19 @@ You can upgrade the following products to a *fully licensed*, baseline version o
 For more information, see [Frequently asked questions for Configuration Manager branches and licensing](../../../understand/product-and-licensing-faq.yml).
 
 > [!TIP]
+>
 > When you upgrade from a System Center 2012 Configuration Manager version to current branch, you might be able to streamline your upgrade process. For more information, see the following:
 >
 > - [Baseline and update versions](../../manage/updates.md#bkmk_Baselines)
 > - [The CD.Latest folder](../../manage/the-cd.latest-folder.md)
 
-If you previously installed Configuration Manager _Evaluation_ version, you can use the upgrade process to convert the site to the full version. For more information, see [Upgrade an evaluation installation of Configuration Manager to a full installation](upgrade-an-evaluation-install-to-a-full-install.md).
+If you previously installed Configuration Manager *Evaluation* version, you can use the upgrade process to convert the site to the full version. For more information, see [Upgrade an evaluation installation of Configuration Manager to a full installation](upgrade-an-evaluation-install-to-a-full-install.md).
+
 ### Unsupported paths
 
 The following paths aren't supported:
 
 - It's not supported to upgrade a technical preview branch to a fully licensed installation. A technical preview version can only upgrade to a later version of the technical preview.
-
 - Migration from a technical preview to a fully licensed version isn't supported.
 
 ## Upgrade checklists
@@ -58,16 +61,14 @@ Review these steps before you upgrade to Configuration Manager.
 
 #### Review your System Center 2012 Configuration Manager environment
 
-Resolve issues as detailed in the following Microsoft Support article: [Configuration Manager clients reinstall every five hours because of a recurring retry task and may cause an inadvertent client upgrade](/troubleshoot/mem/configmgr/configmgr-clients-reinstall-every-five-hours).
+Resolve issues as detailed in the following Microsoft Support article: [Configuration Manager clients reinstall every five hours because of a recurring retry task and may cause an inadvertent client upgrade](https://learn.microsoft.com/en-us/troubleshoot/mem/configmgr/configmgr-clients-reinstall-every-five-hours).
 
 #### Make sure your environment meets the supported configurations
 
 - Review the server OS version in use to host site system roles:
 
   - Some older operating systems supported by System Center 2012 Configuration Manager aren't supported by Configuration Manager current branch. Before the upgrade, remove site system roles on those OS versions. For more information, see [Supported operating systems for site system servers](../../../plan-design/configs/supported-operating-systems-for-site-system-servers.md).
-
-  - The prerequisite checker for Configuration Manager doesn't verify the prerequisites for site system roles on the site server or on remote site systems. For example, you need to manually verify that remote site systems have at least .NET version 4.6.2.<!-- 13846610 --> For more information, see [List of prerequisite checks for Configuration Manager](list-of-prerequisite-checks.md).
-
+  - The prerequisite checker for Configuration Manager doesn't verify the prerequisites for site system roles on the site server or on remote site systems. For example, you need to manually verify that remote site systems have at least .NET version 4.6.2. For more information, see [List of prerequisite checks for Configuration Manager](list-of-prerequisite-checks.md).
 - Review required prerequisites for each computer that hosts a site system role. For example, to deploy an OS, Configuration Manager uses the Windows Assessment and Deployment Kit (ADK). Before you run Setup, download and install the Windows ADK on the site server and on each computer that runs an instance of the SMS Provider.
 
 For more information about supported platforms and prerequisite configurations, see [Supported configurations](../../../plan-design/configs/supported-configurations.md).
@@ -93,9 +94,7 @@ Before you upgrade a site, install any critical software updates for each applic
 The following site system roles are no longer used in Configuration Manager. Uninstall them before you upgrade from System Center 2012 Configuration Manager:
 
 - Out of Band Management point
-
 - System Health Validator point
-
 - Application catalog website point and web service point
 
 #### Disable database replicas for management points at primary sites
@@ -103,13 +102,11 @@ The following site system roles are no longer used in Configuration Manager. Uni
 Configuration Manager can't upgrade a primary site that has a database replica for management points. Disable database replication before you:
 
 - Create a backup of the site database to test the database upgrade
-
 - Upgrade the production site to Configuration Manager current branch
 
 For more information, see the following articles:
 
 - System Center 2012 Configuration Manager: [Configure database replicas for management points](../configure/database-replicas-for-management-points.md#BKMK_DBReplica_Config)
-
 - Configuration Manager, current branch: [Database replicas for management points](../configure/database-replicas-for-management-points.md)
 
 #### Reconfigure software update points that use NLB
@@ -133,7 +130,6 @@ Before you disable a task, record the schedule of the task so you can restore it
 For more information about site maintenance tasks, see the following articles:
 
 - System Center 2012 Configuration Manager: [Planning for site operations](../../../plan-design/hierarchy/plan-for-the-site-database.md)
-
 - Configuration Manager, current branch: [Reference for maintenance tasks](../../manage/reference-for-maintenance-tasks.md)
 
 #### Run setup prerequisite checker
@@ -143,7 +139,7 @@ Before you upgrade a site, run the **Prerequisite Checker** independently from s
 The independent prerequisite check evaluates the site for upgrade to both the current branch and the long-term servicing branch (LTSB) of Configuration Manager. Because some features aren't supported by the LTSB, you might see entries in the **ConfigMgrPrereq.log** that are like the following examples:
 
 - `INFO: The site is a LTSB edition.`
-- `Unsupported site system role 'Asset Intelligence synchronization point' for the LTSB edition;    Error;    Configuration Manager has detected that the 'Asset Intelligence synchronization point' is installed. Asset Intelligence is not supported on the LTSB edition. You must uninstall the Asset Intelligence synchronization point site system role before you can continue.`
+- `Unsupported site system role 'Asset Intelligence synchronization point' for the LTSB edition; Error; Configuration Manager has detected that the 'Asset Intelligence synchronization point' is installed. Asset Intelligence is not supported on the LTSB edition. You must uninstall the Asset Intelligence synchronization point site system role before you can continue.`
 
 If you plan to upgrade to the current branch, errors for the LTSB edition can be safely ignored. They only apply if you plan to upgrade to the LTSB.
 
@@ -162,12 +158,11 @@ For information, see [Setup Downloader](setup-downloader.md).
 When you upgrade a site, the site upgrade installs only the language pack versions you select during the upgrade.
 
 - Setup reviews the current language configuration of your site. It then identifies the language packs that are available in the folder where you store previously downloaded prerequisite files.
-
 - You can affirm the selection of the current server and client language packs, or change the selections to add or remove support for languages.
-
 - Only language packs that are available when you run Setup can be selected.
 
 > [!NOTE]
+>
 > You can't use the language packs from System Center 2012 Configuration Manager to enable languages for a Configuration Manager current branch site.
 
 For more information about language packs, see [Language packs](language-packs.md).
@@ -191,13 +186,9 @@ If you use a customized configuration.mof file to define data classes you use wi
 Before you upgrade a Configuration Manager CAS or primary site, test the site database upgrade process on a copy of the site database.
 
 - Test the site database upgrade process. When you upgrade a site, the site database might be modified.
-
 - Although testing the database upgrade isn't required, it can identify problems for the upgrade before your production database is affected.
-
 - A failed site database upgrade can render your site database inoperable and might require a site recovery to restore functionality.
-
 - Although the site database is shared between sites in a hierarchy, plan to test the database at each applicable site before you upgrade that site.
-
 - If you use database replicas for management points at a primary site, disable replication before you create the backup of the site database.
 
 Configuration Manager doesn't support the backup of secondary sites, or the test upgrade of a secondary site database.
@@ -229,6 +220,7 @@ Review these steps after you upgrade to Configuration Manager.
 By default, when you upgrade a CAS or primary site, the installation also upgrades the Configuration Manager console that's installed on the site server. Manually upgrade each console that's installed on a computer other than the site server.
 
 > [!TIP]
+>
 > Close each open console before you start the upgrade.
 
 For more information, see [Install Configuration Manager consoles](install-consoles.md).
@@ -250,6 +242,7 @@ After all your sites upgrade to Configuration Manager, plan to upgrade clients.
 When you upgrade a client, the current client software is uninstalled and the new client software version is installed. To upgrade clients, you can use any method that Configuration Manager supports.
 
 > [!TIP]
+>
 > When you upgrade the top-level site of a hierarchy, the client installation package on each distribution point in the hierarchy is also updated. When you upgrade a primary site, the client upgrade package that's available from that primary site is updated.
 
 For more information, see [How to upgrade clients for Windows computers](../../../clients/manage/upgrade/upgrade-clients-for-windows-computers.md).
@@ -261,9 +254,7 @@ For more information, see [How to upgrade clients for Windows computers](../../.
 When you upgrade to Configuration Manager, the following actions occur automatically:
 
 - A site reset. This action includes a reinstallation of all site system roles.
-
 - If the site is the top-level site of a hierarchy, it updates the client installation package on each distribution point in the hierarchy. The site also updates the default boot images to use the new Windows PE version for the same version of the Windows ADK. However, the upgrade doesn't upgrade existing media for use with image deployment.
-
 - If the site is a primary site, it updates the client upgrade package for that site.
 
 ### Manual actions after an upgrade
@@ -271,13 +262,9 @@ When you upgrade to Configuration Manager, the following actions occur automatic
 After you upgrade a site, make sure that you do the following actions:
 
 - Make sure that clients assigned to each primary site upgrade and install the new client version.
-
 - Upgrade each Configuration Manager console that connects to the site and that runs on a computer that's remote from the site server.
-
 - At primary sites where you use database replicas for management points, reconfigure the database replicas.
-
 - After the site upgrades, manually upgrade physical media like ISO files for CDs, DVDs, or USB flash drives. It also includes prestaged media provided to hardware vendors. The site upgrade updates the default boot images, it can't upgrade these media files or devices used external to Configuration Manager.
-
 - Plan to update custom boot images when you don't require the older version of Windows PE.
 
 ### Actions that affect configurations and settings
@@ -287,11 +274,8 @@ When a site upgrades to Configuration Manager, some configurations and settings 
 - **Software Center**: The following Software Center items are reset to their default values:
 
   - **Work information** is reset to business hours from **5:00am** to **10:00pm** Monday to Friday.
-
   - The value for **Computer maintenance** is set to **Suspend Software Center activities when my computer is in presentation mode**.
-
   - The value for **Remote control** is set to the value in the client settings that are assigned to the computer.
-
 - **Software update summarization schedules**: Custom summarization schedules for software updates or software update groups are reset to the default value of one hour. After the upgrade finishes, reset custom summarization values to the required frequency.
 
 ## Test the site database upgrade
@@ -322,46 +306,37 @@ Before you upgrade a site, close the Configuration Manager console on the site s
 
 1. Verify that the user who runs Setup has the following security rights:
 
-    - Local **Administrator** rights on the site server
+   - Local **Administrator** rights on the site server
+   - If the site database server is remote from the site server, local **Administrator** rights on it
+2. On the site server, run the following program from the Configuration Manager source media: `.\SMSSETUP\BIN\X64\Setup.exe`. This action starts the Configuration Manager Setup wizard.
+3. Read the information on the **Before You Begin** page, and then select **Next**.
+4. On the **Getting Started** page, select **Upgrade this Configuration Manager site**, and then select **Next**.
+5. On the **Product Key** page:
 
-    - If the site database server is remote from the site server, local **Administrator** rights on it
+   If you previously installed Configuration Manager Evaluation version, you can select **Install the licensed edition of this product**. Then enter your product key for the full installation of Configuration Manager. This action converts the site to the full version. For more information, see [Upgrade an evaluation installation of Configuration Manager to a full installation](upgrade-an-evaluation-install-to-a-full-install.md).
 
-1. On the site server, run the following program from the Configuration Manager source media: `.\SMSSETUP\BIN\X64\Setup.exe`. This action starts the Configuration Manager Setup wizard.
+   You can specify the **Software Assurance expiration date** of your licensing agreement. This date is a convenient reminder for you of that date. If you don't enter this value during setup, you can specify it later in the console.
 
-1. Read the information on the **Before You Begin** page, and then select **Next**.
+   > [!NOTE]
+   >
+   > Microsoft doesn't validate this expiration date, and doesn't use this date for license validation. It's a reminder to you of your expiration date. Configuration Manager periodically checks for new software updates offered online. To be eligible to install these updates, your license status should be current.
 
-1. On the **Getting Started** page, select **Upgrade this Configuration Manager site**, and then select **Next**.
+   For more information, see [Licensing and branches](../../../understand/learn-more-editions.md).
+6. On the **Microsoft Software License Terms** page, read and accept the license terms, and then select **Next**.
+7. On the **Prerequisite Licenses** page, read and accept the license terms for the prerequisite software, and then select **Next**. Setup downloads and automatically installs the software on site systems or clients when it's required. Before you can continue to the next page, agree to all terms.
+8. On the **Prerequisite Downloads** page, specify whether Setup downloads the latest content from the internet or uses previously downloaded files. This content includes prerequisite redistributable files, language packs, and the latest product updates. If you already used Setup Downloader, select **Use previously downloaded files** and specify the download folder. For more information, see [Setup Downloader](setup-downloader.md).
 
-1. On the **Product Key** page:
+   > [!NOTE]
+   >
+   > When you use previously downloaded files, verify that the path to the download folder contains the most recent version of the files.
+9. On the **Server Language Selection** page, view the list of languages that are currently installed for the site. Select other languages that are available at this site for the Configuration Manager console and for reports. You can also clear languages that you no longer want to support at this site. By default, English is selected and can't be removed.
 
-    If you previously installed Configuration Manager Evaluation version, you can select **Install the licensed edition of this product**. Then enter your product key for the full installation of Configuration Manager. This action converts the site to the full version. For more information, see [Upgrade an evaluation installation of Configuration Manager to a full installation](upgrade-an-evaluation-install-to-a-full-install.md).
-
-    You can specify the **Software Assurance expiration date** of your licensing agreement. This date is a convenient reminder for you of that date. If you don't enter this value during setup, you can specify it later in the console.
-
-    > [!NOTE]
-    > Microsoft doesn't validate this expiration date, and doesn't use this date for license validation. It's a reminder to you of your expiration date. Configuration Manager periodically checks for new software updates offered online. To be eligible to install these updates, your license status should be current.
-
-    For more information, see [Licensing and branches](../../../understand/learn-more-editions.md).
-
-1. On the **Microsoft Software License Terms** page, read and accept the license terms, and then select **Next**.
-
-1. On the **Prerequisite Licenses** page, read and accept the license terms for the prerequisite software, and then select **Next**. Setup downloads and automatically installs the software on site systems or clients when it's required. Before you can continue to the next page, agree to all terms.
-
-1. On the **Prerequisite Downloads** page, specify whether Setup downloads the latest content from the internet or uses previously downloaded files. This content includes prerequisite redistributable files, language packs, and the latest product updates. If you already used Setup Downloader, select **Use previously downloaded files** and specify the download folder. For more information, see [Setup Downloader](setup-downloader.md).
-
-    > [!NOTE]
-    > When you use previously downloaded files, verify that the path to the download folder contains the most recent version of the files.
-
-1. On the **Server Language Selection** page, view the list of languages that are currently installed for the site. Select other languages that are available at this site for the Configuration Manager console and for reports. You can also clear languages that you no longer want to support at this site. By default, English is selected and can't be removed.
-
-    > [!IMPORTANT]
-    > Each version of Configuration Manager can't use language packs from a prior version. To enable support for a language at a site that you upgrade, use the version of the language pack for the new version. For example, during upgrade from System Center 2012 Configuration Manager to Configuration Manager current branch, if the current branch version of a language pack isn't available with the prerequisite files you download, you can't install support for that language.
-
-1. On the **Client Language Selection** page, view the list of languages that are currently installed for the site. Select other languages that are available at this site for client computers, or clear languages that you no longer want to support at this site. Specify whether to enable all client languages for mobile device clients, and then select **Next**. By default, English is selected and can't be removed.
-
-1. On the **Settings Summary** page, review the configuration. When you're ready, select **Next** to start the Prerequisite Checker. This tool verifies server readiness for the upgrade of the site. For more information, see [Prerequisite Checker](prerequisite-checker.md).
-
-1. On the **Prerequisite Installation Check** page, if there are no problems listed, select **Next** to upgrade the site and site system roles.
+   > [!IMPORTANT]
+   >
+   > Each version of Configuration Manager can't use language packs from a prior version. To enable support for a language at a site that you upgrade, use the version of the language pack for the new version. For example, during upgrade from System Center 2012 Configuration Manager to Configuration Manager current branch, if the current branch version of a language pack isn't available with the prerequisite files you download, you can't install support for that language.
+10. On the **Client Language Selection** page, view the list of languages that are currently installed for the site. Select other languages that are available at this site for client computers, or clear languages that you no longer want to support at this site. Specify whether to enable all client languages for mobile device clients, and then select **Next**. By default, English is selected and can't be removed.
+11. On the **Settings Summary** page, review the configuration. When you're ready, select **Next** to start the Prerequisite Checker. This tool verifies server readiness for the upgrade of the site. For more information, see [Prerequisite Checker](prerequisite-checker.md).
+12. On the **Prerequisite Installation Check** page, if there are no problems listed, select **Next** to upgrade the site and site system roles.
 
     If the Prerequisite Checker finds a problem, select the item on the list for details about how to resolve it. Resolve all items in the list that have an **Error** status before you continue Setup. For items with a **Warning** status, resolve as many as possible in your environment. After you resolve the issues, select **Run Check** to restart prerequisite checking. For more detailed information, open the **ConfigMgrPrereq.log** file in the root of the system drive. The log file can contain additional information that's not displayed in the user interface. For a list of installation prerequisite rules and descriptions, see [Prerequisite checks](list-of-prerequisite-checks.md).
 
@@ -371,17 +346,12 @@ On the **Upgrade** page, Setup displays the overall progress status. When Setup 
 
 1. Verify that the administrative user that runs Setup has the following security rights:
 
-    - Local **Administrator** rights on the secondary site server
-
-    - **Infrastructure Administrator** or **Full Administrator** security role on the parent primary site
-
-    - System administrator (**SA**) rights on the site database of the secondary site
-
-1. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and then select the **Sites** node.
-
-1. Select the secondary site that you want to upgrade. On the **Home** tab of the ribbon, in the **Site** group, select **Upgrade**.
-
-1. Select **Yes** to confirm the decision, and to start the upgrade of the secondary site.
+   - Local **Administrator** rights on the secondary site server
+   - **Infrastructure Administrator** or **Full Administrator** security role on the parent primary site
+   - System administrator (**SA**) rights on the site database of the secondary site
+2. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and then select the **Sites** node.
+3. Select the secondary site that you want to upgrade. On the **Home** tab of the ribbon, in the **Site** group, select **Upgrade**.
+4. Select **Yes** to confirm the decision, and to start the upgrade of the secondary site.
 
 The secondary site upgrade runs in the background. After the upgrade is complete, confirm the status in the Configuration Manager console. Select the secondary site server, then on the **Home** tab of the ribbon, in the **Site** group, select **Show Install Status**.
 

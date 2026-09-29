@@ -1,47 +1,40 @@
 ---
-title: Add New Properties to an Existing Resource Type
+title: "How to Add New Properties to an Existing Resource Type"
 description: Learn how to add a property to the resource class when the Data Discovery Manager detects that your data discovery record contains a property that doesn't exist.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Add New Properties to an Existing Resource Type
+
 In Configuration Manager, when the Data Discovery Manager (DDM) detects that your data discovery record (DDR) contains a property that does not exist in the resource class, the property is added to the resource class. Depending on the data type of the new property, previous instances of the resource will contain either a zero or an empty string ("") for the value of the new property. You should specify all the class properties when you update an existing resource class. However, do not include the seven properties that the DDM creates for you. When the DDM creates a new resource class, it adds these additional properties to the class:
 
 - ResourceID
-
 - AgentName
-
 - AgentSite
-
 - AgentTime
-
 - Name
-
 - ResourceType
-
 - SMSAssignedSite
 
   For a description of these properties, see `SMS_R_System`. In addition to creating these properties, the DDM creates an instance of `SMS_ResourceMap` for the new ResourceType value.
 
 ### To add properties to an existing resource type
 
-1.  Get a specific instance of an existing resource.
-
-2.  Create a new instance of the `SMSResGen` class.
-
-3.  Create a new DDR using the `NewDDR` method.
-
-4.  Add properties to the DDR using the ADDPROP_ methods.
-
-5.  Write the new DDR to a file using the `DDRWrite` method.
+1. Get a specific instance of an existing resource.
+2. Create a new instance of the `SMSResGen` class.
+3. Create a new DDR using the `NewDDR` method.
+4. Add properties to the DDR using the ADDPROP_ methods.
+5. Write the new DDR to a file using the `DDRWrite` method.
 
 ## Example
- The following example creates a DDR that adds the `OrganizationalUnit` property to the `SMS_R_System` class. You can then use this property to create collections based on departments and distribute software accordingly. If your organization uses Active Directory, you can use the information it contains to populate the `OrganizationalUnit` property.
 
- The following example shows the key, name, and GUID properties that you use to update the system resource class.
+The following example creates a DDR that adds the `OrganizationalUnit` property to the `SMS_R_System` class. You can then use this property to create collections based on departments and distribute software accordingly. If your organization uses Active Directory, you can use the information it contains to populate the `OrganizationalUnit` property.
+
+The following example shows the key, name, and GUID properties that you use to update the system resource class.
 
 ```vbs
 
@@ -146,17 +139,20 @@ public void CreateDDRToAddNewPropertiesToAnExistingResourceType(WqlConnectionMan
 
 ```
 
- The example method has no parameters.
+The example method has no parameters.
 
 ## Compiling the Code
 
 > [!IMPORTANT]
->  This VBScript and C# examples require **smsrsgen.dll** and **smsrsgenctl.dll**, respectively. Both files are included as a part of the downloadable Configuration Manager SDK (in the "Redistributables" folder).
 >
->  The file **smsrsgenctl.dll** is a 32-bit dll and must be registered on the system that will run the application. In addition, the application using **smsrsgenctl.dll** should be compiled as an x86 application.
+> This VBScript and C# examples require **smsrsgen.dll** and **smsrsgenctl.dll**, respectively. Both files are included as a part of the downloadable Configuration Manager SDK (in the "Redistributables" folder).
+>
+> The file **smsrsgenctl.dll** is a 32-bit dll and must be registered on the system that will run the application. In addition, the application using **smsrsgenctl.dll** should be compiled as an x86 application.
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).

@@ -1,27 +1,27 @@
 ---
 description: Learn how to use the group action in configuration manager to create a submenu for related actions.
 title: Configuration Manager Group Action
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Configuration Manager Group Action
+
 In Configuration Manager, the Group action creates a menu group, also known as a submenu, for related actions.
 
- The following attributes and elements are specific to an action that creates a group of context menu items:
+The following attributes and elements are specific to an action that creates a group of context menu items:
 
--   The <`ActionDescription`> element `Class` attribute is set to **Group**.
-
--   The <`DisplayName`> attribute is the group name displayed in the context menu.
-
--   The <`GroupAsRegion`> Boolean attribute specifies whether or not to display this group as a region on the ribbon bar.
-
--   The <`ActionGroups`> element is a list of actions (<`ActionDescription`> elements) displayed in the context menu group.
+- The &lt;`ActionDescription`&gt; element `Class` attribute is set to **Group**.
+- The &lt;`DisplayName`&gt; attribute is the group name displayed in the context menu.
+- The &lt;`GroupAsRegion`&gt; Boolean attribute specifies whether or not to display this group as a region on the ribbon bar.
+- The &lt;`ActionGroups`&gt; element is a list of actions (&lt;`ActionDescription`&gt; elements) displayed in the context menu group.
 
 ## Group Action XML
- The following XML demonstrates a group of actions named New Group Name:
+
+The following XML demonstrates a group of actions named New Group Name:
 
 ```
 <ActionDescription Class="Group" GroupAsRegion="true" DisplayName="New Group Name" MnemonicDisplayName="MnemonicNewGroupName" Description="NewGroupNameDescription">  <ShowOn>      <string>DefaultContextualTab</string> <!-- RIBBON -->     <string>ContextMenu</string> <!-- Context Menu -->   </ShowOn>       <ActionGroups>
@@ -38,6 +38,5 @@ In Configuration Manager, the Group action creates a menu group, also known as a
 ```
 
 ## See Also
-[About Configuration Manager console actions](configuration-manager-actions.md)
- [How to Create a Configuration Manager Action](../../../../develop/core/servers/console/how-to-create-a-configuration-manager-action.md)
- [How to Find a Configuration Manager Node GUID](../../../../develop/core/servers/console/how-to-find-a-configuration-manager-console-node-guid.md)
+
+[About Configuration Manager console actions](configuration-manager-actions.md) [How to Create a Configuration Manager Action](how-to-create-a-configuration-manager-action.md) [How to Find a Configuration Manager Node GUID](how-to-find-a-configuration-manager-console-node-guid.md)

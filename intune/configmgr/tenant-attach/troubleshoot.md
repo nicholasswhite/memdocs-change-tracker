@@ -1,7 +1,7 @@
 ---
-title: Troubleshoot tenant attach and device actions
+title: "Troubleshooting tenant attach and device actions"
 description: Troubleshoot tenant attach and device actions for Configuration Manager.
-ms.date: 07/11/2022
+ms.date: "2022-07-11T00:00:00Z"
 ms.topic: troubleshooting
 ms.subservice: core-infra
 ms.collection: tier3
@@ -20,7 +20,7 @@ The available actions are:
 - Sync User Policy
 - App Evaluation Cycle
 
-[![Device overview in Microsoft Intune admin center](./media/3555758-device-overview-actions.png)](./media/3555758-device-overview-actions.png#lightbox)
+[![Device overview in Microsoft Intune admin center](media/3555758-device-overview-actions.png)](media/3555758-device-overview-actions.png#lightbox)
 
 When an admin runs an action from Microsoft Intune admin center, the notification request is forwarded to Configuration Manager site, and from the site to the client.
 
@@ -39,12 +39,12 @@ Use the following logs located on the client:
 
 - **CcmNotificationAgent.log**
 
-## <a name="bkmk_review"></a> Review your upload
+## Review your upload
 
-1. Open **CMGatewaySyncUploadWorker.log** from &lt;ConfigMgr install directory>\Logs.
-1. The next sync time is noted by log entries similar to `Next run time will be at approximately: 02/28/2020 16:35:31`.
-1. For device uploads, look for log entries similar to `Batching N records`. **N** is the number of changed devices uploaded since the last upload.
-1. The upload occurs every 15 minutes for changes. Once changes are uploaded, it may take an additional 5 to 10 minutes for client changes to appear in **Microsoft Intune admin center**.
+1. Open **CMGatewaySyncUploadWorker.log** from &lt;ConfigMgr install directory&gt;\Logs.
+2. The next sync time is noted by log entries similar to `Next run time will be at approximately: 02/28/2020 16:35:31`.
+3. For device uploads, look for log entries similar to `Batching N records`. **N** is the number of changed devices uploaded since the last upload.
+4. The upload occurs every 15 minutes for changes. Once changes are uploaded, it may take an additional 5 to 10 minutes for client changes to appear in **Microsoft Intune admin center**.
 
 ## Configuration Manager components and log flow
 
@@ -68,19 +68,17 @@ Forwarded BGB remote task. TemplateID: 1 TaskGuid: a43dd1b3-a006-4604-b012-55293
    ```text
    Received new notification. Validating basic notification details..
    ```
-
-1. User and device actions are validated.
+2. User and device actions are validated.
 
    ```text
    Validating device action message content...
    Authorized to perform client action. TemplateID: RequestMachinePolicy TenantId: aaaabbbb-0000-cccc-1111-dddd2222eeee AADUserID:     aaaabbbb-0000-cccc-1111-dddd2222eeee
    ```
+3. The remote task is forwarded to the SMS_NOTIFICATION_SERVER.
 
-1. The remote task is forwarded to the SMS_NOTIFICATION_SERVER.
-
-    ```text
+   ```text
    Forwarded BGB remote task. TemplateID: 1 TaskGuid: a43dd1b3-a006-4604-b012-5529380b3b6f TaskParam: TargetDeviceIDs: 1
-    ```
+   ```
 
 ### SMS_NOTIFICATION_SERVER
 
@@ -103,7 +101,7 @@ Send Task response message <BgbResponseMessage TimeStamp="2020-01-21T15:43:43Z">
 
 ## Common issues
 
-### <a name="bkmk_noauth"></a> Unauthorized to perform client action
+### Unauthorized to perform client action
 
 If the account that is logged into the Microsoft Intune Admin Center doesn't have the required permissions in Configuration Manager, you'll see an `Unauthorized` response in the **CMGatewayNotificationWorker.log**.
 
@@ -119,8 +117,6 @@ Ensure the user running the action from the Microsoft Intune admin center has th
 
 ### Data synchronization failures
 
-<!-- 10877392 -->
-
 If you have issues viewing the tenant attach details in the Microsoft Intune admin center, it may be because of an issue with the hierarchy onboarding configuration. This issue can be caused by onboarding a hierarchy that's already onboarded.
 
 You can also detect this issue from entries in the **GenericUploadWorker.log** and **CMGatewayNotificationWorker.log** files. For more information, see [Example errors in log files that require resetting the tenant attach configuration](#example-errors-in-log-files-that-require-resetting-the-tenant-attach-configuration).
@@ -130,10 +126,8 @@ You can also detect this issue from entries in the **GenericUploadWorker.log** a
 To reset the tenant attach configuration:
 
 1. Offboard the hierarchy. For more information, see [Offboard from tenant attach](device-sync-actions.md#bkmk_offboard).
-
-1. Wait at least two hours for the service to clean up the existing record.
-
-1. Onboard the hierarchy again. For more information, see [Enable tenant attach](device-sync-actions.md).
+2. Wait at least two hours for the service to clean up the existing record.
+3. Onboard the hierarchy again. For more information, see [Enable tenant attach](device-sync-actions.md).
 
 #### Example errors in log files that require resetting the tenant attach configuration
 
@@ -170,15 +164,17 @@ Response in the web exception: {"Message":"An error has occurred."}
 
 ### Specific devices don't synchronize
 
-<!--7099564-->
 It's possible that specific devices, which are Configuration Manager clients, won't be uploaded to the service.
 
-**Impacted devices:**
-If a device is a distribution point that uses the same PKI certificate for both the distribution point functionality and its client agent, then the device won't be included in the tenant attach device sync.
+**Impacted devices:** If a device is a distribution point that uses the same PKI certificate for both the distribution point functionality and its client agent, then the device won't be included in the tenant attach device sync.
 
 **Behavior:** When performing tenant attach during the on-boarding phase, a full sync is performed the first time. Subsequent sync cycles are delta synchronizations. Any update to the impacted devices will cause the device to be removed from the sync.
 
-[!INCLUDE [Known issues shared across tenant attach features](includes/known-issues-shared.md)]
+### When the Configuration Manager site is configured to require multi-factor authentication, most tenant attach features don't work
+
+**Scenario:** If the [SMS provider](../core/plan-design/hierarchy/plan-for-the-sms-provider.md) machine that communicates with the [service connection point](../core/servers/deploy/configure/about-the-service-connection-point.md) is configured to use multi-factor authentication, you can't install applications, run CMPivot queries, and perform other actions from the admin console. You receive an error code 403, forbidden.
+
+**Workaround:** The current workaround is to configure the on-premises hierarchy to the default authentication level of **Windows authentication**. For more information, see the [Authentication section in the SMS provider article](../core/plan-design/hierarchy/plan-for-the-sms-provider.md#authentication).
 
 ## Next steps
 

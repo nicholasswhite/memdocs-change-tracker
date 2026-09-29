@@ -1,7 +1,7 @@
 ---
-title: Manage clients
+title: "How to manage clients in Configuration Manager"
 description: Learn how to manage clients in Configuration Manager.
-ms.date: 02/16/2022
+ms.date: "2022-02-16T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -15,6 +15,7 @@ ms.service: configuration-manager
 When the Configuration Manager client installs on a device and successfully assigns to a site, you see the device in the **Assets and Compliance** workspace in the **Devices** node, and in one or more collections in the **Device Collections** node. Select the device or a collection, and then run management operations. However, there are other ways to manage the client, which might involve other workspaces in the console, or tasks outside of the console.
 
 > [!NOTE]
+>
 > If you install the Configuration Manager client, but it hasn't yet successfully assigned to a site, it might not display in the console. After the client assigns to a site, update collection membership, and then refresh the console view.
 >
 > A device can also display in the console when the Configuration Manager client isn't installed. This behavior happens if the site discovers a device but the client isn't installed and assigned.
@@ -28,7 +29,6 @@ When the Configuration Manager client installs on a device and successfully assi
 Depending on the device type, some of these options might not be available.
 
 1. In the Configuration Manager console, go to the **Assets and Compliance** workspace, and select the **Devices** node.
-
 2. Select one or more devices, and then select one of these client management tasks from the ribbon. You can also right-click the device.
 
 ### Import user device affinity
@@ -46,7 +46,6 @@ Launch the **Import Computer Information Wizard** to import new computer informa
 Provides the following options:
 
 - **Add selected items to existing device collection**: Opens the **Select Collection** dialog box. Select the collection to which you want to add this device. The device is included in this collection by using a **Direct** membership rule.
-
 - **Add selected items to new device collection**: Opens the **Create Device Collection Wizard** where you can create a new collection. The selected collection is included in this collection by using a **Direct** membership rule.
 
 For more information, see [How to create collections](collections/create-collections.md).
@@ -56,6 +55,7 @@ For more information, see [How to create collections](collections/create-collect
 Opens the **Install Client Wizard**. This wizard uses client push installation to install or reinstall the Configuration Manager client on the selected device.
 
 > [!TIP]
+>
 > There are many different ways to install the Configuration Manager client. Although the Client Push wizard offers a convenient client installation method from the console, this method has many dependencies and isn't suitable for all environments. For more information about the dependencies, see [Prerequisites for deploying clients to Windows computers](../deploy/prerequisites-for-deploying-clients-to-windows-computers.md#client-push-installation). For more information about the other client installation methods, see [Client installation methods](../deploy/plan/client-installation-methods.md).
 
 For more information, see [How to install Configuration Manager clients by using client push](../deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).
@@ -70,7 +70,7 @@ For more information, see [Create and run PowerShell scripts](../../../apps/depl
 
 Install an application to a device in real time. This feature can help reduce the need for separate collections for every application.
 
-Starting in version 2111, select the **Install Application Group** action for an app group.<!-- 10992210 -->
+Starting in version 2111, select the **Install Application Group** action for an app group.
 
 For more information, see [Install applications for a device](../../../apps/deploy-use/install-app-for-device.md).
 
@@ -89,16 +89,15 @@ For more information, see [How to configure client settings](../deploy/configure
 - Run **Resource Explorer** to see the hardware and software inventory information from a Windows client. For more information, see the following articles:
 
   - [How to use Resource Explorer to view hardware inventory](inventory/use-resource-explorer-to-view-hardware-inventory.md)
-
   - [How to use Resource Explorer to view software inventory](inventory/use-resource-explorer-to-view-software-inventory.md)
-
 - Remotely administer the device by using **Remote Control**, **Remote Assistance**, or **Remote Desktop Client**. For more information, see [How to remotely administer a Windows client computer](remote-control/remotely-administer-a-windows-client-computer.md).
 
 ### Approve
 
-When the client communicates with site systems using HTTP and a self-signed certificate, you must approve these clients to identify them as trusted computers. By default, the site configuration automatically approves clients from the same Active Directory forest, trusted forests, and connected Microsoft Entra tenants<!-- MEMDocs#318 -->. This default behavior means that you don't have to manually approve each client. Manually approve workgroup computers or clients from an untrusted forest that you trust, and any other unapproved computers that you trust.
+When the client communicates with site systems using HTTP and a self-signed certificate, you must approve these clients to identify them as trusted computers. By default, the site configuration automatically approves clients from the same Active Directory forest, trusted forests, and connected Microsoft Entra tenants. This default behavior means that you don't have to manually approve each client. Manually approve workgroup computers or clients from an untrusted forest that you trust, and any other unapproved computers that you trust.
 
 > [!IMPORTANT]
+>
 > Although some management functions might work for unapproved clients, this is an unsupported scenario for Configuration Manager.
 
 You don't have to approve clients that always communicate to site systems using HTTPS, or clients that use a PKI certificate when they communicate to site systems using HTTP. These clients establish trust by using the PKI certificates.
@@ -108,13 +107,12 @@ You don't have to approve clients that always communicate to site systems using 
 Block a client that you no longer trust. Blocking prevents the client from receiving policy, and prevents site systems from communicating with the client.
 
 > [!IMPORTANT]
+>
 > Blocking a client only prevents communication from the client to Configuration Manager site systems. It doesn't prevent communication to other devices. When the client communicates to site systems by using HTTP instead of HTTPS, there are some security limitations.
 
 You can also unblock a client that is blocked.
 
 For more information, see [Determine whether to block clients](../deploy/plan/determine-whether-to-block-clients.md).
-
-<!-- Change Category is a hybrid action -->
 
 ### Clear required PXE deployments
 
@@ -141,12 +139,12 @@ For more information, see [Link users and devices with user device affinity](../
 You can wipe mobile devices that support the wipe command. This action permanently removes all data on the mobile device, including personal settings and personal data. Typically, this action resets the mobile device back to factory defaults. Wipe a mobile device when it's no longer trusted. For example, if the device is lost or stolen.
 
 > [!TIP]
+>
 > Check the manufacturer's documentation for more information about how the mobile device processes a remote wipe command.
 
 There's often a delay until the mobile device receives the wipe command:
 
 - If the mobile device is enrolled by Configuration Manager, the client receives the command when it downloads its client policy.
-
 - If the mobile device is managed by the Exchange Server connector, it receives the command when it synchronizes with Exchange.
 
 To monitor when the device receives the wipe command, use the **Wipe Status** column. Until the device sends a wipe acknowledgment to Configuration Manager, you can cancel the wipe command.
@@ -168,11 +166,13 @@ You may need to add the **Device Owner** column to the view by right-clicking an
 ### Delete
 
 > [!WARNING]
+>
 > Don't delete a client if you want to uninstall the Configuration Manager client or remove it from a collection.
 
 The **Delete** action manually removes the client record from the Configuration Manager database. Only use this action to troubleshoot a problem. If you delete the object, but the client is still installed and communicating with the site, Heartbeat Discovery recreates the client record. It reappears in the Configuration Manager console, although the client history and any previous associations are lost.
 
 > [!NOTE]
+>
 > When you delete a mobile device client that was enrolled by Configuration Manager, this action also revokes the issued PKI certificate. This certificate is then rejected by the management point, even if IIS doesn't check the certificate revocation list (CRL).
 >
 > Certificates on mobile device legacy clients are not revoked when you delete these clients.
@@ -211,7 +211,8 @@ For more information, see [How to manage collections](collections/manage-collect
 
 Use the Configuration Manager console to identify clients that require a restart. Then use a client notification action to restart them.
 
-> [!Tip]
+> [!TIP]
+>
 > Enable automatic client upgrade to keep your clients up-to-date with less effort. For more information, see [About automatic client upgrade](upgrade/upgrade-clients-for-windows-computers.md#bkmk_autoupdate).
 
 To identify devices that are pending a restart, go to the **Assets and Compliance** workspace in the Configuration Manager console and select the **Devices** node. Then view the status for each device in the details pane in a new column named **Pending Restart**. Each device has one or more of the following values:
@@ -240,18 +241,19 @@ For more information, see [Configure the client content cache](configure-client-
 You can uninstall the Configuration Manager client software from a computer by using **CCMSetup.exe** with the `/Uninstall` property. Run CCMSetup.exe on an individual computer from the command prompt, or deploy a package to uninstall the client for a collection of computers.
 
 > [!NOTE]
+>
 > You can't uninstall the Configuration Manager client from a mobile device. If you must remove the Configuration Manager client from a mobile device, you must wipe the device, which deletes all data on the mobile device.
 
 1. Open a Windows command prompt as an administrator. Change the folder to the location in which CCMSetup.exe is located, for example: `cd %windir%\ccmsetup`
-
 2. Run the following command: `CCMSetup.exe /uninstall`
 
 > [!TIP]
+>
 > The uninstall process displays no results on the screen. To verify that the client successfully uninstalls, see the following log file: `%windir%\ccmsetup\logs\CCMSetup.log`
 >
 > If you need to wait for the uninstall process to complete before doing something else, run `Wait-Process CCMSetup` in PowerShell. This command can pause a script until the CCMSetup process completes.
 
-Starting in version 2111, when you uninstall the client it also removes the client bootstrap, ccmsetup.msi, if it exists.<!-- 12425149 -->
+Starting in version 2111, when you uninstall the client it also removes the client bootstrap, ccmsetup.msi, if it exists.
 
 ## Manage conflicting records
 
@@ -262,54 +264,45 @@ Configuration Manager automatically resolves conflicts by using Windows authenti
 ### Change the hierarchy setting for managing conflicting records
 
 1. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and select the **Sites** node.
+2. In the ribbon, select **Hierarchy Settings**.
+3. Switch to the **Client Approval and Conflicting Records** tab, and select one of the following options:
 
-1. In the ribbon, select **Hierarchy Settings**.
-
-1. Switch to the **Client Approval and Conflicting Records** tab, and select one of the following options:
-
-    - **Automatically resolve conflicting records**
-    - **Manually resolve conflicting records**
+   - **Automatically resolve conflicting records**
+   - **Manually resolve conflicting records**
 
 ### Manually resolve conflicting records
 
 1. In the Configuration Manager console, go to the **Monitoring** workspace, expand **System Status**, and select the **Conflicting Records** node.
+2. Select one or more conflicting records, and then choose **Conflicting Record**.
+3. Select one of the following options:
 
-1. Select one or more conflicting records, and then choose **Conflicting Record**.
-
-1. Select one of the following options:
-
-    - **Merge**: Combine the newly detected record with the existing client record.
-
-    - **New**: Create a new record for the conflicting client record.
-
-    - **Block**: Create a new record for the conflicting client record, but mark it as blocked.
+   - **Merge**: Combine the newly detected record with the existing client record.
+   - **New**: Create a new record for the conflicting client record.
+   - **Block**: Create a new record for the conflicting client record, but mark it as blocked.
 
 ## Manage duplicate hardware identifiers
 
 You can provide a list of hardware identifiers that Configuration Manager ignores for PXE boot and client registration. This list helps to address two common issues:
 
 1. Many new devices don't include an onboard Ethernet port. Technicians use a USB-to-Ethernet adapter to establish a wired connection for purposes of OS deployment. These adapters are often shared because of cost and general usability. The site uses the MAC address of this adapter to identify the device. So reusing the adapter becomes problematic without other administrator actions between each deployment. To reuse the adapter in this scenario, exclude its MAC address.
-
 2. While the SMBIOS attribute should be unique, some specialty hardware devices have duplicate identifiers. Exclude this duplicate identifier and rely on the unique MAC address of each device.
 
 Use the following process to add hardware identifiers for Configuration Manager to ignore:
 
 1. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and select the **Sites** node.
-
 2. On the **Home** tab of the ribbon, in the **Sites** group, choose **Hierarchy Settings**.
-
 3. Switch to the **Client Approval and Conflicting Records** tab. To add new hardware identifiers, choose **Add** in the **Duplicate hardware identifiers** section.
 
 ### PowerShell for duplicate hardware IDs
 
-You can use the following PowerShell cmdlets to automate the management of duplicate hardware identifiers:<!-- 4852819 -->
+You can use the following PowerShell cmdlets to automate the management of duplicate hardware identifiers:
 
-- [Get-CMDuplicateHardwareIdGuid](/powershell/module/configurationmanager/get-cmduplicatehardwareidguid)
-- [New-CMDuplicateHardwareIdGuid](/powershell/module/configurationmanager/new-cmduplicatehardwareidguid)
-- [Remove-CMDuplicateHardwareIdGuid](/powershell/module/configurationmanager/remove-cmduplicatehardwareidguid)
-- [Get-CMDuplicateHardwareIdMacAddress](/powershell/module/configurationmanager/get-cmduplicatehardwareidmacaddress)
-- [New-CMDuplicateHardwareIdMacAddress](/powershell/module/configurationmanager/new-cmduplicatehardwareidmacaddress)
-- [Remove-CMDuplicateHardwareIdMacAddress](/powershell/module/configurationmanager/remove-cmduplicatehardwareidmacaddress)
+- [Get-CMDuplicateHardwareIdGuid](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmduplicatehardwareidguid)
+- [New-CMDuplicateHardwareIdGuid](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmduplicatehardwareidguid)
+- [Remove-CMDuplicateHardwareIdGuid](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/remove-cmduplicatehardwareidguid)
+- [Get-CMDuplicateHardwareIdMacAddress](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/get-cmduplicatehardwareidmacaddress)
+- [New-CMDuplicateHardwareIdMacAddress](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmduplicatehardwareidmacaddress)
+- [Remove-CMDuplicateHardwareIdMacAddress](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/remove-cmduplicatehardwareidmacaddress)
 
 ## Start policy retrieval
 
@@ -323,21 +316,18 @@ A Configuration Manager client downloads its client policy on a schedule that yo
 ### Start client policy retrieval with client notification
 
 1. In the Configuration Manager console, go to the **Assets and Compliance** workspace, and select **Devices**.
+2. Select the device that you want to download policy. On the **Home** tab of the ribbon, in the **Device** group, select **Client Notification**, and then choose **Download Computer Policy**.
 
-1. Select the device that you want to download policy. On the **Home** tab of the ribbon, in the **Device** group, select **Client Notification**, and then choose **Download Computer Policy**.
-
-    > [!NOTE]
-    > You can also use client notification to start policy retrieval for all devices in a collection.
+   > [!NOTE]
+   >
+   > You can also use client notification to start policy retrieval for all devices in a collection.
 
 ### Start client policy retrieval from the Configuration Manager client control panel
 
 1. Open the **Configuration Manager** control panel on the computer.
-
-2. Switch to the **Actions** tab. Select **Machine Policy Retrieval & Evaluation Cycle** to start the computer policy, and then select **Run Now**.
-
+2. Switch to the **Actions** tab. Select **Machine Policy Retrieval &amp; Evaluation Cycle** to start the computer policy, and then select **Run Now**.
 3. Select **OK** to confirm the prompt.
-
-4. Repeat the previous steps for any other actions. For example, **User Policy Retrieval & Evaluation Cycle** for user client settings.
+4. Repeat the previous steps for any other actions. For example, **User Policy Retrieval &amp; Evaluation Cycle** for user client settings.
 
 ### Start client policy retrieval with Support Center Client Tools
 
@@ -346,19 +336,17 @@ Use Support Center Client Tools to request and view client policy. For more info
 ### Start client policy retrieval by script
 
 1. Open a script editor, such as Notepad or Windows PowerShell ISE.
+2. Copy and insert the following sample PowerShell code into the file:
 
-2. Copy and insert the following sample PowerShell code<!-- SCCMDocs#1591 --> into the file:
+   ```PowerShell
+   $trigger = "{00000000-0000-0000-0000-000000000021}"
+   Invoke-WmiMethod -Namespace root\ccm -Class sms_client -Name TriggerSchedule $trigger
+   ```
 
-    ```PowerShell
-    $trigger = "{00000000-0000-0000-0000-000000000021}"
-    Invoke-WmiMethod -Namespace root\ccm -Class sms_client -Name TriggerSchedule $trigger
-    ```
-
-    > [!TIP]
-    > For more information about the schedule IDs, see [Message IDs](../../support/send-schedule-tool.md#bkmk_sendschedule-guids).
-
+   > [!TIP]
+   >
+   > For more information about the schedule IDs, see [Message IDs](../../support/send-schedule-tool.md#bkmk_sendschedule-guids).
 3. Save the file with a `.ps1` extension.
-
 4. Run the script on the client.
 
 ## Next steps

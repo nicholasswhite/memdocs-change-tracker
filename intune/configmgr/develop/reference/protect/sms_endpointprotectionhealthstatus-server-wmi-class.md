@@ -1,16 +1,18 @@
 ---
-title: SMS_EndpointProtectionHealthStatus Class
+title: "SMS_EndpointProtectionHealthStatus Server WMI Class"
 description: Learn how the SMS_EndpointProtectionHealthStatus class is an SMS Provider server class that represents health status of Endpoint Protection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_EndpointProtectionHealthStatus Server WMI Class
+
 The `SMS_EndpointProtectionHealthStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents health status of Endpoint Protection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -41,195 +43,179 @@ Class SMS_EndpointProtectionHealthStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_EndpointProtectionHealthStatus` class does not define any methods.
+
+The `SMS_EndpointProtectionHealthStatus` class does not define any methods.
 
 ## Properties
- `ApplyPolicyFailedCount`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ApplyPolicyFailedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients failed to apply policy.
+Qualifiers: none
 
- `ApplyPolicySucceededCount`
- Data type: `UInt32`
+Count of clients failed to apply policy.
 
- Access type: Read/Write
+`ApplyPolicySucceededCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients succeeded to apply policy.
+Qualifiers: none
 
- `CollectionID`
- Data type: `String`
+Count of clients succeeded to apply policy.
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of collection summarized.
+Qualifiers: [key]
 
- `InstallFailedCount`
- Data type: `UInt32`
+Identifier of collection summarized.
 
- Access type: Read/Write
+`InstallFailedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients failed to install the Endpoint Protection client.
+Qualifiers: none
 
- `InstallRebootPendingCount`
- Data type: `UInt32`
+Count of clients failed to install the Endpoint Protection client.
 
- Access type: Read/Write
+`InstallRebootPendingCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients pending restart to complete Endpoint Protection client installation.
+Qualifiers: none
 
- `NoSignatureCount`
- Data type: `UInt32`
+Count of clients pending restart to complete Endpoint Protection client installation.
 
- Access type: Read/Write
+`NoSignatureCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients without definitions.
+Qualifiers: none
 
- `OverallNotClientCount`
- Data type: `UInt32`
+Count of clients without definitions.
 
- Access type: Read/Write
+`OverallNotClientCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of non-client members.
+Qualifiers: none
 
- `OverallStatusAtRiskCount`
- Data type: `UInt32`
+Count of non-client members.
 
- Access type: Read/Write
+`OverallStatusAtRiskCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with deficient status (agent health, malware, signatures, agent deployment).
+Qualifiers: none
 
- `OverallStatusInactiveCount`
- Data type: `UInt32`
+Count of clients with deficient status (agent health, malware, signatures, agent deployment).
 
- Access type: Read/Write
+`OverallStatusInactiveCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of inactive clients.
+Qualifiers: none
 
- `OverallStatusNotSupportedCount`
- Data type: `UInt32`
+Count of inactive clients.
 
- Access type: Read/Write
+`OverallStatusNotSupportedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients not supported by Endpoint Protection agent.
+Qualifiers: none
 
- `OverallStatusNotYetInstalledCount`
- Data type: `UInt32`
+Count of clients not supported by Endpoint Protection agent.
 
- Access type: Read/Write
+`OverallStatusNotYetInstalledCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients without Endpoint Protection client installed yet.
+Qualifiers: none
 
- `OverallStatusProtectedCount`
- Data type: `UInt32`
+Count of clients without Endpoint Protection client installed yet.
 
- Access type: Read/Write
+`OverallStatusProtectedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with good overall status (agent health, malware, signatures, agent deployment).
+Qualifiers: none
 
- `SignaturesOlderThan7DaysCount`
- Data type: `UInt32`
+Count of clients with good overall status (agent health, malware, signatures, agent deployment).
 
- Access type: Read/Write
+`SignaturesOlderThan7DaysCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with definitions that are 7 days old or older.
+Qualifiers: none
 
- `SignaturesUpTo1DayOldCount`
- Data type: `UInt32`
+Count of clients with definitions that are 7 days old or older.
 
- Access type: Read/Write
+`SignaturesUpTo1DayOldCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with definitions less than 24 hours old.
+Qualifiers: none
 
- `SignaturesUpTo3DaysOldCount`
- Data type: `UInt32`
+Count of clients with definitions less than 24 hours old.
 
- Access type: Read/Write
+`SignaturesUpTo3DaysOldCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with definitions between 1 and 2 days old.
+Qualifiers: none
 
- `SignaturesUpTo7DaysOldCount`
- Data type: `UInt32`
+Count of clients with definitions between 1 and 2 days old.
 
- Access type: Read/Write
+`SignaturesUpTo7DaysOldCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with definitions between 3 and 6 days old.
+Qualifiers: none
 
- `TimeLastUpdated`
- Data type: `DateTime`
+Count of clients with definitions between 3 and 6 days old.
 
- Access type: Read/Write
+`TimeLastUpdated` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Time the statistics were last updated.
+Qualifiers: none
 
- `TotalMemberCount`
- Data type: `UInt32`
+Time the statistics were last updated.
 
- Access type: Read/Write
+`TotalMemberCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Total count of members in the collection.
+Qualifiers: none
 
- `TotalOperationalIssueCount`
- Data type: `UInt32`
+Total count of members in the collection.
 
- Access type: Read/Write
+`TotalOperationalIssueCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with any of 5 types of operational issues.
+Qualifiers: none
 
- `UnhealthyCount`
- Data type: `UInt32`
+Count of clients with any of 5 types of operational issues.
 
- Access type: Read/Write
+`UnhealthyCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients with unhealthy agents.
+Qualifiers: none
+
+Count of clients with unhealthy agents.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

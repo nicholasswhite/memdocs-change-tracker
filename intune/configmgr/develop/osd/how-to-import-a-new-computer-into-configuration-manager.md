@@ -1,49 +1,50 @@
 ---
-title: Import a New Computer
+title: "How to Import a New Computer into Configuration Manager"
 description: Add a new computer directly to the Configuration Manager database by calling the ImportMachineEntry Method in Class SMS_Site.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Import a New Computer into Configuration Manager
-You add a new computer directly to the Configuration Manager database by calling the [ImportMachineEntry Method in Class SMS_Site](../../develop/reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md). This can be used to deploy operating systems to computers that have not yet been discovered automatically by Configuration Manager.
+
+You add a new computer directly to the Configuration Manager database by calling the [ImportMachineEntry Method in Class SMS_Site](../reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md). This can be used to deploy operating systems to computers that have not yet been discovered automatically by Configuration Manager.
 
 > [!TIP]
-> You can also use the [Import-CMComputerInformation](/powershell/module/configurationmanager/import-cmcomputerinformation) PowerShell cmdlet.<!-- SCCMDocs#663 -->
+>
+> You can also use the [Import-CMComputerInformation](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/import-cmcomputerinformation) PowerShell cmdlet.
 
+You must provide the following information:
 
- You must provide the following information:
-
--   NETBIOS computer name
-
--   MAC address
-
--   SMBIOS GUID
+- NETBIOS computer name
+- MAC address
+- SMBIOS GUID
 
 > [!NOTE]
->  The MAC address must be for a network adapter that has a driver in Windows PE. The MAC address must be in colon format. For example, `00:00:00:00:00:00`. Other formats will prevent the client from receiving policy.
+>
+> The MAC address must be for a network adapter that has a driver in Windows PE. The MAC address must be in colon format. For example, `00:00:00:00:00:00`. Other formats will prevent the client from receiving policy.
 
- You should add a newly imported computer to a collection. This allows you to immediately create advertisements for deploying operating systems to the computer.
+You should add a newly imported computer to a collection. This allows you to immediately create advertisements for deploying operating systems to the computer.
 
- You can associate a new computer with a reference computer. For more information, see [How to Create an Association Between Two Computers in Configuration Manager](../../develop/osd/how-to-create-an-association-between-two-computers-in-configuration-manager.md).
+You can associate a new computer with a reference computer. For more information, see [How to Create an Association Between Two Computers in Configuration Manager](how-to-create-an-association-between-two-computers-in-configuration-manager.md).
 
 ### To add a new computer
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Call the [ImportMachineEntry Method in Class SMS_Site](../../develop/reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md).
-
-3.  Add the resource identifier you get from ImportMachineEntry to a collection.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Call the [ImportMachineEntry Method in Class SMS_Site](../reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md).
+3. Add the resource identifier you get from ImportMachineEntry to a collection.
 
 ## Example
- The following example method adds a new computer to Configuration Manager. The [ImportMachineEntry Method in Class SMS_Site](../../develop/reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md) is used to import the computer. Then, the computer is added to a custom collection. "All Systems" collection.
+
+The following example method adds a new computer to Configuration Manager. The [ImportMachineEntry Method in Class SMS_Site](../reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md) is used to import the computer. Then, the computer is added to a custom collection. "All Systems" collection.
 
 > [!IMPORTANT]
->  In previous version of this example, the computer was added to the "All Systems" collection. It is no longer possible to modify the built-in collections, use a custom collection instead.
+>
+> In previous version of this example, the computer was added to the "All Systems" collection. It is no longer possible to modify the built-in collections, use a custom collection instead.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AddNewComputer (connection, netBiosName, smBiosGuid, macAddress)
@@ -146,39 +147,43 @@ public int AddNewComputer(
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|-|-|-|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|-   A valid connection to the SMS Provider.|
-|`netBiosName`|-   Managed: `String`<br />-   VBScript: `String`|-   The computer NETBIOS name.|
-|`smBiosGuid`|-   Managed: `String`<br />-   VBScript: `String`|The SMBIOS GUID for the computer.|
-|`MacAddress`|-   Managed: `String`<br />-   VBScript: `String`|The MAC address for the computer in the following format: `00:00:00:00:00:00`.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | - A valid connection to the SMS Provider. |
+| `netBiosName` | - Managed: `String` - VBScript: `String` | - The computer NETBIOS name. |
+| `smBiosGuid` | - Managed: `String` - VBScript: `String` | The SMBIOS GUID for the computer. |
+| `MacAddress` | - Managed: `String` - VBScript: `String` | The MAC address for the computer in the following format: `00:00:00:00:00:00`. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
 
- [ImportMachineEntry Method in Class SMS_Site](../../develop/reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md)
- [About OS deployment computer management](about-computer-management.md)
+[ImportMachineEntry Method in Class SMS_Site](../reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md) [About OS deployment computer management](about-computer-management.md)

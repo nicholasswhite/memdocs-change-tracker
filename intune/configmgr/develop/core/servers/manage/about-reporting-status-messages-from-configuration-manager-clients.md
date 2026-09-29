@@ -1,16 +1,18 @@
 ---
-title: Reporting Status Messages from Clients
+title: "About Reporting Status Messages from Configuration Manager Clients"
 description: You can raise Configuration Manager client status messages in the Windows event log by using a compiled Managed Object Format (MOF) file on client computers.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: concept-article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # About Reporting Status Messages from Configuration Manager Clients
+
 You can raise Configuration Manager client status messages in the Windows event log by using a compiled Managed Object Format (MOF) file on client computers. This can be useful for administrators who are managing servers with System Center Operations Manager. A Configuration Manager status message that is raised by the Configuration Manager client can be caught by the Operations Manager agent on the same computer, which in turn raises an Operations Manager alert for the Configuration Manager status message.
 
- The following example MOF file shows how to raise Configuration Manager program status messages:
+The following example MOF file shows how to raise Configuration Manager program status messages:
 
 ```
 #pragma namespace("\\\\.\\root\\ccm\\policy\\machine\\requestedconfig")
@@ -38,4 +40,5 @@ instance of CCM_EventForwarder_Configuration
 ```
 
 ## See Also
- [About Configuration Manager Status Summarizers](../../../../develop/core/servers/manage/about-configuration-manager-status-summarizers.md)
+
+[About Configuration Manager Status Summarizers](about-configuration-manager-status-summarizers.md)

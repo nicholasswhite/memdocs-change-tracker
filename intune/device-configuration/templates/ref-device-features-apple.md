@@ -1,7 +1,7 @@
 ---
 title: Apple device feature settings in Microsoft Intune
 description: See all the settings to configure iOS, iPadOS, and macOS devices for AirPrint, home screen layout, app notifications, shared devices, single sign-on, and web content filter settings in Microsoft Intune. Use these settings in a device configuration profile to configure iOS, iPadOS, and macOS devices to use these Apple features on your devices.
-ms.date: 02/10/2026
+ms.date: "2026-02-10T00:00:00Z"
 ms.topic: reference
 ms.reviewer: beflamm
 zone_pivot_groups: platforms-apple
@@ -10,53 +10,40 @@ zone_pivot_groups: platforms-apple
 # Apple device feature settings in Microsoft Intune
 
 > [!NOTE]
-> [!INCLUDE [not-all-settings-are-documented](../includes/not-all-settings-are-documented.md)]
+>
+> Intune might support more settings than the settings listed in this article. Not all settings are documented, and won't be documented. To see the settings you can configure, create a device configuration policy, and select **Settings catalog**. For more information, go to [settings catalog](../settings-catalog/index.md).
 
 Intune has a built-in **Device Features** template profile for Apple devices. It includes built-in settings that admins can use to customize different Apple features on iOS/iPadOS and macOS devices. For example, you can add AirPrint printers, show notifications, use single sign-on authentication, and more.
 
 As part of your mobile device management (MDM) solution, use these features to control and manage Apple features on your devices.
 
-This article lists these settings and describes what each setting does. It also lists the steps to get the IP address, path, and port of AirPrint printers by using the Terminal app (emulator). For more information on the device features template, see [Add iOS/iPadOS or macOS device feature settings](./configure-device-features-apple.md).
+This article lists these settings and describes what each setting does. It also lists the steps to get the IP address, path, and port of AirPrint printers by using the Terminal app (emulator). For more information on the device features template, see [Add iOS/iPadOS or macOS device feature settings](configure-device-features-apple.md).
 
 These settings apply to different enrollment types, with some settings applying to all enrollment options. For more information on the different enrollment types, see [macOS enrollment](../../device-enrollment/apple/methods-macos.md).
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
 > This feature supports the following platforms:
 >
 > - iOS/iPadOS
 > - macOS
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
-> - [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
-> - Create a [device features configuration profile](./configure-device-features-apple.md).
-:::column-end:::
-:::row-end:::
+> - Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
+
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
+
+> - Create a [device features configuration profile](configure-device-features-apple.md).
 
 ## AirPrint
 
 ### Settings apply to: All enrollment types
 
 > [!NOTE]
+>
 > Add all printers to the same profile. Apple prevents multiple AirPrint profiles from targeting the same device.
 
 - **IP address**: Enter the IPv4 or IPv6 address of the printer. If you use hostnames to identify printers, you can get the IP address by pinging the printer in the terminal. [Get the IP address and path](#get-server-ip-address-resource-path-and-port) (in this article) provides more details.
@@ -67,7 +54,6 @@ These settings apply to different enrollment types, with some settings applying 
 
   - iOS 11.0+
   - iPadOS 13.0+
-
 - **Force TLS**: **Disable** (default) doesn't secure AirPrint connections with TLS. **Enable** secures AirPrint connections with Transport Layer Security (TLS).
 
   This setting applies to:
@@ -87,12 +73,10 @@ To add AirPrinter servers, you need the IP address of the printer, the resource 
 1. On a Mac that connects to the same local network (subnet) as the AirPrint printers, open the **Terminal** app (from **/Applications/Utilities**).
 2. In the Terminal app, enter `ippfind`, and select enter.
 
-    Note the printer information. For example, it can return something like `ipp://myprinter.local.:631/ipp/port1`. The first part is the name of the printer. The last part (`ipp/port1`) is the resource path.
-
+   Note the printer information. For example, it can return something like `ipp://myprinter.local.:631/ipp/port1`. The first part is the name of the printer. The last part (`ipp/port1`) is the resource path.
 3. In the Terminal app, enter `ping myprinter.local`, and select enter.
 
    Note the IP address. For example, it can return something like `PING myprinter.local (10.50.25.21)`.
-
 4. Use the IP address and resource path values. In this example, the IP address is `10.50.25.21`, and the resource path is `/ipp/port1`.
 
 ::: zone pivot="ios-ipados"
@@ -110,13 +94,9 @@ This feature applies to:
 - Add an app only once to the dock, page, folder on a page, or folder in the dock. If you add the same app in any two places, the app doesn't show on devices, and reporting errors can occur.
 
   For example, if you add the camera app to a dock and a page, the camera app isn't shown, and reporting might show an error for the policy. To add the camera app to the home screen layout, choose only the dock or a page, not both.
-
 - When you apply a home screen layout, it overwrites any user-defined layout. So, we recommend you use home screen layouts on userless devices.
-
 - You can have preexisting apps installed on the device that aren't included in the home screen layout configuration. These apps are shown in alphabetical order after the configured apps.
-
 - When you use the Home Screen grid settings to add pages, or add pages and apps to the dock, the icons on the Home Screen and pages are locked. You can't move or delete them. This behavior might be by design with iOS/iPadOS and Apple's MDM policies.
-
 - iOS/iPadOS web clips that are required to open in a managed browser don't appear in the order that you enter in the Home Screen layout policy.
 
 ### Home screen
@@ -128,15 +108,12 @@ Use this feature to add apps. You can see how these apps look on pages, the dock
   - iPhone 5 supports 4 columns x 5 rows
   - iPhone 6 and later support 4 columns x 6 rows
   - iPads support 5 columns x 6 rows
-
 - **+**: Select the add button to add apps.
-
 - **Create folder or add apps**: Add an **App** or a **Folder**:
 
   - **App**: Select existing apps from the list. This option adds apps to the home screen on devices. If you don't have any apps, then [Add apps to Intune](../../app-management/deployment/index.md).
 
     You can also search for apps by the app name, like `authenticator` or `drive`. Or, search by the app publisher, like `Microsoft` or `Apple`.
-
   - **Folder**: Adds a folder to the home screen. Enter the **Folder name**, and select existing apps from the list to go in the folder. This folder name is shown to users on their devices.
 
     You can also search for apps by the app name, like `authenticator` or `drive`. Or, search by the app publisher, like `Microsoft` or `Apple`.
@@ -153,7 +130,6 @@ Add up to four (4) items for iPhones, and up to six (6) items for iPads (apps an
   - **App**: Select existing apps from the list. This option adds apps to the dock on the screen. If you don't have any apps, then [Add apps to Intune](../../app-management/deployment/index.md).
 
     You can also search for apps by the app name, like `authenticator` or `drive`. Or, search by the app publisher, like `Microsoft` or `Apple`.
-
   - **Folder**: Adds a folder to the dock on the screen. Enter the **Folder name**, and select existing apps from the list to go in the folder. This folder name is shown to users on their devices.
 
     You can also search for apps by the app name, like `authenticator` or `drive`. Or, search by the app publisher, like `Microsoft` or `Apple`.
@@ -164,11 +140,11 @@ Add up to four (4) items for iPhones, and up to six (6) items for iPads (apps an
 
 In the following example, the dock screen shows the Safari, Mail, and Stocks apps. The Stocks app is selected to show its properties:
 
-:::image type="content" source="./media/ref-device-features-apple/dock-screen-stocks-app.png" alt-text="Sample iOS/iPadOS Home screen layout dock settings in Microsoft Intune":::
+![Sample iOS/iPadOS Home screen layout dock settings in Microsoft Intune](media/ref-device-features-apple/dock-screen-stocks-app.png)
 
 When you assign the policy to an iPhone, the dock looks similar to the following image:
 
-:::image type="content" source="./media/ref-device-features-apple/safari-mail-stocks-apps-ios-dock.png" alt-text="Sample iOS/iPadOS dock layout on an iPhone device":::
+![Sample iOS/iPadOS dock layout on an iPhone device](media/ref-device-features-apple/safari-mail-stocks-apps-ios-dock.png)
 
 ::: zone-end
 
@@ -180,13 +156,13 @@ When you assign the policy to an iPhone, the dock looks similar to the following
 
 **Add**: Add notifications for apps:
 
-:::image type="content" source="./media/ref-device-features-apple/ios-ipados-app-notifications.png" alt-text="Add app notification in iOS/iPadOS device features configuration profile in Microsoft Intune":::
+![Add app notification in iOS/iPadOS device features configuration profile in Microsoft Intune](media/ref-device-features-apple/ios-ipados-app-notifications.png)
 
 - **App bundle ID**: Enter the **App Bundle ID** of the app you want to add.
 
   To get the app bundle ID:
 
-  - For some examples, see [Bundle IDs for built-in iOS/iPadOS apps](./ref-bundle-ids-ios.md).
+  - For some examples, see [Bundle IDs for built-in iOS/iPadOS apps](ref-bundle-ids-ios.md).
   - For apps added to Intune, [you can use the Intune admin center](../../app-management/collect-bundle-ids.md).
 
   When set to **Not configured** or left blank, Intune doesn't change or update this setting.
@@ -199,12 +175,14 @@ When you assign the policy to an iPhone, the dock looks similar to the following
   - **Show in notifications center**: **Enable** allows the app to show notifications in the device Notification Center. **Disable** prevents the app from showing notifications in the Notification Center. When set to **Not configured** or left blank, Intune doesn't change or update this setting.
   - **Show on Lock Screen**: **Enable** shows app notifications on the device lock screen. **Disable** prevents the app from showing notifications on the lock screen. When set to **Not configured** or left blank, Intune doesn't change or update this setting.
   - **Alert type**: When devices are unlocked, choose how the notification is shown. Your options:
+
     - **None**: No notification is shown.
     - **Banner**: A banner is briefly shown with the notification. This setting might also be known as Temporary Banner.
     - **Modal**: The notification is shown and users must manually dismiss it before continuing to use the device. This setting might also be known as Persistent Banner.
   - **Badge on app icon**: **Enable** adds a badge to the app icon. The badge means the app sent a notification. **Disable** doesn't add a badge to the app icon. When set to **Not configured**, Intune doesn't change or update this setting.
   - **Enable sounds**: **Enable** plays a sound when a notification is delivered. **Disable** doesn't play a sound when a notification is delivered. When set to **Not configured**, Intune doesn't change or update this setting.
-  - **Show previews**: Shows a preview of recent app notifications. Select when to show the preview. The value you choose overrides the user configured value on the device (Settings > Notifications > Show Previews). Your options:
+  - **Show previews**: Shows a preview of recent app notifications. Select when to show the preview. The value you choose overrides the user configured value on the device (Settings &gt; Notifications &gt; Show Previews). Your options:
+
     - **Not configured**: Intune doesn't change or update this setting.
     - **When unlocked**: The preview only shows when the device is unlocked.
     - **Always**: The preview always shows on the lock screen.
@@ -237,7 +215,7 @@ These settings use the [AssociatedDomains.ConfigurationItem payload](https://dev
 
   - **App ID**: Enter the app identifier of the app to associate with a website. The app identifier includes the team ID and a bundle ID: `TeamID.BundleID`.
 
-    The team ID is a 10-character alphanumerical (letters and numbers) string generated by Apple for your app developers, like `ABCDE12345`. [Locate your Team ID](https://help.apple.com/developer-account/#/dev55c3c710c) (opens Apple's web site) has more information.
+    The team ID is a 10-character alphanumerical (letters and numbers) string generated by Apple for your app developers, like `ABCDE12345`. [Locate your Team ID](https://help.apple.com/developer-account/#/dev55c3c710c) (opens Apple's web site) has more information.
 
     The bundle ID uniquely identifies the app, and typically is formatted in reverse domain name notation. For example, the bundle ID of Finder is `com.apple.finder`.
 
@@ -245,7 +223,6 @@ These settings use the [AssociatedDomains.ConfigurationItem payload](https://dev
 
     - Open the Terminal app and use AppleScript: `osascript -e 'id of app "ExampleApp"'`
     - For apps added to Intune, [you can use the Intune admin center](../../app-management/collect-bundle-ids.md).
-
   - **Domains**: Enter the website domain to associate with an app. The domain includes a service type and fully qualified hostname, like `webcredentials:www.contoso.com`.
 
     You can match all subdomains of an associated domain by entering `*.` (an asterisk wildcard and a period) before the beginning of the domain. The period is required. Exact domains have a higher priority than wildcard domains. So, patterns from parent domains are matched *if* a match isn't found at the fully qualified subdomain.
@@ -255,7 +232,6 @@ These settings use the [AssociatedDomains.ConfigurationItem payload](https://dev
     - **authsrv**: Single sign-on app extension
     - **applink**: Universal link
     - **webcredentials**: Password autofill
-
   - **Enable direct downloads**: **Yes** downloads the domain data directly from the device, instead of going through Apple's content delivery network (CDN). When set to **Not configured**, Intune doesn't change or update this setting. By default, the OS might download data through Apple's CDN dedicated to Associated Domains.
 
     This setting applies to:
@@ -263,7 +239,8 @@ These settings use the [AssociatedDomains.ConfigurationItem payload](https://dev
     - macOS 11 and newer
 
 > [!TIP]
-> To troubleshoot, on your macOS device, open **System Preferences** > **Profiles**. Confirm the profile you created is in the device profiles list. If it's listed, be sure the **Associated Domains Configuration** is in the profile, and it includes the correct app ID and domains.
+>
+> To troubleshoot, on your macOS device, open **System Preferences** &gt; **Profiles**. Confirm the profile you created is in the device profiles list. If it's listed, be sure the **Associated Domains Configuration** is in the profile, and it includes the correct app ID and domains.
 
 ::: zone-end
 
@@ -274,6 +251,7 @@ These settings use the [AssociatedDomains.ConfigurationItem payload](https://dev
 Content caching saves a local copy of content. Other Apple devices can get this information without connecting to the Internet. This caching accelerates downloads by saving software updates, apps, photos, and other content the first time they're downloaded. Since apps are downloaded once and shared to other devices, schools and organizations with many devices save bandwidth.
 
 > [!NOTE]
+>
 > Use only one profile for these settings. If you assign multiple profiles with these settings, an error occurs.
 >
 > For more information on monitoring content caching, see [View content caching logs and statistics](https://support.apple.com/guide/mac-help/view-content-caching-logs-statistics-mac-mchl0d8533cd/10.15/mac/10.15) (opens Apple's web site).
@@ -289,58 +267,49 @@ For more information on these settings, see [Content Caching payload settings](h
 **Enable content caching**: **Yes** turns on content caching, and users can't disable it. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might turn it off.
 
 - **Type of content to cache**: Your options:
+
   - **All content**: Caches iCloud content and shared content.
   - **User content only**: Caches user's iCloud content, including photos and documents.
   - **Shared content only**: Caches apps and software updates.
-
 - **Maximum cache size**: Enter the maximum amount of disk space (in bytes) that's used to cache content. When left blank (default), Intune doesn't change or update this setting. By default, the OS might set this value to zero (`0`) bytes, which gives unlimited disk space to the cache.
 
   Be sure you don't exceed the space available on the devices. For more information on device storage capacity, see [How iOS and macOS report storage capacity](https://support.apple.com/HT201402) (opens Apple's web site).
-
 - **Cache location**: Enter the path to store the cached content. The default location is `/Library/Application Support/Apple/AssetCache/Data`. Don't change this location.
 
-  If you change this setting, your cached content isn't moved to the new location. To move it automatically, users need to change the location on the device (**System Preferences** > **Sharing** > **Content Caching**).
-
+  If you change this setting, your cached content isn't moved to the new location. To move it automatically, users need to change the location on the device (**System Preferences** &gt; **Sharing** &gt; **Content Caching**).
 - **Port**: Enter the TCP port number on devices for the cache to accept download and upload requests, from 0-65535. Enter zero (`0`) (default) to use whatever port is available.
 - **Block internet connection and cache content sharing**: Also known as tethered caching. **Yes** prevents Internet connection sharing, and prevents sharing cached content with iOS/iPadOS devices USB-connected to their Mac. Users can't enable this setting. When set to **Not configured** (default), Intune doesn't change or update this setting.
-
 - **Enable internet connection sharing**: Also known as tethered caching. **Yes** allows Internet connection sharing, and allows sharing cached content with iOS/iPadOS devices USB-connected to their Mac. Users can't disable this setting. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might turn this off.
 
   This setting applies to:
 
   - macOS 10.15.4 and newer
-
-- **Enable cache to log client details**: **Yes** logs the IP address and port number of the devices that request content. If you're troubleshooting device issues, this log file can help. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not log this information.
-
+- **Enable cache to log client details**: **Yes** logs the IP address and port number of the devices that request content. If you're troubleshooting device issues, this log file can help. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not log this information.
 - **Always keep content from the cache, even when the system needs disk space for other apps**: **Yes** keeps the cache content, and makes sure nothing is deleted, even when disk space is low. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might purge content from the cache automatically when it needs storage space for other apps.
 
   This setting applies to:
 
   - macOS 10.15 and newer
-
 - **Show status alerts**: **Yes** shows alerts as system notifications. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not show these alerts as system notifications.
 
   This setting applies to:
 
   - macOS 10.15 and newer
-
 - **Prevent the device from sleeping while caching is turned on**: **Yes** prevents the computer from going to sleep when caching is on. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow the device to sleep.
 
   This setting applies to:
 
   - macOS 10.15 and newer
-
 - **Devices to cache**: Choose the devices that can cache content. Your options:
+
   - **Not configured** (default): Intune doesn't change or update this setting.
   - **Devices using the same local network**: The content cache offers content to devices on the same immediate local network. No content is offered to devices on other networks, including devices reachable by the content cache.
   - **Devices using the same public IP address**: The content cache offers content to devices using the same public IP address. No content is offered to devices on other networks, including devices reachable by the content cache.
-  - **Devices using custom local networks**: The content cache provides content to devices in the IP ranges you enter.
+  - **Devices using custom local networks**: The content cache provides content to devices in the IP ranges you enter.
     - **Client listen ranges**: Enter the range of IP addresses that can receive the content cache.
   - **Devices using custom local networks with fallback**: The content cache provides content to devices in the listen ranges, peer listen ranges, and parents IP addresses.
     - **Client listen ranges**: Enter the range of IP addresses that can receive the content cache.
-
 - **Custom public IP addresses**: Enter a range of public IP addresses. The cloud servers use this range to match client devices to caches.
-
 - **Share content with other caches**: When your network has more than one content cache, the content caches on other devices automatically become peers. These devices can consult and share cached software.
 
   When a requested item isn't available on one content cache, it checks its peers for the item. If the item is available, it's downloaded from the content cache on the peer device. If it's still not available, the content cache downloads the item from:
@@ -348,7 +317,6 @@ For more information on these settings, see [Content Caching payload settings](h
   - A parent IP address, if you configure one
 
     OR,
-
   - From Apple using the Internet
 
   When more than one content cache is available, devices automatically select the right content cache.
@@ -362,9 +330,9 @@ For more information on these settings, see [Content Caching payload settings](h
 
     - **Peer listen ranges**: Enter the IPv4 or IPv6 start and ending IP addresses for your range. The content cache responds only to peer cache requests from content caches in the IP address ranges you enter.
     - **Peer filter ranges**: Enter the IPv4 or IPv6 start and ending IP addresses for your range. The content cache filters its list of peers using the IP address ranges you enter.
-
 - **Parent IP addresses**: Enter the local IP address of another content cache to add as a parent cache. Your cache uploads and downloads content to these caches, instead of uploading or downloading directly from Apple. Only add a parent IP address once.
 - **Parent selection policy**: When there are many parent caches, select how the parent IP address is chosen. Your options:
+
   - **Not configured** (default): Intune doesn't change or update this setting.
   - **Round robin**: Use the parent IP addresses in order. This option is good for load balancing scenarios.
   - **First available**: Always use the first available IP address in the list.
@@ -388,7 +356,6 @@ This feature applies to:
 - **"If Lost, Return to..." Message**: If devices are lost or stolen, enter a note that might help get the device returned if found. You can enter any text you want. For example, enter something like `If found, call Contoso at ...`.
 
   The text you enter is shown on the sign in window and lock screen on devices.
-
 - **Asset tag information**: Enter information about the asset tag of the device. For example, enter `Owned by Contoso Corp` or `Serial Number: {{serialnumber}}`.
 
   Use device tokens to add device-specific information to these fields. For example, to show the serial number, enter `Serial Number: {{serialnumber}}` or `Device ID: {{DEVICEID}}`. On the lock screen, the text shows similar to `Serial Number 123456789ABC`. When entering variables, be sure to use curly brackets `{{ }}`.
@@ -441,10 +408,10 @@ This feature applies to:
     - `/Users/UserName/music/itunes.app`
 
     When adding any app, folder, or file, be sure to enter the correct path. Not all items are in the `Applications` folder. If users move an item from one location to another, then the path changes. This moved item isn't opened when the user signs in.
-
   - **Hide**: Choose to show or hide the app. Your options:
-    - **Not configured** (default): Intune doesn't change or update this setting. By default, the OS might show items in the Users & Groups login items list with the hide option unchecked.
-    - **Yes**: Hides the app in the Users & Groups login items list.
+
+    - **Not configured** (default): Intune doesn't change or update this setting. By default, the OS might show items in the Users &amp; Groups login items list with the hide option unchecked.
+    - **Yes**: Hides the app in the Users &amp; Groups login items list.
 
 ::: zone-end
 
@@ -496,22 +463,18 @@ This feature applies to:
   - **Not configured**: Intune doesn't change or update this setting. By default, the OS prompts users for a Kerberos principal name when the profile is deployed to devices. A principal name is required for MDMs to install SSO profiles.
   - **User principal name**: The user principal name (UPN) is parsed in the following way:
 
-    :::image type="content" source="./media/ref-device-features-apple/user-name-attribute.png" alt-text="iOS/iPadOS Username SSO attribute in Microsoft Intune":::
+    ![iOS/iPadOS Username SSO attribute in Microsoft Intune](media/ref-device-features-apple/user-name-attribute.png)
 
     You can also overwrite the realm with the text you enter in the **Realm** text box.
 
     For example, Contoso has several regions, including Europe, Asia, and North America. Contoso wants their Asia users to use SSO, and the app requires the UPN in the `username@asia.contoso.com` format. When you select **User Principal Name**, the realm for each user is taken from Microsoft Entra ID, which is `contoso.com`. So for users in Asia, select **User Principal Name**, and enter `asia.contoso.com`. The user's UPN becomes `username@asia.contoso.com`, instead of `username@contoso.com`.
-
   - **Intune Device ID**: Intune automatically selects the Intune device ID. By default:
 
     - Apps only need to use the device ID. But if your app uses the realm and the device ID, enter the realm in the **Realm** text box.
     - If you use device ID, keep the realm empty.
-
   - **Azure AD Device ID**: The Microsoft Entra device ID
   - **SAM account name**: Intune populates the on-premises Security Accounts Manager (SAM) account name.
-
 - **Realm**: Enter the domain part of the URL. For example, enter `contoso.com`.
-
 - **URLs**: **Add** any URLs in your organization that require user single sign-on (SSO) authentication.
 
   For example, when a user connects to any of these sites, the iOS/iPadOS device uses the SSO credentials. Users don't need to enter credentials again. If multifactor authentication (MFA) is enabled, users are required to enter the second authentication.
@@ -519,18 +482,15 @@ This feature applies to:
   Also:
 
   - These URLs must be properly formatted FQDN. Apple requires the URLs be in the `http://<yourURL.domain>` format.
-
   - The URL matching patterns must begin with either `http://` or `https://`. A simple string match is run, so the `http://www.contoso.com/` URL prefix doesn't match `http://www.contoso.com:80/`. With iOS 10.0+ and iPadOS 13.0+, a single wildcard \* can be used to enter all matching values. For example, `http://*.contoso.com/` matches both `http://store.contoso.com/` and `http://www.contoso.com`.
 
     The `http://.com` and `https://.com` patterns match all HTTP and HTTPS URLs, respectively.
-
 - **Apps**: **Add** apps on users devices that can use single sign-on.
 
   The `AppIdentifierMatches` array must include strings that match the app bundle IDs. These strings can be exact matches, like `com.contoso.myapp`, or enter a prefix match on the bundle ID using the `*` wildcard character. The wildcard character must appear after a period character (.), and can appear only once, at the end of the string, like `com.contoso.*`. When a wildcard is included, any app whose bundle ID begins with the prefix is granted access to the account.
 
   Use **App Name** to enter a user-friendly name to help you identify the bundle ID.
-
-- **Credential renewal certificate**: If using certificates for authentication (not passwords), select the existing [SCEP](../../device-configuration/certificates/scep-profiles.md) or [PFX](../../device-configuration/certificates/pkcs-profiles.md) certificate as the authentication certificate. Typically, this certificate is the same certificate that's deployed to users for other profiles, like VPN, Wi-Fi, or email.
+- **Credential renewal certificate**: If using certificates for authentication (not passwords), select the existing [SCEP](../certificates/scep-profiles.md) or [PFX](../certificates/pkcs-profiles.md) certificate as the authentication certificate. Typically, this certificate is the same certificate that's deployed to users for other profiles, like VPN, Wi-Fi, or email.
 
 ::: zone-end
 
@@ -545,15 +505,12 @@ These settings use Apple's Web Content Filter settings. For more information on 
 **Filter Type**: Choose to allow specific websites. Your options:
 
 - **Not configured**: Intune doesn't change or update this setting.
-
 - **Configure URLs**: Use Apple's built-in web filter that looks for adult terms, including profanity and sexually explicit language. This setting evaluates each web page as it loads, and identifies and blocks unsuitable content. You can also add URLs that you don't want checked by the filter. Or, block specific URLs, regardless of Apple's filter settings.
 
   - **Permitted URLs**: **Add** the URLs you want to allow. These URLs bypass Apple's web filter.
 
     The URLs you enter are the URLs you don't want evaluated by the Apple web filter. These URLs aren't a list of allowed websites. To create a list of allowed websites, set the **Filter Type** to **Specific websites only**.
-
   - **Blocked URLs**: **Add** the URLs you want to stop from opening, regardless of the Apple web filter settings.
-
 - **Specific websites only** (for Safari web browser only): These URLs are added to the Safari browser's bookmarks. Users are **only** allowed to visit these sites; no other sites can be opened. Use this option only if you know the exact list of URLs that users can access.
 
   - **URL**: Enter the URL of the website you want to allow. For example, enter `https://www.contoso.com`.
@@ -584,6 +541,7 @@ This feature applies to:
 - macOS 10.15 and newer
 
 > [!NOTE]
+>
 > On macOS devices, Microsoft recommends you use Platform SSO to enable single sign-on (SSO). For more information, go to [Configure Platform SSO for macOS devices in Microsoft Intune](../settings-catalog/configure-platform-sso-macos.md).
 
 ### Settings apply to: User approved device enrollment, and Automated device enrollment
@@ -602,18 +560,20 @@ Uses the Microsoft Entra ID Enterprise SSO plug-in, which is a redirect-type SSO
 
 ::: zone pivot="ios-ipados"
 
-All apps that use the Microsoft Authenticator app for authentication continue to get SSO with the [Microsoft Enterprise SSO plug-in for Apple devices](/entra/identity-platform/apple-sso-plugin). For more information, see [Use the Microsoft Enterprise SSO plug-in on iOS/iPadOS devices](../settings-catalog/configure-enterprise-sso-plugin-ios.md).
+All apps that use the Microsoft Authenticator app for authentication continue to get SSO with the [Microsoft Enterprise SSO plug-in for Apple devices](https://learn.microsoft.com/en-us/entra/identity-platform/apple-sso-plugin). For more information, see [Use the Microsoft Enterprise SSO plug-in on iOS/iPadOS devices](../settings-catalog/configure-enterprise-sso-plugin-ios.md).
 
 > [!IMPORTANT]
-> To achieve SSO with the Microsoft Entra SSO app extension type, first install the iOS/iPadOS Microsoft Authenticator app on devices. The Authenticator app delivers the Microsoft Enterprise SSO plug-in to devices, and the MDM SSO app extension settings activate the plug-in. Once Authenticator and the SSO app extension profile are installed on devices, users must enter their credentials to sign in, and establish a session on their devices. This session is then used across different applications without requiring users to authenticate again. For more information about Authenticator, go to [What is the Microsoft Authenticator app](/azure/active-directory/user-help/user-help-auth-app-overview).
+>
+> To achieve SSO with the Microsoft Entra SSO app extension type, first install the iOS/iPadOS Microsoft Authenticator app on devices. The Authenticator app delivers the Microsoft Enterprise SSO plug-in to devices, and the MDM SSO app extension settings activate the plug-in. Once Authenticator and the SSO app extension profile are installed on devices, users must enter their credentials to sign in, and establish a session on their devices. This session is then used across different applications without requiring users to authenticate again. For more information about Authenticator, go to [What is the Microsoft Authenticator app](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-auth-app-overview).
 
 ::: zone-end
 
 ::: zone pivot="macos"
 
-For more information, go to [Use the Microsoft Enterprise SSO plug-in on macOSOS devices](./configure-enterprise-sso-plugin-macos.md).
+For more information, go to [Use the Microsoft Enterprise SSO plug-in on macOSOS devices](configure-enterprise-sso-plugin-macos.md).
 
 > [!IMPORTANT]
+>
 > To achieve SSO with the Microsoft Entra SSO app extension type, install the macOS Company Portal app on devices. The Company Portal app delivers the Microsoft Enterprise SSO plug-in to devices. The MDM SSO app extension settings activate the plug-in. After the Company Portal app and the SSO app extension profile are installed on devices, users sign in with their credentials, and create a session on their devices. This session is used across different applications without requiring users to authenticate again.
 >
 > For more information about the Company Portal app, go to [What happens if you install the Company Portal app and enroll your macOS device in Intune](../../user-help/enrollment/effects-macos.md).
@@ -626,7 +586,7 @@ For more information, go to [Use the Microsoft Enterprise SSO plug-in on macOSOS
 
 - **Enable shared device mode**: Choose **Yes** if you're deploying the Microsoft Enterprise SSO plug-in to iOS/iPadOS devices configured for Microsoft Entra shared device mode feature. Devices in shared mode allow many users to globally sign in and out of applications that support shared device mode. When set to **Not configured**, Intune doesn't change or update this setting. By default, iOS/iPadOS devices aren't intended to be shared among multiple users.
 
-  For more information about shared device mode and how to enable it, see [Overview of shared device mode](/entra/identity-platform/msal-shared-devices).
+  For more information about shared device mode and how to enable it, see [Overview of shared device mode](https://learn.microsoft.com/en-us/entra/identity-platform/msal-shared-devices).
 
   This setting applies to:
 
@@ -640,15 +600,14 @@ For more information, go to [Use the Microsoft Enterprise SSO plug-in on macOSOS
   - The app bundle IDs you enter have permission to use the Microsoft Entra SSO app extension if they don't use any Microsoft libraries, like Microsoft Authentication Library (MSAL).
 
     The experience for these apps might not be as seamless compared to the Microsoft libraries. Older apps that use MSAL authentication, or apps that don't use the newest Microsoft libraries, must be added to this list to work properly with the Microsoft Azure SSO app extension.
-
 - **Additional configuration**: Enter more extension-specific data to pass to the SSO app extension:
+
   - **Key**: Enter the name of the item you want to add, like `user name` or `AppAllowList`.
   - **Type**: Enter the type of data. Your options:
 
     - String
     - Boolean: In **Configuration value**, enter `True` or `False`.
     - Integer: In **Configuration value**, enter a number.
-
   - **Value**: Enter the data.
 
 #### Redirect SSO app extension type
@@ -659,7 +618,6 @@ Use a generic, customizable redirect app extension to use SSO with modern authen
 - **Team ID**: Enter the team identifier of your SSO app extension. A team identifier is a 10-character alphanumerical (numbers and letters) string generated by Apple, like `ABCDE12345`.
 
   [Locate your Team ID](https://help.apple.com/developer-account/#/dev55c3c710c) (opens Apple's website) has more information.
-
 - **URLs**: Enter the URLs where your identity provider can be reached. When a user is redirected to these URLs, the SSO app extension intervenes and prompts for SSO. Each URL must be unique and can't already exist in another profile. Must use HTTP or HTTPS protocols.
 
   For example, when a user connects to any of these sites, the device uses the SSO credentials. Users don't need to enter credentials again. If multifactor authentication (MFA) is enabled, users are required to enter the second authentication.
@@ -675,15 +633,14 @@ Use a generic, customizable redirect app extension to use SSO with modern authen
   With iOS 10.0+ and iPadOS 13.0+, a single wildcard \* can be used to enter all matching values. For example, `http://*.contoso.com/` matches both `http://store.contoso.com/` and `http://www.contoso.com`.
 
   ::: zone-end
-
 - **Additional configuration**: Enter more extension-specific data to pass to the SSO app extension:
+
   - **Key**: Enter the name of the item you want to add, like `user name` or `AppAllowList`.
   - **Type**: Enter the type of data. Your options:
 
     - String
     - Boolean: In **Configuration value**, enter `True` or `False`.
     - Integer: In **Configuration value**, enter a number.
-
   - **Value**: Enter the data.
 
 #### Credential SSO app extension type
@@ -694,23 +651,20 @@ Use a generic, customizable credential app extension to use SSO with challenge-a
 - **Team ID**: Enter the team identifier of your SSO app extension. A team identifier is a 10-character alphanumerical (numbers and letters) string generated by Apple, like `ABCDE12345`.
 
   [Locate your Team ID](https://help.apple.com/developer-account/#/dev55c3c710c) (opens Apple's website) has more information.
-
 - **Realm**: Enter the name of your authentication realm. The realm name should be capitalized, like `CONTOSO.COM`. Typically, your realm name is the same as your DNS domain name, but in all uppercase.
-
 - **Domains**: Enter the domain or host names of the sites that can authenticate through SSO. For example, if your website is `mysite.contoso.com`, then `mysite` is the host name, and `.contoso.com` is the domain name. When users connect to any of these sites, the app extension handles the authentication challenge. This authentication allows users to use Face ID, Touch ID, or Apple pincode/passcode to sign in.
 
   - All the domains in your single sign-on app extension Intune profiles must be unique. You can't repeat a domain in any sign-on app extension profile, even if you're using different types of SSO app extensions.
   - These domains aren't case-sensitive.
   - The domain must begin with a period (`.`).
-
 - **Additional configuration**: Enter more extension-specific data to pass to the SSO app extension:
+
   - **Key**: Enter the name of the item you want to add, like `user name` or `AppAllowList`.
   - **Type**: Enter the type of data. Your options:
 
     - String
     - Boolean: In **Configuration value**, enter `True` or `False`.
     - Integer: In **Configuration value**, enter a number.
-
   - **Value**: Enter the data.
 
 #### Kerberos SSO app extension type
@@ -734,16 +688,15 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
 ::: zone-end
 
 > [!TIP]
+>
 > With the **Redirect** and **Credential** types, you add your own configuration values to pass through the extension. If you're using **Credential**, consider using built-in configuration settings provided by Apple in the **Kerberos** type.
 
 - **Realm**: Enter the name of your authentication realm. The realm name should be capitalized, like `CONTOSO.COM`. Typically, your realm name is the same as your DNS domain name, but in all uppercase.
-
 - **Domains**: Enter the domain or host names of the sites that can authenticate through SSO. For example, if your website is `mysite.contoso.com`, then `mysite` is the host name, and `.contoso.com` is the domain name. When users connect to any of these sites, the app extension handles the authentication challenge. This authentication allows users to use Face ID, Touch ID, or Apple pincode/passcode to sign in.
 
   - All the domains in your single sign-on app extension Intune profiles must be unique. You can't repeat a domain in any sign-on app extension profile, even if you're using different types of SSO app extensions.
   - These domains aren't case-sensitive.
   - The domain must begin with a period (`.`).
-
 - **Block keychain usage**: **Yes** prevents passwords from being saved and stored in the keychain. If blocked, users aren't prompted to save their password, and need to reenter the password when the Kerberos ticket expires. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow passwords to be saved and stored in the keychain. Users aren't prompted to reenter their password when the ticket expires.
 - **Require Face ID, Touch ID, or passcode**: **Yes** forces users to enter their Face ID, Touch ID, or device passcode when the credential is needed to refresh the Kerberos ticket. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not require users to use biometrics or device passcode to refresh the Kerberos ticket. If **Block keychain usage** is set to **Yes**, then this setting doesn't apply.
 - **Set as default realm**: **Yes** sets the **Realm** value you entered as the default realm. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not set a default realm.
@@ -751,9 +704,7 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
   - If you're configuring multiple Kerberos SSO app extensions in your organization, select **Yes**.
   - If you're using multiple realms, select **Yes**. It sets the **Realm** value you entered as the default realm.
   - If you only have one realm, select **Not configured** (default).
-
 - **Block Autodiscover**: **Yes** prevents the Kerberos extension from automatically using LDAP and DNS to determine its Active Directory site name. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow the extension to automatically find the Active Directory site name.
-
 - **Allow only managed apps**: When set to **Yes**, the Kerberos extension allows only managed apps, and any apps entered with the app bundle ID to access the credential. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow nonmanaged apps to access the credential.
 
   This setting applies to:
@@ -763,7 +714,7 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
   - iOS/iPadOS 14 and newer
 
   ::: zone-end
-  
+
   ::: zone pivot="macos"
 
   - macOS 12 and newer
@@ -776,32 +727,27 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
 - **Enable local password sync**: Choose **Yes** to sync your users' local passwords to Microsoft Entra ID. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might disable password sync to Microsoft Entra ID.
 
   Use this setting as an alternative or backup to SSO. This setting doesn't work if users are signed in with an Apple mobile account.
-
 - **Delay Kerberos extension setup**: When set to **Yes**, the user isn't prompted to set up the Kerberos extension until the extension is enabled by the admin, or a Kerberos challenge is received. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might immediately prompt the user to set up the Kerberos extension.
 
   This setting applies to:
 
   - macOS 11 and newer
-
 - **Allow standard Kerberos utilities**: When set to **Yes**, the Kerberos extension allows any apps entered with the app bundle ID, managed apps, and standard Kerberos utilities, like TicketViewer and klist, to access and use the credential. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not allow listed apps to access and use the credential.
 
   This setting applies to:
 
   - macOS 12 and newer
-
 - **Request credential**: When set to **Yes**, the credential is requested on the next matching Kerberos challenge or network state change. When the credential is expired or missing, a new credential is created. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not request a new credential.
 
   This setting applies to:
 
   - macOS 12 and newer
-
 - **Require LDAP connections for TLS**: When set to **Yes**, LDAP connections are required to use Transport Layer Security (TLS). When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not require LDAP connections to use TLS.
 
   This setting applies to:
 
   - macOS 11 and newer
-
-- **Require Active Directory password complexity**: Choose **Yes** to force user passwords to meet Active Directory's password complexity requirements. On devices, this setting shows a pop-up window with check boxes so users see they're completing the password requirements. It helps users know what they need to enter for the password. For more information, go to [Password must meet complexity requirements](/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements). When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not require users to meet Active Directory's password requirement.
+- **Require Active Directory password complexity**: Choose **Yes** to force user passwords to meet Active Directory's password complexity requirements. On devices, this setting shows a pop-up window with check boxes so users see they're completing the password requirements. It helps users know what they need to enter for the password. For more information, go to [Password must meet complexity requirements](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements). When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not require users to meet Active Directory's password requirement.
 - **Minimum password length**: Enter the minimum number of characters that can make up users passwords. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not enforce a minimum password length on the users.
 - **Password reuse limit**: Enter the number of new passwords, from 1-24, that are used until a previous password can be reused on the domain. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not enforce a password reuse limit.
 - **Minimum password age (days)**: Enter the number of days that a password is used on the domain before users can change it. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might not enforce a minimum age of passwords before they can be changed.
@@ -813,8 +759,8 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
   This setting applies to:
 
   - macOS 11 and newer
-
 - **Kerberos extension use**: Select how other processes use the Kerberos Extension credential. Your options:
+
   - **Always**: The extension credential is always used if the SPN is listed in **Domains**. It isn't used if the calling app isn't listed in **App Bundle IDs**.
   - **When not specified**: The extension credential is only used when another credential isn't entered by the caller, and the SPN is listed in Domains. It's not used if the calling app isn't listed in **App Bundle IDs**.
   - **Kerberos default**: Intune doesn't change or update this setting. By default, the OS uses the default Kerberos processes for selecting credentials. This option is the same as not configuring this setting.
@@ -823,13 +769,12 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
 
   - macOS 11 and newer
 
-  ::: zone-end
+::: zone-end
 
 - **Principal name**: Enter the username of the Kerberos principal. You don't need to include the realm name. For example, in `user@contoso.com`, `user` is the principal name, and `contoso.com` is the realm name.
 
   - You can also use variables in the principal name by entering curly brackets `{{ }}`. For example, to show the username, enter `Username: {{username}}`.
   - Be careful with variable substitution. Variables aren't validated in the UI and they're case sensitive. Be sure to enter the correct information.
-
 - **Active Directory site code**: Enter the name of the Active Directory site that the Kerberos extension should use. You might not need to change this value, as the Kerberos extension can automatically find the Active Directory site code.
 - **Cache name**: Enter the Generic Security Services (GSS) name of the Kerberos cache. You most likely don't need to set this value.
 - **Sign in window text**: Enter the text shown to users at the Kerberos sign in window.
@@ -854,7 +799,7 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
 
   When set to **Yes**, all existing user accounts are wiped from the devices. To avoid data loss, or prevent a factory reset, make sure you understand how this setting changes your devices.
 
-  For more information about shared device mode, go to [Overview of shared device mode](/azure/active-directory/develop/msal-shared-devices).
+  For more information about shared device mode, go to [Overview of shared device mode](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-shared-devices).
 
 ::: zone-end
 
@@ -865,10 +810,8 @@ After users successfully sign in to the Authenticator app, they aren't prompted 
   - Have access to the Kerberos Ticket Granting Ticket
   - Have access to the authentication ticket
   - Authenticate users to services they're authorized to access
-
 - **Domain realm mapping**: Enter the domain DNS suffixes that should map to your realm. Use this setting when the DNS names of the hosts don't match the realm name. You most likely don't need to create this custom domain-to-realm mapping.
-
-- **PKINIT certificate**: **Select** the Public Key Cryptography for Initial Authentication (PKINIT) certificate that can be used for Kerberos authentication. You can choose from [PKCS](../../device-configuration/certificates/pkcs-profiles.md) or [SCEP](../../fundamentals/certificates/scep-infrastructure.md) certificates that you added in Intune.
+- **PKINIT certificate**: **Select** the Public Key Cryptography for Initial Authentication (PKINIT) certificate that can be used for Kerberos authentication. You can choose from [PKCS](../certificates/pkcs-profiles.md) or [SCEP](../../fundamentals/certificates/scep-infrastructure.md) certificates that you added in Intune.
 
   For more information about certificates, go to [Use certificates for authentication in Microsoft Intune](../../fundamentals/certificates/overview.md).
 
@@ -899,7 +842,7 @@ You might see unexpected behavior when you assign a profile with no image to dev
 
 > [!TIP]
 >
-> - When you configure a wallpaper policy, Microsoft recommends enabling the [Block modification of Wallpaper](./ref-device-restrictions-apple.md) setting. This setting prevents users from changing the wallpaper.
+> - When you configure a wallpaper policy, Microsoft recommends enabling the [Block modification of Wallpaper](ref-device-restrictions-apple.md) setting. This setting prevents users from changing the wallpaper.
 > - To display different images on the lock screen and home screen, create a profile with the lock screen image. Create another profile with the home screen image. Assign both profiles to your iOS/iPadOS user or device groups.
 
 ::: zone-end
@@ -907,4 +850,4 @@ You might see unexpected behavior when you assign a profile with no image to dev
 ## Related articles
 
 - [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-- Learn more about the [device feature configuration profile template](./configure-device-features-apple.md).
+- Learn more about the [device feature configuration profile template](configure-device-features-apple.md).

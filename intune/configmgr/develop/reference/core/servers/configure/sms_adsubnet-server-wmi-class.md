@@ -1,16 +1,18 @@
 ---
 description: Learn how to use SMS_ADSubnet class as an SMS Provider server class that contains Active Directory subnets discovered by CM Forest Discovery.
-title: SMS_ADSubnet Class
-ms.date: 09/20/2016
+title: "SMS_ADSubnet Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ADSubnet Server WMI Class
+
 The `SMS_ADSubnet` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains Active Directory subnets discovered by Configuration Manager Forest Discovery.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,85 +31,81 @@ Class SMS_ADSubnet : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ADSubnet` class does not define any methods.
+
+The `SMS_ADSubnet` class does not define any methods.
 
 ## Properties
- `ADSubnetDescription`
- Data type: `String`
 
- Access type: Read-only
+`ADSubnetDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Description of the Active Directory subnet.
+Qualifiers: [read]
 
- `ADSubnetLocation`
- Data type: `String`
+Description of the Active Directory subnet.
 
- Access type: Read-only
+`ADSubnetLocation` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Location of the Active Directory subnet.
+Qualifiers: [read]
 
- `ADSubnetName`
- Data type: `String`
+Location of the Active Directory subnet.
 
- Access type: Read-only
+`ADSubnetName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the Active Directory subnet.
+Qualifiers: [read]
 
- `Flags`
- Data type: `UInt32`
+Name of the Active Directory subnet.
 
- Access type: Read-only
+`Flags` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Flags.
+Qualifiers: [read]
 
- `ForestID`
- Data type: `UInt32`
+Flags.
 
- Access type: Read/Write
+`ForestID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the Active Directory forest.
+Qualifiers: [key]
 
- `LastDiscoveryTime`
- Data type: `DateTime`
+Identifier of the Active Directory forest.
 
- Access type: Read-only
+`LastDiscoveryTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The last time this Active Directory subnet was discovered by Active Directory discovery.
+Qualifiers: [read]
 
- `SiteID`
- Data type: `UInt32`
+The last time this Active Directory subnet was discovered by Active Directory discovery.
 
- Access type: Read/Write
+`SiteID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Reference to the `SMS_ADSite SiteID` value.
+Qualifiers: [key]
 
- `SubnetID`
- Data type: `UInt32`
+Reference to the `SMS_ADSite SiteID` value.
 
- Access type: Read/Write
+`SubnetID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The subnet ID.
+Qualifiers: [key]
+
+The subnet ID.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

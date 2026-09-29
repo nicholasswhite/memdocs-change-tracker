@@ -1,7 +1,7 @@
 ---
-title: Jamf Managed Device Compliance with Microsoft Entra ID
+title: "Integrate Jamf Pro with Microsoft Intune to report device compliance to Microsoft Entra ID"
 description: Integrate Jamf Pro with Microsoft Intune to report device compliance to Microsoft Entra ID.
-ms.date: 09/12/2023
+ms.date: "2023-09-12T00:00:00Z"
 ms.topic: article
 ms.reviewer: jeffducasse
 ms.collection:
@@ -22,7 +22,7 @@ The process to establish integration between Jamf Pro and Microsoft Intune is ev
 >
 > If you use Jamf Pro's Conditional Access integration for macOS devices, follow Jamf's documented guidelines to migrate your devices to Device Compliance integration at [***Migrating from macOS Conditional Access to macOS Device Compliance – Jamf Pro Documentation***](https://learn.jamf.com/bundle/jamf-pro-documentation-current/page/Conditional_Access.html#ariaid-title6).
 >
-> If you need help, contact [***Jamf Customer Success***](https://jamf.service-now.com/csm). For more information, see the blog post at [**https://aka.ms/Intune/Jamf-Device-Compliance**](https://aka.ms/Intune/Jamf-Device-Compliance).
+> If you need help, contact [***Jamf Customer Success***](https://jamf.service-now.com/csm). For more information, see the blog post at [**https://aka.ms/Intune/Jamf-Device-Compliance**](https://aka.ms/Intune/Jamf-Device-Compliance).
 
 **This article can help you with the following tasks**:
 
@@ -37,23 +37,18 @@ The process to establish integration between Jamf Pro and Microsoft Intune is ev
 To complete the procedures in this article, you must have:
 
 - A Jamf Pro user account with device compliance privileges or a Jamf Pro administrator account.
-
 - A Microsoft Entra account, assigned a role with sufficient permissions. Available built-in roles include:
 
   - Intune Administrator - This role can perform all steps in this article.
 
-    >[!TIP]
+    > [!TIP]
+    >
     > The Intune Administrator is a highly privileged role with full access in Microsoft Intune. When you delegate roles to other accounts, consider assigning a built-in role with fewer privileges.
-
   - Groups Administrator - This role can create the required device groups.
-
   - Conditional Access Administrator - This role can create and update the Microsoft Entra Conditional Access policies that enable user-device registration.
-
   - Application Administrator - This role can create apps that communicate with JAMF about the device compliance state.
 
-  For more information about these roles, see [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference).
-
-<a name='common-questions-about-jamf-pro-integration-with-entra-id'></a>
+  For more information about these roles, see [Microsoft Entra built-in roles](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference).
 
 ## Common questions about Jamf Pro integration with Microsoft Entra ID
 
@@ -67,9 +62,9 @@ Microsoft Entra Conditional Access policies are able to require devices to not o
 
 **What's different about Microsoft Entra integration vs the Conditional Access method Jamf previously offered?**
 
-For organizations that utilize Jamf Pro but haven't yet established a connection to Intune, the previous method that utilized the configuration in the Jamf Pro portal's **Settings > Global > Conditional Access** path is no longer able to accept new configurations.
+For organizations that utilize Jamf Pro but haven't yet established a connection to Intune, the previous method that utilized the configuration in the Jamf Pro portal's **Settings &gt; Global &gt; Conditional Access** path is no longer able to accept new configurations.
 
-New integrations require configurations under **Settings > Global > Device Compliance** and provide a wizard-based process to walk you through the connection to Intune. The wizard provides a method to create the required Microsoft Entra registered applications. These registered applications can't be precreated in this current design as they were previously.
+New integrations require configurations under **Settings &gt; Global &gt; Device Compliance** and provide a wizard-based process to walk you through the connection to Intune. The wizard provides a method to create the required Microsoft Entra registered applications. These registered applications can't be precreated in this current design as they were previously.
 
 ## Jamf Pro administrative configurations
 
@@ -81,7 +76,7 @@ Create two computer smart groups using the following examples:
 
 **Applicable**: Create a computer smart group containing criteria, which determines the devices that need access to company resources in the Microsoft tenant.
 
-> **Example:** Go to *Jamf Pro* > *Computers* > *Smart Computer Groups* create a new group:
+> **Example:** Go to *Jamf Pro* &gt; *Computers* &gt; *Smart Computer Groups* create a new group:
 >
 > - Display Name:
 >   - In this article, we've named the group **Jamf-Intune Applicable Group**.
@@ -90,7 +85,7 @@ Create two computer smart groups using the following examples:
 
 **Compliance**: Create a second computer smart group containing criteria, which determines if devices are deemed compliant within Jamf and meet your organization's security standards.
 
-> **Example:** Go to *Jamf Pro* > *Computers* > *Smart Computer Groups*, create another group:
+> **Example:** Go to *Jamf Pro* &gt; *Computers* &gt; *Smart Computer Groups*, create another group:
 >
 > - Display Name:
 >   - In this article, we've named the group **Jamf-Intune Compliance Group**.
@@ -104,32 +99,31 @@ Create two computer smart groups using the following examples:
 
 Create one computer policy that includes the following configurations:
 
-> **Example:** Go to *Jamf Pro* > *Computers* > *Policy*, create a new policy:
+> **Example:** Go to *Jamf Pro* &gt; *Computers* &gt; *Policy*, create a new policy:
 >
 > - **Options** tab:
+>
 >   - **General**:
 >     - Display Name - Give the policy a name. For example, *Register with Microsoft Entra ID(Microsoft Entra)*.
 >     - Enabled - Check this box to enable the policy.
 >   - **Microsoft Device Compliance**:
 >     - Enable **Register computers with Microsoft Entra ID**.
->
 > - **Scope** tab: Configure *Selected Deployment Targets* to **Add** the [**Applicable**](#computer-smart-groups) computer smart group created as part of the [*Jamf Pro administrative configurations*](#complete-the-administrative-configuration).
->
 > - **Self Service** tab:
+>
 >   - Enable **Make the policy available in Self Service**.
 >   - Set a display name.
 >   - Set a button name.
 >   - Provide a description.
 >   - Enable **Ensure that users view the description**.
 >   - Enable optional *Categories* as desired.
->
 > - Select **Save**.
 
 ### Mac App
 
 Create an app in **Mac Apps** Jamf App Catalog for the Microsoft Intune Company Portal that deploys to all devices. *Using the Jamf app catalog version makes it easy to keep the application current*.
 
-> - Go to *Computers* > *Mac Apps*, and select **+New**.
+> - Go to *Computers* &gt; *Mac Apps*, and select **+New**.
 > - Select **Jamf App Catalog**, and then select **Next**.
 > - Search for *Microsoft Intune Company Portal* and select **add** next to the application.
 > - Set *Target Group* to **All Managed Clients**.
@@ -137,58 +131,56 @@ Create an app in **Mac Apps** Jamf App Catalog for the Microsoft Intune Company 
 > - Enable **Install supporting configuration profiles**.
 > - Enable the **Deploy** switch at the top right, and then select **Save**.
 
-<a name='entra-id-administrative-configurations'></a>
-
 ## Microsoft Entra administrative configurations
 
 The ability to register devices can be blocked due to the Conditional Access Policy configurations your organization has in place to secure corporate resources.
 
 Use the following to create a group, containing users of Jamf managed devices, which will be used to scope the Intune connector in later steps.
 
-1. Sign in to [https://entra.microsoft.com](https://entra.microsoft.com) with an account that has permissions to create groups and to create and edit Conditional Access policy.
-1. Expand *Groups* > *All groups* > and select **New Group**.
-1. Create a dynamic group with appropriate rules to include the applicable users that will register their Jamf managed devices with Microsoft Entra ID.
+1. Sign in to <https://entra.microsoft.com> with an account that has permissions to create groups and to create and edit Conditional Access policy.
+2. Expand *Groups* &gt; *All groups* &gt; and select **New Group**.
+3. Create a dynamic group with appropriate rules to include the applicable users that will register their Jamf managed devices with Microsoft Entra ID.
 
    > [!TIP]
+   >
    > We recommend use of a dynamic group, but you can also use a static group.
 
 ## Connect Jamf Pro to Intune
 
-Jamf pro utilizes connectors in the [Microsoft Intune admin center], found at > *Tenant Administration* > *Connectors and tokens*. The process to connect Jamf Pro to Intune starts in the Jamf Pro administrative portal and utilizes a wizard that prompts for next steps.
+Jamf pro utilizes connectors in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), found at &gt; *Tenant Administration* &gt; *Connectors and tokens*. The process to connect Jamf Pro to Intune starts in the Jamf Pro administrative portal and utilizes a wizard that prompts for next steps.
 
-1. Sign in to your Jamf Admin portal, example: [https://tenantname.jamfcloud.com](https://tenantname.jamfcloud.com).
-1. Proceed to *Settings > Global > Device Compliance*.
-1. Select **Edit**, and then enable the Platform macOS by checking the box.
-1. In the *Compliance Group* drop down, select the computer smart group you created for [**Compliance**](#computer-smart-groups) in the previous section *Computer-smart-groups* of this article.
-1. In the *Applicable Group* drop down, select the computer smart group you created for [**Applicable**](#computer-smart-groups) in the previous section *Computer-smart-groups* of this article.
-1. Enable the Slider at the top right, and select **Save**.
-1. Two Microsoft Authentication prompts are then presented. Each requires a Microsoft 365 Global Administrator to authenticate the prompt:
+1. Sign in to your Jamf Admin portal, example: <https://tenantname.jamfcloud.com>.
+2. Proceed to *Settings &gt; Global &gt; Device Compliance*.
+3. Select **Edit**, and then enable the Platform macOS by checking the box.
+4. In the *Compliance Group* drop down, select the computer smart group you created for [**Compliance**](#computer-smart-groups) in the previous section *Computer-smart-groups* of this article.
+5. In the *Applicable Group* drop down, select the computer smart group you created for [**Applicable**](#computer-smart-groups) in the previous section *Computer-smart-groups* of this article.
+6. Enable the Slider at the top right, and select **Save**.
+7. Two Microsoft Authentication prompts are then presented. Each requires a Microsoft 365 Global Administrator to authenticate the prompt:
+
    - The first authentication prompt creates the *Cloud Connector for Device Compliance* application in Microsoft Entra ID.
    - The second authentication prompt creates the *User registration app for Device Compliance*.
 
-   :::image type="content" source="./media/jamf-entra-id/appregreqs-all.png" alt-text="Image showing prompts for permissions requested in the Microsoft Entra registered applications." lightbox="./media/jamf-entra-id/appregreqs-all.png":::
+   [![Image showing prompts for permissions requested in the Microsoft Entra registered applications.](media/jamf-entra-id/appregreqs-all.png)](media/jamf-entra-id/appregreqs-all.png#lightbox)
+8. A new browser tab opens to a Jamf Portal page with a **Configure Compliance Partner** dialog, and then select the button labeled **Open Microsoft Endpoint Manager**.
 
-1. A new browser tab opens to a Jamf Portal page with a **Configure Compliance Partner** dialog, and then select the button labeled **Open Microsoft Endpoint Manager**.
+   [![Image of the Jamf Configure Compliance Partner Open Microsoft Endpoint Manager button.](media/jamf-entra-id/jamf-create-connector-3a.png)](media/jamf-entra-id/jamf-create-connector-3a.png#lightbox)
+9. A new browser tab opens the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+10. Proceed to *Tenant administration &gt; Connectors and tokens &gt; Partner compliance management*.
+11. At the top of the *Partner compliance management* page, select **Add compliance partner**.
+12. In the *Create Compliance Partner* wizard:
 
-   :::image type="content" source="./media/jamf-entra-id/jamf-create-connector-3a.png" alt-text="Image of the Jamf Configure Compliance Partner Open Microsoft Endpoint Manager button." lightbox="./media/jamf-entra-id/jamf-create-connector-3a.png":::
+    1. Use the *Compliance partner* drop-down to select **Jamf Device Compliance**.
+    2. Use the *Platform* drop down to select **macOS**, and then select **Next**.
+    3. In *Assignments*, select **Add Groups**, and then select the Microsoft Entra user group created earlier. **Do not** select *Add all users* as this will inhibit the connection.
+    4. Select **Next**, and then **Create**.
+13. In your browser, open the tab containing the Jamf Portal with the **Configure Compliance Partner** dialog.
+14. Select the **Confirm** button.
 
-1. A new browser tab opens the [Microsoft Intune admin center].
-1. Proceed to *Tenant administration > Connectors and tokens > Partner compliance management*.
-1. At the top of the *Partner compliance management* page, select **Add compliance partner**.
-1. In the *Create Compliance Partner* wizard:
-   1. Use the *Compliance partner* drop-down to select **Jamf Device Compliance**.
-   1. Use the *Platform* drop down to select **macOS**, and then select **Next**.
-   1. In *Assignments*, select **Add Groups**, and then select the Microsoft Entra user group created earlier. **Do not** select *Add all users* as this will inhibit the connection.
-   1. Select **Next**, and then **Create**.
-1. In your browser, open the tab containing the Jamf Portal with the **Configure Compliance Partner** dialog.
-1. Select the **Confirm** button.
+    [![Image of the Jamf Configure Compliance Partner Confirm button.](media/jamf-entra-id/jamf-confirm-connector-a.png)](media/jamf-entra-id/jamf-confirm-connector-a.png#lightbox)
+15. Switch to the browser tab showing the Intune Partner compliance management dashboard and select the **Refresh** icon at the top next to the *Add compliance Partner* option.
+16. Verify the macOS *Jamf Device Compliance* connector shows a Partner Status of **Active**.
 
-   :::image type="content" source="./media/jamf-entra-id/jamf-confirm-connector-a.png" alt-text="Image of the Jamf Configure Compliance Partner Confirm button." lightbox="./media/jamf-entra-id/jamf-confirm-connector-a.png":::
-
-1. Switch to the browser tab showing the Intune Partner compliance management dashboard and select the **Refresh** icon at the top next to the *Add compliance Partner* option.
-1. Verify the macOS *Jamf Device Compliance* connector shows a Partner Status of **Active**.
-
-   :::image type="content" source="./media/jamf-entra-id/intune-confirm-connection-a.png" alt-text="Image of the Intune Connectors for Device Compliance Partner macOS active connection." lightbox="./media/jamf-entra-id/intune-confirm-connection-a.png":::
+    [![Image of the Intune Connectors for Device Compliance Partner macOS active connection.](media/jamf-entra-id/intune-confirm-connection-a.png)](media/jamf-entra-id/intune-confirm-connection-a.png#lightbox)
 
 ### Complete the administrative configuration
 
@@ -204,7 +196,7 @@ For example, consider a Microsoft Entra Conditional Access policy that requires 
 >   - Requires compliance
 >   - Requires a registered device
 
-:::image type="content" source="./media/jamf-entra-id/entra-ca-user-app-exceptions-resize.png" alt-text="Image of the Microsoft Entra Conditional Access Policy exception for user application" lightbox="./media/jamf-entra-id/entra-ca-user-app-exceptions-resize.png":::
+[![Image of the Microsoft Entra Conditional Access Policy exception for user application](media/jamf-entra-id/entra-ca-user-app-exceptions-resize.png)](media/jamf-entra-id/entra-ca-user-app-exceptions-resize.png#lightbox)
 
 ## End user notifications
 
@@ -241,7 +233,3 @@ Second, On the affected device:
 
 - [Apply compliance policies to Jamf-managed devices](../conditional-access-integration/assign-jamf-policies.md)
 - [Data Jamf sends to Intune](../../privacy/data-sharing/ref-jamf-to-intune.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

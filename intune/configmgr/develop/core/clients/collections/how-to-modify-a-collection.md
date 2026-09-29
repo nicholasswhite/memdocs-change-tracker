@@ -1,8 +1,8 @@
 ---
-title: "Modify a Collection"
+title: "How to Modify a Collection"
 description: "How to modify a collection by using the collection ID provided. The example property values are modified using the name and comment values."  
 
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -10,58 +10,63 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Modify a Collection
-### To Modify a Collection  
 
-1.  Set up a connection to the SMS Provider.  
+### To Modify a Collection
 
-2.  Get the specific collection instance by using the collection ID provided.  
+1. Set up a connection to the SMS Provider.
+2. Get the specific collection instance by using the collection ID provided.
+3. Display the current property values (name and comment properties used as examples).
+4. Modify the example property values using the `name` and `comment` values passed in.
 
-3.  Display the current property values (name and comment properties used as examples).  
+## Example
 
-4.  Modify the example property values using the `name` and `comment` values passed in.  
+The following example method shows how to modify collection properties.
 
-## Example  
- The following example method shows how to modify collection properties.  
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).  
-
-```vbs  
+```vbs
 Sub RenameCollection(connection, collectionID, name, comment)    Dim collection    Set collection = connection.Get("SMS_Collection.CollectionID='" & collectionID & "'")    WScript.Echo "-- Collection " & collectionID & " --"    WScript.Echo "Name before: " & collection.Name    WScript.Echo "Comment before: " & collection.Comment    collection.Name = name    collection.Comment = comment    collection.Put_    WScript.Echo ""    WScript.Echo "Name after: " & collection.Name    WScript.Echo "Comment after: " & collection.CommentEnd Sub  
-```  
+```
 
-```c#  
+```c#
 public void RenameCollection(WqlConnectionManager connection, string collectionID, string name, string comment){    IResultObject collection = connection.GetInstance(string.Format("SMS_Collection.CollectionID='{0}'", collectionID));    Console.WriteLine("-- Collection {0} --", collectionID);    Console.WriteLine("Name before: {0}", collection["Name"].StringValue);    Console.WriteLine("Comment before: {0}", collection["Comment"].StringValue);    collection["Name"].StringValue = name;    collection["Comment"].StringValue = comment;    collection.Put();    collection.Get();    Console.WriteLine();    Console.WriteLine("Name after: {0}", collection["Name"].StringValue);    Console.WriteLine("Comment after: {0}", collection["Comment"].StringValue);}  
-```  
+```
 
- The example method has the following parameters:  
+The example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|  
-|collectionID|-   Managed: `String`<br />-   VBScript: `String`|Unique auto-generated ID containing eight characters. For more information, see the CollectionID property of [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md).|  
-|name|-   Managed: `String`<br />-   VBScript: `String`|An example collection property. The property value is modified in the code snippet.|  
-|comment|-   Managed: `String`<br />-   VBScript: `String`|An example collection property. The property value is modified in the code snippet.|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| collectionID | - Managed: `String` - VBScript: `String` | Unique auto-generated ID containing eight characters. For more information, see the CollectionID property of [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md). |
+| name | - Managed: `String` - VBScript: `String` | An example collection property. The property value is modified in the code snippet. |
+| comment | - Managed: `String` - VBScript: `String` | An example collection property. The property value is modified in the code snippet. |
 
-## Compiling the Code  
- The C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System  
+The C# example requires:
 
- Microsoft.ConfigurationManagement.ManagementProvider  
+### Namespaces
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine  
+System
 
-### Assembly  
- adminui.wqlqueryengine  
+Microsoft.ConfigurationManagement.ManagementProvider
 
- microsoft.configurationmanagement.managementprovider  
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
- mscorlib  
+### Assembly
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+adminui.wqlqueryengine
 
-## See Also  
- [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## See Also
+
+[SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md)

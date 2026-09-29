@@ -1,16 +1,18 @@
 ---
-title: GetRemCtrlSettings Method
+title: "GetRemCtrlSettings Method in Class CCM_RemoteControlManager"
 description: The GetRemCtrlSettings Windows Management Instrumentation (WMI) class method in Configuration Manager that gets the remote control settings on a client computer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetRemCtrlSettings Method in Class CCM_RemoteControlManager
+
 The `GetRemCtrlSettings` Windows Management Instrumentation (WMI) class method in Configuration Manager that gets the remote control settings on a client computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -31,94 +33,87 @@ uint32 GetRemCtrlSettings
 ```
 
 ## Parameters
- `RemoteControlSettingsLoc`
- Data type: `UInt32`
 
- Qualifiers: [id("0"), in]
+`RemoteControlSettingsLoc` Data type: `UInt32`
 
- RemoteControlSettingsLoc.
+Qualifiers: [id("0"), in]
 
- `AllowClientChange`
- Data type: `Boolean`
+RemoteControlSettingsLoc.
 
- Qualifiers: [id("1"), out]
+`AllowClientChange` Data type: `Boolean`
 
- `true` if users can change policy or notification settings in Software Center.
+Qualifiers: [id("1"), out]
 
- `UseLocalSettings`
- Data type: `Boolean`
+`true` if users can change policy or notification settings in Software Center.
 
- Qualifiers: [id("2"), out]
+`UseLocalSettings` Data type: `Boolean`
 
- `true` if Remote Assistance settings, which the user can configure in a Control Panel program, is going to get overridden by the Configuration Manager settings.
+Qualifiers: [id("2"), out]
 
- `RemoteControlEnabled`
- Data type: `Boolean`
+`true` if Remote Assistance settings, which the user can configure in a Control Panel program, is going to get overridden by the Configuration Manager settings.
 
- Qualifiers: [id("3"), out]
+`RemoteControlEnabled` Data type: `Boolean`
 
- `true` if the remote control agent is enabled.
+Qualifiers: [id("3"), out]
 
- `AllowRemCtrlToUnattended`
- Data type: `Boolean`
+`true` if the remote control agent is enabled.
 
- Qualifiers: [id("4"), out]
+`AllowRemCtrlToUnattended` Data type: `Boolean`
 
- `true` if the user should be prompted for permission to remote control the computer.
+Qualifiers: [id("4"), out]
 
- `PermissionRequired`
- Data type: `Boolean`
+`true` if the user should be prompted for permission to remote control the computer.
 
- Qualifiers: [id("5"), out]
+`PermissionRequired` Data type: `Boolean`
 
- `true` if permission is required before starting a remote control session.
+Qualifiers: [id("5"), out]
 
- `AccessLevel`
- Data type: `UInt32`
+`true` if permission is required before starting a remote control session.
 
- Qualifiers: [id("6"), out]
+`AccessLevel` Data type: `UInt32`
 
- Access level allowed. Possible values are:
+Qualifiers: [id("6"), out]
 
-|Value|Access level|
-|-|-|
-|0|No access|
-|1|View only|
-|2|Full control|
+Access level allowed. Possible values are:
 
- `AudibleSignal`
- Data type: `UInt32`
+| Value | Access level |
+| --- | --- |
+| 0 | No access |
+| 1 | View only |
+| 2 | Full control |
 
- Qualifiers: [id("7"), out]
+`AudibleSignal` Data type: `UInt32`
 
- Value indicating if a control beep should be sounded during a remote control session to signify that the computer is being remotely controlled. This is only for Remote Control, not Remote Assistance. Possible values are:
+Qualifiers: [id("7"), out]
 
-|Value|Remote control beep|
-|-|-|
-|0|None|
-|1|Beginning and end of session|
-|2|Repeatedly|
+Value indicating if a control beep should be sounded during a remote control session to signify that the computer is being remotely controlled. This is only for Remote Control, not Remote Assistance. Possible values are:
 
- `ConnectionBar`
- Data type: `Boolean`
+| Value | Remote control beep |
+| --- | --- |
+| 0 | None |
+| 1 | Beginning and end of session |
+| 2 | Repeatedly |
 
- Qualifiers: [id("8"), out]
+`ConnectionBar` Data type: `Boolean`
 
- `true` to show the session connection bar.
+Qualifiers: [id("8"), out]
 
- `TaskbarIcon`
- Data type: `Boolean`
+`true` to show the session connection bar.
 
- Qualifiers: [id("9"), out]
+`TaskbarIcon` Data type: `Boolean`
 
- `true` to show the session notification icon on the taskbar.
+Qualifiers: [id("9"), out]
+
+`true` to show the session notification icon on the taskbar.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

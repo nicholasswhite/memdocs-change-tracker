@@ -1,7 +1,7 @@
 ---
-title: Known Issues for Endpoint Privilege Management with Microsoft Intune
+title: "Known Issues for Endpoint Privilege Management"
 description: Configure policies that define how Endpoint Privilege Management functions in your tenant, and behaviors when elevating files to run in administrative context.
-ms.date: 04/27/2026
+ms.date: "2026-04-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -11,7 +11,7 @@ This article lists known issues with Endpoint Privilege Management.
 
 ## Windows 10 devices might not immediately receive confirmation of support approvals
 
-We're working to resolve a few scenarios that prevent Windows 10 devices from automatically receiving the notification that a new approval is ready for the device when you use [support approved elevations](./manage-support-approvals.md#about-support-approved-elevations).
+We're working to resolve a few scenarios that prevent Windows 10 devices from automatically receiving the notification that a new approval is ready for the device when you use [support approved elevations](manage-support-approvals.md#about-support-approved-elevations).
 
 ## Organizations that disable User Account Control (UAC) might experience issues with Endpoint Privilege Management
 
@@ -23,9 +23,10 @@ Administrator Protection doesn't currently support elevations initiated from End
 
 ## Organizations using Application Control for Business might experience issues running Endpoint Privilege Management
 
-Application Control for Business policies that don't account for the EPM client components could prevent the EPM components from functioning. In order to use EPM with AppControl, ensure that your Application Control policy includes rules that allow EPM to function. For more information about troubleshooting application control, see [WDAC debugging and troubleshooting](/windows/security/application-security/application-control/windows-defender-application-control/operations/wdac-debugging-and-troubleshooting).
+Application Control for Business policies that don't account for the EPM client components could prevent the EPM components from functioning. In order to use EPM with AppControl, ensure that your Application Control policy includes rules that allow EPM to function. For more information about troubleshooting application control, see [WDAC debugging and troubleshooting](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/wdac-debugging-and-troubleshooting).
 
-> [!Note]
+> [!NOTE]
+>
 > EPM is not included in default policies for Application Control and may require creating custom policies.
 
 ## Organizations restricting users who can sign in interactively might see issues with Endpoint Privilege Management
@@ -39,6 +40,7 @@ File name is an attribute that can be utilized to detect an application that nee
 File names are *highly susceptible* to change, and files that are signed with a certificate that you trust could have their name changed to be *detected* and then *elevated*, which might not be your intended behavior.
 
 > [!IMPORTANT]
+>
 > Always ensure that rules including a file name include other attributes that provide a strong assertion to the file's identity. Attributes like file hash or properties that are included in the files signature are good indicators that the file you intend is likely the one being elevated.
 
 ## Elevation settings policies might show conflict if changed in quick succession
@@ -78,13 +80,13 @@ EPM can elevate Executables (.exe), Windows Installer (.msi), and PowerShell scr
 EPM checks the certificate expiry date to ensure it hasn't passed before allowing elevation. Rules based on certificates that are expired will fail to elevate.
 
 ### Run with elevated access right-click menu of the file might be unavailable
- 
+
 On devcies that run a Windows version earlier than 24H2 with the April 2025 update, the **Run with elevated access** option is not always successfully added to the file context menu after a successful installation of the EPM Agent. This issue is resolved for devices that run a later version of Windows.
 
 **Workaround:** To resolve this issue on a device that can't update to Windows version 24H2 with the Aril 2025 update or later, run the package *EpmShellExtension.msix* located in *C:\Program Files\Microsoft EPM Agent\EPMShellExtension* to manually install the EPM shell extension to the file context menu.
 
 ### EPM roles do not support scope tags.
 
-The built-in role "Endpoint Privilege Manager" and the custom role "Endpoint Privilege Management Policy Authoring" do not support scope tags. 
+The built-in role "Endpoint Privilege Manager" and the custom role "Endpoint Privilege Management Policy Authoring" do not support scope tags.
 
 **Workaround:** To restrict an administrator's view permissions using scope tags, you must grant permissions that include "Read" for "Device configurations."

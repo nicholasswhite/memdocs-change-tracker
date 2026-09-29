@@ -1,7 +1,7 @@
 ---
-title: SMS_TaskSequence_NetworkAdapterSettings class
+title: "SMS_TaskSequence_NetworkAdapterSettings server WMI class"
 description: Details of the SMS_TaskSequence_NetworkAdapterSettings server WMI class
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -44,214 +44,199 @@ Class SMS_TaskSequence_NetworkAdapterSettings
 ```
 
 ## Methods
- The `SMS_TaskSequence_NetworkAdapterSettings` class does not define any methods.
+
+The `SMS_TaskSequence_NetworkAdapterSettings` class does not define any methods.
 
 ## Properties
- `DNSServerList`
- Data type: `String` Array
 
- Access type: Read/Write
+`DNSServerList` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read/Write
 
- List of Domain Name System (DNS) servers for the adapter.
+Qualifiers: None
 
- `EnableDHCP`
- Data type: `Boolean`
+List of Domain Name System (DNS) servers for the adapter.
 
- Access type: Read/Write
+`EnableDHCP` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to enable Dynamic Host Configuration Protocol (DHCP) for the adapter.
+Qualifiers: [not_null]
 
- `EnableDNSRegistration`
- Data type: `Boolean`
+`true` to enable Dynamic Host Configuration Protocol (DHCP) for the adapter.
 
- Access type: Read/Write
+`EnableDNSRegistration` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to register the IP address for the adapter in DNS.
+Qualifiers: [not_null]
 
- `EnableFullDNSRegistration`
- Data type: `Boolean`
+`true` to register the IP address for the adapter in DNS.
 
- Access type: Read/Write
+`EnableFullDNSRegistration` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to register the IP address for the adapter in DNS under the full DNS name for the computer.
+Qualifiers: [not_null]
 
- `EnableIPProtocolFiltering`
- Data type: `Boolean`
+`true` to register the IP address for the adapter in DNS under the full DNS name for the computer.
 
- Access type: Read/Write
+`EnableIPProtocolFiltering` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to enable IP protocol filtering on the adapter.
+Qualifiers: [not_null]
 
- `EnableLMHOSTS`
- Data type: `Boolean`
+`true` to enable IP protocol filtering on the adapter.
 
- Access type: Read/Write
+`EnableLMHOSTS` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to use local lookup files for Windows Internet Name Service (WINS) resolution.
+Qualifiers: [not_null]
 
- `EnableTCPFiltering`
- Data type: `Boolean`
+`true` to use local lookup files for Windows Internet Name Service (WINS) resolution.
 
- Access type: Read/Write
+`EnableTCPFiltering` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to enable TCP port filtering for the adapter.
+Qualifiers: [not_null]
 
- `EnableUDPFiltering`
- Data type: `Boolean`
+`true` to enable TCP port filtering for the adapter.
 
- Access type: Read/Write
+`EnableUDPFiltering` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to enable User Datagram Protocol (UDP) port filtering for the adapter.
+Qualifiers: [not_null]
 
- `EnableWINS`
- Data type: `Boolean`
+`true` to enable User Datagram Protocol (UDP) port filtering for the adapter.
 
- Access type: Read/Write
+`EnableWINS` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to use WINS for name resolution.
+Qualifiers: [not_null]
+
+`true` to use WINS for name resolution.
 
 > [!IMPORTANT]
-> WINS is a deprecated service. For more information, see [Windows Internet Name Service (WINS)](/windows-server/networking/technologies/wins/wins-top).
+>
+> WINS is a deprecated service. For more information, see [Windows Internet Name Service (WINS)](https://learn.microsoft.com/en-us/windows-server/networking/technologies/wins/wins-top).
 
- `GatewayCostMetric`
- Data type: `UInt32`
+`GatewayCostMetric` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- List of integer cost metrics. This property is ignored unless `EnableDHCP` is set to `false`.
+List of integer cost metrics. This property is ignored unless `EnableDHCP` is set to `false`.
 
- `Gateways`
- Data type: `String` Array
+`Gateways` Data type: `String` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- List of IP gateway addresses. This property is ignored unless `EnableDHCP` is set to `false`.
+List of IP gateway addresses. This property is ignored unless `EnableDHCP` is set to `false`.
 
- `Index`
- Data type: `UInt32`
+`Index` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Index of the network adapter settings in the array of settings. See the `Adapters` property of [SMS_TaskSequence_ApplyNetworkSettingsAction Server WMI Class](../../../develop/reference/osd/sms_tasksequence_applynetworksettingsaction-server-wmi-class.md).
+Index of the network adapter settings in the array of settings. See the `Adapters` property of [SMS_TaskSequence_ApplyNetworkSettingsAction Server WMI Class](sms_tasksequence_applynetworksettingsaction-server-wmi-class.md).
 
- `IPAddressList`
- Data type: `String` Array
+`IPAddressList` Data type: `String` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- List of IP addresses for the adapter. This property is ignored unless `EnableDHCP` is set to `false`.
+List of IP addresses for the adapter. This property is ignored unless `EnableDHCP` is set to `false`.
 
- `IPProtocolFilterList`
- Data type: `String` Array
+`IPProtocolFilterList` Data type: `String` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Array of protocols allowed to run over IP. This property is ignored if `EnableIPProtocolFiltering` is set to `false`.
+Array of protocols allowed to run over IP. This property is ignored if `EnableIPProtocolFiltering` is set to `false`.
 
- `MACAddress`
- Data type: `String`
+`MACAddress` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [not_null]
+Qualifiers: [not_null]
 
- Media access controller (MAC) address used to match settings to physical network adapter.
+Media access controller (MAC) address used to match settings to physical network adapter.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [AllowedLen("0-255")]
+Qualifiers: [AllowedLen("0-255")]
 
- Name of the network connection as it appears in the network connections control panel program. The name is between 0 and 255 characters in length.
+Name of the network connection as it appears in the network connections control panel program. The name is between 0 and 255 characters in length.
 
- `SubnetMask`
- Data type: `String` Array
+`SubnetMask` Data type: `String` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- List of subnet masks. This property is ignored unless `EnableDHCP` is set to `false`.
+List of subnet masks. This property is ignored unless `EnableDHCP` is set to `false`.
 
- `TCPFilterPortList`
- Data type: `SInt32` Array
+`TCPFilterPortList` Data type: `SInt32` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Array of ports to be granted access permissions for TCP. This property is ignored if `EnableTCPFiltering` is set to `false`.
+Array of ports to be granted access permissions for TCP. This property is ignored if `EnableTCPFiltering` is set to `false`.
 
- `TcpipNetbiosOptions`
- Data type: `UInt32`
+`TcpipNetbiosOptions` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Options for NetBIOS over TCP/IP. Possible values are:
+Options for NetBIOS over TCP/IP. Possible values are:
 
 | Value | NetBIOS options |
-| ----- | --------------- |
-|0|Use NetBIOS settings from DHCP server.|
-|1|Enable NetBIOS over TCP/IP.|
-|2|Disable NetBIOS over TCP/IP.|
+| --- | --- |
+| 0 | Use NetBIOS settings from DHCP server. |
+| 1 | Enable NetBIOS over TCP/IP. |
+| 2 | Disable NetBIOS over TCP/IP. |
 
- `UDPFilterPortList`
- Data type: `SInt32` Array
+`UDPFilterPortList` Data type: `SInt32` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Array of ports to be granted access permissions for UDP. This property is ignored if `EnableUDPFiltering` is set to `false`.
+Array of ports to be granted access permissions for UDP. This property is ignored if `EnableUDPFiltering` is set to `false`.
 
- `WINSServerList`
- Data type: `String` Array
+`WINSServerList` Data type: `String` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- List of WINS server IP addresses. This property is ignored unless `EnableWINS` is set to `true`.
+List of WINS server IP addresses. This property is ignored unless `EnableWINS` is set to `true`.
 
 ## Remarks
- There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

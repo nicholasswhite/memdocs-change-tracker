@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent application policy in Configuration Manager using the CCM_ApplicationPolicy class.
-title: CCM_ApplicationPolicy Class
-ms.date: 09/20/2016
+title: "CCM_ApplicationPolicy Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_ApplicationPolicy Client WMI Class
+
 The `CCM_ApplicationPolicy` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents application policy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -46,284 +48,261 @@ Class CCM_ApplicationPolicy : CCM_SoftwareBase
 ```
 
 ## Methods
- The following table lists the methods in the `CCM_ApplicationPolicy` class.
 
--   [EvaluateAllPolicies Method in Class CCM_ApplicationPolicy](../../../../../develop/reference/core/clients/sdk/evaluateallpolicies-method-in-class-ccm_applicationpolicy.md)
+The following table lists the methods in the `CCM_ApplicationPolicy` class.
 
--   [EvaluateAppPolicy Method in Class CCM_ApplicationPolicy](../../../../../develop/reference/core/clients/sdk/evaluateapppolicy-method-in-class-ccm_applicationpolicy.md)
-
--   [GetEvaluationState Method in Class CCM_ApplicationPolicy](../../../../../develop/reference/core/clients/sdk/getevaluationstate-method-in-class-ccm_applicationpolicy.md)
+- [EvaluateAllPolicies Method in Class CCM_ApplicationPolicy](evaluateallpolicies-method-in-class-ccm_applicationpolicy.md)
+- [EvaluateAppPolicy Method in Class CCM_ApplicationPolicy](evaluateapppolicy-method-in-class-ccm_applicationpolicy.md)
+- [GetEvaluationState Method in Class CCM_ApplicationPolicy](getevaluationstate-method-in-class-ccm_applicationpolicy.md)
 
 ## Properties
- `ApplicabilityState`
- Data type: `String`
 
- Access type: Read/Write
+`ApplicabilityState` Data type: `String`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Applicability state. Possible values are:
+Qualifiers: [values]
 
-|Value|
-|-|
-|Unknown|
-|Applicable|
-|Not Applicable|
+Applicability state. Possible values are:
 
- `Apps`
- Data type: `CCM_Application` Array
+| Value |
+| --- |
+| Unknown |
+| Applicable |
+| Not Applicable |
 
- Access type: Read/Write
+`Apps` Data type: `CCM_Application` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Applications.
+Qualifiers: [lazy]
 
- `ConfigureState`
- Data type: `String`
+Applications.
 
- Access type: Read/Write
+`ConfigureState` Data type: `String`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Configure state. Possible values are:
+Qualifiers: [values]
 
-|Value|
-|-|
-|NotNeeded|
-|NotConfigured|
-|Configured|
+Configure state. Possible values are:
 
- `ContentSize`
- Data type: `UInt32`
+| Value |
+| --- |
+| NotNeeded |
+| NotConfigured |
+| Configured |
 
- Access type: Read/Write
+`ContentSize` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Content size.
+Qualifiers: none
 
- `CurrentState`
- Data type: `String`
+Content size.
 
- Access type: Read/Write
+`CurrentState` Data type: `String`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Current state. Possible values are:
+Qualifiers: [values]
 
-|Value|
-|-|
-|NotInstalled|
-|Unknown|
-|Error|
-|Installed|
-|NotEvaluated|
-|NotUpdated|
-|NotConfigured|
+Current state. Possible values are:
 
- `Deadline`
- Data type: `DateTime`
+| Value |
+| --- |
+| NotInstalled |
+| Unknown |
+| Error |
+| Installed |
+| NotEvaluated |
+| NotUpdated |
+| NotConfigured |
 
- Access type: Read/Write
+`Deadline` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Deadline.
+Qualifiers: none
 
- `DeploymentReport`
- Data type: `String`
+Deadline.
 
- Access type: Read/Write
+`DeploymentReport` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Deployment report.
+Qualifiers: [lazy]
 
- `Description`
- Data type: `String`
+Deployment report.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description.
+Qualifiers: none
 
- `ErrorCode`
- Data type: `UInt32`
+Description.
 
- Access type: Read/Write
+`ErrorCode` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Error code.
+Qualifiers: none
 
- `EstimatedInstallTime`
- Data type: `UInt32`
+Error code.
 
- Access type: Read/Write
+`EstimatedInstallTime` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Estimated installation time.
+Qualifiers: none
 
- `EvaluationState`
- Data type: `UInt32`
+Estimated installation time.
 
- Access type: Read/Write
+`EvaluationState` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- EvaluationState
+Qualifiers: none
 
- `FullName`
- Data type: `String`
+EvaluationState
 
- Access type: Read/Write
+`FullName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- FullName
+Qualifiers: none
 
- `Id`
- Data type: `String`
+FullName
 
- Access type: Read/Write
+`Id` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier.
+Qualifiers: [key]
 
- `IsMachineTarget`
- Data type: `Boolean`
+Identifier.
 
- Access type: Read/Write
+`IsMachineTarget` Data type: `Boolean`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- `true` if this is a client targeted application.
+Qualifiers: [key]
 
- `IsPreflightOnly`
- Data type: `Boolean`
+`true` if this is a client targeted application.
 
- Access type: Read/Write
+`IsPreflightOnly` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if this is a simulated deployment.
+Qualifiers: none
 
- `LastEvalTime`
- Data type: `DateTime`
+`true` if this is a simulated deployment.
 
- Access type: Read/Write
+`LastEvalTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last evaluation time.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+Last evaluation time.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name.
+Qualifiers: none
 
- `NextUserScheduledTime`
- Data type: `DateTime`
+Name.
 
- Access type: Read/Write
+`NextUserScheduledTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Next user scheduled time.
+Qualifiers: none
 
- `PercentComplete`
- Data type: `UInt32`
+Next user scheduled time.
 
- Access type: Read/Write
+`PercentComplete` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Percent complete.
+Qualifiers: none
 
- `ProgressState`
- Data type: `String`
+Percent complete.
 
- Access type: Read/Write
+`ProgressState` Data type: `String`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Progress state. Possible values are:
+Qualifiers: [values]
 
-|Value|
-|-|
-|Idle|
-|EvaluationStarted|
-|DownloadingDocuments|
-|Evaluating|
-|EvaluationFailure|
-|Reporting|
+Progress state. Possible values are:
 
- `Publisher`
- Data type: `String`
+| Value |
+| --- |
+| Idle |
+| EvaluationStarted |
+| DownloadingDocuments |
+| Evaluating |
+| EvaluationFailure |
+| Reporting |
 
- Access type: Read/Write
+`Publisher` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Publisher.
+Qualifiers: none
 
- `ResolvedState`
- Data type: `String`
+Publisher.
 
- Access type: Read/Write
+`ResolvedState` Data type: `String`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Resolved state. Possible values are:
+Qualifiers: [values]
 
-|Value|
-|-|
-|None|
-|NotInstalled|
-|Installed|
-|Unknown|
+Resolved state. Possible values are:
 
- `Revision`
- Data type: `String`
+| Value |
+| --- |
+| None |
+| NotInstalled |
+| Installed |
+| Unknown |
 
- Access type: Read/Write
+`Revision` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Revision.
+Qualifiers: [key]
 
- `StartTime`
- Data type: `DateTime`
+Revision.
 
- Access type: Read/Write
+`StartTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Start time.
+Qualifiers: none
 
- `Type`
- Data type: `UInt32`
+Start time.
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Type.
+Qualifiers: none
+
+Type.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

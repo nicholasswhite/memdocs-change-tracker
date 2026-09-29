@@ -1,7 +1,7 @@
 ---
-title: CCM_EvaluationState Class
+title: "CCM_EvaluationState Client WMI Class"
 description: The CCM_EvaluationState WMI class is an SMS Provider server class in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -12,7 +12,7 @@ ms.service: configuration-manager
 
 The `CCM_EvaluationState` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,74 +26,75 @@ Class CCM_EvaluationState :
 ```
 
 ## Methods
- The `CCM_EvaluationState` class doesn't define any methods.
+
+The `CCM_EvaluationState` class doesn't define any methods.
 
 ## Properties
- `ErrorCode`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ErrorCode` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Error code.
+Qualifiers: none
 
- `EvaluationState`
- Data type: `UInt32`
+Error code.
 
- Access type: Read/Write
+`EvaluationState` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Evaluation state. Possible values are:
+Qualifiers: none
 
-|Evaluation State Value|Description|
-|----------------------------|-----------------|
-|0|No state information is available.|
-|1|Application is enforced to desired/resolved state.|
-|2|Application isn't required on the client.|
-|3|Application is available for enforcement (install or uninstall based on resolved state). Content may/may not have been downloaded.|
-|4|Application last failed to enforce (install/uninstall).|
-|5|Application is currently waiting for content download to complete.|
-|6|Application is currently waiting for content download to complete.|
-|7|Application is currently waiting for its dependencies to download.|
-|8|Application is currently waiting for a service (maintenance) window.|
-|9|Application is currently waiting for a previously pending reboot.|
-|10|Application is currently waiting for serialized enforcement.|
-|11|Application is currently enforcing dependencies.|
-|12|Application is currently enforcing.|
-|13|Application install/uninstall enforced and soft reboot is pending.|
-|14|Application installed/uninstalled and hard reboot is pending.|
-|15|Update is available but pending installation.|
-|16|Application failed to evaluate.|
-|17|Application is currently waiting for an active user session to enforce.|
-|18|Application is currently waiting for all users to sign out.|
-|19|Application is currently waiting for a user sign in.|
-|20|Application in progress, waiting for retry.|
-|21|Application is waiting for presentation mode to be switched off.|
-|22|Application is pre-downloading content (downloading outside of install job).|
-|23|Application is pre-downloading dependent content (downloading outside of install job).|
-|24|Application download failed (downloading during install job).|
-|25|Application pre-downloading failed (downloading outside of install job).|
-|26|Download success (downloading during install job).|
-|27|Post-enforce evaluation.|
-|28|Waiting for network connectivity.|
+Evaluation state. Possible values are:
 
- `PercentComplete`
- Data type: `UInt32`
+| Evaluation State Value | Description |
+| --- | --- |
+| 0 | No state information is available. |
+| 1 | Application is enforced to desired/resolved state. |
+| 2 | Application isn't required on the client. |
+| 3 | Application is available for enforcement (install or uninstall based on resolved state). Content may/may not have been downloaded. |
+| 4 | Application last failed to enforce (install/uninstall). |
+| 5 | Application is currently waiting for content download to complete. |
+| 6 | Application is currently waiting for content download to complete. |
+| 7 | Application is currently waiting for its dependencies to download. |
+| 8 | Application is currently waiting for a service (maintenance) window. |
+| 9 | Application is currently waiting for a previously pending reboot. |
+| 10 | Application is currently waiting for serialized enforcement. |
+| 11 | Application is currently enforcing dependencies. |
+| 12 | Application is currently enforcing. |
+| 13 | Application install/uninstall enforced and soft reboot is pending. |
+| 14 | Application installed/uninstalled and hard reboot is pending. |
+| 15 | Update is available but pending installation. |
+| 16 | Application failed to evaluate. |
+| 17 | Application is currently waiting for an active user session to enforce. |
+| 18 | Application is currently waiting for all users to sign out. |
+| 19 | Application is currently waiting for a user sign in. |
+| 20 | Application in progress, waiting for retry. |
+| 21 | Application is waiting for presentation mode to be switched off. |
+| 22 | Application is pre-downloading content (downloading outside of install job). |
+| 23 | Application is pre-downloading dependent content (downloading outside of install job). |
+| 24 | Application download failed (downloading during install job). |
+| 25 | Application pre-downloading failed (downloading outside of install job). |
+| 26 | Download success (downloading during install job). |
+| 27 | Post-enforce evaluation. |
+| 28 | Waiting for network connectivity. |
 
- Access type: Read/Write
+`PercentComplete` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Percent complete.
+Qualifiers: none
+
+Percent complete.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,37 +1,38 @@
 ---
-title: Add a Context Qualifier by Using WMI
+title: "How to Add a Configuration Manager Context Qualifier by Using WMI"
 description: Add context qualifiers to a connection (SWbemServices) or object (SWbemObject) by creating a SWbemNamedValueSet value set to hold the context qualifiers.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Add a Configuration Manager Context Qualifier by Using WMI
-In Configuration Manager, you add context qualifiers to a connection ([SWbemServices](/windows/win32/wmisdk/swbemservices)) or object ([SWbemObject](/windows/win32/wmisdk/swbemobject)) by creating a [SWbemNamedValueSet](/windows/win32/wmisdk/swbemnamedvalueset) value set to hold the context qualifiers. You then provide the [SWbemNamedValueSet](/windows/win32/wmisdk/swbemnamedvalueset) value set as a parameter to connection and object methods.
 
- in Configuration Manager, you can provide your application name (ApplicationName), computer name (MachineName) and locale identifier (LocaleID).
+In Configuration Manager, you add context qualifiers to a connection ([SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices)) or object ([SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject)) by creating a [SWbemNamedValueSet](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemnamedvalueset) value set to hold the context qualifiers. You then provide the [SWbemNamedValueSet](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemnamedvalueset) value set as a parameter to connection and object methods.
 
- In most cases, context qualifiers are not required. The main exception is accessing the site control file where they are needed to set up session information. For more information, see [About the Configuration Manager Site Control File](../../../develop/core/understand/about-the-configuration-manager-site-control-file.md).
+in Configuration Manager, you can provide your application name (ApplicationName), computer name (MachineName) and locale identifier (LocaleID).
+
+In most cases, context qualifiers are not required. The main exception is accessing the site control file where they are needed to set up session information. For more information, see [About the Configuration Manager Site Control File](about-the-configuration-manager-site-control-file.md).
 
 ### To add a Configuration Manager context qualifier
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
-
-2.  Create a [WbemScripting.SWbemNamedValueSet](/windows/win32/wmisdk/swbemnamedvalueset) object and add the desired context qualifiers.
-
-3.  Use the [SWbemNamedValue](/windows/win32/wmisdk/swbemnamedvalue) value set you created in step two to pass context qualifiers to connection and object manipulation calls.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
+2. Create a [WbemScripting.SWbemNamedValueSet](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemnamedvalueset) object and add the desired context qualifiers.
+3. Use the [SWbemNamedValue](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemnamedvalue) value set you created in step two to pass context qualifiers to connection and object manipulation calls.
 
 ## Example
- The following VBScript example creates a [SWbemNamedValueSet](/windows/win32/wmisdk/swbemnamedvalueset) value set and adds the supplied context qualifiers. The following code example demonstrates how to call the method for use in an [SMS_Package](../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) package object **Put** method call. For more information about Configuration Manager objects, see [Objects overview](configuration-manager-objects-overview.md).
 
- `Dim context`
+The following VBScript example creates a [SWbemNamedValueSet](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemnamedvalueset) value set and adds the supplied context qualifiers. The following code example demonstrates how to call the method for use in an [SMS_Package](../../reference/core/servers/configure/sms_package-server-wmi-class.md) package object **Put** method call. For more information about Configuration Manager objects, see [Objects overview](configuration-manager-objects-overview.md).
 
- `Set context = CreateContextQualifiers("My application" , "My Computer" , "MS\1033")`
+`Dim context`
 
- `package.Put_ , context`
+`Set context = CreateContextQualifiers("My application" , "My Computer" , "MS\1033")`
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+`package.Put_ , context`
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```vbs
 
@@ -56,26 +57,26 @@ Function CreateContextQualifiers(applicationName, machineName, localeID)
 End Function
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`applicationName`|-   `String`|The ApplicationName context qualifier.|
-|`machineName`|-   `String`|The computer name qualifier.|
-|`localeID`|-   `String`|The locale identifier. For example, MS\1033 is English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../../../develop/reference/core/servers/configure/sms_identification-server-wmi-class.md)`LocaleID` property.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `applicationName` | - `String` | The ApplicationName context qualifier. |
+| `machineName` | - `String` | The computer name qualifier. |
+| `localeID` | - `String` | The locale identifier. For example, MS\1033 is English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../../reference/core/servers/configure/sms_identification-server-wmi-class.md)`LocaleID` property. |
 
 ## Compiling the Code
- This VBScript example requires:
+
+This VBScript example requires:
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../servers/configure/role-based-administration.md).
 
 ## See Also
- [About the Configuration Manager Site Control File](../../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [Objects overview](configuration-manager-objects-overview.md)
- [Configuration Manager Context Qualifiers](../../../develop/core/understand/context-qualifiers.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [Windows Management Instrumentation](/windows/win32/wmisdk/wmi-start-page)
+
+[About the Configuration Manager Site Control File](about-the-configuration-manager-site-control-file.md) [Objects overview](configuration-manager-objects-overview.md) [Configuration Manager Context Qualifiers](context-qualifiers.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [Windows Management Instrumentation](https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page)

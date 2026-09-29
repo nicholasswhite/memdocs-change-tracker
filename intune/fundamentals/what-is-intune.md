@@ -1,7 +1,7 @@
 ---
 title: What is Microsoft Intune?
 description: Microsoft Intune is a cloud-based endpoint management service that secures and manages devices and apps. Learn what it does and how it works.
-ms.date: 05/06/2026
+ms.date: "2026-05-06T00:00:00Z"
 ms.topic: overview
 ---
 
@@ -13,13 +13,13 @@ Supported platforms include Android, iOS/iPadOS, Linux, macOS, tvOS, visionOS, a
 
 ## What Intune does
 
-Intune covers the full lifecycle of a managed device and the apps that run on it: enrolling devices, configuring settings, securing endpoints, deploying and protecting apps, and keeping everything up to date. You manage all of it from the [Microsoft Intune admin center], a web-based console. Every admin center action is backed by a [Microsoft Graph API](/graph/intune-concept-overview) call, so you can automate the same operations through a public programming interface.
+Intune covers the full lifecycle of a managed device and the apps that run on it: enrolling devices, configuring settings, securing endpoints, deploying and protecting apps, and keeping everything up to date. You manage all of it from the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), a web-based console. Every admin center action is backed by a [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/intune-concept-overview) call, so you can automate the same operations through a public programming interface.
 
 Intune is built around three pillars: the **identities** that sign in, the **devices** they sign in from, and the **apps** they use to get work done. Identity runs on Microsoft Entra ID. Device and app posture flow back to Microsoft Entra Conditional Access, which gates access to corporate resources based on real, up-to-date signals.
 
 For a deeper walkthrough of how the pillars fit together, see [Microsoft Intune core concepts](core-concepts.md). For a guided tour of the admin center, see [Walkthrough: Microsoft Intune admin center](tutorial-admin-center-walkthrough.md).
 
-:::image type="content" source="./media/shared/intune-overview.png" alt-text="Diagram showing Microsoft Intune managing identities, devices, and apps, with signals from Endpoint security in Microsoft Defender. Intune is extended by advanced capabilities, automated by Copilot, and uses Microsoft Entra ID for Conditional Access to corporate resources." lightbox="./media/shared/intune-overview.png" border="false":::
+[![Diagram showing Microsoft Intune managing identities, devices, and apps, with signals from Endpoint security in Microsoft Defender. Intune is extended by advanced capabilities, automated by Copilot, and uses Microsoft Entra ID for Conditional Access to corporate resources.](media/shared/intune-overview.png)](media/shared/intune-overview.png#lightbox)
 
 ## How Intune is used: MDM, MAM, or both
 
@@ -73,7 +73,3 @@ For details, see [Microsoft Copilot in Intune](../copilot/index.md).
 - [Microsoft Intune core concepts](core-concepts.md)
 - [Microsoft Intune architecture](architecture.md)
 - [Microsoft Intune advanced capabilities](advanced-capabilities.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

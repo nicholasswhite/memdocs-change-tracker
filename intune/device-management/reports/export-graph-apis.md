@@ -1,9 +1,9 @@
 ---
-title: Use Graph APIs to Export Intune Reports
+title: "Export Intune Reports Using Graph APIs"
 description: Learn about exporting Intune reports using Graph APIs.
 ms.topic: how-to
 author: nicholasswhite
-ms.date: 02/28/2025
+ms.date: "2025-02-28T00:00:00Z"
 ms.reviewer: davidra
 #ms.custom:
 ---
@@ -13,7 +13,8 @@ ms.reviewer: davidra
 All reports that have been migrated to the Intune reporting infrastructure will be available for export from a single top-level export API. You must use the Microsoft Graph API to make the HTTP call. Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud service resources.
 
 > [!NOTE]
-> For information about making REST API calls, including tools for interacting with Microsoft Graph, see [Use the Microsoft Graph API](/graph/use-the-api).
+>
+> For information about making REST API calls, including tools for interacting with Microsoft Graph, see [Use the Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api).
 
 Microsoft Intune will export reports using the following Microsoft Graph API endpoint:
 
@@ -51,6 +52,7 @@ The below request contains the HTTP method used on the request to Microsoft Grap
 ```
 
 > [!NOTE]
+>
 > To retrieve data, select specific columns, such as those specified in the above example. Don't build automation around default columns of any report export. You should build your automation to explicitly select relevant columns.
 
 ### Response example
@@ -83,10 +85,10 @@ Based on the above POST request, Graph returns a response message. The response 
     "expirationDateTime": "0001-01-01T00:00:00Z"
 }
 ```
+
 You can then use the `id` field to query the status of the export with a GET request:
 
-For example:
-```https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs('Devices_05e62361-783b-4cec-b635-0aed0ecf14a3')``` or ```https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs/Devices_05e62361-783b-4cec-b635-0aed0ecf14a3```
+For example: `https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs('Devices_05e62361-783b-4cec-b635-0aed0ecf14a3')` or `https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs/Devices_05e62361-783b-4cec-b635-0aed0ecf14a3`
 
 You need to continue calling this URL until you get a response with a `status: completed` attribute. It looks like the following example:
 
@@ -116,6 +118,7 @@ You need to continue calling this URL until you get a response with a `status: c
     "expirationDateTime": "2020-08-19T09:44:23.8540289Z"
 }
 ```
+
 You can then directly download the compressed CSV from the `url` field.
 
 ## Report parameters
@@ -125,7 +128,7 @@ There are five main parameters you can submit in your request body to define the
 - `reportName`: Required. This parameter is the name of the report you want to specify.
 - `filter`: Not required for most reports. The filter parameter is a string.
 - `select`: Not required. Specify which columns from the report you want. Only valid column names relevant to the report you're calling will be accepted.
-- `format`: Not required. By default, the data is output in `csv` format.  Specify `json` to output the file in JSON format.
+- `format`: Not required. By default, the data is output in `csv` format. Specify `json` to output the file in JSON format.
 - `localizationType`: This parameter controls localization behavior for the report. Possible values are `LocalizedValuesAsAdditionalColumn` and `ReplaceLocalizableValues`.
 
 ## Localization behavior
@@ -135,20 +138,20 @@ The `localizationType` parameter controls localization behavior for the report. 
 ### LocalizedValuesAsAdditionalColumn report value
 
 This value for the `localizationType` parameter is the default value. It's inserted automatically if the `localizationType` parameter isn't specified. This value specifies that Intune provides two columns for each localizable column.
-- *enum value*:  The *enum value* column contains either a raw string, or a set of numbers that don't change, regardless of locale. This column is under the original column name (see example).
-- *localized string value*: This column  is the original column name with _loc appended. It contains string values that are human readable, and locale conditional (see example).
+
+- *enum value*: The *enum value* column contains either a raw string, or a set of numbers that don't change, regardless of locale. This column is under the original column name (see example).
+- *localized string value*: This column is the original column name with _loc appended. It contains string values that are human readable, and locale conditional (see example).
 
 #### Example
 
-|         OS  |            OS_loc        |
-|-|-|
-|         1  |            Windows        |
-|         1  |            Windows        |
-|         1  |            Windows        |
-|         2  |            iOS        |
-|         3  |            Android        |
-|         4  |            Mac        |
-
+| OS | OS_loc |
+| --- | --- |
+| 1 | Windows |
+| 1 | Windows |
+| 1 | Windows |
+| 2 | iOS |
+| 3 | Android |
+| 4 | Mac |
 
 ### ReplaceLocalizableValues report value
 
@@ -156,18 +159,19 @@ ReplaceLocalizableValues report value will only return one column per localized 
 
 #### Example
 
-|         OS        |
-|-|
-|         Windows        |
-|         Windows        |
-|         Windows        |
-|         iOS        |
-|         Android        |
-|         Mac        |
+| OS |
+| --- |
+| Windows |
+| Windows |
+| Windows |
+| iOS |
+| Android |
+| Mac |
 
 For columns without localized values, only a single column with the true column name and the true column values are returned.
 
 > [!IMPORTANT]
+>
 > The `localizationType` parameter is relevant for any export experience hosted by Intune's reporting infrastructure with a few exceptions. The`Devices` and `DevicesWithInventory` report types won't honor the `localizationType` parameter due to legacy compatibility requirements.
 
 ## API throttling conditions
@@ -176,9 +180,9 @@ To ensure that the `exportJobs` API doesn't have too many concurrent requests, w
 
 - **The APIs will support up to 100 requests per tenant per minute**: This support covers all users and apps in a tenant. Any additional requests initiated by either users or apps in the tenant within the same minute will be throttled.
   - If the APIs are initiated by a user, up to 8 requests will be allowed by the same user within a minute. Subsequent requests by the same user within the same minute will be throttled.
-  -    If the APIs are initiated by an app, then up to 48 requests will be allowed by the same app within a minute. Subsequent requests by the same app within the same minute will be throttled.
+  - If the APIs are initiated by an app, then up to 48 requests will be allowed by the same app within a minute. Subsequent requests by the same app within the same minute will be throttled.
 
 ## Next steps
 
-- [Microsoft Graph documentation](/graph/)
-- [Intune reports](./overview.md)
+- [Microsoft Graph documentation](https://learn.microsoft.com/en-us/graph/)
+- [Intune reports](overview.md)

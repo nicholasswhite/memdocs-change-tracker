@@ -1,7 +1,7 @@
 ---
-title: Anomalies Report for Proactive Device Issue Detection
+title: "Anomalies report"
 description: Use the anomalies report in Advanced Analytics to monitor device health, identify issues early, and prioritize fixes to improve endpoint reliability.
-ms.date: 03/24/2026
+ms.date: "2026-03-24T00:00:00Z"
 ms.topic: concept-article
 ---
 
@@ -13,30 +13,27 @@ The feature correlates deployment objects and configuration changes to speed tro
 
 ## Before you begin
 
-> [!div class="checklist"]
-> - Review [Scores, baselines, and insights in endpoint analytics](../endpoint-analytics/scores.md) to understand these concepts.
-> - Confirm that your environment meets all [prerequisites](index.md#prerequisites).
+- Review [Scores, baselines, and insights in endpoint analytics](../endpoint-analytics/scores.md) to understand these concepts.
+- Confirm that your environment meets all [prerequisites](index.md#prerequisites).
 
 ## Review the report
 
-1. In the [Microsoft Intune admin center][INT-AC], select **Reports** > **Endpoint analytics** > **Overview**.
-1. Select the **Anomalies** tab, which provides an overview of the anomalies detected in your organization.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Reports** &gt; **Endpoint analytics** &gt; **Overview**.
+2. Select the **Anomalies** tab, which provides an overview of the anomalies detected in your organization.
 
-:::image type="content" source="media/anomalies/severity-summary-and-anomaly-list.png" lightbox="media/anomalies/severity-summary-and-anomaly-list.png" alt-text="Screenshot of the anomalies report with severity counts and a list of detected anomalies, including status, affected devices, and occurrence dates.":::
+[![Screenshot of the anomalies report with severity counts and a list of detected anomalies, including status, affected devices, and occurrence dates.](media/anomalies/severity-summary-and-anomaly-list.png)](media/anomalies/severity-summary-and-anomaly-list.png#lightbox)
 
 - Use sorting and filtering capabilities to refine the list of anomalies.
-- To view more information about a specific anomaly, select it from the list. Review details such as the app name, affected devices, when the issue was first detected and last occurred, and any device groups that might be contributing to the problem.
-    :::image type="content" source="media/anomalies/anomaly-detail-and-correlation-groups.png" lightbox="media/anomalies/anomaly-detail-and-correlation-groups.png" alt-text="Screenshot of the anomaly details pane with severity, state, affected devices, detection dates, analytics model, and device correlation groups.":::
-- Select a device correlation group from the list to see common factors among devices. Devices are correlated by shared attributes such as app version, driver update, OS version, or device model. You can view the number of devices currently affected and those at risk. The **prevalence rate** shows the percentage of affected devices in a correlation group.
-    :::image type="content" source="media/anomalies/correlation-group-common-factors.png" lightbox="media/anomalies/correlation-group-common-factors.png" alt-text="Screenshot of an expanded device correlation group with common factors such as app version and publisher, plus prevalence and an affected devices link.":::
-- Select **View Affected Devices** to display a list of devices with key attributes. Filter to view devices in specific correlation groups or show all devices affected by the anomaly. The device timeline also shows additional anomalous events.
-    :::image type="content" source="media/anomalies/affected-devices.png" lightbox="media/anomalies/affected-devices.png" alt-text="Screenshot of the affected devices list filtered by correlation group, showing device name, status, manufacturer, model, OS version, and occurrence dates.":::
+- To view more information about a specific anomaly, select it from the list. Review details such as the app name, affected devices, when the issue was first detected and last occurred, and any device groups that might be contributing to the problem.   [![Screenshot of the anomaly details pane with severity, state, affected devices, detection dates, analytics model, and device correlation groups.](media/anomalies/anomaly-detail-and-correlation-groups.png)](media/anomalies/anomaly-detail-and-correlation-groups.png#lightbox)
+- Select a device correlation group from the list to see common factors among devices. Devices are correlated by shared attributes such as app version, driver update, OS version, or device model. You can view the number of devices currently affected and those at risk. The **prevalence rate** shows the percentage of affected devices in a correlation group.   [![Screenshot of an expanded device correlation group with common factors such as app version and publisher, plus prevalence and an affected devices link.](media/anomalies/correlation-group-common-factors.png)](media/anomalies/correlation-group-common-factors.png#lightbox)
+- Select **View Affected Devices** to display a list of devices with key attributes. Filter to view devices in specific correlation groups or show all devices affected by the anomaly. The device timeline also shows additional anomalous events.   [![Screenshot of the affected devices list filtered by correlation group, showing device name, status, manufacturer, model, OS version, and occurrence dates.](media/anomalies/affected-devices.png)](media/anomalies/affected-devices.png#lightbox)
 
 ## Review anomaly detection data
 
 Investigate flagged device correlation groups using the device timeline and resource reports to determine root causes. Device correlation groups help identify root causes for high and medium severity anomalies, as well as at-risk devices that may be impacted in the future.
 
 **Best practices:**
+
 - Periodically review the anomalies dashboard to understand the current baseline and prioritize investigations and resolutions for new issues.
 - Investigate new reported issues to identify common factors, such as device hardware, as shown in advanced analytics.
 - Prioritize anomalies to investigate based on severity and internal knowledge, such as application criticality.
@@ -48,7 +45,6 @@ Investigate flagged device correlation groups using the device timeline and reso
 - Review anomalies reports after major updates or incidents to check for new issues that need investigation and resolution.
 - To better understand detection methods, review the [statistical models](#statistical-models-for-determining-anomalies) used by anomaly detection.
 
-
 ## Statistical models for determining anomalies
 
 The analytical model detects device cohorts facing anomalous sets of Stop Error Restarts and application hangs or crashes that need admin attention. Patterns identified from sensor telemetry and diagnostics logs determine these device cohorts.
@@ -59,8 +55,5 @@ The analytical model detects device cohorts facing anomalous sets of Stop Error 
 - **Time series Z-score model**: This variation of the Z-score model is designed for detecting anomalies in time series data—sequences of data points collected at regular intervals, such as Stop Error Restarts over time. Standard deviation and mean are calculated for a sliding window, allowing the model to adapt to temporal patterns and changes in data distribution.
 
 > [!NOTE]
+>
 > Device cohorts are only identified for medium and high-severity anomalies.
-
-<!--links-->
-
-[INT-AC]: https://go.microsoft.com/fwlink/?linkid=2109431

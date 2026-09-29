@@ -1,7 +1,7 @@
 ---
 title: Plan and Prepare for Endpoint Privilege Management Deployment
 description: Plan your Endpoint Privilege Management deploying by understanding requirements, fundamentals, and security recommendations.
-ms.date: 01/26/2026
+ms.date: "2026-01-26T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -25,78 +25,52 @@ This article covers the information required to plan for Endpoint Privilege Mana
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [licensing](../includes/requirements/licensing.md)]
+![](../media/icons/16/licensing.svg) **Licensing requirements**
 
-:::column-end:::
-:::column span="3":::
+> This feature requires a subscription in addition to Microsoft Intune Plan 1 or Plan 2. For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
 
->[!INCLUDE [additional-licensing](../includes/licensing/additional-licensing.md)]
-:::column-end:::
-:::row-end:::
+![](../media/icons/16/devices.svg) **Device platform requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
-
->Endpoint Privilege Management supports the following operating systems:
+> Endpoint Privilege Management supports the following operating systems:
 >
->- Windows 11, version 24H2
->- Windows 11, version 23H2 (22631.2506 or later) with [KB5031455](https://support.microsoft.com/topic/october-31-2023-kb5031455-os-builds-22621-2506-and-22631-2506-preview-6513c5ec-c5a2-4aaf-97f5-44c13d29e0d4)
->- Windows 11, version 22H2 (22621.2215 or later) with [KB5029351](https://support.microsoft.com/topic/august-22-2023-kb5029351-os-build-22621-2215-preview-9af25662-083a-43f5-b3a7-975fe25cc692)
->- Windows 11, version 21H2 (22000.2713 or later) with [KB5034121](https://support.microsoft.com/topic/january-9-2024-kb5034121-os-build-22000-2713-f5847e32-0b71-4151-8190-54d3e36386f0)
->- Windows 10, version 22H2 (19045.3393 or later) with [KB5030211](https://support.microsoft.com/topic/september-12-2023-kb5030211-os-builds-19044-3448-and-19045-3448-c0dee353-f025-4f03-bcc1-336f74fb992c)
->- Windows 10, version 21H2 (19044.3393 or later) with [KB5030211](https://support.microsoft.com/topic/september-12-2023-kb5030211-os-builds-19044-3448-and-19045-3448-c0dee353-f025-4f03-bcc1-336f74fb992c)
+> - Windows 11, version 24H2
+> - Windows 11, version 23H2 (22631.2506 or later) with [KB5031455](https://support.microsoft.com/topic/october-31-2023-kb5031455-os-builds-22621-2506-and-22631-2506-preview-6513c5ec-c5a2-4aaf-97f5-44c13d29e0d4)
+> - Windows 11, version 22H2 (22621.2215 or later) with [KB5029351](https://support.microsoft.com/topic/august-22-2023-kb5029351-os-build-22621-2215-preview-9af25662-083a-43f5-b3a7-975fe25cc692)
+> - Windows 11, version 21H2 (22000.2713 or later) with [KB5034121](https://support.microsoft.com/topic/january-9-2024-kb5034121-os-build-22000-2713-f5847e32-0b71-4151-8190-54d3e36386f0)
+> - Windows 10, version 22H2 (19045.3393 or later) with [KB5030211](https://support.microsoft.com/topic/september-12-2023-kb5030211-os-builds-19044-3448-and-19045-3448-c0dee353-f025-4f03-bcc1-336f74fb992c)
+> - Windows 10, version 21H2 (19044.3393 or later) with [KB5030211](https://support.microsoft.com/topic/september-12-2023-kb5030211-os-builds-19044-3448-and-19045-3448-c0dee353-f025-4f03-bcc1-336f74fb992c)
 >
->Endpoint Privilege Management supports the following virtual platforms:
+> Endpoint Privilege Management supports the following virtual platforms:
 >
->- Azure Virtual Desktop (AVD) single-session virtual machines (VMs)
->- Windows 365
+> - Azure Virtual Desktop (AVD) single-session virtual machines (VMs)
+> - Windows 365
 >
->> [!IMPORTANT]
->> [!INCLUDE [windows-10-support](../includes/windows-10-support.md)]
+> > [!IMPORTANT]
+> >
+> > On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 >
->> [!IMPORTANT]
->>
->> - Elevation settings policies report as 'not applicable' for devices that don't run a supported operating system version.
->> - Endpoint Privilege Management is only compatible with 64-bit Operating System Architectures, including Arm64.
+> > [!IMPORTANT]
+> >
+> > - Elevation settings policies report as 'not applicable' for devices that don't run a supported operating system version.
+> > - Endpoint Privilege Management is only compatible with 64-bit Operating System Architectures, including Arm64.
 
-:::column-end:::
-:::row-end:::
+![](../media/icons/16/configuration.svg) **Device configuration requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../includes/requirements/device-configuration.md)]
-
-:::column-end:::
-:::column span="3":::
-
->To use Endpoint Privilege Management, devices must be:
+> To use Endpoint Privilege Management, devices must be:
 >
->- Microsoft Entra joined *or* Microsoft Entra hybrid joined
->- Enrolled in Intune *or* Microsoft Configuration Manager [co-managed](../configmgr/comanage/overview.md) (no workload requirements)
+> - Microsoft Entra joined *or* Microsoft Entra hybrid joined
+> - Enrolled in Intune *or* Microsoft Configuration Manager [co-managed](../configmgr/comanage/overview.md) (no workload requirements)
 >
->Devices must also have clear line of sight (without SSL-Inspection) to the [required endpoints](../fundamentals/endpoints.md#microsoft-intune-endpoint-privilege-management) for Endpoint Privilege Management.
-:::column-end:::
-:::row-end:::
+> Devices must also have clear line of sight (without SSL-Inspection) to the [required endpoints](../fundamentals/endpoints.md#microsoft-intune-endpoint-privilege-management) for Endpoint Privilege Management.
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [cloud](../includes/requirements/cloud.md)]
+![](../media/icons/16/cloud.svg) **Cloud requirements**
 
-:::column-end:::
-:::column span="3":::
 > Specialty device management is supported in the following cloud environments:
+>
 > - Public cloud
 > - Sovereign cloud environments:
 >   - U.S. Government Community Cloud (GCC) High
 >   - U.S. Department of Defense (DoD)
-:::column-end:::
-:::row-end:::
 
 For more information, see [Microsoft Intune for US Government GCC service description](../fundamentals/government-service.md).
 
@@ -105,45 +79,39 @@ For more information, see [Microsoft Intune for US Government GCC service descri
 When you configure the *elevation settings* and *elevation rules* policies that were mentioned previously, there are some important concepts to understand ensuring you configure EPM to meet the needs of your organization. Before you widely deploy EPM, the following concepts should be well understood as well as the effect they have on your environment:
 
 - **Run with elevated access** - A right-click context menu option that appears when EPM is activated on a device. When this option is used, the devices elevation rules policies are checked for a match to determine if, and how, that file can be elevated to run in an administrative context. If there's no applicable elevation rule, then the device uses the default elevation configurations as defined by the elevation settings policy.
-
-- **File elevation and elevation types** – EPM allows users without administrative privileges to run processes in the administrative context. When you create an elevation rule, that rule allows EPM to proxy the target of that rule to run with administrator privileges on the device. The result is that the application has *full administrative* capability on the device. 
+- **File elevation and elevation types** – EPM allows users without administrative privileges to run processes in the administrative context. When you create an elevation rule, that rule allows EPM to proxy the target of that rule to run with administrator privileges on the device. The result is that the application has *full administrative* capability on the device.
 
 Except for *Elevate as current user*, EPM uses a *virtual account* to elevate processes. This isolates elevated actions from the user's profile, reducing exposure to user-specific data and lowering the risk of privilege escalation.
 
-  When you use Endpoint Privilege Management, there are a few options for elevation behavior:
+When you use Endpoint Privilege Management, there are a few options for elevation behavior:
 
-  - **Automatic**: For automatic elevation rules, EPM *automatically* elevates these applications without input from the user. Broad rules in this category can have widespread impact to the security posture of the organization.
+- **Automatic**: For automatic elevation rules, EPM *automatically* elevates these applications without input from the user. Broad rules in this category can have widespread impact to the security posture of the organization.
+- **User confirmed**: With user confirmed rules, end users use a new right-click context menu *Run with elevated access*. User confirmed rules can also require validation with authentication or business justification. Requiring validation provides an extra layer of protection by making the user acknowledge the elevation.
+- **Elevate as current user**: This type of elevation runs the elevated process under the signed-in user's own account, preserving compatibility with tools and installers that rely on the active user profile. This requires the user to enter their credentials for Windows Authentication. This preserves the user's profile paths, environment variables, and personalized settings. Because the elevated process maintains the same user identity before and after elevation, audit trails remain consistent and accurate.
 
-  - **User confirmed**: With user confirmed rules, end users use a new right-click context menu *Run with elevated access*. User confirmed rules can also require validation with authentication or business justification. Requiring validation provides an extra layer of protection by making the user acknowledge the elevation.
+  However, because the elevated process inherits the user's full context, this mode introduces a broader attack surface and reduces isolation from user data.
 
-  - **Elevate as current user**: This type of elevation runs the elevated process under the signed-in user's own account, preserving compatibility with tools and installers that rely on the active user profile. This requires the user to enter their credentials for Windows Authentication. This preserves the user's profile paths, environment variables, and personalized settings. Because the elevated process maintains the same user identity before and after elevation, audit trails remain consistent and accurate.
+  Key considerations:
 
-    However, because the elevated process inherits the user's full context, this mode introduces a broader attack surface and reduces isolation from user data.
-  
-    Key considerations:
-    - Compatibility need: Use this mode only when virtual account elevation causes application failures.
-    - Scope tightly: Limit elevation rules to trusted binaries and paths to reduce risk.
-    - Security tradeoff: Understand that this mode increases exposure to user-specific data.
+  - Compatibility need: Use this mode only when virtual account elevation causes application failures.
+  - Scope tightly: Limit elevation rules to trusted binaries and paths to reduce risk.
+  - Security tradeoff: Understand that this mode increases exposure to user-specific data.
 
-    >[!TIP]
-    > When compatibility isn't an issue, prefer a method that uses the virtual account elevation for stronger security.
-
-  - **Deny**: A deny rule identifies a file that EPM blocks from running in an elevated context. Deny rules can ensure that known files or potentially malicious software can't be run in an elevated context.
-
-  - **Support approved**: For support approved rules, end users must submit a request to run an application with elevated permissions. Once the request is submitted, an administrator can approve the request. Once the request is approved, the end user is notified that they can retry the elevation on the device. For more information about using this rule type, see [Support approved elevation requests](./manage-support-approvals.md)
-
-  > [!NOTE]
+  > [!TIP]
   >
-  > Each elevation rule can also set the elevation behavior for child processes that the elevated process creates.
+  > When compatibility isn't an issue, prefer a method that uses the virtual account elevation for stronger security.
+- **Deny**: A deny rule identifies a file that EPM blocks from running in an elevated context. Deny rules can ensure that known files or potentially malicious software can't be run in an elevated context.
+- **Support approved**: For support approved rules, end users must submit a request to run an application with elevated permissions. Once the request is submitted, an administrator can approve the request. Once the request is approved, the end user is notified that they can retry the elevation on the device. For more information about using this rule type, see [Support approved elevation requests](manage-support-approvals.md)
+
+> [!NOTE]
+>
+> Each elevation rule can also set the elevation behavior for child processes that the elevated process creates.
 
 - **Child process controls** - When processes are elevated by EPM, you can control how the creation of child processes is governed by EPM, which allows you to have granular control over any subprocesses that might be created by your elevated application.
-
 - **Client-side components** – To use Endpoint Privilege Management, Intune provisions a small set of components on the device that receive elevation policies and enforces them. Intune provisions the components only when an elevation settings policy is received, and the policy expresses the intent to *enable* Endpoint Privilege management.
-
 - **Managed elevations vs unmanaged elevations** – These terms might be used in our reporting and usage data. These terms refer to the following descriptions:
 
   - **Managed elevation**: Any elevation that Endpoint Privilege Management facilitates. Managed elevations include all elevations that EPM ends up facilitating for the standard user. These managed elevations could include elevations that happen as the result of an elevation rule or as part of default elevation action.
-
   - **Unmanaged elevation**: All file elevations that happen without use of Endpoint Privilege Management. These elevations can happen when a user with administrative rights uses the Windows default action of *Run as administrator*.
 
 ## EPM Policies
@@ -184,6 +152,7 @@ If a device receives two rules targeting the same application, both rules are co
 - If applying the proceeding logic results in more than one rule, the following order determines the elevation behavior: *User confirmed*, *Elevate as current user*, *Support approved*, and then *Automatic*.
 
 > [!NOTE]
+>
 > If a rule doesn't exist for an elevation and that elevation was requested through the *Run with elevated access* right-click context menu, then the *Default Elevation Behavior* is used.
 
 ## Endpoint Privilege Management and User Account Control
@@ -192,9 +161,10 @@ If a device receives two rules targeting the same application, both rules are co
 
 Endpoint Privilege Management and Windows built-in user account control (UAC) are separate features with different functionality.
 
-When moving users to run as standard users and utilizing Endpoint Privilege Management, you might choose to change the default UAC behavior for standard users. This change can reduce confusion when an application requires elevation and create a better end user experience. Examine [behavior of the elevation prompt for standard users](/windows/security/identity-protection/user-account-control/user-account-control-security-policy-settings#user-account-control-behavior-of-the-elevation-prompt-for-standard-users) for more information.
+When moving users to run as standard users and utilizing Endpoint Privilege Management, you might choose to change the default UAC behavior for standard users. This change can reduce confusion when an application requires elevation and create a better end user experience. Examine [behavior of the elevation prompt for standard users](https://learn.microsoft.com/en-us/windows/security/identity-protection/user-account-control/user-account-control-security-policy-settings#user-account-control-behavior-of-the-elevation-prompt-for-standard-users) for more information.
 
 > [!NOTE]
+>
 > Endpoint Privilege Management doesn't interfere with user account control actions (or UAC) that are run by an Administrator on the device.
 
 ## Security recommendations
@@ -205,15 +175,16 @@ To help ensure a secure deployment of Endpoint Privilege Management, consider th
 
 ### Set a secure default elevation response
 
-Set the [default elevation response](./manage-elevation-settings.md#about-windows-elevation-settings-policy) to **Require support approval** or **Deny** rather than **Require user confirmation**. These options ensure that elevation is controlled with predefined rules for known binaries, reducing the risk of users elevating arbitrary or potentially malicious executables.
+Set the [default elevation response](manage-elevation-settings.md#about-windows-elevation-settings-policy) to **Require support approval** or **Deny** rather than **Require user confirmation**. These options ensure that elevation is controlled with predefined rules for known binaries, reducing the risk of users elevating arbitrary or potentially malicious executables.
 
 ### Require file path restrictions in all rule types
 
-When [configuring an elevation rule](./create-elevation-rules.md#create-elevation-rules-policy), specify a required **File path**. While the *file path* is optional, it can be an important security check for rules that use automatic elevation or wildcard-based attributes when the path points to a location that standard users can't modify, such as a secured system directory. Use of a secured file location helps prevent executables or their dependent binaries from being tampered with or replaced before elevation.
+When [configuring an elevation rule](create-elevation-rules.md#create-elevation-rules-policy), specify a required **File path**. While the *file path* is optional, it can be an important security check for rules that use automatic elevation or wildcard-based attributes when the path points to a location that standard users can't modify, such as a secured system directory. Use of a secured file location helps prevent executables or their dependent binaries from being tampered with or replaced before elevation.
 
-This recommendation applies to rules created [automatically](./create-elevation-rules.md#automatically-configure-elevation-rules-for-windows-elevation-rules-policy) based on details from the [Elevation report](./monitor-reports.md) or [support approved](./manage-support-approvals.md) request, and for elevation rules that you create [manually](./create-elevation-rules.md#manually-configure-elevation-rules-for-windows-elevation-rules-policy).
+This recommendation applies to rules created [automatically](create-elevation-rules.md#automatically-configure-elevation-rules-for-windows-elevation-rules-policy) based on details from the [Elevation report](monitor-reports.md) or [support approved](manage-support-approvals.md) request, and for elevation rules that you create [manually](create-elevation-rules.md#manually-configure-elevation-rules-for-windows-elevation-rules-policy).
 
 > [!IMPORTANT]
+>
 > Files located on network shares aren't supported and shouldn't be used in rule definitions.
 
 ### Differentiate installer and runtime elevation
@@ -235,22 +206,23 @@ EPM operates differently to third-party products and as a result, we recommended
 To manage Endpoint Privilege Management, your account must be assigned an Intune role-based access control (RBAC) role that includes the following permission with sufficient rights to complete the desired task:
 
 - **Endpoint Privilege Management Policy Authoring** – This permission is required to work with policy or data and reports for Endpoint Privilege Management, and supports the following rights:
+
   - View Reports
   - Read
   - Create
   - Update
   - Delete
   - Assign
-
 - **Endpoint Privilege Management Elevation Requests** - This permission is required to work with support approved elevation requests that are submitted by users for approval, and supports the following rights:
+
   - View elevation requests
   - Modify elevation requests
 
 You can add this permission with one or more rights to your own custom RBAC roles, or use a built-in RBAC role dedicated to managing Endpoint Privilege Management:
 
 - **Endpoint Privilege Manager** – This built-in role is dedicated to managing Endpoint Privilege Management in the Intune console. This role includes all rights for *Endpoint Privilege Management Policy Authoring* and *Endpoint Privilege Management Elevation Requests*.
-
 - **Endpoint Privilege Reader** - Use this built-in role to view Endpoint Privilege Management policies in the Intune console, including reports. This role includes the following rights:
+
   - View Reports
   - Read
   - View elevation requests
@@ -258,13 +230,13 @@ You can add this permission with one or more rights to your own custom RBAC role
 In addition to the dedicated roles, the following built-in roles for Intune also include rights for *Endpoint Privilege Management Policy Authoring*:
 
 - **Endpoint Security Manager** - This role includes all rights for *Endpoint Privilege Management Policy Authoring* and *Endpoint Privilege Management Elevation Requests*.
-
 - **Read Only Operator** - This role includes the following rights:
+
   - View Reports
   - Read
   - View elevation requests
 
- For more information, see [Role-based access control for Microsoft Intune](../fundamentals/role-based-access-control/overview.md).
+For more information, see [Role-based access control for Microsoft Intune](../fundamentals/role-based-access-control/overview.md).
 
 ## EpmTools PowerShell module
 
@@ -284,6 +256,7 @@ Import-Module 'C:\Program Files\Microsoft EPM Agent\EpmTools\EpmCmdlets.dll'
 ```
 
 > [!NOTE]
+>
 > Windows on Arm64 requires the use of Windows PowerShell x64.
 
 Following are the available cmdlets:
@@ -301,5 +274,4 @@ For more information about each cmdlet, review the **readme.md** file from the *
 
 ## Next Steps
 
-> [!div class="nextstepaction"]
-> [Next: Review privacy data collection >](./ref-data-collection.md)
+[Next: Review privacy data collection &gt;](ref-data-collection.md)

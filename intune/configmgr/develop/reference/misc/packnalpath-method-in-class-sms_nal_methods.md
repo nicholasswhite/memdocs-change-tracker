@@ -1,16 +1,18 @@
 ---
-title: PackNALPath Method
+title: "PackNALPath Method in Class SMS_NAL_Methods"
 description: Encode a network abstraction layer (NAL) path from its components. A NAL path is an abstract representation of a network path or a user account.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # PackNALPath Method in Class SMS_NAL_Methods
+
 The `PackNALPath` method, in Configuration Manager, encodes a network abstraction layer (NAL) path from its components. A NAL path is an abstract representation of a network path or a user account.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,61 +27,59 @@ SInt32 PackNALPath(
 ```
 
 #### Parameters
- `DisplayQualifiers`
- Data type: `String` Array
 
- Qualifiers: [in]
+`DisplayQualifiers` Data type: `String` Array
 
- Qualifiers that are used by the Configuration Manager console. The possible values are: Display=\<path, group, or user>. The value that you specify for the path must be the same as the value that you specify for `NetworkOSPath`. For path formats, see `NetworkOSPath` formats later in this topic.
+Qualifiers: [in]
 
- `NALType`
- Data type: `String`
+Qualifiers that are used by the Configuration Manager console. The possible values are: Display=&lt;path, group, or user&gt;. The value that you specify for the path must be the same as the value that you specify for `NetworkOSPath`. For path formats, see `NetworkOSPath` formats later in this topic.
 
- Qualifiers: [in]
+`NALType` Data type: `String`
 
- The NAL type specified by the network operating system. Possible values are:
+Qualifiers: [in]
+
+The NAL type specified by the network operating system. Possible values are:
 
 | Value | NAL type |
-| ----- | -------- |
-|GENERIC|All providers accept this account specification. Use this value only when you specify a user or group name.|
-|MSWNET|Windows NT.|
+| --- | --- |
+| GENERIC | All providers accept this account specification. Use this value only when you specify a user or group name. |
+| MSWNET | Windows NT. |
 
- `NetworkOSPath`
- Data type: `String`
+`NetworkOSPath` Data type: `String`
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- The network operating system path. Possible values are:
+The network operating system path. Possible values are:
 
-|Provider|NetworkOSPath|
-|--------------|---------------------|
-|Windows NT user names|\<domain>\\<user name\>|
-|Windows NT group names|\<domain>\group=\<group name>|
-|Generic group names|GROUP=\<group name>|
-|Windows NT (UNC) computer names|\\\\<computer name\>|
-|Windows NT (UNC) share names|\\\\<computer name\>\\<share name\>|
+| Provider | NetworkOSPath |
+| --- | --- |
+| Windows NT user names | &lt;domain&gt;\&lt;user name&gt; |
+| Windows NT group names | &lt;domain&gt;\group=&lt;group name&gt; |
+| Generic group names | GROUP=&lt;group name&gt; |
+| Windows NT (UNC) computer names | \\&lt;computer name&gt; |
+| Windows NT (UNC) share names | \\&lt;computer name&gt;\&lt;share name&gt; |
 
- `NetworkConnectionQualifiers`
- Data type: `String` Array
+`NetworkConnectionQualifiers` Data type: `String` Array
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- Optional. Configuration Manager component-specific qualifiers. The possible values are: SMS_SITE=\<site code> [Preferred]. SMS_SITE identifies the site to which the path belongs. Preferred is optional and identifies the path to use when multiple paths are specified.
+Optional. Configuration Manager component-specific qualifiers. The possible values are: SMS_SITE=&lt;site code&gt; [Preferred]. SMS_SITE identifies the site to which the path belongs. Preferred is optional and identifies the path to use when multiple paths are specified.
 
- `NALPath`
- Data type: `String`
+`NALPath` Data type: `String`
 
- Qualifiers: [out]
+Qualifiers: [out]
 
- Encoded NAL path.
+Encoded NAL path.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Example Code
- The following example encodes a NAL path for an MSWNET network operating system.
+
+The following example encodes a NAL path for an MSWNET network operating system.
 
 ```
 Dim clsNALMethods As SWbemObject
@@ -91,18 +91,19 @@ clsNALMethods.PackNALPath Array("Display=\\<server>"), "MSWNET", _
 ```
 
 ## Remarks
- Your application uses this method when creating a distribution point or defining system resources in the site control file programmatically. The method is not used to create a NAL path of an existing distribution point for an [SMS_DistributionPoint Server WMI Class](../../../develop/reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md) object. To determine the NAL path for an existing distribution point, the application should query the [SMS_SystemResourceList Server WMI Class](../../../develop/reference/core/servers/configure/sms_systemresourcelist-server-wmi-class.md).
+
+Your application uses this method when creating a distribution point or defining system resources in the site control file programmatically. The method is not used to create a NAL path of an existing distribution point for an [SMS_DistributionPoint Server WMI Class](../core/servers/configure/sms_distributionpoint-server-wmi-class.md) object. To determine the NAL path for an existing distribution point, the application should query the [SMS_SystemResourceList Server WMI Class](../core/servers/configure/sms_systemresourcelist-server-wmi-class.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_NAL_Methods Class](../../../develop/reference/misc/sms_nal_methods-server-wmi-class.md)
- [UnPackNALPath Method in Class SMS_NAL_Methods](../../../develop/reference/misc/unpacknalpath-method-in-class-sms_nal_methods.md)
- [SMS_DistributionPoint Server WMI Class](../../../develop/reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md)
- [SMS_SystemResourceList Server WMI Class](../../../develop/reference/core/servers/configure/sms_systemresourcelist-server-wmi-class.md)
+
+[SMS_NAL_Methods Class](sms_nal_methods-server-wmi-class.md) [UnPackNALPath Method in Class SMS_NAL_Methods](unpacknalpath-method-in-class-sms_nal_methods.md) [SMS_DistributionPoint Server WMI Class](../core/servers/configure/sms_distributionpoint-server-wmi-class.md) [SMS_SystemResourceList Server WMI Class](../core/servers/configure/sms_systemresourcelist-server-wmi-class.md)

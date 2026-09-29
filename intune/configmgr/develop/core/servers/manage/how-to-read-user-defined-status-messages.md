@@ -1,25 +1,27 @@
 ---
-title: Read User-Defined Status Messages
+title: "How to Read User-Defined Status Messages"
 description: In Configuration Manager, you can read user-defined status messages, on the site server, by querying the SMS Provider.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Read User-Defined Status Messages
+
 In Configuration Manager, you can read user-defined status messages, on the site server, by querying the SMS Provider.
 
 ### To read a user-defined status messages
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Query the provider for the SMS`_StatusMessage` instances you want. As part of the query get the insertion string values from `SMS_SMS_StatMsgInStrings` and the attribute value from `SMS_StatMsgAttributes`.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Query the provider for the SMS`_StatusMessage` instances you want. As part of the query get the insertion string values from `SMS_SMS_StatMsgInStrings` and the attribute value from `SMS_StatMsgAttributes`.
 
 ## Example
- The following example reads error message status messages for the sample created in [How to Report User-Defined Status Messages Using WMI](../../../../develop/core/servers/manage/how-to-report-user-defined-status-messages.md). Make sure the `MyPackageID` and `MyApplication` values in the query match in both samples.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example reads error message status messages for the sample created in [How to Report User-Defined Status Messages Using WMI](how-to-report-user-defined-status-messages.md). Make sure the `MyPackageID` and `MyApplication` values in the query match in both samples.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 Sub ReadErrorStatusMesage(connection)
@@ -103,43 +105,46 @@ public void ReadErrorStatusMessage(WqlConnectionManager connection)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: [WqlConnectionManager](../../understand/managed-sms-provider-fundamentals-in-configuration-manager.md#wqlconnectionmanager)<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: [WqlConnectionManager](../../understand/managed-sms-provider-fundamentals-in-configuration-manager.md#wqlconnectionmanager) - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md). |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- System.Management
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Management
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- System.Management
+microsoft.configurationmanagement.managementprovider
+
+System.Management
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../configure/role-based-administration.md).
 
 ## See Also
- [About Configuration Manager Status Messages](../../../../develop/core/servers/manage/about-configuration-manager-status-messages.md)
- [How to Report User-Defined Status Messages](../../../../develop/core/servers/manage/how-to-report-user-defined-status-messages.md)
- [SMS_StatusMessage Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md)
- [How To Delete Status Messages](../../../../develop/core/servers/manage/how-to-delete-status-messages.md)
+
+[About Configuration Manager Status Messages](about-configuration-manager-status-messages.md) [How to Report User-Defined Status Messages](how-to-report-user-defined-status-messages.md) [SMS_StatusMessage Server WMI Class](../../../reference/core/servers/manage/sms_statusmessage-server-wmi-class.md) [How To Delete Status Messages](how-to-delete-status-messages.md)

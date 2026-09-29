@@ -1,41 +1,41 @@
 ---
-title: Create a Package
+title: "How to Create a Package"
 description: Learn how to create a package in Configuration Manager by using the SMS_Package class and class properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a Package
+
 The following example shows how to create a package in Configuration Manager by using the `SMS_Package` class and class properties.
 
 ### To create a package
 
 1. Set up a connection to the SMS Provider.
-
 2. Create the new package object by using the `SMS_Package` class.
-
 3. Populate the new package properties.
 
    > [!TIP]
-   >  When you are creating a Virtual Application Package, you must set the `SMS_Package` properties to specific values. Instances of the `SMS_VirtualApp` class must reference instances of the `SMS_Package` class that use the properties described in the following table.
+   >
+   > When you are creating a Virtual Application Package, you must set the `SMS_Package` properties to specific values. Instances of the `SMS_VirtualApp` class must reference instances of the `SMS_Package` class that use the properties described in the following table.
 
-    Virtual Application Package
+   Virtual Application Package
 
-   | Property Name |       Property Value        |
-   |---------------|-----------------------------|
-   |  PackageType  |              7              |
-   | PkgSourceFlag |              2              |
-   | PkgSourcePath | \\\someserver\somesharepath |
-
-
+   | Property Name | Property Value |
+   | --- | --- |
+   | PackageType | 7 |
+   | PkgSourceFlag | 2 |
+   | PkgSourcePath | \\someserver\somesharepath |
 4. Save the package.
 
 ## Example
- The following example method creates a new package and populates its properties for use in software distribution.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method creates a new package and populates its properties for use in software distribution.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -88,37 +88,40 @@ public void CreatePackage(WqlConnectionManager connection, string newPackageName
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`newPackageName`|-   Managed: `String`<br />-   VBScript: `String`|The name of the new package.|
-|`newPackageDescription`|-   Managed: `String`<br />-   VBScript: `String`|The description for the new package.|
-|`newPackageSourceFlag`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The package source.|
-|`newPackageSourcePath`|-   Managed: `String`<br />-   VBScript: `String`|The path to the package source.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `newPackageName` | - Managed: `String` - VBScript: `String` | The name of the new package. |
+| `newPackageDescription` | - Managed: `String` - VBScript: `String` | The description for the new package. |
+| `newPackageSourceFlag` | - Managed: `Integer` - VBScript: `Integer` | The package source. |
+| `newPackageSourcePath` | - Managed: `String` - VBScript: `String` | The path to the package source. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [SMS_Package Server WMI Class](../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
- [PowerShell Cmdlet: New-CMPackage](/powershell/module/configurationmanager/new-cmpackage)
+
+[Software distribution overview](software-distribution-overview.md) [SMS_Package Server WMI Class](../../../reference/core/servers/configure/sms_package-server-wmi-class.md) [PowerShell Cmdlet: New-CMPackage](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmpackage)

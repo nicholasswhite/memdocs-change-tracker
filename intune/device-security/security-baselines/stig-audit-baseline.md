@@ -1,7 +1,7 @@
 ---
-title: Use Security Technical Implementation Guide audit baselines to assess Windows device compliance in Microsoft Intune
+title: "Use STIG audit baselines to assess Windows device compliance in Microsoft Intune"
 description: Learn how to use the Security Technical Implementation Guide security baseline in Microsoft Intune to assess Windows device compliance against Security Technical Implementation Guide recommendations for Department of Defense organizations.
-ms.date: 06/09/2026
+ms.date: "2026-06-09T00:00:00Z"
 ms.topic: how-to
 ai.usage: ai-assisted
 ---
@@ -12,11 +12,10 @@ Intune supports a security baseline for auditing Windows devices against the rec
 
 This baseline is designed for organizations that must demonstrate compliance with STIGs as part of their Department of Defense (DoD) security requirements.
 
-> [!div class="checklist"]
-> Applies to:
->
-> - Windows 10
-> - Windows 11
+Applies to:
+
+- Windows 10
+- Windows 11
 
 ## Overview
 
@@ -41,70 +40,40 @@ Intune's STIG audit baseline helps organizations with this assessment by:
 - **Supporting XCCDF compliance reporting** — Audit results map to NIST XCCDF (Extensible Configuration Checklist Description Format) result categories, supporting the formal reporting formats that DISA and DoD auditors require.
 
 > [!NOTE]
+>
 > Although the Microsoft Windows 11 STIG SCAP Benchmark baseline can be assigned to both Windows 10 and Windows 11 devices, rules that don't apply to a device's operating system version are reported as *Not applicable*.
 
 > [!IMPORTANT]
-> The STIG audit baseline is an *audit-only* tool. It doesn't configure or enforce settings on devices. To bring devices into compliance, use the audit results to identify gaps and then apply the appropriate configuration through [Settings Catalog](../../device-configuration/overview.md) profiles, [compliance policies](../compliance/overview.md), or other [security baselines](./overview.md).
+>
+> The STIG audit baseline is an *audit-only* tool. It doesn't configure or enforce settings on devices. To bring devices into compliance, use the audit results to identify gaps and then apply the appropriate configuration through [Settings Catalog](../../device-configuration/overview.md) profiles, [compliance policies](../compliance/overview.md), or other [security baselines](overview.md).
 
 ## Prerequisites
 
 Before you use the STIG audit baseline, confirm that your environment meets the following requirements:
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [cloud](../../includes/requirements/cloud.md)]
+![](../../media/icons/16/cloud.svg) **Cloud requirements**
 
-:::column-end:::
-:::column span="3":::
 > Your organization must use a [US Government Community Cloud High (GCC High)](../../fundamentals/government-service.md) tenant. The STIG audit baseline isn't available in commercial cloud or GCC environments.
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/licensing.svg) **Licensing requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [licensing](../../includes/requirements/licensing.md)]
-
-:::column-end:::
-:::column span="3":::
 > The STIG audit baseline requires [Intune Advanced Analytics](../../advanced-analytics/index.md).
 >
 > This feature requires a subscription in addition to Microsoft Intune Plan 1 or Plan 2. For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
 > This feature supports the following platforms:
 >
 > - Windows 10
 > - Windows 11
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/enrollment.svg) **Enrollment methods**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [enrollment](../../includes/requirements/enrollment-methods.md)]
-
-:::column-end:::
-:::column span="3":::
 > Devices must be [enrolled in Intune](../../device-enrollment/enroll-devices.md). For co-managed devices, the **Device configuration** workload slider must be set to *Pilot Intune* or *Intune*. The STIG audit baseline is delivered through Intune's device configuration pipeline, so this workload must be owned by Intune for the audit policy to apply.
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-
-:::column-end:::
-:::column span="3":::
 > To **create and manage** STIG audit baseline profiles, use an account with an Intune role that includes the following permissions:
 >
 > - **Organization**: Read
@@ -114,38 +83,30 @@ Before you use the STIG audit baseline, confirm that your environment meets the 
 >
 > You also need **scope tag** permissions for the device groups you want to audit.
 
-:::column-end:::
-:::row-end:::
-
 ## Create a STIG audit baseline profile
 
 To create a STIG audit baseline profile, use the following steps:
 
-1. Sign in to the [Microsoft Intune admin center].
-
-1. Go to **Endpoint security** > **Security baselines** to view the list of available baselines.
-
-1. Select **Microsoft Windows 11 STIG SCAP Benchmark** from the list of available baseline types.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Go to **Endpoint security** &gt; **Security baselines** to view the list of available baselines.
+3. Select **Microsoft Windows 11 STIG SCAP Benchmark** from the list of available baseline types.
 
    > [!NOTE]
+   >
    > If you don't see the STIG baseline in the list, confirm that your tenant meets the [prerequisites](#prerequisites) for tenant type and licensing.
+4. Select **Create profile**.
+5. On the **Basics** tab:
 
-1. Select **Create profile**.
-
-1. On the **Basics** tab:
    - Enter a descriptive **Name** for the profile, such as *STIG audit - Windows clients*.
    - Optionally, add a **Description** to clarify the purpose and scope of this audit profile.
-
-1. On the **Configuration settings** tab, no configuration is required. This tab confirms that the profile contains recommended settings from the current STIG version, and that assigning the profile enables auditing of those settings on targeted devices.
+6. On the **Configuration settings** tab, no configuration is required. This tab confirms that the profile contains recommended settings from the current STIG version, and that assigning the profile enables auditing of those settings on targeted devices.
 
    > [!NOTE]
+   >
    > The STIG audit baseline audits all settings in the baseline as a single profile. You can't select or modify individual settings. The audit rules and their expected values are defined by DISA in the publicly available [SCAP benchmark files](https://public.cyber.mil/stigs/scap/), not by Intune.
-
-1. On the **Scope tags** tab, optionally add scope tags to control which admins can see this profile.
-
-1. On the **Assignments** tab, select the device groups that you want to audit against the STIG baseline. You can target all devices or specific groups.
-
-1. Review your settings on the **Review + create** tab, and then select **Create**.
+7. On the **Scope tags** tab, optionally add scope tags to control which admins can see this profile.
+8. On the **Assignments** tab, select the device groups that you want to audit against the STIG baseline. You can target all devices or specific groups.
+9. Review your settings on the **Review + create** tab, and then select **Create**.
 
 After you create the profile and assign it to groups, Intune evaluates the targeted devices against the STIG baseline as devices check in. Audit report data begins to populate as devices report their assessment results. Initial results for newly targeted devices can take up to 24 hours to appear.
 
@@ -153,20 +114,18 @@ After you create the profile and assign it to groups, Intune evaluates the targe
 
 After devices check in, you can review audit results through the **Audit report** view in the Intune admin center.
 
-:::image type="content" source="./media/stig-audit/stig-audit-profile-overview.png" alt-text="Screenshot showing the STIG audit baseline profile overview with device and user check-in status, Device assignment status report, and Audit report options in the Intune admin center.":::
+![Screenshot showing the STIG audit baseline profile overview with device and user check-in status, Device assignment status report, and Audit report options in the Intune admin center.](media/stig-audit/stig-audit-profile-overview.png)
 
-1. Go to **Endpoint security** > **Security baselines**, and select **Microsoft Windows 11 STIG SCAP Benchmark**.
-
-1. Select the audit profile you want to review.
-
-1. Select **Audit report** to load the report view. You might need to select **Generate** the first time to begin populating data.
+1. Go to **Endpoint security** &gt; **Security baselines**, and select **Microsoft Windows 11 STIG SCAP Benchmark**.
+2. Select the audit profile you want to review.
+3. Select **Audit report** to load the report view. You might need to select **Generate** the first time to begin populating data.
 
 ### Device assignment status
 
 The **Device assignment status** report shows all devices that the policy targets, including devices in a pending policy assignment state. Use this report to confirm which devices received the audit profile and to track assignment progress.
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **Device name** | The display name of the device as registered in Intune. |
 | **Last active user** | The last user who signed in to the device. |
 | **Assignment status** | The current policy assignment state for the device. |
@@ -184,7 +143,7 @@ The **Audit report** shows whether device values meet the recommended values for
 The report includes the following columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **Settings name** | The display name of the STIG rule. |
 | **Reference ID** | The STIG Group ID for the rule. |
 | **Severity** | The severity of the STIG rule: **CAT I** (high), **CAT II** (medium), or **CAT III** (low). |
@@ -202,7 +161,7 @@ Select the device count for a rule, such as the number under **Success devices**
 The device list includes the following columns:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **Device name** | The display name of the device as registered in Intune. |
 | **Status** | The audit result for this specific setting on the device: *Unknown*, *Not applicable*, *Pass*, *Fail*, *Error*, or *Conflict*. |
 | **Last check-in time** | The last time the device checked in and reported its status for this setting. |
@@ -212,7 +171,7 @@ The device list includes the following columns:
 Each device is evaluated per setting and assigned one of the following status values:
 
 | Status | Description | XCCDF mapping |
-|---|---|---|
+| --- | --- | --- |
 | **Unknown** | The device hasn't reported results for this setting yet. | unknown |
 | **Not applicable** | The setting doesn't apply to this device. | notapplicable |
 | **Pass** | The device passes this STIG check. | pass |
@@ -241,6 +200,7 @@ Audit report data isn't real-time. Reporting data can lag one to two device chec
 To refresh the report with the latest available data, use the **Generate again** button in the audit report.
 
 > [!TIP]
+>
 > For devices that already have the audit policy, you can initiate a device sync from the admin center to retrieve the most recent locally cached evaluation results without waiting for the next scheduled check-in.
 
 ## Use the Graph API for STIG audit reports
@@ -248,6 +208,7 @@ To refresh the report with the latest available data, use the **Generate again**
 You can use the Microsoft Graph API to programmatically retrieve STIG audit data. This approach is useful for integrating audit results with external assessment tools, automating STIG reporting workflows, or aggregating assessment data across multiple tenants.
 
 > [!NOTE]
+>
 > Use the `/beta/` endpoint for Graph API calls to STIG audit reporting. The `/v1.0/` endpoint doesn't support these calls.
 
 ### Export STIG audit data in bulk
@@ -263,7 +224,6 @@ For more information about the export API pattern, including the request paramet
 The bulk export uses the `exportJobs` endpoint and follows a create, poll, download pattern. All calls use the `/beta/` endpoint.
 
 1. Authenticate with Microsoft Graph for the target tenant.
-
 2. Create the export job with a POST request to `https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs`. Use the `IndustryBaselinePerSettingDeviceAuditList` report name and select the columns you need:
 
    ```http
@@ -286,7 +246,6 @@ The bulk export uses the `exportJobs` endpoint and follows a create, poll, downl
    ```
 
    Where `{PolicyId}` is the GUID of your STIG Audit profile. To find the PolicyId, see [Retrieve the PolicyId](#retrieve-the-policyid). The response includes an `id` value for the export job.
-
 3. Poll the job status with a GET request until `status` returns `completed`:
 
    ```http
@@ -294,7 +253,6 @@ The bulk export uses the `exportJobs` endpoint and follows a create, poll, downl
    ```
 
    Where `{exportJobId}` is the `id` value returned in the previous step.
-
 4. When the job completes, the response includes a `url` field with a temporary blob storage link. Download the ZIP file from that URL. The ZIP contains a CSV with all STIG audit results for the tenant.
 
 ### Retrieve baseline metadata
@@ -308,7 +266,7 @@ GET /beta/deviceManagement/templates?$filter=templateFamily eq 'baseline'
 The response includes the following fields for the STIG baseline template:
 
 | Field | Description |
-|---|---|
+| --- | --- |
 | **displayName** | The full benchmark name (for example, *Microsoft Windows 11 Security Technical Implementation Guide*). |
 | **displayVersion** | The STIG version and release (for example, *Version 2, Release 7 Benchmark Date: 05 Jan 2026*). |
 | **settingTemplateCount** | The number of STIG rules in the baseline (for example, *197*). |
@@ -320,7 +278,6 @@ The response includes the following fields for the STIG baseline template:
 Before you can call the report APIs, you need the **PolicyId** (GUID) of your STIG Audit profile. You can find the PolicyId in the admin center or retrieve it programmatically through the Graph API.
 
 - **Admin center** — Open the STIG Audit policy in the Intune admin center and copy the GUID from the URL after `/policyID/`. This GUID is tenant-specific.
-
 - **Graph API** — Use the template `id` from the previous section to list all policies created from that template:
 
   ```http
@@ -330,6 +287,7 @@ Before you can call the report APIs, you need the **PolicyId** (GUID) of your ST
   Where `{templateId}` is the template ID retrieved in the previous section (for example, `c64bf257-bce5-4c4d-8ad8-03222f13d84c_1`). The `id` field in each returned policy is the **PolicyId** to use in the report API calls.
 
 > [!NOTE]
+>
 > Policy IDs are tenant-specific and change when a tenant upgrades to a new STIG version. For organizations that aggregate STIG audit data across multiple tenants, such as for the DISA Continuous Monitoring and Risk Scoring (CMRS) program, run this discovery call in each tenant to find the current PolicyId. Setting IDs are globally consistent across tenants for a given STIG template version, so you can correlate results across tenants by SettingId.
 
 ### Retrieve the per-policy audit summary
@@ -387,7 +345,7 @@ POST /beta/deviceManagement/reports/getCachedReport
 The response columns include:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **SettingName** | The display name of the STIG rule as parsed from the STIG documentation. |
 | **SettingId** | A unique identifier for the setting within Intune. This value is globally consistent across tenants for the same STIG template version. |
 | **StigRuleId** | The DISA STIG Rule ID (for example, *SV-253275r828909*) that maps to the original STIG benchmark. |
@@ -443,7 +401,7 @@ POST /beta/deviceManagement/reports/getCachedReport
 The response columns include:
 
 | Column | Description |
-|---|---|
+| --- | --- |
 | **DeviceName** | The display name of the device as registered in Intune. |
 | **MaxSettingStatus** | An integer that represents the audit status of the setting on the device. See [Audit status values](#audit-status-values) for the full mapping. |
 | **PspdpuLastModifiedTimeUtc** | The last time the device checked in with the Intune service and reported status for this setting, in UTC format. Use this timestamp to identify stale data or to design incremental sync strategies. |
@@ -453,7 +411,7 @@ The response columns include:
 The STIG audit baseline works differently from other Intune security baselines:
 
 | Capability | Configuration baselines | STIG audit baseline |
-|---|---|---|
+| --- | --- | --- |
 | Pushes settings to devices | Yes | No |
 | Modifies device configuration | Yes | No |
 | Reports assessment status | Yes (delivery of policy) | Yes (on-device value assessment) |
@@ -470,7 +428,7 @@ Because the STIG audit baseline doesn't push configuration to devices, it doesn'
 The STIG audit baseline identifies configuration gaps but doesn't fix them. Use the following approaches to bring devices into compliance:
 
 - **Settings Catalog profiles** — Create or update [Settings Catalog](../../device-configuration/overview.md) profiles in Intune to enforce specific settings identified by the STIG audit. This approach is recommended for STIG remediation.
-- **Intune security baselines** — The [Windows MDM security baseline](./overview.md) enforces many settings that overlap with STIG requirements.
+- **Intune security baselines** — The [Windows MDM security baseline](overview.md) enforces many settings that overlap with STIG requirements.
 - **Compliance policies** — Use [compliance policies](../compliance/overview.md) to define requirements and take action when devices fall out of compliance.
 - **Group Policy (hybrid environments)** — For co-managed environments, use Group Policy for settings that aren't yet available through Intune.
 
@@ -481,7 +439,7 @@ You can't automatically evaluate some STIG rules because they require physical i
 The following STIG rules require manual verification:
 
 | Rule ID | Description |
-|---|---|
+| --- | --- |
 | V-253256 | Windows 11 systems must have UEFI firmware and be configured to run in UEFI mode, not Legacy BIOS. |
 | V-253258 | Windows 11 must employ automated mechanisms to determine the state of system components with regard to flaw remediation. |
 | V-253262 | The operating system must employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs. |
@@ -546,13 +504,9 @@ Yes. Use the Graph API to programmatically discover audit policies and retrieve 
 
 ## Related content
 
-- [Security baselines overview](./overview.md) - Learn about all available Intune security baselines.
-- [Create security baseline profiles](./configure-baselines.md) - Learn how to deploy configuration baselines in Intune.
-- [Monitor your baselines](./monitor-baselines.md) - Monitor baseline compliance status.
+- [Security baselines overview](overview.md) - Learn about all available Intune security baselines.
+- [Create security baseline profiles](configure-baselines.md) - Learn how to deploy configuration baselines in Intune.
+- [Monitor your baselines](monitor-baselines.md) - Monitor baseline compliance status.
 - [Microsoft Intune for US Government GCC High and DoD](../../fundamentals/government-service.md) - Learn about Intune's GCC High service.
 - [DISA STIGs](https://public.cyber.mil/stigs/) - Access the full STIG library from DISA.
 - [DISA SCAP benchmarks](https://public.cyber.mil/stigs/scap/) - Download the SCAP benchmark files used to generate STIG audit profiles.
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

@@ -1,29 +1,29 @@
 ---
-title: Create a Package Using a Package Definition File Template
+title: "How to Create a Package by Using a Package Definition File Template"
 description: The following example shows how to create a package and program by using a package definition file template in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a Package by Using a Package Definition File Template
+
 The following example shows how to create a package and program by using a package definition file template in Configuration Manager. The package definition file template contains the default values that are used to create `SMS_Package` and `SMS_Program` objects. The following example uses the `SMS_PDF_Package` class and the `GetPDFData` method to load the package definition file template information and to create a package and the related programs.
 
 ### To create a package by using a package definition file template
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create the new package object by using the `SMS_PDF_Package` class.
-
-3.  Populate any additional package properties.
-
-4.  Load the program information and associate each program with the package.
+1. Set up a connection to the SMS Provider.
+2. Create the new package object by using the `SMS_PDF_Package` class.
+3. Populate any additional package properties.
+4. Load the program information and associate each program with the package.
 
 ## Example
- The following example method creates a new package by using a package definition file.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method creates a new package by using a package definition file.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -66,18 +66,19 @@ Sub SWDCreatePDFPackage(connection, existingPDF_ID, newPackageSourceFlag, newPac
 End Sub
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPDF_ID`|-   VBScript: `Integer`|ID of the package definition file.|
-|`newPackageSourceFlag`|-   VBScript: `Integer`|The package source.|
-|`newPackageSourcePath`|-   VBScript: `String`|The path to the package source.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPDF_ID` | - VBScript: `Integer` | ID of the package definition file. |
+| `newPackageSourceFlag` | - VBScript: `Integer` | The package source. |
+| `newPackageSourcePath` | - VBScript: `String` | The path to the package source. |
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)

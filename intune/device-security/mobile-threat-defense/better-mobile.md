@@ -1,7 +1,7 @@
 ---
-title: Better Mobile Threat Defense with Intune
+title: "Better Mobile Threat Defense connector with Intune"
 description: How to set up the Better Mobile Threat Defense with Microsoft Intune to control mobile device access to your corporate resources
-ms.date: 06/02/2025
+ms.date: "2025-06-02T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -16,14 +16,15 @@ You can configure Conditional Access policies based on Better Mobile risk assess
 The Better Mobile app is installed and run on mobile devices. This app captures file system, network stack, device, and application telemetry where available, and then sends the data to the Better Mobile cloud service to assess the device's risk for mobile threats.
 
 - **Support for enrolled devices** - Intune device compliance policy includes a rule for Mobile Threat Defense (MTD), which can use risk assessment information from Better Mobile. When the MTD rule is enabled, Intune evaluates device compliance with the policy that you enabled. If the device is found noncompliant, users are blocked access to corporate resources like Exchange Online and SharePoint Online. Users also receive guidance from the Better Mobile app installed in their devices to resolve the issue and regain access to corporate resources. To support using Better Mobile with enrolled devices:
-  - [Add MTD apps to devices](./assign-apps.md)
-  - [Create a device compliance policy that supports MTD](./create-compliance-policy.md)
-  - [Enable the MTD connector in Intune](./enable-connector.md)
 
+  - [Add MTD apps to devices](assign-apps.md)
+  - [Create a device compliance policy that supports MTD](create-compliance-policy.md)
+  - [Enable the MTD connector in Intune](enable-connector.md)
 - **Support for unenrolled devices** - Intune can use the risk assessment data from the Better Mobile app on unenrolled devices when you use Intune app protection policies. Admins can use this combination to help protect corporate data within a [Microsoft Intune protected app](../../app-management/ref-protected-apps.md), Admins can also issue a block or selective wipe for corporate data on those unenrolled devices. To support using Better Mobile with unenrolled devices:
-  - [Add the MTD app to unenrolled devices](./add-apps-unenrolled-devices.md)
-  - [Create a Mobile Threat Defense app protection policy](./create-app-protection-policy.md)
-  - [Enable the MTD connector in Intune for unenrolled devices](./enable-unenrolled-devices.md)
+
+  - [Add the MTD app to unenrolled devices](add-apps-unenrolled-devices.md)
+  - [Create a Mobile Threat Defense app protection policy](create-app-protection-policy.md)
+  - [Enable the MTD connector in Intune for unenrolled devices](enable-unenrolled-devices.md)
 
 ## Supported platforms
 
@@ -33,9 +34,7 @@ The Better Mobile app is installed and run on mobile devices. This app captures 
 ## Prerequisites
 
 - Microsoft Entra ID P1
-
 - Microsoft Intune Plan 1 subscription
-
 - Better Mobile Threat Defense subscription
 
   For more information, see the [Better Mobile website](https://better.mobi/).
@@ -49,18 +48,16 @@ Here are some common scenarios.
 When malicious apps such as malware are detected on devices, you can block devices from the following actions until the threat is resolved:
 
 - Connecting to corporate e-mail
-
 - Syncing corporate files with the OneDrive for Work app
-
 - Accessing company apps
 
 Block when malicious apps are detected:
 
-:::image type="content" source="./media/better-mobile/better-mobile-maliciousapps-blocked.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/better-mobile/better-mobile-maliciousapps-blocked.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/better-mobile/better-mobile-maliciousapps-unblocked.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/better-mobile/better-mobile-maliciousapps-unblocked.png)
 
 ### Control access based on threat to network
 
@@ -68,11 +65,11 @@ Detect threats to your network like **Man-in-the-middle** attacks, and protect a
 
 Block network access through Wi-Fi:
 
-:::image type="content" source="./media/better-mobile/better-mobile-network-wifi-blocked.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/better-mobile/better-mobile-network-wifi-blocked.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/better-mobile/better-mobile-network-wifi-unblocked.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated.](media/better-mobile/better-mobile-network-wifi-unblocked.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -80,30 +77,26 @@ Detect threats to your network like **Man-in-the-middle** attacks, and prevent s
 
 Block SharePoint Online when network threats are detected:
 
-:::image type="content" source="./media/better-mobile/better-mobile-network-spo-blocked.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/better-mobile/better-mobile-network-spo-blocked.png)
 
 Access granted on remediation:
 
-:::image type="content" source="./media/better-mobile/better-mobile-network-spo-unblocked.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/better-mobile/better-mobile-network-spo-unblocked.png)
 
-### Control  access on unenrolled devices based on threats from malicious apps
+### Control access on unenrolled devices based on threats from malicious apps
 
 When the BETTER Mobile Threat Defense solution considers a device to be infected:
 
-:::image type="content" source="./media/better-mobile/better-mobile-app-policy-block.png" alt-text="Product flow for App protection policies to block access due to malware.":::
+![Product flow for App protection policies to block access due to malware.](media/better-mobile/better-mobile-app-policy-block.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/better-mobile/better-mobile-app-policy-remediated.png" alt-text=" Product flow for App protection policies to grant access after malware is remediated.":::
+![ Product flow for App protection policies to grant access after malware is remediated.](media/better-mobile/better-mobile-app-policy-remediated.png)
 
 ## Next steps
 
-- [Integrate Better Mobile with Intune](./setup-better-mobile.md)
-
-- [Set up Better Mobile apps](./assign-apps.md)
-
-- [Create Better Mobile device compliance policy](./create-compliance-policy.md)
-
-- [Enable Better Mobile MTD connector](./enable-connector.md)
-
-- [Create an MTD app protection policy](./create-app-protection-policy.md)
+- [Integrate Better Mobile with Intune](setup-better-mobile.md)
+- [Set up Better Mobile apps](assign-apps.md)
+- [Create Better Mobile device compliance policy](create-compliance-policy.md)
+- [Enable Better Mobile MTD connector](enable-connector.md)
+- [Create an MTD app protection policy](create-app-protection-policy.md)

@@ -1,14 +1,16 @@
 ---
-title: Configure VPN settings on Windows 8.1 devices in Microsoft Intune
+title: "Add VPN settings on Windows 8.1 devices in Microsoft Intune"
 description: Add or create a VPN configuration profile using virtual private network (VPN) configuration settings, including the connection details, and the proxy settings to include IP or FQDN address, and TCP port in Microsoft Intune on devices running Windows 8.1.
-ms.date: 04/16/2024
+ms.date: "2024-04-16T00:00:00Z"
 ms.topic: reference
 ms.reviewer: abalwan
 ---
 
 # Add VPN settings on Windows 8.1 devices in Microsoft Intune
 
-[!INCLUDE [windows-phone-81-windows-10-mobile-support](../../includes/windows-phone-81-windows-10-mobile-support.md)]
+> [!IMPORTANT]
+>
+> On October 22, 2022, Microsoft Intune ended support for devices running Windows 8.1. Technical assistance and automatic updates on these devices aren't available.
 
 This article shows you the Intune settings you can use to configure VPN connections on devices running Windows 8.1.
 
@@ -16,28 +18,38 @@ Depending on the settings you choose, not all values in the following list are c
 
 ## Before you begin
 
-- [Create a Windows 8.1 VPN device configuration profile](./configure-vpn.md).
+- [Create a Windows 8.1 VPN device configuration profile](configure-vpn.md).
+- Some Microsoft 365 services, such as Outlook, might not perform well using third party or partner VPNs. If you're using a third party or partner VPN, and experience a latency or performance issue, then remove the VPN.
 
-- [!INCLUDE [partner-vpns](../includes/partner-vpns.md)]
+  If removing the VPN resolves the behavior, then you can:
+
+  - Work with the third party or partner VPN for possible resolutions. Microsoft doesn't provide technical support for third party or partner VPNs.
+  - Don't use a VPN with Outlook traffic.
+  - If you need to use a VPN, then use a split-tunnel VPN. And, allow the Outlook traffic to bypass the VPN.
+
+  For more information, go to:
+
+  - [Overview: VPN split tunneling for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-vpn-split-tunnel)
+  - [Using third-party network devices or solutions with Microsoft 365](https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/office-suite-issues/office-365-third-party-network-devices)
+  - [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles)
 
 ## Base VPN settings
 
 - **Connection name**: Enter a name for this connection. Users see this name when they browse their device for the list of available VPN connections. For example, enter `Contoso VPN`.
 - **Servers**: Add one or more VPN servers that devices connect to. When you add a server, you enter the following information:
+
   - **Description**: Enter a descriptive name for the server, like **Contoso VPN server**.
   - **IP address or FQDN**: Enter the IP address or fully qualified domain name (FQDN) of the VPN server that devices connect to. For example, enter `192.168.1.1` or `vpn.contoso.com`.
   - **Default server**: **True** sets this server as the default server that devices use to establish the connection. Set only one server as the default.
   - **Import**: Browse to a comma-separated file with the list of servers in the format: description, IP address or FQDN, Default server. Choose **OK** to import these servers into the **Servers** list.
   - **Export**: Exports the list of servers to a comma-separated-values (csv) file.
-
 - **Connection type**: Select the VPN connection type. Your options:
+
   - **Check Point Capsule VPN**
   - **SonicWall Mobile Connect**
   - **F5 Access**
   - **Pulse Secure**
-
 - **Login group or domain** (SonicWall Mobile Connect only): Enter the name of the login group or domain you want to connect to.
-
 - **Custom XML**: Enter any custom XML commands that configure the VPN connection.
 
   **Pulse Secure example**:
@@ -65,7 +77,6 @@ Depending on the settings you choose, not all values in the following list are c
   ```
 
   For more information on writing custom XML commands, go to the manufacturer's VPN documentation.
-
 - **Split tunneling**: **Enable** lets devices decide which connection to use depending on the traffic. For example, a user in a hotel uses the VPN connection to access work files, but use the hotel's standard network for regular web browsing.
 
   If you want all traffic to use the VPN tunnel when the VPN connection is active, then set to **Disable**.
@@ -87,5 +98,4 @@ Depending on the settings you choose, not all values in the following list are c
 ## Related articles
 
 - [Assign the profile](../assign-device-profile.md), and [monitor its status](../monitor-device-profile.md).
-
-- Configure VPN settings on [Android](./ref-vpn-settings-android.md), [Android Enterprise](./ref-vpn-settings-android-enterprise.md), [macOS](./ref-vpn-settings-apple.md), and [Windows](./ref-vpn-settings-windows.md) devices.
+- Configure VPN settings on [Android](ref-vpn-settings-android.md), [Android Enterprise](ref-vpn-settings-android-enterprise.md), [macOS](ref-vpn-settings-apple.md), and [Windows](ref-vpn-settings-windows.md) devices.

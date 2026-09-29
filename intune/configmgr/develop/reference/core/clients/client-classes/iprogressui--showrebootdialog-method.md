@@ -1,7 +1,7 @@
 ---
-title: "IProgressUI::ShowRebootDialog"
+title: "IProgressUI::ShowRebootDialog method"
 description: "IProgressUI::ShowRebootDialog method"
-ms.date: 04/01/2019
+ms.date: "2019-04-01T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -37,6 +37,7 @@ Qualifiers: [in]
 Pointer to the organization name that's shown in the progress dialog box. The value can be retrieved from the `_SMSTSOrgName` environment variable.
 
 #### `pszTaskSequenceName`
+
 Data type: `BSTR`
 
 Qualifiers: [in]
@@ -44,6 +45,7 @@ Qualifiers: [in]
 Pointer to the name of the task sequence that's currently running. The value can be retrieved from the `_SMSTSPackageName` environment variable.
 
 #### `pszCustomTitle`
+
 Data type: `BSTR`
 
 Qualifiers: [in]
@@ -59,6 +61,7 @@ Qualifiers: [in]
 Pointer to the text for the custom message that will be displayed in the reboot dialog box. Pass an empty string if there's no custom message to show.
 
 #### `uTimeoutInSeconds`
+
 Data type: `ULONG`
 
 Qualifiers: [in]
@@ -69,15 +72,11 @@ Pointer to the value for the number of seconds the dialog box is displayed befor
 
 An `HRESULT` code. Possible values include, but aren't limited to, the following value. There are no `HRESULT` values returned that are specific to this method.
 
-S_OK
-The method succeeded.
+S_OK The method succeeded.
 
 ## See also
 
 - [OS deployment client COM automation classes](operating-system-deployment-client-com-automation-classes.md)
-
 - [IProgressUI interface](iprogressui-interface.md)
-
 - [About reporting Configuration Manager custom action progress](../../../../osd/about-reporting-configuration-manager-custom-action-progress.md)
-
 - [How to use task sequence variables in a running Configuration Manager task sequence](../../../../osd/how-to-use-task-sequence-variables-in-a-running-task-sequence.md)

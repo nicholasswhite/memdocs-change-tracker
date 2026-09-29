@@ -1,7 +1,7 @@
 ---
-title: Use Microsoft Intune to import and analyze group policies
+title: "Import and analyze your on-premises GPOs using Group Policy analytics in Microsoft Intune"
 description: Import and analyze your group policy objects using the Group Policy analytics tool. See the policies that are supported and aren't supported in Intune.
-ms.date: 06/22/2026
+ms.date: "2026-06-22T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: aanavath
 ---
@@ -9,14 +9,15 @@ ms.reviewer: aanavath
 # Import and analyze your on-premises GPOs using Group Policy analytics in Microsoft Intune
 
 > [!TIP]
-> Looking for on-premises GPO analysis? There are tools available in the [Microsoft Security Compliance Toolkit](/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10).
+>
+> Looking for on-premises GPO analysis? There are tools available in the [Microsoft Security Compliance Toolkit](https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10).
 
 Microsoft Intune has many of the same settings as your on-premises GPOs. **Group Policy analytics** is a tool in Microsoft Intune that:
 
 - Imports and analyzes your on-premises GPOs.
 - Shows the settings that cloud-based MDM providers support, including Microsoft Intune.
 - Shows any deprecated settings, or settings not available.
-- Can [migrate your imported GPOs to a settings catalog policy](./migrate-group-policy.md) that can be deployed to your devices.
+- Can [migrate your imported GPOs to a settings catalog policy](migrate-group-policy.md) that can be deployed to your devices.
 
 If your organization uses on-premises GPOs to manage Windows devices, then Group Policy analytics can help. With Group Policy analytics, it's possible Intune can replace your on-premises GPOs. Windows devices are inherently cloud native. So depending on your configuration, these devices might not require access to an on-premises Active Directory.
 
@@ -26,34 +27,24 @@ This feature applies to:
 
 - Windows
 
-This article shows you how to export your on-premises GPOs, import the GPOs into Intune, and review the analysis and results. To migrate or transfer your imported GPOs to an Intune policy, go to [Create a Settings Catalog policy using your imported GPOs in Microsoft Intune](./migrate-group-policy.md).
+This article shows you how to export your on-premises GPOs, import the GPOs into Intune, and review the analysis and results. To migrate or transfer your imported GPOs to an Intune policy, go to [Create a Settings Catalog policy using your imported GPOs in Microsoft Intune](migrate-group-policy.md).
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../media/icons/16/devices.svg) **Device platform requirements**
+
 > This feature supports the following platforms:
 >
 > - Windows
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
+![](../media/icons/16/rbac.svg) **Roles requirements**
+
 > To configure this policy and start collecting inventory data from devices, use an account with at least one of the following roles:
 >
 > - Intune administrator (Microsoft Entra role)
 > - A role that has the **Security baselines** and the **Device Configuration** permission.
-> 
+>
 > For more information on the built-in roles, see [role-based access control](../fundamentals/role-based-access-control/overview.md).
-:::column-end:::
-:::row-end:::
 
 ## Export a GPO as an XML file
 
@@ -64,71 +55,62 @@ The following steps can be different on your server, depending on the GPMC versi
 3. Expand **Group Policy Objects** to see all the available GPOs.
 4. Right-click the GPO you want to migrate and choose **Save report**:
 
-    :::image type="content" source="./media/import-group-policy-analytics/sample-group-policy-object-save-report.png" alt-text="Screenshot that shows how to open Group Policy management and save a GPO as an XML file report.":::
-
+   ![Screenshot that shows how to open Group Policy management and save a GPO as an XML file report.](media/import-group-policy-analytics/sample-group-policy-object-save-report.png)
 5. Select an easily accessible folder for your export. In **Save as type**, select **XML File**. In another step, you add this file to group policy analytics in Intune.
 
 Make sure that the file is less than 4 MB and has a proper Unicode encoding. If the exported file is greater than 4 MB, then reduce the number of settings in the group policy object.
 
 ## Import GPOs and run analytics
 
-1. In the [Microsoft Intune admin center], select **Devices** > **Manage devices** > **Group Policy analytics**.
-2. Select **Import**, select your saved XML file > **Next**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **Manage devices** &gt; **Group Policy analytics**.
+2. Select **Import**, select your saved XML file &gt; **Next**.
 
-    You can select multiple files at the same time.
+   You can select multiple files at the same time.
 
-    Check the sizes of your individual GPO XML files. A single GPO can't be bigger than 4 MB. If a single GPO is larger than 4 MB, then the import fails. XML files without the appropriate unicode ending also fail.
-
+   Check the sizes of your individual GPO XML files. A single GPO can't be bigger than 4 MB. If a single GPO is larger than 4 MB, then the import fails. XML files without the appropriate unicode ending also fail.
 3. In **Scope tags**, select the existing scope tag you want to apply to the imported GPO. If you don't select an existing scope tag, then the **Default** scope tag is automatically used:
 
-    :::image type="content" source="./media/import-group-policy-analytics/import-gpo-select-scope-tag.png" alt-text="Screenshot that shows how to import a group policy object (GPO) and select a scope tag in Microsoft Intune and Intune admin center.":::
+   ![Screenshot that shows how to import a group policy object (GPO) and select a scope tag in Microsoft Intune and Intune admin center.](media/import-group-policy-analytics/import-gpo-select-scope-tag.png)
 
-    Only admins included in the scope tags you select can see the imported GPO. For more information on scope tags on your imported GPOs, go to [Select a scope tag when you import](#select-a-scope-tag-when-you-import) (in this article).
+   Only admins included in the scope tags you select can see the imported GPO. For more information on scope tags on your imported GPOs, go to [Select a scope tag when you import](#select-a-scope-tag-when-you-import) (in this article).
+4. Select **Next** &gt; **Create**.
 
-4. Select **Next** > **Create**.
-
-    When you select **Create**, Intune automatically analyzes the GPO in the XML file.
-
+   When you select **Create**, Intune automatically analyzes the GPO in the XML file.
 5. After the analysis runs, the GPO you imported is listed with the following information:
 
-    - **Group Policy name**: The name is automatically generated using information in the GPO.
-    - **Active Directory Target**: The target is automatically generated using the organizational unit (OU) target information in the GPO.
-    - **MDM Support**: Shows the percentage of group policy settings in the GPO that have the same setting in Intune.
+   - **Group Policy name**: The name is automatically generated using information in the GPO.
+   - **Active Directory Target**: The target is automatically generated using the organizational unit (OU) target information in the GPO.
+   - **MDM Support**: Shows the percentage of group policy settings in the GPO that have the same setting in Intune.
 
-      > [!NOTE]
-      > Whenever the Microsoft Intune product team makes changes to the mapping in Intune, the percentage under MDM Support automatically updates to reflect those changes.
+     > [!NOTE]
+     >
+     > Whenever the Microsoft Intune product team makes changes to the mapping in Intune, the percentage under MDM Support automatically updates to reflect those changes.
+   - **Unknown Settings**: There are some CSPs that can't be analyzed. **Unknown Settings** lists the GPOs that can't be analyzed.
+   - **Targeted in AD**: **Yes** means the GPO is linked to an OU in on-premises group policy. **No** means the GPO isn't linked to an on-premises OU.
+   - **Last imported**: Shows the date of the last import.
 
-    - **Unknown Settings**: There are some CSPs that can't be analyzed. **Unknown Settings** lists the GPOs that can't be analyzed.
-    - **Targeted in AD**: **Yes** means the GPO is linked to an OU in on-premises group policy. **No** means the GPO isn't linked to an on-premises OU.
-    - **Last imported**: Shows the date of the last import.
+   You can **Import** more GPOs for analysis, **Refresh** the page, and **Filter** the output. You can also **Export** this view to a `.csv` file:
 
-    You can **Import** more GPOs for analysis, **Refresh** the page, and **Filter** the output. You can also **Export** this view to a `.csv` file:
-
-    :::image type="content" source="./media/import-group-policy-analytics/import-refresh-filter-options.png" alt-text="Screenshot that shows how to import, refresh, filter, or export a group policy object (GPO) to a CSV file in Microsoft Intune and Intune admin center.":::
-
+   ![Screenshot that shows how to import, refresh, filter, or export a group policy object (GPO) to a CSV file in Microsoft Intune and Intune admin center.](media/import-group-policy-analytics/import-refresh-filter-options.png)
 6. Select the **MDM Support** percentage for a listed GPO. More detailed information about the GPO is shown:
 
-    - **Setting Name**: The name is automatically generated using information in the GPO setting.
-    - **Group Policy Setting Category**: Shows the setting category for ADMX settings, such as Internet Explorer and Microsoft Edge. Not all settings have a setting category.
-    - **MDM Support**:
+   - **Setting Name**: The name is automatically generated using information in the GPO setting.
+   - **Group Policy Setting Category**: Shows the setting category for ADMX settings, such as Internet Explorer and Microsoft Edge. Not all settings have a setting category.
+   - **MDM Support**:
 
-      - **Yes** means there's a matching setting available in Intune. You can configure this setting in the Settings Catalog.
-      - **No** means there isn't a matching setting available to MDM providers, including Intune.
-      - Other values: If you import older settings that aren't supported anymore, then the tool suggests migrating to a newer supported version. For more information on migrate scenarios, go to [Imported GPOs in Intune - What you need to know](./migrate-group-policy.md#what-you-need-to-know).
+     - **Yes** means there's a matching setting available in Intune. You can configure this setting in the Settings Catalog.
+     - **No** means there isn't a matching setting available to MDM providers, including Intune.
+     - Other values: If you import older settings that aren't supported anymore, then the tool suggests migrating to a newer supported version. For more information on migrate scenarios, go to [Imported GPOs in Intune - What you need to know](migrate-group-policy.md#what-you-need-to-know).
+   - **Value**: Shows the value imported from the GPO. It shows different values, such `true`, `900`, `Enabled`, `false`, and so on.
+   - **Scope**: Shows if the imported GPO targets users or targets devices.
+   - **Min OS Version**: Shows the minimum Windows OS version build numbers that the GPO setting applies. It can show `18362` (1903), `17130` (1803), and other Windows client versions.
 
-    - **Value**: Shows the value imported from the GPO. It shows different values, such `true`, `900`, `Enabled`, `false`, and so on.
-    - **Scope**: Shows if the imported GPO targets users or targets devices.
-    - **Min OS Version**: Shows the minimum Windows OS version build numbers that the GPO setting applies. It can show `18362` (1903), `17130` (1803), and other Windows client versions.
+     For example, if a policy setting shows `18362`, then the setting supports build `18362` and newer builds.
+   - **CSP Name**: A Configuration Service Provider (CSP) exposes device configuration settings in Windows client. This column shows the CSP that includes the setting. For example, you can see Policy, BitLocker, PassportforWork, and so on.
 
-      For example, if a policy setting shows `18362`, then the setting supports build `18362` and newer builds.
-
-    - **CSP Name**: A Configuration Service Provider (CSP) exposes device configuration settings in Windows client. This column shows the CSP that includes the setting. For example, you can see Policy, BitLocker, PassportforWork, and so on.
-
-      The [CSP reference](/windows/client-management/mdm/configuration-service-provider-reference) lists the available CSPs, shows the supported OS editions, and more.
-
-    - **CSP Mapping**: Shows the OMA-URI path for the on-premises policy. You can use the OMA-URI in a [custom device configuration profile](./templates/configure-custom-settings.md). For example, you might see `./Device/Vendor/MSFT/BitLocker/RequireDeviceEnryption`.
-
-7. For the settings that have MDM support, you can create a Settings Catalog policy with these settings. For the specific steps, go to [Create a Settings Catalog policy using your imported GPOs in Microsoft Intune](./migrate-group-policy.md).
+     The [CSP reference](https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference) lists the available CSPs, shows the supported OS editions, and more.
+   - **CSP Mapping**: Shows the OMA-URI path for the on-premises policy. You can use the OMA-URI in a [custom device configuration profile](templates/configure-custom-settings.md). For example, you might see `./Device/Vendor/MSFT/BitLocker/RequireDeviceEnryption`.
+7. For the settings that have MDM support, you can create a Settings Catalog policy with these settings. For the specific steps, go to [Create a Settings Catalog policy using your imported GPOs in Microsoft Intune](migrate-group-policy.md).
 
 ### Select a scope tag when you import
 
@@ -151,43 +133,43 @@ For more information on scope tags, go to [RBAC and scope tags for distributed I
 
 Group Policy analytics can parse the following CSPs for MDM support:
 
-- [Policy CSP](/windows/client-management/mdm/policy-configuration-service-provider)
-- [PassportForWork CSP](/windows/client-management/mdm/passportforwork-csp)
-- [BitLocker CSP](/windows/client-management/mdm/bitlocker-csp)
-- [Firewall CSP](/windows/client-management/mdm/firewall-csp)
-- [AppLocker CSP](/windows/client-management/mdm/applocker-csp)
-- [Group Policy Preferences](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn581922(v=ws.11)#group-policy-preferences-1)
+- [Policy CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-configuration-service-provider)
+- [PassportForWork CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/passportforwork-csp)
+- [BitLocker CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/bitlocker-csp)
+- [Firewall CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/firewall-csp)
+- [AppLocker CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/applocker-csp)
+- [Group Policy Preferences](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn581922(v=ws.11)#group-policy-preferences-1)
 
 If your imported GPO has settings that aren't in the supported CSPs and Group Policies, then the settings might be listed in the **Unknown Settings** column. This behavior means the settings were identified in your GPO.
 
-Even though Group Policy analytics can parse the CSPs, there are some things you should know when migrating your imported GPOs. For more information, go to [Migrate your imported GPO to a Settings Catalog policy - What you need to know](./migrate-group-policy.md#what-you-need-to-know).
+Even though Group Policy analytics can parse the CSPs, there are some things you should know when migrating your imported GPOs. For more information, go to [Migrate your imported GPO to a Settings Catalog policy - What you need to know](migrate-group-policy.md#what-you-need-to-know).
 
 ## Group Policy migration readiness report
 
-1. In the [Microsoft Intune admin center], select **Reports** > **Device management** > **Group policy analytics**:
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Reports** &gt; **Device management** &gt; **Group policy analytics**:
 
-    :::image type="content" source="./media/import-group-policy-analytics/policy-analytics-reports.png" alt-text="Screenshot that shows how to review the report and output of imported GPOs using Group Policy analytics in Microsoft Intune and Intune admin center.":::
-
+   ![Screenshot that shows how to review the report and output of imported GPOs using Group Policy analytics in Microsoft Intune and Intune admin center.](media/import-group-policy-analytics/policy-analytics-reports.png)
 2. In the **Summary** tab, a summary of the GPO and its policies are shown. Use this information to determine the status of the policies in your GPO:
 
-    - **Ready for migration**: The policy has a matching setting in Intune, and is ready to be migrated to Intune.
-    - **Not supported**: The policy doesn't have a matching setting. Typically, policy settings that show this status aren't exposed to MDM providers, including Intune.
-    - **Deprecated**: The policy can apply to older Windows versions, older Microsoft Edge versions, and more policies that aren't used anymore.
+   - **Ready for migration**: The policy has a matching setting in Intune, and is ready to be migrated to Intune.
+   - **Not supported**: The policy doesn't have a matching setting. Typically, policy settings that show this status aren't exposed to MDM providers, including Intune.
+   - **Deprecated**: The policy can apply to older Windows versions, older Microsoft Edge versions, and more policies that aren't used anymore.
 
-      > [!NOTE]
-      > When the Microsoft Intune product team updates the mapping logic, your imported GPOs are automatically updated. You don't need to reimport your GPOs.
+     > [!NOTE]
+     >
+     > When the Microsoft Intune product team updates the mapping logic, your imported GPOs are automatically updated. You don't need to reimport your GPOs.
+3. Select the **Reports** tab &gt; **Group policy migration readiness**. In this report, you can:
 
-3. Select the **Reports** tab > **Group policy migration readiness**. In this report, you can:
+   - See the number of settings in your GPO that can be configured in a device configuration profile. It also shows if the settings can be in a custom profile, aren't supported, or are deprecated.
+   - Filter the report output using the **Migration Readiness**, **Profile type**, and **CSP Name** filters.
+   - Select **Generate report** or **Generate again** to get current data.
+   - See the list of settings in your GPO.
+   - Use the search bar to find specific settings.
+   - Get a time stamp of when the report was last generated.
 
-    - See the number of settings in your GPO that can be configured in a device configuration profile. It also shows if the settings can be in a custom profile, aren't supported, or are deprecated.
-    - Filter the report output using the **Migration Readiness**, **Profile type**, and **CSP Name** filters.
-    - Select **Generate report** or **Generate again** to get current data.
-    - See the list of settings in your GPO.
-    - Use the search bar to find specific settings.
-    - Get a time stamp of when the report was last generated.
-
-    > [!NOTE]
-    > After you add or remove your imported GPOs, it can take about 20 minutes to update the Migration Readiness reporting data.
+   > [!NOTE]
+   >
+   > After you add or remove your imported GPOs, it can take about 20 minutes to update the Migration Readiness reporting data.
 
 ## Known issues
 
@@ -195,7 +177,7 @@ Currently, the Group Policy analytics tool only supports non-ADMX settings in th
 
 ## Send product feedback
 
-You can provide feedback on Group Policy Analytics. In the [Microsoft Intune admin center], select **Devices** > **Manage devices** > **Group Policy analytics** > **Got feedback**.
+You can provide feedback on Group Policy Analytics. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **Manage devices** &gt; **Group Policy analytics** &gt; **Got feedback**.
 
 Examples of feedback areas:
 
@@ -211,16 +193,12 @@ Any use of customer data, such as the GPOs that your organization uses, is aggre
 
 At any time, you can delete imported GPOs:
 
-1. Go to **Devices** > **Manage devices** > **Group Policy analytics**.
-2. Select the context menu > **Delete**:
+1. Go to **Devices** &gt; **Manage devices** &gt; **Group Policy analytics**.
+2. Select the context menu &gt; **Delete**:
 
-    :::image type="content" source="./media/import-group-policy-analytics/delete-imported-gpo.png" alt-text="Screenshot that shows how to delete or remove the group policy object (GPO) you imported in the Group Policy analyzer in Microsoft Intune and Intune admin center.":::
+   ![Screenshot that shows how to delete or remove the group policy object (GPO) you imported in the Group Policy analyzer in Microsoft Intune and Intune admin center.](media/import-group-policy-analytics/delete-imported-gpo.png)
 
 ## Related content
 
-- [Create a Settings Catalog policy using your imported GPOs in Microsoft Intune](./migrate-group-policy.md)
-- Learn about [Configuration Service Providers (CSP)](/windows/configuration/provisioning-packages/how-it-pros-can-use-configuration-service-providers).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Create a Settings Catalog policy using your imported GPOs in Microsoft Intune](migrate-group-policy.md)
+- Learn about [Configuration Service Providers (CSP)](https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/how-it-pros-can-use-configuration-service-providers).

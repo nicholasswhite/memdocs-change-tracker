@@ -1,16 +1,18 @@
 ---
-title: SMS_AppDependencyData Class
+title: "SMS_AppDependencyData Server WMI Class"
 description: The `SMS_AppDependencyData` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents application deployment dependency data.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_AppDependencyData Server WMI Class
+
 The `SMS_AppDependencyData` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents application deployment dependency data.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,154 +36,145 @@ Class SMS_AppDependencyData : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AppDependencyData` class does not define any methods.
+
+The `SMS_AppDependencyData` class does not define any methods.
 
 ## Properties
- `AssignmentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `AssignmentUniqueID`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md)..
+Qualifiers: [not_null, read]
 
- `CollectionID`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md)..
 
- Access type: Read-only
+`CollectionID` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `ComplianceState`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`ComplianceState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `DependencyGroup`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`DependencyGroup` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Name of the Dependency group.
+Qualifiers: [key, not_null, read]
 
- `DependentDTName`
- Data type: `String`
+Name of the Dependency group.
 
- Access type: Read-only
+`DependentDTName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Name of the dependent deployment type.
+Qualifiers: [key, not_null, read]
 
- `DTCI`
- Data type: `UInt32`
+Name of the dependent deployment type.
 
- Access type: Read-only
+`DTCI` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `DTModelID`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`DTModelID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `DTResultID`
- Data type: `UInt64`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`DTResultID` Data type: `UInt64`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `EnforcementState`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`EnforcementState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- Enforcement state. Possible values are:
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
-|Value|Enforcement state|
-|-|-|
-|0|Enforcement State Unknown|
-|1|Enforcement started|
-|2|Enforcement waiting for content|
-|3|Waiting for another installation to complete|
-|4|Waiting for maintenance window before installing|
-|5|Restart required before installing|
-|6|General failure|
-|7|Pending installation|
-|8|Installing update|
-|9|Pending system restart|
-|10|Successfully installed update|
-|11|Failed to install update|
-|12|Downloading update|
-|13|Downloaded update|
-|14|Failed to download update|
+Enforcement state. Possible values are:
 
- `ErrorValue`
- Data type: `UInt32`
+| Value | Enforcement state |
+| --- | --- |
+| 0 | Enforcement State Unknown |
+| 1 | Enforcement started |
+| 2 | Enforcement waiting for content |
+| 3 | Waiting for another installation to complete |
+| 4 | Waiting for maintenance window before installing |
+| 5 | Restart required before installing |
+| 6 | General failure |
+| 7 | Pending installation |
+| 8 | Installing update |
+| 9 | Pending system restart |
+| 10 | Successfully installed update |
+| 11 | Failed to install update |
+| 12 | Downloading update |
+| 13 | Downloaded update |
+| 14 | Failed to download update |
 
- Access type: Read-only
+`ErrorValue` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last return value.
+Qualifiers: [read]
 
- `MachineName`
- Data type: `String`
+Last return value.
 
- Access type: Read-only
+`MachineName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- Name of the computer that created the message.
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- `UserName`
- Data type: `String`
+Name of the computer that created the message.
 
- Access type: Read-only
+`UserName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
+
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

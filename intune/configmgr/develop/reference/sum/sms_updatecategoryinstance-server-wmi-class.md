@@ -1,7 +1,7 @@
 ---
-title: "SMS_UpdateCategoryInstance Class"
+title: "SMS_UpdateCategoryInstance Server WMI Class"
 description: The SMS_UpdateCategoryInstance class is an SMS Provider server class that represents a software-update-specific SMS_CategoryInstance Server WMI Class object available on the site.
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_UpdateCategoryInstance Server WMI Class
-The `SMS_UpdateCategoryInstance` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a software-update-specific `SMS_CategoryInstance Server WMI Class` object available on the site.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_UpdateCategoryInstance` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a software-update-specific `SMS_CategoryInstance Server WMI Class` object available on the site.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_UpdateCategoryInstance : SMS_CategoryInstanceBase  
 {  
       Boolean AllowSubscription;  
@@ -30,127 +32,134 @@ Class SMS_UpdateCategoryInstance : SMS_CategoryInstanceBase
       UInt32 ParentCategoryInstanceID;  
       String SourceSite;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_UpdateCategoryInstance` class does not define any methods.  
+## Methods
+
+The `SMS_UpdateCategoryInstance` class does not define any methods.
 
 > [!WARNING]
->  The `ResendObjectToAllSites Method in Class SMS_UpdateCategoryInstance` has been deprecated in Configuration Manager.  
+>
+> The `ResendObjectToAllSites Method in Class SMS_UpdateCategoryInstance` has been deprecated in Configuration Manager.
 
-## Properties  
- `AllowSubscription`  
- Data type: `Boolean`  
+## Properties
 
- Access type: Read-only  
+`AllowSubscription`  
+ Data type: `Boolean`
 
- Qualifiers: [read]  
+Access type: Read-only
 
- `true` if the category instance is enabled for subscription to the category metadata from the software update source. The default value is `false`. For more information, see [SMS_SoftwareUpdateSource Server WMI Class](../../../develop/reference/sum/sms_softwareupdatesource-server-wmi-class.md).  
+Qualifiers: [read]
+
+`true` if the category instance is enabled for subscription to the category metadata from the software update source. The default value is `false`. For more information, see [SMS_SoftwareUpdateSource Server WMI Class](sms_softwareupdatesource-server-wmi-class.md).
 
 > [!NOTE]
->  Not all categories can be marked for subscription.  
+>
+> Not all categories can be marked for subscription.
 
- `CategoryInstance_UniqueID`  
- Data type: `String`  
+`CategoryInstance_UniqueID`  
+ Data type: `String`
 
- Access type: Read/Write  
+Access type: Read/Write
 
- Qualifiers: [unique, SizeLimit("512")  
+Qualifiers: [unique, SizeLimit("512")
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- `CategoryInstanceID`  
- Data type: `UInt``3``2`  
+`CategoryInstanceID`  
+ Data type: ``` UInt``3``2 ```
 
- Access type: Read-only  
+Access type: Read-only
 
- Qualifiers: [key, read]  
+Qualifiers: [key, read]
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- `CategoryTypeName`  
- Data type: `String`  
+`CategoryTypeName`  
+ Data type: `String`
 
- Access type: Read/Write  
+Access type: Read/Write
 
- Qualifiers: None  
+Qualifiers: None
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- `IsSubscribed`  
- Data type: `Boolean`  
+`IsSubscribed`  
+ Data type: `Boolean`
 
- Access type: Read/Write  
+Access type: Read/Write
 
- Qualifiers: [read]  
+Qualifiers: [read]
 
- `true` if the category instance allows subscription. The default value is `false`. Set this property to `true` only if the `AllowSubscription` property is set to `true`.  
+`true` if the category instance allows subscription. The default value is `false`. Set this property to `true` only if the `AllowSubscription` property is set to `true`.
 
- `LocalizedCategoryInstanceName`  
- Data type: `String`  
+`LocalizedCategoryInstanceName`  
+ Data type: `String`
 
- Access type: Read-only  
+Access type: Read-only
 
- Qualifiers: [read]  
+Qualifiers: [read]
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- `LocalizedInformation`  
- Data type: `SMS_Category_LocalizedProperties Array` Access type: Read/Write  
+`LocalizedInformation`  
+ Data type: `SMS_Category_LocalizedProperties Array` Access type: Read/Write
 
- Qualifiers: [lazy]  
+Qualifiers: [lazy]
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- `LocalizedPropertyLocaleID`  
- Data type: `UInt32`  
+`LocalizedPropertyLocaleID`  
+ Data type: `UInt32`
 
- Access type: Read-only  
+Access type: Read-only
 
- Qualifiers: [read]  
+Qualifiers: [read]
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- `ParentCategoryInstanceID`  
- Data type: `UInt32`  
+`ParentCategoryInstanceID`  
+ Data type: `UInt32`
 
- Access type: Read-only  
+Access type: Read-only
 
- Qualifiers: [read]  
+Qualifiers: [read]
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- `SourceSite`  
- Data type: `String`  
+`SourceSite`  
+ Data type: `String`
 
- Access type: Read-only  
+Access type: Read-only
 
- Qualifiers: [read]  
+Qualifiers: [read]
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).  
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
-## Remarks  
- Class qualifiers for this class include:  
+## Remarks
 
-- Secured  
+Class qualifiers for this class include:
 
-- Read (read-only)  
+- Secured
+- Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-  Your application uses the `SMS_UpdateCategoryInstance` class after creating or modifying a software update deployment using [SMS_UpdatesAssignment Server WMI Class](../../../develop/reference/sum/sms_updatesassignment-server-wmi-class.md). The application can use [SMS_CIAllCategories Server WMI Class](../../../develop/reference/sum/sms_ciallcategories-server-wmi-class.md) to query for all categories associated with the software updates configuration item or for all configuration items associated with a category.  
+  Your application uses the `SMS_UpdateCategoryInstance` class after creating or modifying a software update deployment using [SMS_UpdatesAssignment Server WMI Class](sms_updatesassignment-server-wmi-class.md). The application can use [SMS_CIAllCategories Server WMI Class](sms_ciallcategories-server-wmi-class.md) to query for all categories associated with the software updates configuration item or for all configuration items associated with a category.
 
-  To use this class, the application obtains an `SMS_SoftwareUpdateSource` object and sets the properties as required for the particular software update and the source.  
+  To use this class, the application obtains an `SMS_SoftwareUpdateSource` object and sets the properties as required for the particular software update and the source.
 
-## Requirements  
+## Requirements
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+### Runtime Requirements
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
-## See Also  
- [SMS_CIAllCategories Server WMI Class](../../../develop/reference/sum/sms_ciallcategories-server-wmi-class.md)   
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[SMS_CIAllCategories Server WMI Class](sms_ciallcategories-server-wmi-class.md)  
  [About software update deployments](../../sum/about-software-updates-deployments.md)

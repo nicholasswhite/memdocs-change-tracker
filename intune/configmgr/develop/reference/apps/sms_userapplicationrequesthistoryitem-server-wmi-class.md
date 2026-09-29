@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent an update to an instance of SMS_UserApplicationRequest using SMS_UserApplicationRequestHistoryItem class.
-title: SMS_UserApplicationRequestHistoryItem Class
-ms.date: 09/20/2016
+title: "SMS_UserApplicationRequestHistoryItem Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_UserApplicationRequestHistoryItem Server WMI Class
+
 The `SMS_UserApplicationRequestHistoryItem` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an update to an instance of `SMS_UserApplicationRequest`.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,62 +27,64 @@ Class SMS_UserApplicationRequestHistoryItem :
 ```
 
 ## Methods
- The `SMS_UserApplicationRequestHistoryItem` class does not define any methods.
+
+The `SMS_UserApplicationRequestHistoryItem` class does not define any methods.
 
 ## Properties
- `Comments`
- Data type: `String`
 
- Access type: Read/Write
+`Comments` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Comments entered to explain why the change occurred. These could be user's comment explaining why they are requesting the application or approver comments explaining why the application was approved or denied.
+Qualifiers: none
 
- `ModifiedBy`
- Data type: `String`
+Comments entered to explain why the change occurred. These could be user's comment explaining why they are requesting the application or approver comments explaining why the application was approved or denied.
 
- Access type: Read/Write
+`ModifiedBy` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The user who made the change to the request.
+Qualifiers: none
 
- `ModifiedDate`
- Data type: `DateTime`
+The user who made the change to the request.
 
- Access type: Read/Write
+`ModifiedDate` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The date when the change to the request was made.
+Qualifiers: none
 
- `State`
- Data type: `UInt32`
+The date when the change to the request was made.
 
- Access type: Read/Write
+`State` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The state of the request after the change was made. Possible values are:
+Qualifiers: none
 
-|Value|State|
-|-|-|
-|1|Requested|
-|2|Canceled|
-|3|Denied|
-|4|Approved|
+The state of the request after the change was made. Possible values are:
+
+| Value | State |
+| --- | --- |
+| 1 | Requested |
+| 2 | Canceled |
+| 3 | Denied |
+| 4 | Approved |
 
 ## Remarks
 
 ## Requirements
- Each time a request is updated, an instance of this class is created to track the history of the request.
+
+Each time a request is updated, an instance of this class is created to track the history of the request.
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_UserApplicationRequest Server WMI Class](../../../develop/reference/apps/sms_userapplicationrequest-server-wmi-class.md)
+
+[SMS_UserApplicationRequest Server WMI Class](sms_userapplicationrequest-server-wmi-class.md)

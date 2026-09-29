@@ -1,16 +1,18 @@
 ---
-title: SMS_Boundary Class
+title: "SMS_Boundary Server WMI Class"
 description: An SMS Provider server class that represents a boundary defined within the hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Boundary Server WMI Class
+
 The `SMS_Boundary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a boundary defined within the hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,140 +35,133 @@ Class SMS_Boundary : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_Boundary` class does not define any methods.
+
+The `SMS_Boundary` class does not define any methods.
 
 ## Properties
- `BoundaryFlags`
- Data type: `UInt32`
 
- Access type: Read/Write
+`BoundaryFlags` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- This property is obsolete, use the `Flags` property in `SMS_BoundaryGroupSiteSystems` instead.
+Qualifiers: none
 
- Specifies the connection type of the boundary. Possible values are:
+This property is obsolete, use the `Flags` property in `SMS_BoundaryGroupSiteSystems` instead.
 
-|Value|Connection type|
-|-|-|
-|0|FAST|
-|1|SLOW|
+Specifies the connection type of the boundary. Possible values are:
 
- `BoundaryID`
- Data type: `UInt32`
+| Value | Connection type |
+| --- | --- |
+| 0 | FAST |
+| 1 | SLOW |
 
- Access type: Read/Write
+`BoundaryID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique identifier of the boundary.
+Qualifiers: [key]
 
- `BoundaryType`
- Data type: `UInt32`
+Unique identifier of the boundary.
 
- Access type: Read/Write
+`BoundaryType` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- Boundary type.
+Qualifiers: [enumeration]
 
-|Value|Boundary type|
-|-|-|
-|0|IPSUBNET|
-|1|ADSITE|
-|2|IPV6PREFIX|
-|3|IPRANGE|
+Boundary type.
 
- `CreatedBy`
- Data type: `String`
+| Value | Boundary type |
+| --- | --- |
+| 0 | IPSUBNET |
+| 1 | ADSITE |
+| 2 | IPV6PREFIX |
+| 3 | IPRANGE |
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- User that created the boundary.
+Qualifiers: [read]
 
- `CreatedOn`
- Data type: `DateTime`
+User that created the boundary.
 
- Access type: Read-only
+`CreatedOn` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date the boundary was created.
+Qualifiers: [read]
 
- `DefaultSiteCode`
- Data type: `String Array`
+Date the boundary was created.
 
- Access type: Read-only
+`DefaultSiteCode` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Site code new clients will be auto assigned to.
+Qualifiers: [read]
 
- `DisplayName`
- Data type: `String`
+Site code new clients will be auto assigned to.
 
- Access type: Read/Write
+`DisplayName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Display name of the boundary.
+Qualifiers: none
 
- `GroupCount`
- Data type: `UInt32`
+Display name of the boundary.
 
- Access type: Read-only
+`GroupCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of boundary groups that have this boundary.
+Qualifiers: [read]
 
- `ModifiedBy`
- Data type: `String`
+Count of boundary groups that have this boundary.
 
- Access type: Read-only
+`ModifiedBy` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- User that last modified the boundary.
+Qualifiers: [read]
 
- `ModifiedOn`
- Data type: `DateTime`
+User that last modified the boundary.
 
- Access type: Read-only
+`ModifiedOn` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date the boundary was last modified.
+Qualifiers: [read]
 
- `SiteSystems`
- Data type: `String Array`
+Date the boundary was last modified.
 
- Access type: Read-only
+`SiteSystems` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Site system machines within the boundary.
+Qualifiers: [read]
 
- `Value`
- Data type: `String`
+Site system machines within the boundary.
 
- Access type: Read/Write
+`Value` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Boundary value.
+Qualifiers: none
+
+Boundary value.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

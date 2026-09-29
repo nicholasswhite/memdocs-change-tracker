@@ -1,16 +1,18 @@
 ---
-title: SMS_ImageServicingScheduledImage Class
+title: "SMS_ImageServicingScheduledImage Server WMI Class"
 description: The SMS_ImageServicingScheduledImage WMI class represents all schedules for offline servicing image.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ImageServicingScheduledImage Server WMI Class
+
 The `SMS_ImageServicingScheduledImage` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents all schedules for offline servicing image.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,33 +25,35 @@ Class SMS_ImageServicingScheduledImage : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ImageServicingScheduledImage` class does not define any methods.
+
+The `SMS_ImageServicingScheduledImage` class does not define any methods.
 
 ## Properties
- `ImagePackageID`
- Data type: `String`
 
- Access type: Read/Write
+`ImagePackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID for offline servicing image that is installed on client computer.
+Qualifiers: [key]
 
- `ScheduleID`
- Data type: `SInt32`
+ID for offline servicing image that is installed on client computer.
 
- Access type: Read/Write
+`ScheduleID` Data type: `SInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID for offline servicing image installation schedule.
+Qualifiers: [key]
+
+ID for offline servicing image installation schedule.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

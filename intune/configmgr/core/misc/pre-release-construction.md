@@ -1,7 +1,7 @@
 ---
-title: Pre-release content under construction
+title: "Content under construction"
 description: Content under construction
-ms.date: 01/10/2020
+ms.date: "2020-01-10T00:00:00Z"
 ms.subservice: other
 ms.topic: article
 robots: NOINDEX, NOFOLLOW

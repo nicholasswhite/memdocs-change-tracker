@@ -1,16 +1,18 @@
 ---
-title: SMS_ClientBaselineStatus Class
+title: "SMS_ClientBaselineStatus Server WMI Class"
 description: The SMS_ClientBaselineStatus WMI class is an SMS Provider server class, in Configuration Manager, that represents a client deployment baseline status.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientBaselineStatus Server WMI Class
+
 The `SMS_ClientBaselineStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a client deployment baseline status.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,90 +30,89 @@ Class SMS_ClientBaselineStatus: SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_ClientBaselineStatus` class.
 
-|Method|Description|
-|------------|-----------------|
-|[GetClientBaselineStatusSummary Method in Class SMS_ClientBaselineStatus](../../../../../develop/reference/core/clients/deploy/getclientbaselinestatussummary-method-in-class-sms_clientbaselinestatus.md)|Gets baseline status summary information by BaselineType and CollectionID.|
+The following table lists the methods in the `SMS_ClientBaselineStatus` class.
+
+| Method | Description |
+| --- | --- |
+| [GetClientBaselineStatusSummary Method in Class SMS_ClientBaselineStatus](getclientbaselinestatussummary-method-in-class-sms_clientbaselinestatus.md) | Gets baseline status summary information by BaselineType and CollectionID. |
 
 ## Properties
- `BaselineType`
- Data type: `uint32`
 
- Access type: Read-only
+`BaselineType` Data type: `uint32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The client baseline type. Possible values are:
+Qualifiers: [read]
 
-|Value|Client baseline type|
-|-|-|
-|1|Production|
-|2|Staging|
+The client baseline type. Possible values are:
 
- `InstalledClientVersion`
- Data type: `String`
+| Value | Client baseline type |
+| --- | --- |
+| 1 | Production |
+| 2 | Staging |
 
- Access type: Read/Write
+`InstalledClientVersion` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Client version that deployed through client deployment.
+Qualifiers: none
 
- `LastErrorCode`
- Data type: `UInt32`
+Client version that deployed through client deployment.
 
- Access type: Read-only
+`LastErrorCode` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The last error code sent by the client.
+Qualifiers: [read]
 
- `ResourceID`
- Data type: `UInt32`
+The last error code sent by the client.
 
- Access type: Read-only
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Resource ID of the client.
+Qualifiers: [key, read]
 
- `SMSID`
- Data type: `String`
+Resource ID of the client.
 
- Access type: Read-only
+`SMSID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The SMSID of the client.
+Qualifiers: [read]
 
- `Status`
- Data type: `UInt32`
+The SMSID of the client.
 
- Access type: Read-only
+`Status` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The status of the client against the client baseline. Possible values are:
+Qualifiers: [read]
 
-|Value|Client status|
-|-|-|
-|1|Compliant|
-|2|InProgress|
-|3|NotCompliant|
-|4|CriticalError|
+The status of the client against the client baseline. Possible values are:
+
+| Value | Client status |
+| --- | --- |
+| 1 | Compliant |
+| 2 | InProgress |
+| 3 | NotCompliant |
+| 4 | CriticalError |
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: CCM_UserLogonEvents Class
+title: "CCM_UserLogonEvents Client WMI Class"
 description: A client class that represents a user logon event.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_UserLogonEvents Client WMI Class
+
 The `CCM_UserLogonEvents` Client WMI class is a client class, in Configuration Manager, that represents a user logon event.
 
- The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,40 +27,41 @@ class CCM_UserLogonEvents
 ```
 
 ## Methods
- The `CCM_UserLogonEvents` class does not define any methods.
+
+The `CCM_UserLogonEvents` class does not define any methods.
 
 ## Properties
- `LogoffTime`
- Data type: `UInt64`
 
- Access type: Read/Write
+`LogoffTime` Data type: `UInt64`
 
- Qualifiers: none
+Access type: Read/Write
 
- The number of seconds elapsed since midnight (00:00:00), January 1, 1970, Coordinated Universal Time (UTC).
+Qualifiers: none
 
- `LogonTime`
- Data type: `UInt64`
+The number of seconds elapsed since midnight (00:00:00), January 1, 1970, Coordinated Universal Time (UTC).
 
- Access type: Read/Write
+`LogonTime` Data type: `UInt64`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The number of seconds elapsed since midnight (00:00:00), January 1, 1970, Coordinated Universal Time (UTC).
+Qualifiers: [key]
 
- `UserSID`
- Data type: `String`
+The number of seconds elapsed since midnight (00:00:00), January 1, 1970, Coordinated Universal Time (UTC).
 
- Access type: Read/Write
+`UserSID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The SID of the user.
+Qualifiers: [key]
+
+The SID of the user.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: Support Center UI reference
+title: "Support Center user interface reference"
 description: Learn how to use the Support Center tools.
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: reference
 ms.collection: tier3
@@ -20,13 +20,15 @@ This article is a reference that describes the user interfaces (UI) of the follo
 - Support Center Log File Viewer
 
 > [!NOTE]
-> In version 2010 and earlier, the Client Data Collector and Client Tools are combined into a single tool called **Support Center**.<!--8693068-->
+>
+> In version 2010 and earlier, the Client Data Collector and Client Tools are combined into a single tool called **Support Center**.
 
 The Support Center suite also includes **OneTrace**. For more information, see [Support Center OneTrace](support-center-onetrace.md).
 
 ## Support Center Client Data Collector
 
 > [!NOTE]
+>
 > In version 2010 and earlier, this tool is part of the **Support Center** tool. The **Collect selected data** action is on the **Home** tab of the **Support Center** tool.
 
 ### Window menu (Client Data Collector)
@@ -34,11 +36,8 @@ The Support Center suite also includes **OneTrace**. For more information, see [
 In the upper left corner of the Support Center Client Data Collector window, select the arrow in the blue box to open this menu.
 
 - **Local Machine Connection**: Gather data from the client that's running Support Center Client Data Collector.
-
 - **Remote Connection**: Establish a remote connection with another Configuration Manager client. After connecting, gather data from the remote client.
-
 - **About**: Provides information about Support Center Client Data Collector, such as the version.
-
 - **Options**:
 
   - Reduce the movement of animated user interface elements
@@ -46,7 +45,6 @@ In the upper left corner of the Support Center Client Data Collector window, sel
   - Change the location of temporary files
   - Reset warnings. Any warning messages that you previously suppressed appear again when triggered.
   - Reset temporary file path to the default, `%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenter`
-
 - **Exit**: Close Support Center Client Data Collector.
 
 ### Home tab
@@ -72,31 +70,25 @@ For more information, see [Support Center quickstart guide](support-center-quick
 When you select the checkbox for an option, Support Center Client Data Collector collects that type of data the next time you select **Collect selected data**. The following types are available:
 
 - **Log files**: Client log files including setup logs.
-
 - **Policy**: Client policy collection.
-
 - **Certificates**: Public key information for client certificates. Support Center Client Data Collector doesn't collect certificate private keys.
-
 - **Client configuration collector**: Configuration Manager client information. You can't disable this data type.
-
 - **Client registry**: Collects client configuration information from the registry. Support Center Client Data Collector only collects Configuration Manager registry information.
-
 - **Client WMI**: Client configuration information from WMI. Support Center Client Data Collector doesn't collect client policy.
-
 - **Troubleshooting**: Real-time troubleshooting data to help diagnose common client problems with Active Directory, management points, networking, policy assignments, and registration.
 
-    > [!NOTE]
-    > This data type isn't supported when you make a remote connection to another client.
-
+  > [!NOTE]
+  >
+  > This data type isn't supported when you make a remote connection to another client.
 - **Debug dumps**: Create a debug dump of client and related processes. Debug dumps can be large. Only enable this option when troubleshooting issues with client performance.
 
-    > [!WARNING]
-    > Collecting debug dumps will cause data bundles to become very large. In some cases, the size can be several hundred MB.
-    >
-    > Debug dumps contain may contain sensitive information, including passwords, cryptographic secrets, or user data. Only collect debug dumps on the recommendation of Microsoft Support personnel. Carefully handle data bundles that contain debug dumps to protect them from unauthorized access.
-    >
-    > This data type isn't supported when you make a remote connection to another client.
-
+  > [!WARNING]
+  >
+  > Collecting debug dumps will cause data bundles to become very large. In some cases, the size can be several hundred MB.
+  >
+  > Debug dumps contain may contain sensitive information, including passwords, cryptographic secrets, or user data. Only collect debug dumps on the recommendation of Microsoft Support personnel. Carefully handle data bundles that contain debug dumps to protect them from unauthorized access.
+  >
+  > This data type isn't supported when you make a remote connection to another client.
 - **Operating system**: Collects configuration information about the local machine. This data includes information about the Windows installation, network adapters, and system service configuration. You can't disable this data type.
 
 ## Support Center Client Tools
@@ -104,6 +96,7 @@ When you select the checkbox for an option, Support Center Client Data Collector
 This section describes the user interface for the **Support Center Client Tools** tool.
 
 > [!NOTE]
+>
 > In version 2010 and earlier, this tool is called **Support Center**.
 >
 > Starting in version 2103, use the [Support Center Client Data Collector](#support-center-client-data-collector) for the **Collect selected data** action.
@@ -121,11 +114,8 @@ This section describes the user interface for the **Support Center Client Tools*
 In the upper left corner of the Support Center Client Tools window, select the arrow in the blue box to open this menu.
 
 - **Local Machine Connection**: Gather log files and troubleshoot the client that's running Support Center.
-
 - **Remote Connection**: Establish a remote connection with another Configuration Manager client. After connecting, gather log files and troubleshoot the remote client.
-
 - **About**: Provides information about Support Center Client Tools, such as the version.
-
 - **Options**:
 
   - Reduce the movement of animated user interface elements
@@ -133,7 +123,6 @@ In the upper left corner of the Support Center Client Tools window, select the a
   - Change the location of temporary files
   - Reset warnings. Any warning messages that you previously suppressed appear again when triggered.
   - Reset temporary file path to the default, `%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenter`
-
 - **Exit**: Close Support Center Client Tools.
 
 ### Client tab
@@ -147,27 +136,16 @@ Load or refresh details for the Configuration Manager client.
 When you load client details, this tool shows the following properties:
 
 - **Client ID**: A unique identifier that Configuration Manager uses to identify the client.
-
 - **Hardware ID**: A unique identifier that Configuration Manager uses to identify the client hardware.
-
 - **Approved**: Indicates whether the client is approved in Configuration Manager.
-
 - **Registration State**: Indicates whether the client is registered with Configuration Manager.
-
 - **Internet-facing**: Indicates whether the client is on the internet.
-
 - **Version**: The version number of the installed Configuration Manager client.
-
 - **Site Code**: The site code for the primary site to which the client is assigned.
-
 - **Assigned MP**: The fully qualified domain name (FQDN) of the client's currently assigned management point.
-
 - **Resident MP**: The FQDN of the resident management point.
-
 - **Proxy MP**: The hostname or FQDN of the proxy management point (if it exists).
-
 - **Proxy Site Code**: The site code for the secondary site (if it exists).
-
 - **Proxy State**: The state of the Configuration Manager client's proxy management point. For example, **Active** or **Pending**.
 
 #### Maintenance windows
@@ -180,15 +158,15 @@ Do one of the following actions for the Configuration Manager client agent servi
 
 - **Restart client**
 
-    > [!IMPORTANT]
-    > If the client agent service doesn't successfully restart, the client isn't manageable by Configuration Manager until the service starts.
-
+  > [!IMPORTANT]
+  >
+  > If the client agent service doesn't successfully restart, the client isn't manageable by Configuration Manager until the service starts.
 - **Start client**
-
 - **Stop client**
 
-    > [!IMPORTANT]
-    > The client isn't manageable by Configuration Manager until the service starts.
+  > [!IMPORTANT]
+  >
+  > The client isn't manageable by Configuration Manager until the service starts.
 
 ### Policy tab (Client Tools)
 
@@ -199,9 +177,7 @@ Use the actions on this tab instead of the older [PolicySpy](policy-spy.md) tool
 This option varies depending upon the view:
 
 - **Load Actual policy**: Select **Actual** in the View group, and then select this option in the Policy group. Load the client policy that you've currently selected.
-
 - **Load Requested policy**: Select **Requested** in the View group, and then select this option in the Policy group. Load the client policy requested of the client.
-
 - **Load Default policy**: Select **Default** in the View group, and then select this option in the Policy group. Load the default policy for this client.
 
 Select the drop-down list at the bottom of this button for other options:
@@ -227,9 +203,7 @@ Request the client policy from the management point, and then evaluate that poli
 Select the drop-down list at the bottom of this button for other options:
 
 - **Request policy**: Request the client policy from the management point.
-
 - **Evaluate policy**: Evaluate the client policy on the client.
-
 - **Reset policy to default**: Tell the Configuration Manager client to reapply the default policy. It removes all machine and user policies on the client.
 
 #### Listen for policy events
@@ -257,17 +231,11 @@ The following items on this menu request a client action related to content:
 - **Location services**
 
   - **Refresh content locations**: Refreshes the distribution points used by any active content downloads.
-
   - **Refresh management points**: Updates the internal list of management points used by the client.
-
   - **Time out content requests**: If any content location requests have been running for too long, this action stops the request.
-
 - **Application deployment evaluation**: Starts a task that evaluates deployed applications.
-
 - **Software updates deployment evaluation**: Starts a task that evaluates deployed software updates.
-
 - **Software updates source scan**: Starts a task that scans update source locations.
-
 - **Windows Installer source list update**: Starts a task that updates the source location for Windows Installer (MSI) installations.
 
 #### Deployment view
@@ -275,45 +243,41 @@ The following items on this menu request a client action related to content:
 See applications, packages, and updates that are loaded on the client. When you select an application, package, or update, you can view details on that content. For some applications, you can also do the following actions:
 
 - **Refresh**: Refresh the details view.
-
 - **Verify or Download**: Verify that an application is available for download.
-
 - **Install**: Install the application.
-
 - **Uninstall**: Uninstall the application.
 
 Starting in Configuration Manager version 2107, the view is grouped by **Category** and **Status**. The view can be sorted and filtered to help you find the deployments you're interested in. Select a deployment in the results pane to display the following information in the details pane:
 
 - **Properties** tab
-   - **Name**: The name of the deployment property.
-   - **Value**: The value assigned to the deployment property.
 
+  - **Name**: The name of the deployment property.
+  - **Value**: The value assigned to the deployment property.
 - **Policy** tab
-   - **Display name**: Display name of the items in the deployment.
-   - **Version**: Version for the item in the deployment.
-   - **Model name**: Model name for the item in the deployment.
-   - **CI XML**: XML for the configuration item.
 
+  - **Display name**: Display name of the items in the deployment.
+  - **Version**: Version for the item in the deployment.
+  - **Model name**: Model name for the item in the deployment.
+  - **CI XML**: XML for the configuration item.
 - **Reporting** tab
-   - **Time**: Timestamp of the state message.
-   - **State** The state that was reported by the client.
-   - **Topic ID**: ID of what the state message is reporting on, used to map to events in log files. In this context, it will typically be the Assignment ID of the deployment.
-   - **Topic type**: The state message type.
-   - **Topic type ID**: The subtype of the state message.
-   - **State ID**: The result of the action that you're monitoring.
 
+  - **Time**: Timestamp of the state message.
+  - **State** The state that was reported by the client.
+  - **Topic ID**: ID of what the state message is reporting on, used to map to events in log files. In this context, it will typically be the Assignment ID of the deployment.
+  - **Topic type**: The state message type.
+  - **Topic type ID**: The subtype of the state message.
+  - **State ID**: The result of the action that you're monitoring.
 
-> [!Note]
-> In Configuration Manager versions 2103 and earlier **Deployment view** is named **Content view**. <!--8272488-->
+> [!NOTE]
+>
+> In Configuration Manager versions 2103 and earlier **Deployment view** is named **Content view**.
 
 #### Cache view
 
 View the client cache configuration and details about the cache contents. When you connect Support Center Client Tools to a local client, you can also do the following actions:
 
 - To change the cache location, select **Change** next to the **Cache location** field.
-
 - To adjust the size of the cache, select **Change** next to the **Cache size** field.
-
 - To clear the client cache, select **Clear** next to the **Cache in use** field.
 
 This view shows the following properties:
@@ -359,6 +323,7 @@ Load or refresh the client inventory list for the currently selected view.
 #### Invoke trigger (Inventory)
 
 > [!NOTE]
+>
 > For tasks other than **Software metering report cycle**:
 >
 > - If you request the task when another inventory task is already running, the client queues the new task to run after it completes the current task and other queued tasks.
@@ -367,19 +332,12 @@ Load or refresh the client inventory list for the currently selected view.
 The following items on this menu request client action related to inventory:
 
 - **Discovery data collection cycle (heartbeat)**: Triggers the client task used to collect device discovery information.
-
 - **File collection cycle**: Triggers the client task used to collect local files.
-
 - **Hardware inventory cycle**: Triggers the client task used to collect hardware inventory data.
-
 - **IDMIF collection cycle**: Triggers the client task used to collect IDMIF data.
-
 - **Software inventory cycle**: Triggers the client task used to collect software inventory data.
-
 - **Software metering report cycle**: Triggers the client task used to build a software metering report and send it to the management point. Track the progress of this task in **SWMTRReportGen.log**.
-
 - **Send unsent state messages in queue**: Triggers the client task to flush the queue of state messages.
-
 - **Advanced**
 
   - **Hardware inventory cycle (full resynchronization)**
@@ -390,17 +348,11 @@ The following items on this menu request client action related to inventory:
 If a feature isn't enabled, the view doesn't display any data.
 
 - **Status**: Show the inventory data sets the client has collected.
-
 - **DDR**: Information about the client discovery data collected from the client.
-
 - **HINV**: Information about the hardware inventory data collected from the client.
-
 - **SINV**: Information about the software inventory data collected from the client.
-
 - **File collection**: Information about the files collected from the client.
-
 - **IDMIF**: Information about the IDMIF and NOIDMIF data collected from the client.
-
 - **Metering**: Information about the software metering data collected from the client.
 
 ### Troubleshooting tab (Client Tools)
@@ -415,6 +367,7 @@ Troubleshoot some of the most common issues with Configuration Manager clients:
   - Registration
 
 > [!NOTE]
+>
 > This tab isn't available when you connect to a remote Configuration Manager client.
 
 #### Start
@@ -450,6 +403,7 @@ Set the following options:
 - **Maximum file size**: The size in bytes of any given log file before the client creates a new log
 
 > [!NOTE]
+>
 > If you set these values too low, the client may not log any useful information. If you set these values too high, the client logs can consume large amounts of storage.
 
 For more information, see [About log files](../plan-design/hierarchy/about-log-files.md).
@@ -490,16 +444,13 @@ In the upper left corner of the Support Center Viewer window, select the arrow i
 
   - Version 2103 and later: Support Center Client Data Collector
   - Version 2010 and earlier: Support Center
-
 - **About**: Displays information about Support Center Viewer, such as the version.
-
 - **Options**:
 
   - Reduce the movement of animated user interface elements.
   - Change the location of temporary files.
   - Reset warnings. Any warning messages that you previously suppressed appear again when triggered.
   - Reset temporary file path to the default, `%UserProfile%\AppData\Local\Microsoft\ConfigMgrSupportCenterViewer`
-
 - **Exit**: Exits Support Center Viewer.
 
 ### Home tab (Viewer)
@@ -524,14 +475,10 @@ In the **Decode certificate** window, paste the serialized certificate value for
 The **Configuration** tab of the Support Center Viewer tool provides the following views using data retrieved from WMI providers:
 
 - **Client**: This view displays the same information shown on the **Client** tab of Support Center.
-
-- **Operating system**: Details for the client's OS. It uses the [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) class.
-
-- **Computer**: Details for the client computer. It uses the [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) class.
-
-- **Services**:  Details for services running on the client computer. It uses the [Win32_Service](/windows/desktop/CIMWin32Prov/win32-service) class.
-
-- **Network adapters**: Details for network adapters installed on the client computer. It uses the [Win32_NetworkAdapterConfiguration](/windows/desktop/CIMWin32Prov/win32-networkadapterconfiguration) class.
+- **Operating system**: Details for the client's OS. It uses the [Win32_OperatingSystem](https://learn.microsoft.com/en-us/windows/desktop/CIMWin32Prov/win32-operatingsystem) class.
+- **Computer**: Details for the client computer. It uses the [Win32_OperatingSystem](https://learn.microsoft.com/en-us/windows/desktop/CIMWin32Prov/win32-operatingsystem) class.
+- **Services**: Details for services running on the client computer. It uses the [Win32_Service](https://learn.microsoft.com/en-us/windows/desktop/CIMWin32Prov/win32-service) class.
+- **Network adapters**: Details for network adapters installed on the client computer. It uses the [Win32_NetworkAdapterConfiguration](https://learn.microsoft.com/en-us/windows/desktop/CIMWin32Prov/win32-networkadapterconfiguration) class.
 
 ### Logs tab (Viewer)
 
@@ -550,6 +497,7 @@ In the **Decode certificate** window, paste the serialized certificate value for
 Each row on this tab provides details on the debug dump files that are available to export. Use this tab to export debug dump files (.dmp) for further analysis. This analysis uses a debugging tool such as WinDbg.
 
 > [!WARNING]
+>
 > Debug dumps may contain sensitive information, including passwords, cryptographic secrets, or user data. Only collect debug dumps on the recommendation of Microsoft Support personnel. Carefully handle data bundles that contain debug dumps to protect them from unauthorized access.
 
 #### Export (Viewer: Debug dumps)
@@ -565,9 +513,7 @@ This tab shows the set of WMI data from the Configuration Manager client that th
 Opens the Find window, which has the following features:
 
 - **Find what**: Enter a string to search for in the WMI data set. It supports wildcard characters.
-
 - **Look at**: Choose whether you want to search within the WMI data set for a matching **Class or instance name**, **Property**, or **Value**.
-
 - **Match whole string only**: By default, it searches for strings that contain the string for which you're looking. Choose this checkbox to only find strings that are an exact match to the string that you provided.
 
 #### Find next (Viewer: WMI)
@@ -591,9 +537,7 @@ Save a copy of the registry key and subkeys that you select as a registry (.reg)
 Opens the Find window, which has the following features:
 
 - **Find what**: Enter a string to search for in the WMI data set. It supports wildcard characters.
-
 - **Look at**: Choose whether you want to search within the WMI data set for a matching **Class or instance name**, **Property**, or **Value**.
-
 - **Match whole string only**: By default, it searches for strings that contain the string for which you're looking. Choose this checkbox to only find strings that are an exact match to the string that you provided.
 
 #### Find next (Viewer: Registry)
@@ -613,9 +557,7 @@ The **Policy** tab is used to view policy data included in the data bundle.
 Opens the Find window, which has the following features:
 
 - **Find what**: Enter a string to search for in the WMI data set. It supports wildcard characters.
-
 - **Look at**: Choose whether you want to search within the WMI data set for a matching **Class or instance name**, **Property**, or **Value**.
-
 - **Match whole string only**: By default, it searches for strings that contain the string for which you're looking. Choose this checkbox to only find strings that are an exact match to the string that you provided.
 
 #### Find next (Viewer: Policy)
@@ -655,23 +597,19 @@ This section describes the user interface for the **Support Center Log File View
 
 This tool is almost identical to the **Logs** tab of **Support Center Client Tools**. The main difference is that this tool doesn't include the options to **Configure client logging** and **Log groups**.
 
-Starting in version 2111, Support Center Log File Viewer display status messages in an easy to read format. Entries starting with `>>` are status messages that are automatically converted into a readable format when a log is opened. Search or filter on the `>>` string to find status messages in the log. <!--9348231, 10915091-->
-
+Starting in version 2111, Support Center Log File Viewer display status messages in an easy to read format. Entries starting with `>>` are status messages that are automatically converted into a readable format when a log is opened. Search or filter on the `>>` string to find status messages in the log.
 
 ### Window menu (Log File Viewer)
 
 In the upper left corner of the Support Center Log File Viewer window, select the arrow in the blue box to open this menu.
 
-- **Open logs**:  Browse to the location of log files to open.
-
+- **Open logs**: Browse to the location of log files to open.
 - **Options**:
 
   - Reduce the movement of animated user interface elements.
   - Register Log File Viewer as the default app for log files with the `.log` and `.lo_` file extensions.
   - Reset warnings. Any warning messages that you previously suppressed appear again when triggered.
-
 - **About**: Displays information about Support Center Log File Viewer, such as the version.
-
 - **Close**: Closes Support Center Log File Viewer
 
 ### Home tab (Log File Viewer)
@@ -709,19 +647,12 @@ After finding two or more matches for the string that you're searching for, this
 #### Options
 
 - **Live updating**: Monitor a currently open log file for changes. This feature doesn't function when multiple log files are open. This option is enabled by default.
-
 - **Auto-scroll**: If you also chose the **Live updating** option, this option automatically scrolls the log view to show newly added entries. This feature doesn't function when multiple log files are open. This option is enabled by default.
-
 - **Show details**: When you select a log file message, the bottom of the **Logs** tab displays the details of the log file message. This option is enabled by default.
-
 - **Quick filter**: Filter the log file messages across all open log files to find a specific string. You can filter by log text, component name, and thread ID. To find similar log messages, right-click a log message and select **Quick filter** on log text.
-
 - **Wrap log text**: Wrap long and multi-line messages to fit into a single column. This behavior makes these messages easier to read. This option is enabled by default.
-
 - **Raw log entry display**: Displays unprocessed log lines.
-
 - **Advanced filters**: Open the **Advanced filters** window. For more information, see [Advanced log file filters](#advanced-log-file-filters).
-
 - **Error code links**: Error codes in log text are highlighted and clickable. This option is enabled by default.
 
 #### Error lookup
@@ -747,39 +678,27 @@ In the Advanced filters window, you can create complex filter sets. These filter
 ### Add a filter
 
 1. In the Log File Viewer tool, or on the Support Center Client Tools **Logs** tab, select **Advanced filters**.
+2. In the Advanced filters window, select **Add**. Then select one of the following options to act on log entries that match your filter:
 
-1. In the Advanced filters window, select **Add**. Then select one of the following options to act on log entries that match your filter:
+   - **Include**
+   - **Exclude**
+   - **Highlight**
+3. In the **Advanced filter configuration** window, choose a column and an operator:
 
-    - **Include**
-    - **Exclude**
-    - **Highlight**
+   - **Column**: Choose where to look for strings that match your filter:
 
-1. In the **Advanced filter configuration** window, choose a column and an operator:
-
-    - **Column**: Choose where to look for strings that match your filter:
-
-         - **Log text**: Search within the text of a log file
-
-         - **Log severity**: Search for logs with a specific severity level. Set these severity levels in the **Value** field.
-
-         - **Component**: Search for a specific component by name
-
-         - **Thread ID**: Search for log messages with a specific thread ID
-
-         - **Source file**: Search for log messages that occur in a specific log file
-
-    - **Operator**: Choose an operator for your filter
-
-1. Enter a value to filter on in the **Value** field. If your value contains regular expressions, select **Enable regular expression matching**.
+     - **Log text**: Search within the text of a log file
+     - **Log severity**: Search for logs with a specific severity level. Set these severity levels in the **Value** field.
+     - **Component**: Search for a specific component by name
+     - **Thread ID**: Search for log messages with a specific thread ID
+     - **Source file**: Search for log messages that occur in a specific log file
+   - **Operator**: Choose an operator for your filter
+4. Enter a value to filter on in the **Value** field. If your value contains regular expressions, select **Enable regular expression matching**.
 
 ### Manage filter sets
 
 - To edit a filter, select the filter, and then select **Edit**.
-
 - To delete a filter, select the filter, and then select **Delete**.
-
 - To clear all filters, select **Clear**.
-
 - To save the current filter set, select **Save filters**. Then save your filter set as a `.filterset` file.
-
 - To load a saved filter set, select **Load filters**. Then browse to a previously saved `.filterset` file.

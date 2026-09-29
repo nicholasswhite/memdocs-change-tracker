@@ -1,7 +1,7 @@
 ---
 title: Cryptographic controls technical reference
 description: Learn how signing and encryption can help protect attacks from reading data in Configuration Manager.
-ms.date: 10/15/2024
+ms.date: "2024-10-15T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: reference
 ms.collection: tier3
@@ -19,11 +19,10 @@ The primary hashing algorithm that Configuration Manager uses for signing is **S
 Starting in version 2107, the primary encryption algorithm that Configuration Manager uses is **AES-256**. Encryption mainly happens in the following two areas:
 
 - If you enable the site to **Use encryption**, the client encrypts its inventory data and state messages that it sends to the management point.
-
 - When the client downloads secret policies, the management point always encrypts these policies. For example, an OS deployment task sequence that includes passwords.
 
-
 > [!NOTE]
+>
 > If you configure HTTPS communication, these messages are encrypted twice. The message is encrypted with AES, then the HTTPS transport is encrypted with AES-256.
 
 When you use client communication over HTTPS, configure your public key infrastructure (PKI) to use certificates with the maximum hashing algorithms and key lengths. When using CNG v3 certificates, Configuration Manager clients only support certificates that use the RSA cryptographic algorithm. For more information, see [PKI certificate requirements](../network/pki-certificate-requirements.md) and [CNG v3 certificates overview](../network/cng-certificates-overview.md).
@@ -68,7 +67,7 @@ When a client sends hardware or software inventory to a management point, it alw
 
 ### State migration encryption
 
-When a task sequence captures data from a client for OS deployment, it always encrypts the data. In version 2103 and later, the task sequence runs the User State Migration Tool (USMT) with the **AES-256** encryption algorithm.<!--9171505-->
+When a task sequence captures data from a client for OS deployment, it always encrypts the data. In version 2103 and later, the task sequence runs the User State Migration Tool (USMT) with the **AES-256** encryption algorithm.
 
 ### Encryption for multicast packages
 
@@ -105,20 +104,20 @@ For a list of the public key infrastructure (PKI) certificates that can be used 
 Most Configuration Manager operations that use certificates also support v3 certificates. For more information, see [CNG v3 certificates overview](../network/cng-certificates-overview.md).
 
 > [!NOTE]
+>
 > All certificates that Configuration Manager uses must contain only single-byte characters in the subject name or subject alternative name.
 
 Configuration Manager requires PKI certificates for the following scenarios:
 
 - When you manage Configuration Manager clients on the internet
-
 - When you use a cloud management gateway (CMG)
 
 For most other communication that requires certificates for authentication, signing, or encryption, Configuration Manager automatically uses PKI certificates if available. If they aren't available, Configuration Manager generates self-signed certificates.
 
-
 ### Mobile device management and PKI certificates
 
 > [!NOTE]
+>
 > Since Nov 2021 we have deprecated Mobile device management and we recommend customers to uninstall this role.
 
 ### OS deployment and PKI certificates
@@ -141,28 +140,23 @@ If the ISV certificate is compromised, block the certificate in the **Certificat
 
 #### Copy GUID for ISV proxy certificate
 
-<!--2842082-->
-
 Starting in version 2111, to simplify the management of these ISV proxy certificates, you can now copy its GUID in the Configuration Manager console.
 
 1. In the Configuration Manager console, go to the **Administration** workspace.
-
-1. Expand **Security**, and select the **Certificates** node.
-
-1. Sort the list of the certificates by the **Type** column.
-
-1. Select a certificate of type **ISV Proxy**.
-
-1. In the ribbon, select **Copy Certificate GUID**.
+2. Expand **Security**, and select the **Certificates** node.
+3. Sort the list of the certificates by the **Type** column.
+4. Select a certificate of type **ISV Proxy**.
+5. In the ribbon, select **Copy Certificate GUID**.
 
 This action copies this certificate's GUID, for example: `aa05bf38-5cd6-43ea-ac61-ab101f943987`
 
 ### Asset Intelligence and certificates
 
 > [!NOTE]
+>
+> Note
 
 > Since Nov 2021 we have deprecated Asset Intelligence and we recommend customers to uninstall this role.
-
 
 ### Azure services and certificates
 
@@ -197,19 +191,12 @@ When Configuration Manager uses a certificate for this communication, if there's
 In addition to this certificate for each site system server, Configuration Manager generates a self-signed certificate for most site system roles. When there is more than one instance of the site system role in the same site, they share the same certificate. For example, you might have multiple management points in the same site. This self-signed certificate uses SHA-256 and has a key length of 2048 bits. It's copied to the Trusted People Store on site system servers that might need to trust it. The following site system roles generate this certificate:
 
 - Asset Intelligence synchronization point
-
 - Endpoint Protection point
-
 - Fallback status point
-
 - Management point
-
 - Multicast-enabled distribution point
-
 - Reporting services point
-
 - Software update point
-
 - State migration point
 
 Configuration Manager automatically generates and manages these certificates.
@@ -227,7 +214,6 @@ Site servers establish site-to-site communication by using a secure key exchange
 Database replication in Configuration Manager uses the SQL Server Service Broker to transfer data between sites. It uses the following mechanisms:
 
 - SQL Server to SQL Server: This connection uses Windows credentials for server authentication and self-signed certificates with 1024 bits to sign and encrypt the data with the AES algorithm. If available, it uses PKI certificates with server authentication capability. It only uses certificates in the computer's Personal certificate store.
-
 - SQL Service Broker: This service uses self-signed certificates with 2048 bits for authentication and to sign and encrypt the data with the AES algorithm. It only uses certificates in the SQL Server master database.
 
 File-based replication uses the server message block (SMB) protocol. It uses **SHA-256** to sign data that isn't encrypted and doesn't contain any sensitive data. To encrypt this data, use IPsec, which you implement independently from Configuration Manager.
@@ -239,6 +225,7 @@ When site system roles accept client connections, you can configure them to acce
 Client connections over HTTPS offer a higher level of security by integrating with a public key infrastructure (PKI) to help protect client-to-server communication. However, configuring HTTPS client connections without a thorough understanding of PKI planning, deployment, and operations could still leave you vulnerable. For example, if you don't secure your root certificate authority (CA), attackers could compromise the trust of your entire PKI infrastructure. Failing to deploy and manage the PKI certificates by using controlled and secured processes might result in unmanaged clients that can't receive critical software updates or packages.
 
 > [!IMPORTANT]
+>
 > The PKI certificates that Configuration Manager uses for client communication protect the communication only between the client and some site systems. They don't protect the communication channel between the site server and site systems or between site servers.
 
 ### Unencrypted communication when clients use HTTPS
@@ -246,13 +233,10 @@ Client connections over HTTPS offer a higher level of security by integrating wi
 When clients communicate with site systems over HTTPS, most traffic is encrypted. In the following situations, clients communicate with site systems without using encryption:
 
 - Client fails to make an HTTPS connection on the intranet and falls back to using HTTP when site systems allow this configuration.
-
 - Communication to the following site system roles:
 
   - Client sends state messages to the fallback status point.
-
   - Client sends PXE requests to a PXE-enabled distribution point.
-
   - Client sends notification data to a management point.
 
 You configure reporting services points to use HTTP or HTTPS independently from the client communication mode.
@@ -276,17 +260,16 @@ When a management point first authenticates a client by using the self-signed cl
 To improve the security of your Configuration Manager clients and servers, do the following actions:
 
 - Enable TLS 1.2 across all devices and services. To enable TLS 1.2 for Configuration Manager, see [How to enable TLS 1.2 for Configuration Manager](enable-tls-1-2.md).
-
 - Disable SSL 3.0, TLS 1.0, and TLS 1.1.
-
 - Reorder the TLS-related cipher suites.
 
 For more information, see the following articles:
 
-- [Restrict the use of certain cryptographic algorithms and protocols in Schannel.dll](/troubleshoot/windows-server/windows-security/restrict-cryptographic-algorithms-protocols-schannel)
-- [Prioritizing Schannel cipher suites](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)
+- [Restrict the use of certain cryptographic algorithms and protocols in Schannel.dll](https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/restrict-cryptographic-algorithms-protocols-schannel)
+- [Prioritizing Schannel cipher suites](https://learn.microsoft.com/en-us/windows/win32/secauthn/prioritizing-schannel-cipher-suites)
 
 These procedures don't affect Configuration Manager functionality.
 
 > [!NOTE]
-> Updates to Configuration Manager download from the Azure content delivery network (CDN), which has cipher suite requirements. For more information, see [Azure Front Door: TLS configuration FAQ](/azure/frontdoor/front-door-faq#tls-configuration)..<!-- 10424111 -->
+>
+> Updates to Configuration Manager download from the Azure content delivery network (CDN), which has cipher suite requirements. For more information, see [Azure Front Door: TLS configuration FAQ](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-faq#tls-configuration)..

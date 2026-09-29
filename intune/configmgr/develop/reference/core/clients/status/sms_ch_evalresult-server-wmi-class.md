@@ -1,16 +1,18 @@
 ---
-title: SMS_CH_EvalResult Class
+title: "SMS_CH_EvalResult Server WMI Class"
 description: The SMS_CH_EvalResult Windows Management Instrumentation class is an SMS Provider server class, in Configuration Manager, that represents client evaluation results.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CH_EvalResult Server WMI Class
+
 The `SMS_CH_EvalResult` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents client evaluation results.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,85 +31,81 @@ Class SMS_CH_EvalResult : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CH_EvalResult` class does not define any methods.
+
+The `SMS_CH_EvalResult` class does not define any methods.
 
 ## Properties
- `EvalTime`
- Data type: `DateTime`
 
- Access type: Read-only
+`EvalTime` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Evaluation time.
+Qualifiers: [not_null, read]
 
- `HealthCheckDescription`
- Data type: `String`
+Evaluation time.
 
- Access type: Read-only
+`HealthCheckDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Health Check description.
+Qualifiers: [read]
 
- `HealthCheckGUID`
- Data type: `String`
+Health Check description.
 
- Access type: Read-only
+`HealthCheckGUID` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Health check GUID.
+Qualifiers: [key, not_null, read]
 
- `ResourceID`
- Data type: `UInt32`
+Health check GUID.
 
- Access type: Read-only
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Unique Configuration Manager-supplied ID for the resource.
+Qualifiers: [key, not_null, read]
 
- `Result`
- Data type: `UInt32`
+Unique Configuration Manager-supplied ID for the resource.
 
- Access type: Read-only
+`Result` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Evaluation result.
+Qualifiers: [not_null, read]
 
- `ResultCode`
- Data type: `UInt32`
+Evaluation result.
 
- Access type: Read-only
+`ResultCode` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Result code.
+Qualifiers: [read]
 
- `ResultDetail`
- Data type: `String`
+Result code.
 
- Access type: Read-only
+`ResultDetail` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Result detail.
+Qualifiers: [read]
 
- `ResultType`
- Data type: `UInt32`
+Result detail.
 
- Access type: Read-only
+`ResultType` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Result type.
+Qualifiers: [read]
+
+Result type.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

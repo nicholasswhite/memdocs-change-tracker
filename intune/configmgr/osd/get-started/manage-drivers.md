@@ -1,7 +1,7 @@
 ---
-title: Manage drivers
+title: "Manage drivers in Configuration Manager"
 description: Use the Configuration Manager driver catalog to import device drivers, group drivers in packages, and distribute those packages to distribution points.
-ms.date: 11/30/2020
+ms.date: "2020-11-30T00:00:00Z"
 ms.subservice: osd
 ms.topic: how-to
 ms.collection: tier3
@@ -25,29 +25,24 @@ Group similar device drivers in packages to help streamline OS deployments. For 
 Consider the following points:
 
 - When you create a driver package, the source location of the package must point to an empty network share that's not used by another driver package. The SMS Provider must have **Full control** permissions to that location.
-
 - When you add device drivers to a driver package, Configuration Manager copies it to the package source location. You can add to a driver package only device drivers that you've imported and that are enabled in the driver catalog.
-
 - You can copy a subset of the device drivers from an existing driver package. First, create a new driver package. Then add the subset of device drivers to the new package, and then distribute the new package to a distribution point.
-
 - When you use task sequences to install drivers, create driver packages that contain less than 500 device drivers.
 
 ### Create a driver package
 
 > [!IMPORTANT]
+>
 > To create a driver package, you must have an empty network folder that's not used by another driver package. In most cases, create a new folder before you start this procedure.
 
 1. In the Configuration Manager console, go to the **Software Library** workspace. Expand **Operating Systems**, and then select the **Driver Packages** node.
-
 2. On the **Home** tab of the ribbon, in the **Create** group, select **Create Driver Package**.
-
 3. Specify a descriptive **Name** for the driver package.
-
 4. Enter an optional **Comment** for the driver package. Use this description to provide information about the contents or the purpose of the driver package.
-
 5. In the **Path** box, specify an empty source folder for the driver package. Each driver package must use a unique folder. This path is required as a network location.
 
    > [!IMPORTANT]
+   >
    > The site server account must have **Full control** permissions to the specified source folder.
 
 The new driver package doesn't contain any drivers. The next step adds drivers to the package.
@@ -79,7 +74,8 @@ Start the **Export Driver Package Wizard** to save associated drivers and conten
 Start the **Import Driver Package Wizard** to create a driver package from a previously exported package.
 
 > [!TIP]
-> Starting in version 2010, when you import an object in the Configuration Manager console, it now imports to the current folder. Previously, Configuration Manager always put imported objects in the root node.<!--6601203-->
+>
+> Starting in version 2010, when you import an object in the Configuration Manager console, it now imports to the current folder. Previously, Configuration Manager always put imported objects in the root node.
 
 #### Manage access accounts
 
@@ -95,12 +91,11 @@ Moves the driver package to another folder in the **Driver Packages** node.
 
 Opens the **Properties** window. Review and change the content and properties of the driver. For example, change the name and description of the driver, enable or disable it, and specify on which platforms it can run.
 
-<!--3607716, fka 1358270-->
 Driver packages have metadata fields for **Manufacturer** and **Model**. Use these fields to tag driver packages with information to assist in general housekeeping, or to identify old and duplicate drivers that you can delete. On the **General** tab, select an existing value, or enter a string to create a new entry.
 
 In the **Driver Packages** node, these fields display in the list as the **Driver Manufacturer** and **Driver Model** columns. They can also be used as search criteria.
 
-Starting in version 1906, use these attributes to pre-cache content on a client. For more information, see [Configure pre-cache content](../deploy-use/configure-precache-content.md).<!--4224642-->
+Starting in version 1906, use these attributes to pre-cache content on a client. For more information, see [Configure pre-cache content](../deploy-use/configure-precache-content.md).
 
 #### Show members
 
@@ -132,72 +127,63 @@ By default, the driver is named after the first hardware device that it supports
 After you import device drivers into the catalog, add them to driver packages or boot image packages.
 
 > [!IMPORTANT]
+>
 > You can't import device drivers directly into a subfolder of the **Drivers** node. To import a device driver into a subfolder, first import the device driver into the **Drivers** node, and then move the driver to the subfolder.
 
 #### Process to import Windows device drivers into the driver catalog
 
 1. In the Configuration Manager console, go to the **Software Library** workspace. Expand **Operating Systems**, and select the **Drivers** node.
-
 2. On the **Home** tab of the ribbon, in the **Create** group, select **Import Driver** to start the **Import New Driver Wizard**.
-
 3. On the **Locate Driver** page, specify the following options:
 
-    - **Import all drivers in the following network path (UNC)**: To import all the device drivers in a specific folder, specify its network path. For example: `\\servername\share\folder`.
+   - **Import all drivers in the following network path (UNC)**: To import all the device drivers in a specific folder, specify its network path. For example: `\\servername\share\folder`.
 
-        > [!NOTE]
-        > If there are a lot of subfolders and a lot of driver INF files, this process can take time.
+     > [!NOTE]
+     >
+     > If there are a lot of subfolders and a lot of driver INF files, this process can take time.
+   - **Import a specific driver**: To import a specific driver from a folder, specify the network path to the Windows device driver INF file.
+   - **Specify the option for duplicate drivers**: Select how you want Configuration Manager to manage driver categories when you import a duplicate device driver
 
-    - **Import a specific driver**: To import a specific driver from a folder, specify the network path to the Windows device driver INF file.
+     - **Import the driver and append a new category to the existing categories**
+     - **Import the driver and keep the existing categories**
+     - **Import the driver and overwrite the existing categories**
+     - **Do not import the driver**
 
-    - **Specify the option for duplicate drivers**: Select how you want Configuration Manager to manage driver categories when you import a duplicate device driver
-        - **Import the driver and append a new category to the existing categories**
-        - **Import the driver and keep the existing categories**
-        - **Import the driver and overwrite the existing categories**
-        - **Do not import the driver**
-
-    > [!IMPORTANT]
-    > When you import drivers, the site server must have **Read** permission to the folder, or the import fails.
-
+   > [!IMPORTANT]
+   >
+   > When you import drivers, the site server must have **Read** permission to the folder, or the import fails.
 4. On the **Driver Details** page, specify the following options:
 
-    - **Hide drivers that are not in a storage or network class (for boot images)**: Use this setting to only display storage and network drivers. This option hides other drivers that aren't typically needed for boot images, such as a video driver or modem driver.
+   - **Hide drivers that are not in a storage or network class (for boot images)**: Use this setting to only display storage and network drivers. This option hides other drivers that aren't typically needed for boot images, such as a video driver or modem driver.
+   - **Hide drivers that are not digitally signed**: Microsoft recommends only using drivers that are digitally signed
+   - In the list of drivers, select the drivers that you want to import into the driver catalog.
+   - **Enable these drivers and allow computers to install them**: Select this setting to let computers install the device drivers. This option is enabled by default.
 
-    - **Hide drivers that are not digitally signed**: Microsoft recommends only using drivers that are digitally signed
-
-    - In the list of drivers, select the drivers that you want to import into the driver catalog.
-
-    - **Enable these drivers and allow computers to install them**: Select this setting to let computers install the device drivers. This option is enabled by default.
-
-        > [!IMPORTANT]
-        > If a device driver is causing a problem or you want to suspend the installation of a device driver, disable it during import. You can also disable drivers after you import them.
-
-    - To assign the device drivers to an administrative category for filtering purposes, such as "Desktops" or "Notebooks", select **Categories**. Then choose an existing category, or create a new category. Use categories to control which device drivers are applied by the [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) task sequence step.
-
+     > [!IMPORTANT]
+     >
+     > If a device driver is causing a problem or you want to suspend the installation of a device driver, disable it during import. You can also disable drivers after you import them.
+   - To assign the device drivers to an administrative category for filtering purposes, such as "Desktops" or "Notebooks", select **Categories**. Then choose an existing category, or create a new category. Use categories to control which device drivers are applied by the [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) task sequence step.
 5. On the **Add Driver to Packages** page, choose whether to add the drivers to a package.
 
-    - Select the driver packages that are used to distribute the device drivers.
+   - Select the driver packages that are used to distribute the device drivers.
 
-        If necessary, select **New Package** to create a new driver package. When you create a new driver package, provide a network share that's not in use by other driver packages.
-
-    - If the package has already been distributed to distribution points, select **Yes** in the dialog box to update the boot images on distribution points. You can't use device drivers until they're distributed to distribution points. If you select **No**, run the **Update Distribution Point** action before using the boot image. If the driver package has never been distributed, you must use the **Distribute Content** action in the **Driver Packages** node.
-
+     If necessary, select **New Package** to create a new driver package. When you create a new driver package, provide a network share that's not in use by other driver packages.
+   - If the package has already been distributed to distribution points, select **Yes** in the dialog box to update the boot images on distribution points. You can't use device drivers until they're distributed to distribution points. If you select **No**, run the **Update Distribution Point** action before using the boot image. If the driver package has never been distributed, you must use the **Distribute Content** action in the **Driver Packages** node.
 6. On the **Add Driver to Boot Images** page, choose whether to add the device drivers to existing boot images.
 
-    > [!NOTE]
-    > Add only storage and network drivers to the boot images.
+   > [!NOTE]
+   >
+   > Add only storage and network drivers to the boot images.
 
-    - Select **Yes** in the dialog box to update the boot images on distribution points. You can't use device drivers until they're distributed to distribution points. If you select **No**, run the **Update Distribution Point** action before using the boot image. If the driver package has never been distributed, you must use the **Distribute Content** action in the **Driver Packages** node.
+   - Select **Yes** in the dialog box to update the boot images on distribution points. You can't use device drivers until they're distributed to distribution points. If you select **No**, run the **Update Distribution Point** action before using the boot image. If the driver package has never been distributed, you must use the **Distribute Content** action in the **Driver Packages** node.
+   - Configuration Manager warns you if the architecture for one or more drivers doesn't match the architecture of the boot images that you selected. If they don't match, select **OK**. Go back to the **Driver Details** page, and clear the drivers that don't match the architecture of the selected boot image. For example, if you select an x64 and x86 boot image, all drivers must support both architectures. If you select an x64 boot image, all drivers must support the x64 architecture.
 
-    - Configuration Manager warns you if the architecture for one or more drivers doesn't match the architecture of the boot images that you selected. If they don't match, select **OK**. Go back to the **Driver Details** page, and clear the drivers that don't match the architecture of the selected boot image. For example, if you select an x64 and x86 boot image, all drivers must support both architectures. If you select an x64 boot image, all drivers must support the x64 architecture.
-
-        > [!NOTE]
-        > - The architecture is based on the architecture reported in the INF from the manufacturer.
-        > - If a driver reports it supports both architectures, then you can import it into either boot image.
-
-    - Configuration Manager warns you if you add device drivers that aren't network or storage drivers to a boot image. In most cases, they aren't necessary for the boot image. Select **Yes** to add the drivers to the boot image, or **No** to go back and modify your driver selection.
-
-    - Configuration Manager warns you if one or more of the selected drivers aren't properly digitally signed. Select **Yes** to continue, and select **No** to go back and make changes to your driver selection.
-
+     > [!NOTE]
+     >
+     > - The architecture is based on the architecture reported in the INF from the manufacturer.
+     > - If a driver reports it supports both architectures, then you can import it into either boot image.
+   - Configuration Manager warns you if you add device drivers that aren't network or storage drivers to a boot image. In most cases, they aren't necessary for the boot image. Select **Yes** to add the drivers to the boot image, or **No** to go back and modify your driver selection.
+   - Configuration Manager warns you if one or more of the selected drivers aren't properly digitally signed. Select **Yes** to continue, and select **No** to go back and make changes to your driver selection.
 7. Complete the wizard.
 
 ### Manage device drivers in a driver package
@@ -205,52 +191,40 @@ After you import device drivers into the catalog, add them to driver packages or
 Use the following procedures to modify driver packages and boot images. To add or remove a driver, first locate it in the **Drivers** node. Then edit the packages or boot images with which the selected driver is associated.
 
 1. In the Configuration Manager console, go to the **Software Library** workspace. Expand **Operating Systems**, and then select the **Drivers** node.
-
 2. Select the device drivers that you want to add to a driver package.
-
 3. On the **Home** tab of the ribbon, in the **Driver** group, select **Edit**, and then choose **Driver Packages**.
-
 4. To add a device driver, select the check box of the driver packages to which you want to add the device drivers. To remove a device driver, clear the check box of the driver packages from which you want to remove the device driver.
 
-    If you're adding device drivers that are associated with driver packages, you can optionally create a new package. Select **New Package**, which opens the **New Driver Package** dialog box.
-
+   If you're adding device drivers that are associated with driver packages, you can optionally create a new package. Select **New Package**, which opens the **New Driver Package** dialog box.
 5. If the package has already been distributed to distribution points, select **Yes** in the dialog box to update the boot images on distribution points. You can't use device drivers until they're distributed to distribution points. If you select **No**, run the **Update Distribution Point** action before using the boot image. If the driver package has never been distributed, you must use the **Distribute Content** action in the **Driver Packages** node. Before the drivers are available, you must update the driver package on distribution points.
 
-    Select **OK** when finished.
+   Select **OK** when finished.
 
 ### Manage device drivers in a boot image
 
 You can add to boot images Windows device drivers that have been imported into the catalog. Use the following guidelines when you add device drivers to a boot image:
 
 - Add only storage and network drivers to boot images. Other types of drivers aren't usually required in Windows PE. Drivers that aren't required unnecessarily increase the size of the boot image.
-
 - Add only device drivers to a boot image for the version of Windows PE. For example, if you're using the Windows ADK for Windows 11, only add Windows 11 drivers.
-
 - Make sure that you use the correct device driver for the architecture of the boot image. Don't add an x86 device driver to an x64 boot image.
 
 #### Process to modify the device drivers associated with a boot image
 
 1. In the Configuration Manager console, go to the **Software Library** workspace. Expand **Operating Systems**, and then select the **Drivers** node.
-
 2. Select the device drivers that you want to add to the driver package.
-
 3. On the **Home** tab of the ribbon, in the **Driver** group, select **Edit**, and then choose **Boot images**.
-
 4. To add a device driver, select the check box of the boot image to which you want to add the device drivers. To remove a device driver, clear the check box of the boot image from which you want to remove the device driver.
-
 5. If you don't want to update the distribution points where the boot image is stored, clear the **Update distribution points when finished** check box. By default, the distribution points are updated when the boot image is updated.
 
-    - Select **Yes** in the dialog box to update the boot images on distribution points. You can't use device drivers until they're distributed to distribution points. If you select **No**, run the **Update Distribution Point** action before using the boot image. If the driver package has never been distributed, you must use the **Distribute Content** action in the **Driver Packages** node.
+   - Select **Yes** in the dialog box to update the boot images on distribution points. You can't use device drivers until they're distributed to distribution points. If you select **No**, run the **Update Distribution Point** action before using the boot image. If the driver package has never been distributed, you must use the **Distribute Content** action in the **Driver Packages** node.
+   - Configuration Manager warns you if the architecture for one or more drivers doesn't match the architecture of the boot images that you selected. If they don't match, select **OK**. Go back to the **Driver Details** page and clear the drivers that don't match the architecture of the selected boot image. For example, if you select an x64 and x86 boot image, all drivers must support both architectures. If you select an x64 boot image, all drivers must support the x64 architecture.
 
-    - Configuration Manager warns you if the architecture for one or more drivers doesn't match the architecture of the boot images that you selected. If they don't match, select **OK**. Go back to the **Driver Details** page and clear the drivers that don't match the architecture of the selected boot image. For example, if you select an x64 and x86 boot image, all drivers must support both architectures. If you select an x64 boot image, all drivers must support the x64 architecture.
-
-        > [!NOTE]
-        > - The architecture is based on the architecture reported in the INF from the manufacturer.
-        > - If a driver reports it supports both architectures then you can import it into either boot image.
-
-    - Configuration Manager warns you if you add device drivers that aren't network or storage drivers to a boot image. In most cases, they aren't necessary for the boot image. Select **Yes** to add the drivers to the boot image or **No** to go back and modify your driver selection.
-
-    - Configuration Manager warns you if one or more of the selected drivers aren't properly digitally signed. Select **Yes** to continue or select **No** to go back and make changes to your driver selection.
+     > [!NOTE]
+     >
+     > - The architecture is based on the architecture reported in the INF from the manufacturer.
+     > - If a driver reports it supports both architectures then you can import it into either boot image.
+   - Configuration Manager warns you if you add device drivers that aren't network or storage drivers to a boot image. In most cases, they aren't necessary for the boot image. Select **Yes** to add the drivers to the boot image or **No** to go back and modify your driver selection.
+   - Configuration Manager warns you if one or more of the selected drivers aren't properly digitally signed. Select **Yes** to continue or select **No** to go back and make changes to your driver selection.
 
 ### Additional actions for device drivers
 
@@ -269,6 +243,7 @@ Removes the driver from the **Drivers** node and also removes the driver from th
 Prohibits the driver from being installed. This action temporarily disables the driver. The task sequence can't install a disabled driver when you deploy an OS.
 
 > [!NOTE]
+>
 > This action only prevents drivers from installing using the **Auto Apply Driver** task sequence step.
 
 #### Enable
@@ -283,12 +258,11 @@ Moves the device driver to another folder in the **Drivers** node.
 
 Opens the **Properties** dialog box. Review and change the properties of the driver. For example, change its name and description, enable or disable it, and specify which platforms it can run on.
 
-## <a name="BKMK_TSDrivers"></a> Use task sequences to install drivers
+## Use task sequences to install drivers
 
 Use task sequences to automate how the OS is deployed. Each step in the task sequence can do a specific action, such as installing a driver. You can use the following two task sequence steps to install device drivers when you deploy an OS:
 
 - [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers): This step lets you automatically match and install device drivers as part of an operating system deployment. You can configure the task sequence step to install only the best matched driver for each detected hardware device. Alternatively, specify that the step installs all compatible drivers for each detected hardware device, and then let Windows Setup choose the best driver. You can also specify a driver category to limit the drivers that are available for this step.
-
 - [Apply Driver Package](../understand/task-sequence-steps.md#BKMK_ApplyDriverPackage): This step lets you make all device drivers in a specific driver package available for Windows Setup. In the specified driver packages, Windows Setup searches for the device drivers that are required. When you create stand-alone media, you must use this step to install device drivers.
 
 When you use these task sequence steps, you can also specify how the drivers are installed on the computer where you deploy the OS. For more information, see [Manage task sequences to automate tasks](../deploy-use/manage-task-sequences-to-automate-tasks.md).

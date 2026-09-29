@@ -1,18 +1,20 @@
 ---
 description: Learn how to use the CCM_Policy_Assignment2 class to represent a policy assignment in Configuration Manager.
-title: CCM_Policy_Assignment2 Class
-ms.date: 09/20/2016
+title: "CCM_Policy_Assignment2 Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Policy_Assignment2 Client WMI Class
+
 In Configuration Manager, the `CCM_Policy_Assignment2` class is a client Windows Management Instrumentation (WMI) class that represents a policy assignment.
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,71 +31,69 @@ Class CCM_Policy_Assignment2 : CCM_Policy_Config
 ```
 
 ## Methods
- The `CCM_Policy_Assignment2` class does not define any methods.
+
+The `CCM_Policy_Assignment2` class does not define any methods.
 
 ## Properties
- `AssignmentCondition`
- Data type: `String`
 
- Access type: Read/Write
+`AssignmentCondition` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Assignment condition that determines if the policy should be applied to the assignment. Set this property to NULL if the policy always applies, or to the ID of a particular policy condition, represented by [CCM_Policy_Condition Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_condition-client-wmi-class.md).
+Qualifiers: None
 
- `AssignmentCookie`
- Data type: `String`
+Assignment condition that determines if the policy should be applied to the assignment. Set this property to NULL if the policy always applies, or to the ID of a particular policy condition, represented by [CCM_Policy_Condition Client WMI Class](ccm_policy_condition-client-wmi-class.md).
 
- Access type: Read/Write
+`AssignmentCookie` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- Arbitrary data used by the source authority.
+Qualifiers: [Not_Null:ToInstance]
 
- `AssignmentID`
- Data type: `String`
+Arbitrary data used by the source authority.
 
- Access type: Read/Write
+`AssignmentID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique ID of the assignment.
+Qualifiers: [key]
 
- `AssignmentPolicy`
- Data type: `ref:CCM_Policy_Policy`
+Unique ID of the assignment.
 
- Access type: Read-only
+`AssignmentPolicy` Data type: `ref:CCM_Policy_Policy`
 
- Qualifiers: [read, Not_Null:ToInstance]
+Access type: Read-only
 
- Reference to the policy object to which the assignment applies.
+Qualifiers: [read, Not_Null:ToInstance]
 
- `AssignmentSource`
- Data type: `String`
+Reference to the policy object to which the assignment applies.
 
- Access type: Read/Write
+`AssignmentSource` Data type: `String`
 
- Qualifiers: [key, Not_Null:ToInstance]
+Access type: Read/Write
 
- Source authority of the assignment.
+Qualifiers: [key, Not_Null:ToInstance]
 
- `AssignmentVersion`
- Data type: `String`
+Source authority of the assignment.
 
- Access type: Read/Write
+`AssignmentVersion` Data type: `String`
 
- Qualifiers: [key, Not_Null:ToInstance ToSubClass]
+Access type: Read/Write
 
- Version of the assignment.
+Qualifiers: [key, Not_Null:ToInstance ToSubClass]
+
+Version of the assignment.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Policy Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/policy-agent-client-wmi-classes.md)
- [CCM_Policy_Condition Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_condition-client-wmi-class.md)
+
+[Policy Agent Client WMI Classes](policy-agent-client-wmi-classes.md) [CCM_Policy_Condition Client WMI Class](ccm_policy_condition-client-wmi-class.md)

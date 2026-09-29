@@ -1,39 +1,37 @@
 ---
-title: Enumerate Updates Matching a Specific Criteria
+title: "How to Enumerate Updates Matching a Specific Criteria"
 description: Enumerate software updates that match specific criteria in Configuration Manager by building a query and then using the ExecuteQuery method of the QueryProcessor class to run the query.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Enumerate Updates Matching a Specific Criteria
+
 This topic explains how to enumerate software updates that match specific criteria in Configuration Manager by building a query and then using the `ExecuteQuery` method of the `QueryProcessor` class to run the query.
 
 ### To enumerate updates matching a specific criteria
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Assign a specific query to a variable.
-
-3.  Pass the variable to the `ExecuteQuery` method.
+1. Set up a connection to the SMS Provider.
+2. Assign a specific query to a variable.
+3. Pass the variable to the `ExecuteQuery` method.
 
 ## Example
- The following example method enumerates updates that match specific criteria by passing a query to the `ExecuteQuery` method.
 
- Four example queries are demonstrated below:
+The following example method enumerates updates that match specific criteria by passing a query to the `ExecuteQuery` method.
+
+Four example queries are demonstrated below:
 
 1. A query that displays the software updates that have already been downloaded.
-
 2. A query that displays the software updates that have already been deployed.
-
 3. A query that displays the software updates that have a particular severity value.
-
 4. A query that displays the software update CI_IDs that are associated with a specific knowledge base article.
 
-   Detailed information about the properties that are associated with a software update is in the [SMS_SoftwareUpdate](../../develop/reference/sum/sms_softwareupdate-server-wmi-class.md) class reference material.
+   Detailed information about the properties that are associated with a software update is in the [SMS_SoftwareUpdate](../reference/sum/sms_softwareupdate-server-wmi-class.md) class reference material.
 
-   For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+   For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -220,36 +218,41 @@ public void EnumerateUpdatesMatchingCriteria(WqlConnectionManager connection)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See also
 

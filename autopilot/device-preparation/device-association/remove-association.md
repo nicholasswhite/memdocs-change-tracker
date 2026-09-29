@@ -1,7 +1,7 @@
 ---
-title: Remove a Windows Autopilot device association
-description: Remove a Windows Autopilot device association by deleting the device from the Device association list in Intune or by clearing the Device Link UEFI variables on the device with sample PowerShell commands.
-ms.date: 08/07/2026
+title: "Remove association from a device"
+description: "Remove a Windows Autopilot device association by deleting the device from the Device association list in Intune or by clearing the Device Link UEFI variables on the device."
+ms.date: "2026-09-11T00:00:00Z"
 ms.topic: how-to
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -20,8 +20,8 @@ When a device permanently leaves your organization—for example, when it's deco
 If the device hasn't completed association in OOBE yet (its state is **Pre-associated**), delete it directly from the device list:
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
-1. Go to **Devices** > **Enrollment** > **Device association** > **Devices**.
-1. Select the device, and then select **Delete**.
+2. Go to **Devices** &gt; **Enrollment** &gt; **Device association** &gt; **Devices**.
+3. Select the device, and then select **Delete**.
 
 The device is removed from the list immediately.
 
@@ -31,59 +31,26 @@ If the device already completed association (its state is **Associated**), the t
 
 Before clearing the association, make sure the device is no longer enrolled with its mobile device management (MDM) provider as part of your decommissioning process. If the device remains enrolled, the MDM provider attempts to re-associate it on its next check-in.
 
-The association is stored in **Device Link** UEFI variables, which bind the device to your tenant.
+The association is stored in the **Device Link** UEFI namespace. Clear all of the following variables to remove the association:
 
-Read and clear these variables with the [UEFI PowerShell module](https://www.powershellgallery.com/packages/UEFI). The following sections show sample commands that you can run interactively or adapt into your own removal script. Run them from an elevated Windows PowerShell prompt on the device.
-
-### Prerequisites
-
-Install the UEFI module from the PowerShell Gallery (first run only):
-
-```powershell
-Install-Module UEFI -Force
-```
-
-Define the namespace and variable names for the Device Link variables:
-
-```powershell
-# Device Link (tenant association)
-$deviceLinkNamespace = "{B3DE75DA-819C-4FD5-9F01-C3D49E8CBBD7}"
-$deviceLinkVariables = "DeviceLinkId", "DeviceLinkBlob", "DeviceLinkUtc"
-```
-
-### Query the current association
-
-Before you clear anything, confirm which variables are set on the device. Querying doesn't require an elevated session:
-
-```powershell
-Write-Host "Device Link:"
-foreach ($name in $deviceLinkVariables) {
-    Get-UEFIVariable -Namespace $deviceLinkNamespace -VariableName $name -ErrorAction SilentlyContinue
-}
-```
-
-### Clear the Device Link variables
-
-Clearing the Device Link variables removes the tenant association:
-
-```powershell
-foreach ($name in $deviceLinkVariables) {
-    Set-UEFIVariable -Namespace $deviceLinkNamespace -VariableName $name -Value $null
-}
-```
+| UEFI namespace | Variable |
+| --- | --- |
+| `{B3DE75DA-819C-4FD5-9F01-C3D49E8CBBD7}` | `DeviceLinkId` |
+| `{B3DE75DA-819C-4FD5-9F01-C3D49E8CBBD7}` | `DeviceLinkJwtCompressed` |
+| `{B3DE75DA-819C-4FD5-9F01-C3D49E8CBBD7}` | `DeviceLinkJwtLastWrite` |
+| `{B3DE75DA-819C-4FD5-9F01-C3D49E8CBBD7}` | `DeviceLinkCreationTimeUtc` |
 
 > [!IMPORTANT]
 >
-> - Run the clear commands from an elevated (Administrator) PowerShell session. Querying variables doesn't require elevation.
-> - Clearing the Device Link UEFI variables only removes the association. It doesn't reset the TPM, unenroll the device, or delete the device's Microsoft Entra ID or Intune records.
+> Clearing the Device Link UEFI variables only removes the association. It doesn't reset the TPM, unenroll the device, or delete the device's Microsoft Entra ID or Intune records.
 
 ### Delete the device from Intune
 
 After you clear the association information on the device, remove the device record from Intune:
 
-1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to **Devices** > **Enrollment** > **Device association** > **Devices**.
-1. Select the device. The **Association state** changes to **Pending removal**.
-1. Select **Delete** to remove the device from the list.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to **Devices** &gt; **Enrollment** &gt; **Device association** &gt; **Devices**.
+2. Select the device. The **Association state** changes to **Pending removal**.
+3. Select **Delete** to remove the device from the list.
 
    > [!NOTE]
    >

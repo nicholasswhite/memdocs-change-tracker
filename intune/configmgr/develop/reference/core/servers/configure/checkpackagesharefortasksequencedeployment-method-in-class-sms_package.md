@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the Configuration Manager with the CheckPackageShareForTaskSequenceDeployment Windows Management Instrumentation (WMI) class method to verify that the package share type meets the requirements of a task sequence deployment.
-title: CheckPackageShareForTaskSequenceDeployment Method
-ms.date: 09/20/2016
+title: "CheckPackageShareForTaskSequenceDeployment Method in Class SMS_Package"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CheckPackageShareForTaskSequenceDeployment Method in Class SMS_Package
+
 The `CheckPackageShareForTaskSequenceDeployment` Windows Management Instrumentation (WMI) class method in Configuration Manager that checks whether the package share type meets the requirements of a task sequence deployment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,40 +27,39 @@ uint32 CheckPackageShareForTaskSequenceDeployment
 ```
 
 ## Parameters
- `PackageID`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`PackageID` Data type: `String`
 
- Package identifier.
+Qualifiers: [id("0"), in]
 
- `IsValid`
- Data type: `Boolean`
+Package identifier.
 
- Qualifiers: [id("1"), out]
+`IsValid` Data type: `Boolean`
 
- `true` if the package is valid for task sequence use. `false` if the package is invalid for task sequence use. If the package is referred to by a run-from-net deployment, the package must be available as a share on a distribution point.
+Qualifiers: [id("1"), out]
 
- `InvalidTaskSequenceDeploymentIDs`
- Data type: `String` Array
+`true` if the package is valid for task sequence use. `false` if the package is invalid for task sequence use. If the package is referred to by a run-from-net deployment, the package must be available as a share on a distribution point.
 
- Qualifiers: [id("2"), out]
+`InvalidTaskSequenceDeploymentIDs` Data type: `String` Array
 
- Identifiers of task sequence deployments that are invalid because this package isn't valid for task sequence use.
+Qualifiers: [id("2"), out]
 
- `InvalidTaskSequenceDeploymentNames`
- Data type: `String Array`
+Identifiers of task sequence deployments that are invalid because this package isn't valid for task sequence use.
 
- Qualifiers: [id("3"), out]
+`InvalidTaskSequenceDeploymentNames` Data type: `String Array`
 
- Names of task sequence deployments that are invalid because this package isn't valid for task sequence use.
+Qualifiers: [id("3"), out]
+
+Names of task sequence deployments that are invalid because this package isn't valid for task sequence use.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

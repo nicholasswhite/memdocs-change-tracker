@@ -1,7 +1,7 @@
 ---
-title: Device management with Exchange
+title: "Device management with Exchange and Configuration Manager"
 description: Manage mobile devices with the Exchange Server connector in Configuration Manager.
-ms.date: 12/31/2019
+ms.date: "2019-12-31T00:00:00Z"
 ms.subservice: mdm
 ms.topic: article
 ms.collection: tier3
@@ -42,11 +42,13 @@ When you configure at least one setting in the group, Configuration Manager mana
 You can also configure the Exchange Server connector to manage the Exchange access rules. These access rules include allow, block, or quarantine mobile devices. You can remotely wipe mobile devices by using the Configuration Manager console.
 
 > [!TIP]
+>
 > When a mobile device is transferred to another user, before the new owner configures their Exchange account on the device, delete the mobile device from the Configuration Manager console.
 
 ## Prerequisites
 
 > [!IMPORTANT]
+>
 > Before you install this connector, confirm that Configuration Manager supports your version of Exchange. For more information, see [Supported configurations - Exchange Server connector](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md#bkmk_ExSrvConOS).
 
 ### Permissions to configure the connector
@@ -54,7 +56,6 @@ You can also configure the Exchange Server connector to manage the Exchange acce
 You need the following security permissions to configure the Exchange Server connector in Configuration Manager:
 
 - To add, modify, and delete the Exchange Server connector: **Modify** permission for the **Site** object.
-
 - To configure the mobile device settings: **ModifyConnectorPolicy** permission for the **Site** object.
 
 For example, the **Full Administrator** built-in role includes these required permissions.
@@ -64,9 +65,7 @@ For example, the **Full Administrator** built-in role includes these required pe
 You need the following security permissions to manage mobile devices:
 
 - To wipe a mobile device: **Delete resource** for the **Collection** object.
-
 - To cancel a wipe command: **Modify resource** for the **Collection** object.
-
 - To allow and block mobile devices: **Modify resource** for the **Collection** object.
 
 For example, the **Operations Administrator** built-in role includes these required permissions.
@@ -75,5 +74,4 @@ For more information, see [Configure role-based administration](../../core/serve
 
 ## Next steps
 
-> [!div class="nextstepaction"]
-> [Install and configure the Exchange connector](install-configure-exchange-connector.md)
+[Install and configure the Exchange connector](install-configure-exchange-connector.md)

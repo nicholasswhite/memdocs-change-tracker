@@ -1,55 +1,57 @@
 ---
-title: Create a State Migration Point Role
+title: "How to Create a State Migration Point Role"
 description: You create the state migration point role, in Configuration Manager, by creating an instance of SMS_SCI_SysResUse Server WMI Class and providing the property values in the following table.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a State Migration Point Role
-You create the state migration point role, in Configuration Manager, by creating an instance of [SMS_SCI_SysResUse Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) and providing the property values in the following table.
 
-|Property|Description|
-|--------------|-----------------|
-|`RoleName`|Name of the role. For a state migration point, the value is SMS State Migration Point.|
-|`SiteCode`|The site code for the site.|
-|`NALPath`|The network abstraction layer (NAL) path to the state migration point. For more information, see [PackNALPath Method in Class SMS_NAL_Methods](../../develop/reference/misc/packnalpath-method-in-class-sms_nal_methods.md).|
-|`NALType`|The resource type. For a state migration point, this should be Windows NT Server.|
+You create the state migration point role, in Configuration Manager, by creating an instance of [SMS_SCI_SysResUse Server WMI Class](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) and providing the property values in the following table.
 
- You will also need to set initial values for the following embedded properties and embedded property lists.
+| Property | Description |
+| --- | --- |
+| `RoleName` | Name of the role. For a state migration point, the value is SMS State Migration Point. |
+| `SiteCode` | The site code for the site. |
+| `NALPath` | The network abstraction layer (NAL) path to the state migration point. For more information, see [PackNALPath Method in Class SMS_NAL_Methods](../reference/misc/packnalpath-method-in-class-sms_nal_methods.md). |
+| `NALType` | The resource type. For a state migration point, this should be Windows NT Server. |
 
-|Name|Description|
-|----------|-----------------|
-|`Server Remote Name`|The server that has the state migration point. Embedded property.|
-|`SMPQuiesceState`|Sets the restore-only mode. For more information, see [How to Set the Restore-Only Mode for a State Migration Point](../../develop/osd/how-to-set-the-restore-only-mode-for-a-state-migration-point.md). Embedded property.|
-|`SMPStoreDeletionDelayTimeInMinutes`|Sets the deletion policy. For more information, see [How to Set the Deletion Policy for a State Migration Point](../../develop/osd/how-to-set-the-deletion-policy-for-a-state-migration-point.md). Embedded property.|
-|`SMPStoreDeletionCycleTimeInMinutes`|Sets the deletion policy. For more information, see [How to Set the Deletion Policy for a State Migration Point](../../develop/osd/how-to-set-the-deletion-policy-for-a-state-migration-point.md).|
-|`Directories`|Lists the state migration point folders. For more information, see [How to Add a State Migration Point Folder](../../develop/osd/how-to-add-a-state-migration-point-folder.md).|
+You will also need to set initial values for the following embedded properties and embedded property lists.
+
+| Name | Description |
+| --- | --- |
+| `Server Remote Name` | The server that has the state migration point. Embedded property. |
+| `SMPQuiesceState` | Sets the restore-only mode. For more information, see [How to Set the Restore-Only Mode for a State Migration Point](how-to-set-the-restore-only-mode-for-a-state-migration-point.md). Embedded property. |
+| `SMPStoreDeletionDelayTimeInMinutes` | Sets the deletion policy. For more information, see [How to Set the Deletion Policy for a State Migration Point](how-to-set-the-deletion-policy-for-a-state-migration-point.md). Embedded property. |
+| `SMPStoreDeletionCycleTimeInMinutes` | Sets the deletion policy. For more information, see [How to Set the Deletion Policy for a State Migration Point](how-to-set-the-deletion-policy-for-a-state-migration-point.md). |
+| `Directories` | Lists the state migration point folders. For more information, see [How to Add a State Migration Point Folder](how-to-add-a-state-migration-point-folder.md). |
 
 ### To create a state migration point role
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Create an instance of [SMS_SCI_SysResUse Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md).
-
-3.  Populate the properties listed above.
-
-4.  Commit the `SMS_SCI_SystResUse` object.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Create an instance of [SMS_SCI_SysResUse Server WMI Class](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md).
+3. Populate the properties listed above.
+4. Commit the `SMS_SCI_SystResUse` object.
 
 ## Example
- The following example method creates a state migration point from the supplied site code and NAL path. Some helper functions are provided for writing the embedded properties and embedded property lists to the site control file.
+
+The following example method creates a state migration point from the supplied site code and NAL path. Some helper functions are provided for writing the embedded properties and embedded property lists to the site control file.
 
 > [!IMPORTANT]
->  This example makes use of other state migration point code snippets to set various values. The methods `AddSmpFolder`, `SetRestoreOnlyMode`, `SetDeletionPolicy` are described in the below topics:
 >
-> - [How to Add a State Migration Point Folder](../../develop/osd/how-to-add-a-state-migration-point-folder.md)
->   -   [How to Set the Restore-Only Mode for a State Migration Point](../../develop/osd/how-to-set-the-restore-only-mode-for-a-state-migration-point.md)
->   -   [How to Set the Deletion Policy for a State Migration Point](../../develop/osd/how-to-set-the-deletion-policy-for-a-state-migration-point.md)
+> This example makes use of other state migration point code snippets to set various values. The methods `AddSmpFolder`, `SetRestoreOnlyMode`, `SetDeletionPolicy` are described in the below topics:
+>
+> - [How to Add a State Migration Point Folder](how-to-add-a-state-migration-point-folder.md)
+>
+>   - [How to Set the Restore-Only Mode for a State Migration Point](how-to-set-the-restore-only-mode-for-a-state-migration-point.md)
+>   - [How to Set the Deletion Policy for a State Migration Point](how-to-set-the-deletion-policy-for-a-state-migration-point.md)
 >
 >   The methods `AddSmpFolder`, `SetRestoreOnlyMode`, `SetDeletionPolicy` must be included for the example to work. The methods are not included in the code snippets below.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```c#
 public void CreateSmpRole(
@@ -153,46 +155,45 @@ public void WriteScfEmbeddedProperty(
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|Managed: `WqlConnectionManager`|A valid connection to the SMS Provider.|
-|`serverName`|Managed: `String`|The Configuration Manager server that the state migration point is running on.|
-|`siteCode`|Managed: `String`|The Configuration Manager site code.|
-|`nalPath`|Managed: `String`|The NAL path to the state migration point. For example, `["Display=\\SERVERNAME\"]MSWNET:["SMS_SITE=SITECODE"]\\SERVERNAME\`|
+| --- | --- | --- |
+| `connection` | Managed: `WqlConnectionManager` | A valid connection to the SMS Provider. |
+| `serverName` | Managed: `String` | The Configuration Manager server that the state migration point is running on. |
+| `siteCode` | Managed: `String` | The Configuration Manager site code. |
+| `nalPath` | Managed: `String` | The NAL path to the state migration point. For example, `["Display=\\SERVERNAME\"]MSWNET:["SMS_SITE=SITECODE"]\\SERVERNAME\` |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [SMS_SCI_SysResUse Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md)
- [PackNALPath Method in Class SMS_NAL_Methods](../../develop/reference/misc/packnalpath-method-in-class-sms_nal_methods.md)
- [About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md)
- [How to Add a State Migration Point Folder](../../develop/osd/how-to-add-a-state-migration-point-folder.md)
- [How to Set the Deletion Policy for a State Migration Point](../../develop/osd/how-to-set-the-deletion-policy-for-a-state-migration-point.md)
- [How to Set the Restore-Only Mode for a State Migration Point](../../develop/osd/how-to-set-the-restore-only-mode-for-a-state-migration-point.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
+
+[SMS_SCI_SysResUse Server WMI Class](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) [PackNALPath Method in Class SMS_NAL_Methods](../reference/misc/packnalpath-method-in-class-sms_nal_methods.md) [About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md) [How to Add a State Migration Point Folder](how-to-add-a-state-migration-point-folder.md) [How to Set the Deletion Policy for a State Migration Point](how-to-set-the-deletion-policy-for-a-state-migration-point.md) [How to Set the Restore-Only Mode for a State Migration Point](how-to-set-the-restore-only-mode-for-a-state-migration-point.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)

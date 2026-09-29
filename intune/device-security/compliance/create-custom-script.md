@@ -1,14 +1,14 @@
-﻿---
-title: Create discovery scripts for custom compliance policy in Microsoft Intune
+---
+title: "Custom compliance discovery scripts for Microsoft Intune"
 description: Create scripts for Linux, macOS, or Windows devices to discover the settings you define as custom compliance settings for Microsoft Intune.
-ms.date: 09/04/2025
+ms.date: "2025-09-04T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: ilwu
 ---
 
 # Custom compliance discovery scripts for Microsoft Intune
 
-Before you can use [custom settings for compliance](./custom-settings.md) with Microsoft Intune, you must create a script that discovers custom compliance settings on devices. The script you use depends on the platform:
+Before you can use [custom settings for compliance](custom-settings.md) with Microsoft Intune, you must create a script that discovers custom compliance settings on devices. The script you use depends on the platform:
 
 - Windows devices use a PowerShell script.
 - Linux devices can run scripts in any language as long as the corresponding interpreter is installed and configured on the device.
@@ -78,6 +78,7 @@ For example, if your script should use the Bash shell as the interpreter, add th
 To use Python, specify the interpreter path. For example, add the following line to the top of your script: `#!/usr/bin/python3` or `#!/usr/bin/env python3`
 
 > [!TIP]
+>
 > To handle interrupts or cancellation signals, implement graceful termination mechanisms in your scripts. When a script handles these signals, it can perform cleanup tasks and exit gracefully, ensuring resources are released correctly. For example, catch signals like SIGINT (interrupt signal) or SIGTERM (termination signal) and define custom actions to run when they're received. These actions can include closing open files, releasing acquired locks, or cleaning up temporary resources.
 
 For more information, see the [Intune Linux Custom Compliance Samples](https://github.com/microsoft/shell-intune-samples/tree/master/Linux) guide.
@@ -106,8 +107,7 @@ fi
 
 Before deploying your script in production, test it in an isolated environment to ensure the syntax you use behaves as expected.
 
-
-1. Sign into [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Endpoint security** > **Device compliance** > **Scripts** > **Add** > *(choose your platform)*.
+1. Sign into [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Endpoint security** &gt; **Device compliance** &gt; **Scripts** &gt; **Add** &gt; *(choose your platform)*.
 2. On **Basics**, provide a **Name**.
 3. On **Settings**, add your script to **Detection script**. Review your script carefully. Intune doesn’t validate the script for syntax or programmatic errors.
 4. ***For macOS*** - On **Settings**, configure the following behavior for the Bash script:
@@ -119,20 +119,17 @@ Before deploying your script in production, test it in an isolated environment t
    ***For Windows only*** - On **Settings**, configure the following behavior for the PowerShell script:
 
 > [!NOTE]
+>
 > The script upload workflow doesn't support scope tags. You must be assigned the default scope tag to create, edit, or view custom compliance discovery scripts.
 
-   - **Run this script using the logged on credentials** – By default, the script runs in the System context on the device. Set this value to **Yes** to have it run in the context of the logged-on user. If the user isn't logged in, the script defaults back to the System context.
-   - **Enforce script signature check** – For more information, see [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.1&preserve-view=true) in the PowerShell documentation.
-   - **Run script in 64 bit PowerShell Host** – By default, the script runs using the 32-bit PowerShell host. Set this value to **Yes** to force the script to run using the 64-bit host instead.
+- **Run this script using the logged on credentials** – By default, the script runs in the System context on the device. Set this value to **Yes** to have it run in the context of the logged-on user. If the user isn't logged in, the script defaults back to the System context.
+- **Enforce script signature check** – For more information, see [about_Signing](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.1&preserve-view=true) in the PowerShell documentation.
+- **Run script in 64 bit PowerShell Host** – By default, the script runs using the 32-bit PowerShell host. Set this value to **Yes** to force the script to run using the 64-bit host instead.
 
 5. Complete the script creation process. The script appears in the **Scripts** pane and is available to select when configuring compliance policies.
 
 ## Next steps
 
-- [Use custom compliance settings](./custom-settings.md)
-- [Create a JSON for custom compliance](./create-custom-json.md)
-- [Create a compliance policy](./create-policy.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Use custom compliance settings](custom-settings.md)
+- [Create a JSON for custom compliance](create-custom-json.md)
+- [Create a compliance policy](create-policy.md)

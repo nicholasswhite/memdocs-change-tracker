@@ -1,7 +1,7 @@
 ---
 title: Learn more about PowerShell script security
 description: Resources to help learn about PowerShell script security.
-ms.date: 10/01/2021
+ms.date: "2021-10-01T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -28,10 +28,6 @@ The Configuration Manager scripts feature lets you visually review and approve s
 
 This collection of links was chosen to give Configuration Manager administrators a starting point for learning about PowerShell script security recommendations.
 
-<!-- [PowerShell Security Best Practices](https://devblogs.microsoft.com/powershell/powershell-security-best-practices/)
-
-> [!VIDEO https://channel9.msdn.com/Events/Blue-Hat-Security-Briefings/BlueHat-Security-Briefings-Fall-2013-Sessions/PowerShell-Best-Practices/player] -->
-
 [Defending Against PowerShell Attacks](https://devblogs.microsoft.com/powershell/defending-against-powershell-attacks/)
 
 [Protecting Against Malicious Code Injection](https://devblogs.microsoft.com/powershell/protecting-against-malicious-code-injection/)
@@ -56,7 +52,7 @@ The following list includes recommendations to prevent malicious parameters or s
 
 The following video titled: "DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server" gives an overview of the types of issues that you can secure against (especially the section 12:20 to 17:50):
 
-> [!VIDEO https://www.youtube.com/embed/ahxMOAAani8]
+[Embedded video](https://www.youtube-nocookie.com/embed/ahxMOAAani8)
 
 ## Environment recommendations
 

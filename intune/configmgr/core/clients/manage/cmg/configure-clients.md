@@ -1,7 +1,7 @@
 ---
-title: Configure clients for CMG
+title: "Configure clients for cloud management gateway"
 description: Understand how to configure clients to use the cloud management gateway (CMG).
-ms.date: 02/16/2022
+ms.date: "2022-02-16T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -19,6 +19,7 @@ Clients that can communicate with the management point automatically get the loc
 For devices that aren't connected to the internal network, there are several options to configure them with a CMG location. For more information, see [Install off-premises clients using a CMG](#install-off-premises-clients-using-a-cmg).
 
 > [!NOTE]
+>
 > By default all clients receive CMG policy. Control this behavior with the client setting, **Enable clients to use a cloud management gateway**. For more information, see [About client settings](../../deploy/about-client-settings.md#enable-clients-to-use-a-cloud-management-gateway).
 
 ## Client location
@@ -26,6 +27,7 @@ For devices that aren't connected to the internal network, there are several opt
 The Configuration Manager client automatically determines whether it's on the intranet or the internet. If the client can contact a domain controller or an on-premises management point, it sets its connection type to **Currently intranet**. Otherwise, it switches to **Currently Internet**, and uses the location of the CMG service to communicate with the site.
 
 > [!NOTE]
+>
 > You can force the client to always use the CMG regardless of whether it's on the intranet or internet. This configuration is useful for testing purposes, or for clients that you want to force to always use the CMG. Set the following registry key on the client:
 >
 > `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\Security, ClientAlwaysOnInternet = 1`
@@ -43,6 +45,7 @@ Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate 
 This command displays any internet-based management points the client knows about. While the CMG isn't technically an internet-based management point, clients view it as one.
 
 > [!NOTE]
+>
 > To troubleshoot CMG client traffic, use **CMGService.log** and **SMS_Cloud_ProxyConnector.log**. For more information, see [Log files](../../../plan-design/hierarchy/log-files.md#cloud-management-gateway).
 
 ## Install off-premises clients using a CMG
@@ -50,11 +53,9 @@ This command displays any internet-based management points the client knows abou
 There are two methods to install the Configuration Manager client on devices that aren't currently connected to your intranet. Both require a local administrator account on the target system.
 
 - The first method is to use a bulk registration token to install the client on a device. For more information on this method, see [Create a bulk registration token](../../deploy/deploy-clients-cmg-token.md#bulk-registration-token).
-
 - For the second method, when you run **ccmsetup.exe**, use the `/mp` parameter to specify the CMG's URL. For more information, see [About client installation parameters and properties](../../deploy/about-client-installation-properties.md#mp). This method requires one of the following conditions:
 
   - The Configuration Manager site is properly configured to use PKI certificates for client authentication. Additionally, the client systems each have a valid, unique, and trusted client authentication certificate previously issued to them.
-
   - The systems are Microsoft Entra domain-joined or hybrid Microsoft Entra domain-joined.
 
 ## Configure off-premises clients for CMG
@@ -62,19 +63,13 @@ There are two methods to install the Configuration Manager client on devices tha
 You can connect devices to a recently configured CMG where the following conditions are true:
 
 - They already have the Configuration Manager client installed.
-
 - They aren't connected and can't be connected to your intranet.
-
 - They meet one of the following conditions:
 
   - A valid, unique, and trusted client authentication certificate previously issued to it.
-
   - Microsoft Entra domain-joined
-
   - Hybrid Microsoft Entra domain-joined
-
 - You don't want to or can't completely reinstall the existing client.
-
 - You have a method to change a machine registry value and restart the **SMS Agent Host** service using a local administrator account.
 
 To force the connection on these devices, create the **REG_SZ** registry entry `CMGFQDNs` in the key `HKLM\Software\Microsoft\CCM`. Set its value to the URL of the CMG, for example, `https://GraniteFalls.contoso.com`. Then restart the **SMS Agent Host** Windows service on the device.
@@ -85,5 +80,4 @@ If the Configuration Manager client doesn't have a current CMG or internet-facin
 
 Your CMG is now set up and functional with clients communicating to the site. Next, understand how to monitor the CMG service and clients:
 
-> [!div class="nextstepaction"]
-> [Monitor CMG](monitor-clients-cloud-management-gateway.md)
+[Monitor CMG](monitor-clients-cloud-management-gateway.md)

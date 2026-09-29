@@ -1,7 +1,7 @@
 ---
-title: Reports for Windows Quality Update Policies
+title: "Windows update distribution report"
 description: Learn about the reports available for Windows quality update policies in Microsoft Intune.
-ms.date: 01/14/2026
+ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: zadvor
 ---
@@ -14,10 +14,11 @@ The report provides a drill down for each quality update that aggregates devices
 
 The report includes Intune managed and co-managed devices, and is based on the OS version updated at every device check-in. The report can slice the data based on device scope tags.
 
->[!NOTE]
+> [!NOTE]
+>
 > The Windows update distribution report can be used if you are using Update Rings, or not using any update policies in Intune.
 
-The Windows update distribution report comprises distinct organizational reports that function sequentially to provide insights on devices and their corresponding Windows update versions. To access this feature, navigate to **Reports** > **Windows Updates** > **Reports tab** > **Windows Update Distribution Report**.
+The Windows update distribution report comprises distinct organizational reports that function sequentially to provide insights on devices and their corresponding Windows update versions. To access this feature, navigate to **Reports** &gt; **Windows Updates** &gt; **Reports tab** &gt; **Windows Update Distribution Report**.
 
 The Windows update distribution report includes three nested reports:
 
@@ -25,14 +26,20 @@ The Windows update distribution report includes three nested reports:
 - Windows quality update distribution per feature version report
 - Windows quality update device version report
 
-Select a tab to learn more about each report. 
+Select a tab to learn more about each report.
 
-# [**QU distribution**](#tab/distribution)
+- [**QU distribution**](#tabpanel_1_distribution)
+- [**QU distribution per feature version**](#tabpanel_1_feature-version)
+- [**QU device version**](#tabpanel_1_device-version)
 
-The report displays the distribution of devices against different quality updates for the selected scope. It shows the counts of devices corresponding to the displayed quality updates.\
-Select one or more scope tags from the drop-down list to generate the report. The drop-down list shows all the scope tags the user has access to, based on the user's assigned scope tags.
+<a id="tabpanel_1_distribution"></a>
 
-:::image type="content" source="./media/monitor-quality-updates/quality-update-distribution.png" alt-text="Screen capture of the Windows quality update distribution report." lightbox="./media/monitor-quality-updates/quality-update-distribution.png":::
+
+
+The report displays the distribution of devices against different quality updates for the selected scope. It shows the counts of devices corresponding to the displayed quality updates.  
+ Select one or more scope tags from the drop-down list to generate the report. The drop-down list shows all the scope tags the user has access to, based on the user's assigned scope tags.
+
+[![Screen capture of the Windows quality update distribution report.](media/monitor-quality-updates/quality-update-distribution.png)](media/monitor-quality-updates/quality-update-distribution.png#lightbox)
 
 The report shows the number of devices under each QU level corresponding to the current month and the last 3 months from the day of reporting. The top rows typically represent the last three months, followed by other device data distributions.
 
@@ -50,15 +57,18 @@ The report shows the number of devices under each QU level corresponding to the 
 - **% of all devices**: Number of devices running a particular quality update represented in percentage of total managed devices in Intune.
 
 All QUs from this page are hyperlinked:
+
 - When you select one of the current or last 3 months quality update (B, D or OOB), the *Windows quality update distribution per feature version* report is displayed.
 - When you select **Older releases**, the *Windows quality update device version* report is displayed with a list of devices that are on an older quality update level excluding insider builds and unknown builds.
-- When you select **Windows insider or other releases**, the  *Windows quality update device version* report is displayed with a list of devices whose feature version is insider release, or the quality update of the device cannot be mapped to documented quality update version in Windows release information.
+- When you select **Windows insider or other releases**, the *Windows quality update device version* report is displayed with a list of devices whose feature version is insider release, or the quality update of the device cannot be mapped to documented quality update version in Windows release information.
 
-# [**QU distribution per feature version**](#tab/feature-version)
+<a id="tabpanel_1_feature-version"></a>
+
+
 
 The report provides the distribution of devices against Windows feature releases. The distribution of devices that are eligible to receive the selected quality update shown based on the Windows feature versions that are generally available. The report aids IT administrators in making informed decisions for devices and managing devices that need attention.
 
-:::image type="content" source="./media/monitor-quality-updates/quality-update-per-feature-version.png" alt-text="Screen capture of the Windows quality update distribution per feature version." lightbox="./media/monitor-quality-updates/quality-update-per-feature-version.png":::
+[![Screen capture of the Windows quality update distribution per feature version.](media/monitor-quality-updates/quality-update-per-feature-version.png)](media/monitor-quality-updates/quality-update-per-feature-version.png#lightbox)
 
 The stacked chart displays the counts of devices that are up to date, those that need updates, and those for which the chosen quality update does not apply. Together, these counts make up the total Windows devices that Intune manages, including co-managed devices.
 
@@ -73,17 +83,18 @@ Select **Columns** at the top of the table to toggle the visibility of columns, 
 - **Build Number**: Build number of the windows feature version. Devices running supported Windows feature versions that the selected quality update does not cover are marked as **Not applicable**. Devices running unsupported Windows feature versions, insider versions, or those with an unknown OS version, are grouped under one line item and marked as **Not applicable**.
 - **Devices on this update or later**: Number of devices where the target quality update or later is installed.
 - **Devices on this update**: Number of devices where the target quality update is installed.
-- **Devices need update**: Number of devices that are applicable for the update but do not currently have it installed.
-KB article: External link to target quality update's KB Article for the corresponding Windows feature version.
+- **Devices need update**: Number of devices that are applicable for the update but do not currently have it installed. KB article: External link to target quality update's KB Article for the corresponding Windows feature version.
 
 When you select any device count, the *Windows quality update device version* report is displayed.
 
-# [**QU device version**](#tab/device-version)
+<a id="tabpanel_1_device-version"></a>
 
-The report presents a list of devices based on the selections from the previous 2 reports. The  criteria that you selected in the previous reports are displayed at the top of the page.\
-The report offers sortable columns and search options, along with an export feature allowing high volume data to be downloaded in CSV format.
 
-:::image type="content" source="./media/monitor-quality-updates/quality-update-device-version.png" alt-text="Screen capture of the Windows quality update device version." lightbox="./media/monitor-quality-updates/quality-update-device-version.png":::
+
+The report presents a list of devices based on the selections from the previous 2 reports. The criteria that you selected in the previous reports are displayed at the top of the page.  
+ The report offers sortable columns and search options, along with an export feature allowing high volume data to be downloaded in CSV format.
+
+[![Screen capture of the Windows quality update device version.](media/monitor-quality-updates/quality-update-device-version.png)](media/monitor-quality-updates/quality-update-device-version.png#lightbox)
 
 **Column details**:
 
@@ -99,10 +110,4 @@ The report offers sortable columns and search options, along with an export feat
 
 The search bar enables the search for a specific device or UPN. Select a device from the list to view the device's details.
 
----
-
 All these reports are cached, and have an expiry time of three days, after which you must generate a new report. Select **Generate Again** to get fresh data.
-
-<!-- admin center links -->
-
-[INT-AC]: https://go.microsoft.com/fwlink/?linkid=2109431

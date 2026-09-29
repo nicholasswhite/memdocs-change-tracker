@@ -1,7 +1,7 @@
 ---
-title: Linux device compliance settings in Microsoft Intune
+title: "Device compliance settings for Linux in Intune"
 description: View the device compliance settings for Linux that you can manage with Microsoft Intune compliance policies.
-ms.date: 08/15/2025
+ms.date: "2025-08-15T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: arnab
 ms.collection:
@@ -18,13 +18,13 @@ This article lists and describes the different compliance settings you can confi
 
 For Linux, compliance settings are available from the [settings catalog](../../device-configuration/settings-catalog/index.md) instead of from a predetermined template as seen for other platforms. Therefore, when configuring a compliance policy for Linux you choose the settings you want to include in your policy by browsing the catalog and selecting them.
 
-Devices are also governed by tenant-wide [compliance policy settings](./overview.md#compliance-policy-settings).
+Devices are also governed by tenant-wide [compliance policy settings](overview.md#compliance-policy-settings).
 
 This feature applies to:
 
-* Ubuntu Desktop 24.04 LTS or 26.04 LTS (physical or Hyper-V machine with x86/64 CPUs)
-* RedHat Enterprise Linux 9
-* RedHat Enterprise Linux 10
+- Ubuntu Desktop 24.04 LTS or 26.04 LTS (physical or Hyper-V machine with x86/64 CPUs)
+- RedHat Enterprise Linux 9
+- RedHat Enterprise Linux 10
 
 ## Linux settings categories
 
@@ -40,7 +40,7 @@ Users of devices that fail to meet the defined criteria need to install a differ
 
 Add the settings in this category when you use custom compliance settings for Linux.
 
-For information about the available settings for custom compliance and how to use them, see [Use custom compliance policies and settings for Linux and Windows devices with Microsoft Intune](./custom-settings.md).
+For information about the available settings for custom compliance and how to use them, see [Use custom compliance policies and settings for Linux and Windows devices with Microsoft Intune](custom-settings.md).
 
 ### Device encryption
 
@@ -79,11 +79,10 @@ Users that fail to meet password complexity requirements can receive a message t
 If you must modify a device's configuration, use one of the following methods to refresh the device compliance status with Intune after making changes:
 
 - If the Microsoft Intune app is still running, on the apps *device details* page or the *compliance issues* page, select the **Refresh** link. The device starts a new check-in.
-
 - If the Microsoft Intune app isn't running, start the app and sign in. Signing in starts a new check-in.
 - By default, the Microsoft Intune app periodically uses a background task to check in while the computer is on and logged in.
 
 ## Next steps
 
-- [Add actions for noncompliant devices](./configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
-- [Monitor your compliance policies](./monitor-policy.md).
+- [Add actions for noncompliant devices](configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
+- [Monitor your compliance policies](monitor-policy.md).

@@ -1,7 +1,7 @@
 ---
-title: "Device Action: New Remote Assistance Session"
+title: "Device action: new Remote Assistance session"
 description: Learn how to use the new remote assistance session action in Intune to offer support to your users.
-ms.date: 10/27/2025
+ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -20,10 +20,5 @@ When selecting the **New remote assistance session** action in Intune:
 
 Every solution has its own requirements and options. For more information, see:
 
-- [Use Remote Help with Microsoft Intune][RA-HELP]
-- [Use TeamViewer to remotely administer Intune devices][RA-TVIEW]
-
-<!--Other links-->
-
-[RA-HELP]: ../../remote-help/index.md
-[RA-TVIEW]: ../../device-management/tools/teamviewer-legacy.md
+- [Use Remote Help with Microsoft Intune](../../remote-help/index.md)
+- [Use TeamViewer to remotely administer Intune devices](../tools/teamviewer-legacy.md)

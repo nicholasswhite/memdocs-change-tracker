@@ -1,7 +1,7 @@
 ---
-title: SMS_SCI_SQLTask class
+title: "SMS_SCI_SQLTask Server WMI Class"
 description: The technical details of the SMS_SCI_SQLTask server WMI class.
-ms.date: 04/07/2020
+ms.date: "2020-04-07T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -12,7 +12,7 @@ ms.service: configuration-manager
 
 The `SMS_SCI_SQLTask` WMI class is an SMS Provider server class in Configuration Manager that defines a SQL Server task to be run periodically.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,187 +36,179 @@ Class SMS_SCI_SQLTask : SMS_SiteControlItem
 ```
 
 ## Methods
- The `SMS_SCI_SQLTask` class does not define any methods.
+
+The `SMS_SCI_SQLTask` class does not define any methods.
 
 ## Properties
- `BeginTime`
- Data type: `DateTime`
 
- Access type: Read/Write
+`BeginTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Beginning time for execution of the SQL Server task. The default value is "00000000000000.000000+***". Only the hours and minutes of this property are used.
+Qualifiers: None
 
- `DaysOfWeek`
- Data type: `UInt32`
+Beginning time for execution of the SQL Server task. The default value is "00000000000000.000000+\*\*\*". Only the hours and minutes of this property are used.
 
- Access type: Read/Write
+`DaysOfWeek` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read/Write
 
- Days of the week on which the SQL Server task executes. Possible values are listed below. Take the sum of the values for tasks that execute on multiple days. For example, if all days are selected this property would have a value of 127.
+Qualifiers: [bits]
 
-|Value|SQL Server task day|
-|-|-|
-|1|SUNDAY|
-|2|MONDAY|
-|4|TUESDAY|
-|8|WEDNESDAY|
-|16|THURSDAY|
-|32|FRIDAY|
-|64|SATURDAY|
+Days of the week on which the SQL Server task executes. Possible values are listed below. Take the sum of the values for tasks that execute on multiple days. For example, if all days are selected this property would have a value of 127.
 
- `DeleteOlderThan`
- Data type: `UInt32`
+| Value | SQL Server task day |
+| --- | --- |
+| 1 | SUNDAY |
+| 2 | MONDAY |
+| 4 | TUESDAY |
+| 8 | WEDNESDAY |
+| 16 | THURSDAY |
+| 32 | FRIDAY |
+| 64 | SATURDAY |
 
- Access type: Read/Write
+`DeleteOlderThan` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Number of days after which records are deleted if the `TaskType` property is set to DELETE. The default value is 0.
+Qualifiers: None
 
- `DeviceName`
- Data type: `String`
+Number of days after which records are deleted if the `TaskType` property is set to DELETE. The default value is 0.
 
- Access type: Read/Write
+`DeviceName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Device name if the `TaskType` property is set to BACKUP. The default value is "".
+Qualifiers: None
 
- `Enabled`
- Data type: `Boolean`
+Device name if the `TaskType` property is set to BACKUP. The default value is "".
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- TRUE if the task is active.
+Qualifiers: None
 
- `FileType`
- Data type: `UInt32`
+TRUE if the task is active.
 
- Access type: Read-only
+`FileType` Data type: `UInt32`
 
- Qualifiers: [key, enumeration:ToSubClass]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, enumeration:ToSubClass]
 
- `ItemName`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `LatestBeginTime`
- Data type: `DateTime`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read/Write
+`LatestBeginTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Latest beginning time of execution for the SQL command. The default value is "00000000000000.000000+***". Only the hours and minutes of this property are used.
+Qualifiers: None
 
- `NumRefreshDays`
- Data type: `UInt32`
+Latest beginning time of execution for the SQL command. The default value is "00000000000000.000000+\*\*\*". Only the hours and minutes of this property are used.
 
- Access type: Read/Write
+`NumRefreshDays` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Number of days between task executions. The default value is 0.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Number of days between task executions. The default value is 0.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read/Write
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, SizeLimit("3")]
 
- `TaskName`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read/Write
+`TaskName` Data type: `String`
 
- Qualifiers: [StringEnumeration]
+Access type: Read/Write
 
- Configuration Manager-defined task name. Possible values are listed below. The default value is "".
+Qualifiers: [StringEnumeration]
 
-|Value|
-|-|
-|Backup SMS Site Server|
-|Check Application Title with Inventory Information|
-|Clear Undiscovered Clients|
-|Delete Aged Application Request Data|
-|Delete Aged Application Revisions|
-|Delete Aged Client Operations|
-|Delete Aged Collected Files|
-|Delete Aged Computer Association Data|
-|Delete Aged Delete Detection Data|
-|Delete Aged Device Wipe Record|
-|Delete Aged Discovery Data|
-|Delete Aged Enrolled Devices|
-|Delete Aged EP Health Status History Data|
-|Delete Aged Exchange Partnership|
-|Delete Aged Inventory History|
-|Delete Aged Log Data|
-|Delete Aged Metering Data|
-|Delete Aged Metering Summary Data|
-|Delete Aged Replication Data|
-|Delete Aged Status Messages|
-|Delete Aged Threat Data|
-|Delete Aged User Device Affinity Data|
-|Delete Inactive Client Discovery Data|
-|Delete Obsolete Alerts|
-|Delete Obsolete Client Discovery Data|
-|Delete Obsolete Forest Discovery Sites And Subnets|
-|Monitor Keys|
-|Rebuild Indexes|
-|Summarize File Usage Metering Data|
-|Summarize Installed Software Data|
-|Summarize Monthly Usage Metering Data|
+Configuration Manager-defined task name. Possible values are listed below. The default value is "".
 
- `TaskType`
- Data type: `UInt32`
+| Value |
+| --- |
+| Backup SMS Site Server |
+| Check Application Title with Inventory Information |
+| Clear Undiscovered Clients |
+| Delete Aged Application Request Data |
+| Delete Aged Application Revisions |
+| Delete Aged Client Operations |
+| Delete Aged Collected Files |
+| Delete Aged Computer Association Data |
+| Delete Aged Delete Detection Data |
+| Delete Aged Device Wipe Record |
+| Delete Aged Discovery Data |
+| Delete Aged Enrolled Devices |
+| Delete Aged EP Health Status History Data |
+| Delete Aged Exchange Partnership |
+| Delete Aged Inventory History |
+| Delete Aged Log Data |
+| Delete Aged Metering Data |
+| Delete Aged Metering Summary Data |
+| Delete Aged Replication Data |
+| Delete Aged Status Messages |
+| Delete Aged Threat Data |
+| Delete Aged User Device Affinity Data |
+| Delete Inactive Client Discovery Data |
+| Delete Obsolete Alerts |
+| Delete Obsolete Client Discovery Data |
+| Delete Obsolete Forest Discovery Sites And Subnets |
+| Monitor Keys |
+| Rebuild Indexes |
+| Summarize File Usage Metering Data |
+| Summarize Installed Software Data |
+| Summarize Monthly Usage Metering Data |
 
- Access type: Read/Write
+`TaskType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Task type. Possible values are listed below. The default value is 0.
+Qualifiers: None
 
-|Value|Task type|
-|-|-|
-|1|BACKUP|
-|2|PERIOD|
-|3|DELETE|
+Task type. Possible values are listed below. The default value is 0.
+
+| Value | Task type |
+| --- | --- |
+| 1 | BACKUP |
+| 2 | PERIOD |
+| 3 | DELETE |
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md)

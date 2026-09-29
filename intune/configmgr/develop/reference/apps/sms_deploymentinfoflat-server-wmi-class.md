@@ -1,16 +1,18 @@
 ---
-title: SMS_DeploymentInfoFlat Class
+title: "SMS_DeploymentInfoFlat Server WMI Class"
 description: Learn how the SMS_DeploymentInfoFlat Windows Management Instrumentation (WMI) class is an SMS Provider server class.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DeploymentInfoFlat Server WMI Class
+
 The `SMS_DeploymentInfoFlat` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents all kinds of flattened deployment relations (includes dependence and supersedence).
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,87 +31,83 @@ Class SMS_DeploymentInfoFlat : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DeploymentInfoFlat` class doesn't define any methods.
+
+The `SMS_DeploymentInfoFlat` class doesn't define any methods.
 
 ## Properties
- `CollectionID`
- Data type: `String`
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Existing collection to which the advertisement is targeted.
+Qualifiers: none
 
- `CollectionName`
- Data type: `String`
+Existing collection to which the advertisement is targeted.
 
- Access type: Read/Write
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the collection to which the advertisement is advertising.
+Qualifiers: none
 
- `DeploymentID`
- Data type: `String`
+Name of the collection to which the advertisement is advertising.
 
- Access type: Read/Write
+`DeploymentID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique auto-generated key.
+Qualifiers: [key]
 
- `DeploymentName`
- Data type: `String`
+Unique auto-generated key.
 
- Access type: Read/Write
+`DeploymentName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Plain text name of the deployment (advertisement/assignment).
+Qualifiers: none
 
- `DeploymentTypeID`
- Data type: `UInt32`
+Plain text name of the deployment (advertisement/assignment).
 
- Access type: Read/Write
+`DeploymentTypeID` Data type: `UInt32`
 
- Qualifiers: [enumeration, key]
+Access type: Read/Write
 
- Deployment type identifier.
+Qualifiers: [enumeration, key]
 
- `TargetName`
- Data type: `String`
+Deployment type identifier.
 
- Access type: Read/Write
+`TargetName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Package name, if the target is a package. Application name, if it's an application. Update name, if it's an update.
+Qualifiers: none
 
- `TargetSecurityTypeID`
- Data type: `UInt32`
+Package name, if the target is a package. Application name, if it's an application. Update name, if it's an update.
 
- Access type: Read/Write
+`TargetSecurityTypeID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Security type identifier of the object type. For example, if the object is a package, its `2`.
+Qualifiers: none
 
- `TargetSubName`
- Data type: `String`
+Security type identifier of the object type. For example, if the object is a package, its `2`.
 
- Access type: Read/Write
+`TargetSubName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Program name if it's a package, otherwise leave this value empty.
+Qualifiers: none
+
+Program name if it's a package, otherwise leave this value empty.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
 title: Miscellaneous policy mapping from Basic Mobility and Security to Intune
 description: A detailed miscellaneous policy map between Basic Mobility and Security access requirements and Intune.
-ms.date: 12/03/2025
+ms.date: "2025-12-03T00:00:00Z"
 ms.topic: reference
 ms.reviewer: dagerrit
 ---
@@ -22,33 +22,33 @@ To see these settings, sign in to the [Microsoft 365 admin center](https://porta
 
 ### User
 
-- **Devices** > **All devices** > device name > **Overview** > **Enrolled by**
+- **Devices** &gt; **All devices** &gt; device name &gt; **Overview** &gt; **Enrolled by**
 
 ### Device type
 
-- **Devices** > **All devices** > device name > **Overview** > **Operating system**
+- **Devices** &gt; **All devices** &gt; device name &gt; **Overview** &gt; **Operating system**
 
 ### State
 
 This setting isn't a default column in the admin center device list. You can show it by using the **Columns** picker.
 
-- **Devices** > **All devices** > **Device state** column
+- **Devices** &gt; **All devices** &gt; **Device state** column
 
 ### OS version
 
-- **Devices** > **All devices** > device name > **Hardware** > **Operating system version**
+- **Devices** &gt; **All devices** &gt; device name &gt; **Hardware** &gt; **Operating system version**
 
 ### Factory reset
 
-- **Devices** > **All devices** > device name > **Overview** > **Wipe**
+- **Devices** &gt; **All devices** &gt; device name &gt; **Overview** &gt; **Wipe**
 
 ### Remove company data
 
-- **Devices** > **All devices** > device name > **Overview** > **Retire**
+- **Devices** &gt; **All devices** &gt; device name &gt; **Overview** &gt; **Retire**
 
 ## Organization-wide device access settings
 
-To see these settings in the Microsoft Purview compliance portal, sign in to the [Purview compliance portal](https://protection.office.com/devicev2). Then, select **Device security policies** > **Manage organization-wide device access settings**.
+To see these settings in the Microsoft Purview compliance portal, sign in to the [Purview compliance portal](https://protection.office.com/devicev2). Then, select **Device security policies** &gt; **Manage organization-wide device access settings**.
 
 These settings are backed by the Conditional Access policy [GraphAggregatorService] Device policy. It includes:
 
@@ -60,7 +60,7 @@ These settings are backed by the Conditional Access policy [GraphAggregatorServi
 
 This setting modifies one classic Conditional Access policy:
 
-- **Endpoint security** > **Conditional Access** > **Classic policies** > **[GraphAggregatorService] Device policy** > **Conditions** > **Client apps (Preview)** > **Mobile apps and desktop clients** > **Exchange ActiveSync clients** > **Apply policy only to supported platform**
+- **Endpoint security** &gt; **Conditional Access** &gt; **Classic policies** &gt; **[GraphAggregatorService] Device policy** &gt; **Conditions** &gt; **Client apps (Preview)** &gt; **Mobile apps and desktop clients** &gt; **Exchange ActiveSync clients** &gt; **Apply policy only to supported platform**
 
 ### Are there any security groups you want to exclude from access control?
 
@@ -71,40 +71,39 @@ This setting modifies five classic Conditional Access policies:
 - [Outlook Service for Exchange] Device policy
 - [Office 365 SharePoint Online] Device policy
 - [Outlook Service for OneDrive] Device policy
-
-- **Endpoint security** > **Conditional Access** > policy name > **Users and groups** > **Exclude**
+- **Endpoint security** &gt; **Conditional Access** &gt; policy name &gt; **Users and groups** &gt; **Exclude**
 
 ## Device security policy Name and Description
 
-To see these settings in the Microsoft Purview compliance portal, sign in to the [Purview compliance portal](https://protection.office.com/devicev2). Then, select **Device security policies** > policy name > **Edit policy** > **Name**.
+To see these settings in the Microsoft Purview compliance portal, sign in to the [Purview compliance portal](https://protection.office.com/devicev2). Then, select **Device security policies** &gt; policy name &gt; **Edit policy** &gt; **Name**.
 
 ### Name
 
 Up to three compliance policies and up to six configuration profiles (three for restrictions and three for email):
 
-- **Devices** > **By platform** > **Windows** > **Manage devices** > **Compliance** > policy name_O365_W > **Properties** >  **Basics Edit** > **Name**
-- **Devices** > **By platform** > **iOS/iPadOS** > **Manage devices** > **Compliance** > policy name_O365_i > **Properties** > **Basics Edit** > **Name**
-- **Devices** > **By platform** > **Android** > **Manage devices** > **Compliance** > policy name_O365_A > **Properties** > **Basics Edit** > **Name**
-- **Devices** > **By platform** > **Windows** > **Manage devices** > **Configuration** > policy name_O365_W > **Properties** >  **Basics Edit** > **Name**
-- **Devices** > **By platform** > **iOS/iPadOS** > **Manage devices** > **Configuration**> policy name_O365_i > **Properties** > **Basics Edit** > **Name**
-- **Devices** > **By platform** > **Android** > **Manage devices** > **Configuration** > policy name_O365_A > **Properties** > **Basics Edit** > **Name**
-- **Devices** > **By platform** > **Windows** > **Manage devices** > **Configuration** > policy name_O365_W_Email > **Properties** >  **Basics Edit** > **Name**
-- **Devices** > **By platform** > **iOS/iPadOS** > **Manage devices** > **Configuration**> policy name_O365_i_Email > **Properties** > **Basics Edit** > **Name**
-- **Devices** > **By platform** > **Android** > **Manage devices** > **Configuration** > policy name_O365_A_Email > **Properties** > **Basics Edit** > **Name**
+- **Devices** &gt; **By platform** &gt; **Windows** &gt; **Manage devices** &gt; **Compliance** &gt; policy name_O365_W &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **iOS/iPadOS** &gt; **Manage devices** &gt; **Compliance** &gt; policy name_O365_i &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **Android** &gt; **Manage devices** &gt; **Compliance** &gt; policy name_O365_A &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **Windows** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_W &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **iOS/iPadOS** &gt; **Manage devices** &gt; **Configuration**&gt; policy name_O365_i &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **Android** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_A &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **Windows** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_W_Email &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **iOS/iPadOS** &gt; **Manage devices** &gt; **Configuration**&gt; policy name_O365_i_Email &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
+- **Devices** &gt; **By platform** &gt; **Android** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_A_Email &gt; **Properties** &gt; **Basics Edit** &gt; **Name**
 
 ### Description
 
 Up to three compliance policies and up to six configuration profiles (three for restrictions and three for email):
 
-- **Devices** > **By platform** > **Windows** > **Manage devices** > **Compliance** > policy name_O365_W > **Properties** >  **Basics Edit** > **Description**
-- **Devices** > **By platform** > **iOS/iPadOS** > **Manage devices** > **Compliance** > policy name_O365_i > **Properties** > **Basics Edit** > **Description**
-- **Devices** > **By platform** > **Android** > **Manage devices** > **Compliance** > policy name_O365_A > **Properties** > **Basics Edit** > **Description**
-- **Devices** > **By platform** > **Windows** > **Manage devices** > **Configuration** > policy name_O365_W > **Properties** >  **Basics Edit** > **Description**
-- **Devices** > **By platform** > **iOS/iPadOS** > **Manage devices** > **Configuration**> policy name_O365_i > **Properties** > **Basics Edit** > **Description**
-- **Devices** > **By platform** > **Android** > **Manage devices** > **Configuration** > policy name_O365_A > **Properties** > **Basics Edit** > **Description**
-- **Devices** > **By platform** > **Windows** > **Manage devices** > **Configuration** > policy name_O365_W_Email > **Properties** >  **Basics Edit** > **Description**
-- **Devices** > **By platform** > **iOS/iPadOS** > **Manage devices** > **Configuration**> policy name_O365_i_Email > **Properties** > **Basics Edit** > **Description**
-- **Devices** > **By platform** > **Android** > **Manage devices** > **Configuration** > policy name_O365_A_Email > **Properties** > **Basics Edit** > **Description**
+- **Devices** &gt; **By platform** &gt; **Windows** &gt; **Manage devices** &gt; **Compliance** &gt; policy name_O365_W &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **iOS/iPadOS** &gt; **Manage devices** &gt; **Compliance** &gt; policy name_O365_i &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **Android** &gt; **Manage devices** &gt; **Compliance** &gt; policy name_O365_A &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **Windows** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_W &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **iOS/iPadOS** &gt; **Manage devices** &gt; **Configuration**&gt; policy name_O365_i &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **Android** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_A &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **Windows** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_W_Email &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **iOS/iPadOS** &gt; **Manage devices** &gt; **Configuration**&gt; policy name_O365_i_Email &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
+- **Devices** &gt; **By platform** &gt; **Android** &gt; **Manage devices** &gt; **Configuration** &gt; policy name_O365_A_Email &gt; **Properties** &gt; **Basics Edit** &gt; **Description**
 
 ## Related article
 

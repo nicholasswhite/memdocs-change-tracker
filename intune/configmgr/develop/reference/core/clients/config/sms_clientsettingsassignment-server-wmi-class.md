@@ -1,16 +1,18 @@
 ---
-title: SMS_ClientSettingsAssignment Class
+title: "SMS_ClientSettingsAssignment Server WMI Class"
 description: The SMS_ClientSettingsAssignment WMI class is an SMS Provider server class, in Configuration Manager, that represents the collection assignments of specified SMS_ClientSettings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientSettingsAssignment Server WMI Class
+
 The `SMS_ClientSettingsAssignment` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the collection assignments of specified SMS_ClientSettings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,60 +28,59 @@ Class SMS_ClientSettingsAssignment : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ClientSettingsAssignment` class does not define any methods.
+
+The `SMS_ClientSettingsAssignment` class does not define any methods.
 
 ## Properties
- `ClientSettingsID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ClientSettingsID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifies the client agent component. The Client Settings Agent ID is 1.
+Qualifiers: [key]
 
- `CollectionID`
- Data type: `String`
+Identifies the client agent component. The Client Settings Agent ID is 1.
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The ID for the collection associated with the client settings assignment.
+Qualifiers: [key]
 
- `CollectionName`
- Data type: `String`
+The ID for the collection associated with the client settings assignment.
 
- Access type: Read-only
+`CollectionName` Data type: `String`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- The name of the collection associated with the client settings assignment.
+Qualifiers: [notnull, read]
 
- `CreationTime`
- Data type: `DateTime`
+The name of the collection associated with the client settings assignment.
 
- Access type: Read-only
+`CreationTime` Data type: `DateTime`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- The date and time when the client settings assignment is created.
+Qualifiers: [notnull, read]
 
- `UniqueID`
- Data type: `String`
+The date and time when the client settings assignment is created.
 
- Access type: Read-only
+`UniqueID` Data type: `String`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- The GUID of the client settings assignment.
+Qualifiers: [notnull, read]
+
+The GUID of the client settings assignment.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: SMS_CH_Settings Class
+title: "SMS_CH_Settings Server WMI Class"
 description: Learn how the SMS_CH_Settings class is an SMS Provider server class, in Configuration Manager, that represents client status settings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CH_Settings Server WMI Class
+
 The `SMS_CH_Settings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents client status settings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,94 +32,89 @@ Class SMS_CH_Settings : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CH_Settings` class does not define any methods.
+
+The `SMS_CH_Settings` class does not define any methods.
 
 ## Properties
- `ADRetrievingSchedule`
- Data type: `String`
 
- Access type: Read/Write
+`ADRetrievingSchedule` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Schedule for how frequently the system retrieves information from Active Directory.
+Qualifiers: none
 
- `CleanUpInterval`
- Data type: `UInt32`
+Schedule for how frequently the system retrieves information from Active Directory.
 
- Access type: Read/Write
+`CleanUpInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- History clean up interval.
+Qualifiers: none
 
- `DDRInactiveInterval`
- Data type: `UInt32`
+History clean up interval.
 
- Access type: Read/Write
+`DDRInactiveInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Heartbeat discovery inactive interval.
+Qualifiers: none
 
- `HWInactiveInterval`
- Data type: `UInt32`
+Heartbeat discovery inactive interval.
 
- Access type: Read/Write
+`HWInactiveInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Hardware inventory inactive interval.
+Qualifiers: none
 
- `NeedADLastLogonTime`
- Data type: `Boolean`
+Hardware inventory inactive interval.
 
- Access type: Read/Write
+`NeedADLastLogonTime` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last logged on time from Active Directory.
+Qualifiers: none
 
- `PolicyInactiveInterval`
- Data type: `UInt32`
+Last logged on time from Active Directory.
 
- Access type: Read/Write
+`PolicyInactiveInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Policy request inactive interval.
+Qualifiers: none
 
- `SettingsID`
- Data type: `UInt32`
+Policy request inactive interval.
 
- Access type: Read/Write
+`SettingsID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Settings ID.
+Qualifiers: [key]
 
- `StatusInactiveInterval`
- Data type: `UInt32`
+Settings ID.
 
- Access type: Read/Write
+`StatusInactiveInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Status message inactive interval.
+Qualifiers: none
 
- `SWInactiveInterval`
- Data type: `UInt32`
+Status message inactive interval.
 
- Access type: Read/Write
+`SWInactiveInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Software inventory inactive interval.
+Qualifiers: none
+
+Software inventory inactive interval.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
 description: Article outlining how to read SMS Schedule Token Server Class objects with ReadFromString class method in Configuration Manager.
-title: ReadFromString Method
-ms.date: 09/20/2016
+title: "ReadFromString Method in Class SMS_ScheduleMethods"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# ReadFromString Method in Class SMS_ScheduleMethods
-The `ReadFromString` Windows Management Instrumentation (WMI) class method, in Configuration Manager, reads [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md) objects from an interval string.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+# ReadFromString Method in Class SMS_ScheduleMethods
+
+The `ReadFromString` Windows Management Instrumentation (WMI) class method, in Configuration Manager, reads [SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md) objects from an interval string.
+
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,19 +24,18 @@ SInt32 ReadFromString(
 ```
 
 #### Parameters
- `StringData`
- Data type: `String`
 
- Qualifiers: [in]
+`StringData` Data type: `String`
 
- The interval string (details in table below).
+Qualifiers: [in]
 
- `TokenData`
- Data type: `SMS_ScheduleToken` Array
+The interval string (details in table below).
 
- Qualifiers: [out]
+`TokenData` Data type: `SMS_ScheduleToken` Array
 
- [SMS_ScheduleToken Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_scheduletoken-server-wmi-class.md) objects.
+Qualifiers: [out]
+
+[SMS_ScheduleToken Server WMI Class](sms_scheduletoken-server-wmi-class.md) objects.
 
 ```
 
@@ -104,18 +105,21 @@ Values for the second DWORD laid out as follows:
 ```
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ScheduleMethods Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_schedulemethods-server-wmi-class.md)
- [WriteToString Method in Class SMS_ScheduleMethods](../../../../../develop/reference/core/servers/configure/writetostring-method-in-class-sms_schedulemethods.md)
+
+[SMS_ScheduleMethods Server WMI Class](sms_schedulemethods-server-wmi-class.md) [WriteToString Method in Class SMS_ScheduleMethods](writetostring-method-in-class-sms_schedulemethods.md)

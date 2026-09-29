@@ -1,7 +1,7 @@
 ---
-title: Query views
+title: "Query views in Configuration Manager"
 description: Information about all the queries in the Configuration Manager hierarchy.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 
@@ -18,4 +18,4 @@ The **v_Query** view can be joined to the **v_CollectionRuleQuery** collection v
 
 ## See also
 
-[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md)  
+[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md)

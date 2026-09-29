@@ -1,27 +1,28 @@
 ---
-title: Enumerate the Steps in an OS Deployment Task Sequence
+title: "How to Enumerate the Steps in an Operating System Deployment Task Sequence"
 description: You enumerate an operating system deployment task sequence, in Configuration Manager, by using a recursive method to scan through the task sequence steps and groups.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Enumerate the Steps in an Operating System Deployment Task Sequence
+
 You enumerate an operating system deployment task sequence, in Configuration Manager, by using a recursive method to scan through the task sequence steps and groups.
 
 ### To enumerate the steps in a task sequence
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Obtain a valid task sequence [SMS_TaskSequence](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md) object. For more information, see [How to Create an Operating System Deployment Task Sequence](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence.md)
-
-3.  Enumerate through the steps to display any action ([SMS_TaskSequence_Action](../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md)) names. Use recursion to access any groups ([SMS_TaskSequence_Group](../../develop/reference/osd/sms_tasksequence_group-server-wmi-class.md)) that are found and display their actions.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Obtain a valid task sequence [SMS_TaskSequence](../reference/osd/sms_tasksequence-server-wmi-class.md) object. For more information, see [How to Create an Operating System Deployment Task Sequence](how-to-create-an-operating-system-deployment-task-sequence.md)
+3. Enumerate through the steps to display any action ([SMS_TaskSequence_Action](../reference/osd/sms_tasksequence_action-server-wmi-class.md)) names. Use recursion to access any groups ([SMS_TaskSequence_Group](../reference/osd/sms_tasksequence_group-server-wmi-class.md)) that are found and display their actions.
 
 ## Example
- The following example displays the actions and groups within a task sequence.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example displays the actions and groups within a task sequence.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub RecurseTaskSequenceSteps(taskSequence, indent)
@@ -93,41 +94,43 @@ public void RecurseTaskSequenceSteps(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`taskSequence`|-   Managed: `IResultObject`<br />-   VBScript: [SWbemObject](/windows/win32/wmisdk/swbemservices)|A valid task sequence (`SMS_TaskSequence`). The group is added to this task sequence.|
-|`indent`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Indent is used to space console output for child groups.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `taskSequence` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid task sequence (`SMS_TaskSequence`). The group is added to this task sequence. |
+| `indent` | - Managed: `Integer` - VBScript: `Integer` | Indent is used to space console output for child groups. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Add an Operating System Deployment Task Sequence Action](../../develop/osd/how-to-add-an-operating-system-deployment-task-sequence-action.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager  by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
+
+[Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Add an Operating System Deployment Task Sequence Action](how-to-add-an-operating-system-deployment-task-sequence-action.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md)

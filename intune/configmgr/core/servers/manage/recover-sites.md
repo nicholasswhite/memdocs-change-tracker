@@ -1,7 +1,7 @@
 ---
-title: Site recovery
+title: "Recover a Configuration Manager site"
 description: Learn to recover your sites in Configuration Manager.
-ms.date: 09/18/2021
+ms.date: "2021-09-18T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -18,7 +18,8 @@ The sections in this article can help you recover a Configuration Manager site. 
 
 ## Considerations before recovering a site
 
-> [!Important]
+> [!IMPORTANT]
+>
 > This information applies only to site recovery scenarios. When you're upgrading your on-premises infrastructure and not actively recovering a failed site, review the information in the following articles:
 >
 > - [Upgrade on-premises infrastructure](upgrade-on-premises-infrastructure.md)
@@ -26,14 +27,10 @@ The sections in this article can help you recover a Configuration Manager site. 
 
 ### Prepare the server hardware
 
-<!-- 2841893 -->
-
 Make sure existing configurations aren't present on the site server. Any previous configurations can cause conflicts during the site recovery process. Use one of the following options for the server hardware:
 
 - Use a new server, that meets the general and recovery requirements.
-
 - Format the disks, and reinstall the OS on the existing server. Make sure it meets the general and recovery requirements.
-
 - Reuse an existing server that you've cleaned
 
 Use one of the following procedures to clean an existing server:
@@ -42,23 +39,23 @@ Use one of the following procedures to clean an existing server:
 
 1. Delete SMS registry keys: `HKLM\Software\Microsoft\SMS`
 2. Delete any registry entries starting with `SMS` from `HKLM\System\CurrentControlSet\Services`. For example:
-    - SMS_DISCOVERY_DATA_MANAGER
-    - SMS_EXECUTIVE
-    - SMS_INBOX_MONITOR
-    - SMS_INVENTORY_DATA_LOADER
-    - SMS_LAN_SENDER
-    - SMS_MP_FILE_DISPATCH_MANAGER
-    - SMS_SCHEDULER
-    - SMS_SITE_BACKUP
-    - SMS_SITE_COMPONENT_MANAGER
-    - SMS_SITE_SQL_BACKUP
-    - SMS_SITE_VSS_WRITER
-    - SMS_SOFTWARE_METERING_PROCESSOR
-    - SMS_STATE_SYSTEM
-    - SMS_STATUS_MANAGER
-    - SMS_WSUS_SYNC_MANAGER
-    - SMSvcHost 3.0.0.0
-    - SMSvcHost 4.0.0.0
+   - SMS_DISCOVERY_DATA_MANAGER
+   - SMS_EXECUTIVE
+   - SMS_INBOX_MONITOR
+   - SMS_INVENTORY_DATA_LOADER
+   - SMS_LAN_SENDER
+   - SMS_MP_FILE_DISPATCH_MANAGER
+   - SMS_SCHEDULER
+   - SMS_SITE_BACKUP
+   - SMS_SITE_COMPONENT_MANAGER
+   - SMS_SITE_SQL_BACKUP
+   - SMS_SITE_VSS_WRITER
+   - SMS_SOFTWARE_METERING_PROCESSOR
+   - SMS_STATE_SYSTEM
+   - SMS_STATUS_MANAGER
+   - SMS_WSUS_SYNC_MANAGER
+   - SMSvcHost 3.0.0.0
+   - SMSvcHost 4.0.0.0
 3. Uninstall the Configuration Manager console
 4. Restart the server
 5. Confirm that all of the above registry keys are deleted.
@@ -78,7 +75,9 @@ The server is now ready for the Configuration Manager restore procedure.
 
 1. Back up the site database. Also back up any other supporting databases, like WSUS.
 2. Make a copy of the content library
+
 > [!WARNING]
+>
 > The following step - Uninstall the Configuration Manager site - should only be performed on a standalone Primary site, or a child Primary site that is unable to communicate over the network with the Central Administration Site (CAS). Uninstalling the site in a hierarchy results is the CAS losing the ability to communicate with that child primary and the restore process will fail. For child Primary sites, instead follow the **Clean an existing server for site server recovery only** steps above.
 
 3. Manually delete the site database from the SQL Server
@@ -90,8 +89,6 @@ The server is now ready for the Configuration Manager restore procedure.
 The server is now ready for the Configuration Manager restore procedure.
 
 ### Use a supported version and same edition of SQL Server
-
-<!-- SCCMDocs#751 -->
 
 If possible, use the same version of SQL Server. However, it's supported to restore a database to a newer version.
 
@@ -112,10 +109,10 @@ After you restore a site database that you configured for database replicas, rec
 
 ## Determine your recovery options
 
-There are two main areas to consider for Configuration Manager primary site server and central administration site (CAS) recovery: the **site server** and the **site database**.
-The following sections can help you select the best options for your recovery scenario.
+There are two main areas to consider for Configuration Manager primary site server and central administration site (CAS) recovery: the **site server** and the **site database**. The following sections can help you select the best options for your recovery scenario.
 
 > [!NOTE]
+>
 > When Configuration Manager setup detects an existing site on the server, you can start a site recovery, but the recovery options for the site server are limited. For example, if you run Setup on an existing site server, when you choose recovery, you can recover the site database server, but the option to recover the site server is disabled.
 
 ### Site server recovery options
@@ -123,7 +120,6 @@ The following sections can help you select the best options for your recovery sc
 Start Configuration Manager setup from a copy of the **CD.Latest** folder that you created outside of the Configuration Manager installation folder.
 
 - If you run setup from the **Start** menu on the site server, the **Recover a site** option isn't available.
-
 - If you installed any updates from within the Configuration Manager console before you made your backup, you can't reinstall the site by using setup from the following locations:
 
   - Installation media
@@ -140,9 +136,7 @@ Use this option when you have a Configuration Manager backup of the site server 
 Use this option when you don't have a backup of the site server. The site server is reinstalled, and you must specify the site settings as you would during an initial installation.
 
 - Use the same site code and site database name that you used when the failed site was first installed.
-
 - You can reinstall the site on a new computer that runs a new OS version.
-
 - The server must use the same hostname and fully qualified domain name (FQDN) of the original site server.
 
 ### Site database recovery options
@@ -156,6 +150,7 @@ Use this option when you have a Configuration Manager backup of the site databas
 When you recover the site database for a site in a hierarchy, the recovery behavior is different for a CAS and primary site. The behavior is also different when the last backup is inside or outside of the SQL Server change tracking retention period. For more information, see the [Site database recovery scenarios](#site-database-recovery-scenarios) section in this article.
 
 > [!NOTE]
+>
 > If you select to restore the site database by using a backup set, but the site database already exists, the recovery fails.
 
 #### Create a new database for this site
@@ -175,8 +170,8 @@ Use this option when you've already recovered the Configuration Manager site dat
     After you restore the site database by using a method outside Configuration Manager, run Setup, and select this option to complete the site database recovery.
 
     > [!NOTE]
-    > When you use DPM to back up your site database, use the DPM procedures to restore the site database to a specified location before you continue the restore process in Configuration Manager. For more information about DPM, see the [Data Protection Manager](/system-center/dpm) documentation library.
-
+    >
+    > When you use DPM to back up your site database, use the DPM procedures to restore the site database to a specified location before you continue the restore process in Configuration Manager. For more information about DPM, see the [Data Protection Manager](https://learn.microsoft.com/en-us/system-center/dpm) documentation library.
 - In a hierarchy, when you recover a primary site database, the recovery process retrieves from the CAS any changes made to the site database after the last backup. When restoring the CAS, the recovery process retrieves these changes from a reference primary site. When you recover the site database for a standalone primary site, you lose site changes after the last backup.
 
 #### Skip database recovery
@@ -187,7 +182,7 @@ Use this option when no data loss has occurred on the Configuration Manager site
 
 Configuration Manager enables change tracking for the site database in SQL Server. Change tracking lets Configuration Manager query for information about the changes made to database tables after a previous point in time. The retention period specifies how long change tracking information is kept. By default, the site database is configured to have a retention period of five days. When you recover a site database, the recovery process proceeds differently if your backup is inside or outside the retention period. For example, if your SQL Server fails, and your last backup is seven days old, it's outside the retention period.
 
-For more information about SQL Server change tracking internals, see the following blog posts from the SQL Server team: [Change Tracking Cleanup - part 1](/archive/blogs/sql_server_team/change-tracking-cleanup-part-1) and [Change Tracking Cleanup - part 2](/archive/blogs/sql_server_team/change-tracking-cleanup-part-2).
+For more information about SQL Server change tracking internals, see the following blog posts from the SQL Server team: [Change Tracking Cleanup - part 1](https://learn.microsoft.com/en-us/archive/blogs/sql_server_team/change-tracking-cleanup-part-1) and [Change Tracking Cleanup - part 2](https://learn.microsoft.com/en-us/archive/blogs/sql_server_team/change-tracking-cleanup-part-2).
 
 ### Reinitialization of site or global data
 
@@ -214,13 +209,10 @@ After a site database is restored from a backup, Configuration Manager tries to 
 - Database backup within change tracking retention period
 
   - **Global data**: The changes in global data after the backup are replicated from all primary sites.
-
   - **Site data**: The changes in site data after the backup are replicated from all primary sites.
-
 - Database backup older than change tracking retention period
 
   - **Global data**: The CAS reinitializes the global data from the reference primary site if you specify it. Then all other primary sites reinitialize the global data from the CAS. If you don't specify a reference site, all primary sites reinitialize the global data from the CAS. This data is what you restored from backup.
-
   - **Site data**: The CAS reinitializes the site data from each primary site.
 
 #### Recovered site is a primary site
@@ -228,13 +220,10 @@ After a site database is restored from a backup, Configuration Manager tries to 
 - Database backup within change tracking retention period
 
   - **Global data**: The changes in global data after the backup are replicated from the CAS.
-
   - **Site data**: The CAS reinitializes the site data from the primary site. Changes after the backup are lost. Clients regenerate most data when they send information to the primary site.
-
 - Database backup older than change tracking retention period
 
   - **Global data**: The primary site reinitializes the global data from the CAS.
-
   - **Site data**: The CAS reinitializes the site data from the primary site. Changes after the backup are lost. Clients regenerate most data when they send information to the primary site.
 
 ## Site recovery procedures
@@ -244,29 +233,26 @@ Use one of the following procedures to help you recover your site server and sit
 ### Start a site recovery in the setup wizard
 
 1. Copy the [CD.Latest folder](the-cd.latest-folder.md) to a location outside the Configuration Manager installation folder. From the copy of the CD.Latest folder, run the Configuration Manager setup wizard.
-
 2. On the **Getting Started** page, select **Recover a site**, and then select **Next**.
-
 3. Complete the wizard by using the options that are appropriate for your site recovery.
 
-     - During the recovery, setup identifies the SQL Server Service Broker (SSB) port used by the SQL Server. Don't change this port setting during recovery or data replication won't work properly after the recovery completes.
-
-     - You can specify the original or a new path to use for the Configuration Manager installation in the setup wizard.
+   - During the recovery, setup identifies the SQL Server Service Broker (SSB) port used by the SQL Server. Don't change this port setting during recovery or data replication won't work properly after the recovery completes.
+   - You can specify the original or a new path to use for the Configuration Manager installation in the setup wizard.
 
 ### Start an unattended site recovery
 
 1. Prepare the unattended installation script for the options that you require for the site recovery. For more information, see [Unattended site recovery](unattended-recovery.md).
-
 2. Run Configuration Manager setup by using the `/script` command-line option. For example, you create a setup initialization file **ConfigMgrUnattend.ini**. You save it in the `C:\Temp` directory of the computer on which you're running setup. Use the following command:
 
-    `setup.exe /script C:\temp\ConfigMgrUnattend.ini`
+   `setup.exe /script C:\temp\ConfigMgrUnattend.ini`
 
 > [!NOTE]
+>
 > After you recover a CAS, replication of some site data from child sites can fail to be established. This data can include hardware inventory, software inventory, and status messages.
 >
 > If this issue occurs, reinitialize the **ConfigMgrDRSSiteQueue** for database replication. Use **SQL Server Manager** to run the following query against the site database for the CAS:
 >
-> ``` SQL
+> ```SQL
 > IF EXISTS (SELECT * FROM sys.service_queues WHERE name = 'ConfigMgrDRSSiteQueue' AND is_receive_enabled = 0)
 >
 > ALTER QUEUE [dbo].[ConfigMgrDRSSiteQueue] WITH STATUS = ON
@@ -283,62 +269,39 @@ After a site server recovery, reenter the passwords for any user accounts in the
 #### Reenter user account passwords after site recovery
 
 1. Open the Configuration Manager console and connect to the recovered site.
-
 2. Go to the **Administration** workspace, expand **Security**, and then select **Accounts**.
-
 3. For each account, do the following steps to reenter the password:
 
-     1. Select the account from the list identified after site recovery.
-
-     2. Select **Properties** in the ribbon.
-
-     3. On the **General** tab, select **Set**, and then reenter the password for the account.
-
-     4. Select **Verify**, choose the appropriate data source for the selected user account, and then select **Test connection**. This step tests that the user account can connect to the data source, and verifies the credentials.
-
-     5. Select **OK** to save the password changes, and then select **OK** to close the account properties page.
+   1. Select the account from the list identified after site recovery.
+   2. Select **Properties** in the ribbon.
+   3. On the **General** tab, select **Set**, and then reenter the password for the account.
+   4. Select **Verify**, choose the appropriate data source for the selected user account, and then select **Test connection**. This step tests that the user account can connect to the data source, and verifies the credentials.
+   5. Select **OK** to save the password changes, and then select **OK** to close the account properties page.
 
 #### Reenter PXE passwords
 
-<!-- SCCMDocs#1683 -->
-
 1. In the Configuration Manager console, go to the **Administration** workspace, and select the **Distribution Points** node. Any on-premises distribution point with **Yes** in the **PXE** column is enabled for PXE and may have a password to reenter.
-
-1. Select a PXE-enabled distribution point, and select **Properties** in the ribbon.
-
-1. Switch to the **PXE** tab.
-
-1. If the option to **Require a password when computers use PXE** is enabled, enter and confirm the password.
-
-1. Select **OK** to save and close the properties.
+2. Select a PXE-enabled distribution point, and select **Properties** in the ribbon.
+3. Switch to the **PXE** tab.
+4. If the option to **Require a password when computers use PXE** is enabled, enter and confirm the password.
+5. Select **OK** to save and close the properties.
 
 Repeat this process for any other PXE-enabled on-premises distribution point.
 
 #### Reenter task sequence passwords
 
-<!-- SCCMDocs#1683 -->
-
 1. In the Configuration Manager console, go to the **Software Library** workspace, expand **Operating Systems**, and select the **Task Sequences** node.
+2. Select a task sequence, and then in the ribbon, select **Edit**.
+3. Review the following steps for passwords to reenter:
 
-1. Select a task sequence, and then in the ribbon, select **Edit**.
-
-1. Review the following steps for passwords to reenter:
-
-    - **Apply Windows Settings**: If you enable and specify the local administrator password, reenter and confirm the password.
-
-    - **Apply Network Settings**: For the account that has permission to join the domain, select **Set**. Enter and confirm the password, and then select **Verify**.
-
-    - **Capture Operating System Image**: For the account used to access the destination, select **Set**. Enter and confirm the password, and then select **Verify**.
-
-    - **Connect to Network Folder**: For the account used to connect a network folder, select **Set**. Enter and confirm the password, and then select **Verify**.
-
-    - **Enable BitLocker**: If you use the key management option **TPM and PIN**, reenter the PIN.
-
-    - **Join Domain or Workgroup**: For the account that has permission to join the domain, select **Set**. Enter and confirm the password, and then select **Verify**.
-
-    - **Run Command Line**: If you use the option to **Run this step as the following account**, select **Set**. Enter and confirm the password, and then select **Verify**.
-
-    - **Run PowerShell Script**: If you use the option to **Run this step as the following account**, select **Set**. Enter and confirm the password, and then select **Verify**.
+   - **Apply Windows Settings**: If you enable and specify the local administrator password, reenter and confirm the password.
+   - **Apply Network Settings**: For the account that has permission to join the domain, select **Set**. Enter and confirm the password, and then select **Verify**.
+   - **Capture Operating System Image**: For the account used to access the destination, select **Set**. Enter and confirm the password, and then select **Verify**.
+   - **Connect to Network Folder**: For the account used to connect a network folder, select **Set**. Enter and confirm the password, and then select **Verify**.
+   - **Enable BitLocker**: If you use the key management option **TPM and PIN**, reenter the PIN.
+   - **Join Domain or Workgroup**: For the account that has permission to join the domain, select **Set**. Enter and confirm the password, and then select **Verify**.
+   - **Run Command Line**: If you use the option to **Run this step as the following account**, select **Set**. Enter and confirm the password, and then select **Verify**.
+   - **Run PowerShell Script**: If you use the option to **Run this step as the following account**, select **Set**. Enter and confirm the password, and then select **Verify**.
 
 Repeat this process for all task sequences.
 
@@ -354,8 +317,6 @@ For example, before the site failure the **Total activations** count shows as **
 
 ### Recreate Azure services
 
-<!-- SCCMDocs#1022 -->
-
 After site recovery, you may see the following error in the cloudmgr.log:
 
 `Index (zero-based) must be greater than or equal to zero`
@@ -364,7 +325,6 @@ To resolve this issue, [Renew the secret key](../deploy/configure/azure-services
 
 ### Delete and recreate subscriptions for external notifications on the CAS
 
-<!-- 10333966 -->
 After you recover the CAS, you need to delete and recreate any subscriptions for external notifications. For more information, see [External notifications](external-notifications.md).
 
 ### Configure HTTPS for site system roles that use IIS
@@ -377,7 +337,7 @@ After a site recovery, you must reinstall any [out-of-band hotfixes](updates.md#
 
 ### Recover custom reports
 
-Some customers create custom reports in SQL Server Reporting Services. When this component fails, recover the reports from a backup of the report server. For more information about restoring your custom reports in Reporting Services, see [Backup and Restore Operations for Reporting Services](/sql/reporting-services/install-windows/backup-and-restore-operations-for-reporting-services).
+Some customers create custom reports in SQL Server Reporting Services. When this component fails, recover the reports from a backup of the report server. For more information about restoring your custom reports in Reporting Services, see [Backup and Restore Operations for Reporting Services](https://learn.microsoft.com/en-us/sql/reporting-services/install-windows/backup-and-restore-operations-for-reporting-services).
 
 ### Recover content files
 
@@ -388,7 +348,6 @@ If you don't have a file system backup for the package source files, manually co
 If you don't have a file system backup that includes the content library, you have the following restore options:
 
 - **Import a prestaged content file**: In a Configuration Manager hierarchy, you can create a prestaged content file with all packages and applications from another location. Then import the prestaged content file to recover the content library on the site server.
-
 - **Update content**: Configuration Manager copies the content from the package source to the content library. For this action to finish successfully, the package source files must be available in the original location. Do this action on each package and application.
 
 ### Recover custom software updates
@@ -398,9 +357,7 @@ When you've included System Center Updates Publisher database files in your back
 #### Restore the Updates Publisher database
 
 1. Reinstall Updates Publisher on the recovered computer.
-
 2. Copy the database file **Scupdb.sdf** from your backup destination to `%USERPROFILE%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\` on the computer that runs Updates Publisher.
-
 3. When more than one user runs Updates Publisher on the computer, copy each database file to the appropriate user profile location.
 
 ### User State Migration data
@@ -409,11 +366,11 @@ As part of the state migration point properties, you specify the folders that st
 
 ### Regenerate the certificates for distribution points
 
-After you restore a site, the **distmgr.log** might list the following entry for one or more distribution points: `Failed to decrypt cert PFX data`. This entry indicates that the distribution point certificate data can't be decrypted by the site. To resolve this issue, regenerate or reimport the certificate for affected distribution points. Use the [Set-CMDistributionPoint](/powershell/module/configurationmanager/set-cmdistributionpoint) PowerShell cmdlet.
+After you restore a site, the **distmgr.log** might list the following entry for one or more distribution points: `Failed to decrypt cert PFX data`. This entry indicates that the distribution point certificate data can't be decrypted by the site. To resolve this issue, regenerate or reimport the certificate for affected distribution points. Use the [Set-CMDistributionPoint](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/set-cmdistributionpoint) PowerShell cmdlet.
 
 ### Restore database encryption certificates
 
-If you use SQL Server encryption for the entire database or for specific tables, you may need to restore the certificates after you restore the site database. For example, if you encrypt recovery data for BitLocker management. For more information, see [Restore certificate for BitLocker management](../../../protect/deploy-use/bitlocker/encrypt-recovery-data.md#restore-certificate).<!-- memdocs#1901 -->
+If you use SQL Server encryption for the entire database or for specific tables, you may need to restore the certificates after you restore the site database. For example, if you encrypt recovery data for BitLocker management. For more information, see [Restore certificate for BitLocker management](../../../protect/deploy-use/bitlocker/encrypt-recovery-data.md#restore-certificate).
 
 ## Recover a secondary site
 
@@ -422,15 +379,11 @@ Configuration Manager doesn't support the backup of the database at a secondary 
 ### Requirements
 
 - The server must meet all secondary site prerequisites and have appropriate security rights configured.
-
 - Use the same installation path that was used for the failed site.
-
 - Use a server with the same configuration as the failed server. This configuration includes its fully qualified domain name (FQDN).
-
 - The server must have the same SQL Server configuration as the failed site.
 
   - During a secondary site recovery, Configuration Manager doesn't install SQL Server Express if it's not already installed on the computer.
-
   - Use the same version of SQL Server and the same instance of SQL Server that you used for the secondary site database before the failure.
 
 ### Procedure

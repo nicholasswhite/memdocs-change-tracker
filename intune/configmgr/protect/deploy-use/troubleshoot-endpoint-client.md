@@ -1,7 +1,7 @@
 ---
-title: Troubleshoot Endpoint Protection
+title: "Troubleshoot Windows Defender or Endpoint Protection client"
 description: Learn how to troubleshoot problems with Windows Defender and Endpoint Protection.
-ms.date: 09/10/2019
+ms.date: "2019-09-10T00:00:00Z"
 ms.subservice: protect
 ms.topic: article
 ms.collection: tier3
@@ -29,11 +29,8 @@ Windows Defender or Endpoint Protection works automatically with Microsoft Updat
 This section addresses common issues with automatic updates, including the following situations:
 
 - You see error messages indicating that updates have failed.
-
 - When you check for updates, you receive an error message that the virus and spyware definition updates can't be checked, downloaded, or installed.
-
 - Even though your device is connected to the internet, the updates fail.
-
 - Updates aren't automatically installing as scheduled.
 
 ### Causes
@@ -46,71 +43,58 @@ The most common causes for update issues are problems with internet connectivity
 
 1. Exit all open programs, including the web browser.
 
-    > [!NOTE]
-    > When you reset these internet settings, it may delete your browser temporary files, cookies, browsing history, and online passwords. It doesn't delete your favorites.
-
+   > [!NOTE]
+   >
+   > When you reset these internet settings, it may delete your browser temporary files, cookies, browsing history, and online passwords. It doesn't delete your favorites.
 2. Go to the **Start** menu, and open `inetcpl.cpl`.
-
 3. Switch to the **Advanced** tab.
-
 4. In the section to **Reset Internet Explorer settings**, select **Reset**, and then select **Reset** again to confirm.
-
 5. Select **OK** when the settings are reset.
-
 6. Try to update Windows Defender again.
 
 If the issue persists, continue to the next step.
 
 #### Step 2: Make sure that the date and time are set correctly on your computer
 
-If the error message contains the code 0x80072f8f, the problem is most likely caused by an incorrect date or time setting on your computer. Go to the **Start** menu, select **Settings**, select **Time & language**, and select **Date & time**.
+If the error message contains the code 0x80072f8f, the problem is most likely caused by an incorrect date or time setting on your computer. Go to the **Start** menu, select **Settings**, select **Time &amp; language**, and select **Date &amp; time**.
 
 #### Step 3: Rename the Software Distribution folder on your computer
 
 1. Stop the **Windows Update** service.
 
-    1. Go to **Start**, and open **services.msc**.
-
-    2. Select the **Windows Update** service. Go to the **Action** menu, and select **Stop**.
-
+   1. Go to **Start**, and open **services.msc**.
+   2. Select the **Windows Update** service. Go to the **Action** menu, and select **Stop**.
 2. Rename the **SoftwareDistribution** directory.
 
-    1. Open a command prompt as an administrator.
+   1. Open a command prompt as an administrator.
+   2. Enter the following commands:
 
-    2. Enter the following commands:
-
-        ```cmd
-        cd %windir%
-        ren SoftwareDistribution SDTemp
-        exit
-        ```
-
+      ```cmd
+      cd %windir%
+      ren SoftwareDistribution SDTemp
+      exit
+      ```
 3. Restart the **Windows Update** service.
 
-    1. Switch back to the **Services** window.
-
-    2. Select the **Windows Update** service. Go to the **Action** menu, and select **Start**.
-
-    3. Close the Services window.
+   1. Switch back to the **Services** window.
+   2. Select the **Windows Update** service. Go to the **Action** menu, and select **Start**.
+   3. Close the Services window.
 
 #### Step 4: Reset the Microsoft antivirus update engine on your computer
 
 1. Open a command prompt as an administrator.
-
 2. Enter the following commands:
 
-    ```cmd
-    cd \
+   ```cmd
+   cd \
 
-    cd program files\windows defender
+   cd program files\windows defender
 
-    MpCmdRun -RemoveDefinitions -all
+   MpCmdRun -RemoveDefinitions -all
 
-    exit
-    ```
-
+   exit
+   ```
 3. Restart the computer.
-
 4. Try to update Windows Defender again.
 
 If the issue persists, continue to the next step.
@@ -138,29 +122,26 @@ Close all applications and restart your computer.
 #### Step 2: Check the Windows service
 
 1. Go to **Start**, and open **services.msc**.
-
 2. Select the **Windows Defender Antivirus Service**.
-
 3. Make sure that the **Startup Type** is set to **Automatic**.
-
 4. Go to the **Action** menu and select **Start**.
 
-    1. If this action isn't available, select **Stop**. Wait for the service to stop, and then select the **Start** action to restart the service.
+   1. If this action isn't available, select **Stop**. Wait for the service to stop, and then select the **Start** action to restart the service.
 
 Note any errors that may appear during this process. [Contact Microsoft Support](../../core/understand/find-help.md#support-options-and-community-resources) and provide the error information.
 
 #### Step 3: Remove any third-party security programs
 
 > [!NOTE]
+>
 > Some security applications don't uninstall completely. You may need to download and run a cleanup utility for your previous security application to completely remove it.
 
 1. Go to **Start** and open **appwiz.cpl**.
-
 2. In the list of installed programs, uninstall any third-party security programs.
-
 3. Restart your computer.
 
 > [!CAUTION]
+>
 > When you remove security programs, your computer may be unprotected. If you have problems installing Windows Defender after you remove existing security programs, contact [Microsoft Support](https://support.microsoft.com/supportforbusiness/productselection). Select the **Security** product family, and then the **Windows Defender** product.
 
 ## Internet connection issues
@@ -168,11 +149,8 @@ Note any errors that may appear during this process. [Contact Microsoft Support]
 For your computer to receive the latest updates from Windows Update, connect it to the internet.
 
 1. Go to **Start** and open **ncpa.cpl**.
-
 2. Open the connection name to view the connection **Status**.
-
 3. If your computer is connected, the **IPv4 connectivity** and/or **IPv6 connectivity** status is **Internet**.
-
 4. If your computer doesn't appear to be connected, select the connection name, and select **Diagnose this connection**.
 
 Close any open programs and restart your computer.
@@ -184,9 +162,7 @@ When Windows Defender or Endpoint Protection detects a potential threat, it trie
 ### Remove or scan the file
 
 - If the detected threat was in a compressed archive file, browse to the file. Delete the file, or manually scan it. Right-click the file and select **Scan with Windows Defender**. If Windows Defender detects additional threats in the file, it notifies you. Then you can choose an appropriate action.
-
 - If the detected threat was in a network share, open the share, and manually scan it. Right-click the file and select **Scan with Windows Defender**. If Windows Defender detects additional threats in the network share, it notifies you. Then you can choose an appropriate action.
-
 - If you're not sure of the file's origin, run a full scan on your computer. A full scan may take some time to complete.
 
 ## See also

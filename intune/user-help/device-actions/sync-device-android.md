@@ -1,7 +1,7 @@
 ---
-title: Sync device in Company Portal for Android
+title: "Manually sync Android device with Intune"
 description: Sync a device in the Intune Company Portal app to get the latest updates and policies for work.
-ms.date: 02/06/2025
+ms.date: "2025-02-06T00:00:00Z"
 ms.reviewer: esmichel
 ---
 
@@ -11,8 +11,8 @@ A manual sync forces your device to connect with Intune to get the latest update
 
 Syncing can also help resolve work-related downloads or other processes that are in progress or stalled. If you're experiencing slow or unusual behavior while installing or using a work app, or if you're missing a work app that you know you're supposed to have, try syncing your device.
 
-
 ## Sync device
+
 To force a sync:
 
 1. Sign in to the Company Portal app for Android.
@@ -20,12 +20,9 @@ To force a sync:
 3. Scroll down to **Management Policy** and tap **Sync**. Wait while Company Portal syncs your device. When complete, the screen shows the timestamp of the last successful sync.
 
 ## Next steps
-After you sync a device, you may receive notifications from Company Portal about updating its settings. Microsoft Learn offers how-to articles to help guide you through these updates. To find these articles, go to the table of contents and choose **Android device management** > **Update Android device settings**.
+
+After you sync a device, you may receive notifications from Company Portal about updating its settings. Microsoft Learn offers how-to articles to help guide you through these updates. To find these articles, go to the table of contents and choose **Android device management** &gt; **Update Android device settings**.
 
 The Company Portal **Sync** feature is different from the **Check device settings** feature. The latter feature forces Company Portal to verify that your settings meet your organization's requirements. Whenever Company Portal prompts you to make changes to your settings, make the change and then select **Check device settings** to regain access to work or school apps. For more information about this feature, see [Check device compliance](../compliance/validate-compliance-android.md).
 
 Still need help? Contact your IT support person with specific questions or concerns about Intune, Company Portal, or device management. For contact information, check the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
-
-
-
-

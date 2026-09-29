@@ -1,7 +1,7 @@
 ---
 title: Endpoint Protection
 description: Learn how to manage antimalware policies and Windows Defender Firewall security for clients.
-ms.date: 09/09/2021
+ms.date: "2021-09-09T00:00:00Z"
 ms.subservice: protect
 ms.topic: overview
 ms.collection: tier3
@@ -29,6 +29,7 @@ Beginning with Windows 10 and Windows Server 2016 computers, Microsoft Defender 
 - Integration with Cloud Protection Service to report malware to Microsoft. When you join this service, the Endpoint Protection client or Microsoft Defender Antivirus downloads the latest definitions from the Malware Protection Center when unidentified malware is detected on a computer.
 
 > [!NOTE]
+>
 > The Endpoint Protection client can be installed on a server that runs Hyper-V and on guest virtual machines with supported operating systems. To prevent excessive CPU usage, Endpoint Protection actions have a built-in randomized delay so that protection services do not run simultaneously.
 
 You can also manage Windows Defender Firewall settings with Endpoint Protection in the Configuration Manager console.
@@ -40,11 +41,8 @@ Endpoint Protection in Configuration Manager allows you to create antimalware po
 For more information, see the following articles:
 
 - [How to create and deploy antimalware policies](endpoint-antimalware-policies.md): Create, deploy, and monitor antimalware policies with a list of the settings that you can configure.
-
 - [How to monitor Endpoint Protection](monitor-endpoint-protection.md): Monitoring activity reports, infected client computers, and more.
-
 - [How to manage antimalware policies and firewall settings](endpoint-antimalware-firewall.md): Remediate malware found on client computers.
-
 - [Log files for Endpoint Protection](../../core/plan-design/hierarchy/log-files.md#BKMK_EPLog)
 
 ## Manage Windows Defender Firewall
@@ -52,12 +50,11 @@ For more information, see the following articles:
 Endpoint Protection in Configuration Manager provides basic management of the Windows Defender Firewall on client computers. For each network profile, you can configure the following settings:
 
 - Enable or disable the Windows Defender Firewall.
-
 - Block incoming connections, including connections in the list of allowed programs.
-
 - Notify the user when Windows Defender Firewall blocks a new program.
 
 > [!NOTE]
+>
 > Endpoint Protection supports managing the Windows Defender Firewall only.
 
 For more information, see [How to create and deploy Windows Defender Firewall policies](create-windows-firewall-policies.md).
@@ -70,7 +67,7 @@ Configuration Manager manages and monitors Microsoft Defender for Endpoint, form
 
 Use the following diagram to help you understand the workflow to implement Endpoint Protection in your Configuration Manager hierarchy.
 
-![Endpoint protection workflow.](../media/Endpoint-Protection-Workflow.gif)
+![Endpoint protection workflow.](../media/endpoint-protection-workflow.gif)
 
 ## Recommendations
 

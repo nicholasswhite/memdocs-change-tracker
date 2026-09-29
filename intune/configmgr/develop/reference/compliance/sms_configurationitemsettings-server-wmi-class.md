@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent configuration item settings using the SMS_ConfigurationItemSettings class in Configuration Manager.
-title: SMS_ConfigurationItemSettings Class
-ms.date: 09/20/2016
+title: "SMS_ConfigurationItemSettings Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ConfigurationItemSettings Server WMI Class
+
 The `SMS_ConfigurationItemSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents configuration item settings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,96 +32,91 @@ Class SMS_ConfigurationItemSettings : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ConfigurationItemSettings` class does not define any methods.
+
+The `SMS_ConfigurationItemSettings` class does not define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `CI_UniqueID`
- Data type: `String`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `DataType`
- Data type: `UInt32`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`DataType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Defines the type of setting (integer, string, and so on) to facilitate rule authoring and evaluation.
+Qualifiers: none
 
- `ModelName`
- Data type: `String`
+Defines the type of setting (integer, string, and so on) to facilitate rule authoring and evaluation.
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md)
+Qualifiers: none
 
- `Setting_ID`
- Data type: `UInt32`
+[SMS_ConfigurationItemLatestBaseClass Server WMI Class](sms_configurationitemlatestbaseclass-server-wmi-class.md)
 
- Access type: Read/Write
+`Setting_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The database identifier of a setting in the configuration item.
+Qualifiers: [key]
 
- `Setting_UniqueID`
- Data type: `String`
+The database identifier of a setting in the configuration item.
 
- Access type: Read/Write
+`Setting_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Uniquely identifies a setting defined in the configuration item.
+Qualifiers: none
 
- `SettingDescription`
- Data type: `String`
+Uniquely identifies a setting defined in the configuration item.
 
- Access type: Read/Write
+`SettingDescription` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description of the setting.
+Qualifiers: none
 
- `SettingName`
- Data type: `String`
+Description of the setting.
 
- Access type: Read/Write
+`SettingName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the setting.
+Qualifiers: none
 
- `SourceType`
- Data type: `UInt32`
+Name of the setting.
 
- Access type: Read/Write
+`SourceType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The setting discovery provider type defined, if this setting is discovered from the registry, file system, WMI and so on.
+Qualifiers: none
+
+The setting discovery provider type defined, if this setting is discovered from the registry, file system, WMI and so on.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

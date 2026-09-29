@@ -1,7 +1,7 @@
 ---
 title: Windows Autopilot Enrollment Status Page
 description: Gives an overview of the Enrollment Status Page capabilities, configuration.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: article
@@ -9,7 +9,6 @@ appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 10</a>
 ---
-
 
 # Windows Autopilot Enrollment Status Page
 
@@ -25,11 +24,11 @@ An administrator can deploy ESP profiles to a licensed Intune user and configure
 - Allow users to collect troubleshooting logs.
 - Specify what a user can do if device setup fails.
 
-For more information, see [Set up the Enrollment Status Page](/intune/intune-service/enrollment/windows-enrollment-status).
+For more information, see [Set up the Enrollment Status Page](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-enrollment-status).
 
-:::image type="content" source="images/enrollment-status-page.png" alt-text="Screenshot that shows Enrollment Status Page":::
+![Screenshot that shows Enrollment Status Page](images/enrollment-status-page.png)
 
 ## Related content
 
-- [FirstSyncStatus details in the DMClient CSP](/windows/client-management/mdm/dmclient-csp#deviceproviderprovideridfirstsyncstatus).
+- [FirstSyncStatus details in the DMClient CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/dmclient-csp#deviceproviderprovideridfirstsyncstatus).
 - [Support Tip: Office C2R installation is now tracked during ESP](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-office-c2r-installation-is-now-tracked-during-esp/ba-p/295514).

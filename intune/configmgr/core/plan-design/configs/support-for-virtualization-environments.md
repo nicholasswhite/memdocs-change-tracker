@@ -1,7 +1,7 @@
 ---
-title: Support for virtualization
+title: "Support for virtualization environments with Configuration Manager"
 description: The requirements for installing Configuration Manager client and site system roles in a virtualization environment.
-ms.date: 08/02/2021
+ms.date: "2026-09-21T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -18,18 +18,14 @@ For example, you use Microsoft Hyper-V Server 2016 to host a VM that runs Window
 
 ## Virtualization environments
 
-- Windows Server 2022 (_starting in version 2107_)<!-- 10200029 -->
+- Windows Server 2022 (*starting in version 2107*)
 - Windows Server 2019
 - Windows Server 2016 <sup>[Note 1](#bkmk_note1)</sup>
 - Microsoft Hyper-V Server 2016 <sup>[Note 1](#bkmk_note1)</sup>
-- Windows Server 2012 R2
-- Microsoft Hyper-V Server 2012
-- Windows Server 2012
-
-<a name="bkmk_note1"></a>
 
 > [!NOTE]
-> Configuration Manager doesn't support [nested virtualization](/windows-server/virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows#nested-virtualization-new), which is new with Windows Server 2016.
+>
+> Configuration Manager doesn't support [nested virtualization](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows#nested-virtualization-new), which is new with Windows Server 2016.
 
 ### Virtualization environment support
 
@@ -43,29 +39,29 @@ In general, Configuration Manager gives no special consideration to VMs. For exa
 
 To help with Configuration Manager client performance in virtual environments that support multiple user sessions, it disables user policy by default. Starting in version 1910, you can enable user policy in this scenario. For more information, see [About client settings - Enable user policy for multiple user sessions](../../clients/deploy/about-client-settings.md#enable-user-policy-for-multiple-user-sessions).
 
-## <a name="bkmk_Azure"></a> Microsoft Azure VMs
+## Microsoft Azure VMs
 
 Configuration Manager can run on infrastructure as a service (IaaS) VMs in Azure just as it runs on-premises within your data center. Use Configuration Manager with Azure VMs in the following scenarios:
 
 - **Scenario 1**: Run Configuration Manager on an Azure VM. Use it to manage clients on other Azure VMs.
-
 - **Scenario 2**: Run Configuration Manager on an Azure VM. Use it to manage clients that aren't running on Azure.
-
 - **Scenario 3**: Run different Configuration Manager site system roles on Azure VMs. Run other roles in your on-premises data center, properly connected to Azure.
 
 > [!NOTE]
-> These scenarios also apply to IaaS VMs on Azure Stack Hub.<!-- 10371381 -->
+>
+> These scenarios also apply to IaaS VMs on Azure Stack Hub.
 
 The same Configuration Manager requirements for networks, supported configurations, and hardware requirements also apply to Azure VMs.
 
 For more information, see [Configuration Manager on Azure FAQ](../../understand/configuration-manager-on-azure.yml).
 
 > [!IMPORTANT]
+>
 > Configuration Manager sites and clients that run on Azure VMs are subject to the same license requirements as on-premises installations.
 
 ## Azure Virtual Desktop
 
-[Azure Virtual Desktop](/azure/virtual-desktop/) is a desktop and app virtualization service that runs on Microsoft Azure. Use Configuration Manager to manage these virtual devices running Windows in Azure. For more information, see [Supported operating systems for clients and devices](supported-operating-systems-for-clients-and-devices.md#azure-virtual-desktop).
+[Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/) is a desktop and app virtualization service that runs on Microsoft Azure. Use Configuration Manager to manage these virtual devices running Windows in Azure. For more information, see [Supported operating systems for clients and devices](supported-operating-systems-for-clients-and-devices.md#azure-virtual-desktop).
 
 ## Next steps
 

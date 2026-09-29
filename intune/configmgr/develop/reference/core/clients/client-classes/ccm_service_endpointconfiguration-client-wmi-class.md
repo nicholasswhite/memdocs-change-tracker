@@ -1,19 +1,22 @@
 ---
 description: Article outlining the use of CCM_Service_EndpointConfiguration class that supports endpoint configuration for the CCMEXEC service.
-title: CCM_Service_EndpointConfiguration Class
-ms.date: 09/20/2016
+title: "CCM_Service_EndpointConfiguration Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Service_EndpointConfiguration Client WMI Class
+
 > [!IMPORTANT]
->  This class supports the Configuration Manager 2007 infrastructure; any access to this class or class properties should be read-only.
+>
+> This class supports the Configuration Manager 2007 infrastructure; any access to this class or class properties should be read-only.
 
- in Configuration Manager, the `CCM_Service_EndpointConfiguration` class is a client Windows Management Instrumentation (WMI) class that supports endpoint configuration for the CCMEXEC service. There's an instance of this class for each endpoint on the computer.
+in Configuration Manager, the `CCM_Service_EndpointConfiguration` class is a client Windows Management Instrumentation (WMI) class that supports endpoint configuration for the CCMEXEC service. There's an instance of this class for each endpoint on the computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -42,184 +45,171 @@ Class CCM_Service_EndpointConfiguration : CCM_Policy
 ```
 
 ## Methods
- The `CCM_Service_EndpointConfiguration` class doesn't define any methods.
+
+The `CCM_Service_EndpointConfiguration` class doesn't define any methods.
 
 ## Properties
- `ACL`
- Data type: `String`
 
- Access type: Read/Write
+`ACL` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Value indicating the management point. This value might be null, empty, A (for an assigned management point), L (for a local management point), or AL (for both). This is an optional parameter.
+Qualifiers: None
 
- `ActiveMessageThreshold`
- Data type: `UInt32`
+Value indicating the management point. This value might be null, empty, A (for an assigned management point), L (for a local management point), or AL (for both). This is an optional parameter.
 
- Access type: Read/Write
+`ActiveMessageThreshold` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The number of messages that can be processed concurrently in a parallel endpoint.
+Qualifiers: None
 
- `CoClass`
- Data type: `String`
+The number of messages that can be processed concurrently in a parallel endpoint.
 
- Access type: Read/Write
+`CoClass` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- `ClassID` or `ProgID` of the COM class that implements the endpoint. This is a required field.
+Qualifiers: None
 
- `Concurrency`
- Data type: `String`
+`ClassID` or `ProgID` of the COM class that implements the endpoint. This is a required field.
 
- Access type: Read/Write
+`Concurrency` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Concurrency level of the endpoint.
+Qualifiers: None
 
- `DisplayName`
- Data type: `String`
+Concurrency level of the endpoint.
 
- Access type: Read/Write
+`DisplayName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Display name of the endpoint for when it's displayed in a user interface. This is an optional field.
+Qualifiers: None
 
- `ManualStart`
- Data type: `Boolean`
+Display name of the endpoint for when it's displayed in a user interface. This is an optional field.
 
- Access type: Read/Write
+`ManualStart` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- Flag indicating whether the delivery of messages should be started manually. If this flag is set, the service won't dispatch messages to the endpoint until it's explicitly started by using the **StartEndpoint** system command.
+Qualifiers: None
 
- `MessageTimeout`
- Data type: `UInt32`
+Flag indicating whether the delivery of messages should be started manually. If this flag is set, the service won't dispatch messages to the endpoint until it's explicitly started by using the **StartEndpoint** system command.
 
- Access type: Read/Write
+`MessageTimeout` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Optional. Message timeout, in minutes.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+Optional. Message timeout, in minutes.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [Realkey]
+Access type: Read/Write
 
- Name of the endpoint that is used for addressing. This is a required field and must be unique for the computer.
+Qualifiers: [Realkey]
 
- `NotificationQueries`
- Data type: `String` Array
+Name of the endpoint that is used for addressing. This is a required field and must be unique for the computer.
 
- Access type: Read/Write
+`NotificationQueries` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read/Write
 
- Array of notification queries (optional parameter).
+Qualifiers: None
 
- `PolicyID`
- Data type: `String`
+Array of notification queries (optional parameter).
 
- Access type: Read/Write
+`PolicyID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyInstanceID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyInstanceID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyPrecedence`
- Data type: `UInt32`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyPrecedence` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: None
 
- `PolicyRuleID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyRuleID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicySource`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicySource` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyVersion`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `ReleaseTimeout`
- Data type: `UInt32`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`ReleaseTimeout` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Optional. Release timeout, in minutes.
+Qualifiers: None
 
- `ThreadType`
- Data type: `String`
+Optional. Release timeout, in minutes.
 
- Access type: Read/Write
+`ThreadType` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Thread type on which the endpoint should be invoked.
+Qualifiers: None
 
- `Visibility`
- Data type: `String`
+Thread type on which the endpoint should be invoked.
 
- Access type: Read/Write
+`Visibility` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Flag indicating that the endpoint is public. Public endpoints can receive messages from remote computers. Possible values are:
+Qualifiers: None
 
- internal -  No remote messages.
+Flag indicating that the endpoint is public. Public endpoints can receive messages from remote computers. Possible values are:
 
- signed  - Remote messages must be signed by a management point in mixed or native mode. Used on some client endpoints that receive replies from a management point.
+internal - No remote messages.
 
- clientsigned -Remote messages must be signed by a client in native mode. Used on some management point endpoints.
+signed - Remote messages must be signed by a management point in mixed or native mode. Used on some client endpoints that receive replies from a management point.
+
+clientsigned -Remote messages must be signed by a client in native mode. Used on some management point endpoints.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md)

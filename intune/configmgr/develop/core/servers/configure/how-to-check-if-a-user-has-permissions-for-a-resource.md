@@ -1,25 +1,26 @@
 ---
-title: Check if a User Has Permissions for a Resource
+title: "How to Check if a User Has Permissions for a Resource"
 description: Check whether a user has permission for a resource using the GetCollectionsWithResourcePermissions method in the SMS_RbacSecuredObject class.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Check if a User Has Permissions for a Resource
+
 In Configuration Manager, you can check whether a user has permission for a resource using the `GetCollectionsWithResourcePermissions` method in the `SMS_RbacSecuredObject` class.
 
 ### To check if a user has permissions for a resource
 
-1.  Create a dictionary object to pass object name and permissions to check for to the [GetCollectionsWithResourcePermissions Method in Class SMS_RbacSecuredObject](../../../../develop/reference/core/servers/configure/getcollectionswithresourcepermissions-method-in-class-sms_rbacsecuredobject.md).
-
-2.  Call the [GetCollectionsWithResourcePermissions Method in Class SMS_RbacSecuredObject](../../../../develop/reference/core/servers/configure/getcollectionswithresourcepermissions-method-in-class-sms_rbacsecuredobject.md), passing in the dictionary object.
-
-3.  The method returns `true`, if the user has the permissions.
+1. Create a dictionary object to pass object name and permissions to check for to the [GetCollectionsWithResourcePermissions Method in Class SMS_RbacSecuredObject](../../../reference/core/servers/configure/getcollectionswithresourcepermissions-method-in-class-sms_rbacsecuredobject.md).
+2. Call the [GetCollectionsWithResourcePermissions Method in Class SMS_RbacSecuredObject](../../../reference/core/servers/configure/getcollectionswithresourcepermissions-method-in-class-sms_rbacsecuredobject.md), passing in the dictionary object.
+3. The method returns `true`, if the user has the permissions.
 
 ## Example
- The following example checks to see if the user has resource permissions.
+
+The following example checks to see if the user has resource permissions.
 
 ```c#
 public bool CheckUserPermissions(ConnectionManagerBase connectionManager, string resourceID)
@@ -60,34 +61,37 @@ public bool CheckUserPermissions(ConnectionManagerBase connectionManager, string
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `connectionManager`|A valid connection to the SMS Provider.|
-|`resourceID`|`String`|Unique ID, supplied by Configuration Manager, for the resource.|
+| --- | --- | --- |
+| `connection` | - Managed: `connectionManager` | A valid connection to the SMS Provider. |
+| `resourceID` | `String` | Unique ID, supplied by Configuration Manager, for the resource. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- Microsoft.ConfigurationManagement.ManagementProvider
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
 
- System
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+
+System
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [SMS_Admin Server WMI Class](../../../../develop/reference/core/servers/configure/sms_admin-server-wmi-class.md)
- [SMS_Role Server WMI Class](../../../../develop/reference/core/servers/configure/sms_role-server-wmi-class.md)
- [SMS_SecuredCategory Server WMI Class](../../../../develop/reference/core/servers/configure/sms_securedcategory-server-wmi-class.md)
+
+[SMS_Admin Server WMI Class](../../../reference/core/servers/configure/sms_admin-server-wmi-class.md) [SMS_Role Server WMI Class](../../../reference/core/servers/configure/sms_role-server-wmi-class.md) [SMS_SecuredCategory Server WMI Class](../../../reference/core/servers/configure/sms_securedcategory-server-wmi-class.md)

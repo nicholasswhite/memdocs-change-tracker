@@ -1,7 +1,7 @@
 ---
-title: Scenarios to deploy enterprise operating systems
+title: "Scenarios to deploy enterprise operating systems with Configuration Manager"
 description: Learn about several scenarios to deploy enterprise operating systems with Configuration Manager.
-ms.date: 10/01/2021
+ms.date: "2021-10-01T00:00:00Z"
 ms.subservice: osd
 ms.topic: install-set-up-deploy
 ms.collection: tier3
@@ -23,17 +23,16 @@ This scenario applies to all [supported versions](../../core/plan-design/configs
 For more information, see [Upgrade Windows to the latest version](upgrade-windows-to-the-latest-version.md).
 
 ## Windows Autopilot for existing devices
-<!--3607717, fka 1358333-->
 
 Windows Autopilot for existing devices is available with Windows 10, version 1809 or later. This feature allows you to reimage and provision a device with an earlier version of Windows for Windows Autopilot user-driven mode using a single Configuration Manager task sequence.
 
 This scenario applies to Windows 10 version 1809 and later
 
-For more information, see [Windows Autopilot for existing devices](/autopilot/existing-devices).
+For more information, see [Windows Autopilot for existing devices](../../../../autopilot/existing-devices.md).
 
 ## Refresh an existing computer with a new version
 
-This scenario partitions and formats an existing computer and installs a new OS on the computer. It's also referred to as _wipe and load_. You can migrate settings and user data after the OS is installed.
+This scenario partitions and formats an existing computer and installs a new OS on the computer. It's also referred to as *wipe and load*. You can migrate settings and user data after the OS is installed.
 
 This scenario applies to all [supported versions](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) of Windows client and Windows Server.
 
@@ -41,7 +40,7 @@ For more information, see [Refresh an existing computer with a new version of Wi
 
 ## Install a new version of Windows on a new computer
 
-This scenario installs an OS on a new computer. It's also referred to as _bare metal_. It's a fresh installation of the OS and doesn't include any settings or user data migration.
+This scenario installs an OS on a new computer. It's also referred to as *bare metal*. It's a fresh installation of the OS and doesn't include any settings or user data migration.
 
 This scenario applies to all [supported versions](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) of Windows client and Windows Server.
 

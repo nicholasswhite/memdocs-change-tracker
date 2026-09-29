@@ -2,7 +2,7 @@
 title: Zero Trust deployment approach with Microsoft Intune
 description: Learn the recommended seven-layer deployment progression for implementing Zero Trust device security with Microsoft Intune, from app protection to endpoint data loss prevention.
 ms.author: lanewsad
-ms.date: 02/24/2026
+ms.date: "2026-02-24T00:00:00Z"
 ms.topic: concept-article
 ms.collection:
 - M365-identity-device-management
@@ -13,12 +13,12 @@ ms.collection:
 
 Microsoft Intune is a mobile device management solution that supports your organization's Zero Trust journey.
 
-[Zero Trust](/security/zero-trust/zero-trust-overview) isn't a product or service. Instead, it's a modern cybersecurity strategy that assumes no implicit trust, not even within the corporate network. Instead of trusting users, devices, or applications by default, a Zero Trust approach explicitly verifies every access request, continuously assesses risk, and enforces least privilege access across the entire digital estate.
+[Zero Trust](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview) isn't a product or service. Instead, it's a modern cybersecurity strategy that assumes no implicit trust, not even within the corporate network. Instead of trusting users, devices, or applications by default, a Zero Trust approach explicitly verifies every access request, continuously assesses risk, and enforces least privilege access across the entire digital estate.
 
 Core principles of Zero Trust include:
 
 | Verify explicitly | Use least privilege access | Assume breach |
-|---------|---------|---------|
+| --- | --- | --- |
 | Always authenticate and authorize based on all available data points. | Limit user access with Just-In-Time and Just-Enough-Access (JIT/JEA), risk-based adaptive policies, and data protection. | Minimize blast radius and segment access. Verify end-to-end encryption and use analytics to get visibility, drive threat detection, and improve defenses. |
 
 ## Why manage endpoints for Zero Trust?
@@ -38,14 +38,14 @@ Building a comprehensive Zero Trust security posture for devices involves progre
 The following table shows recommended deployment progression for Zero Trust device security:
 
 | Layer | Protection capability | What you accomplish | Prerequisites | License requirements |
-|-------|----------------------|---------------------|---------------|---------------------|
+| --- | --- | --- | --- | --- |
 | **1** | [App protection policies](deploy-protect-apps-step-2.md) | Protect organizational data in apps without requiring device enrollment. Creates foundation for bring-your-own-device (BYOD) scenarios. | Supported apps (Microsoft 365 apps, policy-enabled apps) | Microsoft 365 E3, E5, F1, F3, F5 |
 | **2** | [Enroll devices](../device-enrollment/guide.md) | Establish relationship between user, device, and Intune. Enable device management and visibility into endpoints accessing resources. | Platform-specific prerequisites (MDM authority, certificates) | Microsoft 365 E3, E5, F1, F3, F5 |
 | **3** | [Compliance policies](deploy-compliance-step-3.md) | Define minimum requirements devices must meet (password protection, OS version, encryption). Mark devices as compliant or noncompliant. | Devices enrolled in layer 2 | Microsoft 365 E3, E5, F3, F5 |
 | **4** | [Require healthy and compliant devices](../device-security/compliance/overview.md#integrate-with-conditional-access) | Implement enterprise Zero Trust identity and device access policies. Work with identity team to enforce compliance through Conditional Access, blocking access from devices that don't meet security requirements. | Compliance policies from layer 3, coordination with identity administrators | Microsoft 365 E3, E5, F3, F5 |
 | **5** | [Configuration profiles](deploy-configuration-step-4.md) | Configure device settings to harden security. Deploy security baselines. Move security controls from Group Policy to cloud policies. | Enrolled devices from layer 2 | Microsoft 365 E3, E5, F3, F5 |
 | **6** | [Device risk monitoring](../device-security/microsoft-defender/configure-integration.md) | Integrate with Microsoft Defender for Endpoint to monitor device risk, detect threats, and block access based on risk level. Deploy security baselines. | Microsoft Defender for Endpoint setup, coordination with threat protection team | Microsoft 365 E5, F5 |
-| **7** | [Endpoint DLP](/purview/endpoint-dlp-learn-about) | Protect sensitive data on endpoints with Microsoft Purview Data Loss Prevention. Monitor and control file operations based on sensitivity labels. | Microsoft Purview configuration, devices onboarded to MDE in layer 6 | Microsoft 365 E5, E5 compliance add-on, F5 compliance add-on |
+| **7** | [Endpoint DLP](https://learn.microsoft.com/en-us/purview/endpoint-dlp-learn-about) | Protect sensitive data on endpoints with Microsoft Purview Data Loss Prevention. Monitor and control file operations based on sensitivity labels. | Microsoft Purview configuration, devices onboarded to MDE in layer 6 | Microsoft 365 E5, E5 compliance add-on, F5 compliance add-on |
 
 ## Understanding the seven deployment layers
 
@@ -60,6 +60,7 @@ Users install apps like Outlook or Teams from the store, sign in with their work
 **Example:** A user's personal iPhone has Outlook installed. Your app protection policy requires a PIN to access work email, prevents copying work data to personal apps, and blocks saving email attachments to personal cloud storage. The user maintains full control of their device while organizational data stays protected.
 
 > [!TIP]
+>
 > App protection policies can be deployed to both unenrolled devices (layer 1) and enrolled devices (layer 2+) for additional app-level protection beyond device management.
 
 For details, see [Deployment guidance: App protection policies](deploy-protect-apps-step-2.md).
@@ -79,6 +80,7 @@ Compliance policies define security requirements that devices must meet to acces
 **Example:** Your compliance policy requires Windows devices to have BitLocker enabled, run a minimum OS version, and use a password with at least eight characters. A user's laptop missing BitLocker is marked noncompliant. The user receives notifications about the requirement and has time to remediate before access is blocked (if you enforce layer 4).
 
 > [!TIP]
+>
 > Compliance policies assess device state but don't automatically block access. They work with Conditional Access (layer 4) to enforce compliance requirements.
 
 For details, see [Deployment guidance: Compliance policies](deploy-compliance-step-3.md).
@@ -92,9 +94,10 @@ This layer represents the shift from assessment to enforcement. After compliance
 **Example:** Your identity team configures a Conditional Access policy that requires devices to be marked as compliant before users can access Microsoft 365 apps. A user attempts to access Outlook from a Windows device that is managed by Intune. The device is noncompliant because it doesn't meet an Intune compliance requirement, disk encryption (BitLocker) isn't enabled. Because the device isn't marked as compliant, Conditional Access blocks access to Outlook and prompts the user to resolve the issue. After the user enables BitLocker, the device reports its updated compliance state to Intune. Once the device is evaluated as compliant, Conditional Access reevaluates the sign-in and access to Outlook is restored.
 
 > [!NOTE]
+>
 > This layer requires coordination with your identity team. While the Intune admin center presents the Conditional Access node from Microsoft Entra ID, Conditional Access policies are created in Entra ID, not Intune. See the [Identity team coordination section](#identity-team-microsoft-entra-id) for the workflow.
 
-For details, see [Require managed devices with Conditional Access](/entra/identity/conditional-access/policy-all-users-device-compliance).
+For details, see [Require managed devices with Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance).
 
 ### Configuration profiles (Layer 5)
 
@@ -105,6 +108,7 @@ You can deploy settings through device configuration profiles or endpoint securi
 **Example:** You deploy a Windows security baseline to corporate laptops. The baseline enables Windows Firewall, configures BitLocker encryption, disables legacy protocols, enables attack surface reduction rules, and configures dozens of other security settings. Users don't need to configure any of these settings manually—Intune applies them automatically.
 
 > [!TIP]
+>
 > Security baselines are preconfigured profiles containing Microsoft's recommended security settings. Use them as a starting point, then customize based on your organization's needs.
 
 For details, see [Deploy configuration profiles](deploy-configuration-step-4.md).
@@ -118,6 +122,7 @@ When you onboard devices to Microsoft Defender for Endpoint, they begin reportin
 **Example:** A user's laptop becomes infected with malware. Microsoft Defender for Endpoint detects the threat and marks the device as high risk. Your compliance policy evaluating device risk immediately marks the device as noncompliant. Conditional Access blocks the user's access to organizational resources until the threat is remediated and the device risk returns to an acceptable level.
 
 > [!TIP]
+>
 > Integrating Defender for Endpoint with Intune also lets you deploy deeper security configurations, including the Microsoft Defender for Endpoint security baseline and advanced threat protection settings like attack surface reduction rules, controlled folder access, and network protection.
 
 For details, see [Microsoft Defender for Endpoint integration](../device-security/microsoft-defender/configure-integration.md).
@@ -131,9 +136,10 @@ Devices onboarded to Microsoft Defender for Endpoint in layer 6 are automaticall
 **Example:** Your compliance team creates a DLP policy preventing files labeled "Confidential" from being copied to USB drives or uploaded to personal cloud storage. A user attempts to copy a confidential financial report to a USB drive. Endpoint DLP blocks the operation and displays a notification explaining the restriction. Depending on how the compliance team configured the policy, the block might be absolute or allow the user to provide a business justification and proceed. All activities are logged for compliance reporting.
 
 > [!NOTE]
+>
 > As the Intune administrator, your role for Endpoint DLP is limited to ensuring devices are onboarded to Microsoft Defender for Endpoint (layer 6). All DLP policy creation and management happens in the Microsoft Purview portal by your compliance team.
 
-For details, see [Learn about Endpoint DLP](/purview/endpoint-dlp-learn-about) and [Get started with Endpoint DLP](/purview/endpoint-dlp-getting-started).
+For details, see [Learn about Endpoint DLP](https://learn.microsoft.com/en-us/purview/endpoint-dlp-learn-about) and [Get started with Endpoint DLP](https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started).
 
 ## Enrollment vs. onboarding
 
@@ -142,13 +148,14 @@ As you implement these layers, you'll work with two related but different concep
 **Enrollment** (Layer 2) registers devices with Intune for comprehensive device management. **Onboarding** (Layers 6-7) configures devices to report information to specific services like Microsoft Defender for Endpoint or Microsoft Purview.
 
 |  | Enrollment | Onboarding |
-|---------|---------|----------|
+| --- | --- | --- |
 | **What it does** | Registers devices for management with Intune. Intune manages the entire device including apps, settings, and policies. | Configures devices to share information with specific Microsoft 365 services (currently Microsoft Defender for Endpoint and Microsoft Purview). |
 | **Scope** | Full device management—configure settings, deploy apps, enforce compliance, monitor device health. | Service-specific capabilities only. For example, onboarding to MDE enables threat detection; onboarding to Purview enables DLP. |
-| **In this deployment** | Layer 2: You enroll devices into Intune management. | Layer 6: You onboard devices to Microsoft Defender for Endpoint using Intune.<br>Layer 7: Devices onboarded to MDE are automatically onboarded for Microsoft Purview Endpoint DLP. |
+| **In this deployment** | Layer 2: You enroll devices into Intune management. | Layer 6: You onboard devices to Microsoft Defender for Endpoint using Intune. Layer 7: Devices onboarded to MDE are automatically onboarded for Microsoft Purview Endpoint DLP. |
 | **How you do it** | Platform-specific enrollment methods: Microsoft Entra join (automatic enrollment), Windows Autopilot, Apple Automated Device Enrollment, manual enrollment. | Use Intune to deploy onboarding configuration to enrolled devices. Devices must be enrolled in Intune before you can onboard them to MDE or Purview. |
 
 > [!NOTE]
+>
 > Onboarding to Microsoft Defender for Endpoint automatically onboards devices for Microsoft Purview capabilities including Endpoint DLP. No additional Intune configuration is required.
 
 ## Coordinating with Microsoft 365 teams
@@ -169,7 +176,7 @@ Implementing Zero Trust device security requires coordination across multiple te
   4. Ensure both policies target the same user groups.
   5. Test together using the Conditional Access *What If* tool before enabling enforcement.
 - For detailed workflow, see [Common ways to use Conditional Access](../device-security/conditional-access-integration/scenarios.md#device-based-conditional-access).
-- For policy creation, see [Require managed devices with Conditional Access](/entra/identity/conditional-access/policy-all-users-device-compliance).
+- For policy creation, see [Require managed devices with Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance).
 
 **Related guidance:** [Conditional Access with Intune](../device-security/conditional-access-integration/overview.md)
 
@@ -202,12 +209,13 @@ Implementing Zero Trust device security requires coordination across multiple te
 - Support user education when DLP policies block or warn about data operations
 
 > [!NOTE]
+>
 > As the Intune administrator, your role for Endpoint DLP is limited to ensuring devices are onboarded to Microsoft Defender for Endpoint. Devices onboarded to MDE automatically become DLP-capable with no additional Intune configuration. All DLP policy creation and management happens in the Microsoft Purview portal by your compliance team.
 
 **Related guidance:**
 
-- [Learn about Endpoint DLP](/purview/endpoint-dlp-learn-about)
-- [Get started with Endpoint DLP](/purview/endpoint-dlp-getting-started)
+- [Learn about Endpoint DLP](https://learn.microsoft.com/en-us/purview/endpoint-dlp-learn-about)
+- [Get started with Endpoint DLP](https://learn.microsoft.com/en-us/purview/endpoint-dlp-getting-started)
 
 ### Best practices for cross-team coordination
 
@@ -225,16 +233,16 @@ Implementing Zero Trust device security requires coordination across multiple te
 - [Deployment guidance: App protection policies](deploy-protect-apps-step-2.md) - Layer 1
 - [Deployment guidance: Enroll devices](../device-enrollment/guide.md) - Layer 2
 - [Deployment guidance: Compliance policies](deploy-compliance-step-3.md) - Layer 3
-- [Require managed devices with Conditional Access](/entra/identity/conditional-access/policy-all-users-device-compliance) - Layer 4
+- [Require managed devices with Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance) - Layer 4
 
 **Learn more about Zero Trust:**
 
-- [Zero Trust Guidance Center](/security/zero-trust) - Enterprise-scale strategy and architecture
-- [Secure endpoints with Zero Trust](/security/zero-trust/deploy/endpoints) - Device-centric deployment objectives
-- [Zero Trust deployment plan with Microsoft 365](/microsoft-365/security/microsoft-365-zero-trust) - Cross-service deployment guidance
+- [Zero Trust Guidance Center](https://learn.microsoft.com/en-us/security/zero-trust) - Enterprise-scale strategy and architecture
+- [Secure endpoints with Zero Trust](https://learn.microsoft.com/en-us/security/zero-trust/deploy/endpoints) - Device-centric deployment objectives
+- [Zero Trust deployment plan with Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/security/microsoft-365-zero-trust) - Cross-service deployment guidance
 
 **Explore advanced protection layers:**
 
 - [Deploy configuration profiles](deploy-configuration-step-4.md) - Layer 5
 - [Microsoft Defender for Endpoint integration](../device-security/microsoft-defender/configure-integration.md) - Layer 6
-- [Learn about Endpoint DLP](/purview/endpoint-dlp-learn-about) - Layer 7
+- [Learn about Endpoint DLP](https://learn.microsoft.com/en-us/purview/endpoint-dlp-learn-about) - Layer 7

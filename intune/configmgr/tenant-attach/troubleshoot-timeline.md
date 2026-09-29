@@ -1,51 +1,52 @@
 ---
-title: Troubleshooting the device timeline
+title: "Troubleshoot the timeline for devices uploaded to the admin center"
 description: Troubleshooting the device timeline for Intune tenant attach
-ms.date: 07/11/2022
+ms.date: "2022-07-11T00:00:00Z"
 ms.topic: troubleshooting
 ms.subservice: core-infra
 ms.collection: tier3
 ms.service: configuration-manager
 ---
 
-# <a name="bkmk_timeline"></a> Troubleshoot the timeline for devices uploaded to the admin center
-<!--CM7141381, IN7552762 pubpreview Sept8, 2020, GA 2201 -->
+# Troubleshoot the timeline for devices uploaded to the admin center
+
 *Applies to: Configuration Manager (current branch)*
 
 Use the following to troubleshoot the device timeline in the Microsoft Intune admin center:
 
-## <a name="bkmk_common"></a> Common errors from the Microsoft Intune admin center
+## Common errors from the Microsoft Intune admin center
 
 When viewing or synching the timeline from the Microsoft Intune admin center, you may run across one of these errors.
 
-### <a name="bkmk_401"></a> The necessary configuration is missing in Microsoft Entra ID
+### The necessary configuration is missing in Microsoft Entra ID
 
 **Error message:** The necessary configuration is missing in Microsoft Entra ID. Make sure to attach the Configuration Manager site to your Azure tenant, and assign the proper user role in Microsoft Entra ID.
 
 **Possible causes:**
 
 - Make sure [Microsoft Entra user discovery](../core/servers/deploy/configure/about-discovery-methods.md#azureaddisc) and [Active Directory User discovery](../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser) are configured and the user account accessing tenant attach features from the Microsoft Intune admin center is discovered by both.
-- The user account might need an [Intune role](../../fundamentals/role-based-access-control/overview.md) assigned. <!--7980141-->
+- The user account might need an [Intune role](../../fundamentals/role-based-access-control/overview.md) assigned.
 
-### <a name="bkmk_403"></a> Unable to get timeline information
+### Unable to get timeline information
 
 **Error message:** Unable to get timeline information. Make sure the Microsoft Entra ID and AD user discovery are configured and the user is discovered by both. Verify the user has the proper permissions in Configuration Manager.
 
 **Possible causes:**
 
 Verify the account has the following permissions:
+
 - The **Read** permission for the device's **Collection** in Configuration Manager.
 - The **Read Resource** permission under **Collection** in Configuration Manager.
 - The **Notify Resource** permission under **Collection** in Configuration Manager.
-   - This permission is needed to be able to sync the latest events.
+  - This permission is needed to be able to sync the latest events.
 
-### <a name="bkmk_404"></a> Unable to get timeline information
+### Unable to get timeline information
 
 **Error message:** The device information hasn't yet synchronized from Configuration Manager to Microsoft Intune admin center. Wait up to 15 minutes after you attach the site to your Azure tenant.
 
 **Possible resolution:** Wait for approximately 15 minutes and the issue should be resolved automatically.
 
-### <a name="bkmk_500"></a> Unexpected error occurred
+### Unexpected error occurred
 
 **Error message:** Unexpected error occurred
 
@@ -54,7 +55,7 @@ Verify the account has the following permissions:
 - Verify you have a supported version of Configuration Manager and the corresponding version of the console installed.
 - If there are a large number of events (more than 10,000, approximately), and multiple searches are requested rapidly, then it's possible to receive an unexpected error. You may also see your search results [timeout](#bkmk_timeout).
 
-### <a name="bkmk_timeout"></a> Getting results timed out
+### Getting results timed out
 
 **Error message:** Getting results timed out. Make sure that the Configuration Manager service connection point is operational and has a connection to the cloud.
 
@@ -62,7 +63,11 @@ Verify the account has the following permissions:
 
 ## Known issues
 
-[!INCLUDE [Known issues shared across tenant attach features](includes/known-issues-shared.md)]
+### When the Configuration Manager site is configured to require multi-factor authentication, most tenant attach features don't work
+
+**Scenario:** If the [SMS provider](../core/plan-design/hierarchy/plan-for-the-sms-provider.md) machine that communicates with the [service connection point](../core/servers/deploy/configure/about-the-service-connection-point.md) is configured to use multi-factor authentication, you can't install applications, run CMPivot queries, and perform other actions from the admin console. You receive an error code 403, forbidden.
+
+**Workaround:** The current workaround is to configure the on-premises hierarchy to the default authentication level of **Windows authentication**. For more information, see the [Authentication section in the SMS provider article](../core/plan-design/hierarchy/plan-for-the-sms-provider.md#authentication).
 
 ## Next steps
 

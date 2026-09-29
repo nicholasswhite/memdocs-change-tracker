@@ -1,16 +1,18 @@
 ---
 description: The SMS_ClientAdvertisementStatus WMI class is an SMS Provider server class, in Configuration Manager, that records the last status message for every client and advertisement.
-title: SMS_ClientAdvertisementStatus Class
-ms.date: 09/20/2016
+title: "SMS_ClientAdvertisementStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientAdvertisementStatus Server WMI Class
+
 The `SMS_ClientAdvertisementStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that records the last status message for every client and advertisement.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -37,181 +39,171 @@ Class SMS_ClientAdvertisementStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ClientAdvertisementStatus` class does not define any methods.
+
+The `SMS_ClientAdvertisementStatus` class does not define any methods.
 
 ## Properties
- `AdvertisementID`
- Data type: `String`
 
- Access type: Read Only
+`AdvertisementID` Data type: `String`
 
- Qualifiers:  [key]
+Access type: Read Only
 
- ID of the advertisement.
+Qualifiers: [key]
 
- `LastAcceptanceMessageID`
- Data type: `UInt32`
+ID of the advertisement.
 
- Access type: Read Only
+`LastAcceptanceMessageID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- Last acceptance status message ID.
+Qualifiers: None
 
- `LastAcceptanceMessageIDName`
- Data type: `String`
+Last acceptance status message ID.
 
- Access type: Read Only
+`LastAcceptanceMessageIDName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Short description of the last acceptance status message.
+Qualifiers: None
 
- `LastAcceptanceMessageIDSeverity`
- Data type: `UInt32`
+Short description of the last acceptance status message.
 
- Access type: Read Only
+`LastAcceptanceMessageIDSeverity` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read Only
 
- The severity of the last acceptance status message. Possible values are:
+Qualifiers: [enumeration]
 
-|Value|Status message severity|
-|-|-|
-|0x40000000|Error(3221225472)|
-|0x80000000|Warning(2147483648)|
-|0xC0000000|Informational(1073741824)|
+The severity of the last acceptance status message. Possible values are:
 
- `LastAcceptanceState`
- Data type: `UInt32`
+| Value | Status message severity |
+| --- | --- |
+| 0x40000000 | Error(3221225472) |
+| 0x80000000 | Warning(2147483648) |
+| 0xC0000000 | Informational(1073741824) |
 
- Access type: Read Only
+`LastAcceptanceState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- Numeric category of the last acceptance status message.
+Qualifiers: None
 
- `LastAcceptanceStateName`
- Data type: `String`
+Numeric category of the last acceptance status message.
 
- Access type: Read Only
+`LastAcceptanceStateName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Short description of the acceptance category.
+Qualifiers: None
 
- `LastAcceptanceStatusTime`
- Data type: `DateTime`
+Short description of the acceptance category.
 
- Access type: Read Only
+`LastAcceptanceStatusTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read Only
 
- Date and time, in Universal Coordinated Time (UTC), when the last acceptance message was generated.
+Qualifiers: None
 
- `LastExecutionContext`
- Data type: `String`
+Date and time, in Universal Coordinated Time (UTC), when the last acceptance message was generated.
 
- Access type: Read Only
+`LastExecutionContext` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- User context (account) under which the program ran.
+Qualifiers: None
 
- `LastExecutionResult`
- Data type: `String`
+User context (account) under which the program ran.
 
- Access type: Read Only
+`LastExecutionResult` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Last string returned by a status Management Information Format (MIF) file (messages 10007 and 10009) or an error return code (10006).
+Qualifiers: None
 
- `LastState`
- Data type: `UInt32`
+Last string returned by a status Management Information Format (MIF) file (messages 10007 and 10009) or an error return code (10006).
 
- Access type: Read Only
+`LastState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- Numeric category of the last delivery status message.
+Qualifiers: None
 
- `LastStateName`
- Data type: `String`
+Numeric category of the last delivery status message.
 
- Access type: Read Only
+`LastStateName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Short description of the delivery category.
+Qualifiers: None
 
- `LastStatusMessageID`
- Data type: `UInt32`
+Short description of the delivery category.
 
- Access type: Read Only
+`LastStatusMessageID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- Last delivery status message ID.
+Qualifiers: None
 
- `LastStatusMessageIDName`
- Data type: `String`
+Last delivery status message ID.
 
- Access type: Read Only
+`LastStatusMessageIDName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Short description of the last delivery status message.
+Qualifiers: None
 
- `LastStatusMessageIDSeverity`
- Data type: `UInt32`
+Short description of the last delivery status message.
 
- Access type: Read Only
+`LastStatusMessageIDSeverity` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- [enumeration]
+Qualifiers: None
 
- The severity of the last delivery status message. Possible values are listed for `LastAcceptanceMessageIDSeverity`.
+[enumeration]
 
- `LastStatusTime`
- Data type: `DateTime`
+The severity of the last delivery status message. Possible values are listed for `LastAcceptanceMessageIDSeverity`.
 
- Access type: Read Only
+`LastStatusTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read Only
 
- Date and time, in Universal Coordinated Time (UTC), when the last delivery message was generated.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Date and time, in Universal Coordinated Time (UTC), when the last delivery message was generated.
 
- Access type: Read Only
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read Only
 
- ID of the resource for the client.
+Qualifiers: [key]
+
+ID of the resource for the client.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   Using this class is the primary way to determine advertisement status. Even if a client is no longer in the collection targeted by an advertisement, an instance still appears in this class. It records the last status message for every advertisement for each client.
 
   Advertisement status is divided into two stages, Acceptance and Delivery, which are recorded separately. Acceptance is whether the client has received the advertisement and whether the client decides that the advertisement applies to it. Delivery is the status of everything that comes after; that is, the actual download and execution of the advertisement. Advertisement status messages have been categorized into several groups that indicate similar status for the advertisement.
 
-  For more information about categories see [SMS_AdvertisementStatusInformation Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_advertisementstatusinformation-server-wmi-class.md).
+  For more information about categories see [SMS_AdvertisementStatusInformation Server WMI Class](sms_advertisementstatusinformation-server-wmi-class.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_AdvertisementStatusInformation Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_advertisementstatusinformation-server-wmi-class.md)
+
+[SMS_AdvertisementStatusInformation Server WMI Class](sms_advertisementstatusinformation-server-wmi-class.md)

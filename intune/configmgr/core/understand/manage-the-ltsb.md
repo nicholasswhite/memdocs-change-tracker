@@ -1,7 +1,7 @@
 ---
-title: Manage the LTSB
+title: "Manage the long term servicing branch of Configuration Manager"
 description: Management differences for the LTSB of Configuration Manager.
-ms.date: 03/24/2022
+ms.date: "2022-03-24T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3

@@ -1,7 +1,7 @@
 ---
-title: Network infrastructure
+title: "Network infrastructure considerations for Configuration Manager"
 description: Set up firewalls, ports, and domains to prepare for Configuration Manager communications.
-ms.date: 06/19/2019
+ms.date: "2019-06-19T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -29,13 +29,11 @@ For more information, see the following articles:
 - [How to configure client communication ports](../../clients/deploy/configure-client-communication-ports.md)
 - [Ports used in Configuration Manager](../hierarchy/ports.md)
 
-
 ## Internet access requirements
 
 Some Configuration Manager features rely on internet connectivity for full functionality. If your organization restricts network communication with the internet using a firewall or proxy device, make sure to allow the necessary endpoints.
 
 For more information, see [Internet access requirements](internet-endpoints.md)
-
 
 ## Proxy servers
 

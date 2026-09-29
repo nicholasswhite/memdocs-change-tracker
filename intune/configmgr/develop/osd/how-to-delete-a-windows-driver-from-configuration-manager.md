@@ -1,27 +1,28 @@
 ---
-title: Delete a Windows Driver
+title: "How to Delete a Windows Driver from Configuration Manager"
 description: You delete a Windows driver from the operating system deployment driver catalog, in Configuration Manager, by deleting its SMS_Driver Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete a Windows Driver from Configuration Manager
-You delete a Windows driver from the operating system deployment driver catalog, in Configuration Manager, by deleting its [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) object. When you delete a driver, its definition is deleted, and it is no longer matched by the apply driver action task sequences. However, if the content associated with the driver was added to a driver package, or if the driver was added to a boot image package, the content remains there until the packages are updated.
+
+You delete a Windows driver from the operating system deployment driver catalog, in Configuration Manager, by deleting its [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) object. When you delete a driver, its definition is deleted, and it is no longer matched by the apply driver action task sequences. However, if the content associated with the driver was added to a driver package, or if the driver was added to a boot image package, the content remains there until the packages are updated.
 
 ### To delete a Windows driver
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the `SMS_Driver` object for the driver that you want to delete.
-
-3.  Delete the `SMS_Driver` object.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the `SMS_Driver` object for the driver that you want to delete.
+3. Delete the `SMS_Driver` object.
 
 ## Example
- The following example method deletes a driver identified by its `CI_ID` property value.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method deletes a driver identified by its `CI_ID` property value.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub DeleteDriver(connection,driverID)
@@ -56,34 +57,39 @@ public void DeleteDriver(WqlConnectionManager connection,
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed:`WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`driverID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The Windows driver identifier available in `SMS_Driver.CI_ID`.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed:`WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `driverID` | - Managed: `Integer` - VBScript: `Integer` | The Windows driver identifier available in `SMS_Driver.CI_ID`. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).

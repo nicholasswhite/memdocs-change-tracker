@@ -1,8 +1,8 @@
 ---
-title: Zero Trust with Microsoft Intune
+title: "Overview - Zero Trust with Microsoft Intune"
 description: Microsoft Intune contributes to a strong Zero Trust strategy and architecture by managing and securing endpoints that access organizational resources.
 ms.author: lanewsad
-ms.date: 02/24/2026
+ms.date: "2026-02-24T00:00:00Z"
 ms.topic: article
 ms.collection:
 - M365-identity-device-management
@@ -13,12 +13,12 @@ ms.collection:
 
 Microsoft Intune is a mobile device management solution that supports your organization's Zero Trust journey by securing and managing endpoints that access organizational resources.
 
-[Zero Trust](/security/zero-trust/zero-trust-overview) isn't a product or service. Instead, it's a modern cybersecurity strategy that assumes no implicit trust, not even within the corporate network. Instead of trusting users, devices, or applications by default, a Zero Trust approach explicitly verifies every access request, continuously assesses risk, and enforces least privilege access across the entire digital estate.
+[Zero Trust](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview) isn't a product or service. Instead, it's a modern cybersecurity strategy that assumes no implicit trust, not even within the corporate network. Instead of trusting users, devices, or applications by default, a Zero Trust approach explicitly verifies every access request, continuously assesses risk, and enforces least privilege access across the entire digital estate.
 
 Core principles of Zero Trust include:
 
 | Verify explicitly | Use least privilege access | Assume breach |
-|---------|---------|---------|
+| --- | --- | --- |
 | Always authenticate and authorize based on all available data points. | Limit user access with Just-In-Time and Just-Enough-Access (JIT/JEA), risk-based adaptive policies, and data protection. | Minimize blast radius and segment access. Verify end-to-end encryption and use analytics to get visibility, drive threat detection, and improve defenses. |
 
 ## Why manage endpoints for Zero Trust?
@@ -34,10 +34,10 @@ To avoid exposing your data to risk, you need to monitor every endpoint for risk
 You can use Intune to protect both access and data on organization-owned devices and your user's personal devices that they use for work. Intune use of Microsoft Entra as its identity service helps you enforce device compliance policies that align with your organization's requirements while providing reports that help you monitor and achieve your Zero Trust objectives.
 
 | Zero Trust principle | How Intune helps |
-|----------------------|------------------|
+| --- | --- |
 | Verify explicitly | Intune supports creation of policies for [apps](../app-management/protection/overview.md), [security settings](../device-security/security-baselines/configure-baselines.md), [device configuration](../device-configuration/settings-catalog/index.md), [compliance](../device-security/compliance/overview.md), Microsoft Entra [Conditional Access](../device-security/conditional-access-integration/overview.md), and more. These policies become part of the authentication and authorization process of accessing resources. |
-| Use least privilege access | Intune simplifies app management with a built-in app experience, including app lifecycle management. You can distribute apps from your private app stores, enable Microsoft 365 apps, deploy Win32 apps, create app protection policies, and manage access to apps and their data.</br></br> Intune's [Endpoint Privilege Management (EPM)](../epm/overview.md) helps you move your organization's users to run as standard users without administrator rights while enabling those same users to complete tasks and run apps that require elevated privileges.</br></br> Intune policies for Local Administrator Password Solutions (LAPS) for both [Windows](../device-security/laps/overview.md) and [macOS](../device-security/laps/setup-macos.md) can help you secure and manage the local administrator accounts on your managed devices. |
-| Assume breach | Intune integrates with [mobile threat defense services](../device-security/mobile-threat-defense/overview.md), including Microsoft Defender for Endpoint and third-party partner services. With these services, you can create policies for endpoint protection that respond to threats, do real-time risk analysis, and automate remediation.</br></br> When you integrate Intune and Defender, you can use evolving tools like the [Vulnerability Remediation Agent for Security Copilot](../copilot/agents/vulnerability-remediation-agent.md). This agent identifies Common Vulnerabilities and Exposures (CVEs) on your managed devices and provides you with step-by-step guidance you can use to remediate them. |
+| Use least privilege access | Intune simplifies app management with a built-in app experience, including app lifecycle management. You can distribute apps from your private app stores, enable Microsoft 365 apps, deploy Win32 apps, create app protection policies, and manage access to apps and their data.   Intune's [Endpoint Privilege Management (EPM)](../epm/overview.md) helps you move your organization's users to run as standard users without administrator rights while enabling those same users to complete tasks and run apps that require elevated privileges.   Intune policies for Local Administrator Password Solutions (LAPS) for both [Windows](../device-security/laps/overview.md) and [macOS](../device-security/laps/setup-macos.md) can help you secure and manage the local administrator accounts on your managed devices. |
+| Assume breach | Intune integrates with [mobile threat defense services](../device-security/mobile-threat-defense/overview.md), including Microsoft Defender for Endpoint and third-party partner services. With these services, you can create policies for endpoint protection that respond to threats, do real-time risk analysis, and automate remediation.   When you integrate Intune and Defender, you can use evolving tools like the [Vulnerability Remediation Agent for Security Copilot](../copilot/agents/vulnerability-remediation-agent.md). This agent identifies Common Vulnerabilities and Exposures (CVEs) on your managed devices and provides you with step-by-step guidance you can use to remediate them. |
 
 ## Zero Trust deployment approach
 
@@ -51,4 +51,4 @@ For detailed deployment guidance including prerequisites, licensing requirements
 
 - [Learn about Intune core concepts](core-concepts.md)
 - [Zero Trust deployment approach with Microsoft Intune](zero-trust-deployment.md)
-- [Zero Trust Guidance Center](/security/zero-trust)
+- [Zero Trust Guidance Center](https://learn.microsoft.com/en-us/security/zero-trust)

@@ -1,16 +1,18 @@
 ---
-title: SMS_DPContentInfo Class
+title: "SMS_DPContentInfo Server WMI Class"
 description: Learn how to use the SMS_DPContentInfo class in Configuration Manager to describe package information for a given distribution point.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DPContentInfo Server WMI Class
+
 The `SMS_DPContentInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes package information for a given distribution point.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,119 +32,114 @@ Class SMS_DPContentInfo : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DPContentInfo` class does not define any methods.
+
+The `SMS_DPContentInfo` class does not define any methods.
 
 ## Properties
- `Description`
- Data type: `String`
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description for the package or application.
+Qualifiers: none
 
- `IsPredefinedPackage`
- Data type: `Boolean`
+Description for the package or application.
 
- Access type: Read-only
+`IsPredefinedPackage` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `True` if this package is a predefined package.
+Qualifiers: [read]
 
- `NALPath`
- Data type: `String`
+`True` if this package is a predefined package.
 
- Access type: Read/Write
+`NALPath` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Distribution point NALPath.
+Qualifiers: [key]
 
- `Name`
- Data type: `String`
+Distribution point NALPath.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the package or application.
+Qualifiers: none
 
- `ObjectID`
- Data type: `String`
+Name of the package or application.
 
- Access type: Read/Write
+`ObjectID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The identifier of the package or the unique identifier of the configuration item.
+Qualifiers: [key]
 
- `ObjectType`
- Data type: `UInt32`
+The identifier of the package or the unique identifier of the configuration item.
 
- Access type: Read-only
+`ObjectType` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Object type.
+Qualifiers: [enumeration, read]
 
-|value|Object type|
-|-|-|
-|Value|Description|
-|0|PKG_TYPE_REGULAR|
-|3|PKG_TYPE_DRIVER|
-|4|PKG_TYPE_TASK_SEQUENCE|
-|5|PKG_TYPE_SWUPDATES|
-|6|PKG_TYPE_DEVICE_SETTING|
-|8|PKG_CONTENT_PACKAGE|
-|257|PKG_TYPE_IMAGE|
-|258|PKG_TYPE_BOOTIMAGE|
-|259|PKG_TYPE_OSINSTALLIMAGE|
-|512|APPLICATION|
+Object type.
 
- `ObjectTypeID`
- Data type: `UInt32`
+| value | Object type |
+| --- | --- |
+| Value | Description |
+| 0 | PKG_TYPE_REGULAR |
+| 3 | PKG_TYPE_DRIVER |
+| 4 | PKG_TYPE_TASK_SEQUENCE |
+| 5 | PKG_TYPE_SWUPDATES |
+| 6 | PKG_TYPE_DEVICE_SETTING |
+| 8 | PKG_CONTENT_PACKAGE |
+| 257 | PKG_TYPE_IMAGE |
+| 258 | PKG_TYPE_BOOTIMAGE |
+| 259 | PKG_TYPE_OSINSTALLIMAGE |
+| 512 | APPLICATION |
 
- Access type: Read-only
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Secured object class ID.
+Qualifiers: [enumeration, read]
 
-|Value|Object type|
-|-|-|
-|Value|Description|
-|2|SMS_Package|
-|14|SMS_OperatingSystemInstallPackage|
-|18|SMS_ImagePackage|
-|19|SMS_BootImagePackage|
-|23|SMS_DriverPackage|
-|24|SMS_SoftwareUpdatesPackage|
-|31|SMS_Application|
+Secured object class ID.
 
- `PackageID`
- Data type: `String`
+| Value | Object type |
+| --- | --- |
+| Value | Description |
+| 2 | SMS_Package |
+| 14 | SMS_OperatingSystemInstallPackage |
+| 18 | SMS_ImagePackage |
+| 19 | SMS_BootImagePackage |
+| 23 | SMS_DriverPackage |
+| 24 | SMS_SoftwareUpdatesPackage |
+| 31 | SMS_Application |
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Identifier for the package.
+Qualifiers: none
 
- `SourceSize`
- Data type: `UInt32`
+Identifier for the package.
 
- Access type: Read/Write
+`SourceSize` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Source size of the package.
+Qualifiers: none
+
+Source size of the package.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: SMS_G_System_WORKSTATION_STATUS Class
+title: "SMS_G_System_WORKSTATION_STATUS Server WMI Class"
 description: In the Configuration Manager, the SMS_G_System_WORKSTATION_STATUS Windows Management Instrumentation class is an SMS Provider server class that contains information about the last time inventory was collected on a client computer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_WORKSTATION_STATUS Server WMI Class
+
 The `SMS_G_System_WORKSTATION_STATUS` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains information about the last time inventory was collected on a client computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,92 +31,87 @@ Class SMS_G_System_WORKSTATION_STATUS : SMS_G_System_Current
 ```
 
 ## Methods
- The `SMS_G_System_WORKSTATION_STATUS` class does not define any methods.
+
+The `SMS_G_System_WORKSTATION_STATUS` class does not define any methods.
 
 ## Properties
- `GroupID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`GroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+Qualifiers: [key]
 
- For this class, the default value of this property is NULL.
+See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
- `LastHardwareScan`
- Data type: `DateTime`
+For this class, the default value of this property is NULL.
 
- Access type: Read/Write
+`LastHardwareScan` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time when Configuration Manager inventoried the client computer hardware.
+Qualifiers: None
 
- `LastReportVersion`
- Data type: `String`
+Date and time when Configuration Manager inventoried the client computer hardware.
 
- Access type: Read/Write
+`LastReportVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Version of the last report.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Version of the last report.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+Qualifiers: [key]
 
- For this class, the default value of this property is `null`.
+See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
- `RevisionID`
- Data type: `UInt32`
+For this class, the default value of this property is `null`.
 
- Access type: Read/Write
+`RevisionID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the default value of this property is `null`.
+See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
- `SystemDefaultLocaleID`
- Data type: `UInt32`
+For this class, the default value of this property is `null`.
 
- Access type: Read/Write
+`SystemDefaultLocaleID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- System default locale ID.
+Qualifiers: None
 
- `TimeStamp`
- Data type: `DateTime`
+System default locale ID.
 
- Access type: Read/Write
+`TimeStamp` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the default value of this property is `null`.
+See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
- `TimeZoneOffset`
- Data type: `UInt32`
+For this class, the default value of this property is `null`.
 
- Access type: Read/Write
+`TimeZoneOffset` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- System default time zone offset.
+Qualifiers: None
+
+System default time zone offset.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## See Also
- [Hardware Inventory Server WMI Classes](../../../../../develop/reference/core/clients/manage/hardware-inventory-server-wmi-classes.md)
- [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md)
+
+[Hardware Inventory Server WMI Classes](hardware-inventory-server-wmi-classes.md) [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md)

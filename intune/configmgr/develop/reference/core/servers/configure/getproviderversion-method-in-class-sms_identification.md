@@ -1,16 +1,18 @@
 ---
-title: GetProviderVersion Method
+title: "GetProviderVersion Method in Class SMS_Identification"
 description: In Configuration Manager, the GetProviderVersion Windows Management Instrumentation class method gets the product version string from the version resources of the SMS Provider DLL.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# GetProviderVersion Method in Class SMS_Identification
-The `GetProviderVersion` Windows Management Instrumentation (WMI) class method, in Configuration Manager,  gets the product version string from the version resources of the SMS Provider DLL.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+# GetProviderVersion Method in Class SMS_Identification
+
+The `GetProviderVersion` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets the product version string from the version resources of the SMS Provider DLL.
+
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -21,23 +23,26 @@ SInt32 GetProviderVersion(
 ```
 
 #### Parameters
- `VersionString`
- Data type: `String`
 
- Qualifiers: [out]
+`VersionString` Data type: `String`
 
- Product version string from the version resources of the Smsprov.dll file.
+Qualifiers: [out]
+
+Product version string from the version resources of the Smsprov.dll file.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
- The version that is obtained by this method allows your application to determine whether the SMS Provider has had a hotfix applied.
+
+The version that is obtained by this method allows your application to determine whether the SMS Provider has had a hotfix applied.
 
 ## Example Code
- The following example shows how to call this method to get the version number of the SMS Provider.
+
+The following example shows how to call this method to get the version number of the SMS Provider.
 
 ```
 Dim Identification As SWbemObject
@@ -52,10 +57,13 @@ MsgBox "Version = " & ProviderVersion
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Identification Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_identification-server-wmi-class.md)
+
+[SMS_Identification Server WMI Class](sms_identification-server-wmi-class.md)

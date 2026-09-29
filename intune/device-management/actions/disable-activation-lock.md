@@ -1,7 +1,7 @@
 ---
-title: "Device Action: Disable Activation Lock"
+title: "Device action: disable Activation Lock"
 description: Learn how to use Microsoft Intune to disable Activation Lock on Apple devices.
-ms.date: 10/27/2025
+ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 zone_pivot_groups: e5de148b-1c4f-40a3-8ecb-0f8a7724d927
 ---
@@ -27,7 +27,7 @@ These scenarios can delay provisioning, increase support overhead, and impact op
 
 To help solve these problems, Apple introduced the ability to disable Activation Lock for supervised devices, without the user's Apple ID and password. Supervised devices generate a device-specific Activation Lock bypass code, which is stored on Apple's activation server.
 
-To dive deeper into how Activation Lock works, see [Activation Lock for iPhone and iPad][APL-2].
+To dive deeper into how Activation Lock works, see [Activation Lock for iPhone and iPad](https://support.apple.com/HT201365).
 
 ## How Intune helps you manage Activation Lock
 
@@ -36,8 +36,7 @@ There are two methods to disabling Activation Lock on devices:
 - Manually entering the Activation Lock bypass code on the device.
 - Using the *disable Activation* Lock device action.
 
-For supervised devices, Intune stores the Activation Lock bypass code, which can be entered on the device to manually disable Activation Lock. If the device has been wiped, you can directly access the device by using a blank username and the code as the password.
-Additionally, Intune can directly issue the bypass code to Apple's activation server to disable Activation Lock without having to interact with the device.
+For supervised devices, Intune stores the Activation Lock bypass code, which can be entered on the device to manually disable Activation Lock. If the device has been wiped, you can directly access the device by using a blank username and the code as the password. Additionally, Intune can directly issue the bypass code to Apple's activation server to disable Activation Lock without having to interact with the device.
 
 The business benefits of using Intune to manage Activation Lock are:
 
@@ -45,125 +44,88 @@ The business benefits of using Intune to manage Activation Lock are:
 - You can enable users to do their work and unlock it when a device needs to be repurposed, without needing the previous username or password.
 
 > [!TIP]
-> You can also turn off Activation Lock directly in Apple Business Manager and Apple School Manager. To learn more, see [Turn off Activation Lock in Apple Business Manager][APL-1].
+>
+> You can also turn off Activation Lock directly in Apple Business Manager and Apple School Manager. To learn more, see [Turn off Activation Lock in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/axm812df1dd8).
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
-> - iOS/iPadOS in [Supervised Mode][IOS-SUP] through Automated Device Enrollment (ADE)
-> - macOS [enrolled via Automated Device Enrollment (ADE)][MAC-ADE]
-:::column-end:::
-:::row-end:::
+> - iOS/iPadOS in [Supervised Mode](https://learn.microsoft.com/en-us/intune/intune-service/remote-actions/device-supervised-mode) through Automated Device Enrollment (ADE)
+> - macOS [enrolled via Automated Device Enrollment (ADE)](../../device-enrollment/apple/setup-automated-macos.md)
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
 
 ::: zone pivot="ios"
+
 > Before you can manage Activation Lock, you must configure your devices to allow it.
+>
 > 1. [Create a Settings catalog policy](../../device-configuration/settings-catalog/index.md) for the iOS/iPadOS platform and use the following setting:
-> 
->     | Category | Setting name | Value |
->     |--|--|--|
->     | **Managed Setting** > **MDM Options** | Activation Lock Allowed While Supervised| Allowed|
 >
-> 1. Assign the policy to a group that contains as members the devices that you want to configure.
+>    | Category | Setting name | Value |
+>    | --- | --- | --- |
+>    | **Managed Setting** &gt; **MDM Options** | Activation Lock Allowed While Supervised | Allowed |
+> 2. Assign the policy to a group that contains as members the devices that you want to configure.
+
 ::: zone-end
+
 ::: zone pivot="macos"
+
 > Before you can manage Activation Lock, you must configure your devices to allow it.
-> 1. [Create a Settings catalog policy](../../device-configuration/settings-catalog/index.md) for the macOS platform and use the following setting:
-> 
->     | Category | Setting name | Value |
->     |--|--|--|
->     | **Managed Setting** > **MDM Options** | Activation Lock Allowed While Supervised| Allowed|
 >
-> 1. Assign the policy to a group that contains as members the devices that you want to configure.
+> 1. [Create a Settings catalog policy](../../device-configuration/settings-catalog/index.md) for the macOS platform and use the following setting:
+>
+>    | Category | Setting name | Value |
+>    | --- | --- | --- |
+>    | **Managed Setting** &gt; **MDM Options** | Activation Lock Allowed While Supervised | Allowed |
+> 2. Assign the policy to a group that contains as members the devices that you want to configure.
+
 ::: zone-end
 
-
-:::column-end:::
-:::row-end:::
-
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
 > To run this action, use an account with at least one of the following roles:
 >
 > - Intune Service Administrator
-> - [Custom role] that includes:
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Remote tasks/Bypass activation lock**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
 
-:::column-end:::
-:::row-end:::
-
 ## How to disable Activation Lock from the Intune admin center
 
-The Disable Activation Lock device action in Intune removes Activation Lock without requiring the user's Apple ID and password. However, if the Find My app is launched after this action, Activation Lock will be automatically re-enabled.
-To avoid re-locking the device, make sure you have physical possession of the device before disabling Activation Lock.
+The Disable Activation Lock device action in Intune removes Activation Lock without requiring the user's Apple ID and password. However, if the Find My app is launched after this action, Activation Lock will be automatically re-enabled. To avoid re-locking the device, make sure you have physical possession of the device before disabling Activation Lock.
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Disable Activation Lock**.
-1. Select **Hardware**, then find and copy the **Activation Lock bypass code** value under **Conditional Access**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Secure** &gt; **Disable Activation Lock**.
+4. Select **Hardware**, then find and copy the **Activation Lock bypass code** value under **Conditional Access**.
 
-    >[!IMPORTANT]
-    >If you reset the device settings before you copy the code, the code is removed from Intune and is inaccessible. **Ensure to copy the bypass code before you wipe the device.**
+   > [!IMPORTANT]
+   >
+   > If you reset the device settings before you copy the code, the code is removed from Intune and is inaccessible. **Ensure to copy the bypass code before you wipe the device.**
 
-To retrieve the `activationLockBypassCode` property using Microsoft Graph, you must explicitly include it in your query.
-If you send an unfiltered request for the device object, Graph returns a default set of properties—and `activationLockBypassCode` will be `null`.
+To retrieve the `activationLockBypassCode` property using Microsoft Graph, you must explicitly include it in your query. If you send an unfiltered request for the device object, Graph returns a default set of properties—and `activationLockBypassCode` will be `null`.
 
 ## How to use the Activation Lock bypass code from the Intune admin center
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Wipe**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Wipe**.
+
 ::: zone pivot="ios"
+
 3. After the device is reset, you're prompted for the Apple ID and password. Leave the ID field blank, and then enter the **Activation Lock bypass code** for the password. This step removes the account from the device.
+
 ::: zone-end
+
 ::: zone pivot="macos"
+
 3. After the device is reset, select **Recovery Assistant** in the menu bar and then select **Activate with MDM key** option to enter the bypass code.
+
 ::: zone-end
 
 ## Reference links
 
-- Microsoft Graph API: [bypassActivationLock action][GRAPH-1]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[School Administrator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator
-[Endpoint Security Manager]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#endpoint-security-manager
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-bypassactivationlock
-
-<!--Other links-->
-
-[IOS-SUP]: /intune/intune-service/remote-actions/device-supervised-mode
-[MAC-ADE]: ../../device-enrollment/apple/setup-automated-macos.md
-[APL-1]: https://support.apple.com/guide/apple-business-manager/axm812df1dd8
-[APL-2]: https://support.apple.com/HT201365
+- Microsoft Graph API: [bypassActivationLock action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-bypassactivationlock)

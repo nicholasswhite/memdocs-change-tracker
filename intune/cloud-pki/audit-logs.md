@@ -1,7 +1,7 @@
 ---
-title: Audit logs for Microsoft Intune cloud PKI
+title: "Microsoft Cloud PKI audit logs"
 description: Get audit logs for Microsoft cloud public key infrastructure (PKI) activity in the admin center.
-ms.date: 12/06/2024
+ms.date: "2024-12-06T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -14,17 +14,17 @@ This article describes how to access and utilize audit logs for Microsoft Cloud 
 Audit logs are available for the following actions on CAs and certificates:
 
 | Audit action | Purpose |
-| -------------------------- | ----------------- |
-|Create CloudCertificationAuthority| This action creates a new CA in Intune Cloud PKI.|
-| Search CloudCertificationAuthority| This action searches for CAs available in Intune Cloud PKI. |
-|Get CloudCertificationAuthority | This action retrieves a specific CA by its ID in Intune Cloud PKI |
-|Patch CloudCertificationAuthority | This action updates the properties of an existing CA in Intune Cloud PKI |
-| Delete CloudCertificationAuthority|This action deletes an existing CA in Intune Cloud PKI. |
-|Search CloudCertificationAuthorityLeafCertificate | This action retrieves all leaf certificates issued by a specific CA in the Cloud PKI service. |
-|RevokeLeafCertAsync CloudCertificationAuthorityLeafCertificate | This action revokes a specific leaf certificate issued by a CA in the Cloud PKI service. |
-|UploadExternallySignedCertificationAuthorityCertificateAsync CloudCertificationAuthority| This action uploads an externally signed CA certificate to an existing CA in Intune Cloud PKI. |
-|ChangeCloudCertificationAuthorityStatusAsync CloudCertificationAuthority| This action changes the status of an existing CA in Intune Cloud PKI. |
-|RevokeCloudCertificationAuthorityCertificateAsync CloudCertificationAuthority | This action revokes the CA certificate of an existing CA in Intune Cloud PKI, which renders it invalid. |
+| --- | --- |
+| Create CloudCertificationAuthority | This action creates a new CA in Intune Cloud PKI. |
+| Search CloudCertificationAuthority | This action searches for CAs available in Intune Cloud PKI. |
+| Get CloudCertificationAuthority | This action retrieves a specific CA by its ID in Intune Cloud PKI |
+| Patch CloudCertificationAuthority | This action updates the properties of an existing CA in Intune Cloud PKI |
+| Delete CloudCertificationAuthority | This action deletes an existing CA in Intune Cloud PKI. |
+| Search CloudCertificationAuthorityLeafCertificate | This action retrieves all leaf certificates issued by a specific CA in the Cloud PKI service. |
+| RevokeLeafCertAsync CloudCertificationAuthorityLeafCertificate | This action revokes a specific leaf certificate issued by a CA in the Cloud PKI service. |
+| UploadExternallySignedCertificationAuthorityCertificateAsync CloudCertificationAuthority | This action uploads an externally signed CA certificate to an existing CA in Intune Cloud PKI. |
+| ChangeCloudCertificationAuthorityStatusAsync CloudCertificationAuthority | This action changes the status of an existing CA in Intune Cloud PKI. |
+| RevokeCloudCertificationAuthorityCertificateAsync CloudCertificationAuthority | This action revokes the CA certificate of an existing CA in Intune Cloud PKI, which renders it invalid. |
 
 ## Prerequisites
 
@@ -45,15 +45,15 @@ You can access the audit logs for Microsoft Cloud PKI in the Microsoft Intune ad
 
 ### Microsoft Intune admin center
 
-In the admin center, go to **Tenant Administration** > **Audit Logs**.
+In the admin center, go to **Tenant Administration** &gt; **Audit Logs**.
 
 ### Microsoft Graph API
 
 The Microsoft Graph API is a unified endpoint that enables you to access data and services across Microsoft 365, including Cloud PKI. You can use the Microsoft Graph API to query, filter, and export the audit logs for Cloud PKI actions.
 
-1. Make a GET request to ``https://graph.microsoft.com/beta/deviceManagement/auditEvents``.
-
+1. Make a GET request to `https://graph.microsoft.com/beta/deviceManagement/auditEvents`.
 2. Use the `$filter` query parameter to filter the audit logs. Available filters include:
+
    - activityType
    - activityDateTime
    - displayName
@@ -61,7 +61,7 @@ The Microsoft Graph API is a unified endpoint that enables you to access data an
 
    For example, you can use the following query to filter the audit logs by the Intune Cloud PKI category and the CreateCaAsync action:
 
-   `GET  https://graph.microsoft.com/beta/deviceManagement/auditEvents?$filter=activityType eq 'Create CloudCertificationAuthority'`
+   `GET https://graph.microsoft.com/beta/deviceManagement/auditEvents?$filter=activityType eq 'Create CloudCertificationAuthority'`
 
    As another example, the following query requests audit revocation logs between the dates of January 9 and January 10.
 

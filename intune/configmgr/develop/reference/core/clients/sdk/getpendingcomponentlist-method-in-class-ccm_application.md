@@ -1,16 +1,18 @@
 ---
-title: GetPendingComponentList Method
+title: "GetPendingComponentList Method in Class CCM_Application"
 description: In Configuration Manager, the GetPendingComponentList Windows Management Instrumentation class method that gets the pending component list for an application.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetPendingComponentList Method in Class CCM_Application
+
 The `GetPendingComponentList` Windows Management Instrumentation (WMI) class method in Configuration Manager that gets the pending component list for an application.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,33 +26,33 @@ uint32 GetPendingComponentList
 ```
 
 ## Parameters
- `AppDeliveryTypeId`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`AppDeliveryTypeId` Data type: `String`
 
- Application delivery type identifier.
+Qualifiers: [id("0"), in]
 
- `Revision`
- Data type: `UInt32`
+Application delivery type identifier.
 
- Qualifiers: [id("1"), in]
+`Revision` Data type: `UInt32`
 
- Revision.
+Qualifiers: [id("1"), in]
 
- `PendingComponentList`
- Data type: `String`
+Revision.
 
- Qualifiers: [id("2"), out]
+`PendingComponentList` Data type: `String`
 
- Pending component list.
+Qualifiers: [id("2"), out]
+
+Pending component list.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: Antivirus exclusions
+title: "Recommended antivirus exclusions for Configuration Manager"
 description: Learn about recommended antivirus exclusions for use when troubleshooting possible issues.
-ms.date: 10/31/2019
+ms.date: "2019-10-31T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ROBOTS: NOINDEX
@@ -33,7 +33,6 @@ The following is a non-comprehensive list of possible symptoms:
 - Software Center is not populated by deployed software on client systems, or doesn't start. Also, the CCMRepair.log file may contain errors that resemble the following example:
 
   > Database verification failed with result: 0x80004005 but DB: C:\Windows\CCM\filename.sdf could be opened, skipping DB repair.
-
 - Software that is deployed to clients can't be installed.
 - Compliance data for software deployments is inaccurate.
 
@@ -43,11 +42,11 @@ To prevent such problems, we recommend that you add the following real-time prot
 
 ### Default Installation Folders
 
-|Folder|Path|
-| - | - |
-|*ConfigMgr Installation Folder*  |  %ProgramFiles%\Microsoft Configuration Manager  |
-|*MP Installation Folder*  |%ProgramFiles%\SMS_CCM  |
-|*Client Installation Folder*  |%Windir%\CCM  |
+| Folder | Path |
+| --- | --- |
+| *ConfigMgr Installation Folder* | %ProgramFiles%\Microsoft Configuration Manager |
+| *MP Installation Folder* | %ProgramFiles%\SMS_CCM |
+| *Client Installation Folder* | %Windir%\CCM |
 
 ### Folder exclusions for site servers
 
@@ -74,7 +73,7 @@ To prevent such problems, we recommend that you add the following real-time prot
 
 ### Folder exclusions for clients
 
-- *Client Installation Folder*\\\*.sdf
+- *Client Installation Folder*\\*.sdf
 - *Client Installation Folder*\ServiceData
 - C:\Windows\CCMCache
 - C:\Windows\CCMSetup

@@ -1,7 +1,7 @@
 ---
-title: "Device Action: Reset Passcode"
+title: "Device action: reset passcode"
 description: Learn how to reset a passcode with Microsoft Intune.
-ms.date: 10/27/2025
+ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -11,12 +11,7 @@ With the *reset passcode* action in Microsoft Intune, you can remotely reset a d
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
@@ -26,24 +21,16 @@ With the *reset passcode* action in Microsoft Intune, you can remotely reset a d
 > - Android Enterprise personally-owned work profile (BYOD)
 > - Android Open Source Project (AOSP)
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
 > To run this action, use an account with at least one of the following roles:
 >
-> - [Help Desk Operator]
-> - [School Administrator]
-> - [Custom role] that includes:
+> - [Help Desk Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [School Administrator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#school-administrator)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Remote Tasks/Reset Passcode**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
-:::column-end:::
-:::row-end:::
+
 ## Passcode reset types
 
 When working with Android devices, it's important to understand the two types of passcode resets available:
@@ -54,7 +41,7 @@ When working with Android devices, it's important to understand the two types of
 The following table summarizes the passcode reset types based on platform:
 
 | Platform | Device-level passcode reset | Work profile passcode reset |
-|--|:-:|:-:|
+| --- | --- | --- |
 | Android Enterprise corporate-owned dedicated (COSU) | ✅ | ❌ |
 | Android Enterprise corporate-owned fully managed (COBO) | ❌ | ✅ |
 | Android Enterprise corporate-owned work profile (COPE) | ❌ | ✅ |
@@ -62,14 +49,15 @@ The following table summarizes the passcode reset types based on platform:
 | Android Open Source Project (AOSP) | ✅ | ❌ |
 
 > [!IMPORTANT]
-> Before initiating a passcode reset, ensure that the passcode requirement is enforced via [device configuration policies][INT-1]—otherwise, the reset fails.
+>
+> Before initiating a passcode reset, ensure that the passcode requirement is enforced via [device configuration policies](../../device-configuration/settings-catalog/ref-android-settings.md)—otherwise, the reset fails.
 
 ## How to reset a passcode from the Intune admin center
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Reset passcode**.
-1. A new passcode is presented to the admin.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Secure** &gt; **Reset passcode**.
+4. A new passcode is presented to the admin.
 
 The new passcode must be entered on the device, and it's displayed in the admin center for seven days.
 
@@ -77,29 +65,10 @@ The new passcode must be entered on the device, and it's displayed in the admin 
 
 For work profile passcode reset, users get notified to activate their reset passcode. After their passcode is entered, the notification is dismissed.
 
->[!NOTE]
->If the remote lock action fails, confirm that you have a device passcode policy assigned to the device. If the device doesn't have a device passcode assigned, the remote lock action doesn't succeed.
+> [!NOTE]
+>
+> If the remote lock action fails, confirm that you have a device passcode policy assigned to the device. If the device doesn't have a device passcode assigned, the remote lock action doesn't succeed.
 
 ## Reference links
 
-- Microsoft Graph API: [resetPasscode action][GRAPH-1]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[School Administrator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-resetpasscode
-
-<!--Other links-->
-
-[INT-1]: ../../device-configuration/settings-catalog/ref-android-settings.md
+- Microsoft Graph API: [resetPasscode action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-resetpasscode)

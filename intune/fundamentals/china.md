@@ -1,7 +1,7 @@
 ---
 title: Intune operated by 21Vianet in China
 description: Intune operated by 21Vianet in China.
-ms.date: 10/16/2025
+ms.date: "2025-10-16T00:00:00Z"
 ms.topic: article
 ms.reviewer: amsaeedi, acabello
 ms.collection:
@@ -15,7 +15,9 @@ Intune operated by 21Vianet is designed to meet the needs for secure, reliable, 
 
 Microsoft doesn't operate the service itself. 21Vianet operates, provides, and manages delivery of the service. 21Vianet is an Internet data center services provider in China. It provides hosting, managed network services, and cloud computing infrastructure services. By licensing Microsoft technologies, 21Vianet operates local datacenters to provide you with the ability to use Intune service while keeping your data within China. 21Vianet also provides your subscription, billing, and support services.
 
-[!INCLUDE [GDPR-related guidance](../privacy/includes/gdpr-dsr-and-stp-note.md)]
+> [!NOTE]
+>
+> If you're interested in viewing or deleting personal data, see the [Azure Data Subject Requests for the GDPR](https://learn.microsoft.com/en-us/microsoft-365/compliance/gdpr-dsr-azure) article. If you're looking for general info about GDPR, see the [GDPR section of the Service Trust portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 ## Feature differences in Intune operated by 21Vianet
 
@@ -27,15 +29,15 @@ Because the China services are operated by a partner from inside China, there ar
 - Derived Credentials aren't supported with Intune operated by 21Vianet.
 - Windows device management is supported using the modern MDM channel.
 - Intune operated by 21Vianet doesn't support on-premises Exchange Connector.
-- Intune operated by 21Vianet doesn't support [Microsoft Store for Business](/lifecycle/announcements/microsoft-store-for-business-education-retiring).
-- [Windows Autopilot](/autopilot/overview) features, including Autopilot with co-management, aren't supported with Intune operated by 21Vianet. [Windows Autopilot Device Preparation](/autopilot/device-preparation/overview) is available on Intune operated by 21Vianet in China cloud.
+- Intune operated by 21Vianet doesn't support [Microsoft Store for Business](https://learn.microsoft.com/en-us/lifecycle/announcements/microsoft-store-for-business-education-retiring).
+- [Windows Autopilot](../../autopilot/overview.md) features, including Autopilot with co-management, aren't supported with Intune operated by 21Vianet. [Windows Autopilot Device Preparation](../../autopilot/device-preparation/overview.md) is available on Intune operated by 21Vianet in China cloud.
 
-  To learn more about the differences, see [Compare Autopilot solutions](/autopilot/device-preparation/compare).
-
-- Intune operated by 21Vianet supports the Company Portal for Windows app. Use WinGet to download the Company portal package and dependencies and then deploy as a Line-of-Business app using Intune. [Use the WinGet tool to install and manage applications](/windows/package-manager/winget/).
+  To learn more about the differences, see [Compare Autopilot solutions](../../autopilot/device-preparation/compare.md).
+- Intune operated by 21Vianet supports the Company Portal for Windows app. Use WinGet to download the Company portal package and dependencies and then deploy as a Line-of-Business app using Intune. [Use the WinGet tool to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
 - Microsoft Intune Endpoint Analytics and Log Analytics features aren't currently available.
 - Azure Virtual Desktop Windows multi-session isn't currently supported for 21Vianet.
 - Because Google Mobile Services isn't available in China, customers in Intune operated by 21Vianet can't use features that require Google Mobile Services. These features include:
+
   - Google Play Protect capabilities such as Play integrity verdict.
   - Managing apps from the Google Play Store.
   - Android Enterprise capabilities. For more information, see this [Google documentation](https://support.google.com/work/android/answer/6270910?hl=en).
@@ -68,8 +70,8 @@ With Microsoft Azure, Intune, Microsoft 365, and Power BI operated by 21Vianet, 
 
 The Tenant Administrator role for Intune operated by 21Vianet can request data for data subjects in the following ways:
 
-- In the Microsoft Entra admin center, a Tenant Administrator can permanently delete a data subject from Microsoft Entra ID and related services. For more information, see [Azure Data Subject Requests - Delete](/microsoft-365/compliance/gdpr-dsr-azure#step-5-delete)
-- System-generated logs for Microsoft services operated by 21Vianet can be exported by Tenant Administrators using the Data Log Export. For more information, see [Azure Data Subject Requests - Export](/microsoft-365/compliance/gdpr-dsr-azure#step-6-export).
+- In the Microsoft Entra admin center, a Tenant Administrator can permanently delete a data subject from Microsoft Entra ID and related services. For more information, see [Azure Data Subject Requests - Delete](https://learn.microsoft.com/en-us/microsoft-365/compliance/gdpr-dsr-azure#step-5-delete)
+- System-generated logs for Microsoft services operated by 21Vianet can be exported by Tenant Administrators using the Data Log Export. For more information, see [Azure Data Subject Requests - Export](https://learn.microsoft.com/en-us/microsoft-365/compliance/gdpr-dsr-azure#step-6-export).
 
 ## Next steps
 

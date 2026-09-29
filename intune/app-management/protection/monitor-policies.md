@@ -1,7 +1,7 @@
 ---
 title: How to Monitor App Protection Policies
 description: This article describes how to monitor app protection policies in Intune.
-ms.date: 06/16/2024
+ms.date: "2024-06-16T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ilwu
 ---
@@ -16,14 +16,15 @@ App protection data is retained for a minimum of 90 days. Any app instances that
 
 - When you delete an app protection policy, scoped admins no longer see app instances associated with that policy. Global Administrators continue to see the policy name listed as "not available."
 
-  [!INCLUDE [global-admin](../../includes/global-admin.md)]
+  The [Microsoft Entra Global Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) role is a highly privileged role, and should only be used when another role can't be used. This feature requires the Global Administrator role.
 
+  To reduce risk, assign the least-privileged role that can complete the task. For more information on the built-in Intune roles and what they can do, see [Role-based access control (RBAC) with Intune](../../fundamentals/role-based-access-control/overview.md) and [Built-in role permissions for Intune](../../fundamentals/role-based-access-control/ref-built-in-roles.md).
 - For iOS 16 and later devices, the **Device Name** value in all app protection reports is a generic device name. For more information, see [Apple Developer documentation](https://developer.apple.com/documentation/uikit/uidevice/1620015-name).
 
 ## View the **App protection status** report
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Apps** > **Monitor** > **App protection status**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Apps** &gt; **Monitor** &gt; **App protection status**.
 
 - **User**: The name of the user.
 - **Email**: The email of the user.
@@ -47,10 +48,11 @@ App protection data is retained for a minimum of 90 days. Any app instances that
 - **iOS SDK version**: The current iOS MAM SDK version of the iOS app.
 - **Compliance State**: The app meets compliance if targeted with MAM policy.
 
->[!NOTE]
+> [!NOTE]
+>
 > The **Last Sync** column represents the same value in both the in-console User status report and the App Protection Policy exportable .csv report. The difference is a small delay in synchronization between the value in the two reports.
 >
-> The time referenced in Last Sync is when Intune last saw the app instance. When a user launches an app, it might notify the Intune App Protection service at that launch time, depending on when it last checked in. For more information, see [the retry interval times for App Protection Policy check-in](./policy-delivery-timing.md). If a user doesn't use that particular app in the last check-in interval (which is usually 30 minutes for active usage), and they launch the app, then:
+> The time referenced in Last Sync is when Intune last saw the app instance. When a user launches an app, it might notify the Intune App Protection service at that launch time, depending on when it last checked in. For more information, see [the retry interval times for App Protection Policy check-in](policy-delivery-timing.md). If a user doesn't use that particular app in the last check-in interval (which is usually 30 minutes for active usage), and they launch the app, then:
 >
 > - The App Protection Policy exportable .csv report has the newest time, within 1 minute (minimum) to 30 minutes (maximum).
 > - The User status report has the newest time instantly.
@@ -62,9 +64,5 @@ App protection data is retained for a minimum of 90 days. Any app instances that
 
 ## See also
 
-- [How to create and assign app protection policies](./create-policy.md)
+- [How to create and assign app protection policies](create-policy.md)
 - [Intune reports](../../device-management/reports/overview.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

@@ -1,13 +1,15 @@
 ---
 description: Learn how to use the Configuration Manager with the CreateIdentity method to create a PXE certificate identity that is used in the client configuration file.
-title: "IPxeAuthClass::ReadIdentity"
-ms.date: 09/20/2016
+title: "IPxeAuthClass::ReadIdentity Method"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # IPxeAuthClass::ReadIdentity Method
+
 In Configuration Manager, the `ReadIdentity` method reads a PXE certificate identity from the client configuration (PFX) file. The method is used in serializing a certificate from the file.
 
 ## Syntax
@@ -22,42 +24,39 @@ HRESULT ReadIdentity(
 ```
 
 #### Parameters
- `FileName`
- Data type: `BSTR`
 
- Qualifiers: [in]
+`FileName` Data type: `BSTR`
 
- Name of the client configuration (PFX) file.
+Qualifiers: [in]
 
- `FilePassword`
- Data type: `BSTR`
+Name of the client configuration (PFX) file.
 
- Qualifiers: [in]
+`FilePassword` Data type: `BSTR`
 
- Password to use for access to the client configuration file.
+Qualifiers: [in]
 
- `SMSID`
- Data type: `BSTR`
+Password to use for access to the client configuration file.
 
- Qualifiers: [in]
+`SMSID` Data type: `BSTR`
 
- The GUID used to identify the certificate. This is the value of the SMSID property in [SMS_CertificateInfo Server WMI Class](../../../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: [in]
 
- `Identity`
- Data type: `VARIANT`
+The GUID used to identify the certificate. This is the value of the SMSID property in [SMS_CertificateInfo Server WMI Class](../../../osd/sms_certificateinfo-server-wmi-class.md).
 
- Qualifiers: [out, retval]
+`Identity` Data type: `VARIANT`
 
- PXE certificate identity. The return value can be used with [SubmitRegistrationRecord Method in Class SMS_Site](../../../../../develop/reference/core/servers/configure/submitregistrationrecord-method-in-class-sms_site.md).
+Qualifiers: [out, retval]
+
+PXE certificate identity. The return value can be used with [SubmitRegistrationRecord Method in Class SMS_Site](../../servers/configure/submitregistrationrecord-method-in-class-sms_site.md).
 
 ## Return Values
- An `HRESULT` code. Possible values include, but are not limited to, the following value.
 
- S_OK
- The method succeeded.
+An `HRESULT` code. Possible values include, but are not limited to, the following value.
+
+S_OK The method succeeded.
 
 ## Remarks
 
 ## See Also
- [IPxeAuthClass Interface](../../../../../develop/reference/core/clients/client-classes/ipxeauthclass-interface.md)
- [About Operating System Deployment Site Role Configuration](../../../../../develop/osd/about-operating-system-deployment-site-role-configuration.md)
+
+[IPxeAuthClass Interface](ipxeauthclass-interface.md) [About Operating System Deployment Site Role Configuration](../../../../osd/about-operating-system-deployment-site-role-configuration.md)

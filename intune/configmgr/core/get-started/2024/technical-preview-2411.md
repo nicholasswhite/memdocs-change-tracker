@@ -1,11 +1,12 @@
 ---
-title: Technical preview 2411
+title: "Features in Configuration Manager technical preview version 2411"
 description: Learn about new features available in the Configuration Manager technical preview branch version 2411.
-ms.date: 11/28/2024
+ms.date: "2024-11-28T00:00:00Z"
 ms.topic: whats-new
 ROBOTS: NOINDEX, NOFOLLOW
 ms.collection: tier3
 ---
+
 # Features in Configuration Manager technical preview version 2411
 
 *Applies to: Configuration Manager (technical preview branch)*
@@ -16,15 +17,53 @@ Review the [technical preview](../technical-preview.md) article before installin
 
 The following sections describe the new features to try out in this version:
 
-[!INCLUDE [Operating System support added for Windows 11 24H2 and Windows Server 2025](includes/2411/26942563.md)]
-[!INCLUDE [Enhanced Security for CMG](includes/2411/27297018.md)]
-[!INCLUDE [SQL 2012 and 2014 support are deprecated](includes/2411/27212884.md)]
-[!INCLUDE [Software metering support in Arm64 devices](includes/2411/17419432.md)]
+## Operating System support added for Windows 11 24H2 and Windows Server 2025
 
+With this version of Configuration Manager, support is added for Windows 11 24H2 and Windows Server 2025.
+
+- Windows 11 24H2 &amp; Windows Server 2025 are added to the product lifecycle dashboard and supported platform.
+- Windows 11 24H2 &amp; Windows Server 2025 client support is added.
+- Boot image creation in CM on Windows Server 2025 now supports latest Windows ADK.
+- Windows upgrade readiness dashboard now supports Windows 11 24H2 for upgrading clients.
+
+> [!NOTE]
+>
+> Windows Server and Windows 11 24H2 do not support Firewall rules. This will result in a non-compliant status in the Configuration Manager applet.
+
+## Enhanced Security for CMG
+
+CMG Setup now uses managed identities and third party **Server App** to interact with CMG's Azure storage account, instead of storage account keys.
+
+- Hence storage account key access is disabled for new CMG setup.
+- For sessions upgrading from earlier versions to 2411 tp, the **CMG Enhance Security** button is shown as enabled.
+
+  [![Screenshot of cm enhanced window in the console.](media/27297018-cmg-enhanced.png)](media/27297018-cmg-enhanced.png#lightbox)
+- When the enhanced security option is selected, the VMSS OS Auto Upgrade feature is also activated. An extra panel appears, prompting the admin to provide maintenance window details. Azure uses this information to schedule upgrades whenever new OS images become available.
+
+  [![Screenshot of service window in the console.](media/27297018-service-window.png)](media/27297018-service-window.png#lightbox)
+
+### CMG Entra Application secret key renewal
+
+The 'Renew Secret Key' feature now opens a dialog with four options for the validity period. This update also prevents applications older than 800 days (approximately two years) from renewing their secret keys. The same options are available when creating a new app.
+
+[![Screenshot of service window in the console.](media/27297018-secret-window.png)](media/27297018-secret-window.png#lightbox)
+
+Sign in using tenant Global Administrator credentials and then click on the renew button.
+
+> [!IMPORTANT]
+>
+> The [Microsoft Entra Global Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) role is a highly privileged role and should only be used when another role can't be used. This feature requires the Global Administrator role. For other features, Microsoft recommends using roles with the fewest permissions. To learn more, see [Fundamentals of role-based administration for Configuration Manager](../../understand/fundamentals-of-role-based-administration.md).
+
+## SQL 2012 and 2014 support are deprecated
+
+Starting with this version, Configuration Manager no longer supports SQL Server 2012 and 2014. Upgrade to the latest SQL Server version or at least SQL Server 2016. If you don’t upgrade, CM upgrades are blocked, and you see an error during the prereq check.
+
+## Software metering support in Arm64 devices
+
+The Configuration Manager now supports Software metering for Arm64 devices. Software metering is used to monitor Windows PC desktop apps with a filename ending in .exe. For more information, see [Software metering in Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).
 
 ## Next steps
 
 For more information about installing or updating the technical preview branch, see [Technical preview](../technical-preview.md).
 
 For more information about the different branches of Configuration Manager, see [Which branch of Configuration Manager should I use?](../../understand/which-branch-should-i-use.md).
-

@@ -1,7 +1,7 @@
 ---
-title: Check status of work or school device in Company Portal app for macOS
+title: "Check status in Company Portal for macOS"
 description:  Check status of work or school devices in Company Portal app for macOS.
-ms.date: 11/08/2024
+ms.date: "2024-11-08T00:00:00Z"
 ms.reviewer: kakyker
 ---
 
@@ -10,6 +10,7 @@ ms.reviewer: kakyker
 The Intune Company Portal app regularly checks the settings on work or school devices to ensure they're meeting access requirements. However, if you ever need to disconnect from Wi-Fi for an extended period of time, or if you're in a hurry to resolve a current access issue, you can use the Company Portal *check status* action to reconnect without waiting.
 
 > [!TIP]
+>
 > The Intune Company Portal app is required for this feature. If you're trying to sync a Mac that's owned by your organization, and it doesn't have the Company Portal app, contact your support person for help. They must facilitate the status check on their end.
 
 ## Check status
@@ -17,15 +18,11 @@ The Intune Company Portal app regularly checks the settings on work or school de
 Complete these steps to check the status of the Mac you use for work or school.
 
 1. Open the Company Portal app on your Mac.
-
-1. Select **Devices**.
-
-1. If you only have one device, skip to step 4. If you have multiple devices, select the device you're currently using.
-
-1. Select **Check Status**.
-
-1. Wait while Company Portal confirms the status of your access. The status appears onscreen and tells you that you meet your organization's security requirements, or tells you what is needed to get access.
+2. Select **Devices**.
+3. If you only have one device, skip to step 4. If you have multiple devices, select the device you're currently using.
+4. Select **Check Status**.
+5. Wait while Company Portal confirms the status of your access. The status appears onscreen and tells you that you meet your organization's security requirements, or tells you what is needed to get access.
 
 ## Next steps
-Still need help? Contact your support person. Sign in to the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) for your organization's contact information.
 
+Still need help? Contact your support person. Sign in to the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) for your organization's contact information.

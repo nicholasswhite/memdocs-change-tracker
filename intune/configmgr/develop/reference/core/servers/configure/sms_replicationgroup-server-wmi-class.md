@@ -1,16 +1,18 @@
 ---
 description: Learn how to classify replication group data in Configuration Manager using SMS_ReplicationGroup WMI class.
-title: SMS_ReplicationGroup Class
-ms.date: 09/20/2016
+title: "SMS_ReplicationGroup Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ReplicationGroup Server WMI Class
+
 The `SMS_ReplicationGroup` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains replication group data.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,109 +32,105 @@ Class SMS_ReplicationGroup : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_ReplicationGroup` class.
 
-|Method|Description|
-|------------|-----------------|
-|[InitializeData Method in Class SMS_ReplicationGroup](../../../../../develop/reference/core/servers/configure/initializedata-method-in-class-sms_replicationgroup.md)|Reinitializes the data in a specific replication group between two specified sites.|
+The following table lists the methods in the `SMS_ReplicationGroup` class.
+
+| Method | Description |
+| --- | --- |
+| [InitializeData Method in Class SMS_ReplicationGroup](initializedata-method-in-class-sms_replicationgroup.md) | Reinitializes the data in a specific replication group between two specified sites. |
 
 ## Properties
- `ID`
- Data type: `UInt32`
 
- Access type: Read-only
+`ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Unique identifier for the replication group.
+Qualifiers: [key]
 
- `IsPush`
- Data type: `Boolean`
+Unique identifier for the replication group.
 
- Access type: Read-only
+`IsPush` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this is site data. `false` if this is global data.
+Qualifiers: none
 
- `ReplicationGroup`
- Data type: `String`
+`true` if this is site data. `false` if this is global data.
 
- Access type: Read-only
+`ReplicationGroup` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Name of the replication group used in the data replication service. Each replication group contains a set of tables to be replicated together.
+Qualifiers: none
 
- `ReplicationPattern`
- Data type: `String`
+Name of the replication group used in the data replication service. Each replication group contains a set of tables to be replicated together.
 
- Access type: Read-only
+`ReplicationPattern` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Replication pattern. Possible values are:
+Qualifiers: none
 
-|Value|Replication pattern|
-|-|-|
-|Global|The data is replicated across all primary sites and CAS in the hierarchy.|
-|Site|The data is replicated up to the CAS in the hierarchy.|
-|Global_proxy|The data is replicated to secondary sites in the hierarchy.|
+Replication pattern. Possible values are:
 
- `ReplicationPriority`
- Data type: `UInt16`
+| Value | Replication pattern |
+| --- | --- |
+| Global | The data is replicated across all primary sites and CAS in the hierarchy. |
+| Site | The data is replicated up to the CAS in the hierarchy. |
+| Global_proxy | The data is replicated to secondary sites in the hierarchy. |
 
- Access type: Read-only
+`ReplicationPriority` Data type: `UInt16`
 
- Qualifiers: none
+Access type: Read-only
 
- Priority of data replication using data replication service.
+Qualifiers: none
 
- `SecurityKey`
- Data type: `String`
+Priority of data replication using data replication service.
 
- Access type: Read-only
+`SecurityKey` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Security key value for RBAC to verify that the SDK user has permission to read the instance of `SMS_ReplicationGroup`.
+Qualifiers: none
 
- `Status`
- Data type: `UInt32`
+Security key value for RBAC to verify that the SDK user has permission to read the instance of `SMS_ReplicationGroup`.
 
- Access type: Read-only
+`Status` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- The current status of replicating data for tables in the replication group.
+Qualifiers: none
 
- `SyncInterval`
- Data type: `UInt32`
+The current status of replicating data for tables in the replication group.
 
- Access type: Read-only
+`SyncInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- How often the data replication service checks to see if there are any changes in the tables within the replication group to be replicated.
+Qualifiers: none
 
- `TransportType`
- Data type: `String`
+How often the data replication service checks to see if there are any changes in the tables within the replication group to be replicated.
 
- Access type: Read-only
+`TransportType` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Type of transportation supported by data replication service.
+Qualifiers: none
+
+Type of transportation supported by data replication service.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

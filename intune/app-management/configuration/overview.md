@@ -1,7 +1,7 @@
 ---
 title: App Configuration Policies for Microsoft Intune
 description: Learn how to use app configuration policies on an iOS/iPadOS or Android device in Microsoft Intune.
-ms.date: 04/23/2026
+ms.date: "2026-04-23T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.reviewer: bryanke
@@ -28,6 +28,7 @@ If end-users were to enter these settings instead, they could do this incorrectl
 The available configuration parameters and the implementation of the configuration parameters are decided by the developers of the application. Documentation from the application vendor should be reviewed to see what configurations are available and how the configurations influence the behavior of the application. For some applications, Intune will populate the available configuration settings.
 
 > [!NOTE]
+>
 > In the Managed Google Play Store, apps that support configuration will be marked as such:
 >
 > ![Screenshot of a configured app](media/overview/configured-app.png)
@@ -36,7 +37,7 @@ The available configuration parameters and the implementation of the configurati
 
 You can assign an app configuration policy to a group of end-users and devices by using a combination of [include and exclude assignments](../deployment/configure-assignment-scope.md). As part of the process to add or update an app configuration policy, you can set the assignments for the app configuration policy. When you set the assignments for the policy, you can choose to include and exclude the [groups](../../fundamentals/tenant-administration/add-groups.md) of end-users for which the policy applies. When you choose to include one or more groups, you can choose to select specific groups to include or select built-in groups. Built-in groups include **All Users**, **All Devices**, and **All Users + All Devices**.
 
-You can also use [filters](../../fundamentals/filters/overview.md) to refine the assignment scope when deploying app configuration policies for managed iOS and Android devices. You must first [create a filter](../../fundamentals/filters/overview.md#create-a-filter) using any of the available properties for iOS and Android. Then, in [Microsoft Intune admin center] you can assign your managed app configuration policy by selecting **Apps** > **Configuration** > **Create** > **Managed devices** and go to the assignment page. After selecting a group, you can refine the applicability of the policy by choosing a filter and deciding to use it in **Include** or **Exclude** mode.
+You can also use [filters](../../fundamentals/filters/overview.md) to refine the assignment scope when deploying app configuration policies for managed iOS and Android devices. You must first [create a filter](../../fundamentals/filters/overview.md#create-a-filter) using any of the available properties for iOS and Android. Then, in [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) you can assign your managed app configuration policy by selecting **Apps** &gt; **Configuration** &gt; **Create** &gt; **Managed devices** and go to the assignment page. After selecting a group, you can refine the applicability of the policy by choosing a filter and deciding to use it in **Include** or **Exclude** mode.
 
 The app configuration policy workload provides a list of app configuration policies that have been created for your tenant. This list provides details, such as Name, Platform, Updated, Enrollment type, and Scope Tags. For additional details about a specific app configuration policy, select the policy. On the policy **Overview** pane, you can see specific details, such as the policy status based on device and based on user, as well as whether the policy has been assigned.
 
@@ -53,7 +54,11 @@ Intune represents these different app configuration policy channels as:
 
 Apps may handle app configuration policy settings differently with respect to user preference. For example, with Outlook for iOS and Android, the Focused Inbox app configuration setting will respect the user setting, allowing the user to override admin intent. Other settings may let you control whether a user can or cannot change the setting based on the admin intent.
 
-[!INCLUDE [android-supported-os](../includes/android-supported-os.md)]
+> [!NOTE]
+>
+> This requirement does not apply to [Microsoft Teams Android devices](https://www.microsoft.com/microsoft-teams/across-devices/devices?rtc=2) as these devices will continue to be supported.
+>
+> For Intune app protection policies and app configuration delivered through Managed apps app configuration policies, Intune requires Android 10.0 or higher.
 
 ### Managed devices
 
@@ -79,6 +84,7 @@ Delivery of app configuration through the MAM channel does not require the devic
 - Advanced app protection policies data protection settings which extend the capabilities offered by app protection policies
 
 > [!NOTE]
+>
 > Intune managed apps will check in with an interval of 30 minutes for Intune App Configuration Policy status, when deployed in conjunction with an Intune App Protection Policy. If an Intune App Protection Policy isn't assigned to the user, then the Intune App Configuration Policy check-in interval is set to 720 minutes.
 
 For information on which apps support app configuration through the MAM channel, see [Microsoft Intune protected apps](../ref-protected-apps.md).
@@ -90,13 +96,15 @@ For Android Enterprise app configuration policies, you can select the device enr
 Enrollment type can be one of the following:
 
 - **All Profile Types**: If a new profile is created and **All Profile Types** is selected for device enrollment type, you will not be able to associate a certificate profile with the app config policy. This option supports username and password authentication. If you use certificate-based authentication, don't use this option.
-- **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**: If a new profile is created and **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only** is selected, **Fully Managed, Dedicated, and Corporate-Owned Work Profile** certificate policies created under **Devices** > **Manage devices** > **Configuration** can be utilized. This option supports certificate-based authentication, and username and password authentication. **Fully Managed** relates to Android Enterprise fully managed devices (COBO). **Dedicated** relates to Android Enterprise dedicated devices (COSU). **Corporate-Owned Work Profile** relates to Android Enterprise corporate-owned work profile (COPE).
-- **Personally-Owned Work Profile Only**: If a new profile is created and **Personally-Owned Work Profile Only** is selected, Work Profile certificate policies created under **Devices** > **Manage devices** > **Configuration** can be utilized. This option supports certificate-based authentication, and username and password authentication.
+- **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**: If a new profile is created and **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only** is selected, **Fully Managed, Dedicated, and Corporate-Owned Work Profile** certificate policies created under **Devices** &gt; **Manage devices** &gt; **Configuration** can be utilized. This option supports certificate-based authentication, and username and password authentication. **Fully Managed** relates to Android Enterprise fully managed devices (COBO). **Dedicated** relates to Android Enterprise dedicated devices (COSU). **Corporate-Owned Work Profile** relates to Android Enterprise corporate-owned work profile (COPE).
+- **Personally-Owned Work Profile Only**: If a new profile is created and **Personally-Owned Work Profile Only** is selected, Work Profile certificate policies created under **Devices** &gt; **Manage devices** &gt; **Configuration** can be utilized. This option supports certificate-based authentication, and username and password authentication.
 
 > [!NOTE]
+>
 > If you deploy a Gmail or Nine configuration profile to an Android Enterprise dedicated device work profile which doesn't involve a user, it will fail because Intune can't resolve the user.
 
 > [!IMPORTANT]
+>
 > Existing policies created prior to the release of this feature (April 2020 release - 2004) that do not have any certificate profiles associated with the policy will default to **All Profile Types** for device enrollment type. Also, existing policies created prior to the release of this feature that have certificate profiles associated with them will default to Work Profile only.
 >
 > Existing policies will not remediate or issue new certificates.
@@ -105,21 +113,19 @@ Enrollment type can be one of the following:
 
 You can validate the app configuration policy using the following three methods:
 
-   1. Verify the app configuration policy visibly on the device. Confirm that the targeted app is exhibiting the behavior applied in the app configuration policy.
-   2. Verify via Diagnostic Logs (see the [Diagnostic Logs](#diagnostic-logs) section below).
-   3. Verify in the Microsoft Intune admin center. In the [Microsoft Intune admin center], select **Apps** > **All Apps** > *select the related app**. Then, under the **Monitor** section, select **Device install status**:
-      Device Install Status Report monitors the latest check-in's for all the devices the configuration policy has been targeted to.
-      ![First screenshot of device install status](media/overview/device-install-status-1.png)
+1. Verify the app configuration policy visibly on the device. Confirm that the targeted app is exhibiting the behavior applied in the app configuration policy.
+2. Verify via Diagnostic Logs (see the [Diagnostic Logs](#diagnostic-logs) section below).
+3. Verify in the Microsoft Intune admin center. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Apps** &gt; **All Apps** &gt; *select the related app*\*. Then, under the **Monitor** section, select **Device install status**: Device Install Status Report monitors the latest check-in's for all the devices the configuration policy has been targeted to. ![First screenshot of device install status](media/overview/device-install-status-1.png)
 
-      Additionally, in the [Microsoft Intune admin center], select **Devices** > **All Devices** > *select a device* > **App configuration**. The **app configuration** pane will display all the assigned policies and their state:
+   Additionally, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **All Devices** &gt; *select a device* &gt; **App configuration**. The **app configuration** pane will display all the assigned policies and their state:
 
-      ![Screenshot of app configuration](media/overview/app-configuration.png)
+   ![Screenshot of app configuration](media/overview/app-configuration.png)
 
 ## Diagnostic Logs
 
 ### iOS/iPadOS configuration on unmanaged devices
 
-You can validate iOS/iPadOS configuration with the **Intune Diagnostic Log** for settings deployed through the managed app configuration policies. In addition to the below steps, you can access managed app logs using Microsoft Edge. For more information, see [Use Microsoft Edge for iOS and Android to access managed app logs](./configure-edge-ios-android.md#use-microsoft-edge-for-ios-and-android-to-access-managed-app-logs).
+You can validate iOS/iPadOS configuration with the **Intune Diagnostic Log** for settings deployed through the managed app configuration policies. In addition to the below steps, you can access managed app logs using Microsoft Edge. For more information, see [Use Microsoft Edge for iOS and Android to access managed app logs](configure-edge-ios-android.md#use-microsoft-edge-for-ios-and-android-to-access-managed-app-logs).
 
 1. If not already installed on the device, download and install the **Microsoft Edge** from the App Store. For more information, see [Microsoft Intune protected apps](../ref-protected-apps.md).
 2. Launch the **Microsoft Edge** and enter **about:intunehelp** in the address box.
@@ -129,33 +135,33 @@ You can validate iOS/iPadOS configuration with the **Intune Diagnostic Log** for
 6. Review **IntuneMAMDiagnostics.txt** in your text file viewer.
 7. Search for `ApplicationConfiguration`. The results will look like the following:
 
-    ``` JSON
-        {
-            (
-                {
-                    Name = "com.microsoft.intune.mam.managedbrowser.BlockListURLs";
-                    Value = "https://www.aol.com";
-                },
-                {
-                    Name = "com.microsoft.intune.mam.managedbrowser.bookmarks";
-                    Value = "Outlook Web|https://outlook.office.com||Bing|https://www.bing.com";
-                }
-            );
-        },
-        {
-            ApplicationConfiguration =
-            (
-                {
-                Name = IntuneMAMUPN;
-                Value = "CMARScrubbedM:13c45c42712a47a1739577e5c92b5bc86c3b44fd9a27aeec3f32857f69ddef79cbb988a92f8241af6df8b3ced7d5ce06e2d23c33639ddc2ca8ad8d9947385f8a";
-                },
-                {
-                Name = "com.microsoft.outlook.Mail.BlockExternalImagesEnabled";
-                Value = true;
-                }
-            );
-        }
-    ```
+   ```JSON
+       {
+           (
+               {
+                   Name = "com.microsoft.intune.mam.managedbrowser.BlockListURLs";
+                   Value = "https://www.aol.com";
+               },
+               {
+                   Name = "com.microsoft.intune.mam.managedbrowser.bookmarks";
+                   Value = "Outlook Web|https://outlook.office.com||Bing|https://www.bing.com";
+               }
+           );
+       },
+       {
+           ApplicationConfiguration =
+           (
+               {
+               Name = IntuneMAMUPN;
+               Value = "CMARScrubbedM:13c45c42712a47a1739577e5c92b5bc86c3b44fd9a27aeec3f32857f69ddef79cbb988a92f8241af6df8b3ced7d5ce06e2d23c33639ddc2ca8ad8d9947385f8a";
+               },
+               {
+               Name = "com.microsoft.outlook.Mail.BlockExternalImagesEnabled";
+               Value = true;
+               }
+           );
+       }
+   ```
 
 Your application configuration details should match the application configuration policies configured for your tenant.
 
@@ -184,11 +190,11 @@ To collect logs from an Android device, you or the end user must download the lo
 3. In the `com.microsoft.windowsintune.companyportal` folder, open the Files folder and open `OMADMLog_0`.
 4. Search for `AppConfigHelper` to find app configuration related messages. The results will look similar to the following block of data:
 
-    `2019-06-17T20:09:29.1970000       INFO   AppConfigHelper     10888  02256  Returning app config JSON [{"ApplicationConfiguration":[{"Name":"com.microsoft.intune.mam.managedbrowser.BlockListURLs","Value":"https:\/\/www.aol.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.bookmarks","Value":"Outlook Web|https:\/\/outlook.office.com||Bing|https:\/\/www.bing.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.homepage","Value":"https:\/\/www.arstechnica.com"}]},{"ApplicationConfiguration":[{"Name":"IntuneMAMUPN","Value":"AdeleV@M365x935807.OnMicrosoft.com"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled","Value":"false"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled.UserChangeAllowed","Value":"false"}]}] for user User-875363642`
+   `2019-06-17T20:09:29.1970000 INFO AppConfigHelper 10888 02256 Returning app config JSON [{"ApplicationConfiguration":[{"Name":"com.microsoft.intune.mam.managedbrowser.BlockListURLs","Value":"https:\/\/www.aol.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.bookmarks","Value":"Outlook Web|https:\/\/outlook.office.com||Bing|https:\/\/www.bing.com"},{"Name":"com.microsoft.intune.mam.managedbrowser.homepage","Value":"https:\/\/www.arstechnica.com"}]},{"ApplicationConfiguration":[{"Name":"IntuneMAMUPN","Value":"AdeleV@M365x935807.OnMicrosoft.com"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled","Value":"false"},{"Name":"com.microsoft.outlook.Mail.NotificationsEnabled.UserChangeAllowed","Value":"false"}]}] for user User-875363642`
 
 ## Graph API support for app configuration
 
-You can use Graph API to accomplish app configuration tasks. For details, see [Graph API Reference MAM Targeted Config](/graph/api/resources/intune-shared-targetedmanagedappconfiguration?view=graph-rest-beta&viewFallbackFrom=graph-rest-1.0&preserve-view=true). For more information about Intune and Graph, see [Working with Intune in Microsoft Graph](/graph/api/resources/intune-graph-overview?view=graph-rest-1.0&preserve-view=true).
+You can use Graph API to accomplish app configuration tasks. For details, see [Graph API Reference MAM Targeted Config](https://learn.microsoft.com/en-us/graph/api/resources/intune-shared-targetedmanagedappconfiguration?view=graph-rest-beta&viewFallbackFrom=graph-rest-1.0&preserve-view=true). For more information about Intune and Graph, see [Working with Intune in Microsoft Graph](https://learn.microsoft.com/en-us/graph/api/resources/intune-graph-overview?view=graph-rest-1.0&preserve-view=true).
 
 ## Troubleshooting
 
@@ -200,13 +206,9 @@ When the logs show a configuration parameter that is confirmed to be applying bu
 
 ### Managed devices
 
-- Learn how to use app configuration with your iOS/iPadOS devices.  See [Add app configuration policies for managed iOS/iPadOS devices](./configure-managed-ios.md).
-- Learn how to use app configuration with your Android devices.  See [Add app configuration policies for managed Android devices](./configure-managed-android.md).
+- Learn how to use app configuration with your iOS/iPadOS devices. See [Add app configuration policies for managed iOS/iPadOS devices](configure-managed-ios.md).
+- Learn how to use app configuration with your Android devices. See [Add app configuration policies for managed Android devices](configure-managed-android.md).
 
 ### Managed apps
 
-- Learn how to use app configuration with managed apps. See [Add app configuration policies for managed apps without device enrollment](./configure-managed-apps.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- Learn how to use app configuration with managed apps. See [Add app configuration policies for managed apps without device enrollment](configure-managed-apps.md).

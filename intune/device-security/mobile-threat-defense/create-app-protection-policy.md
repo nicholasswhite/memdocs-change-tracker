@@ -1,7 +1,7 @@
 ---
-title: Create Mobile Threat Defense (MTD) app protection policy with Intune
+title: "Create Mobile Threat Defense app protection policy with Intune"
 description: Create Mobile Threat Defense (MTD) app protection policy with Microsoft Intune.
-ms.date: 08/20/2024
+ms.date: "2024-08-20T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -9,7 +9,21 @@ ms.topic: how-to
 
 Intune with Mobile Threat Defense (MTD) helps you detect threats and assess risk on mobile and Windows devices. You can create an Intune app protection policy that assesses risk to determine if the application is allowed to access corporate data or not.
 
-[!INCLUDE [mtd-mam-note](./includes/mtd-mam-note.md)]
+> [!NOTE]
+>
+> This article applies to all Mobile Threat Defense partners that support app protection policies:
+>
+> - Better Mobile (Android, iOS/iPadOS)
+> - BlackBerry Mobile (CylancePROTECT for Android, iOS/iPadOS)
+> - Check Point Harmony Mobile (Android, iOS/iPadOS)
+> - Jamf (Android, iOS/iPadOS)
+> - Lookout for Work (Android, iOS/iPadOS)
+> - Microsoft Defender for Endpoint (Android, iOS/iPadOS, Windows)
+> - SentinelOne (Android, iOS/iPadOS)
+> - Symantec Endpoint Security (Android, iOS/iPadOS)
+> - Trellix Mobile Security (Android, iOS/iPadOS)
+> - Windows Security Center (Windows) - *For information about the Windows versions that support this connector, see [Data protection for Windows MAM](../../app-management/protection/enable-mam-windows.md).*
+> - Zimperium (Android, iOS/iPadOS)
 
 ## Before you begin
 
@@ -37,7 +51,6 @@ Use the procedure to [create an Application protection policy for either iOS/iPa
 
   - **Block access**
   - **Wipe data**
-
 - **Assignments**: Assign the policy to groups of users. The devices used by the group's members are evaluated for access to corporate data on targeted apps via Intune app protection.
 
 ## To create an MTD app protection policy for Windows
@@ -58,7 +71,6 @@ Use the procedure to [create an Application protection policy for Windows](../..
 
   - **Block access**
   - **Wipe data**
-
 - **Assignments**: Assign the policy to groups of users. The devices used by the group's members are evaluated for access to corporate data on targeted apps via Intune app protection.
 
 > [!IMPORTANT]
@@ -67,4 +79,4 @@ Use the procedure to [create an Application protection policy for Windows](../..
 
 ## Next steps
 
-- Learn more about [Mobile Threat Defense](./overview.md) in Microsoft Intune.
+- Learn more about [Mobile Threat Defense](overview.md) in Microsoft Intune.

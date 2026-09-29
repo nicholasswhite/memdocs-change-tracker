@@ -1,7 +1,7 @@
 ---
-title: View the Android device administrator compliance settings for Microsoft Intune compliance policies
+title: "Device compliance settings for Android device administrator in Intune"
 description: View the device compliance settings that are available for Android device administrator devices in Microsoft Intune.
-ms.date: 09/04/2025
+ms.date: "2025-09-04T00:00:00Z"
 ms.topic: article
 ms.reviewer: tycast
 ---
@@ -14,19 +14,22 @@ This feature applies to:
 
 - Android device administrator
 
- [!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
 Settings in this article are organized by the sections that appear in the admin center when you create a compliance policy.
 
 ## Before you begin
 
-[Create a compliance policy](./create-policy.md#create-the-policy). For **Platform**, select **Android device administrator**.
+[Create a compliance policy](create-policy.md#create-the-policy). For **Platform**, select **Android device administrator**.
 
 ## Microsoft Defender for Endpoint
 
 - **Require the device to be at or under the machine risk score**
 
   Select the maximum allowed machine risk score for devices evaluated by Microsoft Defender for Endpoint. Devices that exceed this score are marked as noncompliant.
+
   - **Not configured** (*default*)
   - **Clear**
   - **Low**
@@ -36,19 +39,17 @@ Settings in this article are organized by the sections that appear in the admin 
 ## Device health
 
 - **Devices managed with device administrator**  
-  *Device administrator* capabilities are superseded by Android Enterprise.
+   *Device administrator* capabilities are superseded by Android Enterprise.
 
   - **Not configured** (*default*)
   - **Block** - Blocking device administrator guides users to move to Android Enterprise Personally Owned and Corporate Owned Work Profile management to regain access.
-
 - **Rooted devices**  
-  Prevent rooted devices from having corporate access. (This compliance check is supported for Android 4.0 and later.)
+   Prevent rooted devices from having corporate access. (This compliance check is supported for Android 4.0 and later.)
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Block** - Mark rooted devices as noncompliant.
-
 - **Require the device to be at or under the Device Threat Level**  
-  Use this setting to take the risk assessment from a connected mobile threat defense service as a condition for compliance.
+   Use this setting to take the risk assessment from a connected mobile threat defense service as a condition for compliance.
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Secured** - This option is the most secure, as the device can't have any threats. If the device is detected with any level of threats, the device is evaluated as noncompliant.
@@ -59,35 +60,35 @@ Settings in this article are organized by the sections that appear in the admin 
 ### Google Play Protect
 
 > [!IMPORTANT]
+>
 > Devices operating in countries or regions where Google Mobile Services aren't available fail Google Play Protect compliance policy setting evaluations. For more information, see [Managing Android devices where Google Mobile Services are not available](https://techcommunity.microsoft.com/t5/intune-customer-success/intune-customer-success-managing-android-devices-where-google/ba-p/1628793).
 
 - **Google Play Services is configured**  
-    Google Play services enables security updates and is a base-level dependency for many security features on certified-Google devices.
+   Google Play services enables security updates and is a base-level dependency for many security features on certified-Google devices.
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Require** - Require that the Google Play services app is installed and enabled.
-
 - **Up-to-date security provider**
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Require** - Require that an up-to-date security provider protects a device from known vulnerabilities.
-
 - **Threat scan on apps**
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Require** - Require that the Android **Verify Apps** feature is enabled.
 
   > [!NOTE]
+  >
   > On the legacy Android platform, this feature is a compliance setting. Intune can only check whether this setting is enabled at the device level.
-
 - **Play integrity verdict**  
-  Enter the level of Google's [Play Integrity](https://developer.android.com/google/play/integrity) that must be met. Your options:
+   Enter the level of Google's [Play Integrity](https://developer.android.com/google/play/integrity) that must be met. Your options:
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Check basic integrity**
-  - **Check basic integrity & device integrity**
+  - **Check basic integrity &amp; device integrity**
 
 > [!NOTE]
+>
 > To configure Google Play Protect settings by using app protection policies, see [Intune app protection policy settings](../../app-management/protection/ref-settings-android.md#conditional-launch) on Android.
 
 ## Device properties
@@ -95,12 +96,11 @@ Settings in this article are organized by the sections that appear in the admin 
 ### Operating system version
 
 - **Minimum OS version**  
-  When a device doesn't meet the minimum OS version requirement, the device is reported as noncompliant. A link with information about how to upgrade is shown. The end user can choose to upgrade their device, and then get access to company resources.
+   When a device doesn't meet the minimum OS version requirement, the device is reported as noncompliant. A link with information about how to upgrade is shown. The end user can choose to upgrade their device, and then get access to company resources.
 
   *By default, no version is configured*.
-
 - **Maximum OS version**  
-  When a device uses an OS version later than the version specified in the rule, access to company resources is blocked. The user is asked to contact their IT admin. Until a rule is changed to allow the OS version, this device can't access company resources.
+   When a device uses an OS version later than the version specified in the rule, access to company resources is blocked. The user is asked to contact their IT admin. Until a rule is changed to allow the OS version, this device can't access company resources.
 
   *By default, no version is configured*.
 
@@ -109,7 +109,7 @@ Settings in this article are organized by the sections that appear in the admin 
 ### Encryption
 
 - **Require encryption of data storage on device**  
-  *Supported on Android 11 and earlier, or Samsung KNOX Android 14 and earlier*.
+   *Supported on Android 11 and earlier, or Samsung KNOX Android 14 and earlier*.
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Require** - Encrypt data storage on your devices. Devices are encrypted when you choose the **Require a password to unlock mobile devices** setting.
@@ -117,47 +117,43 @@ Settings in this article are organized by the sections that appear in the admin 
 ### Device security
 
 - **Block apps from unknown sources**  
-  *Supported on Android 4.0 to Android 7.x. Not supported by Android 8.0 and later.*
+   *Supported on Android 4.0 to Android 7.x. Not supported by Android 8.0 and later.*
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
-  - **Block** - Block devices with **Security > Unknown Sources** enabled sources (*supported on Android 4.0 through Android 7.x. Not supported on Android 8.0 and later.*).
+  - **Block** - Block devices with **Security &gt; Unknown Sources** enabled sources (*supported on Android 4.0 through Android 7.x. Not supported on Android 8.0 and later.*).
 
   To sideload apps, unknown sources must be allowed. If you're not sideloading Android apps, set this feature to **Block** to enable this compliance policy.
 
   > [!IMPORTANT]
+  >
   > Sideloading applications requires that the **Block apps from unknown sources** setting is enabled. Enforce this compliance policy only if you're not sideloading Android apps on devices.
-
 - **Company portal app runtime integrity**
+
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Require** - Choose *Require* to confirm the Company Portal app meets all the following requirements:
 
     - Has the default runtime environment installed
     - Is properly signed
     - Isn't in debug-mode
-
 - **Block USB debugging on device**  
-  *(Supported on Android 4.2 or later)*
+   *(Supported on Android 4.2 or later)*
 
   - **Not configured** (*default*) - This setting isn't evaluated for compliance or noncompliance.
   - **Block** - Prevent devices from using the USB debugging feature.
-
 - **Minimum security patch level**  
-  *(Supported on Android 8.0 or later)*
+   *(Supported on Android 8.0 or later)*
 
   Select the oldest security patch level a device can have. Devices that aren't at least at this patch level are noncompliant. Enter the date in the `YYYY-MM-DD` format.
 
   *By default, no date is configured*.
-
 - **Restricted apps**  
-  Enter the **App name** and **App bundle ID** for apps that should be restricted, and then select **Add**. A device with at least one restricted app installed is marked as noncompliant.
+   Enter the **App name** and **App bundle ID** for apps that should be restricted, and then select **Add**. A device with at least one restricted app installed is marked as noncompliant.
 
   To get the bundle ID of an app added to Intune, [you can use the Intune admin center](../../app-management/collect-bundle-ids.md).
-
 - **Maximum minutes of inactivity before password is required (Samsung KNOX Android 12 and earlier)​**  
-  This setting specifies the length of time without user input after which the mobile device screen is locked. Options range from *1 Minute* to *8 Hours*. The recommended value is *15 Minutes*.
+   This setting specifies the length of time without user input after which the mobile device screen is locked. Options range from *1 Minute* to *8 Hours*. The recommended value is *15 Minutes*.
 
   - **Not configured** (*default*)
-
 - **Require a password to unlock mobile devices**
 
   This setting specifies whether to require users to enter a password before access is granted to information on their mobile devices. Recommended value: *Require* (This compliance check is supported for devices with OS versions Android 4.0 and above, or KNOX 4.0 and above.)
@@ -172,8 +168,7 @@ Settings in this article are organized by the sections that appear in the admin 
 
 *The following settings are supported on Android 10 or later, but not on Knox.*
 
-- **Password complexity**
- *This setting is supported on Android 10 or later, but not on Samsung Knox. On devices that run Android 9 and earlier or Samsung Knox, settings for the password length and type override this setting for complexity*.
+- **Password complexity** *This setting is supported on Android 10 or later, but not on Samsung Knox. On devices that run Android 9 and earlier or Samsung Knox, settings for the password length and type override this setting for complexity*.
 
   Specify the required password complexity.
 
@@ -195,7 +190,7 @@ Settings in this article are organized by the sections that appear in the admin 
 *The following settings are supported on Android 9.0 and earlier, and any Android OS version 15 and earlier.*
 
 - **Required password type**  
-  Choose if a password should include only numeric characters, or a mix of numerals and other characters.
+   Choose if a password should include only numeric characters, or a mix of numerals and other characters.
 
   - **Device Default** - To evaluate password compliance, be sure to select a password strength other than **Device default**.
   - **Low security biometric**
@@ -207,20 +202,13 @@ Settings in this article are organized by the sections that appear in the admin 
 
   Based on the configuration of this setting, one or more of the following options are available:
 
-  - **Minimum password length**
-    Enter the minimum number of digits or characters that the user's password must have.
-
-  - **Maximum minutes of inactivity before password is required**
-    Enter the idle time before the user must reenter their password. When you choose **Not configured** (default), this setting isn't evaluated for compliance or noncompliance.
-
-  - **Number of days until password expires**
-    Select the number of days before the password expires and the user must create a new password.
-
-  - **Number of previous passwords to prevent reuse**
-    Enter the number of recent passwords that can't be reused. Use this setting to restrict the user from creating previously used passwords.
+  - **Minimum password length** Enter the minimum number of digits or characters that the user's password must have.
+  - **Maximum minutes of inactivity before password is required** Enter the idle time before the user must reenter their password. When you choose **Not configured** (default), this setting isn't evaluated for compliance or noncompliance.
+  - **Number of days until password expires** Select the number of days before the password expires and the user must create a new password.
+  - **Number of previous passwords to prevent reuse** Enter the number of recent passwords that can't be reused. Use this setting to restrict the user from creating previously used passwords.
 
 ## Next steps
 
-- [Add actions for noncompliant devices](./configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
-- [Monitor your compliance policies](./monitor-policy.md).
-- See the [compliance policy settings for Android Enterprise](./ref-android-enterprise-settings.md) devices.
+- [Add actions for noncompliant devices](configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
+- [Monitor your compliance policies](monitor-policy.md).
+- See the [compliance policy settings for Android Enterprise](ref-android-enterprise-settings.md) devices.

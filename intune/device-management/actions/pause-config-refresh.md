@@ -1,7 +1,7 @@
 ---
-title: "Device Action: Pause Config Refresh"
+title: "Device action: pause Config Refresh"
 description: Learn how to temporarily pause policy enforcement on Windows 11 devices using Intune's Pause Config Refresh action to support troubleshooting and manual changes.
-ms.date: 10/27/2025
+ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -15,80 +15,42 @@ With the pause Config Refresh action, IT admins can suspend policy refresh for a
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
 > - Windows 11
-:::column-end:::
-:::row-end:::
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
+
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
+
 > To use this action, make sure devices meet the following requirements:
 >
 > - Config Refresh is enabled.
 >
-> To learn more, see [Config Refresh][LEARN-1].
+> To learn more, see [Config Refresh](https://learn.microsoft.com/en-us/windows/security/book/operating-system-security-system-security#-config-refresh).
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
 > To run this action, use an account with at least one of the following roles:
 >
-> - [Intune Administrator]
-> - [Custom role] that includes:
+> - [Intune Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Remote tasks/Run Pause Configuration Refresh**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
-:::column-end:::
-:::row-end:::
+
 ## How to pause Config Refresh from the Intune admin center
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Pause Config Refresh**.
-1. Specify the number of minutes to pause Config Refresh in the **Time period to Pause Config Refresh**. The maximum is 1,440 minutes (24 hours).
-1. Select **Pause**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Remote actions** &gt; **Pause Config Refresh**.
+4. Specify the number of minutes to pause Config Refresh in the **Time period to Pause Config Refresh**. The maximum is 1,440 minutes (24 hours).
+5. Select **Pause**.
 
-> [!Note]
+> [!NOTE]
+>
 > If Config Refresh is paused and you want to resume, then select **Pause** again for 0 minutes to resume Config Refresh enforcement.
 
 ## Reference links
 
-- Microsoft Graph API: [pauseConfigurationRefresh action][GRAPH-1] in the Microsoft Graph API documentation.
-- Configuration service provider (CSP) used to initiate the action: [DMClient CSP][CSP-1]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Intune Administrator]: /entra/identity/role-based-access-control/permissions-reference#intune-administrator
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-pauseconfigurationrefresh
-
-<!--Other links-->
-
-[CSP-1]: /windows/client-management/mdm/dmclient-csp#deviceproviderprovideridconfigrefresh
-[LEARN-1]: /windows/security/book/operating-system-security-system-security#-config-refresh
-
-
+- Microsoft Graph API: [pauseConfigurationRefresh action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-pauseconfigurationrefresh) in the Microsoft Graph API documentation.
+- Configuration service provider (CSP) used to initiate the action: [DMClient CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/dmclient-csp#deviceproviderprovideridconfigrefresh)

@@ -1,7 +1,7 @@
 ---
-title: Security and privacy for apps
+title: "Security and privacy for application management in Configuration Manager"
 description: Guidance and recommendations for security and privacy when managing applications in Configuration Manager.
-ms.date: 08/10/2021
+ms.date: "2021-08-10T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -28,14 +28,15 @@ If you configure the deployment to run directly from a distribution point, the C
 
 If you must run deployments directly from distribution points, use NTFS least permissions on the packages on the distribution points. Also use internet protocol security (IPsec) to secure the channel between the client and the distribution points, and between the distribution points and the site server.
 
-### <a name="bkmk_interact"></a> Don't let users interact with elevated processes
+### Don't let users interact with elevated processes
 
 If you enable the options to **Run with administrative rights** or **Install for system**, don't let users interact with those applications. When you configure an application, you can set the option to **Allow users to view and interact with the program installation**. This setting allows users to respond to any required prompts in the user interface. If you also configure the application to **Run with administrative rights** or **Install for system**, an attacker at the computer that runs the program could use the user interface to escalate privileges on the client computer.
 
 Use programs that use Windows Installer for setup and per-user elevated privileges for software deployments that require administrative credentials. Setup must be run in the context of a user who doesn't have administrative credentials. Windows Installer per-user elevated privileges provide the most secure way to deploy applications that have this requirement.
 
 > [!NOTE]
-> When the user starts the application installation process from Software Center, the option to **Allow users to view and interact with the program installation** can't control user interactions with any other processes created by the application installer. Because of this behavior, even if you don't select this option, the user may still be able to interact with an elevated process. To avoid this issue, don't deploy applications that create other processes with user interactions. If you have to install this type of application, deploy it as **Required** and configure the user notification experience to **Hide in Software Center and all notifications**.<!-- 10303284 -->
+>
+> When the user starts the application installation process from Software Center, the option to **Allow users to view and interact with the program installation** can't control user interactions with any other processes created by the application installer. Because of this behavior, even if you don't select this option, the user may still be able to interact with an elevated process. To avoid this issue, don't deploy applications that create other processes with user interactions. If you have to install this type of application, deploy it as **Required** and configure the user notification experience to **Hide in Software Center and all notifications**.
 
 ### Restrict whether users can install software interactively
 
@@ -52,9 +53,7 @@ Deploy mobile device applications only if they're code-signed by a certification
 For example:
 
 - An application from a vendor, which is signed by a public and globally trusted certificate provider.
-
 - An internal application that you sign independent from Configuration Manager by using your internal CA.
-
 - An internal application that you sign by using Configuration Manager when you create the application type and use a signing certificate.
 
 ### Secure the location of the mobile device application signing certificate
@@ -110,15 +109,13 @@ If you configure a web application deployment type, use HTTPS to secure the conn
 
 - Low-rights users can change files that record software deployment history on the client computer.
 
-    Because the application history information isn't protected, a user can change files that report whether an application is installed.
-
+  Because the application history information isn't protected, a user can change files that report whether an application is installed.
 - App-V packages aren't signed.
 
-    App-V packages in Configuration Manager don't support signing. Digital signatures verify the content is from a trusted source and wasn't altered in transit. There's no mitigation for this security issue. Follow the security best practice to download the content from a trusted source and from a secure location.
-
+  App-V packages in Configuration Manager don't support signing. Digital signatures verify the content is from a trusted source and wasn't altered in transit. There's no mitigation for this security issue. Follow the security best practice to download the content from a trusted source and from a secure location.
 - Published App-V applications can be installed by all users on the computer.
 
-    When an App-V application is published on a computer, all users who sign in to that computer can install the application. You can't restrict the users who can install the application after it's published.
+  When an App-V application is published on a computer, all users who sign in to that computer can install the application. You can't restrict the users who can install the application after it's published.
 
 ## Privacy information
 
@@ -135,27 +132,19 @@ Application deployment doesn't happen by default and requires several configurat
 The following features help efficient software deployment:
 
 - **User device affinity** maps a user to devices. A Configuration Manager administrator deploys software to a user. The client automatically installs the software on one or more computers that the user uses most often.
-
 - **Software Center** is installed automatically on a device when you install the Configuration Manager client. Users change settings, browse for software, and install software from Software Center.
 
-### <a name="bkmk_privacy-uda"></a> User device affinity privacy information
+### User device affinity privacy information
 
 - Configuration Manager might transmit information between clients and management point site systems. The information might identify the computer, the sign-in account, and the summarized usage for sign-in accounts.
-
 - Unless you configure the management point to require HTTPS communication, the information that's transmitted between the client and server isn't encrypted.
-
 - The computer and sign-in account usage information is used to map a user to a device. Configuration Manager stores this information on client computers, sends it to management points, and then stores it in the site database. By default, the site deletes old information from the database after 90 days. The deletion behavior is configurable by setting the [Delete Aged User Device Affinity Data](../../core/servers/manage/reference-for-maintenance-tasks.md#delete-aged-user-device-affinity-data) site maintenance task.
-
 - Configuration Manager maintains status information about user device affinity. Unless you [configure clients](../../core/plan-design/security/configure-security.md#signing-and-encryption) to communicate with management points by using HTTPS, they don't encrypt status information during transmission. The site doesn't store status information in encrypted form in the database.
-
 - Computer and sign-in usage information that's used to establish user and device affinity is always enabled. Users and administrative users can supply user device affinity information.
 
-### <a name="bkmk_privacy-userex"></a> Software Center privacy information
+### Software Center privacy information
 
 - Software Center lets the Configuration Manager administrator publish any application, program, or script for users to run. Configuration Manager has no control over the types of programs or scripts that are published in Software Center or the type of information that they transmit.
-
 - Configuration Manager might transmit information between clients and the management point. The information might identify the computer and sign-in accounts. Unless you configure the management point to require clients connect by using HTTPS, the information that's transmitted between the client and servers isn't encrypted.
-
 - The information about the application approval request is stored in the Configuration Manager database. For requests that are canceled or denied, the corresponding request history entries are deleted after 30 days by default. You can configure this deletion behavior with the [Delete Aged Application Request Data](../../core/servers/manage/reference-for-maintenance-tasks.md#delete-aged-application-request-data) site maintenance task. The site never deletes application approval requests that are in approved and pending states.
-
 - When you install the Configuration Manager client on a device, it automatically installs Software Center.

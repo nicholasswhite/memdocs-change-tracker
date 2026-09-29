@@ -1,16 +1,18 @@
 ---
 description: Learn how to define user information of an application in Configuration Manager with SMS_Windows8ApplicationUserInfo.
-title: SMS_Windows8ApplicationUserInfo Class
-ms.date: 09/20/2016
+title: "SMS_Windows8ApplicationUserInfo Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Windows8ApplicationUserInfo Client WMI Class
+
 In Configuration Manager, the `SMS_Windows8ApplicationUserInfo` class is a client Windows Management Instrumentation (WMI) class that defines user information of an application.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,58 +27,59 @@ Class SMS_Windows8ApplicationUserInfo
 ```
 
 ## Methods
- The `SMS_Windows8ApplicationUserInfo` class does not define any methods.
+
+The `SMS_Windows8ApplicationUserInfo` class does not define any methods.
 
 ## Properties
- `FullName`
- Data type: `String`
 
- Access type: Read-only
+`FullName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Full name of the user.
+Qualifiers: [key, read]
 
- `InstallState`
- Data type: `String`
+Full name of the user.
 
- Access type: Read-only
+`InstallState` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Installation state of the package. Possible values are:
+Qualifiers: [read]
 
-|Value|Description|
-|-----------|-----------------|
-|NotInstalled|The package has not been installed.|
-|Staged|The package has been downloaded.|
-|Installed|The package is ready for use.|
+Installation state of the package. Possible values are:
 
- `UserAccountName`
- Data type: `String`
+| Value | Description |
+| --- | --- |
+| NotInstalled | The package has not been installed. |
+| Staged | The package has been downloaded. |
+| Installed | The package is ready for use. |
 
- Access type: Read-only
+`UserAccountName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- User account name.
+Qualifiers: [read]
 
- `UserSecurityId`
- Data type: `String`
+User account name.
 
- Access type: Read-only
+`UserSecurityId` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- User security identifier.
+Qualifiers: [key, read]
+
+User security identifier.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Inventory Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/inventory-agent-client-wmi-classes.md)
+
+[Inventory Agent Client WMI Classes](inventory-agent-client-wmi-classes.md)

@@ -1,13 +1,15 @@
 ---
 title: Configuration Baseline Example 1
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 description: This Baseline Configuration Item Instance example references an application configuration item that checks whether the Configuration Manager client and Notepad are installed on systems that are running Windows XP SP2.
 ms.service: configuration-manager
 ---
+
 # Configuration Baseline Example 1
+
 The following Baseline Configuration Item Instance example references an application configuration item that checks whether the Configuration Manager client and Notepad.exe are installed on systems that are running Windows XP SP2.
 
 ## Configuration Baseline Example
@@ -101,4 +103,5 @@ Only references to content defined as System Definition Model language (SDM) can
 ```
 
 ## See Also
+
 [About authoring configuration baselines and items](about-authoring-configuration-baselines-and-configuration-items.md)

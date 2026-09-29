@@ -1,32 +1,33 @@
 ---
-title: Configure Mobile Device Client Agent Settings
+title: "How to Configure Mobile Device Client Agent Settings"
 description: How to Configure Mobile Device Client Agent Settings
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Configure Mobile Device Client Agent Settings
+
 You configure the Mobile Device Client Agent settings, in Configuration Manager, by modifying the site control file.
 
 > [!IMPORTANT]
+>
 > This article only applies to the mobile device legacy client.
 
 ### To configure the Mobile Device Client Agent settings
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Make a connection to the Device Client section of the site control file by using the `SMS_SCI_ClientComp` class.
-
-3.  Loop through the array of available properties, making changes as needed.
-
-4.  Commit the property changes to the site control file.
+1. Set up a connection to the SMS Provider.
+2. Make a connection to the Device Client section of the site control file by using the `SMS_SCI_ClientComp` class.
+3. Loop through the array of available properties, making changes as needed.
+4. Commit the property changes to the site control file.
 
 ## Example
- The following example method configures various Mobile Device Client Agent settings by using the `SMS_SCI_ClientComp` class to connect to the site control file and change properties.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method configures various Mobile Device Client Agent settings by using the `SMS_SCI_ClientComp` class to connect to the site control file and change properties.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -225,49 +226,51 @@ public void ConfigureMobileDeviceClientAgentSettings(WqlConnectionManager connec
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`swbemContext`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code.|
-|`newPollInterval`|-   Managed: `String`<br />-   VBScript: `String`|The interval that the client tries to contact the server.<br /><br /> The format of the string must be:<br /><br /> Years-months-days hours:minutes:seconds<br /><br /> "0000-00-00 00:00:00"|
-|`newPollIntervalMinutes`|-   Managed: `String`<br />-   VBScript: `String`|A value representing the minutes of the `newPollInterval` string.|
-|`newPollIntervalHours`|-   Managed: `String`<br />-   VBScript: `String`|A value representing the hours of the `newPollInterval` string.|
-|`newFailureRetryCount`|-   Managed: `String`<br />-   VBScript: `String`|A value representing the hours of the `newPollInterval` string.|
-|`newFailureRetryIntervalMinutes`|-   Managed: `String`<br />-   VBScript: `String`|A value representing the minutes of the `newFailureRetryInterval` string.|
-|`newFailureRetryIntervalHours`|-   Managed: `String`<br />-   VBScript: `String`|A value representing the hours of the `newFailureInterval` string.|
-|`newEnableDisableSoftwareDistribution`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|A value that enables or disables software distribution.<br /><br /> Enabled = `true`<br /><br /> Disabled = `false`|
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `swbemContext` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code. |
+| `newPollInterval` | - Managed: `String` - VBScript: `String` | The interval that the client tries to contact the server.   The format of the string must be:   Years-months-days hours:minutes:seconds   "0000-00-00 00:00:00" |
+| `newPollIntervalMinutes` | - Managed: `String` - VBScript: `String` | A value representing the minutes of the `newPollInterval` string. |
+| `newPollIntervalHours` | - Managed: `String` - VBScript: `String` | A value representing the hours of the `newPollInterval` string. |
+| `newFailureRetryCount` | - Managed: `String` - VBScript: `String` | A value representing the hours of the `newPollInterval` string. |
+| `newFailureRetryIntervalMinutes` | - Managed: `String` - VBScript: `String` | A value representing the minutes of the `newFailureRetryInterval` string. |
+| `newFailureRetryIntervalHours` | - Managed: `String` - VBScript: `String` | A value representing the hours of the `newFailureInterval` string. |
+| `newEnableDisableSoftwareDistribution` | - Managed: `Boolean` - VBScript: `Boolean` | A value that enables or disables software distribution.   Enabled = `true`   Disabled = `false` |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Software Updates Setup and Configuration](../../develop/sum/about-software-updates-setup-and-configuration.md)
- [About the Configuration Manager Site Control File](../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
- [SMS_SCI_Component Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
+
+[About Software Updates Setup and Configuration](../sum/about-software-updates-setup-and-configuration.md) [About the Configuration Manager Site Control File](../core/understand/about-the-configuration-manager-site-control-file.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md) [SMS_SCI_Component Server WMI Class](../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)

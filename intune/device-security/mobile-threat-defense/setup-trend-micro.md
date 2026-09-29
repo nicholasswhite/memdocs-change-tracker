@@ -1,7 +1,7 @@
 ---
-title: Set up Trend Micro MTD integration with Intune
+title: "Connect Trend Micro Mobile Security as a Service with Microsoft Intune"
 description: How to set up Trend Micro Mobile Security with Microsoft Intune to control mobile device access to your corporate resources
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -36,23 +36,20 @@ The following authorization process happens when you configure the integration w
 - Allow Trend Micro Mobile Security as a Service to create device configuration profiles.
 - Allow Trend Micro Mobile Security as a Service to perform remote actions when necessary.
 
-For more information about consent and Microsoft Entra applications, see [Introduction to permissions and consent](/azure/active-directory/develop/v2-permissions-and-consent).
+For more information about consent and Microsoft Entra applications, see [Introduction to permissions and consent](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent).
 
 ## Configuration Overview
 
 The configuration of Trend Micro Mobile Security as a Service and Intune integration can be done on [Trend Micro Vision One console](https://portal.xdr.trendmicro.com/) with the following steps:
 
 1. **Configure Intune integration settings.** - Grant permissions required by Trend Micro Mobile Security as a Service, select the platforms of your mobile devices, and choose data synchronization frequency. Device configuration profiles and app configuration policies are created automatically in Intune.
-
 2. **Select groups to install Trend Micro Mobile Security as a Service mobile app.** - Trend Micro Mobile Security as a Service mobile app installs automatically on devices in the selected groups.
-
 3. **(Optional) Create mobile policies.** - Optionally create customized mobile security policies provided by Trend Micro Mobile Security as a Service. For more information, see [Configuring Mobile Policies](https://docs.trendmicro.com/enterprise/trend-micro-xdr-help/configuringmobilepolicy).
-
 4. **Confirm mobile app status update.**
 
 ## Set up Mobile Security as a Service integration
 
-1. Sign in to the [Microsoft Intune admin center] with an Intune administrator account.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an Intune administrator account.
 2. Go to **Tenant administration**.
 3. Select **Connectors and tokens**.
 4. Under **Cross platform**, select **Mobile Threat Defense**.
@@ -65,8 +62,4 @@ The configuration of Trend Micro Mobile Security as a Service and Intune integra
 ## Next steps
 
 - [Customize Mobile Policies in Trend Micro Mobile Security as a Service](https://docs.trendmicro.com/documentation/article/trend-vision-one-configuring-mobile-policies)
-- [Create Mobile Threat Defense (MTD) device compliance policy with Intune](./create-compliance-policy.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Create Mobile Threat Defense (MTD) device compliance policy with Intune](create-compliance-policy.md)

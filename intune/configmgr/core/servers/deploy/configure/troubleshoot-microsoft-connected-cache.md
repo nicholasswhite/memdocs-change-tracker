@@ -1,7 +1,7 @@
 ---
-title: Troubleshoot Connected Cache
+title: "Troubleshoot Microsoft Connected Cache with Configuration Manager"
 description: Technical details for Microsoft Connected Cache to help you troubleshoot issues.
-ms.date: 11/23/2021
+ms.date: "2021-11-23T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: troubleshooting
 ms.collection: tier3
@@ -23,81 +23,78 @@ Verify this behavior [on a client](#verify-on-a-client) or [on the server](#veri
 Use the following workflow to verify the Microsoft Connected Cache configuration:
 
 1. Open a 64-bit PowerShell window as an administrator.
-1. Ensure the host is targeted by policy. If policy isn't set by Configuration Manager or Intune, set `DOCacheHost` to the distribution point FQDN or IP:
+2. Ensure the host is targeted by policy. If policy isn't set by Configuration Manager or Intune, set `DOCacheHost` to the distribution point FQDN or IP:
 
-    ```powershell
-    $parentKeyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
-    if (!(Test-Path $parentKeyPath)) {
-        New-Item -Path $parentKeyPath -ItemType RegistryKey -Force -ErrorAction Stop | Out-Null
-    }
-    Set-ItemProperty -Path $parentKeyPath -Name "DOCacheHost" -Value "[DP IP Address or FQDN]" -ErrorAction Stop
-    ```
+   ```powershell
+   $parentKeyPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization"
+   if (!(Test-Path $parentKeyPath)) {
+       New-Item -Path $parentKeyPath -ItemType RegistryKey -Force -ErrorAction Stop | Out-Null
+   }
+   Set-ItemProperty -Path $parentKeyPath -Name "DOCacheHost" -Value "[DP IP Address or FQDN]" -ErrorAction Stop
+   ```
+3. Verify HTTP delivery by running the following command, and replace the name or IP address of your server for `<DoincServer>`:
 
-1. Verify HTTP delivery by running the following command, and replace the name or IP address of your server for `<DoincServer>`:
+   ```PowerShell
+   Invoke-WebRequest -URI "http://<DoincServer>/mscomtest/wuidt.gif" -Headers @{"Host"="b1.download.windowsupdate.com"}
+   ```
 
-    ```PowerShell
-    Invoke-WebRequest -URI "http://<DoincServer>/mscomtest/wuidt.gif" -Headers @{"Host"="b1.download.windowsupdate.com"}
-    ```
+   The output looks similar to the following example:
 
-    The output looks similar to the following example:
-
-    ```PowerShell
-    PS C:\WINDOWS\system32> Invoke-WebRequest -URI "http://SERVER01.CONTOSO.COM/mscomtest/wuidt.gif" -Headers @{"Host"="b1.download.windowsupdate.com"}
+   ```PowerShell
+   PS C:\WINDOWS\system32> Invoke-WebRequest -URI "http://SERVER01.CONTOSO.COM/mscomtest/wuidt.gif" -Headers @{"Host"="b1.download.windowsupdate.com"}
 
 
-    StatusCode        : 200
-    StatusDescription : OK
-    Content           : {71, 73, 70, 56...}
-    RawContent        : HTTP/1.1 200 OK
-                        X-HW: 1567797125.dop019.se2.t,1567797125.cds058.se2.s,1567797125.dop114.at2.r,1567797125.cds079.at2
-                        .p,1567797125.cds058.se2.p
-                        X-CCC: cdP+dRBgUCoZO1mezA9zhg2VwQ7P1JWTh9k+GhfQmu8=_SLwv...
-    Headers           : {[X-HW, 1567797125.dop019.se2.t,1567797125.cds058.se2.s,1567797125.dop114.at2.r,1567797125.cds079.a
-                        t2.p,1567797125.cds058.se2.p], [X-CCC,
-                        cdP+dRBgUCoZO1mezA9zhg2VwQ7P1JWTh9k+GhfQmu8=_SLwvtSBQdT3uPQ5ikBe1ABMbdYIIncem+h5dtcLI6GY=],
-                        [X-CID, 100], [Accept-Ranges, bytes]...}
-    RawContentLength  : 969710
-    ```
+   StatusCode        : 200
+   StatusDescription : OK
+   Content           : {71, 73, 70, 56...}
+   RawContent        : HTTP/1.1 200 OK
+                       X-HW: 1567797125.dop019.se2.t,1567797125.cds058.se2.s,1567797125.dop114.at2.r,1567797125.cds079.at2
+                       .p,1567797125.cds058.se2.p
+                       X-CCC: cdP+dRBgUCoZO1mezA9zhg2VwQ7P1JWTh9k+GhfQmu8=_SLwv...
+   Headers           : {[X-HW, 1567797125.dop019.se2.t,1567797125.cds058.se2.s,1567797125.dop114.at2.r,1567797125.cds079.a
+                       t2.p,1567797125.cds058.se2.p], [X-CCC,
+                       cdP+dRBgUCoZO1mezA9zhg2VwQ7P1JWTh9k+GhfQmu8=_SLwvtSBQdT3uPQ5ikBe1ABMbdYIIncem+h5dtcLI6GY=],
+                       [X-CID, 100], [Accept-Ranges, bytes]...}
+   RawContentLength  : 969710
+   ```
 
-    The following attributes indicate success:
+   The following attributes indicate success:
 
-    - `StatusCode : 200`
-    - `StatusDescription : OK`
+   - `StatusCode : 200`
+   - `StatusDescription : OK`
+4. Verify MSIX download via HTTPS channel by requesting Microsoft Teams content from Connected Cache:
 
-1. Verify MSIX download via HTTPS channel by requesting Microsoft Teams content from Connected Cache:
+   ```powershell
+   Add-AppxPackage "https://installer.teams.static.microsoft/production-windows-x64/25177.2002.3761.5185/MSTeams-x64.msix"
+   ```
 
-    ```powershell
-    Add-AppxPackage "https://installer.teams.static.microsoft/production-windows-x64/25177.2002.3761.5185/MSTeams-x64.msix"
-    ```
+   Expected result: Download completes without error.
+5. Verify that bytes were served by cache:
 
-    Expected result: Download completes without error.
+   ```powershell
+   Get-DeliveryOptimizationStatus | Select-Object DownloadMode, TotalBytesDownloaded, BytesFromCacheServer
+   ```
 
-1. Verify that bytes were served by cache:
+   Expected result: `BytesFromCacheServer` is greater than `0`.
+6. (Optional) In environments using DOINC/CDN byte reporting, interpret results as follows:
 
-    ```powershell
-    Get-DeliveryOptimizationStatus | Select-Object DownloadMode, TotalBytesDownloaded, BytesFromCacheServer
-    ```
-
-    Expected result: `BytesFromCacheServer` is greater than `0`.
-
-1. (Optional) In environments using DOINC/CDN byte reporting, interpret results as follows:
-
-    - `CDN` bytes equals `DOINC` bytes: 100% of bytes came from cache.
-    - `DOINC` bytes is `0`: 100% of bytes came from CDN.
-    - `CDN` bytes greater than `DOINC` bytes: Partial bytes came from cache.
+   - `CDN` bytes equals `DOINC` bytes: 100% of bytes came from cache.
+   - `DOINC` bytes is `0`: 100% of bytes came from CDN.
+   - `CDN` bytes greater than `DOINC` bytes: Partial bytes came from cache.
 
 > [!NOTE]
+>
 > You may observe an issue where Intune content isn't cached until the third request from the cache server. This can occur when the Intune CDN returns a `VARY` header that instructs content not to be cached.
 
 ### Verify on the server
 
-On the distribution point server, check the registry values at `HKLM\SOFTWARE\Microsoft\Delivery Optimization In-Network Cache`. Verify that `PrimaryDrivesInput` value reflects the actual cache location, like  `PrimaryDrivesInput\DOINC-E77D08D0-5FEA-4315-8C95-10D359D59294`. Note that `PrimaryDrivesInput` can reference multiple drives (for example, `C,D,E`).
+On the distribution point server, check the registry values at `HKLM\SOFTWARE\Microsoft\Delivery Optimization In-Network Cache`. Verify that `PrimaryDrivesInput` value reflects the actual cache location, like `PrimaryDrivesInput\DOINC-E77D08D0-5FEA-4315-8C95-10D359D59294`. Note that `PrimaryDrivesInput` can reference multiple drives (for example, `C,D,E`).
 
 Also, check the **DoincSetup.log** to confirm successful installation:
 
 1. On the distribution point server, navigate to `\SMS_DP$\Ms.Dsp.Do.Inc.Setup\DoincSetup.log` located at one of the logical drives.
-1. Open the file and scroll to the end.
-1. Verify that it contains entries similar to the following:
+2. Open the file and scroll to the end.
+3. Verify that it contains entries similar to the following:
 
 ```output
 Requesting content from the Delivery Optimization In-Network Cache (DOINC) instance... (Attempt #1)
@@ -121,15 +118,16 @@ Delivery Optimization In-Network Cache (DOINC) Install succeeded
 - **Internet Information Services (IIS) operational logs**: By default, `%SystemDrive%\inetpub\logs\LogFiles`
 - **Connected Cache server operational log**: `C:\Doinc\Product\Install\Logs`
 
-    > [!TIP]
-    > Among other uses, this log can help you identify connectivity issues with the Microsoft cloud.
+  > [!TIP]
+  >
+  > Among other uses, this log can help you identify connectivity issues with the Microsoft cloud.
 
 ## Setup error codes
 
 When Configuration Manager installs the Connected Cache component on the distribution point, the following table lists the possible error codes that might occur:
 
 | Error code | Error description |
-|------------|-------------------|
+| --- | --- |
 | 0x00000000 | Success |
 | 0x00000BC2 | Success, reboot required |
 | 0x00000643 | Generic install failure |
@@ -283,9 +281,9 @@ If requests with `X-Forwarded-For` headers are blocked on a proxy server, either
 To change the custom header name for each server farm:
 
 1. Open IIS Manager.
-1. Select **Server Farms**.
-1. Select a server farm and the proxy icon.
-1. Under **Custom Headers**, change the value `X-Forwarded-For` to `X-Forwarded-For-<custom-name>`.
+2. Select **Server Farms**.
+3. Select a server farm and the proxy icon.
+4. Under **Custom Headers**, change the value `X-Forwarded-For` to `X-Forwarded-For-<custom-name>`.
 
 ## Manage server resources
 
@@ -297,7 +295,7 @@ Disk space required for each Connected Cache server might vary, based on your or
 
 The Connected Cache server shouldn't consume much system memory or processor time. After you install the Connected Cache server, if you notice significant process or memory resource consumption, analyze the IIS and ARR log files.
 
-If the IIS and ARR log files take up too much space on the server, there are several methods you can use to manage the log files. For more information, see [Managing IIS log file storage](/iis/manage/provisioning-and-managing-iis/managing-iis-log-file-storage#overview).
+If the IIS and ARR log files take up too much space on the server, there are several methods you can use to manage the log files. For more information, see [Managing IIS log file storage](https://learn.microsoft.com/en-us/iis/manage/provisioning-and-managing-iis/managing-iis-log-file-storage#overview).
 
 ## See also
 

@@ -1,22 +1,26 @@
 ---
-title: Specify the Supported Platforms for a Driver
+title: "How to Specify the Supported Platforms for a Driver"
 description: In Configuration Manager, you specify the supported platforms of a driver in the SDMPackageXML property XML of the driver's SMS_Driver Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Specify the Supported Platforms for a Driver
-In Configuration Manager, you specify the supported platforms of a driver in the `SDMPackageXML` property XML of the driver's [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) object. The XML contains a node `PlatformApplicabilityConditions` to which you add `PlatformApplicabilityCondition` elements for each platform the driver supports.
+
+In Configuration Manager, you specify the supported platforms of a driver in the `SDMPackageXML` property XML of the driver's [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) object. The XML contains a node `PlatformApplicabilityConditions` to which you add `PlatformApplicabilityCondition` elements for each platform the driver supports.
 
 > [!NOTE]
->  You should add only platforms that are listed in a [SMS_SupportedPlatforms Server WMI Class](../../develop/reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md) object. Drivers can only be conditioned for major operating system releases, that is, it is not possible to target drivers at service packs.
+>
+> You should add only platforms that are listed in a [SMS_SupportedPlatforms Server WMI Class](../reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md) object. Drivers can only be conditioned for major operating system releases, that is, it is not possible to target drivers at service packs.
 
 > [!CAUTION]
->  The supported platforms portion of `SDMPackageXML` is the only part of the CI-XML schema that can be edited. You should not make changes to other parts of the XML.
 >
->  The following XML demonstrates a driver that supports two platforms. For more information about the supported platforms schema, see [Operating System Deployment Driver Supported Platforms Schema](../../develop/reference/osd/operating-system-deployment-driver-supported-platforms-schema.md).
+> The supported platforms portion of `SDMPackageXML` is the only part of the CI-XML schema that can be edited. You should not make changes to other parts of the XML.
+>
+> The following XML demonstrates a driver that supports two platforms. For more information about the supported platforms schema, see [Operating System Deployment Driver Supported Platforms Schema](../reference/osd/operating-system-deployment-driver-supported-platforms-schema.md).
 
 ```
 <PlatformApplicabilityConditions>
@@ -31,24 +35,22 @@ In Configuration Manager, you specify the supported platforms of a driver in the
 </PlatformApplicabilityConditions>
 ```
 
- To validate the platform applicability requirements, use the [SMS_SupportedPlatforms Server WMI Class](../../develop/reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md) class `Condition` property for the required platform.
+To validate the platform applicability requirements, use the [SMS_SupportedPlatforms Server WMI Class](../reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md) class `Condition` property for the required platform.
 
 ### To specify the supported platforms for a driver
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) object for the driver. The driver is identified by the key property `CI_ID`. For information about getting objects by using a key property, see [How to Read a Configuration Manager Object by Using Managed Code](../../develop/core/understand/how-to-read-a-configuration-manager-object-by-using-managed-code.md)
-
-3.  Update the driver XML.
-
-4.  Commit the changes back to the SMS Provider.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) object for the driver. The driver is identified by the key property `CI_ID`. For information about getting objects by using a key property, see [How to Read a Configuration Manager Object by Using Managed Code](../core/understand/how-to-read-a-configuration-manager-object-by-using-managed-code.md)
+3. Update the driver XML.
+4. Commit the changes back to the SMS Provider.
 
 ## Example
- The following example method adds a supported platform to the driver that is identified by `objDriver`. For example, the following calling code adds Windows XP Professional x64 operating system to the driver `objDriver` list of supported platforms. You can get the details for a specific platform from its `SMS_SupportedPlatforms` object instance.
 
- `AddSupportedPlatform objDriver, "All x64 Windows XP Professional", "5.20.9999.9999","5.20.3790.0", "Win NT","x64", "SELECT * FROM Win32_OperatingSystem WHERE BuildNumber = 3790 AND OSType=18 AND ProductType=1", "SELECT * FROM Win32_Processor WHERE Architecture=9 AND DataWidth=64"`
+The following example method adds a supported platform to the driver that is identified by `objDriver`. For example, the following calling code adds Windows XP Professional x64 operating system to the driver `objDriver` list of supported platforms. You can get the details for a specific platform from its `SMS_SupportedPlatforms` object instance.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+`AddSupportedPlatform objDriver, "All x64 Windows XP Professional", "5.20.9999.9999","5.20.3790.0", "Win NT","x64", "SELECT * FROM Win32_OperatingSystem WHERE BuildNumber = 3790 AND OSType=18 AND ProductType=1", "SELECT * FROM Win32_Processor WHERE Architecture=9 AND DataWidth=64"`
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AddSupportedPlatform( objDriver, sDisplayName, sMaxVersion, sMinVersion, sName, sPlatform, sQuery1, sQuery2 )
@@ -212,55 +214,53 @@ public void AddSupportedPlatform(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`driver`<br /><br /> `objDriver`|-   Managed: `IResultObject`<br />-   VBScript:  [SWbemObject](/windows/win32/wmisdk/swbemobject)|-   A valid [SMS_Driver](../../develop/reference/osd/sms_driver-server-wmi-class.md) object. For more information, see [How to Import a Windows Driver Described by an INF File into Configuration Manager](../../develop/osd/how-to-import-a-windows-driver-described-by-an-inf-file.md).|
-|`displayName`<br /><br /> `sDisplayName`|-   Managed: `String`<br />-   VBScript: `String`|The display name for the condition shown in the Configuration Manager console.|
-|`maxVersion`<br /><br /> `sMaxVersion`|-   Managed: `String`<br />-   VBScript: `String`|The maximum supported version.|
-|`minVersion`<br /><br /> `sMinVersion`|-   Managed: `String`<br />-   VBScript: `String`|The minimum supported version.|
-|`name`<br /><br /> `sName`|-   Managed: `String`<br />-   VBScript: `String`|The operating system name.|
-|`platform`<br /><br /> `sPlatform`|-   Managed: `String`<br />-   VBScript: `String`|The platform name.|
-|`query1`<br /><br /> `sQuery1`|-   Managed: `String`<br />-   VBScript: `String`|The first query used to identify the client platform.|
-|`query2`<br /><br /> `sQuery2`|-   Managed: `String`<br />-   VBScript: `String`|The second query used to identify the client platform.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `driver`   `objDriver` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject) | - A valid [SMS_Driver](../reference/osd/sms_driver-server-wmi-class.md) object. For more information, see [How to Import a Windows Driver Described by an INF File into Configuration Manager](how-to-import-a-windows-driver-described-by-an-inf-file.md). |
+| `displayName`   `sDisplayName` | - Managed: `String` - VBScript: `String` | The display name for the condition shown in the Configuration Manager console. |
+| `maxVersion`   `sMaxVersion` | - Managed: `String` - VBScript: `String` | The maximum supported version. |
+| `minVersion`   `sMinVersion` | - Managed: `String` - VBScript: `String` | The minimum supported version. |
+| `name`   `sName` | - Managed: `String` - VBScript: `String` | The operating system name. |
+| `platform`   `sPlatform` | - Managed: `String` - VBScript: `String` | The platform name. |
+| `query1`   `sQuery1` | - Managed: `String` - VBScript: `String` | The first query used to identify the client platform. |
+| `query2`   `sQuery2` | - Managed: `String` - VBScript: `String` | The second query used to identify the client platform. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
 
- System.Xml
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
- System.IO
+System.Xml
+
+System.IO
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [SMS_SupportedPlatforms Server WMI Class](../../develop/reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md)
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [How to Move a Step to a Different Operating System Deployment Task Sequence Group](../../develop/osd/how-to-move-a-step-to-a-different-task-sequence-group.md)
- [How to Create an Operating System Deployment Task Sequence Group](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence-group.md)
- [How to Remove a Step From an Operating System Deployment Group](../../develop/osd/how-to-remove-a-step-from-an-operating-system-deployment-group.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
- [SMS_SupportedPlatforms Server WMI Class](../../develop/reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md)
+
+[SMS_SupportedPlatforms Server WMI Class](../reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md) [Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [How to Move a Step to a Different Operating System Deployment Task Sequence Group](how-to-move-a-step-to-a-different-task-sequence-group.md) [How to Create an Operating System Deployment Task Sequence Group](how-to-create-an-operating-system-deployment-task-sequence-group.md) [How to Remove a Step From an Operating System Deployment Group](how-to-remove-a-step-from-an-operating-system-deployment-group.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md) [SMS_SupportedPlatforms Server WMI Class](../reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md)

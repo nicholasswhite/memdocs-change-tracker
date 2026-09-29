@@ -1,7 +1,7 @@
 ---
-title: "Enumerate the Members of a Collection"
+title: "How to Enumerate the Members of a Collection"
 description: "In Configuration Manager, the preferred method to enumerate through a collection is to use SMS_FullCollectionMembership Server WMI Class."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,50 +9,52 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Enumerate the Members of a Collection
-In Configuration Manager, the preferred method to enumerate through a collection is to use `SMS_FullCollectionMembership Server WMI Class`.  
 
- **Query 1: SMS_FullCollectionMembership**: This example shows how to enumerate the members of the All Systems (SMS00001) collection by using the `SMS_FullCollectionMembership Server WMI Class`.  
+In Configuration Manager, the preferred method to enumerate through a collection is to use `SMS_FullCollectionMembership Server WMI Class`.
 
- **Query 2: SMS_CollectionMember_a**: This example shows a slower alternative, by using the [SMS_CollectionMember_a Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionmember_a-server-wmi-class.md) class.  
+**Query 1: SMS_FullCollectionMembership**: This example shows how to enumerate the members of the All Systems (SMS00001) collection by using the `SMS_FullCollectionMembership Server WMI Class`.
 
- **Query 3: SMS_Collection**: This example shows a further alternative, which is to query the members by using the actual collection class name that is specified in the `MemberClassName` property of [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md). Querying the actual class offers performance advantages and lets you create more complex queries, such as JOINs. The example is equivalent to the earlier queries.  
+**Query 2: SMS_CollectionMember_a**: This example shows a slower alternative, by using the [SMS_CollectionMember_a Server WMI Class](../../../reference/core/clients/collections/sms_collectionmember_a-server-wmi-class.md) class.
+
+**Query 3: SMS_Collection**: This example shows a further alternative, which is to query the members by using the actual collection class name that is specified in the `MemberClassName` property of [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md). Querying the actual class offers performance advantages and lets you create more complex queries, such as JOINs. The example is equivalent to the earlier queries.
 
 > [!NOTE]
->  When the SMS Provider first initializes, it registers and dynamically loads the SMS collection class into memory. If a WQL query is made against the collection class before it is loaded, an empty query result set will be returned.  
+>
+> When the SMS Provider first initializes, it registers and dynamically loads the SMS collection class into memory. If a WQL query is made against the collection class before it is loaded, an empty query result set will be returned.
 
- Collections are closely tied to packages, programs and advertisements. For more information, see [Software Distribution Overview](../../../../develop/core/servers/configure/software-distribution-overview.md).  
+Collections are closely tied to packages, programs and advertisements. For more information, see [Software Distribution Overview](../../servers/configure/software-distribution-overview.md).
 
- These examples require the following values:  
+These examples require the following values:
 
-- A Windows Management Instrumentation (WMI) connection object.  
+- A Windows Management Instrumentation (WMI) connection object.
 
-  Example of the subroutine call in Visual Basic:  
+  Example of the subroutine call in Visual Basic:
 
-```  
+```
 Call EnumerateCollectionMembers(swbemServices)  
-```  
+```
 
- Example of the method call in C#:  
+Example of the method call in C#:
 
-```  
+```
 EnumerateCollectionMembers(WMIConnection)  
-```  
+```
 
-### To enumerate the members of a collection  
+### To enumerate the members of a collection
 
-1.  Set up a connection to the SMS Provider.  
+1. Set up a connection to the SMS Provider.
+2. Define a query to select the resources for the collection.
+3. Execute the query and enumerate the results.
 
-2.  Define a query to select the resources for the collection.  
+## Example
 
-3.  Execute the query and enumerate the results.  
+The following example method enumerates the members of a collection.
 
-## Example  
- The following example method enumerates the members of a collection.  
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).  
-
-```vbs  
+```vbs
 
 Sub EnumerateCollectionMembers(connection)  
     Const wbemFlagReturnImmediately = 16    Const wbemFlagForwardOnly = 32  
@@ -99,9 +101,9 @@ Sub EnumerateCollectionMembers(connection)
     Next  
 
 End Sub  
-```  
+```
 
-```c#  
+```c#
 public void EnumerateCollectionMembers(WqlConnectionManager connection)  
 {  
     // Set required variables.  
@@ -158,36 +160,40 @@ public void EnumerateCollectionMembers(WqlConnectionManager connection)
         throw;  
     }  
 }  
-```  
+```
 
- The example method has the following parameters:  
+The example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
 
-## Compiling the Code  
- The C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System  
+The C# example requires:
 
- Microsoft.ConfigurationManagement.ManagementProvider  
+### Namespaces
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine  
+System
 
-### Assembly  
- adminui.wqlqueryengine  
+Microsoft.ConfigurationManagement.ManagementProvider
 
- microsoft.configurationmanagement.managementprovider  
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
- mscorlib  
+### Assembly
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+adminui.wqlqueryengine
 
-## See Also  
- [SMS_CollectionMember_a Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionmember_a-server-wmi-class.md)   
- [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)   
- [Software distribution overview](../../servers/configure/software-distribution-overview.md)
- [About deployments](../../servers/configure/about-software-distribution-deployments.md)
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## See Also
+
+[SMS_CollectionMember_a Server WMI Class](../../../reference/core/clients/collections/sms_collectionmember_a-server-wmi-class.md)  
+ [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md)  
+ [Software distribution overview](../../servers/configure/software-distribution-overview.md) [About deployments](../../servers/configure/about-software-distribution-deployments.md)

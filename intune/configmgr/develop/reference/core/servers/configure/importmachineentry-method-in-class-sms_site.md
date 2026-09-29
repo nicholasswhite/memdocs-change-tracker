@@ -1,16 +1,18 @@
 ---
 description: Learn how to import computer information using ImportMachineEntry class method in Configuration Manager.
-title: ImportMachineEntry Method
-ms.date: 09/20/2016
+title: "ImportMachineEntry Method in Class SMS_Site"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ImportMachineEntry Method in Class SMS_Site
+
 The `ImportMachineEntry` Windows Management Instrumentation (WMI) class method in Configuration Manager that imports computer information.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -34,103 +36,93 @@ uint32 ImportMachineEntry
 ```
 
 ## Parameters
- `NetbiosName`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`NetbiosName` Data type: `String`
 
- The NetBIOS name for the computer.
+Qualifiers: [id("0"), in]
 
- `SMBIOSGUID`
- Data type: `String`
+The NetBIOS name for the computer.
 
- Qualifiers: [id("1"), in]
+`SMBIOSGUID` Data type: `String`
 
- The GUID for the system management BIOS (SMBIOS).
+Qualifiers: [id("1"), in]
 
- `MACAddress`
- Data type: `String`
+The GUID for the system management BIOS (SMBIOS).
 
- Qualifiers: [id("2"), in]
+`MACAddress` Data type: `String`
 
- The media access controller (MAC) address. The MAC address must be for a network adapter that has a driver in Windows PE. The MAC address must be in colon format. For example, 00:00:00:00:00:00. Other formats prevent the client from receiving policy.
+Qualifiers: [id("2"), in]
 
- `OverwriteExistingRecord`
- Data type: `Boolean`
+The media access controller (MAC) address. The MAC address must be for a network adapter that has a driver in Windows PE. The MAC address must be in colon format. For example, 00:00:00:00:00:00. Other formats prevent the client from receiving policy.
 
- Qualifiers: [id("3"), in]
+`OverwriteExistingRecord` Data type: `Boolean`
 
- `true` to overwrite the existing record.
+Qualifiers: [id("3"), in]
 
- `FQDN`
- Data type: `String`
+`true` to overwrite the existing record.
 
- Qualifiers: [id("4"), in, optional]
+`FQDN` Data type: `String`
 
- Fully qualified domain name of this computer.
+Qualifiers: [id("4"), in, optional]
 
- `AdminPassword`
- Data type: `String`
+Fully qualified domain name of this computer.
 
- Qualifiers: [id("7"), in, optional]
+`AdminPassword` Data type: `String`
 
- The changed password of the MEBx password that can occur during out of band provisioning.
+Qualifiers: [id("7"), in, optional]
 
- `AddToCollection`
- Data type: `Boolean`
+The changed password of the MEBx password that can occur during out of band provisioning.
 
- Qualifiers: [id("8"), in, optional]
+`AddToCollection` Data type: `Boolean`
 
- `true` to add the computer to a collection.
+Qualifiers: [id("8"), in, optional]
 
- `CollectionRule`
- Data type: `SMS_CollectionRule`
+`true` to add the computer to a collection.
 
- Qualifiers: [id("9"), in, optional]
+`CollectionRule` Data type: `SMS_CollectionRule`
 
- Adds the collection rule to a specified collection. The default value is NULL.
+Qualifiers: [id("9"), in, optional]
 
- `CollectionId`
- Data type: `String`
+Adds the collection rule to a specified collection. The default value is NULL.
 
- Qualifiers: [id("10"), in, optional]
+`CollectionId` Data type: `String`
 
- The collection identifier for the collection that the computer is added to. The default value is empty.
+Qualifiers: [id("10"), in, optional]
 
- `WTGUniqueKey`
- Data type: `String`
+The collection identifier for the collection that the computer is added to. The default value is empty.
 
- Qualifiers: [id("11"), in, optional]
+`WTGUniqueKey` Data type: `String`
 
- For a Windows To Go deployment, this is the USB unique key that is used to identify the client, instead of the SMBIOS and MAC address.
+Qualifiers: [id("11"), in, optional]
 
- `MachineExists`
- Data type: `Boolean`
+For a Windows To Go deployment, this is the USB unique key that is used to identify the client, instead of the SMBIOS and MAC address.
 
- Qualifiers: [id("12"), out]
+`MachineExists` Data type: `Boolean`
 
- `true` if the computer exists.
+Qualifiers: [id("12"), out]
 
- `ResourceID`
- Data type: `UInt32`
+`true` if the computer exists.
 
- Qualifiers: [id("13"), out]
+`ResourceID` Data type: `UInt32`
 
- Resource identifier for the computer.
+Qualifiers: [id("13"), out]
 
- `SMSUniqueIdentifier`
- Data type: `String`
+Resource identifier for the computer.
 
- Qualifiers: [id("14"), out]
+`SMSUniqueIdentifier` Data type: `String`
 
- Unique identifier of Configuration Manager.
+Qualifiers: [id("14"), out]
+
+Unique identifier of Configuration Manager.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

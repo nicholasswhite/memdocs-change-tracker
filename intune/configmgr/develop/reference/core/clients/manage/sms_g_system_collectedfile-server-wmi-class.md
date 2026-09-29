@@ -1,16 +1,18 @@
 ---
 description: Learn how to use SMS_G_System_CollectedFile class which contains information about a file copied from the client computer to the site server.
-title: SMS_G_System_CollectedFile Class
-ms.date: 09/20/2016
+title: "SMS_G_System_CollectedFile Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_CollectedFile Server WMI Class
+
 The `SMS_G_System_CollectedFile` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains information about a file copied from the client computer to the site server.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,125 +33,118 @@ Class SMS_G_System_CollectedFile : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_CollectedFile` class does not define any methods.
+
+The `SMS_G_System_CollectedFile` class does not define any methods.
 
 ## Properties
- `CollectionDate`
- Data type: `DateTime`
 
- Access type: Read/Write
+`CollectionDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time the file was collected from the client computer.
+Qualifiers: None
 
- `FileData`
- Data type: `UInt8` Array
+Date and time the file was collected from the client computer.
 
- Access type: Read/Write
+`FileData` Data type: `UInt8` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Contents of the file.
+Qualifiers: [lazy]
 
- `FileName`
- Data type: `String`
+Contents of the file.
 
- Access type: Read/Write
+`FileName` Data type: `String`
 
- Qualifiers: [DefaultOrder("ASC")]
+Access type: Read/Write
 
- Name and file name extension of the file.
+Qualifiers: [DefaultOrder("ASC")]
 
- `FilePath`
- Data type: `String`
+Name and file name extension of the file.
 
- Access type: Read/Write
+`FilePath` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Path to the file on the client computer.
+Qualifiers: [key]
 
- `FileSize`
- Data type: `UInt32`
+Path to the file on the client computer.
 
- Access type: Read/Write
+`FileSize` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Size of the file, in bytes.
+Qualifiers: None
 
- `LocalFilePath`
- Data type: `String`
+Size of the file, in bytes.
 
- Access type: Read/Write
+`LocalFilePath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Path to the file on the site server.
+Qualifiers: None
 
- `ModifiedDate`
- Data type: `DateTime`
+Path to the file on the site server.
 
- Access type: Read/Write
+`ModifiedDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time the file was last modified.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Date and time the file was last modified.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: [key]
 
- `RevisionID`
- Data type: `UInt32`
+See [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
 
- Access type: Read/Write
+`RevisionID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Revision ID that increments each time an inventory is taken to identify the number of times the file has been inventoried. The file is only inventoried when it has changed.
+Qualifiers: [key]
 
- `FileModifyDate`
- Data type: `DateTime`
+Revision ID that increments each time an inventory is taken to identify the number of times the file has been inventoried. The file is only inventoried when it has changed.
 
- Access type: Read/Write
+`FileModifyDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time the file was last modified.
+Qualifiers: None
+
+Date and time the file was last modified.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- The Software Inventory Agent collects files identified in the site control file. To identify the files to collect, the agent:
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-1.  Queries the site control [SMS_SCI_ClientComp Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) objects for items having the value "Software Inventory Agent" for the `ClientComponentName` property.
+The Software Inventory Agent collects files identified in the site control file. To identify the files to collect, the agent:
 
-2.  Loops through the embedded property list. When the value for `PropertyName` is "Collectable Files", the agent updates the comma-delimited list of file names (including extensions) in the `Value2` property. When the value for `PropertyName` is "Max Collected File Size", the agent sets a maximum size, in megabytes, for the files that Configuration Manager collects from the client, for that query, during each software inventory cycle.
-
-3.  For any new collectable file added, adds an entry to each of the embedded property lists Collectable File Path, Collectable File Subdirectories, Collectable File Exclude, and Collectable File Max Size.
-
-4.  Updates the site control file. For more information, see [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md).
+1. Queries the site control [SMS_SCI_ClientComp Server WMI Class](../../servers/configure/sms_sci_clientcomp-server-wmi-class.md) objects for items having the value "Software Inventory Agent" for the `ClientComponentName` property.
+2. Loops through the embedded property list. When the value for `PropertyName` is "Collectable Files", the agent updates the comma-delimited list of file names (including extensions) in the `Value2` property. When the value for `PropertyName` is "Max Collected File Size", the agent sets a maximum size, in megabytes, for the files that Configuration Manager collects from the client, for that query, during each software inventory cycle.
+3. For any new collectable file added, adds an entry to each of the embedded property lists Collectable File Path, Collectable File Subdirectories, Collectable File Exclude, and Collectable File Max Size.
+4. Updates the site control file. For more information, see [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md).
 
 > [!NOTE]
->  Collecting files from clients can generate a large volume of network traffic and require extensive storage space. For this reason, you should test any changes you make in a test environment before implementing them in a production environment.
+>
+> Collecting files from clients can generate a large volume of network traffic and require extensive storage space. For this reason, you should test any changes you make in a test environment before implementing them in a production environment.
 
- Collected files are deleted on a schedule if the Delete Aged Collected Files database maintenance task is set to `true` in the Configuration Manager console. You can also enable this task and set the schedule by updating the site control file. The site control item is an instance of [SMS_SCI_SQLTask Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sci_sqltask-server-wmi-class.md) and the `TaskName` value is "Delete Aged Collected Files".
+Collected files are deleted on a schedule if the Delete Aged Collected Files database maintenance task is set to `true` in the Configuration Manager console. You can also enable this task and set the schedule by updating the site control file. The site control item is an instance of [SMS_SCI_SQLTask Server WMI Class](../../servers/configure/sms_sci_sqltask-server-wmi-class.md) and the `TaskName` value is "Delete Aged Collected Files".
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md)
- [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md)
+
+[SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md) [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md)

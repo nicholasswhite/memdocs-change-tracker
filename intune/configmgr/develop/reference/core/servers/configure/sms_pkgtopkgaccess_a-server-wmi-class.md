@@ -1,16 +1,18 @@
 ---
 description: Learn how to relate an SMS Package Server class object with the SMS PackageAccessByUsers Server class object used to access its distribution points.
-title: SMS_PkgToPkgAccess_a Class
-ms.date: 09/20/2016
+title: "SMS_PkgToPkgAccess_a Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_PkgToPkgAccess_a Server WMI Class
-The `SMS_PkgToPkgAccess_a` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that uses the `PackageID` property to relate an [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) object with the [SMS_PackageAccessByUsers Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_packageaccessbyusers-server-wmi-class.md) object used to access the package on its distribution points.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_PkgToPkgAccess_a Server WMI Class
+
+The `SMS_PkgToPkgAccess_a` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that uses the `PackageID` property to relate an [SMS_Package Server WMI Class](sms_package-server-wmi-class.md) object with the [SMS_PackageAccessByUsers Server WMI Class](sms_packageaccessbyusers-server-wmi-class.md) object used to access the package on its distribution points.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,44 +25,46 @@ Class SMS_PkgToPkgAccess_a : SMS_BaseAssociation
 ```
 
 ## Methods
- The `SMS_PkgToPkgAccess_a` class does not define any methods.
+
+The `SMS_PkgToPkgAccess_a` class does not define any methods.
 
 ## Properties
- `package`
- Data type: `ref:SMS_Package`
 
- Access type: Read/Write
+`package` Data type: `ref:SMS_Package`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Reference to an [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) object path.
+Qualifiers: [key]
 
- `pkgAccess`
- Data type: `ref:SMS_PackageAccessByUsers`
+Reference to an [SMS_Package Server WMI Class](sms_package-server-wmi-class.md) object path.
 
- Access type: Read/Write
+`pkgAccess` Data type: `ref:SMS_PackageAccessByUsers`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Reference to an [SMS_PackageAccessByUsers Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_packageaccessbyusers-server-wmi-class.md) object path.
+Qualifiers: [key]
+
+Reference to an [SMS_PackageAccessByUsers Server WMI Class](sms_packageaccessbyusers-server-wmi-class.md) object path.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Association: ToInstance
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
- [SMS_PackageAccessByUsers Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_packageaccessbyusers-server-wmi-class.md)
+
+[SMS_Package Server WMI Class](sms_package-server-wmi-class.md) [SMS_PackageAccessByUsers Server WMI Class](sms_packageaccessbyusers-server-wmi-class.md)

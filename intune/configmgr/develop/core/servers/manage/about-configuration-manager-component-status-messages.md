@@ -1,19 +1,22 @@
 ---
-title: About Component Status Messages
+title: "About Configuration Manager Component Status Messages"
 description: The message text for both the Configuration Manager components and the raw user-defined messages is contained in message DLLs.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: concept-article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # About Configuration Manager Component Status Messages
-The message text for both the Configuration Manager components and the raw user-defined messages is contained in message DLLs. The [SMS_StatMsgInsStrings Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statmsginsstrings-server-wmi-class.md) class contains the insertion strings for those messages that use insertion strings. To read the SMS component and raw user-defined messages, you must know the message DLL that contains the message text.
+
+The message text for both the Configuration Manager components and the raw user-defined messages is contained in message DLLs. The [SMS_StatMsgInsStrings Server WMI Class](../../../reference/core/servers/manage/sms_statmsginsstrings-server-wmi-class.md) class contains the insertion strings for those messages that use insertion strings. To read the SMS component and raw user-defined messages, you must know the message DLL that contains the message text.
 
 > [!NOTE]
->  If the status message is in Srvmsgs.dll, Provmsgs.dll, or Climmsgs.dll, you can use [FormatModuleMessage Method](../../../../develop/reference/core/servers/manage/formatmodulemessage-method.md) to resolve the message.
+>
+> If the status message is in Srvmsgs.dll, Provmsgs.dll, or Climmsgs.dll, you can use [FormatModuleMessage Method](../../../reference/core/servers/manage/formatmodulemessage-method.md) to resolve the message.
 
- You can get the DLL name from the [SMS_StatMsgModuleNames Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statmsgmodulenames-server-wmi-class.md). The [SMS_StatMsgModuleNames Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statmsgmodulenames-server-wmi-class.md) class contains the **ModuleName** and **MsgDLLName** properties. You can use **ModuleName** to join the `SMS_StatMsgModuleNames` class with the `SMS_StatusMessage` class, as the following example shows.
+You can get the DLL name from the [SMS_StatMsgModuleNames Server WMI Class](../../../reference/core/servers/manage/sms_statmsgmodulenames-server-wmi-class.md). The [SMS_StatMsgModuleNames Server WMI Class](../../../reference/core/servers/manage/sms_statmsgmodulenames-server-wmi-class.md) class contains the **ModuleName** and **MsgDLLName** properties. You can use **ModuleName** to join the `SMS_StatMsgModuleNames` class with the `SMS_StatusMessage` class, as the following example shows.
 
 ```
 // Note that this query returns all the instances found in the SMS_Status_Message
@@ -31,11 +34,11 @@ FROM SMS_StatusMessage AS B
 ORDER BY B.Sitecode, B.RecordID, B.MessageID, D.InsStrIndex
 ```
 
- You can use the **MessageID** and **Component** names from the list to limit your status message query. For example, you can add a WHERE clause to limit the status messages to the SMS_Distribution_Manager component.
+You can use the **MessageID** and **Component** names from the list to limit your status message query. For example, you can add a WHERE clause to limit the status messages to the SMS_Distribution_Manager component.
 
- After you have the DLL name, you can use the Microsoft Win32 API function **FormatMessage** to retrieve the message text from the component's message DLL. This requires you to get the module handle for the DLL by using the Win32 API function **GetModuleHandle**. The *dwMessageId* parameter is the OR'd result of the **MessageID** and the **Severity** properties. You should set the FORMAT_MESSAGE_ARGUMENT_ARRAY flag and pass the insertion strings as an array.
+After you have the DLL name, you can use the Microsoft Win32 API function **FormatMessage** to retrieve the message text from the component's message DLL. This requires you to get the module handle for the DLL by using the Win32 API function **GetModuleHandle**. The *dwMessageId* parameter is the OR'd result of the **MessageID** and the **Severity** properties. You should set the FORMAT_MESSAGE_ARGUMENT_ARRAY flag and pass the insertion strings as an array.
 
- The following code shows how to call **FormatMessage** to retrieve the message text from a DLL.
+The following code shows how to call **FormatMessage** to retrieve the message text from a DLL.
 
 ```
 // Get the module handle for the component's message DLL. This assumes the
@@ -63,6 +66,5 @@ LocalFree(lpBuffer);
 ```
 
 ## See Also
- [About Configuration Manager Status Messages](../../../../develop/core/servers/manage/about-configuration-manager-status-messages.md)
- [SMS_StatMsgInsStrings Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statmsginsstrings-server-wmi-class.md)
- [SMS_StatMsgModuleNames Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statmsgmodulenames-server-wmi-class.md)
+
+[About Configuration Manager Status Messages](about-configuration-manager-status-messages.md) [SMS_StatMsgInsStrings Server WMI Class](../../../reference/core/servers/manage/sms_statmsginsstrings-server-wmi-class.md) [SMS_StatMsgModuleNames Server WMI Class](../../../reference/core/servers/manage/sms_statmsgmodulenames-server-wmi-class.md)

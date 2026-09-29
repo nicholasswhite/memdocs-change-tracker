@@ -1,7 +1,7 @@
 ---
-title: Zimperium MTD connector with Microsoft Intune
+title: "Zimperium Mobile Threat Defense connector with Intune"
 description: How to set up Zimperium Mobile Threat Defense with Microsoft Intune to control mobile device access to your corporate resources
-ms.date: 09/30/2024
+ms.date: "2024-09-30T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -14,7 +14,6 @@ You can configure Conditional Access policies based on Zimperium risk assessment
 ## Supported platforms
 
 - **Android 5.1 and later**
-
 - **iOS 10 and later**
 
 ## Prerequisites
@@ -29,14 +28,15 @@ You can configure Conditional Access policies based on Zimperium risk assessment
 The Zimperium app for Android and iOS/iPadOS captures file system, network stack, device, and application telemetry where available, then sends the telemetry data to the Zimperium cloud service to assess the device's risk for mobile threats.
 
 - **Support for enrolled devices** - Intune device compliance policy includes a rule for Mobile Threat Defense (MTD), which can use risk assessment information from Zimperium. When the MTD rule is enabled, Intune evaluates device compliance with the policy that you enabled. If the device is found noncompliant, users are blocked access to corporate resources like Exchange Online and SharePoint Online. Users also receive guidance from the Zimperium app installed in their devices to resolve the issue and regain access to corporate resources. To support using Zimperium with enrolled devices:
-  - [Add MTD apps to devices](./assign-apps.md)
-  - [Create a device compliance policy that supports MTD](./create-compliance-policy.md)
-  - [Enable a Mobile Threat Defense connector](./enable-connector.md)
 
+  - [Add MTD apps to devices](assign-apps.md)
+  - [Create a device compliance policy that supports MTD](create-compliance-policy.md)
+  - [Enable a Mobile Threat Defense connector](enable-connector.md)
 - **Support for unenrolled devices** - Intune can use the risk assessment data from the Zimperium app on unenrolled devices when you use Intune app protection policies. Admins can use this combination to help protect corporate data within a [Microsoft Intune protected app](../../app-management/ref-protected-apps.md), Admins can also issue a block or selective wipe for corporate data on those unenrolled devices. To support using Zimperium with unenrolled devices:
-  - [Add the MTD app to unenrolled devices](./add-apps-unenrolled-devices.md)
-  - [Create a Mobile Threat Defense app protection policy](./create-app-protection-policy.md)
-  - [Enable the MTD connector in Intune for unenrolled devices](./enable-unenrolled-devices.md)
+
+  - [Add the MTD app to unenrolled devices](add-apps-unenrolled-devices.md)
+  - [Create a Mobile Threat Defense app protection policy](create-app-protection-policy.md)
+  - [Enable the MTD connector in Intune for unenrolled devices](enable-unenrolled-devices.md)
 
 ## Sample scenarios
 
@@ -52,11 +52,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected:*
 
-:::image type="content" source="./media/zimperium/maliciousapps-blocked-zimperium.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/zimperium/maliciousapps-blocked-zimperium.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/zimperium/maliciousapps-unblocked-zimperium.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/zimperium/maliciousapps-unblocked-zimperium.png)
 
 ### Control access based on threat to network
 
@@ -64,11 +64,11 @@ Detect threats like **Man-in-the-middle** in network, and protect access to Wi-F
 
 *Block network access through Wi-Fi:*
 
-:::image type="content" source="./media/zimperium/network-wifi-blocked-zimperium.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/zimperium/network-wifi-blocked-zimperium.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/zimperium/network-wifi-unblocked-zimperium.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated.](media/zimperium/network-wifi-unblocked-zimperium.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -76,25 +76,25 @@ Detect threats like **Man-in-the-middle** in network, and prevent synchronizatio
 
 *Block SharePoint Online when network threats are detected:*
 
-:::image type="content" source="./media/zimperium/network-spo-blocked-zimperium.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/zimperium/network-spo-blocked-zimperium.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/zimperium/network-spo-unblocked-zimperium.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/zimperium/network-spo-unblocked-zimperium.png)
 
 ### Control access on unenrolled devices based on threats from malicious apps
 
 When the Zimperium Mobile Threat Defense solution considers a device to be infected:
 
-:::image type="content" source="./media/zimperium/zimperium-mobile-app-policy-block.png" alt-text="Product flow for App protection policies to block access due to malware.":::
+![Product flow for App protection policies to block access due to malware.](media/zimperium/zimperium-mobile-app-policy-block.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/zimperium/zimperium-mobile-app-policy-remediated.png" alt-text="Product flow for App protection policies to grant access after malware is remediated.":::
+![Product flow for App protection policies to grant access after malware is remediated.](media/zimperium/zimperium-mobile-app-policy-remediated.png)
 
 ## Related content
 
-- [Integrate Zimperium with Intune](./setup-zimperium.md)
-- [Set up Zimperium apps](./assign-apps.md)
-- [Create Zimperium device compliance policy](./create-compliance-policy.md)
-- [Create an MTD app protection policy](./create-app-protection-policy.md)
+- [Integrate Zimperium with Intune](setup-zimperium.md)
+- [Set up Zimperium apps](assign-apps.md)
+- [Create Zimperium device compliance policy](create-compliance-policy.md)
+- [Create an MTD app protection policy](create-app-protection-policy.md)

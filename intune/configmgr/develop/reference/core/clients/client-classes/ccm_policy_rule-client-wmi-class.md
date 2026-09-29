@@ -1,16 +1,18 @@
 ---
 description: Learn how to define a policy object rule used in the PolicyRules property with the CCM_Policy_Rule class.
-title: CCM_Policy_Rule Class
-ms.date: 09/20/2016
+title: "CCM_Policy_Rule Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# CCM_Policy_Rule Client WMI Class
-In Configuration Manager, the `CCM_Policy_Rule` class is a client Windows Management Instrumentation (WMI) class that defines a policy object rule. Objects of this class are only used in the `PolicyRules` property in [CCM_Policy_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_policy-client-wmi-class.md).
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# CCM_Policy_Rule Client WMI Class
+
+In Configuration Manager, the `CCM_Policy_Rule` class is a client Windows Management Instrumentation (WMI) class that defines a policy object rule. Objects of this class are only used in the `PolicyRules` property in [CCM_Policy_Policy Client WMI Class](ccm_policy_policy-client-wmi-class.md).
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,42 +26,41 @@ Class  CCM_Policy_Rule : CCM_Policy_Config
 ```
 
 ## Properties
- `RuleID`
- Data type: `String`
 
- Access type: Read-only
+`RuleID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Unique ID of the rule within the policy object.
+Qualifiers: [key]
 
- `RuleCondition`
- Data type: `String`
+Unique ID of the rule within the policy object.
 
- Access type: Read-only
+`RuleCondition` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Optional. Rule condition. If the condition is not NULL, set this property to the unique ID of a [CCM_Policy_Condition Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_condition-client-wmi-class.md) object. The rule is only applied if the policy is active and the rule condition evaluates to TRUE.
+Qualifiers: None
 
- `RuleActions`
- Data type: `Object` Array
+Optional. Rule condition. If the condition is not NULL, set this property to the unique ID of a [CCM_Policy_Condition Client WMI Class](ccm_policy_condition-client-wmi-class.md) object. The rule is only applied if the policy is active and the rule condition evaluates to TRUE.
 
- Access type: Read-only
+`RuleActions` Data type: `Object` Array
 
- Qualifiers: None
+Access type: Read-only
 
- Array of [CCM_Policy_Action Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_action-client-wmi-class.md) objects specifying the actions to perform when the rule is applied.
+Qualifiers: None
+
+Array of [CCM_Policy_Action Client WMI Class](ccm_policy_action-client-wmi-class.md) objects specifying the actions to perform when the rule is applied.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Policy Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/policy-agent-client-wmi-classes.md)
- [CCM_Policy_Condition Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_condition-client-wmi-class.md)
- [CCM_Policy_Action Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_action-client-wmi-class.md)
+
+[Policy Agent Client WMI Classes](policy-agent-client-wmi-classes.md) [CCM_Policy_Condition Client WMI Class](ccm_policy_condition-client-wmi-class.md) [CCM_Policy_Action Client WMI Class](ccm_policy_action-client-wmi-class.md)

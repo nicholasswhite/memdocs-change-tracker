@@ -1,7 +1,7 @@
 ---
-title: Data Warehouse Data Model
+title: "Microsoft Intune Data Warehouse Data Model"
 description: The Microsoft Intune Data Warehouse samples data daily to provide a historical view of your continually changing mobile environment.
-ms.date: 10/30/2024
+ms.date: "2024-10-30T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -42,10 +42,11 @@ A star-schema model is optimized for flexibility and data analysis so that you c
 The warehouse is downstream from your Intune data. Intune takes a daily snapshot at Midnight UTC and stores the snapshot in the warehouse. The duration of held snapshots vary from fact table to fact table. Some may hold seven days, others 30 days, and some even longer durations.
 
 > [!NOTE]
-> The Data Warehouse does not sync Jamf devices. For more information about Jamf, see [Troubleshooting Jamf Pro integration with Microsoft Intune](/troubleshoot/mem/intune/troubleshoot-jamf) and [Data Jamf Pro sends to Intune](../../privacy/data-sharing/ref-jamf-to-intune.md).
+>
+> The Data Warehouse does not sync Jamf devices. For more information about Jamf, see [Troubleshooting Jamf Pro integration with Microsoft Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-jamf) and [Data Jamf Pro sends to Intune](../../privacy/data-sharing/ref-jamf-to-intune.md).
 
 ## Next steps
 
 - To learn more about how the data warehouse tracks a user's lifetime in Intune, see [User lifetime representation in the Intune Data Warehouse](ref-user-timeline.md).
-- To learn more about working with data warehouses, see [Microsoft Fabric Data Warehouse introduction](/fabric/data-warehouse/tutorial-introduction).
+- To learn more about working with data warehouses, see [Microsoft Fabric Data Warehouse introduction](https://learn.microsoft.com/en-us/fabric/data-warehouse/tutorial-introduction).
 - To learn more about working with Power BI and a data warehouse in [Create a new Power BI report by importing a dataset](https://powerbi.microsoft.com/documentation/powerbi-service-create-a-new-report/).

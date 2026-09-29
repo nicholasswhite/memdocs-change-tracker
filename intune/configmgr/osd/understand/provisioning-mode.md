@@ -1,7 +1,7 @@
 ---
 title: Provisioning mode
 description: Learn about client provisioning mode during the Configuration Manager task sequence.
-ms.date: 10/01/2021
+ms.date: "2021-10-01T00:00:00Z"
 ms.subservice: osd
 ms.topic: troubleshooting
 ms.collection: tier3
@@ -25,6 +25,7 @@ Invoke-WmiMethod -Namespace root\CCM -Class SMS_Client -Name SetClientProvisioni
 ```
 
 > [!IMPORTANT]
+>
 > One of the changes made by this WMI method is setting a registry value, but it makes other changes as well. Just changing the registry value doesn't fully take the client out of provisioning mode. If you manually edit the registry, the client may exhibit unexpected behaviors.
 
 ## Client provisioning mode timeout

@@ -1,14 +1,13 @@
 ---
-title: iVerify Enterprise Mobile Threat Defense with Intune
+title: "Use iVerify Enterprise with Microsoft Intune"
 description: Set up iVerify Enterprise Mobile Security with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 12/02/2025
+ms.date: "2025-12-02T00:00:00Z"
 ms.topic: how-to
 ---
 
 # Use iVerify Enterprise with Microsoft Intune
 
-You can use iVerify Enterprise as a Mobile Threat Defense and Endpoint Detection and Response
-(EDR) solution that integrates seamlessly with Microsoft Intune. Risk is assessed based on comprehensive, real-time telemetry collected from devices running the iVerify app.
+You can use iVerify Enterprise as a Mobile Threat Defense and Endpoint Detection and Response (EDR) solution that integrates seamlessly with Microsoft Intune. Risk is assessed based on comprehensive, real-time telemetry collected from devices running the iVerify app.
 
 You can configure Conditional Access policies based on the iVerify risk assessment, enabled through Intune device compliance policies. These policies automatically allow or block noncompliant devices from accessing corporate resources based on detected threats and vulnerabilities.
 
@@ -32,10 +31,9 @@ Devices must run the iVerify Enterprise app:
 - [Apple Store](https://apps.apple.com/us/app/iverify-enterprise/id6677005195)
 - [Google Play](https://play.google.com/store/apps/details?id=com.trailofbits.iverify.orgs&utm_source=na_Med)
 
-
 ## Integrate iVerify Enterprise with Intune to help protect your company resources
 
-The integration of iVerify Enterprise with Microsoft Intune ensures corporate resources are accessed only by safe, secure and compliant mobile devices. The iVerify app captures deep real-time system and log telemetry to detect both advanced and common threats, including operating system exploitation, malicious applications, and network-level risks. 
+The integration of iVerify Enterprise with Microsoft Intune ensures corporate resources are accessed only by safe, secure and compliant mobile devices. The iVerify app captures deep real-time system and log telemetry to detect both advanced and common threats, including operating system exploitation, malicious applications, and network-level risks.
 
 iVerify streams telemetry to its cloud for rapid risk assessment, reporting a definitive risk score to Intune using the Intune Mobile Threat Defense connector for iVerify. This updates device compliance. If a threat is detected, the device is marked noncompliant, and your Conditional Access policies block access to sensitive resources. The iVerify app then guides users to remediation, quickly restoring compliance and access while protecting the enterprise.
 
@@ -54,22 +52,22 @@ When iVerify detects a threat to the operating system, such as a zero-click atta
 - Accessing company Line-of-Business (LOB) apps
 - Blocking access to corporate networks
 
-:::image type="content" source="./media/iverify/iverify-malicious-access-blocked.png" alt-text="Diagram of product flow for blocking threats to the device operating system."::: 
+![Diagram of product flow for blocking threats to the device operating system.](media/iverify/iverify-malicious-access-blocked.png)
 
- ### Control access based on threats from malicious applications
+### Control access based on threats from malicious applications
 
 When an application behaves in a malicious way, such as stealing credentials or accessing sensitive APIs, you can block device access until the threat is resolved.
 
-:::image type="content" source="./media/iverify/iverify-malicious-apps-blocked.png" alt-text="Diagram of product flow for blocking access due to malicious apps.":::
+![Diagram of product flow for blocking access due to malicious apps.](media/iverify/iverify-malicious-apps-blocked.png)
 
 ### Control access based on network threats
 
 You can detect threats like Man-in-the-Middle (MiTM) attacks, malicious SSL certificates, or malicious cellular networks and protect access to corporate data based on the device's network security risk.
 
-:::image type="content" source="./media/iverify/iverify-network-wifi-blocked.png" alt-text="Diagram of product flow for blocking access to the organizations files due to an alert.":::
+![Diagram of product flow for blocking access to the organizations files due to an alert.](media/iverify/iverify-network-wifi-blocked.png)
 
 ## Related content
 
-- [Mobile Threat Defense with Microsoft Intune](./overview.md) 
-- [Create device compliance policy for Mobile Threat Protection](./create-compliance-policy.md)
-- [Enable mobile threat connectors in Intune](./enable-connector.md)
+- [Mobile Threat Defense with Microsoft Intune](overview.md)
+- [Create device compliance policy for Mobile Threat Protection](create-compliance-policy.md)
+- [Enable mobile threat connectors in Intune](enable-connector.md)

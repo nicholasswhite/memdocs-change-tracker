@@ -1,7 +1,7 @@
 ---
-title: Fundamentals
+title: "Fundamentals of Configuration Manager"
 description: Learn about basic concepts for Configuration Manager.
-ms.date: 11/29/2019
+ms.date: "2019-11-29T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -19,15 +19,9 @@ For information about supported operating systems and supported environments, ha
 See the following articles to learn about fundamental concepts for Configuration Manager:
 
 - [Fundamentals of sites and hierarchies](fundamentals-of-sites-and-hierarchies.md)
-
 - [About upgrade, update, and install](upgrade-update-install.md)
-
 - [Fundamentals of managing devices](fundamentals-of-managing-devices.md)
-
 - [Fundamentals of client management tasks](fundamentals-of-client-management-tasks.md)
-
 - [Fundamentals of security](fundamentals-of-security.md)
-
 - [Fundamentals of role-based administration](fundamentals-of-role-based-administration.md)
-
 - [Fundamentals of content management](../plan-design/hierarchy/fundamental-concepts-for-content-management.md)

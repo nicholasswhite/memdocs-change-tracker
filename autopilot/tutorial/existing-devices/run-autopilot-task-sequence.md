@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 9 of 10 - Run Windows Autopilot task sequence on device
+title: "Windows Autopilot deployment for existing devices: Run Windows Autopilot task sequence on device"
 description: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 9 of 10 - Run Windows Autopilot task sequence on device.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -21,9 +21,7 @@ Windows Autopilot user-driven Microsoft Entra join steps:
 - Step 7: [Deploy a Windows Autopilot task sequence to collection in Configuration Manager](deploy-autopilot-task-sequence.md)
 - Step 8: [Speed up the deployment process (optional)](speed-up-deployment.md)
 
-> [!div class="checklist"]
->
-> - **Step 9: Run Windows Autopilot task sequence on device**
+- **Step 9: Run Windows Autopilot task sequence on device**
 
 - Step 10: [Register device for Windows Autopilot](register-device.md)
 
@@ -38,33 +36,29 @@ Once the Windows Autopilot for existing devices is created, modified as needed, 
    - Configuration Manager Software Center
    - PXE enabled distribution point
    - Task sequence bootable media
-
-1. Allow the task sequence to complete.
-
-1. Once the task sequence completes, the device either restarts or shuts down depending on the shutdown or restart behavior selected in one of the following two steps:
+2. Allow the task sequence to complete.
+3. Once the task sequence completes, the device either restarts or shuts down depending on the shutdown or restart behavior selected in one of the following two steps:
 
    - [Create Windows Autopilot task sequence in Configuration Manager](create-autopilot-task-sequence.md#modify-the-task-sequence-to-account-for-sysprep-command-line-configuration).
    - [Speed up the deployment process](run-autopilot-task-sequence.md).
 
-    The behavior of the device after the task sequence completes depends on whether the device restarted or shut down:
+   The behavior of the device after the task sequence completes depends on whether the device restarted or shut down:
 
    - **Restart**: the device restarts as soon as the task sequence completes and then immediately boot into Windows for the first time and run OOBE. When OOBE runs, the Windows Autopilot JSON file is processed and the Windows Autopilot deployment starts.
+   - **Shutdown**: the device shuts down and power off as soon as the task sequence completes. Shutting down the device gives the option to further prepare the device and then deliver it to an end-user. OOBE and the Windows Autopilot deployment start when the end-user turns on the device for the first time.
 
-   - **Shutdown**: the device shuts down and power off  as soon as the task sequence completes. Shutting down the device gives the option to further prepare the device and then deliver it to an end-user. OOBE and the Windows Autopilot deployment start when the end-user turns on the device for the first time.
-
-    > [!IMPORTANT]
-    >
-    > A Windows Autopilot profile downloaded from Intune is used instead of the Windows Autopilot profile from the JSON file if the following conditions are met after the task sequence completes:
-    >
-    > - Device is registered as a Windows Autopilot device in Intune.
-    > - Device has a Windows Autopilot profile assigned to it in Intune.
-    >
-    > The Windows Autopilot profile downloaded from Intune has priority over the local Windows Autopilot profile from the JSON file.
+   > [!IMPORTANT]
+   >
+   > A Windows Autopilot profile downloaded from Intune is used instead of the Windows Autopilot profile from the JSON file if the following conditions are met after the task sequence completes:
+   >
+   > - Device is registered as a Windows Autopilot device in Intune.
+   > - Device has a Windows Autopilot profile assigned to it in Intune.
+   >
+   > The Windows Autopilot profile downloaded from Intune has priority over the local Windows Autopilot profile from the JSON file.
 
 ## Next step: Register device for Windows Autopilot
 
-> [!div class="nextstepaction"]
-> [Step 10: Register device for Windows Autopilot](register-device.md)
+[Step 10: Register device for Windows Autopilot](register-device.md)
 
 ## Related content
 

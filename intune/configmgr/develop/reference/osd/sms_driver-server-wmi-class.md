@@ -1,16 +1,18 @@
 ---
-title: SMS_Driver Class
+title: "SMS_Driver Server WMI Class"
 description: In Configuration Manager, the SMS_Driver Windows Management Instrumentation class is an SMS Provider server class that represents device drivers in the driver catalog that can be installed as part of a task sequence in an operating system deployment.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Driver Server WMI Class
+
 The `SMS_Driver` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents device drivers, in the driver catalog, that can be installed as part of a task sequence in an operating system deployment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -75,539 +77,486 @@ Class SMS_Driver : SMS_ConfigurationItemBaseClass
 ```
 
 ## Methods
- The following table shows the methods in `SMS_Driver`.
 
-|Method|Description|
-|------------|-----------------|
-|[CreateFromINF Method in Class SMS_Driver](../../../develop/reference/osd/createfrominf-method-in-class-sms_driver.md)|Creates an `SMS_Driver` object based on information from the specified source path and INF file.|
-|[CreateFromINFs Method in Class SMS_Driver](../../../develop/reference/osd/createfrominfs-method-in-class-sms_driver.md)|Creates `SMS_Driver` objects based on information from the specified source path and one or more INF files.|
-|[CreateFromOEM Method in Class SMS_Driver](../../../develop/reference/osd/createfromoem-method-in-class-sms_driver.md)|Creates a set of `SMS_Driver` objects referenced by the specified Txtsetup.oem file.|
+The following table shows the methods in `SMS_Driver`.
+
+| Method | Description |
+| --- | --- |
+| [CreateFromINF Method in Class SMS_Driver](createfrominf-method-in-class-sms_driver.md) | Creates an `SMS_Driver` object based on information from the specified source path and INF file. |
+| [CreateFromINFs Method in Class SMS_Driver](createfrominfs-method-in-class-sms_driver.md) | Creates `SMS_Driver` objects based on information from the specified source path and one or more INF files. |
+| [CreateFromOEM Method in Class SMS_Driver](createfromoem-method-in-class-sms_driver.md) | Creates a set of `SMS_Driver` objects referenced by the specified Txtsetup.oem file. |
 
 ## Properties
- `ApplicabilityCondition`
- Data type: `String`
 
- Access type: Read/Write
+`ApplicabilityCondition` Data type: `String`
 
- Qualifiers: [SizeLimit("512"), not_null]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [SizeLimit("512"), not_null]
 
- `CategoryInstance_UniqueIDs`
- Data type: `String` Array
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`CategoryInstance_UniqueIDs` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `CI_ID`
- Data type: `UInt32`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [key]
 
- `CI_UniqueID`
- Data type: `String`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers:[unique, not_null]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers:[unique, not_null]
 
- `CIType_ID`
- Data type: `UInt32`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`CIType_ID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- For this class, the type ID is Driver (6).
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- `CIVersion`
- Data type: `UInt32`
+For this class, the type ID is Driver (6).
 
- Access type: Read-only
+`CIVersion` Data type: `UInt32`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read, not_null]
 
- `ConfigurationFlags`
- Data type: `UInt64`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`ConfigurationFlags` Data type: `UInt64`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `ContentSourcePath`
- Data type: `String`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ContentSourcePath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The location of the driver files. When a driver is added to a driver package or a boot image the SMS Provider copies files from this location. The path must be a Universal Naming Convention (UNC) path accessible by the SMS Provider, for example, \\\smsserver\drivers\microsoft\vmscsi, as the path for INF files.
+Qualifiers: None
 
- `CreatedBy`
- Data type: `String`
+The location of the driver files. When a driver is added to a driver package or a boot image the SMS Provider copies files from this location. The path must be a Universal Naming Convention (UNC) path accessible by the SMS Provider, for example, \\smsserver\drivers\microsoft\vmscsi, as the path for INF files.
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [SizeLimit("512"), read, not_null]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [SizeLimit("512"), read, not_null]
 
- `DateCreated`
- Data type: `DateTime`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read, not_null]
 
- `DateLastModified`
- Data type: `DateTime`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`DateLastModified` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `DriverBootCritical`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`DriverBootCritical` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the driver is boot-critical. A mass storage driver imported from a txtsetup.oem file that needs to be installed before booting into a pre-Windows Vista operating system.
+Qualifiers: [read]
 
- `DriverClass`
- Data type: `String`
+`true` if the driver is boot-critical. A mass storage driver imported from a txtsetup.oem file that needs to be installed before booting into a pre-Windows Vista operating system.
 
- Access type: Read-only
+`DriverClass` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The class of device that the driver supports (such as Net or Display) as reported by the driver's INF file.
+Qualifiers: [read]
 
- `DriverDate`
- Data type: `DateTime`
+The class of device that the driver supports (such as Net or Display) as reported by the driver's INF file.
 
- Access type: Read-only
+`DriverDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time when the driver was written as reported by the INF file.
+Qualifiers: [read]
 
- `DriverINFFile`
- Data type: `String`
+Date and time when the driver was written as reported by the INF file.
 
- Access type: Read-only
+`DriverINFFile` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Relative path and file name of the driver INF file, relative to `ContentSourcePath`.
+Qualifiers: [not_null, read]
 
- `DriverProvider`
- Data type: `String`
+Relative path and file name of the driver INF file, relative to `ContentSourcePath`.
 
- Access type: Read-only
+`DriverProvider` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the company or author of the driver file as reported in the INF file. This property does not necessarily reflect the device manufacturer.
+Qualifiers: [read]
 
- `DriverSigned`
- Data type: `Boolean`
+The name of the company or author of the driver file as reported in the INF file. This property does not necessarily reflect the device manufacturer.
 
- Access type: Read-only
+`DriverSigned` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the driver source file is digitally signed by a recognized authority. For example, the Windows Hardware Quality Lab.
+Qualifiers: [read]
 
- `DriverSigner`
- Data type: `String`
+`true` if the driver source file is digitally signed by a recognized authority. For example, the Windows Hardware Quality Lab.
 
- Access type: Read-only
+`DriverSigner` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the digital signer if the driver source file is signed.
+Qualifiers: [read]
 
- `DriverType`
- Data type: `String`
+The name of the digital signer if the driver source file is signed.
 
- Access type: Read-only
+`DriverType` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The type of driver. Currently the only valid value for this is INF.
+Qualifiers: [not_null, read]
 
- `DriverVersion`
- Data type: `String`
+The type of driver. Currently the only valid value for this is INF.
 
- Access type: Read-only
+`DriverVersion` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Version number of the driver, as specified by the driver provider.
+Qualifiers: [read]
 
- `EffectiveDate`
- Data type: `DateTime`
+Version number of the driver, as specified by the driver provider.
 
- Access type: Read-only
+`EffectiveDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULAAccepted`
- Data type: `UInt32`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`EULAAccepted` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULAExists`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`EULAExists` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULASignoffDate`
- Data type: `DateTime`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`EULASignoffDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULASignoffUser`
- Data type: `String`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`EULASignoffUser` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `ExecutionContext`
- Data type: `UInt32`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`ExecutionContext` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `IsBundle`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IsBundle` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsDigest`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`IsDigest` Data type: `Boolean`
 
- Qualifiers: [read, lazy]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read, lazy]
 
- `IsEnabled`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IsEnabled` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsExpired`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IsExpired` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsHidden`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IsHidden` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsLatest`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`IsLatest` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `IsQuarantined`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`IsQuarantined` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `IsSuperseded`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`IsSuperseded` Data type: `Boolean`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read, not_null]
 
- `IsUserDefined`
- Data type: `Boolean`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IsUserDefined` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `LastModifiedBy`
- Data type: `String`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [SizeLimit("512"), read, not_null]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [SizeLimit("512"), read, not_null]
 
- `LocalizedCategoryInstanceNames`
- Data type: `String Array`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedCategoryInstanceNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedDescription`
- Data type: `String`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedDisplayName`
- Data type: `String`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedDisplayName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedEulas`
- Data type: `SMS_CI_LocalizedEulas Array`
+See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`LocalizedEulas` Data type: `SMS_CI_LocalizedEulas Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Not used.
+Qualifiers: [lazy]
 
- `LocalizedInformation`
- Data type: `SMS_CI_LocalizedProperties Array`
+Not used.
 
- Access type: Read/Write
+`LocalizedInformation` Data type: `SMS_CI_LocalizedProperties Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Language-specific localized information about the driver:
+Qualifiers: [lazy]
 
-- String  DisplayName
+Language-specific localized information about the driver:
 
-- String  Description
-
-- String  InformativeURL
-
-- UInt32  LocaleID
+- String DisplayName
+- String Description
+- String InformativeURL
+- UInt32 LocaleID
 
   This property is used to change the display name and description for a driver that supports multiple languages.
 
-  `LocalizedInformativeURL`
-  Data type: `String`
+  `LocalizedInformativeURL` Data type: `String`
 
   Access type: Read-only
 
   Qualifiers: [read]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-  `LocalizedPropertyLocaleID`
-  Data type: `UInt32`
+  `LocalizedPropertyLocaleID` Data type: `UInt32`
 
   Access type: Read-only
 
   Qualifiers: [read]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-  `ModelName`
-  Data type: `String`
+  `ModelName` Data type: `String`
 
   Access type: Read/Write
 
   Qualifiers: [unique, not_null]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-  `ModelID`
-  Data type: `UInt32`
-
-  Access type: Read/Write
-
-  Qualifiers: [not_null]
-
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
-
-  `PermittedUses`
-  Data type: `UInt32`
+  `ModelID` Data type: `UInt32`
 
   Access type: Read/Write
 
   Qualifiers: [not_null]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-  `PlatformType`
-  Data type: `String`
+  `PermittedUses` Data type: `UInt32`
+
+  Access type: Read/Write
+
+  Qualifiers: [not_null]
+
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
+
+  `PlatformType` Data type: `String`
 
   Access type: Read/Write
 
   Qualifiers: None
 
-  See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
-  `PlatformCategoryInstance_UniqueIDs`
-  Data type: `String Array`
+  `PlatformCategoryInstance_UniqueIDs` Data type: `String Array`
 
   Access type: Read/Write
 
   Qualifiers: None
 
-  See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
-  `SDMPackageLocalizedData`
-  Data type: `SMS_SDMPackageLocalizedData` Array
+  `SDMPackageLocalizedData` Data type: `SMS_SDMPackageLocalizedData` Array
 
   Access type: Read/Write
 
   Qualifiers: [lazy]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-  `SDMPackageVersion`
-  Data type: `UInt32`
+  `SDMPackageVersion` Data type: `UInt32`
 
   Access type: Read/Write
 
   Qualifiers: [not_null]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-  `SDMPackageXML`
-  Data type: `String`
+  `SDMPackageXML` Data type: `String`
 
   Access type: Read/Write
 
   Qualifiers: [lazy]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
-  `SecuredScopeNames`
-  Data type: `String Array`
-
-  Access type: Read-only
-
-  Qualifiers: [read]
-
-  See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
-
-  `SedoObjectVersion`
-  Data type: `String`
+  `SecuredScopeNames` Data type: `String Array`
 
   Access type: Read-only
 
   Qualifiers: [read]
 
-  See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+  See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
-  `SourceSite`
-  Data type: `String`
+  `SedoObjectVersion` Data type: `String`
+
+  Access type: Read-only
+
+  Qualifiers: [read]
+
+  See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+
+  `SourceSite` Data type: `String`
 
   Access type: Read/Write
 
   Qualifiers: [SizeLimit("3")]
 
-  See [SMS_ConfigurationItemBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitembaseclass-server-wmi-class.md).
+  See [SMS_ConfigurationItemBaseClass Server WMI Class](../compliance/sms_configurationitembaseclass-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Configuration Manager uses a driver catalog to manage the different computers, devices, and associated Windows device drivers that it supports. For more information, see [Manage drivers](../../../osd/get-started/manage-drivers.md).
 
-  You can create an `SMS_Driver` object by using the [CreateFromINF Method in Class SMS_Driver](../../../develop/reference/osd/createfrominf-method-in-class-sms_driver.md) and [CreateFromOEM Method in Class SMS_Driver](../../../develop/reference/osd/createfromoem-method-in-class-sms_driver.md) methods. You use [CreateFromINF Method in Class SMS_Driver](../../../develop/reference/osd/createfrominf-method-in-class-sms_driver.md) to create an `SMS_Driver` Object from a Windows driver INF file. For more information see, How to Import a Windows Driver Described by an INF File into Configuration Manager. You use [CreateFromOEM Method in Class SMS_Driver](../../../develop/reference/osd/createfromoem-method-in-class-sms_driver.md) to create an `SMS_Driver` object from a Txtsetup.oem file.
+  You can create an `SMS_Driver` object by using the [CreateFromINF Method in Class SMS_Driver](createfrominf-method-in-class-sms_driver.md) and [CreateFromOEM Method in Class SMS_Driver](createfromoem-method-in-class-sms_driver.md) methods. You use [CreateFromINF Method in Class SMS_Driver](createfrominf-method-in-class-sms_driver.md) to create an `SMS_Driver` Object from a Windows driver INF file. For more information see, How to Import a Windows Driver Described by an INF File into Configuration Manager. You use [CreateFromOEM Method in Class SMS_Driver](createfromoem-method-in-class-sms_driver.md) to create an `SMS_Driver` object from a Txtsetup.oem file.
 
   Drivers share many of the abstract qualities of configuration items but you cannot use drivers like configuration items. For example, they cannot be assigned to baselines.
 
-  Drivers can be arranged into categories by adding the relevant category identifier to the `SMS_Driver Server WMI Class``CategoryInstance_UniqueIDs` array property. For more information, see How to Add a Category to a Windows Driver.
+  Drivers can be arranged into categories by adding the relevant category identifier to the ``` SMS_Driver Server WMI Class``CategoryInstance_UniqueIDs ``` array property. For more information, see How to Add a Category to a Windows Driver.
 
-  When you use the Configuration Manager server WMI classes in your application or script, remember that each driver must be added to at least one driver package ([UPDATED: SMS_DriverPackage Server WMI Class](../../../develop/reference/osd/sms_driverpackage-server-wmi-class.md)) before it can be installed on a client. For more information, see How to Create a Driver Package for a Windows Driver in Configuration Manager. Mass storage drivers may also be added to a boot image package, represented by [SMS_BootImagePackage Server WMI Class](../../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md). How to add a Windows Driver to a Configuration Manager Boot Image Package.
+  When you use the Configuration Manager server WMI classes in your application or script, remember that each driver must be added to at least one driver package ([UPDATED: SMS_DriverPackage Server WMI Class](sms_driverpackage-server-wmi-class.md)) before it can be installed on a client. For more information, see How to Create a Driver Package for a Windows Driver in Configuration Manager. Mass storage drivers may also be added to a boot image package, represented by [SMS_BootImagePackage Server WMI Class](sms_bootimagepackage-server-wmi-class.md). How to add a Windows Driver to a Configuration Manager Boot Image Package.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_DriverPackage Server WMI Class](../../../develop/reference/osd/sms_driverpackage-server-wmi-class.md)
- [SMS_Driver_Details Server WMI Class](../../../develop/reference/osd/sms_driver_details-server-wmi-class.md)
- [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)
+
+[SMS_DriverPackage Server WMI Class](sms_driverpackage-server-wmi-class.md) [SMS_Driver_Details Server WMI Class](sms_driver_details-server-wmi-class.md) [SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md)

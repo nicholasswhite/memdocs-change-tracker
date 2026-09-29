@@ -1,40 +1,39 @@
 ---
-title: Add a State Migration Point Folder
+title: "How to Add a State Migration Point Folder"
 description: Add an operating system deployment state migration point folder by adding the folder description to the Directories embedded property list.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Add a State Migration Point Folder
+
 In Configuration Manager, you add an operating system deployment state migration point folder by adding the folder description to the `Directories` embedded property list.
 
- The folder description is a string that defines the following information.
+The folder description is a string that defines the following information.
 
-|Value|Description|
-|-----------|-----------------|
-|`Directory`|The name of the folder.|
-|`MaxClients`|The maximum number of clients supported.|
-|`MinDiskSpace`|The minimum disk space required.|
-|`MinDiskSpaceUnit`|The minimum disk space units.<br /><br /> 1 - MB<br /><br /> 2 - GB<br /><br /> 3 - Percentage|
+| Value | Description |
+| --- | --- |
+| `Directory` | The name of the folder. |
+| `MaxClients` | The maximum number of clients supported. |
+| `MinDiskSpace` | The minimum disk space required. |
+| `MinDiskSpaceUnit` | The minimum disk space units.   1 - MB   2 - GB   3 - Percentage |
 
 ### To add a state migration point folder
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Make a connection to the state migration point resources section of the site control file.
-
-3.  Get the `Directories` embedded properties list.
-
-4.  Update the `Directories` embedded property with new folder.
-
-5.  Commit the changes to the site control file.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Make a connection to the state migration point resources section of the site control file.
+3. Get the `Directories` embedded properties list.
+4. Update the `Directories` embedded property with new folder.
+5. Commit the changes to the site control file.
 
 ## Example
- The following example method adds a new folder to the state migration point.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method adds a new folder to the state migration point.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AddSmpFolder( connection, _
@@ -170,47 +169,51 @@ public void AddSmpFolder(
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`context (VBScript)`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|
-|`directory`|-   Managed: `String`<br />-   VBScript: `String`|The folder to be added.|
-|`maxClients`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The maximum number of supported clients.|
-|`minDiskSpace`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The minimum disk space.|
-|`minDiskSpaceUnit`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The minimum disk space unit.|
-|`serverName`|-   Managed: `String`<br />-   VBScript: `String`|The Configuration Manager server that the state migration point is running on.|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code for the site that is running the state migration point site role.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `context (VBScript)` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `directory` | - Managed: `String` - VBScript: `String` | The folder to be added. |
+| `maxClients` | - Managed: `Integer` - VBScript: `Integer` | The maximum number of supported clients. |
+| `minDiskSpace` | - Managed: `Integer` - VBScript: `Integer` | The minimum disk space. |
+| `minDiskSpaceUnit` | - Managed: `Integer` - VBScript: `Integer` | The minimum disk space unit. |
+| `serverName` | - Managed: `String` - VBScript: `String` | The Configuration Manager server that the state migration point is running on. |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code for the site that is running the state migration point site role. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
 
- System.Globalization
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+
+System.Globalization
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
+
+[About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)

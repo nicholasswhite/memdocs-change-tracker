@@ -1,7 +1,7 @@
 ---
-title: Proxy server support
+title: "Proxy server support in Configuration Manager"
 description: Learn how Configuration Manager systems use proxy servers.
-ms.date: 06/08/2026
+ms.date: "2026-06-08T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -15,13 +15,9 @@ ms.service: configuration-manager
 Some Configuration Manager components require connections to the internet. If your environment requires internet traffic to use a proxy server, configure these systems to use the proxy.
 
 - A computer that hosts a site system server supports a single proxy server configuration. All site system roles on that computer share this same proxy configuration. If you need separate proxy servers for different roles or instances of a role, place those roles on separate site system servers.
-
 - When you configure new proxy server settings for a site system server that already has a proxy server configuration, the original configuration is overwritten.
-
 - By default, connections to the proxy use the **System** account of the computer that hosts the site system role.
-
 - If the computer account can't authenticate, the site system server can store user credentials to connect to the proxy server. These credentials are the **site system proxy server account**.
-
 - If you install the Configuration Manager console on administrative workstations, some connections will use the proxy configuration.
 
 ## Site system roles that use a proxy
@@ -31,23 +27,23 @@ The following site system roles connect to the internet, and if necessary, can u
 ### Asset Intelligence synchronization point
 
 > [!IMPORTANT]
-> Starting in November 2021, this feature of Configuration Manager is deprecated.<!-- 12454890 --> For more information, see [Asset intelligence deprecation](../../clients/manage/asset-intelligence/deprecation.md).
+>
+> Starting in November 2021, this feature of Configuration Manager is deprecated. For more information, see [Asset intelligence deprecation](../../clients/manage/asset-intelligence/deprecation.md).
 
 This site system role connects to Microsoft and uses a proxy server configuration on the computer that hosts the Asset Intelligence synchronization point.
 
 ### Cloud distribution point
 
 > [!NOTE]
-> The cloud-based distribution point (CDP) is deprecated. Starting in version 2107, you can't create new CDP instances.<!-- 10247883 --> To provide content to internet-based devices, enable a cloud management gateway (CMG) to distribute content. For more information, see [Deprecated features](../changes/deprecated/removed-and-deprecated-cmfeatures.md#deprecated-features).
+>
+> The cloud-based distribution point (CDP) is deprecated. Starting in version 2107, you can't create new CDP instances. To provide content to internet-based devices, enable a cloud management gateway (CMG) to distribute content. For more information, see [Deprecated features](../changes/deprecated/removed-and-deprecated-cmfeatures.md#deprecated-features).
 
 The cloud distribution point role runs in Microsoft Azure. You don't configure this site system role to use a proxy. Set the proxy configuration on the primary site server that manages the cloud distribution point.
 
 For this configuration, the primary site server:
 
 - Must be able to connect to Microsoft Azure to set up, monitor, and distribute content to the cloud distribution point.
-
 - By default, uses the computer's **System** account to make the connection. It can also use the site system proxy server account, if necessary.
-
 - Uses Windows web browser APIs.
 
 ### Cloud management gateway connection point
@@ -55,8 +51,6 @@ For this configuration, the primary site server:
 The cloud management gateway (CMG) connection point is an on-premises role that communicates with the CMG service in Azure. For more information, see [Overview of CMG](../../clients/manage/cmg/overview.md).
 
 ### Distribution point
-
-<!-- 10404718 -->
 
 If you enable a Configuration Manager distribution point for Microsoft Connected Cache, it can communicate through a proxy server for internet access starting from [Configuration Manager version 2603](../../../hotfix/2603/37426535.md) or after installing [KB33247081](../../../hotfix/2509/33247081.md). Previous releases require a direct internet connection or a proxy that supports relative URIs. For more information, see [Microsoft Connected Cache](../hierarchy/microsoft-connected-cache.md).
 
@@ -66,11 +60,12 @@ This site system role connects to an Exchange Server. It uses a proxy server con
 
 ### Management point
 
-<!--Starting in version 2603-->Starting in version 2603, the management point uses Microsoft Identity Service Essentials (MISE) for Microsoft Entra token validation. In environments that support Microsoft Entra joined users and devices, the management point server requires internet access to connect to Microsoft Entra authentication endpoints. For the list of endpoints to allow, see [Management point internet access requirements](internet-endpoints.md#management-point).
+Starting in version 2603, the management point uses Microsoft Identity Service Essentials (MISE) for Microsoft Entra token validation. In environments that support Microsoft Entra joined users and devices, the management point server requires internet access to connect to Microsoft Entra authentication endpoints. For the list of endpoints to allow, see [Management point internet access requirements](internet-endpoints.md#management-point).
 
 Microsoft Entra token validation runs in the **system (Local System) context** using the .NET Framework HTTP stack. As a result, if the management point reaches the internet through a proxy, the proxy must be available to the Local System account through its **WinINET (Windows Internet, or Internet Options) settings**.
 
 > [!IMPORTANT]
+>
 > In version 2603, the following proxy configurations are **not** used for MISE token validation:
 >
 > - The proxy configured in the [site system properties](#configure-the-proxy-for-a-site-system-server).
@@ -84,17 +79,16 @@ Use one of the following methods to set the proxy for the Local System account o
 
 - **Registry**: Set the following values under `HKEY_USERS\S-1-5-18\Software\Microsoft\Windows\CurrentVersion\Internet Settings`:
 
-    - `ProxyEnable` (DWORD) = `1`
-    - `ProxyServer` (String) = `<proxyservername>:<portnumber>`, for example `proxy.domain.example.com:80`
-    - `ProxyOverride` (String) = optional proxy bypass list, for example `<local>`
+  - `ProxyEnable` (DWORD) = `1`
+  - `ProxyServer` (String) = `<proxyservername>:<portnumber>`, for example `proxy.domain.example.com:80`
+  - `ProxyOverride` (String) = optional proxy bypass list, for example `<local>`
+- **Internet Options in the system context**: Open Internet Options as the Local System account and configure the LAN proxy. For example, use [PsExec](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) to launch the browser as the system account:
 
-- **Internet Options in the system context**: Open Internet Options as the Local System account and configure the LAN proxy. For example, use [PsExec](/sysinternals/downloads/psexec) to launch the browser as the system account:
+  ```cmd
+  PsExec.exe -i -s "C:\Program Files\Internet Explorer\iexplore.exe"
+  ```
 
-    ```cmd
-    PsExec.exe -i -s "C:\Program Files\Internet Explorer\iexplore.exe"
-    ```
-
-    Then go to **Internet Options** > **Connections** > **LAN settings** and configure the proxy server.
+  Then go to **Internet Options** &gt; **Connections** &gt; **LAN settings** and configure the proxy server.
 
 After you change the proxy, restart the `SMS_EXECUTIVE` service on the management point for the new setting to take effect.
 
@@ -109,6 +103,7 @@ Invoke-WebRequest "https://login.microsoftonline.com/<TenantID>/.well-known/open
 ```
 
 > [!NOTE]
+>
 > This system-context proxy requirement is specific to version 2603. A future update is planned to let MISE token validation use the proxy configured in the site system properties.
 
 For more information about this requirement, see [Management point requires internet access for Microsoft Entra token validation](../changes/whats-new-in-version-2603.md#management-point-requires-internet-access-for-microsoft-entra-token-validation).
@@ -122,23 +117,23 @@ This site system role connects to the Configuration Manager cloud service to dow
 This site system role uses the proxy when it connects to Microsoft Update to download patches and synchronize information about updates. Like every other site system role, first configure the site system proxy settings. Then configure the following options specific to the software update point:
 
 - **Use a proxy server when synchronizing software updates**
-
 - **Use a proxy server when downloading content by using automatic deployment rules**
 
-    > [!NOTE]
-    > While available for use, this setting isn't used by software update points at secondary sites.
+  > [!NOTE]
+  >
+  > While available for use, this setting isn't used by software update points at secondary sites.
 
 These settings are on the **Proxy and Account Settings** tab of the software update point properties.
 
 > [!NOTE]
+>
 > By default, when the automatic deployment rules run, the **System** account on the site server of the site on which an automatic deployment rule was created is used to connect to the internet and download software updates. Alternatively, configure and use the site system proxy server account.
 >
-> When this account cannot access the internet, software updates fail to download. The following entry is logged to **ruleengine.log**:
-> `Failed to download the update from internet. Error = 12007.`
+> When this account cannot access the internet, software updates fail to download. The following entry is logged to **ruleengine.log**: `Failed to download the update from internet. Error = 12007.`
 
 ## Other features that use the proxy
 
-The following features use the proxy of the site system that hosts the [service connection point](#service-connection-point) role: <!--5913817-->
+The following features use the proxy of the site system that hosts the [service connection point](#service-connection-point) role:
 
 - [Microsoft Entra user discovery](../../servers/deploy/configure/about-discovery-methods.md#azureaddisc)
 - [Microsoft Entra user group discovery](../../servers/deploy/configure/about-discovery-methods.md#bkmk_azuregroupdisco)
@@ -147,24 +142,16 @@ The following features use the proxy of the site system that hosts the [service 
 ## Configure the proxy for a site system server
 
 1. In the Configuration Manager console, go to the **Administration** workspace. Expand **Site Configuration**, and then select the **Servers and Site System Roles** node.
-
 2. Select the site system server that you want to edit. In the details pane, right-click the **Site system** role, and select **Properties**.
-
 3. In Site system Properties, switch to the **Proxy** tab. Configure the following proxy settings:
 
-    - **Use a proxy server when synchronizing information from the internet**: Select this option to enable the site system server to use a proxy server.
-
-    - **Proxy server name**: Specify the hostname or FQDN of the proxy server in your environment.
-
-    - **Port**: Specify the network port on which to communicate with the proxy server. By default, it uses port **80**.
-
-    - **Use credentials to connect to the proxy server**: Many proxy servers require a user to authenticate. By default, the site system server uses its computer account to connect to the proxy server. If necessary, enable this option, click **Set**, and then choose an **Existing Account** or specify a **New Account**. These credentials are the **site system proxy server account**. For more information, see [Accounts used in Configuration Manager](../hierarchy/accounts.md).
-
+   - **Use a proxy server when synchronizing information from the internet**: Select this option to enable the site system server to use a proxy server.
+   - **Proxy server name**: Specify the hostname or FQDN of the proxy server in your environment.
+   - **Port**: Specify the network port on which to communicate with the proxy server. By default, it uses port **80**.
+   - **Use credentials to connect to the proxy server**: Many proxy servers require a user to authenticate. By default, the site system server uses its computer account to connect to the proxy server. If necessary, enable this option, click **Set**, and then choose an **Existing Account** or specify a **New Account**. These credentials are the **site system proxy server account**. For more information, see [Accounts used in Configuration Manager](../hierarchy/accounts.md).
 4. Choose **OK** to save the new proxy server configuration.
 
 ## Configuration Manager console
-
-<!-- 14110385 -->
 
 If you install the Configuration Manager console on an administrative workstation, some connections will use the proxy configuration. The console may fail to connect to the site because of a proxy configuration. To help troubleshoot, you can modify the console configuration file, `Microsoft.ConfigurationManagement.exe.config`. By default, this file is located in `C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin`. Open it in Windows Notepad or another XML editor.
 

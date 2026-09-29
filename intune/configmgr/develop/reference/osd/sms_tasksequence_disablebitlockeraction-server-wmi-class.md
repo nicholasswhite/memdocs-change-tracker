@@ -1,7 +1,7 @@
 ---
-title: SMS_TaskSequence_DisableBitLockerAction class
+title: "SMS_TaskSequence_DisableBitLockerAction server WMI class"
 description: An SMS Provider server class that represents a task sequence action, which disables the BitLocker encryption on the specified drive.
-ms.date: 08/11/2020
+ms.date: "2020-08-11T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -45,7 +45,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `ContinueOnError`
 
@@ -55,7 +55,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Description`
 
@@ -65,7 +65,7 @@ Access type: Read/Write
 
 Qualifiers: `[AllowedLen("0-255")]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Enabled`
 
@@ -75,7 +75,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Name`
 
@@ -85,7 +85,7 @@ Access type: Read/Write
 
 Qualifiers: `[AllowedLen("1-100")]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `RebootCount`
 
@@ -103,7 +103,7 @@ Access type: Read/Write
 
 Qualifiers: `[Not_Null:ToInstance]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 The default value of this property for this task sequence action is `FullOS`.
 
@@ -125,7 +125,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ## Remarks
 
@@ -137,17 +137,17 @@ Class qualifiers for this class include:
 ActionCategory{"Disks,5,3"},ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "DisableBitLockerControl", "TaskSequenceOptionControl"}, VariablePrefix("OSDBitLocker")]
 ```
 
-For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager class and property qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager class and property qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime requirements
 
-For more information, see [Configuration Manager server runtime requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+For more information, see [Configuration Manager server runtime requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development requirements
 
-For more information, see [Configuration Manager server development requirements](../../../develop/core/reqs/server-development-requirements.md).
+For more information, see [Configuration Manager server development requirements](../../core/reqs/server-development-requirements.md).
 
 ## See also
 

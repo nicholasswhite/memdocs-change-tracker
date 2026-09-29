@@ -1,7 +1,7 @@
 ---
-title: Support for Active Directory domains
+title: "Support for Active Directory domains in Configuration Manager"
 description: Learn about the requirements for a Configuration Manager site system in an Active Directory domain.
-ms.date: 10/22/2019
+ms.date: "2019-10-22T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -17,20 +17,16 @@ All Configuration Manager site systems must be members of a supported Active Dir
 ## Requirements and limitations
 
 - Domain membership also applies to site systems that support internet-based client management in a perimeter network. (These networks are also known as a DMZ, demilitarized zone, and screened subnet).
-
 - It's not supported to change the following configurations for a computer that hosts a site system role:
 
   - Domain membership, including if you remove a site system from the domain, and then rejoin the same domain.
-
   - Domain name
-
   - Computer name
 
   Before making these changes, uninstall the site system role. To make these changes to a site server, uninstall the site first. You can also consider creating a [site server in passive mode](../../servers/deploy/configure/site-server-high-availability.md) to help manage this change on a site server.
+- Configuration Manager supports domain and forest functional level of Windows Server 2008 R2 or later.
 
-- Configuration Manager supports domain and forest functional level of Windows Server 2008 R2 or later.<!-- SCCMDocs#1853 -->
-
-## <a name="bkmk_Disjoint"></a> Disjoint namespace
+## Disjoint namespace
 
 You can install Configuration Manager site systems and clients in a domain that has a *disjoint namespace*.
 
@@ -71,14 +67,14 @@ To make sure that the *DNS suffix search list* contains all the DNS namespaces i
 You can use group policy to configure the **Domain Name System (DNS) suffix search** list.
 
 > [!IMPORTANT]
+>
 > When you reference a computer in Configuration Manager, enter the computer by using its primary DNS suffix. This suffix should match the fully qualified domain name that's registered as the **dnsHostName** attribute in the Active Directory domain and the service principal name that's associated with the system.
 
-## <a name="bkmk_SLD"></a> Single label domains
+## Single label domains
 
 Configuration Manager supports site systems and clients in a single label domain when the following criteria are met:
 
 - Configure the single label domain in Active Directory Domain Services with a disjoint DNS namespace that has a valid top-level domain.
 
   **For example:** The single label domain of Contoso is configured to have a disjoint namespace in DNS of contoso.com. When you specify the DNS suffix in Configuration Manager for a computer in the Contoso domain, you specify "Contoso.com" and not "Contoso".
-
 - The distributed component object model (DCOM) connections between site servers in the system context must be successful by using Kerberos authentication.

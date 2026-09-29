@@ -1,7 +1,7 @@
 ---
-title: Manage Outlook for iOS and Android With Intune
+title: "Manage Messaging Collaboration Access by Using Outlook for iOS and Android With Microsoft Intune"
 description: Use Intune app protection and configuration policies with Outlook for iOS and Android to ensure team collaboration experiences are always accessed with safeguards in place.
-ms.date: 06/12/2025
+ms.date: "2025-06-12T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: beflamm
 ms.collection:
@@ -16,20 +16,21 @@ The Outlook for iOS and Android app is designed to enable users in your organiza
 The richest and broadest protection capabilities for Microsoft 365 data are available when you subscribe to the Enterprise Mobility + Security suite, which includes Microsoft Intune and Microsoft Entra ID P1 or P2 features, such as Conditional Access. At a minimum, you will want to deploy a Conditional Access policy that allows connectivity to Outlook for iOS and Android from mobile devices and an Intune app protection policy that ensures the collaboration experience is protected.
 
 ## Apply Conditional Access
-Organizations can use Microsoft Entra Conditional Access policies to ensure that users can only access work or school content using Outlook for iOS and Android. To do this, you will need a Conditional Access policy that targets all potential users. These policies are described in [Conditional Access: Require approved client apps or app protection policy](/azure/active-directory/conditional-access/howto-policy-approved-app-or-app-protection).
 
-1. Follow the steps in [Require approved client apps or app protection policy with mobile devices](/azure/active-directory/conditional-access/howto-policy-approved-app-or-app-protection#require-approved-client-apps-or-app-protection-policy-with-mobile-devices). This policy allows Outlook for iOS and Android, but blocks OAuth and basic authentication capable Exchange ActiveSync mobile clients from connecting to Exchange Online.
+Organizations can use Microsoft Entra Conditional Access policies to ensure that users can only access work or school content using Outlook for iOS and Android. To do this, you will need a Conditional Access policy that targets all potential users. These policies are described in [Conditional Access: Require approved client apps or app protection policy](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/howto-policy-approved-app-or-app-protection).
 
-    > [!NOTE]
-    > This policy ensures mobile users can access all Microsoft 365 endpoints using the applicable apps.
+1. Follow the steps in [Require approved client apps or app protection policy with mobile devices](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/howto-policy-approved-app-or-app-protection#require-approved-client-apps-or-app-protection-policy-with-mobile-devices). This policy allows Outlook for iOS and Android, but blocks OAuth and basic authentication capable Exchange ActiveSync mobile clients from connecting to Exchange Online.
 
-2. Follow the steps in [Block Exchange ActiveSync on all devices](/azure/active-directory/conditional-access/howto-policy-approved-app-or-app-protection#block-exchange-activesync-on-all-devices), which prevents Exchange ActiveSync clients using basic authentication on non-mobile devices from connecting to Exchange Online.
+   > [!NOTE]
+   >
+   > This policy ensures mobile users can access all Microsoft 365 endpoints using the applicable apps.
+2. Follow the steps in [Block Exchange ActiveSync on all devices](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/howto-policy-approved-app-or-app-protection#block-exchange-activesync-on-all-devices), which prevents Exchange ActiveSync clients using basic authentication on non-mobile devices from connecting to Exchange Online.
 
-   The above policies leverage the grant access control [Require app protection policy](/azure/active-directory/active-directory-conditional-access-technical-reference), which ensures that an Intune App Protection Policy is applied to the associated account within Outlook for iOS and Android prior to granting access. If the user isn't assigned to an Intune App Protection Policy, isn't licensed for Intune, or the app isn't included in the Intune App Protection Policy, then the policy prevents the user from obtaining an access token and gaining access to messaging data.
-
-3. Follow the steps in [How to: Block legacy authentication to Microsoft Entra ID with Conditional Access](/azure/active-directory/conditional-access/block-legacy-authentication) to block legacy authentication for other Exchange protocols on iOS and Android devices; this policy should target only Microsoft Exchange Online cloud app and iOS and Android device platforms. This ensures mobile apps using Exchange Web Services, IMAP4, or POP3 protocols with basic authentication cannot connect to Exchange Online.
+   The above policies leverage the grant access control [Require app protection policy](https://learn.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-technical-reference), which ensures that an Intune App Protection Policy is applied to the associated account within Outlook for iOS and Android prior to granting access. If the user isn't assigned to an Intune App Protection Policy, isn't licensed for Intune, or the app isn't included in the Intune App Protection Policy, then the policy prevents the user from obtaining an access token and gaining access to messaging data.
+3. Follow the steps in [How to: Block legacy authentication to Microsoft Entra ID with Conditional Access](https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/block-legacy-authentication) to block legacy authentication for other Exchange protocols on iOS and Android devices; this policy should target only Microsoft Exchange Online cloud app and iOS and Android device platforms. This ensures mobile apps using Exchange Web Services, IMAP4, or POP3 protocols with basic authentication cannot connect to Exchange Online.
 
 > [!NOTE]
+>
 > To leverage app-based Conditional Access policies, the Microsoft Authenticator app must be installed on iOS devices. For Android devices, the Intune Company Portal app is required. For more information, see [App-based Conditional Access with Intune](../../device-security/conditional-access-integration/app-based-policies.md).
 
 ## Create Intune app protection policies
@@ -47,14 +48,13 @@ To see the specific recommendations for each configuration level and the minimum
 Regardless of whether the device is enrolled in a unified endpoint management (UEM) solution, an Intune app protection policy needs to be created for both iOS and Android apps, using the steps in [How to create and assign app protection policies](../protection/create-policy.md). These policies, at a minimum, must meet the following conditions:
 
 - They include all Microsoft 365 mobile applications, such as Edge, Outlook, OneDrive, Office, or Teams, as this ensures that users can access and manipulate work or school data within any Microsoft app in a secure fashion.
-
 - They are assigned to all users. This ensures that all users are protected, regardless of whether they use Outlook for iOS or Android.
-
 - Determine which framework level meets your requirements. Most organizations should implement the settings defined in **Enterprise enhanced data protection** (Level 2) as that enables data protection and access requirements controls.
 
 For more information on the available settings, see [Android app protection policy settings](../protection/ref-settings-android.md) and [iOS app protection policy settings](../protection/ref-settings-ios.md).
 
 > [!IMPORTANT]
+>
 > To apply Intune app protection policies against apps on Android devices that are not enrolled in Intune, the user must also install the Intune Company Portal.
 
 ## Use app configuration
@@ -68,9 +68,9 @@ App configuration can be delivered either through the mobile device management (
 - S/MIME settings
 - Data protection settings
 
-For specific procedural steps and detailed documentation on the app configuration settings Outlook for iOS and Android supports, see [Deploying Outlook for iOS and Android app configuration settings](/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
+For specific procedural steps and detailed documentation on the app configuration settings Outlook for iOS and Android supports, see [Deploying Outlook for iOS and Android app configuration settings](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune).
 
 ## Next steps
 
 - [What are app protection policies?](../protection/overview.md)
-- [App configuration policies for Microsoft Intune](./overview.md)
+- [App configuration policies for Microsoft Intune](overview.md)

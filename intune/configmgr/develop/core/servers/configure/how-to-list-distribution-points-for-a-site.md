@@ -1,32 +1,34 @@
 ---
-title: List Distribution Points for a Site
+title: "How to List Distribution Points for a Site"
 description: How to assign a distribution point to a package by using the SMS_DistributionPoint Server WMI Class and class properties in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# How to List Distribution Points for a Site
-The following example shows how to assign a distribution point to a package by using the [SMS_DistributionPoint Server WMI Class](../../../../develop/reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md) class and class properties in Configuration Manager.
 
- You only need to assign a distribution point to a package if the package contains source files. The package is not advertised until the program source files have been propagated to a distribution point share. You can use the default distribution point share, or you can specify a share to use. You can also specify more than one distribution point to use to distribute your package source files, although the following example does not demonstrate that.
+# How to List Distribution Points for a Site
+
+The following example shows how to assign a distribution point to a package by using the [SMS_DistributionPoint Server WMI Class](../../../reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md) class and class properties in Configuration Manager.
+
+You only need to assign a distribution point to a package if the package contains source files. The package is not advertised until the program source files have been propagated to a distribution point share. You can use the default distribution point share, or you can specify a share to use. You can also specify more than one distribution point to use to distribute your package source files, although the following example does not demonstrate that.
 
 > [!NOTE]
->  To identify branch distribution points, check the [IsPeerDP](../../../../develop/reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md) property of the specific [SMS_DistributionPoint](../../../../develop/reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md) class instance. If the IsPeerDP property is true, then the distribution point is a branch distribution point.
+>
+> To identify branch distribution points, check the [IsPeerDP](../../../reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md) property of the specific [SMS_DistributionPoint](../../../reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md) class instance. If the IsPeerDP property is true, then the distribution point is a branch distribution point.
 
 ### To list distribution points for a site
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Run a query, which populates a variable with a collection of distribution point objects.
-
-3.  Enumerate through the collection of and list the distribution points returned by the query.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Run a query, which populates a variable with a collection of distribution point objects.
+3. Enumerate through the collection of and list the distribution points returned by the query.
 
 ## Example
- The following example method lists distribution points for a site.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method lists distribution points for a site.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -81,42 +83,43 @@ public void ListDistributionPointsForSite(WqlConnectionManager connection, strin
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swebemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code for the site that supports the distribution points.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swebemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code for the site that supports the distribution points. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [About the Configuration Manager Site Control File](../../../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
- [SMS_DistributionPoint Server WMI Class](../../../../develop/reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [About the Configuration Manager Site Control File](../../understand/about-the-configuration-manager-site-control-file.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md) [SMS_DistributionPoint Server WMI Class](../../../reference/core/servers/configure/sms_distributionpoint-server-wmi-class.md)

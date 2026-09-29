@@ -1,16 +1,18 @@
 ---
-title: SMS_Client_Reg_MultiString_List Class
+title: "SMS_Client_Reg_MultiString_List Server WMI Class"
 description: An SMS Provider server class that represents a list of client registry multi-string items from the site control file.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Client_Reg_MultiString_List Server WMI Class
+
 The `SMS_Client_Reg_MultiString_List` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that represents a list of client registry multi-string items from the site control file.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,65 +27,67 @@ Class SMS_Client_Reg_MultiString_List
 ```
 
 ## Methods
- The `SMS_Client_Reg_MultiString_List` class doesn't define any methods.
+
+The `SMS_Client_Reg_MultiString_List` class doesn't define any methods.
 
 ## Properties
- `ItemType`
- Data type: `String`
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Client registry multstring item type.
+Qualifiers: [key, read]
 
- `ValueName`
- Data type: `String`
+Client registry multstring item type.
 
- Access type: Read/Write
+`ValueName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Property name reflected in the system registry key where the multi-string items are stored. The default value is "".
+Qualifiers: None
 
- `KeyPath`
- Data type: `String`
+Property name reflected in the system registry key where the multi-string items are stored. The default value is "".
 
- Access type: Read/Write
+`KeyPath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Path to the multi-string item. The default value is "".
+Qualifiers: None
+
+Path to the multi-string item. The default value is "".
 
 > [!NOTE]
->  Do not set this property when updating the `ValueName` property.
+>
+> Do not set this property when updating the `ValueName` property.
 
- `ValueStrings`
- Data type: `String` Array
+`ValueStrings` Data type: `String` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- List of strings that serve as registry data values. The meaning of the strings is determined by the `ValueName` property.
+List of strings that serve as registry data values. The meaning of the strings is determined by the `ValueName` property.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  This class behaves the same as [SMS_EmbeddedPropertyList Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_embeddedpropertylist-server-wmi-class.md). It's used to represent data that is stored in the system registry with the `REG_MULTI_SZ` data type.
+  This class behaves the same as [SMS_EmbeddedPropertyList Server WMI Class](sms_embeddedpropertylist-server-wmi-class.md). It's used to represent data that is stored in the system registry with the `REG_MULTI_SZ` data type.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_EmbeddedPropertyList Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_embeddedpropertylist-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_EmbeddedPropertyList Server WMI Class](sms_embeddedpropertylist-server-wmi-class.md)

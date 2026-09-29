@@ -1,7 +1,7 @@
 ---
 title: Microsoft Intune advanced capabilities
 description: Microsoft Intune advanced capabilities deliver advanced endpoint management and security. Learn what they are, which licenses include them, and how to get them.
-ms.date: 05/20/2026
+ms.date: "2026-05-20T00:00:00Z"
 ms.topic: overview
 ms.reviewer: aanavath
 ms.subservice: suite
@@ -16,68 +16,37 @@ Intune includes capabilities that extend endpoint management and security across
 
 Intune offers the following advanced capabilities:
 
-:::row:::
-    :::column:::
-> [!div class="nextstepaction"]
-> [Firmware Over-the-Air updates](../device-updates/android/manage-fota.md)
+[Firmware Over-the-Air updates](../device-updates/android/manage-fota.md)
 
 > Remotely deliver firmware updates to Android devices over the air, without user action.
 
-    :::column-end:::
-    :::column:::
-> [!div class="nextstepaction"]
-> [Specialty device management](../device-management/specialty-devices.md)
+[Specialty device management](../device-management/specialty-devices.md)
 
 > Manage AR/VR headsets, large smart-screen devices, and conference room meeting devices.
 
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-
-> [!div class="nextstepaction"]
-> [Microsoft Tunnel for MAM](../device-security/microsoft-tunnel/mam.md)
+[Microsoft Tunnel for MAM](../device-security/microsoft-tunnel/mam.md)
 
 > Extend the Microsoft Tunnel VPN to Android and iOS devices that aren't enrolled in Intune.
-    :::column-end:::
-    :::column:::
-> [!div class="nextstepaction"]
-> [Advanced Analytics](../advanced-analytics/index.md)
+
+[Advanced Analytics](../advanced-analytics/index.md)
 
 > Get analytics-driven insights to understand and improve the user experience across your endpoints.
-    :::column-end:::
-:::row-end:::
 
-:::row:::
-    :::column:::
-> [!div class="nextstepaction"]
-> [Remote Help](../remote-help/index.md)
+[Remote Help](../remote-help/index.md)
 
 > Securely connect to user devices for cloud-based help-desk support with role-based access controls.
-    :::column-end:::
-    :::column:::
-> [!div class="nextstepaction"]
-> [Microsoft Cloud PKI](../cloud-pki/index.md)
+
+[Microsoft Cloud PKI](../cloud-pki/index.md)
 
 > Use a managed certificate authority for issuance, renewal, and revocation across Intune platforms.
-    :::column-end:::
-:::row-end:::
 
-:::row:::
-    :::column:::
-> [!div class="nextstepaction"]
-> [Endpoint Privilege Management](../epm/overview.md)
+[Endpoint Privilege Management](../epm/overview.md)
 
 > Run users with least privilege while still allowing approved tasks that require elevation.
-    :::column-end:::
-    :::column:::
-> [!div class="nextstepaction"]
-> [Enterprise Application Management](../app-management/deployment/enterprise-app-management.md)
+
+[Enterprise Application Management](../app-management/deployment/enterprise-app-management.md)
 
 > Deploy curated Win32 apps from a Microsoft-hosted Enterprise App Catalog with built-in install settings.
-    :::column-end:::
-:::row-end:::
 
 ## Intune plans and advanced capabilities
 
@@ -87,13 +56,13 @@ For licensing concepts and admin-access requirements, see [Microsoft Intune lice
 
 ## Trial subscriptions for advanced capabilities
 
-
 You can start a free trial to explore advanced capabilities before purchasing.
 
 ### Trial summary
-- **Duration:** 90 days  
-- **Maximum users:** 250 per tenant  
-- **Trial limit:** One trial per capability per tenant  
+
+- **Duration:** 90 days
+- **Maximum users:** 250 per tenant
+- **Trial limit:** One trial per capability per tenant
 - **Post-trial:** 30-day grace period
 
 After the trial ends, a 30-day grace period begins. Once this period expires, the capability is no longer available in the admin center.
@@ -111,14 +80,15 @@ If a capability isn't included in your current licenses, you can start a trial t
 
 ### Start a trial
 
-1. Sign in to the [Microsoft Intune admin center] as a Global or Billing administrator.  
-1. Go to **Tenant administration** > **Intune add-ons**.  
-1. Select the **All add-ons** tab and find the capability you want to try.  
-1. In the **Try or Buy** column, select **View details**, then choose **Go to Microsoft 365 admin center**.  
-1. In the Microsoft 365 admin center, complete the **Start free trial** process.  
-1. Return to **Tenant administration** > **Intune add-ons**. The capability now shows as **Active**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) as a Global or Billing administrator.
+2. Go to **Tenant administration** &gt; **Intune add-ons**.
+3. Select the **All add-ons** tab and find the capability you want to try.
+4. In the **Try or Buy** column, select **View details**, then choose **Go to Microsoft 365 admin center**.
+5. In the Microsoft 365 admin center, complete the **Start free trial** process.
+6. Return to **Tenant administration** &gt; **Intune add-ons**. The capability now shows as **Active**.
 
 > [!NOTE]
+>
 > If you're not a Global or Billing admin, the **Your add-ons** tab isn't visible. The **Capabilities** tab still shows what your tenant is eligible for.
 
 To try Microsoft Intune itself (rather than an advanced capability), see [Sign Up for Microsoft Intune Free Trial Setup Guide](free-trial-sign-up.md).
@@ -131,7 +101,3 @@ To try Microsoft Intune itself (rather than an advanced capability), see [Sign U
 - [Sign up or sign in to Microsoft Intune](account-sign-up.md)
 - [Sign Up for Microsoft Intune Free Trial Setup Guide](free-trial-sign-up.md)
 - [Assign Microsoft Intune licenses](assign-licenses.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

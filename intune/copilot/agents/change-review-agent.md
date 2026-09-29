@@ -1,14 +1,30 @@
 ---
-title: Change Review Agent Overview
+title: "Change Review Agent overview"
 description: Learn about the Change Review Agent in Microsoft Intune, its prerequisites, and how it works.
-ms.date: 11/10/2025
+ms.date: "2025-11-10T00:00:00Z"
 ms.topic: overview
 ms.reviewer: zinebtakafi
 ---
 
 # Change Review Agent overview
 
-[!INCLUDE [agent-deprecation](includes/agent-deprecation.md)]
+> [!IMPORTANT]
+>
+> **Starting August 31, 2026, the Policy Configuration Agent (PCA) and Change Review Agent (CRA) will no longer be available in the Microsoft Intune admin center.**
+>
+> Review any existing processes that use these agents and complete any active agent runs before this date. Avoid creating new dependencies on these agents.
+>
+> **What this change means for you**:
+>
+> - You can continue using existing Policy Configuration Agent (PCA) and Change Review Agent (CRA) experiences until August 31, 2026.
+> - After August 31, 2026, these agents and their associated experiences are no longer accessible in the Microsoft Intune admin center.
+> - If your organization relies on these agents, review and update affected operational processes before the retirement date.
+>
+> **Recommended actions**:
+>
+> - Complete any active Policy Configuration Agent (PCA) and Change Review Agent (CRA) activities before **August 31, 2026.**
+> - Avoid creating new workflows or dependencies that rely on these agents.
+> - Review existing administrative processes that depend on these agents and plan alternative approaches before the retirement date
 
 In public preview, the Microsoft Intune Change Review Agent uses Microsoft Security Copilot's generative AI to evaluate Multi Admin Approval requests for PowerShell scripts on Windows devices. It provides risk-based recommendations and contextual insights to help administrators understand script behavior and associated risks. These insights help Intune administrators make informed decisions more quickly about whether to approve or deny requests.
 
@@ -22,118 +38,89 @@ The agent analyzes these signals to assess the potential risk associated with ea
 
 ## Prerequisites
 
-<!-- start cloud -->
-:::row:::
-:::column span="1":::
-[!INCLUDE [cloud](../../includes/requirements/cloud.md)]
-:::column-end:::
+![](../../media/icons/16/cloud.svg) **Cloud requirements**
 
-:::column span="3":::
 > The agent is supported on the public cloud only. It isn't supported on government clouds.
-:::column-end:::
-:::row-end:::
-<!-- end cloud -->
 
-<!-- start license -->
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/licensing.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/licensing.svg) **Licensing requirements**
+
 > To use Security Copilot agents in Microsoft Intune, your organization must meet specific licensing requirements.
 >
 > Required licenses:
+>
 > - [Microsoft Intune Plan 1 subscription](../../fundamentals/licensing.md)
-> - [Microsoft Entra ID P2](/entra/fundamentals/licensing)
-> - [Microsoft Defender Vulnerability Management](/defender-vulnerability-management/tvm-prerequisites)
-> - [Microsoft Security Copilot](/copilot/security/get-started-security-copilot) with sufficient security compute units (SCUs)
-:::column-end:::
-:::row-end:::
-<!-- end license -->
+> - [Microsoft Entra ID P2](https://learn.microsoft.com/en-us/entra/fundamentals/licensing)
+> - [Microsoft Defender Vulnerability Management](https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-prerequisites)
+> - [Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot) with sufficient security compute units (SCUs)
 
-<!-- stat plugin -->
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/plugins.md)]
+![](../../media/icons/16/plugin.svg) **Plugins requirements**
 
-:::column-end:::
-:::column span="3":::
 > Plugins enable Security Copilot agents to connect with Microsoft services and perform specialized actions.
 >
 > The Change Review Agent requires the following plugins:
 >
-> - [!INCLUDE [plugin-intune](includes/plugin-intune.md)]
-> - [!INCLUDE [plugin-entra](includes/plugin-entra.md)]
-> - [!INCLUDE [plugin-defender-xdr](includes/plugin-defender-xdr.md)]
-> - [!INCLUDE [plugin-threat-intelligence](includes/plugin-threat-intelligence.md)]
+> - ![](../../media/icons/16/intune.svg) [Microsoft Intune](../security-copilot.md)
+> - ![](../../media/icons/16/entra.svg) [Microsoft Entra](https://learn.microsoft.com/en-us/entra/fundamentals/copilot-security-entra)
+> - ![](../../media/icons/16/defender.svg) [Microsoft Defender XDR](https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management)
+> - ![](../../media/icons/16/defender.svg) [Microsoft Threat Intelligence](https://learn.microsoft.com/en-us/defender/threat-intelligence/what-is-microsoft-defender-threat-intelligence-defender-ti)
 >
 > [Learn more about plugins](https://go.microsoft.com/fwlink/?linkid=2316474).
 
-:::column-end:::
-:::row-end:::
-<!-- end plugin -->
+![](../../media/icons/16/devices.svg) **Platform requirements and scenarios**
 
-<!-- start platform ../../../media/icons/16/devices.svg  -->
-:::row:::
-:::column span="1":::
-:::image type="icon" source="../../media/icons/16/devices.svg" border="false"::: **Platform requirements and scenarios**
-:::column-end:::
-:::column span="3":::
 > The agent supports evaluation and recommendations for the following platforms and scenarios:
+>
 > - Windows
 > - PowerShell scripts in Intune
-:::column-end:::
-:::row-end:::
-<!-- end platform -->
 
-<!-- start rbac -->
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::column-end:::
-:::column span="3":::
 > Role requirements vary based on whether you're configuring the agent or using it, and on the specific actions performed.
 >
 > ---
 >
 > To **enable and configure** the Change Review Agent, use an account with the following roles:
 >
-> :::image type="icon" source="../../media/icons/16/entra.svg" border="false"::: Entra roles:
-> - [*Intune Administrator*](/entra/identity/role-based-access-control/permissions-reference#intune-administrator)
-> - [*Security Reader*](/entra/identity/role-based-access-control/permissions-reference#security-reader)
+> ![](../../media/icons/16/entra.svg) Entra roles:
+>
+> - [*Intune Administrator*](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator)
+> - [*Security Reader*](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#security-reader)
 > - *Entra/Identity risky user (read)* - This permission maps to the Unified RBAC permission *Security posture / Identity risk / Risky users (read)*.
 >
-> :::image type="icon" source="../../media/icons/16/defender.svg" border="false"::: Defender roles - Defender role-based access control (RBAC) roles depend on your Defender XDR implementation:
-> - [*Unified RBAC*](/defender-xdr/manage-rbac): Assign the Microsoft Entra ID Security Reader to the agent's identity account. This role provides read-only access to Defender Vulnerability Management data and automatically enforces device group scoping.
-> - [*Granular RBAC*](/defender-endpoint/rbac): Assign a custom RBAC role with permissions equivalent to the Unified RBAC Security Reader role. For example: 
+> ![](../../media/icons/16/defender.svg) Defender roles - Defender role-based access control (RBAC) roles depend on your Defender XDR implementation:
+>
+> - [*Unified RBAC*](https://learn.microsoft.com/en-us/defender-xdr/manage-rbac): Assign the Microsoft Entra ID Security Reader to the agent's identity account. This role provides read-only access to Defender Vulnerability Management data and automatically enforces device group scoping.
+> - [*Granular RBAC*](https://learn.microsoft.com/en-us/defender-endpoint/rbac): Assign a custom RBAC role with permissions equivalent to the Unified RBAC Security Reader role. For example:
+>
 >   - *View data – Defender Vulnerability Management* - This permission maps to the Unified RBAC permission *Security posture / Posture management / Vulnerability management (read)*.
 >
->    For details about mapping permissions to the Unified RBAC Security Reader role, see [Microsoft Entra Global roles access](/defender-xdr/compare-rbac-roles#microsoft-entra-global-roles-access) in the *Map Microsoft Defender XDR Unified role-based access control (RBAC)* article in the Defender documentation.
+>   For details about mapping permissions to the Unified RBAC Security Reader role, see [Microsoft Entra Global roles access](https://learn.microsoft.com/en-us/defender-xdr/compare-rbac-roles#microsoft-entra-global-roles-access) in the *Map Microsoft Defender XDR Unified role-based access control (RBAC)* article in the Defender documentation.
 >
->    Ensure the agent's identity is scoped in Microsoft Defender to include all relevant device groups. The agent can't access or report on devices outside its assigned scope.
+>   Ensure the agent's identity is scoped in Microsoft Defender to include all relevant device groups. The agent can't access or report on devices outside its assigned scope.
 >
-> :::image type="icon" source="../../media/icons/16/copilot.svg" border="false"::: Security Copilot roles:
-> - [Copilot owner](/copilot/security/authentication#security-copilot-roles) 
+> ![](../../media/icons/16/copilot.svg) Security Copilot roles:
+>
+> - [Copilot owner](https://learn.microsoft.com/en-us/copilot/security/authentication#security-copilot-roles)
 >
 > ---
 >
 > To **use** the agent, sign in with an account that has the following roles:
 >
-> :::image type="icon" source="../../media/icons/16/intune.svg" border="false"::: Intune roles:
+> ![](../../media/icons/16/intune.svg) Intune roles:
+>
 > - [Read Only Operator](../../fundamentals/role-based-access-control/overview.md#built-in-roles) or [custom role](../../fundamentals/role-based-access-control/overview.md#custom-roles) with equivalent permissions.
 >
-> :::image type="icon" source="../../media/icons/16/entra.svg" border="false"::: Entra roles:
-> - [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader)
-> 
-> :::image type="icon" source="../../media/icons/16/defender.svg" border="false"::: Defender roles
+> ![](../../media/icons/16/entra.svg) Entra roles:
+>
+> - [Security Reader](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#security-reader)
+>
+> ![](../../media/icons/16/defender.svg) Defender roles
+>
 > - Use of the agent requires the same access as *enabling and configuring* the agent.
 >
-> :::image type="icon" source="../../media/icons/16/copilot.svg" border="false"::: Security Copilot roles:
-> - [Copilot contributor](/copilot/security/authentication#security-copilot-roles)
-
-:::column-end:::
-:::row-end:::
+> ![](../../media/icons/16/copilot.svg) Security Copilot roles:
+>
+> - [Copilot contributor](https://learn.microsoft.com/en-us/copilot/security/authentication#security-copilot-roles)
 
 ## How the agent works
 
@@ -146,9 +133,7 @@ At a high level, the agent does the following steps each time it runs:
    - Microsoft Defender Vulnerability Management - for threat insights
    - Microsoft Entra ID - for identity risk
    - Microsoft Intune - for Multi Admin Approval requests and historical context of similar requests
-
 2. **Evaluation** - The agent evaluates Windows PowerShell scripts for Multi Admin Approval requests using predefined logic that's built in to the agent configuration.
-
 3. **Recommendations** - The agent reviews and then provides recommendations for a maximum of 10 requests per run.
 
    Suggestions are *suggestions* only. The approval or rejection of a request remains with an Intune administrator.
@@ -160,6 +145,7 @@ At a high level, the agent does the following steps each time it runs:
    - Needs more info - Risk couldn't be fully assessed. This request requires further review.
 
    Each recommendation includes supporting details that explain:
+
    - The rationale behind the agent's recommendation.
    - What the script is intended to accomplish or do.
    - A detailed list of factors that the agent reviewed as part of its process.
@@ -184,27 +170,37 @@ The agent operates under the identity and permissions of the Intune admin accoun
 
 **To set up the Change Review Agent:**
 
-1. In the [Microsoft Intune admin center], go to **Agents** > **Change Review Agent**.
-
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to **Agents** &gt; **Change Review Agent**.
 2. In **Overview**, select **Set up Agent** to open the *Set up Change review agent* pane.
-
 3. The **Set up Change review agent** pane lists the required permissions and provides details about setup requirements. When requirements are met, select **Start agent**.
 
-   :::image type="content" source="./media/change-review-agent/setup.png" alt-text="Screenshot of the Set up Change review agent pane." :::
+   ![Screenshot of the Set up Change review agent pane.](media/change-review-agent/setup.png)
 
 The agent operates until it completes its evaluation and displays results in the Overview tab. When the run finishes, the agent is ready to use.
 
 To learn more about using the agent, see [Use the Change Review Agent](manage-change-review-agent.md).
 
-<!--  ## Remove the agent  --  H2 header is in the Include:  -->
-[!INCLUDE [remove](includes/remove.md)]
+## Remove the agent
 
-[!INCLUDE [feedback](includes/feedback.md)]
+When you remove an agent, all associated data generated including suggestions and activities are deleted. Previously applied suggestions remain unchanged.
+
+Steps to remove an agent instance:
+
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Agents**.
+2. Select the agent instance you want to remove.
+3. Select **Remove agent** and confirm the removal.
+
+After removal:
+
+- The agent pane returns to its original state.
+- An admin can reinstall the agent later by repeating the setup process.
+
+## ![](../../media/icons/32/feedback.svg) Help shape the future of Intune agents
+
+Join our **Intune Agents Feedback Forum** to share insights and influence upcoming capabilities in Microsoft Intune.
+
+Sign up and learn more: <https://aka.ms/IntuneAgentsForum>
 
 ## Related content
 
 - [Use the Change Review Agent](manage-change-review-agent.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

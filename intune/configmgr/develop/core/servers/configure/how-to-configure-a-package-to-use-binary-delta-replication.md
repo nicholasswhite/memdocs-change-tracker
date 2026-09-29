@@ -1,32 +1,33 @@
 ---
 description: Learn how to configure an existing package to use binary delta replication in Configuration Manager.
-title: Configure a Package to Use Binary Delta Replication
-ms.date: 09/20/2016
+title: "How to Configure a Package to Use Binary Delta Replication"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Configure a Package to Use Binary Delta Replication
+
 The following example shows how to configure an existing package to use binary delta replication, in Configuration Manager, by using the `SMS_Package` class and the `PkgFlags` class property.
 
 ### To configure an existing package to use binary delta replication
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the existing package object using `SMS_Package` class.
-
-3.  Modify the `PkgFlags` using the hexadecimal value for AP_USE_BINARY_DELTA_REP.
-
-4.  Save the package and the new package properties.
+1. Set up a connection to the SMS Provider.
+2. Load the existing package object using `SMS_Package` class.
+3. Modify the `PkgFlags` using the hexadecimal value for AP_USE_BINARY_DELTA_REP.
+4. Save the package and the new package properties.
 
 ## Example
- The following example method configures an existing package to use binary delta replication.
+
+The following example method configures an existing package to use binary delta replication.
 
 > [!IMPORTANT]
->  The hexadecimal values that define the `PkgFlags` property are listed in the `SMS_Package` class reference material.
+>
+> The hexadecimal values that define the `PkgFlags` property are listed in the `SMS_Package` class reference material.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -106,35 +107,39 @@ public void ModifyPackageToUseBinaryDeltaReplication(WqlConnectionManager connec
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`Connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the existing package.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPackageID` | - Managed: `String` - VBScript: `String` | The ID of the existing package. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)

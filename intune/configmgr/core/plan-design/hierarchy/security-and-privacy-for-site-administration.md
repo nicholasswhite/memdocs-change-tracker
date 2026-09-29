@@ -1,7 +1,7 @@
 ---
-title: Site administration security and privacy
+title: "Security and privacy for site administration in Configuration Manager"
 description: Optimize security and privacy for site administration in Configuration Manager
-ms.date: 04/05/2024
+ms.date: "2024-04-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -14,7 +14,7 @@ ms.service: configuration-manager
 
 This article contains security and privacy information for Configuration Manager sites and the hierarchy.
 
-## <a name="BKMK_Security_Sites"></a> Security guidance for site administration
+## Security guidance for site administration
 
 Use the following guidance to help you secure Configuration Manager sites and the hierarchy.
 
@@ -33,10 +33,10 @@ Schema extensions aren't required to run Configuration Manager, but they do crea
 If clients are in an untrusted domain, deploy the following site system roles in the clients' domains:
 
 - Management point
-
 - Distribution point
 
 > [!NOTE]
+>
 > A trusted domain for Configuration Manager requires Kerberos authentication. If clients are in another forest that doesn't have a two-way forest trust with the site server's forest, these clients are considered to be in an untrusted domain. An external trust isn't sufficient for this purpose.
 
 ### Use IPsec to secure communications
@@ -45,24 +45,23 @@ Although Configuration Manager does secure communication between the site server
 
 If you don't use additional controls to secure these server-to-server channels, attackers can use various spoofing and man-in-the-middle attacks against site systems. Use SMB signing when you can't use IPsec.
 
-> [!Important]
+> [!IMPORTANT]
+>
 > Secure the communication channel between the site server and the package source server. This communication uses SMB. If you can't use IPsec to secure this communication, use SMB signing to make sure that the files aren't tampered with before clients download and run them.
 
 ### Don't change the default security groups
 
 Don't change the following security groups that Configuration Manager creates and manages for site system communication:
 
-- **SMS_SiteSystemToSiteServerConnection_MP_&lt;SiteCode\>**
-
-- **SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;SiteCode\>**
-
-- **SMS_SiteSystemToSiteServerConnection_Stat_&lt;SiteCode\>**
+- **SMS_SiteSystemToSiteServerConnection_MP_&lt;SiteCode&gt;**
+- **SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;SiteCode&gt;**
+- **SMS_SiteSystemToSiteServerConnection_Stat_&lt;SiteCode&gt;**
 
 Configuration Manager automatically creates and manages these security groups. This behavior includes removing computer accounts when a site system role is removed.
 
 To make sure service continuity and least privileges, don't manually edit these groups.
 
-### Avoid automatically approving all clients ###
+### Avoid automatically approving all clients
 
 Automatically approving all clients isn't recommended, unless you have other access controls to prevent untrustworthy computers from accessing your network. Refer to [Automatically approve client computers from trusted domains and manually check and approve other computers](../../clients/deploy/plan/security-and-privacy-for-clients.md) for more information.
 
@@ -78,14 +77,14 @@ Using non-default port numbers can provide additional security. They make it har
 
 ### Use role separation on site systems
 
-Although you can install all the site system roles on a single computer, this practice is rarely used on production networks. It creates a single point of failure.
-A best practice for security and operational resilience is to keep site system roles separate from the site server, rather than colocate them on the same computer.
+Although you can install all the site system roles on a single computer, this practice is rarely used on production networks. It creates a single point of failure. A best practice for security and operational resilience is to keep site system roles separate from the site server, rather than colocate them on the same computer.
 
 ### Reduce the attack profile
 
 Isolating each site system role on a different server reduces the chance that an attack against vulnerabilities on one site system can be used against a different site system. Many roles require the installation of Internet Information Services (IIS) on the site system, and this need increases the attack surface. If you must combine roles to reduce hardware expenditure, combine IIS roles only with other roles that require IIS.
 
 > [!IMPORTANT]
+>
 > The fallback status point role is an exception. Because this site system role accepts unauthenticated data from clients, don't assign the fallback status point role to any other Configuration Manager site system role.
 
 ### Configure static IP addresses for site systems
@@ -153,12 +152,12 @@ When Configuration Manager client computers use a proxy web server to connect to
 If your proxy web server can't support the requirements for SSL bridging, SSL tunneling is also supported. This option is less secure. The SSL packets from the internet are forwarded to the site systems without termination. Then they can't be inspected for malicious content.
 
 > [!WARNING]
+>
 > Mobile devices that are enrolled by Configuration Manager can't use SSL bridging. They must use SSL tunneling only.
 
 ### Configurations to use if you configure the site to wake up computers to install software
 
 - If you use traditional wake-up packets, use unicast rather than subnet-directed broadcasts.
-
 - If you must use subnet-directed broadcasts, configure routers to allow IP-directed broadcasts only from the site server and only on a non-default port number.
 
 For more information about the different Wake On LAN technologies, see [Planning how to wake up clients](../../clients/deploy/plan/plan-wake-up-clients.md).
@@ -169,16 +168,15 @@ Whenever possible, use a mail server that supports authenticated access. Use the
 
 ### Enforce LDAP channel binding and LDAP signing
 
-The security of Active Directory domain controllers can be improved by configuring the server to reject Simple Authentication and Security Layer (SASL) LDAP binds that do not request signing or to reject LDAP simple binds that are performed on a clear text connection. Starting in version 1910, Configuration Manager supports enforcing LDAP channel binding and LDAP signing. For more information, see [2020 LDAP channel binding and LDAP signing requirements for Windows](https://support.microsoft.com/help/4520412/2020-ldap-channel-binding-and-ldap-signing-requirements-for-windows). <!--6244453-->
+The security of Active Directory domain controllers can be improved by configuring the server to reject Simple Authentication and Security Layer (SASL) LDAP binds that do not request signing or to reject LDAP simple binds that are performed on a clear text connection. Starting in version 1910, Configuration Manager supports enforcing LDAP channel binding and LDAP signing. For more information, see [2020 LDAP channel binding and LDAP signing requirements for Windows](https://support.microsoft.com/help/4520412/2020-ldap-channel-binding-and-ldap-signing-requirements-for-windows).
 
-
-## <a name="BKMK_Security_SiteServer"></a> Security guidance for the site server
+## Security guidance for the site server
 
 Use the following guidance to help you secure the Configuration Manager site server.
 
 > [!WARNING]
-> Network access account - Don't grant interactive sign-in rights to this account on SQL Servers.
-Don't grant this account the right to join computers to the domain. If you must join computers to the domain during a task sequence, use the Task sequence domain join account..
+>
+> Network access account - Don't grant interactive sign-in rights to this account on SQL Servers. Don't grant this account the right to join computers to the domain. If you must join computers to the domain during a task sequence, use the Task sequence domain join account..
 
 ### Install Configuration Manager on a member server instead of a domain controller
 
@@ -196,11 +194,9 @@ For more information, see [Install a secondary site](../../servers/deploy/instal
 
 ### Site role installation inherits permissions from drive root
 
-<!-- SCCMDocs#1380 -->
 Make sure to properly configure the system drive permissions before you install the first site system role to any server. For example, `C:\SMS_CCM` inherits permissions from `C:\`. If the root of the drive isn't properly secured, then low rights users may be able to access or modify content in the Configuration Manager folder.
 
-
-## <a name="BKMK_Security_SQLServer"></a> Security guidance for SQL Server
+## Security guidance for SQL Server
 
 Configuration Manager uses SQL Server as the back-end database. If the database is compromised, attackers could bypass Configuration Manager. If they access SQL Server directly, they can launch attacks through Configuration Manager. Consider attacks against SQL Server to be high risk and mitigate appropriately.
 
@@ -219,7 +215,6 @@ Although Configuration Manager accesses the site database by using a Windows acc
 When you install a primary site, Configuration Manager downloads SQL Server Express from the Microsoft Download Center. It then copies the files to the primary site server. When you install a secondary site and select the option that installs SQL Server Express, Configuration Manager installs the previously downloaded version. It doesn't check whether new versions are available. To make sure that the secondary site has the latest versions, do one of the following tasks:
 
 - After you install the secondary site, run Windows Update on the secondary site server.
-
 - Before you install the secondary site, manually install SQL Server Express on the secondary site server. Make sure that you install the latest version and any software updates. Then install the secondary site, and select the option to use an existing SQL Server instance.
 
 Periodically run Windows Update for all installed versions of SQL Server. This practice makes sure that they have the latest software updates.
@@ -229,11 +224,9 @@ Periodically run Windows Update for all installed versions of SQL Server. This p
 Identify and follow the general guidance for your version of SQL Server. However, take into consideration the following requirements for Configuration Manager:
 
 - The computer account of the site server must be a member of the Administrators group on the computer that runs SQL Server. If you follow the SQL Server recommendation of "provision administrator principals explicitly", the account that you use to run setup on the site server must be a member of the SQL Server Users group.
-
 - If you install SQL Server by using a domain user account, make sure that the site server computer account is configured for a Service Principal Name (SPN) that's published to Active Directory Domain Services. Without the SPN, Kerberos authentication fails and Configuration Manager setup fails.
 
-
-## <a name="BKMK_Security_IIS"></a> Security guidance for site systems that run IIS
+## Security guidance for site systems that run IIS
 
 Several site system roles in Configuration Manager require IIS. The process of securing IIS enables Configuration Manager to operate correctly and reduces the risk of security attacks. When practical, minimize the number of servers that require IIS. For example, run only the number of management points that you require to support your client base, taking into consideration high availability and network isolation for internet-based client management.
 
@@ -250,14 +243,14 @@ When clients connect to a site system by using HTTP rather than by using HTTPS, 
 The exception to this guidance might be distribution points. Package access accounts don't work when the distribution point is configured for HTTPS. Package access accounts provide authorization to the content, so that you can restrict which users can access the content. For more information, see [Security guidance for content management](security-and-privacy-for-content-management.md#security-guidance).
 
 > [!IMPORTANT]
-> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).<!-- 9390933,9572265 -->
+>
+> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).
 
 ### Configure a certificate trust list (CTL) in IIS for site system roles
 
 Site system roles:
 
 - A distribution point that you configure for HTTPS
-
 - A management point that you configure for HTTPS and enable to support mobile devices
 
 A CTL is a defined list of trusted root certification authorities (CAs). When you use a CTL with group policy and a public key infrastructure (PKI) deployment, a CTL enables you to supplement the existing trusted root CAs that are configured on your network. For example, CAs that are automatically installed with Microsoft Windows or added through Windows enterprise root CAs. When a CTL is configured in IIS, it defines a subset of those trusted root CAs.
@@ -267,6 +260,7 @@ This subset provides you with more control over security. The CTL restricts the 
 By default, the computer that runs IIS trusts certificates that chain to these well-known CAs. When you don't configure IIS with a CTL for the listed site system roles, the site accepts as a valid client any device that has a certificate issued from these CAs. If you configure IIS with a CTL that didn't include these CAs, the site refuses client connections, if the certificate chains to these CAs. For Configuration Manager clients to be accepted for the listed site system roles, you must configure IIS with a CTL that specifies the CAs that are used by Configuration Manager clients.
 
 > [!NOTE]
+>
 > Only the listed site system roles require you to configure a CTL in IIS. The certificate issuers list that Configuration Manager uses for management points provides the same functionality for client computers when they connect to HTTPS management points.
 
 For more information about how to configure a list of trusted CAs in IIS, see the IIS documentation.
@@ -292,11 +286,8 @@ When you change from using the default website to using a custom website, Config
 For example, remove the following virtual directories for a distribution point:
 
 - SMS_DP_SMSPKG$
-
 - SMS_DP_SMSSIG$
-
 - NOCERT_SMS_DP_SMSPKG$
-
 - NOCERT_SMS_DP_SMSSIG$
 
 ### Follow IIS Server security guidance
@@ -305,15 +296,15 @@ Identify and follow the general guidance for your version of IIS Server. Take in
 
 ### Configure IIS custom headers
 
-Configure the following custom headers to disable MIME sniffing:<!-- 8540255 -->
+Configure the following custom headers to disable MIME sniffing:
 
 `x-content-type-options: nosniff`
 
-For more information, see [Custom Headers](/iis/configuration/system.webserver/httpprotocol/customheaders).
+For more information, see [Custom Headers](https://learn.microsoft.com/en-us/iis/configuration/system.webserver/httpprotocol/customheaders).
 
 If other services use the same IIS instance, make sure these custom headers are compatible.
 
-## <a name="BKMK_Security_ManagementPoint"></a> Security guidance for the management point
+## Security guidance for the management point
 
 Management points are the primary interface between devices and Configuration Manager. Consider attacks against the management point and the server that it runs on to be high risk, and mitigate appropriately. Apply all appropriate security guidance and monitor for unusual activity.
 
@@ -325,8 +316,7 @@ Avoid the scenario where you assign the Configuration Manager client that's on a
 
 If you migrate from an earlier version to Configuration Manager current branch, migrate the client on the management point to the new site as soon as possible.
 
-
-## <a name="BKMK_Security_FSP"></a> Security guidance for the fallback status point
+## Security guidance for the fallback status point
 
 If you install a fallback status point in Configuration Manager, use the following security guidance:
 
@@ -348,48 +338,41 @@ By design, the fallback status point accepts data from any client. Although a fa
 
 If you do install the fallback status point in the perimeter network or any untrusted network, configure the site server to initiate data transfers. Don't use the default setting that allows the fallback status point to initiate a connection to the site server.
 
-
-## <a name="BKMK_SecurityIssues_Clients"></a> Security issues for site administration
+## Security issues for site administration
 
 Review the following security issues for Configuration Manager:
 
 - Configuration Manager has no defense against an authorized administrative user who uses Configuration Manager to attack the network. Unauthorized administrative users are a high security risk. They could launch many attacks, which include the following strategies:
 
-    - Use software deployment to automatically install and run malicious software on every Configuration Manager client computer in the organization.
+  - Use software deployment to automatically install and run malicious software on every Configuration Manager client computer in the organization.
+  - Remotely control a Configuration Manager client without client permission.
+  - Configure rapid polling intervals and extreme amounts of inventory. This action creates denial of service attacks against the clients and servers.
+  - Use one site in the hierarchy to write data to another site's Active Directory data.
 
-    - Remotely control a Configuration Manager client without client permission.
+  The site hierarchy is the security boundary. Consider sites to be management boundaries only.
 
-    - Configure rapid polling intervals and extreme amounts of inventory. This action creates denial of service attacks against the clients and servers.
-
-    - Use one site in the hierarchy to write data to another site's Active Directory data.
-
-    The site hierarchy is the security boundary. Consider sites to be management boundaries only.
-
-    Audit all administrative user activity and routinely review the audit logs. Require all Configuration Manager administrative users to undergo a background check before they're hired. Require periodic rechecks as a condition of employment.
-
+  Audit all administrative user activity and routinely review the audit logs. Require all Configuration Manager administrative users to undergo a background check before they're hired. Require periodic rechecks as a condition of employment.
 - If the enrollment point is compromised, an attacker could obtain certificates for authentication. They could steal the credentials of users who enroll their mobile devices.
 
-    The enrollment point communicates with a CA. It can create, modify, and delete Active Directory objects. Never install the enrollment point in the perimeter network. Always monitor for unusual activity.
-
+  The enrollment point communicates with a CA. It can create, modify, and delete Active Directory objects. Never install the enrollment point in the perimeter network. Always monitor for unusual activity.
 - If you allow user policies for internet-based client management, you increase your attack profile.
 
-    In addition to using PKI certificates for client-to-server connections, these configurations require Windows authentication. They might fall back to using NTLM authentication rather than Kerberos. NTLM authentication is vulnerable to impersonation and replay attacks. To successfully authenticate a user on the internet, you need to allow a connection from the internet-based site system to a domain controller.
-
+  In addition to using PKI certificates for client-to-server connections, these configurations require Windows authentication. They might fall back to using NTLM authentication rather than Kerberos. NTLM authentication is vulnerable to impersonation and replay attacks. To successfully authenticate a user on the internet, you need to allow a connection from the internet-based site system to a domain controller.
 - The **Admin$** share is required on site system servers.
 
-    The Configuration Manager site server uses the Admin$ share to connect to and do service operations on site systems. Don't disable or remove this share.
-
+  The Configuration Manager site server uses the Admin$ share to connect to and do service operations on site systems. Don't disable or remove this share.
 - Configuration Manager uses name resolution services to connect to other computers. These services are hard to secure against the following security attacks:
-    - Spoofing
-    - Tampering
-    - Repudiation
-    - Information disclosure
-    - Denial of service
-    - Elevation of privilege
 
-    Identify and follow any security guidance for the version of DNS that you use for name resolution.
+  - Spoofing
+  - Tampering
+  - Repudiation
+  - Information disclosure
+  - Denial of service
+  - Elevation of privilege
 
-## <a name="BKMK_Privacy_Cliients"></a> Privacy information for discovery
+  Identify and follow any security guidance for the version of DNS that you use for name resolution.
+
+## Privacy information for discovery
 
 Discovery creates records for network resources and stores them in the Configuration Manager database. Discovery data records contain computer information such as IP addresses, OS versions, and computer names. You can also configure Active Directory discovery methods to return any information that your organization stores in Active Directory Domain Services.
 

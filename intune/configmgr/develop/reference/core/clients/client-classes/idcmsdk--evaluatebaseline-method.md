@@ -1,13 +1,15 @@
 ---
 description: The IDCMSDK::EvaluateBaseline method, in Configuration Manager, runs the discover operation for the specified baseline configuration item.
-title: "IDCMSDK::EvaluateBaseline"
-ms.date: 09/20/2016
+title: "IDCMSDK::EvaluateBaseline Method"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # IDCMSDK::EvaluateBaseline Method
+
 The `IDCMSDK::EvaluateBaseline` method, in Configuration Manager, runs the discover operation for the specified baseline configuration item.
 
 ## Syntax
@@ -23,51 +25,49 @@ HRESULT EvaluateBaseline(
 ```
 
 #### Parameters
- `pInfo`
- Data type: `struct`
 
- Qualifiers: [in]
+`pInfo` Data type: `struct`
 
- Pointer to a [CIDetectInfo Structure](../../../../../develop/reference/core/clients/client-classes/cidetectinfo-structure.md) containing information about the baseline configuration item.
+Qualifiers: [in]
 
- `pCallback`
- Data type: `IDCMAgentCallback`
+Pointer to a [CIDetectInfo Structure](cidetectinfo-structure.md) containing information about the baseline configuration item.
 
- Qualifiers: [in]
+`pCallback` Data type: `IDCMAgentCallback`
 
- Pointer to an [IDCMAgentCallback Interface](../../../../../develop/reference/core/clients/client-classes/idcmagentcallback-interface.md) object that is used to notify the agent of the progress, completion, or failure of the operation.
+Qualifiers: [in]
 
- `bForce`
- Data type: `BOOL`
+Pointer to an [IDCMAgentCallback Interface](idcmagentcallback-interface.md) object that is used to notify the agent of the progress, completion, or failure of the operation.
 
- Qualifiers: [in]
+`bForce` Data type: `BOOL`
 
- `true` if the method is to force the evaluation scan of the baseline configuration item. This value requires administrator privileges.
+Qualifiers: [in]
 
- A setting of `false` for this parameter allows the scan to run, but it doesn't run if the last evaluation of the baseline met the Desired Configuration Management TimeToLive threshold.
+`true` if the method is to force the evaluation scan of the baseline configuration item. This value requires administrator privileges.
 
- `pJobId`
- Data type: `JobId`
+A setting of `false` for this parameter allows the scan to run, but it doesn't run if the last evaluation of the baseline met the Desired Configuration Management TimeToLive threshold.
 
- Qualifiers: [out]
+`pJobId` Data type: `JobId`
 
- Pointer to the ID of the new Desired Configuration Management Agent job for the baseline configuration item.
+Qualifiers: [out]
+
+Pointer to the ID of the new Desired Configuration Management Agent job for the baseline configuration item.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- S_OK
- The method succeeded. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S_OK The method succeeded. All other return values indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [IDCMSDK Interface](../../../../../develop/reference/core/clients/client-classes/idcmsdk-interface.md)
- [IDCMAgentCallback Interface](../../../../../develop/reference/core/clients/client-classes/idcmagentcallback-interface.md)
- [CIDetectInfo Structure](../../../../../develop/reference/core/clients/client-classes/cidetectinfo-structure.md)
+
+[IDCMSDK Interface](idcmsdk-interface.md) [IDCMAgentCallback Interface](idcmagentcallback-interface.md) [CIDetectInfo Structure](cidetectinfo-structure.md)

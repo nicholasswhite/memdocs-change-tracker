@@ -1,27 +1,27 @@
 ---
-title: Create a Data Discovery Record
+title: "How to Create a Data Discovery Record"
 description: Specify the resource type, the discovery process, the site that discovered the resource, and the resource properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a Data Discovery Record
-The data discovery record (DDR), in Configuration Manager, specifies the resource type, the discovery process, the site that discovered the resource, and the resource properties. Configuration Manager provides six library functions that you use to create your own DDRs. For more information. see [About Creating a Data Discovery Record](../../../../develop/core/servers/configure/about-creating-a-data-discovery-record.md).
+
+The data discovery record (DDR), in Configuration Manager, specifies the resource type, the discovery process, the site that discovered the resource, and the resource properties. Configuration Manager provides six library functions that you use to create your own DDRs. For more information. see [About Creating a Data Discovery Record](about-creating-a-data-discovery-record.md).
 
 ### To create a data discovery record
 
-1.  Create a new instance of the `SMSResGen` class.
-
-2.  Create a new DDR by using the `NewDDR` method.
-
-3.  Add properties to the DDR by using the `ADDPROP_` methods.
-
-4.  Write the new DDR to a file by using the `DDRWrite` method.
+1. Create a new instance of the `SMSResGen` class.
+2. Create a new DDR by using the `NewDDR` method.
+3. Add properties to the DDR by using the `ADDPROP_` methods.
+4. Write the new DDR to a file by using the `DDRWrite` method.
 
 ## Example
- The following example creates a DDR.
+
+The following example creates a DDR.
 
 ```vbs
 
@@ -119,16 +119,19 @@ public void CreateNewDDR()
 ## Compiling the Code
 
 > [!IMPORTANT]
->  This VBScript and C# examples require **smsrsgen.dll** and **smsrsgenctl.dll**, respectively. Both files are included as a part of the downloadable Configuration Manager SDK (in the "Redistributables" folder).
 >
->  The file smsrsgenctl.dll is a 32-bit dll and must be registered on the system that will run the application. In addition, the application using smsrsgenctl.dll should be compiled as an x86 application.
+> This VBScript and C# examples require **smsrsgen.dll** and **smsrsgenctl.dll**, respectively. Both files are included as a part of the downloadable Configuration Manager SDK (in the "Redistributables" folder).
+>
+> The file smsrsgenctl.dll is a 32-bit dll and must be registered on the system that will run the application. In addition, the application using smsrsgenctl.dll should be compiled as an x86 application.
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).
 
 ## See also
 
-[SMSResGen COM Automation Class](../../../../develop/reference/core/servers/configure/smsresgen-com-automation-class.md)
+[SMSResGen COM Automation Class](../../../reference/core/servers/configure/smsresgen-com-automation-class.md)

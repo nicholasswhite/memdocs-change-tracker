@@ -1,16 +1,18 @@
 ---
-title: CCM_PolicyAgent_Configuration Class
+title: "CCM_PolicyAgent_Configuration Client WMI Class"
 description: A Windows Management Instrumentation class that represents the Policy Agent configuration for a given authority.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_PolicyAgent_Configuration Client WMI Class
+
 In Configuration Manager, the `CCM_PolicyAgent_Configuration` class is a client Windows Management Instrumentation (WMI) class that represents the Policy Agent configuration for a given authority.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -42,214 +44,195 @@ Class CCM_PolicyAgent_Configuration : CCM_Policy
 ```
 
 ## Methods
- The `CCM_PolicyAgent_Configuration` class does not define any methods.
+
+The `CCM_PolicyAgent_Configuration` class does not define any methods.
 
 ## Properties
- `AuthorityName`
- Data type: `String`
 
- Access type: Read/Write
+`AuthorityName` Data type: `String`
 
- Qualifiers: [RealKey]
+Access type: Read/Write
 
- Name of the authority.
+Qualifiers: [RealKey]
 
- `PolicyDownloadsByBatch`
- Data type: `Boolean`
+Name of the authority.
 
- Access type: Read/Write
+`PolicyDownloadsByBatch` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if . The default value is `true`.
+Qualifiers: None
 
- `PolicyDownloadMethod`
- Data type: `String`
+`true` if . The default value is `true`.
 
- Access type: Read/Write
+`PolicyDownloadMethod` Data type: `String`
 
- Qualifiers: [ToInstance ToSubClass]
+Access type: Read/Write
 
- Method used by the Policy Agent to download policy files. Possible values are listed below. This value can only be NULL if `PolicyRequestTarget` is NULL. This value should not be changed.
+Qualifiers: [ToInstance ToSubClass]
+
+Method used by the Policy Agent to download policy files. Possible values are listed below. This value can only be NULL if `PolicyRequestTarget` is NULL. This value should not be changed.
 
 | Value | Description |
-| ----- | ----------- |
-|FILECOPY|Copy policy files using standard file copy operations. Policy paths must be local or Universal Naming Convention (UNC) file paths. This value is intended for testing only.|
-|HTTP|Download policy files synchronously by using direct HTTP. Policy paths must be HTTP URLs.|
-|BITS|Drizzle policy files asynchronously by using the Data Transfer Service. Policy paths must be HTTP URLs.|
+| --- | --- |
+| FILECOPY | Copy policy files using standard file copy operations. Policy paths must be local or Universal Naming Convention (UNC) file paths. This value is intended for testing only. |
+| HTTP | Download policy files synchronously by using direct HTTP. Policy paths must be HTTP URLs. |
+| BITS | Drizzle policy files asynchronously by using the Data Transfer Service. Policy paths must be HTTP URLs. |
 
- `PolicyDownloadsPerBatch`
- Data type: `UInt32`
+`PolicyDownloadsPerBatch` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: []
+Qualifiers: []
 
- For batch policy download. The default value is 150.
+For batch policy download. The default value is 150.
 
- `PolicyDownloadUsePeerCache`
- Data type: `Boolean`
+`PolicyDownloadUsePeerCache` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: []
+Qualifiers: []
 
- `true` to use peer cache.
+`true` to use peer cache.
 
- `PolicyEnableUserAuthForAllUserPolicies`
- Data type: `Boolean`
+`PolicyEnableUserAuthForAllUserPolicies` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: []
+Qualifiers: []
 
- `true` to enable user policy polling.
+`true` to enable user policy polling.
 
- `PolicyEnableUserGroupSupport`
- Data type: `Boolean`
+`PolicyEnableUserGroupSupport` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [Not_Null:ToInstance ToSubClass]
+Qualifiers: [Not_Null:ToInstance ToSubClass]
 
- `true` if the Policy Agent sends user group information when requesting a user policy.
+`true` if the Policy Agent sends user group information when requesting a user policy.
 
- This method/property has been removed or deprecated in Configuration Manager SP1.
+This method/property has been removed or deprecated in Configuration Manager SP1.
 
- `PolicyEnableUserPolicyOnInternet`
- Data type: `Boolean`
+`PolicyEnableUserPolicyOnInternet` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: []
+Qualifiers: []
 
- `true` to
+`true` to
 
- `PolicyEnableUserPolicyPolling`
- Data type: `Boolean`
+`PolicyEnableUserPolicyPolling` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- `true` to enable user policy polling.
+`true` to enable user policy polling.
 
- `PolicyExpirationTimeForDefaultPerUserRequestedConfig`
- Data type: `UInt32`
+`PolicyExpirationTimeForDefaultPerUserRequestedConfig` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
+`PolicyID` Data type: `String`
 
+Access type: Read/Write
 
- `PolicyID`
- Data type: `String`
+Qualifiers: [key]
 
- Access type: Read/Write
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Qualifiers: [key]
+`PolicyInstanceID` Data type: `String`
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Access type: Read/Write
 
- `PolicyInstanceID`
- Data type: `String`
+Qualifiers: [key]
 
- Access type: Read/Write
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Qualifiers: [key]
+`PolicyPrecedence` Data type: `UInt32`
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Access type: Read/Write
 
- `PolicyPrecedence`
- Data type: `UInt32`
+Qualifiers: [key]
 
- Access type: Read/Write
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Qualifiers: [key]
+`PolicyRequestAssignmentTimeout` Data type: `UInt32`
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Access type: Read/Write
 
- `PolicyRequestAssignmentTimeout`
- Data type: `UInt32`
+Qualifiers: None
 
- Access type: Read/Write
+Timeout for the policy request assignment.
 
- Qualifiers: None
+`PolicyRuleID` Data type: `String`
 
- Timeout for the policy request assignment.
+Access type: Read/Write
 
- `PolicyRuleID`
- Data type: `String`
+Qualifiers: [key]
 
- Access type: Read/Write
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Qualifiers: [key]
+`PolicySource` Data type: `String`
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Access type: Read/Write
 
- `PolicySource`
- Data type: `String`
+Qualifiers: [key]
 
- Access type: Read/Write
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Qualifiers: [key]
+`PolicyTimeDelayBeforeUserPolicyRefreshAtLogonOrUnlock` Data type: `UInt32`
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Access type: Read/Write
 
- `PolicyTimeDelayBeforeUserPolicyRefreshAtLogonOrUnlock`
- Data type: `UInt32`
+Qualifiers: None
 
- Access type: Read/Write
+PolicyTimeDelayBeforeUserPolicyRefreshAtLogonOrUnlock.
 
- Qualifiers: None
+`PolicyTimeUntilAck` Data type: `UInt32`
 
- PolicyTimeDelayBeforeUserPolicyRefreshAtLogonOrUnlock.
+Access type: Read/Write
 
- `PolicyTimeUntilAck`
- Data type: `UInt32`
+Qualifiers: None
 
- Access type: Read/Write
+The time that must elapse before the policy is acknowledged.
 
- Qualifiers: None
+`PolicyTimeUntilExpire` Data type: `UInt32`
 
- The time that must elapse before the policy is acknowledged.
+Access type: Read/Write
 
- `PolicyTimeUntilExpire`
- Data type: `UInt32`
+Qualifiers: None
 
- Access type: Read/Write
+The number of days that the Policy Agent should wait since it last received a `ReplyAssignments` message from the authority before removing its policy. At half this time, the Policy Agent begins requesting acknowledgments. If this value is NULL, the policy never expires.
 
- Qualifiers: None
+`PolicyTimeUntilUpdateActualConfig` Data type: `UInt32`
 
- The number of days that the Policy Agent should wait since it last received a `ReplyAssignments` message from the authority before removing its policy. At half this time, the Policy Agent begins requesting acknowledgments. If this value is NULL, the policy never expires.
+Access type: Read/Write
 
- `PolicyTimeUntilUpdateActualConfig`
- Data type: `UInt32`
+Qualifiers: None
 
- Access type: Read/Write
+The time that must elapse before the actual configuration is updated.
 
- Qualifiers: None
+`PolicyVersion` Data type: `String`
 
- The time that must elapse before the actual configuration is updated.
+Access type: Read/Write
 
- `PolicyVersion`
- Data type: `String`
+Qualifiers: [key]
 
- Access type: Read/Write
-
- Qualifiers: [key]
-
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Policy Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/policy-agent-client-wmi-classes.md)
- [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md)
+
+[Policy Agent Client WMI Classes](policy-agent-client-wmi-classes.md) [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md)

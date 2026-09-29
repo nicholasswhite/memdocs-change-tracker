@@ -1,7 +1,7 @@
 ---
-title: Supported site system servers
+title: "Supported operating systems for Configuration Manager site system servers"
 description: Learn which Windows versions you can use to host a Configuration Manager site or site system role.
-ms.date: 12/19/2024
+ms.date: "2024-12-19T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: reference
 ms.collection: tier3
@@ -16,7 +16,7 @@ This article details the Windows versions that you can use to host a Configurati
 
 ## Windows Server 2025
 
-_Applies to Datacenter: Azure Edition, Standard and Datacenter editions_
+*Applies to Datacenter: Azure Edition, Standard and Datacenter editions*
 
 Site servers:
 
@@ -42,7 +42,7 @@ Site system servers:
 
 ## Windows Server 2022
 
-_Applies to Datacenter: Azure Edition, Standard and Datacenter editions_
+*Applies to Datacenter: Azure Edition, Standard and Datacenter editions*
 
 Site servers:
 
@@ -71,7 +71,7 @@ Site system servers:
 
 ## Windows Server 2019
 
-_Applies to Standard and Datacenter editions_
+*Applies to Standard and Datacenter editions*
 
 Site servers:
 
@@ -100,7 +100,7 @@ Site system servers:
 
 ## Windows Server 2016
 
-_Applies to Standard and Datacenter editions_
+*Applies to Standard and Datacenter editions*
 
 Site servers:
 
@@ -135,7 +135,7 @@ Site system server:
 
 ## Windows Server 2012/2012 R2
 
-_Applies to Standard and Datacenter_
+*Applies to Standard and Datacenter*
 
 On October 10th, 2023, Windows Server 2012 and Windows Server 2012 R2 entered the Extended Support Updates phase. Microsoft will no longer provide support for Configuration Manager site servers or roles installed to these Operating Systems. For more information, see [Extended Security Updates and Configuration Manager](supported-operating-systems-for-clients-and-devices.md#bkmk_ESU).
 
@@ -151,11 +151,10 @@ The following client OS versions are supported for use as a **distribution point
 
 - Windows 11
 
-    For more information on supported build versions and editions, see [Support for Windows 11](support-for-windows-11.md).
-
+  For more information on supported build versions and editions, see [Support for Windows 11](support-for-windows-11.md).
 - Windows 10 (x86, x64)
 
-    For more information on supported build versions and editions, see [Support for Windows 10](support-for-windows-10.md).
+  For more information on supported build versions and editions, see [Support for Windows 10](support-for-windows-10.md).
 
 This support has the following limitation:
 
@@ -183,13 +182,13 @@ This support has the following limitation:
 
 On October 10th, 2023, Windows Server 2012 and Windows Server 2012 R2 will enter the Extended Support Updates phase. Microsoft will no longer provide support for Configuration Manager site servers or roles installed to these Operating Systems. For more information, see [Extended Security Updates and Configuration Manager](supported-operating-systems-for-clients-and-devices.md#bkmk_ESU).
 
-### <a name="bkmk_note1"></a> Note 1: Distribution points
+### Note 1: Distribution points
 
 Distribution points support several different configurations that each have different requirements. In some cases, these configurations support installation not only on servers, but on client operating systems. For more information, see [Manage content and content infrastructure](../../servers/deploy/configure/manage-content-and-content-infrastructure.md).
 
-### <a name="bkmk_note2"></a> Note 2: Site database servers
+### Note 2: Site database servers
 
-Site database servers aren't supported on a read-only domain controller (RODC). For more information, see [SQL Server security considerations: Installing SQL Server on a domain controller](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#Install_DC).
+Site database servers aren't supported on a read-only domain controller (RODC). For more information, see [SQL Server security considerations: Installing SQL Server on a domain controller](https://learn.microsoft.com/en-us/sql/sql-server/install/security-considerations-for-a-sql-server-installation#Install_DC).
 
 Additionally, secondary site servers aren't supported on any domain controller.
 

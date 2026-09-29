@@ -1,7 +1,7 @@
 ---
 title: Create device groups for Windows Autopilot
 description: Learn how to create device groups for Windows Autopilot.
-ms.date: 09/13/2024
+ms.date: "2024-09-13T00:00:00Z"
 ms.topic: how-to
 ms.collection:
   - M365-modern-desktop
@@ -17,42 +17,34 @@ appliesto:
 
 > [!NOTE]
 >
-> HoloLens 2 devices require Windows Autopilot self-deploying mode. For more information about using Windows Autopilot to deploy HoloLens 2 devices, see [Windows Autopilot for HoloLens 2](/hololens/hololens2-autopilot). **Assign to User** isn't applicable for self-deployment Windows Autopilot mode on HoloLens 2.
+> HoloLens 2 devices require Windows Autopilot self-deploying mode. For more information about using Windows Autopilot to deploy HoloLens 2 devices, see [Windows Autopilot for HoloLens 2](https://learn.microsoft.com/en-us/hololens/hololens2-autopilot). **Assign to User** isn't applicable for self-deployment Windows Autopilot mode on HoloLens 2.
 
 ## Create a Windows Autopilot device group using Intune
 
-1. In the [Microsoft Intune admin center], select **Groups** > **New group**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Groups** &gt; **New group**.
+2. In **New Group**, configure the following properties:
 
-1. In **New Group**, configure the following properties:
+   - **Group type**: Select **Security**.
+   - **Group name** and **Group description**: Enter a name and description for the group.
+   - **Microsoft Entra roles can be assigned to the group**: Select **No**, Microsoft Entra roles aren't assigned to this group.
 
-    - **Group type**: Select **Security**.
+     For more information, see [Use cloud groups to manage role assignments in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/roles/groups-concept).
+   - **Membership type**: Select how devices become members of this group. Select **Dynamic Device**. For more information, see [Add groups to organize users and devices](../intune/fundamentals/tenant-administration/add-groups.md).
+   - **Owners**: Select users that own the group. Owners can also delete this group.
+   - **Dynamic device members**: Select **Add dynamic query** &gt; **Add expression**.
 
-    - **Group name** and **Group description**: Enter a name and description for the group.
+     Create rules using Windows Autopilot device attributes. Windows Autopilot devices that meet these rules are automatically added to the group.
 
-    - **Microsoft Entra roles can be assigned to the group**: Select **No**, Microsoft Entra roles aren't assigned to this group.
+     > [!NOTE]
+     >
+     > You should only create groups using the Autopilot device attributes, which are available only on registered devices. Creating an expression using non-Windows Autopilot attributes doesn't guarantee that devices will be members of the group before provisioning and could result in unexpected configuration during OOBE.
 
-      For more information, see [Use cloud groups to manage role assignments in Microsoft Entra ID](/azure/active-directory/roles/groups-concept).
+     When creating expressions:
 
-    - **Membership type**: Select how devices become members of this group. Select **Dynamic Device**. For more information, see [Add groups to organize users and devices](/intune/fundamentals/tenant-administration/add-groups).
-
-    - **Owners**: Select users that own the group. Owners can also delete this group.
-
-   - **Dynamic device members**: Select **Add dynamic query** > **Add expression**.
-   
-     Create rules using Windows Autopilot device attributes. Windows Autopilot devices that meet these rules are automatically added to the group. 
-     
-      > [!NOTE] 
-      >
-      > You should only create groups using the Autopilot device attributes, which are available only on registered devices. Creating an expression using non-Windows Autopilot attributes doesn't guarantee that devices will be members of the group before provisioning and could result in unexpected configuration during OOBE.
-   
-
-      When creating expressions:
-        - To create a group that includes all of the Windows Autopilot devices, enter: `(device.devicePhysicalIDs -any (_ -startsWith "[ZTDid]"))`.
-        - Intune's group tag field maps to the `OrderID` attribute on Microsoft Entra devices. To create a group that includes all Windows Autopilot devices with a specific group tag (the Microsoft Entra device `OrderID`), enter: `(device.devicePhysicalIds -any (_ -eq "[OrderID]:179887111881"))`.
-        - To create a group that includes all the Windows Autopilot devices with a specific Purchase Order ID, enter: `(device.devicePhysicalIds -any (_ -eq "[PurchaseOrderId]:76222342342"))`
-      **Save** the expressions.
-
-1. Select **Create**.
+     - To create a group that includes all of the Windows Autopilot devices, enter: `(device.devicePhysicalIDs -any (_ -startsWith "[ZTDid]"))`.
+     - Intune's group tag field maps to the `OrderID` attribute on Microsoft Entra devices. To create a group that includes all Windows Autopilot devices with a specific group tag (the Microsoft Entra device `OrderID`), enter: `(device.devicePhysicalIds -any (_ -eq "[OrderID]:179887111881"))`.
+     - To create a group that includes all the Windows Autopilot devices with a specific Purchase Order ID, enter: `(device.devicePhysicalIds -any (_ -eq "[PurchaseOrderId]:76222342342"))` **Save** the expressions.
+3. Select **Create**.
 
 For a detailed tutorial on creating a device group for each of the Windows Autopilot scenarios using Intune, see the following links:
 
@@ -83,23 +75,15 @@ For more information including a list of supported OEMs, see [Return of key func
 >
 > Assigning a user to a specific Windows Autopilot device doesn't work if using Active Directory Federation Services (ADFS).
 
-1. Sign in to the [Microsoft Intune admin center].
-
-1. In the **Home** screen, select **Devices** in the left hand pane.
-
-1. In the **Devices | Overview** screen, under **By platform**, select **Windows**.
-
-1. In the **Windows | Windows devices** screen, under **Device onboarding**, select **Enrollment**.
-
-1. In the **Windows | Windows enrollment** screen, under **Windows Autopilot**, select **Devices**.
-
-1. In the **Windows Autopilot devices** screen, select a device, and then in the toolbar select **Assign user**.
-
-1. Select a Microsoft Entra ID user licensed to use Intune and select **Select**.
-
-1. In the **User Friendly Name** box, enter a friendly name or just accept the default.
-
-1. Select **Save**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Devices** in the left hand pane.
+3. In the **Devices | Overview** screen, under **By platform**, select **Windows**.
+4. In the **Windows | Windows devices** screen, under **Device onboarding**, select **Enrollment**.
+5. In the **Windows | Windows enrollment** screen, under **Windows Autopilot**, select **Devices**.
+6. In the **Windows Autopilot devices** screen, select a device, and then in the toolbar select **Assign user**.
+7. Select a Microsoft Entra ID user licensed to use Intune and select **Select**.
+8. In the **User Friendly Name** box, enter a friendly name or just accept the default.
+9. Select **Save**.
 
 For a detailed tutorial on assigning a user for each of the Windows Autopilot scenarios via Intune, see the following articles:
 
@@ -120,7 +104,7 @@ If there isn't interest in mobile device management (MDM), Windows Autopilot can
 
 ## Windows Autopilot for existing devices
 
-When enrolling Windows devices via [Windows Autopilot for existing devices](tutorial/existing-devices/existing-devices-workflow.md), a correlator ID can be used to group the Windows devices. The correlator ID is a parameter of the Windows Autopilot configuration file. The [Microsoft Entra device attribute enrollmentProfileName](/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices) is automatically set to equal **OfflineAutopilotprofile-\<correlator ID\>**. Arbitrary Microsoft Entra dynamic groups can be created when using the correlator ID from the **enrollmentprofileName** attribute.
+When enrolling Windows devices via [Windows Autopilot for existing devices](tutorial/existing-devices/existing-devices-workflow.md), a correlator ID can be used to group the Windows devices. The correlator ID is a parameter of the Windows Autopilot configuration file. The [Microsoft Entra device attribute enrollmentProfileName](https://learn.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-dynamic-membership#rules-for-devices) is automatically set to equal **OfflineAutopilotprofile-&lt;correlator ID&gt;**. Arbitrary Microsoft Entra dynamic groups can be created when using the correlator ID from the **enrollmentprofileName** attribute.
 
 > [!WARNING]
 >
@@ -147,8 +131,4 @@ For a detailed tutorial on configuring and assigning a Windows Autopilot deploym
 - [Pre-provision Microsoft Entra hybrid join: Create and assign a pre-provisioned Microsoft Entra hybrid join Windows Autopilot profile](tutorial/pre-provisioning/hybrid-azure-ad-join-autopilot-profile.md).
 - [Self-deploying mode: Create and assign self-deploying Windows Autopilot profile](tutorial/self-deploying/self-deploying-autopilot-profile.md).
 
-For more information about managing Windows Autopilot devices, see [What is Microsoft Intune device management?](/intune/intune-service/remote-actions/device-management).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+For more information about managing Windows Autopilot devices, see [What is Microsoft Intune device management?](https://learn.microsoft.com/en-us/intune/intune-service/remote-actions/device-management).

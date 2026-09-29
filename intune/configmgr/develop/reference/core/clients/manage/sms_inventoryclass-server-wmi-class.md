@@ -1,16 +1,18 @@
 ---
-title: SMS_InventoryClass Class
+title: "SMS_InventoryClass Server WMI Class"
 description: In Configuration Manager, the SMS_InventoryClass Windows Management Instrumentation class is an SMS Provider server class that represents inventory classes that exist in the system.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_InventoryClass Server WMI Class
+
 The `SMS_InventoryClass` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents inventory classes that exist in the system.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,91 +31,87 @@ Class SMS_InventoryClass :
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_InventoryClass` class.
 
-|Method|Description|
-|------------|-----------------|
-|GetInventoryClassesFromMof Method in Class SMS_InventoryClass|For internal use only.|
+The following table lists the methods in the `SMS_InventoryClass` class.
+
+| Method | Description |
+| --- | --- |
+| GetInventoryClassesFromMof Method in Class SMS_InventoryClass | For internal use only. |
 
 ## Properties
- `ClassName`
- Data type: `String`
 
- Access type: Read/Write
+`ClassName` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The WMI name of the inventory class.
+Qualifiers: [not_null]
 
- `IsDeletable`
- Data type: `Boolean`
+The WMI name of the inventory class.
 
- Access type: Read-only
+`IsDeletable` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- For internal use only.
+Qualifiers: [read]
 
- `Namespace`
- Data type: `String`
+For internal use only.
 
- Access type: Read/Write
+`Namespace` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The WMI namespace.
+Qualifiers: [not_null]
 
- `Properties`
- Data type: `Object Array`
+The WMI namespace.
 
- Access type: Read/Write
+`Properties` Data type: `Object Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The properties of this class.
+Qualifiers: none
 
- `SMSClassID`
- Data type: `String`
+The properties of this class.
 
- Access type: Read/Write
+`SMSClassID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The Class ID that will be used to generate the database table, view and the UI SDK class.
+Qualifiers: [key]
 
- `SMSContext`
- Data type: `String`
+The Class ID that will be used to generate the database table, view and the UI SDK class.
 
- Access type: Read/Write
+`SMSContext` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- SMS contexts in XML format. This can support multiple contexts.
+Qualifiers: none
 
- `SMSDeviceUri`
- Data type: `String`
+SMS contexts in XML format. This can support multiple contexts.
 
- Access type: Read/Write
+`SMSDeviceUri` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- SMS device URI in XML format. This could support multiple device URIs.
+Qualifiers: none
 
- `SMSGroupName`
- Data type: `String`
+SMS device URI in XML format. This could support multiple device URIs.
 
- Access type: Read/Write
+`SMSGroupName` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The default class name displayed in the MOF editor and Resource Explorer, if no localized resources are provided.
+Qualifiers: [not_null]
+
+The default class name displayed in the MOF editor and Resource Explorer, if no localized resources are provided.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

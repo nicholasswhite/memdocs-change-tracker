@@ -1,16 +1,18 @@
 ---
 description: Learn how to describe the permission granted to a specific admin in Configuration Manager using SMS_APermission class.
-title: SMS_APermission Class
-ms.date: 09/20/2016
+title: "SMS_APermission Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_APermission Server WMI Class
+
 The `SMS_APermission` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is embedded by `SMS_Admin` and describes the permission granted to a specific admin.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,63 +28,62 @@ Class SMS_APermission :
 ```
 
 ## Methods
- The `SMS_APermission` class does not define any methods.
+
+The `SMS_APermission` class does not define any methods.
 
 ## Properties
- `CategoryID`
- Data type: `String`
 
- Access type: Read/Write
+`CategoryID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the associated RBA security category or collection.
+Qualifiers: None
 
- `CategoryName`
- Data type: `String`
+ID of the associated RBA security category or collection.
 
- Access type: Read-only
+`CategoryName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the RBA security category or collection.
+Qualifiers: [read]
 
- `CategoryTypeID`
- Data type: `UInt32`
+Name of the RBA security category or collection.
 
- Access type: Read/Write
+`CategoryTypeID` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- The type of category. The default value is 29.
+Qualifiers: [enumeration]
 
-|Value|Category type|
-|-|-|
-|1|Collection|
-|29|SecuredScope|
+The type of category. The default value is 29.
 
- `RoleID`
- Data type: `String`
+| Value | Category type |
+| --- | --- |
+| 1 | Collection |
+| 29 | SecuredScope |
 
- Access type: Read/Write
+`RoleID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the security role.
+Qualifiers: None
 
- `RoleName`
- Data type: `String`
+ID of the security role.
 
- Access type: Read-only
+`RoleName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the role.
+Qualifiers: [read]
+
+Name of the role.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: SMS_MigrationJob Class
+title: "SMS_MigrationJob Server WMI Class"
 description: The SMS_MigrationJob WMI class is an SMS Provider server class that represents a migration job.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MigrationJob Server WMI Class
+
 The `SMS_MigrationJob` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a migration job.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -52,24 +54,25 @@ Class SMS_MigrationJob : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_MigrationJob` class.
 
-|Method|Description|
-|------------|-----------------|
-|[Start Method in Class SMS_MigrationJob](../../../../develop/reference/core/migration/start-method-in-class-sms_migrationjob.md)|Starts the migration job.|
-|[Stop Method in Class SMS_MigrationJob](../../../../develop/reference/core/migration/stop-method-in-class-sms_migrationjob.md)|Stops the migration job.|
+The following table lists the methods in the `SMS_MigrationJob` class.
+
+| Method | Description |
+| --- | --- |
+| [Start Method in Class SMS_MigrationJob](start-method-in-class-sms_migrationjob.md) | Starts the migration job. |
+| [Stop Method in Class SMS_MigrationJob](stop-method-in-class-sms_migrationjob.md) | Stops the migration job. |
 
 ## Properties
- `AdditionalConfiguration`
- Data type: `String`
 
- Access type: Read/Write
+`AdditionalConfiguration` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Additional configuration for migration jobs.
+Qualifiers: none
 
- For a collection migration job, the configuration contains the collections information included in this job. The format is like:
+Additional configuration for migration jobs.
+
+For a collection migration job, the configuration contains the collections information included in this job. The format is like:
 
 ```
 <MigrationJob>
@@ -82,7 +85,7 @@ Class SMS_MigrationJob : SMS_BaseClass
 </MigrationJob>
 ```
 
- For a distribution point upgrade job, the configuration contains the settings to upgrade a shared distribution point. The format is like:
+For a distribution point upgrade job, the configuration contains the settings to upgrade a shared distribution point. The format is like:
 
 ```
 <DPUpgrade>
@@ -109,301 +112,274 @@ Class SMS_MigrationJob : SMS_BaseClass
 </DPUpgrade>
 ```
 
- `CreatedBy`
- Data type: `String`
+`CreatedBy` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Name of the user who created this job.
+Name of the user who created this job.
 
- `CustomBootImagePackage_x64`
- Data type: `String`
+`CustomBootImagePackage_x64` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- PackageID of a boot image package to use for x64 boot images in place of the default.
+PackageID of a boot image package to use for x64 boot images in place of the default.
 
- `CustomBootImagePackage_x86`
- Data type: `String`
+`CustomBootImagePackage_x86` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- PackageID of a boot image package to use for x86 boot images in place of the default.
+PackageID of a boot image package to use for x86 boot images in place of the default.
 
- `DateCreated`
- Data type: `DateTime`
+`DateCreated` Data type: `DateTime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Time that the job was created.
+Time that the job was created.
 
- `DateEnded`
- Data type: `DateTime`
+`DateEnded` Data type: `DateTime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Time that the job ended.
+Time that the job ended.
 
- `DateLastUpdated`
- Data type: `DateTime`
+`DateLastUpdated` Data type: `DateTime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Time that the job was last updated.
+Time that the job was last updated.
 
- `DateNextRun`
- Data type: `DateTime`
+`DateNextRun` Data type: `DateTime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Time that the job will run next.
+Time that the job will run next.
 
- `DateStarted`
- Data type: `DateTime`
+`DateStarted` Data type: `DateTime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Time that the job started.
+Time that the job started.
 
- `Description`
- Data type: `String`
+`Description` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Description of the job.
+Description of the job.
 
- `DestinationSiteCode`
- Data type: `String`
+`DestinationSiteCode` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Destination site code.
+Destination site code.
 
- `DestinationSiteFQDN`
- Data type: `String`
+`DestinationSiteFQDN` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Destination site FQDN.
+Destination site FQDN.
 
- `DisableAdvertisements`
- Data type: `Boolean`
+`DisableAdvertisements` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- `true` if migrated advertisements will be disabled.
+`true` if migrated advertisements will be disabled.
 
- `FailedObjectNumber`
- Data type: `UInt32`
+`FailedObjectNumber` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Number of failed objects.
+Number of failed objects.
 
- `JobID`
- Data type: `UInt32`
+`JobID` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [key, read]
+Qualifiers: [key, read]
 
- Identifier of the job.
+Identifier of the job.
 
- `JobName`
- Data type: `String`
+`JobName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Name of the job.
+Name of the job.
 
- `MigratedObjectNumber`
- Data type: `UInt32`
+`MigratedObjectNumber` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Number of migrated objects.
+Number of migrated objects.
 
- `MigrateWithFolders`
- Data type: `Boolean`
+`MigrateWithFolders` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- `true` if the folder structure should be migrated along with the objects.
+`true` if the folder structure should be migrated along with the objects.
 
- `ModifiedBy`
- Data type: `String`
+`ModifiedBy` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Name of the user who most recently modified this job.
+Name of the user who most recently modified this job.
 
- `ResolveObjectConflictOption`
- Data type: `UInt32`
+`ResolveObjectConflictOption` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Resolve object conflict option.
+Resolve object conflict option.
 
- `ScheduleToken`
- Data type: `String`
+`ScheduleToken` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Schedule token, writable only with the manage migration Job right..
+Schedule token, writable only with the manage migration Job right..
 
- `ScopeIDs`
- Data type: `String Array`
+`ScopeIDs` Data type: `String Array`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [lazy]
+Qualifiers: [lazy]
 
- Scope IDs that migrated entities should be in.
+Scope IDs that migrated entities should be in.
 
- `SkippedObjectNumber`
- Data type: `UInt32`
+`SkippedObjectNumber` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Number of skipped objects.
+Number of skipped objects.
 
- `SourceCollectionIDs`
- Data type: `String Array`
+`SourceCollectionIDs` Data type: `String Array`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [lazy]
+Qualifiers: [lazy]
 
- Source collection IDs selected for migration.
+Source collection IDs selected for migration.
 
- `SourceObjectIDs`
- Data type: `UInt32 Array`
+`SourceObjectIDs` Data type: `UInt32 Array`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [lazy]
+Qualifiers: [lazy]
 
- Source object IDs included in the job.
+Source object IDs included in the job.
 
- `SourceSiteCode`
- Data type: `String`
+`SourceSiteCode` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Source site code.
+Source site code.
 
- `SourceSiteFQDN`
- Data type: `String`
+`SourceSiteFQDN` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Source site FQDN.
+Source site FQDN.
 
- `SourceSiteID`
- Data type: `UInt32`
+`SourceSiteID` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Source site ID.
+Source site ID.
 
- `Status`
- Data type: `UInt32`
+`Status` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [enumeration, read]
+Qualifiers: [enumeration, read]
 
- Job status. Possible values are:
+Job status. Possible values are:
 
-|Value|Job status|
-|-|-|
-|0|NotStarted|
-|1|Completed|
-|2|Running|
-|3|Failed|
-|4|Stopped|
+| Value | Job status |
+| --- | --- |
+| 0 | NotStarted |
+| 1 | Completed |
+| 2 | Running |
+| 3 | Failed |
+| 4 | Stopped |
 
- `TotalObjectNumber`
- Data type: `UInt32`
+`TotalObjectNumber` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Number of objects.
+Number of objects.
 
- `Type`
- Data type: `UInt32`
+`Type` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [enumeration]
+Qualifiers: [enumeration]
 
- The type of job. Possible values are:
+The type of job. Possible values are:
 
-|Value|Job type|
-|-|-|
-|1|Object|
-|2|Client|
-|3|ObjectandClient|
+| Value | Job type |
+| --- | --- |
+| 1 | Object |
+| 2 | Client |
+| 3 | ObjectandClient |
 
 ## Remarks
- Migration jobs are the object used by the server components to perform a migration task. There are three types of migration jobs: 1) collection migration job, 2) object migration job and 3) distribution point upgrade job. Job types are defined using the `Type` property.
 
- Collection migration jobs include the collections and collection related information such as the limiting collection, the source site code and the destination site code. Object migration jobs can include objects such as packages, but cannot include the collections and the targeting objects such as advertisements. Distribution point upgrade jobs can upgrade a shared distribution point to a Configuration Manager regular distribution point.
+Migration jobs are the object used by the server components to perform a migration task. There are three types of migration jobs: 1) collection migration job, 2) object migration job and 3) distribution point upgrade job. Job types are defined using the `Type` property.
 
- For collection migration jobs and object migration jobs, the included objects' entity ID is stored as an array of properties on the job, SourceCollectionIDs and SourceObjectIDs. For distribution point upgrade jobs, the settings for the new site system and distribution point are stored as XML in the property `AdditionalConfiguration`. All job types are scheduled by using the `ScheduleToken` property.
+Collection migration jobs include the collections and collection related information such as the limiting collection, the source site code and the destination site code. Object migration jobs can include objects such as packages, but cannot include the collections and the targeting objects such as advertisements. Distribution point upgrade jobs can upgrade a shared distribution point to a Configuration Manager regular distribution point.
+
+For collection migration jobs and object migration jobs, the included objects' entity ID is stored as an array of properties on the job, SourceCollectionIDs and SourceObjectIDs. For distribution point upgrade jobs, the settings for the new site system and distribution point are stored as XML in the property `AdditionalConfiguration`. All job types are scheduled by using the `ScheduleToken` property.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).

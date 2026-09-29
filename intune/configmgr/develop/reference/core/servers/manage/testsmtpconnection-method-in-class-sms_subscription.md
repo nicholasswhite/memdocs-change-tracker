@@ -1,16 +1,18 @@
 ---
-title: TestSmtpConnection Method
+title: "TestSmtpConnection Method in Class SMS_Subscription"
 description: A Windows Management Instrumentation class method that tests the SMTP connection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # TestSmtpConnection Method in Class SMS_Subscription
+
 The `TestSmtpConnection` Windows Management Instrumentation (WMI) class method, in Configuration Manager, tests the SMTP connection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -28,81 +30,77 @@ sint32 TestSmtpConnection(
 ```
 
 #### Parameters
- `ServerFqdn`
- Data type: `String`
 
- Qualifiers: `[in]`
+`ServerFqdn` Data type: `String`
 
- The FQDN of the SMTP server.
+Qualifiers: `[in]`
 
- `Port`
- Data type: `UInt32`
+The FQDN of the SMTP server.
 
- Qualifiers: `[in]`
+`Port` Data type: `UInt32`
 
- The port for the SMTP server.
+Qualifiers: `[in]`
 
- `Sender`
- Data type: `String`
+The port for the SMTP server.
 
- Qualifiers: `[in]`
+`Sender` Data type: `String`
 
- Email address of the sender.
+Qualifiers: `[in]`
 
- `Recipients`
- Data type: `String`
+Email address of the sender.
 
- Qualifiers: `[in]`
+`Recipients` Data type: `String`
 
- Email addresses of the recipients.
+Qualifiers: `[in]`
 
- `AuthenticationType`
- Data type: `UInt32`
+Email addresses of the recipients.
 
- Qualifiers: `[in]`
+`AuthenticationType` Data type: `UInt32`
 
- Authentication type. Possible values are:
+Qualifiers: `[in]`
+
+Authentication type. Possible values are:
 
 | Value | Authentication type |
-| ----- | ------------------- |
-|0|Anonymous access.|
-|1|Use the computer account of the site server.|
-|2|Use the specified user name and password.|
+| --- | --- |
+| 0 | Anonymous access. |
+| 1 | Use the computer account of the site server. |
+| 2 | Use the specified user name and password. |
 
- `UserName`
- Data type: `String`
+`UserName` Data type: `String`
 
- Qualifiers: `[in]`
+Qualifiers: `[in]`
 
- User name of the SMTP server connection account. This is used when `AuthenticationType` is 2.
+User name of the SMTP server connection account. This is used when `AuthenticationType` is 2.
 
- `EncryptPassword`
- Data type: `String`
+`EncryptPassword` Data type: `String`
 
- Qualifiers: `[in]`
+Qualifiers: `[in]`
 
- The encrypted password for the SMTP server connection account. This is used when `AuthenticationType` is 2.
+The encrypted password for the SMTP server connection account. This is used when `AuthenticationType` is 2.
 
- `TestID`
- Data type: `UInt32`
+`TestID` Data type: `UInt32`
 
- Qualifiers: `[out]`
+Qualifiers: `[out]`
 
- Test identifier. Used by `GetTestSmtpConnectionResult` to the test result.
+Test identifier. Used by `GetTestSmtpConnectionResult` to the test result.
 
 ## Return Values
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Subscription Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_subscription-server-wmi-class.md)
- [SMS_Subscription Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_subscription-server-wmi-class.md)
+
+[SMS_Subscription Server WMI Class](sms_subscription-server-wmi-class.md) [SMS_Subscription Server WMI Class](sms_subscription-server-wmi-class.md)

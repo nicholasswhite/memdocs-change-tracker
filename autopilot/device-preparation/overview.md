@@ -1,7 +1,7 @@
-﻿---
+---
 title: Overview of Windows Autopilot device preparation
 description: Windows Autopilot device preparation is used to set up and configure new devices, getting them ready for productive use.
-ms.date: 08/07/2026
+ms.date: "2026-08-07T00:00:00Z"
 ms.topic: overview
 ms.collection:
   - M365-modern-desktop
@@ -32,9 +32,7 @@ This article explores the capabilities of the Windows Autopilot device preparati
 - Windows 11, version 24H2 or later.
 - Windows 11, version 23H2 with [KB5035942](https://support.microsoft.com/topic/march-26-2024-kb5035942-os-builds-22621-3374-and-22631-3374-preview-3ad9affc-1a91-4fcb-8f98-1fe3be91d8df) or later.
 - Windows 11, version 22H2 with [KB5035942](https://support.microsoft.com/topic/march-26-2024-kb5035942-os-builds-22621-3374-and-22631-3374-preview-3ad9affc-1a91-4fcb-8f98-1fe3be91d8df) or later.
-
 - Microsoft Entra ID - only Microsoft Entra join is supported.
-
 - If the device is registered as a Windows Autopilot device, which deployment runs depends on the device's association state. If the device isn't associated with the tenant, the Windows Autopilot profile takes precedence. If the device is associated, device association takes precedence and the Windows Autopilot device preparation deployment runs. To use Windows Autopilot device preparation on a registered device without associating it, first [deregister the device](../registration-overview.md#deregister-a-device).
 
 For additional detailed requirements, see [Windows Autopilot device preparation requirements](requirements.md).
@@ -44,7 +42,6 @@ For additional detailed requirements, see [Windows Autopilot device preparation 
 When new Windows devices are initially deployed, Windows Autopilot device preparation uses the OEM-optimized version of Windows client. The OEM-optimized version of Windows client is preinstalled on the device, so custom images and drivers don't need to be maintained for every device model. Instead of re-imaging the device, with Windows Autopilot device preparation, the existing Windows installation can be transformed into a "business-ready" state that can:
 
 - Deliver Windows Autopilot device preparation configuration during device provisioning.
-
 - Automatically add devices to the device security group and receive selected applications and PowerShell scripts assigned to the group.
 
 ## Windows Autopilot device preparation improvements
@@ -59,18 +56,16 @@ Windows Autopilot device preparation is an improved profile experience that inco
 New features in Windows Autopilot device preparation include:
 
 - **Utilizing enrollment time grouping in Intune** - Device is added to a device security group at enrollment time and configuration is delivered immediately. This feature provides a faster and more reliable setup. For more information, see [Enrollment Time Grouping](#enrollment-time-grouping).
-
 - **Granular reporting** - Improved monitoring and troubleshooting. Monitoring and reporting with near real-time status of deployments, including:
 
   - Applications status
   - PowerShell scripts status
   - Deployment time. For more information, see [Windows Autopilot device preparation reporting and monitoring](reporting-monitoring.md).
-
-- **Support for Government Community Cloud High (GCCH) and Department of Defense (DoD) environments** - Windows Autopilot device preparation supports [GCCH and DoD](/intune/fundamentals/government-service) environments.
+- **Support for Government Community Cloud High (GCCH) and Department of Defense (DoD) environments** - Windows Autopilot device preparation supports [GCCH and DoD](../../intune/fundamentals/government-service.md) environments.
 
 > [!IMPORTANT]
 >
-> [Windows 365 Flex in shared mode](/windows-365/enterprise/introduction-windows-365-frontline) isn't supported for GCCH and DoD at this time.
+> [Windows 365 Flex in shared mode](https://learn.microsoft.com/en-us/windows-365/enterprise/introduction-windows-365-frontline) isn't supported for GCCH and DoD at this time.
 
 ## Capabilities
 
@@ -127,7 +122,7 @@ For Windows Autopilot device preparation:
 - Only applications and PowerShell scripts selected in the Windows Autopilot device preparation profile are deployed during OOBE. Any additional applications or PowerShell scripts assigned to the device group will be deployed after the Windows Autopilot device preparation deployment is complete.
 - For policies, Windows Autopilot device preparation syncs any policies assigned to the device group. However, Windows Autopilot device preparation doesn't track if the policies are applied during the deployment. The policies might be applied either during the deployment or after the deployment is complete.
 
-For more information, see [Enrollment time grouping in Microsoft Intune](/intune/intune-service/enrollment/enrollment-time-grouping).
+For more information, see [Enrollment time grouping in Microsoft Intune](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/enrollment-time-grouping).
 
 ### Corporate identifiers for Windows
 
@@ -135,9 +130,9 @@ Windows Autopilot device preparation supports the Intune corporate identifier en
 
 Windows Autopilot device preparation only requires corporate identifiers for Windows if Intune enrollment restrictions are being used to block personal device enrollments. For more information, see:
 
-- [Identify devices as corporate-owned](/intune/intune-service/enrollment/corporate-identifiers-add).
-- [What are enrollment restrictions?](/intune/intune-service/enrollment/enrollment-restrictions-set).
-- [Create device platform restrictions](/intune/intune-service/enrollment/create-device-platform-restrictions).
+- [Identify devices as corporate-owned](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/corporate-identifiers-add).
+- [What are enrollment restrictions?](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/enrollment-restrictions-set).
+- [Create device platform restrictions](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/create-device-platform-restrictions).
 
 ### Device association
 

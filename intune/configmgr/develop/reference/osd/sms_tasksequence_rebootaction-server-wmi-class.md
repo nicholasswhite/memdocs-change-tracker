@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_RebootAction Class
-ms.date: 09/20/2016
+title: "SMS_TaskSequence_RebootAction Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 description: Learn about the simplified syntax, methods, properties, and requirements of the SMS_TaskSequence_RebootAction server class.
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_RebootAction Server WMI Class
+
 The `SMS_TaskSequence_RebootAction` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a task sequence action that specifies restart options for the target computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,118 +33,112 @@ Class SMS_TaskSequence_RebootAction : SMS_TaskSequence_Action
 ```
 
 ## Methods
- The `SMS_TaskSequence_RebootAction` class does not define any methods.
+
+The `SMS_TaskSequence_RebootAction` class does not define any methods.
 
 ## Properties
- `Condition`
- Data type: `SMS_TaskSequence_Condition`
 
- Access type: Read/Write
+`Condition` Data type: `SMS_TaskSequence_Condition`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `ContinueOnError`
- Data type: `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`ContinueOnError` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `Description`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [AllowedLen("0-255")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [AllowedLen("0-255")]
 
- `Enabled`
- Data type: `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `Message`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Message` Data type: `String`
 
- Qualifiers: [AllowedLen("0-512")]
+Access type: Read/Write
 
- A user-defined message for display in the reboot dialog box. The message length can be between 0 and 512 characters.
+Qualifiers: [AllowedLen("0-512")]
 
- `MessageTimeout`
- Data type: `UInt32`
+A user-defined message for display in the reboot dialog box. The message length can be between 0 and 512 characters.
 
- Access type: Read/Write
+`MessageTimeout` Data type: `UInt32`
 
- Qualifiers: [VariableName("SMSRebootTimeout")]
+Access type: Read/Write
 
- The number of seconds that a user-defined message is displayed to the user before the computer restarts. Specify 0 seconds (default) to indicate that no reboot message should be displayed.
+Qualifiers: [VariableName("SMSRebootTimeout")]
 
- The task sequence variable that is associated with this property is SMSRebootTimeout. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
+The number of seconds that a user-defined message is displayed to the user before the computer restarts. Specify 0 seconds (default) to indicate that no reboot message should be displayed.
 
- `Name`
- Data type: `String`
+The task sequence variable that is associated with this property is SMSRebootTimeout. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [AllowedLen("1-100")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [AllowedLen("1-100")]
 
- `SupportedEnvironment`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`SupportedEnvironment` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [Not_Null:ToInstance]
 
- `Target`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Target` Data type: `String`
 
- Qualifiers: [Not_Null, CommandLineArg(1)]
+Access type: Read/Write
 
- The operating system to use for reboot. Possible values are:
+Qualifiers: [Not_Null, CommandLineArg(1)]
+
+The operating system to use for reboot. Possible values are:
 
 - HD
-
 - WinPE
 
-  `Timeout`
-  Data type: `UInt32`
+  `Timeout` Data type: `UInt32`
 
   Access type: Read/Write
 
   Qualifiers: None
 
-  See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+  See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
 
- [CommandLine("smsboot.exe /target:%1"),VariablePrefix("SMSReboot"),
+Class qualifiers for this class include:
 
- ActionCategory("General,6,1"),ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "RebootComputerControl", "TaskSequenceOptionControl"}]
+[CommandLine("smsboot.exe /target:%1"),VariablePrefix("SMSReboot"),
 
- For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+ActionCategory("General,6,1"),ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "RebootComputerControl", "TaskSequenceOptionControl"}]
+
+For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

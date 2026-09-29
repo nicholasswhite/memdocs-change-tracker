@@ -1,7 +1,7 @@
 ---
-title: SMS_DistributionPointInfo class
+title: "SMS_DistributionPointInfo server WMI class"
 description: An SMS Provider server class that provides information about a specific SMS_DistributionPoint server WMI class object.
-ms.date: 05/24/2019
+ms.date: "2019-05-24T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -65,11 +65,10 @@ Class SMS_DistributionPointInfo : SMS_BaseClass
 
 The following table lists the methods in the `SMS_DistributionPointInfo` class.
 
-|Method|Description|
-|-|-|
-|[GetChainedPullDPs Method in Class SMSDistributionPointInfo](getchainedpulldps-method-in-class-smsdistributionpointinfo.md)|Ensures that when a source distribution point is assigned, a looping chain is not generated.|
-|[SetDPMaintenanceMode method in class SMS_DistributionPointInfo](setdpmaintenancemode-method-in-class-sms-distributionpointinfo.md)|Starting in version 1902, put a distribution point in maintenance mode.|
-
+| Method | Description |
+| --- | --- |
+| [GetChainedPullDPs Method in Class SMSDistributionPointInfo](getchainedpulldps-method-in-class-smsdistributionpointinfo.md) | Ensures that when a source distribution point is assigned, a looping chain is not generated. |
+| [SetDPMaintenanceMode method in class SMS_DistributionPointInfo](setdpmaintenancemode-method-in-class-sms-distributionpointinfo.md) | Starting in version 1902, put a distribution point in maintenance mode. |
 
 ## Properties
 
@@ -153,9 +152,9 @@ Qualifiers: [enumeration, read]
 
 Distribution point flags.
 
-|Value|Distribution point flag|
-|-|-|
-|0|DP_TYPE_READONLY|
+| Value | Distribution point flag |
+| --- | --- |
+| 0 | DP_TYPE_READONLY |
 
 ### `Drive`
 
@@ -398,7 +397,6 @@ Qualifiers: [key]
 Resource type of the distribution point. The default value is "". The possible values are:
 
 - Server
-
 - Server share
 
 ### `ResponseDelay`
@@ -491,7 +489,6 @@ Qualifiers: none
 
 PXE user-device affinity (UDA) setting.
 
-
 ## Remarks
 
 Class qualifiers for this class include:
@@ -499,7 +496,6 @@ Class qualifiers for this class include:
 - Read (read-only)
 
 For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager class and property qualifiers](../../../misc/class-and-property-qualifiers.md).
-
 
 ## Requirements
 
@@ -510,7 +506,6 @@ For more information, see [Configuration Manager server runtime requirements](..
 ### Development requirements
 
 For more information, see [Configuration Manager server development requirements](../../../../core/reqs/server-development-requirements.md).
-
 
 ## See also
 

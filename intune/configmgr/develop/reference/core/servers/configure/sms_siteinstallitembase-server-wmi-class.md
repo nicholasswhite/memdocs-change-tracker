@@ -1,16 +1,18 @@
 ---
-title: SMS_SiteInstallItemBase Class
+title: "SMS_SiteInstallItemBase Server WMI Class"
 description: An SMS Provider server class that represents the abstract base class from which all specific site install item configuration classes are derived.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SiteInstallItemBase Server WMI Class
+
 The `SMS_SiteInstallItemBase` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the abstract base class from which all specific site install item configuration classes are derived.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,44 +27,40 @@ Class SMS_SiteInstallItemBase : SMS_SiteInstallItem
 ```
 
 ## Methods
- The `SMS_SiteInstallItemBase` class does not define any methods.
+
+The `SMS_SiteInstallItemBase` class does not define any methods.
 
 ## Properties
- `ItemName`
- Data type: `String`
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `Units`
- Data type: `String` Array
+See [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md).
 
- Access type: Read/Write
+`Units` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read/Write
 
- Units to install. Possible values are:
+Qualifiers: None
+
+Units to install. Possible values are:
 
 - SMS
-
 - ADMIN_UI
-
 - Remote control
 
-  `SiteCode`
-  Data type: `String`
+  `SiteCode` Data type: `String`
 
   Access type: Read-only
 
@@ -71,24 +69,26 @@ Class SMS_SiteInstallItemBase : SMS_SiteInstallItem
   For internal use only.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  Use classes derived from [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md) to view the install map represented by [SMS_SiteInstallMap Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallmap-server-wmi-class.md).
+  Use classes derived from [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md) to view the install map represented by [SMS_SiteInstallMap Server WMI Class](sms_siteinstallmap-server-wmi-class.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteInstallMap Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallmap-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteInstallMap Server WMI Class](sms_siteinstallmap-server-wmi-class.md)

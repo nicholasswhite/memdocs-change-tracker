@@ -1,16 +1,18 @@
 ---
 description: Learn how to create a client configuration request (CCR) for a particular resource in Configuration Manager.
-title: CreateCCR Method
-ms.date: 09/20/2016
+title: "CreateCCR Method in Class SMS_Collection"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CreateCCR Method in Class SMS_Collection
+
 The `CreateCCR` Windows Management Instrumentation (WMI) class method creates a client configuration request (CCR) for a particular resource.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -29,78 +31,73 @@ SInt32 CreateCCR(
 ```
 
 #### Parameters
- `ResourceID`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`ResourceID` Data type: `UInt32`
 
- ID of a member resource.
+Qualifiers: [in]
 
- `PushOnlyAssignedClients`
- Data type: `Boolean`
+ID of a member resource.
 
- Qualifiers: [in, optional]
+`PushOnlyAssignedClients` Data type: `Boolean`
 
- This property is deprecated.
+Qualifiers: [in, optional]
 
- `ClientType`
- This property is deprecated.
+This property is deprecated.
 
- `Forced`
- Data type: `Boolean`
+`ClientType` This property is deprecated.
 
- Qualifiers: [in, optional]
+`Forced` Data type: `Boolean`
 
- `true` to force installation. This defaults to `false`, if not specified. This is used for force reinstallation, even if the client is already installed. If set to `true`, the operating system is ignored.
+Qualifiers: [in, optional]
 
- `ForceReinstall`
- Data type: `Boolean`
+`true` to force installation. This defaults to `false`, if not specified. This is used for force reinstallation, even if the client is already installed. If set to `true`, the operating system is ignored.
 
- Qualifiers: [in, optional]
+`ForceReinstall` Data type: `Boolean`
 
- `true` to force reinstallation. The value defaults to false, if not specified.
+Qualifiers: [in, optional]
 
- `PushEvenIfDC`
- Data type: `Boolean`
+`true` to force reinstallation. The value defaults to false, if not specified.
 
- Qualifiers: [in, optional]
+`PushEvenIfDC` Data type: `Boolean`
 
- `true` to push installation on a domain component. The value defaults to false, if not specified.
+Qualifiers: [in, optional]
 
- `InformationOnly`
- Data type: `Boolean`
+`true` to push installation on a domain component. The value defaults to false, if not specified.
 
- Qualifiers: [in, optional]
+`InformationOnly` Data type: `Boolean`
 
- `true` if the CCR is for information only. This parameter is only used to gather information from the client. The value defaults to false, if not specified.
+Qualifiers: [in, optional]
 
- `SpecifySiteCode`
- Data type: `Boolean`
+`true` if the CCR is for information only. This parameter is only used to gather information from the client. The value defaults to false, if not specified.
 
- Qualifiers: [in, optional]
+`SpecifySiteCode` Data type: `Boolean`
 
- `SpecifySiteCode` is used to control whether the `PushSiteCode` parameter is used. If `SpecificySiteCode` is set to `true`, `PushSiteCode` is used. If `SpecificySiteCode` isn't set to `true`, `PushSiteCode` won't be used.
+Qualifiers: [in, optional]
 
- `PushSiteCode`
- Data type: `Boolean`
+`SpecifySiteCode` is used to control whether the `PushSiteCode` parameter is used. If `SpecificySiteCode` is set to `true`, `PushSiteCode` is used. If `SpecificySiteCode` isn't set to `true`, `PushSiteCode` won't be used.
 
- Qualifiers: [in, optional]
+`PushSiteCode` Data type: `Boolean`
 
- `PushSiteCode` defines which site initiates the actual push. The specified site pushes its client files to the client and do the actual installation.
+Qualifiers: [in, optional]
+
+`PushSiteCode` defines which site initiates the actual push. The specified site pushes its client files to the client and do the actual installation.
 
 ## Return Values
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Collection Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Collection Server WMI Class](sms_collection-server-wmi-class.md) [SMS_Site Server WMI Class](../../servers/configure/sms_site-server-wmi-class.md)

@@ -1,16 +1,18 @@
 ---
-title: RemoveMemberships Method
+title: "RemoveMemberships Method in Class SMS_SecuredCategoryMembership"
 description: The RemoveMemberships Windows Management Instrumentation (WMI) class method is a batch operation to remove objects from categories.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # RemoveMemberships Method in Class SMS_SecuredCategoryMembership
+
 The `RemoveMemberships` Windows Management Instrumentation (WMI) class method, in Configuration Manager, is a batch operation to remove objects from categories.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,37 +25,39 @@ SInt32 RemoveMemberships(
 ```
 
 #### Parameters
- `ObjectIDs`
- Data type: `String` Array
 
- Qualifiers: [in]
+`ObjectIDs` Data type: `String` Array
 
- The array of object IDs.
+Qualifiers: [in]
 
- `ObjectTypeIDs`
- Data type: `UInt32` Array
+The array of object IDs.
 
- Qualifiers: [in]
+`ObjectTypeIDs` Data type: `UInt32` Array
 
- The array of corresponding object type ID.
+Qualifiers: [in]
 
- `CategoryIDs`
- Data type: `String` Array
+The array of corresponding object type ID.
 
- Qualifiers: [in]
+`CategoryIDs` Data type: `String` Array
 
- The array of corresponding security category IDs which those objects will be removed from.
+Qualifiers: [in]
+
+The array of corresponding security category IDs which those objects will be removed from.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_SecuredCategoryMembership Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_securedcategorymembership-server-wmi-class.md)
+
+[SMS_SecuredCategoryMembership Server WMI Class](sms_securedcategorymembership-server-wmi-class.md)

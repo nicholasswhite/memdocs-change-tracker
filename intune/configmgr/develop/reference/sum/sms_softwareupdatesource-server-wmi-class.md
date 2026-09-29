@@ -1,7 +1,7 @@
 ---
-title: "SMS_SoftwareUpdateSource Class"
+title: "SMS_SoftwareUpdateSource Server WMI Class"
 description: "Lists all software update sources available on the site, for use in synchronizing metadata during a deployment."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_SoftwareUpdateSource Server WMI Class
-The `SMS_SoftwareUpdateSource` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists all software update sources available on the site, for use in synchronizing metadata during a deployment.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_SoftwareUpdateSource` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists all software update sources available on the site, for use in synchronizing metadata during a deployment.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_SoftwareUpdateSource : SMS_BaseClass  
 {  
       String ApplicabilityCondition;  
@@ -37,186 +39,192 @@ Class SMS_SoftwareUpdateSource : SMS_BaseClass
       String UpdateSourceVersion;  
       String UpdateType;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_SoftwareUpdateSource` class does not define any methods.  
+## Methods
+
+The `SMS_SoftwareUpdateSource` class does not define any methods.
 
 > [!NOTE]
->  The `ResendObjectToAllSites Method in Class SMS_SoftwareUpdateSource` has been deprecated in Configuration Manager.  
+>
+> The `ResendObjectToAllSites Method in Class SMS_SoftwareUpdateSource` has been deprecated in Configuration Manager.
 
-## Properties  
- `ApplicabilityCondition`  
- Data type: `String`  
+## Properties
 
- Access type: Read/Write  
+`ApplicabilityCondition`  
+ Data type: `String`
 
- Qualifiers: None  
+Access type: Read/Write
 
- Condition that the client evaluates before evaluating a software update. If the condition does not exist, the update is not evaluated.  
+Qualifiers: None
 
- `DateCreated`  
- Data type: `DateTime`  
+Condition that the client evaluates before evaluating a software update. If the condition does not exist, the update is not evaluated.
 
- Access type: Read/Write  
+`DateCreated`  
+ Data type: `DateTime`
 
- Qualifiers: None  
+Access type: Read/Write
 
- Date and time when the update source was created.  
+Qualifiers: None
 
- `DateModified`  
- Data type: `DateTime`  
+Date and time when the update source was created.
 
- Access type: Read/Write  
+`DateModified`  
+ Data type: `DateTime`
 
- Qualifiers: None  
+Access type: Read/Write
 
- Date and time when the update source was last modified.  
+Qualifiers: None
 
- `IsExpired`  
- Data type: `Boolean`  
+Date and time when the update source was last modified.
 
- Access type: Read/Write  
+`IsExpired`  
+ Data type: `Boolean`
 
- Qualifiers: [not_null]  
+Access type: Read/Write
 
- `true` if the update source is no longer active. The default value is `false`.  
+Qualifiers: [not_null]
 
- `PublicKeys`  
- Data type: `String`  
+`true` if the update source is no longer active. The default value is `false`.
 
- Access type: Read/Write  
+`PublicKeys`  
+ Data type: `String`
 
- Qualifiers: [lazy]  
+Access type: Read/Write
 
- Public keys with which all the associated binaries are signed.  
+Qualifiers: [lazy]
 
- `ScanMethod`  
- Data type: `String`  
+Public keys with which all the associated binaries are signed.
 
- Access type: Read/Write  
+`ScanMethod`  
+ Data type: `String`
 
- Qualifiers: None  
+Access type: Read/Write
 
- Scan method for the update source.  
+Qualifiers: None
 
- `ScanMethodParameters`  
- Data type: `String`  
+Scan method for the update source.
 
- Access type: Read/Write  
+`ScanMethodParameters`  
+ Data type: `String`
 
- Qualifiers: None  
+Access type: Read/Write
 
- Scan method parameters.  
+Qualifiers: None
 
- `ScannerToolPkgID`  
- Data type: `String`  
+Scan method parameters.
 
- Access type: Read/Write  
+`ScannerToolPkgID`  
+ Data type: `String`
 
- Qualifiers: [not_null]  
+Access type: Read/Write
 
- ID of the scanner tool package associated with the update source.  
+Qualifiers: [not_null]
 
- `ScanType`  
- Data type: `UInt32`  
+ID of the scanner tool package associated with the update source.
 
- Access type: Read/Write  
+`ScanType`  
+ Data type: `UInt32`
 
- Qualifiers: None  
+Access type: Read/Write
 
- Type of scan to use for the source. Possible values are:  
+Qualifiers: None
 
-- WSUS  
+Type of scan to use for the source. Possible values are:
 
-- Offline source  
+- WSUS
+- Offline source
 
   `SourceContentType`  
-  Data type: `UInt32`  
+   Data type: `UInt32`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: None  
+  Qualifiers: None
 
-  Type of content distributed by the update source.  
+  Type of content distributed by the update source.
 
   `SourceSite`  
-  Data type: `String`  
+   Data type: `String`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: [not_null]  
+  Qualifiers: [not_null]
 
-  Site code for the update source site.  
+  Site code for the update source site.
 
   `UpdateSourceDescription`  
-  Data type: `String`  
+   Data type: `String`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: None  
+  Qualifiers: None
 
-  Description of the update source.  
+  Description of the update source.
 
   `UpdateSourceID`  
-  Data type: `UInt32`  
+   Data type: `UInt32`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: [key, not_null]  
+  Qualifiers: [key, not_null]
 
-  The unique ID of the software update source. This ID is unique only for the site.  
+  The unique ID of the software update source. This ID is unique only for the site.
 
   `UpdateSourceName`  
-  Data type: `String`  
+   Data type: `String`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: [not_null]  
+  Qualifiers: [not_null]
 
-  Name of the update source.  
+  Name of the update source.
 
   `UpdateSourceUniqueID`  
-  Data type: `String`  
+   Data type: `String`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: [not_null]  
+  Qualifiers: [not_null]
 
-  The unique ID for the update source. This ID is unique across sites.  
+  The unique ID for the update source. This ID is unique across sites.
 
   `UpdateSourceVersion`  
-  Data type: `String`  
+   Data type: `String`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: [not_null]  
+  Qualifiers: [not_null]
 
-  Version of the update source.  
+  Version of the update source.
 
   `UpdateType`  
-  Data type: `String`  
+   Data type: `String`
 
-  Access type: Read/Write  
+  Access type: Read/Write
 
-  Qualifiers: [not_null]  
+  Qualifiers: [not_null]
 
-  Type of the update source.  
+  Type of the update source.
 
-## Remarks  
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+## Remarks
 
- Your application uses this class to set or modify the source of a software update so that metadata is properly synchronized during update deployment. Currently, the supported sources for software updates are Windows Server Update Services (WSUS) and ITMU/Offline Catalog.  
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
- To use this class, the application creates an `SMS_SoftwareUpdateSource` object and sets the properties as required for the particular software update and the source.  
+Your application uses this class to set or modify the source of a software update so that metadata is properly synchronized during update deployment. Currently, the supported sources for software updates are Windows Server Update Services (WSUS) and ITMU/Offline Catalog.
 
-## Requirements  
+To use this class, the application creates an `SMS_SoftwareUpdateSource` object and sets the properties as required for the particular software update and the source.
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+## Requirements
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+### Runtime Requirements
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

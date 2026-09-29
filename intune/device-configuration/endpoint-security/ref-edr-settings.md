@@ -1,15 +1,16 @@
 ---
-title: Intune endpoint security Endpoint detection and response settings
+title: "Endpoint detection and response policy settings for endpoint security in Intune"
 description: Endpoint security Endpoint detection and response policy settings for deprecated profiles in Microsoft Intune
-ms.date: 03/28/2025
+ms.date: "2025-03-28T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mattcall
-
 ---
+
 # Endpoint detection and response policy settings for endpoint security in Intune
 
 > [!IMPORTANT]
-> [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
+>
+> On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
 > [!NOTE]
 >
@@ -17,22 +18,23 @@ ms.reviewer: mattcall
 >
 > Beginning on April 5, 2022, the *Windows 10 and later* platform was replaced by the *Windows* platform. Although you can no longer create a new instance of this older profile, you can continue to edit and use an existing instances of this profile. The settings details in this article apply only to the deprecated profiles.
 
-View the settings you can configure in profiles for [Endpoint detection and response policy](./deploy-edr.md) in the endpoint security node of Intune.
+View the settings you can configure in profiles for [Endpoint detection and response policy](deploy-edr.md) in the endpoint security node of Intune.
 
 Applies to:
 
 - Windows
 
   > [!IMPORTANT]
-  > [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
-
+  >
+  > On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
 Supported platforms and profiles:
 
 - **Windows**: Use this platform for policy you deploy to Windows devices managed with Intune.
-  - Profile: **Endpoint detection and response (MDM)**
 
+  - Profile: **Endpoint detection and response (MDM)**
 - **Windows (ConfigMgr)**: Use this platform for policy you deploy to devices managed by Configuration Manager.
+
   - Profile: **Endpoint detection and response (ConfigMgr)**
 
 ## Endpoint detection and response (MDM)
@@ -49,21 +51,17 @@ Supported platforms and profiles:
 
   When set to *Onboarding blob*, you can configure the following settings:
 
-  - **Defender for Endpoint onboarding blob**
-    Click **Select onboarding file** to open the *Select onboarding File* pane, where you specify a `.onboarding` file.
+  - **Defender for Endpoint onboarding blob** Click **Select onboarding file** to open the *Select onboarding File* pane, where you specify a `.onboarding` file.
 
   When set to *Offboarding blob*, you can configure the following settings:
 
-  - **Defender for Endpoint offboarding blob**
-     Click **Select offboarding file** to open the *Select offboarding File* pane, where you specify a `.offboarding` file.
-
+  - **Defender for Endpoint offboarding blob** Click **Select offboarding file** to open the *Select offboarding File* pane, where you specify a `.offboarding` file.
 - **Sample sharing for all files**
 
   Returns or sets the Microsoft Defender for Endpoint Sample Sharing configuration parameter. Sample Sharing sends a file to Microsoft for deep analysis. Organizations can disable sample sharing on specific devices that are considered too sensitive.
 
   - **Not configured** (*default*)
   - **Yes**
-
 - **Expedite telemetry reporting frequency**
 
   - **Not configured** (*default*)
@@ -76,9 +74,9 @@ Supported platforms and profiles:
 - **Sample sharing for all files**
 
   Returns or sets the Microsoft Defender for Endpoint Sample Sharing configuration parameter.
+
   - **Not configured** (*default*)
   - **Yes**
-
 - **Expedite telemetry reporting frequency**
 
   - **Not configured** (*default*)
@@ -86,4 +84,4 @@ Supported platforms and profiles:
 
 ## Next steps
 
-[Endpoint security policy for EDR](./deploy-edr.md)
+[Endpoint security policy for EDR](deploy-edr.md)

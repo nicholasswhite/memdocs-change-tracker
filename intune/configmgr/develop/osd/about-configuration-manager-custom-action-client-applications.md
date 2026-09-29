@@ -1,7 +1,7 @@
 ---
-title: Custom action client applications
+title: "About Configuration Manager custom action client applications"
 description: About custom action client applications.
-ms.date: 10/01/2021
+ms.date: "2021-10-01T00:00:00Z"
 ms.subservice: sdk
 ms.topic: concept-article
 ms.collection: tier3
@@ -74,7 +74,7 @@ If the operation takes a long time, you can report progress to the task sequence
 The application should set the `SuccessCodes` environment variable as a return value when it's completed.
 
 | Return | Description |
-|--|--|
+| --- | --- |
 | 0 | Success |
 | Non-zero | Failure |
 
@@ -92,6 +92,7 @@ string PackageIDForAbcExe;
 ```
 
 > [!NOTE]
+>
 > The package identifier is the [SMS_Package Server WMI Class](../reference/core/servers/configure/sms_package-server-wmi-class.md)`PackageID` property.
 
 The package identifier is obtained from the administrator, when the custom action is edited in the task sequence editor.
@@ -108,9 +109,10 @@ The package identifier is provided by using the `/run` command-line parameter to
 
 ## Pre-network partition and pre-partition setup
 
-If you need to configure disk or network connectivity before you have a disk partition and before you have network connectivity, you need to create an application to do these tasks. Your application should be placed in a custom boot image by using the Windows Assessment and Deployment Kit (ADK). For more information, see [Windows ADK scenarios for IT Pros](/windows/deployment/windows-adk-scenarios-for-it-pros).
+If you need to configure disk or network connectivity before you have a disk partition and before you have network connectivity, you need to create an application to do these tasks. Your application should be placed in a custom boot image by using the Windows Assessment and Deployment Kit (ADK). For more information, see [Windows ADK scenarios for IT Pros](https://learn.microsoft.com/en-us/windows/deployment/windows-adk-scenarios-for-it-pros).
 
 > [!NOTE]
+>
 > Adding files to the boot image file can increase the minimum RAM requirements and can, due to low memory conditions, cause task sequences to fail in unexpected ways.
 
 Then import the image into Configuration Manager as a custom image. For more information, see [Add a boot image](../../osd/get-started/manage-boot-images.md#add-a-boot-image).

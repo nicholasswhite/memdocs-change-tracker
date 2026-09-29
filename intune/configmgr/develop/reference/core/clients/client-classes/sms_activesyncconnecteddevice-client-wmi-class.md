@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a device connected to the ActiveSyn service using SMS_ActiveSyncConnectedDevice class.
-title: SMS_ActiveSyncConnectedDevice Class
-ms.date: 09/20/2016
+title: "SMS_ActiveSyncConnectedDevice Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ActiveSyncConnectedDevice Client WMI Class
+
 The `SMS_ActiveSyncConnectedDevice` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that represents a device connected to the ActiveSync service.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,140 +37,129 @@ Class SMS_ActiveSyncConnectedDevice : SMS_Class_Template
 ```
 
 ## Methods
- The `SMS_ActiveSyncConnectedDevice` class does not define any methods.
+
+The `SMS_ActiveSyncConnectedDevice` class does not define any methods.
 
 ## Properties
- `DeviceOEMInfo`
- Data type: `String`
 
- Access type: Read/Write
+`DeviceOEMInfo` Data type: `String`
 
- Qualifiers:
+Access type: Read/Write
 
- [SMS_Report("True"), key]
+Qualifiers:
 
- OEM information for the device.
+[SMS_Report("True"), key]
 
- `DeviceType`
- Data type: `String`
+OEM information for the device.
 
- Access type: Read/Write
+`DeviceType` Data type: `String`
 
- Qualifiers: [SMS_Report("True"), key]
+Access type: Read/Write
 
- Type of device.
+Qualifiers: [SMS_Report("True"), key]
 
- `InstalledClientID`
- Data type: `String`
+Type of device.
 
- Access type: Read/Write
+`InstalledClientID` Data type: `String`
 
- Qualifiers: [SMS_Report("True")]
+Access type: Read/Write
 
- The ID of the installed client.
+Qualifiers: [SMS_Report("True")]
 
- `InstalledClientServer`
- Data type: `String`
+The ID of the installed client.
 
- Access type: Read/Write
+`InstalledClientServer` Data type: `String`
 
- Qualifiers: [SMS_Report("True")]
+Access type: Read/Write
 
- The ID of the server for the installed client.
+Qualifiers: [SMS_Report("True")]
 
- `InstalledClientVersion`
- Data type: `String`
+The ID of the server for the installed client.
 
- Access type: Read/Write
+`InstalledClientVersion` Data type: `String`
 
- Qualifiers: [SMS_Report("True")]
+Access type: Read/Write
 
- The version of the installed client.
+Qualifiers: [SMS_Report("True")]
 
- `LastSyncTime`
- Data type: `String`
+The version of the installed client.
 
- Access type: Read/Write
+`LastSyncTime` Data type: `String`
 
- Qualifiers: [SMS_Report("True")]
+Access type: Read/Write
 
- The time when the device was last synchronized.
+Qualifiers: [SMS_Report("True")]
 
- `OS_AdditionalInfo`
- Data type: `String`
+The time when the device was last synchronized.
 
- Access type: Read/Write
+`OS_AdditionalInfo` Data type: `String`
 
- Qualifiers: [SMS_Report("True")]
+Access type: Read/Write
 
- Additional information about the client operating system.
+Qualifiers: [SMS_Report("True")]
 
- `OS_Build`
- Data type: `String`
+Additional information about the client operating system.
 
- Access type: Read/Write
+`OS_Build` Data type: `String`
 
- Qualifiers: [SMS_Report("True")]
+Access type: Read/Write
 
- The build associated with the client operating system.
+Qualifiers: [SMS_Report("True")]
 
- `OS_Major`
- Data type: `String`
+The build associated with the client operating system.
 
- Access type: Read/Write
+`OS_Major` Data type: `String`
 
- Qualifiers: [SMS_Report("True"), key]
+Access type: Read/Write
 
- The major version number of the operating system.
+Qualifiers: [SMS_Report("True"), key]
 
- `OS_Minor`
- Data type: `String`
+The major version number of the operating system.
 
- Access type: Read/Write
+`OS_Minor` Data type: `String`
 
- Qualifiers: [SMS_Report("True"), key]
+Access type: Read/Write
 
- The minor version number of the operating system.
+Qualifiers: [SMS_Report("True"), key]
 
- `OS_Platform`
- Data type: `String`
+The minor version number of the operating system.
 
- Access type: Read/Write
+`OS_Platform` Data type: `String`
 
- Qualifiers: [SMS_Report("True"), key]
+Access type: Read/Write
 
- The platform on which the operating system is running.
+Qualifiers: [SMS_Report("True"), key]
 
- `ProcessorArchitecture`
- Data type: `String`
+The platform on which the operating system is running.
 
- Access type: Read/Write
+`ProcessorArchitecture` Data type: `String`
 
- Qualifiers: [SMS_Report("True"), key]
+Access type: Read/Write
 
- The architecture for the device processor.
+Qualifiers: [SMS_Report("True"), key]
 
- `ProcessorLevel`
- Data type: `String`
+The architecture for the device processor.
 
- Access type: Read/Write
+`ProcessorLevel` Data type: `String`
 
- Qualifiers: SMS_Report("True"), key]
+Access type: Read/Write
 
- The processor level.
+Qualifiers: SMS_Report("True"), key]
 
- `ProcessorRevision`
- Data type: `String`
+The processor level.
 
- Access type: Read/Write
+`ProcessorRevision` Data type: `String`
 
- Qualifiers: [SMS_Report("True"), key]
+Access type: Read/Write
 
- The processor revision.
+Qualifiers: [SMS_Report("True"), key]
+
+The processor revision.
 
 ## Remarks
- All properties of this class are marked with qualifiers to indicate that they represent items that are generated dynamically (reported) based on the content of the SMS_def.mof file.
+
+All properties of this class are marked with qualifiers to indicate that they represent items that are generated dynamically (reported) based on the content of the SMS_def.mof file.
 
 ## See Also
- [Device Management Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/device-management-client-wmi-classes.md)
- [SMS_ActiveSyncService Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_activesyncservice-client-wmi-class.md)
+
+[Device Management Client WMI Classes](device-management-client-wmi-classes.md) [SMS_ActiveSyncService Client WMI Class](sms_activesyncservice-client-wmi-class.md)

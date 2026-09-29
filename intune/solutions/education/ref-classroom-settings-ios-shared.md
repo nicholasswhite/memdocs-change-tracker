@@ -1,17 +1,17 @@
 ---
-title: Intune shared device settings for the iOS/iPadOS Classroom app
+title: "Configure Intune education settings for shared iPad devices"
 description: Learn the Intune settings you can use to control settings for the Classroom app on shared iOS/iPadOS devices.
 author: lenewsad
 ms.author: lanewsad
-ms.date: 12/06/2018
+ms.date: "2018-12-06T00:00:00Z"
 ms.topic: archived
 ms.reviewer: heenamac
 ---
 
-
 # Configure Intune education settings for shared iPad devices
 
 > [!NOTE]
+>
 > Intune doesn't currently support configuring the Classroom app. This article is only applicable for users with existing iOS/iPadOS education profiles in Intune.
 
 Intune supports the iOS/iPadOS Classroom app that helps teachers to guide learning, and control student devices in the classroom. In addition, to the Classroom app, Apple supports the ability for student iPad devices to be configured such that multiple students can share a single device. This document guides you to achieve this goal with Intune.
@@ -26,12 +26,9 @@ The prerequisites to use the shared iPad capabilities are:
 - As part of Apple School Manager setup, configure [Managed Apple IDs](https://school.apple.com/) for students. [Learn more about Managed Apple IDs](https://support.apple.com/HT205918).
 - Create an enrollment profile for the device serial numbers synced from Apple School Manager.
 
-<a name='step-1---import-your-school-data-into-azure-active-directory'></a>
-
 ## Step 1 - Import your school data into Microsoft Entra ID
 
-Use Microsoft's School Data Sync (SDS) to import school records from an existing Student Information System (SIS) to Microsoft Entra ID.
-SDS synchronizes information from your SIS and stores it in Microsoft Entra ID. Microsoft Entra ID is a Microsoft management system that helps you organize users and devices. You can then use this data to help you manage your students and classes. [Learn more about how to deploy SDS](https://support.office.com/article/Overview-of-School-Data-Sync-and-Classroom-f3d1147b-4ade-4905-8518-508e729f2e91).
+Use Microsoft's School Data Sync (SDS) to import school records from an existing Student Information System (SIS) to Microsoft Entra ID. SDS synchronizes information from your SIS and stores it in Microsoft Entra ID. Microsoft Entra ID is a Microsoft management system that helps you organize users and devices. You can then use this data to help you manage your students and classes. [Learn more about how to deploy SDS](https://support.office.com/article/Overview-of-School-Data-Sync-and-Classroom-f3d1147b-4ade-4905-8518-508e729f2e91).
 
 ### How to import data using SDS
 
@@ -43,33 +40,31 @@ You can import information into SDS by using one of the following methods:
 
 ### Find out more
 
-- [Find out more about the full experience of syncing on-premises school data to Microsoft Entra ID](/azure/active-directory/connect/active-directory-aadconnect)
+- [Find out more about the full experience of syncing on-premises school data to Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect)
 - [Find out more about Microsoft School Data Sync](https://sds.microsoft.com/)
-- [Find out more about licensing in Microsoft Entra ID](/azure/active-directory/active-directory-licensing-whatis-azure-portal)
-
+- [Find out more about licensing in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/active-directory-licensing-whatis-azure-portal)
 
 ## Step 2 - Create and assign an iOS/iPadOS Education profile in Intune
 
 ### Configure general settings
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Go to **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Go to **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
-    - **Platform:** Select **iOS/iPadOS**.
-    - **Profile type**: Select **Templates** > **Secure assessment (Education)**.
+   - **Platform:** Select **iOS/iPadOS**.
+   - **Profile type**: Select **Templates** &gt; **Secure assessment (Education)**.
 
-    Select **Create**.
-
+   Select **Create**.
 4. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the profile. For example, enter **iOS/iPadOS education profile**.
-    - **Description**: Enter a description for the profile. This setting is optional, but recommended.
-
+   - **Name**: Enter a descriptive name for the profile. For example, enter **iOS/iPadOS education profile**.
+   - **Description**: Enter a description for the profile. This setting is optional, but recommended.
 5. In **Configuration settings**, you need certificates to establish a trust relationship between teacher and student iPads. Certificates are used to seamlessly and silently authenticate connections between devices without having to enter user names and passwords.
 
->[!Important]
->The teacher and student certificates you use must be issued by different certificate authorities (CAs). You must create two new subordinate CAs connected to your existing certificate infrastructure; one for teachers, and one for students.
+> [!IMPORTANT]
+>
+> The teacher and student certificates you use must be issued by different certificate authorities (CAs). You must create two new subordinate CAs connected to your existing certificate infrastructure; one for teachers, and one for students.
 
 iOS education profiles support only PFX certificates. SCEP certificates are not supported.
 
@@ -127,68 +122,64 @@ The profile is created and appears on the profiles list pane.
 
 ## Step 3 - Create a device category
 
-In the admin center, go to **Devices** > **Manage devices** > **Device categories**.  For more information about how to categorize devices in Intune, see [Add device categories](../../device-management/create-device-categories.md#step-1-create-device-category-in-intune).
+In the admin center, go to **Devices** &gt; **Manage devices** &gt; **Device categories**. For more information about how to categorize devices in Intune, see [Add device categories](../../device-management/create-device-categories.md#step-1-create-device-category-in-intune).
 
 ## Step 4 – Create a dynamic group
 
 1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
-3. On the **Intune** pane, choose **Groups**.
-4. On the **Users and Groups – All Groups** pane, choose **New group**.
-5. On the **Group** pane, choose a **Group type** and then enter a **Name** and **Description** for the group.
-6. From the **Membership type** drop-down list, choose **Dynamic Device**.
-7. Choose **Dynamic device members** to create membership rules.
-8. On the **Dynamic membership rules** pane:
-1. Select **deviceCategory** from the **Add devices where** drop-down list.
-2. Choose **Equals**.
-3. Enter the device category you created in the blank text box.
-9. On the **Dynamic membership rules** pane, choose **Add query**.
-10. On the **Group** pane, choose **Create**.
+2. On the **Intune** pane, choose **Groups**.
+3. On the **Users and Groups – All Groups** pane, choose **New group**.
+4. On the **Group** pane, choose a **Group type** and then enter a **Name** and **Description** for the group.
+5. From the **Membership type** drop-down list, choose **Dynamic Device**.
+6. Choose **Dynamic device members** to create membership rules.
+7. On the **Dynamic membership rules** pane:
+8. Select **deviceCategory** from the **Add devices where** drop-down list.
+9. Choose **Equals**.
+10. Enter the device category you created in the blank text box.
+11. On the **Dynamic membership rules** pane, choose **Add query**.
+12. On the **Group** pane, choose **Create**.
 
 The dynamic group is created in the **Users and Groups – All Groups** pane.
 
 ## Step 5 – Assign a device to a category (Carts)
 
 1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
-3. On the **Intune** pane, choose **Devices**.
-4. On the **Devices** pane, choose **All devices**.
-5. On the **Devices – All devices** pane, choose a device.
-6. On the device pane, choose **Properties**.
-7. On the device's properties pane, enter the device category in the **Device category** text box.
-8. On the device pane, choose **Save**.
+2. On the **Intune** pane, choose **Devices**.
+3. On the **Devices** pane, choose **All devices**.
+4. On the **Devices – All devices** pane, choose a device.
+5. On the device pane, choose **Properties**.
+6. On the device's properties pane, enter the device category in the **Device category** text box.
+7. On the device pane, choose **Save**.
 
 The device is now associated to the device category. Repeat this process for all the devices you want to associate to the device category you created.
 
 ## Step 6 – Create classroom profiles
 
 1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
-3. On the **Intune** pane, choose **Device configuration**.
-4. On the **Device configuration** pane, choose **Manage** > **Cart Profiles**.
-5. On the profiles pane, choose **Create Profile**.
-6. On the **Create Association** pane, enter a **Name** and **Description**.
-7. Choose **Select Classes** > **Configure** to associate groups to the Cart Profile.
-8. Choose the classes to include to the Cart Profile then choose **Select**.
-9. Choose **Select Carts** > **Configure** to associate groups to the Cart Profile.
-10. Choose the groups to include to the Cart Profile then choose **Select**.
-11. On the **Create Association** pane, choose **Save** to save the Cart Profile.
+2. On the **Intune** pane, choose **Device configuration**.
+3. On the **Device configuration** pane, choose **Manage** &gt; **Cart Profiles**.
+4. On the profiles pane, choose **Create Profile**.
+5. On the **Create Association** pane, enter a **Name** and **Description**.
+6. Choose **Select Classes** &gt; **Configure** to associate groups to the Cart Profile.
+7. Choose the classes to include to the Cart Profile then choose **Select**.
+8. Choose **Select Carts** &gt; **Configure** to associate groups to the Cart Profile.
+9. Choose the groups to include to the Cart Profile then choose **Select**.
+10. On the **Create Association** pane, choose **Save** to save the Cart Profile.
 
 The profile is created and appears on the profiles list pane.
 
 ## Step 7 - Assign the Cart Profile to Classes
 
 1. Sign in to [Intune](https://go.microsoft.com/fwlink/?linkid=2090973).
-3. On the **Intune** pane, choose **Device configuration**.
-4. On the **Device configuration** pane, choose **Monitor** > **Assignment status**.
-5. On the **Assignment status** pane, select the **Cart Profile** you created.
-6. On the **Cart Profile** pane choose **Assignments** and then, under **Include** choose **Select groups to include**.
-7. Select the classes you want the cart profile to target (do not select a group), then choose **Select**.
-8. When you are finished, choose **Save**.
+2. On the **Intune** pane, choose **Device configuration**.
+3. On the **Device configuration** pane, choose **Monitor** &gt; **Assignment status**.
+4. On the **Assignment status** pane, select the **Cart Profile** you created.
+5. On the **Cart Profile** pane choose **Assignments** and then, under **Include** choose **Select groups to include**.
+6. Select the classes you want the cart profile to target (do not select a group), then choose **Select**.
+7. When you are finished, choose **Save**.
 
 The assignment completes, and Intune deploys the Classroom profile to the targeted devices based on the classroom assignment.
 
 ## Next Steps
 
 Now students can share devices between students, and students can pick up any iPad in a classroom, log in with a PIN and have it personalized with their content. For more information about Shared iPads, see the [Apple website](https://www.apple.com/education/).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

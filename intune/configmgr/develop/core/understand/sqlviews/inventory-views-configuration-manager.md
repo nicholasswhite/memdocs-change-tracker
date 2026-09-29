@@ -1,7 +1,7 @@
 ---
-title: Inventory views
+title: "Inventory views in Configuration Manager"
 description: Hardware and software inventory information about the clients, files, and products, in the Configuration Manager hierarchy.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 
@@ -19,9 +19,7 @@ For each Configuration Manager site, it's possible to retrieve a list of the har
 ## In This Section
 
 - [Hardware inventory views in Configuration Manager](hardware-inventory-views-configuration-manager.md)
-
 - [Software inventory views in Configuration Manager](software-inventory-views-configuration-manager.md)
-
 - [Asset intelligence views in Configuration Manager](asset-intelligence-views-configuration-manager.md)
 
 ## See also

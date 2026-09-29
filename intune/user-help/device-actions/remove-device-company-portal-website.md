@@ -1,16 +1,18 @@
 ---
-title: Remove device from Company Portal website
+title: "Remove device on Intune Company Portal website"
 description: Sign in to the Intune Company Portal website to unregister a personal device from work or school.
-ms.date: 11/08/2024
+ms.date: "2024-11-08T00:00:00Z"
 ms.reviewer: jieyan
 ---
+
 # Remove device on Intune Company Portal website
 
 **Applies to**:
-* Android
-* iOS/iPadOS
-* macOS
-* Windows 
+
+- Android
+- iOS/iPadOS
+- macOS
+- Windows
 
 Use the Company Portal website to remotely unenroll and unregister a personal device from work or school. Once you remove a device, your organization no longer manages the device and it is removed from the Company Portal app and website. You might lose access to protected work data, such as files, apps, and email, on the device after you unenroll.
 

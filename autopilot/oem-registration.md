@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot OEM registration process
+title: "OEM registration"
 description: How OEMs add devices to Windows Autopilot.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.topic: how-to
 ms.collection:
   - M365-modern-desktop
@@ -12,7 +12,6 @@ appliesto:
   - ✅ <a href="https://learn.microsoft.com/hololens/hololens-release-notes" target="_blank">Windows Holographic</a>
 ms.custom: sfi-ga-nochange
 ---
-
 
 # OEM registration
 
@@ -34,14 +33,13 @@ Microsoft manages and maintains Windows Autopilot. This service provides the bac
 
 Before an OEM can register devices for an organization, the organization's Microsoft Entra Global Administrator must approve the OEM. For more information, see [OEM authorization](registration-auth.md#oem-authorization).
 
-<!-- MAXADO-9048730 -->
-
 > [!IMPORTANT]
-> [!INCLUDE [global-administrator](../autopilot/includes/global-administrator.md)]
+>
+> The [Microsoft Entra Global Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) role is a highly privileged role that should only be used when another role can't be used. This feature requires the Global Administrator role. For other features, Microsoft recommends using roles with the fewest permissions.
 
 ## Microsoft Surface registration
 
-For Surface devices, see [Surface registration support for Windows Autopilot](/surface/surface-autopilot-registration-support).
+For Surface devices, see [Surface registration support for Windows Autopilot](https://learn.microsoft.com/en-us/surface/surface-autopilot-registration-support).
 
 ## Related content
 

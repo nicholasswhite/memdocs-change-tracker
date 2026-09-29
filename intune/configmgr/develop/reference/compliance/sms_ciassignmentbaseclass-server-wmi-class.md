@@ -1,14 +1,16 @@
 ---
-title: SMS_CIAssignmentBaseClass Class
+title: "SMS_CIAssignmentBaseClass Server WMI Class"
 description: The SMS_CIAssignmentBaseClass WMI class is an SMS Provider server class that serves as an abstract base class for the SMS_BaselineAssignment Server WMI Class and SMS_UpdatesAssignment Server WMI Class.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CIAssignmentBaseClass Server WMI Class
-The `SMS_CIAssignmentBaseClass` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as an abstract base class for the [SMS_BaselineAssignment Server WMI Class](../../../develop/reference/compliance/sms_baselineassignment-server-wmi-class.md) and [SMS_UpdatesAssignment Server WMI Class](../../../develop/reference/sum/sms_updatesassignment-server-wmi-class.md).
+
+The `SMS_CIAssignmentBaseClass` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as an abstract base class for the [SMS_BaselineAssignment Server WMI Class](sms_baselineassignment-server-wmi-class.md) and [SMS_UpdatesAssignment Server WMI Class](../sum/sms_updatesassignment-server-wmi-class.md).
 
 ## Syntax
 
@@ -55,397 +57,361 @@ Class SMS_CIAssignmentBaseClass : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CIAssignmentBaseClass` class does not define any methods.
+
+The `SMS_CIAssignmentBaseClass` class does not define any methods.
 
 ## Properties
- `ApplyToSubTargets`
- Data type: `Boolean`
 
- Access type: Read/Write
+`ApplyToSubTargets` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to apply the configuration item assignment to a subcollection.
+Qualifiers: [not_null]
 
- This property is deprecated.
+`true` to apply the configuration item assignment to a subcollection.
 
- `AssignedCIs`
- Data type: `SInt32` Array
+This property is deprecated.
 
- Access type: Read/Write
+`AssignedCIs` Data type: `SInt32` Array
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- Array of IDs for the configuration items targeted by the assignment.
+Qualifiers: [not_null]
 
- `AssignmentAction`
- Data type: `SInt32`
+Array of IDs for the configuration items targeted by the assignment.
 
- Access type: Read/Write
+`AssignmentAction` Data type: `SInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- Action associated with the configuration item assignment. Possible values are:
+Qualifiers: [not_null]
 
-|Value|Assignment action|
-|-|-|
-|1|DETECT|
-|2|APPLY|
+Action associated with the configuration item assignment. Possible values are:
 
- `AssignmentDescription`
- Data type: `String`
+| Value | Assignment action |
+| --- | --- |
+| 1 | DETECT |
+| 2 | APPLY |
 
- Access type: Read/Write
+`AssignmentDescription` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The description of the configuration item assignment.
+Qualifiers: None
 
- `AssignmentID`
- Data type: `SInt32`
+The description of the configuration item assignment.
 
- Access type: Read/Write
+`AssignmentID` Data type: `SInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The ID of the configuration item assignment. This ID is unique only for the site.
+Qualifiers: [key]
 
- `AssignmentName`
- Data type: `String`
+The ID of the configuration item assignment. This ID is unique only for the site.
 
- Access type: Read/Write
+`AssignmentName` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The local assignment name.
+Qualifiers: [not_null]
 
- `AssignmentType`
- Data type: `SInt32`
+The local assignment name.
 
- Access type: Read/Write
+`AssignmentType` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Type of assignment. Possible values are:
+Qualifiers: none
 
-|Value|Assignment type|
-|-|-|
-|0|CIA_TYPE_DCM_BASELINE|
-|1|CIA_TYPE_UPDATES|
-|2|CIA_TYPE_APPLICATION|
-|5|CIA_TYPE_UPDATE_GROUP|
-|8|CIA_TYPE_POLICY|
+Type of assignment. Possible values are:
 
- `AssignmentUniqueID`
- Data type: `String`
+| Value | Assignment type |
+| --- | --- |
+| 0 | CIA_TYPE_DCM_BASELINE |
+| 1 | CIA_TYPE_UPDATES |
+| 2 | CIA_TYPE_APPLICATION |
+| 5 | CIA_TYPE_UPDATE_GROUP |
+| 8 | CIA_TYPE_POLICY |
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- The unique ID of the configuration item assignment. This ID is unique across sites.
+Qualifiers: [read, not_null]
 
- `ContainsExpiredUpdates`
- Data type: `Boolean`
+The unique ID of the configuration item assignment. This ID is unique across sites.
 
- Access type: Read-only
+`ContainsExpiredUpdates` Data type: `Boolean`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- `true` if the deployment contains one or more expired updates.
+Qualifiers: [read, not_null]
 
- `CreationTime`
- Data type: `DateTime`
+`true` if the deployment contains one or more expired updates.
 
- Access type: Read-only
+`CreationTime` Data type: `DateTime`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- The date and time when the configuration item assignment is created.
+Qualifiers: [read, not_null]
 
- `DesiredConfigType`
- Data type: `SInt32`
+The date and time when the configuration item assignment is created.
 
- Access type: Read/Write
+`DesiredConfigType` Data type: `SInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The type of the configuration item. Possible values are:
+Qualifiers: [not_null]
 
-|Value|Configuration item type|
-|-|-|
-|1|REQUIRED|
-|2|NOT_ALLOWED|
+The type of the configuration item. Possible values are:
 
- `DisableMomAlerts`
- Data type: `Boolean`
+| Value | Configuration item type |
+| --- | --- |
+| 1 | REQUIRED |
+| 2 | NOT_ALLOWED |
 
- Access type: Read/Write
+`DisableMomAlerts` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the client is configured to raise MOM alerts when a configuration item is applied. The default is `false`.
+Qualifiers: None
 
- `DPLocality`
- Data type: `UInt32`
+`true` if the client is configured to raise MOM alerts when a configuration item is applied. The default is `false`.
 
- Access type: Read/Write
+`DPLocality` Data type: `UInt32`
 
- Qualifiers: [not_null, bits]
+Access type: Read/Write
 
- Flags that determine how the client obtains distribution points, according to distribution point locality. Possible values are:
+Qualifiers: [not_null, bits]
 
- 4
- DP_DOWNLOAD_FROM_LOCAL
+Flags that determine how the client obtains distribution points, according to distribution point locality. Possible values are:
 
- 6
- DP_DOWNLOAD_FROM_REMOTE
+4 DP_DOWNLOAD_FROM_LOCAL
 
- 17
- DP_NO_FALLBACK_UNPROTECTED
+6 DP_DOWNLOAD_FROM_REMOTE
 
- 18
- DP_ALLOW_WUMU
+17 DP_NO_FALLBACK_UNPROTECTED
 
- 19
- DP_ALLOW_METERED_NETWORK
+18 DP_ALLOW_WUMU
 
- `Enabled`
- Data type: `Boolean`
+19 DP_ALLOW_METERED_NETWORK
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if the configuration item assignment is enabled.
+Qualifiers: [not_null]
 
- `EnforcementDeadline`
- Data type: `DateTime`
+`true` if the configuration item assignment is enabled.
 
- Access type: Read/Write
+`EnforcementDeadline` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time when the configuration item assignment will be enforced.
+Qualifiers: None
 
- `EvaluationSchedule`
- Data type: `String`
+The date and time when the configuration item assignment will be enforced.
 
- Access type: Read/Write
+`EvaluationSchedule` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The assignment evaluation schedule.
+Qualifiers: None
 
- `ExpirationTime`
- Data type: `DateTime`
+The assignment evaluation schedule.
 
- Access type: Read/Write
+`ExpirationTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time when the configuration item assignment expires.
+Qualifiers: None
 
- `LastModificationTime`
- Data type: `DateTime`
+The date and time when the configuration item assignment expires.
 
- Access type: Read-only
+`LastModificationTime` Data type: `DateTime`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- Date and time when the configuration item assignment was last modified.
+Qualifiers: [read, not_null]
 
- `LastModifiedBy`
- Data type: `String`
+Date and time when the configuration item assignment was last modified.
 
- Access type: Read/Write
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- User who last modified the configuration item.
+Qualifiers: none
 
- `LocaleID`
- Data type: `UInt32`
+User who last modified the configuration item.
 
- Access type: Read-only
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- ID for the locale of the assignment name and assignment description properties.
+Qualifiers: [read, not_null]
 
- `LogComplianceToWinEvent`
- Data type: `Boolean`
+ID for the locale of the assignment name and assignment description properties.
 
- Access type: Read/Write
+`LogComplianceToWinEvent` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to log compliance status to Windows event logs. The default value is `false`.
+Qualifiers: [not_null]
 
- `NonComplianceCriticality`
- Data type: `SInt32`
+`true` to log compliance status to Windows event logs. The default value is `false`.
 
- Access type: Read/Write
+`NonComplianceCriticality` Data type: `SInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The configuration item non-compliance criticality for the assignment.
+Qualifiers: None
 
- `NotifyUser`
- Data type: `Boolean`
+The configuration item non-compliance criticality for the assignment.
 
- Access type: Read/Write
+`NotifyUser` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to notify the user when a configuration item is available.
+Qualifiers: [not_null]
 
- `OverrideServiceWindows`
- Data type: `Boolean`
+`true` to notify the user when a configuration item is available.
 
- Access type: Read/Write
+`OverrideServiceWindows` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the client ignores maintenance windows when a configuration item is applied.
+Qualifiers: None
 
- `PersistOnWriteFilterDevices`
- Data type: `Boolean`
+`true` if the client ignores maintenance windows when a configuration item is applied.
 
- Access type: Read/Write
+`PersistOnWriteFilterDevices` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if write filters on devices should be persisted. The default value is `false`.
+Qualifiers: None
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+`true` if write filters on devices should be persisted. The default value is `false`.
 
- `RaiseMomAlertsOnFailure`
- Data type: `Boolean`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read/Write
+`RaiseMomAlertsOnFailure` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the client raises MOM alerts if it fails to apply a configuration item. The default is `false.`
+Qualifiers: None
 
- `RebootOutsideOfServiceWindows`
- Data type: `Boolean`
+`true` if the client raises MOM alerts if it fails to apply a configuration item. The default is `false.`
 
- Access type: Read/Write
+`RebootOutsideOfServiceWindows` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the client reboots outside a maintenance window if a reboot is pending after applying a configuration item targeted by the assignment.
+Qualifiers: None
 
- `SendDetailedNonComplianceStatus`
- Data type: `Boolean`
+`true` if the client reboots outside a maintenance window if a reboot is pending after applying a configuration item targeted by the assignment.
 
- Access type: Read/Write
+`SendDetailedNonComplianceStatus` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` to send a detailed non-compliance status message. The default is `false`.
+Qualifiers: [not_null]
 
- `SoftDeadlineEnabled`
- Data type: `Boolean`
+`true` to send a detailed non-compliance status message. The default is `false`.
 
- Access type: Read/Write
+`SoftDeadlineEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to enable a soft deadline.
+Qualifiers: none
 
- `SourceSite`
- Data type: `String`
+`true` to enable a soft deadline.
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- The site code of the site where the assignment was created.
+Qualifiers: [read, not_null]
 
- `StateMessagePriority`
- Data type: `UInt32`
+The site code of the site where the assignment was created.
 
- Access type: Read/Write
+`StateMessagePriority` Data type: `UInt32`
 
- Qualifiers: [valuemap, values]
+Access type: Read/Write
 
- Priority of state message to be reported from client. The default value is 5.
+Qualifiers: [valuemap, values]
 
-|Value|State message priority|
-|-|-|
-|0|URGENT|
-|1|HIGH|
-|5|NORMAL|
-|10|LOW|
+Priority of state message to be reported from client. The default value is 5.
 
- `StartTime`
- Data type: `DateTime`
+| Value | State message priority |
+| --- | --- |
+| 0 | URGENT |
+| 1 | HIGH |
+| 5 | NORMAL |
+| 10 | LOW |
 
- Access type: Read/Write
+`StartTime` Data type: `DateTime`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The date and time when the configuration item assignment was initially offered.
+Qualifiers: [not_null]
 
- `SuppressReboot`
- Data type: `UInt32`
+The date and time when the configuration item assignment was initially offered.
 
- Access type: Read/Write
+`SuppressReboot` Data type: `UInt32`
 
- Qualifiers: [not_null, bits]
+Access type: Read/Write
 
- Value indicating whether the client should not reboot the computer, if there is a reboot pending after the configuration item is applied. Possible values are:
+Qualifiers: [not_null, bits]
 
-|Value|Suppress reboot|
-|-|-|
-|0|SUPPRESS_REBOOT_WORKSTATIONS|
-|1|SUPPRESS_REBOOT_SERVERS|
+Value indicating whether the client should not reboot the computer, if there is a reboot pending after the configuration item is applied. Possible values are:
 
- `TargetCollectionID`
- Data type: `String`
+| Value | Suppress reboot |
+| --- | --- |
+| 0 | SUPPRESS_REBOOT_WORKSTATIONS |
+| 1 | SUPPRESS_REBOOT_SERVERS |
 
- Access type: Read/Write
+`TargetCollectionID` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The ID of the collection to which the assignment is targeted.
+Qualifiers: [not_null]
 
- `UseGMTTimes`
- Data type: `Boolean`
+The ID of the collection to which the assignment is targeted.
 
- Access type: Read/Write
+`UseGMTTimes` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if the times and schedules are in Universal Coordinated Time (UTC).
+Qualifiers: [not_null]
 
- `WoLEnabled`
- Data type: `Boolean`
+`true` if the times and schedules are in Universal Coordinated Time (UTC).
 
- Access type: Read/Write
+`WoLEnabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` to send a Wake On Lan (WoL) transmission to the client when the deadline is reached for the assignment.
+Qualifiers: None
+
+`true` to send a Wake On Lan (WoL) transmission to the client when the deadline is reached for the assignment.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
- [SMS_BaselineAssignment Server WMI Class](../../../develop/reference/compliance/sms_baselineassignment-server-wmi-class.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md) [SMS_BaselineAssignment Server WMI Class](sms_baselineassignment-server-wmi-class.md)

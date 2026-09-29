@@ -1,7 +1,7 @@
 ---
-title: Use bootable media to deploy Windows over the network
+title: "Use bootable media to deploy Windows over the network with Configuration Manager"
 description: Use bootable media deployments in Configuration Manager to deploy the OS when the destination computer starts.
-ms.date: 08/11/2020
+ms.date: "2020-08-11T00:00:00Z"
 ms.subservice: osd
 ms.topic: how-to
 ms.collection: tier3
@@ -17,9 +17,7 @@ Bootable media only includes the boot image and a pointer to the task sequence. 
 Deploy operating systems over the network with boot media in the following scenarios:
 
 - [Refresh an existing computer with a new version of Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)
-
 - [Install a new version of Windows on a new computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)
-
 - [Replace an existing computer and transfer settings](replace-an-existing-computer-and-transfer-settings.md)
 
 Complete the steps in one of the OS deployment scenarios and then use the following sections to use bootable media to deploy the OS.
@@ -29,9 +27,7 @@ Complete the steps in one of the OS deployment scenarios and then use the follow
 When you use bootable media to start the OS deployment process, configure the task sequence deployment to make the OS available to the media. Set this option on the **Deployment Settings** page of the deployment. For the **Make available to the following** setting, select one of the following options:
 
 - Configuration Manager clients, media, and PXE
-
 - Only media and PXE
-
 - Only media and PXE (hidden)
 
 For more information, see [Deploy a task sequence](deploy-a-task-sequence.md).
@@ -40,13 +36,11 @@ For more information, see [Deploy a task sequence](deploy-a-task-sequence.md).
 
 When you create bootable media, specify whether it's a USB flash drive or CD/DVD set. The computer that starts the media must support the option that you choose as a bootable drive. For more information, see [Create bootable media](create-bootable-media.md).
 
-## <a name="BKMK_Deploy"></a> Install the OS from bootable media
+## Install the OS from bootable media
 
 To install the OS, insert the bootable media, and then power on the computer.
 
 ## Support for cloud-based content
-
-<!--6209223-->
 
 Starting in version 2006, bootable media can download cloud-based content. For example, you send a USB key to a user at a remote office to reimage their device. Or an office that has a local PXE server, but you want devices to prioritize cloud services as much as possible. Instead of further taxing the WAN to download large OS deployment content, boot media and PXE deployments can now get content from cloud-based sources.
 

@@ -1,7 +1,7 @@
 ---
-title: "SMS_SUMDeploymentStatus Class"
+title: "SMS_SUMDeploymentStatus Server WMI Class"
 description: "The SMS_SUMDeploymentStatus WMI class represents per-deployment-state summary for SUM deployments in-console monitoring."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_SUMDeploymentStatus Server WMI Class
-The `SMS_SUMDeploymentStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents per-deployment-state summary for SUM deployments in-console monitoring.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_SUMDeploymentStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents per-deployment-state summary for SUM deployments in-console monitoring.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_SUMDeploymentStatus : SMS_BaseClass  
 {  
     UInt32 Assets;  
@@ -32,136 +34,141 @@ Class SMS_SUMDeploymentStatus : SMS_BaseClass
     UInt32 StatusType;  
     DateTime SummarizationTime;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_SUMDeploymentStatus` class does not define any methods.  
+## Methods
 
-## Properties  
- `Assets`  
- Data type: `UInt32`  
+The `SMS_SUMDeploymentStatus` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [not_null, read]  
+`Assets`  
+ Data type: `UInt32`
 
- Number of assets related to the status.  
+Access type: Read-only
 
- `AssignmentID`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Number of assets related to the status.
 
- Qualifiers: [key, not_null, read]  
+`AssignmentID`  
+ Data type: `UInt32`
 
- The ID of the configuration item assignment. This ID is unique only for the site.  
+Access type: Read-only
 
- `AssignmentName`  
- Data type: `String`  
+Qualifiers: [key, not_null, read]
 
- Access type: Read-only  
+The ID of the configuration item assignment. This ID is unique only for the site.
 
- Qualifiers: [not_null, read]  
+`AssignmentName`  
+ Data type: `String`
 
- The local assignment name.  
+Access type: Read-only
 
- `AssignmentUniqueID`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+The local assignment name.
 
- Qualifiers: [not_null, read]  
+`AssignmentUniqueID`  
+ Data type: `String`
 
- The unique ID of the configuration item assignment. This ID is unique across sites.  
+Access type: Read-only
 
- `CollectionID`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+The unique ID of the configuration item assignment. This ID is unique across sites.
 
- Qualifiers: [not_null, read]  
+`CollectionID`  
+ Data type: `String`
 
- Existing collection to which the deployment is being targeted.  
+Access type: Read-only
 
- `CollectionName`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Existing collection to which the deployment is being targeted.
 
- Qualifiers: [read]  
+`CollectionName`  
+ Data type: `String`
 
- The name of the collection to which the deployment is being targeted.  
+Access type: Read-only
 
- `LastStatusTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The name of the collection to which the deployment is being targeted.
 
- Qualifiers: [not_null, read]  
+`LastStatusTime`  
+ Data type: `DateTime`
 
- Last status time.  
+Access type: Read-only
 
- `StatusDescription`  
- Data type: `String`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+Last status time.
 
- Qualifiers: [read]  
+`StatusDescription`  
+ Data type: `String`
 
- Description of the status.  
+Access type: Read-only
 
- `StatusEnforcementState`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Description of the status.
 
- Qualifiers: [key, read]  
+`StatusEnforcementState`  
+ Data type: `UInt32`
 
- Additional enforcement state for progress and error status (0 for others).  
+Access type: Read-only
 
- `StatusErrorCode`  
- Data type: `UInt32`  
+Qualifiers: [key, read]
 
- Access type: Read-only  
+Additional enforcement state for progress and error status (0 for others).
 
- Qualifiers: [key, read]  
+`StatusErrorCode`  
+ Data type: `UInt32`
 
- Additional error code for error status (0 for others).  
+Access type: Read-only
 
- `StatusType`  
- Data type: `UInt32`  
+Qualifiers: [key, read]
 
- Access type: Read-only  
+Additional error code for error status (0 for others).
 
- Qualifiers: [enumeration, key, read]  
+`StatusType`  
+ Data type: `UInt32`
 
- Status type. Possible values are:  
+Access type: Read-only
 
-| Value | Status |  
-| ----- | ------ |  
-|1|Success|  
-|2|InProgress|  
-|4|Unknown|  
-|5|Error|  
+Qualifiers: [enumeration, key, read]
 
- `SummarizationTime`  
- Data type: `DateTime`  
+Status type. Possible values are:
 
- Access type: Read-only  
+| Value | Status |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 4 | Unknown |
+| 5 | Error |
 
- Qualifiers: [not_null, read]  
+`SummarizationTime`  
+ Data type: `DateTime`
 
- The last time the summarization task was run for this application.  
+Access type: Read-only
 
-## Remarks  
+Qualifiers: [not_null, read]
 
-## Requirements  
+The last time the summarization task was run for this application.
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+## Remarks
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

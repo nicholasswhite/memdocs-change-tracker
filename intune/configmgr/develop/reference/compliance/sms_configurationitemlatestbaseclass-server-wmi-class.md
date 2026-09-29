@@ -1,16 +1,18 @@
 ---
-title: SMS_ConfigurationItemLatestBaseClass Class
+title: "SMS_ConfigurationItemLatestBaseClass Server WMI Class"
 description: An SMS Provider server class, in Configuration Manager, that represents the latest version of Configuration Items in the system.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ConfigurationItemLatestBaseClass Server WMI Class
+
 The `SMS_ConfigurationItemLatestBaseClass` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the latest version of Configuration Items in the system.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -62,424 +64,387 @@ Class SMS_ConfigurationItemLatestBaseClass : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ConfigurationItemLatestBaseClass` class does not define any methods.
+
+The `SMS_ConfigurationItemLatestBaseClass` class does not define any methods.
 
 ## Properties
- `ApplicabilityCondition`
- Data type: `String`
 
- Access type: Read/Write
+`ApplicabilityCondition` Data type: `String`
 
- Qualifiers: [not_null, sizelimit("512")]
+Access type: Read/Write
 
- Condition that the client evaluates before evaluating the configuration item targeted by an assignment. If the condition does not exist, the configuration item is not evaluated on the client. The string can contain up to 512 characters.
+Qualifiers: [not_null, sizelimit("512")]
 
- `CategoryInstance_UniqueIDs`
- Data type: `String Array`
+Condition that the client evaluates before evaluating the configuration item targeted by an assignment. If the condition does not exist, the configuration item is not evaluated on the client. The string can contain up to 512 characters.
 
- Access type: Read/Write
+`CategoryInstance_UniqueIDs` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The unique IDs of the categories to which the configuration item belongs.
+Qualifiers: none
 
- `CI_ID`
- Data type: `UInt32`
+The unique IDs of the categories to which the configuration item belongs.
 
- Access type: Read-only
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The unique ID of the configuration item. This ID is unique only for the site.
+Qualifiers: [not_null, read]
 
- `CI_UniqueID`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site.
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: [not_null, unique]
+Access type: Read/Write
 
- The unique ID of the configuration item. This ID is unique across sites.
+Qualifiers: [not_null, unique]
 
- `CIType_ID`
- Data type: `UInt32`
+The unique ID of the configuration item. This ID is unique across sites.
 
- Access type: Read-only
+`CIType_ID` Data type: `UInt32`
 
- Qualifiers: [enumeration, not_null, read]
+Access type: Read-only
 
- The type of the configuration item. Possible values are:
+Qualifiers: [enumeration, not_null, read]
 
-|Value|Configuration item type|
-|-|-|
-|1|SoftwareUpdate|
-|2|Baseline|
-|3|OperatingSystem|
-|4|BusinessPolicy (General)|
-|5|Application|
-|6|Driver|
-|7|OtherConfigurationItem|
-|8|SoftwareUpdateBundle|
-|9|AuthorizationList (SoftwareUpdateAuthorizationList)|
-|10|AppModel|
-|11|GlobalSettings|
-|13|GlobalExpression|
-|14|Platform|
-|21|DeploymentType|
-|24|Install Policy Type|
-|25|DeploymentTechnology|
-|26|HostingTechnology|
-|27|InstallerTechnology|
-|28|PublishingItem|
-|29|ApplicationGroup|
-|40|SettingsDefinition|
-|50|ConfigurationPolicy|
-|60|VirtualEnvironment|
-|70|AbstractConfigurationItem|
+The type of the configuration item. Possible values are:
 
- `CIVersion`
- Data type: `UInt32`
+| Value | Configuration item type |
+| --- | --- |
+| 1 | SoftwareUpdate |
+| 2 | Baseline |
+| 3 | OperatingSystem |
+| 4 | BusinessPolicy (General) |
+| 5 | Application |
+| 6 | Driver |
+| 7 | OtherConfigurationItem |
+| 8 | SoftwareUpdateBundle |
+| 9 | AuthorizationList (SoftwareUpdateAuthorizationList) |
+| 10 | AppModel |
+| 11 | GlobalSettings |
+| 13 | GlobalExpression |
+| 14 | Platform |
+| 21 | DeploymentType |
+| 24 | Install Policy Type |
+| 25 | DeploymentTechnology |
+| 26 | HostingTechnology |
+| 27 | InstallerTechnology |
+| 28 | PublishingItem |
+| 29 | ApplicationGroup |
+| 40 | SettingsDefinition |
+| 50 | ConfigurationPolicy |
+| 60 | VirtualEnvironment |
+| 70 | AbstractConfigurationItem |
 
- Access type: Read-only
+`CIVersion` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Configuration item policy version, which is automatically incremented.
+Qualifiers: [not_null, read]
 
- `ConfigurationFlags`
- Data type: `UInt64`
+Configuration item policy version, which is automatically incremented.
 
- Access type: Read-only
+`ConfigurationFlags` Data type: `UInt64`
 
- Qualifiers: [bits("COMPLIANCE_POLICY(0)"), read]
+Access type: Read-only
 
- A bitmask for additional properties,
+Qualifiers: [bits("COMPLIANCE_POLICY(0)"), read]
 
- `CreatedBy`
- Data type: `String`
+A bitmask for additional properties,
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [not_null, read, sizelimit("512")]
+Access type: Read-only
 
- Name of the user who created the configuration item.
+Qualifiers: [not_null, read, sizelimit("512")]
 
- `DateCreated`
- Data type: `DateTime`
+Name of the user who created the configuration item.
 
- Access type: Read-only
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Date and time when the configuration item was created.
+Qualifiers: [not_null, read]
 
- `DateLastModified`
- Data type: `DateTime`
+Date and time when the configuration item was created.
 
- Access type: Read-only
+`DateLastModified` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time when the configuration item was last modified.
+Qualifiers: [read]
 
- `EffectiveDate`
- Data type: `DateTime`
+Date and time when the configuration item was last modified.
 
- Access type: Read-only
+`EffectiveDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time when the <!-- Network Access Protection (NAP)  -->compliance policy for the configuration item becomes effective.
+Qualifiers: [read]
 
- `EULAAccepted`
- Data type: `UInt32`
+Date and time when the compliance policy for the configuration item becomes effective.
 
- Access type: Read-only
+`EULAAccepted` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Indication of acceptance of the Microsoft Software License Terms for the configuration item. The default value is 2.
+Qualifiers: [read]
 
- Possible values are:
+Indication of acceptance of the Microsoft Software License Terms for the configuration item. The default value is 2.
 
-|Value|License terms acceptance|
-|-|-|
-|0|Declined|
-|1|Accepted|
-|2|Undetermined (default)|
+Possible values are:
 
- `EULAExists`
- Data type: `Boolean`
+| Value | License terms acceptance |
+| --- | --- |
+| 0 | Declined |
+| 1 | Accepted |
+| 2 | Undetermined (default) |
 
- Access type: Read-only
+`EULAExists` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if Microsoft Software License Terms exist. The default value is `false`.
+Qualifiers: [read]
 
- `EULASignoffDate`
- Data type: `DateTime`
+`true` if Microsoft Software License Terms exist. The default value is `false`.
 
- Access type: Read-only
+`EULASignoffDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time when the Microsoft Software License Terms were signed off.
+Qualifiers: [read]
 
- `EULASignoffUser`
- Data type: `String`
+Date and time when the Microsoft Software License Terms were signed off.
 
- Access type: Read-only
+`EULASignoffUser` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- User who signed off on the Microsoft Software License Terms.
+Qualifiers: [read]
 
- `ExecutionContext`
- Data type: `UInt32`
+User who signed off on the Microsoft Software License Terms.
 
- Access type: Read-only
+`ExecutionContext` Data type: `UInt32`
 
- Qualifiers: [read, valuemap, values]
+Access type: Read-only
 
- Execution context that the configuration item should be evaluated under.
+Qualifiers: [read, valuemap, values]
 
-|Value|Execution context|
-|-|-|
-|0|System|
-|1|User|
+Execution context that the configuration item should be evaluated under.
 
- `IsBundle`
- Data type: `Boolean`
+| Value | Execution context |
+| --- | --- |
+| 0 | System |
+| 1 | User |
 
- Access type: Read/Write
+`IsBundle` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if the configuration item is bundled within another configuration item.
+Qualifiers: [not_null]
 
- `IsDigest`
- Data type: `Boolean`
+`true` if the configuration item is bundled within another configuration item.
 
- Access type: Read-only
+`IsDigest` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Deprecated.
+Qualifiers: [read]
 
- `IsEnabled`
- Data type: `Boolean`
+Deprecated.
 
- Access type: Read/Write
+`IsEnabled` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if the configuration item is enabled and can be evaluated.
+Qualifiers: [not_null]
 
- `IsExpired`
- Data type: `Boolean`
+`true` if the configuration item is enabled and can be evaluated.
 
- Access type: Read/Write
+`IsExpired` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if the configuration item is no longer active.
+Qualifiers: [not_null]
 
- `IsHidden`
- Data type: `Boolean`
+`true` if the configuration item is no longer active.
 
- Access type: Read/Write
+`IsHidden` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if the configuration item is not shown in the Configuration Manager console.
+Qualifiers: [not_null]
 
- `IsLatest`
- Data type: `Boolean`
+`true` if the configuration item is not shown in the Configuration Manager console.
 
- Access type: Read-only
+`IsLatest` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the configuration item is the latest.
+Qualifiers: [read]
 
- `IsSuperseded`
- Data type: `Boolean`
+`true` if the configuration item is the latest.
 
- Access type: Read-only
+`IsSuperseded` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the configuration item is superseded by a new configuration item.
+Qualifiers: [not_null, read]
 
- `IsUserDefined`
- Data type: `Boolean`
+`true` if the configuration item is superseded by a new configuration item.
 
- Access type: Read/Write
+`IsUserDefined` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- `true` if the configuration item was created by the user.
+Qualifiers: [not_null]
 
- `LastModifiedBy`
- Data type: `String`
+`true` if the configuration item was created by the user.
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [not_null, read, sizelimit("512")]
+Access type: Read-only
 
- User who last modified the configuration item. The string can contain up to 512 characters.
+Qualifiers: [not_null, read, sizelimit("512")]
 
- `LocalizedCategoryInstanceNames`
- Data type: `String Array`
+User who last modified the configuration item. The string can contain up to 512 characters.
 
- Access type: Read-only
+`LocalizedCategoryInstanceNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Localized names of the categories to which the configuration item belongs.
+Qualifiers: [read]
 
- `LocalizedDescription`
- Data type: `String`
+Localized names of the categories to which the configuration item belongs.
 
- Access type: Read-only
+`LocalizedDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Localized description of the configuration item.
+Qualifiers: [read]
 
- `LocalizedDisplayName`
- Data type: `String`
+Localized description of the configuration item.
 
- Access type: Read-only
+`LocalizedDisplayName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Localized display name of the configuration item.
+Qualifiers: [read]
 
- `LocalizedInformativeURL`
- Data type: `String`
+Localized display name of the configuration item.
 
- Access type: Read-only
+`LocalizedInformativeURL` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- URL for additional localized information about the configuration item.
+Qualifiers: [read]
 
- `LocalizedPropertyLocaleID`
- Data type: `UInt32`
+URL for additional localized information about the configuration item.
 
- Access type: Read-only
+`LocalizedPropertyLocaleID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Locale ID of the localized properties of the configuration item.
+Qualifiers: [read]
 
- `ModelID`
- Data type: `UInt32`
+Locale ID of the localized properties of the configuration item.
 
- Access type: Read/Write
+`ModelID` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The model ID.
+Qualifiers: [not_null]
 
- `ModelName`
- Data type: `String`
+The model ID.
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: [key, not_null, unique]
+Access type: Read/Write
 
- Desired configuration management model name for the configuration item.
+Qualifiers: [key, not_null, unique]
 
- `PermittedUses`
- Data type: `UInt32`
+Desired configuration management model name for the configuration item.
 
- Access type: Read/Write
+`PermittedUses` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- Valid uses of the configuration item.
+Qualifiers: [not_null]
 
- `PlatformCategoryInstance_UniqueIDs`
- Data type: `String Array`
+Valid uses of the configuration item.
 
- Access type: Read/Write
+`PlatformCategoryInstance_UniqueIDs` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- Category of the platform that this configuration item is applicable on.
+Qualifiers: none
 
- `PlatformType`
- Data type: `UInt32`
+Category of the platform that this configuration item is applicable on.
 
- Access type: Read-only
+`PlatformType` Data type: `UInt32`
 
- Qualifiers: [bitmap, bitvalues, read]
+Access type: Read-only
 
- Platform that the configuration item is applicable on.
+Qualifiers: [bitmap, bitvalues, read]
 
- `SDMPackageLocalizedData`
- Data type: `SMS_SDMPackageLocalizedData Array`
+Platform that the configuration item is applicable on.
 
- Access type: Read/Write
+`SDMPackageLocalizedData` Data type: `SMS_SDMPackageLocalizedData Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Localized data files associated with the System Definition Model (SDM) package for the configuration item.
+Qualifiers: [lazy]
 
- `SDMPackageVersion`
- Data type: `UInt32`
+Localized data files associated with the System Definition Model (SDM) package for the configuration item.
 
- Access type: Read/Write
+`SDMPackageVersion` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- Deprecated.
+Qualifiers: [not_null]
 
- `SDMPackageXML`
- Data type: `String`
+Deprecated.
 
- Access type: Read/Write
+`SDMPackageXML` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- The DCM digest of the configuration item if it is a fully interpreted configuration item. This property indicates the Service Modeling Language (SML) definition of the configuration item if it is an item that is not interpreted or partially interpreted.
+Qualifiers: [lazy]
 
- `SecuredScopeNames`
- Data type: `String Array`
+The DCM digest of the configuration item if it is a fully interpreted configuration item. This property indicates the Service Modeling Language (SML) definition of the configuration item if it is an item that is not interpreted or partially interpreted.
 
- Access type: Read-only
+`SecuredScopeNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The names of the secured scopes.
+Qualifiers: [read]
 
- `SedoObjectVersion`
- Data type: `String`
+The names of the secured scopes.
 
- Access type: Read-only
+`SedoObjectVersion` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
+
+Qualifiers: [read]
 
 The version of the SEDO object.
 
- `SourceSite`
- Data type: `String`
+`SourceSite` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [sizelimit("3")]
+Qualifiers: [sizelimit("3")]
 
- Site where the configuration item is imported or created. The string can contain up to three characters.
+Site where the configuration item is imported or created. The string can contain up to three characters.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

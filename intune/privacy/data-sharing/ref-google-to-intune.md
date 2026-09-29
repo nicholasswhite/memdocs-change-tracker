@@ -1,7 +1,7 @@
 ---
 title: Data Google sends to Intune
 description: List of data that Google sends to Intune when Android enterprise device management is enabled with Intune.
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.topic: reference
 ms.reviewer:
 ---
@@ -13,9 +13,9 @@ When Android enterprise device management is enabled on a device, Microsoft Intu
 The following table lists the data that Google sends to Intune when device management is enabled on an Android device:
 
 | Data Google sends to Intune | Details | Used for | Example |
-|:---:|:---:|:---:|:---:|
-| Enterprise data | Customer's enterprise identifiers in Google. | Links the customer's information between Intune and Google. | **enterpriseId** example: LC04eik8a6.<br>**Name**. The Administrator name as entered when configuring Android enterprise. Example: Joe Smith.<br>**Admin email**. YourAdmin@gmail.com that was used when configuring Android enterprise. |
-| Application data | Data for managed Play Store applications. | Targeting the application to users or devices as available or required. | **Application Name** example: Contoso Warehouse Inventory Application.<br>**Unique Identifier to represent application** example: app:com.Contoso.Warehouse.InventoryTracking |
-| Service account | Unique internal Google service account for use with specific customer calls. | Used for making calls into Google on the customer behalf (to view apps, devices, and more) | **Name** example: InternalAccount@InternalService.com.<br>**Keys** example: ServiceAccountPassword |
+| --- | --- | --- | --- |
+| Enterprise data | Customer's enterprise identifiers in Google. | Links the customer's information between Intune and Google. | **enterpriseId** example: LC04eik8a6. **Name**. The Administrator name as entered when configuring Android enterprise. Example: Joe Smith. **Admin email**. YourAdmin@gmail.com that was used when configuring Android enterprise. |
+| Application data | Data for managed Play Store applications. | Targeting the application to users or devices as available or required. | **Application Name** example: Contoso Warehouse Inventory Application. **Unique Identifier to represent application** example: app:com.Contoso.Warehouse.InventoryTracking |
+| Service account | Unique internal Google service account for use with specific customer calls. | Used for making calls into Google on the customer behalf (to view apps, devices, and more) | **Name** example: InternalAccount@InternalService.com. **Keys** example: ServiceAccountPassword |
 
 To stop using Android enterprise device management with Microsoft Intune and delete the data, you must both disable the Microsoft Intune Android enterprise device management and also delete your Google account. Refer to Google account how to perform account management.

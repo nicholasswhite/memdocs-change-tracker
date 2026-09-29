@@ -1,16 +1,18 @@
 ---
-title: SMS_UserSettings Class
+title: "SMS_UserSettings Server WMI Class"
 description: The SMS_UserSettings class describes attributes that are specific to a single user that is managed by Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_UserSettings Server WMI Class
+
 The `SMS_UserSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes attributes that are specific to a single user that is managed by Configuration Manager.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,61 +27,63 @@ Class SMS_UserSettings
 ```
 
 ## Methods
- The `SMS_UserSettings` class does not define any methods.
+
+The `SMS_UserSettings` class does not define any methods.
 
 ## Properties
- `LastModificationTime`
- Data type: `DateTime`
 
- Access type: Read-only
+`LastModificationTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The date and time when the user settings were last modified.
+Qualifiers: [read]
 
- `LocaleID`
- Data type: `UInt32`
+The date and time when the user settings were last modified.
 
- Access type: Read/Write
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The ID of the locale used to convert the localized name and description of the user. The default locale ID is 1033, English (United States).
+Qualifiers: None
 
- `UserVariables`
- Data type: `SMS_UserVariable` Array
+The ID of the locale used to convert the localized name and description of the user. The default locale ID is 1033, English (United States).
 
- Access type: Read/Write
+`UserVariables` Data type: `SMS_UserVariable` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- The SMS_UserVariable Server WMI Class objects representing user variables for the user resource.
+Qualifiers: [lazy]
 
- `ResourceID`
- Data type: `UInt32`
+The SMS_UserVariable Server WMI Class objects representing user variables for the user resource.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [Key]
+Access type: Read/Write
 
- The unique resource ID for the user.
+Qualifiers: [Key]
+
+The unique resource ID for the user.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Your application can use this class as described in How to Create a Computer Variable in Configuration Manager.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_UserVariable Server WMI Class](../../../develop/reference/osd/sms_machinevariable-server-wmi-class.md)
+
+[SMS_UserVariable Server WMI Class](sms_machinevariable-server-wmi-class.md)

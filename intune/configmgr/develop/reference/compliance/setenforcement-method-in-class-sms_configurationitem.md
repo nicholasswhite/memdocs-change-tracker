@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SetEnforcement method in class SMS_ConfigurationItem to set the enforcement and the enforcement date for a configuration item.
-title: SetEnforcement method in class SMS_ConfigurationItem
-ms.date: 09/20/2016
+title: "SetEnforcement Method in Class SMS_ConfigurationItem"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SetEnforcement Method in Class SMS_ConfigurationItem
+
 The `SetEnforcement` Windows Management Instrumentation (WMI) class method, in Configuration Manager, sets the enforcement and the enforcement date for a configuration item.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,32 +24,35 @@ SInt32 SetEnforcement(
 ```
 
 #### Parameters
- `Enforced`
- Data type: `Boolean`
 
- Qualifiers: [in]
+`Enforced` Data type: `Boolean`
 
- `true` if policy enforcement is enabled.
+Qualifiers: [in]
 
- `EffectiveDate`
- Data type: `DateTime`
+`true` if policy enforcement is enabled.
 
- Qualifiers: [in]
+`EffectiveDate` Data type: `DateTime`
 
- The date and time, in Coordinated Universal Time (UTC), when the configuration item is compliant.
+Qualifiers: [in]
+
+The date and time, in Coordinated Universal Time (UTC), when the configuration item is compliant.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ConfigurationItem Server WMI Class](../../../develop/reference/compliance/sms_configurationitem-server-wmi-class.md)
+
+[SMS_ConfigurationItem Server WMI Class](sms_configurationitem-server-wmi-class.md)

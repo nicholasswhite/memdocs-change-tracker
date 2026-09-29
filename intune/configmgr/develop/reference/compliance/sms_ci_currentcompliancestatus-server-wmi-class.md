@@ -1,13 +1,15 @@
 ---
-title: SMS_CI_CurrentComplianceStatus Class
+title: "SMS_CI_CurrentComplianceStatus Server WMI Class"
 description: Represents the compliance status for a baseline configuration item.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CI_CurrentComplianceStatus Server WMI Class
+
 The `SMS_CI_CurrentComplianceStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the compliance status for a baseline configuration item.
 
 ## Syntax
@@ -38,223 +40,209 @@ Class SMS_CI_CurrentComplianceStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CI_CurrentComplianceStatus` class does not define any methods.
+
+The `SMS_CI_CurrentComplianceStatus` class does not define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `UInt32`
 
- Access type: Read
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The unique ID of the configuration item. This ID is unique only for the site.
+Qualifiers: [key]
 
- `CI_UniqueID`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site.
 
- Access type: Read
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: [unique]
+Access type: Read
 
- The unique ID of the configuration item. This ID is unique across sites.
+Qualifiers: [unique]
 
- `CIVersion`
- Data type: `UInt32`
+The unique ID of the configuration item. This ID is unique across sites.
 
- Access type: Read/Write
+`CIVersion` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Version of the configuration item.
+Qualifiers: none
 
- `ComplianceState`
- Data type: `UInt32`
+Version of the configuration item.
 
- Access type: Read
+`ComplianceState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The compliance state for the configuration item.
+Qualifiers: None
 
- `ComplianceStateName`
- Data type: `String`
+The compliance state for the configuration item.
 
- Access type: Read
+`ComplianceStateName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- The readable name of the compliance state. Possible values are:
+Qualifiers: None
 
-|Value|Compliance state|
-|-|-|
-|0|Compliance State Unknown|
-|1|Compliant|
-|2|Non-Compliant|
-|4|Error|
+The readable name of the compliance state. Possible values are:
 
- `ComplianceStatusDetails`
- Data type: `String`
+| Value | Compliance state |
+| --- | --- |
+| 0 | Compliance State Unknown |
+| 1 | Compliant |
+| 2 | Non-Compliant |
+| 4 | Error |
 
- Access type: Read
+`ComplianceStatusDetails` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read
 
- The noncompliance detail report sent by the client in XML format.
+Qualifiers: [lazy]
 
- `ComplianceValidationRuleFailures`
- Data type: `UInt32`
+The noncompliance detail report sent by the client in XML format.
 
- Access type: Read
+`ComplianceValidationRuleFailures` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The number of validation rule failures.
+Qualifiers: None
 
- `DesiredState`
- Data type: `UInt32`
+The number of validation rule failures.
 
- Access type: Read
+`DesiredState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Desired compliance state of the configuration item on the computer.
+Qualifiers: None
 
- `EnforcementState`
- Data type: `UInt32`
+Desired compliance state of the configuration item on the computer.
 
- Access type: Read
+`EnforcementState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The enforcement state. Possible values are:
+Qualifiers: None
 
-|Value|Enforcement state|
-|-|-|
-|0|Enforcement State Unknown|
-|1|Enforcement started|
-|2|Enforcement waiting for content|
-|3|Waiting for another installation to complete|
-|4|Waiting for maintenance window before installing|
-|5|Restart required before installing|
-|6|General failure|
-|7|Pending installation|
-|8|Installing update|
-|9|Pending system restart|
-|10|Successfully installed update|
-|11|Failed to install update|
-|12|Downloading update|
-|13|Downloaded update|
-|14|Failed to download update|
+The enforcement state. Possible values are:
 
- `EnforcementStateName`
- Data type: `String`
+| Value | Enforcement state |
+| --- | --- |
+| 0 | Enforcement State Unknown |
+| 1 | Enforcement started |
+| 2 | Enforcement waiting for content |
+| 3 | Waiting for another installation to complete |
+| 4 | Waiting for maintenance window before installing |
+| 5 | Restart required before installing |
+| 6 | General failure |
+| 7 | Pending installation |
+| 8 | Installing update |
+| 9 | Pending system restart |
+| 10 | Successfully installed update |
+| 11 | Failed to install update |
+| 12 | Downloading update |
+| 13 | Downloaded update |
+| 14 | Failed to download update |
 
- Access type: Read
+`EnforcementStateName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- The name of the enforcement state.
+Qualifiers: None
 
- `IsApplicable`
- Data type: `Boolean`
+The name of the enforcement state.
 
- Access type: Read
+`IsApplicable` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read
 
- `true` if the configuration item is applicable on the computer.
+Qualifiers: None
 
- `IsDetected`
- Data type: `Boolean`
+`true` if the configuration item is applicable on the computer.
 
- Access type: Read
+`IsDetected` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read
 
- `true` if the configuration item is detected on the computer.
+Qualifiers: None
 
- `LastComplianceMessageTime`
- Data type: `DateTime`
+`true` if the configuration item is detected on the computer.
 
- Access type: Read
+`LastComplianceMessageTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read
 
- Date and time of the last compliance state message.
+Qualifiers: None
 
- `LastEnforcementMessageTime`
- Data type: `DateTime`
+Date and time of the last compliance state message.
 
- Access type: Read
+`LastEnforcementMessageTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read
 
- Date and time of the last enforcement state message.
+Qualifiers: None
 
- `MaxNoncomplianceCriticality`
- Data type: `UInt32`
+Date and time of the last enforcement state message.
 
- Access type: Read
+`MaxNoncomplianceCriticality` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The maximum non-compliance severity reported by the client for the configuration item.
+Qualifiers: None
 
- `ModelName`
- Data type: `String`
+The maximum non-compliance severity reported by the client for the configuration item.
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Model name of the configuration item.
+Qualifiers: none
 
- `ResourceID`
- Data type: `UInt32`
+Model name of the configuration item.
 
- Access type: Read
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The unique ID of the resource for the configuration item.
+Qualifiers: [key]
 
- `SDMPackageVersion`
- Data type: `UInt32`
+The unique ID of the resource for the configuration item.
 
- Access type: Read
+`SDMPackageVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- System Definition Model (SDM) content version of the configuration item.
+Qualifiers: None
 
- `UserName`
- Data type: `String`
+System Definition Model (SDM) content version of the configuration item.
 
- Access type: Read/Write
+`UserName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Name of the user.
+Qualifiers: [key]
+
+Name of the user.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Your application uses this class for compliance monitoring for a baseline configuration item.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md)

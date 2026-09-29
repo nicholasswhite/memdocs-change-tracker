@@ -1,16 +1,18 @@
 ---
-title: LoadIconForPDF Method
+title: "LoadIconForPDF Method in Class SMS_PDF_Package"
 description: In Configuration Manager, the LoadIconForPDF Windows Management Instrumentation class method imports a required icon for a package definition file.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # LoadIconForPDF Method in Class SMS_PDF_Package
+
 The `LoadIconForPDF` Windows Management Instrumentation (WMI) class method, in Configuration Manager, imports a required icon for a package definition file.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,45 +25,49 @@ SInt32 LoadIconForPDF(
 ```
 
 #### Parameters
- `PDFID`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`PDFID` Data type: `UInt32`
 
- ID of the package definition file to which to add icons. Get this value from the `PDFID` parameter of the [LoadPDF Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/loadpdf-method-in-class-sms_pdf_package.md) method.
+Qualifiers: [in]
 
- `IconFileName`
- Data type: `String`
+ID of the package definition file to which to add icons. Get this value from the `PDFID` parameter of the [LoadPDF Method in Class SMS_PDF_Package](loadpdf-method-in-class-sms_pdf_package.md) method.
 
- Qualifiers: [in, SizeLimit("100")]
+`IconFileName` Data type: `String`
 
- Full path and file name of a required package definition file icon. Get the icon name from the `RequriedIconNames` parameter of the `LoadPDF` method. Include the path if necessary.
+Qualifiers: [in, SizeLimit("100")]
 
- `Icon`
- Data type: `UInt8` Array
+Full path and file name of a required package definition file icon. Get the icon name from the `RequriedIconNames` parameter of the `LoadPDF` method. Include the path if necessary.
 
- Qualifiers: [in]
+`Icon` Data type: `UInt8` Array
 
- Icon to associate with the package.
+Qualifiers: [in]
+
+Icon to associate with the package.
 
 ## Return Values
- An `SInt32` data type.
+
+An `SInt32` data type.
 
 ## Remarks
- Package definition files can reference icons to be used with the package. These icons are not part of the file and must be loaded separately.
 
- Your application must call `LoadIconForPDF` for every icon that [LoadPDF Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/loadpdf-method-in-class-sms_pdf_package.md) loads.
+Package definition files can reference icons to be used with the package. These icons are not part of the file and must be loaded separately.
+
+Your application must call `LoadIconForPDF` for every icon that [LoadPDF Method in Class SMS_PDF_Package](loadpdf-method-in-class-sms_pdf_package.md) loads.
 
 ## Example Code
- For an example that uses the `LoadIconForPDF` method, see [LoadPDF Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/loadpdf-method-in-class-sms_pdf_package.md).
+
+For an example that uses the `LoadIconForPDF` method, see [LoadPDF Method in Class SMS_PDF_Package](loadpdf-method-in-class-sms_pdf_package.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_PDF_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_pdf_package-server-wmi-class.md)
+
+[SMS_PDF_Package Server WMI Class](sms_pdf_package-server-wmi-class.md)

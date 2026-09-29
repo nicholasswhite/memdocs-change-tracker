@@ -1,7 +1,7 @@
 ---
-title: Enable the Mobile Threat Defense connector for unenrolled devices
+title: "Enable the Mobile Threat Defense connector in Intune for unenrolled devices"
 description: Enable the Mobile Threat Defense connector in Microsoft Intune for unenrolled devices.
-ms.date: 08/20/2024
+ms.date: "2024-08-20T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -9,7 +9,21 @@ ms.topic: how-to
 
 During Mobile Threat Defense (MTD) setup, you've configured a policy for classifying threats in your Mobile Threat Defense partner console and you've created the app protection policy in Intune. If you've already configured the Intune connector in the MTD partner console, you can now enable the MTD connection for MTD partner applications.
 
-[!INCLUDE [mtd-mam-note](./includes/mtd-mam-note.md)]
+> [!NOTE]
+>
+> This article applies to all Mobile Threat Defense partners that support app protection policies:
+>
+> - Better Mobile (Android, iOS/iPadOS)
+> - BlackBerry Mobile (CylancePROTECT for Android, iOS/iPadOS)
+> - Check Point Harmony Mobile (Android, iOS/iPadOS)
+> - Jamf (Android, iOS/iPadOS)
+> - Lookout for Work (Android, iOS/iPadOS)
+> - Microsoft Defender for Endpoint (Android, iOS/iPadOS, Windows)
+> - SentinelOne (Android, iOS/iPadOS)
+> - Symantec Endpoint Security (Android, iOS/iPadOS)
+> - Trellix Mobile Security (Android, iOS/iPadOS)
+> - Windows Security Center (Windows) - *For information about the Windows versions that support this connector, see [Data protection for Windows MAM](../../app-management/protection/enable-mam-windows.md).*
+> - Zimperium (Android, iOS/iPadOS)
 
 ## Classic Conditional Access policies for Mobile Threat Defense (MTD) apps
 
@@ -23,24 +37,19 @@ If the classic policy is deleted, delete the connection to Intune that was respo
 
 Classic Conditional Access policies for MTD apps:
 
-
 - Are used by Intune MTD to require that devices are registered in Microsoft Entra ID, and that they have a device ID before they communicate with the MTD partner. The ID is required so that devices and can successfully report their status to Intune.
 - Have no effect on any other Cloud apps or Resources.
 - Are distinct from Conditional Access policies you might create to help manage MTD.
 - By default, don't interact with other Condition
 
-To view classic Conditional Access policies, in [Azure](https://portal.azure.com/#home), go to **Microsoft Entra ID** > **Conditional Access** > **Classic policies**.
+To view classic Conditional Access policies, in [Azure](https://portal.azure.com/#home), go to **Microsoft Entra ID** &gt; **Conditional Access** &gt; **Classic policies**.
 
 ## To enable the Mobile Threat Defense connector
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Select **Tenant administration** > **Connectors and tokens** > **Mobile Threat Defense**. To set up an integration with a third-party Mobile Threat Defense vendor, your account must be assigned the *Endpoint Security Manager* built-in admin role for Intune, or be assigned a custom role that includes the *Read* and *Modify* rights for the Intune *Mobile Threat Defense* permission.
-
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Tenant administration** &gt; **Connectors and tokens** &gt; **Mobile Threat Defense**. To set up an integration with a third-party Mobile Threat Defense vendor, your account must be assigned the *Endpoint Security Manager* built-in admin role for Intune, or be assigned a custom role that includes the *Read* and *Modify* rights for the Intune *Mobile Threat Defense* permission.
 3. On the **Mobile Threat Defense** pane, select **Add**.
-
 4. For **Mobile Threat Defense connector to setup**, select your MTD partner solution from the drop-down list..
-
 5. Enable the toggle options according to your organization's requirements. The toggle options that are visible can vary depending on the MTD partner.
 
 ## Mobile Threat Defense toggle options
@@ -53,9 +62,8 @@ You can decide which MTD toggle options you need to enable according to your org
 
 **App Protection Policy Settings**:
 
-- **Connect Android devices of version 4.4 and above to *\<MTD partner name>* for app protection policy evaluation**: When you enable this option, app protection policies using the Device Threat Level rule evaluate devices including data from this connector.
-
-- **Connect iOS devices version 11 and above to *\<MTD partner name>* for app protection policy evaluation**: When you enable this option, app protection policies using the Device Threat Level rule evaluate devices including data from this connector.
+- **Connect Android devices of version 4.4 and above to *&lt;MTD partner name&gt;* for app protection policy evaluation**: When you enable this option, app protection policies using the Device Threat Level rule evaluate devices including data from this connector.
+- **Connect iOS devices version 11 and above to *&lt;MTD partner name&gt;* for app protection policy evaluation**: When you enable this option, app protection policies using the Device Threat Level rule evaluate devices including data from this connector.
 
 **Common Shared Settings**:
 
@@ -67,8 +75,4 @@ You can decide which MTD toggle options you need to enable according to your org
 
 ## Next Steps
 
-- [Create Mobile Threat Defense (MTD) app protection policy with Intune](./create-app-protection-policy.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Create Mobile Threat Defense (MTD) app protection policy with Intune](create-app-protection-policy.md).

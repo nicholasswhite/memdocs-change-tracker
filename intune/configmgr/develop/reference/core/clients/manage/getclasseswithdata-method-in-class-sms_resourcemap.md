@@ -1,13 +1,15 @@
 ---
-title: GetClassesWithData Method
+title: "GetClassesWithData Method in Class SMS_ResourceMap"
 description: Learn how the GetClassesWithData Windows Management Instrumentation (WMI) class method gets the names of the classes that have inventory data for a resource.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetClassesWithData Method in Class SMS_ResourceMap
+
 The `GetClassesWithData` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets the names of the classes that have inventory data for a resource.
 
 ## Syntax
@@ -21,39 +23,41 @@ SInt32 GetClassesWithData(
 ```
 
 #### Parameters
- `ResourceId`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`ResourceId` Data type: `UInt32`
 
- ID of the resource.
+Qualifiers: [in]
 
- `History`
- Data type: `Boolean`
+ID of the resource.
 
- Qualifiers: [in]
+`History` Data type: `Boolean`
 
- TRUE to include history.
+Qualifiers: [in]
 
- `ClassNames`
- Data type: `String`
+TRUE to include history.
 
- Qualifiers: [out]
+`ClassNames` Data type: `String`
 
- Names of classes that have inventory for the specified resource.
+Qualifiers: [out]
+
+Names of classes that have inventory for the specified resource.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ResourceMap Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resourcemap-server-wmi-class.md)
+
+[SMS_ResourceMap Server WMI Class](sms_resourcemap-server-wmi-class.md)

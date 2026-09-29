@@ -1,7 +1,7 @@
 ---
-title: Sample queries for discovery
+title: "Sample queries for discovery in Configuration Manager"
 description: Sample queries that show how to join discovery views to each other and views from other view categories.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 
@@ -56,6 +56,7 @@ The following query retrieves all resources in the **All Systems** collection an
 The following query retrieves all resources that have performed a scan for software updates, the last scan time, the last scan state, and the Windows Update Agent version on the client. The query joins the **v_R_System** discovery view and **v_UpdateScanStatus** software updates view by using the **ResourceID** column, and it uses LEFT OUTER JOIN between the **v_UpdateScanStatus** software updates view and **v_StateNames** status view by using the **LastScanState** and **StateID** columns. The state message topic types are filtered by **TopicType = 501**, which indicates scan-state messages.
 
 > [!NOTE]
+>
 > The state topic type, state ID, state name, and state description for all Configuration Manager state messages are listed in the **v_StateNames** view.
 
 ```sql

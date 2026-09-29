@@ -1,16 +1,18 @@
 ---
-title: SMS_SupportedPlatformsOfflineServicing Class
+title: "SMS_SupportedPlatformsOfflineServicing Server WMI Class"
 description: In Configuration Manager, the SMS_SupportedPlatformsOfflineServicing Windows Management Instrumentation class is an SMS Provider server class that used to determine which operating system images can be serviced offline.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SupportedPlatformsOfflineServicing Server WMI Class
+
 The `SMS_SupportedPlatformsOfflineServicing` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that used to determine which operating system images can be serviced offline.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,47 +26,48 @@ Class SMS_SupportedPlatformsOfflineServicing : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SupportedPlatformsOfflineServicing` class does not define any methods.
+
+The `SMS_SupportedPlatformsOfflineServicing` class does not define any methods.
 
 ## Properties
- `Name`
- Data type: `String`
 
- Access type: Read
+`Name` Data type: `String`
 
- Qualifiers: [key, not_null]
+Access type: Read
 
- The name of the operating system that supports offline servicing, such as "Windows 8" or "Windows 8 Server".
+Qualifiers: [key, not_null]
 
- `OsVersionBuild`
- Data type: `String`
+The name of the operating system that supports offline servicing, such as "Windows 8" or "Windows 8 Server".
 
- Access type: Read
+`OsVersionBuild` Data type: `String`
 
- Qualifiers: [key, not_null]
+Access type: Read
 
- The version and build number of Windows that supports offline servicing, such as 6.0.6001.
+Qualifiers: [key, not_null]
 
- `ProductType`
- Data type: `String`
+The version and build number of Windows that supports offline servicing, such as 6.0.6001.
 
- Access type: Read
+`ProductType` Data type: `String`
 
- Qualifiers: [key, not_null]
+Access type: Read
 
- Product type. Two string values are used: "WinNT" - to indicate a client operating system type, "ServerNT" - to indicate server operating system type. Possible values are:
+Qualifiers: [key, not_null]
 
-|String Value|Operating System Type|
-|------------------|---------------------------|
-|ServerNT|Server|
-|WinNT|Client|
+Product type. Two string values are used: "WinNT" - to indicate a client operating system type, "ServerNT" - to indicate server operating system type. Possible values are:
+
+| String Value | Operating System Type |
+| --- | --- |
+| ServerNT | Server |
+| WinNT | Client |
 
 ## Remarks
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

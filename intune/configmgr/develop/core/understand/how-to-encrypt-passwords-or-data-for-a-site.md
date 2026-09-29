@@ -1,7 +1,7 @@
 ---
-title: Encrypt Passwords or Data for a Site
+title: "How to Encrypt Passwords or Data for a Site"
 description: Encrypt Passwords or Data for a Site. Using a new WMI method, the user accounts' passwords can be encrypted for a specific site.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -16,17 +16,12 @@ Using a new WMI method, these account passwords can be encrypted for a specific 
 
 ## To Encrypt Data for a Site
 
-1.  Connect to the Configuration Manager site.
-
-2.  Get the parameters for the [EncryptDataEx Method in Class SMS_Site](../../../develop/reference/core/servers/configure/encryptdataex-method-in-class-sms_site.md) method.
-
-3.  Add the data to be encrypted to the `Data` parameter.
-
-4.  Add the site code of the specific site for which the data should be encrypted to the `SiteCode` parameter.
-
-5.  Encrypt the data for the specified site by invoking the [EncryptDataEx Method in Class SMS_Site](../../../develop/reference/core/servers/configure/encryptdataex-method-in-class-sms_site.md).
-
-6.  In this case, the encrypted string is output as a test.
+1. Connect to the Configuration Manager site.
+2. Get the parameters for the [EncryptDataEx Method in Class SMS_Site](../../reference/core/servers/configure/encryptdataex-method-in-class-sms_site.md) method.
+3. Add the data to be encrypted to the `Data` parameter.
+4. Add the site code of the specific site for which the data should be encrypted to the `SiteCode` parameter.
+5. Encrypt the data for the specified site by invoking the [EncryptDataEx Method in Class SMS_Site](../../reference/core/servers/configure/encryptdataex-method-in-class-sms_site.md).
+6. In this case, the encrypted string is output as a test.
 
 ### Example
 
@@ -83,4 +78,4 @@ System.Management
 
 ## Robust Programming
 
-For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).

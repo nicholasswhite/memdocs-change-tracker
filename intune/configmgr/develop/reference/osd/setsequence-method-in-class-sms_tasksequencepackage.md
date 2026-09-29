@@ -1,16 +1,18 @@
 ---
 description: The SetSequence Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the task sequence package with the specified task sequence.
-title: SetSequence Method
-ms.date: 09/20/2016
+title: "SetSequence Method in Class SMS_TaskSequencePackage"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SetSequence Method in Class SMS_TaskSequencePackage
+
 The `SetSequence` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the task sequence package with the specified task sequence.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,46 +25,47 @@ SInt32 SetSequence(
 ```
 
 #### Parameters
- `TaskSequencePackage`
- Data type: `SMS_TaskSequencePackage`
 
- Qualifiers: [in]
+`TaskSequencePackage` Data type: `SMS_TaskSequencePackage`
 
- The package that the task sequence `TaskSequence` is added to. See [SMS_TaskSequencePackage Server WMI Class](../../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md).
+Qualifiers: [in]
 
- `TaskSequence`
- Data type: `SMS_TaskSequence`
+The package that the task sequence `TaskSequence` is added to. See [SMS_TaskSequencePackage Server WMI Class](sms_tasksequencepackage-server-wmi-class.md).
 
- Qualifiers: [in]
+`TaskSequence` Data type: `SMS_TaskSequence`
 
- The [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md) object that represents the task sequence that is added to `TaskSequencePackage`.
+Qualifiers: [in]
 
- `SavedTaskSequencePackagePath`
- Data type: `String`
+The [SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md) object that represents the task sequence that is added to `TaskSequencePackage`.
 
- Qualifiers: [out]
+`SavedTaskSequencePackagePath` Data type: `String`
 
- The relative WMI object path for the updated task sequence package.
+Qualifiers: [out]
+
+The relative WMI object path for the updated task sequence package.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
- `SetSequence` is used to associate a task sequence ([SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)) with a task sequence package.
 
- This method also updates other properties of the task sequence package, for example, package references and task sequence type, based on the specified task sequence.
+`SetSequence` is used to associate a task sequence ([SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md)) with a task sequence package.
+
+This method also updates other properties of the task sequence package, for example, package references and task sequence type, based on the specified task sequence.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)
- [SMS_TaskSequencePackage Server WMI Class](../../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md)
- [GetSequence Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/getsequence-method-in-class-sms_tasksequencepackage.md)
+
+[SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md) [SMS_TaskSequencePackage Server WMI Class](sms_tasksequencepackage-server-wmi-class.md) [GetSequence Method in Class SMS_TaskSequencePackage](getsequence-method-in-class-sms_tasksequencepackage.md)

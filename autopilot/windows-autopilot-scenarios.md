@@ -1,7 +1,7 @@
 ---
 title: Windows Autopilot scenarios and capabilities
 description: Follow along with several typical Windows Autopilot deployment scenarios, such as redeploying a device in a business-ready state.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: article
@@ -19,7 +19,7 @@ Windows Autopilot supports a growing list of scenarios that organizations common
 
 - Organization type.
 - Progress moving to the latest version of Windows.
-- The state of transitioning to [modern management](/windows/client-management/manage-windows-10-in-your-organization-modern-management).
+- The state of transitioning to [modern management](https://learn.microsoft.com/en-us/windows/client-management/manage-windows-10-in-your-organization-modern-management).
 
 The following Windows Autopilot scenarios are described in this guide:
 
@@ -33,13 +33,13 @@ The following Windows Autopilot scenarios are described in this guide:
 
 These scenarios are summarized in the following video:
 
-> [!VIDEO https://learn-video.azurefd.net/vod/player?id=7e47e04e-7f51-4eba-9a23-d65f3411b425]
+[Embedded video](https://learn-video.azurefd.net/vod/player?id=7e47e04e-7f51-4eba-9a23-d65f3411b425)
 
 ## Windows Autopilot capabilities
 
 ### Temporary Access Pass
 
-Organizations using [Temporary Access Pass](/azure/active-directory/authentication/howto-authentication-temporary-access-pass) can use this feature with Windows Autopilot Microsoft Entra join user driven, pre-provisioning, and self-deploying mode for shared devices. The native Windows sign-in credential provider doesn't support Temporary Access Pass so it requires the enablement of WebSign-in. To enable this feature in the organization, follow the Configuration Service Provider (CSP) details outlined in [Policy CSP - Authentication](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin). This feature isn't supported with Windows Autopilot Microsoft Entra hybrid join devices and isn't applicable on self-deploying mode kiosks.
+Organizations using [Temporary Access Pass](https://learn.microsoft.com/en-us/azure/active-directory/authentication/howto-authentication-temporary-access-pass) can use this feature with Windows Autopilot Microsoft Entra join user driven, pre-provisioning, and self-deploying mode for shared devices. The native Windows sign-in credential provider doesn't support Temporary Access Pass so it requires the enablement of WebSign-in. To enable this feature in the organization, follow the Configuration Service Provider (CSP) details outlined in [Policy CSP - Authentication](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin). This feature isn't supported with Windows Autopilot Microsoft Entra hybrid join devices and isn't applicable on self-deploying mode kiosks.
 
 ### Cortana voiceover and speech recognition during OOBE
 
@@ -59,11 +59,13 @@ The key value is a DWORD with **0** = disabled and **1** = enabled.
 | **1** | Cortana voiceover is enabled |
 | No value | Device falls back to default behavior of the edition |
 
-To change this key value, use the Windows Configuration Designer (WCD) tool to create as PPKG as documented in [EnableCortanaVoice](/windows/configuration/wcd/wcd-oobe#enablecortanavoice).
+To change this key value, use the Windows Configuration Designer (WCD) tool to create as PPKG as documented in [EnableCortanaVoice](https://learn.microsoft.com/en-us/windows/configuration/wcd/wcd-oobe#enablecortanavoice).
 
-For more information, see [Cortana voice support](/windows-hardware/customize/desktop/cortana-voice-support).
+For more information, see [Cortana voice support](https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/cortana-voice-support).
 
-[!INCLUDE [cortana-app-deprecation](../intune/device-configuration/includes/cortana-app-deprecation.md)]
+> [!NOTE]
+>
+> Microsoft deprecated the Windows Cortana standalone app. The Cortana productivity assistant is still available. For more information on deprecated features on Windows client, go to [Deprecated features for Windows client](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features).
 
 ### BitLocker encryption
 

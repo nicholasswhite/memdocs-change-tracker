@@ -1,15 +1,13 @@
 ---
-title: Use Sophos Mobile with Intune
+title: "Sophos Mobile Threat Defense connector with Intune"
 description: How to use the Sophos Mobile solution with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
-
 # Sophos Mobile Threat Defense connector with Intune
 
-You can control mobile device access to corporate resources using Conditional Access based on risk assessment conducted by Sophos Mobile, a Mobile Threat Defense (MTD) solution that integrates with Microsoft Intune. Risk is assessed based on telemetry collected from devices running the Sophos Mobile app.
-You can configure Conditional Access policies based on Sophos Mobile risk assessment enabled through Intune device compliance policies, which you can use to allow or block noncompliant devices to access corporate resources based on detected threats.
+You can control mobile device access to corporate resources using Conditional Access based on risk assessment conducted by Sophos Mobile, a Mobile Threat Defense (MTD) solution that integrates with Microsoft Intune. Risk is assessed based on telemetry collected from devices running the Sophos Mobile app. You can configure Conditional Access policies based on Sophos Mobile risk assessment enabled through Intune device compliance policies, which you can use to allow or block noncompliant devices to access corporate resources based on detected threats.
 
 > [!NOTE]
 >
@@ -48,11 +46,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected*:
 
-:::image type="content" source="./media/sophos/sophos-malicious-apps-blocked.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/sophos/sophos-malicious-apps-blocked.png)
 
 *Access granted on remediation*:
 
-:::image type="content" source="./media/sophos/sophos-malicious-apps-unblocked.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/sophos/sophos-malicious-apps-unblocked.png)
 
 ### Control access based on threat to network
 
@@ -60,11 +58,11 @@ Detect threats to your network like Man-in-the-middle attacks, and protect acces
 
 *Block network access through Wi-Fi*:
 
-:::image type="content" source="./media/sophos/sophos-network-wifi-blocked.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/sophos/sophos-network-wifi-blocked.png)
 
 *Access granted on remediation*:
 
-:::image type="content" source="./media/sophos/sophos-network-wifi-unblocked.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated. ":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated. ](media/sophos/sophos-network-wifi-unblocked.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -72,15 +70,15 @@ Detect threats to your network like Man-in-the-middle attacks, and prevent synch
 
 *Block SharePoint Online when network threats are detected*:
 
-:::image type="content" source="./media/sophos/sophos-network-spo-blocked.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/sophos/sophos-network-spo-blocked.png)
 
 *Access granted on remediation*:
 
-:::image type="content" source="./media/sophos/sophos-network-spo-unblocked.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/sophos/sophos-network-spo-unblocked.png)
 
 ## Next steps
 
-- [Integrate Sophos with Intune](./setup-sophos.md)
-- [Set up Sophos apps](./assign-apps.md)
-- [Create Sophos device compliance policy](./create-compliance-policy.md)
-- [Enable Sophos MTD connector](./enable-connector.md)
+- [Integrate Sophos with Intune](setup-sophos.md)
+- [Set up Sophos apps](assign-apps.md)
+- [Create Sophos device compliance policy](create-compliance-policy.md)
+- [Enable Sophos MTD connector](enable-connector.md)

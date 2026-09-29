@@ -1,7 +1,7 @@
 ---
 description: Learn how to synchronize the asset intelligence catalog outside the normal synchronization schedule.
-title: "Initiate a Synchronization"
-ms.date: "09/20/2016"
+title: "How to Initiate a Synchronization"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,26 +9,28 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Initiate a Synchronization
-The Asset Intelligence catalog can be refreshed manually, outside the normal synchronization schedule. A manual refresh is accomplished by using the [RequestCatalogUpdate](../../../../develop/reference/core/clients/asset-intelligence/requestcatalogupdate-method-in-class-sms_aiproxy.md) method on the [SMS_AIProxy Server WMI Class](../../../../develop/reference/core/clients/asset-intelligence/sms_aiproxy-server-wmi-class.md).  
+
+The Asset Intelligence catalog can be refreshed manually, outside the normal synchronization schedule. A manual refresh is accomplished by using the [RequestCatalogUpdate](../../../reference/core/clients/asset-intelligence/requestcatalogupdate-method-in-class-sms_aiproxy.md) method on the [SMS_AIProxy Server WMI Class](../../../reference/core/clients/asset-intelligence/sms_aiproxy-server-wmi-class.md).
 
 > [!IMPORTANT]
->  This method can only be called once within a 12 hours period, subsequent method calls will not work.  
+>
+> This method can only be called once within a 12 hours period, subsequent method calls will not work.
 
-### Refresh the Asset Intelligence catalog  
+### Refresh the Asset Intelligence catalog
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).  
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Query the SMS Provider for the [SMS_AIProxy](../../../reference/core/clients/asset-intelligence/sms_aiproxy-server-wmi-class.md) instance that you want refresh the catalog on.
+3. Call the SMS_AIProxy class [RequestCatalogUpdate](../../../reference/core/clients/asset-intelligence/requestcatalogupdate-method-in-class-sms_aiproxy.md) method to run an action on the collection.
 
-2.  Query the SMS Provider for the [SMS_AIProxy](../../../../develop/reference/core/clients/asset-intelligence/sms_aiproxy-server-wmi-class.md) instance that you want refresh the catalog on.  
+## Example
 
-3.  Call the SMS_AIProxy class [RequestCatalogUpdate](../../../../develop/reference/core/clients/asset-intelligence/requestcatalogupdate-method-in-class-sms_aiproxy.md) method to run an action on the collection.  
+The following example method runs the refresh on the provided server.
 
-## Example  
- The following example method runs the refresh on the provided server.  
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).  
-
-```vbs  
+```vbs
 Function InitiateSync(connection, serverName)
     On Error Resume Next    
     Dim classObj: Set classObj = connection.Get("SMS_AIProxy")    
@@ -43,9 +45,9 @@ Function InitiateSync(connection, serverName)
     End If
     On Error Goto 0
 End Function  
-```  
+```
 
-```c#  
+```c#
 public void InitiateSync(WqlConnectionManager connection, string serverName)
 {
     try
@@ -62,36 +64,41 @@ public void InitiateSync(WqlConnectionManager connection, string serverName)
         throw;    
     }
 }  
-```  
+```
 
- The example method has the following parameters:  
+The example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|connection|Managed: `WqlConnectionManager`<br /><br /> VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the provider.|  
-|serverName|Managed: `String`<br /><br /> VBScript: `String`|Name of the server to run the refresh on. This name maps to the `ProxyName` property of an `SMS_AIProxy` instance.|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| connection | Managed: `WqlConnectionManager`   VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the provider. |
+| serverName | Managed: `String`   VBScript: `String` | Name of the server to run the refresh on. This name maps to the `ProxyName` property of an `SMS_AIProxy` instance. |
 
-## Compiling the Code  
- The C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System  
+The C# example requires:
 
- System.Collections.Generic  
+### Namespaces
 
- System.Text  
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider  
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine  
+System.Text
 
-### Assembly  
- microsoft.configurationmanagement.managementprovider  
+Microsoft.ConfigurationManagement.ManagementProvider
 
- adminui.wqlqueryengine  
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+### Assembly
 
-## .NET Framework Security  
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../servers/configure/role-based-administration.md).

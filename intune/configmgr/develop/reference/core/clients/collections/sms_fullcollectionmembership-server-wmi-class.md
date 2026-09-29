@@ -1,13 +1,15 @@
 ---
-title: SMS_FullCollectionMembership Class
+title: "SMS_FullCollectionMembership Server WMI Class"
 description: Learn how to use the SMS_FullCollectionMembership class in Configuration Manager to list all member resources for a specific collection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_FullCollectionMembership Server WMI Class
+
 The `SMS_FullCollectionMembership` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists all member resources of a specific collection.
 
 ## Syntax
@@ -43,234 +45,211 @@ Class SMS_FullCollectionMembership : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_FullCollectionMembership` class does not define any methods.
+
+The `SMS_FullCollectionMembership` class does not define any methods.
 
 ## Properties
- `ClientCertType`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ClientCertType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Client certificate type. Possible values are:
+Qualifiers: none
+
+Client certificate type. Possible values are:
 
 - Self-signed Certificate
 - PKI Certificate
 
- `ClientType`
- Data type: `UInt32`
+`ClientType` Data type: `UInt32`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- Type of client. Possible values are:
+Type of client. Possible values are:
 
-|Value|Definition|
-|----|----|
-|1|Client|
-|3|Device|
+| Value | Definition |
+| --- | --- |
+| 1 | Client |
+| 3 | Device |
 
- `ClientVersion`
- Data type: `String`
+`ClientVersion` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Version of the installed client software.
+Version of the installed client software.
 
- `CollectionID`
- Data type: `String`
+`CollectionID` Data type: `String`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- ID of the collection to which the member belongs.
+ID of the collection to which the member belongs.
 
- `DeviceCategory`
- Data type: `String`
+`DeviceCategory` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Category of the device.
+Category of the device.
 
- `DeviceOwner`
- Data type: `UInt32`
+`DeviceOwner` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Owner of the device. Possible values are:
+Owner of the device. Possible values are:
 
-|Value|Definition|
-|----|----|
-|1|Company|
-|2|Personal|
+| Value | Definition |
+| --- | --- |
+| 1 | Company |
+| 2 | Personal |
 
- `Domain`
- Data type: `String`
+`Domain` Data type: `String`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- Domain to which the resource belongs.
+Domain to which the resource belongs.
 
- `IsActive`
- Data type: `Boolean`
+`IsActive` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the client is active.
+`true` if the client is active.
 
- `IsAlwaysInternet`
- Data type: `Boolean`
+`IsAlwaysInternet` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if this is an Internet-facing client.
+`true` if this is an Internet-facing client.
 
- `IsApproved`
- Data type: `UInt32`
+`IsApproved` Data type: `UInt32`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- Whether the resource is approved. Possible values are:
+Whether the resource is approved. Possible values are:
 
-|Value|Definition|
-|----|----|
-|0|Not approved|
-|1|Approved|
-|2|Not applicable|
+| Value | Definition |
+| --- | --- |
+| 0 | Not approved |
+| 1 | Approved |
+| 2 | Not applicable |
 
- `IsAssigned`
- Data type: `Boolean`
+`IsAssigned` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the client is assigned to any site.
+`true` if the client is assigned to any site.
 
- `IsBlocked`
- Data type: `Boolean`
+`IsBlocked` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the client is blocked.
+`true` if the client is blocked.
 
- `IsClient`
- Data type: `Boolean`
+`IsClient` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if this is a client.
+`true` if this is a client.
 
- `IsDecommissioned`
- Data type: `Boolean`
+`IsDecommissioned` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the record is deleted.
+`true` if the record is deleted.
 
- `IsDirect`
- Data type: `Boolean`
+`IsDirect` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the client is a member through a direct rule, represented by [SMS_CollectionRuleDirect Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionruledirect-server-wmi-class.md); otherwise `false` or `null`.
+`true` if the client is a member through a direct rule, represented by [SMS_CollectionRuleDirect Server WMI Class](sms_collectionruledirect-server-wmi-class.md); otherwise `false` or `null`.
 
- `IsInternetEnabled`
- Data type: `Boolean`
+`IsInternetEnabled` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the client can be Internet-enabled.
+`true` if the client can be Internet-enabled.
 
- `IsObsolete`
- Data type: `Boolean`
+`IsObsolete` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if this is an obsolete record.
+`true` if this is an obsolete record.
 
- `IsVirtualMachine`
- Data type: `Boolean`
+`IsVirtualMachine` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- `true` if this is a virtual machine.
+`true` if this is a virtual machine.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- Name of the resource.
+Name of the resource.
 
- `Priority`
- Data type: `UInt32`
+`Priority` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Priority of the client settings.
+Priority of the client settings.
 
- `ResourceID`
- Data type: `UInt32`
+`ResourceID` Data type: `UInt32`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Unique ID supplied by Configuration Manager for the resource. This ID is not unique across sites.
+Unique ID supplied by Configuration Manager for the resource. This ID is not unique across sites.
 
- `ResourceType`
- Data type: `UInt32`
+`ResourceType` Data type: `UInt32`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- Type of resource. Possible values are:
+Type of resource. Possible values are:
 
 - System
-
 - User groups
-
 - User
 
-  `SiteCode`
-  Data type: `String`
+  `SiteCode` Data type: `String`
 
   Access type: Read Only
 
@@ -278,8 +257,7 @@ Class SMS_FullCollectionMembership : SMS_BaseClass
 
   Site code of the site that created the collection.
 
-  `SMSID`
-  Data type: `String`
+  `SMSID` Data type: `String`
 
   Access type: Read Only
 
@@ -288,19 +266,22 @@ Class SMS_FullCollectionMembership : SMS_BaseClass
   Configuration Manager unique ID.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
 

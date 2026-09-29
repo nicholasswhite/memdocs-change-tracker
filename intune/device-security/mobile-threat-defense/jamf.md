@@ -1,7 +1,7 @@
 ---
-title: Set up Jamf Mobile Security with Intune
+title: "Jamf Mobile Threat Defense connector with Intune"
 description: How to set up Jamf Mobile Threat Defense with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 01/28/2025
+ms.date: "2025-01-28T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -28,9 +28,8 @@ Jamf updates Intune with each device's latest threat level (Secure, Low, Medium,
 
 These categories and their associated threat levels are configurable in Jamf Security Cloud portal such that the total calculated threat level for each device is customizable per your organization's security requirements. With threat level in hand, there are two Intune policy types that make use of this information to manage access to corporate data:
 
-- Using **Device Compliance Policies** with Conditional Access, administrators set policies to automatically mark a managed device as “out of compliance” based upon the Jamf-reported threat level. This compliance flag empowers Conditional Access policies to allow or deny access to applications that utilize modern authentication. See [Create Mobile Threat Defense (MTD) device compliance policy](./create-compliance-policy.md) with Intune for configuration details.
-
-- Using **App Protection Policies** with Conditional Launch, administrators can set policies that are enforced at the native app level (for example, Android and iOS/iPad OS apps like Outlook, OneDrive, etc.) based upon the Jamf-reported threat level. These policies can also be used for unenrolled devices with MAM managed applications to provide uniform policy across all device platforms and ownership modes. See [Create Mobile Threat Defense app protection policy](./create-app-protection-policy.md) with Intune for configuration details.
+- Using **Device Compliance Policies** with Conditional Access, administrators set policies to automatically mark a managed device as “out of compliance” based upon the Jamf-reported threat level. This compliance flag empowers Conditional Access policies to allow or deny access to applications that utilize modern authentication. See [Create Mobile Threat Defense (MTD) device compliance policy](create-compliance-policy.md) with Intune for configuration details.
+- Using **App Protection Policies** with Conditional Launch, administrators can set policies that are enforced at the native app level (for example, Android and iOS/iPad OS apps like Outlook, OneDrive, etc.) based upon the Jamf-reported threat level. These policies can also be used for unenrolled devices with MAM managed applications to provide uniform policy across all device platforms and ownership modes. See [Create Mobile Threat Defense app protection policy](create-app-protection-policy.md) with Intune for configuration details.
 
 ## Supported platforms
 
@@ -63,11 +62,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected*:
 
-:::image type="content" source="./media/jamf/jamf-malicious-apps-blocked.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/jamf/jamf-malicious-apps-blocked.png)
 
 *Access granted on remediation*:
 
-:::image type="content" source="./media/jamf/jamf-malicious-apps-unblocked.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/jamf/jamf-malicious-apps-unblocked.png)
 
 ### Control access based on threat to network
 
@@ -75,11 +74,11 @@ Detect threats to your network such as man-in-the-middle attacks and protect acc
 
 *Block network access through Wi-Fi*:
 
-:::image type="content" source="./media/jamf/jamf-network-wifi-blocked.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/jamf/jamf-network-wifi-blocked.png)
 
 *Access granted on remediation*:
 
-:::image type="content" source="./media/jamf/jamf-network-wifi-unblocked.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated.](media/jamf/jamf-network-wifi-unblocked.png)
 
 ## Control access to SharePoint Online based on threat to network
 
@@ -87,25 +86,25 @@ Detect threats to your network such as Man-in-the-middle attacks, and prevent sy
 
 *Block SharePoint Online when network threats are detected*:
 
-:::image type="content" source="./media/jamf/jamf-network-spo-blocked.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/jamf/jamf-network-spo-blocked.png)
 
 *Access granted on remediation*:
 
-:::image type="content" source="./media/jamf/jamf-network-spo-unblocked.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/jamf/jamf-network-spo-unblocked.png)
 
 ### Control access on unenrolled devices based on threats from malicious apps
 
 When the Jamf Mobile Threat Defense solution considers a device to be infected:
 
-:::image type="content" source="./media/jamf/jamf-mobile-app-policy-block.png" alt-text="Product flow for App protection policies to block access due to malware.":::
+![Product flow for App protection policies to block access due to malware.](media/jamf/jamf-mobile-app-policy-block.png)
 
 *Access is granted on remediation*:
 
-:::image type="content" source="./media/jamf/jamf-mobile-app-policy-remediated.png" alt-text=" Product flow for App protection policies to grant access after malware is remediated.":::
+![ Product flow for App protection policies to grant access after malware is remediated.](media/jamf/jamf-mobile-app-policy-remediated.png)
 
 ## Related content
 
-- [Integrate Jamf with Intune](./setup-jamf.md)
-- [Set up Jamf apps](./assign-apps.md)
-- [Create Jamf device compliance policy](./create-compliance-policy.md)
-- [Enable Jamf MTD connector](./enable-connector.md)
+- [Integrate Jamf with Intune](setup-jamf.md)
+- [Set up Jamf apps](assign-apps.md)
+- [Create Jamf device compliance policy](create-compliance-policy.md)
+- [Enable Jamf MTD connector](enable-connector.md)

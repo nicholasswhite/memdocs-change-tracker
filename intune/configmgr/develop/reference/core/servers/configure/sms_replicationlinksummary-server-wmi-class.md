@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_ReplicationLinkSummary class to represent summaries of database replication link statuses.
-title: SMS_ReplicationLinkSummary Class
-ms.date: 09/20/2016
+title: "SMS_ReplicationLinkSummary Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ReplicationLinkSummary Server WMI Class
+
 The `SMS_ReplicationLinkSummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the summary of database replication link status.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,180 +40,167 @@ Class SMS_ReplicationLinkSummary : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ReplicationLinkSummary` class does not define any methods.
+
+The `SMS_ReplicationLinkSummary` class does not define any methods.
 
 ## Properties
- `GlobalInitPercentage`
- Data type: `String`
 
- Access type: Read-only
+`GlobalInitPercentage` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Progress of the re-initialization of the global data.
+Qualifiers: [read]
 
- `LinkStatus`
- Data type: `UInt32`
+Progress of the re-initialization of the global data.
 
- Access type: Read-only
+`LinkStatus` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Overall link status.
+Qualifiers: [read]
 
- `LinkStatusDescription`
- Data type: `UInt32`
+Overall link status.
 
- Access type: Read-only
+`LinkStatusDescription` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Overall link status.
+Qualifiers: [read]
 
- `Site1`
- Data type: `String`
+Overall link status.
 
- Access type: Read-only
+`Site1` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Parent site for the link.
+Qualifiers: [key, read]
 
- `Site1Status`
- Data type: `UInt32`
+Parent site for the link.
 
- Access type: Read-only
+`Site1Status` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Site status for the parent site. See [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md).
+Qualifiers: [read]
 
- `Site1ToSite2GlobalState`
- Data type: `UInt32`
+Site status for the parent site. See [SMS_Site Server WMI Class](sms_site-server-wmi-class.md).
 
- Access type: Read-only
+`Site1ToSite2GlobalState` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Overall link status for global data sent from the parent site to the child site.
+Qualifiers: [read]
 
- `Site1ToSite2GlobalSyncTime`
- Data type: `DateTime`
+Overall link status for global data sent from the parent site to the child site.
 
- Access type: Read-only
+`Site1ToSite2GlobalSyncTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last time that the parent site sent a message to the child site for global data synchronization.
+Qualifiers: [read]
 
- `Site2`
- Data type: `String`
+Last time that the parent site sent a message to the child site for global data synchronization.
 
- Access type: Read-only
+`Site2` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Child site.
+Qualifiers: [key, read]
 
- `Site2Status`
- Data type: `UInt32`
+Child site.
 
- Access type: Read-only
+`Site2Status` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Site status for the child site. See [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md).
+Qualifiers: [read]
 
- `Site2ToSite1GlobalState`
- Data type: `UInt32`
+Site status for the child site. See [SMS_Site Server WMI Class](sms_site-server-wmi-class.md).
 
- Access type: Read-only
+`Site2ToSite1GlobalState` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Overall link status for global data sent from the child site to the parent site.
+Qualifiers: [read]
 
- `Site2ToSite1GlobalSyncTime`
- Data type: `DateTime`
+Overall link status for global data sent from the child site to the parent site.
 
- Access type: Read-only
+`Site2ToSite1GlobalSyncTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last time that the child site sent a message to the parent site for global data synchronization.
+Qualifiers: [read]
 
- `Site2ToSite1SiteState`
- Data type: `UInt32`
+Last time that the child site sent a message to the parent site for global data synchronization.
 
- Access type: Read-only
+`Site2ToSite1SiteState` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Overall link status for site data send from the child site to the parent site.
+Qualifiers: [read]
 
- `Site2ToSite1SiteSyncTime`
- Data type: `DateTime`
+Overall link status for site data send from the child site to the parent site.
 
- Access type: Read-only
+`Site2ToSite1SiteSyncTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last time that the child site sent a message to the parent site for data synchronization.
+Qualifiers: [read]
 
- `SiteName1`
- Data type: `String`
+Last time that the child site sent a message to the parent site for data synchronization.
 
- Access type: Read-only
+`SiteName1` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the parent site.
+Qualifiers: [read]
 
- `SiteName2`
- Data type: `String`
+Name of the parent site.
 
- Access type: Read-only
+`SiteName2` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the child site.
+Qualifiers: [read]
 
- `SiteType1`
- Data type: `UInt32`
+Name of the child site.
 
- Access type: Read/Write
+`SiteType1` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- Type of the parent site. Possible values are:
+Qualifiers: [enumeration]
 
-|Value|Parent site type|
-|-|-|
-|1|SECONDARY|
-|2|PRIMARY|
-|4|CAS|
+Type of the parent site. Possible values are:
 
- `SiteType2`
- Data type: `UInt32`
+| Value | Parent site type |
+| --- | --- |
+| 1 | SECONDARY |
+| 2 | PRIMARY |
+| 4 | CAS |
 
- Access type: Read/Write
+`SiteType2` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- Type of the child site. Possible values are:
+Qualifiers: [enumeration]
 
-|Value|Child site type|
-|-|-|
-|1|SECONDARY|
-|2|PRIMARY|
-|4|CAS|
+Type of the child site. Possible values are:
+
+| Value | Child site type |
+| --- | --- |
+| 1 | SECONDARY |
+| 2 | PRIMARY |
+| 4 | CAS |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

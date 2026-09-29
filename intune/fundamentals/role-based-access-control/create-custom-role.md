@@ -1,7 +1,7 @@
 ---
 title: Create a custom role in Intune
 description: Learn how to create a custom role in Microsoft Intune.
-ms.date: 08/21/2026
+ms.date: "2026-08-21T00:00:00Z"
 ms.topic: article
 ---
 
@@ -10,7 +10,8 @@ ms.topic: article
 You can create a custom Intune role that includes any permissions required for a specific job function. For example, if an IT department group manages applications, policies, and configuration profiles, you can add all those permissions together in one custom role. After creating a custom role, you can [assign](assign-role.md) it to any users that need those permissions.
 
 > [!NOTE]
-> **Enhanced Security**: [!INCLUDE [multi-admin-approval-rbac](../includes/multi-admin-approval-rbac.md)]
+>
+> **Enhanced Security**: Multi Admin Approval now supports role-based access control. When this setting is on, a second administrator must approve changes to roles. These changes can include updates to role permissions, admin groups, or member group assignments. The change takes effect only after the approval. This dual authorization process helps protect your organization from unauthorized or accidental role-based access control changes. For more information, see [Use Multi Admin Approval in Intune](multi-admin-approval.md).
 
 To create, edit, or assign roles, your account must have the following role in Microsoft Entra ID:
 
@@ -18,26 +19,19 @@ To create, edit, or assign roles, your account must have the following role in M
 
 ## To create a custom role
 
-1. In the [Microsoft Intune admin center], choose **Tenant administration** > **Roles** > **All roles** > **Create**.
-
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), choose **Tenant administration** &gt; **Roles** &gt; **All roles** &gt; **Create**.
 2. On the **Basics** page, enter a name and description for the new role, then choose **Next**.
-
 3. On the **Permissions** page, choose the permissions you want to use with this role.
-
 4. On the **Scope (Tags)** page, choose the tags for this role. When this role is assigned to a user, that user can access resources that also have these tags. Choose **Next**.
-
 5. On the **Review + create** page, when you're done, choose **Create**. The new role is displayed in the list on the **Intune roles - All roles** page.
 
 ## Copy a role
 
 You can also copy an existing role.
 
-1. In the [Microsoft Intune admin center], choose **Tenant administration** > **Roles** > **All roles** > select the checkbox for a role in the list > **Duplicate**.
-
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), choose **Tenant administration** &gt; **Roles** &gt; **All roles** &gt; select the checkbox for a role in the list &gt; **Duplicate**.
 2. On the **Basics** page, enter a name. Make sure to use a unique name.
-
 3. All the permissions and scope tags from the original role are already selected. You can later change the duplicate role's **Name**, **Description**, **Permissions**, and **Scope (Tags)**.
-
 4. After you make all the changes that you want, choose **Next** to get to the **Review + create** page. Select **Create**.
 
 ## Custom role permissions
@@ -45,7 +39,8 @@ You can also copy an existing role.
 The following permissions are available when creating custom roles.
 
 > [!TIP]
-> For a list of permissions for each Intune built-in role, see [Intune built-in roles and their permissions](../role-based-access-control/ref-built-in-roles.md).
+>
+> For a list of permissions for each Intune built-in role, see [Intune built-in roles and their permissions](ref-built-in-roles.md).
 
 ### Admin tasks
 
@@ -280,10 +275,10 @@ The following permissions are available when creating custom roles.
 
 | Permission | Action | Description |
 | --- | --- | --- |
-| Filters | Create | Create new filter. Learn more https://go.microsoft.com/fwlink/?linkid=2135625 |
-| Filters | Delete | Delete filters. Learn more https://go.microsoft.com/fwlink/?linkid=2135625 |
-| Filters | Read | View filters. Learn more https://go.microsoft.com/fwlink/?linkid=2135625 |
-| Filters | Update | Edit filters. Learn more https://go.microsoft.com/fwlink/?linkid=2135625 |
+| Filters | Create | Create new filter. Learn more <https://go.microsoft.com/fwlink/?linkid=2135625> |
+| Filters | Delete | Delete filters. Learn more <https://go.microsoft.com/fwlink/?linkid=2135625> |
+| Filters | Read | View filters. Learn more <https://go.microsoft.com/fwlink/?linkid=2135625> |
+| Filters | Update | Edit filters. Learn more <https://go.microsoft.com/fwlink/?linkid=2135625> |
 
 ### Intune data warehouse
 
@@ -300,7 +295,7 @@ The following permissions are available when creating custom roles.
 | Managed apps | Delete | Delete application protection policies. |
 | Managed apps | Read | View application protection policies and status. |
 | Managed apps | Update | Change application protection policies, or delete pending wipe requests for protected apps. |
-| Managed apps | Wipe | Create a wipe request to selectively remove company data from a protected app.  |
+| Managed apps | Wipe | Create a wipe request to selectively remove company data from a protected app. |
 
 ### Managed Device Cleanup Rules
 
@@ -320,7 +315,7 @@ The following permissions are available when creating custom roles.
 | --- | --- | --- |
 | Managed devices | Delete | Delete Intune managed devices. Deleted devices can no longer be managed by Intune, and the device can no longer access company resources. Company data may be wiped from the device if a user tries to check in after it's deleted. |
 | Managed devices | Query | Allows Intune to query a managed device for the purposes of retrieving detailed inventory information, device state, or other properties of a managed device from the device itself. |
-| Managed devices | Read | View Intune managed devices.  |
+| Managed devices | Read | View Intune managed devices. |
 | Managed devices | Read Bios Password | Read BIOS password for devices with managed BIOS and firmware configuration. |
 | Managed devices | Set primary user | Choose, change, or remove the primary user of a managed device. This permission must be used in combination with the managed devices read and update permissions. |
 | Managed devices | Update | Change settings or ownership properties of a managed device. This permission doesn't enable remote actions for devices. To perform remote actions on the device, grant one or more of the Remote Task permissions. |
@@ -331,7 +326,7 @@ The following permissions are available when creating custom roles.
 | Permission | Action | Description |
 | --- | --- | --- |
 | Managed Google Play | Modify | Modify the settings for synchronizing Managed Google Play apps with Microsoft Intune. |
-| Managed Google Play | Read |  View the settings for synchronizing Managed Google Play apps with Microsoft Intune. |
+| Managed Google Play | Read | View the settings for synchronizing Managed Google Play apps with Microsoft Intune. |
 
 ### Microsoft Defender ATP
 
@@ -361,13 +356,13 @@ The following permissions are available when creating custom roles.
 | --- | --- | --- |
 | Mobile apps | Assign | Assign mobile applications or eBooks to Microsoft Entra security groups. |
 | Mobile apps | Create | Add new mobile applications to Intune such as store apps, line-of-business apps, web-links, or built-in apps. You can also add books purchased through the Apple Volume Purchase Program or add eBook categories. You can set up iOS VPP Tokens, Windows Symantec certificates, Windows side loading keys, app categories, or the Android for Work connection. *See the note following this table regarding Apple Volume Purchase Program (VPP) apps.* |
-| Mobile apps | Delete | Delete mobile applications such as store apps, line-of-business apps, web-links, or built-in apps. You can also delete books purchased through the Apple Volume Purchase Program or delete eBook categories. You can delete iOS VPP Tokens, Windows Symantec certificates, Windows side loading keys, app categories, or the Android for Work connection. *See the note following this table regarding Apple Volume Purchase Program (VPP) apps.*|
+| Mobile apps | Delete | Delete mobile applications such as store apps, line-of-business apps, web-links, or built-in apps. You can also delete books purchased through the Apple Volume Purchase Program or delete eBook categories. You can delete iOS VPP Tokens, Windows Symantec certificates, Windows side loading keys, app categories, or the Android for Work connection. *See the note following this table regarding Apple Volume Purchase Program (VPP) apps.* |
 | Mobile apps | Read | View mobile applications such as store apps, line-of-business apps, web-links, or built-in apps. You can also view books purchased through the Apple Volume Purchase Program or add eBook categories. You can view iOS VPP Tokens, Windows Symantec certificates, Windows side loading keys, app categories, or the Android for Work connection. *See the note following this table regarding Apple Volume Purchase Program (VPP) apps.* |
 | Mobile apps | Relate | Create relationships with other managed apps using Dependencies and Supersedence features. |
 | Mobile apps | Update | Manage mobile applications such as store apps, line-of-business apps, web-links, or built-in apps. You can also manage books purchased through the Apple Volume Purchase Program or add eBook categories. You can manage iOS VPP Tokens, Windows Symantec certificates, Windows side loading keys, app categories, or the Android for Work connection. The Mobile Applications Create permission may be required for certain application update scenarios. *See the note following this table regarding Apple Volume Purchase Program (VPP) apps.* |
 
-
 > [!NOTE]
+>
 > You can view and manage Apple Volume Purchase Program (VPP) apps with only the **Mobile apps** permission assigned. Previously, the **Managed apps** permission was required to view and manage VPP apps. This change doesn't apply to Intune for Education tenants who still need to assign the **Managed apps** permission.
 
 ### Mobile Threat Defense
@@ -450,7 +445,7 @@ The following permissions are available when creating custom roles.
 | Permission | Action | Description |
 | --- | --- | --- |
 | Remote assistance connectors | Read | View the status of the TeamViewer connector and remote help. This permission isn't required to initiate remote assistance requests for devices. |
-| Remote assistance connectors | Update | Manage the state of the TeamViewer connector and remote help. This permission also requires the *Remote assistance connectors > Read* permission to view the status of the TeamViewer connector and remote help. |
+| Remote assistance connectors | Update | Manage the state of the TeamViewer connector and remote help. This permission also requires the *Remote assistance connectors &gt; Read* permission to view the status of the TeamViewer connector and remote help. |
 | Remote assistance connectors | View reports | View, generate and export remote help sessions and monitor reports. |
 
 ### Remote Help app
@@ -464,13 +459,11 @@ The following permissions are available when creating custom roles.
 | Remote Help app | View screen | View screen allows the helper to view the sharer's device when Remote Help is enabled for all platforms we support. |
 
 ### Remote tasks
-<!-- This permission/action pulled via graph is pending review.  
-| Remote tasks | Change organizational unit | Move a Chrome Enterprise device to an existing organizational unit in your Google Workspace domain. |  -->
 
 | Permission | Action | Description |
 | --- | --- | --- |
-| Remote tasks | Bypass activation lock | Remove the Activation Lock from supervised devices without requiring the user's Apple ID and password. This may be required if a user leaves the company and returns the device; without the user's Apple ID and password, there's no way to reactivate the device. Or, you need to reassign some devices to a different department during a device refresh in your organization. You can only reassign devices that don't have Activation Lock enabled. You must also have the *Managed Device > Read* permission to view devices in the Azure portal before initiating this remote task. |
-| Remote tasks | Change assignments | Allows IT Admin to initiate a change assignments action. Action allows the selection of assigned applications and configuration to be removed from a device. Additionally, previously removed applications and configuration to be restored on the device. | 
+| Remote tasks | Bypass activation lock | Remove the Activation Lock from supervised devices without requiring the user's Apple ID and password. This may be required if a user leaves the company and returns the device; without the user's Apple ID and password, there's no way to reactivate the device. Or, you need to reassign some devices to a different department during a device refresh in your organization. You can only reassign devices that don't have Activation Lock enabled. You must also have the *Managed Device &gt; Read* permission to view devices in the Azure portal before initiating this remote task. |
+| Remote tasks | Change assignments | Allows IT Admin to initiate a change assignments action. Action allows the selection of assigned applications and configuration to be removed from a device. Additionally, previously removed applications and configuration to be restored on the device. |
 | Remote tasks | Clean PC | Initiate a Fresh start device action. This action removes any apps that are installed on a Windows 10 PC that's running the Creators Update. Then, it automatically updates the PC to the latest version of Windows. |
 | Remote tasks | Collect diagnostics | Collect device diagnostics |
 | Remote tasks | Disable lost mode | Turn off lost mode for an iOS or ChromeOS device. |
@@ -480,7 +473,7 @@ The following permissions are available when creating custom roles.
 | Remote tasks | Indicates remote device action to initiate Mobile Device Management (MDM) attestation if device is capable for it. | Indicates remote device action to initiate Mobile Device Management (MDM) attestation if device is capable for it. |
 | Remote tasks | Initiate Configuration Manager action | Initiate a remote action on a device managed by Configuration Manager. |
 | Remote tasks | Locate device | View the location of a lost or stolen corporate-owned device on a map. Can locate supervised iOS/iPadOS devices, Android dedicated devices (COSU), and Windows devices. |
-| Remote tasks | Manage shared device users | Sign out the user with the current session on a shared device.  This action doesn't delete users from a shared device, it only forces the user with a current session to be logged out. |
+| Remote tasks | Manage shared device users | Sign out the user with the current session on a shared device. This action doesn't delete users from a shared device, it only forces the user with a current session to be logged out. |
 | Remote tasks | Offboard | Offboard the devices associated with a user, when the user is leaving the organization. |
 | Remote tasks | Offer remote assistance | Initiate a remote assistance session with a user's device by using a remote assistance provider. The remote assistance option for your provider must be enabled for your tenant. |
 | Remote tasks | Play sound to locate lost devices | Play a sound to locate lost Android dedicated devices, or iOS devices placed in MDM lost mode. |
@@ -499,11 +492,11 @@ The following permissions are available when creating custom roles.
 | Remote tasks | Run Pause Configuration Refresh | Initiate On Demand pause configuration refresh |
 | Remote tasks | Run Remediation | Initiate On Demand Proactive Remediation |
 | Remote tasks | Send custom notifications | Allows admin to send customized notifications to devices. Devices receive notifications in Company Portal. |
-| Remote tasks | Set device name | Set or change the name of a device.  |
+| Remote tasks | Set device name | Set or change the name of a device. |
 | Remote tasks | Shut down | Initiates a shutdown of the device, and will automatically close all applications and running services and leave the device in a powered-off state. |
 | Remote tasks | Sync devices. | Initiates a sync operation on the device and forces the selected device to immediately check in with Intune. When a device checks in, it immediately receives any pending actions or policies that have been assigned to it. |
 | Remote tasks | Temporarily suspend Managed Home Screen | Remotely suspend Managed Home Screen on Android Enterprise devices in kiosk mode, allowing temporary access to the default launcher experience. Supports automatic restoration after a configured time period without requiring user interaction or PIN sharing. |
-| Remote tasks | Update cellular data plan | Activate the data plan for cellular iOS/iPadOS devices that support eSIM.  |
+| Remote tasks | Update cellular data plan | Activate the data plan for cellular iOS/iPadOS devices that support eSIM. |
 | Remote tasks | Update device account | Allows changing the device account associated with Surface Hub devices, and set authentication options such as password rotation. |
 | Remote tasks | View macOS recovery lock password | View the recovery lock password in the Recovery Keys blade of macOS devices |
 | Remote tasks | Windows Defender | Initiates a Windows Defender signature update. |
@@ -517,7 +510,7 @@ The following permissions are available when creating custom roles.
 | Roles | Create | Create new Intune custom roles. Built-in roles are created by Intune automatically. |
 | Roles | Delete | Delete a custom Intune role. You can't delete built-in roles. |
 | Roles | Read | View permissions, role assignments, member groups, and scope groups for any built-in or custom Intune role. |
-| Roles | Update | Update custom role permissions and role assignments for built-in or custom roles. Role assignments define the administrators and end user scope for the role.  |
+| Roles | Update | Update custom role permissions and role assignments for built-in or custom roles. Role assignments define the administrators and end user scope for the role. |
 
 ### Security baselines
 
@@ -547,7 +540,7 @@ The following permissions are available when creating custom roles.
 
 | Permission | Action | Description |
 | --- | --- | --- |
-| Telecom expenses | Read | View settings and status of telecom expense partner connector. The telecom expense partner connector feature was deprecated and this permission is no longer supported after June  2025. |
+| Telecom expenses | Read | View settings and status of telecom expense partner connector. The telecom expense partner connector feature was deprecated and this permission is no longer supported after June 2025. |
 | Telecom expenses | Update | Modify or activate telecom expense management partner connector. The telecom expense partner connector feature is deprecated and this permission is no longer supported after June, 2025. |
 
 ### Tenant attached recommendations
@@ -577,7 +570,3 @@ The following permissions are available when creating custom roles.
 
 - [Assign a role to a user](assign-role.md)
 - [Learn more about role-based access control in Intune](overview.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

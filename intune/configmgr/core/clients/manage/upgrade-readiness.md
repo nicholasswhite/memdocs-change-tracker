@@ -1,7 +1,7 @@
 ---
-title: Upgrade Readiness
+title: "Integrate Upgrade Readiness with Configuration Manager"
 description: Integrate Upgrade Readiness with Configuration Manager to access Windows upgrade compatibility data and target devices for upgrade or remediation.
-ms.date: 01/31/2020
+ms.date: "2020-01-31T00:00:00Z"
 ms.topic: integration
 ms.subservice: core-infra
 ms.collection: tier3
@@ -13,17 +13,16 @@ ms.service: configuration-manager
 *Applies to: Configuration Manager (current branch)*
 
 > [!IMPORTANT]
+>
 > The Windows Analytics service is retired as of January 31, 2020. For more information, see [KB 4521815: Windows Analytics retirement on January 31, 2020](https://support.microsoft.com/help/4521815/windows-analytics-retirement).
 
 If your Configuration Manager site had a connection to Upgrade Readiness, you need to remove it and reconfigure clients.
 
-## <a name="bkmk_remove"></a> Remove Upgrade Readiness connection
+## Remove Upgrade Readiness connection
 
 1. Open the Configuration Manager console as a user with the **Full administrator** role.
-
-1. Go to the **Administration** workspace, expand **Cloud Services**, and select the **Azure Services** node.
-
-1. Delete the Windows Analytics service.
+2. Go to the **Administration** workspace, expand **Cloud Services**, and select the **Azure Services** node.
+3. Delete the Windows Analytics service.
 
 ## Reconfigure clients
 
@@ -45,10 +44,11 @@ If you don't want your devices to continue sending diagnostic data:
 
 Set these values using one of the following methods:
 
-- Group policy, in **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Data Collection and Preview Builds**
+- Group policy, in **Computer Configuration** &gt; **Administrative Templates** &gt; **Windows Components** &gt; **Data Collection and Preview Builds**
 - Mobile device management (MDM), such as [Microsoft Intune](../../../../device-configuration/templates/ref-device-restrictions-windows.md)
 
-For more information, see [Configure Windows diagnostic data in your organization](/windows/privacy/configure-windows-diagnostic-data-in-your-organization).
+For more information, see [Configure Windows diagnostic data in your organization](https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization).
 
 > [!NOTE]
+>
 > When you apply these changes, devices immediately stop sending diagnostic data. It may take 24-48 hours for Microsoft to stop processing insights for your workspace. Microsoft deletes this data from its cloud services within 30 days or less.

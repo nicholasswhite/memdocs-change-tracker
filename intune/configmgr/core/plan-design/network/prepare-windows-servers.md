@@ -1,7 +1,7 @@
 ---
-title: Prepare Windows Servers
+title: "Prepare Windows Servers to support Configuration Manager"
 description: Make sure that a computer meets prerequisites for use as a site server or a site system server for Configuration Manager.
-ms.date: 08/02/2021
+ms.date: "2021-08-02T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -25,13 +25,9 @@ When you set up Windows features and roles on a computer, you might be required 
 The following Windows features are required on certain site system servers. Set them up before you install a site system role on that computer.
 
 - **.NET Framework**: Different site system roles require different versions of .NET Framework.
-
 - **Background Intelligent Transfer Services (BITS)**: Management points require BITS to support communication with managed devices. This feature includes all automatically selected options.
-
 - **BranchCache**: Distribution points can be set up with BranchCache to support clients.
-
 - **Data Deduplication**: Distribution points can be set up with and benefit from data deduplication.
-
 - **Remote Differential Compression (RDC)**: Each computer that hosts a site server or a distribution point requires RDC. RDC is used to generate package signatures and compare digital signatures.
 
 ### Roles
@@ -39,7 +35,6 @@ The following Windows features are required on certain site system servers. Set 
 The following Windows roles are required to support specific functionality, like software updates and OS deployments. IIS is required by the most common site system roles.
 
 - **Network Device Enrollment Service** (under Active Directory Certificate Services): This Windows role is a prerequisite to use certificate profiles in Configuration Manager.
-
 - **Web server (IIS)**: The following site system roles use IIS:
 
   - Distribution point
@@ -51,16 +46,14 @@ The following Windows roles are required to support specific functionality, like
   - State migration point
 
   The minimum version of IIS that's required is the version that's supplied with the OS of the site server.
-
 - **Windows Deployment Services**: This role is used with OS deployment.
-
 - **Windows Server Update Services**: This role is required for software updates.
 
 ## IIS request filtering for distribution points
 
 By default, IIS uses request filtering to block several file name extensions and folder locations from access by HTTP or HTTPS communication. On a distribution point, this configuration prevents clients from downloading packages that have blocked extensions or folder locations.
 
-When your package source files have extensions that are blocked in IIS by your request filtering configuration, set up request filtering to allow them. Use the IIS Manager to [edit the request filtering feature](/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)) on your distribution point computers.
+When your package source files have extensions that are blocked in IIS by your request filtering configuration, set up request filtering to allow them. Use the IIS Manager to [edit the request filtering feature](https://learn.microsoft.com/en-us/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)) on your distribution point computers.
 
 Additionally, the following file name extensions are used by Configuration Manager for packages and applications. Make sure that your request filtering configurations don't block these file extensions:
 
@@ -72,12 +65,11 @@ Additionally, the following file name extensions are used by Configuration Manag
 For example, source files for a software deployment might include a folder named **bin** or have a file that has the **.mdb** file name extension.
 
 - By default, IIS request filtering blocks access to these elements. **Bin** is blocked as a Hidden Segment and **.mdb** is blocked as a file name extension.
-
 - When you use the default IIS configuration on a distribution point, clients that use BITS fail to download this software deployment from the distribution point and indicate that they're waiting for content.
-
 - To let the clients download this content, on each applicable distribution point, edit **Request Filtering** in IIS Manager. Allow access to the file extensions and folders that are in the packages and applications that you deploy.
 
 > [!IMPORTANT]
+>
 > Edits to the request filter can increase the attack surface of the computer.
 >
 > - Edits that you make at the server level apply to all websites on the server.
@@ -87,7 +79,7 @@ For example, source files for a software deployment might include a folder named
 
 ## HTTP verbs
 
-For more information, see [Configure request filtering in IIS](/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)#http-verbs).
+For more information, see [Configure request filtering in IIS](https://learn.microsoft.com/en-us/previous-versions/orphan-topics/ws.11/hh831621(v=ws.11)#http-verbs).
 
 ### Management points
 

@@ -1,16 +1,18 @@
 ---
 description: Learn how to list instances of service windows in Configuration Manager using CCM_ServiceWindow class.
-title: CCM_ServiceWindow Class
-ms.date: 09/20/2016
+title: "CCM_ServiceWindow Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_ServiceWindow Client WMI Class
+
 The `CCM_ServiceWindow` Client WMI class is a client class, in Configuration Manager, that lists instances of service windows.
 
- The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from the Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,67 +28,66 @@ class CCM_ServiceWindow
 ```
 
 ## Methods
- The `CCM_ServiceWindow` class does not define any methods.
+
+The `CCM_ServiceWindow` class does not define any methods.
 
 ## Properties
- `Duration`
- Data type: `UInt32`
 
- Access type: Read-only
+`Duration` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Total duration, in seconds, of the service window.
+Qualifiers: [read]
 
- `EndTime`
- Data type: `Datetime`
+Total duration, in seconds, of the service window.
 
- Access type: Read-only
+`EndTime` Data type: `Datetime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time to end the service window.
+Qualifiers: [read]
 
- `ID`
- Data type: `String`
+Date and time to end the service window.
 
- Access type: Read-only
+`ID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Service window identifier for this particular instance of service window.
+Qualifiers: [read]
 
- `StartTime`
- Data type: `Datetime`
+Service window identifier for this particular instance of service window.
 
- Access type: Read-only
+`StartTime` Data type: `Datetime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time to start the service window.
+Qualifiers: [read]
 
- `Type`
- Data type: `UInt32`
+Date and time to start the service window.
 
- Access type: Read-only
+`Type` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Type of service window. The following table shows the list of possible values.
+Qualifiers: [read]
 
-|Value|Service Window Type|Description|
-|-----------|-------------------------|-----------------|
-|1|ALLPROGRAM_SERVICEWINDOW|All Deployment Service Window|
-|2|PROGRAM_SERVICEWINDOW|Program Service Window|
-|3|REBOOTREQUIRED_SERVICEWINDOW|Reboot Required Service Window|
-|4|SOFTWAREUPDATE_SERVICEWINDOW|Software Update Service Window|
-|5|OSD_SERVICEWINDOW|Task Sequences Service Window|
-|6|USER_DEFINED_SERVICE_WINDOW|Corresponds to non-working hours|
+Type of service window. The following table shows the list of possible values.
+
+| Value | Service Window Type | Description |
+| --- | --- | --- |
+| 1 | ALLPROGRAM_SERVICEWINDOW | All Deployment Service Window |
+| 2 | PROGRAM_SERVICEWINDOW | Program Service Window |
+| 3 | REBOOTREQUIRED_SERVICEWINDOW | Reboot Required Service Window |
+| 4 | SOFTWAREUPDATE_SERVICEWINDOW | Software Update Service Window |
+| 5 | OSD_SERVICEWINDOW | Task Sequences Service Window |
+| 6 | USER_DEFINED_SERVICE_WINDOW | Corresponds to non-working hours |
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

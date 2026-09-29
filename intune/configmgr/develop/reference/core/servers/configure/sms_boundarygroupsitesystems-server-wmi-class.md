@@ -1,16 +1,18 @@
 ---
-title: SMS_BoundaryGroupSiteSystems Class
+title: "SMS_BoundaryGroupSiteSystems Server WMI Class"
 description: The SMS_BoundaryGroupSiteSystems WMI class represents site systems that serve computers within the boundary group.
-ms.date: 03/13/2017
+ms.date: "2017-03-13T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BoundaryGroupSiteSystems Server WMI Class
+
 The `SMS_BoundaryGroupSiteSystems` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents site systems that serve computers within the boundary group.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,63 +27,64 @@ Class SMS_BoundaryGroupSiteSystems : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_BoundaryGroupSiteSystems` class does not define any methods.
+
+The `SMS_BoundaryGroupSiteSystems` class does not define any methods.
 
 ## Properties
- `Flags`
- Data type: `UInt32`
 
- Access type: Read/Write
+`Flags` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read/Write
 
- Specifies the connection type of the boundary. Possible values are:
+Qualifiers: [bits]
 
-|Value|Description|
-|---|---|
-|0|FAST|
-|1|SLOW|
+Specifies the connection type of the boundary. Possible values are:
+
+| Value | Description |
+| --- | --- |
+| 0 | FAST |
+| 1 | SLOW |
 
 > [!NOTE]
+>
 > This parameter is no longer used for distribution points.
 
+`GroupID` Data type: `UInt32`
 
- `GroupID`
- Data type: `UInt32`
+Access type: Read-only
 
- Access type: Read-only
+Qualifiers: [key, read]
 
- Qualifiers: [key, read]
+Unique identifier of the boundary group.
 
- Unique identifier of the boundary group.
+`ServerNALPath` Data type: `String`
 
- `ServerNALPath`
- Data type: `String`
+Access type: Read-only
 
- Access type: Read-only
+Qualifiers: [key, read]
 
- Qualifiers: [key, read]
+NAL path of site system servicing machines within the boundary.
 
- NAL path of site system servicing machines within the boundary.
+`SiteCode` Data type: `String`
 
- `SiteCode`
- Data type: `String`
+Access type: Read-only
 
- Access type: Read-only
+Qualifiers: [read, sizelimit("3")]
 
- Qualifiers: [read, sizelimit("3")]
-
- Site code of the role.
+Site code of the role.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

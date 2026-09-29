@@ -1,13 +1,15 @@
 ---
 description: Learn how to use CCM_ServiceBITSConfiguration class which supports BITS-related settings used by CCMEXEC for uploading and downloading message payloads.
-title: CCM_Service_BITSConfiguration Class
-ms.date: 09/20/2016
+title: "CCM_Service_BITSConfiguration Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Service_BITSConfiguration Client WMI Class
+
 In Configuration Manager, the `CCM_Service_BITSConfiguration` class is a client Windows Management Instrumentation (WMI) class that supports Background Intelligent Transfer Service (BITS)-related settings used by CCMEXEC for uploading and downloading message payloads. The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
@@ -28,98 +30,93 @@ Class CCM_Service_BITSConfiguration : CCM_Policy
 ```
 
 ## Methods
- The `CCM_Service_BITSConfiguration` class does not define any methods.
+
+The `CCM_Service_BITSConfiguration` class does not define any methods.
 
 ## Properties
- `DummyKey`
- Data type: `UInt8`
 
- Access type: Read/Write
+`DummyKey` Data type: `UInt8`
 
- Qualifiers: None
+Access type: Read/Write
 
- This value is used as the WMI key for a singleton policy and has no other effect.
+Qualifiers: None
 
- `MinimumRetryDelay`
- Data type: `UInt32`
+This value is used as the WMI key for a singleton policy and has no other effect.
 
- Access type: Read/Write
+`MinimumRetryDelay` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Retry delay to pass to BITS when uploading or downloading message payloads (in minutes). If the value is 0 or `null`, BITS defaults are used.
+Qualifiers: None
 
- `NoProgressTimeout`
- Data type: `UInt32`
+Retry delay to pass to BITS when uploading or downloading message payloads (in minutes). If the value is 0 or `null`, BITS defaults are used.
 
- Access type: Read/Write
+`NoProgressTimeout` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- No-progress timeout to pass to BITS when uploading or downloading message payloads (in minutes). If the value is `null` or 0, BITS defaults are used.
+Qualifiers: None
 
- `PolicyID`
- Data type: `String`
+No-progress timeout to pass to BITS when uploading or downloading message payloads (in minutes). If the value is `null` or 0, BITS defaults are used.
 
- Access type: Read/Write
+`PolicyID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyInstanceID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyInstanceID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyPrecedence`
- Data type: `UInt32`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyPrecedence` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: None
 
- `PolicyRuleID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyRuleID` Data type: `String`
 
- Qualifiers: Key
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: Key
 
- `PolicySource`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicySource` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyVersion`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
+
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
- [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md) [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md)

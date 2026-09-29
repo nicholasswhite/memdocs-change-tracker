@@ -1,13 +1,15 @@
 ---
-title: OS Configuration Item Example 1
+title: "Operating System Configuration Item Example 1"
 description: Example 1 for Operating System Configuration Item
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Operating System Configuration Item Example 1
+
 In Configuration Manager, the following Operating System Configuration Item Schema example checks for Windows XP SP2.
 
 ## Operating System Configuration Item Example
@@ -82,4 +84,5 @@ OperatingSystem identifies how to determine whether or not this operating system
 ```
 
 ## See Also
+
 [About authoring configuration baselines and items](about-authoring-configuration-baselines-and-configuration-items.md)

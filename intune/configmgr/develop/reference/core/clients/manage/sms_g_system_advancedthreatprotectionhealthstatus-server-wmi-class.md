@@ -1,16 +1,18 @@
 ---
-title: SMS_G_System_AdvancedThreatProtectionHealthStatus Class
-ms.date: 05/13/2019
+title: "SMS_G_System_AdvancedThreatProtectionHealthStatus Server WMI Class"
+ms.date: "2019-05-13T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 description: An overview of SMS_G_System_AdvancedThreatProtectionHealthStatus Server WMI Class
 ms.service: configuration-manager
 ---
-# SMS_G_System_AdvancedThreatProtectionHealthStatus Server WMI Class
-The  `SMS_G_System_AdvancedThreatProtectionHealthStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents Microsoft Defender for Endpoint client health status.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_G_System_AdvancedThreatProtectionHealthStatus Server WMI Class
+
+The `SMS_G_System_AdvancedThreatProtectionHealthStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents Microsoft Defender for Endpoint client health status.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,69 +28,67 @@ Class SMS_G_System_AdvancedThreatProtectionHealthStatus : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_AdvancedThreatProtectionHealthStatus` class does not define any methods.
+
+The `SMS_G_System_AdvancedThreatProtectionHealthStatus` class does not define any methods.
 
 ## Properties
- `LastConnected`
- Data type: `DateTime`
 
- Access type: Read
+`LastConnected` Data type: `DateTime`
 
- Qualifiers: [not_null]
+Access type: Read
 
- The time that the Microsoft Defender for Endpoint agent last connected to the cloud.
+Qualifiers: [not_null]
 
- `OnboardingState`
- Data type: `UInt32`
+The time that the Microsoft Defender for Endpoint agent last connected to the cloud.
 
- Access type: Read
+`OnboardingState` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read
 
- The onboarding state.
+Qualifiers: [not_null]
 
- `OrgId`
- Data type: `String`
+The onboarding state.
 
- Access type: Read
+`OrgId` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read
 
- The ID of the organization that the Microsoft Defender for Endpoint agent reports to.
+Qualifiers: [not_null]
 
- `ResourceID`
- Data type: `UInt32`
+The ID of the organization that the Microsoft Defender for Endpoint agent reports to.
 
- Access type: Read
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key, not_null]
+Access type: Read
 
- See [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: [key, not_null]
 
- `SenseIsRunning`
- Data type: `Boolean`
+See [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
 
- Access type: Read
+`SenseIsRunning` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read
 
- Indicates whether the Microsoft Defender for Endpoint agent is running.
+Qualifiers: [not_null]
+
+Indicates whether the Microsoft Defender for Endpoint agent is running.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

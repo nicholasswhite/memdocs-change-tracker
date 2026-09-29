@@ -1,7 +1,7 @@
 ---
-title: App inventory for Windows devices
+title: "App inventory for Windows devices in Microsoft Intune"
 description: Use app inventory in Microsoft Intune to collect detailed application data from Windows devices with faster refresh cycles and richer metadata than Discovered apps.
-ms.date: 04/15/2026
+ms.date: "2026-04-15T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-generated
 ---
@@ -20,6 +20,7 @@ App inventory expands the existing device inventory agent on Windows devices to 
 - Reports data to the **All apps** page on each device in the Intune admin center
 
 > [!IMPORTANT]
+>
 > Unlike Discovered apps, which collect inventory automatically, app inventory requires you to create and assign a device configuration policy to enable collection. Devices don't report app inventory data until a policy is assigned.
 
 ## Prerequisites
@@ -31,15 +32,17 @@ App inventory expands the existing device inventory agent on Windows devices to 
 
 To collect app inventory data, create a device configuration policy that specifies which application properties to collect and assign it to your device or user groups.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Select the following settings:
+
    - **Platform**: Windows 10 and later
    - **Profile type**: Properties catalog
 4. Select **Create**.
 5. In **Basics**, enter a name and description for the policy. For example, *App inventory - all properties*.
 6. In **Configuration settings**, select **+ Add Properties**, then select the checkbox for **ApplicationProperties**.
 7. Select the application properties you want to collect. The following properties are required and selected by default:
+
    - App Name
    - App Version
    - Publisher
@@ -51,7 +54,7 @@ To collect app inventory data, create a device configuration policy that specifi
    You can also collect the following optional properties:
 
    | Properties catalog setting | Report column name | Description |
-   |----------|-------------|-------------|
+   | --- | --- | --- |
    | **Install location** | Install location | The path where the application is installed on the device. |
    | **Install date** | Install date | The date the application was installed. |
    | **Estimated size** | Estimated size | The estimated size of the application, in bytes. |
@@ -65,15 +68,15 @@ To collect app inventory data, create a device configuration policy that specifi
    The following properties also appear in the app inventory report but aren't configurable in the Properties catalog:
 
    | Report column | Description |
-   |----------|-------------|
+   | --- | --- |
    | **MSI Product Code** | The MSI product code for Win32 apps, when available. |
    | **Installed For** | Indicates whether the app is installed at the device level or for a specific user. |
    | **Last updated** | The date the app record was last updated. |
    | **Last checked** | The date the device last reported app inventory data. |
 
    > [!NOTE]
+   >
    > Not all properties are guaranteed to have data for every application. Data availability depends on whether the information exists in the data source (the uninstall registry key or package manager API) on the device.
-
 8. Select **Next**.
 9. In **Assignments**, select the device or user groups that should have application inventory collected.
 10. Complete the remaining wizard steps and select **Create**.
@@ -94,8 +97,8 @@ If more than one policy targets the same device, the device merges the settings.
 
 After devices check in with the inventory policy, you can view the collected app data.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **All devices**, and then select a device.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **All devices**, and then select a device.
 3. Select **All Apps**.
 4. Select the **App Inventory** tab.
 
@@ -106,13 +109,14 @@ The **All apps** page on each device brings both managed apps and inventoried ap
 Some properties in the Properties catalog appear under different column names in the app inventory report. The following table maps the required Properties catalog settings to their report column names:
 
 | Properties catalog setting | Report column name |
-|----------|-------------|
+| --- | --- |
 | Install Scope Platform User Id | SID |
 | Install Scope User Id | User Entra ID |
 | Install Scope User Name | User Name |
 | Platform Specific App Id | Package Name or Uninstall Registry Key Name |
 
 > [!NOTE]
+>
 > The **Platform Specific App Id** maps to **Package Name** for Store apps (package full name) and MSI apps (product code). If neither applies, it maps to **Uninstall Registry Key Name** instead.
 
 ## Data collection details
@@ -148,12 +152,12 @@ If the app inventory policy is removed from a device, the device inventory agent
 ## Differences between Discovered apps and app inventory
 
 | Capability | Discovered apps | App inventory |
-|------------|----------------|----------------------|
+| --- | --- | --- |
 | Admin configuration | No configuration available | Requires a device configuration policy |
 | Refresh cycle | Seven days (24 hours for Win32 via IME) | Multiple times per day |
 | Properties collected | App name, platform, version, publisher, device count | App name, version, publisher + install location, install date, size, architecture, uninstall command, modify command, platform-specific ID, languages, install scope, and more |
 | Supported platforms | Windows, iOS/iPadOS, macOS, Android, AOSP | Windows (macOS, iOS/iPadOS, and Android support planned) |
-| Admin center location | **Apps** > **Monitor** > **Discovered apps**, and per-device under **Devices** > *device* > **Discovered apps** | **Devices** > *device* > **All Apps** > **App Inventory** tab |
+| Admin center location | **Apps** &gt; **Monitor** &gt; **Discovered apps**, and per-device under **Devices** &gt; *device* &gt; **Discovered apps** | **Devices** &gt; *device* &gt; **All Apps** &gt; **App Inventory** tab |
 | Per-user installed app handling | Last logged-in user | Multi-user support |
 
 Both features can run simultaneously. App inventory doesn't disable Discovered apps.
@@ -167,8 +171,4 @@ Both features can run simultaneously. App inventory doesn't disable Discovered a
 
 - [Discovered apps](../discovered-apps.md)
 - [Monitor app information and assignments with Microsoft Intune](../monitor-assignments.md)
-- [App types in Microsoft Intune](./index.md#app-types-in-microsoft-intune)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [App types in Microsoft Intune](index.md#app-types-in-microsoft-intune)

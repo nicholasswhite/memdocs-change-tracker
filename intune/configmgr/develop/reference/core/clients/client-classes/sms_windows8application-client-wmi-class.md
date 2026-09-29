@@ -1,16 +1,18 @@
 ---
 description: Learn how to define a Windows 8 style application or a Windows Store application in Configuration Manager.
-title: SMS_Windows8Application Class
-ms.date: 09/20/2016
+title: "SMS_Windows8Application Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Windows8Application Client WMI Class
+
 In Configuration Manager, the `SMS_Windows8Application` class is a client Windows Management Instrumentation (WMI) class that defines a Windows 8 style application or a Windows Store application.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,123 +34,117 @@ Class SMS_Windows8Application
 ```
 
 ## Methods
- The `SMS_Windows8Application` class does not define any methods.
+
+The `SMS_Windows8Application` class does not define any methods.
 
 ## Properties
- `ApplicationName`
- Data type: `String`
 
- Access type: Read-only
+`ApplicationName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the application.
+Qualifiers: [read]
 
- `Architecture`
- Data type: `String`
+Name of the application.
 
- Access type: Read-only
+`Architecture` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Specifies the processor architecture supported by an application. Possible values are:
+Qualifiers: [read]
 
-|Value|Description|
-|-----------|-----------------|
-|X86 or x86|The x86 processor architecture.|
-|Arm or arm|The ARM processor architecture.|
-|X64 or x64|The x64 processor architecture.|
-|Neutral or neutral|A neutral processor architecture.|
-|Unknown or unknown|An unknown processor architecture.|
+Specifies the processor architecture supported by an application. Possible values are:
 
- `DependencyApplicationNames`
- Data type: `String`
+| Value | Description |
+| --- | --- |
+| X86 or x86 | The x86 processor architecture. |
+| Arm or arm | The ARM processor architecture. |
+| X64 or x64 | The x64 processor architecture. |
+| Neutral or neutral | A neutral processor architecture. |
+| Unknown or unknown | An unknown processor architecture. |
 
- Access type: Read-only
+`DependencyApplicationNames` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Dependency application names.
+Qualifiers: [read]
 
- `FamilyName`
- Data type: `String`
+Dependency application names.
 
- Access type: Read-only
+`FamilyName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Family name.
+Qualifiers: [read]
 
- `FullName`
- Data type: `String`
+Family name.
 
- Access type: Read-only
+`FullName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Full name.
+Qualifiers: [key, read]
 
- `InstalledLocation`
- Data type: `String`
+Full name.
 
- Access type: Read-only
+`InstalledLocation` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Installation location.
+Qualifiers: [key, read]
 
- `IsFramework`
- Data type: `Boolean`
+Installation location.
 
- Access type: Read-only
+`IsFramework` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if another application can declare a dependency on this application.
+Qualifiers: [read]
 
- `ConfigMgrManaged`
- Data type: `Boolean`
+`true` if another application can declare a dependency on this application.
 
- Access type: Read-only
+`ConfigMgrManaged` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the application is managed by Configuration Manager.
+Qualifiers: [read]
 
- `Publisher`
- Data type: `String`
+`true` if the application is managed by Configuration Manager.
 
- Access type: Read-only
+`Publisher` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Application publisher.
+Qualifiers: [read]
 
- `PublisherId`
- Data type: `String`
+Application publisher.
 
- Access type: Read-only
+`PublisherId` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Application publisher identifier.
+Qualifiers: [read]
 
- `Version`
- Data type: `String`
+Application publisher identifier.
 
- Access type: Read-only
+`Version` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Application version.
+Qualifiers: [read]
+
+Application version.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Inventory Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/inventory-agent-client-wmi-classes.md)
+
+[Inventory Agent Client WMI Classes](inventory-agent-client-wmi-classes.md)

@@ -1,17 +1,17 @@
 ---
-title: Enable autodiscovery of Intune enrollment server
+title: "Enable auto-discovery of Intune enrollment server"
 description: Simplify enrollment for users by enabling automatic discovery of the Intune enrollment server.
-ms.date: 11/21/2025
+ms.date: "2025-11-21T00:00:00Z"
 ms.topic: how-to
 ---
 
-# Enable auto-discovery of Intune enrollment server  
+# Enable auto-discovery of Intune enrollment server
 
 If you're not using automatic enrollment as part of your enrollment or provisioning solution, we recommend creating a domain name server (DNS) alias, called a *CNAME* record type, for your MDM servers. The CNAME redirects enrollment requests to Intune servers so that device users don't have to enter the server address during device enrollment. Although the CNAME configuration is optional, it makes enrollment easier for users by enabling automatic discovery of the Intune enrollment server and reducing the amount of user interaction required.
 
-If you're enrolling Windows devices by using [MDM automatic enrollment](enable-automatic-mdm.md), you don’t have to worry about configuring CNAME records for your MDM server. The MDM server is configured by default when you enable MDM automatic enrollment in your tenant.  
+If you're enrolling Windows devices by using [MDM automatic enrollment](enable-automatic-mdm.md), you don’t have to worry about configuring CNAME records for your MDM server. The MDM server is configured by default when you enable MDM automatic enrollment in your tenant.
 
-This article applies to Windows.  
+This article applies to Windows.
 
 ## Step 1: Create CNAME
 
@@ -20,7 +20,7 @@ Create CNAME DNS resource records for your organization's domain. For example, i
 If no enrollment CNAME record is found, users are prompted to manually enter the MDM server name: *enrollment.manage.microsoft.com*.
 
 | Type | Host name | Points to | TTL |
-|----------|---------------|---------------|---|
+| --- | --- | --- | --- |
 | CNAME | EnterpriseEnrollment.company_domain.com | EnterpriseEnrollment-s.manage.microsoft.com | One hour |
 | CNAME | EnterpriseRegistration.company_domain.com | EnterpriseRegistration.windows.net | One hour |
 
@@ -29,14 +29,14 @@ If your organization uses more than one UPN suffix, create one CNAME for each do
 For example:
 
 1. Contoso users use the following formats as their email address/UPN:
-    - name@contoso.com
-    - name@us.contoso.com
-    - name@eu.contoso.com
 
+   - name@contoso.com
+   - name@us.contoso.com
+   - name@eu.contoso.com
 2. As the Contoso DNS admin, you should configure CNAME records as described in the following table:
 
    | Type | Host name | Points to | TTL |
-   |----------|---------------|---------------|---|
+   | --- | --- | --- | --- |
    | CNAME | EnterpriseEnrollment.contoso.com | EnterpriseEnrollment-s.manage.microsoft.com | One hour |
    | CNAME | EnterpriseEnrollment.us.contoso.com | EnterpriseEnrollment-s.manage.microsoft.com | One hour |
    | CNAME | EnterpriseEnrollment.eu.contoso.com | EnterpriseEnrollment-s.manage.microsoft.com | One hour |
@@ -47,12 +47,12 @@ Changes to DNS records might take up to 72 hours to propagate. You can't verify 
 
 ## Step 2: Verify CNAME
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Go to **Devices**.
-1. Expand **Device onboarding** and select **Enrollment**.
-1. Select the **Windows** tab.
-1. Under **Enrollment options**, select **CNAME Validation**.
-1. For **Domain**, enter the company website, and then choose **Test**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Go to **Devices**.
+3. Expand **Device onboarding** and select **Enrollment**.
+4. Select the **Windows** tab.
+5. Under **Enrollment options**, select **CNAME Validation**.
+6. For **Domain**, enter the company website, and then choose **Test**.
 
 ## Best practices and recommendations
 
@@ -68,29 +68,23 @@ Microsoft Entra ID uses a different CNAME during device registration for iOS/iPa
 | --- | --- | --- | --- |
 | CNAME | EnterpriseRegistration.contoso.com | EnterpriseRegistration.windows.net | One hour |
 
-For more information about device registration, see
-[Manage device identities using the Azure portal](/azure/active-directory/devices/device-management-azure-portal)
+For more information about device registration, see [Manage device identities using the Azure portal](https://learn.microsoft.com/en-us/azure/active-directory/devices/device-management-azure-portal)
 
-## Windows auto enrollment and device registration  
+## Windows auto enrollment and device registration
 
-This section applies to US government cloud customers on devices running Windows.  
+This section applies to US government cloud customers on devices running Windows.
 
 Although creating CNAME DNS entries is optional, CNAME records make enrollment easier for users. If no enrollment CNAME record is found, users are prompted to manually enter the MDM server name, enrollment.manage.microsoft.us.
 
 | Type | Host name | Points to | TTL |
 | --- | --- | --- | --- |
-|CNAME | EnterpriseEnrollment.contoso.com | EnterpriseEnrollment-s.manage.microsoft.us | One hour |
-|CNAME | EnterpriseRegistration.contoso.com | EnterpriseRegistration.windows.net | One hour |
+| CNAME | EnterpriseEnrollment.contoso.com | EnterpriseEnrollment-s.manage.microsoft.us | One hour |
+| CNAME | EnterpriseRegistration.contoso.com | EnterpriseRegistration.windows.net | One hour |
 
-For Intune operated in China and by 21Vianet, use the following details.   
+For Intune operated in China and by 21Vianet, use the following details.
 
 | Type | Host name | Points to | TTL |
 | --- | --- | --- | --- |
-|CNAME | EnterpriseEnrollment.contoso.com | enterpriseenrollment-s.manage.microsoftonline.cn | One hour |
-
+| CNAME | EnterpriseEnrollment.contoso.com | enterpriseenrollment-s.manage.microsoftonline.cn | One hour |
 
 For more information about automatic enrollment for Windows, see [Set up automatic enrollment](enable-automatic-mdm.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

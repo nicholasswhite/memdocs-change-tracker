@@ -1,7 +1,7 @@
 ---
-title: Add custom settings for Windows devices in Microsoft Intune
+title: "Use custom settings for Windows client devices in Intune"
 description: Add or create a custom profile to use the OMA-URI settings for devices running Windows 10/11 client in Microsoft Intune. Use a custom profile to add custom settings.
-ms.date: 06/25/2024
+ms.date: "2024-06-25T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: mikedano
 ---
@@ -9,11 +9,12 @@ ms.reviewer: mikedano
 # Use custom settings for Windows client devices in Intune
 
 > [!NOTE]
-> [!INCLUDE [not-all-settings-are-documented](../includes/not-all-settings-are-documented.md)]
+>
+> Intune might support more settings than the settings listed in this article. Not all settings are documented, and won't be documented. To see the settings you can configure, create a device configuration policy, and select **Settings catalog**. For more information, go to [settings catalog](../settings-catalog/index.md).
 
 This article describes some of the different custom settings you can control on Windows client devices. As part of your mobile device management (MDM) solution, use these settings to configure settings that aren't built in to Intune.
 
-For more information on custom profiles, go to [Create a profile with custom settings](./configure-custom-settings.md).
+For more information on custom profiles, go to [Create a profile with custom settings](configure-custom-settings.md).
 
 These settings are added to a device configuration profile in Intune, and then assigned or deployed to your Windows client devices.
 
@@ -23,13 +24,13 @@ This feature applies to:
 
 Windows client custom profiles use Open Mobile Alliance Uniform Resource Identifier (OMA-URI) settings to configure different features. These settings are typically used by mobile device manufacturers to control features on the device.
 
-Windows client makes many Configuration Service Provider (CSP) settings available, such as [Policy Configuration Service Provider (Policy CSP)](/windows/configuration/provisioning-packages/how-it-pros-can-use-configuration-service-providers).
+Windows client makes many Configuration Service Provider (CSP) settings available, such as [Policy Configuration Service Provider (Policy CSP)](https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/how-it-pros-can-use-configuration-service-providers).
 
-If you're looking for a specific setting, the [Windows device restriction profile](./ref-device-restrictions-windows.md) and the [Settings catalog](../../device-configuration/settings-catalog/index.md) include many built-in settings. So, you may not need to enter custom values.
+If you're looking for a specific setting, the [Windows device restriction profile](ref-device-restrictions-windows.md) and the [Settings catalog](../settings-catalog/index.md) include many built-in settings. So, you may not need to enter custom values.
 
 ## Before you begin
 
-- [Create a Windows custom profile](./configure-custom-settings.md#create-the-profile).
+- [Create a Windows custom profile](configure-custom-settings.md#create-the-profile).
 
 ## OMA-URI settings
 
@@ -47,31 +48,32 @@ If you're looking for a specific setting, the [Windows device restriction profil
   - String
   - Floating point
   - Integer
-
 - **Value**: Enter the data value you want to associate with the OMA-URI you entered. The value depends on the data type you selected. For example, if you select **Date and time**, select the value from a date picker.
 
 After you add some settings, you can select **Export**. **Export** creates a list of all the values you added in a comma-separated values (`.csv`) file.
 
 ## Find the policies you can configure
 
-For a complete list of all configuration service providers (CSPs) that Windows client supports, go to the [CSP reference](/windows/client-management/mdm/configuration-service-provider-reference).
+For a complete list of all configuration service providers (CSPs) that Windows client supports, go to the [CSP reference](https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference).
 
-Not all settings are compatible with all Windows client versions. The [CSP reference](/windows/client-management/mdm/configuration-service-provider-reference) lists the supported versions for each CSP.
+Not all settings are compatible with all Windows client versions. The [CSP reference](https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference) lists the supported versions for each CSP.
 
-Also, Intune doesn't support all the settings listed in [CSP reference](/windows/client-management/mdm/configuration-service-provider-reference). To find out if Intune supports the setting you want, open the article for that setting. Each setting page shows its supported operation. To work with Intune, the setting must support the **Add**, **Replace**, and **Get** operations. If the value returned by the **Get** operation doesn't match the value supplied by the **Add** or **Replace** operations, then Intune reports a compliance error.
+Also, Intune doesn't support all the settings listed in [CSP reference](https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference). To find out if Intune supports the setting you want, open the article for that setting. Each setting page shows its supported operation. To work with Intune, the setting must support the **Add**, **Replace**, and **Get** operations. If the value returned by the **Get** operation doesn't match the value supplied by the **Add** or **Replace** operations, then Intune reports a compliance error.
 
 > [!NOTE]
+>
 > For settings created using a string, base64, or XML data type, the stored value is obscured. If the user who is accessing the value has any of the following permissions or roles, they can see the value:
 >
-> - A Microsoft Intune role that has the **Device configurations** > **Create**, **Read**, and **Update** permissions, like the **Policy and Profile manager** Intune built-in role.
+> - A Microsoft Intune role that has the **Device configurations** &gt; **Create**, **Read**, and **Update** permissions, like the **Policy and Profile manager** Intune built-in role.
 > - Intune Administrator Microsoft Entra role
 >
 > For more information, go to:
+>
 > - [Built-in role permissions for Microsoft Intune](../../fundamentals/role-based-access-control/ref-built-in-roles.md)
-> - [Microsoft Entra built-in roles - Intune Administrator](/entra/identity/role-based-access-control/permissions-reference#intune-administrator)
+> - [Microsoft Entra built-in roles - Intune Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator)
 
 ## Next steps
 
 [Assign the profile](../assign-device-profile.md), and [monitor its status](../monitor-device-profile.md).
 
-[Learn more about custom profiles in Intune](./configure-custom-settings.md).
+[Learn more about custom profiles in Intune](configure-custom-settings.md).

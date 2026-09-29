@@ -1,16 +1,18 @@
 ---
-title: SMS_ADSite Class
+title: "SMS_ADSite Server WMI Class"
 description: Learn how the SMS_ADSite class is an SMS Provider server class that contains Active Directory sites discovered by Configuration Manager Forest Discovery.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ADSite Server WMI Class
+
 The `SMS_ADSite` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains Active Directory sites discovered by Configuration Manager Forest Discovery.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,76 +30,73 @@ Class SMS_ADSite : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ADSite` class does not define any methods.
+
+The `SMS_ADSite` class does not define any methods.
 
 ## Properties
- `ADSiteDescription`
- Data type: `String`
 
- Access type: Read-only
+`ADSiteDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Description of the Active Directory site.
+Qualifiers: [read]
 
- `ADSiteLocation`
- Data type: `String`
+Description of the Active Directory site.
 
- Access type: Read-only
+`ADSiteLocation` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Location of the Active Directory site.
+Qualifiers: [read]
 
- `ADSiteName`
- Data type: `String`
+Location of the Active Directory site.
 
- Access type: Read-only
+`ADSiteName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the Active Directory site.
+Qualifiers: [read]
 
- `Flags`
- Data type: `UInt32`
+Name of the Active Directory site.
 
- Access type: Read-only
+`Flags` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Flags.
+Qualifiers: [read]
 
- `ForestID`
- Data type: `UInt32`
+Flags.
 
- Access type: Read/Write
+`ForestID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The identifier of Active Directory forest.
+Qualifiers: [key]
 
- `LastDiscoveryTime`
- Data type: `DateTime`
+The identifier of Active Directory forest.
 
- Access type: Read-only
+`LastDiscoveryTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The last time this Active Directory site was discovered by Active Directory forest discovery.
+Qualifiers: [read]
 
- `SiteID`
- Data type: `UInt32`
+The last time this Active Directory site was discovered by Active Directory forest discovery.
 
- Access type: Read/Write
+`SiteID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The ID of the site.
+Qualifiers: [key]
+
+The ID of the site.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

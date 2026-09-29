@@ -1,13 +1,15 @@
 ---
-title: GetClientBaselineStatusSummary Method
+title: "GetClientBaselineStatusSummary Method in Class SMS_ClientBaselineStatus"
 description: The GetClientBaselineStatusSummary WMI class method gets baseline status summary information by BaselineType and CollectionID.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetClientBaselineStatusSummary Method in Class SMS_ClientBaselineStatus
+
 The `GetClientBaselineStatusSummary` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets baseline status summary information by `BaselineType` and `CollectionID`.
 
 ## Syntax
@@ -26,72 +28,70 @@ sint32 GetClientBaselineStatusSummary(
 ```
 
 #### Parameters
- `BaselineType`
- Data type: `uint32`
 
- Qualifiers: [in]
+`BaselineType` Data type: `uint32`
 
- The client baseline type. Possible values are:
+Qualifiers: [in]
 
-|Value|Client baseline type|
-|-|-|
-|1|Production|
-|2|Staging|
+The client baseline type. Possible values are:
 
- `CollectionID`
- Data type: `String`
+| Value | Client baseline type |
+| --- | --- |
+| 1 | Production |
+| 2 | Staging |
 
- Qualifiers: [in]
+`CollectionID` Data type: `String`
 
- The collection for which you want to get the baseline status summary.
+Qualifiers: [in]
 
- `Total`
- Data type: `uint32`
+The collection for which you want to get the baseline status summary.
 
- Qualifiers: [out]
+`Total` Data type: `uint32`
 
- The total number of clients in the specified collection.
+Qualifiers: [out]
 
- `Compliant`
- Data type: `uint32`
+The total number of clients in the specified collection.
 
- Qualifiers: [out]
+`Compliant` Data type: `uint32`
 
- The number of clients in the specified collection that are compliant with the baseline.
+Qualifiers: [out]
 
- `InProgress`
- Data type: `uint32`
+The number of clients in the specified collection that are compliant with the baseline.
 
- Qualifiers: [out]
+`InProgress` Data type: `uint32`
 
- The number of clients in the specified collection for which setup is in progress.
+Qualifiers: [out]
 
- `NotCompliant`
- Data type: `uint32`
+The number of clients in the specified collection for which setup is in progress.
 
- Qualifiers: [out]
+`NotCompliant` Data type: `uint32`
 
- The number of clients in the specified collection that are not compliant.
+Qualifiers: [out]
 
- `CriticalError`
- Data type: `uint32`
+The number of clients in the specified collection that are not compliant.
 
- Qualifiers: [out]
+`CriticalError` Data type: `uint32`
 
- The number of clients in the specified collection that have a critical error.
+Qualifiers: [out]
+
+The number of clients in the specified collection that have a critical error.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ClientBaselineStatus Server WMI Class](../../../../../develop/reference/core/clients/deploy/sms_clientbaselinestatus-server-wmi-class.md)
+
+[SMS_ClientBaselineStatus Server WMI Class](sms_clientbaselinestatus-server-wmi-class.md)

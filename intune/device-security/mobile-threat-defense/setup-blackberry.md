@@ -1,7 +1,7 @@
 ---
-title: Set up BlackBerry Protect with Microsoft Intune
+title: "Connect BlackBerry Protect Mobile MTD connector in Microsoft Intune"
 description: How to set up the CylancePROTECT (BlackBerry) MTD solution with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -16,20 +16,18 @@ This article describes the requirements and steps to connect the MTD connector i
 The following subscriptions and accounts are required to integrate UES with Microsoft Intune.
 
 - Microsoft Intune Plan 1 subscription
-
 - Microsoft Entra account with Global Administrator rights to grant the following permissions:
 
   - Sign in and read user profile
-
   - Access the directory as the signed-in user
-
   - Read directory data
-
   - Send device information to Intune
 
   > [!CAUTION]
-  > [!INCLUDE [global-admin](../../includes/global-admin.md)]
-
+  >
+  > The [Microsoft Entra Global Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/privileged-roles-permissions) role is a highly privileged role, and should only be used when another role can't be used. This feature requires the Global Administrator role.
+  >
+  > To reduce risk, assign the least-privileged role that can complete the task. For more information on the built-in Intune roles and what they can do, see [Role-based access control (RBAC) with Intune](../../fundamentals/role-based-access-control/overview.md) and [Built-in role permissions for Intune](../../fundamentals/role-based-access-control/ref-built-in-roles.md).
 - Admin sign-in credentials to access the UES management console
 
 ### App authorization
@@ -37,18 +35,15 @@ The following subscriptions and accounts are required to integrate UES with Micr
 The following authorization process happens when you connect the BlackBerry Protect Mobile MTD connector:
 
 - Allow BlackBerry UES to communicate information related to device health state back to Intune. To grant these permissions, you must use Global Administrator credentials. Granting permissions is a one-time operation. After the permissions are granted, the Global Administrator credentials aren't needed for day-to-day operation.
-
 - Allow BlackBerry UES to sync Microsoft Entra enrollment group membership to populate its device's database.
-
 - Allow BlackBerry UES management console to use Microsoft Entra single sign-on (SSO).
-
 - Allow BlackBerry Protect app to sign in using Microsoft Entra SSO.
 
-For more information about consent and Microsoft Entra applications, see [Introduction to permissions and consent](/azure/active-directory/develop/v2-permissions-and-consent).
+For more information about consent and Microsoft Entra applications, see [Introduction to permissions and consent](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent).
 
 ## Set up BlackBerry Protect Mobile MTD connector
 
-1. Sign in to the [Microsoft Intune admin center] with an Intune administrator account.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an Intune administrator account.
 2. Go to **Tenant administration**.
 3. Select **Connectors and tokens**.
 4. Under **Cross platform**, select **Mobile Threat Defense**.
@@ -59,14 +54,9 @@ For more information about consent and Microsoft Entra applications, see [Introd
 9. After you finish setup in the UES management console, return to your tab in the Microsoft Intune admin center.
 10. Under **MDM Compliance Policy Settings**, turn on the following settings:
     - **Connect Android devices to BlackBerry Protect Mobile**
-    - **Connect iOS devices to BlackBerry Protect Mobile**
-    These settings allow BlackBerry Protect Mobile to evaluate the devices in your organization.
+    - **Connect iOS devices to BlackBerry Protect Mobile** These settings allow BlackBerry Protect Mobile to evaluate the devices in your organization.
 11. Select **Create** to save your connector configurations.
 
 ## Next steps
 
-- [Set up BlackBerry Protect app for enrolled devices](./assign-apps.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Set up BlackBerry Protect app for enrolled devices](assign-apps.md)

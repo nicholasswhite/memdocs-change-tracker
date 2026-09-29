@@ -1,13 +1,15 @@
 ---
 title: General Configuration Item Example 1
 description: The following example is a general configuration item schema example that checks the registry to see whether, in this case, remote control is enabled in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # General Configuration Item Example 1
+
 The following example is a general configuration item schema example that checks the registry to see whether, in this case, remote control is enabled in Configuration Manager.
 
 ## General Configuration Item Example
@@ -124,4 +126,5 @@ Rules defined against the value of the setting.
 ```
 
 ## See Also
+
 [About authoring configuration baselines and items](about-authoring-configuration-baselines-and-configuration-items.md)

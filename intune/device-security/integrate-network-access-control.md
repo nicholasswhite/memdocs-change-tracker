@@ -1,7 +1,7 @@
 ---
-title: Network access control integration with Microsoft Intune
+title: "Network access control (NAC) integration with Intune"
 description: Network access control (NAC) solutions check enrollment and compliance for devices with Intune. NAC includes certain behaviors and works with Conditional Access. See the steps to get onboarded, and get a list of partner solutions.
-ms.date: 08/21/2024
+ms.date: "2024-08-21T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: sheetg
 ms.collection:
@@ -14,7 +14,8 @@ ms.collection:
 
 Intune integrates with network access control (NAC) partners to help organizations secure corporate data when devices try to access on-premises resources.
 
->[!NOTE]
+> [!NOTE]
+>
 > The *compliance retrieval service* was released in July 2021 and replaced the previous Intune NAC service. Microsoft Intune is providing support for the legacy Intune NAC service through March 31, 2024. Our NAC partners are transitioning to the compliance retrieval service and include:
 >
 > - ExtremeCloud Universal ZTNA
@@ -47,17 +48,17 @@ If the device is enrolled and compliant with Intune, the NAC solution should all
 
 Devices that are actively syncing to Intune can't move from **Compliant** / **Noncompliant** to **Not Synced** (or **Unknown**). The **Unknown** state is reserved for newly enrolled devices that haven't been evaluated for compliance yet.
 
-For devices that are blocked from access to resources, the blocking service should redirect all users to the [management portal](https://portal.manage.microsoft.com) to determine why the device is blocked.  If the users visit this page, their devices are synchronously reevaluated for compliance.
+For devices that are blocked from access to resources, the blocking service should redirect all users to the [management portal](https://portal.manage.microsoft.com) to determine why the device is blocked. If the users visit this page, their devices are synchronously reevaluated for compliance.
 
 ## NAC and Conditional Access
 
-NAC works with Conditional Access to provide access control decisions. For more information, see [Common ways to use Conditional Access with Intune](./conditional-access-integration/scenarios.md).
+NAC works with Conditional Access to provide access control decisions. For more information, see [Common ways to use Conditional Access with Intune](conditional-access-integration/scenarios.md).
 
 ## How the NAC integration works
 
 The following list is an overview on how NAC integration works when integrated with Intune. The first three steps, 1-3, explain the onboarding process. Once the NAC solution is integrated with Intune, steps 4-9 describe the ongoing operation.
 
-![Conceptual image of how NAC works with Intune](./media/integrate-network-access-control/ca-intune-common-ways-2.png)
+![Conceptual image of how NAC works with Intune](media/integrate-network-access-control/ca-intune-common-ways-2.png)
 
 1. Register the NAC partner solution with Microsoft Entra ID, and grant delegated permissions to the Intune NAC API.
 2. Configure the NAC partner solution with the appropriate settings including the Intune discovery URL.
@@ -70,12 +71,13 @@ The following list is an overview on how NAC integration works when integrated w
 9. Connection is successfully established which allows the device access to corporate resources.
 
 > [!NOTE]
+>
 > NAC partner solutions will typically make two different types of query to Intune to ask about device compliance state:
 >
 > - Queries filtering based on a known property value of a single device such as its IMEI or Wi-Fi MAC address
 > - Broad, unfiltered queries for all non-compliant devices.
 >
-> NAC Solutions are permitted to make as many of the device-specific queries as required.  However the broad unfiltered queries may be throttled. The NAC solution should be configured to only submit the *all non-compliant devices* queries, at most, once every four hours. Queries made more frequently will receive an http 503 error from the Intune service.
+> NAC Solutions are permitted to make as many of the device-specific queries as required. However the broad unfiltered queries may be throttled. The NAC solution should be configured to only submit the *all non-compliant devices* queries, at most, once every four hours. Queries made more frequently will receive an http 503 error from the Intune service.
 
 ## Enable NAC
 
@@ -86,6 +88,7 @@ The compliance retrieval service requires certificate-based authentication and t
 Other NAC products might require you include a device ID when using NAC with iOS VPN profiles.
 
 > [!TIP]
+>
 > We recommend using certificate-based authentication with the Intune device ID wherever possible. If you're unable to use certificate-based authentication, Intune supports querying devices based on MAC addresses.
 
 For more information about certificate profiles, see [Use SCEP certificate profiles with Microsoft Intune](../device-configuration/certificates/scep-profiles.md) and [Use a PKCS certificate profile to provision devices with certificates in Microsoft Intune](../device-configuration/certificates/pkcs-profiles.md).
@@ -100,11 +103,11 @@ Also, the data returned will be limited if:
 - The OS prevents the specific device property from being shared with Microsoft. Intune will share empty values back to the NAC product for data properties not shared with Intune by the OS.
 
 | Device property | Available in NAC 1.0 | Available in NAC 1.1 | Available in NAC 1.3 | Available in Compliance Retrieval/NAC 2.0 |
-|--|--|--|--|--|
+| --- | --- | --- | --- | --- |
 | Compliance state | Yes | Yes | Yes | Yes |
 | Managed by Intune | Yes | Yes | Yes | Yes |
 | Personal or corporate ownership | No | Yes | Yes | No |
-| MAC address | Yes | Yes | Yes | Yes|
+| MAC address | Yes | Yes | Yes | Yes |
 | Serial number | Yes | Yes | Yes | No |
 | IMEI | Yes | Yes | Yes | No |
 | UDID | Yes | Yes | Yes | No |

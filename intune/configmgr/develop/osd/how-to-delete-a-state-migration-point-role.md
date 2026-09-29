@@ -1,29 +1,29 @@
 ---
-title: Delete a State Migration Point Role
+title: "How to Delete a State Migration Point Role"
 description: You delete the state migration point role, in Configuration Manager, by deleting the role's SMS_SCI_SysResUse Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete a State Migration Point Role
-You delete the state migration point role, in Configuration Manager, by deleting the role's [SMS_SCI_SysResUse Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) object.
+
+You delete the state migration point role, in Configuration Manager, by deleting the role's [SMS_SCI_SysResUse Server WMI Class](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) object.
 
 ### To delete a state migration point role
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the [SMS_SCI_SysResUse Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) object for the state migration point role.
-
-3.  Set the corresponding state migration point to none.
-
-4.  Delete the state migration point [SMS_SCI_SysResUse Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) object.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the [SMS_SCI_SysResUse Server WMI Class](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) object for the state migration point role.
+3. Set the corresponding state migration point to none.
+4. Delete the state migration point [SMS_SCI_SysResUse Server WMI Class](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) object.
 
 ## Example
- The following example method deletes the state migration point identified by the site code and network abstraction layer (NAL) path. The example determines whether the state migration point has any incomplete state migration restores in process. If there are any, the current implementation still deletes the state migration point.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method deletes the state migration point identified by the site code and network abstraction layer (NAL) path. The example determines whether the state migration point has any incomplete state migration restores in process. If there are any, the current implementation still deletes the state migration point.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```c#
 public void DeleteSmpRole(
@@ -133,42 +133,46 @@ public bool DeleteSmpOK(IResultObject selectedResultObject)
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|-|-|-|
-|`connection`|Managed: `WqlConnectionManager`|A valid connection to the SMS Provider.|
-|`siteCode`|Managed: `String`|The Configuration Manager site code.|
-|`nalPath`|Managed: `String`|The NAL path to the state migration point. For example `["Display=\\SERVERNAME\"]MSWNET:["SMS_SITE=SITECODE"]\\SERVERNAME\`|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | Managed: `WqlConnectionManager` | A valid connection to the SMS Provider. |
+| `siteCode` | Managed: `String` | The Configuration Manager site code. |
+| `nalPath` | Managed: `String` | The NAL path to the state migration point. For example `["Display=\\SERVERNAME\"]MSWNET:["SMS_SITE=SITECODE"]\\SERVERNAME\` |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
 
- System.Globalization
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+
+System.Globalization
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [SMS_SCI_SysResUse Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md)
- [About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
+
+[SMS_SCI_SysResUse Server WMI Class](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) [About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)

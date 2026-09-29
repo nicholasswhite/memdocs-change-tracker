@@ -1,16 +1,18 @@
 ---
-title: SMS_SecuredCategoryMembership Class
+title: "SMS_SecuredCategoryMembership Server WMI Class"
 description: Learn how to use the SMS_SecuredCategoryMembership class in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SecuredCategoryMembership Server WMI Class
+
 The `SMS_SecuredCategoryMembership` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents object to security category assignment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,45 +26,46 @@ Class SMS_SecuredCategoryMembership : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_SecuredCategoryMembership` class.
 
-|Method|Description|
-|------------|-----------------|
-|[AddMemberships Method in Class SMS_SecuredCategoryMembership](../../../../../develop/reference/core/servers/configure/addmemberships-method-in-class-sms_securedcategorymembership.md)|Batch operation to assign objects to a security category.|
-|[RemoveMemberships Method in Class SMS_SecuredCategoryMembership](../../../../../develop/reference/core/servers/configure/removememberships-method-in-class-sms_securedcategorymembership.md)|Batch operation to remove objects from a security category|
+The following table lists the methods in the `SMS_SecuredCategoryMembership` class.
+
+| Method | Description |
+| --- | --- |
+| [AddMemberships Method in Class SMS_SecuredCategoryMembership](addmemberships-method-in-class-sms_securedcategorymembership.md) | Batch operation to assign objects to a security category. |
+| [RemoveMemberships Method in Class SMS_SecuredCategoryMembership](removememberships-method-in-class-sms_securedcategorymembership.md) | Batch operation to remove objects from a security category |
 
 ## Properties
- `CategoryID`
- Data type: `String`
 
- Access type: Read/Write
+`CategoryID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The ID of security category.
+Qualifiers: [key]
 
- `ObjectKey`
- Data type: `String`
+The ID of security category.
 
- Access type: Read/Write
+`ObjectKey` Data type: `String`
 
- Qualifiers: [key, sizelimit("256")]
+Access type: Read/Write
 
- The key of object.
+Qualifiers: [key, sizelimit("256")]
 
- `ObjectTypeID`
- Data type: `UInt32`
+The key of object.
 
- Access type: Read/Write
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The type id of the object. See the `SMS_RbacSecuredObject` class for details.
+Qualifiers: [key]
+
+The type id of the object. See the `SMS_RbacSecuredObject` class for details.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

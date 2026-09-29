@@ -1,7 +1,7 @@
 ---
 title: How to create a SQL statement by using query designer
 description: How to create Configuration Manager report queries using Query Designer.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 
@@ -17,15 +17,16 @@ Query Designer in SQL Server can help you to more easily write SQL queries that 
 ## To create a new SQL query in query designer
 
 1. Start Microsoft SQL Server Management Studio.
-1. Navigate to *\<Computer Name\>*�**\\ Databases \\**�*\<Configuration Manager database name\>*�**\\ Views**.
-1. Right-click **Views** and then select **New View**.
-1. In the **Add Table** dialog box, select the **Views** tab and then select the views that you want to include in the SQL query.
+2. Navigate to *&lt;Computer Name&gt;*�**\ Databases \**�*&lt;Configuration Manager database name&gt;*�**\ Views\*\*.
+3. Right-click **Views** and then select **New View**.
+4. In the **Add Table** dialog box, select the **Views** tab and then select the views that you want to include in the SQL query.
 
-    > [!NOTE]
-    > You can select multiple views by holding down the CTRL key.
-1. In the design view of query designer, select the columns you want to appear in the report. If you are querying multiple views, you can join these by selecting a column in one view and dragging this over to the same column in another view.
-1. Select **Execute SQL** to test the query and see the results.
-1. When you are happy with the results returned by the query, copy and paste it from query designer to be used to create your report in Report Builder.
+   > [!NOTE]
+   >
+   > You can select multiple views by holding down the CTRL key.
+5. In the design view of query designer, select the columns you want to appear in the report. If you are querying multiple views, you can join these by selecting a column in one view and dragging this over to the same column in another view.
+6. Select **Execute SQL** to test the query and see the results.
+7. When you are happy with the results returned by the query, copy and paste it from query designer to be used to create your report in Report Builder.
 
 ## See also
 

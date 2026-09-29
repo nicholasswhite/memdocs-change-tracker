@@ -1,9 +1,9 @@
 ---
-title: Try Microsoft Intune for free
+title: "Prerequisites and tasks to try and evaluate Microsoft Intune for free"
 description: Evaluate Microsoft Intune with a free trial. Step through common settings, enroll devices, create policies, and learn about cloud-based device management. Start your trial today.
 author: nicholasswhite
 ms.author: nwhite
-ms.date: 01/20/2026
+ms.date: "2026-01-20T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: tycast
 ---
@@ -14,7 +14,7 @@ You can evaluate and use Microsoft Intune with a free trial.
 
 In this series of articles, you learn how to evaluate Microsoft Intune by stepping through common tasks, like adding users and groups, enrolling devices, creating policies, and adding apps. You can use a free trial to complete the steps in this series.
 
-To learn more about Intune, see [What is Microsoft Intune?](what-is-intune.md) and [Benefits of Microsoft Intune training path](/training/modules/benefits-microsoft-endpoint-manager/).
+To learn more about Intune, see [What is Microsoft Intune?](what-is-intune.md) and [Benefits of Microsoft Intune training path](https://learn.microsoft.com/en-us/training/modules/benefits-microsoft-endpoint-manager/).
 
 ## Recommended prerequisites
 
@@ -43,12 +43,11 @@ In these topics, you set up a test environment. Then, you step through common ta
 
 ## Get started
 
-> [!div class="nextstepaction"]
-> [Step 1 - Set up the Microsoft Intune free trial](free-trial-sign-up.md)
+[Step 1 - Set up the Microsoft Intune free trial](free-trial-sign-up.md)
 
 When you complete the setup, you have a new tenant that's ready to step through the tasks in this series.
 
 ## Learn more
 
 - [What is Microsoft Intune?](what-is-intune.md)
-- [Training path - Introduction to Microsoft Intune](/training/modules/intro-to-endpoint-manager)
+- [Training path - Introduction to Microsoft Intune](https://learn.microsoft.com/en-us/training/modules/intro-to-endpoint-manager)

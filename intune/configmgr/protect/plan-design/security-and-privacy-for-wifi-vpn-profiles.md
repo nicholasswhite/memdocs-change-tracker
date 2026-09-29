@@ -1,7 +1,7 @@
 ---
-title: Wi-Fi and VPN profile security and privacy
+title: "Security and privacy for Wi-Fi and VPN profiles in Configuration Manager"
 description: Learn about the security recommendations for managing Wi-Fi and VPN profiles for devices in Configuration Manager.
-ms.date: 03/29/2022
+ms.date: "2022-03-29T00:00:00Z"
 ms.subservice: protect
 ms.topic: article
 ms.collection: tier3
@@ -13,7 +13,8 @@ ms.service: configuration-manager
 *Applies to: Configuration Manager (current branch)*
 
 > [!IMPORTANT]
-> Starting in version 2203, this company resource access feature is no longer supported.<!-- 9315387 --> For more information, see [Frequently asked questions about resource access deprecation](resource-access-deprecation-faq.yml).
+>
+> Starting in version 2203, this company resource access feature is no longer supported. For more information, see [Frequently asked questions about resource access deprecation](resource-access-deprecation-faq.yml).
 
 ## Security recommendations
 

@@ -1,17 +1,18 @@
 ---
 description: Learn how to represent the fallback relationships for boundary groups in Configuration Manager using SMS_BoundaryGroupRelationships.
-title: SMS_BoundaryGroupRelationships Class
-ms.date: 03/13/2017
+title: "SMS_BoundaryGroupRelationships Server WMI Class"
+ms.date: "2017-03-13T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BoundaryGroupRelationships Server WMI Class
 
 The `SMS_BoundaryGroupRelationships` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents fallback relationships for boundary groups.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,69 +27,70 @@ Class SMS_BoundaryGroupRelationships : SMS_BaseClass
 ```
 
 ## Methods
- The following table shows the methods in `SMS_BoundaryGroupRelationships`.
 
-|Method|Description|
-|------------|-----------------|
-|[FallbackDP Method in Class SMS_BoundaryGroupRelationships](../../../../../develop/reference/core/servers/configure/fallbackdp-method-in-class-sms-boundarygrouprelationships.md)|Sets the fallback time for a distribution point (DP).|
-|[FallbackMP Method in Class SMS_BoundaryGroupRelationships](../../../../../develop/reference/core/servers/configure/fallbackmp-method-in-class-sms-boundarygrouprelationships.md)|Sets the fallback time for a management point (MP).|
-|[FallbackSMP Method in Class SMS_BoundaryGroupRelationships](../../../../../develop/reference/core/servers/configure/fallbacksmp-method-in-class-sms-boundarygrouprelationships.md)|Sets the fallback time for a state migration point (SMP).|
-|[FallbackSUP Method in Class SMS_BoundaryGroupRelationships](../../../../../develop/reference/core/servers/configure/fallbacksup-method-in-class-sms-boundarygrouprelationships.md)|Sets the fallback time for a software update point (SUP).|
+The following table shows the methods in `SMS_BoundaryGroupRelationships`.
+
+| Method | Description |
+| --- | --- |
+| [FallbackDP Method in Class SMS_BoundaryGroupRelationships](fallbackdp-method-in-class-sms-boundarygrouprelationships.md) | Sets the fallback time for a distribution point (DP). |
+| [FallbackMP Method in Class SMS_BoundaryGroupRelationships](fallbackmp-method-in-class-sms-boundarygrouprelationships.md) | Sets the fallback time for a management point (MP). |
+| [FallbackSMP Method in Class SMS_BoundaryGroupRelationships](fallbacksmp-method-in-class-sms-boundarygrouprelationships.md) | Sets the fallback time for a state migration point (SMP). |
+| [FallbackSUP Method in Class SMS_BoundaryGroupRelationships](fallbacksup-method-in-class-sms-boundarygrouprelationships.md) | Sets the fallback time for a software update point (SUP). |
 
 ## Properties
- `DestinationGroupID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`DestinationGroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the destination boundary group.
+Qualifiers: [key]
 
- `DestinationGroupName`
- Data type: `String`
+ID of the destination boundary group.
 
- Access type: Read-only
+`DestinationGroupName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the destination boundary group.
+Qualifiers: [read]
 
- `SourceGroupID`
- Data type: `UInt32`
+Name of the destination boundary group.
 
- Access type: Read/Write
+`SourceGroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the source boundary group.
+Qualifiers: [key]
 
- `SourceGroupName`
- Data type: `String`
+ID of the source boundary group.
 
- Access type: Read-only
+`SourceGroupName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the source boundary group.
+Qualifiers: [read]
+
+Name of the source boundary group.
 
 ## Remarks
 
- Class qualifiers for this class include:
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
 
- ## See Also
- [SMS_BoundaryGroup Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_boundarygroup-server-wmi-class.md)
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+## See Also
+
+[SMS_BoundaryGroup Server WMI Class](sms_boundarygroup-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

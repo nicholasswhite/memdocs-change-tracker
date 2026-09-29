@@ -1,7 +1,7 @@
 ---
-title: "Device Action: BitLocker Key Rotation"
+title: "Device action: BitLocker key rotation"
 description: Learn how to rotate the BitLocker recovery key with Microsoft Intune.
-ms.date: 10/27/2025
+ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -13,65 +13,31 @@ Key rotation is especially useful in environments where devices are frequently s
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
 > - Windows
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
 > To run this action, use an account with at least one of the following roles:
 >
-> - [Help Desk Operator]
-> - [Endpoint Security Manager]
-> - [Custom role] that includes:
+> - [Help Desk Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [Endpoint Security Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#endpoint-security-manager)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Remote tasks/Rotate BitLockerKeys**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
-:::column-end:::
-:::row-end:::
+
 ## How to rotate the BitLocker key from the Intune admin center
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **BitLocker key rotation**.
-1. Select **Yes** to confirm the action.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Secure** &gt; **BitLocker key rotation**.
+4. Select **Yes** to confirm the action.
 
 ## Reference links
 
-- Configuration service provider (CSP) used to initiate the action: [BitLocker CSP][CSP-1]
-- Microsoft Graph API: [rotateBitLockerKeys action][GRAPH-1]
-- [BitLocker overview][WIN-1]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[Endpoint Security Manager]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#endpoint-security-manager
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-rotateBitLockerKeys
-
-<!--Other links-->
-
-[WIN-1]: /windows/security/operating-system-security/data-protection/bitlocker/
-[CSP-1]: /windows/client-management/mdm/bitlocker-csp#rotaterecoverypasswords
+- Configuration service provider (CSP) used to initiate the action: [BitLocker CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/bitlocker-csp#rotaterecoverypasswords)
+- Microsoft Graph API: [rotateBitLockerKeys action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-rotateBitLockerKeys)
+- [BitLocker overview](https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/)

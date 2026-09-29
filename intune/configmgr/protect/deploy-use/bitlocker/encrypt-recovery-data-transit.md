@@ -1,7 +1,7 @@
 ---
 title: Encrypt recovery data over the network
 description: Encrypt BitLocker recovery keys, recovery packages, and TPM password hashes over the network.
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: protect
 ms.topic: how-to
 ms.collection: tier3
@@ -12,26 +12,29 @@ ms.service: configuration-manager
 
 *Applies to: Configuration Manager (current branch)*
 
-<!--3601034-->
-
 When you create a BitLocker management policy, Configuration Manager deploys the recovery service to a management point. On the **Client Management** page of the BitLocker management policy, when you **Configure BitLocker Management Services**, the client backs up key recovery information to the site database. This information includes BitLocker recovery keys, recovery packages, and TPM password hashes. When users are locked out of their protected device, you can use this information to help them recover access to the device.
 
 Given the sensitive nature of this information, you need to protect it.
 
-[!INCLUDE [11108795 note about recovery service](includes/11108795-bitlocker-recovery-service.md)]
+> [!IMPORTANT]
+>
+> Starting in version 2103, the implementation of the recovery service changed. It's no longer using legacy MBAM components, but is still conceptually referred to as the *recovery service*. All version 2103 clients use the *message processing engine* component of the management point as their recovery service. They escrow their recovery keys over the secure client notification channel. With this change, you can enable the Configuration Manager site for [enhanced HTTP](../../../core/plan-design/hierarchy/enhanced-http.md). This configuration doesn't affect the functionality of BitLocker management in Configuration Manager.
+>
+> When both the site and clients are running Configuration Manager version 2103 or later, clients send their recovery keys to the management point over the secure client notification channel. If any clients are on version 2010 or earlier, they need an HTTPS-enabled recovery service on the management point to escrow their keys.
 
 ## HTTPS certificate requirements
 
 > [!NOTE]
+>
 > These requirements only apply if the site is version 2010 or earlier, or if you deploy BitLocker management policies to devices with Configuration Manager client version 2010 or earlier.
 
 Configuration Manager requires a secure connection between the client and the recovery service to encrypt the data in transit across the network. Use one of the following options:
 
-- [HTTPS-enable the IIS website](#https-enable-the-iis-website) on the management point that hosts the recovery service, not the entire management point role.<!-- 5925660 -->
-
+- [HTTPS-enable the IIS website](#https-enable-the-iis-website) on the management point that hosts the recovery service, not the entire management point role.
 - [Configure the management point for HTTPS](#configure-the-management-point-for-https). On the properties of the management point, the **Client connections** setting must be **HTTPS**.
 
 > [!NOTE]
+>
 > If your site has more than one management point, enable HTTPS on all management points at the site with which a BitLocker-managed client could potentially communicate. If the HTTPS management point is unavailable, the client could fail over to an HTTP management point, and then fail to escrow its recovery key.
 >
 > This recommendation applies to both options: enable the management point for HTTPS, or enable the IIS website that hosts the recovery service on the management point.
@@ -47,19 +50,18 @@ The HTTPS requirement is now for the IIS website that hosts the recovery service
 The **Client connections** property of the management point can be **HTTP** or **HTTPS**. If the management point is configured for **HTTP**, to support the BitLocker recovery service:
 
 1. Acquire a server authentication certificate. Bind the certificate to the IIS website on the management point that hosts the BitLocker recovery service.
-
 2. Configure clients to trust the server authentication certificate. There are two methods to accomplish this trust:
 
-    - Use a certificate from a public and globally trusted certificate provider.<!-- memdocs#1668 --> Windows clients include trusted root certificate authorities (CAs) from these providers. By using a server authentication certificate that's issued by one of these providers, your clients should automatically trust it.
-
-    - Use a certificate issued by a CA from your organization's public key infrastructure (PKI). Most PKI implementations add the trusted root CAs to Windows clients. For example, using Active Directory Certificate Services with group policy. If you issue the server authentication certificate from a CA that your clients don't automatically trust, add the CA trusted root certificate to clients.
+   - Use a certificate from a public and globally trusted certificate provider. Windows clients include trusted root certificate authorities (CAs) from these providers. By using a server authentication certificate that's issued by one of these providers, your clients should automatically trust it.
+   - Use a certificate issued by a CA from your organization's public key infrastructure (PKI). Most PKI implementations add the trusted root CAs to Windows clients. For example, using Active Directory Certificate Services with group policy. If you issue the server authentication certificate from a CA that your clients don't automatically trust, add the CA trusted root certificate to clients.
 
 > [!TIP]
+>
 > The only clients that need to communicate with the recovery service are those clients that you plan to target with a BitLocker management policy and includes a **Client Management** rule.
 
 ## Troubleshoot the connection
 
-On the client, use the **BitLockerManagementHandler.log** to troubleshoot this connection. For connectivity to the recovery service, the log shows the URL that the client is using. Locate an entry in the log based on the version of Configuration Manager:<!-- MEMDocs#1688 -->
+On the client, use the **BitLockerManagementHandler.log** to troubleshoot this connection. For connectivity to the recovery service, the log shows the URL that the client is using. Locate an entry in the log based on the version of Configuration Manager:
 
 - In version 2103 and later, the entry starts with `Recovery keys escrowed to MP`
 - In version 2010 and earlier, the entry starts with `Checking for Recovery Service at`

@@ -1,16 +1,18 @@
 ---
-title: RemovePackages Method
+title: "RemovePackages Method in Class SMS_DistributionPointGroup"
 description: In Configuration Manager, the RemovePackages WMI class method removes a set of packages from this distribution point group.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # RemovePackages Method in Class SMS_DistributionPointGroup
+
 The `RemovePackages` Windows Management Instrumentation (WMI) class method, in Configuration Manager, removes a set of packages from this distribution point group.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,32 +24,35 @@ sint32 RemovePackages(
 ```
 
 #### Parameters
- `PackageIDs`
- Data type: `String` Array
 
- Qualifiers: `[in]`
+`PackageIDs` Data type: `String` Array
 
- A unique, auto-generated key that is used to relate programs, advertisements, and distribution points to the package.
+Qualifiers: `[in]`
 
- `RemovePackageFromDPs`
- Data type: `Boolean`
+A unique, auto-generated key that is used to relate programs, advertisements, and distribution points to the package.
 
- Qualifiers: `[in, optional]`
+`RemovePackageFromDPs` Data type: `Boolean`
 
- `true`, if the packages should be removed from the distribution points.  The default value is `true`.
+Qualifiers: `[in, optional]`
+
+`true`, if the packages should be removed from the distribution points. The default value is `true`.
 
 ## Return Values
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Application Server WMI Class](../../../../../develop/reference/apps/sms_application-server-wmi-class.md)
+
+[SMS_Application Server WMI Class](../../../apps/sms_application-server-wmi-class.md)

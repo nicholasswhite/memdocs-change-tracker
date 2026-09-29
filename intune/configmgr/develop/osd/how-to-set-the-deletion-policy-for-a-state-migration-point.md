@@ -1,34 +1,34 @@
 ---
-title: Set the Deletion Policy for a State Migration Point
+title: "How to Set the Deletion Policy for a State Migration Point"
 description: In Configuration Manager, configure the state migration point deletion policy by updating the embedded properties of SMPStoreDeletionDelayTimeInMinutes and SMPStoreDeletionCycleTimeInMinutes.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Set the Deletion Policy for a State Migration Point
+
 In Configuration Manager, you configure the state migration point deletion policy by updating the **SMPStoreDeletionDelayTimeInMinutes** and **SMPStoreDeletionCycleTimeInMinutes** embedded properties. The deletion policy defines when the state migration point should remove data marked for deletion.
 
 > [!NOTE]
->  The Configuration Manager console displays the deletion delay time in days, whereas SMPStoreDeletionDelayTimeInMinutes and SMPStoreDeletionCycleTimeInMinutes are stored in minutes.
+>
+> The Configuration Manager console displays the deletion delay time in days, whereas SMPStoreDeletionDelayTimeInMinutes and SMPStoreDeletionCycleTimeInMinutes are stored in minutes.
 
 ### To set the deletion policy
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Make a connection to the state migration point resources section of the site control file.
-
-3.  Get the embedded properties.
-
-4.  Update `SMPStoreDeletionDelayTimeInMinutes` and `SMPStoreDeletionCycleTimeInMinutes`.
-
-5.  Commit the changes to the site control file.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Make a connection to the state migration point resources section of the site control file.
+3. Get the embedded properties.
+4. Update `SMPStoreDeletionDelayTimeInMinutes` and `SMPStoreDeletionCycleTimeInMinutes`.
+5. Commit the changes to the site control file.
 
 ## Example
- The following example method sets the deletion policy for a state migration point. The example receives the number of days, converts the value to minutes, and updates the deletion policy accordingly.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method sets the deletion policy for a state migration point. The example receives the number of days, converts the value to minutes, and updates the deletion policy accordingly.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub SetDeletionPolicy(connection,          _
@@ -144,42 +144,46 @@ int deletionPolicyDays)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|-|-|-|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`context (VBScript)`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|
-|`server`|-   Managed: `String`<br />-   VBScript: `String`|The Configuration Manager server that the state migration point is running on.|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The Configuration Manager site code.|
-|`deletionPolicyDays`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Number of days before data deletion.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `context (VBScript)` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `server` | - Managed: `String` - VBScript: `String` | The Configuration Manager server that the state migration point is running on. |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The Configuration Manager site code. |
+| `deletionPolicyDays` | - Managed: `Integer` - VBScript: `Integer` | Number of days before data deletion. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md) .
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md) .
 
 ## See Also
- [About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
+
+[About OS deployment site role configuration](about-operating-system-deployment-site-role-configuration.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)

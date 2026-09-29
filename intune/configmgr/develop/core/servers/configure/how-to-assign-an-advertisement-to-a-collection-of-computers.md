@@ -1,32 +1,33 @@
 ---
 description: Learn how to use the SMS_Advertisement class to assign an advertisement to a collection of computers.
-title: Assign an Advertisement to a Collection of Computers
-ms.date: 09/20/2016
+title: "How to Assign an Advertisement to a Collection of Computers"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Assign an Advertisement to a Collection of Computers
-You can assign an advertisement to a collection by using the `SMS_Advertisement` class in Configuration Manager. Advertisements are closely tied to packages, programs and collections. For more information, see [Software Distribution Overview](../../../../develop/core/servers/configure/software-distribution-overview.md).
+
+You can assign an advertisement to a collection by using the `SMS_Advertisement` class in Configuration Manager. Advertisements are closely tied to packages, programs and collections. For more information, see [Software Distribution Overview](software-distribution-overview.md).
 
 > [!NOTE]
->  Detailed information about the `SMS_Advertisement` class and class properties is in the reference section of the Configuration Manager Software Development Kit (SDK).
+>
+> Detailed information about the `SMS_Advertisement` class and class properties is in the reference section of the Configuration Manager Software Development Kit (SDK).
 
 ### To assign an advertisement to a collection
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Get the specific advertisement using the existing advertisement ID.
-
-3.  Populate the advertisement collection ID property with the existing collection ID.
-
-4.  Save the advertisement and properties.
+1. Set up a connection to the SMS Provider.
+2. Get the specific advertisement using the existing advertisement ID.
+3. Populate the advertisement collection ID property with the existing collection ID.
+4. Save the advertisement and properties.
 
 ## Example
- The following example method assigns a specific advertisement to a collection for use in software distribution.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method assigns a specific advertisement to a collection for use in software distribution.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -76,35 +77,38 @@ public void AssignSWDAdvertisementToCollection(WqlConnectionManager connection, 
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swebemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingAdvertisementID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of an existing advertisement.|
-|`existingCollectionID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of an existing collection.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swebemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingAdvertisementID` | - Managed: `String` - VBScript: `String` | The ID of an existing advertisement. |
+| `existingCollectionID` | - Managed: `String` - VBScript: `String` | The ID of an existing collection. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [About deployments](about-software-distribution-deployments.md)
- [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [About deployments](about-software-distribution-deployments.md) [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md)

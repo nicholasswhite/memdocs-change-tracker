@@ -1,7 +1,7 @@
 ---
-title: Prerequisites for reporting
+title: "Prerequisites for reporting in Configuration Manager"
 description: Understand various dependencies that impact your use of reporting in Configuration Manager.
-ms.date: 04/01/2020
+ms.date: "2020-04-01T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -22,7 +22,7 @@ Reporting in Configuration Manager has the following dependencies:
 
 Before you can use reporting in Configuration Manager, install and configure SQL Server Reporting Services.
 
-For more information about planning and deploying Reporting Services, see the [Install SQL Server Reporting Services](/sql/reporting-services/install-windows/install-reporting-services).
+For more information about planning and deploying Reporting Services, see the [Install SQL Server Reporting Services](https://learn.microsoft.com/en-us/sql/reporting-services/install-windows/install-reporting-services).
 
 Install the Reporting Services database on either the default instance or a named instance of a 64-bit SQL Server installation. Colocate the SQL Server instance with the site system server, or configure it on a remote computer.
 

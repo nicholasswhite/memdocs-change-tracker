@@ -1,7 +1,7 @@
 ---
-title: On-premises MDM
+title: "On-premises MDM in Configuration Manager"
 description: Learn about on-premises mobile device management (MDM) in Configuration Manager
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: mdm
 ms.topic: article
 ms.collection: tier3
@@ -13,7 +13,8 @@ ms.service: configuration-manager
 *Applies to: Configuration Manager (current branch)*
 
 > [!IMPORTANT]
-> Starting in November 2021, this feature of Configuration Manager is [deprecated](../../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).<!-- 12454901 -->
+>
+> Starting in November 2021, this feature of Configuration Manager is [deprecated](../../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
 Configuration Manager on-premises mobile device management (MDM) is a device management solution that relies on the built-in management capabilities of Windows. This feature is based on the Open Mobile Alliance (OMA) Device Management (DM) standard. It uses your organization's Configuration Manager infrastructure to manage and maintain the devices. Your organization requires Microsoft Intune licenses to use this feature, but it doesn't require any cloud connection. Configuration Manager stores all data about your devices in your on-premises site database.
 
@@ -26,9 +27,7 @@ The following sections list the advantages and disadvantages of on-premises MDM 
 ### Advantages
 
 - **Simplified infrastructure**: Fewer site system roles are required.
-
 - **Easier to maintain**: Because management functionality is built in to the device OS, new versions of the Configuration Manager client aren't required when new management features are introduced to the site.
-
 - **On-premises**: - All management and data are kept on-premises.
 
 ### Disadvantages
@@ -41,5 +40,4 @@ The following sections list the advantages and disadvantages of on-premises MDM 
 
 Learn about what to consider when setting up the Configuration Manager infrastructure and planning for device enrollment in on-premises MDM.
 
-> [!div class="nextstepaction"]
-> [Plan for on-premises MDM](../plan-design/plan-on-premises-mdm.md)
+[Plan for on-premises MDM](../plan-design/plan-on-premises-mdm.md)

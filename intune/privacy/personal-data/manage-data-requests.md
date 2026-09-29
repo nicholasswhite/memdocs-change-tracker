@@ -1,7 +1,7 @@
 ---
-title: Audit, export or delete personal data collected by Intune
+title: "Audit export or delete personal data in Intune"
 description: Learn how to audit, export, or delete personal data that is collected by Intune.
-ms.date: 04/10/2025
+ms.date: "2025-04-10T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: kerimh
 ms.collection:
@@ -15,7 +15,8 @@ ms.collection:
 
 Intune admins can use audit logs to track activities surrounding personal data. Admins can also export and delete personal data.
 
->[!Note]
+> [!NOTE]
+>
 > This article provides steps for how to delete personal data from the device or service and can be used to support your obligations under the GDPR. If you're looking for general information about GDPR, see the [GDPR section of the Service Trust portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 ## Audit personal data
@@ -49,7 +50,7 @@ There are three ways to remove personal data from Intune management:
 
 ### Delete a user from Intune
 
-To delete an end user's personal data from Intune, an admin must [delete the user from Microsoft Entra ID](/azure/active-directory/fundamentals/add-users-azure-active-directory#delete-a-user). When the user is deleted from Microsoft Entra ID (hard deleted), Intune receives the *Delete* signal from Microsoft Entra ID and then automatically begins purging all of that user's personal data from the Intune service. The user's information is deleted from Intune service within 30 days of the removal action.
+To delete an end user's personal data from Intune, an admin must [delete the user from Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/add-users-azure-active-directory#delete-a-user). When the user is deleted from Microsoft Entra ID (hard deleted), Intune receives the *Delete* signal from Microsoft Entra ID and then automatically begins purging all of that user's personal data from the Intune service. The user's information is deleted from Intune service within 30 days of the removal action.
 
 ### Reset device to factory settings
 

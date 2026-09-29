@@ -1,7 +1,7 @@
 ---
-title: Unicode and ASCII support
+title: "Unicode and ASCII support in Configuration Manager"
 description: Learn about support for Unicode and ASCII characters in Configuration Manager objects.
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: reference
 ms.collection: tier3
@@ -19,81 +19,56 @@ Configuration Manager creates most objects by using Unicode characters. However,
 When you create the following objects, Configuration Manager only supports the ASCII character set:
 
 - Site code
-
 - All site system server computer names
-
 - The following Configuration Manager accounts:
 
-    > [!NOTE]
-    > These accounts support ASCII characters, and RUS characters on a site that runs in Russian.
+  > [!NOTE]
+  >
+  > These accounts support ASCII characters, and RUS characters on a site that runs in Russian.
 
   - Client push installation account
-
   - Management point database connect account
-
   - Network access account
-
   - Package access account
-
   - Standard sender account
-
   - Site system installation account
-
   - Software update point connection account
-
   - Software update point proxy server account
 
     > [!NOTE]
+    >
     > The accounts that you specify for role-based administration support Unicode.
     >
     > The reporting services point account supports Unicode, with the exception of RUS characters.
-
 - Fully qualified domain name (FQDN) for site servers and site systems
-
 - Installation path for Configuration Manager
-
 - SQL Server instance name
-
 - The path for the following site system roles:
 
   - Enrollment point
-
   - Enrollment proxy point
-
   - Reporting services point
-
   - State migration point
-
 - The path for the following folders:
 
   - The folder that stores client state migration data
-
   - The folder that contains the Configuration Manager reports
-
   - The folder that stores the Configuration Manager backup
-
   - The folder that stores the installation source files for site setup
-
   - The folder that stores the prerequisite downloads for use by setup
-
 - The path for the following objects:
 
   - IIS website
-
   - Virtual application installation path
-
   - Virtual application name
-
 - Boot media ISO file names
-
-- [Custom property](../../../develop/adminservice/custom-properties.md) _names_<!-- 12377169 -->
+- [Custom property](../../../develop/adminservice/custom-properties.md) *names*
 
 ## Other limitations
 
 The following limitations are for supported character sets and language versions:
 
 - Configuration Manager doesn't support changing the locale of the site server computer.
-
 - An enterprise certificate authority (CA) doesn't support client computer names that use double-byte character sets (DBCS). The client computer names that you can use are restricted by the PKI limitation of the IA5 character set. Configuration Manager doesn't support CA names or subject name values that use DBCS.
 
 ## Objects that aren't localized

@@ -1,16 +1,18 @@
 ---
-title: SMS_G_System_LastSoftwareScan Class
+title: "SMS_G_System_LastSoftwareScan Server WMI Class"
 description: The SMS_G_System_LastSoftwareScan WMI class is an SMS Provider server class that represents information about the most recent software inventory scan on the client computer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_LastSoftwareScan Server WMI Class
+
 The `SMS_G_System_LastSoftwareScan` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents information about the most recent software inventory scan on the client computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,59 +27,61 @@ Class SMS_G_System_LastSoftwareScan : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_LastSoftwareScan` class does not define any methods.
+
+The `SMS_G_System_LastSoftwareScan` class does not define any methods.
 
 ## Properties
- `ResourceID`
- Data type: **UInt32**
 
- Access type: Read/Write
+`ResourceID` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: [key]
 
- `LastCollectedFileScanDate`
- Data type: **DateTime**
+See [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
 
- Access type: Read/Write
+`LastCollectedFileScanDate` Data type: **DateTime**
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time of the last scan for collected files.
+Qualifiers: None
 
- `LastScanDate`
- Data type: **DateTime**
+The date and time of the last scan for collected files.
 
- Access type: Read/Write
+`LastScanDate` Data type: **DateTime**
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time of the most recent Configuration Manager software inventory scan.
+Qualifiers: None
 
- `LastScanOpcode`
- Data type: **UInt32**
+Date and time of the most recent Configuration Manager software inventory scan.
 
- Access type: Read/Write
+`LastScanOpcode` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read/Write
 
- Not used.
+Qualifiers: None
+
+Not used.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md)
+
+[SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md)

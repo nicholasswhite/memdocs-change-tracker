@@ -1,7 +1,7 @@
 ---
-title: Language packs
+title: "Language packs in Configuration Manager"
 description: Learn about the language support available in Configuration Manager.
-ms.date: 04/05/2021
+ms.date: "2021-04-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -17,70 +17,68 @@ This article provides technical details about language support in Configuration 
 Install multiple languages at each site. You only need to install the languages that you use.
 
 - Each site supports multiple languages for Configuration Manager consoles.
-
 - Add support for only the client languages that you want to support by installing individual client language packs at each site.
 
 When you install support for a language that matches the following components:
 
 - The display language of a computer: Both the Configuration Manager console and the client user interface that runs on that computer display information in that language.
-
 - The language preference that's in use by the web browser of a computer: Connections to web-based information display in that language. For example, SQL Server Reporting Services.
 
 When you run Configuration Manager setup, it downloads language pack files as part of the prerequisites and redistributable files. You can also use the [setup downloader](setup-downloader.md) to download these files before you run setup.
 
 ## Server languages
 
-Use the following table to map a locale ID to a language that you want to support on servers. For more information about locale IDs, see [Locale IDs assigned by Microsoft](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).
+Use the following table to map a locale ID to a language that you want to support on servers. For more information about locale IDs, see [Locale IDs assigned by Microsoft](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).
 
-|Server language|Locale ID (LCID)|Three-letter code|
-|---------------------|------------------------|-----------------------|
-|English (default)|0409|ENU|
-|Chinese (Simplified)|0804|CHS|
-|Chinese (Traditional, Taiwan)|0404|CHT|
-|Czech|0405|CSY|
-|Dutch - Netherlands|0413|NLD|
-|French|040c|FRA|
-|German|0407|DEU|
-|Hungarian|040e|HUN|
-|Italian - Italy|0410|ITA|
-|Japanese|0411|JPN|
-|Korean|0412|KOR|
-|Polish|0415|PLK|
-|Portuguese - Brazil|0416|PTB|
-|Portuguese - Portugal|0816|PTG|
-|Russian|0419|RUS|
-|Spanish - Spain|0c0a|ESN|
-|Swedish|041d|SVE|
-|Turkish|041f|TRK|
+| Server language | Locale ID (LCID) | Three-letter code |
+| --- | --- | --- |
+| English (default) | 0409 | ENU |
+| Chinese (Simplified) | 0804 | CHS |
+| Chinese (Traditional, Taiwan) | 0404 | CHT |
+| Czech | 0405 | CSY |
+| Dutch - Netherlands | 0413 | NLD |
+| French | 040c | FRA |
+| German | 0407 | DEU |
+| Hungarian | 040e | HUN |
+| Italian - Italy | 0410 | ITA |
+| Japanese | 0411 | JPN |
+| Korean | 0412 | KOR |
+| Polish | 0415 | PLK |
+| Portuguese - Brazil | 0416 | PTB |
+| Portuguese - Portugal | 0816 | PTG |
+| Russian | 0419 | RUS |
+| Spanish - Spain | 0c0a | ESN |
+| Swedish | 041d | SVE |
+| Turkish | 041f | TRK |
 
 ## Client languages
 
-Use the following table to map a locale ID to a language that you want to support on client computers. For more information about locale IDs, see [Locale IDs assigned by Microsoft](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).
+Use the following table to map a locale ID to a language that you want to support on client computers. For more information about locale IDs, see [Locale IDs assigned by Microsoft](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c).
 
-|Client language|Locale ID (LCID)|Three-letter code|
-|---------------------|------------------------|-----------------------|
-|English (default)|0409|ENG|
-|Chinese -Simplified|0804|CHS|
-|Chinese (Traditional, Taiwan)|0404|CHT|
-|Czech|0405|CSY|
-|Danish|0406|DAN|
-|Dutch - Netherlands|0413|NLD|
-|Finnish|040b|FIN|
-|French|040c|FRA|
-|German|0407|DEU|
-|Greek|0408|ELL|
-|Hungarian|040e|HUN|
-|Italian - Italy|0410|ITA|
-|Japanese|0411|JPN|
-|Korean|0412|KOR|
-|Norwegian|0414|NOR|
-|Polish|0415|PLK|
-|Portuguese (Brazil)|0416|PTB|
-|Portuguese (Portugal)|0816|PTG|
-|Russian|0419|RUS|
-|Spanish - Spain|0c0a|ESN|
-|Swedish|041d|SVE|
-|Turkish|041f|TRK|
+| Client language | Locale ID (LCID) | Three-letter code |
+| --- | --- | --- |
+| English (default) | 0409 | ENG |
+| Chinese -Simplified | 0804 | CHS |
+| Chinese (Traditional, Taiwan) | 0404 | CHT |
+| Czech | 0405 | CSY |
+| Danish | 0406 | DAN |
+| Dutch - Netherlands | 0413 | NLD |
+| Finnish | 040b | FIN |
+| French | 040c | FRA |
+| German | 0407 | DEU |
+| Greek | 0408 | ELL |
+| Hungarian | 040e | HUN |
+| Italian - Italy | 0410 | ITA |
+| Japanese | 0411 | JPN |
+| Korean | 0412 | KOR |
+| Norwegian | 0414 | NOR |
+| Polish | 0415 | PLK |
+| Portuguese (Brazil) | 0416 | PTB |
+| Portuguese (Portugal) | 0816 | PTG |
+| Russian | 0419 | RUS |
+| Spanish - Spain | 0c0a | ESN |
+| Swedish | 041d | SVE |
+| Turkish | 041f | TRK |
 
 ### Mobile device client languages
 

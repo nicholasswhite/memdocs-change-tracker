@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequenceReferencesInfo Class
+title: "SMS_TaskSequenceReferencesInfo Server WMI Class"
 description: The SMS_TaskSequenceReferencesInfo class associates a task sequence with its package.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequenceReferencesInfo Server WMI Class
+
 The `SMS_TaskSequenceReferencesInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that associates a task sequence with its package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,102 +31,99 @@ Class SMS_TaskSequenceReferencesInfo : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_TaskSequenceReferencesInfo` class does not define any methods.
+
+The `SMS_TaskSequenceReferencesInfo` class does not define any methods.
 
 ## Properties
- `PackageID`
- Data type: `String`
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the task sequence package.
+Qualifiers: [key]
 
- `ProgramName`
- Data type: `String`
+ID of the task sequence package.
 
- Access type: Read/Write
+`ProgramName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Name of the program associated with the task sequence.
+Qualifiers: [key]
 
- `ReferenceDescription`
- Data type: `String`
+Name of the program associated with the task sequence.
 
- Access type: Read/Write
+`ReferenceDescription` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The long description of the reference package.
+Qualifiers: None
 
- `ReferenceName`
- Data type: `String`
+The long description of the reference package.
 
- Access type: Read/Write
+`ReferenceName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The name of the reference package.
+Qualifiers: None
 
- `ReferencePackageID`
- Data type: `String`
+The name of the reference package.
 
- Access type: Read/Write
+`ReferencePackageID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the reference package.
+Qualifiers: None
 
- `ReferencePackageType`
- Data type: `UInt32`
+ID of the reference package.
 
- Access type: Read/Write
+`ReferencePackageType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The type of the reference package. Possible values are:
+Qualifiers: None
+
+The type of the reference package. Possible values are:
 
 | Value | Package type |
-| ----- | ------------ |
-|0 (0x0000)|PKG_TYPE_REGULAR|
-|3 (0x0003)|PKG_TYPE_DRIVER|
-|4 (0x0004)|PKG_TYPE_TASK_SEQUENCE|
-|5 (0x0005)|PKG_TYPE_SWUPDATES|
-|257 (0x0101)|PKG_TYPE_IMAGE|
-|258 0x0102)|PKG_TYPE_BOOTIMAGE|
-|259 (0x0101)|PKG_TYPE_OSINSTALLIMAGE|
+| --- | --- |
+| 0 (0x0000) | PKG_TYPE_REGULAR |
+| 3 (0x0003) | PKG_TYPE_DRIVER |
+| 4 (0x0004) | PKG_TYPE_TASK_SEQUENCE |
+| 5 (0x0005) | PKG_TYPE_SWUPDATES |
+| 257 (0x0101) | PKG_TYPE_IMAGE |
+| 258 0x0102) | PKG_TYPE_BOOTIMAGE |
+| 259 (0x0101) | PKG_TYPE_OSINSTALLIMAGE |
 
- `ReferenceProgramName`
- Data type: `String`
+`ReferenceProgramName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Name of the reference program for the task sequence.
+Name of the reference program for the task sequence.
 
- `ReferenceVersion`
- Data type: `String`
+`ReferenceVersion` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- The version of the reference package.
+The version of the reference package.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

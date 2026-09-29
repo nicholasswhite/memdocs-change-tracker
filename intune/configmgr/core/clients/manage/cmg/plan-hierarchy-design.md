@@ -1,7 +1,7 @@
 ---
 title: CMG hierarchy design
 description: Design how to use a cloud management gateway (CMG) in your Configuration Manager hierarchy.
-ms.date: 03/11/2022
+ms.date: "2022-03-11T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -42,29 +42,30 @@ Fourth Coffee has a CAS in an on-premises datacenter at their headquarters in Se
 As clients roam onto the internet, they communicate with the CMG in the West US Azure region. The CMG forwards this communication to the CMG connection point in the client's assigned primary site.
 
 > [!TIP]
-> When providing global client support, content downloads from a geographically distant Cloud Management Gateway's storage account can be affected by cloud service communication latency between countries or regions. Although the delay from one network location to another may not be significant, the necessity for communication to traverse different regions can increase latency. For applications with large content (either in terms of the number of files or file size), the download timing can vary between proximate and distant CMGs (storage accounts). For Client operational communication, the impact is lower, as the routing to Storage account is different than the routing to CMG VM Api Service.
 >
+> When providing global client support, content downloads from a geographically distant Cloud Management Gateway's storage account can be affected by cloud service communication latency between countries or regions. Although the delay from one network location to another may not be significant, the necessity for communication to traverse different regions can increase latency. For applications with large content (either in terms of the number of files or file size), the download timing can vary between proximate and distant CMGs (storage accounts). For Client operational communication, the impact is lower, as the routing to Storage account is different than the routing to CMG VM Api Service.
 
 ## Multiple environments
-<!-- SCCMDocs#1225 -->
+
 Many organizations have separate environments for production, test, development, or quality assurance. When you plan your CMG deployment, consider the following questions:
 
 - How many Microsoft Entra tenants does your organization have?
+
   - Is there a separate tenant for testing?
   - Are user and device identities in the same tenant?
-
 - How many subscriptions are in each tenant?
+
   - Are there subscriptions that are specific for testing?
 
 Configuration Manager's Azure service for **Cloud management** supports multiple tenants. Multiple Configuration Manager sites can connect to the same tenant. A single site can deploy multiple CMG services into different subscriptions. Multiple sites can deploy CMG services into the same subscription. Configuration Manager provides flexibility depending upon your environment and business requirements.
 
-For more information, see the following FAQ: [Do the user accounts have to be in the same Microsoft Entra tenant as the tenant associated with the subscription that hosts the CMG cloud service?](./cloud-management-gateway-faq.yml#do-the-user-accounts-have-to-be-in-the-same-microsoft-entra-tenant-as-the-tenant-associated-with-the-subscription-that-hosts-the-cmg-cloud-service-)
+For more information, see the following FAQ: [Do the user accounts have to be in the same Microsoft Entra tenant as the tenant associated with the subscription that hosts the CMG cloud service?](cloud-management-gateway-faq.yml#do-the-user-accounts-have-to-be-in-the-same-microsoft-entra-tenant-as-the-tenant-associated-with-the-subscription-that-hosts-the-cmg-cloud-service-)
 
 ## Boundary groups
 
-You can associate a CMG with a boundary group. This configuration allows clients to default or fall back to the CMG for client communication according to [boundary group relationships](../../../servers/deploy/configure/boundary-groups.md). This behavior is especially useful in branch office and VPN scenarios. You can direct client traffic away from expensive and slow WAN links to instead use faster services in Microsoft Azure.<!--3640932-->
+You can associate a CMG with a boundary group. This configuration allows clients to default or fall back to the CMG for client communication according to [boundary group relationships](../../../servers/deploy/configure/boundary-groups.md). This behavior is especially useful in branch office and VPN scenarios. You can direct client traffic away from expensive and slow WAN links to instead use faster services in Microsoft Azure.
 
-Intranet clients can access a CMG-enabled software update point when it's assigned to a boundary group. For more information, see [Configure boundary groups](../../../servers/deploy/configure/boundary-groups-software-update-points.md#intranet-clients-can-use-a-cmg-software-update-point).<!--7102873-->
+Intranet clients can access a CMG-enabled software update point when it's assigned to a boundary group. For more information, see [Configure boundary groups](../../../servers/deploy/configure/boundary-groups-software-update-points.md#intranet-clients-can-use-a-cmg-software-update-point).
 
 Internet-based clients don't rely on boundary groups. They only use internet-facing or cloud content sources. If you're only using content-enabled CMGs for these types of clients, then you don't need to include them in boundary groups.
 
@@ -76,5 +77,4 @@ Even though you install the CMG in a specific region of Azure, clients aren't aw
 
 Next, review the features and configurations that the CMG supports:
 
-> [!div class="nextstepaction"]
-> [Supported configurations for CMG](supported-configurations.md)
+[Supported configurations for CMG](supported-configurations.md)

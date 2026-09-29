@@ -1,32 +1,124 @@
 ---
-title: Get started - Create and deploy endpoint security policies from the admin center
+title: "Get started: Create and deploy endpoint security policies from the admin center"
 description: Create and deploy endpoint security policies from the Microsoft Intune admin center and for Configuration Manager collections.
-ms.date: 03/21/2022
+ms.date: "2022-03-21T00:00:00Z"
 ms.topic: get-started
 ms.subservice: core-infra
 ms.collection: tier3
 ms.service: configuration-manager
 ---
 
-# <a name="bkmk_atp"></a> Get started: Create and deploy endpoint security policies from the admin center
-<!--5691658-->
+# Get started: Create and deploy endpoint security policies from the admin center
+
 *Applies to: Configuration Manager (current branch)*
 
 The Microsoft Intune family of products is an integrated solution for managing all of your devices. Microsoft brings together Configuration Manager and Intune into a single console called **Microsoft Intune admin center**.
 
-<!--Adding Include for Prerequisites-->
+## Prerequisites
 
-[!INCLUDE [Profiles for Configuration Manager tenant attached devices](./includes/configmgr-endpoint-security-prerequisties.md)]
+- Access to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+- An environment that's [tenant attached with uploaded devices](device-sync-actions.md).
+- A supported version of Configuration Manager and the corresponding version of the console installed.
+  - Upgrade the target devices to the latest version of the Configuration Manager client.
+- At least one Configuration Manager collection that's [available for assigning Endpoint security policies](#bkmk_collections)
+- Windows Devices that [support this profile for tenant attached devices](#bkmk_supportedprofiles)
 
-## <a name="bkmk_supportedprofiles"></a>Supported endpoint security profiles for tenant attached devices
+## Supported endpoint security profiles for tenant attached devices
 
-[!INCLUDE [Profiles for Configuration Manager tenant attached devices](./includes/configmgr-endpoint-security-profiles.md)]
+| Platform | Endpoint security policy | Profile | Endpoint Protection (Configuration Manager) | Endpoint Security (Tenant Attach) |
+| --- | --- | --- | --- | --- |
+| Windows 10, Windows 11, and Windows Server | Antivirus | Antivirus | ![Supported](media/green-check.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11, and Windows Server | Antivirus | Antivirus Exclusions | ![Supported](media/green-check.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11, and Windows Server | Antivirus | Tamper Protection | ![Not Supported](media/red-wrong.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11, and Windows Server | Attack Surface Reduction | Attack Surface Reduction Rules | ![Supported](media/green-check.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11 | Attack Surface Reduction | Application Guard Settings | ![Supported](media/green-check.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11, and Windows Server | Attack Surface Reduction | Exploit protection | ![Supported](media/green-check.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11, and Windows Server | Endpoint detection and response | Endpoint detection and response | ![Supported](media/green-check.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11, and Windows Server | Firewall | Firewall | ![Supported](media/green-check.png) | ![Supported](media/green-check.png) |
+| Windows 10, Windows 11, and Windows Server | Firewall | Firewall Rules | ![Not Supported](media/red-wrong.png) | ![Supported](media/green-check.png) |
 
-## <a name="bkmk_collections"></a> Make Configuration Manager collections available to assign Endpoint security policies
+The following profiles are supported for devices you manage with Configuration Manager current branch, through the tenant attach scenario:
+
+- Platform: **Windows 10, Windows 11, and Windows Server (ConfigMgr)**
+
+  - Profile: **Microsoft Defender Antivirus** - Manage [Antivirus policy settings for Configuration Manager devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-antivirus-defender-settings-windows-tenant-attach?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json), when you use tenant attach.
+
+    This profile is supported with devices that are tenant attached and run the following platforms:
+
+    - Windows 10 and later (x86, x64, ARM64)
+    - Windows Server 2019 and later (x64)
+    - Windows Server 2016 (x64)
+    - Windows 8.1 (x86, x64)
+    - Windows Server 2012 R2 (x64)
+  - Profile: **Windows Security experience (ConfigMgr)** - Manage [Windows Security app settings for Configuration Manager devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-windows-security-settings-tenant-attach?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json), when you use tenant attach.
+
+    This profile is supported with devices that are tenant attached and run the following platforms:
+
+    - Windows 10 and later (x86, x64, ARM64)
+    - Windows Server 2019 and later (x64)
+
+  > [!IMPORTANT]
+  >
+  > To support managing tamper protection your environment must additionally meet the [prerequisites for managing tamper protection with Intune](https://learn.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/prevent-changes-to-security-settings-with-tamper-protection#turn-tamper-protection-on-or-off-for-your-organization-using-intune) as detailed in the Windows documentation.
+
+  - Profile: **Endpoint detection and response (ConfigMgr)** - Manage [Endpoint detection and response policy settings](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-edr-settings?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json), when you use tenant attach.
+
+    This profile is supported with devices that are tenant attached and run the following platforms:
+
+    - Windows 10 and later (x86, x64, ARM64)
+    - Windows 8.1 (x84, x64)
+    - Windows Server 2019 and later (x64)
+    - Windows Server 2016 (x64)
+    - Windows Server 2012 R2 (x64)
+    - Profile: **Attack Surface Reduction Rules (ConfigMgr)** - Manage Attack Surface Reduction Rules for Configuration Manager devices as part of Attack surface reduction policy, when you use tenant attach.
+
+    This profile is supported with devices that are tenant attached and run the following platforms:
+
+    - Windows 10 and later (x86, x64, ARM64)
+    - Windows Server 2019 and later (x64)
+    - Windows Server 2016 (x64)
+    - Windows Server 2012 R2 (x64)
+
+    > [!NOTE]
+    >
+    > Attack Surface Reduction rules may not be available on Windows Server 2012 R2 and Windows Server 2016. For more information please refer to [Attack Surface Reduction rules documentation](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/attack-surface-reduction-rules-reference#supported-operating-systems).
+- Platform: **Windows 10 and later**
+
+  - Profile: **Microsoft Defender Firewall (ConfigMgr)** - Manage [firewall policy settings for Configuration Manager devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-firewall-settings-tenant-attach?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json), when you use tenant attach.
+
+    This profile is supported with devices that are tenant attached and run the following platforms:
+
+    - Windows 10 and later (x86, x64, ARM64)
+
+    > [!IMPORTANT]
+    >
+    > A supported version of Configuration manager is required to support firewall policies.
+  - Profile: **Exploit Protection (ConfigMgr)** - Manage [Exploit Protection settings for Configuration Manager devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-attack-surface-reduction-settings?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json#attack-surface-reduction-configmgr) as part of Attack surface reduction policy, when you use tenant attach.
+
+    This profile is supported with devices that are tenant attached and run the following platforms:
+
+    - Windows 10 and later (x86, x64, ARM64)
+  - Profile: **Web Protection (ConfigMgr)** - Manage [Web Protection settings for Configuration Manager devices](https://learn.microsoft.com/en-us/intune/device-configuration/endpoint-security/ref-attack-surface-reduction-settings?toc=/mem/configmgr/tenant-attach/toc.json&bc=/mem/configmgr/tenant-attach/breadcrumb/toc.json#attack-surface-reduction-configmgr) as part of Attack surface reduction policy, when you use tenant attach.
+
+    This profile is supported with devices that are tenant attached and run the following platforms:
+
+    - Windows 10 and later (x86, x64, ARM64)
+
+## Make Configuration Manager collections available to assign Endpoint security policies
 
 When you enable collections of devices to work with endpoint security policies from Intune, you're configuring devices in those collections to onboard with Microsoft Defender for Endpoint.
 
-[!INCLUDE [Enable endpoint security policies for a Configuration Manager collection](../../device-configuration/endpoint-security/includes/make-configmgr-collection-available-edr.md)]
+1. From a Configuration Manager console connected to your top-level site, right-click on a device collection that you synchronize to Microsoft Intune admin center and select **Properties**.
+2. On the **Cloud Sync** tab, enable the option to **Make this collection available to assign Endpoint security policies from Microsoft Intune admin center**.
+
+   - You can't select this option if your Configuration Manager hierarchy isn't tenant attached.
+   - The collections available for this option are limited by the [collection scope selected for tenant attach upload](device-sync-actions.md#bkmk_edit).
+
+   ![Configure cloud sync](../../fundamentals/media/tenant-attach/cloud-sync.png)
+3. Select **Add** and then select the Microsoft Entra group that you would like to synchronize with **Collect membership results**.
+4. Select **OK** to save the configuration.
+
+   Devices in this collection can now onboard with Microsoft Defender for Endpoint, and support use of Intune endpoint security policies.
 
 ## Next steps
 

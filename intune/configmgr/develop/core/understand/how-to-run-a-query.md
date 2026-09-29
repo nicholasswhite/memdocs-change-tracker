@@ -1,29 +1,30 @@
 ---
-title: Run a Query
+title: "How to Run a Configuration Manager Query"
 description: Run an SMS_Query based query by getting the query instance and then by running WQL query in the SMS_Query object Expression property.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Run a Configuration Manager Query
+
 In Configuration Manager, you run a `SMS_Query` based query by getting the query instance and then by running WQL query in the `SMS_Query` object `Expression` property.
 
- After you have the WQL query, you can run the query either synchronously or asynchronously. The following example is synchronous. For information about running the query asynchronously, see [How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](../../../develop/core/understand/how-to-perform-an-asynchronous-query-by-using-managed-code.md) and [How to Perform an Asynchronous Configuration Manager Query by Using WMI](../../../develop/core/understand/how-to-perform-an-asynchronous-configuration-manager-query-by-using-wmi.md). In these examples, change the `select * from collection` string to the `Expression` property value.
+After you have the WQL query, you can run the query either synchronously or asynchronously. The following example is synchronous. For information about running the query asynchronously, see [How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](how-to-perform-an-asynchronous-query-by-using-managed-code.md) and [How to Perform an Asynchronous Configuration Manager Query by Using WMI](how-to-perform-an-asynchronous-configuration-manager-query-by-using-wmi.md). In these examples, change the `select * from collection` string to the `Expression` property value.
 
 ### To run a query
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
-
-2.  Get the `SMS_Query` object for the query you want to run.
-
-3.  Run the query identified by the `SMS_Query` object `Expression` property.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
+2. Get the `SMS_Query` object for the query you want to run.
+3. Run the query identified by the `SMS_Query` object `Expression` property.
 
 ## Example
- The following example method synchronously runs the query identified by the `queryId` parameter.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following example method synchronously runs the query identified by the `queryId` parameter.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```vbs
 Sub RunQuery(connection, queryId)
@@ -86,40 +87,43 @@ public void RunQuery(WqlConnectionManager connection, string queryId)
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`queryID`|-   Managed: `String`<br />-   VBScript: `String`|A query identifier. For more information see the `SMS_Query` class `QueryID` property.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `queryID` | - Managed: `String` - VBScript: `String` | A query identifier. For more information see the `SMS_Query` class `QueryID` property. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../servers/configure/role-based-administration.md).
 
 ## See Also
- [About Configuration Manager Queries](../../../develop/core/understand/about-configuration-manager-queries.md)
- [How to Create a Configuration Manager Query](../../../develop/core/understand/how-to-create-a-configuration-manager-query.md)
- [How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](../../../develop/core/understand/how-to-perform-an-asynchronous-query-by-using-managed-code.md)
- [How to Perform an Asynchronous Configuration Manager Query by Using WMI](../../../develop/core/understand/how-to-perform-an-asynchronous-configuration-manager-query-by-using-wmi.md)
+
+[About Configuration Manager Queries](about-configuration-manager-queries.md) [How to Create a Configuration Manager Query](how-to-create-a-configuration-manager-query.md) [How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](how-to-perform-an-asynchronous-query-by-using-managed-code.md) [How to Perform an Asynchronous Configuration Manager Query by Using WMI](how-to-perform-an-asynchronous-configuration-manager-query-by-using-wmi.md)

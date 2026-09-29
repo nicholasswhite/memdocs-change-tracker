@@ -1,13 +1,15 @@
 ---
 description: "Learn how to get the excluded file list for application content used to support selective file download with IAppContentExt::GetExcludedFileList method."
 title: "IAppContentExt::GetExcludedFileList"
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # IAppContentExt::GetExcludedFileList
+
 The `IAppContentExt::GetExcludedFileList` method, in Configuration Manager, gets the excluded file list for application content. This is used to support selective file download.
 
 ## Syntax
@@ -22,42 +24,41 @@ HRESULT GetExcludedFileList(
 ```
 
 #### Parameters
- `*pHandlerSynclet`
- Data type: `IWbemClassObject`
 
- Qualifiers: [in]
+`*pHandlerSynclet` Data type: `IWbemClassObject`
 
- .
+Qualifiers: [in]
 
- `pwszExcludedFileList`
- Data type: `LPWSTR`
+.
 
- Qualifiers: [out]
+`pwszExcludedFileList` Data type: `LPWSTR`
 
- The exclude file list is a single string separated by the ':' character. For example, "File1.txt:File2.exe."
+Qualifiers: [out]
 
- `pbForceFileExclusion`
- Data type: `BOOL`
+The exclude file list is a single string separated by the ':' character. For example, "File1.txt:File2.exe."
 
- Qualifiers: [out]
+`pbForceFileExclusion` Data type: `BOOL`
 
- `True` to force exclusion of files. If `False`, content framework decides whether or not excluding them based on network condition and content configuration.
+Qualifiers: [out]
+
+`True` to force exclusion of files. If `False`, content framework decides whether or not excluding them based on network condition and content configuration.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- S_OK
- Discovery was triggered successfully. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S_OK Discovery was triggered successfully. All other return values indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Microsoft.ConfigurationManagement.ApplicationManagement](/previous-versions/)]
- [Configuration Manager Software Development Kit](../../../../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [Configuration Manager Reference](../../../../../develop/reference/configuration-manager-reference.md)
+
+[Microsoft.ConfigurationManagement.ApplicationManagement](https://learn.microsoft.com/en-us/previous-versions/)] [Configuration Manager Software Development Kit](../../../../core/misc/system-center-configuration-manager-sdk.md) [Configuration Manager Reference](../../../configuration-manager-reference.md)

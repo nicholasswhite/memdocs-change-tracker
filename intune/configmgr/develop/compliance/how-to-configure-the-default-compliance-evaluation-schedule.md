@@ -1,29 +1,29 @@
 ---
-title: Configure the Default Compliance Evaluation Schedule
+title: "How to Configure the Default Compliance Evaluation Schedule"
 description: In Configuration Manager, the site control file maintains configuration for the configuration of the site.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Configure the Default Compliance Evaluation Schedule
+
 In Configuration Manager, the site control file maintains configuration for the configuration of the site. These code samples query for the specific site control file item Configuration Management Agent, and change the EvaluationSchedule value to set the client agent evaluation schedule.
 
 ### To configure the Default Compliance Evaluation Schedule
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Make a connection to the Desired Configuration Management Client Agent section of the site control file by using the [SMS_SCI_ClientComp](../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class.
-
-3.  Loop through the array of available properties, making changes as needed.
-
-4.  Commit the changes to the site control file.
+1. Set up a connection to the SMS Provider.
+2. Make a connection to the Desired Configuration Management Client Agent section of the site control file by using the [SMS_SCI_ClientComp](../reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class.
+3. Loop through the array of available properties, making changes as needed.
+4. Commit the changes to the site control file.
 
 ## Example
- The following code example shows how to change the default compliance evaluation schedule for the configuration management client agent.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following code example shows how to change the default compliance evaluation schedule for the configuration management client agent.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -137,44 +137,43 @@ public void ChangeDCMAgentEvaluationSchedule(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`swbemContext`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code.|
-|`newAgentSchedule`|-   Managed: `String`<br />-   VBScript: `String`|The new schedule in string format. For more information, see [About schedules](../core/understand/about-configuration-manager-schedules.md).|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `swbemContext` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code. |
+| `newAgentSchedule` | - Managed: `String` - VBScript: `String` | The new schedule in string format. For more information, see [About schedules](../core/understand/about-configuration-manager-schedules.md). |
 
 ## Compiling the Code
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Compliance Settings (DCM) Setup and Configuration](../../develop/compliance/about-compliance-settings--dcm--setup-and-configuration.md)
- [About the Configuration Manager Site Control File](../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
- [SMS_SCI_ClientComp Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md)
- [About schedules](../core/understand/about-configuration-manager-schedules.md)
- [How to Create a Schedule Token](../../develop/core/understand/how-to-create-a-schedule-token.md)
+
+[About Compliance Settings (DCM) Setup and Configuration](about-compliance-settings--dcm--setup-and-configuration.md) [About the Configuration Manager Site Control File](../core/understand/about-the-configuration-manager-site-control-file.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md) [SMS_SCI_ClientComp Server WMI Class](../reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) [About schedules](../core/understand/about-configuration-manager-schedules.md) [How to Create a Schedule Token](../core/understand/how-to-create-a-schedule-token.md)

@@ -1,7 +1,7 @@
 ---
-title: Create configuration items for Windows
+title: "Create configuration items for Windows devices with on-premises MDM in Configuration Manager"
 description: Create configuration items to manage settings for Windows 10 computers with on-premises mobile device management (MDM) in Configuration Manager.
-ms.date: 01/14/2020
+ms.date: "2020-01-14T00:00:00Z"
 ms.subservice: mdm
 ms.topic: how-to
 ms.collection: tier3
@@ -17,56 +17,43 @@ Use the Configuration Manager **Windows 8.1 and Windows 10** configuration item 
 For more general information on compliance settings in Configuration Manager, see the following articles:
 
 - [Get started with compliance settings](../../compliance/get-started/get-started-with-compliance-settings.md)
-
 - [Plan for and configure compliance settings](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)
 
 ## Create a configuration item
 
 1. In the Configuration Manager console, go to the **Assets and compliance** workspace, expand **Compliance Settings**, and then select the **Configuration Items** node.
+2. On the **Home** tab of the ribbon, in the **Create** group, select **Create Configuration Item**.
+3. On the **General** page of the **Create Configuration Item Wizard**, specify the following information:
 
-1. On the **Home** tab of the ribbon, in the **Create** group, select **Create Configuration Item**.
+   - **Name**: A unique name to identify this configuration item.
+   - **Description**: An optional description to provide further information about its use.
+   - Under **Settings for devices managed *without* the Configuration Manager client**, select **Windows 8.1 and Windows 10**.
+   - **Categories**: You can create and assign categories to help you search and filter configuration items in the Configuration Manager console.
+4. On the **Supported Platforms** page of the wizard, select the specific Windows platforms to evaluate this configuration item.
+5. On the **Device Settings** page, select the settings groups that you want to configure. For more information on the available settings, see [Settings reference](#bkmk_setref).
 
-1. On the **General** page of the **Create Configuration Item Wizard**, specify the following information:
+   > [!TIP]
+   >
+   > If the setting that you want isn't listed, select the option to **Configure additional settings that are not in the default setting groups**. This option adds the **Additional Settings** page to the wizard.
+6. On each settings page, configure the necessary settings. When the settings support it, you can also **Remediate noncompliant settings**. If a device evaluates the setting as not compliant with this configuration item, it will remediate the setting to be compliant.
 
-    - **Name**: A unique name to identify this configuration item.
+   For each settings group, you can also configure the severity that it reports when the setting is noncompliant. Choose one of the following values for the **Noncompliance severity for reports** option:
 
-    - **Description**: An optional description to provide further information about its use.
+   - **None**: Devices that fail this compliance rule don't report a failure severity for Configuration Manager reports.
+   - **Information**
+   - **Warning**
+   - **Critical**
+   - **Critical with event**: Devices that fail this compliance rule report a failure severity of **Critical** for Configuration Manager reports. It also logs the noncompliant state as a Windows event in the application event log.
+7. On the **Platform Applicability** page of the wizard, review any settings that aren't compatible with the selected supported platforms. Go back and remove these settings, change the support platforms, or continue.
 
-    - Under **Settings for devices managed *without* the Configuration Manager client**, select **Windows 8.1 and Windows 10**.
-
-    - **Categories**: You can create and assign categories to help you search and filter configuration items in the Configuration Manager console.
-
-1. On the **Supported Platforms** page of the wizard, select the specific Windows platforms to evaluate this configuration item.
-
-1. On the **Device Settings** page, select the settings groups that you want to configure. For more information on the available settings, see [Settings reference](#bkmk_setref).
-
-    > [!TIP]
-    > If the setting that you want isn't listed, select the option to **Configure additional settings that are not in the default setting groups**. This option adds the **Additional Settings** page to the wizard.
-
-1. On each settings page, configure the necessary settings. When the settings support it, you can also **Remediate noncompliant settings**. If a device evaluates the setting as not compliant with this configuration item, it will remediate the setting to be compliant.
-
-    For each settings group, you can also configure the severity that it reports when the setting is noncompliant. Choose one of the following values for the **Noncompliance severity for reports** option:
-
-    - **None**: Devices that fail this compliance rule don't report a failure severity for Configuration Manager reports.
-
-    - **Information**
-
-    - **Warning**
-
-    - **Critical**
-
-    - **Critical with event**: Devices that fail this compliance rule report a failure severity of **Critical** for Configuration Manager reports. It also logs the noncompliant state as a Windows event in the application event log.
-
-1. On the **Platform Applicability** page of the wizard, review any settings that aren't compatible with the selected supported platforms. Go back and remove these settings, change the support platforms, or continue.
-
-    > [!IMPORTANT]
-    > Devices don't assess the compliance of unsupported settings.
-
-1. Complete the wizard.
+   > [!IMPORTANT]
+   >
+   > Devices don't assess the compliance of unsupported settings.
+8. Complete the wizard.
 
 You can view the new configuration item in the **Configuration Items** node of the **Assets and Compliance** workspace.
 
-## <a name="bkmk_setref"></a> Settings reference
+## Settings reference
 
 The following sections detail the specific settings available in each group. Configure these settings on the **Device Settings** page of the **Create Configuration Item Wizard** for **Windows 8.1 and Windows 10** devices managed *without* the Configuration Manager client.
 
@@ -220,31 +207,30 @@ These settings are only for devices running Windows 10 and later.
 #### Configured wireless network connections
 
 1. On the **Configure mobile device wireless communication settings** page, select **Add**.
+2. In the **Wireless Network Connection** window, specify the following information about the wireless connection to provision on mobile devices:
 
-1. In the **Wireless Network Connection** window, specify the following information about the wireless connection to provision on mobile devices:
-
-    - **Network name (SSID)**: Enter the name of the Wi-Fi network.
-    - **Network connection**: Choose either **Internet** or **Work**.
-    - **Authentication**: Choose the authentication method for the wireless connection:
-        - **Open**
-        - **Shared**
-        - **WPA**
-        - **WPA-PSK**
-        - **WPA2**
-        - **WPA2-PSK**
-    - **Data encryption**: Choose the encryption method used by this connection. The available values change based on the **Authentication** method you select:
-        - **Disabled**
-        - **WEP**
-        - **TKIP**
-        - **AES**
-    - **Key index**: When you set **Data encryption** to **WEP**, select a key index from **1** to **4**.
-    - **This network connects to the Internet**: Supply proxy settings to allow mobile devices on a wireless network to connect to the internet.
-        - **Proxy server settings**: Configure your **Server** and **Port** settings for **HTTP**, **WAP**, and **Sockets** proxies.
-    - **802.1X settings**:
-        - **Enable 802.1X network access**: Secure the connection by specifying an EAP type.
-        - **EAP type**: Choose one of the following authentication protocols:
-            - **PEAP**
-            - **Smart card or certificate**
+   - **Network name (SSID)**: Enter the name of the Wi-Fi network.
+   - **Network connection**: Choose either **Internet** or **Work**.
+   - **Authentication**: Choose the authentication method for the wireless connection:
+     - **Open**
+     - **Shared**
+     - **WPA**
+     - **WPA-PSK**
+     - **WPA2**
+     - **WPA2-PSK**
+   - **Data encryption**: Choose the encryption method used by this connection. The available values change based on the **Authentication** method you select:
+     - **Disabled**
+     - **WEP**
+     - **TKIP**
+     - **AES**
+   - **Key index**: When you set **Data encryption** to **WEP**, select a key index from **1** to **4**.
+   - **This network connects to the Internet**: Supply proxy settings to allow mobile devices on a wireless network to connect to the internet.
+     - **Proxy server settings**: Configure your **Server** and **Port** settings for **HTTP**, **WAP**, and **Sockets** proxies.
+   - **802.1X settings**:
+     - **Enable 802.1X network access**: Secure the connection by specifying an EAP type.
+     - **EAP type**: Choose one of the following authentication protocols:
+       - **PEAP**
+       - **Smart card or certificate**
 
 ### Certificates
 
@@ -316,7 +302,7 @@ These settings are only for devices running Windows 10 Team.
 
 ### Windows Information Protection
 
-For more information about how to configure enterprise data protection with Configuration Manager, see [Protect your enterprise data using Windows Information Protection (WIP)](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
+For more information about how to configure enterprise data protection with Configuration Manager, see [Protect your enterprise data using Windows Information Protection (WIP)](https://learn.microsoft.com/en-us/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip).
 
 ### Microsoft Edge Legacy
 

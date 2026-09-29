@@ -1,16 +1,18 @@
 ---
-title: SMS_InstalledSoftware Class
+title: "SMS_InstalledSoftware Client WMI Class"
 description: In Configuration Manager, the SMS_InstalledSoftware class is a client WMI class that merges installed software information from multiple sources to provide categorization and Microsoft Licensing information.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_InstalledSoftware Client WMI Class
+
 The `SMS_InstalledSoftware` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that merges installed software information from multiple sources to provide categorization and Microsoft Licensing information.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -46,295 +48,266 @@ Class SMS_InstalledSoftware
 ```
 
 ## Methods
- The `SMS_InstalledSoftware` class does not define any methods.
+
+The `SMS_InstalledSoftware` class does not define any methods.
 
 ## Properties
- `ARPDisplayName`
- Data type: `String`
 
- Access type: Read-only
+`ARPDisplayName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The product display name as found in **Add or Remove Programs**. An example name is "Microsoft SQL Server 2005 Tools".
+Qualifiers: None
 
- `ChannelCode`
- Data type: `String`
+The product display name as found in **Add or Remove Programs**. An example name is "Microsoft SQL Server 2005 Tools".
 
- Access type: Read-only
+`ChannelCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Numeric code that represents the channel through which the software product was acquired. Possible values are:
+Qualifiers: None
+
+Numeric code that represents the channel through which the software product was acquired. Possible values are:
 
 | Value | Description |
-| ----- | ----------- |
-|0|Full Packaged Product (Retail)|
-|1|Compliance Checked Product|
-|2|OEM|
-|3|Volume|
+| --- | --- |
+| 0 | Full Packaged Product (Retail) |
+| 1 | Compliance Checked Product |
+| 2 | OEM |
+| 3 | Volume |
 
 > [!NOTE]
->  Other values are undefined.
+>
+> Other values are undefined.
 
- `CM_DSLID`
- Data type: `String`
+`CM_DSLID` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: None
+Qualifiers: None
 
- Reserved. For future use.
+Reserved. For future use.
 
- `EvidenceSource`
- Data type: `String`
+`EvidenceSource` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [SMS_Report (TRUE)]
+Qualifiers: [SMS_Report (TRUE)]
 
- Describes how this software was discovered.
-
-|Value|Description|
-|-----------|-----------------|
-|A|Windows Installer|
-|B|The software's install registry key|
-|C|The software's uninstall registry key|
-|D|Operating System's Windows Installer|
-|E|Operating System's Windows NT registry setting|
-|M|Internally computed property|
-|X|Unknown|
-
- `InstallDate`
- Data type: `DateTime`
-
- Access type: Read-only
-
- Qualifiers: None
-
- Date and time of when the software product was installed.
-
- `InstallDirectoryValidation`
- Data type: `UInt32`
-
- Access type: Read-only
-
- Qualifiers: None
-
- Numeric code that provides additional information about the inventoried software. Possible values are:
+Describes how this software was discovered.
 
 | Value | Description |
-| ----- | ----------- |
-|1|Because the `InstalledLocation` property was not available in any of the data sources, a check was not possible.|
-|2|An executable file was found in the directory specified by the `InstalledLocation` property or in one of its subdirectories.|
-|3|A file was found in the directory specified by the `InstalledLocation` property or in one of its subdirectories, but no executable file was found.|
-|4|The directory specified by the `InstalledLocation` property was located, but it did not contain any executable files or other files.|
-|5|The directory specified by the `InstalledLocation` property does not exist.|
+| --- | --- |
+| A | Windows Installer |
+| B | The software's install registry key |
+| C | The software's uninstall registry key |
+| D | Operating System's Windows Installer |
+| E | Operating System's Windows NT registry setting |
+| M | Internally computed property |
+| X | Unknown |
 
- `InstalledLocation`
- Data type: `String`
+`InstallDate` Data type: `DateTime`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: None
+Qualifiers: None
 
- The full path to the primary directory that is associated with the software.
+Date and time of when the software product was installed.
 
- `InstallSource`
- Data type: `String`
+`InstallDirectoryValidation` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: None
+Qualifiers: None
 
- The full path of the directory from which the software was installed, for example, \\\Software\Microsoft\SMS\Setup.exe.
+Numeric code that provides additional information about the inventoried software. Possible values are:
 
- `InstallType`
- Data type: `UInt32`
+| Value | Description |
+| --- | --- |
+| 1 | Because the `InstalledLocation` property was not available in any of the data sources, a check was not possible. |
+| 2 | An executable file was found in the directory specified by the `InstalledLocation` property or in one of its subdirectories. |
+| 3 | A file was found in the directory specified by the `InstalledLocation` property or in one of its subdirectories, but no executable file was found. |
+| 4 | The directory specified by the `InstalledLocation` property was located, but it did not contain any executable files or other files. |
+| 5 | The directory specified by the `InstalledLocation` property does not exist. |
 
- Access type: Read-only
+`InstalledLocation` Data type: `String`
 
- Qualifiers: [SMS_Report (TRUE)]
+Access type: Read-only
 
- Describes the type of software that has been installed.
+Qualifiers: None
 
-|Value|Description|
-|-----------|-----------------|
-|0|Physically installed|
-|1|Virtually installed|
+The full path to the primary directory that is associated with the software.
 
- `Language`
- Data type: `UInt32`
+`InstallSource` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: None
+Qualifiers: None
 
- The language associated with the software product.
+The full path of the directory from which the software was installed, for example, \\Software\Microsoft\SMS\Setup.exe.
 
- `LocalPackage`
- Data type: `String`
+`InstallType` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: None
+Qualifiers: [SMS_Report (TRUE)]
 
- The local cached package, for example, C:\Windows\Installer\9c1c748.msi.
+Describes the type of software that has been installed.
 
- `ProductCode`
- Data type: `String`
+| Value | Description |
+| --- | --- |
+| 0 | Physically installed |
+| 1 | Virtually installed |
 
- Access type: Read-only
+`Language` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique identifier for the particular product release. The identifier is represented as a GUID for Windows Installer-based applications or as the string used by the product to register with **Add or Remove Programs**.
+Qualifiers: None
 
- `ProductID`
- Data type: `String`
+The language associated with the software product.
 
- Access type: Read-only
+`LocalPackage` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Vendor-generated ID that uniquely identifies the product.
+Qualifiers: None
 
- `ProductName`
- Data type: `String`
+The local cached package, for example, C:\Windows\Installer\9c1c748.msi.
 
- Access type: Read-only
+`ProductCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The name of the installed product that is displayed to the user, for example, "Microsoft Office 2003".
+Qualifiers: None
 
- `ProductVersion`
- Data type: `String`
+A unique identifier for the particular product release. The identifier is represented as a GUID for Windows Installer-based applications or as the string used by the product to register with **Add or Remove Programs**.
 
- Access type: Read-only
+`ProductID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The version of the product, for example, "5.1.1969".
+Qualifiers: None
 
- `Publisher`
- Data type: `String`
+Vendor-generated ID that uniquely identifies the product.
 
- Access type: Read-only
+`ProductName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The company that publishes the software.
+Qualifiers: None
 
- `RegisteredUser`
- Data type: `String`
+The name of the installed product that is displayed to the user, for example, "Microsoft Office 2003".
 
- Access type: Read-only
+`ProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The registered user for the product.
+Qualifiers: None
 
- `ServicePack`
- Data type: `String`
+The version of the product, for example, "5.1.1969".
 
- Access type: Read-only
+`Publisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The major version number of the service pack that is installed on the computer. If no service pack has been installed, the value is 0 (zero). Applicable only to operating systems.
+Qualifiers: None
 
- `SoftwareCode`
- Data type: `String`
+The company that publishes the software.
 
- Access type: Read-only
+`RegisteredUser` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read-only
 
- A normalized version of the `ProductCode` property. All characters in the string are lowercase.
+Qualifiers: None
 
- `SoftwarePropertiesHash`
- Data type: `String`
+The registered user for the product.
 
- Access type: Read-only
+`ServicePack` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique 128-bit signature derived from a combination of the `ProductName`, `Publisher`, and `ProductVersion` properties of the software product.
+Qualifiers: None
 
- `SoftwarePropertiesHashEx`
- Data type: `String`
+The major version number of the service pack that is installed on the computer. If no service pack has been installed, the value is 0 (zero). Applicable only to operating systems.
 
- Access type: Read-only
+`SoftwareCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique 128-bit signature derived from a combination of the `ProductName`, `Publisher`, `ProductVersion`, and `Language` properties of the software product.
+Qualifiers: [key]
 
- `UninstallString`
- Data type: `String`
+A normalized version of the `ProductCode` property. All characters in the string are lowercase.
 
- Access type: Read-only
+`SoftwarePropertiesHash` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The uninstall string as registered by the product with **Add or Remove Programs**, for example, "MsiExec.exe /X{210C4411-95A8-4CAF-8B23-F964CF8A78F3}".
+Qualifiers: None
 
- `UpgradeCode`
- Data type: `String`
+A unique 128-bit signature derived from a combination of the `ProductName`, `Publisher`, and `ProductVersion` properties of the software product.
 
- Access type: Read-only
+`SoftwarePropertiesHashEx` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A GUID that represents a related set of products. Applicable only to Windows Installer-based products.
+Qualifiers: None
 
- `VersionMajor`
- Data type: `UInt32`
+A unique 128-bit signature derived from a combination of the `ProductName`, `Publisher`, `ProductVersion`, and `Language` properties of the software product.
 
- Access type: Read-only
+`UninstallString` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The major product version that is derived from the `ProductVersion` property.
+Qualifiers: None
 
- `VersionMinor`
- Data type: `UInt32`
+The uninstall string as registered by the product with **Add or Remove Programs**, for example, "MsiExec.exe /X{210C4411-95A8-4CAF-8B23-F964CF8A78F3}".
 
- Access type: Read-only
+`UpgradeCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The minor product version that is derived from the `ProductVersion` property.
+Qualifiers: None
+
+A GUID that represents a related set of products. Applicable only to Windows Installer-based products.
+
+`VersionMajor` Data type: `UInt32`
+
+Access type: Read-only
+
+Qualifiers: None
+
+The major product version that is derived from the `ProductVersion` property.
+
+`VersionMinor` Data type: `UInt32`
+
+Access type: Read-only
+
+Qualifiers: None
+
+The minor product version that is derived from the `ProductVersion` property.
 
 ## Remarks
- This class merges information from as many as five sources. The first source is the Windows `MsiEnumProducts` function. This function enumerates through all the products that are currently advertised or installed. Other sources of information for all installed software are the following registry keys:
 
-- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\\[User SID]\Products
+This class merges information from as many as five sources. The first source is the Windows `MsiEnumProducts` function. This function enumerates through all the products that are currently advertised or installed. Other sources of information for all installed software are the following registry keys:
 
+- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\[User SID]\Products
 - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 
   The class also gathers information for operating system software from the following sources:
-
 - WMI class root\CIMV2:Win32_OperatingSystem
-
 - Registry key HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Asset Intelligence Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/asset-intelligence-client-wmi-classes.md)
- [SMS_AutoStartSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_autostartsoftware-client-wmi-class.md)
- [SMS_BrowserHelperObject Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_browserhelperobject-client-wmi-class.md)
- [SMS_InstalledExecutable Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedexecutable-client-wmi-class.md)
- [SMS_InstalledSoftwareMS Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftwarems-client-wmi-class.md)
- [SMS_Processor Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_processor-client-wmi-class.md)
- [SMS_SoftwareShortcut Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_softwareshortcut-client-wmi-class.md)
- [SMS_SystemConsoleUsage Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleusage-client-wmi-class.md)
- [SMS_SystemConsoleUser Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleuser-client-wmi-class.md)
+
+[Asset Intelligence Client WMI Classes](asset-intelligence-client-wmi-classes.md) [SMS_AutoStartSoftware Client WMI Class](sms_autostartsoftware-client-wmi-class.md) [SMS_BrowserHelperObject Client WMI Class](sms_browserhelperobject-client-wmi-class.md) [SMS_InstalledExecutable Client WMI Class](sms_installedexecutable-client-wmi-class.md) [SMS_InstalledSoftwareMS Client WMI Class](sms_installedsoftwarems-client-wmi-class.md) [SMS_Processor Client WMI Class](sms_processor-client-wmi-class.md) [SMS_SoftwareShortcut Client WMI Class](sms_softwareshortcut-client-wmi-class.md) [SMS_SystemConsoleUsage Client WMI Class](sms_systemconsoleusage-client-wmi-class.md) [SMS_SystemConsoleUser Client WMI Class](sms_systemconsoleuser-client-wmi-class.md)

@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot BitLocker
 description: Learn how to troubleshoot problems with BitLocker management in Configuration Manager
-ms.date: 11/29/2019
+ms.date: "2019-11-29T00:00:00Z"
 ms.subservice: protect
 ms.topic: troubleshooting
 ms.collection: tier3
@@ -18,7 +18,7 @@ Use the information in this article to help you troubleshoot issues with BitLock
 
 When trying to open the self-service portal (`https://webserver.contoso.com/SelfService`) for the first time, you see the following error message:
 
-``` error
+```error
 Configuration Error - Server Error in '/SelfService' Application
 
 Description: An error occurred during the processing of a configuration file required to service this request. Please review the specific error details below and modify your configuration file appropriately.

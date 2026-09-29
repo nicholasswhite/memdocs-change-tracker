@@ -1,16 +1,18 @@
 ---
-title: SMS_Content Class
+title: "SMS_Content Server WMI Class"
 description: Learn how the SMS_Content class is an SMS Provider server class, in Configuration Manager, that provides additional information about a CI_Content instance.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Content Server WMI Class
+
 The `SMS_Content` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides additional information about a `CI_Content` instance.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,137 +35,129 @@ Class SMS_Content : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_Content` class.
 
-|Method|Description|
-|------------|-----------------|
-|[IsOfficeContent Method in Class SMS_Content](../../../../../develop/reference/core/servers/configure/isofficecontent-method-in-class-sms_content.md)|Specifies whether content is Microsoft Office content.|
+The following table lists the methods in the `SMS_Content` class.
+
+| Method | Description |
+| --- | --- |
+| [IsOfficeContent Method in Class SMS_Content](isofficecontent-method-in-class-sms_content.md) | Specifies whether content is Microsoft Office content. |
 
 ## Properties
- `ContentDescription`
- Data type: `String`
 
- Access type: Read/Write
+`ContentDescription` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description of the content.
+Qualifiers: none
 
- `ContentFlags`
- Data type: `UInt32`
+Description of the content.
 
- Access type: Read/Write
+`ContentFlags` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- This specifies additional attributes for content instance.
+Qualifiers: none
 
-|Value|Content flag|
-|-|-|
-|8|DOWNLOAD_ON_DEMAND_FROM_LOCAL_DP|
-|12|DOWNLOAD_FROM_LOCAL_DISPPOINT|
-|13|DOWNLOAD_LOCAL_PARTIALDOWNLOADTOLOCAL|
-|14|DOWNLOAD_FROM_REMOTE_DISPPOINT|
-|15|DOWNLOAD_REMOTE_PARTIALDOWNLOADTOLOCAL|
-|16|DOWNLOAD_ENABLE_PEER_CACHING|
-|17|DP_NO_FALLBACK_UNPROTECTED|
-|24|DO_NOT_DOWNLOAD|
-|25|PERSIST_IN_CACHE|
+This specifies additional attributes for content instance.
 
- `ContentHash`
- Data type: `String`
+| Value | Content flag |
+| --- | --- |
+| 8 | DOWNLOAD_ON_DEMAND_FROM_LOCAL_DP |
+| 12 | DOWNLOAD_FROM_LOCAL_DISPPOINT |
+| 13 | DOWNLOAD_LOCAL_PARTIALDOWNLOADTOLOCAL |
+| 14 | DOWNLOAD_FROM_REMOTE_DISPPOINT |
+| 15 | DOWNLOAD_REMOTE_PARTIALDOWNLOADTOLOCAL |
+| 16 | DOWNLOAD_ENABLE_PEER_CACHING |
+| 17 | DP_NO_FALLBACK_UNPROTECTED |
+| 24 | DO_NOT_DOWNLOAD |
+| 25 | PERSIST_IN_CACHE |
 
- Access type: Read-only
+`ContentHash` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Hash of the content.
+Qualifiers: [read]
 
- `ContentHashVersion`
- Data type: `UInt32`
+Hash of the content.
 
- Access type: Read-only
+`ContentHashVersion` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- This specifies the hash version used to calculate the content hash.
+Qualifiers: [read]
 
- `ContentID`
- Data type: `SInt32`
+This specifies the hash version used to calculate the content hash.
 
- Access type: Read-only
+`ContentID` Data type: `SInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifier for the content.
+Qualifiers: [key, read]
 
- `ContentSource`
- Data type: `String`
+Identifier for the content.
 
- Access type: Read/Write
+`ContentSource` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- This specifies the source location where content files are stored.
+Qualifiers: none
 
- `ContentType`
- Data type: `UInt32`
+This specifies the source location where content files are stored.
 
- Access type: Read/Write
+`ContentType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Type of the content.
+Qualifiers: none
 
- `ContentUniqueID`
- Data type: `String`
+Type of the content.
 
- Access type: Read-only
+`ContentUniqueID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Unique identifier for the content.
+Qualifiers: [read]
 
- `ContentVersion`
- Data type: `UInt32`
+Unique identifier for the content.
 
- Access type: Read-only
+`ContentVersion` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Version of the content.
+Qualifiers: [read]
 
- `ObjectTypeID`
- Data type: `UInt32`
+Version of the content.
 
- Access type: Read/Write
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The security type of the content.
+Qualifiers: none
 
- `RelatedContentID`
- Data type: `String`
+The security type of the content.
 
- Access type: Read/Write
+`RelatedContentID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies the related content associated with this content.
+Qualifiers: none
 
- `SecurityKey`
- Data type: `String`
+Specifies the related content associated with this content.
 
- Access type: Read/Write
+`SecurityKey` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The security key of the content. Content may be secured by application or package.
+Qualifiers: none
+
+The security key of the content. Content may be secured by application or package.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

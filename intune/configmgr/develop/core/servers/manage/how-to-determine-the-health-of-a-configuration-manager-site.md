@@ -1,35 +1,36 @@
 ---
-title: Determine the Health of a Site
+title: "How to Determine the Health of a Configuration Manager Site"
 description: In Configuration Manager, you can determine the overall health or status of a site by inspecting the SMS_SummarizerSiteStatus object Status property.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Determine the Health of a Configuration Manager Site
+
 You can determine the overall health or status of a site, in Configuration Manager, by inspecting the `SMS_SummarizerSiteStatus` object `Status` property. The `Status` property has three possible values:
 
-|Value|Description|
-|-----------|-----------------|
-|0|The site is healthy.|
-|1|The site has warning conditions.|
-|2|The site has error conditions.|
+| Value | Description |
+| --- | --- |
+| 0 | The site is healthy. |
+| 1 | The site has warning conditions. |
+| 2 | The site has error conditions. |
 
- `SMS_SummarizerSiteStatus` is an example of a Configuration Manager summarizer. For more information, see [SMS_SummarizerSiteStatus server WMI class](../../../reference/core/servers/manage/sms_summarizersitestatus-server-wmi-class.md).
+`SMS_SummarizerSiteStatus` is an example of a Configuration Manager summarizer. For more information, see [SMS_SummarizerSiteStatus server WMI class](../../../reference/core/servers/manage/sms_summarizersitestatus-server-wmi-class.md).
 
 ### To determine a site's health
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Get the `SMS_SummarizerSiteStatus` object by using the Configuration Manager site code.
-
-3.  Inspect the `SMS_SummarizerSiteStatus` object `Status` property to determine the site status
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Get the `SMS_SummarizerSiteStatus` object by using the Configuration Manager site code.
+3. Inspect the `SMS_SummarizerSiteStatus` object `Status` property to determine the site status
 
 ## Example
- The following example determines the health of the site code supplied in the parameter `siteCode`.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example determines the health of the site code supplied in the parameter `siteCode`.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 Sub ShowSiteHealth(connection, siteCode)
@@ -95,37 +96,43 @@ public void ShowSiteHealth(WqlConnectionManager connection, string siteCode)
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: [WqlConnectionManager](../../understand/managed-sms-provider-fundamentals-in-configuration-manager.md#wqlconnectionmanager)<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|A valid task Configuration Manager site code|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: [WqlConnectionManager](../../understand/managed-sms-provider-fundamentals-in-configuration-manager.md#wqlconnectionmanager) - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md). |
+| `siteCode` | - Managed: `String` - VBScript: `String` | A valid task Configuration Manager site code |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../configure/role-based-administration.md).
 
 ## See Also
- [About status messages](about-configuration-manager-status-messages.md)
+
+[About status messages](about-configuration-manager-status-messages.md)

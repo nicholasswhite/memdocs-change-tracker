@@ -1,14 +1,16 @@
 ---
-title: Use Zebra Mobility Extensions on Android devices in Microsoft Intune
+title: "Use and manage Zebra devices with Zebra Mobility Extensions in Microsoft Intune"
 description: Use Microsoft Intune to manage and use Zebra devices running Android with Zebra Mobility Extensions (MX). See all the steps, including install the Company Portal app, sideload the app, assign device administrator role, create a StageNow profile, and more.
-ms.date: 06/27/2024
+ms.date: "2024-06-27T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: jieyan
 ---
 
 # Use and manage Zebra devices with Zebra Mobility Extensions in Microsoft Intune
 
-[!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
 Intune includes a rich set of features, including managing apps and configuring device settings. These built-in features and settings manage Android devices manufactured by Zebra Technologies, also known as **Zebra devices**.
 
@@ -18,7 +20,7 @@ This feature applies to:
 
 - Android device administrator
 
-For Android Enterprise devices, use [OEMConfig](./configure-oemconfig-android.md).
+For Android Enterprise devices, use [OEMConfig](configure-oemconfig-android.md).
 
 Your company may use Zebra devices for retail, on the factory floor, and more. For example, you're a retailer and your environment includes thousands of Zebra mobile devices used by sales associates. Intune can help manage these devices as part of your mobile device management (MDM) solution.
 
@@ -27,6 +29,7 @@ Using Intune, you can enroll Zebra devices to deploy your line-of-business apps 
 This article shows you how to use Zebra Mobility Extensions (MX) on Zebra devices in Microsoft Intune.
 
 > [!NOTE]
+>
 > By default, the Zebra MX APIs aren't locked down on devices. Before a device enrolls in Intune, it's possible the device can be compromised in a malicious manner. When the device is in a clean state, we suggest you lock down MX APIs using Access Manager (`AccessMgr`). For example, you can choose that only the Company Portal app and apps you trust are allowed to call MX APIs.
 >
 > For more information, go to [Locking down your device](https://developer.zebra.com/community/home/blog/2017/04/11/locking-down-your-device) on Zebra's web site.
@@ -55,8 +58,8 @@ The following steps provide an overview. For specific details, go to Zebra's doc
 4. In **Download MDM**, select **Transfer/Copy File**. Add the source and destination of the Company Portal Android package (APK).
 5. In **Launch MDM**, leave the default values as-is. Add the following details:
 
-    - **Package Name**: `com.microsoft.windowsintune.companyportal`
-    - **Class Name**: `com.microsoft.windowsintune.companyportal.views.SplashActivity`
+   - **Package Name**: `com.microsoft.windowsintune.companyportal`
+   - **Class Name**: `com.microsoft.windowsintune.companyportal.views.SplashActivity`
 
 Continue to publish the profile, and consume it with the StageNow app on the device. The Company Portal app is installed and opened on the device.
 
@@ -90,14 +93,13 @@ When you create the profile in StageNow, on the last step, select **Export to MD
 
 - It's recommended to test the profile before you deploy it to devices in your organization. To test, in the last step when creating profiles with StageNow on your computer, use the **Test** options. Then, consume the StageNow-generated file with the StageNow app on the device.
 
-  The StageNow app on the device shows logs generated when you test the profile. For help with understanding any errors, [Use StageNow logs on Zebra devices running Android in Intune](./troubleshoot-zebra-mx-android.md) has information on using the StageNow logs.
-
+  The StageNow app on the device shows logs generated when you test the profile. For help with understanding any errors, [Use StageNow logs on Zebra devices running Android in Intune](troubleshoot-zebra-mx-android.md) has information on using the StageNow logs.
 - If you reference apps, update packages, or update other files in your StageNow profile, you want the device to get these updates. To get the updates, the device must connect to the StageNow deployment server when the profile is applied.
 
   Or, you can use built-in features in Intune to get these changes, including:
 
   - App management features to [add](../../app-management/deployment/index.md), [deploy](../../app-management/deployment/assign-groups.md), update, and [monitor](../../app-management/monitor-assignments.md) apps.
-  - Manage [system and app updates](./ref-device-restrictions-android-enterprise.md) on devices running Android Enterprise
+  - Manage [system and app updates](ref-device-restrictions-android-enterprise.md) on devices running Android Enterprise
 
 After you test the file, the next step is to deploy the profile to devices using Intune.
 
@@ -113,40 +115,36 @@ After you test the file, the next step is to deploy the profile to devices using
 
 In Intune, create a device configuration profile:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
-    - **Platform**: Select **Android device administrator**.
-    - **Profile type**: Select **MX policy (Zebra only)**.
-
+   - **Platform**: Select **Android device administrator**.
+   - **Profile type**: Select **MX policy (Zebra only)**.
 4. Select **Create**.
 5. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the new policy.
-    - **Description**: Enter a description for the policy. This setting is optional, but recommended.
-
+   - **Name**: Enter a descriptive name for the new policy.
+   - **Description**: Enter a description for the policy. This setting is optional, but recommended.
 6. Select **Next**.
-7. In **Configuration settings** > **Choose a valid Zebra MX XML file**, add the XML profile file [you exported from StageNow](#step-4---create-a-device-management-profile-in-stagenow) (in this article).
+7. In **Configuration settings** &gt; **Choose a valid Zebra MX XML file**, add the XML profile file [you exported from StageNow](#step-4---create-a-device-management-profile-in-stagenow) (in this article).
 
-    When done, select **Next**.
+   When done, select **Next**.
 
-    > [!TIP]
-    > For security reasons, you won't see the profile XML text after you save it. The text is encrypted, and you only see asterisks (`****`). For your reference, it's recommended to save copies of the MX profiles before you add them to Intune.
+   > [!TIP]
+   >
+   > For security reasons, you won't see the profile XML text after you save it. The text is encrypted, and you only see asterisks (`****`). For your reference, it's recommended to save copies of the MX profiles before you add them to Intune.
+8. In **Scope tags** (optional) &gt; **Select scope tags**, choose your scope tags to assign to the profile. For more information, go to [Use RBAC and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 
-8. In **Scope tags** (optional) > **Select scope tags**, choose your scope tags to assign to the profile. For more information, go to [Use RBAC and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
-
-    Select **Next**.
-
+   Select **Next**.
 9. In **Assignments**, select the groups that will receive this profile. For more information on assigning profiles, go to [Assign user and device profiles](../assign-device-profile.md).
 
-    Select **Next**.
-
+   Select **Next**.
 10. In **Review + create**, when you're done, choose **Create**. The profile is created, and shown in the list.
 
     You can also [monitor its status](../monitor-device-profile.md).
 
-The next time the device checks for configuration updates, the MX profile is deployed to the device. Devices sync with Intune when devices enroll, and then approximately every 8 hours. You can also [force a sync in Intune](../../device-management/actions/sync.md) using a remote action. Or, on the device, open the **Company Portal app** > **Settings** > **Sync**.
+The next time the device checks for configuration updates, the MX profile is deployed to the device. Devices sync with Intune when devices enroll, and then approximately every 8 hours. You can also [force a sync in Intune](../../device-management/actions/sync.md) using a remote action. Or, on the device, open the **Company Portal app** &gt; **Settings** &gt; **Sync**.
 
 ## Update a Zebra MX configuration after it's assigned
 
@@ -158,8 +156,4 @@ To update the MX-specific configuration of a Zebra device, you can:
 ## Related content
 
 - [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-- [Use StageNow logs to troubleshoot Zebra devices](./troubleshoot-zebra-mx-android.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Use StageNow logs to troubleshoot Zebra devices](troubleshoot-zebra-mx-android.md).

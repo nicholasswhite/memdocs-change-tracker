@@ -1,16 +1,18 @@
 ---
-title: SMS_DistributionPointDriveInfo Class
+title: "SMS_DistributionPointDriveInfo Server WMI Class"
 description: The SMS_DistributionPointDriveInfo WMI class is an SMS Provider server class that represents the basic information about the drives on a distribution point site system role.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DistributionPointDriveInfo Server WMI Class
+
 The `SMS_DistributionPointDriveInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the basic information about the drives on a distribution point site system role.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,119 +33,113 @@ Class SMS_DistributionPointDriveInfo : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DistributionPointDriveInfo` class does not define any methods.
+
+The `SMS_DistributionPointDriveInfo` class does not define any methods.
 
 ## Properties
- `BytesFree`
- Data type: `SInt64`
 
- Access type: Read/Write
+`BytesFree` Data type: `SInt64`
 
- Qualifiers: none
+Access type: Read/Write
 
- Amount of free, unused storage space, in kilobytes, for the storage object.
+Qualifiers: none
 
- `BytesTotal`
- Data type: `SInt64`
+Amount of free, unused storage space, in kilobytes, for the storage object.
 
- Access type: Read/Write
+`BytesTotal` Data type: `SInt64`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum amount of storage space, in kilobytes, of the storage object. A negative value indicates that information is currently unavailable.
+Qualifiers: none
 
- `ConttentLibPriority`
- Data type: `SInt32`
+Maximum amount of storage space, in kilobytes, of the storage object. A negative value indicates that information is currently unavailable.
 
- Access type: Read/Write
+`ConttentLibPriority` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The order of preference for distributing content to this drive when copying packages to the Configuration Manager content library on the distribution point system. Lower values are preferred over higher values.
+Qualifiers: none
 
- `Drive`
- Data type: `String`
+The order of preference for distributing content to this drive when copying packages to the Configuration Manager content library on the distribution point system. Lower values are preferred over higher values.
 
- Access type: Read/Write
+`Drive` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Drive that is used by the distribution point.
+Qualifiers: [key]
 
- `NALPath`
- Data type: `String`
+Drive that is used by the distribution point.
 
- Access type: Read/Write
+`NALPath` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Network abstraction layer (NAL) path to the distribution point.
+Qualifiers: [key]
 
- `ObjectType`
- Data type: `SInt32`
+Network abstraction layer (NAL) path to the distribution point.
 
- Access type: Read/Write
+`ObjectType` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Object type. Possible values are:
+Qualifiers: none
 
-|Value|Object type|
-|-|-|
-|Value|Description|
-|0|PKG_TYPE_REGULAR|
-|3|PKG_TYPE_DRIVER|
-|4|PKG_TYPE_TASK_SEQUENCE|
-|5|PKG_TYPE_SWUPDATES|
-|6|PKG_TYPE_DEVICE_SETTING|
-|8|PKG_CONTENT_PACKAGE|
-|257|PKG_TYPE_IMAGE|
-|258|PKG_TYPE_BOOTIMAGE|
-|259|PKG_TYPE_OSINSTALLIMAGE|
-|512|APPLICATION|
+Object type. Possible values are:
 
- `PercentFree`
- Data type: `SInt32`
+| Value | Object type |
+| --- | --- |
+| Value | Description |
+| 0 | PKG_TYPE_REGULAR |
+| 3 | PKG_TYPE_DRIVER |
+| 4 | PKG_TYPE_TASK_SEQUENCE |
+| 5 | PKG_TYPE_SWUPDATES |
+| 6 | PKG_TYPE_DEVICE_SETTING |
+| 8 | PKG_CONTENT_PACKAGE |
+| 257 | PKG_TYPE_IMAGE |
+| 258 | PKG_TYPE_BOOTIMAGE |
+| 259 | PKG_TYPE_OSINSTALLIMAGE |
+| 512 | APPLICATION |
 
- Access type: Read/Write
+`PercentFree` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Percentage of free storage space available on the storage object.
+Qualifiers: none
 
- `PkgSharePriority`
- Data type: `SInt32`
+Percentage of free storage space available on the storage object.
 
- Access type: Read/Write
+`PkgSharePriority` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The order of preference for distributing packages to this drive when coping packages to package share location. Lower values are preferred over higher values.
+Qualifiers: none
 
- `SiteCode`
- Data type: `String`
+The order of preference for distributing packages to this drive when coping packages to package share location. Lower values are preferred over higher values.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Site code of the role.
+Qualifiers: none
 
- `Status`
- Data type: `SInt32`
+Site code of the role.
 
- Access type: Read/Write
+`Status` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The last returned error code from attempts to copy content to this drive. A status of 0 indicates success.
+Qualifiers: none
+
+The last returned error code from attempts to copy content to this drive. A status of 0 indicates success.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

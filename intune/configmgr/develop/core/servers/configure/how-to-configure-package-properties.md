@@ -1,29 +1,29 @@
 ---
 description: Learn how the following example shows how to configure the properties of an existing package, in Configuration Manager, by using the SMS_Package class.
-title: Configure Package Properties
-ms.date: 09/20/2016
+title: "How to Configure Package Properties"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Configure Package Properties
+
 The following example shows how to configure the properties of an existing package, in Configuration Manager, by using the `SMS_Package` class.
 
 ### To configure an existing package
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the existing package object by using `SMS_Package` class.
-
-3.  Populate any package properties (this example uses package description).
-
-4.  Save the package and the new package properties.
+1. Set up a connection to the SMS Provider.
+2. Load the existing package object by using `SMS_Package` class.
+3. Populate any package properties (this example uses package description).
+4. Save the package and the new package properties.
 
 ## Example
- The following example method configures package properties for software distribution.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method configures package properties for software distribution.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -77,34 +77,38 @@ public void ConfigurePackageProperties(WqlConnectionManager connection, string e
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the existing package.|
-|`newPackageDescription`|-   Managed: `String`<br />-   VBScript: `String`|The description for the new package.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPackageID` | - Managed: `String` - VBScript: `String` | The ID of the existing package. |
+| `newPackageDescription` | - Managed: `String` - VBScript: `String` | The description for the new package. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)

@@ -1,6 +1,6 @@
 ---
-title: Author configuration baselines and items
-ms.date: 08/01/2019
+title: "About authoring configuration baselines and configuration items"
+ms.date: "2019-08-01T00:00:00Z"
 ms.subservice: sdk
 ms.topic: concept-article
 ms.collection: tier3
@@ -19,21 +19,20 @@ When you create configuration data with the Configuration Manager console, you c
 Create configuration data in the following ways:
 
 - You can create configuration data externally with an XML editor. If you then package it as a .cab file, you can import it into Configuration Manager.
-
 - You can create configuration data within Configuration Manager by using the following wizards:
 
   - Create Application Configuration Item Wizard
-
   - Create Operating System Configuration Item Wizard
-
   - Create Configuration Baseline
 
 > [!IMPORTANT]
+>
 > You create and manage software update configuration items through the software updates management feature in Configuration Manager. You can reference these configuration items by configuration baselines. However, don't directly author them by using configuration items or the DCM Digest.
 
 You can also import configuration data that software vendors and solution providers have published.
 
 > [!NOTE]
+>
 > You can digitally sign published configuration data. Then you can verify the publishing source and be sure that no one has tampered with the data. If the digital signature verification check fails, Configuration Manager warns you to continue with the import. Only import configuration data from external sources if it has a valid digital signature from a trusted publisher.
 
 After the site imports the configuration data, you can then work with it in the Configuration Manager console.

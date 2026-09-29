@@ -1,7 +1,7 @@
 ---
-title: Prerequisites for software updates
+title: "Prerequisites for software updates in Configuration Manager"
 description: Learn about prerequisites for software updates in Configuration Manager.
-ms.date: 06/20/2024
+ms.date: "2024-06-20T00:00:00Z"
 ms.topic: article
 ms.subservice: software-updates
 ms.collection: tier3
@@ -31,10 +31,8 @@ Windows Server Update Services (WSUS) is needed for software updates synchroniza
 
 > [!NOTE]
 >
-> - On October 10th, 2023, Windows Server 2012 and Windows Server 2012 R2 entered the Extended Support Updates phase. Microsoft will no longer provide support for Configuration Manager site servers or roles installed to these Operating Systems. For more information, see **[Extended Security Updates and Configuration Manager](/mem/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices)**.
->
-> - Starting March 28, 2023, on-premises Windows 11, version 22H2 devices will receive quality updates via the Unified Update Platform (UUP). The 2023-02 cumulative update is required for UUP to work. If you're unable to install these updates, you can [manually add the required MIME types for UUP](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment#manually-add-the-required-mime-types-for-uup) to the WSUS server. If you encounter a `Cannot add duplicate collection entry of type 'mimeMap'` error, see [Cannot add duplicate collection entry of type mimeMap](/windows-server/administration/windows-server-update-services/manage/wsus-messages-and-troubleshooting-tips#cannot-add-duplicate-collection-entry-of-type-mimemap).
->
+> - On October 10th, 2023, Windows Server 2012 and Windows Server 2012 R2 entered the Extended Support Updates phase. Microsoft will no longer provide support for Configuration Manager site servers or roles installed to these Operating Systems. For more information, see **[Extended Security Updates and Configuration Manager](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices)**.
+> - Starting March 28, 2023, on-premises Windows 11, version 22H2 devices will receive quality updates via the Unified Update Platform (UUP). The 2023-02 cumulative update is required for UUP to work. If you're unable to install these updates, you can [manually add the required MIME types for UUP](https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment#manually-add-the-required-mime-types-for-uup) to the WSUS server. If you encounter a `Cannot add duplicate collection entry of type 'mimeMap'` error, see [Cannot add duplicate collection entry of type mimeMap](https://learn.microsoft.com/en-us/windows-server/administration/windows-server-update-services/manage/wsus-messages-and-troubleshooting-tips#cannot-add-duplicate-collection-entry-of-type-mimemap).
 > - When you have multiple software update points at a site, ensure that they're all running the same version of WSUS.
 
 ### WSUS Administration Console
@@ -72,10 +70,9 @@ Distribution points are required to store the content for software updates. For 
 
 Software updates are enabled for clients by default. There are other available settings that control how and when clients assess compliance for the software updates and control how the software updates are installed.
 
- For more information, see the following articles:
+For more information, see the following articles:
 
 - [Client settings for software updates](../get-started/manage-settings-for-software-updates.md#BKMK_ClientSettings)
-
 - [Software updates client settings](../../core/clients/deploy/about-client-settings.md#software-updates)
 
 > [!IMPORTANT]

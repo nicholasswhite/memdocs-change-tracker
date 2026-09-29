@@ -1,16 +1,18 @@
 ---
-title: CCM_CIEvaluationJob Class
+title: "CCM_CIEvaluationJob Client WMI Class"
 description: The CCM_CIEvaluationJob Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a configuration item evaluation job.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_CIEvaluationJob Client WMI Class
+
 The `CCM_CIEvaluationJob` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a configuration item evaluation job.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,119 +33,113 @@ Class CCM_CIEvaluationJob :
 ```
 
 ## Methods
- The `CCM_CIEvaluationJob` class doesn't define any methods.
+
+The `CCM_CIEvaluationJob` class doesn't define any methods.
 
 ## Properties
- `CIAgentJobId`
- Data type: `String`
 
- Access type: Read/Write
+`CIAgentJobId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- CI agent job identifier.
+Qualifiers: none
 
- `ErrorCode`
- Data type: `UInt32`
+CI agent job identifier.
 
- Access type: Read/Write
+`ErrorCode` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Error code.
+Qualifiers: none
 
- `Id`
- Data type: `String`
+Error code.
 
- Access type: Read/Write
+`Id` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier.
+Qualifiers: [key]
 
- `IsMachineTarget`
- Data type: `Boolean`
+Identifier.
 
- Access type: Read/Write
+`IsMachineTarget` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if this is a device targeted application.
+Qualifiers: none
 
- `IsRebootRequired`
- Data type: `Boolean`
+`true` if this is a device targeted application.
 
- Access type: Read/Write
+`IsRebootRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if a reboot is required.
+Qualifiers: none
 
- `JobState`
- Data type: `String`
+`true` if a reboot is required.
 
- Access type: Read/Write
+`JobState` Data type: `String`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Job state. Possible values are:
+Qualifiers: [values]
 
-|Value|
-|-|
-|Idle|
-|Evaluating|
-|Success|
-|Error|
-|CanceledOrDeleted|
+Job state. Possible values are:
 
- `LastModifiedTime`
- Data type: `DateTime`
+| Value |
+| --- |
+| Idle |
+| Evaluating |
+| Success |
+| Error |
+| CanceledOrDeleted |
 
- Access type: Read/Write
+`LastModifiedTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last modified time.
+Qualifiers: none
 
- `OwnerSID`
- Data type: `String`
+Last modified time.
 
- Access type: Read/Write
+`OwnerSID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Owner identifier (SID).
+Qualifiers: none
 
- `Type`
- Data type: `String`
+Owner identifier (SID).
 
- Access type: Read/Write
+`Type` Data type: `String`
 
- Qualifiers: [valuemap]
+Access type: Read/Write
 
- Job type. Possible values are:
+Qualifiers: [valuemap]
 
-|Value|
-|-|
-|DesiredConfiguration|
-|ApplicationManagement|
-|SoftwareUpdates|
+Job type. Possible values are:
 
- `UserSID`
- Data type: `String`
+| Value |
+| --- |
+| DesiredConfiguration |
+| ApplicationManagement |
+| SoftwareUpdates |
 
- Access type: Read/Write
+`UserSID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- User identifier (SID).
+Qualifiers: none
+
+User identifier (SID).
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

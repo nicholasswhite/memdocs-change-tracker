@@ -1,16 +1,18 @@
 ---
 description: Learn how to retrieve the targeted users of an application deployment type using GetTargetedUsers class method.
-title: GetTargetedUsers Method
-ms.date: 09/20/2016
+title: "GetTargetedUsers Method in Class CCM_AppDeploymentType"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetTargetedUsers Method in Class CCM_AppDeploymentType
+
 The `GetTargetedUsers` Windows Management Instrumentation (WMI) class method in Configuration Manager that retrieves the targeted users of an application deployment type.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,33 +26,33 @@ uint32 GetTargetedUsers
 ```
 
 ## Parameters
- `Id`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`Id` Data type: `String`
 
- Identifier.
+Qualifiers: [id("0"), in]
 
- `Revision`
- Data type: `String`
+Identifier.
 
- Qualifiers: [id("1"), in]
+`Revision` Data type: `String`
 
- Revision.
+Qualifiers: [id("1"), in]
 
- `Users`
- Data type: `String Array`
+Revision.
 
- Qualifiers: [id("2"), out]
+`Users` Data type: `String Array`
 
- Targeted users.
+Qualifiers: [id("2"), out]
+
+Targeted users.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

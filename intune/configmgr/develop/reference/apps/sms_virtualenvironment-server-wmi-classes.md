@@ -1,16 +1,18 @@
 ---
 description: Learn how to track the history of a request each time a request is updated using SMS_VirtualEnvironment in Configuration Manager.
-title: SMS_VirtualEnvironment Classes
-ms.date: 09/20/2016
+title: "SMS_VirtualEnvironment Server WMI Classes"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_VirtualEnvironment Server WMI Classes
+
 The `SMS_VirtualEnvironment` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,61 +28,61 @@ Class SMS_UserApplicationRequestHistoryItem :
 ```
 
 ## Methods
- The `SMS_UserApplicationRequestHistoryItem` class does not define any methods.
+
+The `SMS_UserApplicationRequestHistoryItem` class does not define any methods.
 
 ## Properties
- `IsReadOnly`
- Data type: `Boolean`
 
- Access type: Read/Write
+`IsReadOnly` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Flag to indicate the virtual environment is read-only.
+Qualifiers: none
 
- `LocalizedInformation`
- Data type: `SMS_CI_LocalizedProperties` Array
+Flag to indicate the virtual environment is read-only.
 
- Access type: Read/Write
+`LocalizedInformation` Data type: `SMS_CI_LocalizedProperties` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Localized information.
+Qualifiers: [lazy]
 
- `NumReferringApplications`
- Data type: `UInt32`
+Localized information.
 
- Access type: Read
+`NumReferringApplications` Data type: `UInt32`
 
- Qualifiers: [read, not_null]
+Access type: Read
 
- The number of referring applications.
+Qualifiers: [read, not_null]
 
- `NumReferringDeploymentTypes`
- Data type: `UInt32`
+The number of referring applications.
 
- Access type: Read
+`NumReferringDeploymentTypes` Data type: `UInt32`
 
- Qualifiers: [read, not_null]
+Access type: Read
 
- The number of referring deployment types.
+Qualifiers: [read, not_null]
 
- `ReferringDeploymentTypes`
- Data type: `UInt32` Array
+The number of referring deployment types.
 
- Access type: Read/Write
+`ReferringDeploymentTypes` Data type: `UInt32` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- A list of CI_IDs of the referring deployment types.
+Qualifiers: [lazy]
+
+A list of CI_IDs of the referring deployment types.
 
 ## Remarks
 
 ## Requirements
- Each time a request is updated, an instance of this class is created to track the history of the request.
+
+Each time a request is updated, an instance of this class is created to track the history of the request.
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

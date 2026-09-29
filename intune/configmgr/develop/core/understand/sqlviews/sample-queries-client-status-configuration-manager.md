@@ -1,7 +1,7 @@
 ---
-title: Sample queries for client status
+title: "Sample queries for client status in Configuration Manager"
 description: Sample queries that show how to join common client status views to other views.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 

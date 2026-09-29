@@ -1,7 +1,7 @@
 ---
 title: Requirements for Windows Autopilot device association
 description: Software, networking, licensing, and RBAC requirements for Windows Autopilot device association.
-ms.date: 08/25/2026
+ms.date: "2026-08-25T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: article
@@ -20,7 +20,14 @@ The list of requirements for Windows Autopilot device association is organized i
 
 Select the appropriate tab to see the relevant requirements:
 
-## [:::image type="icon" source="../../images/icons/software-18.svg"::: **Software**](#tab/software)
+- [![](../../images/icons/software-18.svg) **Software**](#tabpanel_1_software)
+- [![](../../images/icons/wifi-ethernet-18.svg) **Networking**](#tabpanel_1_networking)
+- [![](../../images/icons/license-18.svg) **Licensing**](#tabpanel_1_licensing)
+- [![](../../images/icons/permissions-18.svg) **RBAC**](#tabpanel_1_rbac)
+
+<a id="tabpanel_1_software"></a>
+
+
 
 ### Software requirements
 
@@ -40,17 +47,19 @@ The following editions are supported:
 - Windows 11 Pro for Workstations.
 - Windows 11 Enterprise.
 - Windows 11 Education.
-- [Windows 11 Enterprise LTSC](/windows/whats-new/ltsc/overview).
+- [Windows 11 Enterprise LTSC](https://learn.microsoft.com/en-us/windows/whats-new/ltsc/overview).
 
 #### Trusted Platform Module (TPM)
 
 Device association requires a **physical device**—virtual machines aren't supported. Each device must have **TPM 2.0**, enabled and in a good state. The TPM shouldn't be in **Reduced Functionality Mode**. TPM attestation is enforced during association: device association uses the TPM to attest the device's identity before enrollment.
 
-## [:::image type="icon" source="../../images/icons/wifi-ethernet-18.svg"::: **Networking**](#tab/networking)
+<a id="tabpanel_1_networking"></a>
+
+
 
 ### Networking requirements
 
-Device association builds on Windows Autopilot device preparation and has the same baseline networking requirements. For the full list of endpoints and network configuration, see [Windows Autopilot device preparation requirements](../requirements.md?tabs=networking).
+Device association builds on Windows Autopilot device preparation and has the same baseline networking requirements. For the full list of endpoints and network configuration, see [Windows Autopilot device preparation requirements](https://learn.microsoft.com/en-us/autopilot/device-preparation/requirements?tabs=networking).
 
 In addition to the baseline requirements, allow HTTPS access over TCP port 443 to the following endpoints:
 
@@ -68,13 +77,17 @@ In addition to the baseline requirements, allow HTTPS access over TCP port 443 t
 - `https://peapdamaa89.jpe.attest.azure.net`
 - `https://peapdamaa93.weu.attest.azure.net`
 
-## [:::image type="icon" source="../../images/icons/license-18.svg"::: **Licensing**](#tab/licensing)
+<a id="tabpanel_1_licensing"></a>
+
+
 
 ### Licensing requirements
 
-Device association is part of Windows Autopilot device preparation and has the same licensing requirements. For the full list of supported subscriptions, see [Windows Autopilot device preparation requirements](../requirements.md?tabs=licensing).
+Device association is part of Windows Autopilot device preparation and has the same licensing requirements. For the full list of supported subscriptions, see [Windows Autopilot device preparation requirements](https://learn.microsoft.com/en-us/autopilot/device-preparation/requirements?tabs=licensing).
 
-## [:::image type="icon" source="../../images/icons/permissions-18.svg"::: **RBAC**](#tab/rbac)
+<a id="tabpanel_1_rbac"></a>
+
+
 
 ### Required RBAC permissions
 
@@ -108,16 +121,14 @@ The following role-based access control (RBAC) permissions are required in an In
 To create a custom role with these permissions for use with Windows Autopilot device association:
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
-1. Select **Tenant administration** > **Roles**.
-1. Select **Create** > **Intune role**.
-1. On the **Basics** page, enter a name and description for the custom role, and then select **Next**.
-1. On the **Permissions** page, set each of the permissions listed previously to **Yes**. Leave all other permissions at the default of **No**.
-1. On the **Scope tags** page, select **Next**.
-1. On the **Review + create** page, verify that all permissions are correct, and then select **Create**.
+2. Select **Tenant administration** &gt; **Roles**.
+3. Select **Create** &gt; **Intune role**.
+4. On the **Basics** page, enter a name and description for the custom role, and then select **Next**.
+5. On the **Permissions** page, set each of the permissions listed previously to **Yes**. Leave all other permissions at the default of **No**.
+6. On the **Scope tags** page, select **Next**.
+7. On the **Review + create** page, verify that all permissions are correct, and then select **Create**.
 
-The new custom role can now be assigned to users who manage Windows Autopilot device association. For more information, see [Role-based access control (RBAC) with Microsoft Intune](/intune/fundamentals/role-based-access-control/overview).
-
----
+The new custom role can now be assigned to users who manage Windows Autopilot device association. For more information, see [Role-based access control (RBAC) with Microsoft Intune](../../../intune/fundamentals/role-based-access-control/overview.md).
 
 ## Next steps
 

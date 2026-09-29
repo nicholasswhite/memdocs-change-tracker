@@ -1,17 +1,18 @@
 ---
 description: Learn how to Repair an application using the Repair Windows Management Instrumentation (WMI) class method.
-title: Repair Method
-ms.date: 04/14/2026
+title: "Repair Method in Class CCM_Application"
+ms.date: "2026-04-14T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Repair Method in Class CCM_Application
 
 The `Repair` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that repairs an application.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -30,67 +31,60 @@ uint32 Repair
 
 ## Parameters
 
- `Id`
- Data type: `String`
+`Id` Data type: `String`
 
- Qualifiers: [id("0"), in]
+Qualifiers: [id("0"), in]
 
- Application identifier.
+Application identifier.
 
- `Revision`
- Data type: `String`
+`Revision` Data type: `String`
 
- Qualifiers: [id("1"), in]
+Qualifiers: [id("1"), in]
 
- Revision.
+Revision.
 
- `IsMachineTarget`
- Data type: `Boolean`
+`IsMachineTarget` Data type: `Boolean`
 
- Qualifiers: [id("2"), in]
+Qualifiers: [id("2"), in]
 
- `true` if the application targets a device.
+`true` if the application targets a device.
 
- `EnforcePreference`
- Data type: `UInt32`
+`EnforcePreference` Data type: `UInt32`
 
- Qualifiers: [id("3"), in, values]
+Qualifiers: [id("3"), in, values]
 
- Enforce preference. Possible values are:
+Enforce preference. Possible values are:
 
-|Value|Enforce preference|
-|-|-|
-|0|Immediate|
-|1|NonBusinessHours|
-|2|AdminSchedule|
+| Value | Enforce preference |
+| --- | --- |
+| 0 | Immediate |
+| 1 | NonBusinessHours |
+| 2 | AdminSchedule |
 
- `Priority`
- Data type: `String`
+`Priority` Data type: `String`
 
- Qualifiers: [id("4"), in, valuemap]
+Qualifiers: [id("4"), in, valuemap]
 
- Priority. Possible values are:
+Priority. Possible values are:
 
-|Value|
-|-|
-|Foreground|
-|High|
-|Normal|
-|Low|
+| Value |
+| --- |
+| Foreground |
+| High |
+| Normal |
+| Low |
 
- `IsRebootIfNeeded`
- Data type: `Boolean`
+`IsRebootIfNeeded` Data type: `Boolean`
 
- Qualifiers: [id("5"), in]
+Qualifiers: [id("5"), in]
 
- `true` if a reboot is needed.
+`true` if a reboot is needed.
 
- `JobId`
- Data type: `String`
+`JobId` Data type: `String`
 
- Qualifiers: [id("6"), out]
+Qualifiers: [id("6"), out]
 
- Job identifier.
+Job identifier.
 
 ## Remarks
 
@@ -98,8 +92,8 @@ uint32 Repair
 
 ## Runtime Requirements
 
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
 
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

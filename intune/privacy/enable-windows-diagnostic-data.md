@@ -1,7 +1,7 @@
 ---
 title: Enable Windows diagnostic data and license verification
 description: Learn how to enable Intune tenant settings to use Windows diagnostic data and verify Windows licenses required for dependent features.
-ms.date: 02/24/2026
+ms.date: "2026-02-24T00:00:00Z"
 ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
@@ -13,32 +13,15 @@ ms.collection:
 
 Some Microsoft Intune features require access to Windows diagnostic data or verification that the tenant owns eligible Windows licenses. Configure these requirements at the tenant level so dependent features can function correctly.
 
-<!--
-## Prerequisites
-
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../includes/requirements/rbac.md)]
-
-:::column-end:::
-:::column span="3":::
-> To enable Windows diagnostic data and license verification, use an account with at least one of the following roles:
-> - [Intune Administrator]
-> - [Custom role][INT-RC] that includes:
->   - The permission **/**
-
-:::column-end:::
-:::row-end:::
--->
-
 ## Enable Windows diagnostic data
 
 To allow Intune to access Windows diagnostic data collected from enrolled devices:
 
-1. In the [Microsoft Intune admin center], select **Tenant administration** > **Connectors and tokens** > **Windows data**.
-1. Toggle **Enable features that require Windows diagnostic data in processor configuration** to **On**. The default is *Off*.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Tenant administration** &gt; **Connectors and tokens** &gt; **Windows data**.
+2. Toggle **Enable features that require Windows diagnostic data in processor configuration** to **On**. The default is *Off*.
 
 > [!NOTE]
+>
 > There are multiple ways to enable Windows diagnostic data for a tenant. This toggle reflects only your configuration choice for **Intune features**.
 >
 > Turning this setting **Off** disables Intune features that rely on this configuration, but it might not disable processor configuration that was enabled by other methods.
@@ -51,7 +34,7 @@ Features that require Windows diagnostic data include:
 - Expedited quality update policies with alerts for Windows expedited update failures
 - Feature update policies with alerts for feature update failures
 
-To learn more about this configuration, see [Enable Windows diagnostic data processor configuration](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enable-windows-diagnostic-data-processor-configuration) in the Windows privacy documentation.
+To learn more about this configuration, see [Enable Windows diagnostic data processor configuration](https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#enable-windows-diagnostic-data-processor-configuration) in the Windows privacy documentation.
 
 ## Enable Windows license verification
 
@@ -59,8 +42,8 @@ Some Intune features require an attestation that your tenant owns eligible Windo
 
 To attest ownership of the required Windows licenses:
 
-1. In the [Microsoft Intune admin center], select [**Tenant administration**] > [**Connectors and tokens**] > [**Windows data**].
-1. Toggle **I confirm that my tenant owns one of these licenses** to **On**. By default, it's *Off*.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Tenant administration**](https://intune.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/TenantAdminMenu) &gt; [**Connectors and tokens**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/%7E/connectorsAndTokens) &gt; [**Windows data**].
+2. Toggle **I confirm that my tenant owns one of these licenses** to **On**. By default, it's *Off*.
 
 Supported licenses:
 
@@ -75,15 +58,4 @@ Features that require license verification include:
 
 ## Next steps
 
-To understand how Windows diagnostic data is collected and managed, see [Configure Windows diagnostic data in your organization](/windows/privacy/configure-windows-diagnostic-data-in-your-organization) in the Windows privacy documentation.
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Connectors and tokens**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/~/connectorsAndTokens
-[**Tenant administration**]: https://intune.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/TenantAdminMenu
-
-<!-- Role links-->
-
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role.md
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator
+To understand how Windows diagnostic data is collected and managed, see [Configure Windows diagnostic data in your organization](https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization) in the Windows privacy documentation.

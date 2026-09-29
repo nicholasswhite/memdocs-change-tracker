@@ -1,7 +1,7 @@
 ---
-title: What are cloud-native Windows endpoints
+title: "Learn more about cloud-native endpoints"
 description: Learn more about cloud-native endpoints and what they are. See a list of benefits, and the effect on end users and IT administrators. Cloud-native endpoints help with remote workers and hybrid workers, and use Microsoft Intune to manage devices.
-ms.date: 05/28/2026
+ms.date: "2026-05-28T00:00:00Z"
 ms.topic: overview
 ms.keywords: cloud native Windows, cloud-native Windows endpoint, Intune cloud native, Windows Autopilot cloud native, cloud native endpoint setup
 ms.collection:
@@ -13,7 +13,13 @@ ms.collection:
 # Learn more about cloud-native endpoints
 
 > [!TIP]
-> [!INCLUDE [cloud-native-endpoints-definitions](../../includes/cloud-native-endpoints-definitions.md)]
+>
+> When reading about cloud native endpoints, you see the following terms:
+>
+> - **Endpoint**: An endpoint is a device, like a mobile phone, tablet, laptop, or desktop computer. "Endpoints" and "devices" are used interchangeably.
+> - **Managed endpoints**: Endpoints that receive policies from the organization using an MDM solution or Group Policy Objects. These devices are typically organization owned, but can also be BYOD or personally owned devices.
+> - **Cloud native endpoints**: Endpoints that are joined to Microsoft Entra. They aren't joined to on-premises AD.
+> - **Workload**: Any program, service, or process.
 
 Organizations are focusing on supporting remote and hybrid workers. With cloud-native endpoints, organizations can:
 
@@ -24,22 +30,18 @@ Organizations are focusing on supporting remote and hybrid workers. With cloud-n
 
 In this set of articles, you will:
 
-- :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Learn about cloud-native endpoints** and the benefits to organizations and end users (this article).
-
-- :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Step through a tutorial** that creates a Windows device that's cloud-native:
+- ![](../../media/icons/16/check.svg) **Learn about cloud-native endpoints** and the benefits to organizations and end users (this article).
+- ![](../../media/icons/16/check.svg) **Step through a tutorial** that creates a Windows device that's cloud-native:
 
   - [Tutorial: Set up cloud-native Windows endpoints with Microsoft Intune](tutorial-cloud-native-setup.md)
-
-- :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Learn more about the Microsoft Entra concepts** that are part of cloud-native endpoints, including accessing on-premises resources:
+- ![](../../media/icons/16/check.svg) **Learn more about the Microsoft Entra concepts** that are part of cloud-native endpoints, including accessing on-premises resources:
 
   - [Entra joined vs. Hybrid Entra joined](entra-join-types.md)
   - [Cloud-native endpoints and on-premises resources](on-premises-resources.md)
-
-- :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Get guidance and advice** on moving your workloads and your organization to become cloud-native:
+- ![](../../media/icons/16/check.svg) **Get guidance and advice** on moving your workloads and your organization to become cloud-native:
 
   - [High level planning guide to move to cloud-native endpoints](planning-guide.md)
-
-- :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Read about some scenarios** that can affect your cloud-native migration:
+- ![](../../media/icons/16/check.svg) **Read about some scenarios** that can affect your cloud-native migration:
 
   - [Known issues and important information](troubleshoot.md)
 
@@ -51,7 +53,7 @@ A cloud-native endpoint doesn't necessarily live exclusively in the cloud. Inste
 
 These endpoints can be located anywhere that has internet access. They can also be physical devices or virtual machines.
 
-From a technical perspective, cloud-native endpoints are Windows devices that are deployed using [Windows Autopilot](/autopilot/overview), joined to Microsoft Entra ([Microsoft Entra joined devices](/entra/identity/devices/concept-directory-join)), and are automatically enrolled in a Mobile Device Management (MDM) solution, like [Microsoft Intune](../../fundamentals/what-is-intune.md).
+From a technical perspective, cloud-native endpoints are Windows devices that are deployed using [Windows Autopilot](../../../autopilot/overview.md), joined to Microsoft Entra ([Microsoft Entra joined devices](https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join)), and are automatically enrolled in a Mobile Device Management (MDM) solution, like [Microsoft Intune](../../fundamentals/what-is-intune.md).
 
 A cloud-native endpoint has the following characteristics:
 
@@ -61,7 +63,7 @@ A cloud-native endpoint has the following characteristics:
 - Includes configuration, data, and applications that are portable and roam with the user
 - Doesn't generally require a direct connection to any on-premises resources for usability or management
 
-For end users, they only need an internet connection. Their data and critical settings can be automatically preserved and restored using [Enterprise State Roaming](/entra/identity/devices/enterprise-state-roaming-faqs), or similar solutions. If end users experience issues during deployment or at any time, then they can reset and reprovision the device without contacting support.
+For end users, they only need an internet connection. Their data and critical settings can be automatically preserved and restored using [Enterprise State Roaming](https://learn.microsoft.com/en-us/entra/identity/devices/enterprise-state-roaming-faqs), or similar solutions. If end users experience issues during deployment or at any time, then they can reset and reprovision the device without contacting support.
 
 Microsoft recommends that organizations focus on adopting cloud-native endpoints.
 
@@ -76,28 +78,23 @@ Cloud-native endpoints provide many benefits to end users and IT:
   Microsoft Entra joined endpoints do the initial sign-in using an internet connection. The Microsoft Entra joined sign-in process doesn't use an on-premises domain controller for connectivity, and is faster than a traditional domain-based sign-in.
 
   Traditional domain joined PCs require connectivity to domain controllers for initial sign-in.
-
 - **Deploy from anywhere**
 
   To deploy new devices, administrators can be anywhere with an internet connection. You can provision or reset devices, and have the devices ready quicker than traditional provisioning, possibly in minutes. The reliance on on-premises resources is reduced, which simplifies the endpoint requirements and endpoint management.
-
 - **Simplified management for all platforms**
 
   Users and administrators get a unified management experience for all platforms, including Android, iOS/iPadOS, macOS, and Windows. With Intune, you can manage mobile and non-mobile devices and operating systems. You don't need to rely on complex group policy management.
-
 - **Provide a secure Single-Sign-On (SSO) experience to cloud and on-premises apps**
 
-  Cloud-native endpoints include native single sign-on (SSO) for cloud and [on-premises resources](/entra/identity/devices/device-sso-to-on-premises-resources), such as file servers, print servers, and web applications.
-
+  Cloud-native endpoints include native single sign-on (SSO) for cloud and [on-premises resources](https://learn.microsoft.com/en-us/entra/identity/devices/device-sso-to-on-premises-resources), such as file servers, print servers, and web applications.
 - **Secure access without passwords**
 
-  With [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview), end users can sign in to their device, and access resources without passwords.
+  With [Windows Hello for Business](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-overview), end users can sign in to their device, and access resources without passwords.
 
-  For more specific information, go to [Password-less Strategy](/windows/security/identity-protection/hello-for-business/passwordless-strategy).
-
+  For more specific information, go to [Password-less Strategy](https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/passwordless-strategy).
 - **Seamless experience for documents, settings, and preferences**
 
-  With [OneDrive](/onedrive/plan-onedrive-enterprise), end users automatically gain access to their documents, can restore any previous Office and Windows settings, and avoid spending time recovering data.
+  With [OneDrive](https://learn.microsoft.com/en-us/onedrive/plan-onedrive-enterprise), end users automatically gain access to their documents, can restore any previous Office and Windows settings, and avoid spending time recovering data.
 
   For example, you can store the following user data on OneDrive:
 
@@ -120,7 +117,6 @@ The [High level planning guide to move to cloud-native endpoints](planning-guide
   - Get your end users ready for change.
 
   For more specific information, go to the [High level planning guide to move to cloud-native endpoints](planning-guide.md).
-
 - **Create a Proof of Concept**: Do an initial proof of concept (POC). The goal is to understand changes and their impact.
 
   For more specific information, go to the [High level planning guide to move to cloud-native endpoints](planning-guide.md).

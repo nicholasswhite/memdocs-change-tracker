@@ -1,16 +1,18 @@
 ---
-title: GetTSRelatedToDriverCategory Method
+title: "GetTSRelatedToDriverCategory Method in Class SMS_TaskSequencePackage"
 description: The GetTSRelatedToDriverCategory WMI class method gets task sequence packages related to the specified category.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetTSRelatedToDriverCategory Method in Class SMS_TaskSequencePackage
+
 The `GetTSRelatedToDriverCategory` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that gets task sequence packages related to the specified category.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,36 +26,37 @@ uint32 GetTSRelatedToDriverCategory
 ```
 
 ## Parameters
- `CategoryUniqueId`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`CategoryUniqueId` Data type: `String`
 
- Unique ID of the category instance. This ID is unique across sites. The string length can be up to 512 characters.
+Qualifiers: [id("0"), in]
 
- `PacakgeIds`
- Data type: `String` Array
+Unique ID of the category instance. This ID is unique across sites. The string length can be up to 512 characters.
 
- Qualifiers: [id("2"), out]
+`PacakgeIds` Data type: `String` Array
 
- Package identifiers for packages related to the specified category.
+Qualifiers: [id("2"), out]
+
+Package identifiers for packages related to the specified category.
 
 > [!NOTE]
->  The incorrect spelling of the variable "PacakgeIds" is hardcoded in WMI.
+>
+> The incorrect spelling of the variable "PacakgeIds" is hardcoded in WMI.
 
- `PackageNames`
- Data type: `String` Array
+`PackageNames` Data type: `String` Array
 
- Qualifiers: [id("3"), out]
+Qualifiers: [id("3"), out]
 
- Package names for packages related to the specified category.
+Package names for packages related to the specified category.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: SMS_CM_RES_COLL_CollectionID Class
+title: "SMS_CM_RES_COLL_CollectionID Server WMI Class"
 description: The SMS_CM_RES_COLL_CollectionID Windows Management Instrumentation class represents a particular member of an SMS_Collection Server WMI Class object by collection ID.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_CM_RES_COLL_CollectionID Server WMI Class
-The `SMS_CM_RES_COLL_CollectionID` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a particular member of an [SMS_Collection Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md) object by collection ID.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_CM_RES_COLL_CollectionID Server WMI Class
+
+The `SMS_CM_RES_COLL_CollectionID` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a particular member of an [SMS_Collection Server WMI Class](sms_collection-server-wmi-class.md) object by collection ID.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,186 +40,174 @@ Class SMS_CM_RES_COLL_CollectionID : SMS_CollectionMember
 ```
 
 ## Methods
- The `SMS_CM_RES_COLL_CollectionID` class does not define any methods.
+
+The `SMS_CM_RES_COLL_CollectionID` class does not define any methods.
 
 ## Properties
- `ClientType`
- Data type: `UInt32`
 
- Access type: Read Only
+`ClientType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- Type of client. Possible values are:
+Qualifiers: None
+
+Type of client. Possible values are:
 
 | Value | Client type |
-| ----- | ----------- |
-|1|Advanced|
-|3|Device|
+| --- | --- |
+| 1 | Advanced |
+| 3 | Device |
 
- `Domain`
- Data type: `String`
+`Domain` Data type: `String`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `IsActive`
- Data type: `Boolean`
+`IsActive` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the collection member is active.
+`true` if the collection member is active.
 
- `IsAlwaysInternet`
- Data type: `Boolean`
+`IsAlwaysInternet` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` to always use the Internet.
+`true` to always use the Internet.
 
- `IsApproved`
- Data type: `UInt32`
+`IsApproved` Data type: `UInt32`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- Whether the resource is approved. Possible values are:
+Whether the resource is approved. Possible values are:
 
 | Value | Approval type |
-| ----- | ------------- |
-|0|Not approved|
-|1|Approved|
-|2|Not applicable|
+| --- | --- |
+| 0 | Not approved |
+| 1 | Approved |
+| 2 | Not applicable |
 
- `IsAssigned`
- Data type: `Boolean`
+`IsAssigned` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `IsBlocked`
- Data type: `Boolean`
+`IsBlocked` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the collection member is blocked.
+`true` if the collection member is blocked.
 
- `IsClient`
- Data type: `Boolean`
+`IsClient` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `IsDecommissioned`
- Data type: `Boolean`
+`IsDecommissioned` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the collection member is decommissioned.
+`true` if the collection member is decommissioned.
 
- `IsDirect`
- Data type: `Boolean`
+`IsDirect` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `IsInternetEnabled`
- Data type: `Boolean`
+`IsInternetEnabled` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the collection member is enabled for the Internet.
+`true` if the collection member is enabled for the Internet.
 
- `IsObsolete`
- Data type: `Boolean`
+`IsObsolete` Data type: `Boolean`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- `true` if the collection member is obsolete.
+`true` if the collection member is obsolete.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `ResourceID`
- Data type: `UInt32`
+`ResourceID` Data type: `UInt32`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `ResourceType`
- Data type: `UInt32`
+`ResourceType` Data type: `UInt32`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `SiteCode`
- Data type: `String`
+`SiteCode` Data type: `String`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: [SizeLimit("3")]
+Qualifiers: [SizeLimit("3")]
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
- `SMSID`
- Data type: `String`
+`SMSID` Data type: `String`
 
- Access type: Read Only
+Access type: Read Only
 
- Qualifiers: None
+Qualifiers: None
 
- See [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+See [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md).
 
 ## Remarks
- The `CollectionID` property of a collection is the unique collection identifier assigned when the collection is created. The SMS Provider creates several default `SMS_CM_RES_COLL_``CollectionID` classes at installation time for collection IDs with values beginning with "SMS". For example, SMS_CM_RES_COLL_`SMS00004` identifies all Windows NT Workstation systems.
 
- This class is deleted automatically if the associated collection is deleted.
+The `CollectionID` property of a collection is the unique collection identifier assigned when the collection is created. The SMS Provider creates several default ``` SMS_CM_RES_COLL_``CollectionID ``` classes at installation time for collection IDs with values beginning with "SMS". For example, SMS_CM_RES_COLL_`SMS00004` identifies all Windows NT Workstation systems.
+
+This class is deleted automatically if the associated collection is deleted.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Collection Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)
- [SMS_CollectionMember Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md)
+
+[SMS_Collection Server WMI Class](sms_collection-server-wmi-class.md) [SMS_CollectionMember Server WMI Class](sms_collectionmember-server-wmi-class.md)

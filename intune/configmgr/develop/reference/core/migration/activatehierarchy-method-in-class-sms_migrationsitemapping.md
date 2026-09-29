@@ -1,7 +1,7 @@
 ---
-title: ActivateHierarchy method
+title: "ActivateHierarchy Method in Class SMS_MigrationSiteMapping"
 description: The technical details of the ActivateHierarchy method in the SMS_MigrationSiteMapping WMI class.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -10,13 +10,13 @@ ms.service: configuration-manager
 
 # ActivateHierarchy Method in Class SMS_MigrationSiteMapping
 
-The `ActivateHierarchy` WMI class method in Configuration Manager activates the hierarchy.  
+The `ActivateHierarchy` WMI class method in Configuration Manager activates the hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.  
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
-## Syntax  
+## Syntax
 
-```  
+```
 SInt32 ActivateHierarchy (  
      String sourceSite,  
      String wmiAccount,  
@@ -24,57 +24,61 @@ SInt32 ActivateHierarchy (
      String destinationSiteCode,  
      String scheduleToken  
 );  
-```  
+```
 
-#### Parameters  
- `sourceSite`  
- Data type: `String` Array  
+#### Parameters
 
- Qualifiers: [in]  
+`sourceSite`  
+ Data type: `String` Array
 
- The source site FQDN, netBIOS name or IP address.  
+Qualifiers: [in]
 
- `wmiAccount`  
- Data type: `String` Array  
+The source site FQDN, netBIOS name or IP address.
 
- Qualifiers: `[in]`  
+`wmiAccount`  
+ Data type: `String` Array
 
- The account name to access the WMI provider on the source site.  
+Qualifiers: `[in]`
 
- `sqlAccount`  
- Data type: `String` Array  
+The account name to access the WMI provider on the source site.
 
- Qualifiers: [in]  
+`sqlAccount`  
+ Data type: `String` Array
 
- The account name to access SQL Server on the source site.  
+Qualifiers: [in]
 
- `destinationSiteCode`  
- Data type: `String` Array  
+The account name to access SQL Server on the source site.
 
- Qualifiers: `[in]`  
+`destinationSiteCode`  
+ Data type: `String` Array
 
- The destination site's site code. This should be the top site.  
+Qualifiers: `[in]`
 
- `scheduleToken`  
- Data type: `String` Array  
+The destination site's site code. This should be the top site.
 
- Qualifiers: [in]  
+`scheduleToken`  
+ Data type: `String` Array
 
- The schedule for the data gathering job.  
+Qualifiers: [in]
 
-## Return Values  
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.  
+The schedule for the data gathering job.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+## Return Values
 
-## Requirements  
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).  
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../core/understand/about-configuration-manager-errors.md).
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).
 
 ## See also
 
-[SMS_MigrationEntity Server WMI Class](../../../../develop/reference/core/migration/sms_migrationentity-server-wmi-class.md)
+[SMS_MigrationEntity Server WMI Class](sms_migrationentity-server-wmi-class.md)

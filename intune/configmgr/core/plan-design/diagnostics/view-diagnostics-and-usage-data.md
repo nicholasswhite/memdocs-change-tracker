@@ -1,7 +1,7 @@
 ---
-title: View diagnostics data
+title: "How to view diagnostics and usage data for Configuration Manager"
 description: View diagnostic and usage data to confirm that your Configuration Manager hierarchy contains no sensitive information.
-ms.date: 11/15/2021
+ms.date: "2021-11-15T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -20,7 +20,7 @@ The information in this article gives you a view of the exact data sent to Micro
 
 Use the following SQL command to view the contents of this table and show the exact data that's sent:
 
-``` SQL
+```SQL
 SELECT * FROM TEL_TelemetryResults
 ```
 
@@ -41,34 +41,31 @@ When you view the raw data, a common hashed value appears in each row of data. T
 ### How the one-way hash works
 
 1. Get your support ID from the Configuration Manager console. Select the arrow in the upper left corner of the ribbon, and then choose **About Configuration Manager**. You can select and copy the support ID from the window that opens.
-
 2. Use the following Windows PowerShell script to do the one-way hash of your support ID.
 
-    ``` PowerShell
-    Param( [Parameter(Mandatory=$True)] [string]$value )
-      $guid = [System.Guid]::NewGuid()
-      if( [System.Guid]::TryParse($value,[ref] $guid) -eq $true ) {
-      #many of the values we hash are Guids
-      $bytesToHash = $guid.ToByteArray()
-    } else {
-      #otherwise hash as string (unicode)
-      $ue = New-Object System.Text.UnicodeEncoding
-      $bytesToHash = $ue.GetBytes($value)
-    }
-      # Load Hash Provider (https://en.wikipedia.org/wiki/SHA-2)
-    $hashAlgorithm = [System.Security.Cryptography.SHA256Cng]::Create()
-    # Hash the input
-    $hashedBytes = $hashAlgorithm.ComputeHash($bytesToHash)
-    # Base64 encode the result for transport
-    $result = [Convert]::ToBase64String($hashedBytes)
-    return $result
-    ```
-
-1. Compare the script output against the GUID in the raw data. This process shows how the data is obscured.
+   ```PowerShell
+   Param( [Parameter(Mandatory=$True)] [string]$value )
+     $guid = [System.Guid]::NewGuid()
+     if( [System.Guid]::TryParse($value,[ref] $guid) -eq $true ) {
+     #many of the values we hash are Guids
+     $bytesToHash = $guid.ToByteArray()
+   } else {
+     #otherwise hash as string (unicode)
+     $ue = New-Object System.Text.UnicodeEncoding
+     $bytesToHash = $ue.GetBytes($value)
+   }
+     # Load Hash Provider (https://en.wikipedia.org/wiki/SHA-2)
+   $hashAlgorithm = [System.Security.Cryptography.SHA256Cng]::Create()
+   # Hash the input
+   $hashedBytes = $hashAlgorithm.ComputeHash($bytesToHash)
+   # Base64 encode the result for transport
+   $result = [Convert]::ToBase64String($hashedBytes)
+   return $result
+   ```
+3. Compare the script output against the GUID in the raw data. This process shows how the data is obscured.
 
 ## Next steps
 
 Next, learn about the levels of diagnostics and usage data that Configuration Manager collects:
 
-> [!div class="nextstepaction"]
-> [Levels of diagnostic usage data](levels-overview.md)
+[Levels of diagnostic usage data](levels-overview.md)

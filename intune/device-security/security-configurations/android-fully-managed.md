@@ -1,14 +1,14 @@
 ---
-title: Android Enterprise security configurations for corporate-owned fully managed profiles
+title: "Android Enterprise fully managed device security configuration examples"
 description: Review example configurations of basic, enhanced, and high security for devices with Android Enterprise corporate-owned fully managed profiles.
-ms.date: 03/26/2025
+ms.date: "2025-03-26T00:00:00Z"
 ms.topic: reference
 ms.reviewer:
 ---
 
 # Android Enterprise fully managed device security configuration examples
 
-In support of the [Microsoft Zero Trust security model](/security/zero-trust/zero-trust-identity-device-access-policies-common), this article provides example configurations to use with Microsoft Intune to configure both device compliance policy and device restriction policy for Android Enterprise fully managed mobile users. These examples include levels of device security configuration that align with Zero Trust principles.
+In support of the [Microsoft Zero Trust security model](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-identity-device-access-policies-common), this article provides example configurations to use with Microsoft Intune to configure both device compliance policy and device restriction policy for Android Enterprise fully managed mobile users. These examples include levels of device security configuration that align with Zero Trust principles.
 
 When using these examples, work with your security team to evaluate the threat environment, risk appetite, and the effect the different levels and configurations can have on usability. After reviewing and adjusting the examples to meet the needs of your organization, implement a ring deployment approach for initial testing followed by production use.
 
@@ -32,14 +32,14 @@ Tables in the following sections list only the settings that are included in the
 ### Device compliance (level 1)
 
 | Section | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | Device Health | Play Integrity Verdict | Check basic integrity | This setting requires devices to pass Google's Play Integrity API's basic integrity check. It verifies that the device is in a reasonably secure state, which means it isn't rooted or running a custom ROM. |
-| Device Properties | Minimum OS version | Format: Major.Minor<br>Example: 9.0| Microsoft recommends configuring the minimum Android major version to match the supported Android versions for Microsoft apps. OEMs and devices adhering to Android Enterprise recommended requirements must support the current shipping release + one letter upgrade. Currently, Android recommends Android 9.0 and later for knowledge workers. <br><br> For Android's latest recommendations, see [Android Enterprise Recommended requirements](https://www.android.com/enterprise/recommended/requirements/). |
+| Device Properties | Minimum OS version | Format: Major.Minor Example: 9.0 | Microsoft recommends configuring the minimum Android major version to match the supported Android versions for Microsoft apps. OEMs and devices adhering to Android Enterprise recommended requirements must support the current shipping release + one letter upgrade. Currently, Android recommends Android 9.0 and later for knowledge workers.    For Android's latest recommendations, see [Android Enterprise Recommended requirements](https://www.android.com/enterprise/recommended/requirements/). |
 | Device Properties | Minimum security patch level | Not configured | Android devices can receive monthly security patches, but the release is dependent on OEMs and/or carriers. Organizations should ensure that deployed Android devices do receive security updates before implementing this setting. For the latest patch releases, see [Android Security Bulletins](https://source.android.com/security/bulletin/). |
 | System Security | Require a password to unlock mobile devices | Require |  |
 | System Security | Required password type | Numeric Complex | Organizations might need to update this setting to match their password policy. |
 | System Security | Minimum password length | 6 | Organizations might need to update this setting to match their password policy. |
-| System Security | Maximum minutes of inactivity before password is required | 5 | Organizations might need to update this setting to match their password policy.|
+| System Security | Maximum minutes of inactivity before password is required | 5 | Organizations might need to update this setting to match their password policy. |
 | System Security | Require encryption of data storage on device | Require |  |
 | System Security | Intune app runtime integrity | Require |  |
 | Actions for noncompliance | Mark device noncompliant | Immediately | By default, the policy is configured to mark the device as noncompliant. Additional actions are available. For more information, see [Configure actions for noncompliant devices in Intune](../compliance/configure-noncompliance-actions.md). |
@@ -47,13 +47,13 @@ Tables in the following sections list only the settings that are included in the
 ### Device restrictions (level 1)
 
 | Section | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | General | Default permission policy (work profile-level) | Device Default |  |
 | General | USB file transfer | Block |  |
 | General | External media | Block |  |
 | General | Factory reset | Block |  |
 | General | Data sharing between work and personal profiles | Device Default |  |
-| System security | Threat scan on apps |Require |  |
+| System security | Threat scan on apps | Require |  |
 | Device experience | Enrollment profile type | Fully managed |  |
 | Device experience | Device experience type | Not configured | Organizations can choose to implement Microsoft Launcher to ensure a consistent home screen experience on Fully managed devices. For more information, see [How to Setup Microsoft Launcher on Android Enterprise Fully Managed Devices with Intune](https://techcommunity.microsoft.com/t5/intune-customer-success/how-to-setup-microsoft-launcher-on-android-enterprise-fully/ba-p/1482134). |
 | Device password | Required password type | Numeric complex |  |
@@ -76,16 +76,16 @@ The level 2 settings include all the policy settings recommended for level 1. Ho
 ### Device compliance (level 2)
 
 | Section | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | System Security | Number of days until password expires | 365 | Organizations might need to update this setting to match their password policy. |
-| System Security |    Number of passwords required before user can reuse a password | 5 | Organizations might need to update this setting to match their password policy. |
-| Device Health | Play Integrity Verdict | Check basic integrity & device integrity | Require devices to pass Play's basic integrity check and device integrity check. |
+| System Security | Number of passwords required before user can reuse a password | 5 | Organizations might need to update this setting to match their password policy. |
+| Device Health | Play Integrity Verdict | Check basic integrity &amp; device integrity | Require devices to pass Play's basic integrity check and device integrity check. |
 | Device Health | Check strong integrity using hardware-backed security features | Check strong integrity | Require devices to pass Play's strong integrity check. Not all devices support this type of check. Intune marks such devices as noncompliant. |
 
 ### Device restrictions (level 2)
 
 | Section | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | General | Factory reset protection emails | Google account email addresses |  |
 | General | List of email addresses (Google account email addresses option only) | example@gmail.com | Manually update this policy to specify the Google email addresses of device administrators that can unlock the devices after they're wiped. |
 | Device password | Number of days until password expires | 365 | Organizations might need to update this setting to match their password policy. |
@@ -97,7 +97,6 @@ The level 2 settings include all the policy settings recommended for level 1. Ho
 | Work profile password | Number of passwords required before user can reuse a password | 5 | Organizations might need to update this setting to match their password policy. |
 
 ## Fully managed high security (level 3)
-
 
 Level 3 is the recommended configuration for both:
 
@@ -118,23 +117,23 @@ The level 3 settings include all the policy settings recommended for level 2. Ho
 ### Device compliance (level 3)
 
 | Section | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
-| Microsoft Defender for Endpoint | Require the device to be at or under the machine risk score | Clear | This setting requires Microsoft Defender for Endpoint. For more information, see Enforce compliance for [Microsoft Defender for Endpoint with Conditional Access in Intune](../microsoft-defender/overview.md).<p> Customers should consider implementing Microsoft Defender for Endpoint or a mobile threat defense solution. It isn't necessary to deploy both. |
-| Device Health | Require the device to be at or under the Device Threat Level | Secured | This setting requires a mobile threat defense product. For more information, see [Mobile Threat Defense for enrolled devices](../mobile-threat-defense/create-compliance-policy.md).<p>Customers should consider implementing Microsoft Defender for Endpoint or a mobile threat defense solution. It isn't necessary to deploy both.|
-| Device Properties | Minimum OS version | Format: Major.Minor<br>Example: 11.0| Microsoft recommends configuring the minimum Android major version to match the supported Android versions for Microsoft apps. OEMs and devices adhering to Android Enterprise recommended requirements must support the current shipping release + one letter upgrade. Currently, Android recommends Android 9.0 and later for knowledge workers. <br><br> For Android's latest recommendations, see [Android Enterprise Recommended requirements](https://www.android.com/enterprise/recommended/requirements/). |
+| --- | --- | --- | --- |
+| Microsoft Defender for Endpoint | Require the device to be at or under the machine risk score | Clear | This setting requires Microsoft Defender for Endpoint. For more information, see Enforce compliance for [Microsoft Defender for Endpoint with Conditional Access in Intune](../microsoft-defender/overview.md). Customers should consider implementing Microsoft Defender for Endpoint or a mobile threat defense solution. It isn't necessary to deploy both. |
+| Device Health | Require the device to be at or under the Device Threat Level | Secured | This setting requires a mobile threat defense product. For more information, see [Mobile Threat Defense for enrolled devices](../mobile-threat-defense/create-compliance-policy.md). Customers should consider implementing Microsoft Defender for Endpoint or a mobile threat defense solution. It isn't necessary to deploy both. |
+| Device Properties | Minimum OS version | Format: Major.Minor Example: 11.0 | Microsoft recommends configuring the minimum Android major version to match the supported Android versions for Microsoft apps. OEMs and devices adhering to Android Enterprise recommended requirements must support the current shipping release + one letter upgrade. Currently, Android recommends Android 9.0 and later for knowledge workers.    For Android's latest recommendations, see [Android Enterprise Recommended requirements](https://www.android.com/enterprise/recommended/requirements/). |
 
 ### Device restrictions (level 3)
 
 | Section | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | General | Date and Time changes | Block |  |
 | General | Tethering and access to hotspots | Block |  |
 | General | Beam data using NFC (work profile-level) | Block |  |
 | General | Search work contacts and display work contact caller-ID in personal profile | Block |  |
-| Device password | Disabled lock screen features | - Unredacted notifications <br><br> - Trust Agents (work profile-level) |  |
+| Device password | Disabled lock screen features | - Unredacted notifications    - Trust Agents (work profile-level) |  |
 | Applications | App auto-updates (work profile-level) | Always | Organizations should adjust this setting as necessary as data plan charges might occur if app updates occur over the cellular network. |
 | Work profile password | Number of sign-in failures before wiping device | 5 | Organizations might need to update this setting to match their password policy. |
 
 ## Related articles
 
-[Configure security settings for personally-owned devices](./android-personally-owned.md)
+[Configure security settings for personally-owned devices](android-personally-owned.md)

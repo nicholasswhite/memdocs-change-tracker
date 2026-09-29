@@ -1,7 +1,7 @@
 ---
-title: Checklist for 2002
+title: "Checklist for installing update 2002 for Configuration Manager"
 description: Learn about actions to take before updating to Configuration Manager version 2002.
-ms.date: 05/11/2020
+ms.date: "2020-05-11T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: checklist
 ROBOTS: NOINDEX
@@ -13,18 +13,16 @@ ms.service: configuration-manager
 
 *Applies to: Configuration Manager (current branch)*
 
-When you use the current branch of Configuration Manager, you can install the in-console update for version 2002 to update your hierarchy from a previous version. <!-- baseline only statement:-->Version 2002 is also available as [baseline media](updates.md#bkmk_Baselines), so you can use the installation media to install the first site of a new hierarchy.
+When you use the current branch of Configuration Manager, you can install the in-console update for version 2002 to update your hierarchy from a previous version. Version 2002 is also available as [baseline media](updates.md#bkmk_Baselines), so you can use the installation media to install the first site of a new hierarchy.
 
-To get the update for version 2002, you must use a service connection point at the top-level site of your hierarchy. This site system role can be in online or offline mode. To download the update when your service connection point is offline, [use the service connection tool](use-the-service-connection-tool.md).<!-- SCCMDocs#1946 -->
+To get the update for version 2002, you must use a service connection point at the top-level site of your hierarchy. This site system role can be in online or offline mode. To download the update when your service connection point is offline, [use the service connection tool](use-the-service-connection-tool.md).
 
 After your hierarchy downloads the update package from Microsoft, find it in the console. In the **Administration** workspace, select the **Updates and Servicing** node.
 
 - When the update is listed as **Available**, the update is ready to install. Before installing version 2002, review the following information [about installing update 2002](#about-installing-update-2002) and the [checklist](#checklist) for configurations to make before starting the update.
-
 - If the update displays as **Downloading** and doesn't change, review the **hman.log** and **dmpdownloader.log** for errors.
 
   - The dmpdownloader.log may indicate that the dmpdownloader process is waiting for an interval before checking for updates. To restart the download of the update's redistribution files, restart the **SMS_Executive** service on the site server.
-
   - Another common download issue occurs when proxy server settings prevent downloads from `silverlight.dlservice.microsoft.com`, `download.microsoft.com`, and `go.microsoft.com`.
 
 For more information about installing updates, see [In-console updates and servicing](updates.md#bkmk_inconsole).
@@ -38,7 +36,6 @@ For more information about current branch versions, see [Baseline and update ver
 Install update 2002 at the top-level site of your hierarchy. Start the installation from your central administration site (CAS) or from your stand-alone primary site. After the update is installed at the top-level site, child sites have the following update behavior:
 
 - Child primary sites install the update automatically after the CAS finishes the installation of the update. You can use service windows to control when a site installs the update. For more information, see [Service windows for site servers](service-windows.md).
-
 - Manually update each secondary site from within the Configuration Manager console after the primary parent site finishes the update installation. Automatic update of secondary site servers isn't supported.
 
 ### Site system roles
@@ -50,6 +47,7 @@ When a site server installs the update, it automatically updates all of the site
 The first time you use a Configuration Manager console after the update has finished, you're prompted to update that console. You can also run the Configuration Manager setup on the computer that hosts the console, and choose the option to update the console. Install the update to the console as soon as possible. For more information, see [Install the Configuration Manager console](../deploy/install/install-consoles.md).
 
 > [!IMPORTANT]
+>
 > When you install an update at the CAS, be aware of the following limitations and delays that exist until all child primary sites also complete the update installation:
 >
 > - **Client upgrades** don't start. This includes automatic updates of clients and pre-production clients. Additionally, you can't promote pre-production clients to production until the last site completes the update installation. After the last site completes the update installation, client updates begin based on your configuration choices.
@@ -58,37 +56,7 @@ The first time you use a Configuration Manager console after the update has fini
 
 ### Early update ring
 
-<!-- SCCMDocs#1397 -->
-
 As of May 11, 2020, version 2002 is globally available for all customers to install. If you previously opted in to the early update ring, watch for an update to this current branch version.
-
-<!--
-At this time, version 2002 is released for the early update ring. To install this update, you need to opt-in. The following PowerShell script adds your hierarchy or standalone primary site to the early update ring for version 2002:
-
-[Version 2002 opt-in script](https://go.microsoft.com/fwlink/?linkid=2099733) <!-- This fwlink points to the script package on the Download Center, don't change the link here! Make any changes to the fwlink target -->
-
-<!--
-Microsoft digitally signs the script, and bundles it inside a signed self-extracting executable.
-
-> [!Note]
-> The version 2002 update is only applicable to sites running version 1810 or later.
-
-To opt-in to the early update ring:
-
-1. Open Windows PowerShell and **Run as administrator**
-1. Run the **EnableEarlyUpdateRing2002.ps1** script, using the following syntax:
-
-    `EnableEarlyUpdateRing2002.ps1 <SiteServer_Name> | SiteServer_IP>`
-
-    Where `SiteServer` refers to the central administration site or standalone primary site server. For example, `EnableEarlyUpdateRing2002.ps1 cmprimary01`
-
-1. Check for updates. For more information, see [Get available updates](install-in-console-updates.md#get-available-updates).
-
-The version 2002 update should now be available in the console.
-
-> [!Important]
-> This script only adds your site to the early update ring for version 2002. It's not a permanent change.
- -->
 
 ## Checklist
 
@@ -135,7 +103,7 @@ A site update can fail because of existing operational problems. Before you upda
 - The site database server
 - Remote site system roles on other servers
 
-For more information, see [Use the status system](use-status-system.md).
+For more information, see [Use the status system](use-status-system.md).
 
 ### Review file and data replication between sites
 
@@ -151,11 +119,11 @@ Use RLA to answer the following questions:
 - Are any links degraded?
 - Are there any errors?
 
-If there's a backlog, wait until it clears out. If the backlog is large, such as millions of records, then the link is in a bad state. Before updating the site, solve the replication issue. If you need further assistance, contact Microsoft Support.<!-- 2838129 -->
+If there's a backlog, wait until it clears out. If the backlog is large, such as millions of records, then the link is in a bad state. Before updating the site, solve the replication issue. If you need further assistance, contact Microsoft Support.
 
 #### File-based replication
 
-For [file-based replication](../../plan-design/hierarchy/file-based-replication.md), check all inboxes for a backlog on both sending and receiving sites. If there are lots of stuck or pending replication jobs, wait until they clear out.<!-- SCCMDocs#1792 -->
+For [file-based replication](../../plan-design/hierarchy/file-based-replication.md), check all inboxes for a backlog on both sending and receiving sites. If there are lots of stuck or pending replication jobs, wait until they clear out.
 
 - On the sending site, review **sender.log**.
 - On the receiving site, review **despooler log**.
@@ -172,7 +140,7 @@ For more information, see [Database replicas for management points](../deploy/co
 
 ### Set SQL Server Always On availability groups to manual failover
 
-If you use an availability group, make sure that the availability group is set to manual failover before you start the update installation. After the site has updated, you can restore failover to be automatic. For more information, see [Prepare to use an availability group](../deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
+If you use an availability group, make sure that the availability group is set to manual failover before you start the update installation. After the site has updated, you can restore failover to be automatic. For more information, see [Prepare to use an availability group](../deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
 ### Disable site maintenance tasks at each site
 
@@ -184,17 +152,17 @@ Before you install the update, disable any site maintenance task that might run 
 
 When a site database maintenance task runs during the update installation, the update installation can fail. Before you disable a task, record the schedule of the task so you can restore its configuration after the update has been installed.
 
-For more information, see [Maintenance tasks](maintenance-tasks.md) and [Reference for maintenance tasks](reference-for-maintenance-tasks.md).
+For more information, see [Maintenance tasks](maintenance-tasks.md) and [Reference for maintenance tasks](reference-for-maintenance-tasks.md).
 
 ### Temporarily stop any antivirus software
 
-Before you update a site, stop antivirus software on the Configuration Manager servers. The antivirus software can lock some files that need to be updated which causes our update to fail. <!--SMS.503481-->
+Before you update a site, stop antivirus software on the Configuration Manager servers. The antivirus software can lock some files that need to be updated which causes our update to fail.
 
 ### Create a backup of the site database
 
 Before you update a site, back up the site database at the CAS and primary sites. This backup makes sure you have a successful backup to use for disaster recovery.
 
-For more information, see [Backup and recovery](backup-and-recovery.md).
+For more information, see [Backup and recovery](backup-and-recovery.md).
 
 ### Back up customized files
 
@@ -206,20 +174,18 @@ For example, you add custom entries to the **osdinjection.xml** file in the `bin
 
 When you install a site update that also updates the client, test that new client update in pre-production before you update all production clients. To use this option, configure your site to support automatic upgrades for pre-production before beginning installation of the update.
 
-For more information, see [Upgrade clients](../../clients/manage/upgrade/upgrade-clients.md) and [How to test client upgrades in a pre-production collection](../../clients/manage/upgrade/test-client-upgrades.md).
+For more information, see [Upgrade clients](../../clients/manage/upgrade/upgrade-clients.md) and [How to test client upgrades in a pre-production collection](../../clients/manage/upgrade/test-client-upgrades.md).
 
 ### Plan to use service windows
 
-To define a period during which updates to a site server can be installed, use service windows. They can help you control when sites in your hierarchy install the update. For more information, see [Service windows for site servers](service-windows.md).
+To define a period during which updates to a site server can be installed, use service windows. They can help you control when sites in your hierarchy install the update. For more information, see [Service windows for site servers](service-windows.md).
 
 ### Review supported extensions
 
-<!--SCCMdocs#587-->
 If you extend Configuration Manager with other products from Microsoft or Microsoft partners, confirm that those products support version 2002. Check with the product vendor for this information. For example, see the Microsoft Deployment Toolkit [release notes](../../../mdt/release-notes.md).
 
 ### Remove Intune subscription (hybrid MDM)
 
-<!-- SCCMDocs-pr#4253 -->
 The hybrid MDM service offering is retired as of September 1, 2019. If your Configuration Manager site had a Microsoft Intune subscription, you need to remove it. For more information, see [Remove hybrid MDM](../../../mdm/understand/what-happened-to-hybrid.md#remove-hybrid-mdm).
 
 ### Run the setup prerequisite checker
@@ -231,7 +197,8 @@ To run a prerequisite check from the console, go to the **Administration** works
 For more information, see the section to **Run the prerequisite checker before installing an update** in [Before you install an in-console update](prepare-in-console-updates.md#before-you-install-an-in-console-update).
 
 > [!IMPORTANT]
-> When the prerequisite checker runs, the process updates some product source files that are used for site maintenance tasks. Therefore, after running the prerequisite checker but before installing the update, if you need to perform a site maintenance task, run **Setupwpf.exe** (Configuration Manager Setup) from the CD.Latest folder on the site server.
+>
+> When the prerequisite checker runs, the process updates some product source files that are used for site maintenance tasks. Therefore, after running the prerequisite checker but before installing the update, if you need to perform a site maintenance task, run **Setupwpf.exe** (Configuration Manager Setup) from the CD.Latest folder on the site server.
 
 ### Update sites
 
@@ -239,7 +206,7 @@ You're now ready to start the update installation for your hierarchy. For more i
 
 You may plan to install the update outside of normal business hours. Determine when the process will have the least effect on your business operations. Installing the update and its actions reinstall site components and site system roles.
 
-For more information, see [Updates for Configuration Manager](updates.md).
+For more information, see [Updates for Configuration Manager](updates.md).
 
 ## Post-update checklist
 
@@ -256,7 +223,6 @@ Consider restarting remote site systems that don't successfully update at first.
 In the Configuration Manager console, go to the following locations to view the status, and make sure that replication is active:
 
 - **Monitoring** workspace, **Site Hierarchy** node
-
 - **Monitoring** workspace, **Database Replication** node
 
 For more information, see the following articles:
@@ -269,7 +235,6 @@ For more information, see the following articles:
 Update all remote Configuration Manager consoles to the same version. You're prompted to update the console when:
 
 - You open the console.
-
 - You go to a new node in the console.
 
 ### Reconfigure database replicas for management points
@@ -278,7 +243,7 @@ After you update a primary site, reconfigure the database replica for management
 
 ### Reconfigure availability groups
 
-If you use an availability group, reset the failover configuration to automatic. For more information, see [Prepare to use an availability group](../deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).<!-- SCCMDocs #1366 -->
+If you use an availability group, reset the failover configuration to automatic. For more information, see [Prepare to use an availability group](../deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
 ### Reconfigure any disabled maintenance tasks
 
@@ -293,8 +258,6 @@ Update clients per the plan you created, especially if you configured client pil
 If you use any extensions to Configuration Manager, update them to the latest version to support Configuration Manager version 2002.
 
 ### Update custom boot images and media
-
-<!--SCCMDocs issue 775-->
 
 Use the **Update Distribution Points** action for any boot image that you use, whether it's a default or custom boot image. This action makes sure that clients can use the latest version. Even if there isn't a new version of the Windows ADK, the Configuration Manager client components may change with an update. If you don't update boot images and media, task sequence deployments may fail on devices.
 

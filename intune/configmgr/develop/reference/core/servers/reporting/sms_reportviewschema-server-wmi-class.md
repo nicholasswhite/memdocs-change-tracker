@@ -1,16 +1,18 @@
 ---
-title: SMS_ReportViewSchema Class
+title: "SMS_ReportViewSchema Server WMI Class"
 description: An SMS Provider server class that represents the views and columns available for building a report.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ReportViewSchema Server WMI Class
+
 The `SMS_ReportViewSchema` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the views and columns that are available for building a report.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,47 +26,49 @@ Class SMS_ReportViewSchema : SMS_BaseClass
 ```
 
 ## Methods
- The following table shows the methods in `SMS_ReportViewSchema`.
 
-|Method|Description|
-|------------|-----------------|
-|[GetSampleValues Method in Class SMS_ReportViewSchema](../../../../../develop/reference/core/servers/reporting/getsamplevalues-method-in-class-sms_reportviewschema.md)|Gets sample values for a report view schema.|
+The following table shows the methods in `SMS_ReportViewSchema`.
+
+| Method | Description |
+| --- | --- |
+| [GetSampleValues Method in Class SMS_ReportViewSchema](getsamplevalues-method-in-class-sms_reportviewschema.md) | Gets sample values for a report view schema. |
 
 ## Properties
- `IsStringType`
- Data type: `Boolean`
 
- Access type: Read Only
+`IsStringType` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read Only
 
- `true` if the values of the column are strings.
+Qualifiers: None
 
- `ViewColumnName`
- Data type: `String`
+`true` if the values of the column are strings.
 
- Access type: Read Only
+`ViewColumnName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read Only
 
- Name of a column in the view.
+Qualifiers: [key]
 
- `ViewName`
- Data type: `String`
+Name of a column in the view.
 
- Access type: Read Only
+`ViewName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read Only
 
- Name of a view.
+Qualifiers: [key]
+
+Name of a view.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

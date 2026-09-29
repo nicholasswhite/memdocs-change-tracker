@@ -1,7 +1,7 @@
 ---
-title: Get started with macOS endpoints
+title: "End-to-end guide to get started with macOS endpoints"
 description: Microsoft Intune guide to set up and configure macOS devices from setup to creating policies and enrolling devices. You secure your corporate and organization-owned endpoints that are enrolled in Intune, and then deploy at scale with Apple Business Manager or Apple School Manager.
-ms.date: 01/22/2026
+ms.date: "2026-01-22T00:00:00Z"
 ms.topic: get-started
 ms.reviewer: scbree;rogerso
 ms.collection:
@@ -13,7 +13,7 @@ ms.collection:
 
 # End-to-end guide to get started with macOS endpoints
 
-Using Microsoft Intune, you can manage and secure macOS endpoints owned by your organization or school. When you or your organization manage the devices, you can deploy the apps your end users need, configure the device features you want, and use policies that help protect your devices & organization from threats.
+Using Microsoft Intune, you can manage and secure macOS endpoints owned by your organization or school. When you or your organization manage the devices, you can deploy the apps your end users need, configure the device features you want, and use policies that help protect your devices &amp; organization from threats.
 
 This article applies to:
 
@@ -30,7 +30,7 @@ This article guides you through the end-to-end steps to create and manage your m
 
 This guide has seven phases. Each phase has a set of steps that help build your macOS endpoint configuration and deployment. Each phase builds on the previous phase.
 
-:::image type="content" source="./media/macos-endpoints-get-started/all-steps-overview.png" border="false" alt-text="A diagram that summarizes all the phases to onboard macOS devices, including testing, enrolling, securing, deploying policies, and supporting the devices using Microsoft Intune":::
+![A diagram that summarizes all the phases to onboard macOS devices, including testing, enrolling, securing, deploying policies, and supporting the devices using Microsoft Intune](media/macos-endpoints-get-started/all-steps-overview.png)
 
 Complete the phases and steps in order. The phases include:
 
@@ -50,24 +50,24 @@ Before you build your first macOS endpoint, there are some requirements and conf
 
 In this phase, you check the requirements, integrate Intune with Apple Business Manager (or Apple School Manager), configure some features, and add some apps to Intune.
 
-:::image type="content" source="./media/macos-endpoints-get-started/phase-1-setup-environment.png" border="false" alt-text="A diagram that lists the steps to setup your environment to support macOS devices in Microsoft Intune, including netowrk requirements, certificates, configuring single sign-on, and more":::
+![A diagram that lists the steps to setup your environment to support macOS devices in Microsoft Intune, including netowrk requirements, certificates, configuring single sign-on, and more](media/macos-endpoints-get-started/phase-1-setup-environment.png)
 
 ### Step 1 - Network requirements
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Set up your network**
+![](../../media/icons/16/check.svg) **Set up your network**
 
 To successfully prepare and deploy your macOS endpoint, the endpoint requires access to several public Internet services.
 
 - Start your testing on an open network. Or, in your organization network, provide access to all the endpoints listed at [Network endpoints for Microsoft Intune](../../fundamentals/endpoints.md). Then, you can use your organization network to test your configuration.
-
 - If your wireless network requires certificates, you can start with an Ethernet connection during testing. The Ethernet connection gives you some time to determine the best approach for the wireless connections that devices need.
 
 > [!CAUTION]
+>
 > SSL inspection can cause access to Microsoft and Apple services to fail. For more information on Apple's requirements, go to [Use Apple products on enterprise networks](https://support.apple.com/HT210060).
 
 ### Step 2 - Enrollment and licensing
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Create a new group, configure enrollment restrictions, and assign licenses**
+![](../../media/icons/16/check.svg) **Create a new group, configure enrollment restrictions, and assign licenses**
 
 To get the endpoints ready for enrollment, you need to make sure the correct endpoints are targeted and that the endpoints are licensed correctly.
 
@@ -80,7 +80,6 @@ Specifically:
   To create a Microsoft Entra group, use the Intune admin center. When you create a group in Intune, you're creating an Entra group. You don't see the Entra branding, but that's what you're using.
 
   For more information, go to [Create a group to manage users in Intune](../../fundamentals/tenant-administration/quickstart-create-group.md).
-
 - **Enrollment Restrictions**
 
   Enrollment restrictions allow you to control the types of devices that can enroll into Intune management. For this guide to be successful, in an enrollment restriction, make sure macOS (MDM) enrollment is allowed, which is the default configuration. Assign this enrollment restriction to the new group you created.
@@ -88,20 +87,19 @@ Specifically:
   If needed/wanted, you can also prevent specific devices from enrolling.
 
   For information on configuring Enrollment Restrictions, go to [Set enrollment restrictions in Microsoft Intune](../../device-enrollment/restrictions.md).
-
 - **Licensing**
 
   Users enrolling macOS devices require a Microsoft Intune or Microsoft Intune for Education license. To assign licenses, go to [Assign Microsoft Intune licenses](../../fundamentals/assign-licenses.md). Assign the licenses to the test accounts you created.
 
   > [!NOTE]
+  >
   > Both types of licenses are typically included with licensing bundles, like Microsoft 365 E3 (or A3) and higher. For more information, go to [Compare Microsoft 365 Enterprise Plans](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans).
 
 ### Step 3 - Add the Apple MDM Certificate
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Add the push certificate with a Managed Apple ID**
+![](../../media/icons/16/check.svg) **Add the push certificate with a Managed Apple ID**
 
 - To manage macOS devices, Apple requires the Intune tenant be configured with an MDM push certificate. If you currently manage iOS/iPadOS devices in this same tenant, then this step is done.
-
 - Make sure you use a Managed Apple ID with the Apple Business Manager (or Apple School Manager) instance.
 
   **Don't use a personal Apple ID**. Management of the Apple Push Notification Service certificate is critical over the life of your device management solution. Access with a personal Apple ID can become unavailable, as staff does change over time.
@@ -110,7 +108,7 @@ For information on configurating an Apple MDM push certificate, go to [Get an Ap
 
 ### Step 4 - Add the Apple automated device enrollment token
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Link Apple token for Automated Device Enrollment**
+![](../../media/icons/16/check.svg) **Link Apple token for Automated Device Enrollment**
 
 To manage devices enrolled through Apple Business Manager (or Apple School Manager), you need to set up an MDM token and link the token with Intune.
 
@@ -135,7 +133,7 @@ When you use macOS ADE enrollment profiles, we recommend configuring [macOS acco
 
 ### Step 5 - Target devices
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Target specific groups using user groups, Intune filters or dynamic groups**
+![](../../media/icons/16/check.svg) **Target specific groups using user groups, Intune filters or dynamic groups**
 
 macOS devices with user affinity can be targeted for profiles and apps using user or device groups. There are two common options for how organizations dynamically target devices:
 
@@ -146,36 +144,34 @@ macOS devices with user affinity can be targeted for profiles and apps using use
   Policies and apps targeted to the **All Devices** group apply faster after enrollment than dynamic groups. Not all configuration profiles (like macOS scripts) support filters.
 
   For more information on assignment filters, go to [Create filters in Microsoft Intune](../../fundamentals/filters/overview.md).
-
 - **Option 2 – Microsoft Entra dynamic group based on enrollmentProfileName**
 
   To limit the configurations from this guide to the test devices that you import through Apple Business Manager, create a dynamic Microsoft Entra group. You can then target all your configurations and apps to this group.
 
-  1. Open the [Microsoft Intune admin center].
-  2. Select **Groups** > **New Group**, and enter the following details:
+  1. Open the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+  2. Select **Groups** &gt; **New Group**, and enter the following details:
 
-      - **Group type**: Select **Security**.
-      - **Group Name**: Enter **macOS endpoints**.
-      - **Membership type**: Select **Dynamic Device**.
-
+     - **Group type**: Select **Security**.
+     - **Group Name**: Enter **macOS endpoints**.
+     - **Membership type**: Select **Dynamic Device**.
   3. For **Dynamic device members**, select **Add dynamic query** and enter the following properties:
 
-      - **Property**: Select **enrollmentProfileName**.
-      - **Operator**: Select **equals**.
-      - **Value**: Enter your enrollment profile name.
-
-  4. Select **OK** > **Save** > **Create**.
+     - **Property**: Select **enrollmentProfileName**.
+     - **Operator**: Select **equals**.
+     - **Value**: Enter your enrollment profile name.
+  4. Select **OK** &gt; **Save** &gt; **Create**.
 
   When you create apps and policies, you can target the policies to this new dynamic Microsoft Entra group.
 
-   > [!NOTE]
-   > After changes occur, Dynamic groups can take several minutes to populate. In large organizations, it [can take longer](/entra/identity/users/groups-troubleshooting#troubleshooting-dynamic-memberships-for-groups). After creating a new group, wait several minutes before you check if the device is a member of the group.
-   >
-   > For more information about dynamic groups for devices, go to [Dynamic membership rules for groups in Microsoft Entra ID: Rules for devices](/entra/identity/users/groups-dynamic-membership#rules-for-devices).
+  > [!NOTE]
+  >
+  > After changes occur, Dynamic groups can take several minutes to populate. In large organizations, it [can take longer](https://learn.microsoft.com/en-us/entra/identity/users/groups-troubleshooting#troubleshooting-dynamic-memberships-for-groups). After creating a new group, wait several minutes before you check if the device is a member of the group.
+  >
+  > For more information about dynamic groups for devices, go to [Dynamic membership rules for groups in Microsoft Entra ID: Rules for devices](https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership#rules-for-devices).
 
 ### Step 6 - Configure initial settings and single sign-on (SSO)
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Optimize first run experience**
+![](../../media/icons/16/check.svg) **Optimize first run experience**
 
 Using Intune, you can optimize the first run experience using built-in settings within the ADE enrollment profile. Specifically, when you create the enrollment profile, you can:
 
@@ -184,7 +180,7 @@ Using Intune, you can optimize the first run experience using built-in settings 
 
 For more information on this feature and ADE enrollment, go to [Automatically enroll Macs with Apple Business Manager or Apple School Manager](../../device-enrollment/apple/setup-automated-macos.md).
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Reduce app sign-in prompts with SSO**
+![](../../media/icons/16/check.svg) **Reduce app sign-in prompts with SSO**
 
 In Intune, you can configure settings that reduce the number of sign-in prompts end users receive when using apps, including Microsoft 365 apps. There are two parts to this configuration:
 
@@ -192,7 +188,12 @@ In Intune, you can configure settings that reduce the number of sign-in prompts 
 
   There are two options for configuring SSO for Mac - [Enterprise SSO plug-in](../../device-configuration/templates/configure-enterprise-sso-plugin-macos.md) and [Platform SSO](../../device-configuration/settings-catalog/configure-platform-sso-macos.md).
 
-  # [Platform SSO](#tab/psso)
+  - [Platform SSO](#tabpanel_1_psso)
+  - [Enterprise SSO plug-in](#tabpanel_1_esso)
+
+  <a id="tabpanel_1_psso"></a>
+
+
 
   Platform SSO builds on top of the existing capabilities in the Enterprise SSO plug-in. Platform SSO allows for device-bound credentials, smart card or password sync authentication options. On macOS 14, Platform SSO also supports creating new user accounts from the macOS login screen.
 
@@ -201,60 +202,58 @@ In Intune, you can configure settings that reduce the number of sign-in prompts 
   For more information, go to:
 
   - [Configure Platform SSO for macOS devices in Microsoft Intune](../../device-configuration/settings-catalog/configure-platform-sso-macos.md)
-
   - [Platform SSO on Apple's web site](https://support.apple.com/guide/deployment/dep7bbb05313/web) (opens Apple's website)
 
-  # [Enterprise SSO plug-in](#tab/esso)
+  <a id="tabpanel_1_esso"></a>
+
+
 
   The Microsoft Enterprise SSO plug-in for Apple devices provides single sign-on (SSO) for Microsoft Entra accounts on macOS across all applications that support Apple's enterprise single sign-on feature.
 
-  To create these policies, in the [Microsoft Intune admin center], go to:
+  To create these policies, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to:
 
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Authentication > Extensible Single Sign On (SSO)**: Add and configure the following settings:
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Authentication &gt; Extensible Single Sign On (SSO)**: Add and configure the following settings:
 
     | Name | Configuration |
-    |---|---|
-    | Extension Identifier | `com.microsoft.CompanyPortalMac.ssoextension`|
+    | --- | --- |
+    | Extension Identifier | `com.microsoft.CompanyPortalMac.ssoextension` |
     | Team Identifier | `UBF8T346G9` |
     | Type | Redirect |
-    | URLs | `https://login.microsoftonline.com` <br/> `https://login.microsoft.com` <br/> `https://sts.windows.net` <br/> `https://login.partner.microsoftonline.cn` <br/> `https://login.chinacloudapi.cn` <br/> `https://login.microsoftonline.us` <br/> `https://login-us.microsoftonline.com` |
-
+    | URLs | `https://login.microsoftonline.com`   `https://login.microsoft.com`   `https://sts.windows.net`   `https://login.partner.microsoftonline.cn`   `https://login.chinacloudapi.cn`   `https://login.microsoftonline.us`   `https://login-us.microsoftonline.com` |
   - Configure the following optional settings:
 
     | Key | Type | Value |
-    |---|---|---|
+    | --- | --- | --- |
     | AppPrefixAllowList | String | `com.apple.,com.microsoft` |
     | browser_sso_interaction_enabled | Integer | 1 |
     | disable_explicit_app_prompt | Integer | 1 |
 
   For more information on the Enterprise SSO plug-in, including how to create the policy, go to [Configure macOS Enterprise SSO plug-in with Intune](../../device-configuration/templates/configure-enterprise-sso-plugin-macos.md).
 
-  ---
+---
 
 - **Part 2** - Use the [Intune settings catalog](../../device-configuration/settings-catalog/index.md) to configure the following settings that reduce sign-in prompts, including Microsoft AutoUpdate (MAU) and Microsoft Office.
 
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Microsoft AutoUpdate (MAU)**: Add and configure the following settings:
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Microsoft AutoUpdate (MAU)**: Add and configure the following settings:
 
     - **Automatically acknowledge data collection policy**: Select **Acknowledge – send required and optional data**.
 
-      For more information about this setting, go to [Use preferences to manage privacy controls for Office for Mac](/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate)
-
+      For more information about this setting, go to [Use preferences to manage privacy controls for Office for Mac](https://learn.microsoft.com/en-us/deployoffice/privacy/mac-privacy-preferences#preference-setting-for-the-required-data-notice-dialog-for-microsoft-autoupdate)
     - **Enable AutoUpdate**: Select **True**.
 
-      This setting forces Microsoft AutoUpdate to on. For more information about Microsoft AutoUpdate, which updates Microsoft 365 Apps and Company Portal, go to [Deploy updates for Office for Mac](/deployoffice/mac/deploy-updates-for-office-for-mac).
-
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Microsoft Office > Microsoft Office**: Add and configure the following settings:
+      This setting forces Microsoft AutoUpdate to on. For more information about Microsoft AutoUpdate, which updates Microsoft 365 Apps and Company Portal, go to [Deploy updates for Office for Mac](https://learn.microsoft.com/en-us/deployoffice/mac/deploy-updates-for-office-for-mac).
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Microsoft Office &gt; Microsoft Office**: Add and configure the following settings:
 
     - **Office Activation Email Address**: Enter `{{userprincipalname}}`.
     - **Enable automatic sign-in**: Select **True**.
 
-    These settings streamline the sign in process when opening Office apps for the first time. For more information on these settings, go to [Set suite-wide preferences for Office for Mac](/deployoffice/mac/preferences-office).
+    These settings streamline the sign in process when opening Office apps for the first time. For more information on these settings, go to [Set suite-wide preferences for Office for Mac](https://learn.microsoft.com/en-us/deployoffice/mac/preferences-office).
 
   For more information on the settings catalog, including how to create a policy, go to [Use the settings catalog to configure settings in Microsoft Intune](../../device-configuration/settings-catalog/index.md).
 
 ### Step 7 - Add and assign must-have apps
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Add a minimum set of apps to Intune**
+![](../../media/icons/16/check.svg) **Add a minimum set of apps to Intune**
 
 Your organization might have some apps that your macOS devices must have. Your organization can require these apps be installed on all devices managed by Intune.
 
@@ -269,7 +268,6 @@ Some must-have apps include:
   The Company Portal app is also required for the SSO extension that you configure in [Step 6 - Configure initial settings and single sign-on (SSO)](#step-6---configure-initial-settings-and-single-sign-on-sso) (in this article).
 
   To deploy the Company Portal app as a required app, go to [Add the Company Portal for macOS app](../../app-management/deployment/add-company-portal-macos.md).
-
 - **Microsoft 365 Apps**
 
   Microsoft 365 apps, like Word, Excel, OneDrive, and Outlook, can easily be deployed to devices using the built-in Microsoft 365 apps for macOS app profile in Intune.
@@ -283,21 +281,18 @@ Some must-have apps include:
 
 The next phase enrolls a test macOS device into Intune. This phase gets you familiar with the initial steps so you're ready when it's time to enroll all your macOS devices in Intune.
 
-:::image type="content" source="./media/macos-endpoints-get-started/phase-2-enroll-test-endpoint.png" border="false" alt-text="A diagram that lists the steps to enroll a test macOS device using Microsoft Intune, including registering a device, assigning a profile, and more":::
+![A diagram that lists the steps to enroll a test macOS device using Microsoft Intune, including registering a device, assigning a profile, and more](media/macos-endpoints-get-started/phase-2-enroll-test-endpoint.png)
 
 To enroll your first organization macOS endpoint, make sure the macOS device is:
 
-> [!div class="checklist"]
->
-> - [Registered in Apple Business Manager (or Apple School Manager) and assigned to your Intune MDM](https://support.apple.com/guide/apple-business-manager/axmf500c0851/web) (opens Apple's website)
-> - [Assigned an enrollment policy in Intune](../../device-enrollment/apple/setup-automated-macos.md#assign-an-enrollment-policy-to-devices)
+- [Registered in Apple Business Manager (or Apple School Manager) and assigned to your Intune MDM](https://support.apple.com/guide/apple-business-manager/axmf500c0851/web) (opens Apple's website)
+- [Assigned an enrollment policy in Intune](../../device-enrollment/apple/setup-automated-macos.md#assign-an-enrollment-policy-to-devices)
 
 The high-level steps to enroll your first macOS endpoint with Intune are:
 
 1. Erase or reset the macOS endpoint. This step is required for existing devices. If you enroll a macOS device that is already set up, then the device is considered a personal device. So, you must erase or reset the device before you can enroll it into Intune.
 
-    For new devices that aren't set up, you can skip this step. If you aren't sure if the device is set up, then reset the device.
-
+   For new devices that aren't set up, you can skip this step. If you aren't sure if the device is set up, then reset the device.
 2. Go through Setup Assistant.
 3. Open the Company Portal app and sign in with your organization account (`user@contoso.com`).
 
@@ -307,7 +302,7 @@ When the user signs in, the enrollment policy applies. When it completes, your m
 
 In this phase, you configure security settings and features that help protect your endpoints, including keeping devices current with updates.
 
-:::image type="content" source="./media/macos-endpoints-get-started/phase-3-secure-endpoints.png" border="false" alt-text="A diagram that lists the steps to secure macOS devices using compliance policies, software updates, and more in Microsoft Intune":::
+![A diagram that lists the steps to secure macOS devices using compliance policies, software updates, and more in Microsoft Intune](media/macos-endpoints-get-started/phase-3-secure-endpoints.png)
 
 This section focuses on the different endpoint security features in Microsoft Intune, including:
 
@@ -321,29 +316,29 @@ This section focuses on the different endpoint security features in Microsoft In
 
 ### Compliance and Conditional Access policies
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Create compliance policies and enforce compliance with Conditional Access**
+![](../../media/icons/16/check.svg) **Create compliance policies and enforce compliance with Conditional Access**
 
 - **Compliance policies** verify the device settings you configure and can remediate some settings that aren't compliant. For example, you can create compliance policies that check password complexity, jailbroken status, threat levels, enrollment status, and more.
 
   If there are configuration settings that conflict between compliance policies and other policies, then the compliance policy takes precedence. For more information, go to [Compliance and device configuration policies that conflict](../../device-configuration/troubleshoot-device-profiles.md#compliance-and-device-configuration-policies-that-conflict).
-
 - **Conditional Access** can be used to enforce the compliance policies you create. When combined, end users can be required to enroll their devices and meet a minimum security standard before accessing organization resources. If a device is noncompliant, then you can block access to resources, like email, or require the user to enroll their device and fix the issue.
 
 > [!NOTE]
+>
 > To confirm you're enforcing the proper device controls, work with your team that manages your Entra Conditional Access policies.
 
-You can create compliance and Conditional Access policies in the [Microsoft Intune admin center].
+You can create compliance and Conditional Access policies in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 For more information, go to:
 
 - [Use compliance policies to set rules for devices you manage with Intune](../../device-security/compliance/overview.md)
 - [Conditional Access and Intune](../../device-security/conditional-access-integration/overview.md)
-- [How to require a compliant device or MFA](/entra/identity/conditional-access/howto-conditional-access-policy-compliant-device)
-- [What is Conditional Access in Microsoft Entra ID?](/entra/identity/conditional-access/overview)
+- [How to require a compliant device or MFA](https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-compliant-device)
+- [What is Conditional Access in Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview)
 
 ### Microsoft Defender for Endpoint
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Use Microsoft Defender for Endpoint for threat defense**
+![](../../media/icons/16/check.svg) **Use Microsoft Defender for Endpoint for threat defense**
 
 Microsoft Defender for Endpoint is a mobile threat defense solution that helps protect your devices from security threats.
 
@@ -352,61 +347,61 @@ In Intune, you can connect to your Microsoft Defender for Endpoint service, crea
 For more information, go to:
 
 - [Configure Microsoft Defender for Endpoint in Intune](../../device-security/microsoft-defender/configure-integration.md)
-- [Deploy Microsoft Defender for Endpoint on macOS with Microsoft Intune](/microsoft-365/security/defender-endpoint/mac-install-with-intune)
+- [Deploy Microsoft Defender for Endpoint on macOS with Microsoft Intune](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/mac-install-with-intune)
 
 ### Built-in endpoint security
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Encrypt devices with FileVault disk encryption**
+![](../../media/icons/16/check.svg) **Encrypt devices with FileVault disk encryption**
 
 **FileVault** is a whole-disk encryption feature that helps prevent unauthorized access. The FileVault settings are built into the Intune settings catalog and are available as compliance policies.
 
 So, you can configure FileVault, check for compliance, and deploy the policies to your devices.
 
-To create these policies, in the [Microsoft Intune admin center], go to:
+To create these policies, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to:
 
-- **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Full Disk Encryption**
-- **Devices > Manage devices > Compliance > Create policy > System security > Require encryption of data storage on device**
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Full Disk Encryption**
+- **Devices &gt; Manage devices &gt; Compliance &gt; Create policy &gt; System security &gt; Require encryption of data storage on device**
 
 For more information about FileVault, go to:
 
 - [Encrypt macOS devices with FileVault disk encryption with Intune](../../device-configuration/endpoint-security/encrypt-filevault-macos.md)
 - [Use FileVault to encrypt the startup disk on your Mac](https://support.apple.com/guide/mac-help/mh1710e6fa5b/mac) (opens Apple's website)
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Configure the firewall**
+![](../../media/icons/16/check.svg) **Configure the firewall**
 
 The **firewall** is an application firewall and helps prevent incoming attacks. The firewall settings are built into the Intune settings catalog and are available as compliance policies.
 
 So, you can configure the firewall, check for compliance, and deploy the policies to your devices.
 
-To create these policies, in the [Microsoft Intune admin center], go to:
+To create these policies, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to:
 
-- **Devices > Manage devices > Configuration > Create > **New policy** > Settings catalog**:
-  - Networking > Firewall
-  - Security > Security preferences
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; **New policy** &gt; Settings catalog**:
 
-- **Devices > Manage devices > Compliance > Create policy > System Security > Firewall**
+  - Networking &gt; Firewall
+  - Security &gt; Security preferences
+- **Devices &gt; Manage devices &gt; Compliance &gt; Create policy &gt; System Security &gt; Firewall**
 
 For more information about the macOS firewall, go to:
 
 - [Firewall policy for endpoint security in Intune](../../device-configuration/endpoint-security/firewall.md)
 - [Change Firewall settings on Mac](https://support.apple.com/guide/mac-help/mh11783/mac) (opens Apple's website)
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Configure Gatekeeper**
+![](../../media/icons/16/check.svg) **Configure Gatekeeper**
 
 **Gatekeeper** makes sure that only trusted software runs on the device. The Gatekeeper settings are built into the Intune settings catalog and are available as compliance policies.
 
 So, you can configure Gatekeeper, check for compliance, and deploy the policies to your devices.
 
-To create these policies, in the [Microsoft Intune admin center], go to:
+To create these policies, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to:
 
-- **Devices > Manage devices > Configuration > Create > **New policy** > Settings catalog > System policy > System Policy Control**:
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; **New policy** &gt; Settings catalog &gt; System policy &gt; System Policy Control**:
+
   - **Allow Identified Developer**: Select **True**.
   - **Enable Assessment**: Select **True**.
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; **New policy** &gt; Settings catalog &gt; System policy &gt; System Policy Managed**:
 
-- **Devices > Manage devices > Configuration > Create > **New policy** > Settings catalog > System policy > System Policy Managed**:
   - **Disable Override**: Select **True**.
-
-- **Devices > Manage devices > Compliance > Create policy > System Security > Gatekeeper**
+- **Devices &gt; Manage devices &gt; Compliance &gt; Create policy &gt; System Security &gt; Gatekeeper**
 
 For more information about Gatekeeper, go to:
 
@@ -415,103 +410,98 @@ For more information about Gatekeeper, go to:
 
 ### Software Updates
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Configure Software Updates**
+![](../../media/icons/16/check.svg) **Configure Software Updates**
 
 On devices, software updates are critical and you must determine how the updates are installed. You have some options.
 
-When you configure these settings, you enforce and restrict the behavior in the **Settings** app > **Software Update** node on the device.
+When you configure these settings, you enforce and restrict the behavior in the **Settings** app &gt; **Software Update** node on the device.
 
 - **Option 1 - macOS 14.0 and newer devices (recommended)** - On macOS 14.0 and newer devices, use the [Intune settings catalog](../../device-configuration/settings-catalog/index.md) to create a [managed software updates policy](../../device-updates/apple/index.md). This feature uses Apple's declarative device management (DDM), and is the recommended approach to update macOS devices.
 
-  Specifically, in the [Microsoft Intune admin center], you configure the following settings:
+  Specifically, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), you configure the following settings:
 
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Declarative Device Management > Software Update**
-
-  - **Optional** - At **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Restrictions**, you can use the following settings to delay how long after an update is released that users can manually install the updates. These settings use Apple's MDM settings:
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Declarative Device Management &gt; Software Update**
+  - **Optional** - At **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Restrictions**, you can use the following settings to delay how long after an update is released that users can manually install the updates. These settings use Apple's MDM settings:
 
     - Enforced Software Update Minor OS Deferred Install Delay: 0-30
     - Enforced Software Update Major OS Deferred Install Delay: 0-30
     - Enforced Software Update Non OS Deferred Install Delay: 0-30
 
-    The **Settings Catalog > Declarative Device Management > Software Update** settings take precedence over the **Settings Catalog > Restrictions** settings.
-
+    The **Settings Catalog &gt; Declarative Device Management &gt; Software Update** settings take precedence over the **Settings Catalog &gt; Restrictions** settings.
 - **Option 2 - macOS 13.0 and older (recommended)** - On macOS 13.0 and older devices, you can use a combination of the [Intune settings catalog](../../device-configuration/settings-catalog/index.md) and an Intune [software updates policy](../../device-updates/apple/index.md). These features use Apple's MDM settings.
 
-  Specifically, in the [Microsoft Intune admin center], you can configure the following settings:
+  Specifically, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), you can configure the following settings:
 
-  - **Devices > Manage updates > Apple updates > macOS updates policy**
+  - **Devices &gt; Manage updates &gt; Apple updates &gt; macOS updates policy**
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Software Update**
 
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Software Update**
-
-  Some of the settings in both policy types (Software updates vs. Settings catalog) can overlap. So, pay attention to what you configure in each policy. The settings in the macOS updates policy take precedence over the Settings Catalog > Software Update settings.
-
+  Some of the settings in both policy types (Software updates vs. Settings catalog) can overlap. So, pay attention to what you configure in each policy. The settings in the macOS updates policy take precedence over the Settings Catalog &gt; Software Update settings.
 - **Option 3 (not recommended)** - End users manually install the updates. This approach relies on end users to decide when to install the updates. And, they can install an update that your organization doesn't approve.
 
 For more information on planning your macOS update strategy, go to [Software updates planning guide for managed macOS devices in Microsoft Intune](../../device-updates/apple/planning-guide-macos.md).
 
 ### Guest account
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Disable the guest account**
+![](../../media/icons/16/check.svg) **Disable the guest account**
 
 You should disable the guest account on macOS endpoints. You can disable the guest account using the [Intune settings catalog](../../device-configuration/settings-catalog/index.md):
 
-- **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Accounts > Accounts**:
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Accounts &gt; Accounts**:
   - **Disable Guest Account**: Select **True**.
 
 ### Idle timeout
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Set an idle timeout**
+![](../../media/icons/16/check.svg) **Set an idle timeout**
 
 Using the [Intune settings catalog](../../device-configuration/settings-catalog/index.md), you control the time period after idle that macOS prompts for a password:
 
-- **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > System Configuration > Screensaver**:
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; System Configuration &gt; Screensaver**:
 
   - **Ask for Password**: Select **True**.
   - **Login Windows Idle Time**: Enter something like `300`, which is 5 minutes.
   - **Ask for Password Delay**: Enter something like `5`.
   - **Module Name**: Enter the name of the screensaver module, like **Flurry**.
-
-- **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > User Experience > Screensaver User**:
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; User Experience &gt; Screensaver User**:
 
   - **Idle Time**: Enter something like `300`, which is 5 minutes.
   - **Module Name**: Enter the name of the screensaver module, like **Flurry**.
-
 - For your desktop and laptop devices, there are settings that can help save energy:
 
-  **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > System Configuration > Energy Saver**:
+  **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; System Configuration &gt; Energy Saver**:
 
-  - **Desktop Power > Display Sleep Timer**
-  - **Laptop Battery Power > Display Sleep Timer**
-  - **Laptop Power > Display Sleep Timer**
+  - **Desktop Power &gt; Display Sleep Timer**
+  - **Laptop Battery Power &gt; Display Sleep Timer**
+  - **Laptop Power &gt; Display Sleep Timer**
 
 > [!TIP]
+>
 > To find the screensaver module name, set the screensaver, open the Terminal app, and run the following command:
 >
 > `defaults -currentHost read com.apple.screensaver`
 
 ### macOS Evaluation Utility
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Use the macOS Evaluation Utility**
+![](../../media/icons/16/check.svg) **Use the macOS Evaluation Utility**
 
-The Mac Evaluation Utility confirms that your Mac has the configuration and settings recommended by Apple. To access the Mac Evaluation Utility, sign in to [Apple Seed for IT](https://beta.apple.com/for-it) (opens Apple's website) > **Resources**.
+The Mac Evaluation Utility confirms that your Mac has the configuration and settings recommended by Apple. To access the Mac Evaluation Utility, sign in to [Apple Seed for IT](https://beta.apple.com/for-it) (opens Apple's website) &gt; **Resources**.
 
 ## Phase 4 - Apply organization specific customizations
 
 In this phase, you apply organization-specific settings and apps, and review your on-premises configuration.
 
-:::image type="content" source="./media/macos-endpoints-get-started/phase-4-apply-organization-customizations.png" border="false" alt-text="A diagram that lists some features to customize you macOS devices using apps, device settings, certificates and more using Microsoft Intune":::
+![A diagram that lists some features to customize you macOS devices using apps, device settings, certificates and more using Microsoft Intune](media/macos-endpoints-get-started/phase-4-apply-organization-customizations.png)
 
 The phase helps you customize any features specific to your organization. Notice the various components of macOS. There are sections for each of the following areas:
 
 - Apps
-- Device configuration for the dock, notifications, preference files & custom policies, and wallpaper
+- Device configuration for the dock, notifications, preference files &amp; custom policies, and wallpaper
 - Device name
 - Certificates
 - Wi-Fi
 
 ### Apps
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Add more apps to Intune**
+![](../../media/icons/16/check.svg) **Add more apps to Intune**
 
 In [Phase 1 - Set up your environment](#phase-1---set-up-your-environment), you added some apps that the devices must have. In this step, add other apps that can improve the end user experience or productivity.
 
@@ -523,28 +513,25 @@ In [Phase 1 - Set up your environment](#phase-1---set-up-your-environment), you 
   - [Add the app disk image (`.dmg`) to Intune, and use Intune policy to deploy the app](../../app-management/deployment/add-dmg-macos.md)
   - [Apps licensed with Apple's Volume Purchase Plan (VPP) and use Intune policy to deploy the app](../../app-management/deployment/manage-vpp-apple.md)
   - [Add the app package (`.pkg`) to Intune, and use Intune policy to deploy the app](../../app-management/deployment/add-lob-macos.md)
-
 - **Microsoft Edge**
 
   You can deploy Microsoft Edge to macOS endpoints using the built-in deployment type. For more information, go to [Add Microsoft Edge to macOS devices using Microsoft Intune](../../app-management/deployment/add-edge-macos.md).
 
   You can also configure Microsoft Edge settings using the [Intune settings catalog](../../device-configuration/settings-catalog/index.md):
 
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Microsoft Edge**
-
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Microsoft Edge**
 - **Microsoft OneDrive**
 
-  In [Phase 1 - Set up your environment](#phase-1---set-up-your-environment), you added Microsoft 365 apps, which include Microsoft OneDrive. So, if you previously added Microsoft OneDrive, then you don't need to add it again. If you didn't previously add it, then you can also deploy Microsoft OneDrive separately using a [downloaded app package (`.pkg`)](/sharepoint/deploy-and-configure-on-macos).
+  In [Phase 1 - Set up your environment](#phase-1---set-up-your-environment), you added Microsoft 365 apps, which include Microsoft OneDrive. So, if you previously added Microsoft OneDrive, then you don't need to add it again. If you didn't previously add it, then you can also deploy Microsoft OneDrive separately using a [downloaded app package (`.pkg`)](https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos).
 
-  You can also configure the [Microsoft OneDrive settings](/sharepoint/deploy-and-configure-on-macos) using the [Intune settings catalog](../../device-configuration/settings-catalog/index.md). For example, the following settings might apply to your organization:
+  You can also configure the [Microsoft OneDrive settings](https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos) using the [Intune settings catalog](../../device-configuration/settings-catalog/index.md). For example, the following settings might apply to your organization:
 
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > Microsoft Office > Microsoft OneDrive**:
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; Microsoft Office &gt; Microsoft OneDrive**:
 
-    - **Automatically and silently enable the Folder Backup feature (Known Folder Move)**: Enter your \<Microsoft Entra tenant ID>.
+    - **Automatically and silently enable the Folder Backup feature (Known Folder Move)**: Enter your &lt;Microsoft Entra tenant ID&gt;.
     - **Enable Files On-Demand**: Select **True**.
     - **Open at login**: Select **True**.
-
-  - **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > App Management > NS Extension Management**:
+  - **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; App Management &gt; NS Extension Management**:
 
     - **Allowed Extensions**: Enter `com.microsoft.OneDrive.FinderSync`.
 
@@ -566,46 +553,45 @@ For example, we used the settings catalog to configure the following feature are
 
 There are many device settings you can configure using the settings catalog, including:
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Dock**
+![](../../media/icons/16/check.svg) **Dock**
 
-- **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > User Experience > Dock**
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; User Experience &gt; Dock**
 
 You can also add or remove items from the dock using a [GitHub - Microsoft Intune dock shell sample](https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Dock) or partner command line tools like [GitHub - DockUtil](https://github.com/kcrawford/dockutil).
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Notification prompts**
+![](../../media/icons/16/check.svg) **Notification prompts**
 
-- **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > User Experience > Notifications > Notification Settings**
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; User Experience &gt; Notifications &gt; Notification Settings**
 
   You should enter the bundle ID for each application you want to control notifications for.
 
 For more information, go to [Notifications MDM payload settings for Apple devices](https://support.apple.com/guide/deployment/dep46b6547ba/web) (opens Apple's website).
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Preference files and custom policies**
+![](../../media/icons/16/check.svg) **Preference files and custom policies**
 
 - **Preference files** define app properties or settings that you want to preconfigure. In the [Intune settings catalog](../../device-configuration/settings-catalog/index.md), there are many built-in settings for apps, like Microsoft Edge and Microsoft Office. So, you might not need a preference file.
 
   Microsoft recommends you use the built-in settings in the settings catalog. If the settings catalog doesn't have the settings you need, then add a preference file to Intune.
 
   For more information, go to [Add a property list file to macOS devices using Microsoft Intune](../../device-configuration/templates/configure-preference-file-macos.md)
-
 - **Custom profiles** are designed to add device settings and features that aren't built in to Intune.
 
   Microsoft recommends you use the built-in settings in the settings catalog. If the settings catalog doesn't have the settings you need, then use a custom profile.
 
   For more information, go to [custom profiles](../../device-configuration/templates/configure-custom-settings-apple.md).
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Wallpaper**
+![](../../media/icons/16/check.svg) **Wallpaper**
 
 You can enforce a wallpaper on macOS using a combination of a sample script and the settings catalog:
 
-- **Devices > Manage devices > Configuration > Create > New policy > Settings catalog > User Experience > Desktop**:
-  - **Override Picture Path**: 'Enter the \<path of the image>'.
+- **Devices &gt; Manage devices &gt; Configuration &gt; Create &gt; New policy &gt; Settings catalog &gt; User Experience &gt; Desktop**:
+  - **Override Picture Path**: 'Enter the &lt;path of the image&gt;'.
 
 The image file must exist on the macOS endpoint. To download a picture from a web location, you can use a sample script at [GitHub - Microsoft Intune wallpaper shell sample](https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Config/Wallpaper). You can also use an app package tool to copy a file and then deploy it using the [unmanaged PKG](../../app-management/deployment/add-unmanaged-pkg-macos.md) deployment feature.
 
 ### Device name
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Rename devices**
+![](../../media/icons/16/check.svg) **Rename devices**
 
 Using a shell script, you can rename the devices to include specific information, like the device serial number combined with the country/region code.
 
@@ -613,7 +599,7 @@ For more information, go to [GitHub - Microsoft Shell scripts to rename Mac devi
 
 ### Certificates
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Add certificates for certificate based authentication**
+![](../../media/icons/16/check.svg) **Add certificates for certificate based authentication**
 
 If you use certificate based authentication for a password-less experience, then you can use Intune to add and deploy certificates.
 
@@ -621,7 +607,7 @@ For more information, go to [Types of certificate available in Microsoft Intune]
 
 ### Wi-Fi
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Preconfigure a Wi-Fi connection**
+![](../../media/icons/16/check.svg) **Preconfigure a Wi-Fi connection**
 
 Using Intune, you can create a Wi-Fi connection that includes your network information, and then deploy the connection to your macOS devices. If your devices connect to the organization using Wi-Fi, then create a Wi-Fi connection policy.
 
@@ -631,15 +617,15 @@ For more information, go to [Configure Wi-Fi settings for macOS devices in Micro
 
 There are some caching features you can use to help reduce your network bandwidth.
 
-:::image type="content" source="./media/macos-endpoints-get-started/phase-5-optional-caching.png" border="false" alt-text="A diagram that describes using content caching and AutoUpdate local cache app on macOS devices using Microsoft Intune":::
+![A diagram that describes using content caching and AutoUpdate local cache app on macOS devices using Microsoft Intune](media/macos-endpoints-get-started/phase-5-optional-caching.png)
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Use content caching**
+![](../../media/icons/16/check.svg) **Use content caching**
 
 If you have a large number of macOS or iOS/iPadOS devices on your network, you can deploy Apple Content Cache to help reduce your Internet bandwidth. Apple Content Cache can cache content that is hosted on Apple services, like Software Updates and VPP apps.
 
 For more information, go to [Intro to content caching](https://support.apple.com/guide/deployment/depde72e125f/web) (opens Apple's website).
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **AutoUpdate local cache**
+![](../../media/icons/16/check.svg) **AutoUpdate local cache**
 
 Many Microsoft apps on macOS are updated using the Microsoft AutoUpdate application. This app can reference a different URL for content.
 
@@ -651,11 +637,11 @@ For more information, go to [GitHub - Microsoft AutoUpdate Cache Admin](https://
 
 So far, you created your configuration and added apps. Now you're ready to enroll all your macOS endpoints with an Automated Device Enrollment policy using Microsoft Intune.
 
-:::image type="content" source="./media/macos-endpoints-get-started/phase-6-enroll-all-endpoints.png" border="false" alt-text="A diagram that tells you to enroll all your macOS endpoints with an Automated Device Enrollment policy using Microsoft Intune":::
+![A diagram that tells you to enroll all your macOS endpoints with an Automated Device Enrollment policy using Microsoft Intune](media/macos-endpoints-get-started/phase-6-enroll-all-endpoints.png)
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Create the Automated Device Enrollment policy**
+![](../../media/icons/16/check.svg) **Create the Automated Device Enrollment policy**
 
-The enrollment policy is assigned to your new group. When the devices receive the enrollment policy, the enrollment process starts, and the app & configuration policies you created are applied.
+The enrollment policy is assigned to your new group. When the devices receive the enrollment policy, the enrollment process starts, and the app &amp; configuration policies you created are applied.
 
 For more information on Automated Device Enrollment, and to get started, go to [Automatically enroll Macs with Apple Business Manager or Apple School Manager](../../device-enrollment/apple/setup-automated-macos.md).
 
@@ -663,19 +649,19 @@ For more information on Automated Device Enrollment, and to get started, go to [
 
 The final phase is to support and maintain your macOS devices. This phase includes using Intune features, like remote help, monitoring your Apple certificates, and more.
 
-:::image type="content" source="./media/macos-endpoints-get-started/phase-7-support-maintenance.png" border="false" alt-text="A diagram that lists the steps to support and maintain your macOS devices, including using remote help, adding custom attributes, and configuring Apple Business Manager using Microsoft Intune":::
+![A diagram that lists the steps to support and maintain your macOS devices, including using remote help, adding custom attributes, and configuring Apple Business Manager using Microsoft Intune](media/macos-endpoints-get-started/phase-7-support-maintenance.png)
 
 Intune manages macOS devices using the built-in operating system MDM capabilities and the Intune Management Extension (IME) agent.
 
 These two components offer separate functionality and communicate with the macOS device through different channels. Enrollment is orchestrated through Apple Business Manager, MDM is orchestrated through the Apple Push Notification Service, and the IME communicates directly with Intune.
 
-:::image type="content" source="./media/macos-endpoints-get-started/macos-endpoint-ime-architecture.png" border="false" alt-text="A diagram that shows how the macOS MDM and the Intune Managemnt Extension work together to support management of macOS devices using Microsoft Intune":::
+![A diagram that shows how the macOS MDM and the Intune Managemnt Extension work together to support management of macOS devices using Microsoft Intune](media/macos-endpoints-get-started/macos-endpoint-ime-architecture.png)
 
 For more information about the Intune Management Extension, go to [Understanding Microsoft Intune management agent for macOS](../../app-management/deployment/management-agent-macos.md).
 
 ### macOS enrollment maintenance
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Renew Apple certificates and sync ADE tokens**
+![](../../media/icons/16/check.svg) **Renew Apple certificates and sync ADE tokens**
 
 For your Mac devices to maintain their connection to Intune and continue enrolling, there are several important areas you should check in the console periodically and take action as needed:
 
@@ -684,13 +670,11 @@ For your Mac devices to maintain their connection to Intune and continue enrolli
   Apple's Push Notification Service certificate must be renewed yearly. When this certificate expires, Intune can't manage devices that enrolled using that certificate. Make sure you renew this certificate every year.
 
   For more information, go to [Get an Apple MDM Push certificate for Intune](../../device-enrollment/apple/create-mdm-push-certificate.md#renew-apple-mdm-push-certificate).
-
 - **Apple Automated Device Enrollment certificate expiry**
 
   When you set up a connection between Apple Business Manager (or Apple School Manager) and Intune, a certificate is used. This certificate must be renewed yearly. If this certificate isn't renewed, changes from Apple Business Manager (or Apple School Manager) can't sync to Intune.
 
   For more information, go to [Renew a macOS enrollment token](../../device-enrollment/apple/setup-macos-token.md#renew-an-enrollment-program-token).
-
 - **Apple Automated Device Enrollment sync status**
 
   Apple suspends syncing of ADE tokens when the terms and conditions are changed in Apple Business Manager (or Apple School Manager). They can change after a major OS release, but it can happen anytime.
@@ -701,7 +685,7 @@ For your Mac devices to maintain their connection to Intune and continue enrolli
 
 ### Remote Help
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Enable remote help**
+![](../../media/icons/16/check.svg) **Enable remote help**
 
 Remote Help is a cloud-based solution for secure help desk connections that use role-based access controls. With the connection, your support staff can remote connect to end user devices.
 
@@ -712,7 +696,7 @@ For more information, go to:
 
 ### Custom attributes
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Use custom properties to get reporting information**
+![](../../media/icons/16/check.svg) **Use custom properties to get reporting information**
 
 In Intune, you can use shell scripts to collect custom properties from managed macOS devices. This feature is a great way to get custom reporting information.
 
@@ -720,18 +704,14 @@ For more information, go to [Use shell scripts on macOS devices in Microsoft Int
 
 ### Configure Apple Business Manager for automatic user provisioning
 
-:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: **Use Entra user accounts for ABM administration and Managed Apple IDs**
+![](../../media/icons/16/check.svg) **Use Entra user accounts for ABM administration and Managed Apple IDs**
 
 Microsoft Entra ID can be configured to automatically provision and deprovision users to Apple Business Manager (ABM) using the Microsoft Entra provisioning service.
 
-For more information, go to [Tutorial: Configure Apple Business Manager for automatic user provisioning](/entra/identity/saas-apps/apple-business-manager-provision-tutorial).
+For more information, go to [Tutorial: Configure Apple Business Manager for automatic user provisioning](https://learn.microsoft.com/en-us/entra/identity/saas-apps/apple-business-manager-provision-tutorial).
 
 ## Related articles
 
 - [macOS platform guide](../../fundamentals/platform-guide-macos.md)
 - [Microsoft Intune securely manages identities, manages apps, and manages devices](../../fundamentals/what-is-intune.md)
 - [macOS account configuration with LAPS](../../device-security/laps/setup-macos.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

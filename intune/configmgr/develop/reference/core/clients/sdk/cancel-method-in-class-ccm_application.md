@@ -1,16 +1,18 @@
 ---
 description: Learn how to cancel an application deployment using the Cancel class method in Configuration Manager.
-title: Cancel Method
-ms.date: 09/20/2016
+title: "Cancel Method in Class CCM_Application"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Cancel Method in Class CCM_Application
+
 The `Cancel` Windows Management Instrumentation (WMI) class method in Configuration Manager that cancels an application deployment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,33 +26,33 @@ uint32 Cancel
 ```
 
 ## Parameters
- `Id`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`Id` Data type: `String`
 
- Application identifier.
+Qualifiers: [id("0"), in]
 
- `Revision`
- Data type: `String`
+Application identifier.
 
- Qualifiers: [id("1"), in]
+`Revision` Data type: `String`
 
- Revision.
+Qualifiers: [id("1"), in]
 
- `IsMachineTarget`
- Data type: `Boolean`
+Revision.
 
- Qualifiers: [id("2"), in]
+`IsMachineTarget` Data type: `Boolean`
 
- `true` if the application targets a device.
+Qualifiers: [id("2"), in]
+
+`true` if the application targets a device.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

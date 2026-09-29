@@ -1,16 +1,18 @@
 ---
-title: SMS_ImageServicingProgress Class
+title: "SMS_ImageServicingProgress Server WMI Class"
 description: The SMS_ImageServicingProgress WMI class is an SMS Provider server class that represents software update installation status in offline servicing image.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ImageServicingProgress Server WMI Class
+
 The `SMS_ImageServicingProgress` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents software update installation status in offline servicing image.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,75 +29,73 @@ Class SMS_ImageServicingProgress : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ImageServicingProgress` class does not define any methods.
+
+The `SMS_ImageServicingProgress` class does not define any methods.
 
 ## Properties
- `FailedUpdateID`
- Data type: `SInt32`
 
- Access type: Read/Write
+`FailedUpdateID` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Failed software update local unique ID.
+Qualifiers: none
 
- `ImagePackageID`
- Data type: `String`
+Failed software update local unique ID.
 
- Access type: Read/Write
+`ImagePackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Package ID of the image applied to the target computer.
+Qualifiers: [key]
 
- `RunDateTime`
- Data type: `DateTime`
+Package ID of the image applied to the target computer.
 
- Access type: Read/Write
+`RunDateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last run time of software update.
+Qualifiers: none
 
- `ScheduleID`
- Data type: `SInt32`
+Last run time of software update.
 
- Access type: Read/Write
+`ScheduleID` Data type: `SInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Schedule ID for software update installation.
+Qualifiers: [key]
 
- `Status`
- Data type: `SInt32`
+Schedule ID for software update installation.
 
- Access type: Read/Write
+`Status` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Status for software update installation.
+Qualifiers: none
+
+Status for software update installation.
 
 | Value | Installation status |
-| ----- | ------------------- |
-|1|Running|
-|2|Success|
-|3|Failed|
+| --- | --- |
+| 1 | Running |
+| 2 | Success |
+| 3 | Failed |
 
- `Win32ErrorCode`
- Data type: `SInt32`
+`Win32ErrorCode` Data type: `SInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Win32 error code for software update installation.
+Win32 error code for software update installation.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

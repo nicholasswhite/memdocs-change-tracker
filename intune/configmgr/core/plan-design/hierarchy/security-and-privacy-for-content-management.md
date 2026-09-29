@@ -1,7 +1,7 @@
 ---
-title: Content management security and privacy
+title: "Security and privacy for content management in Configuration Manager"
 description: Optimize security and privacy for content management in Configuration Manager.
-ms.date: 07/15/2021
+ms.date: "2021-07-15T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -20,14 +20,14 @@ This article contains security and privacy information for content management in
 
 For distribution points on the intranet, consider the advantages and disadvantages of using HTTPS or HTTP. In most scenarios, using HTTP and [package access accounts](accounts.md#package-access-account) for authorization provides more security than using HTTPS with encryption but without authorization. However, if you have sensitive data in your content that you want to encrypt during transfer, use HTTPS.
 
-- When you use _HTTPS_ for a distribution point: Configuration Manager doesn't use package access accounts to authorize access to the content. The content is encrypted when it's transferred over the network.
-
-- When you use _HTTP_ for a distribution point: You can use package access accounts for authorization. The content isn't encrypted when it's transferred over the network.
+- When you use *HTTPS* for a distribution point: Configuration Manager doesn't use package access accounts to authorize access to the content. The content is encrypted when it's transferred over the network.
+- When you use *HTTP* for a distribution point: You can use package access accounts for authorization. The content isn't encrypted when it's transferred over the network.
 
 Consider enabling **Enhanced HTTP** for the site. This feature allows clients to use Microsoft Entra authentication to securely communicate with an HTTP distribution point. For more information, see [Enhanced HTTP](enhanced-http.md).
 
 > [!IMPORTANT]
-> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).<!-- 9390933,9572265 -->
+>
+> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).
 
 ### Protect the client authentication certificate file
 
@@ -74,11 +74,8 @@ Use IPsec or SMB signing between the site server and the package source location
 If you change the site configuration option to use a custom website rather than the default website after installing a distribution point role, remove the default virtual directories. When you switch from the default website to a custom website, Configuration Manager doesn't remove the old virtual directories. Remove the following virtual directories that Configuration Manager originally created under the default website:
 
 - `SMS_DP_SMSPKG$`
-
 - `SMS_DP_SMSSIG$`
-
 - `NOCERT_SMS_DP_SMSPKG$`
-
 - `NOCERT_SMS_DP_SMSSIG$`
 
 For more information about using a custom website, see [Websites for site system servers](../network/websites-for-site-system-servers.md).
@@ -97,16 +94,14 @@ Store the certificates securely. If you browse to them over the network when you
 
 Configuration Manager doesn't warn you when the imported certificates for the CMG are about to expire. Monitor the expiry dates independently from Configuration Manager. Make sure that you renew and then import the new certificates before the expiry date. This action is important if you acquire a server authentication certificate from an external, public provider, because you might need more time to acquire a renewed certificate.
 
-If a certificate expires, the Configuration Manager cloud services manager generates a status message with ID **9425**. The CloudMgr.log file contains an entry to indicate that the certificate _is in expired state_, with the expiry date also logged in UTC.
+If a certificate expires, the Configuration Manager cloud services manager generates a status message with ID **9425**. The CloudMgr.log file contains an entry to indicate that the certificate *is in expired state*, with the expiry date also logged in UTC.
 
 ## Security considerations
 
 - Clients don't validate content until after it's downloaded. Configuration Manager clients validate the hash on content only after it's downloaded to their client cache. If an attacker tampers with the list of files to download or with the content itself, the download process can take up considerable network bandwidth. Then the client discards the content when it finds the invalid hash.
-
 - When you use content-enabled cloud management gateways:
 
   - It automatically restricts access to the content to your organization. You can't restrict it further to selected users or groups.
-
   - The management point first authenticates the client. Then the client uses a Configuration Manager token to access cloud storage. The token is valid for eight hours. This behavior means that if you block a client because it's no longer trusted, it can continue to download content from cloud storage until this token expires. The management point won't issue another token for the client because it's blocked.
 
     To avoid a blocked client from downloading content within this eight-hour window, stop the cloud service. In the Configuration Manager console, go to the **Administration** workspace, expand **Cloud Services**, and select the **Cloud Management Gateway** node.
@@ -118,9 +113,6 @@ Configuration Manager doesn't include any user data in content files, although a
 ## Next steps
 
 - [Fundamental concepts for content management](fundamental-concepts-for-content-management.md)
-
 - [Security and privacy for application management](../../../apps/plan-design/security-and-privacy-for-application-management.md)
-
 - [Security and privacy for software updates](../../../sum/plan-design/security-and-privacy-for-software-updates.md)
-
 - [Security and privacy for OS deployment](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md)

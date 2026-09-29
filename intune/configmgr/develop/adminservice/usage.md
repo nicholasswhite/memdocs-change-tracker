@@ -1,7 +1,7 @@
 ---
-title: How to use the admin service
+title: "How to use the administration service in Configuration Manager"
 description: Learn how you can use the administration service in custom scenarios.
-ms.date: 07/20/2020
+ms.date: "2020-07-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -15,6 +15,7 @@ ms.service: configuration-manager
 Configuration Manager uses the administration service REST API in several native [scenarios](overview.md#scenarios). You can also use the administration service for your own custom scenarios.
 
 > [!NOTE]
+>
 > The examples in this article all use the FQDN of the server that hosts the SMS Provider role. If you access the administration service remotely through a CMG, use the CMG endpoint instead of the SMS Provider FQDN. For more information, see [Enable internet access](set-up.md#enable-internet-access).
 
 ## Direct query
@@ -28,17 +29,16 @@ There are several ways that you can directly query the administration service:
 The next sections cover the first two methods.
 
 > [!IMPORTANT]
+>
 > The administration service class names are case-sensitive. Make sure to use the proper capitalization. For example, `SMS_Site`.
 
 ### Web browser
 
 You can use a web browser to easily query the administration service. When you specify a query URI as the browser's URL, the administration service processes the GET request, and returns the result in JSON format. Some web browsers may not display the result in an easy to read format.
 
-<!-- screenshot -->
-
 ### PowerShell
 
-Make direct calls to this service with the Windows PowerShell cmdlet [Invoke-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod).
+Make direct calls to this service with the Windows PowerShell cmdlet [Invoke-RestMethod](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod).
 
 For example:
 
@@ -70,15 +70,12 @@ For more information, see [Task sequence steps - Run PowerShell Script](../../os
 
 ## Power BI Desktop
 
-You can use Power BI Desktop to query data in Configuration Manager via the administration service. For more information, see [What is Power BI Desktop?](/power-bi/desktop-what-is-desktop)
+You can use Power BI Desktop to query data in Configuration Manager via the administration service. For more information, see [What is Power BI Desktop?](https://learn.microsoft.com/en-us/power-bi/desktop-what-is-desktop)
 
 1. In Power BI Desktop, in the ribbon, select **Get Data**, and select **OData feed**.
-
-1. For the **URL**, specify the administration service route. For example, `https://smsprovider.contoso.com/AdminService/wmi/`
-
-1. Choose **Windows Authentication**.
-
-1. In the **Navigator** window, select the items to use in your Power BI dashboard or report.
+2. For the **URL**, specify the administration service route. For example, `https://smsprovider.contoso.com/AdminService/wmi/`
+3. Choose **Windows Authentication**.
+4. In the **Navigator** window, select the items to use in your Power BI dashboard or report.
 
 [![Screenshot of Navigator window in Power BI Desktop](media/powerbi-desktop-navigator.png)](media/powerbi-desktop-navigator.png#lightbox)
 
@@ -93,9 +90,7 @@ For example: `https://smsprovider.contoso.com/AdminService/wmi/SMS_R_System(1677
 ### v1 Device class examples
 
 - Get all devices: `https://<ProviderFQDN>/AdminService/v1.0/Device`
-
 - Get single device: `https://<ProviderFQDN>/AdminService/v1.0/Device(<ResourceID>)`
-
 - Run CMPivot on a device:
 
   ```rest
@@ -103,14 +98,12 @@ For example: `https://smsprovider.contoso.com/AdminService/wmi/SMS_R_System(1677
   URI: https://<ProviderFQDN>/AdminService/v1.0/Device(<ResourceID>)/AdminService.RunCMPivot
   Body: {"InputQuery":"<CMPivot query to run>"}
   ```
-
 - See CMPivot job result:
 
   ```rest
   Verb: GET
   URI: https://<ProviderFQDN>/AdminService/v1.0/Device(<ResourceID>)/AdminService.CMPivotResult(OperationId=<Operation ID of the CM Pivot job>)
   ```
-
 - See which collections a device belongs to: `https://<ProviderFQDN>/AdminService/v1.0/Device(16777219)/ResourceCollectionMembership?$expand=Collection&$select=Collection`
 
 ### Filter results with startswith

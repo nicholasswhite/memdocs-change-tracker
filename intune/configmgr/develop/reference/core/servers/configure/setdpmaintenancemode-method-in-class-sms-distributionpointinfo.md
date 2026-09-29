@@ -1,7 +1,7 @@
 ---
 description: Learn how to set a distribution point in maintenance mode using SetDPMaintenanceMode class method in Configuration Manager.
-title: SetDPMaintenanceMode method
-ms.date: 05/24/2019
+title: "SetDPMaintenanceMode method in class SMS_DistributionPoint"
+ms.date: "2019-05-24T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,8 +9,6 @@ ms.service: configuration-manager
 ---
 
 # SetDPMaintenanceMode method in class SMS_DistributionPoint
-
-<!--3555754-->
 
 The `SetDPMaintenanceMode` WMI class method in Configuration Manager sets a distribution point in maintenance mode. For more information, see [Maintenance mode](../../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_maint).
 
@@ -33,7 +31,7 @@ Data type: `String`
 
 Qualifiers: `[in]`
 
- Network abstraction layer (NAL) path to the distribution point server.
+Network abstraction layer (NAL) path to the distribution point server.
 
 ### `Mode`
 
@@ -43,13 +41,11 @@ Qualifiers: `[in]`
 
 `1` to enable maintenance mode, `0` to disable
 
-
 ## Return values
 
 An `uint32` data type that's `0` indicates success. A non-zero hresult indicates failure.
 
 For more information about handling returned errors, see [About Configuration Manager errors](../../../../core/understand/about-configuration-manager-errors.md).
-
 
 ## Requirements
 
@@ -60,7 +56,6 @@ For more information, see [Configuration Manager server runtime requirements](..
 ### Development requirements
 
 For more information, see [Configuration Manager server development requirements](../../../../core/reqs/server-development-requirements.md).
-
 
 ## See also
 

@@ -1,19 +1,22 @@
 ---
 description: Learn how to represent a pending re-registration at the time of site reassignment in Configuration Manager.
-title: SMS_PendingReRegistrationOnSiteReAssignment Class
-ms.date: 09/20/2016
+title: "SMS_PendingReRegistrationOnSiteReAssignment Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PendingReRegistrationOnSiteReAssignment Client WMI Class
+
 > [!IMPORTANT]
->  This class supports the Configuration Manager 2007 infrastructure and is not intended to be used directly from your code.
+>
+> This class supports the Configuration Manager 2007 infrastructure and is not intended to be used directly from your code.
 
- The `SMS_PendingReRegistrationOnSiteReAssignment` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that represents a pending re-registration at the time of site reassignment.
+The `SMS_PendingReRegistrationOnSiteReAssignment` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that represents a pending re-registration at the time of site reassignment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,43 +30,45 @@ Class SMS_PendingReRegistrationOnSiteReAssignment
 ```
 
 ## Methods
- The `SMS_PendingReRegistrationOnSiteReAssignment` class does not define any methods.
+
+The `SMS_PendingReRegistrationOnSiteReAssignment` class does not define any methods.
 
 ## Properties
- `Flags`
- Data type: `UInt32`
 
- Access type: Read/Write
+`Flags` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Flags defining options for the pending re-registration.
+Qualifiers: None
 
- `LastAssignedSite`
- Data type: `String`
+Flags defining options for the pending re-registration.
 
- Access type: Read/Write
+`LastAssignedSite` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The site code of the last site that was assigned.
+Qualifiers: None
 
- `NewAssignedSite`
- Data type: `String`
+The site code of the last site that was assigned.
 
- Access type: Read/Write
+`NewAssignedSite` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The site code of the new site being assigned.
+Qualifiers: None
+
+The site code of the new site being assigned.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md)

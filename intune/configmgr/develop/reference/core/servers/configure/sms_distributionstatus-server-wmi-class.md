@@ -1,16 +1,18 @@
 ---
 description: The SMS_DistributionStatus WMI class is an SMS Provider server class, in Configuration Manager, that represents the status of a package that has been assigned to a distribution point.
-title: SMS_DistributionStatus Class
-ms.date: 09/20/2016
+title: "SMS_DistributionStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DistributionStatus Server WMI Class
+
 The `SMS_DistributionStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that represents the status of a package that has been assigned to a distribution point.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,95 +30,92 @@ Class SMS_DistributionStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DistributionStatus` class doesn't define any methods.
+
+The `SMS_DistributionStatus` class doesn't define any methods.
 
 ## Properties
- `Assets`
- Data type: `UInt32`
 
- Access type: Read-only
+`Assets` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Number of distribution points in this status.
+Qualifiers: [read]
 
- `LastUpdateDate`
- Data type: `DateTime`
+Number of distribution points in this status.
 
- Access type: Read-only
+`LastUpdateDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last status update date.
+Qualifiers: [read]
 
- `MessageCategory`
- Data type: `UInt32`
+Last status update date.
 
- Access type: Read-only
+`MessageCategory` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Status message category.
+Qualifiers: [key, read]
 
- `ObjectID`
- Data type: `String`
+Status message category.
 
- Access type: Read-only
+`ObjectID` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- PackageID or ModelName.
+Qualifiers: [key, read]
 
- `ObjectTypeID`
- Data type: `UInt32`
+PackageID or ModelName.
 
- Access type: Read-only
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Secured object class ID.
+Qualifiers: [enumeration, read]
 
-|Value|Object type|
-|-|-|
-|2|SMS_DistributionStatus|
-|14|SMS_OperatingSystemInstallPackage|
-|18|SMS_ImagePackage|
-|19|SMS_BootImagePackage|
-|21|SMS_DeviceSettingPackage|
-|23|SMS_DriverPackage|
-|24|SMS_SoftwareUpdatesPackage|
-|31|SMS_Application|
+Secured object class ID.
 
- `PackageID`
- Data type: `String`
+| Value | Object type |
+| --- | --- |
+| 2 | SMS_DistributionStatus |
+| 14 | SMS_OperatingSystemInstallPackage |
+| 18 | SMS_ImagePackage |
+| 19 | SMS_BootImagePackage |
+| 21 | SMS_DeviceSettingPackage |
+| 23 | SMS_DriverPackage |
+| 24 | SMS_SoftwareUpdatesPackage |
+| 31 | SMS_Application |
 
- Access type: Read-only
+`PackageID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- PackageID.
+Qualifiers: [read]
 
- `Type`
- Data type: `UInt32`
+PackageID.
 
- Access type: Read-only
+`Type` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Status Type.
+Qualifiers: [enumeration, read]
 
-|Value|Status type|
-|-|-|
-|1|Success|
-|2|InProgress|
-|3|Error|
+Status Type.
+
+| Value | Status type |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 3 | Error |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

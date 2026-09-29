@@ -1,7 +1,7 @@
 ---
-title: OS deployment interoperability
+title: "Plan for OS deployment interoperability"
 description: Understand interoperability issues when different Configuration Manager sites in a single hierarchy use different versions.
-ms.date: 10/01/2021
+ms.date: "2021-10-01T00:00:00Z"
 ms.subservice: osd
 ms.topic: install-set-up-deploy
 ms.collection: tier3
@@ -14,7 +14,6 @@ ms.service: configuration-manager
 
 When different Configuration Manager sites in a single hierarchy use different versions, some Configuration Manager functionality isn't available. Typically, functionality from the newer version of Configuration Manager isn't accessible at sites or by clients that run a lower version. For more information, see [Interoperability between different versions of Configuration Manager](../../core/plan-design/hierarchy/interoperability-between-different-versions.md).
 
-
 ## Objects
 
 Consider the following objects when you upgrade the top-level site in your hierarchy and other sites in your hierarchy run Configuration Manager with a lower version:
@@ -22,15 +21,12 @@ Consider the following objects when you upgrade the top-level site in your hiera
 ### Client installation package
 
 - The source for the default client installation package is automatically upgraded. All distribution points in the hierarchy are updated with the new client installation package. This behavior happens even on distribution points at sites in the hierarchy that are at a lower version.
-
 - You can't assign new version clients to sites that you haven't yet upgraded to the new version. Assignment is blocked at the management point.
 
 ### Boot images
 
 - When you upgrade the top-level site to the latest version of Configuration Manager, it automatically updates the default boot images (x86 and x64). The update uses the version of the Windows ADK and Windows PE that you've installed. The files that are associated with the default boot images are updated with the latest Configuration Manager version of the files. The site doesn't automatically update custom boot images. You need to manually update custom boot images, which include older Windows PE versions.
-
 - When your site hierarchy contains sites with different versions of Configuration Manager, avoid the use of dynamic media. Instead, use site-based media to contact a specific management point. After you update all sites to the same version of Configuration Manager, you can use dynamic media again.
-
 - Verify that the latest Configuration Manager boot images include your customizations. Then update all distribution points at the new version sites with the latest version of the new boot images.
 
 ### User State Migration Tool (USMT)
@@ -49,7 +45,6 @@ When the site is updated to a new version, update all media with the new Configu
 
 When you have third-party extensions to OS deployment and you have different versions of Configuration Manager sites or Configuration Manager clients, there might be issues with the extensions.
 
-
 ## Latest version of Configuration Manager sites in a mixed hierarchy
 
 When you upgrade a site to latest version of Configuration Manager, task sequences that reference the default client installation package automatically start to deploy the latest Configuration Manager client version.
@@ -62,6 +57,7 @@ When you configure a task sequence to use a custom client installation package, 
 - Update the custom package to use the latest Configuration Manager client installation source
 
 > [!IMPORTANT]
+>
 > Don't deploy a task sequence that references the latest Configuration Manager client installation package to clients in an older Configuration Manager site. When clients assigned to an older Configuration Manager site are upgraded to the latest Configuration Manager client version, Configuration Manager blocks the assignment to the older Configuration Manager site. These clients are no longer assigned to any site. Until you manually assign the client to the latest Configuration Manager site, or reinstall the older Configuration Manager version of the client on the computer, these clients are unmanaged.
 
 ## Older versions of Configuration Manager in a mixed hierarchy

@@ -1,16 +1,18 @@
 ---
 description: Learn how to specify the general settings for communication between server and client using SMS_COnfigMgrClientAgentConfig.
-title: SMS_ConfigMgrClientAgentConfig Class
-ms.date: 09/20/2016
+title: "SMS_ConfigMgrClientAgentConfig Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ConfigMgrClientAgentConfig Server WMI Class
+
 The `SMS_ConfigMgrClientAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies the general settings for communication between server and client.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -43,234 +45,216 @@ Class SMS_ConfigMgrClientAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_ConfigMgrClientAgentConfig` class does not define any methods.
+
+The `SMS_ConfigMgrClientAgentConfig` class does not define any methods.
 
 ## Properties
- `AddPortalToTrustedSiteList`
- Data type: `Boolean`
 
- Access type: Read/Write
+`AddPortalToTrustedSiteList` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Add default Application Catalog website to the Internet Explorer trusted sites zone.
+Qualifiers: none
 
- `AllowPortalToHaveElevatedTrust`
- Data type: `Boolean`
+Add default Application Catalog website to the Internet Explorer trusted sites zone.
 
- Access type: Read/Write
+`AllowPortalToHaveElevatedTrust` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Allow Silverlight applications to run in elevated trust mode.
+Qualifiers: none
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+Allow Silverlight applications to run in elevated trust mode.
 
- `AgentID`
- Data type: `UInt32`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Configuration Manager Client Agent ID is 4.
+Qualifiers: [key, read]
 
- `BrandingTitle`
- Data type: `String`
+Identifies the client agent component. The Configuration Manager Client Agent ID is 4.
 
- Access type: Read/Write
+`BrandingTitle` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Organization name displayed in Software Center.
+Qualifiers: none
 
- `DayReminderInterval`
- Data type: `UInt32`
+Organization name displayed in Software Center.
 
- Access type: Read/Write
+`DayReminderInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Deployment deadline greater than 24 hours, remind user every (hours).
+Qualifiers: none
 
- `DisplayNewProgramNotification`
- Data type: `Boolean`
+Deployment deadline greater than 24 hours, remind user every (hours).
 
- Access type: Read/Write
+`DisplayNewProgramNotification` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if notifications are shown to a user when a new program is made available.
+Qualifiers: none
 
- `EnableHealthAttestation`
- Data type: `Boolean`
+`true` if notifications are shown to a user when a new program is made available.
 
- Access type: Read/Write
+`EnableHealthAttestation` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates whether [Windows 10 Device Health Attestation](/windows/security/threat-protection/protect-high-value-assets-by-controlling-the-health-of-windows-10-based-devices) is enabled.
+Qualifiers: none
 
- `EnableThirdPartyOrchestration`
- Data type: `UInt32`
+Indicates whether [Windows 10 Device Health Attestation](https://learn.microsoft.com/en-us/windows/security/threat-protection/protect-high-value-assets-by-controlling-the-health-of-windows-10-based-devices) is enabled.
 
- Access type: Read/Write
+`EnableThirdPartyOrchestration` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Enable third party orchestration.
+Qualifiers: none
 
- `GracePeriodHours`
- Data type: `UInt32`
+Enable third party orchestration.
 
- Access type: Read/Write
+`GracePeriodHours` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of hours in the enforcement grace period.
+Qualifiers: none
 
- Define an enforcement grace period to give users more time to install required application deployments or software updates beyond any deadlines you configured.
+Number of hours in the enforcement grace period.
 
- `HourReminderInterval`
- Data type: `UInt32`
+Define an enforcement grace period to give users more time to install required application deployments or software updates beyond any deadlines you configured.
 
- Access type: Read/Write
+`HourReminderInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Deployment deadline less than 24 hours, remind user every (hours).
+Qualifiers: none
 
- `InstallRestriction`
- Data type: `UInt32`
+Deployment deadline less than 24 hours, remind user every (hours).
 
- Access type: Read/Write
+`InstallRestriction` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Install permissions.
+Qualifiers: none
 
-|Possible values|
-|----|
-|All users|
-|Only administrators|
-|Only administrators and primary users|
-|No users|
+Install permissions.
 
- `OnPremHAServiceUrl`
- Data type: `String`
+| Possible values |
+| --- |
+| All users |
+| Only administrators |
+| Only administrators and primary users |
+| No users |
 
- Access type: Read/Write
+`OnPremHAServiceUrl` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The URL for the on-premises Health Attestation Service.
+Qualifiers: none
 
- `OSDBrandingSubTitle`
- Data type: `String`
+The URL for the on-premises Health Attestation Service.
 
- Access type: Read/Write
+`OSDBrandingSubTitle` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The operating system deployment branding subtitle.
+Qualifiers: none
 
- `PortalUrl`
- Data type: `String`
+The operating system deployment branding subtitle.
 
- Access type: Read/Write
+`PortalUrl` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Default Application Catalog website point.
+Qualifiers: none
 
- `PowerShellExecutionPolicy`
- Data type: `UInt32`
+Default Application Catalog website point.
 
- Access type: Read/Write
+`PowerShellExecutionPolicy` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- PowerShell execution policy.
+Qualifiers: none
 
-|Value|Definition|
-|----|----|
-|0|Bypass|
-|1|Restricted|
+PowerShell execution policy.
 
- `ReminderInterval`
- Data type: `UInt32`
+| Value | Definition |
+| --- | --- |
+| 0 | Bypass |
+| 1 | Restricted |
 
- Access type: Read/Write
+`ReminderInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Deployment deadline less than 1 hour, remind user every (minutes).
+Qualifiers: none
 
- `SUMBrandingSubTitle`
- Data type: `String`
+Deployment deadline less than 1 hour, remind user every (minutes).
 
- Access type: Read/Write
+`SUMBrandingSubTitle` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The software updates branding subtitle.
+Qualifiers: none
 
- `SuspendBitLocker`
- Data type: `UInt32`
+The software updates branding subtitle.
 
- Access type: Read/Write
+`SuspendBitLocker` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to disable PIN protector on the system volume if the reboot is initiated by CcmExec (not including the user explicitly rebooting from the reboot UI). After the reboot, the PIN protector is enabled. This enables a computer reboot without user intervention.
+Qualifiers: none
 
-|Value|Definition|
-|----|----|
-|0|Never disable PIN protection.|
-|1|Always disable PIN protection.|
+`true` to disable PIN protector on the system volume if the reboot is initiated by CcmExec (not including the user explicitly rebooting from the reboot UI). After the reboot, the PIN protector is enabled. This enables a computer reboot without user intervention.
 
- `SWDBrandingSubTitle`
- Data type: `String`
+| Value | Definition |
+| --- | --- |
+| 0 | Never disable PIN protection. |
+| 1 | Always disable PIN protection. |
 
- Access type: Read/Write
+`SWDBrandingSubTitle` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The software distribution branding subtitle.
+Qualifiers: none
 
- `SystemRestartTurnaroundTime`
- Data type: `UInt32`
+The software distribution branding subtitle.
 
- Access type: Read/Write
+`SystemRestartTurnaroundTime` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The estimated turnaround time for system reboot, in seconds.
+Qualifiers: none
 
- `UseNewSoftwareCenter`
- Data type: `Boolean`
+The estimated turnaround time for system reboot, in seconds.
 
- Access type: Read/Write
+`UseNewSoftwareCenter` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates whether the updated Software Center is used.
+Qualifiers: none
 
- `UseOnPremHAService`
- Data type: `Boolean`
+Indicates whether the updated Software Center is used.
 
- Access type: Read/Write
+`UseOnPremHAService` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates whether the on-premises Health Attestation Service is used.
+Qualifiers: none
+
+Indicates whether the on-premises Health Attestation Service is used.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

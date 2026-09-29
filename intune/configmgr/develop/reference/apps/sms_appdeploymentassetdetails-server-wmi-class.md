@@ -1,16 +1,18 @@
 ---
-title: SMS_AppDeploymentAssetDetails Class
+title: "SMS_AppDeploymentAssetDetails Server WMI Class"
 description: The SMS_AppDeploymentAssetDetails WMI class is an SMS Provider server class that represents asset-level details about the deployment.
-ms.date: 04/30/2020
+ms.date: "2020-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_AppDeploymentAssetDetails Server WMI Class
+
 The `SMS_AppDeploymentAssetDetails` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents asset-level details about the deployment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -51,331 +53,305 @@ Class SMS_AppDeploymentAssetDetails : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AppDeploymentAssetDetails` class does not define any methods.
+
+The `SMS_AppDeploymentAssetDetails` class does not define any methods.
 
 ## Properties
- `AppCI`
- Data type: `UInt32`
 
- Access type: Read-only
+`AppCI` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Application configuration item.
+Qualifiers: [not_null, read]
 
- `AppName`
- Data type: `String`
+Application configuration item.
 
- Access type: Read-only
+`AppName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Application description.
+Qualifiers: [read]
 
- `AppStatusType`
- Data type: `UInt32`
+Application description.
 
- Access type: Read-only
+`AppStatusType` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Application status type. Possible values are:
+Qualifiers: [not_null, read]
 
-|Value|Application status|
-|-|-|
-|1|Success|
-|2|InProgress|
-|3|RequirementsNotMet|
-|4|Unknown|
-|5|Error|
+Application status type. Possible values are:
 
- `AssignmentID`
- Data type: `UInt32`
+| Value | Application status |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 3 | RequirementsNotMet |
+| 4 | Unknown |
+| 5 | Error |
 
- Access type: Read-only
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `AssignmentUniqueID`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](../compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `CollectionID`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](../compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`CollectionID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- ID of the collection to which the deployment was deployed.
+Qualifiers: [not_null, read]
 
- `CollectionName`
- Data type: `String`
+ID of the collection to which the deployment was deployed.
 
- Access type: Read-only
+`CollectionName` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Collection name.
+Qualifiers: [not_null, read]
 
- `ComplianceState`
- Data type: `UInt32`
+Collection name.
 
- Access type: Read-only
+`ComplianceState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Compliance state for the configuration item.
+Qualifiers: [not_null, read]
 
- `DeploymentIntent`
- Data type: `UInt32`
+Compliance state for the configuration item.
 
- Access type: Read-only
+`DeploymentIntent` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Intended purpose of the deployment, regardless of the Action (Install or Uninstall) specified. Possible values are:
+Qualifiers: [read]
 
-|Value|Intended purpose|
-|-|-|
-|1|Required|
-|2|Available|
-|3|Simulate|
+Intended purpose of the deployment, regardless of the Action (Install or Uninstall) specified. Possible values are:
 
- `DTCI`
- Data type: `UInt32`
+| Value | Intended purpose |
+| --- | --- |
+| 1 | Required |
+| 2 | Available |
+| 3 | Simulate |
 
- Access type: Read-only
+`DTCI` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Deployment type configuration item.
+Qualifiers: [key, not_null, read]
 
- `DTModelID`
- Data type: `UInt32`
+Deployment type configuration item.
 
- Access type: Read-only
+`DTModelID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Deployment Type Model ID.
+Qualifiers: [key, not_null, read]
 
- `DTName`
- Data type: `String`
+Deployment Type Model ID.
 
- Access type: Read-only
+`DTName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Description of the deployment type.
+Qualifiers: [read]
 
- `DTResultID`
- Data type: `UInt64`
+Description of the deployment type.
 
- Access type: Read-only
+`DTResultID` Data type: `UInt64`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Deployment Type Result ID.
+Qualifiers: [not_null, read]
 
- `EnforcementState`
- Data type: `UInt32`
+Deployment Type Result ID.
 
- Access type: Read-only
+`EnforcementState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The enforcement state. Possible values are:
+Qualifiers: [not_null, read]
 
-|Value|Enforcement state|
-|-|-|
-|0|Enforcement State Unknown|
-|1|Enforcement started|
-|2|Enforcement waiting for content|
-|3|Waiting for another installation to complete|
-|4|Waiting for maintenance window before installing|
-|5|Restart required before installing|
-|6|General failure|
-|7|Pending installation|
-|8|Installing update|
-|9|Pending system restart|
-|10|Successfully installed update|
-|11|Failed to install update|
-|12|Downloading update|
-|13|Downloaded update|
-|14|Failed to download update|
+The enforcement state. Possible values are:
 
- `ExtendedInfoDescriptionID`
- Data type: `UInt32`
+| Value | Enforcement state |
+| --- | --- |
+| 0 | Enforcement State Unknown |
+| 1 | Enforcement started |
+| 2 | Enforcement waiting for content |
+| 3 | Waiting for another installation to complete |
+| 4 | Waiting for maintenance window before installing |
+| 5 | Restart required before installing |
+| 6 | General failure |
+| 7 | Pending installation |
+| 8 | Installing update |
+| 9 | Pending system restart |
+| 10 | Successfully installed update |
+| 11 | Failed to install update |
+| 12 | Downloading update |
+| 13 | Downloaded update |
+| 14 | Failed to download update |
 
- Access type: Read-only
+`ExtendedInfoDescriptionID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Extended information description ID.
+Qualifiers: [not_null, read]
 
- `ExtendedInfoID`
- Data type: `UInt32`
+Extended information description ID.
 
- Access type: Read-only
+`ExtendedInfoID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Extended information ID.
+Qualifiers: [not_null, read]
 
- `InstalledState`
- Data type: `UInt32`
+Extended information ID.
 
- Access type: Read-only
+`InstalledState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Installed state. Possible values are:
+Qualifiers: [not_null, read]
 
-|Value|Installed state|
-|-|-|
-|1|Uninstall|
-|2|Install|
-|3|Unknown|
+Installed state. Possible values are:
 
- `IsMachineAssignedToUser`
- Data type: `Boolean`
+| Value | Installed state |
+| --- | --- |
+| 1 | Uninstall |
+| 2 | Install |
+| 3 | Unknown |
 
- Access type: Read-only
+`IsMachineAssignedToUser` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the computer is assigned to a user.
+Qualifiers: [read]
 
- `IsMachineChangesPersisted`
- Data type: `Boolean`
+`true` if the computer is assigned to a user.
 
- Access type: Read-only
+`IsMachineChangesPersisted` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if changes made to virtual machine  are persisted.
+Qualifiers: [read]
 
- `IsVM`
- Data type: `Boolean`
+`true` if changes made to virtual machine are persisted.
 
- Access type: Read-only
+`IsVM` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if the computer is a virtual machine.
+Qualifiers: [read]
 
- `MachineID`
- Data type: `UInt32`
+`true` if the computer is a virtual machine.
 
- Access type: Read-only
+`MachineID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- ID of the virtual machine.
+Qualifiers: [not_null, read]
 
- `MachineName`
- Data type: `String`
+ID of the virtual machine.
 
- Access type: Read-only
+`MachineName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Virtual machine name.
+Qualifiers: [key, not_null, read]
 
- `PolicyModelID`
- Data type: `UInt32`
+Virtual machine name.
 
- Access type: Read-only
+`PolicyModelID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Policy Model ID.
+Qualifiers: [not_null, read]
 
- `Revision`
- Data type: `UInt32`
+Policy Model ID.
 
- Access type: Read-only
+`Revision` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Revision.
+Qualifiers: [not_null, read]
 
- `StartTime`
- Data type: `DateTime`
+Revision.
 
- Access type: Read-only
+`StartTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Deployment time.
+Qualifiers: [read]
 
- `StatusType`
- Data type: `UInt32`
+Deployment time.
 
- Access type: Read-only
+`StatusType` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Status type.
+Qualifiers: [not_null, read]
 
-|Value|Status type|
-|-|-|
-|1|Success|
-|2|InProgress|
-|3|RequirementsNotMet|
-|4|Unknown|
-|5|Error|
+Status type.
 
- `Technology`
- Data type: `String`
+| Value | Status type |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 3 | RequirementsNotMet |
+| 4 | Unknown |
+| 5 | Error |
 
- Access type: Read-only
+`Technology` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Technology.
+Qualifiers: [not_null, read]
 
- `UpdateState`
- Data type: `UInt32`
+Technology.
 
- Access type: Read-only
+`UpdateState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Update state.
+Qualifiers: [not_null, read]
 
- `UserName`
- Data type: `String`
+Update state.
 
- Access type: Read-only
+`UserName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- User name.
+Qualifiers: [key, not_null, read]
 
- `VMHostName`
- Data type: `String`
+User name.
 
- Access type: Read-only
+`VMHostName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Virtual machine host name.
+Qualifiers: [read]
+
+Virtual machine host name.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

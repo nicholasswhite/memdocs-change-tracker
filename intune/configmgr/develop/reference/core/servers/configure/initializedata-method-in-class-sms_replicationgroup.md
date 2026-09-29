@@ -1,16 +1,18 @@
 ---
 description: Learn how to reinitialize a specific replication group between two specified sites using InitializeData class method.
-title: InitializeData Method
-ms.date: 09/20/2016
+title: "InitializeData Method in Class SMS_ReplicationGroup"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # InitializeData Method in Class SMS_ReplicationGroup
+
 The `InitializeData` Windows Management Instrumentation (WMI) class method, in Configuration Manager, reinitializes a specific replication group between two specified sites.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,39 +25,41 @@ SInt32 InitializeData(
 ```
 
 #### Parameters
- `ReplicationGroupID`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`ReplicationGroupID` Data type: `UInt32`
 
- Unique identifier of the replication group.
+Qualifiers: [in]
 
- `SiteCode1`
- Data type: `String`
+Unique identifier of the replication group.
 
- Qualifiers: [in]
+`SiteCode1` Data type: `String`
 
- Site code 1.
+Qualifiers: [in]
 
- `SiteCode2`
- Data type: `String`
+Site code 1.
 
- Qualifiers: [in]
+`SiteCode2` Data type: `String`
 
- Site code 2.
+Qualifiers: [in]
+
+Site code 2.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ReplicationGroup Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_replicationgroup-server-wmi-class.md)
+
+[SMS_ReplicationGroup Server WMI Class](sms_replicationgroup-server-wmi-class.md)

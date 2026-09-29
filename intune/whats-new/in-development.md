@@ -1,7 +1,7 @@
 ---
-title: In development - Microsoft Intune
+title: "In development for Microsoft Intune"
 description: This article describes Microsoft Intune features that are in development.
-ms.date: 09/01/2026
+ms.date: "2026-09-24T00:00:00Z"
 ms.topic: whats-new
 ai-usage: ai-assisted
 ms.reviewer: intuner
@@ -20,70 +20,30 @@ To help in your readiness and planning, this article lists Intune UI updates and
 This article and the [What's new](index.md) article are updated periodically. Check back for more updates.
 
 > [!NOTE]
+>
 > This article reflects our current expectations about Intune capabilities in an upcoming release. Dates and individual features might change. This article doesn't describe all features in development. It was last updated on the date shown under the title.
 
 You can use RSS to be notified when this article is updated. For more information, see [How to use the docs](../fundamentals/use-docs.md#notifications).
-<!-- **RSS feed**: Find out when this article is updated by copying and pasting the following URL into your feed reader: `https://learn.microsoft.com/api/search/rss?search=%22in+development+-+microsoft+intune%22&locale=en-us` -->
-
-<!-- Common categories: use this order:
-## Microsoft Intune Suite
-## App management
-## Device configuration
-## Device enrollment
-## Device management
-## Device security
-## Intune apps
-## Monitor and troubleshoot
-## Role-based access control
-## Tenant administration
-## Notices
--->
-
-<!-- ***********************************************-->
 
 ## Microsoft Intune Suite
 
-### Scope tags support for Endpoint Privilege Management reports<!-- 34639681 -->
+### Scope tags support for Endpoint Privilege Management reports
 
-We're fixing how scope tags work with Endpoint Privilege Management (EPM) reports. With this change, EPM reports will respect the report viewer's assigned scope and display the details for only the users and devices that the report user is scoped to view.  
-
-<!-- ***********************************************-->
+We're fixing how scope tags work with Endpoint Privilege Management (EPM) reports. With this change, EPM reports will respect the report viewer's assigned scope and display the details for only the users and devices that the report user is scoped to view.
 
 ## App management
 
-### Require Managed Home Screen authentication for protected app activities<!-- 35765469 -->
-
-For Android Enterprise dedicated devices using Managed Home Screen (MHS) with Microsoft Entra shared device mode, Intune will allow admins to requiring users to complete MHS authentication state before allowing protected activities in MAM-integrated apps. When MHS requires sign-in or session PIN authentication, users will still be able to complete limited actions, such as accepting or declining incoming calls. If a user tries to open another protected activity, the app will return them to MHS to authenticate. After authentication, protected app activities will become available normally. This behavior will help prevent users from bypassing the MHS session PIN while preserving critical communication actions.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - Android Enterprise corporate-owned dedicated devices using Managed Home Screen with Microsoft Entra shared device mode
-
-### Declarative VPP app download in Company Portal<!-- 30483698 -->
+### Declarative VPP app download in Company Portal
 
 The iOS/iPadOS Company Portal will support Declarative Volume-Purchased Program (VPP) app downloads from the Apps tab. Declarative VPP apps provide an improved end-user experience by reducing app installation latency, allowing for automatic overnight app updates, and providing the end user with a live status of an app installation. If you choose not to use Declarative VPP apps, there will be no changes to the admin and user experience.
 
-> [!div class="checklist"]
-> Applies to:
->
-> - iOS/iPadOS
+Applies to:
 
-<!-- *********************************************** -->
+- iOS/iPadOS
 
 ## Device configuration
 
-### New Apple settings in the Settings Catalog for iOS/iPadOS and macOS<!-- 39430305 -->
-
-Microsoft Intune will add new Apple settings for supported iOS/iPadOS and macOS devices. You'll be able to configure the new options by using Settings Catalog profiles in the Microsoft Intune admin center. These settings will expand the device management controls available through Intune and help you manage Apple devices with a consistent policy workflow. To see these settings, go to **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy** > **iOS/iPadOS** or **macOS** for platform > **Settings catalog** for profile type.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - iOS/iPadOS
-> - macOS
-
-### Enforce Routes capability in iOS/iPadOS and macOS VPN profiles<!-- 28869584 -->
+### Enforce Routes capability in iOS/iPadOS and macOS VPN profiles
 
 Microsoft Intune will support Apple's **[Enforce Routes](https://developer.apple.com/documentation/networkextension/nevpnprotocol/enforceroutes)** feature in iOS/iPadOS and macOS VPN profiles.
 
@@ -96,13 +56,12 @@ To learn more about VPN profiles in Intune, see:
 - [Create VPN profiles to connect to VPN servers in Intune](../device-configuration/templates/configure-vpn.md)
 - [Add VPN settings to Apple devices in Microsoft Intune](../device-configuration/templates/ref-vpn-settings-apple.md)
 
-> [!div class="checklist"]
-> Applies to:
->
-> - iOS/iPadOS
-> - macOS
+Applies to:
 
-### Disable MAC address randomization on macOS Wi-Fi profiles<!-- 8457343 -->
+- iOS/iPadOS
+- macOS
+
+### Disable MAC address randomization on macOS Wi-Fi profiles
 
 On macOS devices, the **Disable MAC address randomization** setting will be available for Wi-Fi profiles. Use this setting to disable MAC address randomization on managed macOS devices.
 
@@ -113,100 +72,37 @@ For more information, see:
 - [Wi-Fi profile settings for Apple devices](../device-configuration/templates/ref-wifi-settings-apple.md)
 - [Add and use Wi-Fi settings on your devices in Microsoft Intune](../device-configuration/templates/configure-wifi.md)
 
-> [!div class="checklist"]
-> Applies to:
->
-> - macOS 15 and later
+Applies to:
 
-<!-- *********************************************** -->  
-
-<!-- *********************************************** -->
-
-## Device enrollment
-
-### Automatically launch Microsoft Defender for Endpoint during Android Enterprise device setup<!-- 38079776 -->
-
-You'll be able to configure Microsoft Defender for Endpoint to open automatically during out-of-box setup for supported corporate-owned Android Enterprise devices. After you configure the Defender for Endpoint connector, turn on **Grant MTD role permissions**, and assign the Defender app as required, you'll enable this experience from **Endpoint security** > **Defender for Endpoint**. Intune will open Defender during enrollment so users can complete its initial configuration as part of device setup. If configuration isn't completed, the Intune setup step will remain available so users can open Defender again. This experience will help ensure that Defender is configured before enrollment finishes.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - Android Enterprise corporate-owned fully managed devices (COBO)
-> - Android Enterprise corporate-owned devices with a work profile (COPE)
-
-<!-- *********************************************** -->
+- macOS 15 and later
 
 ## Device management
 
-### Updated minimum supported version for macOS<!-- 38259939 -->
+### Updated minimum supported version for macOS
 
 Microsoft Intune will update its minimum supported macOS version after Apple releases macOS 27. Intune, the Company Portal, and the Intune management agent will support macOS 15 and later. Devices running macOS 14 or earlier that are already enrolled will remain enrolled, but new devices on those versions won't be able to enroll. You'll be able to use Intune reporting to identify affected devices and plan upgrades. Devices enrolled without user affinity have a separate support statement.
 
-> [!div class="checklist"]
-> Applies to:
->
-> - macOS
+Applies to:
 
-### Updated minimum supported version for iOS and iPadOS<!-- 38546204 -->
+- macOS
 
-Microsoft Intune will update its minimum supported operating-system version after Apple releases iOS and iPadOS 27. Intune device management, the Company Portal, and app protection policies will require iOS/iPadOS 18 or later for standard supported scenarios. You'll be able to use Intune reports to identify affected devices and users and plan operating-system upgrades before the change. Userless devices enrolled through Automated Device Enrollment have a separate support statement and should be evaluated using the applicable guidance.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - iOS/iPadOS
-
-### New single device page becomes the default experience in the Intune admin center<!-- 16532161 -->
-
-Starting with Intune's September (2609) release, the new single device page in the Intune admin center will become the default experience for all admins, and the previous device page will no longer be available. When you go to **Devices** > **All devices** and select a device, you'll use a consolidated view to find device details and properties, monitor activity, access tools and reports, and perform device actions. A consistent layout across platforms will group actions by purpose and show only supported and permitted actions, helping you find information and complete common device-management tasks more efficiently. Existing device-management capabilities will remain available in the redesigned experience.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - All platforms
-
-### Stage app and policy rollout with deployment plans<!-- 33144262 -->
-
-Deployments and Deployments plans will give you a new way to roll out apps and configuration policies in Intune. Instead of assigning to all targeted groups at once, you'll be able to stage a rollout across multiple rings, control the timing of each ring, and monitor progress from a new **Deployments** experience in the Intune admin center. Plans provide reusable templates that define standardized rollout patterns for delivering a payload across devices in controlled stages, or rings. Deployments integrate with Multiple Admin Approval for change control. This helps you reduce risk when introducing changes to large device fleets.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - Windows
-> - Win32 and Enterprise app catalog apps
-> - Settings catalog and Endpoint security policies
-
-### Bulk eSIM activation and wipe options for corporate-owned Android Enterprise devices<!-- 39365748 -->
-
-You'll be able to use Microsoft Intune bulk device actions to activate eSIMs on up to 100 supported corporate-owned Android Enterprise devices running Android 15 or later by using a carrier activation server URL. When you bulk wipe supported devices, Intune will preserve eSIM data plans by default, and you'll be able to choose to remove them when needed. These bulk actions will help you deploy or retire devices more efficiently without configuring each device individually. Personally owned Android Enterprise work profile devices won't be supported.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - Android Enterprise corporate-owned fully managed devices (COBO)
-> - Android Enterprise corporate-owned dedicated devices (COSU)
-> - Android Enterprise corporate-owned devices with a work profile (COPE)
-
-### Device query for multiple devices for app inventory on Windows<!-- 25850932 -->
+### Device query for multiple devices for app inventory on Windows
 
 Advanced Analytics will extend device query for multiple devices to cover app inventory data on Windows. Building on the existing multi-device query for hardware inventory, you'll be able to use Kusto Query Language (KQL) to investigate installed applications across your entire Windows fleet—identifying versions, surfacing outdated or unwanted software, and producing detailed reports without targeting devices one at a time. Multi-device app inventory queries will run against collected inventory data, so you get fleet-wide answers for compliance reviews, vulnerability triage, and license-tracking scenarios.
 
-> [!div class="checklist"]
-> Applies to:
->
-> - Windows
+Applies to:
 
-### Agentic identity for the Policy Configuration Agent (public preview)<!-- 37369520 -->
+- Windows
+
+### Agentic identity for the Policy Configuration Agent (public preview)
 
 The Intune Policy Configuration Agent will update to use a Microsoft Entra agentic identity instead of a human user identity. This enables the agent to run policy configuration actions securely and independently.
 
-For existing agents, admins will be able to transition to an agentic identity from the agent's **Settings** tab by selecting **Create new identity**. After the identity is provisioned, the agent will now run on behalf of the logged-in user and the information will be scoped by the permissions of that account. For new agents, an agentic identity will be auto provisioned at setup.  
-
-<!-- *********************************************** -->
+For existing agents, admins will be able to transition to an agentic identity from the agent's **Settings** tab by selecting **Create new identity**. After the identity is provisioned, the agent will now run on behalf of the logged-in user and the information will be scoped by the permissions of that account. For new agents, an agentic identity will be auto provisioned at setup.
 
 ## Device security
 
-### Configure Quality Update approvals and policies for Quick Machine Recovery (QMR)<!-- 33856442, 32995296 -->
+### Configure Quality Update approvals and policies for Quick Machine Recovery (QMR)
 
 Windows Autopatch currently offers limited control over the deployment of quality updates. Today, the *expedite mechanism* focuses on deploying the latest security update and doesn't let admins select specific quality update releases or apply different deployment schedules, which can limit compliance, validation, and operational planning scenarios.
 
@@ -217,103 +113,410 @@ Soon, Windows Autopatch will let you explicitly approve, auto-approve, reject, a
 - Out-of-band security updates
 - Out-of-band non-security updates
 
-> [!div class="checklist"]
-> Applies to:
->
-> - Windows
+Applies to:
 
-### Associate devices to your organization with Windows Autopilot device preparation<!-- 17307894 -->
+- Windows
 
-A new capability for Windows Autopilot device preparation will be available soon: *device association*. Device association binds a Windows device to your organization and enables advanced functionality such as streamlined out-of-box experience (OOBE) pages, device naming before enrollment, and device-based targeting. It also improves onboarding security by verifying device identity before enrollment through hardware-based attestation and TPM-backed cryptographic validation, helping ensure that only trusted devices can access organizational resources.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - Windows
-
-### New Linux antivirus settings for Microsoft Defender for Endpoint<!-- 37379884 -->
+### New Linux antivirus settings for Microsoft Defender for Endpoint
 
 We're adding a new Microsoft Defender Updates template for Linux endpoint security antivirus policies. This template will include four new settings for managing Microsoft Defender for Endpoint agent auto-update behavior on Linux devices attached via MDE attach. You will be able to configure update channels and scheduling for Defender engine, platform, and security intelligence updates.
 
-> [!div class="checklist"]
-> Applies to:
->
-> - Linux
+Applies to:
 
-### Mark Windows devices noncompliant when prohibited AI agents are discovered<!-- 37387056 -->
+- Linux
+
+### Mark Windows devices noncompliant when prohibited AI agents are discovered
 
 Automatically mark Windows devices as noncompliant when prohibited local AI agents, such as OpenClaw, are discovered on the device. As an admin, you'll be able to configure a list of prohibited agents in a Windows compliance policy. When a prohibited agent is detected, the device reports as noncompliant and Conditional Access takes effect. The device returns to a compliant state once the agent is removed.
 
-### Support for Intune Device control policy for devices managed by Microsoft Defender for Endpoint<!-- 15466620 -->
+### Support for Intune Device control policy for devices managed by Microsoft Defender for Endpoint
 
 You'll be able to use the endpoint security policy for *Device control* (Attack surface reduction policy) from Microsoft Intune with the devices you manage through the [Microsoft Defender for Endpoint security settings management](../device-security/microsoft-defender/security-settings-management.md) capability.
 
 - **Device control** policies are part of endpoint security [Attack surface reduction policy](../device-configuration/endpoint-security/attack-surface-reduction.md).
 
-> [!div class="checklist"]
-> Applies to the following when you use the *Windows* platform:
->
-> - Windows 10
-> - Windows 11
+Applies to the following when you use the *Windows* platform:
+
+- Windows 10
+- Windows 11
 
 When this change takes effect, devices that are assigned this policy while managed by Defender for Endpoint but not enrolled with Intune, will now apply the settings from the policy. Check your policy to make sure only the devices you intend to receive this policy will get it.
 
-### Client-driven compliance evaluation for Windows devices<!-- 37554578 -->
-
-Microsoft Intune will introduce client-driven compliance evaluation for Windows devices to reduce delays in compliance reporting. Supported devices will detect important state changes locally and proactively request a compliance re-evaluation when it matters, instead of waiting for the next scheduled check-in. As an admin, you'll see faster updates for remediation, reporting, and access decisions. This capability will roll out in preview for Windows devices.
-
-> [!div class="checklist"]
-> Applies to:
->
-> - Windows
-
-<!-- *********************************************** -->
-
 ## Monitor and troubleshoot
 
-### Remote Help support in GCCH<!-- 23122683 -->
+### Remote Help support in GCCH
 
 You'll be able to use Remote Help in US Government Community Cloud High (GCCH) environments. This expansion extends the same secure, cloud-based remote assistance capabilities currently available in GCC to GCCH tenants. IT support staff will be able to establish Remote Help sessions with end users on GCCH-enrolled devices, providing real-time troubleshooting with role-based access controls through Intune. Both helpers and sharers must sign in with their organization's Microsoft Entra ID accounts.
 
-> [!div class="checklist"]
-> Applies to:
->
-> - Android
-> - macOS
-> - Windows
+Applies to:
 
-### Certificate connector health monitoring in the Microsoft Intune admin center<!-- 37746972 -->
+- Android
+- macOS
+- Windows
+
+### Certificate connector health monitoring in the Microsoft Intune admin center
 
 The Certificate Connector for Microsoft Intune will surface new health and status signals in the admin center, so you can spot certificate-issuance problems early. You'll get clear indicators for common failure conditions — such as the connector being unable to reach the certification authority (CA), the connector's service account lacking permission to issue or revoke certificates, or certificate requests being rejected because of a template mismatch with your SCEP or PKCS profile. Each signal includes guidance to help you investigate and remediate before devices relying on certificate-based authentication hit access, sign-in, or compliance issues.
 
-> [!div class="checklist"]
-> Applies to:
->
-> - Certificate Connector for Microsoft Intune
+Applies to:
 
-<!-- *********************************************** -->
+- Certificate Connector for Microsoft Intune
 
 ## Role-based access control
 
-### Scoped permissions for role-based access control moving to general availability<!-- 27067241 -->
+### Scoped permissions for role-based access control moving to general availability
 
 The **Scoped permissions** setting for role-based access control (RBAC) will move from public preview to general availability. Scoped permissions prevents Intune from merging permissions across multiple role assignments that share the same permission category but use different scope tags. When enabled, each role assignment's permissions apply only within its own scope tag context, giving admins exactly the access you intended.
 
 When this feature reaches general availability, Scoped permissions will become the default behavior for all tenants.
 
-If you haven't enabled Scoped permissions yet, use the **Permissions Assessment Report** at **Tenant administration** > **Roles** > **Settings** to preview how permissions will change before opting in.
+If you haven't enabled Scoped permissions yet, use the **Permissions Assessment Report** at **Tenant administration** &gt; **Roles** &gt; **Settings** to preview how permissions will change before opting in.
 
 For more information, see [Permission behavior across role assignments](../fundamentals/role-based-access-control/scope-tags.md#permission-behavior-across-role-assignments).
 
-<!-- *********************************************** -->
-
-<!-- ## Tenant administration -->
-
-<!-- ***********************************************-->
-
 ## Notices
 
-[!INCLUDE [Intune notices](./includes/intune-notices.md)]
+These notices provide important information that can help you prepare for future Intune changes and features.
+
+### Plan for Change: Intune is moving to support iOS/iPadOS 18 and later
+
+Later in calendar year 2026, we expect iOS 27 and iPadOS 27 to be released by Apple. Microsoft Intune, including the Intune Company Portal and Intune app protection policies (APP, also known as MAM), requires [iOS 17/iPadOS 17 and higher](../fundamentals/ref-supported-platforms.md) shortly after the iOS/iPadOS 27 release.
+
+#### How does this change affect you or your users?
+
+If you're managing iOS/iPadOS devices, you might have devices that won't be able to upgrade to the minimum supported version (iOS 18/iPadOS 18).
+
+Given that Microsoft 365 mobile apps are supported on iOS 18/iPadOS 18 and higher, this change might not affect you. You likely already upgraded your OS or devices.
+
+To check which devices support iOS 18 or iPadOS 18 (if applicable), see the following Apple documentation:
+
+- [Supported iPhone models](https://support.apple.com/guide/iphone/iphone-models-compatible-with-ios-18-iphe3fa5df43/18.0/ios/18.0)
+- [Supported iPad models](https://support.apple.com/guide/ipad/ipad-models-compatible-with-ipados-18-ipad213a25b2/18.0/ipados/18.0)
+
+> [!NOTE]
+>
+> Userless iOS and iPadOS devices enrolled through Automated Device Enrollment (ADE) have a slightly nuanced support statement due to their shared usage. The minimum supported OS version changes to iOS 18/iPadOS 18 while the allowed OS version changes to iOS 16/iPadOS 16 and later. For more information, see [this statement about ADE Userless support](https://aka.ms/ADE_userless_support).
+
+#### How can you prepare?
+
+Check your Intune reporting to see what devices or users might be affected. For devices with mobile device management (MDM), go to **Devices** &gt; **All devices** and filter by OS. For devices with app protection policies, go to **Apps** &gt; **Monitor** &gt; **App protection status** and use the *Platform* and *Platform version* columns to filter.
+
+To manage the supported OS version in your organization, you can use Microsoft Intune controls for both MDM and APP. For more information, see [Manage operating system versions with Intune](../device-updates/manage-os-versions.md).
+
+### Plan for change: Intune is moving to support macOS 15 and higher later this year
+
+Later in calendar year 2026, we expect macOS Golden Gate 27 to be released by Apple. Microsoft Intune, the Company Portal app, and the Intune mobile device management agent support macOS 15 and later. Since the Company Portal app for iOS and macOS are a unified app, this change will occur shortly after the release of macOS 27. This change doesn't affect existing enrolled devices.
+
+#### How does this change affect you or your users?
+
+This change only affects you if you currently manage, or plan to manage, macOS devices with Intune. If your users have likely already upgraded their macOS devices, then this change might not affect you. For a list of supported devices, refer to [macOS Sequoia is compatible with these computers](https://support.apple.com/120282).
+
+> [!NOTE]
+>
+> Devices that are currently enrolled on macOS 14.x or below will continue to remain enrolled even when those versions are no longer supported. New devices are unable to enroll if they're running macOS 14.x or below.
+
+#### How can you prepare?
+
+Check your Intune reporting to see what devices or users might be affected. Go to **Devices** &gt; **All devices** and filter by macOS. You can add more columns to help identify who in your organization has devices running macOS 14.x or earlier. Ask your users to upgrade their devices to a supported OS version.
+
+### Warning notifications for iOS apps running unsupported SDK versions
+
+We're continuing improvements to the Microsoft Intune mobile application management (MAM) service to ensure applications remain secure, reliable, and aligned with the latest platform capabilities.
+
+Starting in late June 2026, users opening iOS apps built with an Intune MAM SDK version earlier than 20.8.0 will see a warning message recommending they update to a supported app version for the best experience and continued compatibility.
+
+#### How does this change affect you or your users?
+
+Users running iOS apps with an Intune MAM SDK version lower than 20.8.0 will see a warning message. The warning will appear in iOS apps such as Microsoft Teams, Outlook, Edge and OneDrive. Note that this notification is non-blocking, users can dismiss the message and continue using the app.
+
+#### How can you prepare?
+
+Notify users to update to the latest versions of Microsoft and third-party apps as soon as possible. The latest versions are available in Apple's [App store](https://www.apple.com/app-store/). For example, you can find the latest version of Microsoft Teams [here](https://apps.apple.com/app/microsoft-teams/id1113153706) and Microsoft Outlook [here](https://apps.apple.com/app/microsoft-outlook/id951937596).
+
+If applicable, notify your helpdesk and support teams about the warning message. Additionally, as an IT admin you can use [Conditional Launch](../app-management/protection/ref-settings-ios.md#conditional-launch) settings to block unsupported app or SDK versions that are still in use:
+
+- The **Min SDK version** setting to block users if the app is using Intune SDK for iOS older than 20.8.0.
+- The **Min app version** setting to warn or block users on older Microsoft apps. Note, this setting must be in a policy targeted to only the targeted app.
+
+### Update to the latest Intune Company Portal for Android, Intune App SDK for iOS, and Intune App Wrapper for iOS
+
+Starting **January 19, 2026**, or soon after, we're making updates to improve the Intune mobile application management (MAM) service. To stay secure and run smoothly, this update will require iOS wrapped apps, iOS SDK integrated apps, and the Intune Company Portal for Android to be updated to the latest versions.
+
+> [!IMPORTANT]
+>
+> If you don't update to the latest versions, users will be blocked from launching your app.
+
+The way Android updates, once one Microsoft application with the updated SDK is on the device and the Company Portal is updated to the latest version, Android apps will update, so this message is focused on iOS SDK/app wrapper updates. We recommend to always update your Android and iOS apps to the latest SDK or app wrapper to ensure that your app continues to run smoothly. Review the following GitHub announcements for more details on the specific effect:
+
+- SDK for iOS: [Action Required: Update the MAM SDK in your application to avoid end user impact - microsoftconnect/ms-intune-app-sdk-ios Discussion #598 | GitHub](https://github.com/microsoftconnect/ms-intune-app-sdk-ios/discussions/598)
+- Wrapper for iOS: [Action Required: Wrap your application with version 20.8.1+ to avoid end user impact - microsoftconnect/intune-app-wrapping-tool-ios Discussion #143 | GitHub](https://github.com/microsoftconnect/intune-app-wrapping-tool-ios/discussions/143)
+
+If you have questions, leave a comment on the applicable GitHub announcement.
+
+#### How does this change affect you or your users?
+
+If your users haven't updated to the latest Microsoft or third-party app protection supported apps, they'll be blocked from launching their apps. If you have iOS line-of-business (LOB) applications that are using the Intune wrapper or Intune SDK, you must be on Wrapper/SDK version **20.8.0** or later for apps compiled with Xcode 16 and version **21.1.0** or later for apps compiled with Xcode 26 to avoid your users being blocked.
+
+#### How can you prepare?
+
+Plan to make the following changes before **January 19, 2026**:
+
+- For apps using the Intune App SDK, you must update to the new version of the Intune App SDK for iOS:
+
+  - For apps built with XCode 16 use [v20.8.0 - Release 20.8.0 - microsoftconnect/ms-intune-app-sdk-ios | GitHub](https://github.com/microsoftconnect/ms-intune-app-sdk-ios/releases/tag/20.8.0)
+  - For apps built with XCode 26 use [v21.1.0 - Release 21.1.0 - microsoftconnect/ms-intune-app-sdk-ios | GitHub](https://github.com/microsoftconnect/ms-intune-app-sdk-ios/releases/tag/21.1.0)
+- For apps using the wrapper, you must update to the new version of the Intune App Wrapping Tool for iOS:
+
+  - For apps built with XCode 16 use [v20.8.1 - Release 20.8.1 - microsoftconnect/intune-app-wrapping-tool-ios | GitHub](https://github.com/microsoftconnect/intune-app-wrapping-tool-ios/releases/tag/20.8.1)
+  - For apps built with XCode 26 use [v21.1.0 - Release 21.1.0 - microsoftconnect/intune-app-wrapping-tool-ios | GitHub](https://github.com/microsoftconnect/intune-app-wrapping-tool-ios/releases/tag/21.1.0)
+- For tenants with policies targeted to iOS apps:
+
+  - Notify your users that they need to upgrade to the latest version of the Microsoft apps. You can find the latest version of the apps in the [App store](https://www.apple.com/app-store/). For example, you can find the latest version of Microsoft Teams [here](https://apps.apple.com/app/microsoft-teams/id1113153706) and Microsoft Outlook [here](https://apps.apple.com/app/microsoft-outlook/id951937596).
+  - Additionally, you can enable the following [conditional launch](../app-management/protection/ref-settings-ios.md#conditional-launch) settings:
+    - The **Min SDK version** setting to block users if the app is using Intune SDK for iOS older than 20.8.0.
+    - The **Min app version** setting to warn users on older Microsoft apps. Note, this setting must be in a policy targeted to only the targeted app.
+- For tenants with policies targeted to Android apps:
+
+  - Notify your users that they need to upgrade to the latest version (v5.0.6726.0) of the [Intune Company Portal](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) app.
+  - Additionally, you can enable the following [conditional launch](../app-management/protection/ref-settings-ios.md#conditional-launch) device condition setting:
+
+    - The **Min Company Portal version** setting to warn users using a Company Portal app version older than 5.0.6726.0.
+
+> [!NOTE]
+>
+> Use Conditional Access policy to ensure that only apps with app protection policies can access corporate resources. For more information, see the [Require approved client apps or app protection policy with mobile devices](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-approved-app-or-app-protection#require-approved-client-apps-or-app-protection-policy-with-mobile-devices) on creating Conditional Access policies.
+
+### Update firewall configurations to include new Intune network endpoints
+
+As part of Microsoft's ongoing [Secure Future Initiative (SFI)](https://www.microsoft.com/trust-center/security/secure-future-initiative), starting on or shortly after **December 2, 2025**, the network service endpoints for Microsoft Intune will also use the Azure Front Door IP addresses. This improvement supports better alignment with modern security practices and over time will make it easier for organizations using multiple Microsoft products to manage and maintain their firewall configurations. As a result, customers might be required to add these network (firewall) configurations in third-party applications to enable proper function of Intune device and app management. This change will affect customers using a firewall allowlist that allows outbound traffic based on IP addresses or Azure service tags.
+
+Don't remove any existing network endpoints required for Microsoft Intune. More network endpoints are documented as part of the Azure Front Door and service tags information referenced in the following files:
+
+- Public clouds: Download Azure IP Ranges and Service Tags – [Public Cloud from Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=56519)
+- Government clouds: Download Azure IP Ranges and Service Tags – [US Government Cloud from Official Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=57063)
+
+The other ranges are in the JSON files linked above and can be found by searching for "AzureFrontDoor.MicrosoftSecurity".
+
+#### How does this change affect you or your users?
+
+If you've configured an outbound traffic policy for Intune IP address ranges or Azure service tags for your firewalls, routers, proxy servers, client-based firewalls, VPN, or network security groups, you'll need to update them to include the new Azure Front Door ranges with the "AzureFrontDoor.MicrosoftSecurity" tag.
+
+Intune requires internet access for devices under Intune management, whether for mobile device management or mobile application management. If your outbound traffic policy doesn't include the new Azure Front Door IP address ranges, users can face sign-in issues, devices might lose connectivity with Intune, and access to apps like the Intune Company Portal or the apps protected by app protection policies could be disrupted.
+
+#### How can you prepare?
+
+Ensure that your firewall rules are updated and added to your firewall's allowlist with the other IP addresses documented under Azure Front Door by **December 2, 2025**.
+
+Alternatively, you can add the `AzureFrontDoor.MicrosoftSecurity` service tag to your firewall rules to allow outbound traffic on port 443 for the addresses in the tag.
+
+If you aren't the IT admin who can make this change, notify your networking team. If you're responsible for configuring internet traffic, see the following documentation for more details:
+
+- [Azure Front Door](https://learn.microsoft.com/en-us/azure/frontdoor/origin-security?tabs=app-service-functions&pivots=front-door-classic)
+- [Azure service tags](https://learn.microsoft.com/en-us/azure/virtual-network/service-tags-overview)
+- [Intune network endpoints](../fundamentals/endpoints.md#intune-core-service)
+- [US government network endpoints for Intune](../fundamentals/endpoints-us-government.md)
+
+If you have a helpdesk, inform them about this upcoming change.
+
+### Update to support statement for Windows 10 in Intune
+
+Windows 10 has reached end of support on **October 14, 2025**. Windows 10 no longer receives quality or feature updates. Security updates are only available to commercial customers who have enrolled devices into the Extended Security Updates (ESU) program. For more details, review the following additional information.
+
+#### How does this change affect you or your users?
+
+Microsoft Intune continues to maintain core management functionality for Windows 10, including:
+
+- Continuity of device management.
+- Support for updates and migration workflows to Windows 11.
+- Ability for ESU customers to deploy Windows security updates and maintain secure patch levels.
+
+The final release of Windows 10 (version 22H2) is designated as an "allowed" version in Intune. While updates and new features are not available, devices running this version can still enroll in Intune and use eligible features, but functionality is not guaranteed and can vary.
+
+#### How can you prepare?
+
+Use the **All devices** report in the Intune admin center to identify devices still running Windows 10 and upgrade eligible devices to Windows 11.
+
+If devices cannot be upgraded in time, consider enrolling eligible devices in the Windows 10 ESU program to continue receiving critical security updates.
+
+#### Additional information
+
+- [Stay secure with Windows 11, Copilot+ PCs, and Windows 365 before support ends for Windows 10](https://blogs.windows.com/windowsexperience/2025/06/24/stay-secure-with-windows-11-copilot-pcs-and-windows-365-before-support-ends-for-windows-10/)
+- [Windows 10 reaching end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support)
+- [Enable Extended Security Updates (ESU)](https://learn.microsoft.com/en-us/windows/whats-new/enable-extended-security-updates)
+- [Windows 10 release information](https://learn.microsoft.com/en-us/windows/release-health/release-information)
+- [Windows 11 release information](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information)
+- [Lifecycle FAQ - Windows](https://learn.microsoft.com/en-us/lifecycle/faq/windows)
+
+### Plan for Change: Google Play strong integrity definition update for Android 13 or above
+
+Google recently updated the definition of "Strong Integrity" for devices running Android 13 or above, requiring hardware-backed security signals and recent security updates. For more information, see the [Android Developers Blog: Making the Play Integrity API faster, more resilient, and more private](https://android-developers.googleblog.com/2024/12/making-play-integrity-api-faster-resilient-private.html). Microsoft Intune will enforce this change by **October 31, 2026**. Until then, we've adjusted app protection policy and compliance policy behavior to align with Google's recommended backward compatibility guidance to minimize disruption as detailed in [Improved verdicts in Android 13 and later devices | Google Play | Android Developers](https://developer.android.com/google/play/integrity/improvements#how_can_i_use_the_old_meets-strong-integrity_label_definition_across_all_android_sdk_versions).
+
+#### How does this change affect you or your users?
+
+If you have targeted users with app protection policies and/or compliance policies that are using devices running Android 13 or above without a security update in the past 12 months, these devices will no longer meet the "Strong Integrity" standard.
+
+**User impact** - For users running devices on Android 13 or above after this change:
+
+- Devices without the latest security updates might be downgraded from "Strong Integrity" to "Device Integrity", which could result in conditional launch blocks for affected devices.
+- Devices without the latest security updates might see their devices become noncompliant in the Intune Company Portal app and could lose access to company resources based on your organization's Conditional Access policies.
+
+Devices running Android versions 12 or below aren't affected by this change.
+
+#### How can you prepare?
+
+Review and update your policies as needed. Ensure users with devices running Android 13 or above are receiving timely security updates. You can use the [app protection status report](../app-management/protection/monitor-policies.md#view-the-app-protection-status-report) to monitor the date of the last Android Security Patch received by the device and notify users to update as needed. The following admin options are available to help warn or block users:
+
+- For app protection policies, configure the **Min OS version** and **Min patch version** conditional launch settings. For more details, review [Android app protection policy settings in Microsoft Intune | Microsoft Learn](../app-management/protection/ref-settings-android.md#conditional-launch)
+- For compliance policies, configure the **Minimum security patch level** compliance setting. For more details, review: [Device compliance settings for Android Enterprise in Intune](../device-security/compliance/ref-android-enterprise-settings.md)
+
+### Plan for Change: New Intune connector for deploying Microsoft Entra hybrid joined devices using Windows Autopilot
+
+As part of Microsoft's Secure Future Initiative, we recently released an update to the Intune Connector for Active Directory to use a Managed Service Account instead of a local SYSTEM account for deploying Microsoft Entra hybrid joined devices with Windows Autopilot. The new connector aims to enhance security by reducing unnecessary privileges and permissions associated with the local SYSTEM account.
+
+> [!IMPORTANT]
+>
+> At the end of June 2025, we'll remove the old connector that uses the local SYSTEM account. At that point, we will stop accepting enrollments from the old connector. For more information, see the [Microsoft Intune Connector for Active Directory security update](https://aka.ms/Intune-connector-blog) blog.
+
+#### How does this change affect you or your users?
+
+If you have Microsoft Entra hybrid joined devices using Windows Autopilot, you need to transition to the new connector to continue deploying and managing devices effectively. If you don't update to the new connector, you won't be able to enroll new devices using the old connector.
+
+#### How can you prepare?
+
+Update your environment to the new connector by following these steps:
+
+1. Download and install the new connector in the Intune admin center.
+2. Sign in to set up the Managed Service Account (MSA).
+3. Update the ODJConnectorEnrollmentWizard.exe.config file to include the required Organizational Units (OUs) for domain join.
+
+For more detailed instructions, review: [Microsoft Intune Connector for Active Directory security update](https://aka.ms/Intune-connector-blog) and [Deploy Microsoft Entra hybrid joined devices by using Intune and Windows Autopilot](../../autopilot/windows-autopilot-hybrid.md).
+
+### Plan for Change: New settings for Apple AI features; Genmojis, Writing tools, Screen capture
+
+Today, the Apple AI features for Genmojis, Writing tools, and screen capture are blocked when the app protection policy (APP) "Send Org data to other apps" setting is configured to a value other than "All apps". For more details on the current configuration, app requirements, and the list of current Apple AI controls review the blog: [Microsoft Intune support for Apple Intelligence](https://techcommunity.microsoft.com/blog/intunecustomersuccess/microsoft-intune-support-for-apple-intelligence/4254037)
+
+In an upcoming release, Intune app protection policies have new standalone settings for blocking screen capture, Genmojis, and Writing tools. These standalone settings are supported by apps that have updated to version 19.7.12 or later for Xcode 15 and 20.4.0 or later for Xcode 16 of the Intune App SDK and App Wrapping Tool.
+
+#### How does this change affect you or your users?
+
+If you configured the APP "Send Org data to other apps" setting to a value other than "All apps", then the new "Genmoji", "Writing Tools" and "Screen capture" settings are set to **Block** in your app protection policy to prevent changes to your current user experience.
+
+> [!NOTE]
+>
+> If you configured an app configuration policy (ACP) to allow for screen capture, it overrides the APP setting. We recommend updating the new APP setting to **Allow** and removing the ACP setting. For more information about the screen capture control, review [iOS/iPadOS app protection policy settings | Microsoft Learn](../app-management/protection/ref-settings-ios.md#data-protection).
+
+#### How can you prepare?
+
+Review and update your app protection policies if you'd like more granular controls for blocking or allowing specific AI features. (**Apps** &gt; **Protection** &gt; *select a policy* &gt; **Properties** &gt; **Basics** &gt; **Apps** &gt; **Data protection**)
+
+### Plan for change: User alerts on iOS for when screen capture actions are blocked
+
+In an upcoming version (20.3.0) of the Intune App SDK and Intune App Wrapping Tool for iOS, support is added to alert users when a screen capture action (including recording and mirroring) is detected in a managed app. The alert is only visible to users if you have configured an app protection policy (APP) to block screen capture.
+
+#### How does this change affect you or your users?
+
+If APP has been configured to block screen capturing, users see an alert indicating that screen capture actions are blocked by their organization when they attempt to screenshot, screen record, or screen mirror.
+
+For apps that have updated to the latest Intune App SDK or Intune App Wrapping Tool versions, screen capture is blocked if you configured "Send Org data to other apps" to a value other than "All apps". To allow screen capture for your iOS/iPadOS devices, configure the Managed apps app configuration policy setting "com.microsoft.intune.mam.screencapturecontrol" to **Disabled**.
+
+#### How can you prepare?
+
+Update your IT admin documentation and notify your helpdesk or users as needed. You can learn more about blocking screen capture in the blog: [New block screen capture for iOS/iPadOS MAM protected apps](https://aka.ms/Intune/iOS-screen-capture)
+
+### Plan for Change: Blocking screen capture in the latest Intune App SDK for iOS and Intune App Wrapping Tool for iOS
+
+We recently released updated versions of the Intune App SDK and the Intune App Wrapping Tool. Included in these releases (v19.7.5+ for Xcode 15 and v20.2.0+ for Xcode 16) is the support for blocking screen capture, Genmojis, and writing tools in response to the new AI features in iOS/iPadOS 18.2.
+
+#### How does this change affect you or your users?
+
+For apps that have updated to the latest Intune App SDK or Intune App Wrapping Tool versions screen capture will be blocked if you configured "Send Org data to other apps" to a value other than "All apps". To allow screen capture for your iOS/iPadOS devices, configure the [Managed apps app configuration policy](../app-management/configuration/configure-managed-apps.md) setting "com.microsoft.intune.mam.screencapturecontrol" to **Disabled**.
+
+#### How can you prepare?
+
+Review your app protection policies and if needed, create a [Managed apps app configuration policy](../app-management/configuration/configure-managed-apps.md) to allow screen capture by configuring the above setting *(Apps &gt; App configuration policies &gt; Create &gt; Managed apps &gt; Step 3 'Settings' under General configuration)*. For more information review, [iOS app protection policy settings – Data protection](../app-management/protection/ref-settings-ios.md#data-protection) and [App configuration policies - Managed apps](../app-management/configuration/overview.md#managed-apps).
+
+### Plan for Change: Implement strong mapping for SCEP and PKCS certificates
+
+With the May 10, 2022, Windows update ([KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16)), changes were made to the Active Directory Kerberos Key Distribution (KDC) behavior in Windows Server 2008 and later versions to mitigate elevation of privilege vulnerabilities associated with certificate spoofing. Windows enforces these changes on **February 11, 2025**.
+
+To prepare for this change, Intune has released the ability to include the security identifier to strongly map SCEP and PKCS certificates. For more information, review the blog: [Support tip: Implementing strong mapping in Microsoft Intune certificates](https://techcommunity.microsoft.com/blog/intunecustomersuccess/support-tip-implementing-strong-mapping-in-microsoft-intune-certificates/4053376).
+
+#### How does this change affect you or your users?
+
+These changes will affect SCEP and PKCS certificates delivered by Intune for Microsoft Entra hybrid joined users or devices. If a certificate can't be strongly mapped, authentication will be denied. To enable strong mapping:
+
+- SCEP certificates: Add the security identifier to your SCEP profile. We strongly recommend testing with a small group of devices and then slowly rollout updated certificates to minimize disruptions to your users.
+- PKCS certificates: Update to the latest version of the Certificate Connector, change the registry key to enable the security identifier, and then restart the connector service. **Important:** Before you modify the registry key, review how to change the registry key and how to back up and restore the registry.
+
+For detailed steps and more guidance, review the [Support tip: Implementing strong mapping in Microsoft Intune certificates](https://techcommunity.microsoft.com/blog/intunecustomersuccess/support-tip-implementing-strong-mapping-in-microsoft-intune-certificates/4053376) blog.
+
+#### How can you prepare?
+
+If you use SCEP or PKCS certificates for Microsoft Entra Hybrid joined users or devices, you'll need to take action before February 11, 2025 to either:
+
+- **(Recommended)** Enable strong mapping by reviewing the steps described in the blog: [Support tip: Implementing strong mapping in Microsoft Intune certificates](https://techcommunity.microsoft.com/blog/intunecustomersuccess/support-tip-implementing-strong-mapping-in-microsoft-intune-certificates/4053376)
+- Alternatively, if all certificates can't be renewed before February 11, 2025, with the SID included, enable Compatibility mode by adjusting the registry settings as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16). Compatibility mode is valid until September 2025.
+
+### Update to the latest Intune App SDK and Intune App Wrapper for Android 15 support
+
+We've recently released new versions of the Intune App SDK and Intune App Wrapping Tool for Android to support Android 15. We recommend upgrading your app to the latest SDK or wrapper versions to ensure applications stay secure and run smoothly.
+
+#### How does this change affect you or your users?
+
+If you have applications using the Intune App SDK or Intune App Wrapping Tool for Android, it's recommended that you update your app to the latest version to support Android 15.
+
+#### How can you prepare?
+
+If you choose to build apps targeting Android API 35, you need to adopt the new version of the Intune App SDK for Android (v11.0.0). If you wrapped your app and are targeting API 35, you need to use the new version of the App wrapper (v1.0.4549.6).
+
+> [!NOTE]
+>
+> As a reminder, while apps must update to the latest SDK if targeting Android 15, apps don't need to update the SDK to run on Android 15.
+
+You should also plan to update your documentation or developer guidance if applicable to include this change in support for the SDK.
+
+Here are the public repositories:
+
+- [Intune App SDK for Android](https://github.com/microsoftconnect/ms-intune-app-sdk-android)
+- [Intune App Wrapping Tool for Android](https://github.com/microsoftconnect/intune-app-wrapping-tool-android)
+
+### Intune moving to support Android 10 and later for user-based management methods in October 2024
+
+In October 2024, Intune supports Android 10 and later for user-based management methods, which includes:
+
+- Android Enterprise personally owned work profile
+- Android Enterprise corporate owned work profile
+- Android Enterprise fully managed
+- Android Open Source Project (AOSP) user-based
+- Android device administrator
+- App protection policies
+- App configuration policies (ACP) for managed apps
+
+Moving forward, we'll end support for one or two versions annually in October until we only support the latest four major versions of Android. You can learn more about this change by reading the blog: [Intune moving to support Android 10 and later for user-based management methods in October 2024](https://aka.ms/Intune/Android-10-support).
+
+> [!NOTE]
+>
+> Userless methods of Android device management (Dedicated and AOSP userless) and Microsoft Teams certified Android devices aren't affected by this change.
+
+#### How does this change affect you or your users?
+
+For user-based management methods (as listed above), Android devices running Android 9 or earlier won't be supported. For devices on unsupported Android OS versions:
+
+- Intune technical support won't be provided.
+- Intune won't make changes to address bugs or issues.
+- New and existing features aren't guaranteed to work.
+
+While Intune won't prevent enrollment or management of devices on unsupported Android OS versions, functionality isn't guaranteed, and use isn't recommended.
+
+#### How can you prepare?
+
+Notify your helpdesk, if applicable, about this updated support statement. The following admin options are available to help warn or block users:
+
+- Configure a [conditional launch](../app-management/protection/ref-settings-android.md#conditional-launch) setting for APP with a minimum OS version requirement to warn and/or block users.
+- Use a device compliance policy and set the action for noncompliance to send a message to users before marking them as noncompliant.
+- Set [enrollment restrictions](../device-updates/manage-os-versions.md) to prevent enrollment on devices running older versions.
+
+For more information, review: [Manage operating system versions with Microsoft Intune](../device-updates/manage-os-versions.md).
 
 ## See also
 

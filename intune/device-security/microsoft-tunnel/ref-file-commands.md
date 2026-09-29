@@ -1,7 +1,7 @@
 ---
-title: File and command reference for Microsoft Tunnel Gateway, a VPN solution for Microsoft Intune
+title: "Command-line Reference for Microsoft Tunnel Gateway"
 description: Find file and command-line references for tools you use to install or manage the Microsoft Tunnel Gateway, a VPN server that runs on Linux.
-ms.date: 03/27/2025
+ms.date: "2025-03-27T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -31,7 +31,6 @@ The following are common command line uses of the tool.
   - `uninstall` - Uninstall the Microsoft Tunnel.
   - `eula` - Show the End-User License Agreement (EULA).
   - `import_cert` - Import or update the TLS certificate.
-
 - `mst-cli agent –help` - Usage: **mst-cli agent [command]**
 
   Commands:
@@ -41,20 +40,18 @@ The following are common command line uses of the tool.
   - `start` - Start the agent service.
   - `stop` - Stop the agent service.
   - `restart` - Restart the agent service.
-
 - `mst-cli agent logs help` - Usage: **mst-cli agent logs [flags]**
 
   Flags:
+
   - `-f, --follow` - Follow log output. The default is false.
   - `--since string` - Show logs since TIMESTAMP.
   - `--tail uint` - Output the specified number of LINES at the end of the logs. Defaults to zero (0), which prints all lines.
   - `-t, --timestamps` - Output the timestamps in the log.
-
 - `mst-cli agent status` - The following returns are examples of results you might see:
 
   - State: running
   - Health: healthy
-
 - `mst-cli agent start` - Starts the agent if it's stopped.
 - `mst-cli agent stop` - Stops the agent. Must be started manually after stopped.
 - `mst-cli agent restart` - Restarts the agent.
@@ -68,7 +65,6 @@ The following are common command line uses of the tool.
   - `stop` - Stop the server service.
   - `restart` - Restart the server service.
   - `show` - Show various server stats. Use **-h** for more information.
-
 - `mst-cli server logs –help` - Usage: **mst-cli server logs [flags]**
 
   Flags:
@@ -77,12 +73,10 @@ The following are common command line uses of the tool.
   - `--since string` - Show logs since TIMESTAMP
   - `--tail uint` - Output the specified number of LINES at the end of the logs. Defaults to zero (0), which prints all lines.
   - `-t, --timestamps` - Output the timestamps in the log.
-
 - `mst-cli server status` - The following returns are examples of results you might see:
 
   - State: running
   - Health: healthy
-
 - `mst-cli server start` - Starts the server if it's stopped.
 - `mst-cli server stop` - Stops the server. Must be started manually after stopped.
 - `mst-cli server restart` - Restarts the server.
@@ -111,37 +105,37 @@ Following are environment variables you might want to configure when you install
 
 ## Data Paths
 
-| Path/File                       | Description             | Permissions |
-|---------------------------------|-------------------------|------------|
-| /…/mstunnel                     | The root directory for all configuration. | Owner root, Group mstunnel |
-| /…/mstunnel/admin-settings.json | Contains the settings for the server install. | *Intune manages this file and it shouldn't be edited manually*. |
-| /…/mstunnel/certs               | The directory where the TLS certificate is stored.  | Owner root, Group mstunnel |
-| /…/mstunnel/private             |The directory where the Intune Agent certificate and the TLS private key are stored. | Owner root, Group mstunnel |
+| Path/File | Description | Permissions |
+| --- | --- | --- |
+| /…/mstunnel | The root directory for all configuration. | Owner root, Group mstunnel |
+| /…/mstunnel/admin-settings.json | Contains the settings for the server install. | *Intune manages this file and it shouldn't be edited manually*. |
+| /…/mstunnel/certs | The directory where the TLS certificate is stored. | Owner root, Group mstunnel |
+| /…/mstunnel/private | The directory where the Intune Agent certificate and the TLS private key are stored. | Owner root, Group mstunnel |
 
 ## Files add during server installation
 
 **/etc/mstunnel**:
 
 - **admin-settings.json**:
+
   - Contains the serialized *Server configuration* from Intune.
   - Created after the server enrolls.
-
 - **agent-info.json**:
+
   - Created when the enrollment is complete.
   - AgentId, IntuneTenantId, AADTenantId, and the agent certificate RenewalDate.
   - Updated on agent certificate renewal.
-
 - **private/agent.p12**:
+
   - PFX certificate used for agent authentication to Intune.
   - Automatically renewed.
-
 - **version-info.json**:
+
   - Contains version information for the various components.
   - ConfigVersion, DockerVersion, AgentImageHash, AgentCreateDate, ServerImageHash, ServerCreateDate.
-
 - **ocserv.conf**:
-  - Server configuration
 
+  - Server configuration
 - **Images_configured**
 
 **The Docker images used to create the containers**:
@@ -151,7 +145,7 @@ Following are environment variables you might want to configure when you install
 
 ### Example of admin-settings.json
 
-``` JSON
+```JSON
 {
 "PolicyName": "Auto Generated Policy for rh7vm",
    "DisplayName": "rh7vm Policy",
@@ -165,24 +159,25 @@ Following are environment variables you might want to configure when you install
 }
 ```
 
-| Admin Setting       | Description                           |
-|---------------------|---------------------------------------|
-| PolicyName          | The name of the settings policy. You can choose the name. |
-| DisplayName         | The short display name. You can choose the name. |
-| Description         | The description of the policy. You can choose the description. |
-| Network             | The network and mask that is used to assign clients virtual addresses. This setting doesn't need to change unless you have a conflict. This setting supports up to 64,000 clients. |
-| DNSServers          | The list of DNS servers that the client should use. These servers can resolve the addresses of internal resources. |
+| Admin Setting | Description |
+| --- | --- |
+| PolicyName | The name of the settings policy. You can choose the name. |
+| DisplayName | The short display name. You can choose the name. |
+| Description | The description of the policy. You can choose the description. |
+| Network | The network and mask that is used to assign clients virtual addresses. This setting doesn't need to change unless you have a conflict. This setting supports up to 64,000 clients. |
+| DNSServers | The list of DNS servers that the client should use. These servers can resolve the addresses of internal resources. |
 | DefaultDomainSuffix | The Domain suffix that a client appends to the host name when trying to resolve resources. |
-| RoutesInclude       | The list of routes that are routed via the VPN. The default is all routes. |
-| RoutesExclude       | The list of routes that should bypass the VPN. |
-| ListenPort          | The port that the VPN server receives traffic on. |
+| RoutesInclude | The list of routes that are routed via the VPN. The default is all routes. |
+| RoutesExclude | The list of routes that should bypass the VPN. |
+| ListenPort | The port that the VPN server receives traffic on. |
 
 ## Docker commands
 
 The following are common commands for Docker that can be of use if you must investigate problems on a tunnel server.
 
 > [!NOTE]
-> Most Linux distributions use Docker. However, some like *Red Hat Enterprise Linux (RHEL) 8.4* don't support Docker. Instead, these distributions use Podman. For more information about supported distributions and the Docker or Podman requirements of each, see [Linux servers](./prerequisites.md#linux-server).
+>
+> Most Linux distributions use Docker. However, some like *Red Hat Enterprise Linux (RHEL) 8.4* don't support Docker. Instead, these distributions use Podman. For more information about supported distributions and the Docker or Podman requirements of each, see [Linux servers](prerequisites.md#linux-server).
 >
 > The references and command lines that are written for Docker can be used with Podman by replacing *docker* with *podman*.
 
@@ -192,11 +187,9 @@ Command-line interface:
 
   - *mstunnel-server* – This container runs the **ocserv** server components, and uses inbound Port 443 *(default)*, or a custom port configuration.
   - *mstunnel-agent* - This container runs the Intune connector and uses outbound Port 443.
-
 - **To restart Docker**:
 
   - `systemctl restart docker`
-
 - **To run something in a container**:
 
   - `docker exec –it mstunnel-server bash`
@@ -217,8 +210,7 @@ The following are common Linux commands you might use with a tunnel server.
 - `sudo su` – Makes you root on the box. Use this command before running the following commands, and before you run mstunnel-setup.
 - `ls` – list contents of the directory.
 - `ls – l` – List contents of directory including timestamps.
-- `cd` – change to another directory. For example, `cd /etc/test/stuff` changes you from the *root* directory to the *etc* subfolder > to the *test* subfolder > and then to the *stuff* folder.
-
+- `cd` – change to another directory. For example, `cd /etc/test/stuff` changes you from the *root* directory to the *etc* subfolder &gt; to the *test* subfolder &gt; and then to the *stuff* folder.
 - `cp <source> <destination>` - Useful for copying the certs to the right location.
 - `ln –s <source> <target>` - Create a softlink.
 - `curl <URL>` – Checks access to a website. For example: `curl https://microsoft.com`

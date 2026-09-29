@@ -1,9 +1,8 @@
 ---
-title: Microsoft Intune built-in roles reference
+title: "Built-in role permissions for Microsoft Intune"
 description: Permissions reference for built-in roles for Microsoft Intune.
-ms.date: 02/04/2026
+ms.date: "2026-02-04T00:00:00Z"
 ms.topic: reference
-
 ---
 
 # Built-in role permissions for Microsoft Intune
@@ -13,9 +12,11 @@ The following tables list the built-in roles for Microsoft Intune. The tables al
 For a list of all available permission/actions combinations see [Custom role permissions](create-custom-role.md#custom-role-permissions) in *Create a custom role in Intune*.
 
 > [!TIP]
-> When your tenant includes a subscription to Windows 365 to support Cloud PCs, you might see additional Cloud PC roles in the Intune admin center. These roles aren't available by default and include permissions within Intune for tasks related to Cloud PCs. For more information about these roles, see [Cloud PC built-in roles](/windows-365/enterprise/role-based-access#cloud-pc-built-in-roles) in the Windows 365 documentation.
+>
+> When your tenant includes a subscription to Windows 365 to support Cloud PCs, you might see additional Cloud PC roles in the Intune admin center. These roles aren't available by default and include permissions within Intune for tasks related to Cloud PCs. For more information about these roles, see [Cloud PC built-in roles](https://learn.microsoft.com/en-us/windows-365/enterprise/role-based-access#cloud-pc-built-in-roles) in the Windows 365 documentation.
 
 > [!TIP]
+>
 > For detailed descriptions of each permission and instructions for creating custom roles with specific permissions, see [Create a custom role in Intune](create-custom-role.md).
 
 ## Application Manager
@@ -23,7 +24,7 @@ For a list of all available permission/actions combinations see [Custom role per
 Application Managers manage mobile and managed applications, can read device information and can view device configuration profiles.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Create |
 | Admin tasks | Delete |
 | Admin tasks | Read |
@@ -79,7 +80,7 @@ Application Managers manage mobile and managed applications, can read device inf
 Endpoint Privilege Managers can manage Endpoint Privilege Management (EPM) policies in the Intune console.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Create |
 | Admin tasks | Delete |
 | Admin tasks | Read |
@@ -100,7 +101,7 @@ Endpoint Privilege Managers can manage Endpoint Privilege Management (EPM) polic
 Endpoint Privilege Readers can view Endpoint Privilege Management (EPM) policies in the Intune console.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Read |
 | Endpoint Privilege Management Elevation Requests | View elevation requests |
 | Endpoint Privilege Management Policy Authoring | Read |
@@ -113,7 +114,7 @@ Endpoint Privilege Readers can view Endpoint Privilege Management (EPM) policies
 Manages security and compliance features such as security baselines, device compliance, conditional access, and Microsoft Defender ATP.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Create |
 | Admin tasks | Delete |
 | Admin tasks | Read |
@@ -220,7 +221,7 @@ Manages security and compliance features such as security baselines, device comp
 Help Desk Operators perform remote tasks on users and devices and can assign applications or policies to users or devices.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Read |
 | Android Enterprise | Read |
 | Android FOTA | Read |
@@ -319,7 +320,7 @@ Help Desk Operators perform remote tasks on users and devices and can assign app
 Intune Role Administrators manage custom Intune roles and add assignments for built-in Intune roles. It is the only Intune role that can assign permissions to Administrators.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Organization | Read |
 | Roles | Assign |
 | Roles | Create |
@@ -332,7 +333,7 @@ Intune Role Administrators manage custom Intune roles and add assignments for bu
 Policy and Profile Managers manage compliance policy, configuration profiles, Apple enrollment, Android Enterprise enrollment profiles and corporate device identifiers.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Create |
 | Admin tasks | Delete |
 | Admin tasks | Read |
@@ -421,7 +422,7 @@ Policy and Profile Managers manage compliance policy, configuration profiles, Ap
 Read Only Operators view user, device, enrollment, configuration and application information and cannot make changes to Intune.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Read |
 | Android Enterprise | Read |
 | Android FOTA | Read |
@@ -483,7 +484,7 @@ Read Only Operators view user, device, enrollment, configuration and application
 School Administrators can manage apps and settings for their groups. They can take remote actions on devices, including remotely locking them, restarting them, and retiring them from management.
 
 | Permission | Action |
-| ---------- | ------ |
+| --- | --- |
 | Admin tasks | Create |
 | Admin tasks | Delete |
 | Admin tasks | Read |

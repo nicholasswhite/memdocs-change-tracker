@@ -1,7 +1,7 @@
 ---
-title: macOS device compliance settings in Microsoft Intune
+title: "Device compliance settings for macOS in Intune"
 description: View the device compliance settings for macOS devices that you can manage with Microsoft Intune compliance policies.
-ms.date: 09/5/2025
+ms.date: "2025-09-05T00:00:00Z"
 ms.topic: article
 ms.reviewer: tycast
 ---
@@ -18,8 +18,8 @@ Settings in this article are organized by the sections that appear in the admin 
 
 ## Before you begin
 
-- To learn more about compliance policies, and what they do, see [get started with device compliance](./overview.md).
-- To create a macOS device compliance policy, see [Create a compliance policy in Microsoft Intune](./create-policy.md). For **Platform**, select **macOS**.
+- To learn more about compliance policies, and what they do, see [get started with device compliance](overview.md).
+- To create a macOS device compliance policy, see [Create a compliance policy in Microsoft Intune](create-policy.md). For **Platform**, select **macOS**.
 
 > [!NOTE]
 >
@@ -34,51 +34,44 @@ Settings in this article are organized by the sections that appear in the admin 
 ## Device properties
 
 - **Minimum OS version**  
-  A device that doesn't meet the minimum OS version requirement is considered to be noncompliant. The device user can view a link with information on how to upgrade and can choose to upgrade their device. After that, they can access organization resources.
-
+   A device that doesn't meet the minimum OS version requirement is considered to be noncompliant. The device user can view a link with information on how to upgrade and can choose to upgrade their device. After that, they can access organization resources.
 - **Maximum OS version**  
-  When a device uses an OS version later than the version in the rule, access to organization resources is blocked. The device user is asked to contact their IT administrator. The device can't access organization resources until a rule changes to allow the OS version.
-
+   When a device uses an OS version later than the version in the rule, access to organization resources is blocked. The device user is asked to contact their IT administrator. The device can't access organization resources until a rule changes to allow the OS version.
 - **Minimum OS build version**  
-  When Apple publishes security updates, the build number is typically updated, not the OS version. Use this feature to enter a minimum allowed build number on the device. For Apple Rapid Security Response updates, enter the supplemental build version, such as `22E772610a`.
-
+   When Apple publishes security updates, the build number is typically updated, not the OS version. Use this feature to enter a minimum allowed build number on the device. For Apple Rapid Security Response updates, enter the supplemental build version, such as `22E772610a`.
 - **Maximum OS build version**  
-  When Apple publishes security updates, the build number is typically updated, not the OS version. Use this feature to enter a maximum allowed build number on the device. For Apple Rapid Security Response updates, enter the supplemental build version, such as `22E772610a`.
+   When Apple publishes security updates, the build number is typically updated, not the OS version. Use this feature to enter a maximum allowed build number on the device. For Apple Rapid Security Response updates, enter the supplemental build version, such as `22E772610a`.
 
 ## System security
 
 ### Password
 
 > [!WARNING]
-> Requiring a password in a compliance policy will automatically expire the existing password for all accounts on the device, including those created by LAPS and Platform SSO. We recommend managing device passwords using a settings catalog policy with Change At Next Auth configured to False. 
+>
+> Requiring a password in a compliance policy will automatically expire the existing password for all accounts on the device, including those created by LAPS and Platform SSO. We recommend managing device passwords using a settings catalog policy with Change At Next Auth configured to False.
 
 - **Require a password to unlock devices**
+
   - **Not configured** (*default*)
   - **Require** Users must enter a password before they can access their device.
-
 - **Simple passwords**
+
   - **Not configured** (*default*) - Users can create simple passwords like **1234** or **1111**.
   - **Block** - Users can't create simple passwords, such as **1234** or **1111**.
-
 - **Minimum password length**  
-  Enter the minimum number of digits or characters that the password must have.
-
+   Enter the minimum number of digits or characters that the password must have.
 - **Password type**  
-  Choose if a password should have only **Numeric** characters, or if there should be a mix of numbers and other characters (**Alphanumeric**).
-
+   Choose if a password should have only **Numeric** characters, or if there should be a mix of numbers and other characters (**Alphanumeric**).
 - **Number of non-alphanumeric characters in password**  
-  Enter the minimum number of special characters, such as `&`, `#`, `%`, `!`, and so on, that must be in the password.
+   Enter the minimum number of special characters, such as `&`, `#`, `%`, `!`, and so on, that must be in the password.
 
   Setting a higher number requires the user to create a password that is more complex.
-
 - **Maximum minutes of inactivity before password is required**  
-  Enter the idle time before the user must reenter their password.
-
+   Enter the idle time before the user must reenter their password.
 - **Password expiration (days)**  
-  Select the number of days before the password expires, and they must create a new one.
-
+   Select the number of days before the password expires, and they must create a new one.
 - **Number of previous passwords to prevent reuse**  
-  Enter the number of previously used passwords that can't be used.
+   Enter the number of previously used passwords that can't be used.
 
 > [!IMPORTANT]
 >
@@ -95,14 +88,15 @@ Settings in this article are organized by the sections that appear in the admin 
 Firewall protects devices from unauthorized network access. You can use Firewall to control connections on a per-application basis.
 
 - **Firewall**
+
   - **Not configured** (*default*) - This setting leaves the firewall turned off, and network traffic is allowed (not blocked).
   - **Enable** - Use *Enable* to help protect devices from unauthorized access. Enabling this feature allows you to handle incoming internet connections, and use stealth mode.
-
 - **Incoming connections**
+
   - **Not configured** (*default*) - Allows incoming connections and sharing services.
   - **Block** - Block all incoming network connections except the connections required for basic internet services, such as DHCP, Bonjour, and IPSec. This setting also blocks all sharing services, including screen sharing, remote access, iTunes music sharing, and more.
-
 - **Stealth Mode**
+
   - **Not configured** (*default*) - This setting leaves stealth mode turned off.
   - **Enable** - Turn on stealth mode to prevent devices from responding to probing requests, which can be made by malicious users. When enabled, the device continues to answer incoming requests for authorized apps.
 
@@ -111,7 +105,7 @@ Firewall protects devices from unauthorized network access. You can use Firewall
 For more information, see [Gatekeeper on macOS](https://support.apple.com/HT202491) (opens Apple's web site).
 
 - **Allow apps downloaded from these locations**  
-  Allows supported applications to be installed on your devices from different locations. Your location options:
+   Allows supported applications to be installed on your devices from different locations. Your location options:
 
   - **Not configured** (*default*) - The gatekeeper option has no effect on compliance or noncompliance.
   - **Mac App Store** - Only install apps for the Mac app store. Apps can't be installed from third parties nor identified developers. If a user selects Gatekeeper to install apps outside the Mac App Store, then the device is considered not compliant.
@@ -120,6 +114,6 @@ For more information, see [Gatekeeper on macOS](https://support.apple.com/HT2024
 
 ## Next steps
 
-- [Add actions for noncompliant devices](./configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
-- [Monitor your compliance policies](./monitor-policy.md).
-- See the [compliance policy settings for iOS](./ref-ios-ipados-settings.md) devices.
+- [Add actions for noncompliant devices](configure-noncompliance-actions.md) and [use scope tags to filter policies](../../fundamentals/role-based-access-control/scope-tags.md).
+- [Monitor your compliance policies](monitor-policy.md).
+- See the [compliance policy settings for iOS](ref-ios-ipados-settings.md) devices.

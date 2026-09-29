@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent an application policy request with CCM_RequestedAppPolicy in Configuration Manager.
-title: CCM_Requested AppPolicy Class
-ms.date: 09/20/2016
+title: "CCM_Requested AppPolicy Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Requested AppPolicy Client WMI Class
+
 The `CCM_RequestedAppPolicy` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an application policy request.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,111 +33,105 @@ Class CCM_RequestedAppPolicy :
 ```
 
 ## Methods
- The following table lists the methods in the `CCM_RequestedAppPolicy` class.
 
--   [QueueRequestedAppPolicy Method in Class CCM_RequestedAppPolicy](../../../../../develop/reference/core/clients/sdk/queuerequestedapppolicy-method-in-class-ccm_requestedapppolicy.md)
+The following table lists the methods in the `CCM_RequestedAppPolicy` class.
+
+- [QueueRequestedAppPolicy Method in Class CCM_RequestedAppPolicy](queuerequestedapppolicy-method-in-class-ccm_requestedapppolicy.md)
 
 ## Properties
- `AppId`
- Data type: `String`
 
- Access type: Read/Write
+`AppId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Application identifier.
+Qualifiers: none
 
- `DateRequested`
- Data type: `DateTime`
+Application identifier.
 
- Access type: Read/Write
+`DateRequested` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Date requested.
+Qualifiers: none
 
- `EnforcePreference`
- Data type: `UInt32`
+Date requested.
 
- Access type: Read/Write
+`EnforcePreference` Data type: `UInt32`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Enforce preference. Possible values are:
+Qualifiers: [values]
 
-|Value|Enforce preference|
-|-|-|
-|0|Immediate|
-|1|Non-business Hours|
-|2|Admin Schedule|
+Enforce preference. Possible values are:
 
- `IsComplete`
- Data type: `Boolean`
+| Value | Enforce preference |
+| --- | --- |
+| 0 | Immediate |
+| 1 | Non-business Hours |
+| 2 | Admin Schedule |
 
- Access type: Read/Write
+`IsComplete` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if application request is complete.
+Qualifiers: none
 
- `IsRebootIfNeeded`
- Data type: `Boolean`
+`true` if application request is complete.
 
- Access type: Read/Write
+`IsRebootIfNeeded` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if a reboot is needed.
+Qualifiers: none
 
- `IsSlowInstallRequest`
- Data type: `Boolean`
+`true` if a reboot is needed.
 
- Access type: Read/Write
+`IsSlowInstallRequest` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if this is an installation over a slow link.
+Qualifiers: none
 
- `PolicyId`
- Data type: `String`
+`true` if this is an installation over a slow link.
 
- Access type: Read/Write
+`PolicyId` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Policy identifier.
+Qualifiers: [key]
 
- `RequestedActions`
- Data type: `UInt32`
+Policy identifier.
 
- Access type: Read/Write
+`RequestedActions` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Requested actions.
+Qualifiers: none
 
- `Revision`
- Data type: `String`
+Requested actions.
 
- Access type: Read/Write
+`Revision` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Revision.
+Qualifiers: none
 
- `UserSID`
- Data type: `String`
+Revision.
 
- Access type: Read/Write
+`UserSID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- User security identifier (SID).
+Qualifiers: [key]
+
+User security identifier (SID).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

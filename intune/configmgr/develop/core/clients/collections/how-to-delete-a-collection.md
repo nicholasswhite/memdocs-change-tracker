@@ -1,7 +1,7 @@
 ---
 description: Learn how your application can delete a collection in Configuration Manager by using the SMS_Collection Server WMI Class and class properties. 
-title: "Delete a Collection"
-ms.date: 12/06/2016
+title: "How to Delete a Collection"
+ms.date: "2016-12-06T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,49 +9,48 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Delete a Collection
-Your application can delete a collection in Configuration Manager by using the [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md) and class properties.  
+
+Your application can delete a collection in Configuration Manager by using the [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md) and class properties.
 
 > [!IMPORTANT]
 >
 > - Care should be exercised when deleting any Configuration Manager object.
->
-> - We recommend that if you are deleting several collections, you do so one at a time, to allow database operations time to manage changes associated with the deletions.  
+> - We recommend that if you are deleting several collections, you do so one at a time, to allow database operations time to manage changes associated with the deletions.
 
- Collections are closely tied to packages, programs, and advertisements. For more information, see [Software Distribution Overview](../../../../develop/core/servers/configure/software-distribution-overview.md).  
+Collections are closely tied to packages, programs, and advertisements. For more information, see [Software Distribution Overview](../../servers/configure/software-distribution-overview.md).
 
- These examples require the following values:  
+These examples require the following values:
 
-- A Windows Management Instrumentation (WMI) connection object.  
+- A Windows Management Instrumentation (WMI) connection object.
+- An existing collection ID.
 
-- An existing collection ID.  
+  The following code is an example of the subroutine call in Visual Basic:
 
-  The following code is an example of the subroutine call in Visual Basic:  
-
-```  
+```
 Call DeleteCollection(swbemServices,"ABC00010")  
-```  
+```
 
- The following code is an example of the method call in C#:  
+The following code is an example of the method call in C#:
 
-```  
+```
 DeleteCollection(WMIConnection,"ABC00010")  
-```  
+```
 
-### To delete a collection  
+### To delete a collection
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).  
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Get the specific collection instance by using the collection ID provided.
+3. Delete the collection by using the delete method.
 
-2.  Get the specific collection instance by using the collection ID provided.  
+## Example
 
-3.  Delete the collection by using the delete method.  
+The following example method deletes a collection.
 
-## Example  
- The following example method deletes a collection.  
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).  
-
-```vbs  
+```vbs
 
 ' Setup a connection to the local provider.  
 Set swbemLocator = CreateObject("WbemScripting.SWbemLocator")  
@@ -79,9 +78,9 @@ Sub DeleteCollection(connection, collectionIDToDelete)
     Wscript.Echo "Deleted collection: " & collectionIDToDelete  
 
 End Sub  
-```  
+```
 
-```c#  
+```c#
 public void DeleteCollection(WqlConnectionManager connection, string collectionIDToDelete)  
 {  
     //  Note:  On delete, the provider cleans up the SMS_CollectionSettings and SMS_CollectToSubCollect objects.  
@@ -105,45 +104,47 @@ public void DeleteCollection(WqlConnectionManager connection, string collectionI
     }  
 }  
 
-```  
+```
 
- The example method has the following parameters:  
+The example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|  
-|`collectionIDToDelete`|-   Managed: `String`<br />-   VBScript: `String`|Unique auto-generated ID containing eight characters. For more information, see the `CollectionID` property of [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md).|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `collectionIDToDelete` | - Managed: `String` - VBScript: `String` | Unique auto-generated ID containing eight characters. For more information, see the `CollectionID` property of [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md). |
 
-## Compiling the Code  
- The C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System  
+The C# example requires:
 
- System.Collections.Generic  
+### Namespaces
 
- System.ComponentModel  
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider  
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine  
+System.ComponentModel
 
-### Assembly  
- adminui.wqlqueryengine  
+Microsoft.ConfigurationManagement.ManagementProvider
 
- microsoft.configurationmanagement.managementprovider  
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+### Assembly
 
-## .NET Framework Security  
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).  
+adminui.wqlqueryengine
 
-## See Also  
- [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)   
- [Delete a collection](how-to-delete-a-collection.md)
- [Software distribution overview](../../servers/configure/software-distribution-overview.md)
- [About deployments](../../servers/configure/about-software-distribution-deployments.md)
- [Objects overview](../../understand/configuration-manager-objects-overview.md)
- [How to Connect to a Configuration Manager Provider using Managed Code](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)   
- [How to Connect to a Configuration Manager Provider Using WMI](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
+microsoft.configurationmanagement.managementprovider
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../servers/configure/role-based-administration.md).
+
+## See Also
+
+[SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md)  
+ [Delete a collection](how-to-delete-a-collection.md) [Software distribution overview](../../servers/configure/software-distribution-overview.md) [About deployments](../../servers/configure/about-software-distribution-deployments.md) [Objects overview](../../understand/configuration-manager-objects-overview.md) [How to Connect to a Configuration Manager Provider using Managed Code](../../understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)  
+ [How to Connect to a Configuration Manager Provider Using WMI](../../understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)

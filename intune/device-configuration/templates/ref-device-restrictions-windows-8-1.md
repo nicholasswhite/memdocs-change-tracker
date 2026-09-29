@@ -1,20 +1,22 @@
 ---
-title: Windows 8.1 device restriction settings in Microsoft Intune
+title: "Microsoft Intune Windows 8.1 device restriction settings"
 description: Learn the Intune settings you can use to control device settings and functionality on devices running Windows 8.1.
-ms.date: 04/16/2024
+ms.date: "2024-04-16T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mikedano
 ---
 
 # Microsoft Intune Windows 8.1 device restriction settings
 
-[!INCLUDE [windows-phone-81-windows-10-mobile-support](../../includes/windows-phone-81-windows-10-mobile-support.md)]
+> [!IMPORTANT]
+>
+> On October 22, 2022, Microsoft Intune ended support for devices running Windows 8.1. Technical assistance and automatic updates on these devices aren't available.
 
 This article shows you the Microsoft Intune device restrictions settings that you can configure for devices running Windows 8.1.
 
 ## Before you begin
 
-- [Create a Windows 8.1 device restrictions configuration profile](./configure-device-restrictions.md#create-the-profile).
+- [Create a Windows 8.1 device restrictions configuration profile](configure-device-restrictions.md#create-the-profile).
 
 ## General
 
@@ -30,6 +32,7 @@ This article shows you the Microsoft Intune device restrictions settings that yo
 ## Password
 
 - **Required password type**: Choose if user must enter a password to access the device. Your options:
+
   - **Not configured** (default): Intune doesn't change or update this setting.
   - **Alphanumeric**: Password must be a mix of numbers and letters.
   - **Numeric**: Password must only be numbers.
@@ -41,7 +44,6 @@ This article shows you the Microsoft Intune device restrictions settings that yo
 - **Picture password and PIN**: A picture password lets the user sign in with gestures on a picture. A PIN lets users quickly sign in with a four-digit code.
 
   **Block** prevents using a picture or PIN as the password. When set to **Not configured** (default), Intune doesn't change or update this setting.
-
 - **Encryption**: **Require** encryption on devices, including files. Not all devices support encryption. When set to **Not configured**, Intune doesn't change or update this setting.
 
   To configure this setting, and correctly report compliance, also configure:
@@ -69,19 +71,21 @@ This article shows you the Microsoft Intune device restrictions settings that yo
 - **Single word entry on intranet site**: Single word entry lets users go to an intranet site by entering a single word, like `hr` or `benefits`. **Block** prevents this feature. When set to **Not configured** (default), Intune doesn't change or update this setting.
 - **Auto detect of intranet site**: **Block** prevents the browser from automatically detecting intranet sites. Intranet mapping rules are blocked. When set to **Not configured** (default), Intune doesn't change or update this setting.
 - **Internet security level**: Sets the security level for Internet sites. Your options:
+
   - **Not configured** (default): Intune doesn't change or update this setting.
   - **High**
   - **Medium-high**
   - **Medium**
 - **Intranet security level**: Sets the security level for intranet sites. Your options:
+
   - **Not configured** (default): Intune doesn't change or update this setting.
   - **High**
   - **Medium-high**
   - **Medium**
   - **Medium-low**
   - **Low**
-
 - **Trusted sites security level**: Configures the security level for the trusted sites zone. Your options:
+
   - **Not configured** (default): Intune doesn't change or update this setting.
   - **High**
   - **Medium-high**
@@ -94,7 +98,6 @@ This article shows you the Microsoft Intune device restrictions settings that yo
   When set to **Not configured**, also enter:
 
   - **Logging report location URL**: Enter a URL location where to get reports that show the websites with Enterprise Mode access turned on.
-
 - **Enterprise mode site list location (Desktop only)**: Enter the location of the websites list that can be opened in Enterprise Mode.
 
 ## Cellular
@@ -108,4 +111,4 @@ This article shows you the Microsoft Intune device restrictions settings that yo
 
 ## Related articles
 
-- Create a device restrictions profile on [Windows devices](./ref-device-restrictions-windows.md).
+- Create a device restrictions profile on [Windows devices](ref-device-restrictions-windows.md).

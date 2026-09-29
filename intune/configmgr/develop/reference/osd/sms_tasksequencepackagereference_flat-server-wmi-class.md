@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequencePackageReference_Flat Class
+title: "SMS_TaskSequencePackageReference_Flat Server WMI Class"
 description: The SMS_TaskSequencePackageReference_Flat WMI class represents all classic package or application references for a task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequencePackageReference_Flat Server WMI Class
+
 The `SMS_TaskSequencePackageReference_Flat` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents all classic package or application references for a task sequence. The list also includes the applications that are dependent on the applications directly referenced in the task sequence.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,152 +33,143 @@ Class SMS_TaskSequencePackageReference_Flat : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_TaskSequencePackageReference_Flat` class does not define any methods.
+
+The `SMS_TaskSequencePackageReference_Flat` class does not define any methods.
 
 ## Properties
- `Description`
- Data type: `String`
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The description for the reference or dependent object.
+Qualifiers: none
 
- `ObjectID`
- Data type: `String`
+The description for the reference or dependent object.
 
- Access type: Read/Write
+`ObjectID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- If the Task Sequence reference is to a legacy package, this property is the package identifier of the legacy package. If the Task Sequence reference is to an application, this property is the package identifier of the application.
+Qualifiers: [key]
 
- `ObjectName`
- Data type: `String`
+If the Task Sequence reference is to a legacy package, this property is the package identifier of the legacy package. If the Task Sequence reference is to an application, this property is the package identifier of the application.
 
- Access type: Read/Write
+`ObjectName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Display name for the reference or dependent object.
+Qualifiers: none
 
- `ObjectType`
- Data type: `UInt32`
+Display name for the reference or dependent object.
 
- Access type: Read/Write
+`ObjectType` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- The type of reference or dependent object. Possible values are:
+Qualifiers: [enumeration]
+
+The type of reference or dependent object. Possible values are:
 
 | Value | Object type |
-| ----- | ----------- |
-|0|Classic Package|
-|3|Driver Package|
-|5|Software Update Package|
-|257|Operating System Image Package|
-|258|Boot Image Package|
-|259|Operating System Installer Source Package|
-|512|Application|
+| --- | --- |
+| 0 | Classic Package |
+| 3 | Driver Package |
+| 5 | Software Update Package |
+| 257 | Operating System Image Package |
+| 258 | Boot Image Package |
+| 259 | Operating System Installer Source Package |
+| 512 | Application |
 
- `Level`
- Data type: `String`
+`Level` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: read
+Qualifiers: read
 
- Reference or dependent object level in the dependency tree. For direct reference objects, this is 0.
+Reference or dependent object level in the dependency tree. For direct reference objects, this is 0.
 
- `ObjectID`
- Data type: `String`
+`ObjectID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- If the Task Sequence reference is to a legacy package, this property is the package identifier of the legacy package. If the Task Sequence reference is to an application, this property is the package identifier of the application.
+If the Task Sequence reference is to a legacy package, this property is the package identifier of the legacy package. If the Task Sequence reference is to an application, this property is the package identifier of the application.
 
- `ObjectName`
- Data type: `String`
+`ObjectName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Display name for the reference or dependent object.
+Display name for the reference or dependent object.
 
- `ObjectType`
- Data type: `UInt32`
+`ObjectType` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [enumeration]
+Qualifiers: [enumeration]
 
- The type of reference or dependent object. Possible values are:
+The type of reference or dependent object. Possible values are:
 
 | Value | Object type |
-| ----- | ----------- |
-|0|Classic Package|
-|3|Driver Package|
-|5|Software Update Package|
-|257|Operating System Image Package|
-|258|Boot Image Package|
-|259|Operating System Installer Source Package|
-|512|Application|
+| --- | --- |
+| 0 | Classic Package |
+| 3 | Driver Package |
+| 5 | Software Update Package |
+| 257 | Operating System Image Package |
+| 258 | Boot Image Package |
+| 259 | Operating System Installer Source Package |
+| 512 | Application |
 
- `PackageID`
- Data type: `String`
+`PackageID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Package identifier of the task sequence.
+Package identifier of the task sequence.
 
- `RefPackageID`
- Data type: `String`
+`RefPackageID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [none]
+Qualifiers: [none]
 
- Reference or dependent object Package ID.
+Reference or dependent object Package ID.
 
- `SourceID`
- Data type: `String`
+`SourceID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [none]
+Qualifiers: [none]
 
- Source object ID for dependency. For direct reference objects this s empty.
+Source object ID for dependency. For direct reference objects this s empty.
 
- `SourceSize`
- Data type: `UInt32`
+`SourceSize` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Package source size.
+Package source size.
 
- `Version`
- Data type: `String`
+`Version` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [none]
+Qualifiers: [none]
 
- Reference or dependent object version.
+Reference or dependent object version.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

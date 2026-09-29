@@ -1,9 +1,9 @@
 ---
 
 
-title: Microsoft Intune App SDK for iOS Developer Guide - Web-View Features
+title: "Intune App SDK for iOS - Web-View Features"
 description: The Microsoft Intune App SDK for iOS lets you incorporate Intune app protection policies (also known as MAM policies) into your native iOS app. Web-view features
-ms.date: 11/18/2025
+ms.date: "2025-11-18T00:00:00Z"
 ms.topic: reference
 ms.collection:
 - M365-identity-device-management
@@ -21,7 +21,7 @@ Because web views exist within the app, they expose it to potential data leaks. 
 The Intune MAM SDK provides several APIs for handling different scenarios where both managed and unmanaged content are surfaced through web views within an app. **These APIs only need to be called if there is a managed user signed in to the app.** Please see the table below as a quick guide on which API applies to which scenario.
 
 | Scenario | APIs |
-| - | - |
+| --- | --- |
 | Only user and organizational content with no risk of arbitrary web pages | No APIs needed |
 | Only non-user and non-organizational content | Set `TreatAllWebViewsAsUnmanaged` in the `Info.plist` |
 | A mix of user/organizational and non-user/non-organizational content (majority non-user/non-organizational) | Set `TreatAllWebViewsAsUnmanaged` in the `Info.plist` and use `setWebViewPolicy:forWebViewer:` with `IntuneMAMWebViewPolicyCurrentIdentity` on web views that contain user or organizational data |
@@ -29,6 +29,7 @@ The Intune MAM SDK provides several APIs for handling different scenarios where 
 | User or organizational content but with a risk of arbitrary web pages | Following suitable usage of `TreatAllWebViewsAsUnmanaged` and `setWebViewPolicy:forWebViewer:`, also implement the `IntuneMAMWebViewPolicyDelegate` for web views that might navigate to arbitrary web pages |
 
 ### Web View Scenario 1: Only web pages that display user or organizational content
+
 If an app only uses web views as a way of rendering user or organizational content and there's no risk of the web view navigating to arbitrary external web pages, then there's no need to use any of the APIs or settings. By default, the SDK will treat any web view surfaced within the app as content belonging to the current UI policy identity.
 
 If a managed user opens a web view within an app, any cut/copy data from the web view will be treated as managed content. Pasting into the web view will be treated according to the managed account's policies.
@@ -72,7 +73,6 @@ If a web view is used to display user or organizational content but has a risk o
 The `setWebViewPolicyDelegate:forWebViewer:` method must be called directly on a WKWebView or SFSafariViewController.
 
 Each time the web view navigates to a new page, the `isExternalURL:` delegate method will be called. Applications should determine if the URL passed to the delegate method represents an internal website where user or organizational data can be pasted in or an external website that could leak organizational data. Returning `NO` will tell the SDK that the website being loaded is an organizational location where user or organizational data can be shared. Returning `YES` will cause the SDK to open the URL in Microsoft Edge rather than the WKWebView or SFSafariViewController if current policy settings require it. This will ensure that no user or organizational data from within the app can be leaked to the external website.
-
 
 ### Web View APIs Example
 

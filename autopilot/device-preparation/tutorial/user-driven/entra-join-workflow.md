@@ -1,7 +1,7 @@
 ---
-title: Overview for Windows Autopilot device preparation user-driven Microsoft Entra join in Intune
+title: "Step-by-step tutorial for Windows Autopilot device preparation user-driven Microsoft Entra join in Intune"
 description: Overview for Windows Autopilot device preparation user-driven Microsoft Entra join in Intune.
-ms.date: 08/07/2026
+ms.date: "2026-08-07T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -13,7 +13,7 @@ This tutorial guides you through using Intune to deploy Windows Autopilot device
 
 The tutorial covers all configuration steps required for a successful Windows Autopilot device preparation user-driven Microsoft Entra join deployment. Although the walkthrough is suitable for a lab or test environment, you can also use it in production.
 
-Before beginning, refer to [Plan your Microsoft Entra device deployment](/entra/identity/devices/device-join-plan) to make sure all requirements are met for joining devices to Microsoft Entra ID.
+Before beginning, refer to [Plan your Microsoft Entra device deployment](https://learn.microsoft.com/en-us/entra/identity/devices/device-join-plan) to make sure all requirements are met for joining devices to Microsoft Entra ID.
 
 ## Windows Autopilot device preparation user-driven Microsoft Entra join overview
 
@@ -38,24 +38,15 @@ Once the Windows Autopilot device preparation user-driven deployment is complete
 During the out-of-box experience (OOBE), a user authenticates with their corporate credentials. If there's a Windows Autopilot device preparation policy assigned to the user signing in, then that policy is delivered to the device. It then determines the configuration that needs to be applied to the device based on the settings configured in the policy. After that, device setup continues in the following order:
 
 1. The device joins Microsoft Entra ID and enrolls in Intune.
-
-1. The Intune management extension installs.
-
-1. When the device is joined to Microsoft Entra ID during the first step, the user is automatically added to the local **Administrators** group on the device. If the user account is configured as a standard user, the setting is enforced by removing the user out of the **Administrators** group.
-
-1. The deployment syncs with the mobile device management (MDM) service such as Intune and checks if line-of-business (LOB) and Microsoft 365 applications are selected in the Windows Autopilot device preparation policy. It also syncs all MDM policy at this time, but application of the policy isn't tracked during the deployment.
-
-1. If there are LOB and Microsoft 365 applications selected in the policy, then they're installed. If a LOB or Microsoft 365 application fails to install, then the deployment fails at this point.
-
-1. The deployment checks if PowerShell scripts are selected in the Windows Autopilot device preparation policy. If there are PowerShell scripts selected in the policy, then they run. If a PowerShell script fails, then the deployment fails at this point.
-
-1. The deployment checks if Win32, Microsoft Store, or Enterprise App Catalog applications are selected in the Windows Autopilot device preparation policy. If there are Win32, Microsoft Store, or Enterprise App Catalog applications selected in the policy, then they're installed. If a Win32, Microsoft Store, or Enterprise App Catalog application fails to install, then the deployment fails at this point.
-
-1. If all steps succeed, the **Required setup complete** page is displayed for the user.
-
-1. Once the **Required setup complete** page is dismissed, the user is automatically signed in and the desktop is displayed.
-
-1. At this point, another sync is triggered and all other configurations is delivered to the device. Additional configurations might include:
+2. The Intune management extension installs.
+3. When the device is joined to Microsoft Entra ID during the first step, the user is automatically added to the local **Administrators** group on the device. If the user account is configured as a standard user, the setting is enforced by removing the user out of the **Administrators** group.
+4. The deployment syncs with the mobile device management (MDM) service such as Intune and checks if line-of-business (LOB) and Microsoft 365 applications are selected in the Windows Autopilot device preparation policy. It also syncs all MDM policy at this time, but application of the policy isn't tracked during the deployment.
+5. If there are LOB and Microsoft 365 applications selected in the policy, then they're installed. If a LOB or Microsoft 365 application fails to install, then the deployment fails at this point.
+6. The deployment checks if PowerShell scripts are selected in the Windows Autopilot device preparation policy. If there are PowerShell scripts selected in the policy, then they run. If a PowerShell script fails, then the deployment fails at this point.
+7. The deployment checks if Win32, Microsoft Store, or Enterprise App Catalog applications are selected in the Windows Autopilot device preparation policy. If there are Win32, Microsoft Store, or Enterprise App Catalog applications selected in the policy, then they're installed. If a Win32, Microsoft Store, or Enterprise App Catalog application fails to install, then the deployment fails at this point.
+8. If all steps succeed, the **Required setup complete** page is displayed for the user.
+9. Once the **Required setup complete** page is dismissed, the user is automatically signed in and the desktop is displayed.
+10. At this point, another sync is triggered and all other configurations is delivered to the device. Additional configurations might include:
 
     - Applications and PowerShell scripts that were assigned to the device group specified in the Windows Autopilot device preparation policy but weren't explicitly selected in the policy.
     - Any additional MDM policy.
@@ -65,14 +56,12 @@ During the out-of-box experience (OOBE), a user authenticates with their corpora
 
 Steps 1–6 configure your environment and the Windows Autopilot device preparation policy. They're required for all deployments:
 
-> [!div class="checklist"]
->
-> - Step 1: [Set up Windows automatic Intune enrollment](entra-join-automatic-enrollment.md)
-> - Step 2: [Allow users to join devices to Microsoft Entra ID](entra-join-allow-users-to-join.md)
-> - Step 3: [Create an assigned device group](entra-join-device-group.md)
-> - Step 4: [Create a user group](entra-join-user-group.md)
-> - Step 5: [Assign applications and PowerShell scripts to device group](entra-join-assign-apps-scripts.md)
-> - Step 6: [Create Windows Autopilot device preparation policy](entra-join-autopilot-policy.md)
+- Step 1: [Set up Windows automatic Intune enrollment](entra-join-automatic-enrollment.md)
+- Step 2: [Allow users to join devices to Microsoft Entra ID](entra-join-allow-users-to-join.md)
+- Step 3: [Create an assigned device group](entra-join-device-group.md)
+- Step 4: [Create a user group](entra-join-user-group.md)
+- Step 5: [Assign applications and PowerShell scripts to device group](entra-join-assign-apps-scripts.md)
+- Step 6: [Create Windows Autopilot device preparation policy](entra-join-autopilot-policy.md)
 
 ### Step 7 (optional): Make sure only trusted devices are onboarded
 
@@ -80,14 +69,11 @@ If you use Intune enrollment restrictions to block personal device enrollments, 
 
 Choose one of the following options:
 
-> [!div class="checklist"]
->
-> - Step 7, option 1: [Add Windows corporate identifier to device](entra-join-corporate-identifier.md)
-> - Step 7, option 2: [Associate devices](entra-join-device-association.md)
+- Step 7, option 1: [Add Windows corporate identifier to device](entra-join-corporate-identifier.md)
+- Step 7, option 2: [Associate devices](entra-join-device-association.md)
 
 Device association also unlocks additional device preparation policy settings—such as OOBE customization and device naming—that are only available to associated devices.
 
 ## Walkthrough
 
-> [!div class="nextstepaction"]
-> [Step 1: Set up Windows automatic Intune enrollment](entra-join-automatic-enrollment.md)
+[Step 1: Set up Windows automatic Intune enrollment](entra-join-automatic-enrollment.md)

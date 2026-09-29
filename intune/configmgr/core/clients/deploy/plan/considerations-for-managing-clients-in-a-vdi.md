@@ -1,7 +1,7 @@
 ---
-title: Manage VDI clients
+title: "Manage Configuration Manager clients in a virtual desktop infrastructure (VDI)"
 description: Manage Configuration Manager clients in a virtual desktop infrastructure (VDI).
-ms.date: 08/11/2020
+ms.date: "2020-08-11T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -15,11 +15,8 @@ ms.service: configuration-manager
 Configuration Manager supports installing the Configuration Manager client on the following virtual desktop infrastructure (VDI) scenarios:
 
 - **Personal virtual machines**: The virtual machine (VM) maintains user data and settings between sessions.
-
 - **Remote Desktop Services sessions**: Host multiple, concurrent client sessions on a centralized server. Users connect to a session and run applications on that server.
-
 - **Pooled virtual machines/Non-Persistent**: The VM doesn't persist between sessions. When a user closes a session, the virtual environment discards all data and settings. Pooled virtual machines are useful when you can't use Remote Desktop Services. For example, if a required application can't run on the Windows Server that hosts the client sessions.
-
 - **Azure Virtual Desktop**: A desktop and app virtualization service that runs on Microsoft Azure. Starting in version 1906, use Configuration Manager to manage these virtual devices running Windows in Azure.
 
 ## Personal VMs
@@ -32,7 +29,7 @@ For more information, see [Support for virtualization environments](../../../pla
 
 You don't install the Configuration Manager client for individual Remote Desktop sessions. Install it once on the server that hosts Remote Desktop Services. You can use all Configuration Manager client features on the Remote Desktop Services server.
 
-For more information, see [Welcome to Remote Desktop Services](/windows-server/remote/remote-desktop-services/welcome-to-rds).
+For more information, see [Welcome to Remote Desktop Services](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/welcome-to-rds).
 
 ## Pooled VMs/Non-Persistent
 

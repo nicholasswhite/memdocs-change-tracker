@@ -1,16 +1,18 @@
 ---
-title: SMS_Permission Class
+title: "SMS_Permission Server WMI Class"
 description: The SMS_Permission Windows Management Instrumentation class is an SMS Provider server class, in Configuration Manager, that represents RBAC Security User Permissions.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Permission Server WMI Class
+
 The `SMS_Permission` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents RBAC Security User Permissions.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,90 +31,86 @@ Class SMS_Permission : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_Permission` class doesn't define any methods.
+
+The `SMS_Permission` class doesn't define any methods.
 
 ## Properties
- `AdminID`
- Data type: `UInt32`
 
- Access type: Read
+`AdminID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- ID of the admin account.
+Qualifiers: [key]
 
- `CategoryID`
- Data type: `String`
+ID of the admin account.
 
- Access type: Read
+`CategoryID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- ID of the RBA security category.
+Qualifiers: [key]
 
- `CategoryName`
- Data type: `String`
+ID of the RBA security category.
 
- Access type: Read
+`CategoryName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Name of the RBA security category.
+Qualifiers: None
 
- `CategoryTypeID`
- Data type: `UInt32`
+Name of the RBA security category.
 
- Access type: Read
+`CategoryTypeID` Data type: `UInt32`
 
- Qualifiers: [enumeration, key]
+Access type: Read
 
- The type of the category. Possible values are listed below. The default value is 29.
+Qualifiers: [enumeration, key]
 
-|Value|Category type|
-|-|-|
-|1|Collection|
-|29|SecuredScope|
+The type of the category. Possible values are listed below. The default value is 29.
 
- `GrantedToCurrentUser`
- Data type: `Boolean`
+| Value | Category type |
+| --- | --- |
+| 1 | Collection |
+| 29 | SecuredScope |
 
- Access type: Read
+`GrantedToCurrentUser` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read
 
- This value will be true if this permission is granted to current user directly or indirectly (through a Security Group).
+Qualifiers: None
 
- `LogonName`
- Data type: `String`
+This value will be true if this permission is granted to current user directly or indirectly (through a Security Group).
 
- Access type: Read
+`LogonName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Sign-in name of the user.
+Qualifiers: None
 
- `RoleID`
- Data type: `String`
+Sign-in name of the user.
 
- Access type: Read
+`RoleID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- ID of the role.
+Qualifiers: [key]
 
- `RoleName`
- Data type: `String`
+ID of the role.
 
- Access type: Read
+`RoleName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Name of the role.
+Qualifiers: None
+
+Name of the role.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

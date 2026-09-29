@@ -1,7 +1,7 @@
 ---
-title: Schema views
+title: "Schema views in Configuration Manager"
 description: Information about the schema that can be used when creating reports.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 
@@ -20,13 +20,11 @@ The Configuration Manager view schema views can be joined together and used to r
 
 ### v_SchemaViews
 
-Lists all the SQL views and SQL view types in the view schema family.
-The view can be joined to the **v_ReportViewSchema** view by using the **ViewName** column.
+Lists all the SQL views and SQL view types in the view schema family. The view can be joined to the **v_ReportViewSchema** view by using the **ViewName** column.
 
 ### v_ReportViewSchema
 
-Lists all the Configuration Manager SQL views in the view schema family and the column names for each view.
-The view can be joined to the **v_ReportViewSchema** view by using the **ViewName** column.
+Lists all the Configuration Manager SQL views in the view schema family and the column names for each view. The view can be joined to the **v_ReportViewSchema** view by using the **ViewName** column.
 
 The following query uses the **v_SchemaViews** view to retrieve a list of all the view schema family views and their associated view category:
 
@@ -57,13 +55,13 @@ The output from this query and the information provided throughout this document
 
 The discovery schema views provide information about all resources in a Configuration Manager site and are described in this section. The two resource schema information views are **v_ResourceMap** and **v_ResourceAttributeMap**. The **v_ResourceMap** view contains a list of all the resource types for discovered data. By default, Configuration Manager has the **Unknown System**, **User Group**, **User**, and **System Resource** types, each of which has its own resource type number and individual view. The view can be joined to other views by using the **ResourceType** column. his section represents the default data contained in the **v_ResourceMap** view.
 
-|Resource type|Display name|Resource class name|
-|--- |--- |--- |
-|2|Unknown System|**v_R_UnknownSystem**|
-|3|User Group|**v_R_UserGroup**|
-|4|User|**v_R_User**|
-|5|System|**v_R_System**|
-|6|IP Network|**V_R_IPNetwork**|
+| Resource type | Display name | Resource class name |
+| --- | --- | --- |
+| 2 | Unknown System | **v_R_UnknownSystem** |
+| 3 | User Group | **v_R_UserGroup** |
+| 4 | User | **v_R_User** |
+| 5 | System | **v_R_System** |
+| 6 | IP Network | **V_R_IPNetwork** |
 
 The **v_ResourceAttributeMap** view contains all of the attributes that will be discovered for each of the resource types, such as NetBIOS name, operating system, user name, user group name, domain name, and so forth. The **v_ResourceAttributeMap** view can be joined to other views by using the **ResourceType** column. For more information about the discovery views, see [Discovery Views in Configuration Manager](discovery-views-configuration-manager.md).
 
@@ -115,4 +113,4 @@ There is one compliance settings schema view, **v_CIRelationTypeMapping**, that 
 
 ## See also
 
-[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md) 
+[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md)

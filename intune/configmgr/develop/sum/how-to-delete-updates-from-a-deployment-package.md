@@ -1,32 +1,34 @@
 ---
-title: Delete Updates from a Deployment Package
+title: "How to Delete Updates from a Deployment Package"
 description: Remove update content from the existing software updates management package by using the RemoveContent method.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete Updates from a Deployment Package
-You remove updates from a software updates deployment package, in Configuration Manager, by obtaining an instance of the [SMS_SoftwareUpdatesPackage](../../develop/reference/sum/sms_softwareupdatespackage-server-wmi-class.md) class and using the [RemoveContent](../../develop/reference/sum/removecontent-method-in-class-sms_softwareupdatespackage.md) method.
+
+You remove updates from a software updates deployment package, in Configuration Manager, by obtaining an instance of the [SMS_SoftwareUpdatesPackage](../reference/sum/sms_softwareupdatespackage-server-wmi-class.md) class and using the [RemoveContent](../reference/sum/removecontent-method-in-class-sms_softwareupdatespackage.md) method.
 
 ### To delete updates from a software updates deployment package
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Obtain an existing package object by using the `SMS_SoftwareUpdatesPackage` class.
-
-3.  Remove update content from the existing software updates management package by using the `RemoveContent` method.
+1. Set up a connection to the SMS Provider.
+2. Obtain an existing package object by using the `SMS_SoftwareUpdatesPackage` class.
+3. Remove update content from the existing software updates management package by using the `RemoveContent` method.
 
 ## Example
- The following example method shows how to remove updates from a software updates deployment package by using the `SMS_SoftwareUpdatesPackage` class and the `RemoveContent` method.
+
+The following example method shows how to remove updates from a software updates deployment package by using the `SMS_SoftwareUpdatesPackage` class and the `RemoveContent` method.
 
 > [!IMPORTANT]
->  No VBScript example was included, as the `RemoveContent` method does not return from the method call on failure. This is a known issue and is being investigated.
+>
+> No VBScript example was included, as the `RemoveContent` method does not return from the method call on failure. This is a known issue and is being investigated.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
- Example of the method call in C#:
+Example of the method call in C#:
 
 ```csharp
 
@@ -74,41 +76,44 @@ public void RemoveUpdatesfromSUMDeploymentPackage(WqlConnectionManager connectio
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`connection`|-   Managed: `WqlConnectionManager`|A valid connection to the SMS Provider.|
-|`existingSUMPackageID`|-   Managed: `String`|The package ID for an existing software updates management package.|
-|`removecontentParameters`|-   Managed: `dictionary object`|The set of parameters (`ContentIDs`, `bRefreshDPs`) that is passed into the method and used with the `RemoveContent` method call.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` | A valid connection to the SMS Provider. |
+| `existingSUMPackageID` | - Managed: `String` | The package ID for an existing software updates management package. |
+| `removecontentParameters` | - Managed: `dictionary object` | The set of parameters (`ContentIDs`, `bRefreshDPs`) that is passed into the method and used with the `RemoveContent` method call. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About software update deployments](about-software-updates-deployments.md)
- [How to Assign a Package to a Distribution Point](../../develop/core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md)
- [SMS_SoftwareUpdatesPackage](../../develop/reference/sum/sms_softwareupdatespackage-server-wmi-class.md)
- [RemoveContent Method in Class SMS_SoftwareUpdatesPackage](../../develop/reference/sum/removecontent-method-in-class-sms_softwareupdatespackage.md)
+
+[About software update deployments](about-software-updates-deployments.md) [How to Assign a Package to a Distribution Point](../core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md) [SMS_SoftwareUpdatesPackage](../reference/sum/sms_softwareupdatespackage-server-wmi-class.md) [RemoveContent Method in Class SMS_SoftwareUpdatesPackage](../reference/sum/removecontent-method-in-class-sms_softwareupdatespackage.md)

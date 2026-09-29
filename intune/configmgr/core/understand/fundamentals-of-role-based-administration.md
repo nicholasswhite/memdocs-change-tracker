@@ -1,7 +1,7 @@
 ---
-title: Role-based administration fundamentals
+title: "Fundamentals of role-based administration for Configuration Manager"
 description: Use role-based administration to control administrative access to Configuration Manager and objects that you manage.
-ms.date: 04/15/2021
+ms.date: "2021-04-15T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -16,31 +16,25 @@ With Configuration Manager, you use role-based administration to secure the acce
 
 The role-based administration model centrally defines and manages hierarchy-wide security access. This model is for all sites and site settings by using the following items:
 
-- _Security roles_ are assigned to administrative users to give them permission to Configuration Manager objects. For example, permission to create or change client settings.
+- *Security roles* are assigned to administrative users to give them permission to Configuration Manager objects. For example, permission to create or change client settings.
+- *Security scopes* are used to group specific instances of objects that an administrative user is responsible to manage. For example, an application that installs the Configuration Manager console.
+- *Collections* are used to specify groups of users and devices that the administrative user can manage in Configuration Manager.
 
-- _Security scopes_ are used to group specific instances of objects that an administrative user is responsible to manage. For example, an application that installs the Configuration Manager console.
-
-- _Collections_ are used to specify groups of users and devices that the administrative user can manage in Configuration Manager.
-
-With the combination of roles, scopes, and collections, you segregate the administrative assignments that meet your organization's requirements. Used together, they define the _administrative scope_ of a user. This administrative scope controls the objects that an administrative user views in the Configuration Manager console, and it controls the permissions that a user has on those objects.
+With the combination of roles, scopes, and collections, you segregate the administrative assignments that meet your organization's requirements. Used together, they define the *administrative scope* of a user. This administrative scope controls the objects that an administrative user views in the Configuration Manager console, and it controls the permissions that a user has on those objects.
 
 ## Benefits
 
 The following items are benefits of role-based administration in Configuration Manager:
 
 - Sites aren't used as administrative boundaries. In other words, don't expand a standalone primary site to a hierarchy with a central administration site to separate administrative users.
-
 - You create administrative users for a hierarchy and only need to assign security to them one time.
-
 - All security assignments are replicated and available throughout the hierarchy. Role-based administration configurations replicate to each site in the hierarchy as global data, and then are applied to all administrative connections.
 
   > [!IMPORTANT]
+  >
   > Intersite replication delays can prevent a site from receiving changes for role-based administration. For more information about how to monitor intersite database replication, see [Data transfers between sites](../plan-design/hierarchy/data-transfers-between-sites.md).
-
 - There are built-in security roles that are used to assign the typical administration tasks. Create your own custom security roles to support your specific business requirements.
-
 - Administrative users see only the objects that they have permissions to manage.
-
 - You can audit administrative security actions.
 
 ## Security roles
@@ -52,7 +46,7 @@ Configuration Manager has several built-in security roles to support typical gro
 The following table summarizes all of the built-in roles:
 
 | Name | Description |
-| ---- | ----------- |
+| --- | --- |
 | **Application administrator** | Combines the permissions of the **Application deployment manager** and the **Application author** roles. Administrative users in this role can also manage queries, view site settings, manage collections, edit settings for user device affinity, and manage App-V virtual environments. |
 | **Application author** | Can create, modify, and retire applications. Administrative users in this role can also manage applications, packages, and App-V virtual environments. |
 | **Application deployment manager** | Can deploy applications. Administrative users in this role can view a list of applications. They can manage deployments for applications, alerts, and packages. They can view collections and their members, status messages, queries, conditional delivery rules, and App-V virtual environments. |
@@ -70,15 +64,16 @@ The following table summarizes all of the built-in roles:
 | **Software update manager** | Grants permissions to define and deploy software updates. Administrative users in this role can manage software update groups, deployments, and deployment templates. |
 
 > [!TIP]
+>
 > If you have permissions, you can view the list of all security roles in the Configuration Manager console. To view the roles, go to the **Administration** workspace, expand **Security**, and then select the **Security Roles** node.
 
-You can't modify the built-in security roles, other than add administrative users. You can copy the role, make changes, and then save these changes as a new custom security role. You can also import security roles that you've exported from another hierarchy like a lab environment. For more information, see [Configure role-based administration](../../core/servers/deploy/configure/configure-role-based-administration.md#how-to-create-custom-security-roles).
+You can't modify the built-in security roles, other than add administrative users. You can copy the role, make changes, and then save these changes as a new custom security role. You can also import security roles that you've exported from another hierarchy like a lab environment. For more information, see [Configure role-based administration](../servers/deploy/configure/configure-role-based-administration.md#how-to-create-custom-security-roles).
 
 Review the security roles and their permissions to determine whether you'll use the built-in security roles, or whether you have to create your own custom security roles.
 
 ### Role permissions
 
-Each security role has specific permissions for different object types. For example, the _application author_ role has the following permissions for _applications_:
+Each security role has specific permissions for different object types. For example, the *application author* role has the following permissions for *applications*:
 
 - Approve
 - Create
@@ -92,29 +87,26 @@ Each security role has specific permissions for different object types. For exam
 
 This role also has permissions for other objects.
 
-:::image type="content" source="media/application-author-role-permissions.png" alt-text="Permissions tab for the application author built-in role":::
+![Permissions tab for the application author built-in role](media/application-author-role-permissions.png)
 
-For more information on how to view the permissions for a role, or change the permissions for a custom role, see [Configure role-based administration](../../core/servers/deploy/configure/configure-role-based-administration.md#configure-security-roles).
+For more information on how to view the permissions for a role, or change the permissions for a custom role, see [Configure role-based administration](../servers/deploy/configure/configure-role-based-administration.md#configure-security-roles).
 
 ### Plan for security roles
 
 Use this process to plan for Configuration Manager security roles in your environment:
 
 1. Identify the tasks that administrative users need to do in Configuration Manager. These tasks might relate to one or more groups of management tasks. For example, deploying operating systems and settings for compliance.
+2. Map these administrative tasks to one or more of the built-in roles.
+3. If some of the administrative users do the tasks of multiple roles, assign the users to the multiple roles. Don't create a custom role that combines the permissions.
+4. If the tasks that you identified don't map to the built-in security roles, create and test custom roles.
 
-1. Map these administrative tasks to one or more of the built-in roles.
-
-1. If some of the administrative users do the tasks of multiple roles, assign the users to the multiple roles. Don't create a custom role that combines the permissions.
-
-1. If the tasks that you identified don't map to the built-in security roles, create and test custom roles.
-
-For more information, see [Create custom security roles](../../core/servers/deploy/configure/configure-role-based-administration.md#create-custom-security-roles) and [Configure security roles](../../core/servers/deploy/configure/configure-role-based-administration.md#configure-security-roles).
+For more information, see [Create custom security roles](../servers/deploy/configure/configure-role-based-administration.md#create-custom-security-roles) and [Configure security roles](../servers/deploy/configure/configure-role-based-administration.md#configure-security-roles).
 
 ## Collections
 
 Collections specify the users and devices that an administrative user can view or manage. For example, to deploy an application to a device, the administrative user needs to be in a security role that grants access to a collection that contains the device.
 
-For more information about collections, see [Introduction to collections](../../core/clients/manage/collections/introduction-to-collections.md).
+For more information about collections, see [Introduction to collections](../clients/manage/collections/introduction-to-collections.md).
 
 Before you configure role-based administration, decide whether you have to create new collections for any of the following reasons:
 
@@ -123,14 +115,13 @@ Before you configure role-based administration, decide whether you have to creat
 - Security requirements and business processes. For example, separate collections for production and test computers.
 - Organization alignment. For example, separate collections for each business unit.
 
-For more information, see [Configure collections to manage security](../../core/servers/deploy/configure/configure-role-based-administration.md#configure-collections-to-manage-security).
+For more information, see [Configure collections to manage security](../servers/deploy/configure/configure-role-based-administration.md#configure-collections-to-manage-security).
 
 ## Security scopes
 
 Use security scopes to provide administrative users with access to securable objects. A security scope is a named set of securable objects that are assigned to administrator users as a group. All securable objects are assigned to one or more security scopes. Configuration Manager has two built-in security scopes:
 
 - **All**: Grants access to all scopes. You can't assign objects to this security scope.
-
 - **Default**: This scope is used for all objects by default. When you install Configuration Manager, it assigns all objects to this security scope.
 
 If you want to restrict the objects that administrative users can see and manage, create your own custom security scopes. Security scopes don't support a hierarchical structure and can't be nested. Security scopes can contain one or more object types, which include the following items:
@@ -145,7 +136,7 @@ If you want to restrict the objects that administrative users can see and manage
 - Distribution points and distribution point groups
 - Driver packages
 - Endpoint protection policies (all)
-- Folders <!--3600867-->
+- Folders
 - Global conditions
 - Migration jobs
 - OneDrive for Business profiles
@@ -187,11 +178,10 @@ Objects that don't support security scopes include but aren't limited to the fol
 Create security scopes when you have to limit access to separate instances of objects. For example:
 
 - You have a group of administrative users who need to see production applications and not test applications. Create one security scope for production applications and another for test applications.
-
 - One group of administrative users requires Read permission to specific software update groups. Another group of administrative users requires Modify and Delete permissions for other software update groups. Create different security scopes for these software update groups.
 
-For more information, see [Configure security scopes for an object](../../core/servers/deploy/configure/configure-role-based-administration.md#configure-security-scopes-for-an-object).
+For more information, see [Configure security scopes for an object](../servers/deploy/configure/configure-role-based-administration.md#configure-security-scopes-for-an-object).
 
 ## Next steps
 
-[Configure role-based administration for Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md)
+[Configure role-based administration for Configuration Manager](../servers/deploy/configure/configure-role-based-administration.md)

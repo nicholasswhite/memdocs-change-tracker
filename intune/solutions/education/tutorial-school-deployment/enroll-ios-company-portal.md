@@ -1,7 +1,7 @@
 ---
-title: Education iOS device enrollment with Company Portal
+title: "Enroll devices with Company Portal"
 description: Learn how to enroll iOS/iPadOS devices using Company Portal.
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 ---
 
@@ -12,6 +12,7 @@ If you're setting up an iOS device individually, you can use the Company Portal 
 With this process, no advance preparation is needed. For more information, see [Set up personal iOS device for work or school](../../../user-help/enrollment/enroll-ios.md).
 
 > [!IMPORTANT]
+>
 > If you configured enrollment restrictions in Intune blocking personal iOS devices, this process will not complete. You will need to use a different enrollment method.
 
 ---
@@ -20,5 +21,4 @@ With this process, no advance preparation is needed. For more information, see [
 
 With the devices managed by Intune, you can use Intune to maintain them and report on their status.
 
-> [!div class="nextstepaction"]
-> [Next: Manage devices >](manage-overview.md)
+[Next: Manage devices &gt;](manage-overview.md)

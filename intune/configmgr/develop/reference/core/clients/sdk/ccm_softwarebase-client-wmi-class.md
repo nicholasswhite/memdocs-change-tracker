@@ -1,19 +1,22 @@
 ---
 description: Learn how to use the CCM_SoftwareBase class to represent the base class for management entities like software updates.
-title: CCM_SoftwareBase Class
-ms.date: 09/20/2016
+title: "CCM_SoftwareBase Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_SoftwareBase Client WMI Class
+
 The `CCM_SoftwareBase` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the base class for management entities like software updates. applications and so on. This class contains the common properties across these management entities. This class is listed here for completeness and to show the base class properties which derived classes would inherit. Client SDK users will always use the specific derived classes of interest to achieve the functionality.
 
 > [!IMPORTANT]
->  The software update client side SDK will only return set of updates which are deployed to client from Configuration Manager site server, and are applicable, and are yet to be installed on the client.
+>
+> The software update client side SDK will only return set of updates which are deployed to client from Configuration Manager site server, and are applicable, and are yet to be installed on the client.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,154 +39,146 @@ Class CCM_SoftwareBase :
 ```
 
 ## Methods
- The `CCM_SoftwareBase` class doesn't define any methods.
+
+The `CCM_SoftwareBase` class doesn't define any methods.
 
 ## Properties
- `ContentSize`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ContentSize` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Represents the content size. Populated only if the managed entity has binary content associated with it.
+Qualifiers: none
 
- `Deadline`
- Data type: `DateTime`
+Represents the content size. Populated only if the managed entity has binary content associated with it.
 
- Access type: Read/Write
+`Deadline` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The deadline specified by the administrator to deploy this managed entity on a client computer.
+Qualifiers: none
 
- `Description`
- Data type: `String`
+The deadline specified by the administrator to deploy this managed entity on a client computer.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The description of the managed entity.
+Qualifiers: none
 
- `ErrorCode`
- Data type: `UInt32`
+The description of the managed entity.
 
- Access type: Read/Write
+`ErrorCode` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Error code.
+Qualifiers: none
 
- `EstimatedInstallTime`
- Data type: `UInt32`
+Error code.
 
- Access type: Read/Write
+`EstimatedInstallTime` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- EstimatedInstallTime
+Qualifiers: none
 
- `EvaluationState`
- Data type: `UInt32`
+EstimatedInstallTime
 
- Access type: Read/Write
+`EvaluationState` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Software enforcement state, such as downloading content, waiting servicewindow, and so on.
+Qualifiers: none
 
-|Value|Software enforcement state|State description|
-|-|-|-|
-|0|Unknown|No state information is available.|
-|1|Enforced|Application is enforced to desired/resolved state.|
-|2|NotRequired|Application isn't required on the client.|
-|3|ApplicationForEnforcement|Application is available for enforcement (install or uninstall based on resolved state). Content may or may not have been downloaded.|
-|4|EnforcementFailed|Application last failed to enforce (install/uninstall).|
-|5|Evaluating|Application is currently waiting for content download to complete. |
-|6|DownloadingContent|Application is currently waiting for content download to complete.|
-|7|WaitingforDependenciesDownload|Application is currently waiting for its dependencies to download.|
-|8|WaitingforServiceWindow|Application is currently waiting for a service window.|
-|9|WaitingforReboot|Application is currently waiting for a previously pending reboot.|
-|10|WaitingToEnforce|Application is currently waiting for serialized enforcement.|
-|11|EnforcingDependencies|Application is currently enforcing dependencies.|
-|12|Enforcing|Application is currently enforcing.|
-|13|SoftRebootPending|Application install/uninstall enforced and a soft reboot is pending.|
-|14|HardRebootPending|Application installed/uninstalled and a hard reboot is pending.|
-|15|PendingUpdate|Update is available but pending installation.|
-|16|EvaluationFailed|Application failed to evaluate.|
-|17|WaitingUserReconnect|Application is currently waiting for an active user session to enforce.|
-|18|WaitingforUserLogoff|Application is currently waiting for all users to sign out.|
-|19|WaitingforUserLogon|Application is currently waiting for a user sign in.|
-|20|InProgressWaitingRetry|Application is in progress awaiting retry.|
-|21|WaitingforPresModeOff|Application  is waiting for presentation mode to be switched off.|
-|22|AdvanceDownloadingContent|Application is pre-downloading content (downloading outside of the install job).|
-|23|AdvanceDependenciesDownload|Application is pre-downloading dependent content (downloading outside of the install job).|
-|24|DownloadFailed|Application is download failed (downloading during the install job).|
-|25|AdvanceDownloadFailed|Application is pre-downloading failed (downloading outside of the install job).|
-|26|DownloadSuccess|Download success (downloading during the install job).|
-|27|PostEnforceEvaluation|Post enforce evaluation. |
+Software enforcement state, such as downloading content, waiting servicewindow, and so on.
 
- `FullName`
- Data type: `String`
+| Value | Software enforcement state | State description |
+| --- | --- | --- |
+| 0 | Unknown | No state information is available. |
+| 1 | Enforced | Application is enforced to desired/resolved state. |
+| 2 | NotRequired | Application isn't required on the client. |
+| 3 | ApplicationForEnforcement | Application is available for enforcement (install or uninstall based on resolved state). Content may or may not have been downloaded. |
+| 4 | EnforcementFailed | Application last failed to enforce (install/uninstall). |
+| 5 | Evaluating | Application is currently waiting for content download to complete. |
+| 6 | DownloadingContent | Application is currently waiting for content download to complete. |
+| 7 | WaitingforDependenciesDownload | Application is currently waiting for its dependencies to download. |
+| 8 | WaitingforServiceWindow | Application is currently waiting for a service window. |
+| 9 | WaitingforReboot | Application is currently waiting for a previously pending reboot. |
+| 10 | WaitingToEnforce | Application is currently waiting for serialized enforcement. |
+| 11 | EnforcingDependencies | Application is currently enforcing dependencies. |
+| 12 | Enforcing | Application is currently enforcing. |
+| 13 | SoftRebootPending | Application install/uninstall enforced and a soft reboot is pending. |
+| 14 | HardRebootPending | Application installed/uninstalled and a hard reboot is pending. |
+| 15 | PendingUpdate | Update is available but pending installation. |
+| 16 | EvaluationFailed | Application failed to evaluate. |
+| 17 | WaitingUserReconnect | Application is currently waiting for an active user session to enforce. |
+| 18 | WaitingforUserLogoff | Application is currently waiting for all users to sign out. |
+| 19 | WaitingforUserLogon | Application is currently waiting for a user sign in. |
+| 20 | InProgressWaitingRetry | Application is in progress awaiting retry. |
+| 21 | WaitingforPresModeOff | Application is waiting for presentation mode to be switched off. |
+| 22 | AdvanceDownloadingContent | Application is pre-downloading content (downloading outside of the install job). |
+| 23 | AdvanceDependenciesDownload | Application is pre-downloading dependent content (downloading outside of the install job). |
+| 24 | DownloadFailed | Application is download failed (downloading during the install job). |
+| 25 | AdvanceDownloadFailed | Application is pre-downloading failed (downloading outside of the install job). |
+| 26 | DownloadSuccess | Download success (downloading during the install job). |
+| 27 | PostEnforceEvaluation | Post enforce evaluation. |
 
- Access type: Read/Write
+`FullName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The complete name of the managed entity, such as software update, application and so on.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+The complete name of the managed entity, such as software update, application and so on.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The name of the actual managed entity like software update, application and so on.
+Qualifiers: none
 
- `NextUserScheduledTime`
- Data type: `DateTime`
+The name of the actual managed entity like software update, application and so on.
 
- Access type: Read/Write
+`NextUserScheduledTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Next scheduled time when end user would like to deploy this managed entity.
+Qualifiers: none
 
- `PercentComplete`
- Data type: `UInt32`
+Next scheduled time when end user would like to deploy this managed entity.
 
- Access type: Read/Write
+`PercentComplete` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Percent complete.
+Qualifiers: none
 
- `Publisher`
- Data type: `String`
+Percent complete.
 
- Access type: Read/Write
+`Publisher` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The publisher that published the managed entity, such as Microsoft for software updates coming from Windows Updates.
+Qualifiers: none
 
- `Type`
- Data type: `UInt32`
+The publisher that published the managed entity, such as Microsoft for software updates coming from Windows Updates.
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Type.
+Qualifiers: none
+
+Type.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

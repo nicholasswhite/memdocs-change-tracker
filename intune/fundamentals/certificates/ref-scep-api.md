@@ -1,13 +1,13 @@
 ---
-title: APIs to onboard third party certificate authorities
+title: "Use APIs to add third-party CAs for SCEP to Intune"
 description: Add or integrate the SCEP GitHub solution for third party certificate authorities (CA) to issue SCEP certificates to devices in Microsoft Intune. This solution includes Java and C# APIs that validate, send success and failure notifications to Intune, and use SSL socket factory when communicating with Intune. Also view an overview of the steps to test your SCEP CA configuration.
-ms.date: 07/03/2025
+ms.date: "2025-07-03T00:00:00Z"
 ms.topic: reference
 ---
 
 # Use APIs to add third-party CAs for SCEP to Intune
 
-In Microsoft Intune, you can add third-party certificate authorities (CA), and have these CAs issue and validate certificates using the Simple Certificate Enrollment Protocol (SCEP). [Add third-party certification authority](./third-party-ca-scep.md) provides an overview of this feature, and describes the Administrator tasks in Intune.
+In Microsoft Intune, you can add third-party certificate authorities (CA), and have these CAs issue and validate certificates using the Simple Certificate Enrollment Protocol (SCEP). [Add third-party certification authority](third-party-ca-scep.md) provides an overview of this feature, and describes the Administrator tasks in Intune.
 
 There are also some developer tasks that use an open-source library that Microsoft published in GitHub.com. The library includes an API that:
 
@@ -18,7 +18,7 @@ Using this API, your third-party SCEP server integrates with the Intune SCEP man
 
 ## SCEP management solution
 
-:::image type="content" source="./media/ref-scep-api/scep-certificate-vendor-integration.png" alt-text="How third party certification authority SCEP integrates with Microsoft Intune" border="false":::
+![How third party certification authority SCEP integrates with Microsoft Intune](media/ref-scep-api/scep-certificate-vendor-integration.png)
 
 Using Intune, administrators create SCEP profiles, and then assign these profiles to MDM devices. The SCEP profiles include parameters, such as:
 
@@ -38,7 +38,6 @@ Intune encrypts this information, signs the encrypted blob, and then packages th
 
 Devices contacting the SCEP server to request a certificate then give this SCEP challenge password. The SCEP server sends the CSR and encrypted SCEP challenge password to Intune for validation. This challenge password and CSR must pass validation for the SCEP server to issue a certificate to the device. When an SCEP challenge is validated, the following checks happen:
 
-
 - Validates the signature of the encrypted blob
 - Validates that the challenge is active and not expired
 - Validates that the profile is still targeted to the device
@@ -54,7 +53,7 @@ Integrating the library into your products includes the following steps. These s
 
 1. Register to receive notifications from the repository
 2. Clone or download the repository
-3. Go to the library implementation you need under the `\src\CsrValidation` folder (https://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/CsrValidation)
+3. Go to the library implementation you need under the `\src\CsrValidation` folder (<https://github.com/Microsoft/Intune-Resource-Access/tree/develop/src/CsrValidation>)
 4. Build the library using the instructions in the README file
 5. Include the library in the project that builds your SCEP server
 6. Complete the following tasks on the SCEP Server:
@@ -64,7 +63,6 @@ Integrating the library into your products includes the following steps. These s
    - Use the **Validate Request API** library to validate Intune-generated SCEP passwords
    - Use the library notification APIs to notify Intune about certificates issued for SCEP requests that have the Intune-generated SCEP passwords. Also notify Intune about errors that can occur when processing these SCEP requests.
    - Confirm that the server logs enough information to help admins troubleshoot issues
-
 7. Complete [integration testing](#integration-testing) (in this article), and address any issues
 8. Give written guidance to the customer that explains:
 
@@ -77,7 +75,7 @@ To authenticate to Intune, the SCEP server requires an Azure Application ID, an 
 
 To get this data, the SCEP server administrator signs in to the Azure portal, registers the application, gives the application both the **Microsoft Intune API\SCEP challenge validation** permission and the **Application.Read.All** permission, creates a key for the application, and then downloads the application ID, its key, and the tenant ID.
 
-For guidance on registering an application, getting the app ID, tenant ID, and keys, see [Use portal to create a Microsoft Entra application and service principal to access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
+For guidance on registering an application, getting the app ID, tenant ID, and keys, see [Use portal to create a Microsoft Entra application and service principal to access resources](https://learn.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal).
 
 ### Java library API
 
@@ -123,10 +121,10 @@ If your solution requires a proxy either with authentication or without authenti
 - **IllegalArgumentException** - Thrown if the constructor is executed without a proper property object.
 
 > [!IMPORTANT]
+>
 > It's best to instantiate an instance of this class, and use it to process multiple SCEP requests. Doing so reduces overhead, as it caches authentication tokens and service location information.
 
-**Security notes**
-The SCEP server implementer must protect the data entered in the configuration properties persisted to storage against tampering and disclosure. We recommend using proper access control lists (ACL) and encryption to secure the information.
+**Security notes** The SCEP server implementer must protect the data entered in the configuration properties persisted to storage against tampering and disclosure. We recommend using proper access control lists (ACL) and encryption to secure the information.
 
 ##### ValidateRequest method
 
@@ -154,6 +152,7 @@ Validates a SCEP certificate request.
 - **Exception** - Thrown if an unexpected error is encountered
 
 > [!IMPORTANT]
+>
 > The server should log exceptions thrown by this method. The `IntuneScepServiceException` properties have detailed information on why the certificate request validation failed.
 
 **Security notes**:
@@ -195,6 +194,7 @@ Notifies Intune that a certificate is created as part of processing a SCEP reque
 - **Exception** - Thrown if an unexpected error is encountered.
 
 > [!IMPORTANT]
+>
 > The server should log exceptions thrown by this method. The `IntuneScepServiceException` properties have detailed information on why the certificate request validation failed.
 
 **Security notes**:
@@ -222,7 +222,7 @@ Notifies Intune that an error occurred while processing a SCEP request. This met
 
 - **transactionId** - The SCEP Transaction ID.
 - **certificateRequest** - DER-encoded PKCS #10 Certificate Request Base64 encoded as a string.
-- **hResult** - Win32 error code that best describes the error that was encountered. See [Win32 Error Codes](/openspecs/windows_protocols/ms-erref/18d8fbe8-a967-4f1c-ae50-99ca8e491d2d).
+- **hResult** - Win32 error code that best describes the error that was encountered. See [Win32 Error Codes](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/18d8fbe8-a967-4f1c-ae50-99ca8e491d2d).
 - **errorDescription** - Description of the error encountered.
 
 **Throws**:
@@ -232,6 +232,7 @@ Notifies Intune that an error occurred while processing a SCEP request. This met
 - **Exception** - Thrown if an unexpected error is encountered.
 
 > [!IMPORTANT]
+>
 > Exceptions thrown by this method should be logged by the server. Note that the `IntuneScepServiceException` properties have detailed information on why the certificate request validation failed.
 
 **Security notes**:
@@ -261,11 +262,13 @@ Use this method to inform the client that it must use the specified SSL socket f
 - **IllegalArgumentException** - Thrown if called with a parameter that isn't valid.
 
 > [!NOTE]
+>
 > Before executing the other methods of this class, the SSL Socket factory must be set, if required.
 
 ##### DownloadCARevocationRequests method
 
->[!NOTE]
+> [!NOTE]
+>
 > Don't use raw OData API directly hosted at CertificateAuthorityRequests/downloadRevocationRequests using CARevocationDownloadParameters. This API will be removed in an upcoming API update.
 
 **Signature**:
@@ -280,6 +283,7 @@ List<CARevocationRequest> DownloadCARevocationRequests(String transactionId,
 Downloads a list of revocation requests from Intune.
 
 > [!NOTE]
+>
 > After a call is made with DownloadCARevocationRequests, Intune enforces a 60-minute cool-down period. During that period of time, no revocation request is sent to avoid duplicate requests and overloading the API.
 
 **Source file**:
@@ -297,6 +301,7 @@ String  transactionId = UUID.randomUUID.toString();
 - **maxCARequestsToDownload** - The maximum number of revocation requests to download from Intune. We recommend an upper bound value of 100.
 
 > [!NOTE]
+>
 > After a call is made, Intune enforces a 60-minute cool-down period. During that period of time, no revocation request is sent to avoid duplicate requests and overloading the API.
 
 - **issuerName** – This value is the same as **CertIssuingAuthority** in the *ScepRequestValidation* call. Maximum string length is 256 characters.
@@ -308,9 +313,10 @@ String  transactionId = UUID.randomUUID.toString();
 
 **Security notes**:
 
-API permissions are required. For more information and app registration permissions, see [Onboard SCEP server in Azure](./ref-scep-api.md#onboard-scep-server-in-azure) in this article.
+API permissions are required. For more information and app registration permissions, see [Onboard SCEP server in Azure](#onboard-scep-server-in-azure) in this article.
 
 ##### UploadRevocationResults method
+
 **Signature**:
 
 ```java
@@ -328,7 +334,6 @@ Uploads a list of revocation results from a third party CA to Intune.
 **Parameters**:
 
 - **transactionId** - A GUID string that uniquely identifies the entire transaction to allow for log correlation across download/upload results calls. Third party API callers should use the same transactionId from the DownloadCARevocationRequest call.
-
 - **revocationResults** – The list of `CARevocationResults` objects to send to Intune.
 
 **Throws**:
@@ -337,10 +342,13 @@ Uploads a list of revocation results from a third party CA to Intune.
 - **IllegalArgumentException** - Thrown if called with a parameter that isn't valid.
 
 ### C# API
+
 The C# API includes the methods used by the SCEP service to download and upload CA revocation results.
 
 #### DownloadCARevocationRequestsAsync method
+
 > [!NOTE]
+>
 > Don't use raw OData API directly hosted at CertificateAuthorityRequests/downloadRevocationRequests using CARevocationDownloadParameters. This API will be removed in an upcoming API update.
 
 **Signature**:
@@ -360,6 +368,7 @@ Task<List<CARevocationRequest>> DownloadCARevocationRequestsAsync(
 Returns a list of CA revocation requests.
 
 > [!NOTE]
+>
 > After a call is made with DownloadCARevocationRequestsAsync, Intune enforces a 60-minute cool-down period. During that period of time, no revocation request is sent to avoid duplicate requests and overloading the API.
 
 **Source file**:
@@ -377,6 +386,7 @@ var transactionId = Guid.NewGuid().ToString();
 - **maxCARequestsToDownload** - The maximum number of revocation requests to download from Intune. We recommend an upper bound value of 100.
 
 > [!NOTE]
+>
 > After a call is made, Intune enforces a 60-minute cool-down period. During that period of time, no revocation request is sent to avoid duplicate requests and overloading the API.
 
 - **issuerName** (optional) – This value is the same as **CertIssuingAuthority** in the ScepRequestValidation call. Maximum string length is 256 characters.
@@ -388,9 +398,10 @@ var transactionId = Guid.NewGuid().ToString();
 
 **Security notes**:
 
-API permissions are required. For more information and app registration permissions, see [Onboard SCEP server in Azure](./ref-scep-api.md#onboard-scep-server-in-azure) in this article.
+API permissions are required. For more information and app registration permissions, see [Onboard SCEP server in Azure](#onboard-scep-server-in-azure) in this article.
 
 ##### UploadRevocationResults method
+
 **Signature**:
 
 ```c#
@@ -408,24 +419,22 @@ Uploads a list of revocation results from a third party CA to Intune.
 **Parameters**:
 
 - **transactionId** - A GUID string that uniquely identifies the entire transaction to allow for log correlation across download/upload results calls. Third party API callers should use the same transactionId from the DownloadCARevocationRequestsAsync call.
-
 - **revocationResults** – The list of `CARevocationResults` objects to send to Intune.
 
 **Throws**:
 
 - **IntuneClientException** - Thrown if the service reports a failure in processing the notification. Examine the exception error code.
-
 - **IllegalArgumentException** - Thrown if called with a parameter that isn't valid.
 
 ## Integration testing
 
 Validating and testing that your solution is properly integrated with Intune is a must. The following lists an overview of the steps:
 
-1. Set up an [Intune trial account](../../fundamentals/account-sign-up.md).
+1. Set up an [Intune trial account](../account-sign-up.md).
 2. Onboard the [SCEP Server in the Azure portal](#onboard-scep-server-in-azure) (in this article).
-3. [Configure the SCEP Server](./scep-infrastructure.md) with the IDs and key created when onboarding your SCEP server.
+3. [Configure the SCEP Server](scep-infrastructure.md) with the IDs and key created when onboarding your SCEP server.
 4. [Enroll devices](../../device-enrollment/guide.md) to test the scenarios in the [scenario testing matrix](https://github.com/Microsoft/Intune-Resource-Access/blob/develop/src/CsrValidation/doc/TestMatrix.csv).
-5. [Create a Trusted Root Certificate profile](./scep-infrastructure.md) for your test Certificate Authority.
+5. [Create a Trusted Root Certificate profile](scep-infrastructure.md) for your test Certificate Authority.
 6. Create SCEP profiles to test the scenarios listed in the [scenario testing matrix](https://github.com/Microsoft/Intune-Resource-Access/blob/develop/src/CsrValidation/doc/TestMatrix.csv).
 7. [Assign the profiles](../../device-configuration/assign-device-profile.md) to users that enrolled their devices.
 8. Wait for the devices to sync with Intune. Or, manually [sync the devices](../../device-management/actions/sync.md).
@@ -437,7 +446,7 @@ Validating and testing that your solution is properly integrated with Intune is 
 
 ## See also
 
-- [Add third party CA overview](./third-party-ca-scep.md)
-- [Set up Intune](../../fundamentals/deploy-setup-step-1.md)
+- [Add third party CA overview](third-party-ca-scep.md)
+- [Set up Intune](../deploy-setup-step-1.md)
 - [Device enrollment](../../device-enrollment/guide.md)
 - [Configure SCEP certificate profiles](../../device-configuration/certificates/scep-profiles.md) (the Microsoft Network Device Enrollment Service server\connector setup isn't used for this scenario)

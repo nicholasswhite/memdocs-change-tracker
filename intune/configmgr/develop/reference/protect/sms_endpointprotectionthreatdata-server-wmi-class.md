@@ -1,16 +1,18 @@
 ---
-title: SMS_EndpointProtectionThreatData Class
+title: "SMS_EndpointProtectionThreatData Server WMI Class"
 description: An SMS Provider server class that represents Microsoft official threats. It's a metadata table and all data is extracted from the signature update.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_EndpointProtectionThreatData Server WMI Class
+
 The `SMS_EndpointProtectionThreatData` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents Microsoft official threats. This is a metadata table/view and all data is extracted from the signature update.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,67 +28,66 @@ Class SMS_EndpointProtectionThreatData : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_EndpointProtectionThreatData` class doesn't define any methods.
+
+The `SMS_EndpointProtectionThreatData` class doesn't define any methods.
 
 ## Properties
- `DefaultActionID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`DefaultActionID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Identifier of the action the EndPoint Protection agent takes for this particular threat.
+Qualifiers: none
+
+Identifier of the action the EndPoint Protection agent takes for this particular threat.
 
 | Value | Default action |
-| ----- | -------------- |
-|0|Recommend|
-|2|Quarantine|
-|3|Remove|
-|6|Allow|
+| --- | --- |
+| 0 | Recommend |
+| 2 | Quarantine |
+| 3 | Remove |
+| 6 | Allow |
 
- `IsAV`
- Data type: `UInt32`
+`IsAV` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Is Antimalware or Antispyware.
+Is Antimalware or Antispyware.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Threat name.
+Threat name.
 
- `ThreatID`
- Data type: `UInt64`
+`ThreatID` Data type: `UInt64`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Threat identifier.
+Threat identifier.
 
- `VersionFirstUpdated`
- Data type: `UInt32`
+`VersionFirstUpdated` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Signature version.
+Signature version.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

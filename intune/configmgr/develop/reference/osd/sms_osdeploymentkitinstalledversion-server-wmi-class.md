@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a mapping of server names to an installed Assessment and Deployment Kit (ADK) version using SMS_OSDeploymentKitInstalledVersion class.
-title: SMS_OSDeploymentKitInstalledVersion Class
-ms.date: 09/20/2016
+title: "SMS_OSDeploymentKitInstalledVersion Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_OSDeploymentKitInstalledVersion Server WMI Class
-The `SMS_OSDeploymentKitInstalledVersion` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a mapping of server names to an  installed Assessment and Deployment Kit (ADK) version.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_OSDeploymentKitInstalledVersion Server WMI Class
+
+The `SMS_OSDeploymentKitInstalledVersion` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a mapping of server names to an installed Assessment and Deployment Kit (ADK) version.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,56 +28,57 @@ Class SMS_OSDeploymentKitInstalledVersion : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_OSDeploymentKitInstalledVersion` class does not define any methods.
+
+The `SMS_OSDeploymentKitInstalledVersion` class does not define any methods.
 
 ## Properties
- `DeploymentKitVersion`
- Data type: `String`
 
- Access type: Read/Write
+`DeploymentKitVersion` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The version of the deployment kit installed on the computer.
+Qualifiers: [not_null]
 
- `FQDN`
- Data type: `String`
+The version of the deployment kit installed on the computer.
 
- Access type: Read/Write
+`FQDN` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The fully qualified domain name of the computer.
+Qualifiers: none
 
- `MachineID`
- Data type: `UInt32`
+The fully qualified domain name of the computer.
 
- Access type: Read/Write
+`MachineID` Data type: `UInt32`
 
- Qualifiers: [key, not_null]
+Access type: Read/Write
 
- A unique identifier for the computer.
+Qualifiers: [key, not_null]
 
- `NetBiosName`
- Data type: `String`
+A unique identifier for the computer.
 
- Access type: Read/Write
+`NetBiosName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The NetBIOS name of the computer.
+Qualifiers: none
+
+The NetBIOS name of the computer.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

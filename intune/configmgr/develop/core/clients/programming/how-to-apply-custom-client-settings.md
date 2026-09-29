@@ -1,7 +1,7 @@
 ---
-title: Apply custom client settings
+title: "How to apply custom client settings"
 description: Use the SDK to apply custom client settings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -10,27 +10,23 @@ ms.service: configuration-manager
 
 # How to apply custom client settings
 
-In Configuration Manager, you apply custom client settings by creating an instance of a Client Configuration class, and then deploying the custom client settings by creating an instance of the `SMS_ClientSettingsAssignment` class and associating the instance of the Client Configuration class and a target collection.  
+In Configuration Manager, you apply custom client settings by creating an instance of a Client Configuration class, and then deploying the custom client settings by creating an instance of the `SMS_ClientSettingsAssignment` class and associating the instance of the Client Configuration class and a target collection.
 
 ### To apply custom client settings
 
-1.  Set up a connection to the SMS Provider.  
-
-2.  Create an instance of a Client Configuration class (such as `SMS_StateSystemConfig` used below).  
-
-3.  Populate specific custom client agent settings.  
-
-4.  Create an instance of the `SMS_ClientSettingsAssignment` class.  
-
-5.  Populate the client settings assignment values. `ClientSettingsID` to identify the custom client settings instance and `CollectionID` to identify the target collection for the deployment of the custom client settings.  
+1. Set up a connection to the SMS Provider.
+2. Create an instance of a Client Configuration class (such as `SMS_StateSystemConfig` used below).
+3. Populate specific custom client agent settings.
+4. Create an instance of the `SMS_ClientSettingsAssignment` class.
+5. Populate the client settings assignment values. `ClientSettingsID` to identify the custom client settings instance and `CollectionID` to identify the target collection for the deployment of the custom client settings.
 
 ## Example
 
-The following example applies custom client settings by creating an instance of a Client Configuration class, and then deploying the custom client settings by creating an instance of the `SMS_ClientSettingsAssignment` class and associating the instance of the Client Configuration class and a target collection.  
+The following example applies custom client settings by creating an instance of a Client Configuration class, and then deploying the custom client settings by creating an instance of the `SMS_ClientSettingsAssignment` class and associating the instance of the Client Configuration class and a target collection.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).  
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
-```c#  
+```c#
 
 public void ApplyCustomClientSettings(WqlConnectionManager connection,string targetCollectionID){
     try
@@ -82,40 +78,46 @@ public void ApplyCustomClientSettings(WqlConnectionManager connection,string tar
         Console.WriteLine("Failed. Error: " + ex.InnerException.Message);
     }
 }
-```  
+```
 
- The example method has the following parameters:  
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`|A valid connection to the SMS Provider.|  
-|`targetCollectionID`|-   Managed: `String`|The target collection for the custom client settings deployment.|  
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` | A valid connection to the SMS Provider. |
+| `targetCollectionID` | - Managed: `String` | The target collection for the custom client settings deployment. |
 
-## Compiling the Code  
- This C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System  
+This C# example requires:
 
- System.Collections.Generic  
+### Namespaces
 
- System.Text  
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider  
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine  
+System.Text
 
-### Assembly  
- adminui.wqlqueryengine  
+Microsoft.ConfigurationManagement.ManagementProvider
 
- microsoft.configurationmanagement.managementprovider  
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+### Assembly
 
-## .NET Framework Security  
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).  
+adminui.wqlqueryengine
 
-## See Also  
- [Configuration Manager SDK](../../../../develop/core/misc/system-center-configuration-manager-sdk.md)   
- [SMS_ClientSettingsAssignment Server WMI Class](../../../../develop/reference/core/clients/config/sms_clientsettingsassignment-server-wmi-class.md)
+microsoft.configurationmanagement.managementprovider
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../servers/configure/role-based-administration.md).
+
+## See Also
+
+[Configuration Manager SDK](../../misc/system-center-configuration-manager-sdk.md)  
+ [SMS_ClientSettingsAssignment Server WMI Class](../../../reference/core/clients/config/sms_clientsettingsassignment-server-wmi-class.md)

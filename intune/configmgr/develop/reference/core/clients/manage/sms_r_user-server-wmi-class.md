@@ -1,16 +1,18 @@
 ---
-title: SMS_R_User Class
+title: "SMS_R_User Server WMI Class"
 description: In Configuration Manager, the SMS_R_User WMI class is an SMS Provider server class that is generated dynamically at SMS Provider run time and contains data discovery for users within a Configuration Manager site hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_R_User Server WMI Class
+
 The `SMS_R_User` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is generated dynamically at SMS Provider run time and contains data discovery for users within a Configuration Manager site hierarchy.
 
- The following syntax is not defined in Managed Object Format (MOF) code.
+The following syntax is not defined in Managed Object Format (MOF) code.
 
 ## Syntax
 
@@ -42,208 +44,193 @@ Class SMS_R_User : SMS_Resource
 ```
 
 ## Methods
- The `SMS_R_User` class does not define any methods.
+
+The `SMS_R_User` class does not define any methods.
 
 ## Properties
- `AgentName`
- Data type: **String** Array
 
- Access type: Read-only
+`AgentName` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of discovery agents that found this resource.
+Qualifiers: None
 
- `AgentSite`
- Data type: **String** Array
+List of discovery agents that found this resource.
 
- Access type: Read-only
+`AgentSite` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of sites from which the discovery agents ran.
+Qualifiers: None
 
- `AgentTime`
- Data type: **DateTime** Array
+List of sites from which the discovery agents ran.
 
- Access type: Read-only
+`AgentTime` Data type: **DateTime** Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of discovery times.
+Qualifiers: None
 
- `CreationDate`
- Data type: **DateTime**
+List of discovery times.
 
- Access type: Read-only
+`CreationDate` Data type: **DateTime**
 
- Qualifiers: None
+Access type: Read-only
 
- The date the record was first created, which is the date when the resource was discovered.
+Qualifiers: None
 
- `DistinguishedName`
- Data type: **String**
+The date the record was first created, which is the date when the resource was discovered.
 
- Access type: Read-only
+`DistinguishedName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Distinguished name of the user resource retrieved from Active Directory.
+Qualifiers: None
 
- `FullUserName`
- Data type: **String**
+Distinguished name of the user resource retrieved from Active Directory.
 
- Access type: Read-only
+`FullUserName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- For Windows NT users, the value of the **Full Name** property of User Properties; for Windows 2000 users, the value of the **Display Name** property in Active Directory.
+Qualifiers: None
 
- `Mail`
- Data type: **String**
+For Windows NT users, the value of the **Full Name** property of User Properties; for Windows 2000 users, the value of the **Display Name** property in Active Directory.
 
- Access type: Read-only
+`Mail` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Mail address of the user resource retrieved from Active Directory.
+Qualifiers: None
 
- `Name`
- Data type: **String**
+Mail address of the user resource retrieved from Active Directory.
 
- Access type: Read-only
+`Name` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- User name displayed in the Configuration Manager console. Its format is UniqueUserName (FullUserName), where FullUserName is included only if it contains a value.
+Qualifiers: None
 
- `NetworkOperatingSystem`
- Data type: **String**
+User name displayed in the Configuration Manager console. Its format is UniqueUserName (FullUserName), where FullUserName is included only if it contains a value.
 
- Access type: Read-only
+`NetworkOperatingSystem` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Free-form string describing the operating system.
+Qualifiers: None
 
- `ObjectGUID`
- Data type: **UInt8**
+Free-form string describing the operating system.
 
- Access type: Read-only
+`ObjectGUID` Data type: **UInt8**
 
- Qualifiers: None
+Access type: Read-only
 
- Object GUID of the user resource retrieved from Active Directory.
+Qualifiers: None
 
- `PrimaryGroupID`
- Data type: **UInt32**
+Object GUID of the user resource retrieved from Active Directory.
 
- Access type: Read-only
+`PrimaryGroupID` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read-only
 
- Primary group ID of the user resource retrieved from Active Directory.
+Qualifiers: None
 
- `ResourceID`
- Data type: **UInt32**
+Primary group ID of the user resource retrieved from Active Directory.
 
- Access type: Read/Write
+`ResourceID` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md).
+Qualifiers: [key]
 
- `ResourceType`
- Data type: **UInt32**
+See [SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md).
 
- Access type: Read-only
+`ResourceType` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read-only
 
- Type of resources on the site. For more information, see [SMS_ResourceMap Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resourcemap-server-wmi-class.md).
+Qualifiers: None
 
- `SID`
- Data type: **String**
+Type of resources on the site. For more information, see [SMS_ResourceMap Server WMI Class](sms_resourcemap-server-wmi-class.md).
 
- Access type: Read-only
+`SID` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Security identifier of the user resource retrieved from Active Directory.
+Qualifiers: None
 
- `UniqueUserName`
- Data type: **String**
+Security identifier of the user resource retrieved from Active Directory.
 
- Access type: Read-only
+`UniqueUserName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Unique user name in the form domain\user name.
+Qualifiers: None
 
- `UserAccountControl`
- Data type: **UInt32**
+Unique user name in the form domain\user name.
 
- Access type: Read-only
+`UserAccountControl` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read-only
 
- User account control value retrieved from Active Directory.
+Qualifiers: None
 
- `UserContainerName`
- Data type: **String** Array
+User account control value retrieved from Active Directory.
 
- Access type: Read-only
+`UserContainerName` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- An array of Active Directory container names to which the user belongs.
+Qualifiers: None
 
- `UserGroupName`
- Data type: **String** Array
+An array of Active Directory container names to which the user belongs.
 
- Access type: Read-only
+`UserGroupName` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- An array of Active Directory group names to which the user belongs.
+Qualifiers: None
 
- `UserName`
- Data type: **String**
+An array of Active Directory group names to which the user belongs.
 
- Access type: Read-only
+`UserName` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- User logon name.
+Qualifiers: None
 
- `UserOUName`
- Data type: **String** Array
+User logon name.
 
- Access type: Read-only
+`UserOUName` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- An array of Active Directory organizational units (OUs) to which the user belongs.
+Qualifiers: None
 
- `WindowsNTDomain`
- Data type: **String**
+An array of Active Directory organizational units (OUs) to which the user belongs.
 
- Access type: Read-only
+`WindowsNTDomain` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Windows NT domain that is associated with the resource.
+Qualifiers: None
+
+Windows NT domain that is associated with the resource.
 
 ## Remarks
- You cannot create or update resource instances by using WMI, but must create or update resources by using data discovery records. Note, however, that you can delete resource instances by using WMI.
+
+You cannot create or update resource instances by using WMI, but must create or update resources by using data discovery records. Note, however, that you can delete resource instances by using WMI.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md)
+
+[SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md)

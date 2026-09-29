@@ -1,16 +1,18 @@
 ---
-title: GetClientVersion Method in
+title: "GetClientVersion Method in Class CCM_SoftwareCatalogUtilities"
 description: The GetClientVersion Windows Management Instrumentation (WMI) class method returns the client version.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetClientVersion Method in Class CCM_SoftwareCatalogUtilities
+
 The `GetClientVersion` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that returns the client version.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,19 +24,21 @@ uint32 GetClientVersion
 ```
 
 ## Parameters
- `ClientVersion`
- Data type: `String`
 
- Qualifiers: [id("0"), out]
+`ClientVersion` Data type: `String`
 
- Version number of the installed client software.
+Qualifiers: [id("0"), out]
+
+Version number of the installed client software.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

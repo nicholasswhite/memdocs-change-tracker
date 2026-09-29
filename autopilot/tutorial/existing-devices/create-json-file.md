@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 3 of 10 - Create JSON file for Windows Autopilot profiles
+title: "Windows Autopilot deployment for existing devices: Create JSON file for Windows Autopilot profiles"
 description: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 3 of 10 - Create JSON file for Windows Autopilot profiles.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -15,9 +15,7 @@ Windows Autopilot user-driven Microsoft Entra join steps:
 - Step 1: [Set up a Windows Autopilot profile](setup-autopilot-profile.md)
 - Step 2: [Install required modules to obtain Windows Autopilot profiles from Intune](install-modules.md)
 
-> [!div class="checklist"]
->
-> - **Step 3: Create JSON file for Windows Autopilot profiles**
+- **Step 3: Create JSON file for Windows Autopilot profiles**
 
 - Step 4: [Create and distribute package for JSON file in Configuration Manager](create-json-package.md)
 - Step 5: [Create Windows Autopilot task sequence in Configuration Manager](create-autopilot-task-sequence.md)
@@ -33,33 +31,28 @@ For an overview of the Windows Autopilot deployment for existing devices workflo
 
 > [!NOTE]
 >
-> The PowerShell code snippets in this section were updated in July of 2023 to use the Microsoft Graph PowerShell modules instead of the deprecated AzureAD Graph PowerShell modules. The Microsoft Graph PowerShell modules might require approval of additional permissions in Microsoft Entra ID when they're first used. For more information, see [AzureAD](/powershell/module/azuread/) and [Important: Azure AD Graph Retirement and PowerShell Module Deprecation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270).
+> The PowerShell code snippets in this section were updated in July of 2023 to use the Microsoft Graph PowerShell modules instead of the deprecated AzureAD Graph PowerShell modules. The Microsoft Graph PowerShell modules might require approval of additional permissions in Microsoft Entra ID when they're first used. For more information, see [AzureAD](https://learn.microsoft.com/en-us/powershell/module/azuread/) and [Important: Azure AD Graph Retirement and PowerShell Module Deprecation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270).
 
 Once the proper modules are installed to allow exporting of Windows Autopilot profiles from Intune, the next step is to export the Windows Autopilot profiles as JSON files. The JSON files are used to create a package in Configuration Manager.
 
 To export the Windows Autopilot profiles as JSON files, follow these steps:
 
 1. Sign in to the Configuration Manager site server or other device where the required modules were installed in the [Install required modules to obtain Windows Autopilot profiles from Intune](install-modules.md) step.
+2. On the device, open a PowerShell window as an administrator by right-clicking on the **Start** menu and selecting **Windows PowerShell (Admin)**/**Windows Terminal (Admin)** and then selecting **Yes** at the **User Account Control** (UAC) prompt.
+3. Copy the following commands by selecting **Copy** at the top right corner of the below **PowerShell** code block:
 
-1. On the device, open a PowerShell window as an administrator by right-clicking on the **Start** menu and selecting **Windows PowerShell (Admin)**/**Windows Terminal (Admin)** and then selecting **Yes** at the **User Account Control** (UAC) prompt.
-
-1. Copy the following commands by selecting **Copy** at the top right corner of the below **PowerShell** code block:
-
-    ```powershell
-    Connect-MgGraph -Scopes "Device.ReadWrite.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementServiceConfig.ReadWrite.All", "Domain.ReadWrite.All", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "User.Read"
-    $AutopilotProfile = Get-AutopilotProfile
-    $targetDirectory = "C:\Autopilot"
-    $AutopilotProfile | ForEach-Object {
-        New-Item -ItemType Directory -Path "$targetDirectory\$($_.displayName)"
-        $_ | ConvertTo-AutopilotConfigurationJSON | Set-Content -Encoding Ascii "$targetDirectory\$($_.displayName)\AutopilotConfigurationFile.json"
-    }
-    ```
-
-1. Paste the commands into the elevated PowerShell window and then select **Enter** on the keyboard to run the commands. If the elevated PowerShell command window isn't already signed in to Intune, a **Sign in to your account** window appears. Sign in with a Microsoft Entra account that has access to Intune and the Windows Autopilot profiles.
-
-1. Once signed in to Intune, **Enter** might need to be selected a second time to run the last command in the code block.
-
-1. Once all the commands run successfully, the Windows Autopilot profiles appears in a subfolder under the folder specified by the `$targetDirectory` variable. By default, the `$targetDirectory` variable is `C:\AutoPilot`, but it can be changed to another location if desired. The subfolder has the name of the Windows Autopilot profile from Intune. If there are multiple Windows Autopilot profiles, each profile has its own subfolder. In each folder, there's a JSON file named **`AutopilotConfigurationFile.json`**.
+   ```powershell
+   Connect-MgGraph -Scopes "Device.ReadWrite.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementServiceConfig.ReadWrite.All", "Domain.ReadWrite.All", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "User.Read"
+   $AutopilotProfile = Get-AutopilotProfile
+   $targetDirectory = "C:\Autopilot"
+   $AutopilotProfile | ForEach-Object {
+       New-Item -ItemType Directory -Path "$targetDirectory\$($_.displayName)"
+       $_ | ConvertTo-AutopilotConfigurationJSON | Set-Content -Encoding Ascii "$targetDirectory\$($_.displayName)\AutopilotConfigurationFile.json"
+   }
+   ```
+4. Paste the commands into the elevated PowerShell window and then select **Enter** on the keyboard to run the commands. If the elevated PowerShell command window isn't already signed in to Intune, a **Sign in to your account** window appears. Sign in with a Microsoft Entra account that has access to Intune and the Windows Autopilot profiles.
+5. Once signed in to Intune, **Enter** might need to be selected a second time to run the last command in the code block.
+6. Once all the commands run successfully, the Windows Autopilot profiles appears in a subfolder under the folder specified by the `$targetDirectory` variable. By default, the `$targetDirectory` variable is `C:\AutoPilot`, but it can be changed to another location if desired. The subfolder has the name of the Windows Autopilot profile from Intune. If there are multiple Windows Autopilot profiles, each profile has its own subfolder. In each folder, there's a JSON file named **`AutopilotConfigurationFile.json`**.
 
 > [!NOTE]
 >
@@ -67,8 +60,7 @@ To export the Windows Autopilot profiles as JSON files, follow these steps:
 
 ## Next step: Create and distribute package for JSON file in Configuration Manager
 
-> [!div class="nextstepaction"]
-> [Step 4: Create and distribute package for JSON file in Configuration Manager](create-json-package.md)
+[Step 4: Create and distribute package for JSON file in Configuration Manager](create-json-package.md)
 
 ## Related content
 

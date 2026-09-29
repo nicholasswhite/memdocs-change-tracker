@@ -1,7 +1,7 @@
 ---
-title: Management tasks for applications
+title: "Management tasks for Configuration Manager applications"
 description: Manage Configuration Manager applications and deployment types.
-ms.date: 04/05/2021
+ms.date: "2021-04-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -17,6 +17,7 @@ Use the information in this article to help you manage Configuration Manager app
 For more information on how to create applications and deployment types, see [Create applications](create-applications.md).
 
 > [!IMPORTANT]
+>
 > Depending on the type of application or deployment type, some management options might not be available.
 
 ## Manage applications
@@ -31,17 +32,16 @@ When you **Add** an account:
 
 1. Specify one of the following account types:
 
-    - **User**: Any account that Windows can authenticate.
-    - **Guest**: An unauthenticated user.
-    - **Administrator**: An account that Windows recognizes as an administrator.
-    - **Windows User**: A specific user account. It can either be from a local machine or Active Directory.
+   - **User**: Any account that Windows can authenticate.
+   - **Guest**: An unauthenticated user.
+   - **Administrator**: An account that Windows recognizes as an administrator.
+   - **Windows User**: A specific user account. It can either be from a local machine or Active Directory.
+2. Specify one of the following access rights:
 
-1. Specify one of the following access rights:
-
-    - **No access**: Explicitly block the specified account type from accessing the content associated with this application.
-    - **Read**
-    - **Change**
-    - **Full control**
+   - **No access**: Explicitly block the specified account type from accessing the content associated with this application.
+   - **Read**
+   - **Change**
+   - **Full control**
 
 By default, the **Administrator** type has **Full control** access, and the **User** type has **Read** access.
 
@@ -78,9 +78,9 @@ When you retire an application, it's no longer available for deployment. Configu
 Before you delete an application:
 
 1. Retire the application.
-1. Delete all deployments.
-1. Remove references to the application by other deployments
-1. Delete all of the application's revisions.
+2. Delete all deployments.
+3. Remove references to the application by other deployments
+4. Delete all of the application's revisions.
 
 For more information, see [Revise and supersede applications](revise-and-supersede-applications.md).
 
@@ -96,8 +96,8 @@ You can export:
 
 To automate this process, use the following Configuration Manager PowerShell cmdlets:
 
-- [Export-CMApplication](/powershell/module/configurationmanager/export-cmapplication)
-- [Import-CMApplication](/powershell/module/configurationmanager/import-cmapplication)
+- [Export-CMApplication](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/export-cmapplication)
+- [Import-CMApplication](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/import-cmapplication)
 
 For more information, see [Import and export applications](import-export-applications.md).
 
@@ -127,7 +127,7 @@ Deploy the selected application to a collection of computers. For more informati
 
 ### Create phased deployment
 
-Phased deployments automate a coordinated, sequenced rollout of software across multiple collections. For example, deploy software to a pilot collection, and then automatically continue the rollout based on success criteria. For more information, see [Create phased deployments](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json).
+Phased deployments automate a coordinated, sequenced rollout of software across multiple collections. For example, deploy software to a pilot collection, and then automatically continue the rollout based on success criteria. For more information, see [Create phased deployments](https://learn.microsoft.com/en-us/intune/configmgr/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/mem/configmgr/apps/toc.json&bc=/mem/configmgr/apps/breadcrumb/toc.json).
 
 ### Distribute content
 
@@ -148,14 +148,13 @@ Administrative categories help you organize apps in the Configuration Manager co
 With this action, you can:
 
 - Quickly add the selected app to an administrative category.
-
 - Clear all categories on the current app.
-
 - Select **Manage categories** to create, rename, or delete categories.
 
 You can also manage categories on the application properties, **General information** tab.
 
 > [!TIP]
+>
 > To help users find apps by category in Software Center, define **user categories** for your apps. You can add these categories on the application properties, **Software Center** tab.
 
 ### View relationships
@@ -163,9 +162,7 @@ You can also manage categories on the application properties, **General informat
 Show a graphical diagram of the relationships of the selected applications to other applications. Choose one of the following relationship types:
 
 - **Dependency**: Shows applications that are dependent on the selected application and the applications that the selected application depends on. For more information, see [Deployment type Dependencies](create-applications.md#bkmk_dt-depend).
-
 - **Supersedence**: Shows applications that the selected application supersedes, and applications that the selected application is superseded by. For more information, see [Supersedence](revise-and-supersede-applications.md#supersedence).
-
 - **Global Conditions**: Shows the global conditions that this application references. For more information, see [Create global conditions](create-global-conditions.md).
 
 ### Properties
@@ -195,8 +192,7 @@ Delete the selected deployment type. You can't delete a deployment type if it's 
 To delete a deployment type:
 
 1. Remove all dependencies from other deployment types.
-
-1. Remove previous revisions of all applications that have a deployment type that references this deployment type.
+2. Remove previous revisions of all applications that have a deployment type that references this deployment type.
 
 ### Update content
 

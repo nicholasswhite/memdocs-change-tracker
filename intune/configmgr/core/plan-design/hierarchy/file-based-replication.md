@@ -1,7 +1,7 @@
 ---
 title: File-based replication
 description: Learn how Configuration Manager uses file-based replication to transfer data between sites in your hierarchy
-ms.date: 08/09/2019
+ms.date: "2019-08-09T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -16,7 +16,7 @@ Configuration Manager uses file-based replication to transfer file-based data be
 
 File-based communication between sites uses the *server message block* (SMB) protocol on TCP/IP port 445. To control the amount of data the site transfers across the network, specify bandwidth throttling and pulse mode. Use schedules to control when to send data across the network.
 
-## <a name="bkmk_routes"></a> Routes
+## Routes
 
 The following information can help you set up and use file replication routes.
 
@@ -33,6 +33,7 @@ You can change the following settings for file replication routes:
 This account connects to the destination site, and writes data to that site's **SMS_Site** share. The receiving site processes the data written to this share. By default, when you add a site to the hierarchy, Configuration Manager assigns the new site server's computer account as its file replication account. It then adds this account to the destination site's `SMS_SiteToSiteConnection_<sitecode>` group. This group is local to the computer that grants access to the SMS_Site share. You can change this account to be a Windows user account. If you change the account, make sure you add the new account to the destination site's `SMS_SiteToSiteConnection_<sitecode>` group.
 
 > [!NOTE]
+>
 > Secondary sites always use the computer account of the secondary site server as the **File Replication Account**.
 
 #### Schedule
@@ -45,19 +46,18 @@ Specify rate limits for each file replication route. This action controls the ne
 
 - **Pulse mode**: Specify the size of the data blocks that the site sends to the destination site. You can also specify a time delay between sending each data block. Use this option when you must send data across a low-bandwidth network connection to the destination site.
 
-    For example, you have constraints to send 1 KB of data every five seconds, but not 1 KB every three seconds. This constraint is regardless of the speed of the link or its usage at a given time.
-
+  For example, you have constraints to send 1 KB of data every five seconds, but not 1 KB every three seconds. This constraint is regardless of the speed of the link or its usage at a given time.
 - **Limited to maximum transfer rates by hour**: The site sends data to a destination site by using only the percentage of time that you specify. Configuration Manager doesn't identify the network's available bandwidth. It divides the time it can send data into slices of time. It then sends the data in a short block of time, which is followed by blocks of time when it doesn't send data.
 
-    For example, you set the maximum rate to **50%**. Configuration Manager transmits data for an amount of time followed by an equal period of time when it doesn't send any data. It doesn't manage the actual size of the data block that it sends. The site only manages the amount of time during which it sends data.
+  For example, you set the maximum rate to **50%**. Configuration Manager transmits data for an amount of time followed by an equal period of time when it doesn't send any data. It doesn't manage the actual size of the data block that it sends. The site only manages the amount of time during which it sends data.
 
-    > [!CAUTION]
-    > By default, a site can use up to three **concurrent sendings** to transfer data to a destination site. When you enable rate limits for a file replication route, it limits the **concurrent sendings** to that site to one. This behavior applies even when the **Limit available bandwidth (%)** is set to **100%**. For example, if you use the default settings for the sender, this reduces the transfer rate to the destination site to be one-third of the default capacity.
+  > [!CAUTION]
+  >
+  > By default, a site can use up to three **concurrent sendings** to transfer data to a destination site. When you enable rate limits for a file replication route, it limits the **concurrent sendings** to that site to one. This behavior applies even when the **Limit available bandwidth (%)** is set to **100%**. For example, if you use the default settings for the sender, this reduces the transfer rate to the destination site to be one-third of the default capacity.
 
 #### Routes between secondary sites
 
 Configure a file replication route between two secondary sites to route file-based content between those sites.
-
 
 ### Sender
 
@@ -76,7 +76,6 @@ By default, each site uses five concurrent sendings (threads). Three threads are
 #### Retry settings
 
 By default, each site retries a problem connection two times, with a one-minute delay between connection attempts. You can modify the number of connection attempts the site makes, and how long to wait between attempts.
-
 
 ## Next steps
 

@@ -1,7 +1,7 @@
 ---
-title: Client security and privacy
+title: "Security and privacy for Configuration Manager clients"
 description: Learn about security and privacy for Configuration Manager clients.
-ms.date: 05/05/2021
+ms.date: "2021-05-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -23,9 +23,7 @@ Use the following security guidance to help protect the site from rogue or compr
 ### Use public key infrastructure (PKI) certificates for client communications with site systems that run IIS
 
 - As a site property, configure **Site system settings** for **HTTPS only**. For more information, see [Configure security](../../../plan-design/security/configure-security.md#client-pki-certificates).
-
 - Install clients with the [UsePKICert](../about-client-installation-properties.md#usepkicert) CCMSetup property.
-
 - Use a [certificate revocation list](../../../plan-design/security/plan-for-certificates.md#pki-certificate-revocation) (CRL). Make sure that clients and communicating servers can always access it.
 
 Mobile device clients and some internet-based clients require these certificates. Microsoft recommends these certificates for all client connections on the intranet.
@@ -33,7 +31,8 @@ Mobile device clients and some internet-based clients require these certificates
 For more information on the use of certificates in Configuration Manager, see [Plan for certificates](../../../plan-design/security/plan-for-certificates.md).
 
 > [!IMPORTANT]
-> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).<!-- 9390933,9572265 -->
+>
+> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).
 
 ### Automatically approve client computers from trusted domains and manually check and approve other computers
 
@@ -43,7 +42,7 @@ When you can't use PKI authentication, approval identifies a computer that you t
 - Automatic for computers in trusted domains
 - Automatic for all computers
 
-The most secure approval method is to automatically approve clients that are members of trusted domains. This option includes cloud-domain joined clients from connected Microsoft Entra tenants.<!-- MEMDocs#318 --> Then manually check and approve all other computers. Automatically approving all clients isn't recommended, unless you have other access controls to prevent untrustworthy computers from accessing your network.
+The most secure approval method is to automatically approve clients that are members of trusted domains. This option includes cloud-domain joined clients from connected Microsoft Entra tenants. Then manually check and approve all other computers. Automatically approving all clients isn't recommended, unless you have other access controls to prevent untrustworthy computers from accessing your network.
 
 For more information about how to manually approve computers, see [Manage clients from the devices node](../../manage/manage-clients.md#manage-clients-from-the-devices-node).
 
@@ -64,15 +63,13 @@ For more information, see [Determine whether to block clients](determine-whether
 
 ### Use the most secure client installation methods that are practical for your environment
 
-- For domain computers, _group policy_ client installation and _software update-based_ client installation methods are more secure than _client push_ installation.
-
+- For domain computers, *group policy* client installation and *software update-based* client installation methods are more secure than *client push* installation.
 - If you apply access controls and change controls, use imaging and manual installation methods.
-
 - Use Kerberos mutual authentication with client push installation.
 
 Of all the client installation methods, client push installation is the least secure because of the many dependencies it has. These dependencies include local administrative permissions, the `Admin$` share, and firewall exceptions. The number and type of these dependencies increase your attack surface.
 
-When using client push, the site can require Kerberos mutual authentication by not allowing fallback to NTLM before establishing the connection. This enhancement helps to secure the communication between the server and the client. For more information, see [How to install clients with client push](../deploy-clients-to-windows-computers.md#BKMK_ClientPush).<!--1358204-->
+When using client push, the site can require Kerberos mutual authentication by not allowing fallback to NTLM before establishing the connection. This enhancement helps to secure the communication between the server and the client. For more information, see [How to install clients with client push](../deploy-clients-to-windows-computers.md#BKMK_ClientPush).
 
 For more information about the different client installation methods, see [Client installation methods](client-installation-methods.md).
 
@@ -118,9 +115,7 @@ To manually install the site server signing certificate, use the CCMSetup client
 To avoid the risk of a new client downloading the trusted root key from a rogue management point, only use automatic site assignment in the following scenarios:
 
 - The client can access Configuration Manager site information that's published to Active Directory Domain Services.
-
 - You pre-provision the client with the trusted root key.
-
 - You use PKI certificates from an enterprise certification authority to establish trust between the client and the management point.
 
 For more information about the trusted root key, see [Planning for the trusted root key](../../../plan-design/security/plan-for-security.md#the-trusted-root-key).
@@ -196,9 +191,7 @@ Help prevent elevation of privileges by restricting the users who can enroll the
 Don't deploy applications to users who have mobile devices enrolled by Configuration Manager in the following scenarios:
 
 - The mobile device is used by more than one person.
-
 - The device is enrolled by an administrator on behalf of a user.
-
 - The device is transferred to another person without retiring and then re-enrolling the device.
 
 Device enrollment creates a user device affinity relationship. This relationship maps the user who does enrollment to the mobile device. If another user uses the mobile device, they can run the applications deployed to the original user, which might result in an elevation of privileges. Similarly, if an administrator enrolls the mobile device for a user, applications deployed to the user aren't installed on the mobile device. Instead, applications deployed to the administrator might be installed.
@@ -230,24 +223,19 @@ To help protect against elevation of privileges, configure the certificate for t
 When you enroll Mac computers, a user certificate to manage the Configuration Manager client is automatically installed. This user certificate includes the trusted root certificates in its trust chain. To restrict the trust of this root certificate to the SSL protocol only, use the following procedure:
 
 1. On the Mac computer, open a terminal window.
-
 2. Enter the following command: `sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access`
-
 3. In the **Keychain Access** dialog box, in the **Keychains** section, select **System**. Then in the **Category** section, select **Certificates**.
-
 4. Locate and open the root CA certificate for the Mac client certificate.
-
 5. In the dialog box for the root CA certificate, expand the **Trust** section, and then make the following changes:
 
-    1. **When using this certificate**: Change the **Always Trust** setting to **Use System Defaults**.
-
-    2. **Secure Sockets Layer (SSL)**: Change **no value specified** to **Always Trust**.
-
+   1. **When using this certificate**: Change the **Always Trust** setting to **Use System Defaults**.
+   2. **Secure Sockets Layer (SSL)**: Change **no value specified** to **Always Trust**.
 6. Close the dialog box. When prompted, enter the administrator's password, and then select **Update Settings**.
 
 After you complete this procedure, the root certificate is only trusted to validate the SSL protocol. Other protocols that are now untrusted with this root certificate include Secure Mail (S/MIME), Extensible Authentication (EAP), or code signing.
 
 > [!NOTE]
+>
 > Also use this procedure if you installed the client certificate independently from Configuration Manager.
 
 ## Security issues for clients

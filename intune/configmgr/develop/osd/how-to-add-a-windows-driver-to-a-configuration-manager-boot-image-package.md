@@ -1,42 +1,42 @@
 ---
-title: Add a Windows Driver to a Boot Image Package
+title: "How to Add a Windows Driver to a Configuration Manager Boot Image Package"
 description: In Configuration Manager, you add a Windows driver to an operating system deployment boot image package by adding a reference to the required driver in the SMS_BootImagePackage Server WMI Class ReferencedDrivers array property.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Add a Windows Driver to a Configuration Manager Boot Image Package
-In Configuration Manager, you add a Windows driver to an operating system deployment boot image package by adding a reference to the required driver in the [SMS_BootImagePackage Server WMI Class](../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md) `ReferencedDrivers` array property.
+
+In Configuration Manager, you add a Windows driver to an operating system deployment boot image package by adding a reference to the required driver in the [SMS_BootImagePackage Server WMI Class](../reference/osd/sms_bootimagepackage-server-wmi-class.md) `ReferencedDrivers` array property.
 
 > [!NOTE]
->  The `ReferencedDrivers` property is an array of an embedded [SMS_Driver_Details](../../develop/reference/osd/sms_driver_details-server-wmi-class.md) object, and you can add more than one driver to the package. The objects in the array are added to the boot image package each time it is updated on the distribution point.
+>
+> The `ReferencedDrivers` property is an array of an embedded [SMS_Driver_Details](../reference/osd/sms_driver_details-server-wmi-class.md) object, and you can add more than one driver to the package. The objects in the array are added to the boot image package each time it is updated on the distribution point.
 
- The location of the driver content is usually obtained from the [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) object `ContentSourcePath` property, but this can be overridden if the original driver location is not available.
+The location of the driver content is usually obtained from the [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) object `ContentSourcePath` property, but this can be overridden if the original driver location is not available.
 
- It might be necessary to add network or storage drivers to a boot image package so that a task sequence can access the network and disk resources while in WinPE.
+It might be necessary to add network or storage drivers to a boot image package so that a task sequence can access the network and disk resources while in WinPE.
 
- Drivers are added to the image only when the boot image is refreshed by calling the [RefreshPkgSource Method in Class SMS_BootImagePackage](../../develop/reference/osd/refreshpkgsource-method-in-class-sms_bootimagepackage.md) method.
+Drivers are added to the image only when the boot image is refreshed by calling the [RefreshPkgSource Method in Class SMS_BootImagePackage](../reference/osd/refreshpkgsource-method-in-class-sms_bootimagepackage.md) method.
 
- Drivers are added to the image by using Windows Package Manager.
+Drivers are added to the image by using Windows Package Manager.
 
 ### To add a Windows driver to a boot image package
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the [SMS_BootImagePackage](../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md) object for the boot image package that you want to add the driver to.
-
-3.  Create and populate an embedded `SMS_Driver_Details` object to contain the driver details.
-
-4.  Add the `SMS_Driver_Details` object to the `ReferencedDrivers` array property of the `SMS_BootImagePackage` object.
-
-5.  Commit the `SMS_BootImagePackage` object changes.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the [SMS_BootImagePackage](../reference/osd/sms_bootimagepackage-server-wmi-class.md) object for the boot image package that you want to add the driver to.
+3. Create and populate an embedded `SMS_Driver_Details` object to contain the driver details.
+4. Add the `SMS_Driver_Details` object to the `ReferencedDrivers` array property of the `SMS_BootImagePackage` object.
+5. Commit the `SMS_BootImagePackage` object changes.
 
 ## Example
- The following example method adds a Windows driver to a boot image package. The package is identified by its `PackageID` property, and the driver is identified by its `CI_ID` property.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method adds a Windows driver to a boot image package. The package is identified by its `PackageID` property, and the driver is identified by its `CI_ID` property.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AddDriverToBootImagePackage(connection, driverId,packageId)
@@ -110,39 +110,44 @@ public void AddDriverToBootImagePackage(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`Connection`|-   Managed:`WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`driverID`|-   Managed: `String`<br />-   VBScript:  `String`|The Windows driver identifier available in `SMS_Driver.CI_ID`.|
-|`PackageID`|-   Managed: `String`<br />-   VBScript: `String`|The boot image package identifier available in `SMS_BootImagePackage.PackageID`.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection` | - Managed:`WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `driverID` | - Managed: `String` - VBScript: `String` | The Windows driver identifier available in `SMS_Driver.CI_ID`. |
+| `PackageID` | - Managed: `String` - VBScript: `String` | The boot image package identifier available in `SMS_BootImagePackage.PackageID`. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Operating System Deployment Driver Management](../../develop/osd/about-operating-system-deployment-driver-management.md)
- [How to Remove a Windows Driver from a Boot Image Package](../../develop/osd/how-to-remove-a-windows-driver-from-a-boot-image-package.md)
+
+[About Operating System Deployment Driver Management](about-operating-system-deployment-driver-management.md) [How to Remove a Windows Driver from a Boot Image Package](how-to-remove-a-windows-driver-from-a-boot-image-package.md)

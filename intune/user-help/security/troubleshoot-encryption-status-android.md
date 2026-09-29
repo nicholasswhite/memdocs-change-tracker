@@ -1,7 +1,7 @@
 ---
-title: Your Android device seems to be encrypted
+title: "Device encrypted but apps say otherwise"
 description: Resolve encryption status in Company Portal and Microsoft Intune app
-ms.date: 09/03/2025
+ms.date: "2025-09-03T00:00:00Z"
 ms.reviewer: rishitasarin
 ---
 
@@ -11,7 +11,7 @@ If Company Portal or the Microsoft Intune app say that your Android device isn't
 
 ## Add a startup PIN
 
-Certain Android devices require you to create a startup PIN for security purposes. The location of this setting will be in your device's **Settings** app. The name and location of the setting could vary. For example, on the Samsung Galaxy S7, the setting is referred to as **Secure Startup**. To enable it and create a passcode, go to **Settings** > **Lock Screen and Security** > **Secure Startup**.
+Certain Android devices require you to create a startup PIN for security purposes. The location of this setting will be in your device's **Settings** app. The name and location of the setting could vary. For example, on the Samsung Galaxy S7, the setting is referred to as **Secure Startup**. To enable it and create a passcode, go to **Settings** &gt; **Lock Screen and Security** &gt; **Secure Startup**.
 
 ## Encrypt the entire device
 
@@ -33,6 +33,7 @@ Some Android devices on version 7.0 and later encrypt data in ways that are inco
 For a non-exhaustive list of supported Android devices, see the article [Supported operating systems and browsers in Intune](../../fundamentals/ref-supported-platforms.md#supported-samsung-knox-standard-devices). If your device isn't listed, refer to the device manufacturer or contact your support person.
 
 > [!NOTE]
+>
 > Microsoft works with manufacturers to address any issues we find while testing or that users report to us. We update this article whenever new information is available.
 
 ## Update devices

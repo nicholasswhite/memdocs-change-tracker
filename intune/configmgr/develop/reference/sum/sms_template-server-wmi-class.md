@@ -1,7 +1,7 @@
 ---
 description: Learn how to create a deployment template available to deploy a software update on the site directly versus using the Configuration Manager console.
-title: "SMS_Template Class"
-ms.date: "09/20/2016"
+title: "SMS_Template Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_Template Server WMI Class
-The `SMS_Template` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that represents a deployment template available on the site that you can use instead of the Configuration Manager console deployment wizard to deploy a software update.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_Template` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that represents a deployment template available on the site that you can use instead of the Configuration Manager console deployment wizard to deploy a software update.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_Template : SMS_BaseClass  
 {  
       String Data;  
@@ -27,98 +29,105 @@ Class SMS_Template : SMS_BaseClass
       String TemplateUniqueID;  
       UInt32 Type;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_Template` class doesn't define any methods.  
+## Methods
 
-## Properties  
- `Data`  
- Data type: `String`  
+The `SMS_Template` class doesn't define any methods.
 
- Access type: Read/Write  
+## Properties
 
- Qualifiers: [lazy, large]  
+`Data`  
+ Data type: `String`
 
- Extended data for the template, in XML format.  
+Access type: Read/Write
 
- `Description`  
- Data type: `String`  
+Qualifiers: [lazy, large]
 
- Access type: Read/Write  
+Extended data for the template, in XML format.
 
- Qualifiers: None  
+`Description`  
+ Data type: `String`
 
- A comment describing the template.  
+Access type: Read/Write
 
- `LastModifiedDate`  
- Data type: `DateTime`  
+Qualifiers: None
 
- Access type: Read-only  
+A comment describing the template.
 
- Qualifiers: read, not_null  
+`LastModifiedDate`  
+ Data type: `DateTime`
 
- The last modified date of the template.  
+Access type: Read-only
 
- `Name`  
- Data type: `String`  
+Qualifiers: read, not_null
 
- Access type: Read/Write  
+The last modified date of the template.
 
- Qualifiers: [not_null]  
+`Name`  
+ Data type: `String`
 
- User-friendly display name for the template.  
+Access type: Read/Write
 
- `SchemaGUID`  
- Data type: `String`  
+Qualifiers: [not_null]
 
- Access type: Read/Write  
+User-friendly display name for the template.
 
- Qualifiers: [optional]  
+`SchemaGUID`  
+ Data type: `String`
 
- GUID that references the template schema.  
+Access type: Read/Write
 
- `TemplateUniqueID`  
- Data type: `String`  
+Qualifiers: [optional]
 
- Access type: Read/Write  
+GUID that references the template schema.
 
- Qualifiers: [key, not_null]  
+`TemplateUniqueID`  
+ Data type: `String`
 
- GUID to represent the template. The default value is "".  
+Access type: Read/Write
 
- `Type`  
- Data type: `UInt32`  
+Qualifiers: [key, not_null]
 
- Access type: Read/Write  
+GUID to represent the template. The default value is "".
 
- Qualifiers: [Not_null]  
+`Type`  
+ Data type: `UInt32`
 
- The type of the template. Currently the only possible value is:  
+Access type: Read/Write
 
-| Value | Template type |  
-| ----- | ------------- |  
-|0|SUM_DEPLOYMENT|  
+Qualifiers: [Not_null]
 
-## Remarks  
- Class qualifiers for this class include:  
+The type of the template. Currently the only possible value is:
 
-- Secured  
+| Value | Template type |
+| --- | --- |
+| 0 | SUM_DEPLOYMENT |
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+## Remarks
 
-  Use of this class is optional. You can use an `SMS_Template` object instead of the console if necessary. In this case, the properties are populated for you, and you need to change only the ones that reflect information that has changed since the last software update deployment.  
+Class qualifiers for this class include:
+
+- Secured
+
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
+
+  Use of this class is optional. You can use an `SMS_Template` object instead of the console if necessary. In this case, the properties are populated for you, and you need to change only the ones that reflect information that has changed since the last software update deployment.
 
 > [!NOTE]
->  `SMS_Template` objects are not replicated to child sites.  
+>
+> `SMS_Template` objects are not replicated to child sites.
 
-## Requirements  
+## Requirements
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+### Runtime Requirements
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

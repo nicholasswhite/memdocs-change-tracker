@@ -1,27 +1,28 @@
 ---
-title: List Configuration Assignments
+title: "How to List Configuration Assignments"
 description: The following code examples show how to list the current configuration baseline assignments and a specific set of properties for each assignment in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to List Configuration Assignments
+
 The following code examples show how to list the current configuration baseline assignments and a specific set of properties for each assignment in Configuration Manager.
 
 ### To list Configuration Assignments
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Query for all instances `SMS_BaselineAssignment`.
-
-3.  Loop through the array of available configuration baseline assignments, listing each configuration baseline assignment and specific properties.
+1. Set up a connection to the SMS Provider.
+2. Query for all instances `SMS_BaselineAssignment`.
+3. Loop through the array of available configuration baseline assignments, listing each configuration baseline assignment and specific properties.
 
 ## Example
- The following example method shows how to list the current configuration baseline assignments and a specific set of properties for each assignment in Configuration Manager.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method shows how to list the current configuration baseline assignments and a specific set of properties for each assignment in Configuration Manager.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -145,39 +146,40 @@ public void DCMAssignments_ListProperties(WqlConnectionManager connection)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|-   `connection`<br />-   `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
+| --- | --- | --- |
+| - `connection` - `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
 
 ## Compiling the Code
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Configuration Baselines and Configuration Items](../../develop/compliance/about-configuration-baselines-and-configuration-items.md)
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Connect to a Configuration Manager Provider using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to a Configuration Manager Provider Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [SMS_BaselineAssignment Server WMI Class](../../develop/reference/compliance/sms_baselineassignment-server-wmi-class.md)
+
+[About Configuration Baselines and Configuration Items](about-configuration-baselines-and-configuration-items.md) [Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Connect to a Configuration Manager Provider using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to a Configuration Manager Provider Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [SMS_BaselineAssignment Server WMI Class](../reference/compliance/sms_baselineassignment-server-wmi-class.md)

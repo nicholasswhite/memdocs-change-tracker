@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent information about hardware inventory related to a client computer operating system with SMS_G_System_SYSTEM.
-title: SMS_G_System_SYSTEM Class
-ms.date: 09/20/2016
+title: "SMS_G_System_SYSTEM Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_SYSTEM Server WMI Class
+
 The `SMS_G_System_SYSTEM` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains information about hardware inventory related to a client computer operating system.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,84 +32,77 @@ Class SMS_G_System_SYSTEM : SMS_G_System_Current
 ```
 
 ## Methods
- The `SMS_G_System_SYSTEM` class does not define any methods.
+
+The `SMS_G_System_SYSTEM` class does not define any methods.
 
 ## Properties
- `Domain`
- Data type: `String`
 
- Access type: Read/Write
+`Domain` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the Windows NT domain to which the operating system account belongs.
+Qualifiers: None
 
- `GroupID`
- Data type: `UInt32`
+Name of the Windows NT domain to which the operating system account belongs.
 
- Access type: Read/Write
+`GroupID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the default value of this property is `null`.
+See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
- `Name`
- Data type: `String`
+For this class, the default value of this property is `null`.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the client computer.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Name of the client computer.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the default value of this property is `null`.
+See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
- `RevisionID`
- Data type: `UInt32`
+For this class, the default value of this property is `null`.
 
- Access type: Read/Write
+`RevisionID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the default value of this property is `null`.
+See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
- `SMSID`
- Data type: `String`
+For this class, the default value of this property is `null`.
 
- Access type: Read/Write
+`SMSID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Unique Configuration Manager ID of the client.
+Qualifiers: None
 
- `SystemRole`
- Data type: `String`
+Unique Configuration Manager ID of the client.
 
- Access type: Read/Write
+`SystemRole` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The system role played by the computer operating system. Possible values are:
+Qualifiers: None
+
+The system role played by the computer operating system. Possible values are:
 
 - Workstation
-
 - Server
 
-  `SystemType`
-  Data type: `String`
+  `SystemType` Data type: `String`
 
   Access type: Read/Write
 
@@ -115,22 +110,22 @@ Class SMS_G_System_SYSTEM : SMS_G_System_Current
 
   Description of the operating system, for example, "X86-based PC".
 
-  `TimeStamp`
-  Data type: `DateTime`
+  `TimeStamp` Data type: `DateTime`
 
   Access type: Read/Write
 
   Qualifiers: None
 
-  See [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md).
+  See [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md).
 
   For this class, the default value of this property is `null`.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- This class was added in SMS 2.0 Service Pack 1. It does not have a Win32 class equivalent.
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
+
+This class was added in SMS 2.0 Service Pack 1. It does not have a Win32 class equivalent.
 
 ## See Also
- [Hardware Inventory Server WMI Classes](../../../../../develop/reference/core/clients/manage/hardware-inventory-server-wmi-classes.md)
- [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md)
+
+[Hardware Inventory Server WMI Classes](hardware-inventory-server-wmi-classes.md) [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md)

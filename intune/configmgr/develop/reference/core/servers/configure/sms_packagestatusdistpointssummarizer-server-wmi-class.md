@@ -1,16 +1,18 @@
 ---
-title: SMS_PackageStatusDistPointsSummarizer Class
+title: "SMS_PackageStatusDistPointsSummarizer Server WMI Class"
 description: The SMS_PackageStatusDistPointsSummarizer WMI class is an SMS Provider server class, in Configuration Manager, that lists the distribution summary for packages a given distribution point.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PackageStatusDistPointsSummarizer Server WMI Class
+
 The `SMS_PackageStatusDistPointsSummarizer` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists the distribution summary for packages on given site for a given distribution point.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,144 +34,138 @@ Class SMS_PackageStatusDistPointsSummarizer : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_PackageStatusDistPointsSummarizer` class does not define any methods.
+
+The `SMS_PackageStatusDistPointsSummarizer` class does not define any methods.
 
 ## Properties
- `LastCopied`
- Data type: `DateTime`
 
- Access type: Read/Write
+`LastCopied` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time, in Universal Coordinated Time (UTC), when the package source files were last successfully copied to the distribution point.
+Qualifiers: None
 
- `PackageID`
- Data type: `String`
+Date and time, in Universal Coordinated Time (UTC), when the package source files were last successfully copied to the distribution point.
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key, SizeLimit("8")]
+Access type: Read/Write
 
- Configuration Manager-assigned ID for the package.
+Qualifiers: [key, SizeLimit("8")]
 
- `PackageType`
- Data type: `UInt32`
+Configuration Manager-assigned ID for the package.
 
- Access type: Read-only
+`PackageType` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- The type of package.
+Qualifiers: [enumeration, read]
 
-|Value|Description|
-|-----------|-----------------|
-|0|PKG_TYPE_REGULAR|
-|3|PKG_TYPE_DRIVER|
-|4|PKG_TYPE_TASK_SEQUENCE|
-|5|PKG_TYPE_SWUPDATES|
-|6|PKG_TYPE_DEVICE_SETTING|
-|7|PKG_TYPE_VIRTUAL_APP|
-|8|PKG_CONTENT_PACKAGE|
-|257|PKG_TYPE_IMAGE|
-|258|PKG_TYPE_BOOTIMAGE|
-|259|PKG_TYPE_OSINSTALLIMAGE|
+The type of package.
 
- `SecuredTypeID`
- Data type: `UInt32`
+| Value | Description |
+| --- | --- |
+| 0 | PKG_TYPE_REGULAR |
+| 3 | PKG_TYPE_DRIVER |
+| 4 | PKG_TYPE_TASK_SEQUENCE |
+| 5 | PKG_TYPE_SWUPDATES |
+| 6 | PKG_TYPE_DEVICE_SETTING |
+| 7 | PKG_TYPE_VIRTUAL_APP |
+| 8 | PKG_CONTENT_PACKAGE |
+| 257 | PKG_TYPE_IMAGE |
+| 258 | PKG_TYPE_BOOTIMAGE |
+| 259 | PKG_TYPE_OSINSTALLIMAGE |
 
- Access type: Read-only
+`SecuredTypeID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Secured type of related package.
+Qualifiers: [read]
 
- `SecureObjectID`
- Data type: `String`
+Secured type of related package.
 
- Access type: Read/Write
+`SecureObjectID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Secure object ID. For app, it is model name. For others, it is package ID.
+Qualifiers: None
 
- `ServerNALPath`
- Data type: `String`
+Secure object ID. For app, it is model name. For others, it is package ID.
 
- Access type: Read/Write
+`ServerNALPath` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Network abstraction layer (NAL) path to the distribution point.
+Qualifiers: [key]
 
- `SiteCode`
- Data type: `String`
+Network abstraction layer (NAL) path to the distribution point.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read/Write
 
- Site code of the site.
+Qualifiers: [key, SizeLimit("3")]
 
- `SourceNALPath`
- Data type: `String`
+Site code of the site.
 
- Access type: Read/Write
+`SourceNALPath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- NAL path to the package source files.
+Qualifiers: None
 
- `SourceVersion`
- Data type: `UInt32`
+NAL path to the package source files.
 
- Access type: Read/Write
+`SourceVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Package source version number currently installed on this distribution point.
+Qualifiers: None
 
- `State`
- Data type: `UInt32`
+Package source version number currently installed on this distribution point.
 
- Access type: Read/Write
+`State` Data type: `UInt32`
 
- Qualifiers: [ENUMERATION]
+Access type: Read/Write
 
- The state of the source files on the distribution point. Possible values are:
+Qualifiers: [ENUMERATION]
 
-|Value|State|
-|-|-|
-|0|INSTALLED|
-|1|INSTALL_PENDING|
-|2|INSTALL_RETRYING|
-|3|INSTALL_FAILED|
-|4|REMOVAL_PENDING|
-|5|REMOVAL_RETRYING|
-|6|REMOVAL_FAILED|
-|7|CONTENT_UPDATING|
-|8|CONTENT_MONITORING|
+The state of the source files on the distribution point. Possible values are:
 
- `SummaryDate`
- Data type: `DateTime`
+| Value | State |
+| --- | --- |
+| 0 | INSTALLED |
+| 1 | INSTALL_PENDING |
+| 2 | INSTALL_RETRYING |
+| 3 | INSTALL_FAILED |
+| 4 | REMOVAL_PENDING |
+| 5 | REMOVAL_RETRYING |
+| 6 | REMOVAL_FAILED |
+| 7 | CONTENT_UPDATING |
+| 8 | CONTENT_MONITORING |
 
- Access type: Read/Write
+`SummaryDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time, in Universal Coordinated Time (UTC), when a change in package status for the sites was most recently reported.
+Qualifiers: None
+
+Date and time, in Universal Coordinated Time (UTC), when a change in package status for the sites was most recently reported.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

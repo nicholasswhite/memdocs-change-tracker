@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_G_System_EndpointProtectionStatus class to represent the status of Endpoint Protection.
-title: SMS_G_System_EndpointProtectionStatus Class
-ms.date: 09/20/2016
+title: "SMS_G_System_EndpointProtectionStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_EndpointProtectionStatus Server WMI Class
+
 The `SMS_G_System_EndpointProtectionStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents status of Endpoint Protection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -45,231 +47,211 @@ Class SMS_G_System_EndpointProtectionStatus : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_EndpointProtectionStatus` class does not define any methods.
+
+The `SMS_G_System_EndpointProtectionStatus` class does not define any methods.
 
 ## Properties
- `AmFullscanRequired`
- Data type: `Boolean`
 
- Access type: Read/Write
+`AmFullscanRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is pending a full scan due to threat action.
+Qualifiers: none
 
- `AmManualStepsRequired`
- Data type: `Boolean`
+`true` if the client is pending a full scan due to threat action.
 
- Access type: Read/Write
+`AmManualStepsRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is pending manual steps due to threat action.
+Qualifiers: none
 
- `AmOfflineScanRequired`
- Data type: `Boolean`
+`true` if the client is pending manual steps due to threat action.
 
- Access type: Read/Write
+`AmOfflineScanRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is pending an offline scan due to threat action.
+Qualifiers: none
 
- `AmRecentlyCleaned`
- Data type: `Boolean`
+`true` if the client is pending an offline scan due to threat action.
 
- Access type: Read/Write
+`AmRecentlyCleaned` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if a threat was detected and cleaned recently.
+Qualifiers: none
 
- `AmRemediationFailed`
- Data type: `Boolean`
+`true` if a threat was detected and cleaned recently.
 
- Access type: Read/Write
+`AmRemediationFailed` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client failed to remediate the threat.
+Qualifiers: none
 
- `AmRestartRequired`
- Data type: `Boolean`
+`true` if the client failed to remediate the threat.
 
- Access type: Read/Write
+`AmRestartRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is pending a reboot due to threat action.
+Qualifiers: none
 
- `AmThreatActivity`
- Data type: `Boolean`
+`true` if the client is pending a reboot due to threat action.
 
- Access type: Read/Write
+`AmThreatActivity` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if a threat was detected.
+Qualifiers: none
 
- `AtRisk`
- Data type: `Boolean`
+`true` if a threat was detected.
 
- Access type: Read/Write
+`AtRisk` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client has the policy to enable EndPoint Protection, however, the SCEP agent is not successfully installed (or pending a reboot to finish the installation), no signature is installed, the signature is too old, the client is inactive (from client status perspective) or the client failed to apply antimalware policy and so on.
+Qualifiers: none
 
- `EnforcementFailed`
- Data type: `Boolean`
+`true` if the client has the policy to enable EndPoint Protection, however, the SCEP agent is not successfully installed (or pending a reboot to finish the installation), no signature is installed, the signature is too old, the client is inactive (from client status perspective) or the client failed to apply antimalware policy and so on.
 
- Access type: Read/Write
+`EnforcementFailed` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client failed to apply policy.
+Qualifiers: none
 
- `EnforcementSucceeded`
- Data type: `Boolean`
+`true` if the client failed to apply policy.
 
- Access type: Read/Write
+`EnforcementSucceeded` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client successfully applied policy.
+Qualifiers: none
 
- `Inactive`
- Data type: `Boolean`
+`true` if the client successfully applied policy.
 
- Access type: Read/Write
+`Inactive` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is inactive.
+Qualifiers: none
 
- `InstallFailed`
- Data type: `Boolean`
+`true` if the client is inactive.
 
- Access type: Read/Write
+`InstallFailed` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client failed to install the Endpoint Protection client.
+Qualifiers: none
 
- `NoSignature`
- Data type: `Boolean`
+`true` if the client failed to install the Endpoint Protection client.
 
- Access type: Read/Write
+`NoSignature` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if no signature is installed on this client.
+Qualifiers: none
 
- `NotClient`
- Data type: `Boolean`
+`true` if no signature is installed on this client.
 
- Access type: Read/Write
+`NotClient` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if this is not a Configuration Manager client.
+Qualifiers: none
 
- `NotYetInstalled`
- Data type: `Boolean`
+`true` if this is not a Configuration Manager client.
 
- Access type: Read/Write
+`NotYetInstalled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the Endpoint Protection client is not installed.
+Qualifiers: none
 
- `PendingReboot`
- Data type: `Boolean`
+`true` if the Endpoint Protection client is not installed.
 
- Access type: Read/Write
+`PendingReboot` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is pending a restart to complete the Endpoint Protection installation.
+Qualifiers: none
 
- `Protected`
- Data type: `Boolean`
+`true` if the client is pending a restart to complete the Endpoint Protection installation.
 
- Access type: Read/Write
+`Protected` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is well protected.
+Qualifiers: none
 
- `ResourceID`
- Data type: `UInt32`
+`true` if the client is well protected.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Client resource identifier.
+Qualifiers: [key]
 
- `SignatureOlderThan7Days`
- Data type: `Boolean`
+Client resource identifier.
 
- Access type: Read/Write
+`SignatureOlderThan7Days` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the signature is older than 7 days.
+Qualifiers: none
 
- `SignatureUpTo1DayOld`
- Data type: `Boolean`
+`true` if the signature is older than 7 days.
 
- Access type: Read/Write
+`SignatureUpTo1DayOld` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the signature is up to 1 day old.
+Qualifiers: none
 
- `SignatureUpTo3DaysOld`
- Data type: `Boolean`
+`true` if the signature is up to 1 day old.
 
- Access type: Read/Write
+`SignatureUpTo3DaysOld` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the signature is up from 1 to 3 days old.
+Qualifiers: none
 
- `SignatureUpTo7DaysOld`
- Data type: `Boolean`
+`true` if the signature is up from 1 to 3 days old.
 
- Access type: Read/Write
+`SignatureUpTo7DaysOld` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the signature is up from 3 to 7 days old.
+Qualifiers: none
 
- `Unhealthy`
- Data type: `Boolean`
+`true` if the signature is up from 3 to 7 days old.
 
- Access type: Read/Write
+`Unhealthy` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client is unhealthy from a client status perspective.
+Qualifiers: none
 
- `Unsupported`
- Data type: `Boolean`
+`true` if the client is unhealthy from a client status perspective.
 
- Access type: Read/Write
+`Unsupported` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the Endpoint Protection client is not supported on this client platform.
+Qualifiers: none
+
+`true` if the Endpoint Protection client is not supported on this client platform.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

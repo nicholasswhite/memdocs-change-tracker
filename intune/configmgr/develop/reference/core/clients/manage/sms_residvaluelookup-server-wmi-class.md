@@ -1,16 +1,18 @@
 ---
-title: SMS_ResIDValueLookup Class
+title: "SMS_ResIDValueLookup Server WMI Class"
 description: In Configuration Manager, the SMS_ResIDValueLookup WMI class is an SMS Provider server class that maps integers to localized text strings found in a resource DLL.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ResIDValueLookup Server WMI Class
+
 The `SMS_ResIDValueLookup` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that maps integers to localized text strings found in a resource DLL.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,67 +28,64 @@ Class SMS_ResIDValueLookup
 ```
 
 ## Methods
- The `SMS_ResIDValueLookup` class does not define any methods.
+
+The `SMS_ResIDValueLookup` class does not define any methods.
 
 ## Properties
- `LookupName`
- Data type: `String`
 
- Access type: Read/Write
+`LookupName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Name specified in the ResIDValueLookup property qualifier.
+Qualifiers: [key]
 
- `IntLookupValue`
- Data type: `UInt32`
+Name specified in the ResIDValueLookup property qualifier.
 
- Access type: Read/Write
+`IntLookupValue` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Value from the property to be localized. Specify a value for this property if the data type of the property to be localized is an integer. The default value is 0.
+Qualifiers: [key]
 
- `StringLookupValue`
- Data type: `String`
+Value from the property to be localized. Specify a value for this property if the data type of the property to be localized is an integer. The default value is 0.
 
- Access type: Read/Write
+`StringLookupValue` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Value from the property to be localized. Specify a value for this property if the data type of the property to be localized is a string. The default value is "".
+Qualifiers: [key]
 
- `ResDLL`
- Data type: `String`
+Value from the property to be localized. Specify a value for this property if the data type of the property to be localized is a string. The default value is "".
 
- Access type: Read/Write
+`ResDLL` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Resource DLL name from which to retrieve a localized string. The default value is "".
+Qualifiers: None
 
- `ResID`
- Data type: `UInt32`
+Resource DLL name from which to retrieve a localized string. The default value is "".
 
- Access type: Read/Write
+`ResID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Resource ID from which to retrieve the localized string. The default value is 0.
+Qualifiers: None
+
+Resource ID from which to retrieve the localized string. The default value is 0.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Static
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   The Configuration Manager console uses this class to convert enumerated property values into localized text strings. The console uses the ResIDValueLookup qualifier value and the property value of the class instance to look up the location of the localized string.
 
-  For example, to get the location of the localized string for the `Priority` property of [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md), the property must contain a ResIDValueLookup property qualifier:
+  For example, to get the location of the localized string for the `Priority` property of [SMS_Package Server WMI Class](../../servers/configure/sms_package-server-wmi-class.md), the property must contain a ResIDValueLookup property qualifier:
 
 1. Get the property value.
-
 2. Either query `SMS_ResIDValueLookup` or get the object directly by specifying the full path. The query and the object path are as follows.
 
    ```
@@ -102,7 +101,9 @@ Class SMS_ResIDValueLookup
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

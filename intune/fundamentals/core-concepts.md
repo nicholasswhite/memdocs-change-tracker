@@ -1,7 +1,7 @@
 ---
 title: Microsoft Intune core concepts
 description: Learn how Microsoft Intune works across identities, devices, and apps, and how the three pillars come together to drive access decisions.
-ms.date: 05/14/2026
+ms.date: "2026-05-14T00:00:00Z"
 ms.topic: concept-article
 ---
 
@@ -11,13 +11,13 @@ Microsoft Intune is built around three pillars: the **identities** that sign in,
 
 For an introduction to what Intune does and why, see [What is Microsoft Intune?](what-is-intune.md). For the components, integrations, and deployment view, see [Microsoft Intune architecture](architecture.md).
 
-:::image type="content" source="./media/shared/intune-overview.png" alt-text="Diagram showing Microsoft Intune managing identities, devices, and apps, with signals from Endpoint security in Microsoft Defender. Intune is extended by advanced capabilities, automated by Copilot, and uses Microsoft Entra ID for Conditional Access to corporate resources." lightbox="./media/shared/intune-overview.png" border="false":::
+[![Diagram showing Microsoft Intune managing identities, devices, and apps, with signals from Endpoint security in Microsoft Defender. Intune is extended by advanced capabilities, automated by Copilot, and uses Microsoft Entra ID for Conditional Access to corporate resources.](media/shared/intune-overview.png)](media/shared/intune-overview.png#lightbox)
 
 ## The three pillars
 
 | Pillar | What Intune does | What Intune relies on |
-|---|---|---|
-| **Identities** | Targets policies to users and groups, scopes admin access through role-based access control (RBAC), and creates user affinity at enrollment. | [Microsoft Entra ID](/entra/fundamentals/whatis) for accounts, groups, authentication, and Conditional Access. |
+| --- | --- | --- |
+| **Identities** | Targets policies to users and groups, scopes admin access through role-based access control (RBAC), and creates user affinity at enrollment. | [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/whatis) for accounts, groups, authentication, and Conditional Access. |
 | **Devices** | Enrolls, configures, protects, and retires the hardware that runs your organization's work. Reports compliance state for Conditional Access. | Platform enrollment programs (Windows Autopilot, Apple Automated Device Enrollment, Android Enterprise). |
 | **Apps** | Deploys, configures, protects, and updates the apps users need, on enrolled and personal devices. | App stores and vendor catalogs (Microsoft Store, App Store, Managed Google Play, Apple Business). |
 
@@ -25,7 +25,7 @@ The rest of this article walks through each pillar and ends with a worked exampl
 
 ## Identities
 
-Intune doesn't store user identities. It uses [Microsoft Entra ID](/entra/fundamentals/whatis) for accounts, groups, authentication, and Conditional Access. Within Intune, identities surface in three places.
+Intune doesn't store user identities. It uses [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/whatis) for accounts, groups, authentication, and Conditional Access. Within Intune, identities surface in three places.
 
 ### User affinity at enrollment
 
@@ -125,16 +125,16 @@ Intune supports public store apps, line-of-business (LOB) apps, web apps, and pl
 A typical access decision touches all three pillars:
 
 1. A user signs in to a managed device and **Microsoft Entra ID** authenticates the user.
-1. The device checks in with **Intune** and reports its compliance state and inventory.
-1. Intune forwards the compliance state to Microsoft Entra ID.
-1. The user opens a corporate app. **Microsoft Entra Conditional Access** evaluates the request using the user, the device's compliance state, the app, the location, and signals from **Endpoint security in Microsoft Defender**.
-1. Conditional Access allows or blocks access. If access is allowed and the app is a managed app, **app protection policies** enforce in-app controls (PIN, copy-paste restrictions, selective wipe).
+2. The device checks in with **Intune** and reports its compliance state and inventory.
+3. Intune forwards the compliance state to Microsoft Entra ID.
+4. The user opens a corporate app. **Microsoft Entra Conditional Access** evaluates the request using the user, the device's compliance state, the app, the location, and signals from **Endpoint security in Microsoft Defender**.
+5. Conditional Access allows or blocks access. If access is allowed and the app is a managed app, **app protection policies** enforce in-app controls (PIN, copy-paste restrictions, selective wipe).
 
 Every access decision exercises all three pillars together: the user's identity, the device's compliance, and the app the user is opening.
 
 ## Related content
 
-- **Identities**: [Microsoft Entra ID fundamentals](/entra/fundamentals/whatis), [Use Conditional Access with Microsoft Intune](../device-security/conditional-access-integration/overview.md), [Role-based access control with Microsoft Intune](role-based-access-control/overview.md)
+- **Identities**: [Microsoft Entra ID fundamentals](https://learn.microsoft.com/en-us/entra/fundamentals/whatis), [Use Conditional Access with Microsoft Intune](../device-security/conditional-access-integration/overview.md), [Role-based access control with Microsoft Intune](role-based-access-control/overview.md)
 - **Devices**: [Device enrollment in Microsoft Intune](../device-enrollment/guide.md), [Use compliance policies to set rules for devices you manage](../device-security/compliance/overview.md), [Manage endpoint security in Microsoft Intune](../device-security/endpoint-security-policies.md)
 - **Apps**: [Add and update apps in Microsoft Intune](../app-management/deployment/index.md), [App configuration policies](../app-management/configuration/overview.md), [App protection policies overview](../app-management/protection/overview.md)
 - **Architecture**: [Microsoft Intune architecture](architecture.md)

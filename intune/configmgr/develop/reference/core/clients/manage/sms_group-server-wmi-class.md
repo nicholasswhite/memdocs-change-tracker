@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a resource group that serves as the abstract base class for SMS_G_System Server WMI Class using SMS_Group class.
-title: SMS_Group Class
-ms.date: 09/20/2016
+title: "SMS_Group Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_Group Server WMI Class
-The `SMS_Group` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a resource group and serves as the abstract base class for [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_Group Server WMI Class
+
+The `SMS_Group` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a resource group and serves as the abstract base class for [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -22,36 +24,40 @@ Class SMS_Group : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_Group` class does not define any methods.
+
+The `SMS_Group` class does not define any methods.
 
 ## Properties
- `ResourceID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Configuration Manager-supplied ID that uniquely identifies a client resource. The default value is 0. This ID is unique only for the site.
+Qualifiers: None
 
- Inventory items with the same `ResourceID` property are all found on the same client.
+Configuration Manager-supplied ID that uniquely identifies a client resource. The default value is 0. This ID is unique only for the site.
+
+Inventory items with the same `ResourceID` property are all found on the same client.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
-
 - Read:ToSubClass
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md)
+
+[SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md)

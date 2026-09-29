@@ -1,16 +1,18 @@
 ---
-title: SMS_ClientPfxCertificate Class
+title: "SMS_ClientPfxCertificate Server WMI Class"
 description: The SMS_ClientPfxCertificate Windows Management Instrumentation class is an SMS Provider server class, in Configuration Manager, that contains an imported  Pfx certificate.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_ClientPfxCertificate Server WMI Class
-The `SMS_ClientPfxCertificate` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains an imported  Pfx certificate.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_ClientPfxCertificate Server WMI Class
+
+The `SMS_ClientPfxCertificate` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that contains an imported Pfx certificate.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,108 +33,103 @@ Class SMS_ClientPfxCertificate : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_ClientPfxCertificate` class.
 
-|Method|Description|
-|------------|-----------------|
-|[ImportForUser Method in Class SMS_ClientPfxCertificate](../../../../../develop/reference/core/clients/deploy/importforuser-method-in-class-sms_clientpfxcertificate.md)|Imports a certificate for a user, encrypted by using a password.|
-|[DeleteForUser Method in Class SMS_ClientPfxCertificate](../../../../../develop/reference/core/clients/deploy/deleteforuser-method-in-class-sms_clientpfxcertificate.md)|Deletes a certificate for a user.|
+The following table lists the methods in the `SMS_ClientPfxCertificate` class.
+
+| Method | Description |
+| --- | --- |
+| [ImportForUser Method in Class SMS_ClientPfxCertificate](importforuser-method-in-class-sms_clientpfxcertificate.md) | Imports a certificate for a user, encrypted by using a password. |
+| [DeleteForUser Method in Class SMS_ClientPfxCertificate](deleteforuser-method-in-class-sms_clientpfxcertificate.md) | Deletes a certificate for a user. |
 
 ## Properties
- `CI_ID`
- Data type: `UInt32`
 
- Access type: Read
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The unique ID of the configuration item.
+Qualifiers: [key]
 
- `DeviceID`
- Data type: `UInt32`
+The unique ID of the configuration item.
 
- Access type: Read
+`DeviceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The ID of the device.
+Qualifiers: [key]
 
- `IsTombstoned`
- Data type: `UInt32`
+The ID of the device.
 
- Access type: Read
+`IsTombstoned` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- Specifies whether the certificate is marked for deletion.
+Qualifiers: none
 
- `ProfileName`
- Data type: `String`
+Specifies whether the certificate is marked for deletion.
 
- Access type: Read
+`ProfileName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- An SMS_ConfigurationPolicy Profile unique ID.
+Qualifiers: [key]
 
- `Thumbprint`
- Data type: `String`
+An SMS_ConfigurationPolicy Profile unique ID.
 
- Access type: Read
+`Thumbprint` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The thumbprint for the certificate.
+Qualifiers: [key]
 
- `UserItemKey`
- Data type: `UInt32`
+The thumbprint for the certificate.
 
- Access type: Read
+`UserItemKey` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The user item key.
+Qualifiers: [key]
 
- `UserName`
- Data type: `String`
+The user item key.
 
- Access type: Read
+`UserName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The user name.
+Qualifiers: [key]
 
- `ValidFrom`
- Data type: `DateTime`
+The user name.
 
- Access type: Read
+`ValidFrom` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The start date for the certificate.
+Qualifiers: none
 
- `ValidUntil`
- Data type: `DateTime`
+The start date for the certificate.
 
- Access type: Read
+`ValidUntil` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The expiration date for the certificate.
+Qualifiers: none
+
+The expiration date for the certificate.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

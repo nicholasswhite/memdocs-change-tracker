@@ -1,16 +1,18 @@
 ---
 description: Learn how to specify general settings for mobile devices in Configuration Manager using the SMS_MobileDeviceAgentConfig class.
-title: SMS_MobileDeviceAgentConfig Class
-ms.date: 09/20/2016
+title: "SMS_MobileDeviceAgentConfig Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MobileDeviceAgentConfig Server WMI Class
+
 The `SMS_MobileDeviceAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies general settings for mobile devices.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -48,258 +50,235 @@ Class SMS_MobileDeviceAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_MobileDeviceAgentConfig` class does not define any methods.
+
+The `SMS_MobileDeviceAgentConfig` class does not define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Mobile Device Agent ID is 12.
+Qualifiers: [key, read]
 
- `DeviceEnrollmentProfileID`
- Data type: `UInt32`
+Identifies the client agent component. The Mobile Device Agent ID is 12.
 
- Access type: Read/Write
+`DeviceEnrollmentProfileID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Mobile device enrollment profile ID.
+Qualifiers: none
 
- `EnableDeviceEnrollment`
- Data type: `UInt32`
+Mobile device enrollment profile ID.
 
- Access type: Read/Write
+`EnableDeviceEnrollment` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Allow users to enroll mobile devices.
+Qualifiers: none
 
- `EnableFileCollection`
- Data type: `Boolean`
+Allow users to enroll mobile devices.
 
- Access type: Read/Write
+`EnableFileCollection` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to enable file collection.
+Qualifiers: none
 
- `EnableHardwareInventory`
- Data type: `Boolean`
+`true` to enable file collection.
 
- Access type: Read/Write
+`EnableHardwareInventory` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to enable hardware inventory.
+Qualifiers: none
 
- `EnableModernDeviceEnrollment`
- Data type: `UInt32`
+`true` to enable hardware inventory.
 
- Access type: Read/Write
+`EnableModernDeviceEnrollment` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Enables enrollment for modern devices.
+Qualifiers: none
 
- `EnableSoftwareDistribution`
- Data type: `Boolean`
+Enables enrollment for modern devices.
 
- Access type: Read/Write
+`EnableSoftwareDistribution` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to enable software distribution on devices.
+Qualifiers: none
 
- `EnableSoftwareInventory`
- Data type: `Boolean`
+`true` to enable software distribution on devices.
 
- Access type: Read/Write
+`EnableSoftwareInventory` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to enable software inventory on devices.
+Qualifiers: none
 
- `FailureRetryCount`
- Data type: `UInt32`
+`true` to enable software inventory on devices.
 
- Access type: Read/Write
+`FailureRetryCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- FailureRetryCount description.
+Qualifiers: none
 
- `FailureRetryInterval`
- Data type: `String`
+FailureRetryCount description.
 
- Access type: Read/Write
+`FailureRetryInterval` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- FailureRetryInterval.
+Qualifiers: none
 
- `FileCollectionExcludeCompressed`
- Data type: `String Array`
+FailureRetryInterval.
 
- Access type: Read/Write
+`FileCollectionExcludeCompressed` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- When collecting files, exclude compressed files.
+Qualifiers: none
 
- `FileCollectionExcludeEncrypted`
- Data type: `String Array`
+When collecting files, exclude compressed files.
 
- Access type: Read/Write
+`FileCollectionExcludeEncrypted` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- When collecting files, exclude encrypted files.
+Qualifiers: none
 
- `FileCollectionFilter`
- Data type: `String Array`
+When collecting files, exclude encrypted files.
 
- Access type: Read/Write
+`FileCollectionFilter` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- FileCollectionFilter.
+Qualifiers: none
 
- `FileCollectionInterval`
- Data type: `String`
+FileCollectionFilter.
 
- Access type: Read/Write
+`FileCollectionInterval` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- FileCollectionInterval.
+Qualifiers: none
 
- `FileCollectionPath`
- Data type: `String Array`
+FileCollectionInterval.
 
- Access type: Read/Write
+`FileCollectionPath` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- FileCollectionPath.
+Qualifiers: none
 
- `FileCollectionSubdirectories`
- Data type: `String Array`
+FileCollectionPath.
 
- Access type: Read/Write
+`FileCollectionSubdirectories` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- FileCollectionSubdirectories.
+Qualifiers: none
 
- `HardwareInventoryInterval`
- Data type: `String`
+FileCollectionSubdirectories.
 
- Access type: Read/Write
+`HardwareInventoryInterval` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- HardwareInventoryInterval.
+Qualifiers: none
 
- `MDMPollInterval`
- Data type: `UInt32`
+HardwareInventoryInterval.
 
- Access type: Read/Write
+`MDMPollInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Polling interval for mobile device management.
+Qualifiers: none
 
- `ModernDeviceEnrollmentProfileID`
- Data type: `UInt32`
+Polling interval for mobile device management.
 
- Access type: Read/Write
+`ModernDeviceEnrollmentProfileID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- ID of the enrollment profile that allows users to enroll modern devices.
+Qualifiers: none
 
- `PollingInterval`
- Data type: `String`
+ID of the enrollment profile that allows users to enroll modern devices.
 
- Access type: Read/Write
+`PollingInterval` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Policy polling interval, in minutes.
+Qualifiers: none
 
- `PollServer`
- Data type: `String`
+Policy polling interval, in minutes.
 
- Access type: Read/Write
+`PollServer` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- PollServer.
+Qualifiers: none
 
- `SoftwareInventoryExcludeCompressed`
- Data type: `String Array`
+PollServer.
 
- Access type: Read/Write
+`SoftwareInventoryExcludeCompressed` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- When inventorying files, exclude compressed files.
+Qualifiers: none
 
- `SoftwareInventoryExcludeEncrypted`
- Data type: `String Array`
+When inventorying files, exclude compressed files.
 
- Access type: Read/Write
+`SoftwareInventoryExcludeEncrypted` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- When inventorying files, exclude encrypted files.
+Qualifiers: none
 
- `SoftwareInventoryFilter`
- Data type: `String Array`
+When inventorying files, exclude encrypted files.
 
- Access type: Read/Write
+`SoftwareInventoryFilter` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- SoftwareInventoryFilter.
+Qualifiers: none
 
- `SoftwareInventoryInterval`
- Data type: `String`
+SoftwareInventoryFilter.
 
- Access type: Read/Write
+`SoftwareInventoryInterval` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- SoftwareInventoryInterval.
+Qualifiers: none
 
- `SoftwareInventoryPath`
- Data type: `String Array`
+SoftwareInventoryInterval.
 
- Access type: Read/Write
+`SoftwareInventoryPath` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- SoftwareInventoryPath.
+Qualifiers: none
 
- `SoftwareInventorySubdirectories`
- Data type: `String Array`
+SoftwareInventoryPath.
 
- Access type: Read/Write
+`SoftwareInventorySubdirectories` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- SoftwareInventorySubdirectories.
+Qualifiers: none
+
+SoftwareInventorySubdirectories.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

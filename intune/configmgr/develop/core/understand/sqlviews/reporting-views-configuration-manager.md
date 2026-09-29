@@ -1,7 +1,7 @@
 ---
-title: Reporting views
+title: "Reporting views in Configuration Manager"
 description: Information about built-in and user-created reports.
-ms.date: 11/22/2021
+ms.date: "2021-11-22T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -24,4 +24,4 @@ For more information about the built-in reports supplied with Configuration Mana
 
 ## See also
 
-[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md)  
+[SQL Server views in Configuration Manager](sql-server-views-configuration-manager.md)

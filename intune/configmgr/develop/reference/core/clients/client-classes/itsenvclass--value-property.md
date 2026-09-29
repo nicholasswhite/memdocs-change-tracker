@@ -1,13 +1,15 @@
 ---
 title: "ITSEnvClass::Value Property"
 description: In Configuration Manager, the Value property contains the value of an operating system deployment task sequence environment variable.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ITSEnvClass::Value Property
+
 In Configuration Manager, the `Value` property contains the value of an operating system deployment task sequence environment variable.
 
 ## Syntax
@@ -20,28 +22,29 @@ HRESULT Value([in] BSTR Name, [out,retval] BSTR* Value);
 ```
 
 #### Parameters
- `Name`
- Data type: `BSTR`
 
- Qualifiers: [in]
+`Name` Data type: `BSTR`
 
- The name of the environment variable.
+Qualifiers: [in]
 
- `Value`
- Data type: `BSTR`
+The name of the environment variable.
 
- Qualifiers: [in; out, retval]
+`Value` Data type: `BSTR`
 
- On input, the value to set for the environment variable. On output, this parameter points to the value that is retrieved for the supplied name.
+Qualifiers: [in; out, retval]
+
+On input, the value to set for the environment variable. On output, this parameter points to the value that is retrieved for the supplied name.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following value.
 
- S_OK
- The method succeeded.
+An `HRESULT` code. Possible values include, but aren't limited to, the following value.
+
+S_OK The method succeeded.
 
 ## Remarks
- The `get_Value` function succeeds with S_OK when called with an invalid variable name, but retrieves an empty string for the value. This behavior differs from the more common return of a non-zero exit code to indicate an invalid variable name input.
+
+The `get_Value` function succeeds with S_OK when called with an invalid variable name, but retrieves an empty string for the value. This behavior differs from the more common return of a non-zero exit code to indicate an invalid variable name input.
 
 ## See Also
- [ITSEnvClass Interface](../../../../../develop/reference/core/clients/client-classes/itsenvclass-interface.md)
+
+[ITSEnvClass Interface](itsenvclass-interface.md)

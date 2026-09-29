@@ -1,7 +1,7 @@
 ---
 title: Windows Autopilot with co-management
 description: Use Windows Autopilot with co-management in Configuration Manager to simplify the set up of new Windows devices.
-ms.date: 11/08/2021
+ms.date: "2021-11-08T00:00:00Z"
 ms.subservice: co-management
 ms.topic: article
 ms.collection: tier3
@@ -22,17 +22,16 @@ Windows Autopilot reduces the time, resources, and complexity associated with de
 Windows Autopilot supports several scenarios, all of which are maximized with co-management:
 
 - Users can drive their own deployments of new devices into Microsoft Entra ID
-
 - You can set up self-deploying new device deployments into Microsoft Entra ID for shared devices and kiosks
-
 - With Windows Autopilot for existing devices, use Configuration Manager to migrate an existing device from earlier versions of Windows and Active Directory to later versions of Windows and Microsoft Entra ID
 
 In the following video, senior program manager Danny Guillory and principal program manager Andrew McMurray discuss and demo Windows Autopilot with co-management:
 
-> [!VIDEO https://aka.ms/docs/player?id=86b3188d-1f01-4655-b001-2274f072e910]
+[Embedded video](https://aka.ms/docs/player?id=86b3188d-1f01-4655-b001-2274f072e910)
 
 > [!NOTE]
-> [Introducing Windows Autopilot into co-management](./autopilot-enrollment.md). When you use [Windows Autopilot](/autopilot/overview) to provision a device, it first enrolls to Microsoft Entra ID and Microsoft Intune. If the intended end-state of the device is co-management, previously this experience was difficult because of installation of Configuration Manager client as Win32 app which introduces component timing and policy delays.
+>
+> [Introducing Windows Autopilot into co-management](autopilot-enrollment.md). When you use [Windows Autopilot](../../../autopilot/overview.md) to provision a device, it first enrolls to Microsoft Entra ID and Microsoft Intune. If the intended end-state of the device is co-management, previously this experience was difficult because of installation of Configuration Manager client as Win32 app which introduces component timing and policy delays.
 
 ## Benefits
 
@@ -83,8 +82,6 @@ Create satisfaction in your organization by creating a better user experience fo
 
 For more information, see the following articles:
 
-- [Windows Autopilot into co-management](./autopilot-enrollment.md)
-
-- [Create device groups](/autopilot/enrollment-autopilot)
-
-- [Windows Autopilot for existing devices](/autopilot/existing-devices)
+- [Windows Autopilot into co-management](autopilot-enrollment.md)
+- [Create device groups](../../../autopilot/enrollment-autopilot.md)
+- [Windows Autopilot for existing devices](../../../autopilot/existing-devices.md)

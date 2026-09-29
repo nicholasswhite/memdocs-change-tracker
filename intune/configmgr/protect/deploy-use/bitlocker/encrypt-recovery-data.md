@@ -1,7 +1,7 @@
 ---
 title: Encrypt recovery data in the database
 description: Encrypt BitLocker recovery keys, recovery packages, and TPM password hashes in the Configuration Manager database.
-ms.date: 06/12/2025
+ms.date: "2025-06-12T00:00:00Z"
 ms.subservice: protect
 ms.topic: how-to
 ms.collection: tier3
@@ -12,8 +12,6 @@ ms.service: configuration-manager
 
 *Applies to: Configuration Manager (current branch)*
 
-<!--3601034-->
-
 When you create a BitLocker management policy, Configuration Manager deploys the recovery service to a management point. On the **Client Management** page of the BitLocker management policy, when you **Configure BitLocker Management Services**, the client backs up key recovery information to the site database. This information includes BitLocker recovery keys, recovery packages, and TPM password hashes. When users are locked out of their protected device, you can use this information to help them recover access to the device.
 
 Given the sensitive nature of this information, you need to protect it. Configuration Manager requires an HTTPS connection between the client and the recovery service to encrypt the data in transit across the network. For more information, see [Encrypt recovery data over the network](encrypt-recovery-data-transit.md).
@@ -23,11 +21,13 @@ Consider also encrypting this data when stored in the site database. If you inst
 If you don't want to create a BitLocker management encryption certificate, opt-in to plain-text storage of the recovery data. When you create a BitLocker management policy, enable the option to **Allow recovery information to be stored in plain text**.
 
 > [!NOTE]
+>
 > Another layer of security is to encrypt the entire site database. If you enable encryption on the database, there aren't any functional issues in Configuration Manager.
 >
 > Encrypt with caution, especially in large-scale environments. Depending upon the tables you encrypt and the version of SQL, you might notice up to a 25% performance degradation. Update your backup and recovery plans, so that you can successfully recover the encrypted data.
 
 > [!NOTE]
+>
 > Configuration Manager never removes or deletes recovery information for devices from the database, even if the client is inactive or deleted. This behavior is for security reasons. It helps with scenarios where a device is stolen but later recovered. For large environments, the impact to the database size is about 9 KB of data per encrypted volume.
 
 ## SQL Server encryption certificate
@@ -37,44 +37,36 @@ Use this SQL Server certificate for Configuration Manager to encrypt BitLocker r
 Alternatively, you can use your own process to create and deploy this certificate, as long as it meets the following requirements:
 
 - The name of the BitLocker management encryption certificate must be `BitLockerManagement_CERT`.
-
 - Encrypt this certificate with a database master key.
-
 - The following SQL Server users need **Control** permissions on the certificate:
+
   - RecoveryAndHardwareCore
   - RecoveryAndHardwareRead
   - RecoveryAndHardwareWrite
-
 - Deploy the same certificate at every site database in your hierarchy.
-
 - Create the certificate with the latest version of SQL Server.
 
-    > [!IMPORTANT]
-    >
-    > - Certificates created with SQL Server 2016 or later are compatible with SQL Server 2014 or earlier.
-    > - Certificates created with SQL Server 2014 or earlier aren't compatible with SQL Server 2016 or later.
+  > [!IMPORTANT]
+  >
+  > - Certificates created with SQL Server 2016 or later are compatible with SQL Server 2014 or earlier.
+  > - Certificates created with SQL Server 2014 or earlier aren't compatible with SQL Server 2016 or later.
 
 ### Manage the encryption certificate on SQL Server upgrade
-
-<!-- 12405266 -->
 
 If your site database is on SQL Server 2014 or earlier, before you upgrade SQL Server to version 2016 or later, use the following procedure to rotate the certificate to a supported version.
 
 1. On an instance of SQL Server running the latest available version, at least version 2016:
 
-    1. [Create a new certificate](#create-certificate)
+   1. [Create a new certificate](#create-certificate)
+   2. [Back up the new certificate](#back-up-certificate)
+2. On the SQL Server instance with the encrypted site database that you plan to upgrade:
 
-    1. [Back up the new certificate](#back-up-certificate)
-
-1. On the SQL Server instance with the encrypted site database that you plan to upgrade:
-
-    1. Move the existing certificate on the site database server SQL Server instance to another name.
-
-    1. [Restore the new certificate](#restore-certificate).
-
-    1. Rotate the new certificate in for the existing certificate. Use the provided SQL function `[RecoveryAndHardwareCore].[RecryptKey]`
+   1. Move the existing certificate on the site database server SQL Server instance to another name.
+   2. [Restore the new certificate](#restore-certificate).
+   3. Rotate the new certificate in for the existing certificate. Use the provided SQL function `[RecoveryAndHardwareCore].[RecryptKey]`
 
 > [!IMPORTANT]
+>
 > If you upgrade SQL Server before you rotate the certificate, contact Microsoft Support for assistance with a work around.
 
 You can also use this process if your business requirements specify that you need to regularly renew this certificate.
@@ -97,7 +89,7 @@ Before you use this script in a production environment, change the following val
 - Password to create the master key (`MyMasterKeyPassword`)
 - Certificate expiry date (`20391022`)
 
-``` SQL
+```SQL
 USE CM_ABC
 IF NOT EXISTS (SELECT name FROM sys.symmetric_keys WHERE name = '##MS_DatabaseMasterKey##')
 BEGIN
@@ -116,9 +108,10 @@ END
 ```
 
 > [!NOTE]
+>
 > SQL doesn't check or enforce the certificate expiration date when the certificate is used for database encryption as is the case here.
 >
-> If your business requirements specify that you regularly renew this certificate, use the same process to [Manage the encryption certificate on SQL Server upgrade](#manage-the-encryption-certificate-on-sql-server-upgrade).<!-- memdocs#1011 -->
+> If your business requirements specify that you regularly renew this certificate, use the same process to [Manage the encryption certificate on SQL Server upgrade](#manage-the-encryption-certificate-on-sql-server-upgrade).
 
 ### Back up certificate
 
@@ -130,7 +123,7 @@ Before you use this script in a production environment, change the following val
 - File path and name (`C:\BitLockerManagement_CERT_KEY`)
 - Export key password (`MyExportKeyPassword`)
 
-``` SQL
+```SQL
 USE CM_ABC
 BACKUP CERTIFICATE BitLockerManagement_CERT TO FILE = 'C:\BitLockerManagement_CERT'
     WITH PRIVATE KEY ( FILE = 'C:\BitLockerManagement_CERT_KEY',
@@ -138,6 +131,7 @@ BACKUP CERTIFICATE BitLockerManagement_CERT TO FILE = 'C:\BitLockerManagement_CE
 ```
 
 > [!IMPORTANT]
+>
 > Always back up the certificate. In case you need to recover the site database, you might need to restore the certificate to regain access to the recovery keys.
 >
 > Store the exported certificate file and associated password in a secure location.
@@ -153,7 +147,7 @@ Before you use this script in a production environment, change the following val
 - File path and name (`C:\BitLockerManagement_CERT_KEY`)
 - Export key password (`MyExportKeyPassword`)
 
-``` SQL
+```SQL
 USE CM_ABC
 IF NOT EXISTS (SELECT name FROM sys.symmetric_keys WHERE name = '##MS_DatabaseMasterKey##')
 BEGIN
@@ -177,7 +171,7 @@ END
 
 Use this SQL script to verify that SQL Server successfully created the certificate with the required permissions.
 
-``` SQL
+```SQL
 USE CM_ABC
 declare @count int
 select @count = count(distinct u.name) from sys.database_principals u
@@ -199,12 +193,12 @@ If using SQL AlwaysOn, see [SQL AlwaysOn when BitLocker recovery data is encrypt
 
 For more information on these SQL commands, see the following articles:
 
-- [SQL Server and database encryption keys](/sql/relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine).
-- [Create certificate](/sql/t-sql/statements/create-certificate-transact-sql).
-- [Backup certificate](/sql/t-sql/statements/backup-certificate-transact-sql).
-- [Create master key](/sql/t-sql/statements/create-master-key-transact-sql).
-- [Backup master key](/sql/t-sql/statements/backup-master-key-transact-sql).
-- [Grant certificate permissions](/sql/t-sql/statements/grant-certificate-permissions-transact-sql).
+- [SQL Server and database encryption keys](https://learn.microsoft.com/en-us/sql/relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine).
+- [Create certificate](https://learn.microsoft.com/en-us/sql/t-sql/statements/create-certificate-transact-sql).
+- [Backup certificate](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-certificate-transact-sql).
+- [Create master key](https://learn.microsoft.com/en-us/sql/t-sql/statements/create-master-key-transact-sql).
+- [Backup master key](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-master-key-transact-sql).
+- [Grant certificate permissions](https://learn.microsoft.com/en-us/sql/t-sql/statements/grant-certificate-permissions-transact-sql).
 - [SQL AlwaysOn when BitLocker recovery data is encrypted in the database](bitlocker-keys-sql-always-on.md).
 
 ## Next steps

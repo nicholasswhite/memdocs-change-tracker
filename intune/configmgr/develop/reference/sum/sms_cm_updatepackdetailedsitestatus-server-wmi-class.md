@@ -1,7 +1,7 @@
 ---
-title: "SMS_CM_UpdatePackDetailedSiteStatus Class"
+title: "SMS_CM_UpdatePackDetailedSiteStatus Server WMI Class"
 description: "In Configuration Manager, the  SMS_CM_UpdatePackDetailedSiteStatus WMI class is an SMS Provider server class that is used to get detailed update package installation status per site."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_CM_UpdatePackDetailedSiteStatus Server WMI Class
-The  `SMS_CM_UpdatePackDetailedSiteStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get detailed update package installation status per site.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_CM_UpdatePackDetailedSiteStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get detailed update package installation status per site.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_CM_UpdatePackDetailedSiteStatus : SMS_BaseClass  
 {  
     DateTime MessageTime;  
@@ -30,106 +32,110 @@ Class SMS_CM_UpdatePackDetailedSiteStatus : SMS_BaseClass
     SInt32 SubStatusID;  
 };  
 
-```  
+```
 
-## Methods  
- The `SMS_CM_UpdatePackDetailedSiteStatus` class does not define any methods.  
+## Methods
 
-## Properties  
- `MessageTime`  
- Data type: `DateTime`  
+The `SMS_CM_UpdatePackDetailedSiteStatus` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [read]  
+`MessageTime`  
+ Data type: `DateTime`
 
- The time that the message was created.  
+Access type: Read-only
 
- `PackageGuid`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The time that the message was created.
 
- Qualifiers: [read]  
+`PackageGuid`  
+ Data type: `String`
 
- Unique identifier of the update package.  
+Access type: Read-only
 
- `SiteCode`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Unique identifier of the update package.
 
- Qualifiers: [read, key, not_null]  
+`SiteCode`  
+ Data type: `String`
 
- Unique identifier of the site.  
+Access type: Read-only
 
- `SiteInstallID`  
- Data type: `SInt32`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+Unique identifier of the site.
 
- Qualifiers: [read, key, not_null]  
+`SiteInstallID`  
+ Data type: `SInt32`
 
- The number of installation retires.  
+Access type: Read-only
 
- `SiteNumber`  
- Data type: `Sint32`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+The number of installation retires.
 
- Qualifiers: [read, key, not_null]  
+`SiteNumber`  
+ Data type: `Sint32`
 
- Unique identifier of the site.  
+Access type: Read-only
 
- `StatusDescription`  
- Data type: `String`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+Unique identifier of the site.
 
- Qualifiers: [read]  
+`StatusDescription`  
+ Data type: `String`
 
- Description of the status.  
+Access type: Read-only
 
- `StatusID`  
- Data type: `Sint32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Description of the status.
 
- Qualifiers: [read, key, not_null]  
+`StatusID`  
+ Data type: `Sint32`
 
- The status ID.  
+Access type: Read-only
 
- `StatusName`  
- Data type: `String`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+The status ID.
 
- Qualifiers: [read]  
+`StatusName`  
+ Data type: `String`
 
- Name of the status.  
+Access type: Read-only
 
- `SubStatusID`  
- Data type: `SInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Name of the status.
 
- Qualifiers: [read, key, not_null]  
+`SubStatusID`  
+ Data type: `SInt32`
 
- The ID of the `SubStatus`.  
+Access type: Read-only
 
-## Remarks  
- Class qualifiers for this class include:  
+Qualifiers: [read, key, not_null]
 
-- Dynamic  
+The ID of the `SubStatus`.
 
-- Read (read-only)  
+## Remarks
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+Class qualifiers for this class include:
 
-## Requirements  
+- Dynamic
+- Read (read-only)
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

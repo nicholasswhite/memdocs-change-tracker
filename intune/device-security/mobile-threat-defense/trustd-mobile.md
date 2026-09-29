@@ -1,7 +1,7 @@
 ---
-title: Trustd Mobile Threat Defense with Microsoft Intune
+title: "Use Trustd Mobile with Microsoft Intune"
 description: Set up Trustd Mobile Threat Defense with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 06/24/2026
+ms.date: "2026-06-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ilwu
 ai-usage: ai-assisted
@@ -42,7 +42,7 @@ Trustd Mobile integrates with Microsoft Intune to ensure corporate resources are
 
 Trustd Mobile reports a risk score to Intune using the Intune Mobile Threat Defense connector. This score updates device compliance status. When a threat is detected, the device is marked noncompliant, and your Conditional Access policies block access to sensitive resources. The Trustd Mobile app guides users to remediate threats to restore compliance and access.
 
-For step-by-step guidance on setting up and integrating Trustd Mobile with Intune, see [Integrate Trustd Mobile with Microsoft Intune](./setup-trustd-mobile.md).
+For step-by-step guidance on setting up and integrating Trustd Mobile with Intune, see [Integrate Trustd Mobile with Microsoft Intune](setup-trustd-mobile.md).
 
 ## Common scenarios
 
@@ -54,11 +54,11 @@ When an application behaves in a malicious way, such as stealing credentials or 
 
 Block when malicious apps are detected:
 
-:::image type="content" source="./media/trustd-mobile/trustd-mobile-malicious-apps-blocked.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/trustd-mobile/trustd-mobile-malicious-apps-blocked.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/trustd-mobile/trustd-mobile-malicious-apps-unblocked.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/trustd-mobile/trustd-mobile-malicious-apps-unblocked.png)
 
 ### Control access based on threat to network
 
@@ -66,11 +66,11 @@ Detect threats to your network like **Man-in-the-middle** attacks, and protect a
 
 Block network access through Wi-Fi:
 
-:::image type="content" source="./media/trustd-mobile/trustd-mobile-network-wifi-blocked.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/trustd-mobile/trustd-mobile-network-wifi-blocked.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/trustd-mobile/trustd-mobile-network-wifi-unblocked.png" alt-text="Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![Product flow for granting access through Wi-Fi after the alert is remediated.](media/trustd-mobile/trustd-mobile-network-wifi-unblocked.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -78,14 +78,14 @@ Detect threats to your network like **Man-in-the-middle** attacks, and prevent s
 
 Block SharePoint Online when network threats are detected:
 
-:::image type="content" source="./media/trustd-mobile/trustd-mobile-network-spo-blocked.png" alt-text="Product flow for blocking access to the organization's files due to an alert.":::
+![Product flow for blocking access to the organization's files due to an alert.](media/trustd-mobile/trustd-mobile-network-spo-blocked.png)
 
 Access granted on remediation:
 
-:::image type="content" source="./media/trustd-mobile/trustd-mobile-network-spo-unblocked.png" alt-text="Product flow for granting access to the organization's files after the alert is remediated.":::
+![Product flow for granting access to the organization's files after the alert is remediated.](media/trustd-mobile/trustd-mobile-network-spo-unblocked.png)
 
 ## Related content
 
-- [Mobile Threat Defense with Microsoft Intune](./overview.md)
-- [Create device compliance policy for Mobile Threat Protection](./create-compliance-policy.md)
-- [Enable mobile threat connectors in Intune](./enable-connector.md)
+- [Mobile Threat Defense with Microsoft Intune](overview.md)
+- [Create device compliance policy for Mobile Threat Protection](create-compliance-policy.md)
+- [Enable mobile threat connectors in Intune](enable-connector.md)

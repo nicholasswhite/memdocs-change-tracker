@@ -1,27 +1,28 @@
 ---
 title: Understand Intune and Microsoft Entra device limit restrictions
 description: Learn the differences between Intune device limit restrictions and Microsoft Entra device limit restrictions.
-ms.date: 10/14/2024
+ms.date: "2024-10-14T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: maholdaa
 ---
 
-# Understand Intune and Microsoft Entra device limit restrictions  
+# Understand Intune and Microsoft Entra device limit restrictions
 
 There are two ways to limit the number of devices an employee or student can use for work or school. You can:
 
-* Configure device limit restrictions in the Microsoft Intune admin center.
-* Configure a device limit in the Microsoft Entra admin center.
+- Configure device limit restrictions in the Microsoft Intune admin center.
+- Configure a device limit in the Microsoft Entra admin center.
 
-This article provides an overview of each limitation, and describes the device conditions and provisioning scenarios that support them. It applies to:  
-- Android  
-- iOS  
-- macOS  
-- Windows  
+This article provides an overview of each limitation, and describes the device conditions and provisioning scenarios that support them. It applies to:
+
+- Android
+- iOS
+- macOS
+- Windows
 
 ## Intune device limit restrictions
 
-Configure Intune device limit restrictions to limit the number of devices a user can enroll in Microsoft Intune. You can allow a user to enroll up to 15 devices. To create a device limit restriction, sign in to the [Microsoft Intune admin center] and go to **Devices** > **Enrollment**. For more information, see [Create a device limit restriction](create-device-limit-restrictions.md).
+Configure Intune device limit restrictions to limit the number of devices a user can enroll in Microsoft Intune. You can allow a user to enroll up to 15 devices. To create a device limit restriction, sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Devices** &gt; **Enrollment**. For more information, see [Create a device limit restriction](create-device-limit-restrictions.md).
 
 Intune device limit restrictions don't apply to devices enrolled via:
 
@@ -41,7 +42,7 @@ Devices enrolled via these methods are enrolled automatically or by an Intune ad
 Configure the *maximum number of devices per user* in Microsoft Entra to limit the number of devices that can join or register with Microsoft Entra. To access this setting:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-2. Go to **Identity** > **Devices** > **Device settings**.
+2. Go to **Identity** &gt; **Devices** &gt; **Device settings**.
 
 The limit applies to devices that are Microsoft Entra joined or Microsoft Entra registered, with some exceptions. It isn't applicable to Microsoft Entra hybrid joined devices, and devices enrolled via:
 
@@ -49,31 +50,35 @@ The limit applies to devices that are Microsoft Entra joined or Microsoft Entra 
 - Windows automatic enrollment + bulk device enrollment
 - Windows automatic enrollment + group policy
 
-For more information about configuring these setting in Microsoft Entra ID, see [Configure device settings](/azure/active-directory/devices/device-management-azure-portal).
+For more information about configuring these setting in Microsoft Entra ID, see [Configure device settings](https://learn.microsoft.com/en-us/azure/active-directory/devices/device-management-azure-portal).
 
 ## Applicable scenarios
+
 Use the following table to determine the type of limitations you can apply to devices.
 
-|Platform| Device management solution | User affinity | Does Microsoft Entra limitation apply? | Does Intune limitation apply? |
-| -----| ----- | ----- | ----- | ----- |
-|Android| Android Enterprise personally owned work profile | Yes | Yes | Yes|
-|Android| Android Enterprise dedicated device | No | No | No |
-|Android| Android Enterprise fully managed | Yes | Yes | Yes |
-|Android| Android Enterprise corporate-owned work profile | Yes | Yes | Yes |
-|Android| Android device administrator | Yes | Yes | Yes |
-|Android| Android device administrator + device enrollment manager | No | Yes | No |
-|iOS and macOS| BYOD: Apple User Enrollment | Yes | Yes | Yes |
-|iOS and macOS| BYOD: Apple Device Enrollment | Yes | Yes | Yes |
-|iOS and macOS| Apple Automated Device Enrollment | Yes | Yes | Yes |
-|Windows| BYOD: User enrollment | Yes | Yes | Yes |
-|Windows | Automatic enrollment + group policy | No | No | No |
-|Windows | Automatic enrollment + device enrollment manager | No | Yes | No |
-|Windows | Automatic enrollment + bulk device enrollment | No | No | No |
-|Windows| Windows Autopilot | Yes | Yes | No |
-|Windows| Co-management with Configuration Manager | No | Yes | No |
+| Platform | Device management solution | User affinity | Does Microsoft Entra limitation apply? | Does Intune limitation apply? |
+| --- | --- | --- | --- | --- |
+| Android | Android Enterprise personally owned work profile | Yes | Yes | Yes |
+| Android | Android Enterprise dedicated device | No | No | No |
+| Android | Android Enterprise fully managed | Yes | Yes | Yes |
+| Android | Android Enterprise corporate-owned work profile | Yes | Yes | Yes |
+| Android | Android device administrator | Yes | Yes | Yes |
+| Android | Android device administrator + device enrollment manager | No | Yes | No |
+| iOS and macOS | BYOD: Apple User Enrollment | Yes | Yes | Yes |
+| iOS and macOS | BYOD: Apple Device Enrollment | Yes | Yes | Yes |
+| iOS and macOS | Apple Automated Device Enrollment | Yes | Yes | Yes |
+| Windows | BYOD: User enrollment | Yes | Yes | Yes |
+| Windows | Automatic enrollment + group policy | No | No | No |
+| Windows | Automatic enrollment + device enrollment manager | No | Yes | No |
+| Windows | Automatic enrollment + bulk device enrollment | No | No | No |
+| Windows | Windows Autopilot | Yes | Yes | No |
+| Windows | Co-management with Configuration Manager | No | Yes | No |
 
 ## Android and iOS devices
- [!INCLUDE [android_device_administrator_support](../includes/android-device-administrator-support.md)]
+
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
 ### iOS or Android devices example 1
 
@@ -107,12 +112,7 @@ Use the following table to determine the type of limitations you can apply to de
 
 **Outcome:** You can only enroll two devices before they're blocked. You can register up to five devices.
 
-
 ## Next steps
 
-- [Create a device limit restriction in Azure.](/azure/active-directory/devices/device-management-azure-portal#configure-device-settings)
-- [Learn more about registration and domain joined.](/azure/active-directory/devices/overview#getting-devices-in-azure-ad)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Create a device limit restriction in Azure.](https://learn.microsoft.com/en-us/azure/active-directory/devices/device-management-azure-portal#configure-device-settings)
+- [Learn more about registration and domain joined.](https://learn.microsoft.com/en-us/azure/active-directory/devices/overview#getting-devices-in-azure-ad)

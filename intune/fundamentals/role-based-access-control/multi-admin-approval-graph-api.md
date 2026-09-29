@@ -1,7 +1,7 @@
 ---
 title: Use Multi Admin Approval with the Microsoft Graph API
 description: Learn how to update your automation scripts and applications to work with Multi Admin Approval enforcement on app-authenticated API calls in Microsoft Intune.
-ms.date: 08/06/2026
+ms.date: "2026-08-06T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.reviewer: davidra
@@ -17,6 +17,7 @@ Multi Admin Approval (MAA) enforces approval workflows on application-authentica
 This article explains how to update your automation to work with the MAA approval workflow, and how to exclude specific applications from enforcement when a code change isn't immediately feasible.
 
 > [!IMPORTANT]
+>
 > MAA is opt-in per workload for every tenant. This enforcement applies only to tenants that have MAA access policies configured. It doesn't automatically enable MAA or change which tenants have MAA. For more information about configuring access policies, see [Use access policies to require multi admin approval](multi-admin-approval.md).
 
 ## What changes for app-auth calls
@@ -41,7 +42,7 @@ MAA only applies to operations that modify protected resources (POST, PATCH, PUT
 
 ## Prerequisites
 
-- An [app registration](/entra/identity-platform/quickstart-register-app) with the required Microsoft Graph application permissions for the Intune resources your app manages (for example, `DeviceManagementApps.ReadWrite.All`).
+- An [app registration](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) with the required Microsoft Graph application permissions for the Intune resources your app manages (for example, `DeviceManagementApps.ReadWrite.All`).
 - MAA access policies configured for the relevant workloads. For more information, see [Create an access policy](multi-admin-approval.md#create-an-access-policy).
 - A separate admin account that's a member of the approver group for the access policy. Applications can't approve or reject MAA requests — only interactive admin accounts can approve requests.
 
@@ -67,6 +68,7 @@ x-msft-approval-justification: YXBwIG9ubHkgdGVzdA==
 ```
 
 > [!TIP]
+>
 > The `x-msft-approval-justification` value is Base64-encoded. For example, `YXBwIG9ubHkgdGVzdA==` decodes to `app only test`. Encode your own justification string before sending.
 
 Without the justification header, the request fails with an error indicating that the `x-msft-approval-justification` header is required.
@@ -93,7 +95,6 @@ Content-Type: application/json
 ```
 
 Extract the `x-msft-approval-code` value from the response. Save the original HTTP method, URL, and request body with this value because you must resubmit the same request in Step 4 after approval.
-
 
 ## Step 3: Wait for approval
 
@@ -156,7 +157,7 @@ No. Applications can't approve or reject MAA requests. A separate interactive ad
 
 ### How do I check if my tenant has MAA enabled?
 
-In the Microsoft Intune admin center, go to **Tenant administration** > **Multi Admin Approval** > **Access policies**. If there are active access policies listed, MAA is enabled for those workloads.
+In the Microsoft Intune admin center, go to **Tenant administration** &gt; **Multi Admin Approval** &gt; **Access policies**. If there are active access policies listed, MAA is enabled for those workloads.
 
 ### Can I turn off MAA to stop the enforcement?
 

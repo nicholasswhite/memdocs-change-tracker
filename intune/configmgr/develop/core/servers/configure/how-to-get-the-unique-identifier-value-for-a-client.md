@@ -1,13 +1,15 @@
 ---
-title: Get the Unique Identifier Value for a Client
+title: "How to Get the Unique Identifier Value for a Client"
 description: When you discover system resource data for a client, in Configuration Manager, you must specify the client's unique identifier value in the data discovery record (DDR).
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Get the Unique Identifier Value for a Client
+
 When you discover system resource data for a client, in Configuration Manager, you must specify the client's unique identifier value in the data discovery record (DDR), such as:
 
 ```
@@ -16,7 +18,7 @@ DDRAddString("SMS Unique Identifier",
              ADDPROP_GUID | ADDPROP_KEY);
 ```
 
- The client's unique identifier can be found in Windows Management Instrumentation (WMI) at:
+The client's unique identifier can be found in Windows Management Instrumentation (WMI) at:
 
 ```
 root\ccm:CCM_Client=@:ClientId
@@ -26,21 +28,21 @@ root\ccm:CCM_Client=@:ClientId
 
 #### To identify the client's unique identifier in WMI
 
-1.  Connect to the CCM namespace (root\ccm).
-
-2.  Load the `CCM_Client` class.
-
-3.  Enumerate through the objects in the `CCM_Client` class and display the unique identifier (ClientId).
+1. Connect to the CCM namespace (root\ccm).
+2. Load the `CCM_Client` class.
+3. Enumerate through the objects in the `CCM_Client` class and display the unique identifier (ClientId).
 
 ## Example
 
 ### Description
- The following example method shows how to obtain the client's unique identifier from WMI by connecting to the CCM namespace, loading the `CCM_Client` class and getting the ClientId property.
+
+The following example method shows how to obtain the client's unique identifier from WMI by connecting to the CCM namespace, loading the `CCM_Client` class and getting the ClientId property.
 
 > [!IMPORTANT]
->  The following C# example requires the System.Management namespace.
+>
+> The following C# example requires the System.Management namespace.
 
- For information about calling the sample code, see [How to Call a Configuration Manager Object Class Method by Using WMI](../../../../develop/core/understand/how-to-call-a-configuration-manager-object-class-method-by-using-wmi.md)
+For information about calling the sample code, see [How to Call a Configuration Manager Object Class Method by Using WMI](../../understand/how-to-call-a-configuration-manager-object-class-method-by-using-wmi.md)
 
 ### Code
 
@@ -99,16 +101,21 @@ public void GetClientUniqueID()
 ### Comments
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 #### Namespaces
- System.Management
+
+System.Management
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).
 
 ## See Also
- [How to Call a WMI Class Method by Using System.Management](../../../../develop/core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md)
+
+[How to Call a WMI Class Method by Using System.Management](../../clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md)

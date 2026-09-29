@@ -1,14 +1,16 @@
 ---
-title: UpdateProfileIDForDevices Method
+title: "UpdateProfileIDForDevices Method in Class SMS_MDMCorpOwnedDevices"
 description: Update the profile IDs for device serial numbers.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # UpdateProfileIDForDevices Method in Class SMS_MDMCorpOwnedDevices
-The `UpdateProfileIdForDevices` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the  profile IDs for device serial numbers.
+
+The `UpdateProfileIdForDevices` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the profile IDs for device serial numbers.
 
 ## Syntax
 
@@ -21,32 +23,35 @@ sint32 UpdateProfileIdForDevices(
 ```
 
 #### Parameters
- `RequestEnrollmentProfileId`
- Data type: `String`
 
- Qualifiers: [in]
+`RequestEnrollmentProfileId` Data type: `String`
 
- Enrollment profile ID.
+Qualifiers: [in]
 
- `DeviceSerialNumbers`
- Data type: `String Array`
+Enrollment profile ID.
 
- Qualifiers: [in]
+`DeviceSerialNumbers` Data type: `String Array`
 
- The serial number of the device.
+Qualifiers: [in]
+
+The serial number of the device.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_MDMCorpOwnedDevices Server WMI Class](../../../develop/reference/mdm/sms_mdmcorpowneddevices-server-wmi-class.md)
+
+[SMS_MDMCorpOwnedDevices Server WMI Class](sms_mdmcorpowneddevices-server-wmi-class.md)

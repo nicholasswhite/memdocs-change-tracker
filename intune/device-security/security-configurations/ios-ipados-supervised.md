@@ -1,14 +1,14 @@
 ---
-title: iOS/iPadOS supervised device security configurations
+title: "iOS/iPadOS supervised device security configurations examples"
 description: Review example supervised device security configurations of basic, enhanced, and high security for iOS devices.
-ms.date: 03/20/2025
+ms.date: "2025-03-20T00:00:00Z"
 ms.topic: reference
 ms.reviewer:
 ---
 
 # iOS/iPadOS supervised device security configurations examples
 
-In support of the [Microsoft Zero Trust security model](/security/zero-trust/zero-trust-identity-device-access-policies-common), this article provides example configurations you can use with Microsoft Intune to configure iOS/iPad device compliance settings for mobile users using supervised devices. These examples include three levels of device security configuration that align with Zero Trust principles.
+In support of the [Microsoft Zero Trust security model](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-identity-device-access-policies-common), this article provides example configurations you can use with Microsoft Intune to configure iOS/iPad device compliance settings for mobile users using supervised devices. These examples include three levels of device security configuration that align with Zero Trust principles.
 
 When using these examples, work with your security team to evaluate the threat environment, risk appetite, and the effect the different levels and configurations can have on usability. After reviewing and adjusting the examples to meet the needs of your organization, you can incorporate them within a ring deployment methodology for testing and production use by importing the sample [iOS/iPadOS Security Configuration Framework JSON templates](https://github.com/microsoft/Intune-Config-Frameworks/tree/master/iOS) with [Intune's PowerShell scripts](https://github.com/microsoftgraph/powershell-intune-samples).
 
@@ -29,10 +29,10 @@ The following table lists only configured settings. Settings not listed in the t
 ### Device restrictions
 
 | Category | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | App Store, Doc Viewing, Gaming | Treat AirDrop as an unmanaged destination | Yes |  |
 | Built-in Apps | Block Siri while device is locked | Yes |  |
-| Built-in Apps | Require Safari fraud warnings  | Yes |  |
+| Built-in Apps | Require Safari fraud warnings | Yes |  |
 | Cloud and Storage | Force encrypted backup | Yes |  |
 | Cloud and Storage | Block managed apps from storing data in iCloud | Yes |  |
 | Cloud and Storage | Block iCloud Keychain sync | Yes |  |
@@ -40,7 +40,7 @@ The following table lists only configured settings. Settings not listed in the t
 | Connected Devices | Block storage of AirPrint credentials in Keychain | Yes |  |
 | Connected Devices | Require AirPrint to destinations with trusted certificates | Yes |  |
 | Connected Devices | Block iBeacon discovery of AirPrint printers | Yes |  |
-| Connected Devices | Block setting up new nearby devices  | Yes |  |
+| Connected Devices | Block setting up new nearby devices | Yes |  |
 | General | Block untrusted TLS certificates | Yes |  |
 | General | Block trusting new enterprise app authors | Yes |  |
 | General | Allow activation lock | Yes |  |
@@ -52,7 +52,7 @@ The following table lists only configured settings. Settings not listed in the t
 | Password | Minimum password length | 6 | Organizations should update this setting to match their password policy. |
 | Password | Number of sign-in failures before wiping the device | 10 | Organizations should update this setting to match their password policy. |
 | Password | Maximum minutes after screen lock before password is required | 5 | Organizations should update this setting to match their password policy. |
-| Password | Maximum minutes of inactivity until screen locks  | 5 | Organizations should update this setting to match their password policy. |
+| Password | Maximum minutes of inactivity until screen locks | 5 | Organizations should update this setting to match their password policy. |
 | Password | Block password proximity requests | Yes |  |
 | Password | Block password sharing | Yes |  |
 | Password | Require Touch ID or Face ID authentication for AutoFill of password or credit card information | Yes |  |
@@ -68,13 +68,13 @@ The level 2 settings include all the policy settings recommended for level 1. Ho
 ### Device restrictions
 
 | Category | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | App Store, Doc Viewing, Gaming | Block viewing corporate documents in unmanaged apps | Yes |  |
 | App Store, Doc Viewing, Gaming | Block viewing non-corporate documents in corporate apps | Not configured | Enabling this device restriction blocks Outlook for iOS’s ability to export contacts. This setting isn't recommended if using Outlook for iOS. For more information, see [Support Tip: Enabling Outlook iOS Contact Sync with iOS12 MDM Controls](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-enabling-outlook-ios-contact-sync-with-ios12-mdm/ba-p/298453). |
 | App Store, Doc Viewing, Gaming | Allow managed apps to write contacts to unmanaged contacts accounts | Yes | This setting is needed to allow Outlook for iOS to export contacts when **Block viewing corporate documents in unmanaged apps** is set to *Yes*. For more information, see [Support Tip: Enabling Outlook iOS Contact Sync with iOS12 MDM Controls](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-enabling-outlook-ios-contact-sync-with-ios12-mdm/ba-p/298453). |
 | App Store, Doc Viewing, Gaming | Allow copy/paste to be affected by managed open-in | Yes | Enabling this setting blocks personal accounts within managed Microsoft apps from sharing data to unmanaged apps. |
-| Built-in Apps | Block Siri for dictation   | Yes |  |
-| Built-in Apps | Block Siri for translation   | Yes |  |
+| Built-in Apps | Block Siri for dictation | Yes |  |
+| Built-in Apps | Block Siri for translation | Yes |  |
 | Cloud Storage | Block backup of enterprise books | Yes |  |
 | Cloud Storage | Block notes and highlights sync for enterprise books | Yes |  |
 | Cloud Storage | Block iCloud document and data sync | Yes |  |
@@ -102,7 +102,7 @@ The policy settings enforced in level 3 include all the policy settings recommen
 ### Device restrictions
 
 | Category | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | App Store, Doc Viewing, Gaming | Block App store | Yes |  |
 | App Store, Doc Viewing, Gaming | Block playback of explicit music, podcast, and iTunes U | Yes |  |
 | App Store, Doc Viewing, Gaming | Block adding Game Center friends | Yes |  |
@@ -121,7 +121,7 @@ The policy settings enforced in level 3 include all the policy settings recommen
 | Connected Devices | Block AirDrop | Yes |  |
 | Connected Devices | Block pairing with non-Configurator hosts | Yes |  |
 | Connected Devices | Block AirPrint | Yes |  |
-| Connected Devices | Allow users to boot devices into recovery mode with unpaired devices  | Not configured |  |
+| Connected Devices | Allow users to boot devices into recovery mode with unpaired devices | Not configured |  |
 | General | Block screenshots and screen recording | Yes |  |
 | General | Block modification of account settings | Yes |  |
 | General | Block users from erasing all content and settings on device | Yes |  |
@@ -133,11 +133,11 @@ The policy settings enforced in level 3 include all the policy settings recommen
 | Password | Number of sign-in failures before wiping the device | 5 | Organizations should update this setting to match their password policy. |
 | Password | Password expiration (days) | 365 | Organizations should update this setting to match their password policy. |
 | Password | Prevent reuse of previous passwords | 5 | Organizations should update this setting to match their password policy. |
-| Password | Block password AutoFill | Yes | |
+| Password | Block password AutoFill | Yes |  |
 | Wireless | Block voice dialing while device is locked | Yes |  |
 | Wireless | Require joining Wi-Fi networks only using configuration profiles | Not configured | Take care when using this setting as it could affect your ability to connect to the device if the specified Wi-Fi Networks are unavailable or if the setting is configured incorrectly. This could result in a situation where you're locked out of the device and unable to remotely reset the device. |
 
 ## Related articles
 
-- [Configure device compliance security policies](./ios-ipados-compliance.md)
-- [Configure device security policies for personal devices](./ios-ipados-personal.md)
+- [Configure device compliance security policies](ios-ipados-compliance.md)
+- [Configure device security policies for personal devices](ios-ipados-personal.md)

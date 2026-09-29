@@ -1,16 +1,18 @@
 ---
-title: SMS_SecuredCategory Class
+title: "SMS_SecuredCategory Server WMI Class"
 description: The SMS_SecuredCategory Windows Management Instrumentation class is an SMS Provider server class, in Configuration Manager, that represents the RBA security category.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SecuredCategory Server WMI Class
+
 The `SMS_SecuredCategory` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the RBA security category. An RBA security category defines a set of objects associated with it.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,112 +34,105 @@ Class SMS_SecuredCategory : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SecuredCategory` class does not define any methods.
+
+The `SMS_SecuredCategory` class does not define any methods.
 
 ## Properties
- `CategoryDescription`
- Data type: `String`
 
- Access type: Read/Write
+`CategoryDescription` Data type: `String`
 
- Qualifiers: [sizelimit("512")]
+Access type: Read/Write
 
- Description of the RBA security category.
+Qualifiers: [sizelimit("512")]
 
- `CategoryID`
- Data type: `String`
+Description of the RBA security category.
 
- Access type: Read-only
+`CategoryID` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- The ID of the RBA security category. Auto generated when the RBA security category is created.
+Qualifiers: [key, read]
 
- `CategoryName`
- Data type: `String`
+The ID of the RBA security category. Auto generated when the RBA security category is created.
 
- Access type: Read/Write
+`CategoryName` Data type: `String`
 
- Qualifiers: [not_null, sizelimit("256"]
+Access type: Read/Write
 
- Name of the RBA security category.
+Qualifiers: [not_null, sizelimit("256"]
 
- `CreatedBy`
- Data type: `String`
+Name of the RBA security category.
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [not_null, read, SizeLimit("512")]
+Access type: Read-only
 
- The logon name of the user that created the RBA security category.
+Qualifiers: [not_null, read, SizeLimit("512")]
 
- `CreatedDate`
- Data type: `DateTime`
+The logon name of the user that created the RBA security category.
 
- Access type: Read-only
+`CreatedDate` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The date when the RBA security category was created.
+Qualifiers: [not_null, read]
 
- `IsBuiltIn`
- Data type: `Boolean`
+The date when the RBA security category was created.
 
- Access type: Read-only
+`IsBuiltIn` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true`, if RBA security category is built-in.
+Qualifiers: [read]
 
- `LastModifiedBy`
- Data type: `String`
+`true`, if RBA security category is built-in.
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [not_null, read, SizeLimit("512")]
+Access type: Read-only
 
- User that last modified the RBA security category.
+Qualifiers: [not_null, read, SizeLimit("512")]
 
- `LastModifiedDate`
- Data type: `DateTime`
+User that last modified the RBA security category.
 
- Access type: Read-only
+`LastModifiedDate` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Time when the RBA security category was last modified.
+Qualifiers: [not_null, read]
 
- `NumberOfAdmins`
- Data type: `UInt32`
+Time when the RBA security category was last modified.
 
- Access type: Read-only
+`NumberOfAdmins` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Number of admin accounts associated with the RBA security category.
+Qualifiers: [read]
 
- `NumberOfObjects`
- Data type: `UInt32`
+Number of admin accounts associated with the RBA security category.
 
- Access type: Read-only
+`NumberOfObjects` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The number of objects associated with the RBA security category.
+Qualifiers: [read]
 
- `SourceSite`
- Data type: `String`
+The number of objects associated with the RBA security category.
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [not_null, read, SizeLimit("3")]
+Access type: Read-only
 
- The site where the RBA security category was created.
+Qualifiers: [not_null, read, SizeLimit("3")]
+
+The site where the RBA security category was created.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

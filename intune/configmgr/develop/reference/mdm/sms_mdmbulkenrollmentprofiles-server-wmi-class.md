@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent On-premises Mobile Device Management (MDM) bulk enrollment profiles using SMS_BulkEnrollmentProfiles class.
-title: SMS_MDMBulkEnrollmentProfiles Class
-ms.date: 09/20/2016
+title: "SMS_MDMBulkEnrollmentProfiles Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_MDMBulkEnrollmentProfiles Server WMI Class
-The  `SMS_BulkEnrollmentProfiles` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents On-premises Mobile Device Management  (MDM)  bulk enrollment profiles.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_MDMBulkEnrollmentProfiles Server WMI Class
+
+The `SMS_BulkEnrollmentProfiles` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents On-premises Mobile Device Management (MDM) bulk enrollment profiles.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,172 +40,160 @@ Class SMS_MDMBulkEnrollmentProfiles : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MDMBulkEnrollmentProfiles`  class does not define any methods.
+
+The `SMS_MDMBulkEnrollmentProfiles` class does not define any methods.
 
 ## Properties
- `Certificate_CI_UniqueID`
- Data type: `String`
 
- Access type: Read/Write
+`Certificate_CI_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The unique ID for a certificate configuration item.
+Qualifiers: none
 
- `CRLCheckEnabled`
- Data type: `Boolean`
+The unique ID for a certificate configuration item.
 
- Access type: Read/Write
+`CRLCheckEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if certificate revocation list (CRL) check is  enabled.
+Qualifiers: none
 
- `EnrolledDeviceCount`
- Data type: `UInt32`
+`true` if certificate revocation list (CRL) check is enabled.
 
- Access type: Read-only
+`EnrolledDeviceCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Number of enrolled devices.
+Qualifiers: [read]
 
- `EnrollmentProxyPointType`
- Data type: `UInt32`
+Number of enrolled devices.
 
- Access type: Read/Write
+`EnrollmentProxyPointType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies the type of URL for all enrollment proxy points. Possible values are:
+Qualifiers: none
+
+Specifies the type of URL for all enrollment proxy points. Possible values are:
 
 | Value | Enrollment Proxy Point type |
-| ----- | --------------------------- |
-|0|NONE|
-|1|INTERNET|
-|2|INTRANET|
+| --- | --- |
+| 0 | NONE |
+| 1 | INTERNET |
+| 2 | INTRANET |
 
- `EnrollmentProxyPointUrl`
- Data type: `String`
+`EnrollmentProxyPointUrl` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Enrollment proxy point URL.
+Enrollment proxy point URL.
 
- `MDMSiteCode`
- Data type: `String`
+`MDMSiteCode` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [not_null]
+Qualifiers: [not_null]
 
- The MDM site code.
+The MDM site code.
 
- `Profile_ID`
- Data type: `UInt32`
+`Profile_ID` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- The profile ID.
+The profile ID.
 
- `Profile_UniqueID`
- Data type: `String`
+`Profile_UniqueID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [unique, not_null]
+Qualifiers: [unique, not_null]
 
- Unique ID of the profile.
+Unique ID of the profile.
 
- `ProfileDescription`
- Data type: `String`
+`ProfileDescription` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The description of the profile.
+The description of the profile.
 
- `ProfileName`
- Data type: `String`
+`ProfileName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The name of the profile.
+The name of the profile.
 
- `ProfileType`
- Data type: `UInt32`
+`ProfileType` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The profile type.
+The profile type.
 
- `ProfileVersion`
- Data type: `UInt32`
+`ProfileVersion` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The version of the profile.
+The version of the profile.
 
- `ProxyPort`
- Data type: `UInt32`
+`ProxyPort` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The proxy port number.
+The proxy port number.
 
- `ProxyServer`
- Data type: `String`
+`ProxyServer` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The proxy server.
+The proxy server.
 
- `Status`
- Data type: `UInt32`
+`Status` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The status.
+The status.
 
- `Wifi_CI_UniqueID`
- Data type: `String`
+`Wifi_CI_UniqueID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The unique ID for a Wi-Fi configuration item.
+The unique ID for a Wi-Fi configuration item.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

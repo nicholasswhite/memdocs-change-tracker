@@ -1,7 +1,7 @@
 ---
 title: Database replication
 description: Learn how Configuration Manager database replication uses SQL Server to transfer data in the hierarchy.
-ms.date: 04/11/2022
+ms.date: "2022-04-11T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -17,9 +17,7 @@ Configuration Manager database replication uses SQL Server to transfer data. It 
 Note the following points about database replication:
 
 - All sites share the same information.
-
 - When you install a site in a hierarchy, Configuration Manager automatically establishes database replication between the new site and its parent site.
-
 - When the site installation finishes, database replication automatically starts.
 
 When you add a new site to a hierarchy, Configuration Manager creates a generic database at the new site. The parent site creates a snapshot of the relevant data in its database. It then transfers the snapshot to the new site using [file-based replication](file-based-replication.md). The new site then uses the SQL Server Bulk Copy Program (BCP) to load the information into its local copy of the Configuration Manager database. After the snapshot loads, each site conducts database replication with the other site.
@@ -37,13 +35,9 @@ For example, a change to a role-based administration configuration replicates qu
 You can modify the following settings for database replication:
 
 - **Database replication links**: Control when specific traffic traverses the network.
-
 - **Distributed views**: When a central administration site (CAS) requests selected site data, it can access the data directly from the database at a child primary site.
-
 - **Schedules**: Specify when a replication link is used, and when different types of site data replicate.
-
 - **Summarization**: Change settings for data summarization about network traffic that traverses replication links. By default, summarization occurs every 15 minutes. It's used in reports for database replication.
-
 - **Database replication thresholds**: Define when the site reports links as degraded or failed. You can also configure when Configuration Manager raises alerts about replication links that have a degraded or failed status.
 
 ## Types of data
@@ -77,18 +71,15 @@ When you install a new site in a hierarchy, Configuration Manager automatically 
 To control the transfer of data across the replication link, change settings for each link. Each replication link supports separate configurations. Each database replication link includes the following controls:
 
 - Stop the replication of selected site data from a primary site to the CAS. This action causes the CAS to access this data directly from the database of the primary site.
-
 - Schedule selected site data to transfer from a child primary site to the CAS.
-
 - Define the settings that determine when a database replication link has a degraded or failed status.
-
 - Specify when to raise alerts for a failed replication link.
-
 - Specify how frequently Configuration Manager summarizes data about the replication traffic that uses the replication link. It uses this data in reports.
 
 To configure a database replication link, in the Configuration Manager console, go to the **Monitoring** workspace. Select the **Database Replication** node, and edit the properties for the link. This node is also in the **Administration** workspace, under the **Hierarchy Configuration** node. Edit a replication link from either the parent site or the child site of the replication link.
 
 > [!TIP]
+>
 > You can edit database replication links from the **Database Replication** node in either workspace. However, when you use the **Database Replication** node in the **Monitoring** workspace, you can also view the status of database replication. It also provides access to the [Replication Link Analyzer](../../servers/manage/monitor-replication.md#BKMK_RLA) tool. Use this tool to help investigate problems with database replication.
 
 For more information about how to configure replication links, see [Site database replication controls](#site-database-replication-controls). For more information about how to monitor replication, see [Monitor database replication](../../servers/manage/monitor-replication.md).
@@ -100,11 +91,8 @@ Through distributed views, when you make a request at the CAS for selected site 
 Distributed views provide the following benefits:
 
 - Reduce the CPU load to process database changes at the CAS and primary sites
-
 - Reduce the amount of data that transfers across the network to the CAS
-
 - Improve the performance of the SQL Server that hosts the CAS database
-
 - Reduce the disk space used by the CAS database
 
 Consider using distributed views when a primary site is closely located to the CAS on the network, the two sites are always on, and always connected. Distributed views replace the replication of the selected data between the sites with direct connections between the site database servers at each site. The CAS makes a direct connection each time you request this data.
@@ -128,26 +116,23 @@ For example, you use a Configuration Manager console connected to the CAS. You r
 If a replication link has a type of data enabled for distributed views, the child primary site doesn't replicate that data to the CAS. When you turn off distributed views for a type of data, the child primary site resumes normal data replication to the CAS. Before this data is available at the CAS, the replication groups for this data must reinitialize between the primary site and the CAS. After you uninstall a primary site that has distributed views turned on, the CAS must complete reinitialization of its data before you can access data that you enabled for distributed views on the CAS.
 
 > [!IMPORTANT]
+>
 > When you use distributed views on any replication link in the site hierarchy, before you uninstall any primary site, turn off distributed views for all replication links. For more information, see [Uninstall a primary site that uses distributed views](../../servers/deploy/install/uninstall-sites-and-hierarchies.md#bkmk_distviews).
 
 ### Prerequisites and limitations for distributed views
 
 - Only use distributed views on replication links between the CAS and a primary site.
-
 - The CAS must use SQL Server Enterprise edition. The primary site doesn't have this requirement.
-
 - The CAS can have only one instance of the SMS Provider. Install that single instance on the site database server. This configuration supports Kerberos authentication. The SQL Server at the CAS requires Kerberos to access the SQL Server at the child primary site. There are no limitations on the SMS Provider at the child primary site.
-
 - You can only install one reporting services point at the CAS. Install SQL Server Reporting Services on the site database server. This configuration supports Kerberos authentication. The SQL Server at the CAS requires Kerberos to access the SQL Server at the child primary site.
-
-- You can host the site database on a [SQL Server Always On failover cluster instance](../../servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md), if it has the following configurations:<!-- 13846496 -->
+- You can host the site database on a [SQL Server Always On failover cluster instance](../../servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md), if it has the following configurations:
 
   - The CAS database is on a single SQL Server with a local SMS Provider.
   - The primary site listener is on port 1433.
-
 - The computer account of the CAS database server requires **Read** permissions on the primary site database.
 
 > [!IMPORTANT]
+>
 > Distributed views and [schedules](#schedule-transfers-of-site-data) for when data can replicate are mutually exclusive settings for a database replication link.
 
 ## Schedule transfers of site data
@@ -157,6 +142,7 @@ To help you control the network bandwidth that's used to replicate site data fro
 When you configure a database replication link schedule, you can restrict the transfer of selected site data from the primary site to the CAS. You can also configure different times to replicate different types of site data.
 
 > [!IMPORTANT]
+>
 > [Distributed views](#distributed-views) and schedules for when data can replicate are mutually exclusive configurations for a database replication link.
 
 ## Summarization of traffic
@@ -176,7 +162,6 @@ One or more replication groups can fail to replicate while other replication gro
 Consider modifying the retry values for the degraded or failed status of the link in the following situations:
 
 - There are recurring delays for specific replication groups, and their delay isn't a problem
-
 - The network link between sites has low available bandwidth
 
 When you increase the number of retries before the site sets the link to degraded or failed, you can eliminate false warnings for known issues. This action lets you more accurately track the status of the link.
@@ -192,18 +177,17 @@ To help you control the network bandwidth used for database replication, change 
 You can modify the following replication controls for each site database:
 
 - The SSB port.
-
 - The period of time to wait before replication failures trigger the site to reinitialize its copy of the site database.
-
 - Compress the data that a site replicates. It only compresses the data for transfer between sites, and not for storage in the site database at either site.
 
 To change the settings for the replication controls for a site database, in the Configuration Manager console, on the **Database Replication** node, edit the properties of the site database. This node appears under the **Hierarchy Configuration** node in the **Administration** workspace, and also appears in the **Monitoring** workspace. To edit the properties of the site database, select the replication link between the sites, and then open either **Parent Database Properties** or **Child Database Properties**.
 
 > [!TIP]
+>
 > You can configure database replication controls from the **Database Replication** node in either workspace. However, when you use the **Database Replication** node in the **Monitoring** workspace, you can also view the status of database replication for a replication link, and access the Replication Link Analyzer tool to help you investigate problems with replication.
 
 ## Next steps
 
 [Monitor replication](../../servers/manage/monitor-replication.md)
 
-[Troubleshoot SQL Server replication](../../servers/manage/replication/overview.md)
+[Troubleshoot SQL Server replication](https://learn.microsoft.com/en-us/intune/configmgr/core/servers/manage/replication/overview)

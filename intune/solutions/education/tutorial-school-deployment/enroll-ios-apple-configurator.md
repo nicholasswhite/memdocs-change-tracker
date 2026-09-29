@@ -1,7 +1,7 @@
 ---
-title: Education device enrollment with Apple Configurator and Intune
+title: "Bulk enrollment with Apple Configurator"
 description: Learn how to bulk enroll devices with Apple Configurator.
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 ---
 
@@ -17,5 +17,4 @@ See [Set up iOS/iPadOS device enrollment with Apple Configurator](../../../devic
 
 With the devices managed by Intune, you can use Intune to maintain them and report on their status.
 
-> [!div class="nextstepaction"]
-> [Next: Manage devices >](manage-overview.md)
+[Next: Manage devices &gt;](manage-overview.md)

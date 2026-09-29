@@ -1,29 +1,29 @@
 ---
-title: Reorder an OS Deployment Task Sequence
-ms.date: 09/20/2016
+title: "How to Reorder an Operating System Deployment Task Sequence"
+ms.date: "2016-09-20T00:00:00Z"
 description: In Configuration Manager, you can reorder the steps (an action or a group) in a task sequence or group by rearranging the step sequence in the [Steps] property array.
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Reorder an Operating System Deployment Task Sequence
-In Configuration Manager, you can reorder the steps (an action or a group) in a task sequence or group by rearranging the step sequence in the [Steps](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md) property [SMS_TaskSequence_Step](../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md) array.
+
+In Configuration Manager, you can reorder the steps (an action or a group) in a task sequence or group by rearranging the step sequence in the [Steps](../reference/osd/sms_tasksequence-server-wmi-class.md) property [SMS_TaskSequence_Step](../reference/osd/sms_tasksequence_step-server-wmi-class.md) array.
 
 ### To reorder a task sequence
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Obtain a valid task sequence ([SMS_TaskSequence](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)) or task sequence group ([SMS_TaskSequence_Group](../../develop/reference/osd/sms_tasksequence_group-server-wmi-class.md)). For more information, see [How to Read a Task Sequence From a Task Sequence Package](../../develop/osd/how-to-read-a-task-sequence-from-a-task-sequence-package.md).
-
-3.  Within the `Steps` array property, move the [SMS_TaskSequence_Step](../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md) to its new location.
-
-4.  Update the task sequence or group.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Obtain a valid task sequence ([SMS_TaskSequence](../reference/osd/sms_tasksequence-server-wmi-class.md)) or task sequence group ([SMS_TaskSequence_Group](../reference/osd/sms_tasksequence_group-server-wmi-class.md)). For more information, see [How to Read a Task Sequence From a Task Sequence Package](how-to-read-a-task-sequence-from-a-task-sequence-package.md).
+3. Within the `Steps` array property, move the [SMS_TaskSequence_Step](../reference/osd/sms_tasksequence_step-server-wmi-class.md) to its new location.
+4. Update the task sequence or group.
 
 ## Example
- The following example shows how to move a step up or down within a task sequence or group.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example shows how to move a step up or down within a task sequence or group.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub MoveTaskSequenceStepDown(taskSequence, stepName)
@@ -143,41 +143,43 @@ public void MoveTaskSequenceStepUp(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`taskSequence`|-   Managed: `IResultObject`<br />-   VBScript: [SWbemObject](/windows/win32/wmisdk/swbemobject)|A valid task sequence or task sequence group|
-|`taskSequenceStepName`<br /><br /> `stepName`|-   Managed: `String`<br />-   VBScript: `String`|The name of the task sequence step to move.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `taskSequence` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject) | A valid task sequence or task sequence group |
+| `taskSequenceStepName`   `stepName` | - Managed: `String` - VBScript: `String` | The name of the task sequence step to move. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Add an Operating System Deployment Task Sequence Action](../../develop/osd/how-to-add-an-operating-system-deployment-task-sequence-action.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager  by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
+
+[Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Add an Operating System Deployment Task Sequence Action](how-to-add-an-operating-system-deployment-task-sequence-action.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md)

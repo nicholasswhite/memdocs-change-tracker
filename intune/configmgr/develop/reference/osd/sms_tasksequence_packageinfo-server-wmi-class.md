@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_PackageInfo Class
+title: "SMS_TaskSequence_PackageInfo Server WMI Class"
 description: SMS_TaskSequence_PackageInfo WMI is an SMS provider server class that represents information about an operating system deployment task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_PackageInfo Server WMI Class
+
 The `SMS_TaskSequence_PackageInfo` Windows Management Instrumentation (WMI) class is an SMS provider server class, in Configuration Manager, that represents information about an operating system deployment task sequence.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,49 +28,49 @@ Class SMS_TaskSequence_PackageInfo
 ```
 
 ## Methods
- The `SMS_TaskSequence_PackageInfo` class does not define any methods.
+
+The `SMS_TaskSequence_PackageInfo` class does not define any methods.
 
 ## Properties
- `Name`
- Data type:  `String`
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The name of the package.
+Qualifiers: None
 
- `PackageId`
- Data type: `String`
+The name of the package.
 
- Access type: Read/Write
+`PackageId` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The ID of the package.
+Qualifiers: None
 
- `PkgType`
- Data type: `UInt32`
+The ID of the package.
 
- Access type: Read/Write
+`PkgType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The package type.
+Qualifiers: None
 
- `Size`
- Data type: `UInt32`
+The package type.
 
- Access type: Read/Write
+`Size` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The size of the package, in kilobytes.
+Qualifiers: None
+
+The size of the package, in kilobytes.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

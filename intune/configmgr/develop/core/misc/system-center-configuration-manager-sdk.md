@@ -1,7 +1,7 @@
 ---
-title: Software development kit
+title: "Configuration Manager SDK"
 description: Landing page for the Configuration Manager software development kit (SDK)
-ms.date: 08/02/2019
+ms.date: "2019-08-02T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3

@@ -1,9 +1,9 @@
 ---
-title: Security Copilot Agents in Intune
+title: "Security Copilot agents in Intune overview"
 description: Discover how Microsoft Security Copilot enhances Microsoft Intune through AI-powered security agents. Learn about available agents and explore their capabilities.
-ms.date: 11/10/2025
+ms.date: "2025-11-10T00:00:00Z"
 ms.topic: overview
-ms.reviewer: 
+ms.reviewer:
 ---
 
 # Security Copilot agents in Intune overview
@@ -16,51 +16,37 @@ Agents are built on Microsoft Security Copilot's generative AI and automation ca
 
 Microsoft Intune includes specialized Security Copilot agents, each designed for a specific security scenario. The following agents are available:
 
-:::row:::
-:::column:::
 #### Change Review Agent
 
-:::image type="icon" source="icons/change-review-agent.svg" border="false":::
+![](icons/change-review-agent.svg)
 
 > The *Change Review Agent* evaluates the effect of approval requests in Intune and makes recommendations for the actions you can take.
 >
->> [!div class="nextstepaction"]
->> [Learn more](change-review-agent.md)
-:::column-end:::
-:::column:::
+> [Learn more](change-review-agent.md)
+
 #### Device Offboarding Agent
 
-:::image type="icon" source="icons/device-offboarding-agent.svg" border="false":::
+![](icons/device-offboarding-agent.svg)
 
 > The *Device Offboarding Agent* identifies stale or misaligned devices across Intune and Microsoft Entra ID, providing actionable insights and requiring admin approval before offboarding any devices.
 >
->> [!div class="nextstepaction"]
->> [Learn more](device-offboarding-agent.md)
-:::column-end:::
-:::row-end:::
+> [Learn more](device-offboarding-agent.md)
 
-:::row:::
-:::column:::
 #### Policy Configuration Agent
 
-:::image type="icon" source="icons/policy-configuration-agent.svg" border="false":::
+![](icons/policy-configuration-agent.svg)
 
 > With the *Policy Configuration Agent*, you import documents or write instructions in plain language. The agent uses this information to find matching settings in the Intune settings catalog and recommends values for these settings. You can then use the agent to create a policy with those settings and their values.
 >
->> [!div class="nextstepaction"]
->> [Learn more](policy-configuration-agent.md)
-:::column-end:::
-:::column:::
+> [Learn more](policy-configuration-agent.md)
+
 #### Vulnerability Remediation Agent
 
-:::image type="icon" source="icons/vulnerability-remediation-agent.svg" border="false":::
+![](icons/vulnerability-remediation-agent.svg)
 
-> The *Vulnerability Remediation Agent* uses Defender data to monitor vulnerabilities and prioritize remediation with AI-driven risk assessments. 
+> The *Vulnerability Remediation Agent* uses Defender data to monitor vulnerabilities and prioritize remediation with AI-driven risk assessments.
 >
->> [!div class="nextstepaction"]
->> [Learn more](vulnerability-remediation-agent.md)
-:::column-end:::
-:::row-end:::
+> [Learn more](vulnerability-remediation-agent.md)
 
 ## Getting started with agents
 
@@ -68,31 +54,31 @@ Microsoft Intune includes specialized Security Copilot agents, each designed for
 
 Before you begin, make sure you have:
 
-- [Security compute units (SCU)](/copilot/security/manage-usage) available
-- Reviewed the [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security) to understand how your data is handled.
+- [Security compute units (SCU)](https://learn.microsoft.com/en-us/copilot/security/manage-usage) available
+- Reviewed the [Privacy and data security in Microsoft Security Copilot](https://learn.microsoft.com/en-us/copilot/security/privacy-data-security) to understand how your data is handled.
 
 ### Setup process
 
-1. Enable Security Copilot using the [Security Copilot setup guide](/copilot/security/get-started-security-copilot).
-1. Sign in to the [Microsoft Intune admin center][INT-AC] using the least privileged role required for the agent you want to configure.
-1. Browse to **Agents** and select **View details** for the agent you want to configure.
+1. Enable Security Copilot using the [Security Copilot setup guide](https://learn.microsoft.com/en-us/copilot/security/get-started-security-copilot).
+2. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) using the least privileged role required for the agent you want to configure.
+3. Browse to **Agents** and select **View details** for the agent you want to configure.
 
-:::image type="content" source="media/index/security-copilot-agents.png" alt-text="Screenshot of the security copilot feature in the Intune admin center." lightbox="media/index/security-copilot-agents.png" border="false":::
+[![Screenshot of the security copilot feature in the Intune admin center.](media/index/security-copilot-agents.png)](media/index/security-copilot-agents.png#lightbox)
 
 ## Agents in the Microsoft ecosystem
 
 While this article focuses on Intune agents, similar agents are available across other Microsoft security products. For more information, see:
 
-- [Microsoft Entra](/entra/security-copilot/entra-agents)
-- [Microsoft Defender](/defender-xdr/security-copilot-agents-defender)
-- [Microsoft Purview](/purview/copilot-in-purview-agents)
+- [Microsoft Entra](https://learn.microsoft.com/en-us/entra/security-copilot/entra-agents)
+- [Microsoft Defender](https://learn.microsoft.com/en-us/defender-xdr/security-copilot-agents-defender)
+- [Microsoft Purview](https://learn.microsoft.com/en-us/purview/copilot-in-purview-agents)
 
 ## Related content
 
-- [Microsoft Security Copilot agents overview](/copilot/security/agents-overview)
+- [Microsoft Security Copilot agents overview](https://learn.microsoft.com/en-us/copilot/security/agents-overview)
 
-[!INCLUDE [feedback](includes/feedback.md)]
+## ![](../../media/icons/32/feedback.svg) Help shape the future of Intune agents
 
-<!-- admin center links -->
+Join our **Intune Agents Feedback Forum** to share insights and influence upcoming capabilities in Microsoft Intune.
 
-[INT-AC]: https://go.microsoft.com/fwlink/?linkid=2109431
+Sign up and learn more: <https://aka.ms/IntuneAgentsForum>

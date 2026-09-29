@@ -1,19 +1,22 @@
 ---
 description: Learn how to use the SMS_SystemConsoleUsage class to define usage data about devices based on the Windows security event log.
-title: SMS_SystemConsoleUsage Class
-ms.date: 09/20/2016
+title: "SMS_SystemConsoleUsage Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SystemConsoleUsage Client WMI Class
+
 The `SMS_SystemConsoleUsage` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that defines usage data about devices, based on the Windows security event log.
 
 > [!NOTE]
->  For this class to gather usable data, the Auditing of Logon/Logoff policy must be turned on for each computer.
+>
+> For this class to gather usable data, the Auditing of Logon/Logoff policy must be turned on for each computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,77 +32,71 @@ Class SMS_SystemConsoleUsage
 ```
 
 ## Methods
- The `SMS_SystemConsoleUsage` class does not define any methods.
+
+The `SMS_SystemConsoleUsage` class does not define any methods.
 
 ## Properties
- `SecurityLogStartDate`
- Data type: `DateTime`
 
- Access type: Read-only
+`SecurityLogStartDate` Data type: `DateTime`
 
- Qualifiers: [key]
+Access type: Read-only
 
- The date and time of the oldest record in the system security event log.
+Qualifiers: [key]
 
- `TopConsoleUser`
- Data type: `String`
+The date and time of the oldest record in the system security event log.
 
- Access type: Read-only
+`TopConsoleUser` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The user with the most console usage on the computer.
+Qualifiers: None
 
- `TotalConsoleTime`
- Data type: `UInt32`
+The user with the most console usage on the computer.
 
- Access type: Read-only
+`TotalConsoleTime` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- The total number of console logon minutes recorded in the system security event log for all users.
+Qualifiers: None
 
- `TotalConsoleUsers`
- Data type: `UInt32`
+The total number of console logon minutes recorded in the system security event log for all users.
 
- Access type: Read-only
+`TotalConsoleUsers` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- The total number of unique console users recorded in the system security event log.
+Qualifiers: None
 
- `TotalSecurityLogTime`
- Data type: `UInt32`
+The total number of unique console users recorded in the system security event log.
 
- Access type: Read-only
+`TotalSecurityLogTime` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- The total time, in minutes, in the system security event log. This time is calculated by subtracting the timestamp for the oldest event in the log from the timestamp of the newest event.
+Qualifiers: None
+
+The total time, in minutes, in the system security event log. This time is calculated by subtracting the timestamp for the oldest event in the log from the timestamp of the newest event.
 
 ## Remarks
- This class gathers information about all users from the system security event log by using logon and logoff events. When a logon event is found, the associated logon ID is used to search for a matching logoff event. If more than one logoff event is found for a specific logon event, then the last logoff event is used to calculate the amount of time that the user was logged on. This is because it is possible to issue more than one logoff request before the system actually performs the logoff action. If a matching logoff event cannot be found, the next shutdown event or logon event is used in place of a logoff event. If none of these can be found, the latest entry in the security log is used. The resulting information is aggregated by user and ordered by total console usage.
+
+This class gathers information about all users from the system security event log by using logon and logoff events. When a logon event is found, the associated logon ID is used to search for a matching logoff event. If more than one logoff event is found for a specific logon event, then the last logoff event is used to calculate the amount of time that the user was logged on. This is because it is possible to issue more than one logoff request before the system actually performs the logoff action. If a matching logoff event cannot be found, the next shutdown event or logon event is used in place of a logoff event. If none of these can be found, the latest entry in the security log is used. The resulting information is aggregated by user and ordered by total console usage.
 
 > [!NOTE]
->  Only interactive logons are acknowledged by this class.
+>
+> Only interactive logons are acknowledged by this class.
 
- Some security logs can roll over frequently, or they can extend for several years. The time polled for this class is limited to the last 90 days.
+Some security logs can roll over frequently, or they can extend for several years. The time polled for this class is limited to the last 90 days.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Asset Intelligence Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/asset-intelligence-client-wmi-classes.md)
- [SMS_AutoStartSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_autostartsoftware-client-wmi-class.md)
- [SMS_BrowserHelperObject Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_browserhelperobject-client-wmi-class.md)
- [SMS_InstalledExecutable Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedexecutable-client-wmi-class.md)
- [SMS_InstalledSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftware-client-wmi-class.md)
- [SMS_InstalledSoftwareMS Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftwarems-client-wmi-class.md)
- [SMS_Processor Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_processor-client-wmi-class.md)
- [SMS_SoftwareShortcut Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_softwareshortcut-client-wmi-class.md)
- [SMS_SystemConsoleUser Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleuser-client-wmi-class.md)
+
+[Asset Intelligence Client WMI Classes](asset-intelligence-client-wmi-classes.md) [SMS_AutoStartSoftware Client WMI Class](sms_autostartsoftware-client-wmi-class.md) [SMS_BrowserHelperObject Client WMI Class](sms_browserhelperobject-client-wmi-class.md) [SMS_InstalledExecutable Client WMI Class](sms_installedexecutable-client-wmi-class.md) [SMS_InstalledSoftware Client WMI Class](sms_installedsoftware-client-wmi-class.md) [SMS_InstalledSoftwareMS Client WMI Class](sms_installedsoftwarems-client-wmi-class.md) [SMS_Processor Client WMI Class](sms_processor-client-wmi-class.md) [SMS_SoftwareShortcut Client WMI Class](sms_softwareshortcut-client-wmi-class.md) [SMS_SystemConsoleUser Client WMI Class](sms_systemconsoleuser-client-wmi-class.md)

@@ -1,33 +1,32 @@
 ---
-title: Move a Step to a Different OS Deployment Task Sequence Group
+title: "How to Move a Step to a Different Operating System Deployment Task Sequence Group"
 description: Move a step from one operating system deployment task sequence group to another by adding the step to the target group.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Move a Step to a Different Operating System Deployment Task Sequence Group
+
 You move a step (an action or a group) from one operating system deployment task sequence group to another, in Configuration Manager, by adding the step to the target group and then by deleting the step from the source group.
 
 ### To move a step from one group to another
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the source and target [SMS_TaskSequenceGroup](../../develop/reference/osd/sms_tasksequence_group-server-wmi-class.md) objects. Copy a step that you want to add the step to. For more information, see [How to Create an Operating System Deployment Task Sequence Group](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence-group.md).
-
-3.  Add the step to the target group. For more information, see [How to Add a Step to an Operating System Deployment Group](../../develop/osd/how-to-add-a-step-to-an-operating-system-deployment-group.md).
-
-4.  Reorder the step within the target group array property as necessary. For more information, see [How to Re-order an Operating System Deployment Task Sequence](../../develop/osd/how-to-reorder-an-operating-system-deployment-task-sequence.md)
-
-5.  Delete the step from the source group. For more information, see [How to Remove a Step From an Operating System Deployment Group](../../develop/osd/how-to-remove-a-step-from-an-operating-system-deployment-group.md).
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the source and target [SMS_TaskSequenceGroup](../reference/osd/sms_tasksequence_group-server-wmi-class.md) objects. Copy a step that you want to add the step to. For more information, see [How to Create an Operating System Deployment Task Sequence Group](how-to-create-an-operating-system-deployment-task-sequence-group.md).
+3. Add the step to the target group. For more information, see [How to Add a Step to an Operating System Deployment Group](how-to-add-a-step-to-an-operating-system-deployment-group.md).
+4. Reorder the step within the target group array property as necessary. For more information, see [How to Re-order an Operating System Deployment Task Sequence](how-to-reorder-an-operating-system-deployment-task-sequence.md)
+5. Delete the step from the source group. For more information, see [How to Remove a Step From an Operating System Deployment Group](how-to-remove-a-step-from-an-operating-system-deployment-group.md).
 
 ## Example
- The following example method moves a step from one task sequence group to another.
 
- You will need the code snippet in [How to Remove a Step From an Operating System Deployment Group](../../develop/osd/how-to-remove-a-step-from-an-operating-system-deployment-group.md) to run this example.
+The following example method moves a step from one task sequence group to another.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+You will need the code snippet in [How to Remove a Step From an Operating System Deployment Group](how-to-remove-a-step-from-an-operating-system-deployment-group.md) to run this example.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub MoveActionToGroup( taskSequenceStep, sourceGroup,targetGroup)
@@ -77,44 +76,44 @@ public void MoveActionToGroup(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`taskSequenceStep`|-   Managed: `IResultObject`<br />-   VBScript: [SWbemObject](/windows/win32/wmisdk/swbemobject)|A valid task sequence step (Group or action) ([SMS_TaskSequence_Step](../../develop/reference/osd/sms_tasksequence_step-server-wmi-class.md)).|
-|`sourceGroup`|-   Managed: `IResultObject`<br />-   VBScript: `SWbemObject`|The group `SMS_TaskSequenceGroup` the step is copied from.|
-|`targetGroup`|-   Managed: `IResultObject`<br />-   VBScript: `SWbemObject`|The group `SMS_TaskSequenceGroup` the step is copied to.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `taskSequenceStep` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject) | A valid task sequence step (Group or action) ([SMS_TaskSequence_Step](../reference/osd/sms_tasksequence_step-server-wmi-class.md)). |
+| `sourceGroup` | - Managed: `IResultObject` - VBScript: `SWbemObject` | The group `SMS_TaskSequenceGroup` the step is copied from. |
+| `targetGroup` | - Managed: `IResultObject` - VBScript: `SWbemObject` | The group `SMS_TaskSequenceGroup` the step is copied to. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Add a Step  to an Operating System Deployment Group](../../develop/osd/how-to-add-a-step-to-an-operating-system-deployment-group.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager  by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [How to Create an Operating System Deployment Task Sequence Group](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence-group.md)
- [How to Remove a Step From an Operating System Deployment Group](../../develop/osd/how-to-remove-a-step-from-an-operating-system-deployment-group.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
+
+[Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Add a Step to an Operating System Deployment Group](how-to-add-a-step-to-an-operating-system-deployment-group.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [How to Create an Operating System Deployment Task Sequence Group](how-to-create-an-operating-system-deployment-task-sequence-group.md) [How to Remove a Step From an Operating System Deployment Group](how-to-remove-a-step-from-an-operating-system-deployment-group.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md)

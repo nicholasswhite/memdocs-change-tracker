@@ -1,19 +1,22 @@
 ---
 description: In Configuration Manager, the CCM_Service_HostedClass class is a client Windows Management Instrumentation class that configures a COM class to be hosted in the CCMEXEC service.
-title: CCM_Service_HostedClass Class
-ms.date: 09/20/2016
+title: "CCM_Service_HostedClass Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Service_HostedClass Client WMI Class
+
 > [!IMPORTANT]
->  This class supports the Configuration Manager 2007 infrastructure and is not intended to be used directly from your code.
+>
+> This class supports the Configuration Manager 2007 infrastructure and is not intended to be used directly from your code.
 
- in Configuration Manager, the `CCM_Service_HostedClass` class is a client Windows Management Instrumentation (WMI) class that configures a COM class to be hosted in the CCMEXEC service.
+in Configuration Manager, the `CCM_Service_HostedClass` class is a client Windows Management Instrumentation (WMI) class that configures a COM class to be hosted in the CCMEXEC service.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,88 +35,85 @@ Class CCM_Service_HostedClass : CCM_Policy
 ```
 
 ## Methods
- The `CCM_Service_HostedClass` class does not define any methods.
+
+The `CCM_Service_HostedClass` class does not define any methods.
 
 ## Properties
- `CLSID`
- Data type: `String`
 
- Access type: Read/Write
+`CLSID` Data type: `String`
 
- Qualifiers: [Realkey]
+Access type: Read/Write
 
- CLSID of the COM class that will be hosted in the service. The class must be registered as an in-process DLL component and be associated with the same application ID as CCMEXEC.
+Qualifiers: [Realkey]
 
- `Description`
- Data type: `String`
+CLSID of the COM class that will be hosted in the service. The class must be registered as an in-process DLL component and be associated with the same application ID as CCMEXEC.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- COM class description.
+Qualifiers: None
 
- `PolicyID`
- Data type: `String`
+COM class description.
 
- Access type: Read/Write
+`PolicyID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyInstanceID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyInstanceID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyPrecedence`
- Data type: `UInt32`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyPrecedence` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: None
 
- `PolicyRuleID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyRuleID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicySource`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicySource` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyVersion`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
+
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md)

@@ -1,16 +1,18 @@
 ---
-title: SMS_SCI_SysResUse Class
+title: "SMS_SCI_SysResUse Server WMI Class"
 description: An SMS Provider server class that represents a specific usage of a server or other network resource.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SCI_SysResUse Server WMI Class
+
 The `SMS_SCI_SysResUse` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a specific usage of a server or other network resource.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,159 +37,150 @@ Class SMS_SCI_SysResUse : SMS_SiteControlItem
 ```
 
 ## Methods
- The `SMS_SCI_SysResUse` class doesn't define any methods.
+
+The `SMS_SCI_SysResUse` class doesn't define any methods.
 
 ## Properties
- `FileType`
- Data type: `UInt32`
 
- Access type: Read/Write
+`FileType` Data type: `UInt32`
 
- Qualifiers: [enumeration, key, enumeration, key]
+Access type: Read/Write
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [enumeration, key, enumeration, key]
 
- `ItemName`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, key, read]
 
- `NALPath`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read/Write
+`NALPath` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Path to the NAL resource. The default value is "".
+Qualifiers: none
 
- `NALType`
- Data type: `String`
+Path to the NAL resource. The default value is "".
 
- Access type: Read/Write
+`NALType` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Friendly name for the `NetworkOSPath` value. For example, "Windows NT Server". The default value is "".
+Qualifiers: none
 
- `NetworkOSPath`
- Data type: `String`
+Friendly name for the `NetworkOSPath` value. For example, "Windows NT Server". The default value is "".
 
- Access type: Read/Write
+`NetworkOSPath` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The network operating system path. The default value is "".
+Qualifiers: none
 
- `PropLists`
- Data type: `SMS_EmbeddedPropertyList` Array
+The network operating system path. The default value is "".
 
- Access type: Read/Write
+`PropLists` Data type: `SMS_EmbeddedPropertyList` Array
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_EmbeddedPropertyList Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_embeddedpropertylist-server-wmi-class.md) objects for the network resource.
+Qualifiers: none
 
- `Props`
- Data type: `SMS_EmbeddedProperty` Array
+[SMS_EmbeddedPropertyList Server WMI Class](sms_embeddedpropertylist-server-wmi-class.md) objects for the network resource.
 
- Access type: Read/Write
+`Props` Data type: `SMS_EmbeddedProperty` Array
 
- Qualifiers: none
+Access type: Read/Write
 
- [SMS_EmbeddedProperty Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_embeddedproperty-server-wmi-class.md) objects for the network resource.
+Qualifiers: none
 
- `RoleCount`
- Data type: `UInt32`
+[SMS_EmbeddedProperty Server WMI Class](sms_embeddedproperty-server-wmi-class.md) objects for the network resource.
 
- Access type: Read/Write
+`RoleCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The number of roles.
+Qualifiers: none
 
- `RoleName`
- Data type: `String`
+The number of roles.
 
- Access type: Read/Write
+`RoleName` Data type: `String`
 
- Qualifiers: [sizelimit("64"), stringenumeration]
+Access type: Read/Write
 
- Role of the server. The default value is "".
+Qualifiers: [sizelimit("64"), stringenumeration]
 
- `ServiceWindows`
- Data type: `SMS_ServiceWindow` Array
+Role of the server. The default value is "".
 
- Access type: Read-only
+`ServiceWindows` Data type: `SMS_ServiceWindow` Array
 
- Qualifiers: [read, lazy]
+Access type: Read-only
 
- List of service windows.
+Qualifiers: [read, lazy]
 
- `SiteCode`
- Data type: `String`
+List of service windows.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, key, sizelimit]
+Access type: Read/Write
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, key, sizelimit]
 
- `SslState`
- Data type: `UInt32`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`SslState` Data type: `UInt32`
 
- Qualifiers: [read, valuemap, values]
+Access type: Read-only
 
- SSL state description. Possible values are:
+Qualifiers: [read, valuemap, values]
 
-|Value|SSL state|
-|-|-|
-|0|HTTP|
-|1|HTTPS|
-|2|Not applicable. The property is only applicable for a site system role that is client facing.|
-|3|Always HTTPS|
-|4|Always HTTP|
+SSL state description. Possible values are:
 
- `Type`
- Data type: `UInt32`
+| Value | SSL state |
+| --- | --- |
+| 0 | HTTP |
+| 1 | HTTPS |
+| 2 | Not applicable. The property is only applicable for a site system role that is client facing. |
+| 3 | Always HTTPS |
+| 4 | Always HTTP |
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- Returns the site server type if the site system role is colocated on the site server.  Possible values are:
+Qualifiers: [enumeration]
 
-|Value|Site server type|
-|-|-|
-|1|The site system role is colocated on the secondary site server.|
-|2|The site system role is colocated on the primary site server.|
-|4|The site system role is colocated on the CAS site server.|
-|8|The site system role isn't colocated with any site server.|
+Returns the site server type if the site system role is colocated on the site server. Possible values are:
+
+| Value | Site server type |
+| --- | --- |
+| 1 | The site system role is colocated on the secondary site server. |
+| 2 | The site system role is colocated on the primary site server. |
+| 4 | The site system role is colocated on the CAS site server. |
+| 8 | The site system role isn't colocated with any site server. |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

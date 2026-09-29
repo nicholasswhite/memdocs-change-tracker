@@ -1,16 +1,18 @@
 ---
-title: SMS_MigrationExpandingScope Class
+title: "SMS_MigrationExpandingScope Server WMI Class"
 description: The SMS_MigrationExpandingScope class represents collections that have the expanding scope problem when migrated to System Center 2012 Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MigrationExpandingScope Server WMI Class
+
 The `SMS_MigrationExpandingScope` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the collections that have the problem of expanding scope when migrated to System Center 2012 Configuration Manager.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,70 +29,69 @@ Class SMS_MigrationExpandingScope : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MigrationExpandingScope` class does not define any methods.
+
+The `SMS_MigrationExpandingScope` class does not define any methods.
 
 ## Properties
- `CollectionEntityID`
- Data type: `UInt32`
 
- Access type: Read-only
+`CollectionEntityID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Unique identifier for the collection.
+Qualifiers: [key]
 
- `CollectionEntityName`
- Data type: `String`
+Unique identifier for the collection.
 
- Access type: Read-only
+`CollectionEntityName` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The collection entity display name.
+Qualifiers: none
 
- `CollectionWMIObjectPath`
- Data type: `String`
+The collection entity display name.
 
- Access type: Read-only
+`CollectionWMIObjectPath` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The collection entity WMI path.
+Qualifiers: none
 
- `TargetingEntityID`
- Data type: `UInt32`
+The collection entity WMI path.
 
- Access type: Read-only
+`TargetingEntityID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Unique identifier for the targeting entity.
+Qualifiers: [key]
 
- `TargetingEntityName`
- Data type: `String`
+Unique identifier for the targeting entity.
 
- Access type: Read-only
+`TargetingEntityName` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The targeting entity display name.
+Qualifiers: none
 
- `TargetingWMIObjectPath`
- Data type: `String`
+The targeting entity display name.
 
- Access type: Read-only
+`TargetingWMIObjectPath` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The targeting entity WMI path.
+Qualifiers: none
+
+The targeting entity WMI path.
 
 ## Remarks
- When you create a migration job, consider whether to specify a new limit to the collection to restrict the scope for each of such collections.
+
+When you create a migration job, consider whether to specify a new limit to the collection to restrict the scope for each of such collections.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).

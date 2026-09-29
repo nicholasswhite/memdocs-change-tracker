@@ -1,7 +1,7 @@
 ---
-title: Symantec Endpoint Protection Mobile connector with Microsoft Intune
+title: "Symantec Endpoint Protection Mobile connector"
 description: How to set up Symantec Endpoint Protection Mobile with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -10,11 +10,8 @@ ms.topic: how-to
 You can control mobile device access to corporate resources using Conditional Access based on risk assessment conducted by Symantec Endpoint Protection Mobile (SEP Mobile), a mobile threat defense solution that integrates with Microsoft Intune. Risk is assessed based on telemetry collected from devices running SEP Mobile, including:
 
 - Physical defense
-
 - Network defense
-
 - Application defense
-
 - Vulnerabilities defense
 
 You can enable SEP Mobile risk assessment through Intune device compliance policies, and then use Conditional Access policies to allow or block noncompliant device access to corporate resources based on detected threats.
@@ -26,7 +23,6 @@ You can enable SEP Mobile risk assessment through Intune device compliance polic
 ## Supported platforms
 
 - **Android 5.0 and later**
-
 - **iOS 10 and later**
 
 ## Prerequisites
@@ -64,11 +60,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected:*
 
-:::image type="content" source="./media/symantec/symantec-arch-1.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/symantec/symantec-arch-1.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/symantec/symantec-arch-2.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/symantec/symantec-arch-2.png)
 
 ### Control access based on threat to network
 
@@ -76,11 +72,11 @@ Detect threats like **Man-in-the-middle** in network, and protect access to Wi-F
 
 *Block network access through Wi-Fi:*
 
-:::image type="content" source="./media/symantec/symantec-arch-3.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/symantec/symantec-arch-3.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/symantec/symantec-arch-4.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated. ":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated. ](media/symantec/symantec-arch-4.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -88,30 +84,27 @@ Detect threats like **Man-in-the-middle** in network, and prevent synchronizatio
 
 *Block SharePoint Online when network threats are detected:*
 
-:::image type="content" source="./media/symantec/symantec-arch-5.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/symantec/symantec-arch-5.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/symantec/symantec-arch-6.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/symantec/symantec-arch-6.png)
 
 ### Control access on unenrolled devices based on threats from malicious apps
 
 When the Symantec Endpoint Protection Mobile Threat Defense solution considers a device to be infected:
 
-:::image type="content" source="./media/symantec/symantec-app-policy-block.png" alt-text="Product flow for App protection policies to block access due to malware.":::
+![Product flow for App protection policies to block access due to malware.](media/symantec/symantec-app-policy-block.png)
 
 Access is granted on remediation:
 
-:::image type="content" source="./media/symantec/symantec-app-policy-remediated.png" alt-text=" Product flow for App protection policies to grant access after malware is remediated.":::
+![ Product flow for App protection policies to grant access after malware is remediated.](media/symantec/symantec-app-policy-remediated.png)
 
 ## Next steps
 
 Here are the steps you need to complete to integrate Intune with SEP Mobile:
 
-- [Set up SEP Mobile integration with Intune](./setup-symantec.md)
-
-- [Add and assign SEP Mobile apps, Microsoft Authenticator and iOS/iPadOS app configuration policy](./assign-apps.md)
-
-- [Create SEP Mobile device compliance policy with Intune](./create-compliance-policy.md)
-
-- [Enable SEP Mobile MTD connector in Intune](./enable-connector.md)
+- [Set up SEP Mobile integration with Intune](setup-symantec.md)
+- [Add and assign SEP Mobile apps, Microsoft Authenticator and iOS/iPadOS app configuration policy](assign-apps.md)
+- [Create SEP Mobile device compliance policy with Intune](create-compliance-policy.md)
+- [Enable SEP Mobile MTD connector in Intune](enable-connector.md)

@@ -1,7 +1,7 @@
 ---
-title: MDT release notes
+title: "Microsoft Deployment Toolkit release notes"
 description: Understand supported platforms, prerequisites, and limitations of the Microsoft Deployment Toolkit (MDT).
-ms.date: 08/12/2022
+ms.date: "2022-08-12T00:00:00Z"
 ms.subservice: mdt
 ms.topic: release-notes
 ms.collection: tier3
@@ -12,12 +12,13 @@ ms.service: configuration-manager
 
 This article provides details on the latest release of the Microsoft Deployment Toolkit (MDT). These details include supported platforms, prerequisites, and any limitations. It assumes familiarity with MDT version concepts, features, and capabilities.
 
-
 > [!CAUTION]
+>
 > ### **Microsoft Deployment Toolkit (MDT) is retired.**
-> > **Microsoft Deployment Toolkit (MDT) is retired.** MDT integration with Configuration Manager and MDT Standalone are **no longer supported**. Customers should **remove all MDT task sequence steps** and then **remove MDT integration** to prevent task sequence corruption and modification failures. **Consider moving to modern provisioning solutions such as Windows Autopilot**, which provides cloud‑driven, zero‑touch provisioning for Windows devices.  Learn more about Autopilot: [here](/windows/deployment/windows-autopilot/windows-autopilot). For customers with on-premises infrastructure and existing Configuration Manager environments, **OSD** remains a fully supported option.
+>
+> > **Microsoft Deployment Toolkit (MDT) is retired.** MDT integration with Configuration Manager and MDT Standalone are **no longer supported**. Customers should **remove all MDT task sequence steps** and then **remove MDT integration** to prevent task sequence corruption and modification failures. **Consider moving to modern provisioning solutions such as Windows Autopilot**, which provides cloud‑driven, zero‑touch provisioning for Windows devices. Learn more about Autopilot: [here](https://learn.microsoft.com/en-us/windows/deployment/windows-autopilot/windows-autopilot). For customers with on-premises infrastructure and existing Configuration Manager environments, **OSD** remains a fully supported option.
 
->For full details on this retirement, see the **[Removed and Deprecated Features](../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md)** page.
+> For full details on this retirement, see the **[Removed and Deprecated Features](../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md)** page.
 
 ## Latest release
 
@@ -59,7 +60,7 @@ The following OS versions are supported for deployment with this build of MDT:
 - Windows 10, version 1809
 - Windows 10, version 1803
 - Windows 10, version 1709
-- Other [supported versions](/windows/release-information/) of Windows 10
+- Other [supported versions](https://learn.microsoft.com/en-us/windows/release-information/) of Windows 10
 - Windows Server 2019
 - Windows Server 2016
 
@@ -67,7 +68,7 @@ The following OS versions are supported for deployment with this build of MDT:
 >
 > MDT doesn't support Windows 10 ARM64 devices or any Windows versions released after those listed above.
 
-FAQ: [Is this release only supported with Windows 10, Windows ADK, or Configuration Manager version *X*?](./faq.yml#what-s-the-mdt-support-life-cycle-)
+FAQ: [Is this release only supported with Windows 10, Windows ADK, or Configuration Manager version *X*?](faq.yml#what-s-the-mdt-support-life-cycle-)
 
 ## Prerequisites
 
@@ -76,11 +77,11 @@ MDT requires the following components, which are included in Windows:
 - Microsoft .NET Framework 4.0
 - Windows PowerShell version 3.0
 
-MDT requires the latest [Windows ADK for Windows 10](/windows-hardware/get-started/adk-install). MDT also requires the **Windows PE add-on** for the Windows ADK.
+MDT requires the latest [Windows ADK for Windows 10](https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install). MDT also requires the **Windows PE add-on** for the Windows ADK.
 
 > [!NOTE]
 >
-> Windows recommends using the Windows ADK that matches the version of Windows you're deploying. For example, use the Windows ADK for Windows 10 version 1809 when deploying Windows 10 version 1809. For more information on Windows ADK component supportability, see [DISM supported platforms](/windows-hardware/manufacture/desktop/dism-supported-platforms) and [USMT requirements](/windows/deployment/usmt/usmt-requirements#bkmk-1).
+> Windows recommends using the Windows ADK that matches the version of Windows you're deploying. For example, use the Windows ADK for Windows 10 version 1809 when deploying Windows 10 version 1809. For more information on Windows ADK component supportability, see [DISM supported platforms](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/dism-supported-platforms) and [USMT requirements](https://learn.microsoft.com/en-us/windows/deployment/usmt/usmt-requirements#bkmk-1).
 
 When integrating MDT with Configuration Manager for ZTI and UDI scenarios, use the latest version of Configuration Manager current branch.
 
@@ -107,7 +108,6 @@ Existing MDT task sequences present in Configuration Manager aren't modified dur
 When the upgrade process is complete:
 
 - Run the **Configure ConfigMgr Integration Wizard** after the upgrade. It registers the new components and installs the updated ZTI task sequence templates.
-
 - Create a new **Microsoft Deployment Toolkit Files** package for any new ZTI task sequences you create. You can use the existing MDT Files package for any ZTI task sequences created before the upgrade. Create a new MDT Files package for new ZTI task sequences.
 
 ## Next steps

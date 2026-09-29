@@ -1,7 +1,7 @@
 ---
-title: "'Advanced exercise 2: Create a new report for hardware inventory'"
+title: "Advanced exercise 2: Create a new report for hardware inventory in Configuration Manager"
 description: Create a Configuration Manager report that displays hardware inventory information.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -13,6 +13,7 @@ ms.service: configuration-manager
 In this exercise, you will create a Configuration Manager report that displays the computer name, site code, the date of the last scan for hardware inventory, and the number of days since the last scan for a specified computer.
 
 > [!IMPORTANT]
+>
 > Before you begin this exercise, you should review the basic exercises to learn about the report elements, the properties for a report, and the different ways to create the report SQL statement.
 
 ## Report requirements
@@ -38,12 +39,13 @@ Create the following JOINS in the SQL statement:
 
 Use the following report columns, in the order listed:
 
-1.  **Netbios_Name0** AS **[Computer Name]** from **v_R_System**
-1.  **SMS_Installed_Sites0** AS **[Site Code]** from **v_RA_System_SMSInstalledSites**
-1.  **LastHWScan** AS **[Last HWScan]** from **v_GS_WORKSTATION_STATUS**
-1.  **DATEDIFF(day, v_GS_WORKSTATION_STATUS.LastHWScan, GETDATE())** AS **[Days Since Last HWScan]**
+1. **Netbios_Name0** AS **[Computer Name]** from **v_R_System**
+2. **SMS_Installed_Sites0** AS **[Site Code]** from **v_RA_System_SMSInstalledSites**
+3. **LastHWScan** AS **[Last HWScan]** from **v_GS_WORKSTATION_STATUS**
+4. **DATEDIFF(day, v_GS_WORKSTATION_STATUS.LastHWScan, GETDATE())** AS **[Days Since Last HWScan]**
 
 > [!NOTE]
+>
 > This report integrates two SQL Server functions to determine the difference between the last hardware scan date and the current date. To display this column, you can copy the whole line into the SQL statement, or you can copy **DATEDIFF(day, v_GS_WORKSTATION_STATUS.LastHWScan, GETDATE())** into the **Column** column and **Days Since Last HWScan** into the **Alias** column in Query Designer.
 
 Sort the data in descending order, using the **LastHWScan** column.
@@ -62,5 +64,4 @@ See [Advanced exercise 2 solution: Create a new report for hardware inventory in
 
 ## See also
 
-[Exercise 1: run an existing Configuration Manager report](exercise-1-run-existing-configuration-manager-report.md)
-[Advanced exercise 2 solution: Create a new report for hardware inventory in Configuration Manager](advanced-exercise-2-solution-create-new-report-hardware-inventory-configuration-manager.md)
+[Exercise 1: run an existing Configuration Manager report](exercise-1-run-existing-configuration-manager-report.md) [Advanced exercise 2 solution: Create a new report for hardware inventory in Configuration Manager](advanced-exercise-2-solution-create-new-report-hardware-inventory-configuration-manager.md)

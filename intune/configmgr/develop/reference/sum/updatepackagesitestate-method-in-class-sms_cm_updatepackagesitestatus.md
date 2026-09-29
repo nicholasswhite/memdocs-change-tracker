@@ -1,7 +1,7 @@
 ---
-title: "UpdatePackageSiteState Method"
+title: "UpdatePackageSiteState Method in Class SMS_CM_UpdatePackageSiteStatus"
 description: "In Configuration Manager, the UpdatePackageSiteState Windows Management Instrumentation class method updates the package installation state of the site."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,40 +9,47 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # UpdatePackageSiteState Method in Class SMS_CM_UpdatePackageSiteStatus
-The `UpdatePackageSiteState` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the package installation state of the site.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.  
+The `UpdatePackageSiteState` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the package installation state of the site.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
-```  
+## Syntax
+
+```
 SInt32 UpdatePackageSiteState(  
      UInt32 State  
 );  
 
-```  
+```
 
-#### Parameters  
- `State`  
- Data type: `UInt32`  
+#### Parameters
 
- Qualifiers: [in]  
+`State`  
+ Data type: `UInt32`
 
- The installation state.  
+Qualifiers: [in]
 
-## Return Values  
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.  
+The installation state.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).  
+## Return Values
 
-## Requirements  
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+For more information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
 
-## See Also  
- [SMS_CM_UpdatePackageSiteStatus Server WMI Class](../../../develop/reference/sum/sms_cm_updatepackagesitestatus-server-wmi-class.md)   
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[SMS_CM_UpdatePackageSiteStatus Server WMI Class](sms_cm_updatepackagesitestatus-server-wmi-class.md)

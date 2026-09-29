@@ -1,7 +1,7 @@
 ---
-title: Support Center
+title: "Support Center for Configuration Manager"
 description: Troubleshoot Configuration Manager clients with the Support Center.
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: overview
 ms.collection: tier3
@@ -12,7 +12,6 @@ ms.service: configuration-manager
 
 *Applies to: Configuration Manager (current branch)*
 
-<!--1357489-->
 Use Support Center for client troubleshooting, real-time log viewing, or capturing the state of a Configuration Manager client computer for later analysis. Support Center is a single tool to combine many administrator troubleshooting tools.
 
 ## About
@@ -22,15 +21,12 @@ Support Center aims to reduce the challenges and frustration when troubleshootin
 Use Support Center to streamline the support experience. It lets you:
 
 - Create a troubleshooting bundle (.zip file) that contains the Configuration Manager client log files. You then have a single file to send to support personnel.
-
 - View Configuration Manager client log files, certificates, registry settings, debug dumps, client policies.
-
 - Real-time diagnostic of inventory (replaces ContentSpy), policy (replaces PolicySpy), and client cache.
 
-Starting in version 2103, Support Center is split into the following tools:<!--8693068-->
+Starting in version 2103, Support Center is split into the following tools:
 
 - **Support Center Client Data Collector**: Collects data from a device to view in the Support Center Viewer. This separate tool encompasses the existing Support Center action to [Collect selected data](support-center-ui-reference.md#collect-selected-data).
-
 - **Support Center Client Tools**: The other Support Center troubleshooting functionality, except for **Collect selected data**.
 
 The following tools are still a part of Support Center:
@@ -49,7 +45,6 @@ Support Center includes a modern log viewer. This tool replaces CMTrace and prov
 
 ### Support Center OneTrace
 
-<!--3555962-->
 **OneTrace** is a new log viewer with Support Center. It works similarly to CMTrace, with improvements. For more information, see [Support Center OneTrace](support-center-onetrace.md).
 
 ### PowerShell cmdlets
@@ -65,8 +60,7 @@ Import-Module "C:\Program Files (x86)\Configuration Manager Support Center\Confi
 Install the following components on the server or client computer on which you install Support Center:
 
 - Any Windows OS version supported by Configuration Manager. For more information, see [Supported OS versions for clients](../plan-design/configs/supported-operating-systems-for-clients-and-devices.md). Support Center doesn't support mobile devices or macOS.
-
-- Starting in version 2107, the all site and client components require .NET version 4.6.2, and version 4.8 is recommended.<!--10402814--> For more information, [Site and site system prerequisites](../../core/plan-design/configs/site-and-site-system-prerequisites.md#net-version-requirements). In version 2103 and earlier, this tool requires .NET 4.5.2 or later.
+- Starting in version 2107, the all site and client components require .NET version 4.6.2, and version 4.8 is recommended. For more information, [Site and site system prerequisites](../plan-design/configs/site-and-site-system-prerequisites.md#net-version-requirements). In version 2103 and earlier, this tool requires .NET 4.5.2 or later.
 
 ## Install
 
@@ -83,23 +77,25 @@ After you install it, find the following items on the Start menu in the **Micros
 
 Starting in version 2103, the Start menu group for Support Center includes these five tools:
 
-:::image type="content" source="media/8693068-support-center-start-menu.png" alt-text="Start menu showing five Support Center tools in version 2103 and later.":::
+![Start menu showing five Support Center tools in version 2103 and later.](media/8693068-support-center-start-menu.png)
 
 > [!TIP]
-> When installing Support Center, you can install tools individually. To install only the OneTrace log viewer, use the **Advanced** option when using the Support Center installer. You can also use the `ADDLOCAL` property, for example `supportcenterinstaller.msi ADDLOCAL=OneTraceApplication` <!--10915091-->
+>
+> When installing Support Center, you can install tools individually. To install only the OneTrace log viewer, use the **Advanced** option when using the Support Center installer. You can also use the `ADDLOCAL` property, for example `supportcenterinstaller.msi ADDLOCAL=OneTraceApplication`
 
 ## Command line options
-<!--9947307-->
+
 Starting in version 2111, the following new command-line options have been added to the Support Center Data Collector and Client Tools:
 
-|Option| Description | Use case|
-|---|---|---|
-| `-l` | Specifies to launch as current user without elevation | If `-l` is used, no elevation is requested and local connections are disabled </br></br> `-l` can be used exclusively from `-m` and `-p`. If `-m` and/or `-p` is used without `-l`, elevation will still be requested. |
-|`-m <machinename>`| Allows specifying a machine name | If `-m <machinename>` is used, an attempt is made to connect to the specified machine name using integrated authentication (unless `-p` is used) |
-|`-p`| Disables integrated authentication| If `-p` is used, the connection screen is launched when the client tools are opened. If used with `-m`, the machine name gets pre-populated with the specified value|
-|`--help`| Displays help||
+| Option | Description | Use case |
+| --- | --- | --- |
+| `-l` | Specifies to launch as current user without elevation | If `-l` is used, no elevation is requested and local connections are disabled    `-l` can be used exclusively from `-m` and `-p`. If `-m` and/or `-p` is used without `-l`, elevation will still be requested. |
+| `-m <machinename>` | Allows specifying a machine name | If `-m <machinename>` is used, an attempt is made to connect to the specified machine name using integrated authentication (unless `-p` is used) |
+| `-p` | Disables integrated authentication | If `-p` is used, the connection screen is launched when the client tools are opened. If used with `-m`, the machine name gets pre-populated with the specified value |
+| `--help` | Displays help |  |
 
 > [!NOTE]
+>
 > When using `-m <machinename>`, the account making the connection needs administrator access on the target machine to collect the data.
 
 ## Known issues
@@ -115,9 +111,7 @@ To avoid this issue, use the following user name formats to connect to a remote 
 
 ### Scripted server message block connections to remote clients might require removal
 
-When connecting to remote clients using the [New-CMMachineConnection](/previous-versions/system-center/powershell/system-center-2012-r2/dn688183(v=sc.20)) PowerShell cmdlet, Support Center creates a server message block (SMB) connection to each remote client. It keeps those connections after you complete data collection. To avoid exceeding the maximum number of remote connections for Windows, use the `net use` command to see the currently active set of remote connections. Then disable any unneeded connections by using the following command:
-`net use <connection_name> /d`
-where `<connection_name>` is the name of the remote connection.
+When connecting to remote clients using the [New-CMMachineConnection](https://learn.microsoft.com/en-us/previous-versions/system-center/powershell/system-center-2012-r2/dn688183(v=sc.20)) PowerShell cmdlet, Support Center creates a server message block (SMB) connection to each remote client. It keeps those connections after you complete data collection. To avoid exceeding the maximum number of remote connections for Windows, use the `net use` command to see the currently active set of remote connections. Then disable any unneeded connections by using the following command: `net use <connection_name> /d` where `<connection_name>` is the name of the remote connection.
 
 ## Next steps
 

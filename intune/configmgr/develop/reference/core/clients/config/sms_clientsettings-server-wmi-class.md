@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the settings that apply to the clients which belong to a specified collection using SMS_ClientSettings class.
-title: SMS_ClientSettings Class
-ms.date: 09/20/2016
+title: "SMS_ClientSettings Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientSettings Server WMI Class
+
 The `SMS_ClientSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the settings that apply to the clients which belong to a specified collection. These settings override the default client settings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -37,173 +39,161 @@ Class SMS_ClientSettings : SMS_ClientSettingsBase
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_ClientSettings` class.
 
-|Method|Description|
-|------------|-----------------|
-|[CheckPortalUrl Method for Class SMS_ClientSettings](../../../../../develop/reference/core/clients/config/checkportalurl-method-for-class-sms_clientsettings.md)|Checks whether the default application catalog website point in the default or custom client agent settings is set to `portalUrl`.|
+The following table lists the methods in the `SMS_ClientSettings` class.
+
+| Method | Description |
+| --- | --- |
+| [CheckPortalUrl Method for Class SMS_ClientSettings](checkportalurl-method-for-class-sms_clientsettings.md) | Checks whether the default application catalog website point in the default or custom client agent settings is set to `portalUrl`. |
 
 ## Properties
- `AgentConfigurations`
- Data type: `SMS_ClientAgentConfig_BaseClass` Array
 
- Access type: Read/Write
+`AgentConfigurations` Data type: `SMS_ClientAgentConfig_BaseClass` Array
 
- Qualifiers: none
+Access type: Read/Write
 
- `AgentConfigurations` is an array of type `SMS_ClientAgentConfig_BaseClass`. Many classes for individual features inherit from `SMS_ClientAgentConfig_BaseClass`. For example, `SMS_StateSystemConfig` and `SMS_HardwareInventoryAgentConfig`. You use these individual SMS_*Config classes to define the value of settings for their feature. The default value is null for `AgentConfigurations`.
+Qualifiers: none
 
- `AssignmentCount`
- Data type: `UInt32`
+`AgentConfigurations` is an array of type `SMS_ClientAgentConfig_BaseClass`. Many classes for individual features inherit from `SMS_ClientAgentConfig_BaseClass`. For example, `SMS_StateSystemConfig` and `SMS_HardwareInventoryAgentConfig`. You use these individual SMS_\*Config classes to define the value of settings for their feature. The default value is null for `AgentConfigurations`.
 
- Access type: Read-only
+`AssignmentCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The count that how many collections are assigned to this setting. The default value is 0.
+Qualifiers: [read]
 
- `CreatedBy`
- Data type: `String`
+The count that how many collections are assigned to this setting. The default value is 0.
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [notnull, read, sizelimit]
+Access type: Read-only
 
- Name of the user that created the client settings.
+Qualifiers: [notnull, read, sizelimit]
 
- `DateCreated`
- Data type: `DateTime`
+Name of the user that created the client settings.
 
- Access type: Read-only
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- The date and time when the client settings are created.
+Qualifiers: [notnull, read]
 
- `DateModified`
- Data type: `DateTime`
+The date and time when the client settings are created.
 
- Access type: Read-only
+`DateModified` Data type: `DateTime`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- The date and time when the client settings are modified.
+Qualifiers: [notnull, read]
 
- `Description`
- Data type: `String`
+The date and time when the client settings are modified.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- User defined description of the setting. The default value is \<null>.
+Qualifiers: [notnull]
 
- `Enabled`
- Data type: `Boolean`
+User defined description of the setting. The default value is &lt;null&gt;.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: [notnull]
 
- `FeatureType`
- Data type: `UInt32`
+Reserved for future use.
 
- Access type: Read/Write
+`FeatureType` Data type: `UInt32`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Indicates if the settings are applied to regular `SMS_ClientSettings` or `SMS_AntimalwareSettings`. The default value is 2 when you create `SMS_ClientSettings`. Possible values are:
+Qualifiers: [notnull]
 
-|Value|Settings type|
-|-|-|
-|1|SMS_AntimalwareSettings|
-|2|SMS_ClientSettings|
+Indicates if the settings are applied to regular `SMS_ClientSettings` or `SMS_AntimalwareSettings`. The default value is 2 when you create `SMS_ClientSettings`. Possible values are:
 
- `Flags`
- Data type: `UInt32`
+| Value | Settings type |
+| --- | --- |
+| 1 | SMS_AntimalwareSettings |
+| 2 | SMS_ClientSettings |
 
- Access type: Read/Write
+`Flags` Data type: `UInt32`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: [notnull]
 
- `LastModifiedBy`
- Data type: `String`
+Reserved for future use.
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [notnull, read, sizelimit]
+Access type: Read-only
 
- Name of the user that last modified the client settings.
+Qualifiers: [notnull, read, sizelimit]
 
- `Name`
- Data type: `String`
+Name of the user that last modified the client settings.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Name of the component.
+Qualifiers: [notnull]
 
- `Priority`
- Data type: `UInt32`
+Name of the component.
 
- Access type: Read/Write
+`Priority` Data type: `UInt32`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Priority is used by the client to decide which value to take if the client belongs to more than one collection and multiple collections have client settings defined. The higher the number, the lower the relative priority to the client. All settings should have different priority numbers. The default value is the next available priority number.
+Qualifiers: [notnull]
 
- `SecuredScopeNames`
- Data type: `String Array`
+Priority is used by the client to decide which value to take if the client belongs to more than one collection and multiple collections have client settings defined. The higher the number, the lower the relative priority to the client. All settings should have different priority numbers. The default value is the next available priority number.
 
- Access type: Read-only
+`SecuredScopeNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the security scopes with which the setting is associated. The default value is "Default."
+Qualifiers: [read]
 
- `SettingsID`
- Data type: `UInt32`
+The name of the security scopes with which the setting is associated. The default value is "Default."
 
- Access type: Read/Write
+`SettingsID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- For internal use only.
+Qualifiers: [key]
 
- `Type`
- Data type: `UInt32`
+For internal use only.
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Type indicates whether the settings are applied to Device or User. The default value is 1 (Device).
+Qualifiers: [notnull]
 
-|Value|Settings type|
-|-|-|
-|1|Device|
-|2|User|
+Type indicates whether the settings are applied to Device or User. The default value is 1 (Device).
 
- `UniqueID`
- Data type: `String`
+| Value | Settings type |
+| --- | --- |
+| 1 | Device |
+| 2 | User |
 
- Access type: Read-only
+`UniqueID` Data type: `String`
 
- Qualifiers: [notnull, read, sizelimit("64")]
+Access type: Read-only
 
- For internal use only.
+Qualifiers: [notnull, read, sizelimit("64")]
+
+For internal use only.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

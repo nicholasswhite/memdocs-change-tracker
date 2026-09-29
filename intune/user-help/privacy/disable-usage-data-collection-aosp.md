@@ -1,7 +1,7 @@
 ---
-title: Turn off Microsoft data collection for AOSP
+title: "Turn off Microsoft data collection on AOSP device"
 description: Learn how to turn off Microsoft data collection in the Microsoft Intune app for AOSP.
-ms.date: 10/10/2024
+ms.date: "2024-10-10T00:00:00Z"
 ms.reviewer:
 ---
 
@@ -12,7 +12,5 @@ In-app performance and usage data is automatically anonymized and shared with Mi
 To turn off data collection:
 
 1. Open the Intune app.
-
-1. Select the menu button > **Settings**.
-
-1. Turn **Usage data** off.
+2. Select the menu button &gt; **Settings**.
+3. Turn **Usage data** off.

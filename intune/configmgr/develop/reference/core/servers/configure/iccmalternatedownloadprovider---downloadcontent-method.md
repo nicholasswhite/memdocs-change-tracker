@@ -1,13 +1,15 @@
 ---
-title: "ICcmAlternateDownloadProvider : DownloadContent"
+title: "ICcmAlternateDownloadProvider : DownloadContent Method"
 description: Learn about the ICcmAlternateDownloadProvider::DownloadContent method. In Configuration Manager, this method instructs the provider to download content.
-ms.date: 07/25/2017
+ms.date: "2017-07-25T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ICcmAlternateDownloadProvider : DownloadContent Method
+
 The **ICcmAlternateDownloadProvider::DownloadContent** method, in Configuration Manager, instructs the provider to download content.
 
 ## Syntax
@@ -36,138 +38,122 @@ HRESULT DownloadContent(
 ```
 
 #### Parameters
- `szContentId`
- Data type: `LPCWSTR`
 
- Qualifiers: [in]
+`szContentId` Data type: `LPCWSTR`
 
- The content/package ID to download.
+Qualifiers: [in]
 
- `szContentVersion`
- Data type: `LPCWSTR`
+The content/package ID to download.
 
- Qualifiers: [in]
+`szContentVersion` Data type: `LPCWSTR`
 
- The content/package version to download.
+Qualifiers: [in]
 
- `szRemotePath`
- Data type: `LPCWSTR`
+The content/package version to download.
 
- Qualifiers: [in]
+`szRemotePath` Data type: `LPCWSTR`
 
- A hint on where to download the content. The provider is free to ignore this parameter and download using its own mechanisms.
+Qualifiers: [in]
 
- `szLocalPath`
- Data type: `LPCWSTR`
+A hint on where to download the content. The provider is free to ignore this parameter and download using its own mechanisms.
 
- Qualifiers: [in]
+`szLocalPath` Data type: `LPCWSTR`
 
- The directory to which the content should be downloaded. This directory should already exist on this call, and the provider shouldn't change any ACLs on the directory itself for any reason. When szManifest is `null`, this parameter should be ignored.
+Qualifiers: [in]
 
- `szNotifyEndpoint`
- Data type: `LPCWSTR`
+The directory to which the content should be downloaded. This directory should already exist on this call, and the provider shouldn't change any ACLs on the directory itself for any reason. When szManifest is `null`, this parameter should be ignored.
 
- Qualifiers: [in]
+`szNotifyEndpoint` Data type: `LPCWSTR`
 
- Endpoint to be used for notifying Content Transfer Manager. This endpoint should be passed verbatim into calls to SendNotify*ToCTM.
+Qualifiers: [in]
 
- `szNotifyData`
- Data type: `LPCWSTR`
+Endpoint to be used for notifying Content Transfer Manager. This endpoint should be passed verbatim into calls to SendNotify\*ToCTM.
 
- Qualifiers: [in]
+`szNotifyData` Data type: `LPCWSTR`
 
- Notification data specified by Content Transfer Manager This should be passed verbatim into calls to SendNotify*ToCTM
+Qualifiers: [in]
 
- `Priority`
- Data type: `CCM_DTS_PRIORITY`
+Notification data specified by Content Transfer Manager This should be passed verbatim into calls to SendNotify\*ToCTM
 
- Qualifiers: [in]
+`Priority` Data type: `CCM_DTS_PRIORITY`
 
- The priority for the job. See notes on CCM_DTS_PRIORITY.
+Qualifiers: [in]
 
- `dwTimeoutSeconds`
- Data type: `DWORD`
+The priority for the job. See notes on CCM_DTS_PRIORITY.
 
- Qualifiers: [in]
+`dwTimeoutSeconds` Data type: `DWORD`
 
- The timeout for the job. If the timeout is reached, the job should report an error through SendNotifyErrorToCTM.
+Qualifiers: [in]
 
- `dwChunkSize`
- Data type: `DWORD`
+The timeout for the job. If the timeout is reached, the job should report an error through SendNotifyErrorToCTM.
 
- Qualifiers: [in]
+`dwChunkSize` Data type: `DWORD`
 
- The chunk size to use for notification. If there's a request for progress notifications, Content Transfer Manager should be notified every dwChunkSize byte.
+Qualifiers: [in]
 
- `dwFlags`
- Data type: `DWORD`
+The chunk size to use for notification. If there's a request for progress notifications, Content Transfer Manager should be notified every dwChunkSize byte.
 
- Qualifiers: [in]
+`dwFlags` Data type: `DWORD`
 
- Flags for the job. This parameter corresponds to an OR of CCM_DTS_FLAG values.
+Qualifiers: [in]
 
- `szLocationOptions`
- Data type: `LPCWSTR`
+Flags for the job. This parameter corresponds to an OR of CCM_DTS_FLAG values.
 
- Qualifiers: [in]
+`szLocationOptions` Data type: `LPCWSTR`
 
- Reserved. Alternate providers should ignore this parameter.
+Qualifiers: [in]
 
- `szFileManifest`
- Data type: `LPCWSTR`
+Reserved. Alternate providers should ignore this parameter.
 
- Qualifiers: [in, unique]
+`szFileManifest` Data type: `LPCWSTR`
 
- Either `null` or XML data representing file byte ranges to be downloaded from the destination.  See [Remarks](#remarks).
+Qualifiers: [in, unique]
 
- `szOwnerSID`
- Data type: `LPCWSTR`
+Either `null` or XML data representing file byte ranges to be downloaded from the destination. See [Remarks](#remarks).
 
- Qualifiers: [in]
+`szOwnerSID` Data type: `LPCWSTR`
 
- The user context in which the download should be performed.
+Qualifiers: [in]
 
- `bDeleteJobOnError`
- Data type: `BOOL`
+The user context in which the download should be performed.
 
- Qualifiers: [in]
+`bDeleteJobOnError` Data type: `BOOL`
 
- Indicates whether or not a job should immediately fail due to a transient error condition. If this value is false, then transient errors should cause the provider to internally retry unless the job times out or is instructed otherwise by Content Transfer Manager.
+Qualifiers: [in]
 
- `szProviderData`
- Data type: `LPCWSTR`
+Indicates whether or not a job should immediately fail due to a transient error condition. If this value is false, then transient errors should cause the provider to internally retry unless the job times out or is instructed otherwise by Content Transfer Manager.
 
- Qualifiers: [in]
+`szProviderData` Data type: `LPCWSTR`
 
- The provider-specific data specified in the CCM_DownloadProvider policy. This is an empty string, if data wasn't specified.
+Qualifiers: [in]
 
- `szPackageData`
- Data type: `LPCWSTR`
+The provider-specific data specified in the CCM_DownloadProvider policy. This is an empty string, if data wasn't specified.
 
- Qualifiers: [in]
+`szPackageData` Data type: `LPCWSTR`
 
- The package-specific data specified server-side, wrapped in a \<Data> XML element. This is an empty string if data wasn't specified.
+Qualifiers: [in]
 
- `*pJobID`
- Data type: `GUID`
+The package-specific data specified server-side, wrapped in a &lt;Data&gt; XML element. This is an empty string if data wasn't specified.
 
- Qualifiers: [out]
+`*pJobID` Data type: `GUID`
 
- The job ID that should be used for reference on subsequent calls.
+Qualifiers: [out]
+
+The job ID that should be used for reference on subsequent calls.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following:
 
- S_OK
- Success implies that discovery was triggered successfully. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but aren't limited to, the following:
+
+S_OK Success implies that discovery was triggered successfully. All other return values indicate failure.
 
 ## Remarks
 
-Starting with version 1702, Configuration Manager integrates with Microsoft 365 click-to-run, which supports incremental download.  Alternate content providers should be updated to implement byte range download capabilities.  Byte range information is specified in an XML manifest specified in the **szFileManifest** parameter.
+Starting with version 1702, Configuration Manager integrates with Microsoft 365 click-to-run, which supports incremental download. Alternate content providers should be updated to implement byte range download capabilities. Byte range information is specified in an XML manifest specified in the **szFileManifest** parameter.
 
 The manifest XML uses the following schema:
 
-``` xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="DTSManifest">
@@ -196,7 +182,7 @@ The manifest XML uses the following schema:
 
 The following example shows a manifest that downloads three files:
 
-``` xml
+```xml
 <?xml version="1.0"?>
 <DTSManifest Version="1">
   <File Destination="C:\Prod\stream.dat" Source="Office/Data/6366.2036/stream.dat">
@@ -212,19 +198,22 @@ The following example shows a manifest that downloads three files:
 
 When processing the manifest, remember:
 
-- There will be one or more `<file`> elements.
+- There will be one or more `<file`&gt; elements.
 - If a `<file>` element contains `<chunk>` elements, each `<chunk>` specifies the length and byte offset of an incremental download.
 - If no `<chunk>` elements are specified, the entire file should be downloaded.
 
-Should an alternate content provider fail to support incremental downloads, Configuration Manager automatically uses distribution points to download Microsoft 365 content.  For other download scenarios, however, the alternate content provider works without more impact.
+Should an alternate content provider fail to support incremental downloads, Configuration Manager automatically uses distribution points to download Microsoft 365 content. For other download scenarios, however, the alternate content provider works without more impact.
 
 > [!NOTE]
->  If the provider cannot handle the request for any reason, it should return an error.
+>
+> If the provider cannot handle the request for any reason, it should return an error.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

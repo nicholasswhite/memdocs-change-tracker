@@ -1,7 +1,7 @@
 ---
-title: Enroll your Mac with Intune Company Portal
+title: "Enroll your macOS device using the Company Portal app"
 description: Enroll your personal Mac for work using the Company Portal app.
-ms.date: 07/29/2025
+ms.date: "2025-07-29T00:00:00Z"
 ms.reviewer:
 ---
 
@@ -16,12 +16,15 @@ During initial setup, the Company Portal app requires you to sign in and authent
 For more information about the Company Portal app for macOS, see [What happens when I install the Company Portal app and enroll my device?](effects-macos.md)
 
 ## Before you begin
+
 Your device must be running macOS 11 or later.
 
 > [!NOTE]
+>
 > During installation and enrollment, you might be prompted to allow Company Portal to use confidential information that's stored in your keychain. These prompts are part of Apple security. When you get the prompt, type in your login keychain password and select **Always Allow**. If you press **Enter** or **Return** on your keyboard, the prompt will select **Allow**, which means you may continue to receive prompts.
 
 ## Install Company Portal app
+
 1. Go to [Enroll My Mac](https://go.microsoft.com/fwlink/?linkid=853070).
 2. Wait while the Company Portal installer .pkg file downloads. Open the installer when it's ready.
 3. On the **Introduction** page, select **Continue**.
@@ -33,31 +36,35 @@ Your device must be running macOS 11 or later.
 9. Open Company Portal from the Applications folder.
 
 > [!IMPORTANT]
+>
 > Microsoft AutoUpdate might open after enrollment and update your Microsoft software. After all updates are installed, open the Company Portal app. For the best setup experience, install the latest versions of Microsoft AutoUpdate and Company Portal.
 
 ## Enroll your Mac
+
 1. Sign in to the Company Portal app with your work or school account.
-1. On the **Set up access** page, select **Begin**.
-1. Review the privacy information. Then select **Continue**.
-1. On the **Install management profile** page, select **Download profile**.
-1. Your macOS system settings open in a new window. The management profile you downloaded is shown.
-    1. Select the profile to open it.
-    1. Review the details of the enrollment profile. Select **Install...**
-    1. When asked to confirm installation, select **Install**.
-    1. Enter your device password to allow the profile to enroll your device. Then select **Enroll**.
-1. Wait while the management profile installs and then enrolls your device.
-1. Return to the Company Portal app and verify that there's a green checkmark next to **Install management profile**.
-1. Your organization may require changes to the device settings. In Company Portal, select the device. Under **Status**, review the list of required changes. Select **Learn more** to read more about the requirements.
+2. On the **Set up access** page, select **Begin**.
+3. Review the privacy information. Then select **Continue**.
+4. On the **Install management profile** page, select **Download profile**.
+5. Your macOS system settings open in a new window. The management profile you downloaded is shown.
+
+   1. Select the profile to open it.
+   2. Review the details of the enrollment profile. Select **Install...**
+   3. When asked to confirm installation, select **Install**.
+   4. Enter your device password to allow the profile to enroll your device. Then select **Enroll**.
+6. Wait while the management profile installs and then enrolls your device.
+7. Return to the Company Portal app and verify that there's a green checkmark next to **Install management profile**.
+8. Your organization may require changes to the device settings. In Company Portal, select the device. Under **Status**, review the list of required changes. Select **Learn more** to read more about the requirements.
 
    > [!TIP]
+   >
    > Select **How to resolve this**, where applicable, to view related help documentation in a web browser.
-
-1. After you make all changes, select **Retry**. Wait while Company Portal rechecks your device settings and refreshes the status.
-1. When setup is complete, select **Done**.
+9. After you make all changes, select **Retry**. Wait while Company Portal rechecks your device settings and refreshes the status.
+10. When setup is complete, select **Done**.
 
 Your device is ready to use for work or school. Sign in to the Company Portal app or website anytime to view and manage it.
 
 ## Enrollment profile details
+
 You can view and finish installing the enrollment profile on your device in the Apple system settings app. Before you install the enrollment profile, make sure it contains the following information:
 
 - **Verification status**: **Verified**
@@ -70,12 +77,13 @@ You can view and finish installing the enrollment profile on your device in the 
 ## Troubleshooting and feedback
 
 Contact your IT support person to troubleshoot problems with enrollment or the Company Portal app. If necessary, you can share your app logs with your support person via the Company Portal app.
+
 1. In the Company Portal app, open the **Help** menu.
 2. Select **Send diagnostic report**. Wait while Company Portal app logs are sent to Microsoft support and Intune Company Portal developers. This information is used to assist with troubleshooting should your support person need more help.
 3. Copy your incident ID for future reference.
 4. Select **Email Logs** to report the problem to your support person. Type in what you experienced in the body of the email. To find your support person's email address, go to the Company Portal app and select **Support**.
 
-To share your feedback and suggestions with Intune Company Portal app developers, go to **Help** > **Send Feedback**.
+To share your feedback and suggestions with Intune Company Portal app developers, go to **Help** &gt; **Send Feedback**.
 
 ## Updating the Company Portal app
 

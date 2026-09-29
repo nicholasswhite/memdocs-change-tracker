@@ -1,7 +1,7 @@
 ---
-title: Add Platform SSO policy to ADE Profile on macOS devices
+title: "Configure Platform Single Sign-On (PSSO) during Automated Device Enrollment for macOS devices"
 description: Add a settings catalog platform single sign-on (PSSO) policy to an Automated Device Enrollment (ADE) profile and configure it to run during Setup Assistant with modern authentication on macOS devices.
-ms.date: 06/01/2026
+ms.date: "2026-06-01T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: iye, arnab
 ---
@@ -33,72 +33,54 @@ This feature applies to:
 - This feature requires three different policies - settings catalog policy, line-of-business app policy, and enrollment profile. All the policies and settings listed in this article are required and work together. If any of the steps are misconfigured or skipped, the enrollment fails. In this situation, [wipe](../../device-management/actions/wipe.md) the device, follow the steps, and re-enroll the device.
 - Assign all the policies to the same **Assigned (static)** user groups that will use this feature. You can use [assignment filters](../../fundamentals/filters/overview.md) on the static user groups.
 
-  You can create new groups for this feature and add the users to those groups. If you assign these policies to different groups, Platform SSO during enrollment fails.  
+  You can create new groups for this feature and add the users to those groups. If you assign these policies to different groups, Platform SSO during enrollment fails.
 
   Remember, the groups must be:
 
   - User groups, not device groups. This feature doesn't work with device groups.
   - Assigned (static) groups, not dynamic groups. This feature doesn't work with dynamic groups.
-
 - Platform SSO has its own set of requirements and configurations. Make sure to review the requirements before you start configuring this feature. For more information, see [Platform SSO configuration guide for macOS devices using Microsoft Intune](configure-platform-sso-macos.md).
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
 > This feature supports the following platform:
 >
 > - macOS 26 and newer
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [enrollment-methods](../../includes/requirements/enrollment-methods.md)]
-:::column-end:::
-:::column span="3":::
-> - Devices enrolled using Apple Business 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/enrollment.svg) **Enrollment methods**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
+> - Devices enrolled using Apple Business
+
+![](../../media/icons/16/rbac.svg) **Roles requirements**
+
 > To configure this policy, use an account with at least one of the following roles:
 >
-> - [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
-:::column-end:::
-:::row-end:::
+> - Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
 
 ## Step 1 - Create or update the Platform SSO settings catalog policy
 
 This policy enables the Platform SSO registration process during Setup Assistant in the ADE enrollment flow.
 
-1. In the [Microsoft Intune admin center], create the settings catalog policy (**Devices > Manage devices > Configuration**):
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), create the settings catalog policy (**Devices &gt; Manage devices &gt; Configuration**):
 
-    - If you already use Platform SSO on existing devices, update your existing Platform SSO settings catalog policy. You can apply only one Platform SSO policy to a device.
-    - If you're configuring Platform SSO for the first time, follow the steps in [Platform SSO configuration guide for macOS devices using Microsoft Intune](configure-platform-sso-macos.md).
+   - If you already use Platform SSO on existing devices, update your existing Platform SSO settings catalog policy. You can apply only one Platform SSO policy to a device.
+   - If you're configuring Platform SSO for the first time, follow the steps in [Platform SSO configuration guide for macOS devices using Microsoft Intune](configure-platform-sso-macos.md).
 
-      When you create the policy, Microsoft recommends using the **Secure Enclave** authentication method.
-
+     When you create the policy, Microsoft recommends using the **Secure Enclave** authentication method.
 2. In your settings catalog policy, add and configure the following setting:
 
-    | Name | Configuration value | Description |
-    |---|---|---|
-    | **Authentication > Extensible single sign-on > Platform SSO > Enable Registration During Setup** | Enabled | When enabled, the system enables the Platform SSO registration process during Setup Assistant. |
+   | Name | Configuration value | Description |
+   | --- | --- | --- |
+   | **Authentication &gt; Extensible single sign-on &gt; Platform SSO &gt; Enable Registration During Setup** | Enabled | When enabled, the system enables the Platform SSO registration process during Setup Assistant. |
 
-    **If you're using the **Password** authentication method**, also add and configure the following setting. If you're not using the **Password** authentication method, don't add or configure the following setting.
+   **If you're using the **Password** authentication method**, also add and configure the following setting. If you're not using the **Password** authentication method, don't add or configure the following setting.
 
-    | Name | Configuration value | Description |
-    |---|---|---|
-    | **Authentication > Extensible single sign-on > Platform SSO > Enable Create First User During Setup** | Enabled | When enabled, the system enables the password synchronization experience during Setup Assistant. <br/><br/> Configure this setting if you're using the **Password** authentication method. If you're not using the **Password** authentication method, it's not required to configure this setting. |
-
-3. Assign the policy to the static groups you created. 
+   | Name | Configuration value | Description |
+   | --- | --- | --- |
+   | **Authentication &gt; Extensible single sign-on &gt; Platform SSO &gt; Enable Create First User During Setup** | Enabled | When enabled, the system enables the password synchronization experience during Setup Assistant.    Configure this setting if you're using the **Password** authentication method. If you're not using the **Password** authentication method, it's not required to configure this setting. |
+3. Assign the policy to the static groups you created.
 
 When you create the Platform SSO settings catalog policy, you add and configure more settings than what's listed in this article. This article only lists the settings that are required to enable Platform SSO during ADE with Setup Assistant. So, add this setting to your existing Platform SSO policy. Or, if you're creating a new Platform SSO policy, add this setting along with the other Platform SSO settings that are required to configure Platform SSO.
 
@@ -106,15 +88,14 @@ When you create the Platform SSO settings catalog policy, you add and configure 
 
 The Company Portal for macOS deploys and installs the Microsoft Enterprise SSO plug-in. This plug-in enables Platform SSO. Make sure you add the latest Company Portal version. If you install an older version of the Company Portal, Platform SSO fails.
 
-1. Download the Company Portal for macOS PKG app from [https://go.microsoft.com/fwlink/?linkid=853070](https://go.microsoft.com/fwlink/?linkid=853070).
+1. Download the Company Portal for macOS PKG app from <https://go.microsoft.com/fwlink/?linkid=853070>.
 
-    > [!IMPORTANT]
-    > Company Portal 5.2604.0 and newer is required.
+   > [!IMPORTANT]
+   >
+   > Company Portal 5.2604.0 and newer is required.
+2. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), add the Company Portal as a line-of-business (LOB) app (**Apps &gt; All Apps &gt; Create**). In the **App bundle ID** list, only add the `com.microsoft.CompanyPortalMac` app bundle ID. Remove any app bundle IDs that aren't related to the Company Portal.
 
-2. In the [Microsoft Intune admin center], add the Company Portal as a line-of-business (LOB) app (**Apps > All Apps > Create**). In the **App bundle ID** list, only add the `com.microsoft.CompanyPortalMac` app bundle ID. Remove any app bundle IDs that aren't related to the Company Portal.
-
-    - [Add macOS Line-of-Business (LOB) Apps to Microsoft Intune](../../app-management/deployment/add-lob-macos.md)
-
+   - [Add macOS Line-of-Business (LOB) Apps to Microsoft Intune](../../app-management/deployment/add-lob-macos.md)
 3. Make it a required app and assign it to the same groups as the Platform SSO policy you created or updated in [Step 1](#step-1---create-or-update-the-platform-sso-settings-catalog-policy).
 
 When Intune detects the Company Portal as a deployed policy, it sends the Company Portal with priority in the enrollment process.
@@ -123,19 +104,17 @@ When Intune detects the Company Portal as a deployed policy, it sends the Compan
 
 This policy configures the enrollment profile to run during Setup Assistant with modern authentication and configures the await final configuration. These settings are required for Platform SSO to run correctly during enrollment.
 
-1. In the [Microsoft Intune admin center], create the Automated Device Enrollment profile (**Devices** > **Device onboarding** > **Enrollment** > **Apple** tab):
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), create the Automated Device Enrollment profile (**Devices** &gt; **Device onboarding** &gt; **Enrollment** &gt; **Apple** tab):
 
-    - [Set up automated device enrollment (ADE)](../../device-enrollment/apple/setup-automated-macos.md)
-
+   - [Set up automated device enrollment (ADE)](../../device-enrollment/apple/setup-automated-macos.md)
 2. In **Management Settings**, configure the following settings:
 
-    | Name | Configuration value |
-    |---|---|
-    | **User affinity** | Enroll with User Affinity |
-    | **Authentication** | Setup Assistant with modern authentication |
-    | **Await final configuration** | Yes |
-    | **Locked enrollment** | Yes |
-
+   | Name | Configuration value |
+   | --- | --- |
+   | **User affinity** | Enroll with User Affinity |
+   | **Authentication** | Setup Assistant with modern authentication |
+   | **Await final configuration** | Yes |
+   | **Locked enrollment** | Yes |
 3. Assign the profile to the same groups as the Platform SSO policy you created or updated in [Step 1](#step-1---create-or-update-the-platform-sso-settings-catalog-policy).
 
 When devices enroll using this ADE profile, the Platform SSO policy and LOB app policy will automatically apply during Setup Assistant. When enrollment completes and users arrive at the desktop, they have a more integrated sign-in experience on the device and can access Microsoft Entra ID resources.
@@ -161,31 +140,27 @@ It's possible the Platform SSO settings catalog policy is delivered, and the Com
 
 ### Remove Platform SSO and reenroll if steps are misconfigured
 
-All the steps in this article are required - the settings catalog policy, Company Portal as a LOB app, and using Setup assistant with Modern Authentication and await final configuration enabled in the ADE profile. If any of these steps are misconfigured or missing, then the configuration fails. 
+All the steps in this article are required - the settings catalog policy, Company Portal as a LOB app, and using Setup assistant with Modern Authentication and await final configuration enabled in the ADE profile. If any of these steps are misconfigured or missing, then the configuration fails.
 
-In this situation, remove the existing Platform SSO (PSSO) configuration and re-enroll the devices by using the following steps. Complete all of the following steps. For more information, see [Steps to Opt out of Platform SSO on macOS](/entra/identity/devices/troubleshoot-mac-sso-extension-plugin#steps-to-opt-out-of-platform-sso-on-macos).
+In this situation, remove the existing Platform SSO (PSSO) configuration and re-enroll the devices by using the following steps. Complete all of the following steps. For more information, see [Steps to Opt out of Platform SSO on macOS](https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-mac-sso-extension-plugin#steps-to-opt-out-of-platform-sso-on-macos).
 
 1. Unassign the Platform SSO policy that has the **Enable Registration During Setup** setting enabled. [Sync](../../device-management/actions/sync.md) the device to ensure the policy is removed.
 2. Update the Platform SSO policy and set the **Enable Registration During Setup** setting to disabled. [Sync](../../device-management/actions/sync.md) the device to ensure the setting is removed.
 
-    If you use the **Password** authentication method in the Platform SSO policy, set the **Enable Create First User During Setup** to disabled. [Sync](../../device-management/actions/sync.md) the device.
-
+   If you use the **Password** authentication method in the Platform SSO policy, set the **Enable Create First User During Setup** to disabled. [Sync](../../device-management/actions/sync.md) the device.
 3. [Wipe](../../device-management/actions/wipe.md) the device. Wiping is required as it restarts the enrollment process and applies the updated enrollment profiles.
 
 When complete, follow the steps in this article and make sure all your policies are correctly configured. Ensure you update the Platform SSO policy to set the **Enable Registration During Setup** setting to enabled.
 
 > [!TIP]
+>
 > Platform SSO and its components, including the Microsoft Enterprise SSO Extension plugin, are features of Microsoft Entra. Intune manages the deployment and configuration of these features on enrolled devices. If you need more troubleshooting help, see:
 >
-> - [Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices](/entra/identity/devices/troubleshoot-mac-sso-extension-plugin)
-> - [macOS Platform single sign-on known issues and troubleshooting](/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension)
+> - [Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices](https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-mac-sso-extension-plugin)
+> - [macOS Platform single sign-on known issues and troubleshooting](https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension)
 
 ## Related articles
 
 - [Platform SSO configuration guide for macOS devices using Microsoft Intune](configure-platform-sso-macos.md)
 - [Add macOS Line-of-Business (LOB) Apps to Microsoft Intune](../../app-management/deployment/add-lob-macos.md)
 - [Set up automated device enrollment (ADE)](../../device-enrollment/apple/setup-automated-macos.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

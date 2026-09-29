@@ -1,7 +1,7 @@
 ---
-title: Automatically Hide Devices With Cleanup Rules
+title: "Device cleanup rules"
 description: Intune's device cleanup rules offer a simple, automated way to ensure that only actively managed devices remain visible in the admin center. Learn more about device cleanup rules and how to configure them.
-ms.date: 10/08/2025
+ms.date: "2025-10-08T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: acabello
 ---
@@ -20,76 +20,62 @@ Device cleanup rules in Intune run on a schedule and automatically hide records 
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
+![](../media/icons/16/rbac.svg) **Roles requirements**
+
 > To configure device cleanup rules, use an account with at least one of the following roles:
 >
-> - [Intune Administrator]
-> - [Custom role] that includes:
+> - [Intune Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator)
+> - [Custom role](../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Managed Device Cleanup Rules/Update**
 >   - The permission **Managed Device Cleanup Settings/Update**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
-:::column-end:::
-:::row-end:::
-
 
 ## How to create a device cleanup rule
 
-1. In the [Microsoft Intune admin center], select [**Devices**].
-1. Under **Organize devices**, select [**Device cleanup rules**].
-1. Select **Create**.
-1. In **Basics**, enter the following properties:
+1. In the [Microsoft Intune admin center], select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview).
+2. Under **Organize devices**, select [**Device cleanup rules**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/deviceCleanUp).
+3. Select **Create**.
+4. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the rule.
-    - **Description**: Enter a description for the rule. This setting is optional.
-    - **Platform**: Select the platform that the rule applies to. The options are:
-        - All platforms
-        - Android (AOSP)
-        - Android (fully managed/dedicated/corporate-owned work profile)
-        - Android (device administrator)
-        - Android (personally-owned work profile)
-        - ChromeOS
-        - iOS/iPadOS
-        - macOS
-        - Windows
-        - Windows Holographic
-        - visionOS
-        - tvOS
+   - **Name**: Enter a descriptive name for the rule.
+   - **Description**: Enter a description for the rule. This setting is optional.
+   - **Platform**: Select the platform that the rule applies to. The options are:
+     - All platforms
+     - Android (AOSP)
+     - Android (fully managed/dedicated/corporate-owned work profile)
+     - Android (device administrator)
+     - Android (personally-owned work profile)
+     - ChromeOS
+     - iOS/iPadOS
+     - macOS
+     - Windows
+     - Windows Holographic
+     - visionOS
+     - tvOS
 
-    You can create one rule per platform. The rule applies to all devices in your organization with the platform you select.
+   You can create one rule per platform. The rule applies to all devices in your organization with the platform you select.
 
 > [!IMPORTANT]
+>
 > If both platform-specific and *All platforms* rules exist, the one with fewer days will be applied.
 
 1. Select **Next**.
-1. In **Rule settings** > **Remove devices that haven't checked in for this many days**, enter a number between 30 and 270.
+2. In **Rule settings** &gt; **Remove devices that haven't checked in for this many days**, enter a number between 30 and 270.
 
-    This setting determines how many days a device must check in with the Intune service before the device is considered stale or inactive. If a device doesn't check in before the period ends, the device is cleaned up.
+   This setting determines how many days a device must check in with the Intune service before the device is considered stale or inactive. If a device doesn't check in before the period ends, the device is cleaned up.
 
-    > [!TIP]
-    > Select **Preview affected devices** to get a list of devices that didn't check in during the specified number of days.
-
-1. Select **Next**.
-1. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the rule applies.
+   > [!TIP]
+   >
+   > Select **Preview affected devices** to get a list of devices that didn't check in during the specified number of days.
+3. Select **Next**.
+4. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the rule applies.
 
 > [!NOTE]
-> Devices hidden from Intune aren't removed from Microsoft Entra ID. For more information about removing devices from Microsoft Entra ID, see [Manage stale devices in Microsoft Entra ID](/entra/identity/devices/manage-stale-devices).
+>
+> Devices hidden from Intune aren't removed from Microsoft Entra ID. For more information about removing devices from Microsoft Entra ID, see [Manage stale devices in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/devices/manage-stale-devices).
 
 ## Device cleanup rules logging
 
-Intune audit logs show the devices hidden by the device cleanup rules. In the logs, filter by **Activity name** > **Device set to be hidden from admin by Device Cleanup Rule [*Your Rule Name*]**.
+Intune audit logs show the devices hidden by the device cleanup rules. In the logs, filter by **Activity name** &gt; **Device set to be hidden from admin by Device Cleanup Rule [*Your Rule Name*]**.
 
-For more information, see [Monitor audit logs in Intune](./monitor-audit-logs.md). 
-
-<!--Intune admin center links-->
-
-[**Device cleanup rules**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/deviceCleanUp
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-
-<!-- Role links-->
-
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-[Intune Administrator]: /entra/identity/role-based-access-control/permissions-reference#intune-administrator
+For more information, see [Monitor audit logs in Intune](monitor-audit-logs.md).

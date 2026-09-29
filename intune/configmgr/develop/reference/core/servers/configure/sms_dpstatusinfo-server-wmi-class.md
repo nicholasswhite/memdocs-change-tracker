@@ -1,16 +1,18 @@
 ---
-title: SMS_DPStatusInfo Class
+title: "SMS_DPStatusInfo Server WMI Class"
 description: Learn how the SMS_DPStatusInfo class is an SMS Provider server class, in Configuration Manager, that represents distribution point status information.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DPStatusInfo Server WMI Class
+
 The `SMS_DPStatusInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents distribution point status information.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,145 +37,135 @@ Class SMS_DPStatusInfo : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DPStatusInfo` class does not define any methods.
+
+The `SMS_DPStatusInfo` class does not define any methods.
 
 ## Properties
- `IsDPMonEnabled`
- Data type: `Boolean`
 
- Access type: Read-only
+`IsDPMonEnabled` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if this distribution point is monitored by distribution point monitor.
+Qualifiers: [not_null, read]
 
- `IsMulticast`
- Data type: `Boolean`
+`true` if this distribution point is monitored by distribution point monitor.
 
- Access type: Read-only
+`IsMulticast` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if this distribution point  is multicast enabled.
+Qualifiers: [not_null, read]
 
- `IsPullDP`
- Data type: `Boolean`
+`true` if this distribution point is multicast enabled.
 
- Access type: Read-only
+`IsPullDP` Data type: `Boolean`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- `true` if this is a pull  distribution point.
+Qualifiers: [read, not_null]
 
- `IsPXE`
- Data type: `Boolean`
+`true` if this is a pull distribution point.
 
- Access type: Read-only
+`IsPXE` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if this distribution point is PXE enabled.
+Qualifiers: [not_null, read]
 
- `LastStatusTime`
- Data type: `DateTime`
+`true` if this distribution point is PXE enabled.
 
- Access type: Read-only
+`LastStatusTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Time of the last status message.
+Qualifiers: [read]
 
- `MessageCount`
- Data type: `UInt32`
+Time of the last status message.
 
- Access type: Read-only
+`MessageCount` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Count of the number of messages on this distribution point.
+Qualifiers: [not_null, read]
 
- `MessageState`
- Data type: `UInt32`
+Count of the number of messages on this distribution point.
 
- Access type: Read-only
+`MessageState` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- State of the message.
+Qualifiers: [not_null, read]
 
-|Value|Message state|
-|-|-|
-|1|Success|
-|2|InProgress|
-|3|Error|
+State of the message.
 
- `NALPath`
- Data type: `String`
+| Value | Message state |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 3 | Error |
 
- Access type: Read-only
+`NALPath` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Distribution point NAL path.
+Qualifiers: [key, not_null, read]
 
- `Name`
- Data type: `String`
+Distribution point NAL path.
 
- Access type: Read-only
+`Name` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the distribution point.
+Qualifiers: [read]
 
- `NumberErrors`
- Data type: `UInt32`
+Name of the distribution point.
 
- Access type: Read-only
+`NumberErrors` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Count of the failed content installations.
+Qualifiers: [not_null, read]
 
- `NumberInProgress`
- Data type: `UInt32`
+Count of the failed content installations.
 
- Access type: Read-only
+`NumberInProgress` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Count of the content installations in progress.
+Qualifiers: [not_null, read]
 
- `NumberInstalled`
- Data type: `UInt32`
+Count of the content installations in progress.
 
- Access type: Read-only
+`NumberInstalled` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Count of the installed content.
+Qualifiers: [not_null, read]
 
- `NumberUnknown`
- Data type: `UInt32`
+Count of the installed content.
 
- Access type: Read-only
+`NumberUnknown` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Count of the unknown content.
+Qualifiers: [not_null, read]
 
- `Version`
- Data type: `String`
+Count of the unknown content.
 
- Access type: Read-only
+`Version` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Version to which the distribution point is upgraded.
+Qualifiers: [read]
+
+Version to which the distribution point is upgraded.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

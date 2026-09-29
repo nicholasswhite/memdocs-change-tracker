@@ -1,7 +1,7 @@
 ---
-title: Rename your device on the Company Portal website
+title: "Rename your device from the Company Portal website"
 description: Learn how to rename your work or school device on the Company Portal website.
-ms.date: 11/09/2024
+ms.date: "2024-11-09T00:00:00Z"
 ms.reviewer: jieyang
 ---
 
@@ -9,10 +9,10 @@ ms.reviewer: jieyang
 
 **Applies to:**
 
-* Android
-* iOS/iPadOS
-* macOS
-* Windows 
+- Android
+- iOS/iPadOS
+- macOS
+- Windows
 
 Rename a device on the Company Portal website. If you use more than one device for work or school, renaming them can make it easier to recognize and manage them when you're in Company Portal.
 
@@ -24,8 +24,9 @@ Rename a device on the Company Portal website. If you use more than one device f
 
 Need additional help? Contact your IT support person. For contact details, go to **Helpdesk** on the Company Portal website.
 
->[!NOTE]
->The rename action on the Company Portal website gives employees and students the chance to rename enrolled devices to something that's easy to recognize. This change only applies to the name in Company Portal, and not to the device name or management name that appears in the Microsoft Intune admin center. If you're an IT administrator and need more information about managing device details in the admin center, see:
+> [!NOTE]
 >
->- [Rename a device with Microsoft Intune](../../device-management/actions/rename.md).
->- [View device details with Microsoft Intune](../../device-management/inventory-and-status/device-details.md#hardware-device-details).
+> The rename action on the Company Portal website gives employees and students the chance to rename enrolled devices to something that's easy to recognize. This change only applies to the name in Company Portal, and not to the device name or management name that appears in the Microsoft Intune admin center. If you're an IT administrator and need more information about managing device details in the admin center, see:
+>
+> - [Rename a device with Microsoft Intune](../../device-management/inventory-and-status/rename-device.md).
+> - [View device details with Microsoft Intune](../../device-management/inventory-and-status/device-details.md#hardware-device-details).

@@ -1,8 +1,8 @@
 ---
 
-title: Assign Microsoft Intune licenses
+title: "Assign licenses to users"
 description: Assign licenses to users so they can enroll in Intune
-ms.date: 01/24/2025
+ms.date: "2025-01-24T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -11,15 +11,15 @@ ms.topic: how-to
 Whether you manually add users or synchronize from your on-premises Active Directory, you must first assign each user license before users can enroll their devices in Intune. For a list of licenses, see [Microsoft Intune licensing](licensing.md).
 
 > [!NOTE]
+>
 > Users assigned Intune app protection policy and not enrolling their devices into Microsoft Intune will also require an Intune license to receive the policy.
 
 ## Assign an Intune license in the Microsoft 365 admin center
 
 You can use the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854) to manually add cloud-based users and assign licenses to both cloud-based user accounts and accounts synchronized from your on-premises Active Directory to Microsoft Entra ID.
 
-1. In the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854), select **Users** > **Active users** > *choose an unlicensed user* > **Licenses and apps**.
-
-2. Choose the box for **Intune** > **Save changes**. If you want to use the Enterprise Mobility + Security E5 or other license, choose that box instead. For more information about Microsoft Intune licenses, see [Microsoft Intune licensing](licensing.md).
+1. In the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854), select **Users** &gt; **Active users** &gt; *choose an unlicensed user* &gt; **Licenses and apps**.
+2. Choose the box for **Intune** &gt; **Save changes**. If you want to use the Enterprise Mobility + Security E5 or other license, choose that box instead. For more information about Microsoft Intune licenses, see [Microsoft Intune licensing](licensing.md).
 
 The user account now has the permissions needed to use the service and enroll devices into Intune management.
 
@@ -27,11 +27,11 @@ The user account now has the permissions needed to use the service and enroll de
 
 If you're an educational organization, you can use School Data Sync (SDS) to assign Intune for Education licenses to synced users. Just choose the Intune for Education checkbox when you're setting up your SDS profile.
 
-:::image type="content" source="./media/assign-licenses/i4e-sds-profile-setup-setting.png" alt-text="Screenshot of the School Data Sync profile setup with the Intune for Education license checkbox.":::
+![Screenshot of the School Data Sync profile setup with the Intune for Education license checkbox.](media/assign-licenses/i4e-sds-profile-setup-setting.png)
 
 When you assign an Intune for Education license, make sure that Intune A Direct license is also assigned.
 
-:::image type="content" source="./media/assign-licenses/i4e-set-licenses.png" alt-text="Screenshot of the product license assignment page showing the Intune A Direct license selected.":::
+![Screenshot of the product license assignment page showing the Intune A Direct license selected.](media/assign-licenses/i4e-set-licenses.png)
 
 See this [overview of School Data Sync](https://support.office.com/article/Overview-of-School-Data-Sync-and-Classroom-f3d1147b-4ade-4905-8518-508e729f2e91) to learn more about SDS.
 
@@ -60,19 +60,19 @@ You must use [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?Lin
 
 ### Microsoft 365 admin center
 
-Using the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854), you can manage the subscription licenses your organization has available. To find these details, sign-in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854), select **Billing** > **Licenses**, then select the **Subscriptions** tab. Additionally, you can view the products owned by your organization in the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854) by selecting **Billing** > **Your products**, then select the **Products** tab. The [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854) also provides licenses details for users by selecting **Users** > **Active users** > *select a user* > **Licenses and apps**.
+Using the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854), you can manage the subscription licenses your organization has available. To find these details, sign-in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854), select **Billing** &gt; **Licenses**, then select the **Subscriptions** tab. Additionally, you can view the products owned by your organization in the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854) by selecting **Billing** &gt; **Your products**, then select the **Products** tab. The [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?LinkId=698854) also provides licenses details for users by selecting **Users** &gt; **Active users** &gt; *select a user* &gt; **Licenses and apps**.
 
 > [!NOTE]
+>
 > Managing licenses is only available with in the Microsoft 365 Admin Center.
 
 ### Microsoft Intune admin center
 
-Using the [Microsoft Intune admin center], you can view the **Total licensed users** and the **Total Intune licenses**. To find these details, sign-in to the [Microsoft Intune admin center], select **Tenant administration** > **Tenant status** and select the **Tenant details** tab. Additionally, you can view the assigned licenses available for a user in Intune by selecting **Users** > *select a user* > **Licenses**.
+Using the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), you can view the **Total licensed users** and the **Total Intune licenses**. To find these details, sign-in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Tenant administration** &gt; **Tenant status** and select the **Tenant details** tab. Additionally, you can view the assigned licenses available for a user in Intune by selecting **Users** &gt; *select a user* &gt; **Licenses**.
 
 ### Microsoft Entra admin center
 
-Much like Microsoft Intune admin center, you can use the [Microsoft Entra admin center](https://entra.microsoft.com) to view available product licenses and assigned user license. To view product licenses in the [Microsoft Entra admin center](https://entra.microsoft.com), select **Licenses** under the **Billing** section, and select **All products**. To view the assigned licenses available for a user, select **Users** > **All users** > *select a user* > **Licenses**.
-
+Much like Microsoft Intune admin center, you can use the [Microsoft Entra admin center](https://entra.microsoft.com) to view available product licenses and assigned user license. To view product licenses in the [Microsoft Entra admin center](https://entra.microsoft.com), select **Licenses** under the **Billing** section, and select **All products**. To view the assigned licenses available for a user, select **Users** &gt; **All users** &gt; *select a user* &gt; **Licenses**.
 
 ## Look up current licenses using PowerShell
 
@@ -83,14 +83,12 @@ To view the number of free and used licenses on a Microsoft Intune subscription,
    ```powershell
    $creds = Get-Credential
    ```
-
 2. A pop-up window will prompt for credentials. Enter your Microsoft Intune credentials.
 3. Run the following command:
 
    ```powershell
    Connect-MgGraph -Credential $creds
    ```
-
 4. Run the following command:
 
    ```powershell
@@ -100,13 +98,14 @@ To view the number of free and used licenses on a Microsoft Intune subscription,
    A list of the **Account ID**, the **Active Units**, and the **Consumed Units** will appear. Note that this will also display any Microsoft Office 365 licenses on the subscription.
 
 > [!NOTE]
+>
 > To confirm your Microsoft Entra ID P1 or P2 and Microsoft Intune using Microsoft Intune admin center, see [Confirm your licenses](licensing.md#confirm-your-licenses).
 
 ## Use PowerShell to selectively manage EMS user licenses
 
-Organizations that use Microsoft Enterprise Mobility + Security (formerly Enterprise Mobility Suite) might have users who only require Microsoft Entra ID P1 or P2 or Intune services in the EMS package. You can assign one or a subset of services using [Microsoft Graph PowerShell cmdlets](/powershell/module/microsoft.graph.users.actions/set-mguserlicense).
+Organizations that use Microsoft Enterprise Mobility + Security (formerly Enterprise Mobility Suite) might have users who only require Microsoft Entra ID P1 or P2 or Intune services in the EMS package. You can assign one or a subset of services using [Microsoft Graph PowerShell cmdlets](https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense).
 
-To selectively assign user licenses for EMS services, open PowerShell as an administrator on a computer with the [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) installed. You can install PowerShell on a local computer or on an ADFS server.
+To selectively assign user licenses for EMS services, open PowerShell as an administrator on a computer with the [Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation) installed. You can install PowerShell on a local computer or on an ADFS server.
 
 You must create a new license SKU definition that applies only to the desired service plans. To do this, disable the plans you don't want to apply. For example, you might create a license SKU definition that doesn't assign an Intune license. To see a list of available services, type:
 
@@ -116,8 +115,8 @@ You must create a new license SKU definition that applies only to the desired se
 
 You can run the following command to exclude the Intune service plan. You can use the same method to expand to an entire security group or you can use more granular filters.
 
-**Example 1**<br>
-Create a new user on the command line and assign an EMS license without enabling the Intune portion of the license:
+**Example 1**  
+ Create a new user on the command line and assign an EMS license without enabling the Intune portion of the license:
 
 ```powershell
 Connect-MgGraph
@@ -134,8 +133,8 @@ Verify with:
 (Get-MgUser -UserPrincipalName "user@<TenantName>.onmicrosoft.com").Licenses.ServiceStatus
 ```
 
-**Example 2**<br>
-Disable the Intune portion of EMS license for a user that is already assigned with a license:
+**Example 2**  
+ Disable the Intune portion of EMS license for a user that is already assigned with a license:
 
 ```powershell
 Connect-MgGraph
@@ -150,13 +149,9 @@ Verify with:
 (Get-MgUser -UserPrincipalName "user@<TenantName>.onmicrosoft.com").Licenses.ServiceStatus
 ```
 
-:::image type="content" source="./media/assign-licenses/posh-addlic-verify.png" alt-text="PowerShell output showing user license and service status verification.":::
+![PowerShell output showing user license and service status verification.](media/assign-licenses/posh-addlic-verify.png)
 
 ## Related content
 
-- [Assign Microsoft Intune roles to groups of users for role-based access control](./role-based-access-control/assign-role.md)
-- [Set the MDM authority](./setup-mdm-authority.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Assign Microsoft Intune roles to groups of users for role-based access control](role-based-access-control/assign-role.md)
+- [Set the MDM authority](setup-mdm-authority.md)

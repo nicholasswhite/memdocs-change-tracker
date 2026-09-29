@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the current client state at the time of the last hardware inventory using SMS_G_System_Current as an abstract base class.
-title: SMS_G_System_Current Class
-ms.date: 09/20/2016
+title: "SMS_G_System_Current Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_Current Server WMI Class
+
 The `SMS_G_System_Current` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as an abstract base class and represents the current client state at the time of the last hardware inventory.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,53 +27,52 @@ Class SMS_G_System_Current : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_Current` class does not define any methods.
+
+The `SMS_G_System_Current` class does not define any methods.
 
 ## Properties
- `GroupID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`GroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the group that distinguishes one hardware inventory instance from another within one client resource. For example, each logical disk instance for a client is assigned a unique `GroupID` value.
+Qualifiers: [key]
 
- `ResourceID`
- Data type: `UInt32`
+ID of the group that distinguishes one hardware inventory instance from another within one client resource. For example, each logical disk instance for a client is assigned a unique `GroupID` value.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the default value of this property is `null`.
+See [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
 
- `RevisionID`
- Data type: `UInt32`
+For this class, the default value of this property is `null`.
 
- Access type: Read/Write
+`RevisionID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID that increments if the object changes after the last time inventory was taken. The highest number indicates the most recent update. Objects with the same `ResourceID` and `GroupID` values are deltas. They differ from one another by the `RevisionID` number.
+Qualifiers: None
 
- `TimeStamp`
- Data type: `DateTime`
+ID that increments if the object changes after the last time inventory was taken. The highest number indicates the most recent update. Objects with the same `ResourceID` and `GroupID` values are deltas. They differ from one another by the `RevisionID` number.
 
- Access type: Read/Write
+`TimeStamp` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time of the inventory.
+Qualifiers: None
+
+Date and time of the inventory.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   Your application can query classes derived from `SMS_G_System_Current` to get the current state of individual client hardware components. Alternatively the application can query `SMS_G_System_Current` itself to get the current state of all client hardware components. For example, the following query retrieves all hardware components for the given client.
 
@@ -80,15 +81,18 @@ SELECT * FROM SMS_G_System_Current
 WHERE ResourceID = <resourceid>
 ```
 
- Although using this query is a simple solution for getting all the hardware components for a client, it is inefficient. WMI turns the query into multiple queries, one for each subclass, and creates a thread for each query. If performance is critical, your application should query each subclass specifically.
+Although using this query is a simple solution for getting all the hardware components for a client, it is inefficient. WMI turns the query into multiple queries, one for each subclass, and creates a thread for each query. If performance is critical, your application should query each subclass specifically.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md)
+
+[SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md)

@@ -1,7 +1,7 @@
 ---
-title: What info can your organization see when you enroll your device?
+title: "What information can my organization see when I enroll my device?"
 description: Describes the information on your enrolled device that's visible to your organization.
-ms.date: 01/27/2025
+ms.date: "2025-01-27T00:00:00Z"
 ms.reviewer: esmich
 ---
 
@@ -9,7 +9,7 @@ ms.reviewer: esmich
 
 **Applies to**:
 
-- Windows  
+- Windows
 - Android
 - iOS/iPadOS
 - macOS
@@ -70,7 +70,8 @@ On corporate-owned Android devices that have a work profile, your organization c
 
 On personal devices, your organization can see the managed app inventory, which includes work and school apps. Some configurations allow organizations to see more than just the managed app inventory on a personal device. To learn more about the information your organization collects, contact your IT admin.
 
->[!NOTE]
+> [!NOTE]
+>
 > An app is considered a *managed app* when it's installed in one of the following ways:
 >
 > - You install it from the Company Portal app after your organization makes it available to you.
@@ -79,6 +80,7 @@ On personal devices, your organization can see the managed app inventory, which 
 ### App permissions
 
 > [!NOTE]
+>
 > This information applies to devices running Android 11 and earlier.
 
 An IT admin can grant permission to apps in the work profile, both manually and by automation. The IT admin does this to reduce the number of prompts you receive. The permissions could be for things like the camera, microphone, and location. If your device is running Android 11, you receive a push notification when someone grants permission to an app.

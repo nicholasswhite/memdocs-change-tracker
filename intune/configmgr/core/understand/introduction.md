@@ -1,7 +1,7 @@
 ---
 title: What is Configuration Manager?
 description: Learn the basics of Microsoft Configuration Manager.
-ms.date: 06/19/2024
+ms.date: "2024-06-19T00:00:00Z"
 ms.subservice: core-infra
 ms.custom: intro-overview
 ms.topic: overview
@@ -22,11 +22,11 @@ The Microsoft Intune family of products is an integrated solution for managing a
 The following Microsoft management solutions are all now part of the **Microsoft Intune** brand:
 
 - [Configuration Manager](../../index.yml)
-- [Intune](../../../intune-service/index.yml)
+- [Intune](https://learn.microsoft.com/en-us/intune/intune-service/)
 - [Endpoint analytics](../../../endpoint-analytics/index.md)
-- [Windows Autopilot](/autopilot/index)
+- [Windows Autopilot](../../../../autopilot/index.yml)
 
-For more information, see [Microsoft Configuration Manager FAQ](microsoft-endpoint-manager-faq.yml).
+For more information, see [Microsoft Configuration Manager FAQ](https://learn.microsoft.com/en-us/intune/configmgr/core/understand/microsoft-endpoint-manager-faq).
 
 ## Introduction
 
@@ -68,7 +68,7 @@ To be successful with Configuration Manager in a production environment, thoroug
 
 ## User interfaces
 
-### <a name="BKMK_Console"></a> The Configuration Manager console
+### The Configuration Manager console
 
 After you install Configuration Manager, use the Configuration Manager console to configure sites and clients, and to run and monitor management tasks. This console is the main point of administration, and lets you manage multiple sites.
 
@@ -76,7 +76,7 @@ You can install the Configuration Manager console on additional computers, and r
 
 For more information, see [Use the Configuration Manager console](../servers/manage/admin-console.md).
 
-### <a name="BKMK_ApplicationCatalog"></a> Software Center
+### Software Center
 
 **Software Center** is an application that's installed when you install the Configuration Manager client on a Windows device. Users use Software Center to request and install software that you deploy. Software Center lets users do the following actions:
 

@@ -1,31 +1,30 @@
 ---
-title: Remove a Category from a Windows Driver
-ms.date: 09/20/2016
+title: "How to Remove a Category from a Windows Driver"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: Learn about how to remove a category from a Windows driver by modifying the CategoryInstance_UniqueIDs array property.
 ms.service: configuration-manager
 ---
+
 # How to Remove a Category from a Windows Driver
-In Configuration Manager, you remove a category from a Windows driver by removing the unique identifier for the category from the [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) `CategoryInstance_UniqueIDs` array property.
+
+In Configuration Manager, you remove a category from a Windows driver by removing the unique identifier for the category from the [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) `CategoryInstance_UniqueIDs` array property.
 
 ### To remove a category from a Windows driver
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the [SMS_Driver](../../develop/reference/osd/sms_driver-server-wmi-class.md) object for the driver that you want remove the category from.
-
-3.  Get the category name identifier from the [SMS_CategoryInstance Server WMI Class](../../develop/reference/compliance/sms_categoryinstance-server-wmi-class.md) object that matches the desired category.
-
-4.  Remove the category identifier from the [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) object `CategoryInstance_UniqueIDs` array property.
-
-5.  Commit the [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) changes.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the [SMS_Driver](../reference/osd/sms_driver-server-wmi-class.md) object for the driver that you want remove the category from.
+3. Get the category name identifier from the [SMS_CategoryInstance Server WMI Class](../reference/compliance/sms_categoryinstance-server-wmi-class.md) object that matches the desired category.
+4. Remove the category identifier from the [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) object `CategoryInstance_UniqueIDs` array property.
+5. Commit the [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) changes.
 
 ## Example
- The following example method removes a category from a Windows driver. `driverID` is a valid [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) object. For more information, see [About Operating System Deployment Driver Management](../../develop/osd/about-operating-system-deployment-driver-management.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method removes a category from a Windows driver. `driverID` is a valid [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) object. For more information, see [About Operating System Deployment Driver Management](about-operating-system-deployment-driver-management.md).
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub RemoveDriverCategory(connection,driver,categoryName)
@@ -110,39 +109,44 @@ public void RemoveDriverCategory(WqlConnectionManager connection,
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`Connection`|-   Managed:`WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`driver`|-   Managed: `IResultObject`<br />-   VBScript:  `SWbemObject`|The Windows driver. It is an instance of [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md).|
-|`categoryName`|-   Managed: `String`<br />-   VBScript:  `String`|The name of an existing category. This matches the [SMS_CategoryInstance Server WMI Class](../../develop/reference/compliance/sms_categoryinstance-server-wmi-class.md)e `LocalizedCategoryInstanceName` property.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection` | - Managed:`WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `driver` | - Managed: `IResultObject` - VBScript: `SWbemObject` | The Windows driver. It is an instance of [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md). |
+| `categoryName` | - Managed: `String` - VBScript: `String` | The name of an existing category. This matches the [SMS_CategoryInstance Server WMI Class](../reference/compliance/sms_categoryinstance-server-wmi-class.md)e `LocalizedCategoryInstanceName` property. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Operating System Deployment Driver Management](../../develop/osd/about-operating-system-deployment-driver-management.md)
- [How to Add a Category to a Windows Driver](../../develop/osd/how-to-add-a-category-to-a-windows-driver.md)
+
+[About Operating System Deployment Driver Management](about-operating-system-deployment-driver-management.md) [How to Add a Category to a Windows Driver](how-to-add-a-category-to-a-windows-driver.md)

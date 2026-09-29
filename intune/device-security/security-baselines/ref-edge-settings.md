@@ -1,7 +1,7 @@
 ---
-title: Settings list for the Microsoft Edge security baseline in Intune
+title: "List of the settings in the Microsoft Edge security baseline in Intune"
 description: View a list of the settings in the Microsoft Intune security baseline for Microsoft Edge browser. This list includes the default values for settings as found in the default configuration of the baseline.
-ms.date: 01/09/2025
+ms.date: "2025-01-09T00:00:00Z"
 ms.topic: reference
 zone_pivot_groups: edge-baseline-versions
 ---
@@ -10,7 +10,7 @@ zone_pivot_groups: edge-baseline-versions
 
 This article is a reference for the settings that are available in the Microsoft Edge security baseline for Microsoft Intune.
 
-In May 2023, the settings for the Microsoft Edge baselines updated to a new format. This article provides a reference for Microsoft Edge baselines version 85 and earlier. To view the settings reference for newer baselines, see [Microsoft Edge security baseline settings reference for Microsoft Intune](./ref-v2-edge-settings.md).
+In May 2023, the settings for the Microsoft Edge baselines updated to a new format. This article provides a reference for Microsoft Edge baselines version 85 and earlier. To view the settings reference for newer baselines, see [Microsoft Edge security baseline settings reference for Microsoft Intune](ref-v2-edge-settings.md).
 
 ## About this reference article
 
@@ -27,165 +27,154 @@ When a new version of a baseline becomes available, it replaces the previous ver
 - Can be updated to the current version. After you update a profile to the current baseline version, you can edit the profile to modify settings.
 
 To learn more about using security baselines, see:
-- [Use security baselines](./overview.md)
-- [Change the baseline version for a profile](./configure-baselines.md#update-a-baseline-profile-to-the-latest-version)
-- [Manage security baselines](./configure-baselines.md)
 
-
+- [Use security baselines](overview.md)
+- [Change the baseline version for a profile](configure-baselines.md#update-a-baseline-profile-to-the-latest-version)
+- [Manage security baselines](configure-baselines.md)
 
 ::: zone pivot="edge-sept-2020"
+
 ## Microsoft Edge baseline for September 2020 (Edge version 85)
 
 ::: zone-end
+
 ::: zone pivot="edge-april-2020"
+
 ## Microsoft Edge baseline for April 2020 (Edge version 80)
+
 ::: zone-end
+
 ::: zone pivot="edge-october-2019"
+
 ## Microsoft Edge baseline for October 2019
 
 > [!NOTE]
+>
 > The Microsoft Edge baseline for October 2019 is a Public Preview.
+
 ::: zone-end
 
 ### Microsoft Edge
 
 ::: zone pivot="edge-sept-2020,edge-april-2020"
 
-- **Supported authentication schemes**\
-  Baseline default: *Enabled*\
-  [Learn more](/deployedge/microsoft-edge-policies#authschemes)
+- **Supported authentication schemes**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#authschemes)
 
-  - **Supported authentication schemes**\
-    Baseline defaults: Two items: *NTLM* and *Negotiate*
+  - **Supported authentication schemes**  
+     Baseline defaults: Two items: *NTLM* and *Negotiate*
+- **Default Adobe Flash setting**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowflash)
 
-- **Default Adobe Flash setting**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowflash)
+  - **Default Adobe Flash setting**  
+     Baseline default: *Block the Adobe Flash plugin*  
+     [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowflashclicktorun)
+- **Control which extensions cannot be installed**  
+   Baseline default: *Enabled*
 
-  - **Default Adobe Flash setting**\
-    Baseline default: *Block the Adobe Flash plugin*\
-    [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowflashclicktorun)
+  - **Extension IDs the user should be prevented from installing (or \* for all)**  
+     Baseline default: *Not configured by default. Manually add one or more Extension IDs*
+- **Allow user-level native messaging hosts (installed without admin permissions)**  
+   Baseline default: *Disabled*
+- **Enable saving passwords to the password manager**  
+   Baseline default: *Disabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager)
+- **Prevent bypassing Microsoft Defender SmartScreen prompts for sites**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride)
+- **Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles)
+- **Enable site isolation for every site**  
+   Baseline default: *Enabled*
 
-- **Control which extensions cannot be installed**\
-  Baseline default: *Enabled*
-
-  - **Extension IDs the user should be prevented from installing (or * for all)**\
-    Baseline default: *Not configured by default. Manually add one or more Extension IDs*
-
-- **Allow user-level native messaging hosts (installed without admin permissions)**\
-  Baseline default: *Disabled*
-
-- **Enable saving passwords to the password manager**\
-  Baseline default: *Disabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager)
-
-- **Prevent bypassing Microsoft Defender SmartScreen prompts for sites**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride)
-
-- **Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles)
-
-- **Enable site isolation for every site**\
-  Baseline default: *Enabled*
-
-  *Microsoft Edge also supports [IsolateOrigins](/deployedge/microsoft-edge-policies#isolateorigins) policy that can isolate additional, finer-grained origins.  Intune doesn't support configuring the IsolateOrigins policy.*
-
-- **Configure Microsoft Defender SmartScreen**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen)
+  *Microsoft Edge also supports [IsolateOrigins](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#isolateorigins) policy that can isolate additional, finer-grained origins. Intune doesn't support configuring the IsolateOrigins policy.*
+- **Configure Microsoft Defender SmartScreen**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen)
 
   *This policy is available only on Windows instances that are joined to a Microsoft Active Director domain, or on Windows Pro or Enterprise instances that are enrolled for device management.*
-
-- **Configure Microsoft Defender SmartScreen to block potentially unwanted apps**\
-  Baseline default: *Enabled*
+- **Configure Microsoft Defender SmartScreen to block potentially unwanted apps**  
+   Baseline default: *Enabled*
 
   *This policy is available only on Windows instances that are joined to a Microsoft Active Director domain, or on Windows Pro or Enterprise instances that are enrolled for device management.*
+- **Allow users to proceed from the SSL warning page**  
+   Baseline default: *Disabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-preventcerterroroverrides)
+- **Minimum SSL version enabled**  
+   Baseline default: *Enabled*
 
-- **Allow users to proceed from the SSL warning page**\
-  Baseline default: *Disabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-preventcerterroroverrides)
-
-- **Minimum SSL version enabled**\
-  Baseline default: *Enabled*
-
-  - **Minimum SSL version enabled**\
-    Baseline default: *TLS 1.2*
+  - **Minimum SSL version enabled**  
+     Baseline default: *TLS 1.2*
 
 ::: zone-end
+
 ::: zone pivot="edge-october-2019"
 
-- **Prevent bypassing Microsoft Defender SmartScreen prompts for sites**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride)
+- **Prevent bypassing Microsoft Defender SmartScreen prompts for sites**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride)
+- **Minimum SSL version enabled**  
+   Baseline default: *Enabled*
 
-- **Minimum SSL version enabled**\
-  Baseline default: *Enabled*
+  - **Minimum SSL version enabled**  
+     Baseline default: *TLS 1.2*
+- **Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles)
+- **Allow users to proceed from the SSL warning page**  
+   Baseline default: *Disabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-preventcerterroroverrides)
+- **Default Adobe Flash setting**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowflash)
 
-  - **Minimum SSL version enabled**\
-    Baseline default: *TLS 1.2*
+  - **Default Adobe Flash setting**  
+     Baseline default: *Block the Adobe Flash plugin*  
+     [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowflashclicktorun)
+- **Enable site isolation for every site**  
+   Baseline default: *Enabled*
 
-- **Prevent bypassing of Microsoft Defender SmartScreen warnings about downloads**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles)
+  *Microsoft Edge also supports [IsolateOrigins](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#isolateorigins) policy that can isolate additional, finer-grained origins. Intune doesn't support configuring the IsolateOrigins policy.*
+- **Supported authentication schemes**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#authschemes)
 
-- **Allow users to proceed from the SSL warning page**\
-  Baseline default: *Disabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-preventcerterroroverrides)
+  - **Supported authentication schemes**  
+     Baseline defaults: Two items: *NTLM* and *Negotiate*
+- **Enable saving passwords to the password manager**  
+   Baseline default: *Disabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager)
+- **Control which extensions cannot be installed**  
+   Baseline default: *Enabled*
 
-- **Default Adobe Flash setting**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowflash)
-
-  - **Default Adobe Flash setting**\
-    Baseline default: *Block the Adobe Flash plugin*\
-    [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowflashclicktorun)
-
-- **Enable site isolation for every site**\
-  Baseline default: *Enabled*
-
-  *Microsoft Edge also supports [IsolateOrigins](/deployedge/microsoft-edge-policies#isolateorigins) policy that can isolate additional, finer-grained origins.  Intune doesn't support configuring the IsolateOrigins policy.*
-
-- **Supported authentication schemes**\
-  Baseline default: *Enabled*\
-  [Learn more](/deployedge/microsoft-edge-policies#authschemes)
-
-  - **Supported authentication schemes**\
-    Baseline defaults: Two items: *NTLM* and *Negotiate*
-
-- **Enable saving passwords to the password manager**\
-  Baseline default: *Disabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowpasswordmanager)
-
-- **Control which extensions cannot be installed**\
-  Baseline default: *Enabled*
-
-  - **Extension IDs the user should be prevented from installing (or * for all)**\
-    Baseline default: *Not configured by default. Manually add one or more Extension IDs*
-
-- **Configure Microsoft Defender SmartScreen**\
-  Baseline default: *Enabled*\
-  [Learn more](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen)
+  - **Extension IDs the user should be prevented from installing (or \* for all)**  
+     Baseline default: *Not configured by default. Manually add one or more Extension IDs*
+- **Configure Microsoft Defender SmartScreen**  
+   Baseline default: *Enabled*  
+   [Learn more](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen)
 
   *This policy is available only on Windows instances that are joined to a Microsoft Active Director domain, or on Windows Pro or Enterprise instances that are enrolled for device management*.
-
-- **Allow user-level native messaging hosts (installed without admin permissions)**\
-  Baseline default: *Disabled*
+- **Allow user-level native messaging hosts (installed without admin permissions)**  
+   Baseline default: *Disabled*
 
 ::: zone-end
+
 ::: zone pivot="edge-sept-2020"
 
-- **Allow certificates signed using SHA-1 when issued by local trust anchors (deprecated)**\
-  Baseline default: *Disabled*
+- **Allow certificates signed using SHA-1 when issued by local trust anchors (deprecated)**  
+   Baseline default: *Disabled*
 
   > [!IMPORTANT]
+  >
   > This setting is deprecated. It is currently supported but will become obsolete in a future release.
 
 ::: zone-end
 
 ## Next steps
 
-- [Learn about security baselines](./overview.md)
-- [Avoid conflicts](./overview.md#avoid-conflicts)
-- [Troubleshoot policies and profiles in Intune](/troubleshoot/mem/intune/troubleshoot-policies-in-microsoft-intune)
+- [Learn about security baselines](overview.md)
+- [Avoid conflicts](overview.md#avoid-conflicts)
+- [Troubleshoot policies and profiles in Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-policies-in-microsoft-intune)

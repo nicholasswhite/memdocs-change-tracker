@@ -1,7 +1,7 @@
 ---
-title: Intune Data Storage and Processing Overview
+title: "Data storage and processing overview"
 description: Learn how Microsoft Intune stores and processes personal data, including storage locations, data residency, and retention policies.
-ms.date: 5/5/2026
+ms.date: "2026-05-05T00:00:00Z"
 ms.topic: overview
 ms.reviewer: bradyw
 ms.collection:
@@ -21,7 +21,7 @@ Microsoft Intune isn't deployed to all Microsoft data centers globally. We make 
 Microsoft offers and operates Intune services in three major geographic regions:
 
 - **North America** - Includes data centers in the United States
-- **Europe** - Includes data centers located solely in the [European Data boundary](/privacy/eudb/eu-data-boundary-learn): European Union (EU) and the European Free Trade Association (EFTA)
+- **Europe** - Includes data centers located solely in the [European Data boundary](https://learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-learn): European Union (EU) and the European Free Trade Association (EFTA)
 - **Asia Pacific** - Includes data centers in Australia, Hong Kong Special Administrative Region, India, Japan, Singapore, and South Korea
 
 Intune is also available in the following local geographies:
@@ -53,21 +53,19 @@ Data residency is important for government, public sector, education and regulat
 
 Towards this end, we offer existing customers an option to request migration of their organization's Customer Data at rest to the datacenter geography that matches their signup Country or region.
 
-With this option, eligible customers with data residency requirements can request migration of their organization's Customer Data at rest to the geography that best aligns with  their  Entra directory country/region value, when available, if minimal data loss and reconfiguration is acceptable. Microsoft offers a committed deadline to all eligible customers who request migration. [Contact support](../../fundamentals/it-pro-support/get-support-admin-center.md) to request your data move. Our support team will guide you through the preparation steps that you need to take and limitations you should be aware of. Data moves can take up to 24 months after the request period ends to complete.
+With this option, eligible customers with data residency requirements can request migration of their organization's Customer Data at rest to the geography that best aligns with their Entra directory country/region value, when available, if minimal data loss and reconfiguration is acceptable. Microsoft offers a committed deadline to all eligible customers who request migration. [Contact support](../../fundamentals/it-pro-support/get-support-admin-center.md) to request your data move. Our support team will guide you through the preparation steps that you need to take and limitations you should be aware of. Data moves can take up to 24 months after the request period ends to complete.
 
 During migration, certain features might not be accessible. The actual down time and impact to end-users depends on the volume of data to be migrated and features in use. When migration is complete, the support team will contact you to make sure everything is working.
 
 Data moves to the new datacenter geographies are completed at no extra cost to the customer.
 
-
 ## Personal data retention
 
 Microsoft 365 Data Handling Standard policy specifies how long customer data is retained after deletion. There are two scenarios in which customer data is deleted:
 
--**Active Deletion**: The tenant has an active subscription and a user or administrator deletes data, or administrators delete a user.
--**Passive Deletion**: The tenant subscription ends.
+-**Active Deletion**: The tenant has an active subscription and a user or administrator deletes data, or administrators delete a user. -**Passive Deletion**: The tenant subscription ends.
 
-For each of the deletion scenarios, see [Data Retention, Deletion, and Destruction in Microsoft 365](/microsoft-365/enterprise/microsoft-365-data-retention-deletion-and-destruction-overview?view=o365-worldwide&preserve-view=true).
+For each of the deletion scenarios, see [Data Retention, Deletion, and Destruction in Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-data-retention-deletion-and-destruction-overview?view=o365-worldwide&preserve-view=true).
 
 In general, personal data collected by Intune is removed within 30 days after deletion. Audit logs are retained for up to two years for security purposes.
 

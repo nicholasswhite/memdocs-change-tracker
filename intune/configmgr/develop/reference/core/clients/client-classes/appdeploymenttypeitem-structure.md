@@ -1,13 +1,15 @@
 ---
 title: AppDeploymentTypeItem Structure
 description: Learn about the AppDeploymentTypeItem structure that contains detection results for an individual deployment type.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # AppDeploymentTypeItem Structure
+
 In Configuration Manager, the `AppDeploymentTypeItem` structure contains detection results for an individual deployment type.
 
 ## Syntax
@@ -23,18 +25,15 @@ typedef struct tagAppDeploymentTypeItem
 ```
 
 ## Members
- `szId`
- ID of the deployment item.
 
- `dwRevision`
- Revision.
+`szId` ID of the deployment item.
 
- `eDetectState`
- Detect state.
+`dwRevision` Revision.
 
- dwErrorCode
- Error code.
+`eDetectState` Detect state.
+
+dwErrorCode Error code.
 
 ## See Also
- [Configuration Manager Software Development Kit](../../../../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [Configuration Manager Reference](../../../../../develop/reference/configuration-manager-reference.md)
+
+[Configuration Manager Software Development Kit](../../../../core/misc/system-center-configuration-manager-sdk.md) [Configuration Manager Reference](../../../configuration-manager-reference.md)

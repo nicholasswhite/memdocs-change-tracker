@@ -1,16 +1,18 @@
 ---
-title: SMS_WSfBConfigurationData Class
+title: "SMS_WSfBConfigurationData Server WMI Class"
 description: An SMS Provider server class, in Configuration Manager, that represents Microsoft Store for Business configuration data.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_WSfBConfigurationData Server WMI Class
+
 The `SMS_WSfBConfigurationData` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents Microsoft Store for Business configuration data.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,99 +32,95 @@ Class SMS_WSfBConfigurationData : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_WSfBConfigurationData` class does not define any methods.
+
+The `SMS_WSfBConfigurationData` class does not define any methods.
 
 ## Properties
- `ClientId`
- Data type: `String`
 
- Access type: Read
+`ClientId` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Microsoft Store For Business client ID.
+Qualifiers: none
 
- `ContentLocation`
- Data type: `String`
+Microsoft Store For Business client ID.
 
- Access type: Read
+`ContentLocation` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Location of the content downloaded from the Microsoft Store For Business.
+Qualifiers: none
 
- `DefaultLocale`
- Data type: `String`
+Location of the content downloaded from the Microsoft Store For Business.
 
- Access type: Read
+`DefaultLocale` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The default language for the Microsoft Store for Business.
+Qualifiers: none
 
- `LastSuccessfulSyncTime`
- Data type: `DateTime`
+The default language for the Microsoft Store for Business.
 
- Access type: Read
+`LastSuccessfulSyncTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The time of the last successful synchronization with Microsoft Store for Business.
+Qualifiers: none
 
- `LastSyncStatus`
- Data type: `SInt32`
+The time of the last successful synchronization with Microsoft Store for Business.
 
- Access type: Read
+`LastSyncStatus` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read
 
- The status of the last synchronization with Microsoft Store for Business.
+Qualifiers: none
 
- `LastSyncTime`
- Data type: `DateTime`
+The status of the last synchronization with Microsoft Store for Business.
 
- Access type: Read
+`LastSyncTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The time of the last synchronization with Microsoft Store for Business.
+Qualifiers: none
 
- `SelectedLocales`
- Data type: `String`
+The time of the last synchronization with Microsoft Store for Business.
 
- Access type: Read
+`SelectedLocales` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The selected languages for Microsoft Store for Business.
+Qualifiers: none
 
- `TenantId`
- Data type: `String`
+The selected languages for Microsoft Store for Business.
 
- Access type: Read
+`TenantId` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- Microsoft Store for Business tenant ID.
+Qualifiers: [key]
+
+Microsoft Store for Business tenant ID.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md)

@@ -1,7 +1,7 @@
 ---
-title: Introduction to the LTSB
+title: "Introduction to the long-term servicing branch of Configuration Manager"
 description: Learn about the long-term servicing branch of Configuration Manager.
-ms.date: 08/23/2019
+ms.date: "2019-08-23T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -19,7 +19,8 @@ Based on Configuration Manager version 1606, the LTSB has reduced functionality 
 In some cases, the support lifecycle of a dependent component may end before the end of support for the Configuration Manager LTSB itself. In such scenarios, Configuration Manager LTSB continues to be supported through its defined end of support, provided that the reported issue is not caused by the out-of-support dependent component.
 
 > [!TIP]
-> The Configuration Manager LTSB isn't related to the System Center suite long-term servicing channel (LTSC). For more information, see [Overview of System Center release options](/system-center/ltsc-and-sac-overview).
+>
+> The Configuration Manager LTSB isn't related to the System Center suite long-term servicing channel (LTSC). For more information, see [Overview of System Center release options](https://learn.microsoft.com/en-us/system-center/ltsc-and-sac-overview).
 
 ## Features that aren't available
 
@@ -36,7 +37,7 @@ The current branch of Configuration Manager supports the following functionality
 
 Although support for these features isn't available with the LTSB, some features remain visible in the Configuration Manager console, but can't be selected or used.
 
-Cloud integrations, as well as any features included with Configuration Manager current branch version 1610 or later, aren't available to the LTSB. These features include, but aren't limited to the following:<!--SCCMDocs#1823-->
+Cloud integrations, as well as any features included with Configuration Manager current branch version 1610 or later, aren't available to the LTSB. These features include, but aren't limited to the following:
 
 - Co-management
 - Cloud management gateway

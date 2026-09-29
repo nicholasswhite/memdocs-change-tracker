@@ -1,7 +1,7 @@
 ---
-title: Set up Sophos Mobile integration with Intune
+title: "Integrate Sophos Mobile with Intune"
 description: How to set up the Sophos Mobile solution with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -36,31 +36,24 @@ The Sophos Mobile app authorization process follows:
 
 ## To set up Sophos Mobile integration
 
-1. Sign in to the [Microsoft Intune admin center], go to **Tenant administration** > **Connectors and tokens** > **Mobile Threat Defense** > and select **Add**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to **Tenant administration** &gt; **Connectors and tokens** &gt; **Mobile Threat Defense** &gt; and select **Add**.
 2. On the **Add Connector** page, use the dropdown and select **Sophos**. And then select **Create**.
 3. Select the link *Open the Sophos admin console*.
 4. Sign in to the [Sophos admin console](https://central.sophos.com/) with your Sophos credentials.
-5. Go to **Mobile** > **Settings** > **Setup** > **Sophos setup**.
+5. Go to **Mobile** &gt; **Settings** &gt; **Setup** &gt; **Sophos setup**.
 6. On the **Sophos setup** page, select the **Intune MTD** tab.
 
-   ![Sophos setup](./media/setup-sophos/sophos-setup.png)
-
+   ![Sophos setup](media/setup-sophos/sophos-setup.png)
 7. Select **Bind**, and then select **Yes**. Sophos connects to Intune and requires you to sign in to your Intune subscription.
 8. In the Microsoft Intune authentication window, enter your Intune credentials and **Accept** the permissions request for *Sophos Mobile Threat Defense*.
 
-   ![Intune authentication](./media/setup-sophos/intune-authentication.png)
-
+   ![Intune authentication](media/setup-sophos/intune-authentication.png)
 9. On the **Sophos setup** page, select **Save** to complete the configuration for Intune:
 
-   ![Save Sophos setup](./media/setup-sophos/save-sophos-configuration.png)
-
+   ![Save Sophos setup](media/setup-sophos/save-sophos-configuration.png)
 10. When the message **Successful Integration** appears, integration is complete.
 11. In the Intune admin center, Sophos is now available.
 
 ## Next Steps
 
-[Configure Sophos client apps](./assign-apps.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+[Configure Sophos client apps](assign-apps.md)

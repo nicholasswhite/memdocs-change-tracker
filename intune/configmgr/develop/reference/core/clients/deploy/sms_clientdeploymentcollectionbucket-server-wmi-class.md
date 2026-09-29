@@ -1,16 +1,18 @@
 ---
-title: SMS_ClientDeploymentCollectionBucket Class
+title: "SMS_ClientDeploymentCollectionBucket Server WMI Class"
 description: The SMS_ClientDeploymentCollectionBucket Windows Management Instrumentation class is an SMS Provider server class, in Configuration Manager, that represents a client deployment collection bucket.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_ClientDeploymentCollectionBucket Server WMI Class
-The  `SMS_ClientDeploymentCollectionBucket` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a client deployment collection bucket that is used to display the localized name in the client deployment detail view.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_ClientDeploymentCollectionBucket Server WMI Class
+
+The `SMS_ClientDeploymentCollectionBucket` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a client deployment collection bucket that is used to display the localized name in the client deployment detail view.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,84 +29,83 @@ Class SMS_ClientDeploymentCollectionBucket: SMS_BaseClass
 ```
 
 ## Methods
- The  `SMS_ClientDeploymentCollectionBucket`  class does not define any methods.
+
+The `SMS_ClientDeploymentCollectionBucket` class does not define any methods.
 
 ## Properties
- `BaselineType`
- Data type: `UInt32`
 
- Access type: Read
+`BaselineType` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The baseline type. Possible values are:
+Qualifiers: [key]
 
-|Value|Baseline type|
-|-|-|
-|1|Product Baseline|
-|2|Staging Baseline|
+The baseline type. Possible values are:
 
- `Bucket`
- Data type: `String`
+| Value | Baseline type |
+| --- | --- |
+| 1 | Product Baseline |
+| 2 | Staging Baseline |
 
- Access type: Read
+`Bucket` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The client deployment status bucket. Possible values are:
+Qualifiers: [key]
 
-|Value|
-|-|
-|CDUnknown|
-|CDFullCompliant|
-|CDInProgress|
-|CDNotCompliant|
-|CDCriticalError|
+The client deployment status bucket. Possible values are:
 
- `CollectionID`
- Data type: `String`
+| Value |
+| --- |
+| CDUnknown |
+| CDFullCompliant |
+| CDInProgress |
+| CDNotCompliant |
+| CDCriticalError |
 
- Access type: Read
+`CollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The ID of the collection.
+Qualifiers: [key]
 
- `CollectionName`
- Data type: `String`
+The ID of the collection.
 
- Access type: Read
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The name of the collection.
+Qualifiers: none
 
- `FeatureType`
- Data type: `UInt32`
+The name of the collection.
 
- Access type: Read
+`FeatureType` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The feature type. Possible values are:
+Qualifiers: [key]
 
-|Value|Feature type|
-|-|-|
-|3|Client Deployment|
+The feature type. Possible values are:
+
+| Value | Feature type |
+| --- | --- |
+| 3 | Client Deployment |
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

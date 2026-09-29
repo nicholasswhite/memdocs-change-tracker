@@ -1,16 +1,18 @@
 ---
-title: CCM_RequestedAppPolicyActivation Class
-ms.date: 09/20/2016
+title: "CCM_RequestedAppPolicyActivation Client WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 description: Learn how the CCM_RequestedAppPolicy Activation class represents a requested application policy activation.
 ms.service: configuration-manager
 ---
+
 # CCM_RequestedAppPolicyActivation Client WMI Class
+
 The `CCM_RequestedAppPolicyActivation` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a requested application policy activation.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,83 +30,80 @@ Class CCM_RequestedAppPolicyActivation :
 ```
 
 ## Methods
- The following table lists the methods in the `CCM_RequestedAppPolicyActivation` class.
 
--   [QueueAppPolicyActivationAction Method in Class CCM_RequestedAppPolicyActivation](../../../../../develop/reference/core/clients/sdk/queueapppolicyactivationaction-method-in-class-ccm_requestedapppolicyactivation.md)
+The following table lists the methods in the `CCM_RequestedAppPolicyActivation` class.
+
+- [QueueAppPolicyActivationAction Method in Class CCM_RequestedAppPolicyActivation](queueapppolicyactivationaction-method-in-class-ccm_requestedapppolicyactivation.md)
 
 ## Properties
- `ActivationAction`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ActivationAction` Data type: `UInt32`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Activation action. Possible values are:
+Qualifiers: [values]
 
-|Value|Activation action|
-|-|-|
-|0|default|
-|1|By-pass Activation|
+Activation action. Possible values are:
 
- `AppId`
- Data type: `String`
+| Value | Activation action |
+| --- | --- |
+| 0 | default |
+| 1 | By-pass Activation |
 
- Access type: Read/Write
+`AppId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Application identifier.
+Qualifiers: none
 
- `DateRequested`
- Data type: `DateTime`
+Application identifier.
 
- Access type: Read/Write
+`DateRequested` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Date requested.
+Qualifiers: none
 
- `IsComplete`
- Data type: `Boolean`
+Date requested.
 
- Access type: Read/Write
+`IsComplete` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if activation is complete.
+Qualifiers: none
 
- `PolicyId`
- Data type: `String`
+`true` if activation is complete.
 
- Access type: Read/Write
+`PolicyId` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Policy identifier.
+Qualifiers: [key]
 
- `Revision`
- Data type: `String`
+Policy identifier.
 
- Access type: Read/Write
+`Revision` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Application revision.
+Qualifiers: none
 
- `UserSID`
- Data type: `String`
+Application revision.
 
- Access type: Read/Write
+`UserSID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- User security identifier (SID).
+Qualifiers: [key]
+
+User security identifier (SID).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

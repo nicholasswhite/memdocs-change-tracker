@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 2 of 10 - Install required modules to obtain Windows Autopilot profiles from Intune
+title: "Windows Autopilot deployment for existing devices: Install required modules to obtain Windows Autopilot profiles from Intune"
 description: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 2 of 10 - Install required modules to obtain Windows Autopilot profiles from Intune.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -14,9 +14,7 @@ Windows Autopilot user-driven Microsoft Entra join steps:
 
 - Step 1: [Set up a Windows Autopilot profile](setup-autopilot-profile.md)
 
-> [!div class="checklist"]
->
-> - **Step 2: Install required modules to obtain Windows Autopilot profiles from Intune**
+- **Step 2: Install required modules to obtain Windows Autopilot profiles from Intune**
 
 - Step 3: [Create JSON file for Windows Autopilot profiles](create-json-file.md)
 - Step 4: [Create and distribute package for JSON file in Configuration Manager](create-json-package.md)
@@ -33,7 +31,7 @@ For an overview of the Windows Autopilot deployment for existing devices workflo
 
 > [!NOTE]
 >
-> The PowerShell code snippets in this section were updated in July of 2023 to use the Microsoft Graph PowerShell modules instead of the deprecated AzureAD Graph PowerShell modules. The Microsoft Graph PowerShell modules might require approval of additional permissions in Microsoft Entra ID when they're first used. The code snippets were also updated to force using an updated version of the WindowsAutoPilot module. For more information, see [AzureAD](/powershell/module/azuread/) and [Important: Azure AD Graph Retirement and PowerShell Module Deprecation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270).
+> The PowerShell code snippets in this section were updated in July of 2023 to use the Microsoft Graph PowerShell modules instead of the deprecated AzureAD Graph PowerShell modules. The Microsoft Graph PowerShell modules might require approval of additional permissions in Microsoft Entra ID when they're first used. The code snippets were also updated to force using an updated version of the WindowsAutoPilot module. For more information, see [AzureAD](https://learn.microsoft.com/en-us/powershell/module/azuread/) and [Important: Azure AD Graph Retirement and PowerShell Module Deprecation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270).
 
 After making sure there's a valid Windows Autopilot profile, the next step is to download the existing Windows Autopilot profiles from Intune as JSON files. The JSON files contain all of the information regarding the Intune tenant and the Windows Autopilot profile. After the JSON files are downloaded from Intune, Configuration Manager packages that contain the JSON files are created. The Configuration Manager packages are then used to install the JSON file on the device during the Windows Autopilot deployment for existing devices task sequence.
 
@@ -48,25 +46,22 @@ Before the Windows Autopilot profiles are downloaded from Intune as JSON files, 
 To install the necessary modules to download the Windows Autopilot profiles as a JSON file, follow these steps:
 
 1. Sign in to the Configuration Manager site server or other device that can access Intune.
+2. On the device, open a PowerShell window as an administrator by right-clicking on the **Start** menu and selecting **Windows PowerShell (Admin)**/**Windows Terminal (Admin)** and then selecting **Yes** at the **User Account Control** (UAC) prompt.
+3. Copy the following commands by selecting **Copy** at the top right corner of the below **PowerShell** code block:
 
-1. On the device, open a PowerShell window as an administrator by right-clicking on the **Start** menu and selecting **Windows PowerShell (Admin)**/**Windows Terminal (Admin)** and then selecting **Yes** at the **User Account Control** (UAC) prompt.
+   ```powershell
+   Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+   Install-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4.0 -Force
+   Install-Module -Name Microsoft.Graph.Groups -Force
+   Install-Module -Name Microsoft.Graph.Authentication -Force
+   Install-Module Microsoft.Graph.Identity.DirectoryManagement -Force
 
-1. Copy the following commands by selecting **Copy** at the top right corner of the below **PowerShell** code block:
-
-    ```powershell
-    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-    Install-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4.0 -Force
-    Install-Module -Name Microsoft.Graph.Groups -Force
-    Install-Module -Name Microsoft.Graph.Authentication -Force
-    Install-Module Microsoft.Graph.Identity.DirectoryManagement -Force
-
-    Import-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4
-    Import-Module -Name Microsoft.Graph.Groups
-    Import-Module -Name Microsoft.Graph.Authentication
-    Import-Module -Name Microsoft.Graph.Identity.DirectoryManagement
-    ```
-
-1. Paste the commands into the elevated PowerShell window and then select **Enter** on the keyboard to run the commands. **Enter** might need to be selected a second time to run the last command in the code block. Once all the commands run successfully, the required modules are installed.
+   Import-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4
+   Import-Module -Name Microsoft.Graph.Groups
+   Import-Module -Name Microsoft.Graph.Authentication
+   Import-Module -Name Microsoft.Graph.Identity.DirectoryManagement
+   ```
+4. Paste the commands into the elevated PowerShell window and then select **Enter** on the keyboard to run the commands. **Enter** might need to be selected a second time to run the last command in the code block. Once all the commands run successfully, the required modules are installed.
 
 ### Verify that Windows Autopilot profiles from Intune can be viewed
 
@@ -78,28 +73,22 @@ Once the required modules are installed, the following steps can be taken to ver
 
 1. Copy the following command by selecting **Copy** at the top right corner of the below **PowerShell** code block:
 
-    ```powershell
-    Connect-MgGraph -Scopes "Device.ReadWrite.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementServiceConfig.ReadWrite.All", "Domain.ReadWrite.All", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "User.Read"
-    ```
+   ```powershell
+   Connect-MgGraph -Scopes "Device.ReadWrite.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementServiceConfig.ReadWrite.All", "Domain.ReadWrite.All", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "User.Read"
+   ```
+2. Paste the command into the elevated PowerShell window and then select **Enter** on the keyboard to run the command.
+3. A **Sign in to your account** window appears. Sign in with a Microsoft Entra account that has access to Intune and the Windows Autopilot profiles.
+4. Copy the following command by selecting **Copy** at the top right corner of the below **PowerShell** code block:
 
-1. Paste the command into the elevated PowerShell window and then select **Enter** on the keyboard to run the command.
-
-1. A **Sign in to your account** window appears. Sign in with a Microsoft Entra account that has access to Intune and the Windows Autopilot profiles.
-
-1. Copy the following command by selecting **Copy** at the top right corner of the below **PowerShell** code block:
-
-    ```powershell
-    Get-AutopilotProfile | ConvertTo-AutopilotConfigurationJSON
-    ```
-
-1. Paste the command into the elevated PowerShell window and then select **Enter** on the keyboard to run the command.
-
-1. All Windows Autopilot profiles available in Intune are displayed in the PowerShell window in JSON format. Each individual Windows Autopilot profile is encapsulated within braces (`{}`).
+   ```powershell
+   Get-AutopilotProfile | ConvertTo-AutopilotConfigurationJSON
+   ```
+5. Paste the command into the elevated PowerShell window and then select **Enter** on the keyboard to run the command.
+6. All Windows Autopilot profiles available in Intune are displayed in the PowerShell window in JSON format. Each individual Windows Autopilot profile is encapsulated within braces (`{}`).
 
 ## Next step: Create JSON file for Windows Autopilot profiles
 
-> [!div class="nextstepaction"]
-> [Step 3: Create JSON file for Windows Autopilot profiles](create-json-file.md)
+[Step 3: Create JSON file for Windows Autopilot profiles](create-json-file.md)
 
 ## Related content
 

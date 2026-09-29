@@ -1,16 +1,18 @@
 ---
-title: SMS_R_System Class
+title: "SMS_R_System Server WMI Class"
 description: The SMS_R_System WMI class is an SMS Provider server class that is generated dynamically at SMS Provider run time and contains discovery data for all discovered system resources.
-ms.date: 02/01/2021
+ms.date: "2021-02-01T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_R_System Server WMI Class
+
 The `SMS_R_System` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is generated dynamically at SMS Provider run time and contains discovery data for all discovered system resources.
 
- The following syntax is not defined in Managed Object Format (MOF) code.
+The following syntax is not defined in Managed Object Format (MOF) code.
 
 ## Syntax
 
@@ -77,533 +79,484 @@ Class SMS_R_System : SMS_Resource
 ```
 
 ## Methods
- The `SMS_R_System` class does not define any methods.
+
+The `SMS_R_System` class does not define any methods.
 
 ## Properties
- `Active`
- Data type: `UInt32`
 
- Access type: Read-only
+`Active` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Flag that indicates the state of the client on the network. Although it is usually set to 1, this flag is set to 0 by the client health tools when it is determined that the client is not healthy or not actively participating on the network.
+Qualifiers: None
 
- `ADSiteName`
- Data type: `String`
+Flag that indicates the state of the client on the network. Although it is usually set to 1, this flag is set to 0 by the client health tools when it is determined that the client is not healthy or not actively participating on the network.
 
- Access type: Read-only
+`ADSiteName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The Active Directory site name that is assigned to the client.
+Qualifiers: None
 
- `AgentName`
- Data type: `String` Array
+The Active Directory site name that is assigned to the client.
 
- Access type: Read-only
+`AgentName` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of the names of discovery agents that found the resource.
+Qualifiers: None
 
- `AgentSite`
- Data type: `String` Array
+List of the names of discovery agents that found the resource.
 
- Access type: Read-only
+`AgentSite` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of sites from which the discovery agents run.
+Qualifiers: None
 
- `AgentTime`
- Data type: `DateTime` Array
+List of sites from which the discovery agents run.
 
- Access type: Read-only
+`AgentTime` Data type: `DateTime` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of discovery dates and times.
+Qualifiers: None
 
- `AlwaysInternet`
- Data type: `UInt32`
+List of discovery dates and times.
 
- Access type: Read-only
+`AlwaysInternet` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Value that indicates whether the client always behaves like an internet-based client.
+Qualifiers: None
 
- `Client`
- Data type: `UInt32`
+Value that indicates whether the client always behaves like an internet-based client.
 
- Access type: Read-only
+`Client` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Value that indicates whether a computer has Configuration Manager client software installed. Possible values are:
+Qualifiers: None
 
-|Value|Description|
-|-----------|-----------------|
-|0|A computer that has no client software installed.|
-|1|A computer that has client software installed.|
+Value that indicates whether a computer has Configuration Manager client software installed. Possible values are:
 
- `ClientType`
- Data type: `UInt32`
+| Value | Description |
+| --- | --- |
+| 0 | A computer that has no client software installed. |
+| 1 | A computer that has client software installed. |
 
- Access type: Read-only
+`ClientType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- The type of the client that is installed on the computer. Possible values are:
+Qualifiers: None
 
-|Value|Description|
-|-----------|-----------------|
-|0|Legacy|
-|1|Advanced Client|
-|3|Device Client|
+The type of the client that is installed on the computer. Possible values are:
 
- `ClientVersion`
- Data type: `String`
+| Value | Description |
+| --- | --- |
+| 0 | Legacy |
+| 1 | Advanced Client |
+| 3 | Device Client |
 
- Access type: Read-only
+`ClientVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Version of the installed client software.
+Qualifiers: None
 
- `CPUType`
- Data type: `String`
+Version of the installed client software.
 
- Access type: Read-only
+`CPUType` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The CPU type, for example, StrongARM. Currently, only device clients report this value.
+Qualifiers: None
 
- `CreationDate`
- Data type: `DateTime`
+The CPU type, for example, StrongARM. Currently, only device clients report this value.
 
- Access type: Read-only
+`CreationDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read-only
 
- The date the record was first created, when the resource was first discovered.
+Qualifiers: None
 
- `Decommissioned`
- Data type: `UInt32`
+The date the record was first created, when the resource was first discovered.
 
- Access type: Read-only
+`Decommissioned` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Flag that identified whether the resource is decommissioned or not.
+Qualifiers: None
 
- `DistinguishedName`
- Data type: `String`
+Flag that identified whether the resource is decommissioned or not.
 
- Access type: Read-only
+`DistinguishedName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The distinguished name of the account.
+Qualifiers: None
 
- `EASDeviceID`
- Data type: `String`
+The distinguished name of the account.
 
- Access type: Read-only
+`EASDeviceID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The Exchange Active Sync device ID for mobile device management.
+Qualifiers: None
 
- `HardwareID`
- Data type: `String`
+The Exchange Active Sync device ID for mobile device management.
 
- Access type: Read-only
+`HardwareID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- An ID that uniquely describes the hardware on which the client is installed. This ID remains unchanged through re-imaging or through successive installations of the operating system or client. This differs from the Configuration Manager unique ID, which might change under these circumstances.
+Qualifiers: None
 
- `InternetEnabled`
- Data type: `UInt32`
+An ID that uniquely describes the hardware on which the client is installed. This ID remains unchanged through re-imaging or through successive installations of the operating system or client. This differs from the Configuration Manager unique ID, which might change under these circumstances.
 
- Access type: Read-only
+`InternetEnabled` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Shows whether the device is enabled as an internet device.
+Qualifiers: None
 
- `IPAddresses`
- Data type: `String` Array
+Shows whether the device is enabled as an internet device.
 
- Access type: Read-only
+`IPAddresses` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of the IP addresses that are associated with the resource. More than one address is listed if the resource has multiple network cards installed.
+Qualifiers: None
 
- `IPSubnets`
- Data type: `String` Array
+List of the IP addresses that are associated with the resource. More than one address is listed if the resource has multiple network cards installed.
 
- Access type: Read-only
+`IPSubnets` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of the subnet masks that are associated with the resource IP addresses.
+Qualifiers: None
 
- `IPv6Addresses`
- Data type: `String` Array
+List of the subnet masks that are associated with the resource IP addresses.
 
- Access type: Read-only
+`IPv6Addresses` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of the IPv6 addresses of the resource.
+Qualifiers: None
 
- `IPv6Prefixes`
- Data type: `String` Array
+List of the IPv6 addresses of the resource.
 
- Access type: Read-only
+`IPv6Prefixes` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of the IPv6 prefixes of the resource.
+Qualifiers: None
 
- `IsAssignedToUser`
- Data type: `Boolean`
+List of the IPv6 prefixes of the resource.
 
- Access type: Read-only
+`IsAssignedToUser` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if the resource is assigned to a user.
+Qualifiers: None
 
- `IsMachineChangesPersisted`
- Data type: `Boolean`
+`true` if the resource is assigned to a user.
 
- Access type: Read-only
+`IsMachineChangesPersisted` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if computer changes are persisted.
+Qualifiers: None
 
- `IsVirtualMachine`
- Data type: `Boolean`
+`true` if computer changes are persisted.
 
- Access type: Read-only
+`IsVirtualMachine` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if the resource is a virtual machine.
+Qualifiers: None
 
- `LastLogonUserDomain`
- Data type: `String`
+`true` if the resource is a virtual machine.
 
- Access type: Read-only
+`LastLogonUserDomain` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Domain used by the last logged-on user at the time the discovery agent ran.
+Qualifiers: None
 
- `LastLogonTimestamp`
- Data type: `DateTime`
+Domain used by the last logged-on user at the time the discovery agent ran.
 
- Access type: Read-only
+`LastLogonTimestamp` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read-only
 
- The date of the last logon for the system.
+Qualifiers: None
 
- `LastLogonUserName`
- Data type: `String`
+The date of the last logon for the system.
 
- Access type: Read-only
+`LastLogonUserName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the last logged-on user at the time the discovery agent ran.
+Qualifiers: None
 
- `MACAddresses`
- Data type: `String` Array
+Name of the last logged-on user at the time the discovery agent ran.
 
- Access type: Read-only
+`MACAddresses` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of the media.
+Qualifiers: None
 
- Media access controller (MAC) addresses of the resource.
+List of the media.
 
- `MDMDeviceCategory`
- Data type: `String`
+Media access controller (MAC) addresses of the resource.
 
- Access type: Read-only
+`MDMDeviceCategory` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- If a device is assigned a device category, this property holds the GUID key associated with `CategoryID`, defined in [SMS_MDMDeviceCategory Server WMI Class](../../../../../develop/reference/mdm/sms_mdmdevicecategory-server-wmi-class.md).
+Qualifiers: None
 
- `Name`
- Data type: `String`
+If a device is assigned a device category, this property holds the GUID key associated with `CategoryID`, defined in [SMS_MDMDeviceCategory Server WMI Class](../../../mdm/sms_mdmdevicecategory-server-wmi-class.md).
 
- Access type: Read-only
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the resource.
+Qualifiers: None
 
- `NetbiosName`
- Data type: `String`
+Name of the resource.
 
- Access type: Read-only
+`NetbiosName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name used by the NetBIOS protocol.
+Qualifiers: None
 
- `ObjectGUID`
- Data type: `UInt8 Array`
+Name used by the NetBIOS protocol.
 
- Access type: Read-only
+`ObjectGUID` Data type: `UInt8 Array`
 
- Qualifiers: None
+Access type: Read-only
 
- Object GUID of the resource retrieved from Active Directory.
+Qualifiers: None
 
- `Obsolete`
- Data type: `UInt32`
+Object GUID of the resource retrieved from Active Directory.
 
- Access type: Read-only
+`Obsolete` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Value identifying the state of the record. Although it is usually set to 0, this value is set to 1 when the server detects that the record has been superseded by another record for the same computer. If several records have the same `HardwareID` value (same computer), the older records are marked as obsolete.
+Qualifiers: None
 
- `OperatingSystemNameandVersion`
- Data type: `String`
+Value identifying the state of the record. Although it is usually set to 0, this value is set to 1 when the server detects that the record has been superseded by another record for the same computer. If several records have the same `HardwareID` value (same computer), the older records are marked as obsolete.
 
- Access type: Read-only
+`OperatingSystemNameandVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Free-form string that describes the operating system.
+Qualifiers: None
 
- `PreviousSMSUUID`
- Data type: `String`
+Free-form string that describes the operating system.
 
- Access type: Read-only
+`PreviousSMSUUID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- ID of the hardware. If the client determines that the hardware has changed significantly (that is, that the client has most likely been moved from one computer to another), it generates a new GUID for itself and reports the old one in this property. The server also marks the old record as obsolete.
+Qualifiers: None
 
- `PrimaryGroupID`
- Data type: `UInt32`
+ID of the hardware. If the client determines that the hardware has changed significantly (that is, that the client has most likely been moved from one computer to another), it generates a new GUID for itself and reports the old one in this property. The server also marks the old record as obsolete.
 
- Access type: Read-only
+`PrimaryGroupID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Primary group of the resource retrieved from Active Directory.
+Qualifiers: None
 
- `ResourceDomainORWorkgroup`
- Data type: `String`
+Primary group of the resource retrieved from Active Directory.
 
- Access type: Read-only
+`ResourceDomainORWorkgroup` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Domain or workgroup to which the resource belongs.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Domain or workgroup to which the resource belongs.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md).
+Qualifiers: [key]
 
- `ResourceNames`
- Data type: `String` Array
+See [SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md).
 
- Access type: Read-only
+`ResourceNames` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of non-NetBIOS names.
+Qualifiers: None
 
- `ResourceType`
- Data type: `UInt32`
+List of non-NetBIOS names.
 
- Access type: Read-only
+`ResourceType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Type of resources on the site. For more information, see [SMS_ResourceMap Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resourcemap-server-wmi-class.md).
+Qualifiers: None
 
- `SecurityGroupName`
- Data type: `String`
+Type of resources on the site. For more information, see [SMS_ResourceMap Server WMI Class](sms_resourcemap-server-wmi-class.md).
 
- Access type: Read-only
+`SecurityGroupName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- SecurityGroupName
+Qualifiers: None
 
- `SID`
- Data type: `String`
+SecurityGroupName
 
- Access type: Read-only
+`SID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- SID of the resource retrieved from Active Directory.
+Qualifiers: None
 
- `SMBIOSGUID`
- Data type: `String`
+SID of the resource retrieved from Active Directory.
 
- Access type: Read-only
+`SMBIOSGUID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- BIOS GUID of a client computer.
+Qualifiers: None
 
- `SMSAssignedSites`
- Data type: `String` Array
+BIOS GUID of a client computer.
 
- Access type: Read-only
+`SMSAssignedSites` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of site codes for sites to which the resource is assigned, based on the site boundaries. Even though a resource is assigned to a site, it might not be functioning as a client if the client software is not yet installed.
+Qualifiers: None
 
- `SMSInstalledSites`
- Data type: `String` Array
+List of site codes for sites to which the resource is assigned, based on the site boundaries. Even though a resource is assigned to a site, it might not be functioning as a client if the client software is not yet installed.
 
- Access type: Read-only
+`SMSInstalledSites` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of codes for sites to which the resource is reporting data. Eventually, this list should match the list of assigned sites.
+Qualifiers: None
 
- `SMSUniqueIdentifier`
- Data type: `String`
+List of codes for sites to which the resource is reporting data. Eventually, this list should match the list of assigned sites.
 
- Access type: Read-only
+`SMSUniqueIdentifier` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Unique ID that comes from the client computer. This ID is unique across sites.
+Qualifiers: None
 
- `SMSUUIDChangeDate`
- Data type: `DateTime`
+Unique ID that comes from the client computer. This ID is unique across sites.
 
- Access type: Read-only
+`SMSUUIDChangeDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read-only
 
- The date of when the client generated a new GUID.
+Qualifiers: None
 
- `SNMPCommunityName`
- Data type: `String`
+The date of when the client generated a new GUID.
 
- Access type: Read-only
+`SNMPCommunityName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- SNMP community name used in network discovery to discover the resource.
+Qualifiers: None
 
- `SystemContainerName`
- Data type: `String` Array
+SNMP community name used in network discovery to discover the resource.
 
- Access type: Read-only
+`SystemContainerName` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- An array of Active Directory container names to which the system belongs.
+Qualifiers: None
 
- `SystemGroupName`
- Data type: `String` Array
+An array of Active Directory container names to which the system belongs.
 
- Access type: Read-only
+`SystemGroupName` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- An array of Active Directory group names to which the system belongs.
+Qualifiers: None
 
- `SystemSystemOUName`
- Data type: `String` Array
+An array of Active Directory group names to which the system belongs.
 
- Access type: Read-only
+`SystemSystemOUName` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- An array of organizational units (OUs) to which the system belongs.
+Qualifiers: None
 
- `SystemRoles`
- Data type: `String` Array
+An array of organizational units (OUs) to which the system belongs.
 
- Access type: Read-only
+`SystemRoles` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- List of site system roles that the resource performs in the Configuration Manager installation, such as a distribution point. Only resources that perform one or more specific site system roles have a value for this property.
+Qualifiers: None
 
- `Unknown`
- Data type: `UInt32`
+List of site system roles that the resource performs in the Configuration Manager installation, such as a distribution point. Only resources that perform one or more specific site system roles have a value for this property.
 
- Access type: Read-only
+`Unknown` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Unknown.
+Qualifiers: None
 
- `UserAccountControl`
- Data type: `UInt32`
+Unknown.
 
- Access type: Read-only
+`UserAccountControl` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- User account control value retrieved from Active Directory.
+Qualifiers: None
 
- `VirtualMachineHostName`
- Data type: `String`
+User account control value retrieved from Active Directory.
 
- Access type: Read-only
+`VirtualMachineHostName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Virtual machine host name.
+Qualifiers: None
 
- `WipeStatus`
- Data type: `UInt32`
+Virtual machine host name.
 
- Access type: Read-only
+`WipeStatus` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Wipe status of the device, as reported through Exchange Active Sync (EAS).
+Qualifiers: None
 
-|Value|Wipe status|
-|-|-|
-|1|Wipe Pending|
-|2|Wipe Cancelling|
-|3|Wipe Confirmed/Registered|
+Wipe status of the device, as reported through Exchange Active Sync (EAS).
+
+| Value | Wipe status |
+| --- | --- |
+| 1 | Wipe Pending |
+| 2 | Wipe Cancelling |
+| 3 | Wipe Confirmed/Registered |
 
 ## Remarks
- You cannot create or update resource instances by using WMI, but you must create or update resources by using data discovery records. However, you can delete resource instances by using WMI.
+
+You cannot create or update resource instances by using WMI, but you must create or update resources by using data discovery records. However, you can delete resource instances by using WMI.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Resource Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_resource-server-wmi-class.md)
+
+[SMS_Resource Server WMI Class](sms_resource-server-wmi-class.md)

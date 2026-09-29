@@ -1,7 +1,7 @@
 ---
-title: SMS_TaskSequence_PartitionDiskAction class
+title: "SMS_TaskSequence_PartitionDiskAction server WMI class"
 description: The SMS_TaskSequence_PartitionDiskAction WMI class is an SMS Provider server class in Configuration Manager.
-ms.date: 08/11/2020
+ms.date: "2020-08-11T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -50,7 +50,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `ContinueOnError`
 
@@ -60,7 +60,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Description`
 
@@ -70,7 +70,7 @@ Access type: Read/Write
 
 Qualifiers: `[AllowedLen("0-255")]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `DiskIndex`
 
@@ -118,7 +118,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `GPTBootDisk`
 
@@ -138,7 +138,7 @@ Access type: Read/Write
 
 Qualifiers: `[AllowedLen("1-100")]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Partitions`
 
@@ -148,7 +148,7 @@ Access type: Read/Write
 
 Qualifiers: `[Not_null]`
 
-For more information on the objects representing partition settings, see [SMS_TaskSequence_PartitionSettings server WMI class](../../../develop/reference/osd/sms_tasksequence_partitionsettings-server-wmi-class.md).
+For more information on the objects representing partition settings, see [SMS_TaskSequence_PartitionSettings server WMI class](sms_tasksequence_partitionsettings-server-wmi-class.md).
 
 ### `PartitionStyle`
 
@@ -161,7 +161,6 @@ Qualifiers: `[Not_null]`
 The partition style. Possible values are:
 
 - `GPT`: GUID partition table format.
-
 - `MBR`: Master boot record format.
 
 ### `SupportedEnvironment`
@@ -172,7 +171,7 @@ Access type: Read/Write
 
 Qualifiers: `[Not_Null:ToInstance]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 The default value of this property for this task sequence action is `WinPE`.
 
@@ -184,7 +183,7 @@ Access type: Read/Write
 
 Qualifiers: None
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ## Remarks
 
@@ -196,20 +195,19 @@ Class qualifiers for this class include:
 ActionCategory{"Disks,1,3"},ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "PartitionDiskControl", "TaskSequenceOptionControl"}]
 ```
 
-For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager class and property qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager class and property qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime requirements
 
-For more information, see [Configuration Manager server runtime requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+For more information, see [Configuration Manager server runtime requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development requirements
 
-For more information, see [Configuration Manager server development requirements](../../../develop/core/reqs/server-development-requirements.md).
+For more information, see [Configuration Manager server development requirements](../../core/reqs/server-development-requirements.md).
 
 ## See also
 
-- [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md)
-
-- [SMS_TaskSequence_PartitionSettings server WMI class](../../../develop/reference/osd/sms_tasksequence_partitionsettings-server-wmi-class.md)
+- [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md)
+- [SMS_TaskSequence_PartitionSettings server WMI class](sms_tasksequence_partitionsettings-server-wmi-class.md)

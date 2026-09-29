@@ -1,16 +1,18 @@
 ---
-title: SMS_PackageToAdvert_a Class
+title: "SMS_PackageToAdvert_a Server WMI Class"
 description: The SMS_PackageToAdvert_a WMI class is an SMS Provider server class that relates an SMS_Advertisement Server WMI Class object to the SMS_Package Server WMI Class object that it advertises.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_PackageToAdvert_a Server WMI Class
-The `SMS_PackageToAdvert_a` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that relates an [SMS_Advertisement Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_advertisement-server-wmi-class.md) object to the [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) object that it advertises.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_PackageToAdvert_a Server WMI Class
+
+The `SMS_PackageToAdvert_a` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that relates an [SMS_Advertisement Server WMI Class](sms_advertisement-server-wmi-class.md) object to the [SMS_Package Server WMI Class](sms_package-server-wmi-class.md) object that it advertises.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,44 +25,46 @@ Class SMS_PackageToAdvert_a : SMS_BaseAssociation
 ```
 
 ## Methods
- The `SMS_PackageToAdvert_a` class does not define any methods.
+
+The `SMS_PackageToAdvert_a` class does not define any methods.
 
 ## Properties
- `advert`
- Data type: `ref:SMS_Advertisement`
 
- Access type: Read/Write
+`advert` Data type: `ref:SMS_Advertisement`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Reference to an [SMS_Advertisement Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_advertisement-server-wmi-class.md) object path.
+Qualifiers: [key]
 
- `package`
- Data type: `ref:SMS_Package`
+Reference to an [SMS_Advertisement Server WMI Class](sms_advertisement-server-wmi-class.md) object path.
 
- Access type: Read/Write
+`package` Data type: `ref:SMS_Package`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Reference to an [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) object path.
+Qualifiers: [key]
+
+Reference to an [SMS_Package Server WMI Class](sms_package-server-wmi-class.md) object path.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Association: ToInstance
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Advertisement Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_advertisement-server-wmi-class.md)
- [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
+
+[SMS_Advertisement Server WMI Class](sms_advertisement-server-wmi-class.md) [SMS_Package Server WMI Class](sms_package-server-wmi-class.md)

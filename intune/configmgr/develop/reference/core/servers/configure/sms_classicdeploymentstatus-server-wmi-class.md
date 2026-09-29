@@ -1,16 +1,18 @@
 ---
-title: SMS_ClassicDeploymentStatus Class
+title: "SMS_ClassicDeploymentStatus Server WMI Class"
 description: The SMS_ClassicDeploymentStatus WMI class is an SMS Provider server class that represents classic software distribution deployment status.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClassicDeploymentStatus Server WMI Class
+
 The `SMS_ClassicDeploymentStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents classic software distribution deployment status.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,148 +37,138 @@ Class SMS_ClassicDeploymentStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ClassicDeploymentStatus` class does not define any methods.
+
+The `SMS_ClassicDeploymentStatus` class does not define any methods.
 
 ## Properties
- `Assets`
- Data type: `UInt32`
 
- Access type: Read-only
+`Assets` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Number of assets related to the status.
+Qualifiers: [not_null, read]
 
- `CollectionID`
- Data type: `String`
+Number of assets related to the status.
 
- Access type: Read-only
+`CollectionID` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Existing collection to which the advertisement is targeted.
+Qualifiers: [key, not_null, read]
 
- `CollectionName`
- Data type: `String`
+Existing collection to which the advertisement is targeted.
 
- Access type: Read-only
+`CollectionName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the collection to which the advertisement is advertising.
+Qualifiers: [read]
 
- `DeploymentID`
- Data type: `String`
+The name of the collection to which the advertisement is advertising.
 
- Access type: Read-only
+`DeploymentID` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- A unique auto-generated key.
+Qualifiers: [key, not_null, read]
 
- `DeploymentTime`
- Data type: `DateTime`
+A unique auto-generated key.
 
- Access type: Read-only
+`DeploymentTime` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The time of the deployment.
+Qualifiers: [not_null, read]
 
- `IsDeviceDeployment`
- Data type: `Boolean`
+The time of the deployment.
 
- Access type: Read-only
+`IsDeviceDeployment` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if the deployment is for mobile devices.
+Qualifiers: [not_null, read]
 
- `MessageDescription`
- Data type: `String`
+`true` if the deployment is for mobile devices.
 
- Access type: Read-only
+`MessageDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Message description.
+Qualifiers: [read]
 
- `MessageID`
- Data type: `UInt32`
+Message description.
 
- Access type: Read-only
+`MessageID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Software distribution or software update message ID.
+Qualifiers: [key, read]
 
- `PackageID`
- Data type: `String`
+Software distribution or software update message ID.
 
- Access type: Read-only
+`PackageID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- ID for an existing package associated with the advertisement.
+Qualifiers: [read]
 
- `PackageName`
- Data type: `String`
+ID for an existing package associated with the advertisement.
 
- Access type: Read-only
+`PackageName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the advertised package.
+Qualifiers: [read]
 
- `ProgramName`
- Data type: `String`
+The name of the advertised package.
 
- Access type: Read-only
+`ProgramName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The program name of the program related to the package that the advertisement will advertise.
+Qualifiers: [read]
 
- `Purpose`
- Data type: `UInt32`
+The program name of the program related to the package that the advertisement will advertise.
 
- Access type: Read-only
+`Purpose` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Purpose.
+Qualifiers: [not_null, read]
 
- `StatusType`
- Data type: `UInt32`
+Purpose.
 
- Access type: Read-only
+`StatusType` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Status Type.
+Qualifiers: [key, read]
 
-|Value|Status type|
-|-|-|
-|1|Success|
-|2|InProgress|
-|4|Unknown|
-|5|Error|
+Status Type.
 
- `SummarizationTime`
- Data type: `DateTime`
+| Value | Status type |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 4 | Unknown |
+| 5 | Error |
 
- Access type: Read-only
+`SummarizationTime` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The last time the summarization task was run for this application or current time in UTC if it is missing.
+Qualifiers: [not_null, read]
+
+The last time the summarization task was run for this application or current time in UTC if it is missing.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

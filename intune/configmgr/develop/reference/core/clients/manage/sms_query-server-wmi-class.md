@@ -1,16 +1,18 @@
 ---
-title: SMS_Query Class
+title: "SMS_Query Server WMI Class"
 description: The SMS_Query Windows Management Instrumentation (WMI) class is an SMS Provider server class. It serves as a container for predefined queries.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Query Server WMI Class
+
 The `SMS_Query` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as a container for predefined queries.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,118 +32,113 @@ Class SMS_Query : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in `SMS_Query`.
 
-|Method|Description|
-|------------|-----------------|
-|[CreateCCRs Method in Class SMS_Query](../../../../../develop/reference/core/clients/manage/createccrs-method-in-class-sms_query.md)|Generates client configuration requests (CCRs) for the query.|
-|[FindResourceSite Method in Class SMS_Query](../../../../../develop/reference/core/clients/manage/findresourcesite-method-in-class-sms_query.md)|Gets site code information for resources from SQL.|
+The following table lists the methods in `SMS_Query`.
+
+| Method | Description |
+| --- | --- |
+| [CreateCCRs Method in Class SMS_Query](createccrs-method-in-class-sms_query.md) | Generates client configuration requests (CCRs) for the query. |
+| [FindResourceSite Method in Class SMS_Query](findresourcesite-method-in-class-sms_query.md) | Gets site code information for resources from SQL. |
 
 ## Properties
- `Comments`
- Data type: **String**
 
- Access type: Read/Write
+`Comments` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- Comments to document the query. The default value is "".
+Qualifiers: None
 
- `Expression`
- Data type: **String**
+Comments to document the query. The default value is "".
 
- Access type: Read/Write
+`Expression` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- WMI Query Language (WQL) text for the query. The default value is "".
+Qualifiers: None
 
- `LimitToCollectionID`
- Data type: **String**
+WMI Query Language (WQL) text for the query. The default value is "".
 
- Access type: Read/Write
+`LimitToCollectionID` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of a collection. This ID is used to limit the query results to resources that are members of the collection.
+Qualifiers: None
 
- `LocalizedCategoryInstanceNames`
- Data type: **String** Array
+ID of a collection. This ID is used to limit the query results to resources that are members of the collection.
 
- Access type: Read
+`LocalizedCategoryInstanceNames` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read
 
- Localized names of the categories to which the resource belongs.
+Qualifiers: None
 
- `Name`
- Data type: **String**
+Localized names of the categories to which the resource belongs.
 
- Access type: Read/Write
+`Name` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the query as shown in the Configuration Manager console. The default value is "".
+Qualifiers: None
 
- `QueryID`
- Data type: **String**
+Name of the query as shown in the Configuration Manager console. The default value is "".
 
- Access type: Read-only
+`QueryID` Data type: **String**
 
- Qualifiers: [read, key]
+Access type: Read-only
 
- Unique auto-generated ID for the query.
+Qualifiers: [read, key]
 
- `ResultAliasNames`
- Data type: **String** Array
+Unique auto-generated ID for the query.
 
- Access type: Read-only
+`ResultAliasNames` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- If you specify an alias in the query expression, this array will be filled with the aliases.
+Qualifiers: None
 
- `ResultColumnsNames`
- Data type: **String** Array
+If you specify an alias in the query expression, this array will be filled with the aliases.
 
- Access type: Read-only
+`ResultColumnsNames` Data type: **String** Array
 
- Qualifiers: None
+Access type: Read-only
 
- If you specify an alias in the query expression, this array will be filled with the resulting alias columns names.
+Qualifiers: None
 
- `TargetClassName`
- Data type: **String**
+If you specify an alias in the query expression, this array will be filled with the resulting alias columns names.
 
- Access type: Read/Write
+`TargetClassName` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the target class, found in the FROM clause of the query. The default value is "".
+Qualifiers: None
 
- This name is arbitrary for queries that perform a JOIN operation. The Configuration Manager console uses this property for display purposes to give the user an idea of the data that the query retrieves.
+Name of the target class, found in the FROM clause of the query. The default value is "".
+
+This name is arbitrary for queries that perform a JOIN operation. The Configuration Manager console uses this property for display purposes to give the user an idea of the data that the query retrieves.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
-
 - DisplayName("Query")
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   You can use `SMS_Query` to persist valid queries that can be used later in an application or that can be run from the Configuration Manager console.
 
-  Instances of this class with the `TargetClassName` property set to an [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md) object appear in the System Status node in the Configuration Manager console. All other instances appear in the Queries node.
+  Instances of this class with the `TargetClassName` property set to an [SMS_StatusMessage Server WMI Class](../../servers/manage/sms_statusmessage-server-wmi-class.md) object appear in the System Status node in the Configuration Manager console. All other instances appear in the Queries node.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Collection Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)
- [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md)
+
+[SMS_Collection Server WMI Class](../collections/sms_collection-server-wmi-class.md) [SMS_StatusMessage Server WMI Class](../../servers/manage/sms_statusmessage-server-wmi-class.md)

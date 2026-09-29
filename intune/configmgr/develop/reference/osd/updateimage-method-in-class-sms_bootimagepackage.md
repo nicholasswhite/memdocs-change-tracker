@@ -1,16 +1,18 @@
 ---
-title: UpdateImage Method
+title: "UpdateImage Method in Class SMS_BootImagePackage"
 description: The UpdateImage Windows Management Instrumentation (WMI) class method, in Configuration Manager, creates a copy of the current boot image source .wim file and updates the copy with the most current operating system deployment binaries.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # UpdateImage Method in Class SMS_BootImagePackage
+
 The `UpdateImage` Windows Management Instrumentation (WMI) class method, in Configuration Manager, creates a copy of the current boot image source .wim file and updates the copy with the most current operating system deployment binaries.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -19,23 +21,29 @@ SInt32 UpdateImage();
 ```
 
 #### Parameters
- None.
+
+None.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
- Your application calls this method only when Configuration Manager is upgrading from an operating system release candidate to an RTM version.
+
+Your application calls this method only when Configuration Manager is upgrading from an operating system release candidate to an RTM version.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_BootImagePackage Server WMI Class](../../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md)
+
+[SMS_BootImagePackage Server WMI Class](sms_bootimagepackage-server-wmi-class.md)

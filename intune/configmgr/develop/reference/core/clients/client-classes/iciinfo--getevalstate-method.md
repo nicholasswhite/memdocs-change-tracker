@@ -1,13 +1,15 @@
 ---
 description: The ICIINFO::GetEvalState method, in Configuration Manager, gets the current evaluation state of the configuration item.
-title: "ICIINFO::GetEvalState"
-ms.date: 09/20/2016
+title: "ICIINFO::GetEvalState Method"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ICIINFO::GetEvalState Method
+
 The `ICIINFO::GetEvalState` method, in Configuration Manager, gets the current evaluation state of the configuration item.
 
 ## Syntax
@@ -20,27 +22,29 @@ HRESULT GetEvalState(
 ```
 
 #### Parameters
- `pCIEvalState`
- Data type: `CIEvalState`
 
- Qualifiers: [out]
+`pCIEvalState` Data type: `CIEvalState`
 
- Pointer to a [CIEvalState Enumeration](../../../../../develop/reference/core/clients/client-classes/cievalstate-enumeration.md) value indicating the evaluation state.
+Qualifiers: [out]
+
+Pointer to a [CIEvalState Enumeration](cievalstate-enumeration.md) value indicating the evaluation state.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but are not limited to, the following:
 
- S_OK
- The method succeeded. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but are not limited to, the following:
+
+S_OK The method succeeded. All other return values indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [ICIINFO Interface](../../../../../develop/reference/core/clients/client-classes/iciinfo-interface.md)
- [CIEvalState Enumeration](../../../../../develop/reference/core/clients/client-classes/cievalstate-enumeration.md)
+
+[ICIINFO Interface](iciinfo-interface.md) [CIEvalState Enumeration](cievalstate-enumeration.md)

@@ -1,7 +1,7 @@
 ---
-title: Tenant attached CMPivot sample scripts
+title: "Tenant attach: CMPivot sample scripts"
 description: Script samples for CMPivot for Microsoft Intune tenant attached devices.
-ms.date: 01/25/2022
+ms.date: "2022-01-25T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: sample
 ms.collection: tier3
@@ -9,16 +9,143 @@ ms.service: configuration-manager
 ---
 
 # Tenant attach: CMPivot sample scripts
-<!---->
+
 *Applies to: Configuration Manager (current branch)*
 
-Run [CMPivot](cmpivot-start.md) queries from Microsoft Intune admin center. Below are a few common query needs and how CMPivot can be used to meet them. CMPivot uses a subset of the [Kusto Query Language (KQL)](/azure/kusto/query/).
+Run [CMPivot](cmpivot-start.md) queries from Microsoft Intune admin center. Below are a few common query needs and how CMPivot can be used to meet them. CMPivot uses a subset of the [Kusto Query Language (KQL)](https://learn.microsoft.com/en-us/azure/kusto/query/).
 
-Below are a few common query needs and how CMPivot can be used to meet them. CMPivot uses a subset of the [Kusto Query Language (KQL)](/azure/kusto/query/).
+Below are a few common query needs and how CMPivot can be used to meet them. CMPivot uses a subset of the [Kusto Query Language (KQL)](https://learn.microsoft.com/en-us/azure/kusto/query/).
 
-[!INCLUDE [Sample scripts for both Microsoft Intune and Configuration Manager use](../core/servers/manage/includes/cmpivot-samples-shared.md)]
+## Operating system
+
+Gets operating system information.
+
+```kusto
+// Sample query for OS information
+OperatingSystem
+```
+
+## Recently used applications
+
+The following query gets recently used applications (last 2 hours):
+
+```kusto
+CCMRecentlyUsedApplications
+| where (LastUsedTime > ago(2h))
+| project CompanyName, ProductName, ProductVersion, LastUsedTime
+```
+
+## Device start times
+
+The following query shows when were the devices started in the last seven days:
+
+```kusto
+OperatingSystem
+| where LastBootUpTime <= ago(7d)
+| summarize count() by bin(LastBootUpTime,1d)
+```
+
+## Free disk space
+
+The following query shows free disk space:
+
+```kusto
+LogicalDisk
+| project Device, DeviceID, Name, Description, FileSystem, Size, FreeSpace
+| order by DeviceID asc
+```
+
+## Device information
+
+Show device, manufacturer, model, and OSVersion:
+
+```kusto
+ComputerSystem
+| project Device, Manufacturer, Model
+| join (OperatingSystem | project Device, OSVersion=Caption)
+```
+
+## Boot times for a device
+
+Show boot times for devices:
+
+```kusto
+SystemBootData
+| project Device, SystemStartTime, BootDuration, OSStart=EventLogStart, GPDuration, UpdateDuration
+| order by SystemStartTime desc
+```
+
+## Authentication failures
+
+Search the event logs for authentication failures.
+
+```kusto
+EventLog('Security')
+| where  EventID == 4673
+```
+
+## ProcessModule(&lt;processname&gt;)
+
+Enumerates all the modules (dlls) loaded by a given process. ProcessModule is useful when hunting for malware that hides in legitimate processes.
+
+```kusto
+ProcessModule('powershell')
+| summarize count() by ModuleName
+| order by count_ desc
+```
+
+## Antimalware software status
+
+Gets the status of antimalware software installed on the computer gathered by the `Get-MpComputerStatus` cmdlet. The entity is supported on Windows 10 and Server 2016, or later with Defender running. |
+
+```kusto
+EPStatus
+| project Device, QuickScanAge=datetime_diff('day',now(),QuickScanEndTime)
+| summarize DeviceCount=count() by QuickScanAge
+```
+
+## Find BIOS Manufacturer that contains any word like Micro
+
+```kusto
+Bios
+// Find BIOS Manufacturer that contains any word like Micro, such as Microsoft
+| where Manufacturer like '%Micro%'
+```
+
+## Find file by its hash
+
+Search for a file by hash.
+
+```kusto
+Device
+| join kind=leftouter ( File('%windir%\\system32\\*.exe')
+| where SHA256Hash == 'A92056D772260B39A876D01552496B2F8B4610A0B1E084952FE1176784E2CE77')
+| project Device, MalwareFound = iif( isnull(FileName), 'No', 'Yes')
+```
+
+## Find 'Scripts' in the CCM logs in the last hour
+
+The following query looks at events in the last 1 hour:
+
+```kusto
+CcmLog('Scripts',1h)
+```
+
+## Find information in the registry
+
+Search for registry information.
+
+```kusto
+// Change the path to match your desired registry hive query
+// The RegistryKey entity (added in version 2107) isn't supported with CMPivot for tenant attached devices.  
+
+Registry('hklm:\SOFTWARE\Microsoft\EnterpriseCertificates\Root\Certificates\*')
+RegistryKey('hklm:\SOFTWARE\Microsoft\EnterpriseCertificates\Root\Certificates\*')
+
+RegistryKey('hklm:\SOFTWARE\Microsoft\SMS\*')
+Registry('hklm:\SOFTWARE\Microsoft\SMS\*')
+```
 
 ## Next steps
 
-For more information, see [Launch CMPivot from the admin center](cmpivot-start.md)
-For more information on entities for your queries, see [Microsoft Intune tenant attach: CMPivot usage overview](cmpivot-overview-attached.md).
+For more information, see [Launch CMPivot from the admin center](cmpivot-start.md) For more information on entities for your queries, see [Microsoft Intune tenant attach: CMPivot usage overview](cmpivot-overview-attached.md).

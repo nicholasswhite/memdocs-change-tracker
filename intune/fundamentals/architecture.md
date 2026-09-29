@@ -1,7 +1,7 @@
 ---
 title: Microsoft Intune architecture
 description: Reference architecture for a Microsoft Intune deployment, including cloud and on-premises components and Microsoft and third-party integrations.
-ms.date: 05/12/2026
+ms.date: "2026-05-12T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: davidra
 ms.collection:
@@ -15,48 +15,38 @@ This article describes the architecture of a Microsoft Intune deployment: the cl
 
 For an introduction to what Intune does, see [What is Microsoft Intune?](what-is-intune.md). For a conceptual walkthrough of how Intune manages identities, devices, and apps, see [Microsoft Intune core concepts](core-concepts.md).
 
-:::image type="content" source="./media/architecture/intune-reference-architecture.png" alt-text="Diagram that shows Microsoft Intune in a reference architecture with Microsoft Entra, Microsoft 365, Configuration Manager, on-premises connectors, and managed endpoints." lightbox="./media/architecture/intune-reference-architecture.png" border="false":::
+[![Diagram that shows Microsoft Intune in a reference architecture with Microsoft Entra, Microsoft 365, Configuration Manager, on-premises connectors, and managed endpoints.](media/architecture/intune-reference-architecture.png)](media/architecture/intune-reference-architecture.png#lightbox)
 
 The diagram organizes a typical Intune deployment into seven tiers:
 
 1. **Cloud control plane**: Microsoft-hosted Intune services.
-1. **Managed endpoints**: devices that Intune manages.
-1. **Endpoint family services**: Microsoft products whose primary purpose is endpoint management.
-1. **Connectors and extensions**: cloud-based external services Intune integrates with.
-1. **Peer integrations**: other Microsoft products that integrate with Intune.
-1. **Partner ecosystem**: third-party products and services that integrate with Intune.
-1. **On-premises services**: customer-operated infrastructure that integrates with the Intune cloud.
+2. **Managed endpoints**: devices that Intune manages.
+3. **Endpoint family services**: Microsoft products whose primary purpose is endpoint management.
+4. **Connectors and extensions**: cloud-based external services Intune integrates with.
+5. **Peer integrations**: other Microsoft products that integrate with Intune.
+6. **Partner ecosystem**: third-party products and services that integrate with Intune.
+7. **On-premises services**: customer-operated infrastructure that integrates with the Intune cloud.
 
 Each tier is described in the following sections.
 
 ## Cloud control plane
 
-:::row:::
-    :::column:::
-        The cloud control plane is the set of Microsoft-hosted services that constitute the Intune tenant. They store configurations, deliver policy, expose programmatic interfaces, and surface the admin and user experiences.
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="media/architecture/cloud-control-plane.png" alt-text="Diagram of the cloud control plane." border="false" lightbox="media/architecture/cloud-control-plane-on.png":::
-    :::column-end:::
-:::row-end:::
+The cloud control plane is the set of Microsoft-hosted services that constitute the Intune tenant. They store configurations, deliver policy, expose programmatic interfaces, and surface the admin and user experiences.
+
+[![Diagram of the cloud control plane.](media/architecture/cloud-control-plane.png)](media/architecture/cloud-control-plane-on.png#lightbox)
 
 | Component | Role |
-|---|---|
+| --- | --- |
 | **Microsoft Intune service** | The cloud control plane that stores configurations and orchestrates policy delivery. |
-| **[Microsoft Intune admin center]** | Web console for administrators. |
-| **[Microsoft Graph API](/graph/intune-concept-overview)** | Public programming interface. Every admin center action is backed by a Graph API call. |
+| **[Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431)** | Web console for administrators. |
+| **[Microsoft Graph API](https://learn.microsoft.com/en-us/graph/intune-concept-overview)** | Public programming interface. Every admin center action is backed by a Graph API call. |
 | **[Microsoft Intune Company Portal app and website](../app-management/configuration/configure-company-portal.md)** | User-facing surface that enrolls devices, surfaces required apps, and shows compliance status. |
 
 ## Managed endpoints
 
-:::row:::
-    :::column:::
-        Intune supports the following platforms: Android, iOS, iPadOS, Linux, macOS, tvOS, visionOS, and Windows. Specialty scenarios include kiosks, frontline devices, and rugged hardware managed through platform-specific enrollment paths.
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="media/architecture/managed-endpoints.png" alt-text="Diagram of managed endpoints as they relate to the cloud control plane." border="false" lightbox="media/architecture/managed-endpoints-on.png":::
-    :::column-end:::
-:::row-end:::
+Intune supports the following platforms: Android, iOS, iPadOS, Linux, macOS, tvOS, visionOS, and Windows. Specialty scenarios include kiosks, frontline devices, and rugged hardware managed through platform-specific enrollment paths.
+
+[![Diagram of managed endpoints as they relate to the cloud control plane.](media/architecture/managed-endpoints.png)](media/architecture/managed-endpoints-on.png#lightbox)
 
 Devices come under management through several modes:
 
@@ -68,37 +58,25 @@ For the full supported-OS matrix, see [Supported operating systems and browsers 
 
 ## Endpoint family services
 
-:::row:::
-    :::column:::
-        Endpoint family services are Microsoft products whose primary purpose is endpoint management. Each specializes in a specific aspect of the endpoint lifecycle.
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="media/architecture/endpoint-family-services.png" alt-text="Diagram of endpoint family services as they relate to the cloud control plane." border="false" lightbox="media/architecture/endpoint-family-services-on.png":::
-    :::column-end:::
-:::row-end:::
+Endpoint family services are Microsoft products whose primary purpose is endpoint management. Each specializes in a specific aspect of the endpoint lifecycle.
 
-
+[![Diagram of endpoint family services as they relate to the cloud control plane.](media/architecture/endpoint-family-services.png)](media/architecture/endpoint-family-services-on.png#lightbox)
 
 | Service | What it does | When to use |
-|---|---|---|
-| **[Windows Autopilot](/autopilot/overview)** | Cloud-based provisioning for new and existing Windows devices, with options for user-driven, self-deploying (zero-touch), pre-provisioning, and reset | Shipping devices directly from OEM to end users, or repurposing existing devices at scale |
-| **[Windows 365](/windows-365/enterprise/overview)** | Cloud-hosted Windows desktops (Cloud PCs) | Remote workers, BYOD, contractors, regulated workloads |
-| **[Windows Autopatch](/windows/deployment/windows-autopatch/overview/windows-autopatch-overview)** | Managed update service for Windows, Microsoft 365 Apps for enterprise, Microsoft Edge, Microsoft Teams, and device drivers and firmware | Reducing manual update administration |
+| --- | --- | --- |
+| **[Windows Autopilot](../../autopilot/overview.md)** | Cloud-based provisioning for new and existing Windows devices, with options for user-driven, self-deploying (zero-touch), pre-provisioning, and reset | Shipping devices directly from OEM to end users, or repurposing existing devices at scale |
+| **[Windows 365](https://learn.microsoft.com/en-us/windows-365/enterprise/overview)** | Cloud-hosted Windows desktops (Cloud PCs) | Remote workers, BYOD, contractors, regulated workloads |
+| **[Windows Autopatch](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/overview/windows-autopatch-overview)** | Managed update service for Windows, Microsoft 365 Apps for enterprise, Microsoft Edge, Microsoft Teams, and device drivers and firmware | Reducing manual update administration |
 | **[Endpoint analytics](../endpoint-analytics/index.md)** | Telemetry and recommendations on device health and performance | Identifying performance issues and reducing help-desk volume |
 
 ## Connectors and extensions
 
-:::row:::
-    :::column:::
-        Connectors and extensions are cloud-based external services that Intune integrates with. They have no on-premises footprint. Intune communicates with them over the internet.
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="media/architecture/connectors-and-extensions.png" alt-text="Diagram of connectors and extensions as they relate to the cloud control plane." border="false" lightbox="media/architecture/connectors-and-extensions-on.png":::
-    :::column-end:::
-:::row-end:::
+Connectors and extensions are cloud-based external services that Intune integrates with. They have no on-premises footprint. Intune communicates with them over the internet.
+
+[![Diagram of connectors and extensions as they relate to the cloud control plane.](media/architecture/connectors-and-extensions.png)](media/architecture/connectors-and-extensions-on.png#lightbox)
 
 | Connector | Role |
-|---|---|
+| --- | --- |
 | **[Microsoft Cloud PKI](../cloud-pki/index.md)** | Cloud-hosted PKI that issues, renews, and revokes SCEP certificates for Intune-managed devices without requiring on-premises AD CS, NDES, or the certificate connector. Supports a fully cloud-hosted hierarchy or anchoring to your existing private root (BYOCA). |
 | **[Apple Business / VPP](../app-management/deployment/manage-vpp-apple.md)** | Token-based integration for Apple app delivery. |
 | **[Apple Push Notification service (APNs)](../device-enrollment/apple/create-mdm-push-certificate.md)** | Required for Apple device management. |
@@ -107,55 +85,40 @@ For the full supported-OS matrix, see [Supported operating systems and browsers 
 
 ## Peer integrations
 
-:::row:::
-    :::column:::
-        Peer integrations are Microsoft products that work alongside Intune. They have their own primary purpose; integration with Intune is one of many uses.
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="media/architecture/peer-integrations.png" alt-text="Diagram of peer integrations as they relate to the cloud control plane." border="false" lightbox="media/architecture/peer-integrations-on.png":::
-    :::column-end:::
-:::row-end:::
+Peer integrations are Microsoft products that work alongside Intune. They have their own primary purpose; integration with Intune is one of many uses.
+
+[![Diagram of peer integrations as they relate to the cloud control plane.](media/architecture/peer-integrations.png)](media/architecture/peer-integrations-on.png#lightbox)
 
 | Product | Role |
-|---|---|
+| --- | --- |
 | **[Microsoft 365 apps](../app-management/deployment/add-microsoft-365-windows.md)** | Deployed to managed endpoints via Intune. |
 | **[Endpoint security in Microsoft Defender](../device-security/microsoft-defender/configure-integration.md)** | Feeds real-time device risk signals into Intune compliance evaluation and Conditional Access decisions. Also serves as a mobile threat defense (MTD) source for iOS, iPadOS and Android. |
 | **[Copilot in Intune](../copilot/index.md)** | Microsoft Security Copilot capabilities surfaced inside the Microsoft Intune admin center. |
-| **[Microsoft Purview](/purview/device-onboarding-mdm)** | Sensitivity labels and endpoint data loss prevention (DLP) policies that apply to data on Intune-managed devices. |
+| **[Microsoft Purview](https://learn.microsoft.com/en-us/purview/device-onboarding-mdm)** | Sensitivity labels and endpoint data loss prevention (DLP) policies that apply to data on Intune-managed devices. |
 
 ## Partner ecosystem
 
-:::row:::
-    :::column:::
-        The partner ecosystem includes third-party products and services that integrate with Intune through documented APIs, connectors, or configuration patterns.
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="media/architecture/partner-ecosystem.png" alt-text="Diagram of the partner ecosystem as it relates to the cloud control plane." border="false" lightbox="media/architecture/partner-ecosystem-on.png":::
-    :::column-end:::
-:::row-end:::
+The partner ecosystem includes third-party products and services that integrate with Intune through documented APIs, connectors, or configuration patterns.
+
+[![Diagram of the partner ecosystem as it relates to the cloud control plane.](media/architecture/partner-ecosystem.png)](media/architecture/partner-ecosystem-on.png#lightbox)
 
 | Category | Description and examples |
-|---|---|
+| --- | --- |
 | **[Mobile threat defense (MTD) partners](../device-security/mobile-threat-defense/overview.md)** | Third-party services that feed device risk signals into Intune. Examples: Lookout, Zimperium, Check Point. Endpoint security in Microsoft Defender is also an MTD source: see [Peer integrations](#peer-integrations). |
 | **[Device compliance partners](../device-security/compliance/third-party-partners.md)** | Non-Intune MDMs that become the MDM authority for assigned user groups and report device compliance state into Microsoft Entra ID for Intune Conditional Access. Supported on Android, iOS, iPadOS, and macOS. Examples: Jamf Pro, Ivanti EPMM, BlackBerry UEM, Omnissa Workspace ONE, Kandji, SOTI MobiControl. |
 | **IT service management (ITSM) partners** | Incident and asset integration. Examples: [ServiceNow](../device-management/tools/setup-servicenow.md), Jira. |
 | **Remote support partners** | Remote control and assistance. Example: [TeamViewer](../device-management/tools/setup-teamviewer.md). |
-| **Device vendor portals** | Vendor-specific management for specialty hardware. Examples: [Surface Management Portal](/surface/surface-management-portal), Lenovo, Intel vPro. |
+| **Device vendor portals** | Vendor-specific management for specialty hardware. Examples: [Surface Management Portal](https://learn.microsoft.com/en-us/surface/surface-management-portal), Lenovo, Intel vPro. |
 | **Network access control (NAC) partners** | Network-tier access enforcement. Examples: Cisco ISE, Aruba ClearPass. |
 
 ## On-premises services
 
-:::row:::
-    :::column:::
-        On-premises services are customer-operated infrastructure that runs on your network and integrates with the Intune cloud control plane.
-    :::column-end:::
-    :::column:::
-        :::image type="content" source="media/architecture/on-premises-services.png" alt-text="Diagram of on-premises services as they relate to the cloud control plane." border="false" lightbox="media/architecture/on-premises-services-on.png":::
-    :::column-end:::
-:::row-end:::
+On-premises services are customer-operated infrastructure that runs on your network and integrates with the Intune cloud control plane.
+
+[![Diagram of on-premises services as they relate to the cloud control plane.](media/architecture/on-premises-services.png)](media/architecture/on-premises-services-on.png#lightbox)
 
 | Component | Role |
-|---|---|
+| --- | --- |
 | **[Microsoft Tunnel Gateway](../device-security/microsoft-tunnel/overview.md)** | VPN gateway for iOS, iPadOS and Android Enterprise devices and apps. Runs in a container on Linux. |
 | **[Certificate Connector for Microsoft Intune](certificates/connector/overview.md)** | Bridges Intune to your on-premises certificate services to issue SCEP and PKCS certificates, import PFX certificates for S/MIME, and revoke certificates. |
 | **[Microsoft Configuration Manager](../configmgr/core/understand/introduction.md)** | On-premises peer to Intune for Windows clients and servers. Integrates with Intune through co-management and tenant attach. See [Co-management and tenant attach](#co-management-and-tenant-attach). |
@@ -178,7 +141,3 @@ By using co-management and tenant attach, organizations that already run Configu
 - [Cloud-native endpoints](../solutions/cloud-native-endpoints/overview.md)
 - [Microsoft Intune advanced capabilities](advanced-capabilities.md)
 - [Passwordless authentication with Microsoft Intune](../solutions/passwordless.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

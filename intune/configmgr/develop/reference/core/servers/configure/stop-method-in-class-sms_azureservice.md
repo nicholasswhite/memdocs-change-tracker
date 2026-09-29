@@ -1,7 +1,7 @@
 ---
 description: Learn how to use the Stop method to stop a Microsoft Azure service that represents a cloud distribution point for Configuration Manager.
-title: Stop method
-ms.date: 09/20/2016
+title: "Stop method in class SMS_AzureService"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -24,19 +24,21 @@ uint32 Stop
 ```
 
 ## Parameters
- `AzureServiceID`
- Data type: `UInt32`
 
- Qualifiers: [id("0"), in]
+`AzureServiceID` Data type: `UInt32`
 
- The service identifier key for the `SMS_AzureService` instance on which the current task will be performed.
+Qualifiers: [id("0"), in]
+
+The service identifier key for the `SMS_AzureService` instance on which the current task will be performed.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

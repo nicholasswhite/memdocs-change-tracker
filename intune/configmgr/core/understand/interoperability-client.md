@@ -1,7 +1,7 @@
 ---
-title: Extended interoperability client
+title: "Use the Configuration Manager client software for extended interoperability with future versions of a Current Branch site"
 description: Learn about using the extended interoperability client for long-term support of a static Configuration Manager client with a current branch site.
-ms.date: 06/22/2021
+ms.date: "2021-06-22T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -23,6 +23,7 @@ Typically, when you install a new [in-console update](../servers/manage/install-
 For more information on the current supported versions, see [Support for Configuration Manager current branch versions](../servers/manage/updates.md#supported-versions).
 
 > [!TIP]
+>
 > The EIC is supported for the client versions which are still in the supported list of Configuration Manager versions. For example, when Configuration Manager 2503 is the latest CB version, EIC supported client version can be on 2403.
 
 Plan to update the extended interoperability client on devices that you manage with the current branch before support for the client expires. To do so, download a new version of the client from Microsoft, and then deploy that updated client software to your devices that use the current extended interoperability client.
@@ -30,15 +31,12 @@ Plan to update the extended interoperability client on devices that you manage w
 ## How to use the EIC
 
 1. Add these devices to a collection, and exclude that collection from automatic client upgrades. For more information, see [How to exclude clients from upgrade](../clients/manage/upgrade/exclude-clients-windows.md).
-
-1. Obtain a supported version of the EIC from the `\SMSSETUP\Client` folder of the Configuration Manager update installation media. Make sure that you copy the entire contents of the folder.
-
-1. Manually install the EIC on those devices. For more information, see [Manually install the client](../clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual).
+2. Obtain a supported version of the EIC from the `\SMSSETUP\Client` folder of the Configuration Manager update installation media. Make sure that you copy the entire contents of the folder.
+3. Manually install the EIC on those devices. For more information, see [Manually install the client](../clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual).
 
 ## Limitations
 
 - Updates for the extended interoperability client software aren't available by using in-console updates. For more information on how to update the EIC, see [How to upgrade an excluded client](../clients/manage/upgrade/exclude-clients-windows.md#how-to-upgrade-an-excluded-client).
-
 - The EIC only supports the following features:
 
   - Software updates

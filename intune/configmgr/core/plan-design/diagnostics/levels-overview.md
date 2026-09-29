@@ -1,7 +1,7 @@
 ---
 title: Levels of diagnostic usage data
 description: Learn about the levels of diagnostics and usage data that Configuration Manager collects
-ms.date: 08/18/2026
+ms.date: "2026-08-18T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -15,6 +15,7 @@ ms.service: configuration-manager
 Configuration Manager collects three levels of diagnostics and usage data: **Basic**, **Enhanced**, and **Full**. By default, this feature is set at the Enhanced level.
 
 > [!IMPORTANT]
+>
 > Configuration Manager doesn't collect site codes, sites names, IP addresses, user names, computer names, physical addresses, or email addresses on the Basic or Enhanced levels. Any collection of this information on the Full level isn't purposeful. It's potentially included in advanced diagnostic information like log files or memory snapshots. Microsoft doesn't use this information to identify you, contact you, or develop advertising.
 
 ## Levels
@@ -32,9 +33,7 @@ Microsoft recommends this level because it provides the minimum data to make pro
 Some examples of data that this level doesn't collect include:
 
 - Names of sites, users, computer, or other objects
-
 - Details of security-related objects
-
 - Vulnerabilities like counts of systems that require software updates
 
 ### Full
@@ -46,10 +45,8 @@ The Full level includes all data in the Basic and Enhanced levels. It also inclu
 To change the data collection level, you need **Modify** permissions on the **Site** object class.
 
 1. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and select the **Sites** node.
-
-1. Select **Hierarchy Settings** in the ribbon.
-
-1. Switch to the **Diagnostic and Usage Data** tab, then choose the data level.
+2. Select **Hierarchy Settings** in the ribbon.
+3. Switch to the **Diagnostic and Usage Data** tab, then choose the data level.
 
 ## Data collected for supported current branch versions
 
@@ -61,5 +58,4 @@ For a list of the currently supported releases, see [Support for Configuration M
 
 Next, learn about the diagnostics and usage data that Configuration Manager collects for its tools:
 
-> [!div class="nextstepaction"]
-> [Diagnostic usage data for tools](tools.md)
+[Diagnostic usage data for tools](tools.md)

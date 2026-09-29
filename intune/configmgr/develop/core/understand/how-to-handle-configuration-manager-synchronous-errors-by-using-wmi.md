@@ -1,22 +1,26 @@
 ---
-title: Handle Synchronous Errors by Using WMI
+title: "How to Handle Configuration Manager Synchronous Errors by Using WMI"
 description: Handle synchronous errors by using the SWbemLastError object when an error occurs.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Handle Configuration Manager Synchronous Errors by Using WMI
+
 You handle synchronous errors, in Configuration Manager, by inspecting the `SWbemLastError` object when an error occurs. An error has occurred when the error object `Number` property is non-zero.
 
 > [!NOTE]
->  In VBScript you should declare that you want to resume running the script if an error occurs. Otherwise, the script will end when an error condition occurs. To do this, use the `On Error Resume Next` declaration in your script.
+>
+> In VBScript you should declare that you want to resume running the script if an error occurs. Otherwise, the script will end when an error condition occurs. To do this, use the `On Error Resume Next` declaration in your script.
 
 ## Example
- The following VBScript example displays the most recent error information that is available from the `SWbemLastError` object. You can use the following code, which tries to get an invalid SMS_Package package to test it.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following VBScript example displays the most recent error information that is available from the `SWbemLastError` object. You can use the following code, which tries to get an invalid SMS_Package package to test it.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```vbs
 
@@ -57,5 +61,6 @@ End Sub
 ```
 
 ## See Also
- [About errors](about-configuration-manager-errors.md)\
- [WMI SDK](/windows/win32/wmisdk/wmi-start-page)
+
+[About errors](about-configuration-manager-errors.md)  
+ [WMI SDK](https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page)

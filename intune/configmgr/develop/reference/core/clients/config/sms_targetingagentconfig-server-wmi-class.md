@@ -1,16 +1,18 @@
 ---
-title: SMS_TargetingAgentConfig Class
+title: "SMS_TargetingAgentConfig Server WMI Class"
 description: In Configuration Manager, the SMS_TargetingAgentConfig Windows Management Instrumentation class is an SMS Provider server class that represents how the client is configured for user and device affinity.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TargetingAgentConfig Server WMI Class
+
 The `SMS_TargetingAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents how the client is configured for user and device affinity.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,69 +29,67 @@ Class SMS_TargetingAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_TargetingAgentConfig` class does not define any methods.
+
+The `SMS_TargetingAgentConfig` class does not define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Targeting Agent Config ID is 10.
+Qualifiers: [key, read]
 
- `AllowUserAffinity`
- Data type: `UInt32`
+Identifies the client agent component. The Targeting Agent Config ID is 10.
 
- Access type: Read/Write
+`AllowUserAffinity` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Allows users to define their primary devices.
+Qualifiers: none
 
- `AllowUserAffinityAfterMinutes`
- Data type: `UInt32`
+Allows users to define their primary devices.
 
- Access type: Read/Write
+`AllowUserAffinityAfterMinutes` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- This property is obsolete.
+Qualifiers: none
 
- `AutoApproveAffinity`
- Data type: `UInt32`
+This property is obsolete.
 
- Access type: Read/Write
+`AutoApproveAffinity` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Automatically configures user device affinity from usage data.
+Qualifiers: none
 
- `ConsoleMinutes`
- Data type: `UInt32`
+Automatically configures user device affinity from usage data.
 
- Access type: Read/Write
+`ConsoleMinutes` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- User device affinity usage threshold in minutes.
+Qualifiers: none
 
- `IntervalDays`
- Data type: `UInt32`
+User device affinity usage threshold in minutes.
 
- Access type: Read/Write
+`IntervalDays` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- User device affinity usage threshold in days.
+Qualifiers: none
+
+User device affinity usage threshold in days.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

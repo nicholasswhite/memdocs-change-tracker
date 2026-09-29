@@ -1,16 +1,18 @@
 ---
-title: SMS_MIFGroup Class
+title: "SMS_MIFGroup Client WMI Class"
 description: A client Windows Management Instrumentation class that serves as a dynamic instance provider class allowing WMI reporting of Management Information Format files that extend the client inventory.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MIFGroup Client WMI Class
+
 The `SMS_MifGroup` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that serves as a dynamic instance provider class allowing WMI reporting of Management Information Format (MIF) files that extend the client inventory.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,113 +33,105 @@ class
 ```
 
 ## Properties
- `ArchitectureName`
- Data type: **String**
 
- Access type: Read-only
+`ArchitectureName` Data type: **String**
 
- Qualifiers: [key]
+Access type: Read-only
 
- Architecture of the component and MIF groups. The default value is System.
+Qualifiers: [key]
 
- `ComponentName`
- Data type: **String**
+Architecture of the component and MIF groups. The default value is System.
 
- Access type: Read-only
+`ComponentName` Data type: **String**
 
- Qualifiers: [key]
+Access type: Read-only
 
- Component for MIF groups. The default value is Workstation.
+Qualifiers: [key]
 
- `MIFGroupVerbatim`
- Data type: **String**
+Component for MIF groups. The default value is Workstation.
 
- Access type: Read-only
+`MIFGroupVerbatim` Data type: **String**
 
- Qualifiers: [key]
+Access type: Read-only
 
- Group name in MIF syntax, for example, Name = \hotfix\\.
+Qualifiers: [key]
 
- `MIFClassVerbatim`
- Data type: **String**
+Group name in MIF syntax, for example, Name = \hotfix\.
 
- Access type: Read-only
+`MIFClassVerbatim` Data type: **String**
 
- Qualifiers: [key]
+Access type: Read-only
 
- Class name in MIF syntax, for example, Class = \MICROSOFT&#124;UPDATE&#124;1.0\\.
+Qualifiers: [key]
 
- `MIFKeysVerbatim`
- Data type: **String**
+Class name in MIF syntax, for example, Class = \MICROSOFT|UPDATE|1.0\.
 
- Access type: Read-only
+`MIFKeysVerbatim` Data type: **String**
 
- Qualifiers: [key]
+Access type: Read-only
 
- Reported key values, based on attribute IDs, in MIF syntax, for example, key = 1, 2.
+Qualifiers: [key]
 
- `AttributeKeyValues`
- Data type: **String**
+Reported key values, based on attribute IDs, in MIF syntax, for example, key = 1, 2.
 
- Access type: Read-only
+`AttributeKeyValues` Data type: **String**
 
- Qualifiers: [key]
+Access type: Read-only
 
- Attribute key values, concatenated in string format, corresponding to the key attribute IDs. This property is primarily useful as a WMI instance key for MIF groups. It is not especially useful for MIF group translation.
+Qualifiers: [key]
 
- `MIFAttributesVerbatim`
- Data type: **String** array
+Attribute key values, concatenated in string format, corresponding to the key attribute IDs. This property is primarily useful as a WMI instance key for MIF groups. It is not especially useful for MIF group translation.
 
- Access type: Read-only
+`MIFAttributesVerbatim` Data type: **String** array
 
- Qualifiers: None
+Access type: Read-only
 
- Array of MIF attribute definitions and values in MIF syntax.
+Qualifiers: None
 
- `MIFFile`
- Data type: **String**
+Array of MIF attribute definitions and values in MIF syntax.
 
- Access type: Read-only
+`MIFFile` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- MIF file name queried, typically *.mif.
+Qualifiers: None
 
- `MIFFileSize`
- Data type: **UInt64**
+MIF file name queried, typically \*.mif.
 
- Access type: Read-only
+`MIFFileSize` Data type: **UInt64**
 
- Qualifiers: None
+Access type: Read-only
 
- Size of the MIF file containing the group. This property is used to limit reporting based on the MIF file size.
+Qualifiers: None
 
- `MIFDirectory`
- Data type: **String**
+Size of the MIF file containing the group. This property is used to limit reporting based on the MIF file size.
 
- Access type: Read-only
+`MIFDirectory` Data type: **String**
 
- Qualifiers: None
+Access type: Read-only
 
- Not implemented. MIF directory queried.
+Qualifiers: None
+
+Not implemented. MIF directory queried.
 
 ## Remarks
- This class is used by the Inventory Client Agent to enumerate the third-party MIF files at a designated collection directory. For each file, the instance provider parses the file against the MIF syntax, validates the contents against Configuration Manager restrictions, and reports each individual MIF group in a generic form that is usable by the Inventory Client Agent and management point. The generic instance format is specifically designed to translate consistently and easily between MIF syntax for any number of MIF group definitions and values. This translation is especially important on the management point, where the Inventory Client Agent report is translated back into MIF format for processing at the Configuration Manager site server.
 
- The preferred way to extend client inventory is through WMI instances (static or dynamic). However, this provider allows a migration step for SMS 2.0 MIF files already in use.
+This class is used by the Inventory Client Agent to enumerate the third-party MIF files at a designated collection directory. For each file, the instance provider parses the file against the MIF syntax, validates the contents against Configuration Manager restrictions, and reports each individual MIF group in a generic form that is usable by the Inventory Client Agent and management point. The generic instance format is specifically designed to translate consistently and easily between MIF syntax for any number of MIF group definitions and values. This translation is especially important on the management point, where the Inventory Client Agent report is translated back into MIF format for processing at the Configuration Manager site server.
 
- The `SMS_MIFGroup` class is specifically used to expose No Identification MIF files (NOIDMIFs) through WMI in client inventory. NOIDMIFs are used to extend client inventory beyond that requested for specific WMI instances in the site policy (see InventoryDataItem). For example, hardware vendors can supply asset information by using NOIDMIFs.
+The preferred way to extend client inventory is through WMI instances (static or dynamic). However, this provider allows a migration step for SMS 2.0 MIF files already in use.
+
+The `SMS_MIFGroup` class is specifically used to expose No Identification MIF files (NOIDMIFs) through WMI in client inventory. NOIDMIFs are used to extend client inventory beyond that requested for specific WMI instances in the site policy (see InventoryDataItem). For example, hardware vendors can supply asset information by using NOIDMIFs.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Inventory Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/inventory-agent-client-wmi-classes.md)
- [FileCollectionAction Client WMI Class](../../../../../develop/reference/core/clients/client-classes/filecollectionaction-client-wmi-class.md)
- [FileSystemFile Client WMI Class](../../../../../develop/reference/core/clients/client-classes/filesystemfile-client-wmi-class.md)
- [InventoryDataItem Client WMI Class](../../../../../develop/reference/core/clients/client-classes/inventorydataitem-client-wmi-class.md)
+
+[Inventory Agent Client WMI Classes](inventory-agent-client-wmi-classes.md) [FileCollectionAction Client WMI Class](filecollectionaction-client-wmi-class.md) [FileSystemFile Client WMI Class](filesystemfile-client-wmi-class.md) [InventoryDataItem Client WMI Class](inventorydataitem-client-wmi-class.md)

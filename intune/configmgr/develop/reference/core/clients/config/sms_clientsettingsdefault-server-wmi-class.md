@@ -1,19 +1,22 @@
 ---
-title: SMS_ClientSettingsDefault Class
+title: "SMS_ClientSettingsDefault Server WMI Class"
 description: An SMS Provider server class that represents simple read-only default client settings properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ClientSettingsDefault Server WMI Class
+
 The `SMS_ClientSettingsDefault` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents simple read-only default client settings properties.
 
 > [!NOTE]
->  Nothing in this class should be modified.
+>
+> Nothing in this class should be modified.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,147 +41,137 @@ Class SMS_ClientSettingsDefault : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ClientSettingsDefault` class doesn't define any methods.
+
+The `SMS_ClientSettingsDefault` class doesn't define any methods.
 
 ## Properties
- `AssignmentCount`
- Data type: `UInt32`
 
- Access type: Read-only
+`AssignmentCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `AssignmentCount` is 0 only. In general, the default client settings apply to all clients in the hierarchy, unless overridden by values defined in `SMS_ClientSettings`, which applies to certain collections.
+Qualifiers: [read]
 
- `CreatedBy`
- Data type: `String`
+`AssignmentCount` is 0 only. In general, the default client settings apply to all clients in the hierarchy, unless overridden by values defined in `SMS_ClientSettings`, which applies to certain collections.
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [notnull, read, sizelimit("512")]
+Access type: Read-only
 
- Name of the user who created the client settings.
+Qualifiers: [notnull, read, sizelimit("512")]
 
- `DateCreated`
- Data type: `DateTime`
+Name of the user who created the client settings.
 
- Access type: Read-only
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- The date and time when the client settings are created.
+Qualifiers: [notnull, read]
 
- `DateModified`
- Data type: `DateTime`
+The date and time when the client settings are created.
 
- Access type: Read-only
+`DateModified` Data type: `DateTime`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- The date and time when the client settings are modified.
+Qualifiers: [notnull, read]
 
- `Description`
- Data type: `String`
+The date and time when the client settings are modified.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Description is specified internally.
+Qualifiers: [notnull]
 
- `Enabled`
- Data type: `Boolean`
+Description is specified internally.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: [notnull]
 
- `Flags`
- Data type: `UInt32`
+Reserved for future use.
 
- Access type: Read/Write
+`Flags` Data type: `UInt32`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: [notnull]
 
- `LastModifiedBy`
- Data type: `String`
+Reserved for future use.
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [notnull, read, sizelimit("512")]
+Access type: Read-only
 
- Name of the user who last modified the client settings.
+Qualifiers: [notnull, read, sizelimit("512")]
 
- `Name`
- Data type: `String`
+Name of the user who last modified the client settings.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- The name of the component.
+Qualifiers: [notnull]
 
- `Priority`
- Data type: `UInt32`
+The name of the component.
 
- Access type: Read/Write
+`Priority` Data type: `UInt32`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Compared to `SMS_ClientSettings`, the priority is the lowest for `SMS_ClientSettingsDefault` (highest number) and shouldn't be changed.
+Qualifiers: [notnull]
 
- `SettingsID`
- Data type: `UInt32`
+Compared to `SMS_ClientSettings`, the priority is the lowest for `SMS_ClientSettingsDefault` (highest number) and shouldn't be changed.
 
- Access type: Read/Write
+`SettingsID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- For internal use only.
+Qualifiers: [key]
 
- `SiteCode`
- Data type: `String`
+For internal use only.
 
- Access type: Read-only
+`SiteCode` Data type: `String`
 
- Qualifiers: [notnull, read]
+Access type: Read-only
 
- Three-letter site code for the CAS site.
+Qualifiers: [notnull, read]
 
- `Type`
- Data type: `UInt32`
+Three-letter site code for the CAS site.
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: [notnull]
+Access type: Read/Write
 
- Type is used to indicate if this setting is 'Device,' 'User,' or 'Default.' For `SMS_ClientSettingsDefault`, it's 0 meaning 'Default.'
+Qualifiers: [notnull]
 
-|Value|Setting type|
-|-|-|
-|0|Default|
-|1|Device|
-|2|User|
+Type is used to indicate if this setting is 'Device,' 'User,' or 'Default.' For `SMS_ClientSettingsDefault`, it's 0 meaning 'Default.'
 
- `UniqueID`
- Data type: `String`
+| Value | Setting type |
+| --- | --- |
+| 0 | Default |
+| 1 | Device |
+| 2 | User |
 
- Access type: Read-only
+`UniqueID` Data type: `String`
 
- Qualifiers: [notnull, read, sizelimit("64")]
+Access type: Read-only
 
- The unique ID of the object.
+Qualifiers: [notnull, read, sizelimit("64")]
+
+The unique ID of the object.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

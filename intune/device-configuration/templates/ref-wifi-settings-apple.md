@@ -1,7 +1,7 @@
 ---
-title: "Configure Wi-Fi Settings for Apple Devices in Intune"
+title: "Add Wi-Fi settings to Apple devices in Microsoft Intune"
 description: Add or create a Wi-Fi configuration profile on iOS/iPadOS and macOS devices using Wi-Fi configuration settings in Microsoft Intune. Configure the connection details, authentication methods, SSIDs, security types, and proxy settings.
-ms.date: 06/23/2026
+ms.date: "2026-06-23T00:00:00Z"
 ms.topic: article
 ms.reviewer: wicale
 zone_pivot_groups: platforms-apple
@@ -17,36 +17,21 @@ This article describes the settings you can configure. To learn more about Wi-Fi
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
 > This feature supports the following platforms:
 >
 > - iOS/iPadOS
 > - macOS
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
-> - [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
-> - Create a [Wi-Fi device configuration profile](./configure-wifi.md)
+> - Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
+
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
+
+> - Create a [Wi-Fi device configuration profile](configure-wifi.md)
 > - These settings are available for all enrollment types.
-:::column-end:::
-:::row-end:::
 
 ## Basic profiles
 
@@ -55,6 +40,7 @@ Basic or personal profiles use WPA/WPA2 to secure the Wi-Fi connection on device
 - **Wi-Fi type**: Select **Basic**.
 
 ::: zone pivot="ios-ipados"
+
 - **Network name**: Enter a name for this Wi-Fi connection. Users see this name when they browse the list of available connections on their device.
 
 ::: zone-end
@@ -66,13 +52,17 @@ Basic or personal profiles use WPA/WPA2 to secure the Wi-Fi connection on device
 
   - **Open (no authentication)**: Only use this option if the network is unsecured.
   - **WPA/WPA2 - Personal**: Enter the password in **Pre-shared key** (PSK). When your organization's network is set up or configured, a password or network key is also configured. Enter this password or network key for the PSK value.
+
   ::: zone pivot="ios-ipados"
+
   - **WPA2/WPA3 - Personal**: Enter the password in **Pre-shared key** (PSK). When your organization's network is set up or configured, a password or network key is also configured. Enter this password or network key for the PSK value.
   - **WPA3 - Personal**: Enter the password in **Pre-shared key** (PSK). When your organization's network is set up or configured, a password or network key is also configured. Enter this password or network key for the PSK value.
-  ::: zone-end
-  - **WEP**
 
+  ::: zone-end
+
+  - **WEP**
 - **Proxy settings**: Your options:
+
   - **None**: No proxy settings are configured.
   - **Manual**: Enter the **Proxy server address** as an IP address, and its **Port number**.
   - **Automatic**: Use a file to configure the proxy server. Enter the **Proxy server URL** that contains the configuration file. For example, enter `http://proxy.contoso.com`, `10.0.0.11`, or `http://proxy.contoso.com/proxy.pac`.
@@ -80,6 +70,7 @@ Basic or personal profiles use WPA/WPA2 to secure the Wi-Fi connection on device
     For more information on PAC files, go to [Proxy Auto-Configuration (PAC) file](https://developer.mozilla.org/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_(PAC)_file) (opens a non-Microsoft site).
 
 ::: zone pivot="ios-ipados"
+
 - **Disable MAC address randomization**: Devices present a randomized MAC address instead of the physical MAC address when connecting to a network. Using randomized MAC addresses is recommended for privacy, as it's harder to track a device by its MAC address. However, randomized MAC addresses break functionality that relies on a static MAC address, including network access control (NAC).
 
   Your options:
@@ -89,7 +80,7 @@ Basic or personal profiles use WPA/WPA2 to secure the Wi-Fi connection on device
   - **No**: Enables MAC address randomization on devices. Users can't turn it off. When devices connect to a new network, devices present a randomized MAC address, instead of the physical MAC address.
 
   This setting applies to:
-  
+
   - iOS 14.0 and newer
   - iPadOS 14.0 and newer
 
@@ -104,9 +95,11 @@ Enterprise profiles use Extensible Authentication Protocol (EAP) to authenticate
 - **Deployment channel**: Select how you want to deploy the profile. This setting also determines the keychain where the authentication certificates are stored, so it's important to select the proper channel. It's not possible to edit the deployment channel after you deploy the profile. To do so, you must create a new profile.
 
   > [!NOTE]
+  >
   > We recommend rechecking the deployment channel setting in existing profiles when the linked authentication certificates are up for renewal to ensure the intended channel is selected. If it isn't, create a new profile with the correct deployment channel.
 
-   You have two options:
+  You have two options:
+
   - **User channel**: Always select the user deployment channel in profiles with user certificates. This option stores certificates in the user keychain.
   - **Device channel**: Always select the device deployment channel in profiles with device certificates. This option stores certificates in the system keychain.
 
@@ -135,13 +128,12 @@ Enterprise profiles use Extensible Authentication Protocol (EAP) to authenticate
 - **EAP type**: Select the Extensible Authentication Protocol (EAP) type used to authenticate secured wireless connections. Your options:
 
   - **EAP-FAST**: Enter the **Protected Access Credential (PAC) Settings**. This option uses protected access credentials to create an authenticated tunnel between the client and the authentication server. Your options:
+
     - **Do not use (PAC)**
     - **Use (PAC)**: If an existing PAC file exists, use it.
     - **Use and Provision PAC**: Create and add the PAC file to your devices.
     - **Use and Provision PAC Anonymously**: Create and add the PAC file to your devices without authenticating to the server.
-
   - **EAP-SIM**
-
   - **EAP-TLS**: Also enter:
 
     - **Certificate server names**: **Add** one or more common names used in the certificates issued by your trusted certificate authority (CA) to your wireless network access servers. For example, add `mywirelessserver.contoso.com` or `mywirelessserver`. When you enter this information, you can bypass the dynamic trust window displayed on user's devices when they connect to this Wi-Fi network. If you have multiple Radius servers with the same DNS suffix in their fully qualified domain name, enter a wildcard suffix. For example, you can enter `*.contoso.com`.
@@ -150,27 +142,24 @@ Enterprise profiles use Extensible Authentication Protocol (EAP) to authenticate
     ::: zone pivot="macos"
 
     - **Certificates**: Select the SCEP or PKCS client certificate profile that is also deployed to the device. This certificate is the identity that the device presents to the server to authenticate the connection. Choose the certificates that align with your deployment channel selection. If you select the user channel, your certificate options are limited to user certificate profiles. If you select the device channel, you have both user and device certificate profiles to choose from. However, always select the certificate type that aligns with the selected channel. Storing user certificates in the system keychain increases security risks.
-
     - **Identity privacy (outer identity)**: Enter the text sent in the response to an EAP identity request. This text can be any value, such as `anonymous`. During authentication, this anonymous identity is initially sent. Then, the real identification is sent in a secure tunnel.
 
     ::: zone-end
 
     ::: zone pivot="ios-ipados"
+
     - **Authentication method**: Select the authentication method used by your device clients. Your options:
 
       - **Derived credential**: Use a certificate that's derived from a user's smart card. If no derived credential issuer is configured, Intune prompts you to add one. For more information, see [Use derived credentials in Microsoft Intune](../../device-security/certificates/derived-credentials.md).
 
         - **Certificates**: Select the SCEP or PKCS client certificate profile that is also deployed to the device. This certificate is the identity that the device presents to the server to authenticate the connection.
-
       - **Identity privacy (outer identity)**: Enter the text sent in the response to an EAP identity request. This text can be any value, such as `anonymous`. During authentication, this anonymous identity is initially sent. Then, the real identification is sent in a secure tunnel.
 
     ::: zone-end
-
   - **EAP-TTLS**: Also enter:
 
     - **Certificate server names**: **Add** one or more common names used in the certificates issued by your trusted certificate authority (CA) to your wireless network access servers. For example, add `mywirelessserver.contoso.com` or `mywirelessserver`. When you enter this information, you can bypass the dynamic trust window displayed on user's devices when they connect to this Wi-Fi network.
     - **Root certificate for server validation**: Select one or more existing trusted root certificate profiles. When the client connects to the network, these certificates are used to establish a chain of trust with the server. If your authentication server uses a public certificate, you don't need to include a root certificate. This certificate allows the client to trust the wireless network access server's certificate.
-
     - **Authentication method**: Select the authentication method used by your device clients. Your options:
 
       ::: zone pivot="ios-ipados"
@@ -180,21 +169,18 @@ Enterprise profiles use Extensible Authentication Protocol (EAP) to authenticate
       ::: zone-end
 
       - **Username and Password**: Prompt the user for a user name and password to authenticate the connection. Also enter:
+
         - **Non-EAP method (inner identity)**: Choose how you authenticate the connection. Be sure you choose the same protocol that is configured on your Wi-Fi network.
 
           Your options: **Unencrypted password (PAP)**, **Challenge Handshake Authentication Protocol (CHAP)**, **Microsoft CHAP (MS-CHAP)**, or **Microsoft CHAP Version 2 (MS-CHAP v2)**
 
           - **Certificates**: Select the SCEP or PKCS client certificate profile that is also deployed to the device. This certificate is the identity that the device presents to the server to authenticate the connection.
-
       - **Identity privacy (outer identity)**: Enter the text sent in the response to an EAP identity request. This text can be any value, such as `anonymous`. During authentication, this anonymous identity is initially sent. Then, the real identification is sent in a secure tunnel.
-
   - **LEAP**
-
   - **PEAP**: Also enter:
 
     - **Certificate server names**: **Add** one or more common names used in the certificates issued by your trusted certificate authority (CA) to your wireless network access servers. For example, add `mywirelessserver.contoso.com` or `mywirelessserver`. When you enter this information, you can bypass the dynamic trust window displayed on user's devices when they connect to this Wi-Fi network.
     - **Root certificate for server validation**: Select one or more existing trusted root certificate profiles. When the client connects to the network, these certificates are used to establish a chain of trust with the server. If your authentication server uses a public certificate, you don't need to include a root certificate. This certificate allows the client to trust the wireless network access server's certificate.
-
     - **Authentication method**: Select the authentication method used by your device clients. Your options:
 
       ::: zone pivot="ios-ipados"
@@ -206,9 +192,7 @@ Enterprise profiles use Extensible Authentication Protocol (EAP) to authenticate
       - **Username and Password**: Prompt the user for a user name and password to authenticate the connection.
 
         - **Certificates**: Select the SCEP or PKCS client certificate profile that is also deployed to the device. This certificate is the identity that the device presents to the server to authenticate the connection.
-
       - **Identity privacy (outer identity)**: Enter the text sent in the response to an EAP identity request. This text can be any value, such as `anonymous`. During authentication, this anonymous identity is initially sent. Then, the real identification is sent in a secure tunnel.
-
 - **Proxy settings**: Select a proxy configuration. Your options:
 
   - **None**: No proxy settings are configured.
@@ -218,6 +202,7 @@ Enterprise profiles use Extensible Authentication Protocol (EAP) to authenticate
     For more information on PAC files, go to [Proxy Auto-Configuration (PAC) file](https://developer.mozilla.org/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_(PAC)_file) (opens a non-Microsoft site).
 
 ::: zone pivot="ios-ipados"
+
 - **Disable MAC address randomization**: Devices present a randomized MAC address instead of the physical MAC address when connecting to a network. Using randomized MAC addresses is recommended for privacy, as it's harder to track a device by its MAC address. Randomized MAC addresses also break functionality that relies on a static MAC address, including network access control (NAC).
 
   Your options:
@@ -236,5 +221,4 @@ Enterprise profiles use Extensible Authentication Protocol (EAP) to authenticate
 ## Related articles
 
 - [Assign this profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-
-- Configure Wi-Fi settings on [Android](./ref-wifi-settings-android.md), [Android Enterprise](./ref-wifi-settings-android-enterprise.md), and [Windows](./ref-wifi-settings-windows.md) devices.
+- Configure Wi-Fi settings on [Android](ref-wifi-settings-android.md), [Android Enterprise](ref-wifi-settings-android-enterprise.md), and [Windows](ref-wifi-settings-windows.md) devices.

@@ -1,16 +1,18 @@
 ---
 title: GetSummary Method in Class SMS_AISoftwareList
 description: A Windows Management Instrumentation class method that returns a summary count of each of the states defined by the SMS_AISoftwareList WMI class records State property.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetSummary Method in Class SMS_AISoftwareList
+
 The `GetSummary` Windows Management Instrumentation (WMI) class method, in Configuration Manager, returns a summary count of each of the states defined by the `SMS_AISoftwareList` WMI class records `State` property.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,53 +27,53 @@ SInt32 GetSummary(
 ```
 
 #### Parameters
- `Validated`
- Data type: `UInt32`
 
- Qualifiers: [out]
+`Validated` Data type: `UInt32`
 
- Count of software titles with the state `Validated`.
+Qualifiers: [out]
 
- `UserDefined`
- Data type: `UInt32`
+Count of software titles with the state `Validated`.
 
- Qualifiers: [out]
+`UserDefined` Data type: `UInt32`
 
- Count of software titles with the state `User Defined`.
+Qualifiers: [out]
 
- `Pending`
- Data type: `UInt32`
+Count of software titles with the state `User Defined`.
 
- Qualifiers: [out]
+`Pending` Data type: `UInt32`
 
- Count of software titles with the state `Pending`.
+Qualifiers: [out]
 
- `Updatable`
- Data type: `UInt32`
+Count of software titles with the state `Pending`.
 
- Qualifiers: [out]
+`Updatable` Data type: `UInt32`
 
- Count of software titles with the state `Updatable`.
+Qualifiers: [out]
 
- `Uncategorized`
- Data type: `UInt32`
+Count of software titles with the state `Updatable`.
 
- Qualifiers: [out]
+`Uncategorized` Data type: `UInt32`
 
- Count of software titles with the state `Uncategorized`.
+Qualifiers: [out]
+
+Count of software titles with the state `Uncategorized`.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_AISoftwareList Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aisoftwarelist-server-wmi-class.md)
+
+[SMS_AISoftwareList Server WMI Class](sms_aisoftwarelist-server-wmi-class.md)

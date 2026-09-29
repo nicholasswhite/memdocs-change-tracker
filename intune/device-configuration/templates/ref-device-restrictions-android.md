@@ -1,7 +1,7 @@
 ---
-title: Device restriction settings for Android DA in Microsoft Intune
+title: "Android device administrator and Samsung Knox Standard device restriction settings in Intune"
 description: See a list of all the Android device administrator settings you can control and restrict in Microsoft Intune. Use these settings to control the password, access Google Play, allow or prohibit apps, control the browser settings, block apps, backup to the Google cloud, and control the message, voice, data roaming, Wi-Fi, and Bluetooth connection options.
-ms.date: 06/09/2025
+ms.date: "2025-06-09T00:00:00Z"
 ms.topic: reference
 ms.reviewer: anuragjain
 ---
@@ -14,21 +14,23 @@ This feature applies to:
 
 - Android device administrator (DA)
 
-  [!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+  > [!IMPORTANT]
+  >
+  > Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
->[!TIP]
->If the settings you want aren't available, you might be able to configure your devices using a [custom profile](./configure-custom-settings-android.md).
+> [!TIP]
+>
+> If the settings you want aren't available, you might be able to configure your devices using a [custom profile](configure-custom-settings-android.md).
 
 ## Before you begin
 
-Create an [Android device administrator device restrictions configuration profile](./configure-device-restrictions.md).
+Create an [Android device administrator device restrictions configuration profile](configure-device-restrictions.md).
 
 ## General
 
 - **Camera (Android 9 and earlier, Samsung KNOX Android 15 and earlier only)**: **Block** prevents access to the device camera. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow access to the device camera.
 
   Intune only manages access to the device camera. It doesn't have access to pictures or videos.
-
 - **Copy and paste (Samsung Knox only)**: **Block** prevents copy-and-paste. **Not configured** allows copy and paste functions on devices.
 - **Clipboard sharing between apps (Samsung Knox only)**: **Block** prevents using the clipboard to copy-and-paste between apps. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow copy and paste functions on devices.
 - **Diagnostic data submission (Samsung Knox only)**: **Block** stops users from submitting bug reports from devices. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow users to submit the data.
@@ -48,11 +50,13 @@ Create an [Android device administrator device restrictions configuration profil
 ## Password
 
 - **Encryption**: Select **Require** so that files on the device are encrypted. Not all devices support encryption. When set to **Not configured** (default), Intune doesn't change or update this setting. To configure this setting, and correctly report compliance, also configure:
+
   1. **Password**: Set to **Require**.
   2. **Required password type**: Set to **At least numeric**.
   3. **Minimum password length**: Set to at least `4`.
 
   > [!NOTE]
+  >
   > If an encryption policy is enforced, Samsung Knox devices require users to set a 6-character complex password as the device passcode.
 
 ### All Android devices
@@ -62,13 +66,12 @@ These settings apply to all Android OS versions and manufacturers, except where 
 - **Maximum minutes of inactivity until screen locks**: Enter the length of time a device must be idle before the screen is automatically locked. For example, enter `5` to lock devices after 5 minutes of being idle. When the value is blank or set to **Not configured**, Intune doesn't change or update this setting.
 
   On a device, users can't set a time value greater than the configured time in the profile. Users can set a lower time value. For example, if the profile is set to `15` minutes, users can set the value to 5 minutes. Users can't set the value to 30 minutes.
-
 - **Number of sign-in failures before wiping device (Samsung KNOX Android 15 and earlier only)**: Enter the number of wrong passwords allowed before devices are wiped, from 4-11. `0` (zero) might disable device wipe functionality. When the value is blank, Intune doesn't change or update this setting.
-
 - **Password**: **Require** users to enter a password to access devices. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow users to access devices without entering a password.
 
-    > [!NOTE]
-    > Samsung Knox devices automatically require a 4-digit PIN during MDM enrollment. Native Android devices might automatically require a PIN to become compliant with Conditional Access.
+  > [!NOTE]
+  >
+  > Samsung Knox devices automatically require a 4-digit PIN during MDM enrollment. Native Android devices might automatically require a PIN to become compliant with Conditional Access.
 
 ### Android 10 and later
 
@@ -88,9 +91,11 @@ These settings apply to all Android OS versions and manufacturers, except where 
     - Alphanumeric, with a minimum length of 6.
 
   This setting applies to:
+
   - Android 10 and newer, but not on Samsung Knox.
 
   > [!IMPORTANT]
+  >
   > The **Password complexity** setting is a work in progress. In late October 2020, **Password complexity** takes effect on devices.
   >
   > If you set **Password complexity** to something other than **None**, then also set the **Password** setting to **Require**, which is found under the *All Android devices* section. Users with passwords that don't meet your complexity requirements receive a warning to update their password. If you don't set the **Password** setting to **Require**, users with weak passwords don't receive the warning.
@@ -100,10 +105,9 @@ These settings apply to all Android OS versions and manufacturers, except where 
 These settings apply to devices running Android 9 or earlier, and all Samsung Knox devices running any Android OS version 15 and earlier.
 
 - **Minimum password length**: Enter the minimum number of characters required, from 4-16. For example, enter `6` to require at least six numbers or characters in the password length.
-
 - **Password expiration (days)**: Enter the number of days, until the device password must be changed, from 1-365. For example, enter `90` to expire the password after 90 days. When the password expires, users are prompted to create a new password. When the value is blank, Intune doesn't change or update this setting.
-
 - **Required password type**: Enter the required password complexity level, and whether biometric devices can be used. Your options:
+
   - **Device default**
   - **Low security biometric**: [Strong vs. weak biometrics](https://android-developers.googleblog.com/2018/06/better-biometrics-in-android-p.html) (opens Android's web site)
   - **At least numeric**: Includes numeric characters, like `123456789`.
@@ -113,20 +117,17 @@ These settings apply to devices running Android 9 or earlier, and all Samsung Kn
 
     - If the Company Portal app is running a version earlier than 1704, no PIN policy applies to devices, and an error shows in the Microsoft Intune admin center.
     - If the Company Portal app runs the 1704 version or later, only a simple PIN can be applied. Android version earlier than 5.0 don't support this setting. No error is shown in the Microsoft Intune admin center.
-
   - **At least alphabetic**: Includes letters in the alphabet. Numbers and symbols aren't required.
   - **At least alphanumeric**: Includes uppercase letters, lowercase letters, and numeric characters.
   - **At least alphanumeric with symbols**: Includes uppercase letters, lowercase letters, numeric characters, punctuation marks, and symbols.
-
 - **Prevent reuse of previous passwords**: Use this setting to restrict users from creating previously used passwords. Enter the number of previously used passwords that can't be used, from 1-24. For example, enter `5` so users can't set a new password to their current password or any of their previous four passwords. When the value is blank, Intune doesn't change or update this setting.
-
 - **Fingerprint unlock (Samsung Knox only)**: **Block** prevents using a fingerprint to unlock devices. When set to **Not configured** (default), Intune doesn't change or update this setting.By default, the OS might allow users to unlock devices using a fingerprint.
-
 - **Smart Lock and other trust agents**: **Block** prevents Smart Lock or other trust agents from adjusting lock screen settings. If the device is in a trusted location, then this feature, also known as a trust agent, lets you disable or bypass the device lock screen password. For example, use this feature when devices are connected to a specific Bluetooth device, or when devices are close to an NFC tag. You can use this setting to prevent users from configuring Smart Lock.
 
   When set to **Not configured** (default), Intune doesn't change or update this setting.
 
   This setting applies to:
+
   - Samsung KNOX Standard 5.0 and newer
 
 ## Google Play Store
@@ -142,7 +143,6 @@ This feature is supported on Android and Samsung Knox Standard devices.
   - **Not configured** (default): Intune doesn't change or update this setting.
   - **Prohibited apps**: List the apps (not managed by Intune) that users aren't allowed to install and run. If a user installs an app from this list, Intune notifies you.
   - **Approved apps**: List the apps that users are allowed to install. To stay compliant, users must not install other apps. Intune-managed apps are automatically allowed, including the Company Portal app.
-
 - **Apps list**: **Add** your app:
 
   - **App store URL**: Enter the Google Play Store URL of the app you want. For example, to add the Microsoft Remote Desktop app for Android, enter `https://play.google.com/store/apps/details?id=com.microsoft.rdc.android`.
@@ -152,9 +152,10 @@ This feature is supported on Android and Samsung Knox Standard devices.
   - **App name**: Enter the name you want. This name is shown to users.
   - **Publisher** (optional): Enter the publisher of the app, like `Microsoft`.
 
-You can also **Import** a CSV file with details about the app, including the URL. Use the <*app url*>, <*app name*>, <*app publisher*> format. Or, **Export** an existing list that includes the restricted apps list in the same format.
+You can also **Import** a CSV file with details about the app, including the URL. Use the &lt;*app url*&gt;, &lt;*app name*&gt;, &lt;*app publisher*&gt; format. Or, **Export** an existing list that includes the restricted apps list in the same format.
 
 > [!IMPORTANT]
+>
 > Device profiles that use the restricted app settings must be assigned to user groups, not device groups.
 
 ## Browser
@@ -214,7 +215,6 @@ Kiosk settings apply only to Samsung Knox Standard devices running Android 10 or
   - **Add apps by package name**: Primarily used for line-of-business apps. Enter the app name, and the name of the app package.
   - **Add apps by URL**: Enter the app name, and its URL in the Google Play store.
   - **Add store app**: Select an app from the existing list of apps you manage in Intune.
-
 - **Screen sleep button**: **Block** prevents or hides the screen sleep button. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow the screen sleep wake button on devices.
 - **Volume buttons**: **Block** prevents users from adjusting the volume by disabling the volume buttons. When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might allow using the volume buttons on devices.
 
@@ -222,4 +222,4 @@ Kiosk settings apply only to Samsung Knox Standard devices running Android 10 or
 
 [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
 
-You can also create kiosk profiles for [Android Enterprise](./ref-device-restrictions-android-enterprise.md) (Device experience) and [Windows](./configure-kiosk.md) devices.
+You can also create kiosk profiles for [Android Enterprise](ref-device-restrictions-android-enterprise.md) (Device experience) and [Windows](configure-kiosk.md) devices.

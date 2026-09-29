@@ -1,7 +1,7 @@
 ---
-title: Android Management API for personally owned work profiles
+title: "Use Android Management API for personally owned devices with work profiles"
 description: Learn about the transition to Android Management API for personally owned work profile devices, including web-based enrollment, migration steps, and what IT admins need to know.
-ms.date: 06/18/2026
+ms.date: "2026-06-18T00:00:00Z"
 ms.topic: overview
 ms.reviewer: priyar, grwilso
 ---
@@ -36,26 +36,17 @@ The transition to Android Management API provides the following advantages for I
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
 > This feature supports the following platform:
 >
 > - Android Enterprise personally owned devices with a work profile enrolled in Intune
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
+
 > To create the device configuration policy:
-> - [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
-:::column-end:::
-:::row-end:::
+>
+> - Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
 
 ## Use web-based enrollment for new devices
 
@@ -83,39 +74,33 @@ For devices already enrolled in Intune, use the Android Management API device co
 - Notify users. Before migrating devices, email users or configure custom notifications to explain the upcoming changes.
 - Monitor progress. Use the **Personal Devices on Android Management API** report to track devices across these states:
 
-  - **AMAPI**: Devices on Android Management API.  
-  - **Not targeted to move**: Devices not targeted to move to Android Management API.  
-  - **Move pending**: Devices targeted to move and pending completion.  
-  - **Error**: Devices that attempted to move and encountered an error.  
+  - **AMAPI**: Devices on Android Management API.
+  - **Not targeted to move**: Devices not targeted to move to Android Management API.
+  - **Move pending**: Devices targeted to move and pending completion.
+  - **Error**: Devices that attempted to move and encountered an error.
 
 ### Create the device configuration profile
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
-    - **Platform**: Select **Android Enterprise**.
-    - **Profile type**: Select **Templates** > **Move to Android Management API**.
-
+   - **Platform**: Select **Android Enterprise**.
+   - **Profile type**: Select **Templates** &gt; **Move to Android Management API**.
 4. Select **Create**.
 5. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **Android: Move to Android Management API**.
-    - **Description**: Enter a description for the policy. This setting is optional, but recommended.
-
+   - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **Android: Move to Android Management API**.
+   - **Description**: Enter a description for the policy. This setting is optional, but recommended.
 6. Select **Next**.
-
 7. In **Configuration settings**, select **Next**.
 
-    This template doesn't have settings for you to configure. The configuration is done by Intune when the device receives the policy.
-
+   This template doesn't have settings for you to configure. The configuration is done by Intune when the device receives the policy.
 8. In **Assignments**, select the device groups that will receive your profile. For information on assigning profiles, go to [Assign user and device profiles](../../device-configuration/assign-device-profile.md).
 
-    Select **Next**.
-
+   Select **Next**.
 9. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
-
-10. Monitor progress at **Personal Devices on Android Management API** report under Devices -> Monitor. Note that reporting will not appear under the policy itself -> "device assignment status" or the device view -> device configuration tab. 
+10. Monitor progress at **Personal Devices on Android Management API** report under Devices -&gt; Monitor. Note that reporting will not appear under the policy itself -&gt; "device assignment status" or the device view -&gt; device configuration tab.
 
 When you assign the policy, devices start moving to Android Management API. If you unassign or delete this policy, devices that already moved keep using Android Management API. Targeted devices that haven't received the policy won't be moved to Android Management API.
 
@@ -129,6 +114,7 @@ When a device migrates to Android Management API:
 - Wi-Fi access might be affected. Devices connected to corporate Wi-Fi with username/password authentication lose Wi-Fi access until the user signs in again. Devices using certificate-based Wi-Fi authentication aren't affected.
 
 > [!TIP]
+>
 > Move to certificate-based Wi-Fi authentication before migrating devices to avoid Wi-Fi disruptions. Certificate authentication is also more secure.
 
 ## Apps installed after enrollment or migration
@@ -136,7 +122,7 @@ When a device migrates to Android Management API:
 Intune automatically installs the following apps on devices managed by Android Management API:
 
 | App | Purpose |
-|---|---|
+| --- | --- |
 | **Microsoft Intune** | User-facing app for device management, IT contact, and diagnostic log collection. |
 | **Company Portal** | Required for mobile app management. |
 | **Android Device Policy** | Enforces Android Management API policies. Installed in a hidden state. Users don't see it. |
@@ -163,31 +149,32 @@ Android Management API doesn't support policies that prevent users from using bi
 If you currently block biometrics at the device level, consider moving that restriction to the work profile level to continue protecting work resources.
 
 > [!NOTE]
+>
 > For users who use a unified password (one lock for both the device and work profile), biometric settings configured for the work profile apply to the device as well.
 
 ### Review enrollment restrictions
 
-The **Personally owned** device setting in enrollment restrictions (under **Android Enterprise (work profile)**) doesn't apply to devices managed by Android Management API. This setting will be removed from the Intune admin center when all devices are on Android Management API.  
+The **Personally owned** device setting in enrollment restrictions (under **Android Enterprise (work profile)**) doesn't apply to devices managed by Android Management API. This setting will be removed from the Intune admin center when all devices are on Android Management API.
 
-If you currently set **Personally owned** to **Block**, plan an alternative approach:  
+If you currently set **Personally owned** to **Block**, plan an alternative approach:
 
 - Use a corporate management method instead, such as corporate-owned work profile.
 - Configure enrollment restrictions to allow only a specific group of users.
 
 ### Update devices to a supported Android version
 
-Ensure devices are running a supported Android version. After you enable enrollment with Android Management API, Devices running any Android OS version can enroll. For a list of all supported versions, see [Supported platforms](../../fundamentals/ref-supported-platforms.md).  
+Ensure devices are running a supported Android version. After you enable enrollment with Android Management API, Devices running any Android OS version can enroll. For a list of all supported versions, see [Supported platforms](../../fundamentals/ref-supported-platforms.md).
 
-Devices must be running Android 9 or later to migrate to Android Management API.  
+Devices must be running Android 9 or later to migrate to Android Management API.
 
-Encourage users to update to their device's latest available Android version for the best experience.  
+Encourage users to update to their device's latest available Android version for the best experience.
 
 ## Changes to be aware of
 
 Some behaviors change on devices managed by Android Management API compared to the custom DPC implementation:
 
 | Area | Custom DPC behavior | Android Management API behavior |
-|---|---|---|
+| --- | --- | --- |
 | **Required apps** | Users can uninstall required apps; they reinstall automatically within a few hours. | Users can't uninstall required apps. |
 | **Caller ID and contact search** | Separate settings for displaying work contact caller ID and searching work contacts from the personal profile. | Single combined setting. If either is blocked, Intune blocks both. |
 | **Screen timeout** | Configurable at the device level or work profile level. | Only configurable at the work profile level. Intune uses the lesser of the two values during migration. |
@@ -202,7 +189,3 @@ For the latest updates on rollout timeline and enforcement changes, see [New pol
 - [Android Enterprise work profile management overview](enterprise-work-profile.md)
 - [Set up enrollment of Android Enterprise personally owned work profile devices](setup-personal-work-profile.md)
 - [Redo Workplace Join for Android Enterprise devices](redo-workplace-join-android.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

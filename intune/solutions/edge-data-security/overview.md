@@ -1,7 +1,7 @@
 ---
 title: Secure Your Corporate Data in Intune with Microsoft Edge for Business
 description: Secure your corporate data in Microsoft Intune with Microsoft Edge for Business across all platforms.
-ms.date: 01/15/2026
+ms.date: "2026-01-15T00:00:00Z"
 ms.topic: overview
 ms.custom:
 ---
@@ -27,24 +27,27 @@ The target audience for this content includes:
 - **Decision Makers:** This content helps decision makers understand the security, productivity, and manageability benefits of implementing a comprehensive secure enterprise browser strategy.
 
 > [!NOTE]
+>
 > This content is designed to help you use the full potential of Microsoft Edge for Business and Microsoft Application Management across all device platforms and management scenarios.
 
 > [!IMPORTANT]
+>
 > The Secure Enterprise Browser framework references industry guidance such as NIST, DISA STIG, and CISA best practices. Applying the recommendations in this series alone doesn't guarantee compliance. Work with your compliance and security teams to validate requirements for your organization.
 
 ## Overview
 
 This guide provides comprehensive step-by-step instructions to implement the Secure Enterprise Browser experience using the data protection framework:
 
-1. **[Microsoft Entra Conditional Access with Microsoft Edge for Business](./conditional-access-step-1.md)** - Create Microsoft Entra Conditional Access policies and Intune app protection policies for browsing on Android, iOS, and Windows.
-2. **[App protection policies for Microsoft Edge for Business](./protection-policies-step-2.md)** - Implement Level 1, Level 2, and Level 3 app protection policies for Windows, Android, and iOS platforms to ensure secure access and usage of enterprise applications.
-3. **[Integrate Mobile Threat Defense](./threat-defense-step-3.md)** - Enhance the overall security posture of your organization by integrating the secure enterprise browser with Windows Security Center, Microsoft Defender, or MTD partners.
-4. **[App configuration policies for Microsoft Edge for Business](./app-configuration-step-4.md)** - Configure Level 1, Level 2, and Level 3 app configuration policies for Android, iOS, and Windows to customize browser behavior and features.
-5. **[Settings catalog for Microsoft Edge for Business](./settings-catalog-step-5.md)** - Apply Level 1, Level 2, and Level 3 settings catalog configurations for Windows and macOS to establish comprehensive device-level browser controls.
-6. **[Microsoft Edge for Business end user experience](./end-user-experience-step-6.md)** - Understand how security measures affecting user interaction for Microsoft Edge for Business.
-7. **[Troubleshooting and FAQ](./troubleshoot-step-7.md)** - Troubleshoot app protection policies with validation examples and frequently asked questions.
+1. **[Microsoft Entra Conditional Access with Microsoft Edge for Business](conditional-access-step-1.md)** - Create Microsoft Entra Conditional Access policies and Intune app protection policies for browsing on Android, iOS, and Windows.
+2. **[App protection policies for Microsoft Edge for Business](protection-policies-step-2.md)** - Implement Level 1, Level 2, and Level 3 app protection policies for Windows, Android, and iOS platforms to ensure secure access and usage of enterprise applications.
+3. **[Integrate Mobile Threat Defense](threat-defense-step-3.md)** - Enhance the overall security posture of your organization by integrating the secure enterprise browser with Windows Security Center, Microsoft Defender, or MTD partners.
+4. **[App configuration policies for Microsoft Edge for Business](app-configuration-step-4.md)** - Configure Level 1, Level 2, and Level 3 app configuration policies for Android, iOS, and Windows to customize browser behavior and features.
+5. **[Settings catalog for Microsoft Edge for Business](settings-catalog-step-5.md)** - Apply Level 1, Level 2, and Level 3 settings catalog configurations for Windows and macOS to establish comprehensive device-level browser controls.
+6. **[Microsoft Edge for Business end user experience](end-user-experience-step-6.md)** - Understand how security measures affecting user interaction for Microsoft Edge for Business.
+7. **[Troubleshooting and FAQ](troubleshoot-step-7.md)** - Troubleshoot app protection policies with validation examples and frequently asked questions.
 
 > [!IMPORTANT]
+>
 > **Policy Selection Guidance**: When configuring browser policies for enrolled Windows devices, you should choose **either** Settings Catalog policies (Step 5) **or** the Microsoft Edge Security Baseline from Endpoint Security, not both. Implementing both creates policy conflicts. The Settings Catalog approach provides more flexibility and granular control across all three security levels. For comprehensive coverage, this guide focuses on Settings Catalog implementation.
 >
 > Similarly, for non-enrolled devices, use App Configuration Policies (Step 4). For enrolled devices, use Settings Catalog policies (Step 5). Never deploy both App Configuration Policies and Settings Catalog policies targeting Microsoft Edge to the same client as this creates policy conflicts.
@@ -80,8 +83,8 @@ Use the following matrix to confirm which policy types apply at each level and p
 | Windows – App protection policies | Basic data protection with minimal sharing limits. | Blocks copy/paste and enforces device health checks. | Enables high assurance with secured threat levels and printer blocking. | Protects work data on managed and unmanaged Windows devices. |
 | Windows – App configuration policies | Establishes home pages, password controls, and download policies. | Extends to certificate management, WebRTC, and session cleanup. | Forces allowlists, disables developer tools, and blocks downloads. | Deep browser customization without replacing device policies. |
 | macOS – Settings catalog | Implements baseline protections and update management. | Adds developer tool lock down, WebUSB/WebHID blocks, and SmartScreen DNS. | Forces allowlist-only browsing with download and clipboard restrictions. | The settings catalog is the primary control plane for macOS. |
-| iOS/iPadOS – App protection & configuration | Requires app PIN, encryption, and smart defaults. | Tightens backups, blocks screenshots, and limits sharing destinations. | Enforces biometric strength, URL allowlists, and high DLP settings. | Covers personal and corporate devices with MAM + ACP. |
-| Android – App protection & configuration | Provides fundamental encryption, PIN, and SmartScreen settings. | Adds backup blocking, Play Integrity checks, and social-media blocks. | Requires Class 3 biometrics, kiosk options, and allowlist-only access. | Mirrors iOS protections with Android-specific controls. |
+| iOS/iPadOS – App protection &amp; configuration | Requires app PIN, encryption, and smart defaults. | Tightens backups, blocks screenshots, and limits sharing destinations. | Enforces biometric strength, URL allowlists, and high DLP settings. | Covers personal and corporate devices with MAM + ACP. |
+| Android – App protection &amp; configuration | Provides fundamental encryption, PIN, and SmartScreen settings. | Adds backup blocking, Play Integrity checks, and social-media blocks. | Requires Class 3 biometrics, kiosk options, and allowlist-only access. | Mirrors iOS protections with Android-specific controls. |
 | Conditional Access (cross-platform) | Introduces browser-only access with MFA and APP requirements. | Adds device compliance, risk-based access, and session frequency controls. | Enforces high-trust locations, continuous access evaluation, and approved clients. | Complements policy configuration with identity-driven enforcement. |
 
 ## Secure Enterprise Browser
@@ -137,7 +140,7 @@ In addition to the above benefits, you can enable protected Mobile Application M
 
 ## Zero Trust Methodology
 
-The [Zero Trust security strategy](/security/zero-trust/zero-trust-overview) is transforming the way organizations approach security. It's becoming the new standard for security strategy in response to the evolving threat landscape. Traditional best practices revolved around the model of "trust but verify," however this approach is exploitable through modern attacks. This is driving the need for a shift in security strategy. The Zero Trust methodology is based on the concept of "never trust, always verify" and aligns with three key principles:
+The [Zero Trust security strategy](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview) is transforming the way organizations approach security. It's becoming the new standard for security strategy in response to the evolving threat landscape. Traditional best practices revolved around the model of "trust but verify," however this approach is exploitable through modern attacks. This is driving the need for a shift in security strategy. The Zero Trust methodology is based on the concept of "never trust, always verify" and aligns with three key principles:
 
 - **Verify Explicitly:** Always authenticate and authorize based on all available data points. These data points include user identity, location, device health, service/workload, data classification, and anomalies.
 - **Use Least-Privilege Access:** Limit user access with just-in-time and just-enough-access (JIT/JEA) policies. Implement risk-based adaptive policies and data protection to secure both data and productivity.
@@ -149,10 +152,10 @@ Microsoft Edge for Business, built on the robust and secure foundation of Chromi
 
 In addition to the inherent security features of Chromium, Microsoft Edge for Business incorporates unique protection features and supports a range of Microsoft technologies:
 
-- **[Microsoft Defender](/defender):** Provides comprehensive security solutions.
-- **[Microsoft Entra](/entra):** Offers identity and access management services.
-- **[Microsoft Intune](/intune/):** Offers mobile device and application management.
-- **[Microsoft Purview](/purview):** Supports data governance across your hybrid data estate.
+- **[Microsoft Defender](https://learn.microsoft.com/en-us/defender):** Provides comprehensive security solutions.
+- **[Microsoft Entra](https://learn.microsoft.com/en-us/entra):** Offers identity and access management services.
+- **[Microsoft Intune](../../index.yml):** Offers mobile device and application management.
+- **[Microsoft Purview](https://learn.microsoft.com/en-us/purview):** Supports data governance across your hybrid data estate.
 
 Furthermore, Microsoft Edge for Business aligns with the Zero Trust methodology by offering the following features:
 
@@ -169,4 +172,4 @@ Furthermore, Microsoft Edge for Business aligns with the Zero Trust methodology 
 
 This solution provides comprehensive guidance for implementing the Secure Enterprise Browser configuration using Microsoft Edge for Business and Microsoft Intune. The step-by-step approach covers all policy types and platforms, organized by configuration method to help you build a complete security framework.
 
-Continue with [Step 1](./conditional-access-step-1.md) to create Microsoft Entra Conditional Access.
+Continue with [Step 1](conditional-access-step-1.md) to create Microsoft Entra Conditional Access.

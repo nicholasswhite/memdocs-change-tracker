@@ -1,7 +1,7 @@
 ---
-title: Manage clients over the internet
+title: "Manage clients over the internet with Configuration Manager"
 description: Learn about managing clients with cloud management gateway and internet-based client management in Configuration Manager.
-ms.date: 08/02/2021
+ms.date: "2021-08-02T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -17,11 +17,11 @@ Typically in Configuration Manager, most of the managed computers and servers ar
 Configuration Manager provides two ways to manage internet-connected clients:
 
 - Cloud management gateway
-
 - Internet-based client management
 
 > [!NOTE]
-> You can have a combination of both services for a single site. If a device gets policy from the site for both IBCM and CMG, then it randomizes between them for communication. The only mechanism available to control communication is client authentication. For example, if a Microsoft Entra joined client doesn't trust the server authentication certificate of the internet-based management point, it can only use the CMG. If a domain-joined client doesn't trust the server authentication certificate of the CMG, it can only use the internet-based management point.<!-- SCCMDocs#1541 -->
+>
+> You can have a combination of both services for a single site. If a device gets policy from the site for both IBCM and CMG, then it randomizes between them for communication. The only mechanism available to control communication is client authentication. For example, if a Microsoft Entra joined client doesn't trust the server authentication certificate of the internet-based management point, it can only use the CMG. If a domain-joined client doesn't trust the server authentication certificate of the CMG, it can only use the internet-based management point.
 
 ## Cloud management gateway
 
@@ -30,17 +30,13 @@ The cloud management gateway provides management of internet-based clients. It u
 ### CMG advantages
 
 - No additional on-premises infrastructure investment required.
-
 - Does not expose on-premises infrastructure to the internet.
-
 - Cloud virtual machines that run the service are fully managed by Azure and require no maintenance.
-
 - Easily set up and configured in the Configuration Manager console.
 
 ### CMG disadvantages
 
 - Cloud subscription cost.
-
 - Management data sent through cloud service.
 
 ## Internet-based client management
@@ -50,17 +46,13 @@ This method relies on internet-facing site system servers to which clients direc
 ### IBCM advantages
 
 - No cloud service dependency.
-
 - No additional cost associated with a cloud subscription.
-
 - Full control of servers and roles providing the service.
 
 ### IBCM disadvantages
 
 - Require additional infrastructure investment.
-
 - Overhead and operational cost of additional infrastructure.
-
 - Infrastructure must be exposed to the internet.
 
 ## Next steps

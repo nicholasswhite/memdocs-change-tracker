@@ -1,7 +1,7 @@
 ---
 title: Management functionalities for Surface devices
 description: Learn about the management capabilities offered to Surface devices, including firmware management and the Surface Management Portal.
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 ---
 
@@ -11,11 +11,11 @@ Microsoft Surface devices offer advanced management functionalities, including t
 
 ## Manage device firmware for Surface devices
 
-Surface devices use a Unified Extensible Firmware Interface (UEFI) setting that allows you to enable or disable built-in hardware components, protect UEFI settings from being changed, and adjust device boot configuration. With [Device Firmware Configuration Interface profiles built into Intune][INT-1], Surface UEFI management extends the modern management capabilities to the hardware level. Windows can pass management commands from Intune to UEFI for Windows Autopilot-deployed devices.
+Surface devices use a Unified Extensible Firmware Interface (UEFI) setting that allows you to enable or disable built-in hardware components, protect UEFI settings from being changed, and adjust device boot configuration. With [Device Firmware Configuration Interface profiles built into Intune](../../../device-configuration/templates/ref-dfci-settings-windows.md), Surface UEFI management extends the modern management capabilities to the hardware level. Windows can pass management commands from Intune to UEFI for Windows Autopilot-deployed devices.
 
-DFCI supports zero-touch provisioning, eliminates BIOS passwords, and provides control of security settings for boot options, cameras and microphones, built-in peripherals, and more. For more information, see [Manage DFCI on Surface devices][SURF-1] and [Manage DFCI with Windows Autopilot][MEM-1], which includes a list of requirements to use DFCI.
+DFCI supports zero-touch provisioning, eliminates BIOS passwords, and provides control of security settings for boot options, cameras and microphones, built-in peripherals, and more. For more information, see [Manage DFCI on Surface devices](https://learn.microsoft.com/en-us/surface/surface-manage-dfci-guide) and [Manage DFCI with Windows Autopilot](../../../../autopilot/dfci-management.md), which includes a list of requirements to use DFCI.
 
-:::image type="content" source="./media/manage-surface/dfci-profile.png" alt-text="Creation of a DFCI profile from Microsoft Intune" lightbox="./media/manage-surface/dfci-profile.png" border="true":::
+[![Creation of a DFCI profile from Microsoft Intune](media/manage-surface/dfci-profile.png)](media/manage-surface/dfci-profile.png#lightbox)
 
 ## Microsoft Surface Management Portal
 
@@ -25,22 +25,11 @@ When Surface devices are enrolled in cloud management and users sign in for the 
 
 To access and use the Surface Management Portal:
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Devices** > **Partner Portals** > **Surface Management Portal**.
-    :::image type="content" source="./media/manage-surface/surface-management-portal.png" alt-text="Surface Management Portal within Microsoft Intune" lightbox="./media/manage-surface/surface-management-portal.png" border="true":::
-1. See an **Overview** of your Surface devices.
-    - Devices that are out of compliance or not registered, have critically low storage, require updates, or are currently inactive, are listed here.
-1. To obtain details on each insights category, select **Insights**.
-    - This dashboard displays diagnostic information that you can customize and export.
-1. To obtain the device's warranty information, select **Insights**.
-1. To review a list of support requests and their status, select **Support**.
-
-<!-- Reference links in article -->
-
-[INT-1]: ../../../device-configuration/templates/ref-dfci-settings-windows.md
-[MEM-1]: /autopilot/dfci-management
-[SURF-1]: /surface/surface-manage-dfci-guide
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Partner Portals** &gt; **Surface Management Portal**.   [![Surface Management Portal within Microsoft Intune](media/manage-surface/surface-management-portal.png)](media/manage-surface/surface-management-portal.png#lightbox)
+3. See an **Overview** of your Surface devices.
+   - Devices that are out of compliance or not registered, have critically low storage, require updates, or are currently inactive, are listed here.
+4. To obtain details on each insights category, select **Insights**.
+   - This dashboard displays diagnostic information that you can customize and export.
+5. To obtain the device's warranty information, select **Insights**.
+6. To review a list of support requests and their status, select **Support**.

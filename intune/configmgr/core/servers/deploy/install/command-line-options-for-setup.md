@@ -1,7 +1,7 @@
 ---
-title: Setup command-line options
+title: "Command-line options for Configuration Manager setup"
 description: Create automation scripts to install Configuration Manager from a command line.
-ms.date: 02/16/2022
+ms.date: "2022-02-16T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: reference
 ms.collection: tier3
@@ -17,6 +17,7 @@ Use this information to configure scripts or to install Configuration Manager fr
 Run `setup.exe` from the `\BIN\X64` directory of the Configuration Manager installation path on the site server.
 
 > [!TIP]
+>
 > You can also use `setupwpf.exe` from the same folder, but it doesn't include basic prerequisite checks.
 
 ## `/DEINSTALL`
@@ -54,6 +55,7 @@ Provide the SQL server name, database name and instance name in the following fo
 Run a test on a backup of the site database to make sure that the database can upgrade.
 
 > [!IMPORTANT]
+>
 > The test upgrade is no longer a required or recommend step for most sites.
 >
 > If your database is suspect, or is modified by customizations not explicitly supported by Configuration Manager, continue to use this process.

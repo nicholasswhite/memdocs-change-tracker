@@ -1,7 +1,7 @@
 ---
-title: Manage Intune Company Portal preferences for macOS
+title: "Manage Company Portal preferences for macOS"
 description: Choose your preferences for single sign-on and in-app data collection in Company Portal for macOS.
-ms.date: 10/08/2024
+ms.date: "2024-10-08T00:00:00Z"
 ms.reviewer: esmich
 ---
 
@@ -10,17 +10,15 @@ ms.reviewer: esmich
 Select your preferences for single sign-on and in-app data collection in Company Portal. To access your preferences:
 
 1. Open the Company Portal app.
-2. Go to the menu bar and select **Company Portal** > **Preferences**.
+2. Go to the menu bar and select **Company Portal** &gt; **Preferences**.
 
 ## Single sign-on
 
 Single sign-on (SSO) configures your work or school account so that you only have to authenticate once to access all cloud-based work apps and services. Preferences include:
 
-* **Register device**: Register your device to enable SSO and gain access to protected resources. This setting is only available on devices enabled for platform SSO.
-
-* **Deregister**: Remove device registration and disable SSO. To access protected resources again on this device, you must reregister. This setting is only available on devices enabled for platform SSO.
-
-* **Remove account from this device**: Remove your work or school account and any SSO authentication tokens from the device.
+- **Register device**: Register your device to enable SSO and gain access to protected resources. This setting is only available on devices enabled for platform SSO.
+- **Deregister**: Remove device registration and disable SSO. To access protected resources again on this device, you must reregister. This setting is only available on devices enabled for platform SSO.
+- **Remove account from this device**: Remove your work or school account and any SSO authentication tokens from the device.
 
 To opt out of SSO on your Mac, select the checkbox next to **Don't ask me to sign in with single sign-on for this device**.
 
@@ -32,7 +30,7 @@ To turn off data collection in Company Portal, deselect the checkbox next to **A
 
 ## Advanced logging
 
-Select the checkbox next to **Turn on advanced logging** to turn on verbose logging, which is used for troubleshooting, for Company Portal and MSAL.  Company Portal logs certificate usage and network responses when advanced logging is turned on. Advanced logging is turned off by default. Keep this setting turned off unless otherwise instructed by your organization's IT administrator.
+Select the checkbox next to **Turn on advanced logging** to turn on verbose logging, which is used for troubleshooting, for Company Portal and MSAL. Company Portal logs certificate usage and network responses when advanced logging is turned on. Advanced logging is turned off by default. Keep this setting turned off unless otherwise instructed by your organization's IT administrator.
 
 ## Next steps
 

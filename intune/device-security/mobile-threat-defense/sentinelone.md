@@ -1,7 +1,7 @@
 ---
-title: SentinelOne MTD connector with Microsoft Intune
+title: "SentinelOne Mobile Threat Defense connector with Intune"
 description: How to set up SentinelOne Mobile Threat Defense with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 10/14/2024
+ms.date: "2024-10-14T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -25,19 +25,18 @@ You can configure Conditional Access policies that are based on SentinelOne risk
 
 ## How do Intune and SentinelOne help protect your company resources?
 
-For Android and iOS/iPadOS The SentinelOne app captures file system, network stack, device, and application telemetry where available. Then the app sends the  data to the SentinelOne cloud service to assess the device's risk for mobile threats.
+For Android and iOS/iPadOS The SentinelOne app captures file system, network stack, device, and application telemetry where available. Then the app sends the data to the SentinelOne cloud service to assess the device's risk for mobile threats.
 
 - **Support for enrolled devices** - Intune device compliance policy includes a rule for Mobile Threat Defense (MTD), which can use risk assessment information from SentinelOne. When the MTD rule is enabled, Intune evaluates device compliance with the policy that you enabled. If the device is found noncompliant, users are blocked access to corporate resources like Exchange Online and SharePoint Online. Users also receive guidance from the SentinelOne app installed in their devices to resolve the issue and regain access to corporate resources. To support using SentinelOne with enrolled devices:
 
-  - [Add MTD apps to devices](./assign-apps.md)
-  - [Create a device compliance policy that supports MTD](./create-compliance-policy.md)
-  - [Enable the MTD connector in Intune](./enable-connector.md)
-
+  - [Add MTD apps to devices](assign-apps.md)
+  - [Create a device compliance policy that supports MTD](create-compliance-policy.md)
+  - [Enable the MTD connector in Intune](enable-connector.md)
 - **Support for unenrolled devices** - Intune can use the risk assessment data from the SentinelOne app on unenrolled devices when you use Intune app protection policies. Admins can use this combination to help protect corporate data within a [Microsoft Intune protected app](../../app-management/ref-protected-apps.md), Admins can also issue a block or selective wipe for corporate data on those unenrolled devices. To support using SentinelOne with unenrolled devices:
 
-  - [Add the MTD app to unenrolled devices](./add-apps-unenrolled-devices.md)
-  - [Create a Mobile Threat Defense app protection policy](./create-app-protection-policy.md)
-  - [Enable the MTD connector in Intune for unenrolled devices](./enable-unenrolled-devices.md)
+  - [Add the MTD app to unenrolled devices](add-apps-unenrolled-devices.md)
+  - [Create a Mobile Threat Defense app protection policy](create-app-protection-policy.md)
+  - [Enable the MTD connector in Intune for unenrolled devices](enable-unenrolled-devices.md)
 
 ## Sample scenarios
 
@@ -53,11 +52,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected:*
 
-:::image type="content" source="./media/sentinelone/malicious-apps-blocked-sentinelone.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/sentinelone/malicious-apps-blocked-sentinelone.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/sentinelone/malicious-apps-unblocked-sentinelone.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/sentinelone/malicious-apps-unblocked-sentinelone.png)
 
 ### Control access based on threat to network
 
@@ -65,11 +64,11 @@ Detect threats like **Man-in-the-middle** in network, and protect access to Wi-F
 
 *Block network access through Wi-Fi:*
 
-:::image type="content" source="./media/sentinelone/network-wifi-blocked-sentinelone.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/sentinelone/network-wifi-blocked-sentinelone.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/sentinelone/network-wifi-unblocked-sentinelone.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated.](media/sentinelone/network-wifi-unblocked-sentinelone.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -77,30 +76,26 @@ Detect threats like **Man-in-the-middle** in network, and prevent synchronizatio
 
 *Block SharePoint Online when network threats are detected:*
 
-:::image type="content" source="./media/sentinelone/network-spo-blocked-sentinelone.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/sentinelone/network-spo-blocked-sentinelone.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/sentinelone/network-spo-unblocked-sentinelone.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/sentinelone/network-spo-unblocked-sentinelone.png)
 
 ### Control access on unenrolled devices based on threats from malicious apps
 
 When the sentinelone Mobile Threat Defense solution considers a device to be infected:
 
-:::image type="content" source="./media/sentinelone/mobile-app-policy-block-sentinelone.png" alt-text="Product flow for App protection policies to block access due to malware.":::
+![Product flow for App protection policies to block access due to malware.](media/sentinelone/mobile-app-policy-block-sentinelone.png)
 
 *Access is granted on remediation*:
 
-:::image type="content" source="./media/sentinelone/mobile-app-policy-remediated-sentinelone.png" alt-text="Product flow for App protection policies to grant access after malware is remediated.":::
+![Product flow for App protection policies to grant access after malware is remediated.](media/sentinelone/mobile-app-policy-remediated-sentinelone.png)
 
 ## Next steps
 
-- [Integrate sentinelone with Intune](./setup-sentinelone.md)
-
-- [Set up sentinelone apps](./assign-apps.md)
-
-- [Create sentinelone device compliance policy](./create-compliance-policy.md)
-
-- [Enable sentinelone MTD connector](./enable-connector.md)
-
-- [Create an MTD app protection policy](./create-app-protection-policy.md)
+- [Integrate sentinelone with Intune](setup-sentinelone.md)
+- [Set up sentinelone apps](assign-apps.md)
+- [Create sentinelone device compliance policy](create-compliance-policy.md)
+- [Enable sentinelone MTD connector](enable-connector.md)
+- [Create an MTD app protection policy](create-app-protection-policy.md)

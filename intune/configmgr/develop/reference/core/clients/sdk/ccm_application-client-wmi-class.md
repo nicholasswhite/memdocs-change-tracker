@@ -1,17 +1,18 @@
 ---
-title: CCM_Application Class
+title: "CCM_Application Client WMI Class"
 description: In Configuration Manager, the CCM_Application Windows Management Instrumentation class is an SMS Provider server class that represents an application.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Application Client WMI Class
 
 The `CCM_Application` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an application.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -61,434 +62,396 @@ Class CCM_Application : CCM_SoftwareBase
 
 ## Methods
 
- The following table lists the methods in the `CCM_Application` class.
+The following table lists the methods in the `CCM_Application` class.
 
-- [Cancel Method in Class CCM_Application](../../../../../develop/reference/core/clients/sdk/cancel-method-in-class-ccm_application.md)
-- [DownloadContents Method in Class CCM_Application](../../../../../develop/reference/core/clients/sdk/downloadcontents-method-in-class-ccm_application.md)
-- [GetPendingComponentList Method in Class CCM_Application](../../../../../develop/reference/core/clients/sdk/getpendingcomponentlist-method-in-class-ccm_application.md)
-- [GetProperty Method in Class CCM_Application](../../../../../develop/reference/core/clients/sdk/getproperty-method-in-class-ccm_application.md)
-- [Install Method in Class CCM_Application](../../../../../develop/reference/core/clients/sdk/install-method-in-class-ccm_application.md)
-- [Repair Method in Class CCM_Application](../../../../../develop/reference/core/clients/sdk/repair-method-in-class-ccm_application.md)
-- [Uninstall Method in Class CCM_Application](../../../../../develop/reference/core/clients/sdk/uninstall-method-in-class-ccm_application.md)
+- [Cancel Method in Class CCM_Application](cancel-method-in-class-ccm_application.md)
+- [DownloadContents Method in Class CCM_Application](downloadcontents-method-in-class-ccm_application.md)
+- [GetPendingComponentList Method in Class CCM_Application](getpendingcomponentlist-method-in-class-ccm_application.md)
+- [GetProperty Method in Class CCM_Application](getproperty-method-in-class-ccm_application.md)
+- [Install Method in Class CCM_Application](install-method-in-class-ccm_application.md)
+- [Repair Method in Class CCM_Application](repair-method-in-class-ccm_application.md)
+- [Uninstall Method in Class CCM_Application](uninstall-method-in-class-ccm_application.md)
 
 ## Properties
 
- `AllowedActions`
- Data type: `String` Array
+`AllowedActions` Data type: `String` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Allowed actions.
+Allowed actions.
 
- `AppDTs`
- Data type: `CCM_AppDeploymentType` Array
+`AppDTs` Data type: `CCM_AppDeploymentType` Array
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [lazy]
+Qualifiers: [lazy]
 
- Application deployment types.
+Application deployment types.
 
- `ApplicabilityState`
- Data type: `String`
+`ApplicabilityState` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [values]
+Qualifiers: [values]
 
- Applicability state. Possible values are:
+Applicability state. Possible values are:
 
-|Value|
-|-|
-|Unknown|
-|Applicable|
-|Not Applicable|
+| Value |
+| --- |
+| Unknown |
+| Applicable |
+| Not Applicable |
 
- `ConfigureState`
- Data type: `String`
+`ConfigureState` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [values]
+Qualifiers: [values]
 
- Configure state. Possible values are:
+Configure state. Possible values are:
 
-|Value|
-|-|
-|NotNeeded|
-|NotConfigured|
-|Configured|
+| Value |
+| --- |
+| NotNeeded |
+| NotConfigured |
+| Configured |
 
- `ContentSize`
- Data type: `UInt32`
+`ContentSize` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Content size.
+Content size.
 
- `Deadline`
- Data type: `DateTime`
+`Deadline` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Deadline.
+Deadline.
 
- `DeploymentReport`
- Data type: `String`
+`DeploymentReport` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [lazy]
+Qualifiers: [lazy]
 
- Deployment report.
+Deployment report.
 
- `Description`
- Data type: `String`
+`Description` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Application description.
+Application description.
 
- `EnforcePreference`
- Data type: `UInt32`
+`EnforcePreference` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [values]
+Qualifiers: [values]
 
- Enforce preference. Possible values are:
+Enforce preference. Possible values are:
 
-|Value|Enforce preference|
-|-|-|
-|0|Immediate|
-|1|NonBusinessHours|
-|2|AdminSchedule|
+| Value | Enforce preference |
+| --- | --- |
+| 0 | Immediate |
+| 1 | NonBusinessHours |
+| 2 | AdminSchedule |
 
- `ErrorCode`
- Data type: `UInt32`
+`ErrorCode` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Error code.
+Error code.
 
- `EstimatedInstallTime`
- Data type: `UInt32`
+`EstimatedInstallTime` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Estimated installation time.
+Estimated installation time.
 
- `EvaluationState`
- Data type: `UInt32`
+`EvaluationState` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Evaluation state. Possible values are:
+Evaluation state. Possible values are:
 
-|Evaluation State Value|Description|
-|----------------------------|-----------------|
-|0|No state information is available.|
-|1|Application is enforced to desired/resolved state.|
-|2|Application is not required on the client.|
-|3|Application is available for enforcement (install or uninstall based on resolved state). Content may/may not have been downloaded.|
-|4|Application last failed to enforce (install/uninstall).|
-|5|Application is currently waiting for content download to complete.|
-|6|Application is currently waiting for content download to complete.|
-|7|Application is currently waiting for its dependencies to download.|
-|8|Application is currently waiting for a service (maintenance) window.|
-|9|Application is currently waiting for a previously pending reboot.|
-|10|Application is currently waiting for serialized enforcement.|
-|11|Application is currently enforcing dependencies.|
-|12|Application is currently enforcing.|
-|13|Application install/uninstall enforced and soft reboot is pending.|
-|14|Application installed/uninstalled and hard reboot are pending.|
-|15|Update is available but pending installation.|
-|16|Application failed to evaluate.|
-|17|Application is currently waiting for an active user session to enforce.|
-|18|Application is currently waiting for all users to sign out.|
-|19|Application is currently waiting for a user sign-in.|
-|20|Application in progress, waiting for retry.|
-|21|Application is waiting for presentation mode to be switched off.|
-|22|Application is predownloading content (downloading outside of install job).|
-|23|Application is predownloading dependent content (downloading outside of install job).|
-|24|Application download failed (downloading during install job).|
-|25|Application predownloading failed (downloading outside of install job).|
-|26|Download success (downloading during install job).|
-|27|Post-enforce evaluation.|
-|28|Waiting for network connectivity.|
+| Evaluation State Value | Description |
+| --- | --- |
+| 0 | No state information is available. |
+| 1 | Application is enforced to desired/resolved state. |
+| 2 | Application is not required on the client. |
+| 3 | Application is available for enforcement (install or uninstall based on resolved state). Content may/may not have been downloaded. |
+| 4 | Application last failed to enforce (install/uninstall). |
+| 5 | Application is currently waiting for content download to complete. |
+| 6 | Application is currently waiting for content download to complete. |
+| 7 | Application is currently waiting for its dependencies to download. |
+| 8 | Application is currently waiting for a service (maintenance) window. |
+| 9 | Application is currently waiting for a previously pending reboot. |
+| 10 | Application is currently waiting for serialized enforcement. |
+| 11 | Application is currently enforcing dependencies. |
+| 12 | Application is currently enforcing. |
+| 13 | Application install/uninstall enforced and soft reboot is pending. |
+| 14 | Application installed/uninstalled and hard reboot are pending. |
+| 15 | Update is available but pending installation. |
+| 16 | Application failed to evaluate. |
+| 17 | Application is currently waiting for an active user session to enforce. |
+| 18 | Application is currently waiting for all users to sign out. |
+| 19 | Application is currently waiting for a user sign-in. |
+| 20 | Application in progress, waiting for retry. |
+| 21 | Application is waiting for presentation mode to be switched off. |
+| 22 | Application is predownloading content (downloading outside of install job). |
+| 23 | Application is predownloading dependent content (downloading outside of install job). |
+| 24 | Application download failed (downloading during install job). |
+| 25 | Application predownloading failed (downloading outside of install job). |
+| 26 | Download success (downloading during install job). |
+| 27 | Post-enforce evaluation. |
+| 28 | Waiting for network connectivity. |
 
- `FileTypes`
- Data type: `String`
+`FileTypes` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- File types.
+File types.
 
- `FullName`
- Data type: `String`
+`FullName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- FullName
+FullName
 
- `Icon`
- Data type: `String`
+`Icon` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Icon.
+Icon.
 
- `Id`
- Data type: `String`
+`Id` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Application identifier.
+Application identifier.
 
- `InformativeUrl`
- Data type: `String`
+`InformativeUrl` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Informative url.
+Informative url.
 
- `InProgressActions`
- Data type: `String Array`
+`InProgressActions` Data type: `String Array`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- In progress actions.
+In progress actions.
 
- `InstallState`
- Data type: `String`
+`InstallState` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [values]
+Qualifiers: [values]
 
- Installation state. Possible values are:
+Installation state. Possible values are:
 
-|Value|
-|-|
-|NotInstalled|
-|Unknown|
-|Error|
-|Installed|
-|NotEvaluated|
-|NotUpdated|
-|NotConfigured|
+| Value |
+| --- |
+| NotInstalled |
+| Unknown |
+| Error |
+| Installed |
+| NotEvaluated |
+| NotUpdated |
+| NotConfigured |
 
- `IsMachineTarget`
- Data type: `Boolean`
+`IsMachineTarget` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- `true` if the application deployment is device targeted.
+`true` if the application deployment is device targeted.
 
- `IsPreflightOnly`
- Data type: `Boolean`
+`IsPreflightOnly` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- `true` if this is a simulated deployment.
+`true` if this is a simulated deployment.
 
- `LastEvalTime`
- Data type: `DateTime`
+`LastEvalTime` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Last evaluation time.
+Last evaluation time.
 
- `LastInstallTime`
- Data type: `DateTime`
+`LastInstallTime` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Last install time.
+Last install time.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Name of application.
+Name of application.
 
- `NextUserScheduledTime`
- Data type: `DateTime`
+`NextUserScheduledTime` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Next user scheduled time.
+Next user scheduled time.
 
- `NotifyUser`
- Data type: `Boolean`
+`NotifyUser` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Notify user.
+Notify user.
 
- `OverrideServiceWindow`
- Data type: `Boolean`
+`OverrideServiceWindow` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- `true` if service windows should be overridden.
+`true` if service windows should be overridden.
 
- `PercentComplete`
- Data type: `UInt32`
+`PercentComplete` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Percent complete.
+Percent complete.
 
- `Publisher`
- Data type: `String`
+`Publisher` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Publisher.
+Publisher.
 
- `RebootOutsideServiceWindow`
- Data type: `Boolean`
+`RebootOutsideServiceWindow` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- True if application should reboot outside service windows.
+True if application should reboot outside service windows.
 
- `ReleaseDate`
- Data type: `DateTime`
+`ReleaseDate` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Release date.
+Release date.
 
- `ResolvedState`
- Data type: `String`
+`ResolvedState` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [values]
+Qualifiers: [values]
 
- Resolved state.
+Resolved state.
 
-|Value|
-|-|
-|None|
-|NotInstalled|
-|Installed|
-|Unknown|
-|Any|
+| Value |
+| --- |
+| None |
+| NotInstalled |
+| Installed |
+| Unknown |
+| Any |
 
- `Revision`
- Data type: `String`
+`Revision` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Revision
+Revision
 
- `SoftwareVersion`
- Data type: `String`
+`SoftwareVersion` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Software version.
+Software version.
 
- `StartTime`
- Data type: `DateTime`
+`StartTime` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Start time.
+Start time.
 
- `SupersessionState`
- Data type: `String`
+`SupersessionState` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [values]
+Qualifiers: [values]
 
- Supersession state. Possible values are:
+Supersession state. Possible values are:
 
-|Value|
-|-|
-|Unknown|
-|None|
-|Superseded|
-|Superseding|
+| Value |
+| --- |
+| Unknown |
+| None |
+| Superseded |
+| Superseding |
 
- `Type`
- Data type: `UInt32`
+`Type` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Type.
+Type.
 
- `UserUIExperience`
- Data type: `Boolean`
+`UserUIExperience` Data type: `Boolean`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- `true` to show a reboot notification. When set to `false`, no reboot notification will be shown.
+`true` to show a reboot notification. When set to `false`, no reboot notification will be shown.
 
 ## Remarks
 
@@ -496,8 +459,8 @@ Class CCM_Application : CCM_SoftwareBase
 
 ## Runtime Requirements
 
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
 
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

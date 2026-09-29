@@ -1,7 +1,7 @@
 ---
-title: Upgrade Windows 10
+title: "Upgrade Windows for co-management"
 description: Upgrade devices to a supported version of Windows 10 or later, which is required for co-management.
-ms.date: 11/08/2021
+ms.date: "2021-11-08T00:00:00Z"
 ms.subservice: co-management
 ms.topic: upgrade-and-migration-article
 ms.collection: tier3
@@ -14,7 +14,7 @@ As you work towards onboarding your organization to co-management, getting curre
 
 In the following video, senior program manager Rob York and product marketing manager Locky Ainley discuss and demo upgrading to Windows 10 for co-management:
 
-> [!VIDEO https://aka.ms/docs/player?id=3099c141-475c-42f9-a997-cb0dffb74788]
+[Embedded video](https://aka.ms/docs/player?id=3099c141-475c-42f9-a997-cb0dffb74788)
 
 ## Why upgrade?
 
@@ -27,13 +27,9 @@ For more information, see [Enable Windows automatic enrollment](../../device-enr
 Here are some tips we've learned from helping thousands of customers get current quickly:
 
 - Use phased deployments to roll out this upgrade to the right people at the right times. For more information, see [Create phased deployments](../osd/deploy-use/create-phased-deployment-for-task-sequence.md).
-
 - Use pre-caching to reduce user wait times. For more information, see [Configure pre-cache content](../osd/deploy-use/configure-precache-content.md).
-
 - Use the default in-place upgrade task sequence template. Then configure your steps for pre- and post-upgrade, and any failure actions. For more information, see [Recommended task sequence steps for post-processing](../osd/understand/in-place-upgrade-recommendations.md#post-processing).
-
 - If your environment has a highly mobile workforce, Configuration Manager supports in-place upgrade over the cloud management gateway (CMG). This feature allows you to upgrade your Windows clients when they're internet-based. For more information on the CMG, see [Deploy Windows in-place upgrade via CMG](../osd/deploy-use/deploy-task-sequence-over-internet.md#deploy-windows-in-place-upgrade-via-cmg).
-
 - Offer an opt-in to co-management for users who want to be early adopters. This approach accelerates initial adoption. By identifying these people in advance, you can make sure good coverage in the early days of a rollout. You also receive validation and feedback from users that are happy for change and interested in more frequent releases. Early adopter programs generate interest in the new technologies and grow in size over time.
 
 ## Case studies

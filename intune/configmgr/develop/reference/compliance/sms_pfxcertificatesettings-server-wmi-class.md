@@ -1,16 +1,18 @@
 ---
 description: Article outlining how to use the SMS_PfxCertificateSettings in Configuration Manager to represent personal information exchange (PFX) certificate settings.
-title: SMS_PfxCertificateSettings Class
-ms.date: 09/20/2016
+title: "SMS_PfxCertificateSettings Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_PfxCertificateSettings Server WMI Class
-The  `SMS_PfxCertificateSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents personal information exchange (PFX) certificate settings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_PfxCertificateSettings Server WMI Class
+
+The `SMS_PfxCertificateSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents personal information exchange (PFX) certificate settings.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -67,439 +69,398 @@ Class SMS_PfxCertificateSettings : SMS_SettingsDefinitionBase
 ```
 
 ## Methods
- The `SMS_PfxCertificateSettings` class does not define any methods.
+
+The `SMS_PfxCertificateSettings` class does not define any methods.
 
 ## Properties
- `ApplicabilityCondition`
- Data type: `String`
 
- Access type: Read/Write
+`ApplicabilityCondition` Data type: `String`
 
- Qualifiers: [SizeLimit("512"), not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [SizeLimit("512"), not_null]
 
- `CategoryInstance_UniqueIDs`
- Data type: `String Array`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`CategoryInstance_UniqueIDs` Data type: `String Array`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: None
 
- `CI_ID`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [key]
 
- `CI_UniqueID`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers:[unique, not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers:[unique, not_null]
 
- `CIType_ID`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`CIType_ID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `CIVersion`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`CIVersion` Data type: `UInt32`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read, not_null]
 
- `ConfigurationFlags`
- Data type: `UInt64`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`ConfigurationFlags` Data type: `UInt64`
 
- Qualifiers: [bits("COMPLIANCE_POLICY(0)"), read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [bits("COMPLIANCE_POLICY(0)"), read]
 
- `CreatedBy`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [SizeLimit("512"),read, not_null]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [SizeLimit("512"),read, not_null]
 
- `DateCreated`
- Data type: `DateTime`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read, not_null]
 
- `DateLastModified`
- Data type: `DateTime`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`DateLastModified` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `EffectiveDate`
- Data type: `DateTime`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`EffectiveDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULAAccepted`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`EULAAccepted` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULAExists`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`EULAExists` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULASignoffDate`
- Data type: `DateTime`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`EULASignoffDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `EULASignoffUser`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`EULASignoffUser` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `ExecutionContext`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`ExecutionContext` Data type: `UInt32`
 
- Qualifiers: [read, valuemap, values]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read, valuemap, values]
 
- `InUse`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`InUse` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `IsBroken`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`IsBroken` Data type: `Boolean`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read, not_null]
 
- `IsBundle`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`IsBundle` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsDigest`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`IsDigest` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `IsEnabled`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`IsEnabled` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsExpired`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`IsExpired` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsHidden`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`IsHidden` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `IsLatest`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`IsLatest` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `IsQuarantined`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`IsQuarantined` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `IsSuperseded`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`IsSuperseded` Data type: `Boolean`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read, not_null]
 
- `IsUserDefined`
- Data type: `Boolean`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`IsUserDefined` Data type: `Boolean`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `LastModifiedBy`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [SizeLimit("512"), read, not_null]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [SizeLimit("512"), read, not_null]
 
- `LocalizedCategoryInstanceNames`
- Data type: `String Array`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedCategoryInstanceNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedDescription`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedDisplayName`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedDisplayName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedEulas`
- Data type: `SMS_CI_LocalizedEulas Array`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`LocalizedEulas` Data type: `SMS_CI_LocalizedEulas Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `LocalizedInformation`
- Data type: `SMS_CI_LocalizedProperties Array`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`LocalizedInformation` Data type: `SMS_CI_LocalizedProperties Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `LocalizedInformativeURL`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedInformativeURL` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedPropertyLocaleID`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedPropertyLocaleID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `ModelID`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`ModelID` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `ModelName`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: [unique,not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [unique,not_null]
 
- `PermittedUses`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`PermittedUses` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `PlatformCategoryInstance_UniqueIDs`
- Data type: `String Array`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`PlatformCategoryInstance_UniqueIDs` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: none
 
- `PlatformType`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`PlatformType` Data type: `UInt32`
 
- Qualifiers: [bitmap, bitvalues, read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [bitmap, bitvalues, read]
 
- `SDMPackageLocalizedData`
- Data type: `SMS_SDMPackageLocalizedData Array`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`SDMPackageLocalizedData` Data type: `SMS_SDMPackageLocalizedData Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `SDMPackageVersion`
- Data type: `UInt32`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`SDMPackageVersion` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [not_null]
 
- `SDMPackageXML`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`SDMPackageXML` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `SecuredScopeNames`
- Data type: `String Array`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`SecuredScopeNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `SedoObjectVersion`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read-only
+`SedoObjectVersion` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [read]
 
- `SourceSite`
- Data type: `String`
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
- Access type: Read/Write
+`SourceSite` Data type: `String`
 
- Qualifiers: [SizeLimit("3")]
+Access type: Read/Write
 
- See [SMS_SettingsDefinitionBase Server WMI Class](../../../develop/reference/compliance/sms_settingsdefinitionbase-server-wmi-class.md).
+Qualifiers: [SizeLimit("3")]
+
+See [SMS_SettingsDefinitionBase Server WMI Class](sms_settingsdefinitionbase-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md)

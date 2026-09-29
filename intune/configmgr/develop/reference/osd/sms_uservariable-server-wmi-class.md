@@ -1,16 +1,18 @@
 ---
-title: SMS_UserVariable Class
+title: "SMS_UserVariable Server WMI Class"
 description: The SMS_UserVariable Windows Management Instrumentation (WMI) class defines the settings of a specific user.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_UserVariable Server WMI Class
+
 The `SMS_UserVariable` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that defines the settings of a specific user (such as IsCloudUser=True/False).
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,52 +26,55 @@ Class SMS_UserVariable
 ```
 
 ## Methods
- The `SMS_UserVariable` class doesn't define any methods.
+
+The `SMS_UserVariable` class doesn't define any methods.
 
 ## Properties
- `IsMasked`
- Data type: `Boolean`
 
- Access type: Read/Write
+`IsMasked` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- This property isn't currently used.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+This property isn't currently used.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The name of the user variable. The default value is "".
+Qualifiers: [key]
 
- `Value`
- Data type: `String`
+The name of the user variable. The default value is "".
 
- Access type: Read/Write
+`Value` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The user variable value. The default value is `null`.
+Qualifiers: None
+
+The user variable value. The default value is `null`.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Your application uses this class to create objects that are embedded by the SMS_UserSettings Server WMI Class and accessed by using the `UserVariables` property.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_CollectionVariable Server WMI Class](../../../develop/reference/osd/sms_collectionvariable-server-wmi-class.md)
+
+[SMS_CollectionVariable Server WMI Class](sms_collectionvariable-server-wmi-class.md)

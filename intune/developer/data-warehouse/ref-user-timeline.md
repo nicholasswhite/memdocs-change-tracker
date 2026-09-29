@@ -1,7 +1,7 @@
 ---
-title: Data Warehouse User Entity Timeline
+title: "User lifetime representation in the Microsoft Intune Data Warehouse"
 description: Learn how the Microsoft Intune Data Warehouse represents Users in a timeline.
-ms.date: 10/30/2024
+ms.date: "2024-10-30T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -17,26 +17,26 @@ This scenario may be clearer if you walk through the lifetime of an entity.
 
 Assume a user, **John Smith**, gets assigned a license on 06/01/2017, then the **User** table would have the following entry:
 
-| DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent
-|--|--|--|--|--|
-| John Smith | FALSE | 06/01/2017 | 12/31/9999 | TRUE
+| DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent |
+| --- | --- | --- | --- | --- |
+| John Smith | FALSE | 06/01/2017 | 12/31/9999 | TRUE |
 
 John Smith gives up his license on 07/25/2017. The **User** table has the following entries. Changes in existing records are `marked`.
 
-| DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent
-|--|--|--|--|--|
-| John Smith | FALSE | 06/01/2017 | `07/26/2017` | `FALSE`
-| John Smith | TRUE | 07/26/2017 | 12/31/9999 | TRUE
+| DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent |
+| --- | --- | --- | --- | --- |
+| John Smith | FALSE | 06/01/2017 | `07/26/2017` | `FALSE` |
+| John Smith | TRUE | 07/26/2017 | 12/31/9999 | TRUE |
 
 The first row indicates John Smith existed in Intune from 06/01/2017 to 07/25/2017. The second record indicates that the user was deleted on 07/25/2017 and is no longer present in Intune.
 
 Now let assume John Smith gets a new license assigned on 08/31/2017, then the User table would have the following entries:
 
-| DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent
-|--|--|--|--|--|
-| John Smith | FALSE | 06/01/2017 | 07/26/2017 | FALSE
-| John Smith | TRUE | 07/26/2017 | `08/31/2017` | `FALSE`
-| John Smith | FALSE | 08/31/2017 | 12/31/9999 | TRUE
+| DisplayName | IsDeleted | StartDateInclusiveUTC | EndDateExclusiveUTC | IsCurrent |
+| --- | --- | --- | --- | --- |
+| John Smith | FALSE | 06/01/2017 | 07/26/2017 | FALSE |
+| John Smith | TRUE | 07/26/2017 | `08/31/2017` | `FALSE` |
+| John Smith | FALSE | 08/31/2017 | 12/31/9999 | TRUE |
 
 A person wanting to see the current state of all users would want to apply a filter where `IsCurrent = TRUE`.
 
@@ -48,11 +48,11 @@ In order to store the history of state changes in entities, Intune doesn't delet
 
 The most commonly used metadata columns are:
 
-| Metadata Property Name  | Interpretation of Values |
-|--|--|
+| Metadata Property Name | Interpretation of Values |
+| --- | --- |
 | IsDeleted | Indicates whether the entity was deleted in Intune. |
-| StartDateInclusiveUTC  | The UTC date the entity was loaded into the Intune Data Warehouse. The entity may have been created before it was imported into the Intune Data Warehouse. |
-| DeletedDateUTC  | The UTC date that the entity was deleted in Intune. |
+| StartDateInclusiveUTC | The UTC date the entity was loaded into the Intune Data Warehouse. The entity may have been created before it was imported into the Intune Data Warehouse. |
+| DeletedDateUTC | The UTC date that the entity was deleted in Intune. |
 
 Any metadata column starting with the prefix **Row**, such as **RowLastModifiedDateTimeUTC**, indicates when a record was created or modified in the Intune Data Warehouse. The warehouse is downstream from the data in Intune. This value has no relationship to the lifetime of the entity in Intune.
 

@@ -1,29 +1,29 @@
 ---
-title: Modify Advertisement Properties
+title: "How to Modify Advertisement Properties"
 description: In Configuration Manager, the following example shows how to modify an existing advertisement by using the SMS_Advertisement class and class properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Modify Advertisement Properties
+
 The following example shows how to modify an existing advertisement, in Configuration Manager, by using the `SMS_Advertisement` class and class properties.
 
 ### To modify advertisement properties
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Get the specific advertisement using an existing advertisement ID.
-
-3.  Replace the existing advertisement property (in this case, advertisement comment).
-
-4.  Save the new advertisement and properties.
+1. Set up a connection to the SMS Provider.
+2. Get the specific advertisement using an existing advertisement ID.
+3. Replace the existing advertisement property (in this case, advertisement comment).
+4. Save the new advertisement and properties.
 
 ## Example
- The following example method modifies advertisement properties for software distribution.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method modifies advertisement properties for software distribution.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -91,34 +91,38 @@ public void ModifySWDAdvertisement(WqlConnectionManager connection, string exist
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingAdvertisementID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the advertisement to modify.|
-|`newAdvertisementComment`|-   Managed: `String`<br />-   VBScript: `String`|The new comment for the advertisement.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingAdvertisementID` | - Managed: `String` - VBScript: `String` | The ID of the advertisement to modify. |
+| `newAdvertisementComment` | - Managed: `String` - VBScript: `String` | The new comment for the advertisement. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [About deployments](about-software-distribution-deployments.md)
+
+[Software distribution overview](software-distribution-overview.md) [About deployments](about-software-distribution-deployments.md)

@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent driver model information for the specified driver in Configuration Manager using SMS_DriverModel class.
-title: SMS_DriverModel Class
-ms.date: 09/20/2016
+title: "SMS_DriverModel Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DriverModel Server WMI Class
+
 The `SMS_DriverModel` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents driver model information for the specified driver.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,51 +27,51 @@ Class SMS_DriverModel : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DriverModel` class does not define any methods.
+
+The `SMS_DriverModel` class does not define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `UInt32`
 
- Access type: Read-only
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Driver configuration item local unique ID.
+Qualifiers: [key, not_null, read]
 
- `CI_UniqueID`
- Data type: `String`
+Driver configuration item local unique ID.
 
- Access type: Read-only
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Driver configuration item global unique ID.
+Qualifiers: [not_null, read]
 
- `ModelManufacture`
- Data type: `String`
+Driver configuration item global unique ID.
 
- Access type: Read-only
+`ModelManufacture` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Driver configuration item Model manufacturer.
+Qualifiers: [key, not_null, read]
 
- `ModelName`
- Data type: `String`
+Driver configuration item Model manufacturer.
 
- Access type: Read-only
+`ModelName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Driver configuration item Model name.
+Qualifiers: [key, not_null, read]
+
+Driver configuration item Model name.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

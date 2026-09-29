@@ -1,7 +1,7 @@
 ---
-title: Device Timeline Report
+title: "Device timeline report"
 description: Use the device timeline report in Intune to review device event history, identify issues faster, and correlate incidents to start troubleshooting now.
-ms.date: 03/24/2026
+ms.date: "2026-03-24T00:00:00Z"
 ms.topic: concept-article
 ---
 
@@ -11,18 +11,17 @@ The device timeline allows you to see a history of events that have occurred on 
 
 ## Before you begin
 
-> [!div class="checklist"]
-> - Review [Scores, baselines, and insights in endpoint analytics](../endpoint-analytics/scores.md) to understand these concepts.
-> - Confirm that your environment meets all [prerequisites](index.md#prerequisites).
+- Review [Scores, baselines, and insights in endpoint analytics](../endpoint-analytics/scores.md) to understand these concepts.
+- Confirm that your environment meets all [prerequisites](index.md#prerequisites).
 
 ## Review the report
 
-1. In the [Microsoft Intune admin center][INT-AC], select **Devices** > **Windows**.
-1. Select a device, then select **User Experience** > **Device Timeline**.
-   :::image type="content" source="media/device-timeline/event-history-chart-and-table.png" alt-text="Screenshot of the device timeline report with an event histogram and event table showing boot, sign-in, app crash, and error details over time." lightbox="media/device-timeline/event-history-chart-and-table.png":::
-1. Filter events by date, device, or user to focus on relevant incidents.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **Windows**.
+2. Select a device, then select **User Experience** &gt; **Device Timeline**.   [![Screenshot of the device timeline report with an event histogram and event table showing boot, sign-in, app crash, and error details over time.](media/device-timeline/event-history-chart-and-table.png)](media/device-timeline/event-history-chart-and-table.png#lightbox)
+3. Filter events by date, device, or user to focus on relevant incidents.
 
 > [!NOTE]
+>
 > The **Device timeline** tab replaces the **Application reliability** tab in tenants that have Advanced Analytics.
 
 You can search by event name or details. To refine results, select **Add filter** to choose the event source, event level, and a time range of interest.
@@ -32,13 +31,10 @@ The device timeline shows events such as app crashes, unresponsive apps, device 
 In some cases, events may take longer to appear if details can't upload immediately. For example, restart or stop error events might be delayed when the device doesn't reboot right away. These events upload at the next available opportunity and display the original timestamp when they occurred.
 
 > [!NOTE]
+>
 > Event timestamps are localized to the time zone of the logged-on Intune user.
 
 ## Limitations
 
 - If your tenant uses Advanced Analytics, the **Device timeline** tab replaces the **Application reliability** tab in device drill-down views. Unlike the timeline, the **Application reliability** tab includes the *application reliability score* for the selected device. To view this score, go to the **Device performance** tab and search for the device.
 - The device timeline is available only for Intune-managed devices (including co-managed). It isn't available for Configuration Manager-only devices in tenants with Advanced Analytics enabled.
-
-<!--links-->
-
-[INT-AC]: https://go.microsoft.com/fwlink/?linkid=2109431

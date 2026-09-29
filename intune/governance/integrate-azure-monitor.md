@@ -1,7 +1,7 @@
 ---
-title: Route logs to Azure Monitor using Microsoft Intune
+title: "Send Intune log data to Azure Storage, Event Hubs, or Log Analytics"
 description: Use Diagnostics Settings to send audit logs and operational logs in Microsoft Intune to Azure Storage account, Event Hubs, or Log Analytics. Choose how long you want to keep the data, and see some estimated costs for different size tenants.
-ms.date: 05/28/2026
+ms.date: "2026-05-28T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: chnatar, daviales
 ---
@@ -24,10 +24,11 @@ These logs can also be sent to Azure Monitor services, including storage account
 
 These features are part of the **Diagnostics Settings** in Intune.
 
-This article shows you how to use **Diagnostics Settings** to send log data to different services, gives examples & cost estimates, and answers some common questions. Once you enable this feature, your logs are routed to the Azure Monitor service you choose.
+This article shows you how to use **Diagnostics Settings** to send log data to different services, gives examples &amp; cost estimates, and answers some common questions. Once you enable this feature, your logs are routed to the Azure Monitor service you choose.
 
 > [!NOTE]
-> These logs use schemas that can change. To provide feedback, including information in the logs, go to [Feedback for Intune](https://feedbackportal.microsoft.com/feedback/forum/ef1d6d38-fd1b-ec11-b6e7-0022481f8472).<!-- 10948264 -->
+>
+> These logs use schemas that can change. To provide feedback, including information in the logs, go to [Feedback for Intune](https://feedbackportal.microsoft.com/feedback/forum/ef1d6d38-fd1b-ec11-b6e7-0022481f8472).
 
 ## Prerequisites
 
@@ -35,65 +36,57 @@ To use this feature, you need:
 
 - An Azure subscription that you can sign in to. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 - A Microsoft Intune environment (tenant)
-- A user who has the **Intune Service Administrator** Microsoft Entra role for the Intune tenant. For information on this role, go to [Microsoft Entra built-in roles - Intune Administrator](/entra/identity/role-based-access-control/permissions-reference#intune-administrator).
-- To configure the log collection from Azure Storage, you need the **Log Analytics Contributor** role in the Log Analytics Workspace. For more information on the different roles, and what they can do, go to [Manage access to log data and workspaces in Azure Monitor](/azure/azure-monitor/logs/manage-access).
+- A user who has the **Intune Service Administrator** Microsoft Entra role for the Intune tenant. For information on this role, go to [Microsoft Entra built-in roles - Intune Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator).
+- To configure the log collection from Azure Storage, you need the **Log Analytics Contributor** role in the Log Analytics Workspace. For more information on the different roles, and what they can do, go to [Manage access to log data and workspaces in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access).
 
 Depending on where you want to route the audit log data, you need one of the following services:
 
-- An [Azure storage account](/azure/storage/common/storage-account-overview) with the **ListKeys** permissions. We recommend that you use a general storage account, and not a blob storage account. For storage pricing information, go to the [Azure Storage pricing calculator](https://azure.microsoft.com/pricing/calculator/?service=storage).
-- An [Azure Event Hubs namespace](/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) to integrate with third-party partner solutions.
-- An [Azure Log Analytics workspace](/azure/azure-monitor/learn/quick-create-workspace) to send logs to Log Analytics.
+- An [Azure storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview) with the **ListKeys** permissions. We recommend that you use a general storage account, and not a blob storage account. For storage pricing information, go to the [Azure Storage pricing calculator](https://azure.microsoft.com/pricing/calculator/?service=storage).
+- An [Azure Event Hubs namespace](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) to integrate with third-party partner solutions.
+- An [Azure Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/learn/quick-create-workspace) to send logs to Log Analytics.
 
 ## Send logs to Azure monitor
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Reports** > **Diagnostics settings**. The first time you open it, turn it on. Otherwise, add a setting.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Reports** &gt; **Diagnostics settings**. The first time you open it, turn it on. Otherwise, add a setting.
 
-    :::image type="content" source="./media/integrate-azure-monitor/diagnostics-settings-turn-on.png" alt-text="Screenshot that shows how to turn on Diagnostics settings in Microsoft Intune to send logs to Azure Monitor.":::
+   ![Screenshot that shows how to turn on Diagnostics settings in Microsoft Intune to send logs to Azure Monitor.](media/integrate-azure-monitor/diagnostics-settings-turn-on.png)
 
-    If your Azure subscription isn't shown, go to the top right corner, select the signed in account > **Switch directory**. You might have to enter the Azure subscription account.
-
+   If your Azure subscription isn't shown, go to the top right corner, select the signed in account &gt; **Switch directory**. You might have to enter the Azure subscription account.
 3. Enter the following properties:
 
-    - **Name**: Enter a name for the diagnostic settings. This setting includes all the properties you enter. For example, enter `Route audit logs to storage account`.
-    - **Archive to a storage account**: Saves the log data to an Azure Storage account. If you want to save or archive the data, then choose this option.
+   - **Name**: Enter a name for the diagnostic settings. This setting includes all the properties you enter. For example, enter `Route audit logs to storage account`.
+   - **Archive to a storage account**: Saves the log data to an Azure Storage account. If you want to save or archive the data, then choose this option.
 
-        1. Select this option > **Configure**.
-        2. Choose an existing storage account from the list > **OK**.
+     1. Select this option &gt; **Configure**.
+     2. Choose an existing storage account from the list &gt; **OK**.
+   - **Stream to an event hub**: Streams the logs to Azure Event Hubs. If you want analytics on your log data using SIEM tools, such as Splunk and QRadar, then choose this option.
 
-    - **Stream to an event hub**: Streams the logs to Azure Event Hubs. If you want analytics on your log data using SIEM tools, such as Splunk and QRadar, then choose this option.
+     1. Select this option &gt; **Configure**.
+     2. Choose an existing Event Hubs namespace and policy from the list &gt; **OK**.
+   - **Send to Log Analytics**: Sends the data to Azure Log Analytics. If you want to use visualizations, monitoring and alerting for your logs, then choose this option.
 
-        1. Select this option > **Configure**.
-        2. Choose an existing Event Hubs namespace and policy from the list > **OK**.
+     1. Select this option &gt; **Configure**.
+     2. Create a new workspace, and enter the workspace details. Or, choose an existing workspace from the list &gt; **OK**.
 
-    - **Send to Log Analytics**: Sends the data to Azure Log Analytics. If you want to use visualizations, monitoring and alerting for your logs, then choose this option.
+        [Azure Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/learn/quick-create-workspace) provides more details on these settings.
+   - **LOG** &gt; **AuditLogs**: Choose this option to send the [Intune audit logs](monitor-audit-logs.md) to your storage account, Event Hubs, or Log Analytics. The audit logs show the history of every task that generates a change in Intune, including who did it and when. For more reference information, go to [IntuneAuditLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/IntuneAuditLogs).
 
-        1. Select this option > **Configure**.
-        2. Create a new workspace, and enter the workspace details. Or, choose an existing workspace from the list > **OK**.
+     If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
+   - **LOG** &gt; **OperationalLogs**: Operational logs show the success or failure of users and devices that enroll in Intune, and details on noncompliant devices. Choose this option to send the enrollment logs to your storage account, Event Hubs, or Log Analytics. For more reference information, go to [IntuneOperationalLogs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/IntuneOperationalLogs).
 
-            [Azure Log Analytics workspace](/azure/azure-monitor/learn/quick-create-workspace) provides more details on these settings.
+     If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
+   - **LOG** &gt; **DeviceComplianceOrg**: Device compliance organizational logs show the organizational report for Device Compliance in Intune, and details of noncompliant devices. Choose this option to send the compliance logs to your storage account, Event Hubs, or Log Analytics. For more reference information, go to [IntuneDeviceComplianceOrg](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/IntuneDeviceComplianceOrg).
 
-    - **LOG** > **AuditLogs**: Choose this option to send the [Intune audit logs](monitor-audit-logs.md) to your storage account, Event Hubs, or Log Analytics. The audit logs show the history of every task that generates a change in Intune, including who did it and when. For more reference information, go to [IntuneAuditLogs](/azure/azure-monitor/reference/tables/IntuneAuditLogs).
+     If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
+   - **LOG** &gt; **IntuneDevices**: The Intune Device log shows device inventory and status information for Intune enrolled and managed devices. Choose this option to send the IntuneDevices logs to your storage account, Event Hubs, or Log Analytics. For more reference information, go to [IntuneDevices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/IntuneDevices).
 
-      If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
+     If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
 
-    - **LOG** > **OperationalLogs**: Operational logs show the success or failure of users and devices that enroll in Intune, and details on noncompliant devices. Choose this option to send the enrollment logs to your storage account, Event Hubs, or Log Analytics. For more reference information, go to [IntuneOperationalLogs](/azure/azure-monitor/reference/tables/IntuneOperationalLogs).
+   When finished, your settings look similar to the following settings:
 
-      If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
-
-    - **LOG** > **DeviceComplianceOrg**: Device compliance organizational logs show the organizational report for Device Compliance in Intune, and details of noncompliant devices. Choose this option to send the compliance logs to your storage account, Event Hubs, or Log Analytics. For more reference information, go to [IntuneDeviceComplianceOrg](/azure/azure-monitor/reference/tables/IntuneDeviceComplianceOrg).
-
-      If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
-
-    - **LOG** > **IntuneDevices**: The Intune Device log shows device inventory and status information for Intune enrolled and managed devices. Choose this option to send the IntuneDevices logs to your storage account, Event Hubs, or Log Analytics. For more reference information, go to [IntuneDevices](/azure/azure-monitor/reference/tables/IntuneDevices).
-
-      If you choose to use a storage account, then also enter how many days you want to keep the data (retention). To keep data forever, set **Retention (days)** to `0` (zero).
-
-    When finished, your settings look similar to the following settings:
-
-    :::image type="content" source="./media/integrate-azure-monitor/diagnostics-settings-example.png" alt-text="Screenshot that shows how to send Microsoft Intune audit logs to an Azure Storage account.":::
-
-4. **Save** your changes. Your setting is shown in the list. Once the settings are created, you can change the settings by selecting **Edit setting** > **Save**.
+   ![Screenshot that shows how to send Microsoft Intune audit logs to an Azure Storage account.](media/integrate-azure-monitor/diagnostics-settings-example.png)
+4. **Save** your changes. Your setting is shown in the list. Once the settings are created, you can change the settings by selecting **Edit setting** &gt; **Save**.
 
 ## Use audit logs throughout Intune
 
@@ -106,10 +99,10 @@ For more information, go to [Use audit logs to track and monitor events](monitor
 In the audit log, you can find the following properties and their specific values:
 
 | Property | Property description | Values |
-|---|---|---|
-| ActivityType  | The action that the admin takes. | Create, Delete, Patch, Action, SetReference, RemoveReference, Get, Search |
-| ActorType  | Person taking the action. | Unknown = 0, ItPro, IW, System, Partner, Application, GuestUser |
-| Category  | The pane where the action took place. | Other = 0, Enrollment = 1, Compliance = 2, DeviceConfiguration = 3, Device = 4, Application = 5, EBookManagement = 6, ConditionalAccess= 7, OnPremiseAccess= 8, Role = 9, SoftwareUpdates =10, DeviceSetupConfiguration = 11, DeviceIntent = 12, DeviceIntentSetting = 13, DeviceSecurity = 14, GroupPolicyAnalytics = 15, AssignmentFilter = 16, RemoteHelp = 17, OrganizationalMessage = 18, EndpointPrivilegeMgmt = 19, DeviceInventory = 20|
+| --- | --- | --- |
+| ActivityType | The action that the admin takes. | Create, Delete, Patch, Action, SetReference, RemoveReference, Get, Search |
+| ActorType | Person taking the action. | Unknown = 0, ItPro, IW, System, Partner, Application, GuestUser |
+| Category | The pane where the action took place. | Other = 0, Enrollment = 1, Compliance = 2, DeviceConfiguration = 3, Device = 4, Application = 5, EBookManagement = 6, ConditionalAccess= 7, OnPremiseAccess= 8, Role = 9, SoftwareUpdates =10, DeviceSetupConfiguration = 11, DeviceIntent = 12, DeviceIntentSetting = 13, DeviceSecurity = 14, GroupPolicyAnalytics = 15, AssignmentFilter = 16, RemoteHelp = 17, OrganizationalMessage = 18, EndpointPrivilegeMgmt = 19, DeviceInventory = 20 |
 | ActivityResult | Whether the action is successful or not | Success = 1 |
 
 ## Cost considerations
@@ -125,20 +118,20 @@ The following tables show a cost estimate depending on the size of the tenant. I
 **Audit log with 100,000 users**:
 
 | Category | Value |
-| -------- | ----- |
-|Events per day| 1.5 million|
-|Estimated volume of data per month| 90 GB|
-|Estimated cost per month (USD)| $1.93|
-|Estimated cost per year (USD)| $23.12|
+| --- | --- |
+| Events per day | 1.5 million |
+| Estimated volume of data per month | 90 GB |
+| Estimated cost per month (USD) | $1.93 |
+| Estimated cost per year (USD) | $23.12 |
 
 **Audit log with 1,000 users**:
 
 | Category | Value |
-| -------- | ----- |
-|Events per day| 15,000|
-|Estimated volume of data per month| 900 MB|
-|Estimated cost per month (USD)| $0.02|
-|Estimated cost per year (USD)| $0.24|
+| --- | --- |
+| Events per day | 15,000 |
+| Estimated volume of data per month | 900 MB |
+| Estimated cost per month (USD) | $0.02 |
+| Estimated cost per year (USD) | $0.24 |
 
 ### Event Hubs messages for activity logs
 
@@ -151,28 +144,28 @@ The following table contains estimated costs per month for a basic Event Hubs in
 **Audit log with 100,000 users**:
 
 | Category | Value |
-| -------- | ----- |
-|Events per second| 18|
-|Events per five-minute interval| 5,400|
-|Volume per interval| 10.8 MB|
-|Messages per interval| 43|
-|Messages per month| 371,520|
-|Estimated cost per month (USD)| $10.83|
+| --- | --- |
+| Events per second | 18 |
+| Events per five-minute interval | 5,400 |
+| Volume per interval | 10.8 MB |
+| Messages per interval | 43 |
+| Messages per month | 371,520 |
+| Estimated cost per month (USD) | $10.83 |
 
 **Audit log with 1,000 users**:
 
 | Category | Value |
-| -------- | ----- |
-|Events per second|0.1 |
-|Events per five-minute interval| 52|
-|Volume per interval|104 KB |
-|Messages per interval|1 |
-|Messages per month|8,640 |
-|Estimated cost per month (USD)|$10.80 |
+| --- | --- |
+| Events per second | 0.1 |
+| Events per five-minute interval | 52 |
+| Volume per interval | 104 KB |
+| Messages per interval | 1 |
+| Messages per month | 8,640 |
+| Estimated cost per month (USD) | $10.80 |
 
 ### Log Analytics cost considerations
 
-To review costs related to managing the Log Analytics workspace, go to [Manage cost by controlling data volume and retention in Log Analytics](/azure/log-analytics/log-analytics-manage-cost-storage).
+To review costs related to managing the Log Analytics workspace, go to [Manage cost by controlling data volume and retention in Log Analytics](https://learn.microsoft.com/en-us/azure/log-analytics/log-analytics-manage-cost-storage).
 
 ## Frequently asked questions (FAQ)
 
@@ -187,9 +180,10 @@ The Intune **Audit logs** and **Operational logs** are available for routing usi
 After the action:
 
 - The Intune **Audit Logs** and **Operational Logs** are sent immediately from Intune to Azure Monitor services.
-- The Intune **Device Compliance Organizational Logs** and **Intune Devices report** data can take up to 48 hours to be sent to Azure Monitor services. Intune sends this data to Azure Monitor services once every 24 hours and this export can happen anytime within each 24-hour period.
+- The Intune **Device Compliance Organizational Logs** and **Intune Devices report** data can take up to 48 hours to be sent to Azure Monitor services. Intune sends this data to Azure Monitor services once every 24 hours and this export can happen anytime within each 24-hour period.
 
 > [!NOTE]
+>
 > Intune doesn't guarantee that Device Compliance Organizational Logs or Intune Devices report data will be exported or available at a specific time of day. These exports can occur anytime within each 24-hour export period and remain subject to the documented delivery window. As Microsoft improves the export pipeline, the observed completion time might change.
 >
 > If you depend on exported Intune data for reports, dashboards, or automation, use a consumption schedule in your software solution that accounts for variable export timing. Don't rely on a fixed or previously observed completion time.
@@ -212,20 +206,20 @@ The streaming costs depend on the number of messages you receive per minute. For
 
 Use Azure Monitor with Event Hubs to stream logs to your SIEM system:
 
-1. [Stream the logs to Event Hubs](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub).
-2. [Set up your SIEM tool](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) with the configured Event Hubs.
+1. [Stream the logs to Event Hubs](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub).
+2. [Set up your SIEM tool](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub#access-data-from-your-event-hub) with the configured Event Hubs.
 
 ### What SIEM tools are currently supported?
 
-Currently, [Splunk](/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), QRadar, and [Sumo Logic](https://help.sumologic.com/docs/integrations/microsoft-azure/active-directory-azure/) (opens a new website) support Azure Monitor. For more information about how the connectors work, go to [Stream Azure monitoring data to Event Hubs for consumption by an external tool](/azure/azure-monitor/platform/stream-monitoring-data-event-hubs).
+Currently, [Splunk](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-integrate-activity-logs-with-splunk), QRadar, and [Sumo Logic](https://help.sumologic.com/docs/integrations/microsoft-azure/active-directory-azure/) (opens a new website) support Azure Monitor. For more information about how the connectors work, go to [Stream Azure monitoring data to Event Hubs for consumption by an external tool](https://learn.microsoft.com/en-us/azure/azure-monitor/platform/stream-monitoring-data-event-hubs).
 
 ### Can I access the data from Azure Event Hubs without using an external SIEM tool?
 
-Yes. To access the logs from your custom application, you can use the [Event Hubs API](/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
+Yes. To access the logs from your custom application, you can use the [Event Hubs API](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph).
 
 ### What data is stored?
 
-Intune doesn't store any data sent through the pipeline. Intune routes data to the Azure Monitor pipeline, at the authority of the tenant. For more information, go to [Azure Monitor overview](/azure/azure-monitor/overview).
+Intune doesn't store any data sent through the pipeline. Intune routes data to the Azure Monitor pipeline, at the authority of the tenant. For more information, go to [Azure Monitor overview](https://learn.microsoft.com/en-us/azure/azure-monitor/overview).
 
 ## Known Issues
 
@@ -237,10 +231,6 @@ The export pipeline might duplicate up to 100% of the data published in a 24-hou
 
 ## Related content
 
-- [Archive activity logs to a storage account](/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
-- [Route activity logs to Azure Event Hubs](/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
-- [Integrate activity logs with Log Analytics](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Archive activity logs to a storage account](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account)
+- [Route activity logs to Azure Event Hubs](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+- [Integrate activity logs with Log Analytics](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)

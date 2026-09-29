@@ -1,7 +1,7 @@
 ---
-title: "SMS_SUMDeploymentStatistics Class"
+title: "SMS_SUMDeploymentStatistics Server WMI Class"
 description: "An SMS Provider server class that represents a per-deployment summary for SUM deployments in-console monitoring."  
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_SUMDeploymentStatistics Server WMI Class
-The `SMS_SUMDeploymentStatistics` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a per-deployment summary for SUM deployments in-console monitoring.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_SUMDeploymentStatistics` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a per-deployment summary for SUM deployments in-console monitoring.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_SUMDeploymentStatistics : SMS_BaseClass  
 {  
     UInt32 AssignmentID;  
@@ -28,93 +30,98 @@ Class SMS_SUMDeploymentStatistics : SMS_BaseClass
     UInt32 NumUnknown;  
     DateTime SummarizationTime;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_SUMDeploymentStatistics` class does not define any methods.  
+## Methods
 
-## Properties  
- `AssignmentID`  
- Data type: `UInt32`  
+The `SMS_SUMDeploymentStatistics` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [key, not_null, read]  
+`AssignmentID`  
+ Data type: `UInt32`
 
- The ID of the configuration item assignment. This ID is unique only for the site.  
+Access type: Read-only
 
- `AssignmentUniqueID`  
- Data type: `String`  
+Qualifiers: [key, not_null, read]
 
- Access type: Read-only  
+The ID of the configuration item assignment. This ID is unique only for the site.
 
- Qualifiers: [not_null, read]  
+`AssignmentUniqueID`  
+ Data type: `String`
 
- The unique ID of the configuration item assignment. This ID is unique across sites.  
+Access type: Read-only
 
- `NumError`  
- Data type: `UInt32`  
+Qualifiers: [not_null, read]
 
- Access type: Read-only  
+The unique ID of the configuration item assignment. This ID is unique across sites.
 
- Qualifiers: [read]  
+`NumError`  
+ Data type: `UInt32`
 
- Count of the number of errors.  
+Access type: Read-only
 
- `NumInProgress`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Count of the number of errors.
 
- Qualifiers: [read]  
+`NumInProgress`  
+ Data type: `UInt32`
 
- Count of the number in progress.  
+Access type: Read-only
 
- `NumReqsNotMet`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Count of the number in progress.
 
- Qualifiers: [read]  
+`NumReqsNotMet`  
+ Data type: `UInt32`
 
- Count of the number where requirements are not met.  
+Access type: Read-only
 
- `NumSuccess`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Count of the number where requirements are not met.
 
- Qualifiers: [read]  
+`NumSuccess`  
+ Data type: `UInt32`
 
- Count of the number of successes.  
+Access type: Read-only
 
- `NumUnknown`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Count of the number of successes.
 
- Qualifiers: [read]  
+`NumUnknown`  
+ Data type: `UInt32`
 
- Count of the number unknown.  
+Access type: Read-only
 
- `SummarizationTime`  
- Data type: `DateTime`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Count of the number unknown.
 
- Qualifiers: [read]  
+`SummarizationTime`  
+ Data type: `DateTime`
 
- Summarization time.   
+Access type: Read-only
 
-## Remarks  
+Qualifiers: [read]
 
-## Requirements  
+Summarization time.
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+## Remarks
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

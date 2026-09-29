@@ -1,7 +1,7 @@
 ---
-title: "Reset the Hardware Inventory Cache"
+title: "How to Reset the Hardware Inventory Cache"
 description: "In Configuration Manager, you reset the hardware inventory cache by connecting to the inventory agent namespace and deleting the inventory action status instance for hardware inventory."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,21 +9,23 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Reset the Hardware Inventory Cache
-In Configuration Manager, you reset the hardware inventory cache by connecting to the inventory agent namespace and deleting the inventory action status instance for hardware inventory.  
 
-### To reset the hardware inventory cache  
+In Configuration Manager, you reset the hardware inventory cache by connecting to the inventory agent namespace and deleting the inventory action status instance for hardware inventory.
 
-1.  Connect to the inventory agent namespace (root\ccm\invagt).  
+### To reset the hardware inventory cache
 
-2.  Delete the inventory action status instance for hardware inventory ({00000000-0000-0000-0000-000000000001}).  
+1. Connect to the inventory agent namespace (root\ccm\invagt).
+2. Delete the inventory action status instance for hardware inventory ({00000000-0000-0000-0000-000000000001}).
 
-## Example  
- The following example method shows how to reset the hardware inventory cache by connecting to the inventory agent namespace and deleting the inventory action status instance for hardware inventory.  
+## Example
 
- For information about calling the sample code, see [How to Call a Configuration Manager Object Class Method by Using WMI](../../../../develop/core/understand/how-to-call-a-configuration-manager-object-class-method-by-using-wmi.md)  
+The following example method shows how to reset the hardware inventory cache by connecting to the inventory agent namespace and deleting the inventory action status instance for hardware inventory.
 
-```vbs  
+For information about calling the sample code, see [How to Call a Configuration Manager Object Class Method by Using WMI](../../understand/how-to-call-a-configuration-manager-object-class-method-by-using-wmi.md)
+
+```vbs
 
 Sub ResetHardwareInventoryCache()  
 
@@ -41,9 +43,9 @@ Sub ResetHardwareInventoryCache()
 
 End Sub  
 
-```  
+```
 
-```c#  
+```c#
 
 // How to Reset the Hardware Inventory Cache  
 public void ResetHardwareInventoryCache()  
@@ -77,20 +79,25 @@ public void ResetHardwareInventoryCache()
     }  
 }  
 
-```  
+```
 
-## Compiling the Code  
- This C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System.Management  
+This C# example requires:
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+### Namespaces
 
-## .NET Framework Security  
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).  
+System.Management
 
-## See Also  
- [Configuration Manager Software Development Kit](../../../../develop/core/misc/system-center-configuration-manager-sdk.md)   
- [About Configuration Manager Inventory](../../../../develop/core/clients/inventory/about-configuration-manager-inventory.md)   
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../servers/configure/role-based-administration.md).
+
+## See Also
+
+[Configuration Manager Software Development Kit](../../misc/system-center-configuration-manager-sdk.md)  
+ [About Configuration Manager Inventory](about-configuration-manager-inventory.md)

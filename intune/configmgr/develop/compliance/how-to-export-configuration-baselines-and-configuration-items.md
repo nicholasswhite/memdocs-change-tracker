@@ -1,32 +1,33 @@
 ---
-title: Export Configuration Baselines and Items
-ms.date: 09/20/2016
+title: "How to Export Configuration Baselines and Configuration Items"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: You can export a configuration baseline or configuration item by using Configuration Manager SDK and reading the relevant SMS_ConfigurationItem instance and writing the SDMPackageXML property (string) to a file.
 ms.service: configuration-manager
 ---
+
 # How to Export Configuration Baselines and Configuration Items
+
 In Configuration Manager, to export a configuration baseline or configuration item using the Configuration Manager SDK, read the relevant `SMS_ConfigurationItem` instance and write the `SDMPackageXML` property (string) to a file.
 
 > [!IMPORTANT]
->  The encoding of the XML file must be set to UTF-16 encoded Unicode.
+>
+> The encoding of the XML file must be set to UTF-16 encoded Unicode.
 
 ### To export Configuration Baselines and Configuration Items
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Get the specific instance of [SMS_ConfigurationItem](../../develop/reference/compliance/sms_configurationitem-server-wmi-class.md) class using the unique ID of the configuration item (CI_ID).
-
-3.  Copy the configuration item XML (SDMPackageXML) into a variable.
-
-4.  Write the configuration item XML content to a file.
+1. Set up a connection to the SMS Provider.
+2. Get the specific instance of [SMS_ConfigurationItem](../reference/compliance/sms_configurationitem-server-wmi-class.md) class using the unique ID of the configuration item (CI_ID).
+3. Copy the configuration item XML (SDMPackageXML) into a variable.
+4. Write the configuration item XML content to a file.
 
 ## Example
- The following code example shows how to read an instance of a configuration baseline or configuration item and then export it to a file.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following code example shows how to read an instance of a configuration baseline or configuration item and then export it to a file.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -112,42 +113,42 @@ public void DCMExportBaselineOrCI(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|-   pathToOutputFile<br />-   pathToFile|-   Managed: `String`<br />-   VBScript: `String`|Path to the output file.|
-|`configurationItemId`|-   Managed: `String`<br />-   VBScript: `String`|Identifier of a configuration item to export.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| - pathToOutputFile - pathToFile | - Managed: `String` - VBScript: `String` | Path to the output file. |
+| `configurationItemId` | - Managed: `String` - VBScript: `String` | Identifier of a configuration item to export. |
 
 ## Compiling the Code
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Configuration Baselines and Configuration Items](../../develop/compliance/about-configuration-baselines-and-configuration-items.md)
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Connect to a Configuration Manager Provider using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to a Configuration Manager Provider Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [SMS_BaselineAssignment Server WMI Class](../../develop/reference/compliance/sms_baselineassignment-server-wmi-class.md)
- [SMS_ConfigurationItem Server WMI Class](../../develop/reference/compliance/sms_configurationitem-server-wmi-class.md)
+
+[About Configuration Baselines and Configuration Items](about-configuration-baselines-and-configuration-items.md) [Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Connect to a Configuration Manager Provider using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to a Configuration Manager Provider Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [SMS_BaselineAssignment Server WMI Class](../reference/compliance/sms_baselineassignment-server-wmi-class.md) [SMS_ConfigurationItem Server WMI Class](../reference/compliance/sms_configurationitem-server-wmi-class.md)

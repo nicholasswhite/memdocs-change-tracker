@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot for existing devices
+title: "Windows Autopilot deployment for existing devices"
 description: Modern desktop deployment with Windows Autopilot enables easily deploying the latest version of Windows to existing devices.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: how-to
@@ -35,65 +35,57 @@ Modern desktop deployment with Windows Autopilot helps easily deploy the latest 
 ## Requirements
 
 - A currently supported version of Microsoft Configuration Manager current branch.
-
 - Assigned Microsoft Intune licenses.
-
 - Microsoft Entra ID P1 or P2.
+- A [supported version of Windows](https://learn.microsoft.com/en-us/windows/release-health/supported-versions-windows-client) imported into Configuration Manager as an [OS image](../intune/configmgr/osd/get-started/manage-operating-system-images.md).
+- Enrollment restrictions aren't configured to block personal devices. For more information, see [What are enrollment restrictions?: Blocking personal Windows devices](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/enrollment-restrictions-set#blocking-personal-windows-devices).
 
-- A [supported version of Windows](/windows/release-health/supported-versions-windows-client) imported into Configuration Manager as an [OS image](/intune/configmgr/osd/get-started/manage-operating-system-images).
-
-- Enrollment restrictions aren't configured to block personal devices. For more information, see [What are enrollment restrictions?: Blocking personal Windows devices](/intune/intune-service/enrollment/enrollment-restrictions-set#blocking-personal-windows-devices). <!-- INADO-27343099 -->
-
-    > [!IMPORTANT]
-    >
-    > Any devices registered using a .json file during a hybrid join scenario are normally enrolled as a Corporate device.
+  > [!IMPORTANT]
+  >
+  > Any devices registered using a .json file during a hybrid join scenario are normally enrolled as a Corporate device.
 
 ## Configure the Enrollment Status Page (optional)
 
 If desired, an [enrollment status page](enrollment-status.md) (ESP) for Windows Autopilot can be set up using Intune.
 
-1. Open the [Microsoft Intune admin center].
-
-1. Go to **Devices** > **Device onboarding** | **Enrollment**. Make sure **Windows** is selected at the top and then under **Windows Autopilot**, select **Enrollment Status Page** and [Set up the Enrollment Status Page](/intune/intune-service/enrollment/windows-enrollment-status).
-
-1. Go to **Microsoft Entra ID** > **Manage** | **Mobility (MDM and WIP)** > **Microsoft Intune** and [enable Windows automatic enrollment](/intune/intune-service/enrollment/windows-enroll#enable-windows-automatic-enrollment). Configure the MDM user scope for some or all users.
+1. Open the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Go to **Devices** &gt; **Device onboarding** | **Enrollment**. Make sure **Windows** is selected at the top and then under **Windows Autopilot**, select **Enrollment Status Page** and [Set up the Enrollment Status Page](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-enrollment-status).
+3. Go to **Microsoft Entra ID** &gt; **Manage** | **Mobility (MDM and WIP)** &gt; **Microsoft Intune** and [enable Windows automatic enrollment](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-enroll#enable-windows-automatic-enrollment). Configure the MDM user scope for some or all users.
 
 ## Install required modules
 
 > [!NOTE]
 >
-> The PowerShell code snippets in this section were updated in July of 2023 to use the Microsoft Graph PowerShell modules instead of the deprecated AzureAD Graph PowerShell modules. The Microsoft Graph PowerShell modules might require approval of additional permissions in Microsoft Entra ID when they're first used. It was also updated to force using an updated version of the WindowsAutoPilot module. For more information, see [AzureAD](/powershell/module/azuread/) and [Important: Azure AD Graph Retirement and PowerShell Module Deprecation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270).
+> The PowerShell code snippets in this section were updated in July of 2023 to use the Microsoft Graph PowerShell modules instead of the deprecated AzureAD Graph PowerShell modules. The Microsoft Graph PowerShell modules might require approval of additional permissions in Microsoft Entra ID when they're first used. It was also updated to force using an updated version of the WindowsAutoPilot module. For more information, see [AzureAD](https://learn.microsoft.com/en-us/powershell/module/azuread/) and [Important: Azure AD Graph Retirement and PowerShell Module Deprecation](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270).
 
 1. On an internet-connected Windows PC or server, open an elevated Windows PowerShell command window.
+2. Enter the following commands to install and import the necessary modules:
 
-1. Enter the following commands to install and import the necessary modules:
+   ```powershell
+   Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+   Install-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4.0 -Force
+   Install-Module -Name Microsoft.Graph.Groups -Force
+   Install-Module -Name Microsoft.Graph.Authentication -Force
+   Install-Module -Name Microsoft.Graph.Identity.DirectoryManagement -Force
 
-    ```powershell
-    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-    Install-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4.0 -Force
-    Install-Module -Name Microsoft.Graph.Groups -Force
-    Install-Module -Name Microsoft.Graph.Authentication -Force
-    Install-Module -Name Microsoft.Graph.Identity.DirectoryManagement -Force
+   Import-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4
+   Import-Module -Name Microsoft.Graph.Groups
+   Import-Module -Name Microsoft.Graph.Authentication
+   Import-Module -Name Microsoft.Graph.Identity.DirectoryManagement
+   ```
+3. Enter the following commands and provide Intune administrative credentials:
 
-    Import-Module -Name WindowsAutopilotIntune -MinimumVersion 5.4
-    Import-Module -Name Microsoft.Graph.Groups
-    Import-Module -Name Microsoft.Graph.Authentication
-    Import-Module -Name Microsoft.Graph.Identity.DirectoryManagement
-    ```
+   Make sure the specified user account has sufficient administrative rights.
 
-1. Enter the following commands and provide Intune administrative credentials:
+   ```powershell
+   Connect-MgGraph -Scopes "Device.ReadWrite.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementServiceConfig.ReadWrite.All", "Domain.ReadWrite.All", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "User.Read"
+   ```
 
-    Make sure the specified user account has sufficient administrative rights.
+   Windows requests the username and password for the account with a standard Microsoft Entra ID form. Type the username and password, and then select **Sign in**.
 
-    ```powershell
-    Connect-MgGraph -Scopes "Device.ReadWrite.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementServiceConfig.ReadWrite.All", "Domain.ReadWrite.All", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "User.Read"
-    ```
+   ![Windows form to sign in to a Microsoft Entra account.](images/pwd.png)
 
-    Windows requests the username and password for the account with a standard Microsoft Entra ID form. Type the username and password, and then select **Sign in**.
-
-    :::image type="content" source="images/pwd.png" alt-text="Windows form to sign in to a Microsoft Entra account.":::
-
-    The first time Intune Graph APIs are used on a device, it prompts to enable Microsoft Intune PowerShell read and write permissions. To enable these permissions, select **Consent on behalf or your organization** and then **Accept**.
+   The first time Intune Graph APIs are used on a device, it prompts to enable Microsoft Intune PowerShell read and write permissions. To enable these permissions, select **Consent on behalf or your organization** and then **Accept**.
 
 ## Get Windows Autopilot profiles for existing devices
 
@@ -129,11 +121,11 @@ Each profile is encapsulated within braces (`{ }`). The previous example display
 | **Version** | Number | Optional | The version number that identifies the format of the JSON file. |
 | **CloudAssignedTenantId** | GUID | Required | The Microsoft Entra tenant ID that should be used. This property is the GUID for the tenant, and can be found in properties of the tenant. The value shouldn't include braces. |
 | **CloudAssignedTenantDomain** | String | Required | The Microsoft Entra tenant name that should be used. For example: `tenant.onmicrosoft.com`. |
-| **CloudAssignedOobeConfig** | Number | Required | This property is a bitmap that shows which Windows Autopilot settings were configured.<br><br><ul><li>1: SkipCortanaOptIn</li><li>2: OobeUserNotLocalAdmin</li><li>4: SkipExpressSettings</li><li>8: SkipOemRegistration</li><li>16: SkipEula</li></ul> |
-| **CloudAssignedDomainJoinMethod** | Number | Required | This property specifies whether the device should join Microsoft Entra ID or Active Directory (Microsoft Entra hybrid join).<br><br><ul><li>0: Microsoft Entra joined</li><li>1: Microsoft Entra hybrid joined</li></ul> |
-| **CloudAssignedForcedEnrollment** | Number | Required | Specifies that the device should require Microsoft Entra join and MDM enrollment.<br><br><ul><li>0: Not required</li><li>1: required</li></ul>|
+| **CloudAssignedOobeConfig** | Number | Required | This property is a bitmap that shows which Windows Autopilot settings were configured.    - 1: SkipCortanaOptIn - 2: OobeUserNotLocalAdmin - 4: SkipExpressSettings - 8: SkipOemRegistration - 16: SkipEula |
+| **CloudAssignedDomainJoinMethod** | Number | Required | This property specifies whether the device should join Microsoft Entra ID or Active Directory (Microsoft Entra hybrid join).    - 0: Microsoft Entra joined - 1: Microsoft Entra hybrid joined |
+| **CloudAssignedForcedEnrollment** | Number | Required | Specifies that the device should require Microsoft Entra join and MDM enrollment.    - 0: Not required - 1: required |
 | **ZtdCorrelationId** | GUID | Required | A unique GUID (without braces) provided to Intune as part of the registration process. This ID is included in the enrollment message as the `OfflineAutopilotEnrollmentCorrelator`. This attribute is present only if enrollment happens on a device registered with Zero Touch Provisioning via offline registration. |
-| **CloudAssignedAadServerData** | Encoded JSON string | Required |An embedded JSON string used for branding. It requires enabling Microsoft Entra organization branding. For example:<br><br>`"CloudAssignedAadServerData": "{\"ZeroTouchConfig\":{\"CloudAssignedTenantUpn\":\"\",\"CloudAssignedTenantDomain\":\"tenant.onmicrosoft.com\"}}` |
+| **CloudAssignedAadServerData** | Encoded JSON string | Required | An embedded JSON string used for branding. It requires enabling Microsoft Entra organization branding. For example:  `"CloudAssignedAadServerData": "{\"ZeroTouchConfig\":{\"CloudAssignedTenantUpn\":\"\",\"CloudAssignedTenantDomain\":\"tenant.onmicrosoft.com\"}}` |
 | **CloudAssignedDeviceName** | String | Optional | The name automatically assigned to the computer. This name follows the naming pattern convention configured in the Intune Windows Autopilot profile. An explicit name can also be specified. |
 
 ## Create the JSON file
@@ -160,7 +152,7 @@ $AutopilotProfile | ForEach-Object {
 
 The profile can also be saved to a text file and edit in Notepad. In Notepad, when choosing **Save as**, select the save as type: **All Files**, and then select **ANSI** for the **Encoding**.
 
-:::image type="content" source="images/notepad.png" alt-text="Save as ANSI encoding in Notepad.":::
+![Save as ANSI encoding in Notepad.](images/notepad.png)
 
 After saving the file, move it to a location for a Microsoft Configuration Manager package source.
 
@@ -177,20 +169,16 @@ After saving the file, move it to a location for a Microsoft Configuration Manag
 ## Create a package containing the JSON file
 
 1. In the Configuration Manager console, go to the **Software Library** workspace, expand **Application Management**, and select the **Packages** node.
+2. On the ribbon, select **Create Package**.
+3. In the Create Package and Program Wizard, enter the following details for the package:
 
-1. On the ribbon, select **Create Package**.
+   - *Name*: **Windows Autopilot for existing devices config**
+   - Select **This package contains source files**
+   - *Source folder*: Specify the UNC network path that contains the `AutopilotConfigurationFile.json` file
 
-1. In the Create Package and Program Wizard, enter the following details for the package:
-
-    - *Name*: **Windows Autopilot for existing devices config**
-    - Select **This package contains source files**
-    - *Source folder*: Specify the UNC network path that contains the `AutopilotConfigurationFile.json` file
-
-    For more information, see [Packages and programs in Configuration Manager](/intune/configmgr/apps/deploy-use/packages-and-programs).
-
-1. For the program, select the *Program Type*: **Don't create a program**
-
-1. Complete the wizard.
+   For more information, see [Packages and programs in Configuration Manager](../intune/configmgr/apps/deploy-use/packages-and-programs.md).
+4. For the program, select the *Program Type*: **Don't create a program**
+5. Complete the wizard.
 
 > [!NOTE]
 >
@@ -199,66 +187,48 @@ After saving the file, move it to a location for a Microsoft Configuration Manag
 ## Create a target collection
 
 1. In the Configuration Manager console, go to the **Assets and Compliance** workspace, and select the **Device Collections** node.
+2. On the ribbon, select **Create**, and then select **Create Device Collection**. An existing collection can also be used. If using an existing collection, proceed to the [Create a task sequence](#create-a-task-sequence) section.
+3. In the Create Device Collection Wizard, enter the following **General** details:
 
-1. On the ribbon, select **Create**, and then select **Create Device Collection**. An existing collection can also be used. If using an existing collection, proceed to the [Create a task sequence](#create-a-task-sequence) section.
+   - *Name*: **Windows Autopilot for existing devices collection**
+   - *Comment*: Add an optional comment to further describe the collection
+   - *Limiting collection*: **All Systems** or if desired, an alternate collection.
+4. On the **Membership Rules** page, select **Add Rule**. Specify either a direct or query-based collection rule to add the target Windows devices to the new collection.
 
-1. In the Create Device Collection Wizard, enter the following **General** details:
+   For example, if the hostname of the computer to be wiped and reloaded is `PC-01`, and **Name** is being used as the attribute:
 
-    - *Name*: **Windows Autopilot for existing devices collection**
-    - *Comment*: Add an optional comment to further describe the collection
-    - *Limiting collection*: **All Systems** or if desired, an alternate collection.
+   1. Select **Add Rule**, select **Direct Rule** to open the Create Direct Membership Rule Wizard, and select **Next** on the Welcome page.
+   2. On the **Search for Resources** page, enter **PC-01** as the **Value**.
+   3. Select **Next**, and select **PC-01** in the **Resources**.
+5. Complete the wizard with the default settings.
 
-1. On the **Membership Rules** page, select **Add Rule**. Specify either a direct or query-based collection rule to add the target Windows devices to the new collection.
-
-    For example, if the hostname of the computer to be wiped and reloaded is `PC-01`, and **Name** is being used as the attribute:
-
-    1. Select **Add Rule**, select **Direct Rule** to open the Create Direct Membership Rule Wizard, and select **Next** on the Welcome page.
-
-    1. On the **Search for Resources** page, enter **PC-01** as the **Value**.
-
-    1. Select **Next**, and select **PC-01** in the **Resources**.
-
-1. Complete the wizard with the default settings.
-
-For more information, see [How to create collections in Configuration Manager](/intune/configmgr/core/clients/manage/collections/create-collections).
+For more information, see [How to create collections in Configuration Manager](../intune/configmgr/core/clients/manage/collections/create-collections.md).
 
 ## Create a task sequence
 
 1. In the Configuration Manager console, go to the **Software Library** workspace, expand **Operating Systems** and select the **Task Sequences** node.
+2. In the **Home** ribbon, select **Create Task Sequence**.
+3. In the **Create new task sequence** page, select the option to **Deploy Windows Autopilot for existing devices**.
+4. In the **Task sequence information** page, specify the following information:
 
-1. In the **Home** ribbon, select **Create Task Sequence**.
+   - A name for the task sequence. For example, **Windows Autopilot for existing devices**.
+   - Optionally add a description to better describe the task sequence.
+   - Select a boot image. For more information on supported boot image versions, see [Support for the Windows ADK in Configuration Manager](../intune/configmgr/core/plan-design/configs/support-for-windows-adk.md).
+5. In the **Install Windows** page, select the Windows **Image package**. Then configure the following settings:
 
-1. In the **Create new task sequence** page, select the option to **Deploy Windows Autopilot for existing devices**.
+   - **Image index**: Select either Enterprise, Education, or Professional, as required by the organization.
+   - Enable the option to **Partition and format the target computer before installing the operating system**.
+   - **Configure task sequence for use with Bitlocker**: If this option is enabled, the task sequence includes the steps necessary to enable BitLocker.
+   - **Product key**: If a product key needs to be specified for Windows activation, enter it here.
+   - Select one of the following options to configure the local administrator account in Windows:
 
-1. In the **Task sequence information** page, specify the following information:
-
-    - A name for the task sequence. For example, **Windows Autopilot for existing devices**.
-    - Optionally add a description to better describe the task sequence.
-    - Select a boot image. For more information on supported boot image versions, see [Support for the Windows ADK in Configuration Manager](/intune/configmgr/core/plan-design/configs/support-for-windows-adk).
-
-1. In the **Install Windows** page, select the Windows **Image package**. Then configure the following settings:
-
-    - **Image index**: Select either Enterprise, Education, or Professional, as required by the organization.
-
-    - Enable the option to **Partition and format the target computer before installing the operating system**.
-
-    - **Configure task sequence for use with Bitlocker**: If this option is enabled, the task sequence includes the steps necessary to enable BitLocker.
-
-    - **Product key**: If a product key needs to be specified for Windows activation, enter it here.
-
-    - Select one of the following options to configure the local administrator account in Windows:
-        - **Randomly generate the local administrator password and disable the account on all support platforms (recommended)**
-        - **Enable the account and specify the local administrator password**
-
-1. In the **Install the Configuration Manager client** page, add any necessary Configuration Manager client installation properties for the environment. For example, since the device is a Workgroup device and not domain joined during the Windows Autopilot for existing devices task sequence, the [SMSMP](/intune/configmgr/core/clients/deploy/about-client-installation-properties#smsmp) or [SMSMPLIST](/intune/configmgr/core/clients/deploy/about-client-installation-properties#smsmplist) parameters might be needed to run certain tasks such as the **Install Application** or **Install Software Updates** tasks.
-
-1. The **Include updates** page selects by default the option to **Do not install any software updates**.
-
-1. In the **Install applications** page, applications to install during the task sequence can be selected. However, Microsoft recommends that to mirror the signature image approach with this scenario. After the device provisions with Windows Autopilot, apply all applications and configurations from Microsoft Intune or Configuration Manager co-management. This process provides a consistent experience between users receiving new devices and those using Windows Autopilot for existing devices.
-
-1. In the **System Preparation** page, select the package that includes the Windows Autopilot configuration file. By default, the task sequence restarts the computer after it runs Windows Sysprep. The option to **Shutdown computer after this task sequence completes** can also be selected. This option allows preparation of a device and then delivery to a user for a consistent Windows Autopilot experience.
-
-1. Complete the wizard.
+     - **Randomly generate the local administrator password and disable the account on all support platforms (recommended)**
+     - **Enable the account and specify the local administrator password**
+6. In the **Install the Configuration Manager client** page, add any necessary Configuration Manager client installation properties for the environment. For example, since the device is a Workgroup device and not domain joined during the Windows Autopilot for existing devices task sequence, the [SMSMP](../intune/configmgr/core/clients/deploy/about-client-installation-properties.md#smsmp) or [SMSMPLIST](../intune/configmgr/core/clients/deploy/about-client-installation-properties.md#smsmplist) parameters might be needed to run certain tasks such as the **Install Application** or **Install Software Updates** tasks.
+7. The **Include updates** page selects by default the option to **Do not install any software updates**.
+8. In the **Install applications** page, applications to install during the task sequence can be selected. However, Microsoft recommends that to mirror the signature image approach with this scenario. After the device provisions with Windows Autopilot, apply all applications and configurations from Microsoft Intune or Configuration Manager co-management. This process provides a consistent experience between users receiving new devices and those using Windows Autopilot for existing devices.
+9. In the **System Preparation** page, select the package that includes the Windows Autopilot configuration file. By default, the task sequence restarts the computer after it runs Windows Sysprep. The option to **Shutdown computer after this task sequence completes** can also be selected. This option allows preparation of a device and then delivery to a user for a consistent Windows Autopilot experience.
+10. Complete the wizard.
 
 The Windows Autopilot for existing devices task sequence results in a device joined to Microsoft Entra ID.
 
@@ -268,93 +238,74 @@ The Windows Autopilot for existing devices task sequence results in a device joi
 >
 > The Windows Autopilot for existing devices task sequence runs the **Prepare Windows for capture** step, which uses the Windows System Preparation Tool (Sysprep). If the device is joined to a domain, Sysprep fails, so therefore the Windows Autopilot for existing devices task sequence joins a workgroup. For this reason, it isn't necessary to add the **Apply Network Settings** task to a Windows Autopilot for existing devices task sequence.
 
-For more information on creating the task sequence, including information on other wizard options, see [Create a task sequence to install an OS](/intune/configmgr/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system).
+For more information on creating the task sequence, including information on other wizard options, see [Create a task sequence to install an OS](../intune/configmgr/osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md).
 
 If the task sequence is viewed, it's similar to the default task sequence to apply an existing OS image. This task sequence includes the following extra steps:
 
 - **Apply Windows Autopilot configuration**: This step applies the Windows Autopilot configuration file from the specified package. It's not a new type of step, it's a **Run Command Line** step to copy the file.
+- **Prepare Windows for Capture**: This step runs Windows Sysprep, and has the setting to **Shutdown the computer after running this action**. For more information, see [Prepare Windows for Capture](../intune/configmgr/osd/understand/task-sequence-steps.md#prepare-windows-for-capture).
 
-- **Prepare Windows for Capture**: This step runs Windows Sysprep, and has the setting to **Shutdown the computer after running this action**. For more information, see [Prepare Windows for Capture](/intune/configmgr/osd/understand/task-sequence-steps#prepare-windows-for-capture).
-
-For more information on editing the task sequence, see [Use the task sequence editor](/intune/configmgr/osd/understand/task-sequence-editor) and [Task sequence steps](/intune/configmgr/osd/understand/task-sequence-steps).
+For more information on editing the task sequence, see [Use the task sequence editor](../intune/configmgr/osd/understand/task-sequence-editor.md) and [Task sequence steps](../intune/configmgr/osd/understand/task-sequence-steps.md).
 
 > [!NOTE]
 >
 > The **Prepare Windows for Capture** step deletes the `AutopilotConfigurationFile.json` file. For more information and a workaround, see [Modify the task sequence to account for Sysprep command line configuration](tutorial/existing-devices/create-autopilot-task-sequence.md#modify-the-task-sequence-to-account-for-sysprep-command-line-configuration) and [Windows Autopilot - known issues: Windows Autopilot for existing devices doesn't work](known-issues.md#windows-autopilot-for-existing-devices-doesnt-work).
 
-To make sure the user's data is backed up before the Windows upgrade, use OneDrive for work or school [known folder move](/onedrive/redirect-known-folders).
+To make sure the user's data is backed up before the Windows upgrade, use OneDrive for work or school [known folder move](https://learn.microsoft.com/en-us/onedrive/redirect-known-folders).
 
 ## Distribute content to distribution points
 
 Next distribute all content required for the task sequence to distribution points.
 
 1. Select the **Windows Autopilot for existing devices** task sequence, and in the ribbon select **Distribute Content**.
+2. On the **Specify the content destination** page, select **Add** to specify either a **Distribution Point** or **Distribution Point Group**.
+3. Specify content destinations that let the devices get the content.
+4. After specifying content distribution, complete the wizard.
 
-1. On the **Specify the content destination** page, select **Add** to specify either a **Distribution Point** or **Distribution Point Group**.
-
-1. Specify content destinations that let the devices get the content.
-
-1. After specifying content distribution, complete the wizard.
-
-For more information, see [Manage task sequences to automate tasks](/intune/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks).
+For more information, see [Manage task sequences to automate tasks](../intune/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks.md).
 
 ## Deploy the Windows Autopilot task sequence
 
 1. Select the **Windows Autopilot for existing devices** task sequence, and in the ribbon select **Deploy**.
+2. In the Deploy Software Wizard, specify the following details:
 
-1. In the Deploy Software Wizard, specify the following details:
+   - **General**
 
-    - **General**
+     - *Task Sequence*: **Windows Autopilot for existing devices**
+     - *Collection*: **Windows Autopilot for existing devices collection**
+   - **Deployment Settings**
 
-      - *Task Sequence*: **Windows Autopilot for existing devices**
+     - *Action*: **Install**.
+     - *Purpose*: **Available**.
+     - *Make available to the following*: **Only Configuration Manager Clients**.
 
-      - *Collection*: **Windows Autopilot for existing devices collection**
+       > [!NOTE]
+       >
+       > Select the option here that is relevant for the context of testing. If the target client doesn't have the Configuration Manager agent or Windows installed, the task sequence needs to be started via PXE or Boot Media.
+   - **Scheduling**
 
-    - **Deployment Settings**
+     - Set a time for when this deployment becomes available
+   - **User Experience**
 
-      - *Action*: **Install**.
+     - Select **Show Task Sequence progress**
+   - **Distribution Points**
 
-      - *Purpose*: **Available**.
-
-      - *Make available to the following*: **Only Configuration Manager Clients**.
-
-        > [!NOTE]
-        >
-        > Select the option here that is relevant for the context of testing. If the target client doesn't have the Configuration Manager agent or Windows installed, the task sequence needs to be started via PXE or Boot Media.
-
-    - **Scheduling**
-
-      - Set a time for when this deployment becomes available
-
-    - **User Experience**
-
-      - Select **Show Task Sequence progress**
-
-    - **Distribution Points**
-
-      - *Deployment options*: **Download content locally when needed by the running task sequence**
-
-1. Complete the wizard.
+     - *Deployment options*: **Download content locally when needed by the running task sequence**
+3. Complete the wizard.
 
 ## Complete the deployment process
 
 1. On the target Windows device, go to the **Start** menu, enter `Software Center`, and open it.
-
-1. In the Software Library, under **Operating Systems**, select **Windows Autopilot for existing devices**, and then select **Install**.
+2. In the Software Library, under **Operating Systems**, select **Windows Autopilot for existing devices**, and then select **Install**.
 
 The task sequence runs and does the following actions:
 
 1. Downloads content.
-
-1. Restarts the device into WinPE.
-
-1. Formats the drive.
-
-1. Installs Windows from the specified OS image.
-
-1. Prepares for Windows Autopilot.
-
-1. After the task sequence completes, the device boots into OOBE for the Windows Autopilot experience:
+2. Restarts the device into WinPE.
+3. Formats the drive.
+4. Installs Windows from the specified OS image.
+5. Prepares for Windows Autopilot.
+6. After the task sequence completes, the device boots into OOBE for the Windows Autopilot experience:
 
 > [!NOTE]
 >
@@ -371,10 +322,9 @@ Also see [Adding devices to Windows Autopilot](add-devices.md).
 > [!NOTE]
 >
 > - Typically, the target device isn't registered with the Windows Autopilot service. If the device is already registered, the assigned profile takes precedence. The Windows Autopilot for existing devices profile only applies if the online profile times out.
-> <!--9105086-->
-> - When the assigned profile is applied, the **enrollmentProfileName** property of the device object in Microsoft Intune and Microsoft Entra ID match the Windows Autopilot profile name.
 >
-> - When the Windows Autopilot for existing devices profile is applied, the **enrollmentProfileName** property of the device object in Microsoft Intune and Microsoft Entra ID are **OffilineAutoPilotProfile-\<ZtdCorrelationId\>**.
+> - When the assigned profile is applied, the **enrollmentProfileName** property of the device object in Microsoft Intune and Microsoft Entra ID match the Windows Autopilot profile name.
+> - When the Windows Autopilot for existing devices profile is applied, the **enrollmentProfileName** property of the device object in Microsoft Intune and Microsoft Entra ID are **OffilineAutoPilotProfile-&lt;ZtdCorrelationId&gt;**.
 
 ## How to speed up the deployment process
 
@@ -389,7 +339,3 @@ For a detailed tutorial on configuring Windows Autopilot for existing devices, s
 ## Related content
 
 - [New Windows Autopilot capabilities and expanded partner support simplify modern device deployment](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/new-windows-autopilot-capabilities-and-expanded-partner-support/ba-p/260430).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

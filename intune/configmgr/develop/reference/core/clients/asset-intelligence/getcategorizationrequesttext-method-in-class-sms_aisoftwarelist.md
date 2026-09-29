@@ -1,16 +1,18 @@
 ---
-title: GetCategorizationRequestText Method
+title: "GetCategorizationRequestText Method in Class SMS_AISoftwareList"
 description: The GetCategorizationRequestText retrieves the XML that is sent to System Center Online for categorization.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetCategorizationRequestText Method in Class SMS_AISoftwareList
+
 The `GetCategorizationRequestText` Windows Management Instrumentation (WMI) class method, in Configuration Manager, retrieves the XML that is sent to System Center Online for categorization.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,34 +24,37 @@ SInt32 GetCategorizationRequestText(
 ```
 
 #### Parameters
- `SoftwareKey`
- Data type: `String`
 
- Qualifiers: [in]
+`SoftwareKey` Data type: `String`
 
- The MD5 hash of the software to be categorized. The hash is made up of the software name, publisher, and version.
+Qualifiers: [in]
 
- This property name has changed from `SoftwarePropertiesHash` to `SoftwareKey` in SP1.
+The MD5 hash of the software to be categorized. The hash is made up of the software name, publisher, and version.
 
- `CategorizationRequestText`
- Data type: `String`
+This property name has changed from `SoftwarePropertiesHash` to `SoftwareKey` in SP1.
 
- Qualifiers: [out]
+`CategorizationRequestText` Data type: `String`
 
- XML formatted string which contains the hash, name, version, publisher, evidence type, and system default locale identifier (LCID) of the software.
+Qualifiers: [out]
+
+XML formatted string which contains the hash, name, version, publisher, evidence type, and system default locale identifier (LCID) of the software.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_AISoftwareList Server WMI Class](../../../../../develop/reference/core/clients/asset-intelligence/sms_aisoftwarelist-server-wmi-class.md)
+
+[SMS_AISoftwareList Server WMI Class](sms_aisoftwarelist-server-wmi-class.md)

@@ -1,7 +1,7 @@
 ---
-title: Education device enrollment with Automated Device Enrollment and Intune
+title: "Enroll devices with Automated Device Enrollment"
 description: Learn how to automatically enroll devices through Apple School Manager with Automated Device Enrollment during Setup Assistant on iOS/iPadOS devices.
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 ---
 
@@ -18,19 +18,23 @@ There are two types of enrollment:
 
 For more information on configuring Automated Device Enrollment, see:
 
-## [Intune](#tab/intune)
+- [Intune](#tabpanel_1_intune)
+- [Intune For Education](#tabpanel_1_intune-for-education)
+
+<a id="tabpanel_1_intune"></a>
+
+
 
 [Set up automated device enrollment in Intune](../../../device-enrollment/apple/setup-automated-ios.md).
 
-## [Intune For Education](#tab/intune-for-education)
+<a id="tabpanel_1_intune-for-education"></a>
 
-[Set up iOS device management](/intune-education/setup-ios-device-management)
 
----
+
+[Set up iOS device management](https://learn.microsoft.com/en-us/intune-education/setup-ios-device-management)
 
 ## Next steps
 
 With the devices managed by Intune, you can use Intune to maintain them and report on their status.
 
-> [!div class="nextstepaction"]
-> [Next: Manage devices >](manage-overview.md)
+[Next: Manage devices &gt;](manage-overview.md)

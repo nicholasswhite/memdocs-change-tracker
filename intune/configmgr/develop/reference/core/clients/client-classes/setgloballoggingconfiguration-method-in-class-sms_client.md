@@ -1,16 +1,18 @@
 ---
 description: Learn how to define the global logging configuration for the client with SetGlobalLoggingConfiguration method.
-title: SetGlobalLoggingConfiguration Method
-ms.date: 09/20/2016
+title: "SetGlobalLoggingConfiguration Method in Class SMS_Client"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SetGlobalLoggingConfiguration Method in Class SMS_Client
+
 The `SetGlobalLoggingConfiguration` method, in Configuration Manager, defines the global logging configuration for the client. This configuration represents either component-level logging or default logging if component-level logging isn't defined.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,59 +26,55 @@ UInt32 SetGlobalLoggingConfiguration(
 ```
 
 #### Parameters
- `LogLevel`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`LogLevel` Data type: `UInt32`
 
- The level of detail that the log will capture. Possible values are shown below. The default value is 1.
+Qualifiers: [in]
+
+The level of detail that the log will capture. Possible values are shown below. The default value is 1.
 
 | Value | Description |
-| ----- | ----------- |
-|0|Verbose logging|
-|1|Normal logging|
-|2|No logging|
+| --- | --- |
+| 0 | Verbose logging |
+| 1 | Normal logging |
+| 2 | No logging |
 
- `LogMaxSize`
- Data type: `UInt32`
+`LogMaxSize` Data type: `UInt32`
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- The maximum size, in bytes, of a given log file.
+The maximum size, in bytes, of a given log file.
 
- `LogMaxHistory`
- Data type: `UInt32`
+`LogMaxHistory` Data type: `UInt32`
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- The number of incremented log files to accumulate before deleting. When this number has been reached, the creation of a new log file results in the deletion of the oldest existing log file.
+The number of incremented log files to accumulate before deleting. When this number has been reached, the creation of a new log file results in the deletion of the oldest existing log file.
 
- `DebugLogging`
- Data type: `Boolean`
+`DebugLogging` Data type: `Boolean`
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- `true` if debug logging should be enabled. Debug logging is rarely used except for troubleshooting.
+`true` if debug logging should be enabled. Debug logging is rarely used except for troubleshooting.
 
 ## Return Values
- A `UInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+A `UInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
 ## Remarks
- This method manipulates registry keys. These keys shouldn't be manipulated directly. However, for reference, these keys can be found at HKEY_LOCAL_MACHINE/Software/Microsoft/CCM/logging/@GLOBAL. Enabling debug logging with `DebugLogging` results in the creation of a new key: HKEY_LOCAL_MACHINE/Software/Microsoft/CCM/logging/debuglogging.
+
+This method manipulates registry keys. These keys shouldn't be manipulated directly. However, for reference, these keys can be found at HKEY_LOCAL_MACHINE/Software/Microsoft/CCM/logging/@GLOBAL. Enabling debug logging with `DebugLogging` results in the creation of a new key: HKEY_LOCAL_MACHINE/Software/Microsoft/CCM/logging/debuglogging.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [SMS_Client Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_client-client-wmi-class.md)
- [EvaluateMachinePolicy method in Class SMS_Client](../../../../../develop/reference/core/clients/client-classes/evaluatemachinepolicy-method-in-class-sms_client.md)
- [GetAssignedSite method in Class SMS_Client](../../../../../develop/reference/core/clients/client-classes/getassignedsite-method-in-class-sms_client.md)
- [RequestMachinePolicy method in Class SMS_Client](../../../../../develop/reference/core/clients/client-classes/requestmachinepolicy-method-in-class-sms_client.md)
- [ResetPolicy method in Class SMS_Client](../../../../../develop/reference/core/clients/client-classes/resetpolicy-method-in-class-sms_client.md)
- [SetAssignedSite method in Class SMS_Client](../../../../../develop/reference/core/clients/client-classes/setassignedsite-method-in-class-sms_client.md)
- [TriggerSchedule method in Class SMS_Client](../../../../../develop/reference/core/clients/client-classes/triggerschedule-method-in-class-sms_client.md)
+
+[SMS_Client Client WMI Class](sms_client-client-wmi-class.md) [EvaluateMachinePolicy method in Class SMS_Client](evaluatemachinepolicy-method-in-class-sms_client.md) [GetAssignedSite method in Class SMS_Client](getassignedsite-method-in-class-sms_client.md) [RequestMachinePolicy method in Class SMS_Client](requestmachinepolicy-method-in-class-sms_client.md) [ResetPolicy method in Class SMS_Client](resetpolicy-method-in-class-sms_client.md) [SetAssignedSite method in Class SMS_Client](setassignedsite-method-in-class-sms_client.md) [TriggerSchedule method in Class SMS_Client](triggerschedule-method-in-class-sms_client.md)

@@ -1,16 +1,18 @@
 ---
 description: Learn how to specify Background Intelligent Transfer settings for client computers using SMS_BITS2Config class.
-title: SMS_BITS2Config Class
-ms.date: 09/20/2016
+title: "SMS_BITS2Config Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BITS2Config Server WMI Class
+
 The `SMS_BITS2Config` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies Background Intelligent Transfer settings for client computers.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,87 +31,83 @@ Class SMS_BITS2Config : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_BITS2Config` class does not define any methods.
+
+The `SMS_BITS2Config` class does not define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The BITS2Config Agent ID is 11.
+Qualifiers: [key, read]
 
- `ApplyToAllClients`
- Data type: `Boolean`
+Identifies the client agent component. The BITS2Config Agent ID is 11.
 
- Access type: Read/Write
+`ApplyToAllClients` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to apply Background Intelligent Transfer settings to all computers.
+Qualifiers: none
 
- `EnableBitsMaxBandwidth`
- Data type: `Boolean`
+`true` to apply Background Intelligent Transfer settings to all computers.
 
- Access type: Read/Write
+`EnableBitsMaxBandwidth` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to enable maximum network bandwidth for BITS background transfers.
+Qualifiers: none
 
- `EnableDownloadOffSchedule`
- Data type: `Boolean`
+`true` to enable maximum network bandwidth for BITS background transfers.
 
- Access type: Read/Write
+`EnableDownloadOffSchedule` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to allow BITS downloads outside of the throttling window.
+Qualifiers: none
 
- `MaxBandwidthValidFrom`
- Data type: `UInt32`
+`true` to allow BITS downloads outside of the throttling window.
 
- Access type: Read/Write
+`MaxBandwidthValidFrom` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Throttling window end time. Valid values are from 0-23.
+Qualifiers: none
 
- `MaxBandwidthValidTo`
- Data type: `UInt32`
+Throttling window end time. Valid values are from 0-23.
 
- Access type: Read/Write
+`MaxBandwidthValidTo` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Throttling window start time. Valid values are from 0-23.
+Qualifiers: none
 
- `MaxTransferRateOffSchedule`
- Data type: `UInt32`
+Throttling window start time. Valid values are from 0-23.
 
- Access type: Read/Write
+`MaxTransferRateOffSchedule` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum transfer rate outside of the throttling window (Kbps).
+Qualifiers: none
 
- `MaxTransferRateOnSchedule`
- Data type: `UInt32`
+Maximum transfer rate outside of the throttling window (Kbps).
 
- Access type: Read/Write
+`MaxTransferRateOnSchedule` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Maximum transfer rate during the throttling window (Kbps).
+Qualifiers: none
+
+Maximum transfer rate during the throttling window (Kbps).
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

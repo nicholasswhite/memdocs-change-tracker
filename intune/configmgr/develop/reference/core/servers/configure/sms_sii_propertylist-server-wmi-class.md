@@ -1,16 +1,18 @@
 ---
-title: SMS_SII_PropertyList Class
+title: "SMS_SII_PropertyList Server WMI Class"
 description: The SMS_SII_PropertyList class is an SMS Provider server class that represents a general-purpose storage object defining property lists for a site install item.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SII_PropertyList Server WMI Class
+
 The `SMS_SII_PropertyList` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a general-purpose storage object defining property lists for a site install item.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,60 +27,61 @@ Class SMS_SII_PropertyList : SMS_SiteInstallItem
 ```
 
 ## Methods
- The `SMS_SII_PropertyList` class does not define any methods.
+
+The `SMS_SII_PropertyList` class does not define any methods.
 
 ## Properties
- `ItemName`
- Data type: `String`
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `PropertyListName`
- Data type: `String`
+See [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md).
 
- Access type: Read-only
+`PropertyListName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the property list. The name is case sensitive and might contain several words.
+Qualifiers: None
 
- `Values`
- Data type: `String` Array
+Name of the property list. The name is case sensitive and might contain several words.
 
- Access type: Read-only
+`Values` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- String values for the property list.
+Qualifiers: None
+
+String values for the property list.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteInstallItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitem-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteInstallItem Server WMI Class](sms_siteinstallitem-server-wmi-class.md)

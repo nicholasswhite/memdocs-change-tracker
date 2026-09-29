@@ -1,16 +1,18 @@
 ---
-title: SMS_SoftwareShortcut Class
+title: "SMS_SoftwareShortcut Client WMI Class"
 description: In Configuration Manager, the SMS_SoftwareShortcut class is a client Windows Management Instrumentation class that defines a shortcut to executable files or a shortcut in a common system location.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SoftwareShortcut Client WMI Class
+
 The `SMS_SoftwareShortcut` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that defines a shortcut to executable files or a shortcut in a common system location.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,188 +40,169 @@ Class SMS_SoftwareShortcut
 ```
 
 ## Methods
- The `SMS_SoftwareShortcut` class does not define any methods.
+
+The `SMS_SoftwareShortcut` class does not define any methods.
 
 ## Properties
- `BinFileVersion`
- Data type: `String`
 
- Access type: Read-only
+`BinFileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Reserved. For internal use.
+Qualifiers: None
 
- `BinProductVersion`
- Data type: `String`
+Reserved. For internal use.
 
- Access type: Read-only
+`BinProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Reserved. For internal use.
+Qualifiers: None
 
- `Description`
- Data type: `String`
+Reserved. For internal use.
 
- Access type: Read-only
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- File description that can be presented to users, for example, "Microsoft Word for Windows".
+Qualifiers: None
 
- `FilePropertiesHash`
- Data type: `String`
+File description that can be presented to users, for example, "Microsoft Word for Windows".
 
- Access type: Read-only
+`FilePropertiesHash` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, and `FileNam`e properties of the file.
+Qualifiers: None
 
- `FilePropertiesHashEx`
- Data type: `String`
+A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, and `FileNam`e properties of the file.
 
- Access type: Read-only
+`FilePropertiesHashEx` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, `FileName`, `FileVersion`, `BinProductVersion`, and `BinFileVersion` properties of the file.
+Qualifiers: None
 
- `FileSize`
- Data type: `UInt32`
+A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, `FileName`, `FileVersion`, `BinProductVersion`, and `BinFileVersion` properties of the file.
 
- Access type: Read-only
+`FileSize` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Size of the file, in bytes.
+Qualifiers: None
 
- `FileVersion`
- Data type: `String`
+Size of the file, in bytes.
 
- Access type: Read-only
+`FileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The version of the file, for example, "12.0.4518.1014".
+Qualifiers: None
 
- `Language`
- Data type: `UInt32`
+The version of the file, for example, "12.0.4518.1014".
 
- Access type: Read-only
+`Language` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Language associated with the file, for example, "1033".
+Qualifiers: None
 
- `ParentName`
- Data type: `String`
+Language associated with the file, for example, "1033".
 
- Access type: Read-only
+`ParentName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The name of the shortcut container, for example, "Start Menu", "Quick Launch", or "Desktop".
+Qualifiers: None
 
- `Product`
- Data type: `String`
+The name of the shortcut container, for example, "Start Menu", "Quick Launch", or "Desktop".
 
- Access type: Read-only
+`Product` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The name of the product with which the file is distributed, for example, "Microsoft Windows".
+Qualifiers: None
 
- `ProductCode`
- Data type: `String`
+The name of the product with which the file is distributed, for example, "Microsoft Windows".
 
- Access type: Read-only
+`ProductCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- GUID that is the principal identifier for an application or product. For more information, see the Microsoft Windows Installer documentation.
+Qualifiers: None
 
- `ProductVersion`
- Data type: `String`
+GUID that is the principal identifier for an application or product. For more information, see the Microsoft Windows Installer documentation.
 
- Access type: Read-only
+`ProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The version of the product with which the file is distributed, for example, "4.2.0.2623".
+Qualifiers: None
 
- `Publisher`
- Data type: `String`
+The version of the product with which the file is distributed, for example, "4.2.0.2623".
 
- Access type: Read-only
+`Publisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The company that produced the file, for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".
+Qualifiers: None
 
- `ShortcutKey`
- Data type: `String`
+The company that produced the file, for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".
 
- Access type: Read-only
+`ShortcutKey` Data type: `String`
 
- Qualifiers: Key
+Access type: Read-only
 
- Key for the shortcut, without the full path.
+Qualifiers: Key
 
- `ShortcutName`
- Data type: `String`
+Key for the shortcut, without the full path.
 
- Access type: Read-only
+`ShortcutName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the shortcut, without the full path.
+Qualifiers: None
 
- `ShortcutType`
- Data type: `UInt32`
+Name of the shortcut, without the full path.
 
- Access type: Read-only
+`ShortcutType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- The type of shortcut. Possible values are:
+Qualifiers: None
+
+The type of shortcut. Possible values are:
 
 | Value | Shortcut type |
-| ----- | ------------- |
-|1|Shortcut to Folder|
-|2|Shortcut to File (EXE or DLL)|
-|3|Application Reference (.appref-ms)|
+| --- | --- |
+| 1 | Shortcut to Folder |
+| 2 | Shortcut to File (EXE or DLL) |
+| 3 | Application Reference (.appref-ms) |
 
- `TargetExecutable`
- Data type: `String`
+`TargetExecutable` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: None
+Qualifiers: None
 
- The name of the executable file that is linked to the shortcut.
+The name of the executable file that is linked to the shortcut.
 
 ## Remarks
 
 > [!NOTE]
->  This class is not currently used to support existing Asset Intelligence reports. However, it can be enabled to support custom reports.
+>
+> This class is not currently used to support existing Asset Intelligence reports. However, it can be enabled to support custom reports.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Asset Intelligence Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/asset-intelligence-client-wmi-classes.md)
- [SMS_AutoStartSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_autostartsoftware-client-wmi-class.md)
- [SMS_BrowserHelperObject Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_browserhelperobject-client-wmi-class.md)
- [SMS_InstalledExecutable Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedexecutable-client-wmi-class.md)
- [SMS_InstalledSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftware-client-wmi-class.md)
- [SMS_InstalledSoftwareMS Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftwarems-client-wmi-class.md)
- [SMS_Processor Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_processor-client-wmi-class.md)
- [SMS_SystemConsoleUsage Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleusage-client-wmi-class.md)
- [SMS_SystemConsoleUser Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleuser-client-wmi-class.md)
+
+[Asset Intelligence Client WMI Classes](asset-intelligence-client-wmi-classes.md) [SMS_AutoStartSoftware Client WMI Class](sms_autostartsoftware-client-wmi-class.md) [SMS_BrowserHelperObject Client WMI Class](sms_browserhelperobject-client-wmi-class.md) [SMS_InstalledExecutable Client WMI Class](sms_installedexecutable-client-wmi-class.md) [SMS_InstalledSoftware Client WMI Class](sms_installedsoftware-client-wmi-class.md) [SMS_InstalledSoftwareMS Client WMI Class](sms_installedsoftwarems-client-wmi-class.md) [SMS_Processor Client WMI Class](sms_processor-client-wmi-class.md) [SMS_SystemConsoleUsage Client WMI Class](sms_systemconsoleusage-client-wmi-class.md) [SMS_SystemConsoleUser Client WMI Class](sms_systemconsoleuser-client-wmi-class.md)

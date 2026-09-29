@@ -1,7 +1,7 @@
 ---
 title: Distribute referenced content
 description: Before clients run a task sequence that references content, distribute that content to distribution points.
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.subservice: osd
 ms.topic: how-to
 ms.collection: tier3
@@ -19,21 +19,16 @@ Before clients run a task sequence that references content, distribute that cont
 Use the following procedure to distribute the content that is referenced by a task sequence:
 
 1. In the Configuration Manager console, go to the **Software Library** workspace, expand **Operating Systems**, and then select the **Task Sequences** node.
+2. In the **Task Sequence** list, select the task sequence that you want to distribute.
+3. On the **Home** tab of the ribbon, in the **Deployment** group, select **Distribute Content**. This action starts the Distribute Content Wizard.
+4. On the **General** page, verify that the correct task sequence is selected for distribution.
+5. On the **Content** page, verify the content to distribute, such as the boot image referenced by the task sequence.
+6. On the **Content Destination** page, specify the collections, distribution point, or distribution point group where you want to distribute the task sequence contents.
 
-1. In the **Task Sequence** list, select the task sequence that you want to distribute.
-
-1. On the **Home** tab of the ribbon, in the **Deployment** group, select **Distribute Content**. This action starts the Distribute Content Wizard.
-
-1. On the **General** page, verify that the correct task sequence is selected for distribution.
-
-1. On the **Content** page, verify the content to distribute, such as the boot image referenced by the task sequence.
-
-1. On the **Content Destination** page, specify the collections, distribution point, or distribution point group where you want to distribute the task sequence contents.
-
-    > [!IMPORTANT]
-    > If the task sequence that you selected references content that's already distributed to a specific distribution point, the wizard doesn't list that distribution point.
-
-1. Complete the wizard.
+   > [!IMPORTANT]
+   >
+   > If the task sequence that you selected references content that's already distributed to a specific distribution point, the wizard doesn't list that distribution point.
+7. Complete the wizard.
 
 ## Prestage content
 

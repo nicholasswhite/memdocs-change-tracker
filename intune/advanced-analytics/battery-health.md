@@ -1,7 +1,7 @@
 ---
-title: Battery Health Report in Endpoint Analytics
+title: "Battery health report"
 description: Learn how to use the battery health report in Microsoft Intune to detect battery degradation, plan proactive replacements, and improve user experience.
-ms.date: 03/24/2026
+ms.date: "2026-03-24T00:00:00Z"
 ms.topic: concept-article
 ---
 
@@ -21,15 +21,14 @@ The battery health report can be used to:
 
 ## Before you begin
 
-> [!div class="checklist"]
-> - Review [Scores, baselines, and insights in endpoint analytics](../endpoint-analytics/scores.md) to understand these concepts.
-> - Confirm that your environment meets all [prerequisites](index.md#prerequisites).
+- Review [Scores, baselines, and insights in endpoint analytics](../endpoint-analytics/scores.md) to understand these concepts.
+- Confirm that your environment meets all [prerequisites](index.md#prerequisites).
 
 ## Review the report
 
-In the [Microsoft Intune admin center][INT-AC], select **Reports** > **Endpoint analytics** > **Battery health**.
+In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Reports** &gt; **Endpoint analytics** &gt; **Battery health**.
 
-:::image type="content" source="media/battery-health/overview-score-and-insights.png" lightbox="media/battery-health/overview-score-and-insights.png" alt-text="Screenshot of the Battery health report overview with health score, baseline comparison, capacity and runtime scores, and insights.":::
+[![Screenshot of the Battery health report overview with health score, baseline comparison, capacity and runtime scores, and insights.](media/battery-health/overview-score-and-insights.png)](media/battery-health/overview-score-and-insights.png#lightbox)
 
 ### Battery health score
 
@@ -67,8 +66,8 @@ Devices with less than 3 hours of runtime usually have poor maximum capacities a
 
 Estimated runtimes might be low despite batteries having good maximum capacities. Low runtime is possible in two scenarios:
 
-1. The device is running apps that drain the battery quickly. Users run applications that consume high power or inefficiently use power and need upgrading or replacing. Battery-powered devices can use the [battery saver Windows](/windows-hardware/design/component-guidelines/battery-saver) feature to ensure that both user productivity and experience are protected.
-1. The device has a battery that is designed to hold low charge. Procurement teams drive this decision.
+1. The device is running apps that drain the battery quickly. Users run applications that consume high power or inefficiently use power and need upgrading or replacing. Battery-powered devices can use the [battery saver Windows](https://learn.microsoft.com/en-us/windows-hardware/design/component-guidelines/battery-saver) feature to ensure that both user productivity and experience are protected.
+2. The device has a battery that is designed to hold low charge. Procurement teams drive this decision.
 
 Insights for this scenario highlight the devices for which the **App Impact** tab might provide more visibility into whether the user needs to use power hungry apps or whether the app's battery usage is unusually high due to inefficiency.
 
@@ -79,6 +78,7 @@ The report is organized into tabs, each providing a different view of related da
 ### Device performance
 
 Shows battery health metrics and a score for all battery-powered devices.
+
 - Sort by a metric (for example, Max capacity) to identify devices with the lowest scores.
 - Search for a device by name.
 - Select a device to view its runtime trend, compare its score to the model's average in your organization, and see the top apps that consumed its battery in the last 14 days.
@@ -95,10 +95,12 @@ Shows battery health metrics and scores by operating system version, helping you
 ### App impact
 
 Summarizes cumulative battery usage per app over the last 14 days.
+
 - View the number of devices affected and the percentage of total battery charge consumed by each app.
 - Use this information to troubleshoot apps that may be draining battery excessively.
 
 > [!NOTE]
+>
 > The battery power used by an app varies by the activity that a user engages in. For example, using Microsoft Teams for chatting vs in an audio/video call with screen share results in different battery drains. The data in the *App impact* tab accounts for all activity using an app.
 
 ## Battery information notes
@@ -112,7 +114,3 @@ Summarizes cumulative battery usage per app over the last 14 days.
 
 - Some data points in the report may display **Not available**. When you export the report, unavailable data appears as `-1` in the generated .csv file.
 - Devices with batteries designed for low capacity (for example, those intended to hold a limited charge) will show low runtime. This behavior is by design. These devices appear under low-runtime insights, and the only way to improve runtime is to replace the battery with one that supports a higher capacity.
-
-<!-- admin center links -->
-
-[INT-AC]: https://go.microsoft.com/fwlink/?linkid=2109431

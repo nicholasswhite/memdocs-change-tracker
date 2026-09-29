@@ -1,7 +1,7 @@
 ---
-title: How to run reports
+title: "How to run Configuration Manager reports"
 description: Information about how to access reports in the Configuration Manager console or by using Report Manager.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 
@@ -19,30 +19,32 @@ Reports in Configuration Manager are stored in SQL Server Reporting Services, an
 Use the following procedures to run a Configuration Manager report.
 
 > [!WARNING]
+>
 > To run reports, you must have **Read** rights for the **Site** permission and the **Run Report** permission that is configured for specific objects.
 
-Report Manager is a web-based report access and management tool that you use to administer a single report server instance on a remote location over an HTTP connection. You can use Report Manager for operational tasks, for example, to view reports, modify report properties, and manage associated report subscriptions. This topic provides the steps to view a report and modify report properties in Report Manager, but for more information about the other options that Report Manager provides, see Report Manager in SQL Server&nbsp;2008 Books Online.
+Report Manager is a web-based report access and management tool that you use to administer a single report server instance on a remote location over an HTTP connection. You can use Report Manager for operational tasks, for example, to view reports, modify report properties, and manage associated report subscriptions. This topic provides the steps to view a report and modify report properties in Report Manager, but for more information about the other options that Report Manager provides, see Report Manager in SQL Server 2008 Books Online.
 
 ### To run a report in the Configuration Manager console
 
 1. In the Configuration Manager console, select **Monitoring**.
-1. In the **Monitoring** workspace, expand **Reporting**, and then select **Reports** to list the available reports.
-    > [!TIP]
-    > If no reports are listed, verify that the reporting services point is installed and configured. For more information, see the topic [Configuring Reporting in Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).
+2. In the **Monitoring** workspace, expand **Reporting**, and then select **Reports** to list the available reports.
 
-1. Select the report that you want to run, and then on the **Home** tab, in the **Report Group** section, select **Run** to open the report.
-1. When there are required parameters, specify the parameters, and then select **View Report**.
+   > [!TIP]
+   >
+   > If no reports are listed, verify that the reporting services point is installed and configured. For more information, see the topic [Configuring Reporting in Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).
+3. Select the report that you want to run, and then on the **Home** tab, in the **Report Group** section, select **Run** to open the report.
+4. When there are required parameters, specify the parameters, and then select **View Report**.
 
 ### To run a report in a web browser
 
 1. In your web browser, enter the Report Manager URL, for example, `http://Server1/Reports`. You can determine the Report Manager URL on the **Report Manager URL** page in Reporting Services Configuration Manager.
-1. In Report Manager, select the report folder for Configuration Manager, for example, ConfigMgr\_CAS.
+2. In Report Manager, select the report folder for Configuration Manager, for example, ConfigMgr_CAS.
 
-    > [!TIP]
-    > If no reports are listed, verify that the reporting services point is installed and configured. For more information, see the topic [Configuring Reporting in Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).
-
-1. Select the report category for the report that you want to run, and then select the link for the report. The report opens in Report Manager.
-1. When there are required parameters, specify the parameters, and then select **View Report**.
+   > [!TIP]
+   >
+   > If no reports are listed, verify that the reporting services point is installed and configured. For more information, see the topic [Configuring Reporting in Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).
+3. Select the report category for the report that you want to run, and then select the link for the report. The report opens in Report Manager.
+4. When there are required parameters, specify the parameters, and then select **View Report**.
 
 ## See also
 

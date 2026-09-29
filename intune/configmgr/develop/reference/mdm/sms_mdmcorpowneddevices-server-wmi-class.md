@@ -1,16 +1,18 @@
 ---
-title: SMS_MDMCorpOwnedDevices Class
+title: "SMS_MDMCorpOwnedDevices Server WMI Class"
 description: The SMS_MDMCorpOwnedDevices WMI class represents On-premises Mobile Device Management (MDM) corporate owned devices.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_MDMCorpOwnedDevices Server WMI Class
-The `SMS_MDMCorpOwnedDevices` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents On-premises Mobile Device Management  (MDM)  corporate owned devices.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_MDMCorpOwnedDevices Server WMI Class
+
+The `SMS_MDMCorpOwnedDevices` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents On-premises Mobile Device Management (MDM) corporate owned devices.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -50,278 +52,254 @@ Class SMS_MDMCorpOwnedDevices : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_MDMCorpOwnedDevices` class.
 
-|Method|Description|
-|------------|-----------------|
-|[UpdateProfileIDForDevices Method in Class SMS_MDMCorpOwnedDevices](../../../develop/reference/mdm/updateprofileidfordevices-method-in-class-sms_mdmcorpowneddevices.md)|Updates the profile IDs for device serial numbers.|
+The following table lists the methods in the `SMS_MDMCorpOwnedDevices` class.
+
+| Method | Description |
+| --- | --- |
+| [UpdateProfileIDForDevices Method in Class SMS_MDMCorpOwnedDevices](updateprofileidfordevices-method-in-class-sms_mdmcorpowneddevices.md) | Updates the profile IDs for device serial numbers. |
 
 ## Properties
- `ActualEnrollmentProfileAssignedTime`
- Data type: `DateTime`
 
- Access type: Read/Write
+`ActualEnrollmentProfileAssignedTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time that the device enrolled to the profile.
+Qualifiers: none
 
- `ActualEnrollmentProfileId`
- Data type: `String`
+The time that the device enrolled to the profile.
 
- Access type: Read/Write
+`ActualEnrollmentProfileId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The profile to which the device enrolled.
+Qualifiers: none
 
- `AssetTag`
- Data type: `String`
+The profile to which the device enrolled.
 
- Access type: Read/Write
+`AssetTag` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Asset tag of the device.
+Qualifiers: none
 
- `Color`
- Data type: `String`
+Asset tag of the device.
 
- Access type: Read/Write
+`Color` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Color of the device.
+Qualifiers: none
 
- `Description`
- Data type: `String`
+Color of the device.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description of the device.
+Qualifiers: none
 
- `DeviceAssignedBy`
- Data type: `String`
+Description of the device.
 
- Access type: Read/Write
+`DeviceAssignedBy` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The Apple ID of the person who assigned the device.
+Qualifiers: none
 
- `DeviceAssignedDate`
- Data type: `DateTime`
+The Apple ID of the person who assigned the device.
 
- Access type: Read/Write
+`DeviceAssignedDate` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time stamp when the device was assigned to the MDM server.
+Qualifiers: none
 
- `DeviceId`
- Data type: `String`
+The time stamp when the device was assigned to the MDM server.
 
- Access type: Read/Write
+`DeviceId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The device ID of the device
+Qualifiers: none
 
- `DeviceName`
- Data type: `String`
+The device ID of the device
 
- Access type: Read/Write
+`DeviceName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the device.
+Qualifiers: none
 
- `DeviceType`
- Data type: `UInt32`
+Name of the device.
 
- Access type: Read/Write
+`DeviceType` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The platform of the device.
+Qualifiers: [key]
 
- `DiscoverySources`
- Data type: `UInt32`
+The platform of the device.
 
- Access type: Read/Write
+`DiscoverySources` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Discovery source of the device.
+Qualifiers: none
 
- `EnrollmentPackageId`
- Data type: `String`
+Discovery source of the device.
 
- Access type: Read/Write
+`EnrollmentPackageId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The enrollment package ID.
+Qualifiers: none
 
- `EnrollmentStatus`
- Data type: `UInt32`
+The enrollment package ID.
 
- Access type: Read/Write
+`EnrollmentStatus` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Enrollment status of the device.
+Qualifiers: none
 
- `EnrollmentType`
- Data type: `UInt32`
+Enrollment status of the device.
 
- Access type: Read/Write
+`EnrollmentType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The corporate enrollment type.
+Qualifiers: none
 
- `ExchangeDeviceId`
- Data type: `String`
+The corporate enrollment type.
 
- Access type: Read/Write
+`ExchangeDeviceId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The Exchange device ID of the device.
+Qualifiers: none
 
- `IMEI`
- Data type: `String`
+The Exchange device ID of the device.
 
- Access type: Read/Write
+`IMEI` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The IMEI number of the device.
+Qualifiers: none
 
- `LastUpdateTime`
- Data type: `DateTime`
+The IMEI number of the device.
 
- Access type: Read/Write
+`LastUpdateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time stamp when the device was last updated.
+Qualifiers: none
 
- `Model`
- Data type: `String`
+The time stamp when the device was last updated.
 
- Access type: Read/Write
+`Model` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Model of the device.
+Qualifiers: none
 
- `OSVersion`
- Data type: `String`
+Model of the device.
 
- Access type: Read/Write
+`OSVersion` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Operating system version on the device.
+Qualifiers: none
 
- `ProfileAssignedTime`
- Data type: `DateTime`
+Operating system version on the device.
 
- Access type: Read/Write
+`ProfileAssignedTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Time at which the  profile was assigned.
+Qualifiers: none
 
- `ProfileName`
- Data type: `String`
+Time at which the profile was assigned.
 
- Access type: Read/Write
+`ProfileName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the profile.
+Qualifiers: none
 
- `ProfilePushedTime`
- Data type: `DateTime`
+Name of the profile.
 
- Access type: Read/Write
+`ProfilePushedTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time that the profile was pushed from Apple.
+Qualifiers: none
 
- `ProfileStatus`
- Data type: `UInt32`
+The time that the profile was pushed from Apple.
 
- Access type: Read/Write
+`ProfileStatus` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Status of the profile from Apple.
+Qualifiers: none
 
- `ProfileUuid`
- Data type: `String`
+Status of the profile from Apple.
 
- Access type: Read/Write
+`ProfileUuid` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- UUID of the profile currently assigned to the device.
+Qualifiers: none
 
- `RequestEnrollmentProfileAssignedTime`
- Data type: `DateTime`
+UUID of the profile currently assigned to the device.
 
- Access type: Read/Write
+`RequestEnrollmentProfileAssignedTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time that the profile was requested to be assigned to the device.
+Qualifiers: none
 
- `RequestEnrollmentProfileId`
- Data type: `String`
+The time that the profile was requested to be assigned to the device.
 
- Access type: Read/Write
+`RequestEnrollmentProfileId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The profile to which the device is assigned.
+Qualifiers: none
 
- `SerialNumber`
- Data type: `String`
+The profile to which the device is assigned.
 
- Access type: Read/Write
+`SerialNumber` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Serial number of the device.
+Qualifiers: none
 
- `UniqueId`
- Data type: `String`
+Serial number of the device.
 
- Access type: Read/Write
+`UniqueId` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The unique ID of a device.
+Qualifiers: [key]
+
+The unique ID of a device.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

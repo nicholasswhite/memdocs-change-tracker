@@ -1,7 +1,7 @@
 ---
 title: Common issues when enabling TLS 1.2
 description: Describes common issues when enabling Transport Layer Security (TLS) 1.2
-ms.date: 05/04/2021
+ms.date: "2021-05-04T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: troubleshooting
 ms.collection: tier3
@@ -27,7 +27,7 @@ If reports don't show in the Configuration Manager console, make sure to update 
 
 If you enable the FIPS security policy setting for either the client or a server, Secure Channel (Schannel) negotiation can cause them to use TLS 1.0. This behavior happens even if you disable the protocol in the registry.
 
-To investigate, enable Secure Channel event logging, and then review Schannel events in the system log. For more information, see [Restrict the use of certain cryptographic algorithms and protocols in Schannel.dll](/troubleshoot/windows-server/windows-security/restrict-cryptographic-algorithms-protocols-schannel).
+To investigate, enable Secure Channel event logging, and then review Schannel events in the system log. For more information, see [Restrict the use of certain cryptographic algorithms and protocols in Schannel.dll](https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/restrict-cryptographic-algorithms-protocols-schannel).
 
 ## SQL Server communication failure
 
@@ -45,14 +45,12 @@ If the Configuration Manager client doesn't communicate with site roles, verify 
 
 If the reporting services point doesn't configure reports, check the **SRSRP.log** for the following error entry:
 
-`The underlying connection was closed:`
-`An expected error occurred on a receive.`
+`The underlying connection was closed:` `An expected error occurred on a receive.`
 
 To resolve this issue, follow these steps:
 
 1. [Update .NET Framework](enable-tls-1-2-client.md#bkmk_net), and enable strong cryptography on all relevant computers.
-
-1. After you install any updates, restart the SMS_Executive service.
+2. After you install any updates, restart the SMS_Executive service.
 
 ## Service connection point upload failures
 
@@ -72,7 +70,7 @@ The Azure virtual machines used by the cloud management gateway support TLS 1.2.
 
 The **SMSAdminui.log** may contain an error similar to the following example:
 
-``` Log
+```Log
 Microsoft.ConfigurationManager.CloudBase.AAD.AADAuthenticationException
 Service returned error. Check InnerException for more details
 at Microsoft.ConfigurationManager.CloudBase.AAD.AADAuthenticationContext.GetAADAuthResultObject
@@ -87,11 +85,10 @@ at System.Net.HttpWebRequest.GetResponse
 ```
 
 In the System EventLog, SChannel EventID 36874 may be logged with the following description: `An TLS 1.2 connection request was received from a remote client application, but none of the cipher suites supported by the client application are supported by the server. The TLS connection request has failed.`
-<!--SCCMDocs issue #1608-->
 
 ## Additional resources
 
-- [Transport layer security (TLS) best practices with the .NET Framework](/dotnet/framework/network-programming/tls#configuring-security-via-the-windows-registry)
+- [Transport layer security (TLS) best practices with the .NET Framework](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls#configuring-security-via-the-windows-registry)
 - [KB 3135244: TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/topic/kb3135244-tls-1-2-support-for-microsoft-sql-server-e4472ef8-90a9-13c1-e4d8-44aad198cdbe)
 - [Cryptographic controls technical reference](cryptographic-controls-technical-reference.md)
 

@@ -1,16 +1,18 @@
 ---
-title: SMS_CollectionRuleQuery Class
+title: "SMS_CollectionRuleQuery Server WMI Class"
 description: In Configuration Manager, the SMS_CollectionRuleQuery Windows Management Instrumentation class is an SMS Provider server class that represents a member of a collection based on the results of a query.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CollectionRuleQuery Server WMI Class
+
 The `SMS_CollectionRuleQuery` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a member of a collection based on the results of a query.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,53 +26,55 @@ Class SMS_CollectionRuleQuery : SMS_CollectionRule
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_CollectionRuleQuery` class.
 
-|Method|Description|
-|------------|-----------------|
-|[ValidateQuery Method in Class SMS_CollectionRuleQuery](../../../../../develop/reference/core/clients/collections/validatequery-method-in-class-sms_collectionrulequery.md)|Validates the collection rule query.|
+The following table lists the methods in the `SMS_CollectionRuleQuery` class.
+
+| Method | Description |
+| --- | --- |
+| [ValidateQuery Method in Class SMS_CollectionRuleQuery](validatequery-method-in-class-sms_collectionrulequery.md) | Validates the collection rule query. |
 
 ## Properties
- `QueryExpression`
- Data type: `String`
 
- Access type: Read/Write
+`QueryExpression` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- WQL SELECT statement having results that are used to populate the collection. The statement must specify a resource class name. The default value is "".
+Qualifiers: None
 
- Your application can use the `LimitToCollectionID` property to further limit the results. Note that the SMS Provider might alter the text of the query to make it more amenable to collection evaluation.
+WQL SELECT statement having results that are used to populate the collection. The statement must specify a resource class name. The default value is "".
 
- `QueryID`
- Data type: `UInt32`
+Your application can use the `LimitToCollectionID` property to further limit the results. Note that the SMS Provider might alter the text of the query to make it more amenable to collection evaluation.
 
- Access type: Read-only
+`QueryID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Auto-generated ID that is only useful when deleting a rule.
+Qualifiers: [read]
 
- `RuleName`
- Data type: `String`
+Auto-generated ID that is only useful when deleting a rule.
 
- Access type: Read/Write
+`RuleName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CollectionRule Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collectionrule-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_CollectionRule Server WMI Class](sms_collectionrule-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

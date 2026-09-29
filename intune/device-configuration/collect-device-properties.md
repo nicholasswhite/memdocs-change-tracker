@@ -1,7 +1,7 @@
 ---
-title: Collect Device Properties With Intune Properties Catalog
+title: "Use Intune properties catalog to collect device properties from Windows devices"
 description: Use Microsoft Intune properties catalog to collect device properties—including hardware, registry values, and security signals—from Windows devices.
-ms.date: 07/01/2026
+ms.date: "2026-07-01T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1018
@@ -29,39 +29,23 @@ In this article, you'll learn how to create a properties catalog policy, view th
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../includes/requirements/platform.md)]
+![](../media/icons/16/devices.svg) **Device platform requirements**
 
-:::column-end:::
-:::column span="3":::
 > This feature supports Windows devices only.
 >
 > On Android and Apple devices, device properties are collected automatically.
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../includes/requirements/device-configuration.md)]
+![](../media/icons/16/configuration.svg) **Device configuration requirements**
 
-:::column-end:::
-:::column span="3":::
 > This feature supports devices that are:
 >
 > - Managed by Intune
 > - Co-managed (Intune + Configuration Manager)
 > - Microsoft Entra joined
 > - Microsoft Entra hybrid joined
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../includes/requirements/rbac.md)]
+![](../media/icons/16/rbac.svg) **Roles requirements**
 
-:::column-end:::
-:::column span="3":::
 > Role requirements vary based on the tasks being performed.
 >
 > ---
@@ -69,15 +53,13 @@ In this article, you'll learn how to create a properties catalog policy, view th
 > To configure the properties catalog policy, use an account with at least one of the following Intune roles:
 >
 > - [Policy and Profile Manager](../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)
-> - A [custom role] that includes the permissions:
+> - A [custom role](../fundamentals/role-based-access-control/create-custom-role.md) that includes the permissions:
 >   - **Organization/Read** and **Managed Devices/Read** — Required for device visibility.
 >   - **Device configurations/Create, Read, Assign** — Required to create and assign the data collection policy.
 >
 > ---
 >
 > To view the collected data, use an account with the permission **Managed Devices/Read**.
-:::column-end:::
-:::row-end:::
 
 ## Available and required properties
 
@@ -86,14 +68,14 @@ You can collect the following properties. To learn more about the different prop
 When you create the policy, select any of the following property categories to collect. The **required** properties are automatically collected when you collect any property in that category.
 
 | Category | Required properties |
-|--|--|
-| Application Properties | App Name<br/>App Version<br/>Architectures<br/>Install Scope<br/>Install Scope Platform User ID<br/>Install Scope User ID<br/>Publisher |
+| --- | --- |
+| Application Properties | App Name App Version Architectures Install Scope Install Scope Platform User ID Install Scope User ID Publisher |
 | Battery | Instance Name |
-| Bios Info | Bios Name<br/>Software Element ID<br/>Software Element State<br/>Target Operating System |
+| Bios Info | Bios Name Software Element ID Software Element State Target Operating System |
 | CPU | Processor ID |
 | Disk Drive | Drive ID |
 | Encryptable Volume | Volume ID |
-| Local AI Agent | Agent Name<br/>Install Location<br/>Install Scope <br/><br/>Microsoft recommends collecting **Host process**, as OpenClaw can run in different process names, like `node.exe`, `wsl.exe`, etc. |
+| Local AI Agent | Agent Name Install Location Install Scope   Microsoft recommends collecting **Host process**, as OpenClaw can run in different process names, like `node.exe`, `wsl.exe`, etc. |
 | Logical Drive | Drive Identifier |
 | Memory Info | — |
 | Network Adapter | Identifier |
@@ -111,82 +93,68 @@ When you create the policy, select any of the following property categories to c
 
 Use the following steps to create a properties catalog profile and assign it to your Windows devices.
 
-1. In the [Microsoft Intune admin center], select **Devices** > **Windows**.
-1. Under **Manage devices**, select **Configuration** > **Create** > **New Policy**.
-1. Select the following properties and select **Create**:
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **Windows**.
+2. Under **Manage devices**, select **Configuration** &gt; **Create** &gt; **New Policy**.
+3. Select the following properties and select **Create**:
 
-    - **Platform**: Select **Windows 10 and later**.
-    - **Profile type**: Select **Properties catalog**.
+   - **Platform**: Select **Windows 10 and later**.
+   - **Profile type**: Select **Properties catalog**.
+4. In **Basics**, enter the following properties and select **Next**:
 
-1. In **Basics**, enter the following properties and select **Next**:
+   - **Name**: Enter a descriptive name for the new profile.
+   - **Description**: Enter a description for the profile. This setting is optional, but recommended.
+5. Select **Add properties** and select the properties you want to collect. You can select multiple properties from multiple categories.
 
-    - **Name**: Enter a descriptive name for the new profile.
-    - **Description**: Enter a description for the profile. This setting is optional, but recommended.
-
-1. Select **Add properties** and select the properties you want to collect. You can select multiple properties from multiple categories.
-
-    Some required properties are automatically added. For a list, see [Required properties](#available-and-required-properties).
-
-    Select **Next**.
-
-1. Optional. In **Scope (Tags)**, select any scope tags you want to assign to the profile. To learn more about scope tags, see [Use scope tags for distributed IT](../fundamentals/role-based-access-control/scope-tags.md).
-
-    Select **Next**.
-
-1. In **Assignments**, select the groups that receive this profile. For more information on assigning profiles, see [Assign policies in Microsoft Intune](./assign-device-profile.md).
+   Some required properties are automatically added. For a list, see [Required properties](#available-and-required-properties).
 
    Select **Next**.
+6. Optional. In **Scope (Tags)**, select any scope tags you want to assign to the profile. To learn more about scope tags, see [Use scope tags for distributed IT](../fundamentals/role-based-access-control/scope-tags.md).
 
-1. In **Review + create**, review your settings, and select **Create**.
+   Select **Next**.
+7. In **Assignments**, select the groups that receive this profile. For more information on assigning profiles, see [Assign policies in Microsoft Intune](assign-device-profile.md).
+
+   Select **Next**.
+8. In **Review + create**, review your settings, and select **Create**.
 
 When you select **Create**, the profile is assigned to the groups you specified. The profile is also created and shown in the list. The next time each device checks in with the Intune service, the policy applies.
 
 > [!NOTE]
-> It can take up to 24 hours for the initial collection of inventory data.
+>
+> Inventory data collection repeats multiple times per day for active devices, but it can take up to 24 hours for the initial collection of inventory data, as full sync runs once per day.
 
 ## View collected data
 
 Use the following steps to view the collected device inventory information:
 
-1. In the [Microsoft Intune admin center], select **Devices** > **Windows**.
-1. From the devices list, select a device.
-1. Under **Tools**, select **Device Inventory**.
-1. Select a category to view the collected information.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **Windows**.
+2. From the devices list, select a device.
+3. Under **Tools**, select **Device Inventory**.
+4. Select a category to view the collected information.
 
 ## Feature details and usage
 
-:::row:::
-:::column span="1":::
 **Local AI agent**
 
-:::column-end:::
-:::column span="3":::
 > Helps you discover OpenClaw running on your Windows devices. After you deploy the properties catalog policy and start collecting data, the next steps are:
 >
 > - Use [Device Query](../advanced-analytics/device-query-multiple-devices.md) to view devices with a Local AI Agent.
 > - Use the [Local AI Agent Baseline - OpenClaw](../device-security/security-baselines/ref-openclaw-settings.md) to block users from using OpenClaw.
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
 **Registry key inventory**
 
-:::column-end:::
-:::column span="3":::
->Lets you collect selected Windows registry data through the properties catalog for configuration visibility and troubleshooting. Here are some important details about this feature:
+> Lets you collect selected Windows registry data through the properties catalog for configuration visibility and troubleshooting. Here are some important details about this feature:
+>
 > - Supported collection methods include a single value, all values directly under a key (non-recursive), and the same value across immediate subkeys.
 > - Registry key inventory isn't intended to collect sensitive or confidential values and includes detection logic to help prevent potentially sensitive values from being ingested. If a value is flagged as potentially sensitive, it isn't collected.
 > - To view collected registry data, use Device Inventory. Registry key inventory is accessible through existing device inventory permissions and may expose missed sensitive device configuration information; this is an accepted risk, and organizations should review security and privacy implications before enabling broad access.
 > - Initial release limitations include HKLM-only collection and enforced value (6KB) and per-device (100 registry keys) collection limits.
-:::column-end:::
-:::row-end:::
 
 ## Stop collecting properties
 
 You can stop (delete) the collection of properties only at the category level. To stop collecting properties, go to the **properties catalog** profile, and remove the collection for every property in the category.
 
 > [!NOTE]
+>
 > If you delete a properties catalog policy, you can see the last-collected data in Device Inventory for up to 28 days.
 
 ## Troubleshooting
@@ -198,12 +166,3 @@ To troubleshoot issues with the properties catalog, review the client logs at `C
 - [Intune data platform schema](../advanced-analytics/ref-data-platform-schema.md)
 - [Device query](../advanced-analytics/device-query.md)
 - [Device query for multiple devices](../advanced-analytics/device-query-multiple-devices.md)
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-
-
-<!--Intune roles-->
-
-[Custom role]: ../fundamentals/role-based-access-control/create-custom-role.md

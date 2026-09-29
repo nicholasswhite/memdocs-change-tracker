@@ -1,13 +1,15 @@
 ---
 description: "Learn how to notify the caller of progress made on a Desired Configuration Management Agent job using IDCMAgentCallback::NotifyProgress."
-title: "IDCMAgentCallback::NotifyProgress"
-ms.date: 09/20/2016
+title: "IDCMAgentCallback::NotifyProgress Method"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # IDCMAgentCallback::NotifyProgress Method
+
 The `IDCMAgentCallback::NotifyProgress` method, in Configuration Manager, notifies the caller of progress made on a Desired Configuration Management Agent job.
 
 ## Syntax
@@ -21,33 +23,35 @@ HRESULT NotifyProgress(
 ```
 
 #### Parameters
- `pJob`
- Data type: `IDCMAgentJob`
 
- Qualifiers: [in]
+`pJob` Data type: `IDCMAgentJob`
 
- Pointer to the `IDCMAgentJob` object representing the configuration items and their progress.
+Qualifiers: [in]
 
- `msgId`
- Data type: `MessageId`
+Pointer to the `IDCMAgentJob` object representing the configuration items and their progress.
 
- Qualifiers: [in]
+`msgId` Data type: `MessageId`
 
- Nothing is returned for this parameter.
+Qualifiers: [in]
+
+Nothing is returned for this parameter.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but are not limited to, the following:
 
- S_OK
- The method succeeded. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but are not limited to, the following:
+
+S_OK The method succeeded. All other return values indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [IDCMAgentCallback Interface](../../../../../develop/reference/core/clients/client-classes/idcmagentcallback-interface.md)
+
+[IDCMAgentCallback Interface](idcmagentcallback-interface.md)

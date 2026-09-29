@@ -1,7 +1,7 @@
 ---
-title: Sample queries for asset intelligence
+title: "Sample queries for asset intelligence in Configuration Manager"
 description: Sample queries that show how to join the most common Asset Intelligence views to other views.
-ms.date: 12/09/2020
+ms.date: "2020-12-09T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 

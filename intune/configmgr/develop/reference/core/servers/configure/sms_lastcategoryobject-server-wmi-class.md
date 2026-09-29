@@ -1,16 +1,18 @@
 ---
-title: SMS_LastCategoryObject Class
+title: "SMS_LastCategoryObject Server WMI Class"
 description: An SMS Provider server class that represents the object that has this assignment as the last category assignment.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_LastCategoryObject Server WMI Class
+
 The `SMS_LastCategoryObject` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the object that has this assignment as the last category assignment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,40 +26,41 @@ Class SMS_LastCategoryObject : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_LastCategoryObject` class does not define any methods.
+
+The `SMS_LastCategoryObject` class does not define any methods.
 
 ## Properties
- `CategoryID`
- Data type: `String`
 
- Access type: Read/Write
+`CategoryID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the RBA security category.
+Qualifiers: [key]
 
- `ObjectKey`
- Data type: `String`
+ID of the RBA security category.
 
- Access type: Read/Write
+`ObjectKey` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Object key.
+Qualifiers: [key]
 
- `ObjectTypeID`
- Data type: `UInt32`
+Object key.
 
- Access type: Read/Write
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the object type.
+Qualifiers: [key]
+
+ID of the object type.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

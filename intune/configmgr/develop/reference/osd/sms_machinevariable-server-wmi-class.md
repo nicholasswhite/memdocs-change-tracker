@@ -1,16 +1,18 @@
 ---
-title: SMS_MachineVariable Class
+title: "SMS_MachineVariable Server WMI Class"
 description: The SMS_MachineVariable WMI class defines the settings of a task sequence variable that is unique to a specific computer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MachineVariable Server WMI Class
+
 The `SMS_MachineVariable` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that defines the settings of a task sequence variable that is unique to a specific computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,55 +26,57 @@ Class SMS_MachineVariable
 ```
 
 ## Methods
- The `SMS_MachineVariable` class doesn't define any methods.
+
+The `SMS_MachineVariable` class doesn't define any methods.
 
 ## Properties
- `IsMasked`
- Data type: `Boolean`
 
- Access type: Read/Write
+`IsMasked` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- This property isn't currently used.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+This property isn't currently used.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The name of the machine variable. The default value is "".
+Qualifiers: [key]
 
- `Value`
- Data type: `String`
+The name of the machine variable. The default value is "".
 
- Access type: Read/Write
+`Value` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The machine variable value. The default value is `null`.
+Qualifiers: None
+
+The machine variable value. The default value is `null`.
 
 ## Remarks
- The task sequence variable can customize the behavior of a task sequence for a specific computer, and it overrides any definition that is set by [SMS_CollectionVariable Server WMI Class](../../../develop/reference/osd/sms_collectionvariable-server-wmi-class.md). These variables are automatically replicated down through the site hierarchy. For example, if a variable is declared on the primary child site server, it will be available on the primary grandchild site server, but not on the primary site server.
 
- Class qualifiers for this class include:
+The task sequence variable can customize the behavior of a task sequence for a specific computer, and it overrides any definition that is set by [SMS_CollectionVariable Server WMI Class](sms_collectionvariable-server-wmi-class.md). These variables are automatically replicated down through the site hierarchy. For example, if a variable is declared on the primary child site server, it will be available on the primary grandchild site server, but not on the primary site server.
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-  Your application uses this class to create objects that are embedded by the [SMS_MachineSettings Server WMI Class](../../../develop/reference/osd/sms_machinesettings-server-wmi-class.md) and accessed by using the `MachineVariables` property. For an example of the use of this class, see How to Create a Computer Variable in Configuration Manager.
+  Your application uses this class to create objects that are embedded by the [SMS_MachineSettings Server WMI Class](sms_machinesettings-server-wmi-class.md) and accessed by using the `MachineVariables` property. For an example of the use of this class, see How to Create a Computer Variable in Configuration Manager.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_MachineSettings Server WMI Class](../../../develop/reference/osd/sms_machinesettings-server-wmi-class.md)
- [SMS_CollectionVariable Server WMI Class](../../../develop/reference/osd/sms_collectionvariable-server-wmi-class.md)
+
+[SMS_MachineSettings Server WMI Class](sms_machinesettings-server-wmi-class.md) [SMS_CollectionVariable Server WMI Class](sms_collectionvariable-server-wmi-class.md)

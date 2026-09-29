@@ -1,7 +1,7 @@
 ---
 title: Device association lifecycle management
 description: Manage the Windows Autopilot device association lifecycle, including resetting devices, uploading updated device information, working with registered Windows Autopilot devices, stale records, and decommissioning.
-ms.date: 09/01/2026
+ms.date: "2026-09-01T00:00:00Z"
 ms.topic: concept-article
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>

@@ -1,7 +1,7 @@
 ---
 title: Remote actions with co-management
 description: Run remote actions from Intune for co-managed devices
-ms.date: 11/08/2021
+ms.date: "2021-11-08T00:00:00Z"
 ms.subservice: co-management
 ms.topic: article
 ms.collection: tier3
@@ -14,7 +14,7 @@ You need to make sure that every device you manage is reachable, no matter where
 
 In the following video, principal program manager Heidi Cheng and senior program manager Danny Guillory discuss and demo remote actions with co-management:
 
-> [!VIDEO https://aka.ms/docs/player?id=0c095272-87a5-40d3-af67-c420c010c783]
+[Embedded video](https://aka.ms/docs/player?id=0c095272-87a5-40d3-af67-c420c010c783)
 
 ## Benefits
 
@@ -36,8 +36,7 @@ For more information on these actions, see [Available device actions](../../devi
 
 The global consulting firm Avanade regularly uses remote actions to manage the devices used by their 30,000 employees. In a blog post, the CIO of Avanade noted:
 
-> *Our immediate win from having the Intune functionality was the ability to remotely reset Windows on a machine. This is important to us for lost or stolen machines, which is more common in our highly mobile workforce.*
-> *This is functionality that we otherwise would have had to build and maintain in a custom ConfigMgr package.*
+> *Our immediate win from having the Intune functionality was the ability to remotely reset Windows on a machine. This is important to us for lost or stolen machines, which is more common in our highly mobile workforce.* *This is functionality that we otherwise would have had to build and maintain in a custom ConfigMgr package.*
 
 For more information on how to use these device actions, see [Available device actions](../../device-management/actions/index.md#available-device-actions).
 
@@ -56,15 +55,12 @@ Use these remote actions from Intune once you [enable co-management](how-to-enab
 #### Remove devices
 
 - **Retire**: This action removes managed apps and data (where applicable), settings, and e-mail profiles that were assigned to that device. The device is then removed from Intune management. This process happens the next time the device checks in and receives the remote retire action. The Retire function leaves the user's personal data on the device.
-
 - **Wipe**: This action restores a device to its factory default settings. If you choose the option to **Retain enrollment state and user account**, then the user data is kept. Otherwise the drive is securely erased.
-
 - **Delete**: If you want to remove devices from the Microsoft Intune admin center, delete them from the specific device pane. The next time the device checks in, it removes any organizational data stored on it.
 
 For more information, see [Remove devices by using wipe, retire, or manually unenrolling the device](../../device-management/actions/wipe.md).
 
 #### Selective wipe
-<!--SCCMDocs issue 973-->
 
 When you choose an **App selective wipe**, it removes company app data without removing personal data. Use this action when a device is reported as lost or stolen.
 

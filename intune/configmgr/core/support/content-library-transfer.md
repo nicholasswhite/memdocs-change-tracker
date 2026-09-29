@@ -1,7 +1,7 @@
 ---
 title: Content Library Transfer tool
 description: Use the Content Library Transfer tool to transfer content from one disk drive to another on a Configuration Manager distribution point.
-ms.date: 07/30/2018
+ms.date: "2018-07-30T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -18,29 +18,23 @@ The tool is useful for the scenario when the disk drive hosting the content libr
 
 Once the transfer is complete, content is accessible to client computers from the new location.
 
-
-
 ## Usage
 
 Run **ContentLibraryTransfer.exe** as a user with administrative permissions on the distribution point.
 
 #### Syntax
+
 `ContentLibraryTransfer.exe –SourceDrive <drive letter of source drive> –TargetDrive <drive letter of destination drive>`
 
 #### Example
+
 `ContentLibraryTransfer –SourceDrive E –TargetDrive G`
-
-
 
 ## Limitations
 
 - Run the tool locally on the distribution point. You can't run it from a remote computer.
-
 - Only use it when clients aren't actively accessing the distribution point. If you run the tool while clients are accessing content, the content library on the destination drive may have incomplete data. The data transfer might fail altogether leading to an unusable content library.
-
 - Don't distribute content to the distribution point when you run the tool. If you run the tool while content is being written to the distribution point, the content library on the destination drive may have incomplete data. The data transfer might fail altogether leading to an unusable content library.
-
-
 
 ## See also
 

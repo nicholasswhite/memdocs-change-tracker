@@ -1,7 +1,7 @@
 ---
 title: About Maintenance Windows
 description: Use Maintenance Windows article provides more information about Configuration Manager maintenance Windows.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: concept-article
 ms.collection: tier3

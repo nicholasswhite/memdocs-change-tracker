@@ -1,7 +1,7 @@
 ---
-title: SMS_AppRelation_Flat Class
+title: "SMS_AppRelation_Flat Server WMI Class"
 description: Details of the SMS_AppRelation_Flat WMI class
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,9 +9,10 @@ ms.service: configuration-manager
 ---
 
 # SMS_AppRelation_Flat Server WMI Class
+
 The `SMS_AppRelation_Flat` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the flattened application relation. This includes direct and indirect relations.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,96 +29,94 @@ Class SMS_AppRelation_Flat : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AppRelation_Flat` class does not define any methods.
+
+The `SMS_AppRelation_Flat` class does not define any methods.
 
 ## Properties
- `FromApplicationCIID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`FromApplicationCIID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- From-application configuration item identifier.
+Qualifiers: [key]
 
- `FromDeploymentTypeCIID`
- Data type: `UInt32`
+From-application configuration item identifier.
 
- Access type: Read/Write
+`FromDeploymentTypeCIID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- From-deployment type identifier.
+Qualifiers: [key]
 
- `Level`
- Data type: `UInt32`
+From-deployment type identifier.
 
- Access type: Read/Write
+`Level` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Level between the from-deployment type and the to-deployment type.
+Qualifiers: [key]
 
- `RelationType`
- Data type: `UInt32`
+Level between the from-deployment type and the to-deployment type.
 
- Access type: Read/Write
+`RelationType` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Type of relationship between configuration items. Possible values are:
+Qualifiers: [key]
 
-|Value|Relationship|
-|-|-|
-|1|Bundled|
-|2|Required|
-|3|Prohibited|
-|4|Optional|
-|5|Derived|
-|6|Superseded|
-|7|Self|
-|8|Reference|
-|9|AppToDTReference|
-|10|AppDependence|
-|11|Intention|
-|12|Platform|
-|13|GlobalConditionReference|
-|15|ApplicationSuperSeded|
-|16|ApplicationType|
-|17|ApplicationHost|
-|18|ApplicationInstaller|
-|19|SupersedOrDependent|
-|20|VirtualEnvironmentReference|
-|21|AppDCMReference|
-|22|DeploymentTypeToPolicyTemplateReference|
-|23|CIInheritanceRelation|
-|24|AppConfigTemplateReference|
-|25|AppGroupItemReference|
+Type of relationship between configuration items. Possible values are:
 
- `ToApplicationCIID`
- Data type: `UInt32`
+| Value | Relationship |
+| --- | --- |
+| 1 | Bundled |
+| 2 | Required |
+| 3 | Prohibited |
+| 4 | Optional |
+| 5 | Derived |
+| 6 | Superseded |
+| 7 | Self |
+| 8 | Reference |
+| 9 | AppToDTReference |
+| 10 | AppDependence |
+| 11 | Intention |
+| 12 | Platform |
+| 13 | GlobalConditionReference |
+| 15 | ApplicationSuperSeded |
+| 16 | ApplicationType |
+| 17 | ApplicationHost |
+| 18 | ApplicationInstaller |
+| 19 | SupersedOrDependent |
+| 20 | VirtualEnvironmentReference |
+| 21 | AppDCMReference |
+| 22 | DeploymentTypeToPolicyTemplateReference |
+| 23 | CIInheritanceRelation |
+| 24 | AppConfigTemplateReference |
+| 25 | AppGroupItemReference |
 
- Access type: Read/Write
+`ToApplicationCIID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- To-application configuration item identifier.
+Qualifiers: [key]
 
- `ToDeploymentTypeCIID`
- Data type: `UInt32`
+To-application configuration item identifier.
 
- Access type: Read/Write
+`ToDeploymentTypeCIID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- To-deployment type configuration item identifier.
+Qualifiers: [key]
+
+To-deployment type configuration item identifier.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

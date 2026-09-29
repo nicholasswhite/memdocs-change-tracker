@@ -1,7 +1,7 @@
 ---
-title: Use Windows Holographic devices with Microsoft Intune
+title: "Manage and use different device management features on Windows Holographic and HoloLens devices with Intune"
 description: Use Microsoft Intune to manage and complete different tasks on devices running Windows Holographic for Business and HoloLens. You can configure the Company Portal app, create a compliance policy, customize OMA-URI settings, deploy apps, categorize devices in groups, create profiles, restrict devices, enable software updates, set terms and conditions, configure VPN and Wi-Fi settings, and use Hello for Business.
-ms.date: 03/17/2025
+ms.date: "2025-03-17T00:00:00Z"
 ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
@@ -9,7 +9,7 @@ ms.collection:
 
 # Manage and use different device management features on Windows Holographic and HoloLens devices with Intune
 
-Microsoft Intune includes many features to help manage devices that run Windows Holographic for Business, like the [Microsoft HoloLens](/hololens/). Using Intune, you can confirm that devices are compliant with your organization's rules, and you can customize the device by adding a VPN or WiFi profile. Another key feature is to use the device as a Kiosk, and run a specific app, or a specific set of apps.
+Microsoft Intune includes many features to help manage devices that run Windows Holographic for Business, like the [Microsoft HoloLens](https://learn.microsoft.com/en-us/hololens/). Using Intune, you can confirm that devices are compliant with your organization's rules, and you can customize the device by adding a VPN or WiFi profile. Another key feature is to use the device as a Kiosk, and run a specific app, or a specific set of apps.
 
 The tasks in this article help you manage, customize, and secure your devices running Windows Holographic for Business, including software updates and using Windows Hello for Business.
 
@@ -21,10 +21,9 @@ This article describes the different features and services you can use to manage
 
 Microsoft Entra ID helps manage and control your devices running Windows Holographic for Business. When you use Intune and Microsoft Entra ID, you can:
 
-- **[Join devices to Microsoft Entra ID](/entra/identity/devices/device-join-plan)**: In Microsoft Entra ID, you can add your work-owned Windows devices, including devices running Windows Holographic for Business. This feature allows Microsoft Entra ID to control the device. It helps confirm that users are accessing the company resources from devices that meet your security and compliance standards.
+- **[Join devices to Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/devices/device-join-plan)**: In Microsoft Entra ID, you can add your work-owned Windows devices, including devices running Windows Holographic for Business. This feature allows Microsoft Entra ID to control the device. It helps confirm that users are accessing the company resources from devices that meet your security and compliance standards.
 
-  For information, go to [Device identity in Microsoft Entra ID](/entra/identity/devices/overview).
-
+  For information, go to [Device identity in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/devices/overview).
 - **[Bulk enrollment for Windows devices](../device-enrollment/windows/create-bulk-package.md)**: You can join large numbers of new Windows devices to Microsoft Entra ID and Intune. This feature is called bulk enrollment, and uses provisioning packages. These packages join the devices running Windows Holographic for Business to your Microsoft Entra tenant, and enrolls them in Intune.
 
 ## Company Portal app
@@ -63,8 +62,8 @@ Microsoft Intune can deploy Universal Windows Apps (UWP) to Microsoft HoloLens d
 - To deploy Line-of-Business (LOB) apps using the Intune admin center, go to [How to add Windows line-of-business apps to Microsoft Intune](../app-management/deployment/add-lob-windows.md).
 
   > [!NOTE]
+  >
   > Intune allows a maximum package size to 8 GB. This package size is only available for the LOB apps uploaded to Intune.
-
 - To learn about app management with Microsoft Intune, go to [What is app management in Microsoft Intune](../app-management/overview.md).
 - To learn more about developing apps for Microsoft HoloLens, go to [Mixed reality apps for Microsoft HoloLens](https://www.microsoft.com/hololens/apps).
 
@@ -75,9 +74,7 @@ Intune has some built-in actions that allow IT admins to do different tasks loca
 When you manage devices running Windows Holographic for Business, the following remote actions can be used:
 
 - **[Wipe](../device-management/actions/wipe.md)**: The **Wipe** action removes the device from Intune, and restores the device back to its factory default settings. Use this action before giving the device to a new user, or when the device is lost or stolen.
-
 - **[Retire](../device-management/actions/retire.md)**: The **Retire** action removes the device from Intune. It also removes managed app data, settings, and email profiles assigned by Intune. The user's personal data stays on the device.
-
 - **[Sync devices to get the latest policies and actions](../device-management/actions/sync.md)**: The **Sync** action forces the device to immediately check in with Intune. When a device checks in, the device receives any pending actions or policies that are assigned. This feature helps you validate and troubleshoot policies you assigned, without waiting for the next scheduled check-in.
 
 For information about managing devices using the Intune admin center, go to [What is Microsoft Intune device management?](../device-management/actions/index.md).
@@ -100,7 +97,7 @@ In your profiles, you can use OMA-URI to customize some settings, create device 
 
 To configure OMA-URI (Open Mobile Alliance Uniform Resource Identifier) settings, you can create a custom profile in Intune. Use the OMA-URI settings to control different features on your Windows Holographic for Business devices. Typically, custom profiles are used to configure settings that aren't built-in to Intune.
 
-The [HoloLens 2 devices example](../device-configuration/templates/configure-wdac-hololens.md) uses the [Windows Defender Application Control (WDAC) CSP](/windows/client-management/mdm/applicationcontrol-csp) to allow or block apps from opening on HoloLens 2 devices.
+The [HoloLens 2 devices example](../device-configuration/templates/configure-wdac-hololens.md) uses the [Windows Defender Application Control (WDAC) CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/applicationcontrol-csp) to allow or block apps from opening on HoloLens 2 devices.
 
 ### [Configure kiosk mode](../device-configuration/templates/ref-kiosk-settings-windows-holographic.md)
 
@@ -115,6 +112,7 @@ Device restrictions let you control different settings and features on your devi
 Virtual private networks (VPNs) give your users secure remote access to your organization network. In Intune, you can create a VPN profile that includes specific settings for your devices running Windows Holographic for Business. For example, you can create a VPN profile so all Windows Holographic for Business devices use Citrix VPN as the connection type.
 
 > [!NOTE]
+>
 > When assigning a VPN policy to Windows Holographic for Business devices, assign the profile to the device scope. Currently, Windows Holographic only supports the device scope. When the VPN profile is installed in the device context, it applies to all users on the device. If a user profile is deployed, it's treated as a device profile.
 
 ### [Configure Wi-Fi](../device-configuration/templates/configure-wifi.md)

@@ -1,7 +1,7 @@
 ---
-title: SMS_AzureServicesTask Class
+title: "SMS_AzureServicesTask server WMI class"
 description: An SMS Provider server class that represents a Microsoft Azure specific operation that can be performed on the specified Microsoft Azure service. This class can be used to initiate an operation and monitor the results of the operation.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -32,115 +32,110 @@ Class SMS_AzureServicesTask : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AzureServicesTask` class doesn't define any methods.
+
+The `SMS_AzureServicesTask` class doesn't define any methods.
 
 ## Properties
- `AzureServiceId`
- Data type: `UInt32`
 
- Access type: Read/Write
+`AzureServiceId` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The service identifier key for the `SMS_AzureService` instance on which the current task will be performed.
+Qualifiers: none
 
- `SiteCode`
- Data type: `String`
+The service identifier key for the `SMS_AzureService` instance on which the current task will be performed.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Site code of the site that owns the task.
+Qualifiers: none
 
- `TaskCreationTime`
- Data type: `DateTime`
+Site code of the site that owns the task.
 
- Access type: Read/Write
+`TaskCreationTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Time the task was created.
+Qualifiers: none
 
- `TaskEndTime`
- Data type: `DateTime`
+Time the task was created.
 
- Access type: Read/Write
+`TaskEndTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Time the task ended.
+Qualifiers: none
 
- `TaskID`
- Data type: `UInt32`
+Time the task ended.
 
- Access type: Read/Write
+`TaskID` Data type: `UInt32`
 
- Qualifiers: [key, not_null]
+Access type: Read/Write
 
- Identifier of the Microsoft Azure service task.
+Qualifiers: [key, not_null]
 
- `TaskKeyValue`
- Data type: `String`
+Identifier of the Microsoft Azure service task.
 
- Access type: Read/Write
+`TaskKeyValue` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Input for the task - if necessary. This value isn't needed for `CreateDeployment`, `UpgradeDeployment`, `DeleteDeployment`, `StopDeployment`, or `StartDeployment` and any value will be ignored.
+Qualifiers: none
 
- `TaskStateId`
- Data type: `UInt32`
+Input for the task - if necessary. This value isn't needed for `CreateDeployment`, `UpgradeDeployment`, `DeleteDeployment`, `StopDeployment`, or `StartDeployment` and any value will be ignored.
 
- Access type: Read/Write
+`TaskStateId` Data type: `UInt32`
 
- Qualifiers: [values]
+Access type: Read/Write
 
- Identifier of the current task state. Possible values are:
+Qualifiers: [values]
 
-|Value|Task state|
-|-|-|
-|1|Created|
-|2|In Progress|
-|3|Completed|
-|4|Failed|
+Identifier of the current task state. Possible values are:
 
- `TaskTypeId`
- Data type: `UInt32`
+| Value | Task state |
+| --- | --- |
+| 1 | Created |
+| 2 | In Progress |
+| 3 | Completed |
+| 4 | Failed |
 
- Access type: Read/Write
+`TaskTypeId` Data type: `UInt32`
 
- Qualifiers: [not_null, values]
+Access type: Read/Write
 
- Identifier for type of task. Possible values are:
+Qualifiers: [not_null, values]
 
-|Value|Task type|
-|-|-|
-|1|CreateDeployment|
-|2|UpgradeDeployment|
-|3|DeleteDeployment|
-|4|StopDeployment|
-|5|StartDeployment|
+Identifier for type of task. Possible values are:
 
- `Type`
- Data type: `UInt32`
+| Value | Task type |
+| --- | --- |
+| 1 | CreateDeployment |
+| 2 | UpgradeDeployment |
+| 3 | DeleteDeployment |
+| 4 | StopDeployment |
+| 5 | StartDeployment |
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Type of task. Possible values are:
+Qualifiers: none
 
-|Value|Task type|
-|-|-|
-|0|RunOnce|
+Type of task. Possible values are:
+
+| Value | Task type |
+| --- | --- |
+| 0 | RunOnce |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: Questions with policies and profiles in Microsoft Intune
+title: "Common questions, answers, and scenarios with policies and profiles in Microsoft Intune"
 description: Common questions, answers, and scenarios with device policies and profiles in Microsoft Intune. Learn more about profile changes not applying to users or devices, how long it takes for new policies to deploy, which settings apply when there are conflicts, what happens when you delete or remove a profile, and more.
-ms.date: 05/19/2026
+ms.date: "2026-05-19T00:00:00Z"
 ms.update-cycle: 180-days
 ms.topic: troubleshooting
 ms.reviewer:
@@ -12,7 +12,9 @@ ms.collection:
 
 # Common questions, answers, and scenarios with policies and profiles in Microsoft Intune
 
-[!INCLUDE [windows-phone-81-windows-10-mobile-support](../includes/windows-phone-81-windows-10-mobile-support.md)]
+> [!IMPORTANT]
+>
+> On October 22, 2022, Microsoft Intune ended support for devices running Windows 8.1. Technical assistance and automatic updates on these devices aren't available.
 
 Get answers to common questions when working with policies in Intune. This article also lists the check-in time intervals, provides more detains on conflicts, and more.
 
@@ -29,7 +31,7 @@ This article applies to the following policies:
 
 When a device syncs with Intune, it checks for configuration for the current user or device context, and receives any pending actions, policies, and apps assigned to it.
 
-For app protection policy refresh intervals, go to [App Protection Policy delivery timing](../app-management/protection/policy-delivery-timing.md).
+For app protection policy refresh intervals, go to [App Protection Policy delivery timing](../app-management/protection/policy-delivery-timing.md).
 
 There are three main types of device syncs - change-based, client initiated, and single device.
 
@@ -40,7 +42,7 @@ These syncs happen when different actions trigger a notification for the device 
 Intune notifies online devices to sync with the Intune service. The notification times can vary from immediately up to a few hours. They can also vary between platforms. To learn more, see:
 
 - Android - [Google Mobile Services (GMS) can affect policy refresh intervals](../app-management/manage-without-gms.md#some-tasks-can-be-delayed)
-- iOS/iPadOS  - [Specific conditions can affect policy refresh intervals](/troubleshoot/mem/intune/device-configuration/2016341112-ios-device-is-currently-busy)
+- iOS/iPadOS - [Specific conditions can affect policy refresh intervals](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-configuration/2016341112-ios-device-is-currently-busy)
 
 An offline device, like when it's powered off, or a disconnected device, might not receive the notifications. In this case, the device gets the policy or profile on its next sync with Intune.
 
@@ -60,10 +62,9 @@ The following client syncs happen in response to a device event or state change,
 - **Maintenance syncs** - These syncs include a large number of client-initiated syncs and they occur at predetermined intervals. The client or service can initiate the sync, depending on the platform. The estimated check-in schedule for all platforms is about every 8 hours.
 
   Independent of the client schedule, devices are only allowed one maintenance sync every 6.5 hours.
+- **Newly enrolled devices** - When devices first enroll, syncs run more frequently to run configuration, compliance, and noncompliance checks. The check-ins are estimated at:
 
-- **Newly enrolled devices** - When devices first enroll, syncs run more frequently to run configuration, compliance, and noncompliance checks. The check-ins are estimated at:
-
-  | Platform | Estimated refresh cycle|
+  | Platform | Estimated refresh cycle |
   | --- | --- |
   | Android, AOSP | Every 3 minutes for 15 minutes, then every 15 minutes for 2 hours, and then around every 8 hours |
   | iOS/iPadOS | Every 15 minutes for 1 hour, and then around every 8 hours |
@@ -74,17 +75,16 @@ The following client syncs happen in response to a device event or state change,
 
 Admins or end users initiate these check-ins when they run certain actions on a single device:
 
-- **End-users actions** - Includes actions made by users in the Company Portal website or app, like [checking the compliance status](../user-help/compliance/validate-status-company-portal-website.md), syncing for policy or profile updates, or [installing apps](../user-help/apps/manage-apps-company-portal-website.md#available-and-required-apps).
-
+- **End-users actions** - Includes actions made by users in the Company Portal website or app, like [checking the compliance status](../user-help/compliance/validate-status-company-portal-website.md), syncing for policy or profile updates, or [installing apps](../user-help/apps/manage-apps-company-portal-website.md#available-and-required-apps).
 - **Admin actions** - Includes actions made by admins in the Intune admin center, like a [device sync](../device-management/actions/sync.md), [remote lock](../device-management/actions/remote-lock.md), or [reset passcode](../device-management/actions/reset-passcode.md). Other actions like [remotely assist users](../remote-help/index.md) don't cause a device check-in.
 
 ## Company portal
 
-At any time, users can open the Company Portal app and navigate to **Devices** > **Check Status** to evaluate your device's settings and verify access to work or school resources or navigate to **Settings** > **Sync** to get the latest updates, requirements, and communications from your organization.
+At any time, users can open the Company Portal app and navigate to **Devices** &gt; **Check Status** to evaluate your device's settings and verify access to work or school resources or navigate to **Settings** &gt; **Sync** to get the latest updates, requirements, and communications from your organization.
 
 For related information about the Intune Management Extension agent or Win32 apps, see [Win32 app management in Microsoft Intune](../app-management/deployment/win32.md).
 
-For related information, see  [Sync enrolled device for Windows](../user-help/device-actions/sync-device-windows.md) and [Check device access in Company Portal for Windows](../user-help/compliance/validate-device-access-windows.md).
+For related information, see [Sync enrolled device for Windows](../user-help/device-actions/sync-device-windows.md) and [Check device access in Company Portal for Windows](../user-help/compliance/validate-device-access-windows.md).
 
 ## Conflicts
 
@@ -107,9 +107,7 @@ A policy is deployed to the app and takes effect. A second policy is deployed. I
 When two or more policies are assigned to the same user or device, then the setting that applies happens at the individual setting level:
 
 - If you use compliance policies to evaluate device settings, then the settings within the compliance policy take precedence over the same setting within device configuration policies. Compliance policy settings always have precedence over configuration profile settings.
-
 - If a compliance policy evaluates against the same setting in another compliance policy, then the most restrictive compliance policy setting applies.
-
 - If a configuration policy setting conflicts with a setting in another configuration policy, this conflict is shown in Intune. Manually resolve these conflicts.
 
 In the Intune admin center, there are a few places you can create configuration policies, including Group Policy analytics, endpoint security, security baselines, and more. If there's a conflict and you have multiple policies, then check all the places you configured policies. Also, the built-in reporting features can help with conflicts. For more information on the available reports, go to [Intune reports](../device-management/reports/overview.md).
@@ -135,11 +133,9 @@ When you delete a profile, or remove a device from a group that's assigned the p
     - Allow voice roaming
     - Allow data roaming
     - Allow automatic synchronization while roaming
-
   - **Windows devices**: After you remove or unassign the profile, have the Microsoft Entra user sign in to the device, and [sync with the Intune service](../user-help/device-actions/sync-device-windows.md).
 
     Intune settings are based on the Windows configuration service provider (CSPs). The behavior depends on the CSP. Some CSPs remove the setting, and some CSPs keep the setting, also called tattooing.
-
 - A profile applies to a user group. Later, a user is removed from the group. For the settings to be removed from that user, it can take up to 7 hours or more for:
 
   - The profile to be removed from the policy assignment in the Intune admin center
@@ -156,7 +152,7 @@ Some settings on Windows client devices can show as **Not Applicable**. When thi
 - The setting is only available for newer versions of Windows, and not the current operating system (OS) version on the device.
 - The setting is only available for specific Windows editions or specific SKUs, such as Home, Professional, Enterprise, and Education.
 
-To learn more about the version and edition requirements for the different settings, see the [Configuration Service Provider (CSP) reference](/windows/client-management/mdm/configuration-service-provider-reference).
+To learn more about the version and edition requirements for the different settings, see the [Configuration Service Provider (CSP) reference](https://learn.microsoft.com/en-us/windows/client-management/mdm/configuration-service-provider-reference).
 
 ## When devices enroll, there's a delay in applying apps and policies assigned to dynamic device groups
 
@@ -167,20 +163,18 @@ Dynamic group membership requires additional processing after a device enrolls. 
 If fast delivery of apps and policies is important to your enrollment scenario, consider these alternatives:
 
 - **User groups** — Assign apps and policies to user groups instead of dynamic device groups. User groups are pre-populated with members before device setup and don't depend on post-enrollment group membership processing.
-
 - **Assignment filters** — Use [assignment filters](../fundamentals/filters/overview.md) to target devices based on properties like OS type, manufacturer, or enrollment profile. Filters evaluate directly at device check-in without depending on group membership processing. Apply filters to broad groups like *All devices* for fast, predictable policy delivery during enrollment.
-
 - **Enrollment time grouping** — If you need to keep using device groups for enrollment targeting, [enrollment time grouping](../device-enrollment/setup-time-grouping.md) adds devices to a security group during enrollment rather than after, so apps and policies assigned to that group are delivered on the first check-in.
 
 For more information on dynamic groups, go to:
 
 - [Add groups to organize users and devices in Intune](../fundamentals/tenant-administration/add-groups.md)
 - [Performance recommendations when using Intune to group, target, and filter](../fundamentals/filters/performance-recommendations.md)
-- [Dynamic membership rules for groups in Microsoft Entra ID](/azure/active-directory/enterprise-users/groups-dynamic-membership)
+- [Dynamic membership rules for groups in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership)
 
 ## Unassigned device compliance policy still assigned and enforced
 
-When you unassign a compliance policy from a device and its associated user, the policy might still show as being assigned in the Intune admin center > Devices > Compliance.
+When you unassign a compliance policy from a device and its associated user, the policy might still show as being assigned in the Intune admin center &gt; Devices &gt; Compliance.
 
 The policy continues to be assigned and in effect until the device syncs with the Intune service. This behavior is by design.
 
@@ -193,11 +187,11 @@ To learn more, see:
 
 ## "The sync could not be initiated (0x80072f9a)" error
 
-On Windows devices, when trying to sync in the **Settings** app > **Accounts** > **Access work or school**, you might see a `The sync could not be initiated (0x80072f9a)` error.
+On Windows devices, when trying to sync in the **Settings** app &gt; **Accounts** &gt; **Access work or school**, you might see a `The sync could not be initiated (0x80072f9a)` error.
 
 If the Trusted Platform Module (TPM) was reset to factory settings, then the device must reenroll to resume syncing. The device's Microsoft Entra identity is stored in the TPM. So, if the ID is removed, then reenrollment is the only way to reestablish the Microsoft Entra identity.
 
 ## Related articles
 
-- [Troubleshoot policies and profiles](/troubleshoot/mem/intune/troubleshoot-policies-in-microsoft-intune).
+- [Troubleshoot policies and profiles](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-policies-in-microsoft-intune).
 - Need extra help? See [How to get support in Microsoft Intune](../fundamentals/it-pro-support/get-support-admin-center.md).

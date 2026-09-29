@@ -1,19 +1,22 @@
 ---
 description: Learn how to represent the basic properties of the site control file in Configuration Manager using SMS_SCI_FileDefinition.
-title: SMS_SCI_FileDefinition Class
-ms.date: 09/20/2016
+title: "SMS_SCI_FileDefinition Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SCI_FileDefinition Server WMI Class
+
 The `SMS_SCI_FileDefinition` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the basic properties of the site control file.
 
 > [!NOTE]
->  This class is vital to the operation of the site control infrastructure. Changing the values for an existing site might render the site control file unusable for further configuration. Existing objects for functioning sites should not be changed.
+>
+> This class is vital to the operation of the site control infrastructure. Changing the values for an existing site might render the site control file unusable for further configuration. Existing objects for functioning sites should not be changed.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,92 +35,89 @@ Class SMS_SCI_FileDefinition : SMS_SiteControlItem
 ```
 
 ## Methods
- The `SMS_SCI_FileDefinition` class doesn't define any methods.
+
+The `SMS_SCI_FileDefinition` class doesn't define any methods.
 
 ## Properties
- `Comment`
- Data type: `String`
 
- Access type: Read/Write
+`Comment` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Free-format comment. The default value is "".
+Qualifiers: None
 
- `FileType`
- Data type: `UInt32`
+Free-format comment. The default value is "".
 
- Access type: Read/Write
+`FileType` Data type: `UInt32`
 
- Qualifiers: [key, enumeration:ToSubClass]
+Access type: Read/Write
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, enumeration:ToSubClass]
 
- `ItemName`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `OriginatingSite`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`OriginatingSite` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Site that originated the creation of the value indicated by `TargetSite`. The default value is "".
+Qualifiers: None
 
- `SerialNumber`
- Data type: `UInt32`
+Site that originated the creation of the value indicated by `TargetSite`. The default value is "".
 
- Access type: Read-only
+`SerialNumber` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Serial number of the actual site control file. It's incremented each time the site control file changes.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Serial number of the actual site control file. It's incremented each time the site control file changes.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read/Write
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, SizeLimit("3")]
 
- `TargetSite`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read/Write
+`TargetSite` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Site for which you're creating the site control file. The default value is "".
+Qualifiers: None
+
+Site for which you're creating the site control file. The default value is "".
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md)

@@ -1,16 +1,18 @@
 ---
-title: CCM_Policy_Policy Class
+title: "CCM_Policy_Policy Client WMI Class"
 description: A client Windows Management Instrumentation class that defines a policy object for a client policy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Policy_Policy Client WMI Class
+
 In Configuration Manager, the `CCM_Policy_Policy` class is a client Windows Management Instrumentation (WMI) class that defines a policy object for a client policy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,101 +31,97 @@ Class CCM_Policy_Policy : CCM_Policy_Config
 ```
 
 ## Methods
- The `CCM_Policy_Policy` class doesn't define any methods.
+
+The `CCM_Policy_Policy` class doesn't define any methods.
 
 ## Properties
- `DownloadSource`
- Data type: `String`
 
- Access type: Read/Write
+`DownloadSource` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- Location from which the policy is downloaded.
+Qualifiers: [Not_Null:ToInstance]
 
- `PolicyCookie`
- Data type: `String`
+Location from which the policy is downloaded.
 
- Access type: Read/Write
+`PolicyCookie` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Arbitrary data used by the source authority.
+Qualifiers: [key]
 
- `PolicyHash`
- Data type: `String`
+Arbitrary data used by the source authority.
 
- Access type: Read/Write
+`PolicyHash` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Reserved.
+Qualifiers: None
 
- `PolicyID`
- Data type: `String`
+Reserved.
 
- Access type: Read/Write
+`PolicyID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique ID of the policy object.
+Qualifiers: [key]
 
- `PolicyRules`
- Data type: `CCM_Policy_Rule` Array
+Unique ID of the policy object.
 
- Access type: Read/Write
+`PolicyRules` Data type: `CCM_Policy_Rule` Array
 
- Qualifiers: None
+Access type: Read/Write
 
- Array of [CCM_Policy_Rule Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_rule-client-wmi-class.md) objects describing rules reflecting actions of the policy object. Set this property to NULL if the policy object contains no actions.
+Qualifiers: None
 
- `PolicySource`
- Data type: `String`
+Array of [CCM_Policy_Rule Client WMI Class](ccm_policy_rule-client-wmi-class.md) objects describing rules reflecting actions of the policy object. Set this property to NULL if the policy object contains no actions.
 
- Access type: Read/Write
+`PolicySource` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Source authority of the policy object.
+Qualifiers: [key]
 
- `PolicyState`
- Data type: `String`
+Source authority of the policy object.
 
- Access type: Read/Write
+`PolicyState` Data type: `String`
 
- Qualifiers: [ToInstance]
+Access type: Read/Write
 
- Current state of the policy object. Possible values are:
+Qualifiers: [ToInstance]
+
+Current state of the policy object. Possible values are:
 
 | Value | Description |
-| ----- | ----------- |
-|NULL|The policy object is inactive and hasn't been downloaded. This is the default value.|
-|DownloadPending|The evaluator has determined that the policy object needs to be applied and should be downloaded. This is a temporary state used during the evaluation process.|
-|DownloadStarted|The policy object has been requested from the management point and is in the process of being downloaded.|
-|DownloadComplete|The policy object has finished downloading from the management point but hasn't been compiled into WMI yet.|
-|Inactive|The policy object is downloaded and compiled, but has no active assignments.|
-|Applied|The policy object is currently active, but pending revaluation. This is a temporary state used during the evaluation process. If the evaluation determines that the policy object should no longer be active, its actions must be revoked.|
-|ApplyPending|The policy object is currently inactive, but now has active assignments and actions that should be applied. This is a temporary state used during the evaluation process.|
-|Active|The policy object is currently active and has been applied.|
-|NotApplicable|The policy object isn't applicable. <br /><br /> This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.|
+| --- | --- |
+| NULL | The policy object is inactive and hasn't been downloaded. This is the default value. |
+| DownloadPending | The evaluator has determined that the policy object needs to be applied and should be downloaded. This is a temporary state used during the evaluation process. |
+| DownloadStarted | The policy object has been requested from the management point and is in the process of being downloaded. |
+| DownloadComplete | The policy object has finished downloading from the management point but hasn't been compiled into WMI yet. |
+| Inactive | The policy object is downloaded and compiled, but has no active assignments. |
+| Applied | The policy object is currently active, but pending revaluation. This is a temporary state used during the evaluation process. If the evaluation determines that the policy object should no longer be active, its actions must be revoked. |
+| ApplyPending | The policy object is currently inactive, but now has active assignments and actions that should be applied. This is a temporary state used during the evaluation process. |
+| Active | The policy object is currently active and has been applied. |
+| NotApplicable | The policy object isn't applicable.    This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later. |
 
- `PolicyVersion`
- Data type: `String`
+`PolicyVersion` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Version of the policy object.
+Version of the policy object.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Policy Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/policy-agent-client-wmi-classes.md)
- [CCM_Policy_Rule Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy_rule-client-wmi-class.md)
+
+[Policy Agent Client WMI Classes](policy-agent-client-wmi-classes.md) [CCM_Policy_Rule Client WMI Class](ccm_policy_rule-client-wmi-class.md)

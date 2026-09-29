@@ -1,16 +1,18 @@
 ---
-title: SMS_CIAllCategories Class
+title: "SMS_CIAllCategories Server WMI Class"
 description: Lists all SMS_CategoryInstance Server WMI Class or SMS_UpdateCategoryInstance Server WMI Class object instances for a given SMS_ConfigurationItem object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_CIAllCategories Server WMI Class
-The `SMS_CIAllCategories` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists all of the SMS_CategoryInstance Server WMI Class or [SMS_UpdateCategoryInstance Server WMI Class](../../../develop/reference/sum/sms_updatecategoryinstance-server-wmi-class.md) object instances for a given SMS_ConfigurationItem object.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_CIAllCategories Server WMI Class
+
+The `SMS_CIAllCategories` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists all of the SMS_CategoryInstance Server WMI Class or [SMS_UpdateCategoryInstance Server WMI Class](sms_updatecategoryinstance-server-wmi-class.md) object instances for a given SMS_ConfigurationItem object.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,96 +32,90 @@ Class SMS_CIAllCategories : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CIAllCategories` class does not define any methods.
+
+The `SMS_CIAllCategories` class does not define any methods.
 
 ## Properties
- `CategoryInstanceID`
- Data type: `UInt32`
 
- Access type: Read-only
+`CategoryInstanceID` Data type: `UInt32`
 
- Qualifiers: [key, read, Not_null]
+Access type: Read-only
 
- Configuration Manager-generated, site-specific ID for the category instance. This ID is defined by the `CategoryInstanceID` property of SMS_CategoryInstanceBase Server WMI Class for the specific configuration item.
+Qualifiers: [key, read, Not_null]
 
- `CategoryInstance_UniqueID`
- Data type: `String`
+Configuration Manager-generated, site-specific ID for the category instance. This ID is defined by the `CategoryInstanceID` property of SMS_CategoryInstanceBase Server WMI Class for the specific configuration item.
 
- Access type: Read/Write
+`CategoryInstance_UniqueID` Data type: `String`
 
- Qualifiers: [unique, SizeLimit("512")]
+Access type: Read/Write
 
- The unique ID for the category instance. This string can have a maximum of 512 characters. This ID is defined by the `CategoryInstance_UniqueID` property of SMS_CategoryInstanceBase Server WMI Class for the specific configuration item.
+Qualifiers: [unique, SizeLimit("512")]
 
- `CategoryTypeName`
- Data type: `String`
+The unique ID for the category instance. This string can have a maximum of 512 characters. This ID is defined by the `CategoryInstance_UniqueID` property of SMS_CategoryInstanceBase Server WMI Class for the specific configuration item.
 
- Access type: Read-only
+`CategoryTypeName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_CategoryInstanceBase Server WMI Class](../../../develop/reference/compliance/sms_categoryinstancebase-server-wmi-class.md).
+Qualifiers: [read]
 
- `CI_ID`
- Data type: `UInt32`
+See [SMS_CategoryInstanceBase Server WMI Class](../compliance/sms_categoryinstancebase-server-wmi-class.md).
 
- Access type: Read-only
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key, read, Not_null]
+Access type: Read-only
 
- The unique ID of the configuration item. This ID is unique only for the site. The ID is defined by the `CI_ID` property of SMS_ConfigurationItemBaseClass Server WMI Class for the specific configuration item.
+Qualifiers: [key, read, Not_null]
 
- `CI_UniqueID`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site. The ID is defined by the `CI_ID` property of SMS_ConfigurationItemBaseClass Server WMI Class for the specific configuration item.
 
- Access type: Read-only
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedCategoryInstanceName`
- Data type: `String`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedCategoryInstanceName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedPropertyLocaleID`
- Data type: `UInt32`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedPropertyLocaleID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `ModelName`
- Data type: `String`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`ModelName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `ObjectTypeID`
- Data type: `UInt32`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
+
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   This class is applicable to all types of configuration items, not just software updates. For a discussion of configuration item types, see the `CIType_ID` property of SMS_ConfigurationItemBaseClass Server WMI Class.
 
@@ -128,11 +124,13 @@ Class SMS_CIAllCategories : SMS_BaseClass
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_UpdateCategoryInstance Server WMI Class](../../../develop/reference/sum/sms_updatecategoryinstance-server-wmi-class.md)
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+
+[SMS_UpdateCategoryInstance Server WMI Class](sms_updatecategoryinstance-server-wmi-class.md) [About software update deployments](../../sum/about-software-updates-deployments.md)

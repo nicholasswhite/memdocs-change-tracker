@@ -1,7 +1,7 @@
 ---
-title: Line-of-Business App Versioning in Intune
+title: "Line-of-Business App Versioning"
 description: Introduces how app versions are used in Intune when an app is added or updated.
-ms.date: 11/18/2024
+ms.date: "2024-11-18T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -17,21 +17,21 @@ The following items are considered as the version property of the app:
 
 ## Locations where you can view the app version
 
-In the [Microsoft Intune admin center], you can view the app version in the following locations:
+In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), you can view the app version in the following locations:
 
 - When you add the app to Intune, the version is displayed in the **App package file** pane. The version value will be used for the **identityVersion** property.
 
-  :::image type="content" source="media/ref-lob-app-versioning/apps-lob-app-versioning-01.png" alt-text="Select app package file":::
+  ![Select app package file](media/ref-lob-app-versioning/apps-lob-app-versioning-01.png)
 - When you select an existing LOB app, the version is displayed in the details pane. The version value is the value of the **identityVersion** property.
 
-  :::image type="content" source="media/ref-lob-app-versioning/apps-lob-app-versioning-02.png" alt-text="View an existing app":::
+  ![View an existing app](media/ref-lob-app-versioning/apps-lob-app-versioning-02.png)
 - You can select to view the version in the list of apps. The version value is the value of the **identityVersion** property.
 
-  :::image type="content" source="media/ref-lob-app-versioning/apps-lob-app-versioning-03.png" alt-text="View app versions":::
+  ![View app versions](media/ref-lob-app-versioning/apps-lob-app-versioning-03.png)
 
 You can see the version when you install the app from the Company Portal app.
 
-:::image type="content" source="media/ref-lob-app-versioning/apps-lob-app-versioning-03.png" alt-text="View app version during installation":::
+![View app version during installation](media/ref-lob-app-versioning/apps-lob-app-versioning-03.png)
 
 - For .appx and .apk files, the version value is the value of the **identityVersion** property.
 - For other types of files, the version value is the value of the **InternalVersion** property in the app's metadata.
@@ -45,17 +45,17 @@ The iOS app package (.ipa) files contain two version-related keys:
 
 For more information about these keys, see [Apple Technical Note TN2420: Version Numbers and Build Numbers](https://developer.apple.com/library/content/technotes/tn2420/_index.html).
 
-Currently, Intune uses the **CFBundleVersion** value for the **identityVersion** property of the [iosLobApp](/graph/api/resources/intune-apps-ioslobapp?view=graph-rest-beta&preserve-view=true) entity.
+Currently, Intune uses the **CFBundleVersion** value for the **identityVersion** property of the [iosLobApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-ioslobapp?view=graph-rest-beta&preserve-view=true) entity.
 
 ### Extract the version number and build number of the iOS app
 
 To manually extract the version number and build number of an .ipa file in Windows, follow these steps:
 
-1. Rename the *\<AppName>.ipa* file to *\<AppName>.zip*.
-1. Extract the *\<AppName>.zip* file to a folder.
-1. Go to the folder that contains the extracted files, open the `Payload\<AppName>.app` folder, and locate the Info.plist file.
-1. Open the Info.plist file in a supported editor.
-1. Check the values of the CFBundleShortVersionString and CFBundleVersion keys.
+1. Rename the *&lt;AppName&gt;.ipa* file to *&lt;AppName&gt;.zip*.
+2. Extract the *&lt;AppName&gt;.zip* file to a folder.
+3. Go to the folder that contains the extracted files, open the `Payload\<AppName>.app` folder, and locate the Info.plist file.
+4. Open the Info.plist file in a supported editor.
+5. Check the values of the CFBundleShortVersionString and CFBundleVersion keys.
 
 ## Android app packages
 
@@ -64,23 +64,22 @@ The Android app package (.apk) files contain two version-related attributes:
 - `android:versionCode`: An internal version number. This number is used only to determine whether one version is more recent than another (higher numbers indicate more recent versions). This value isn't the version number that's shown to users.
 - `android:versionName`: The version number that's shown to users. This attribute can be set as a raw string, or as a reference to a string resource. The string has no other purpose than to be displayed to users. The **versionCode** attribute holds the significant version number used internally.
 
-These attributes are stored in the app manifest file AndroidManifest.xml. For more information, see [Android developer guide: \<manifest>](https://developer.android.com/guide/topics/manifest/manifest-element#vcode).
+These attributes are stored in the app manifest file AndroidManifest.xml. For more information, see [Android developer guide: &lt;manifest&gt;](https://developer.android.com/guide/topics/manifest/manifest-element#vcode).
 
-Currently, Intune uses the **versionCode** value for the **identityVersion** property of the [androidLobApp](/graph/api/resources/intune-apps-androidlobapp?view=graph-rest-beta&preserve-view=true) entity.
+Currently, Intune uses the **versionCode** value for the **identityVersion** property of the [androidLobApp](https://learn.microsoft.com/en-us/graph/api/resources/intune-apps-androidlobapp?view=graph-rest-beta&preserve-view=true) entity.
 
 ### Extract the versionCode and versionName attributes of the Android app
 
 To manually extract the attributes of an .apk file in Windows, follow these steps:
 
 1. [Install the Apktool](https://ibotpeaches.github.io/Apktool/install/).
-1. Run the Apktool to decode the .apk file to a folder. For example, run the following command:
+2. Run the Apktool to decode the .apk file to a folder. For example, run the following command:
 
    ```console
    apktool d <AppName>.apk -o <OutputFolder>
    ```
-
-1. Go to the \<OutputFolder> folder, and open the AndroidManifest.xml file in an editor.
-1. Check the values of the `android:versionCode` and `android:versionName` attributes. Here's an example:
+3. Go to the &lt;OutputFolder&gt; folder, and open the AndroidManifest.xml file in an editor.
+4. Check the values of the `android:versionCode` and `android:versionName` attributes. Here's an example:
 
    ```xml
    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -93,15 +92,12 @@ To manually extract the attributes of an .apk file in Windows, follow these step
    ```
 
 > [!NOTE]
+>
 > The third-party products that this article discusses are manufactured by companies that are independent of Microsoft. Microsoft makes no warranty, implied or otherwise, about the performance or reliability of these products.
 
 ## Next steps
 
 To learn more about LOB apps, see the following topics:
 
-- [Add apps to Microsoft Intune](./index.md)<br>
-- [Prepare line-of-business apps for app protection policies](../../developer/app-sdk/integration-methods.md)<br>
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Add apps to Microsoft Intune](index.md)
+- [Prepare line-of-business apps for app protection policies](../../developer/app-sdk/integration-methods.md)

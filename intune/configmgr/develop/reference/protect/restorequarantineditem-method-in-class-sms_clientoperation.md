@@ -1,16 +1,18 @@
 ---
-title: RestoreQuarantinedItem Method
+title: "RestoreQuarantinedItem Method in Class SMS_ClientOperation"
 description: The RestoreQuarantinedItem WMI class method that restores quarantined items to all members in a collection infected by specified threat.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # RestoreQuarantinedItem Method in Class SMS_ClientOperation
+
 The `RestoreQuarantinedItem` Windows Management Instrumentation (WMI) class method in Configuration Manager that restores quarantined items to all members in a collection infected by specified threat.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -26,47 +28,45 @@ uint32 RestoreQuarantinedItem
 ```
 
 ## Parameters
- `ThreatID`
- Data type: `UInt64`
 
- Qualifiers: [id("0"), in]
+`ThreatID` Data type: `UInt64`
 
- ThreatID.
+Qualifiers: [id("0"), in]
 
- `ThreatName`
- Data type: `String`
+ThreatID.
 
- Qualifiers: [id("1"), in]
+`ThreatName` Data type: `String`
 
- ThreatName.
+Qualifiers: [id("1"), in]
 
- `IncludeDependencies`
- Data type: `Boolean`
+ThreatName.
 
- Qualifiers: [id("2"), in]
+`IncludeDependencies` Data type: `Boolean`
 
- IncludeDependencies.
+Qualifiers: [id("2"), in]
 
- `TargetCollectionID`
- Data type: `String`
+IncludeDependencies.
 
- Qualifiers: [id("3"), in]
+`TargetCollectionID` Data type: `String`
 
- TargetCollectionID.
+Qualifiers: [id("3"), in]
 
- `OperationID`
- Data type: `UInt32`
+TargetCollectionID.
 
- Qualifiers: [id("4"), out]
+`OperationID` Data type: `UInt32`
 
- OperationID.
+Qualifiers: [id("4"), out]
+
+OperationID.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

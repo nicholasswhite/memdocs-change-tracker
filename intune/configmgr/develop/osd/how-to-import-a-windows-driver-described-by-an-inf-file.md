@@ -1,36 +1,36 @@
 ---
-title: Import a Windows Driver Described by an INF File
+title: "How to Import a Windows Driver Described by an INF File into Configuration Manager"
 description: You can import a Windows driver that is described by an information (.inf) file, in Configuration Manager, by using the CreateFromINF Method in Class SMS_Driver.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Import a Windows Driver Described by an INF File into Configuration Manager
-You can import a Windows driver that is described by an information (.inf) file, in Configuration Manager, by using the [CreateFromINF Method in Class SMS_Driver](../../develop/reference/osd/createfrominf-method-in-class-sms_driver.md).
+
+You can import a Windows driver that is described by an information (.inf) file, in Configuration Manager, by using the [CreateFromINF Method in Class SMS_Driver](../reference/osd/createfrominf-method-in-class-sms_driver.md).
 
 ### To import a Windows driver
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Call the [CreateFromINF Method in Class SMS_Driver](../../develop/reference/osd/createfrominf-method-in-class-sms_driver.md) to get the initial [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md) management base object.
-
-3.  Create an instance of [SMS_Driver](../../develop/reference/osd/sms_driver-server-wmi-class.md) by using the management base object.
-
-4.  Populate the `SMS_Driver` object.
-
-5.  Commit the `SMS_Driver` object.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Call the [CreateFromINF Method in Class SMS_Driver](../reference/osd/createfrominf-method-in-class-sms_driver.md) to get the initial [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) management base object.
+3. Create an instance of [SMS_Driver](../reference/osd/sms_driver-server-wmi-class.md) by using the management base object.
+4. Populate the `SMS_Driver` object.
+5. Commit the `SMS_Driver` object.
 
 ## Example
- The following example method creates an `SMS_Driver` object for a Windows driver by using the supplied path and file name. The example also enables the driver by setting the value of the `IsEnabled` property to `true`. The helper function `GetDriverName` is used to get the name of the driver from the driver package XML.
+
+The following example method creates an `SMS_Driver` object for a Windows driver by using the supplied path and file name. The example also enables the driver by setting the value of the `IsEnabled` property to `true`. The helper function `GetDriverName` is used to get the name of the driver from the driver package XML.
 
 > [!NOTE]
->  The `path` parameter must be supplied as a Universal Naming Convention (UNC) network path, for example, \\\localhost\Drivers\ATIVideo\\.
+>
+> The `path` parameter must be supplied as a Universal Naming Convention (UNC) network path, for example, \\localhost\Drivers\ATIVideo\.
 
- In the example, the `LocaleID` property is hard-coded to English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../../develop/reference/core/servers/configure/sms_identification-server-wmi-class.md) `LocaleID` property.
+In the example, the `LocaleID` property is hard-coded to English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../reference/core/servers/configure/sms_identification-server-wmi-class.md) `LocaleID` property.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub ImportINFDriver(connection, path, name)
@@ -192,40 +192,44 @@ public string GetDriverName(IResultObject driver)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`path`|-   Managed: `String`<br />-   VBScript: `String`|A valid UNC network path to the folder that contains the driver contents. For example, \\\Servers\Driver\VideoDriver.|
-|`name`|-   Managed: `String`<br />-   VBScript: `String`|The name of the .inf file. For example, ATI.inf.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `path` | - Managed: `String` - VBScript: `String` | A valid UNC network path to the folder that contains the driver contents. For example, \\Servers\Driver\VideoDriver. |
+| `name` | - Managed: `String` - VBScript: `String` | The name of the .inf file. For example, ATI.inf. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [CreateFromINF Method in Class SMS_Driver](../../develop/reference/osd/createfrominf-method-in-class-sms_driver.md)
- [SMS_Driver Server WMI Class](../../develop/reference/osd/sms_driver-server-wmi-class.md)
- [How to Specify The Supported Platforms for a Driver](../../develop/osd/how-to-specify-the-supported-platforms-for-a-driver.md)
+
+[CreateFromINF Method in Class SMS_Driver](../reference/osd/createfrominf-method-in-class-sms_driver.md) [SMS_Driver Server WMI Class](../reference/osd/sms_driver-server-wmi-class.md) [How to Specify The Supported Platforms for a Driver](how-to-specify-the-supported-platforms-for-a-driver.md)

@@ -1,7 +1,7 @@
 ---
-title: Configuration Manager and Windows as a Service
+title: "Configuration Manager and Windows as a service"
 description: Get basic information on adopting Configuration Manager current branch to support Windows as a service.
-ms.date: 12/07/2021
+ms.date: "2021-12-07T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: overview
 ms.collection: tier3
@@ -17,7 +17,7 @@ Configuration Manager provides comprehensive control over feature updates for Wi
 ## Configuration Manager current branch
 
 | Article | Description |
-|--|--|
+| --- | --- |
 | [Overview of Configuration Manager current branch](../plan-design/changes/whats-new-incremental-versions.md) | Provides a brief summary of the key points for the servicing model for Configuration Manager current branch |
 | [Support lifecycle](../servers/manage/current-branch-versions-supported.md) | Explains the current branch support and servicing model. |
 | [Removed and deprecated items](../plan-design/changes/deprecated/removed-and-deprecated.md) | Provides early notice about future changes that might affect your use of Configuration Manager. |
@@ -33,7 +33,7 @@ Configuration Manager provides comprehensive control over feature updates for Wi
 ## Windows as a service
 
 | Article | Description |
-|--|--|
+| --- | --- |
 | [Manage Windows as a service](../../osd/deploy-use/manage-windows-as-a-service.md) | Explains how to use servicing plans to deploy Windows feature updates. |
 | [Upgrade Windows via task sequence](../../osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system.md) | The details of creating a task sequence to upgrade Windows with additional recommendations. |
 | [Phased deployments](../../osd/deploy-use/create-phased-deployment-for-task-sequence.md) | Phased deployments automate a coordinated, sequenced rollout of a task sequence across multiple collections. |
@@ -43,15 +43,14 @@ Configuration Manager provides comprehensive control over feature updates for Wi
 
 ## Product lifecycle
 
-<!-- 10976295 -->
-
 Another important aspect of staying current with Windows and Configuration Manager is to monitor product lifecycles. Configuration Manager has built-in features to help:
 
 - Be proactive with dashboards for planning:
+
   - [Product lifecycle dashboard](../clients/manage/asset-intelligence/product-lifecycle-dashboard.md): View the Microsoft Lifecycle Policy for applicable products.
   - [Windows servicing dashboard](../../osd/deploy-use/manage-windows-as-a-service.md): Provides you with information about computers in your environment, servicing plans, and compliance information.
-
 - Be reactive with notifications, management insights, and reports:
+
   - [Configuration Manager console notifications](../servers/manage/admin-console-notifications.md#new-notifications-in-version-2010): Look for in-console notifications about devices with operating systems that are past the end of support date and that are no longer eligible to receive security updates.
   - Management insights
     - [Security](../servers/manage/management-insights.md#security): Identify clients with unsupported antimalware client versions or clients running earlier versions of Windows that don't receive security updates by default.

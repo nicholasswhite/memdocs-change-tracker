@@ -1,7 +1,7 @@
 ---
-title: Monitor issued PKI certificates with Microsoft Intune
+title: "Monitoring for Microsoft Cloud PKI"
 description: Monitor reports for certificates issued via Microsoft Intune cloud PKI.
-ms.date: 12/06/2024
+ms.date: "2024-12-06T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -20,27 +20,28 @@ This article describes how to monitor certificates, revoke certificates, and vie
 
 ## View issued certificates
 
-To view issued certificates, go to **Devices** > **Monitor**, and then select **Certificates**.
+To view issued certificates, go to **Devices** &gt; **Monitor**, and then select **Certificates**.
 
-   :::image type="content" source="./media/monitor-certificates/monitor-certificates-cloud-pki.png" alt-text="Admin center Monitor page with Certificates option highlighted." border="false":::
+![Admin center Monitor page with Certificates option highlighted.](media/monitor-certificates/monitor-certificates-cloud-pki.png)
 
 ## Monitor Cloud PKI issuing CA
 
 Each Cloud PKI issuing CA has a monitoring dashboard. Select **View all certificates** to view all issued certificates. Certificate report details should be available within 24 hours of the certificate being successfully issued to the device.
 
-   :::image type="content" source="./media/monitor-certificates/intune-certificate-count-cloud-pki.png" alt-text="Certificate count dashboard for Microsoft Cloud PKI in admin center." border="false":::
+![Certificate count dashboard for Microsoft Cloud PKI in admin center.](media/monitor-certificates/intune-certificate-count-cloud-pki.png)
 
 From here, you can also manually revoke an issued leaf certificate.
 
- 1. Select **View all certificates**.
- 1. Select the **Subject name** of the certificate you want to revoke.
- 1. On the certificate's details page, select **Revoke**.
+1. Select **View all certificates**.
+2. Select the **Subject name** of the certificate you want to revoke.
+3. On the certificate's details page, select **Revoke**.
 
 > [!TIP]
-> When you manually revoke a certificate from a user or device that has an active SCEP certificate profile assignment, then on the next device check-in a new certificate request is made by the device. A certificate is also issued.  If you don't want to reissue a certificate to the device, remove all SCEP policy assignments.
+>
+> When you manually revoke a certificate from a user or device that has an active SCEP certificate profile assignment, then on the next device check-in a new certificate request is made by the device. A certificate is also issued. If you don't want to reissue a certificate to the device, remove all SCEP policy assignments.
 
 ## View SCEP certificate profile report
 
-Go to **Devices** > **Manage devices** > **Configuration**. Select the SCEP profile, and then select **Certificates**.
+Go to **Devices** &gt; **Manage devices** &gt; **Configuration**. Select the SCEP profile, and then select **Certificates**.
 
-   :::image type="content" source="./media/monitor-certificates/scep-certificate-profile.png" alt-text="SCEP certificate profile report in the admin center." border="false":::
+![SCEP certificate profile report in the admin center.](media/monitor-certificates/scep-certificate-profile.png)

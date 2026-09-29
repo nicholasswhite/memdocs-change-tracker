@@ -1,16 +1,18 @@
 ---
-title: ExportRole Method
+title: "ExportRole Method in Class SMS_Role"
 description: The ExportRole Windows Management Instrumentation class method, in Configuration Manager, exports roles to an XML string.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ExportRole Method in Class SMS_Role
+
 The `ExportRole` Windows Management Instrumentation (WMI) class method, in Configuration Manager, exports roles to an XML string.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,30 +24,33 @@ SInt32 ExportRole(
 ```
 
 #### Parameters
- `RoleID`
- Data type: `String`
 
- Qualifiers: [in]
+`RoleID` Data type: `String`
 
- The id of the role.
+Qualifiers: [in]
 
- `ExportedXML`
- Data type: `String`
+The id of the role.
 
- Qualifiers: [out]
+`ExportedXML` Data type: `String`
 
- The XML blob for the role.
+Qualifiers: [out]
+
+The XML blob for the role.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Role Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_role-server-wmi-class.md)
+
+[SMS_Role Server WMI Class](sms_role-server-wmi-class.md)

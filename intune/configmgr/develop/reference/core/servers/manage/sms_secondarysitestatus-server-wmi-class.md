@@ -1,16 +1,18 @@
 ---
 description: The SMS_SecondarySiteStatus WMI class is an SMS Provider server class, in Configuration Manager, that represents secondary site installation or uninstallation status.
-title: SMS_SecondarySiteStatus Class
-ms.date: 09/20/2016
+title: "SMS_SecondarySiteStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SecondarySiteStatus Server WMI Class
+
 The `SMS_SecondarySiteStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents secondary site installation or uninstallation status.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,69 +29,67 @@ Class SMS_SecondarySiteStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SecondarySiteStatus` class does not define any methods.
+
+The `SMS_SecondarySiteStatus` class does not define any methods.
 
 ## Properties
- `Description`
- Data type: `String`
 
- Access type: Read
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Description of the status for secondary installation or uninstallation status.
+Qualifiers: none
 
- `MessageTime`
- Data type: `DateTime`
+Description of the status for secondary installation or uninstallation status.
 
- Access type: Read
+`MessageTime` Data type: `DateTime`
 
- Qualifiers: [key]
+Access type: Read
 
- Time of the message reported for the secondary site installation or uninstallation.
+Qualifiers: [key]
 
- `SiteCode`
- Data type: `String`
+Time of the message reported for the secondary site installation or uninstallation.
 
- Access type: Read
+`SiteCode` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- Site code of the secondary site.
+Qualifiers: [key]
 
- `SiteInstallID`
- Data type: `UInt32`
+Site code of the secondary site.
 
- Access type: Read
+`SiteInstallID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- Site installation or uninstallation identifier.
+Qualifiers: [key]
 
- `Status`
- Data type: `String`
+Site installation or uninstallation identifier.
 
- Access type: Read
+`Status` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- Secondary site installation or uninstallation status.
+Qualifiers: none
 
- `StatusID`
- Data type: `UInt32`
+Secondary site installation or uninstallation status.
 
- Access type: Read
+`StatusID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- Identifier for the status.
+Qualifiers: [key]
+
+Identifier for the status.
 
 ## Remarks
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

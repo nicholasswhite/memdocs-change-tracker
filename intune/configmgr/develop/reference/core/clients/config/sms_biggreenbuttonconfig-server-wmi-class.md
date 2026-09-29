@@ -1,16 +1,18 @@
 ---
 description: Learn how to stop clients from connecting to the client notification server with SMS_BigGreenButtonConfig.
-title: SMS_BigGreenButtonConfig Class
-ms.date: 09/20/2016
+title: "SMS_BigGreenButtonConfig Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_BigGreenButtonConfig Server WMI Class
+
 The `SMS_BigGreenButtonConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that can stop clients from connecting to the client notification server (a hidden role, co-located with management point).
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,35 +25,37 @@ Class SMS_BigGreenButtonConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_BigGreenButtonConfig` class doesn't define any methods.
+
+The `SMS_BigGreenButtonConfig` class doesn't define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The BigGreenButton Agent ID is 18.
+Qualifiers: [key, read]
 
- `EnableClientNotification`
- Data type: `Boolean`
+Identifies the client agent component. The BigGreenButton Agent ID is 18.
 
- Access type: Read/Write
+`EnableClientNotification` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `false` to stop clients from connecting to the client notification server (a hidden role, co-located with management point). No active connections are established between the clients and the client notification server. The default value is `true`.
+Qualifiers: none
 
- This setting is part of the client infrastructure and turned on by default. This value would likely only be changed to troubleshoot a significant performance issue.
+`false` to stop clients from connecting to the client notification server (a hidden role, co-located with management point). No active connections are established between the clients and the client notification server. The default value is `true`.
+
+This setting is part of the client infrastructure and turned on by default. This value would likely only be changed to troubleshoot a significant performance issue.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

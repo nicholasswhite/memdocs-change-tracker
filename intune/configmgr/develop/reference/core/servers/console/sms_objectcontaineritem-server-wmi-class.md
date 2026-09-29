@@ -1,16 +1,18 @@
 ---
-title: SMS_ObjectContainerItem Class
+title: "SMS_ObjectContainerItem Server WMI Class"
 description: An SMS Provider server class that contains information about a Configuration Manager console folder item.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ObjectContainerItem Server WMI Class
+
 The `SMS_ObjectContainerItem` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that contains information about a Configuration Manager console folder item.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,104 +30,103 @@ Class SMS_ObjectContainerItem : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_ObjectContainerItem` class.
 
-|Method|Description|
-|------------|-----------------|
-|[MoveMembers Method in Class SMS_ObjectContainerItem](../../../../../develop/reference/core/servers/console/movemembers-method-in-class-sms_objectcontaineritem.md)|Moves one or more folder items to another folder.|
-|[MoveMembersEx Method in Class SMS_ObjectContainerItem](../../../../../develop/reference/core/servers/console/movemembersex-method-in-class-sms_objectcontaineritem.md)|Moves one or more folder items to another folder.|
+The following table lists the methods in the `SMS_ObjectContainerItem` class.
+
+| Method | Description |
+| --- | --- |
+| [MoveMembers Method in Class SMS_ObjectContainerItem](movemembers-method-in-class-sms_objectcontaineritem.md) | Moves one or more folder items to another folder. |
+| [MoveMembersEx Method in Class SMS_ObjectContainerItem](movemembersex-method-in-class-sms_objectcontaineritem.md) | Moves one or more folder items to another folder. |
 
 ## Properties
- `ContainerNodeID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ContainerNodeID` Data type: `UInt32`
 
- Qualifiers: [Not_null]
+Access type: Read/Write
 
- The unique ID of the folder.
+Qualifiers: [Not_null]
 
- `InstanceKey`
- Data type: `String`
+The unique ID of the folder.
 
- Access type: Read/Write
+`InstanceKey` Data type: `String`
 
- Qualifiers: [Not_null]
+Access type: Read/Write
 
- The name of the folder.
+Qualifiers: [Not_null]
 
- `MemberGuid`
- Data type: `String`
+The name of the folder.
 
- Access type: Read-only
+`MemberGuid` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The guid of the relation.
+Qualifiers: [not_null, read]
 
- `MemberID`
- Data type: `UInt32`
+The guid of the relation.
 
- Access type: Read/Write
+`MemberID` Data type: `UInt32`
 
- Qualifiers: [key, Not_null]
+Access type: Read/Write
 
- The unique ID of the relation.
+Qualifiers: [key, Not_null]
 
- `ObjectType`
- Data type: `UInt32`
+The unique ID of the relation.
 
- Access type: Read-only
+`ObjectType` Data type: `UInt32`
 
- Qualifiers: [deprecated, enumeration, read]
+Access type: Read-only
 
- The type of the folder. Possible values are listed below.
+Qualifiers: [deprecated, enumeration, read]
+
+The type of the folder. Possible values are listed below.
 
 | Value | Object type |
-| ----- | ----------- |
-|2|TYPE_PACKAGE|
-|3|TYPE_ADVERTISEMENT|
-|7|TYPE_QUERY|
-|8|TYPE_REPORT|
-|9|TYPE_METEREDPRODUCTRULE|
-|11|TYPE_CONFIGURATIONITEM|
-|14|TYPE_OSINSTALLPACKAGE|
-|17|TYPE_STATEMIGRATION|
-|18|TYPE_IMAGEPACKAGE|
-|19|TYPE_BOOTIMAGEPACKAGE|
-|20|TYPE_TASKSEQUENCEPACKAGE|
-|21|TYPE_DEVICESETTINGPACKAGE|
-|23|TYPE_DRIVERPACKAGE|
-|25|TYPE_DRIVER|
-|1011|TYPE_SOFTWAREUPDATE|
-|2011|TYPE_CONFIGURATIONBASELINE|
-|5000|TYPE_DEVICE_COLLECTION|
-|5001|TYPE_USER_COLLECTION|
+| --- | --- |
+| 2 | TYPE_PACKAGE |
+| 3 | TYPE_ADVERTISEMENT |
+| 7 | TYPE_QUERY |
+| 8 | TYPE_REPORT |
+| 9 | TYPE_METEREDPRODUCTRULE |
+| 11 | TYPE_CONFIGURATIONITEM |
+| 14 | TYPE_OSINSTALLPACKAGE |
+| 17 | TYPE_STATEMIGRATION |
+| 18 | TYPE_IMAGEPACKAGE |
+| 19 | TYPE_BOOTIMAGEPACKAGE |
+| 20 | TYPE_TASKSEQUENCEPACKAGE |
+| 21 | TYPE_DEVICESETTINGPACKAGE |
+| 23 | TYPE_DRIVERPACKAGE |
+| 25 | TYPE_DRIVER |
+| 1011 | TYPE_SOFTWAREUPDATE |
+| 2011 | TYPE_CONFIGURATIONBASELINE |
+| 5000 | TYPE_DEVICE_COLLECTION |
+| 5001 | TYPE_USER_COLLECTION |
 
- `ObjectTypeName`
- Data type: `String`
+`ObjectTypeName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- The WMI Class Name of the object. Example SMS_Package. This will take effect if the ObjectType is 0 or null.
+The WMI Class Name of the object. Example SMS_Package. This will take effect if the ObjectType is 0 or null.
 
- `SourceSite`
- Data type: `String`
+`SourceSite` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [not_null, read]
+Qualifiers: [not_null, read]
 
- The sitecode of the site that the relation was originally created from.
+The sitecode of the site that the relation was originally created from.
 
 ## Remarks
+
 When attempting to move an item from a root node such as a user collection or device collection, the item doesn't exist as an SMS_ObjectContainerItem. As such a new instance will need to be created instead.
+
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

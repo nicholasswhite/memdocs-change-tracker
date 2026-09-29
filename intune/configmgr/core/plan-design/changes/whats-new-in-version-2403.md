@@ -1,7 +1,7 @@
 ---
-title: What's new in version 2403
+title: "What's new in version 2403 of Configuration Manager current branch"
 description: Get details about changes and new capabilities introduced in version 2403 of Configuration Manager current branch.
-ms.date: 04/05/2024
+ms.date: "2024-04-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ms.collection: tier3
@@ -25,13 +25,13 @@ To take full advantage of new Configuration Manager features, after you update t
 
 Starting Configuration Manager version 2403, Microsoft Azure Active Directory is renamed to Microsoft Entra ID within Configuration Manager.
 
-For more information, see [New name for Azure Active Directory](/entra/fundamentals/new-name).
+For more information, see [New name for Azure Active Directory](https://learn.microsoft.com/en-us/entra/fundamentals/new-name).
 
 ### Automated diagnostic Dashboard for Software Update Issues
 
-A new dashboard is added to the console under monitoring workspace, which shows the diagnosis of the software update issues in your environment this feature can easily identify  any issues related to software updates. You can fix software update issues based on troubleshooting documentations.
+A new dashboard is added to the console under monitoring workspace, which shows the diagnosis of the software update issues in your environment this feature can easily identify any issues related to software updates. You can fix software update issues based on troubleshooting documentations.
 
-:::image type="content" source="media/17668422-troubleshooting-dash.png" alt-text="Screenshot of new troubleshooting dashboard in console.":::
+![Screenshot of new troubleshooting dashboard in console.](media/17668422-troubleshooting-dash.png)
 
 For more information, see [Software update health dashboard.](../../clients/manage/software-update-health-dashboard.md)
 
@@ -39,7 +39,7 @@ For more information, see [Software update health dashboard.](../../clients/mana
 
 Users can now use the global search box in CM console, which streamlines the search experience and centralizes access to information. This feature enhances the overall usability, productivity and effectiveness of CM. Users no longer need to navigate through multiple nodes or sections/ folders to find information they require, saving valuable time and effort.
 
-:::image type="content" source="media/24501008-search-box.png" alt-text="Screenshot of centralized search box in console.":::
+![Screenshot of centralized search box in console.](media/24501008-search-box.png)
 
 For more information, see [Improvements to console search.](../../servers/manage/admin-console-tips.md#improvements-to-console-search)
 
@@ -47,7 +47,7 @@ For more information, see [Improvements to console search.](../../servers/manage
 
 You can now organize scripts by using folders. This change allows for better categorization and management of scripts. Full Administrator and Operations Administrator roles can manage the folders.
 
-:::image type="content" source="media/24475159-folder-scripts.png" alt-text="Screenshot of scripts folder structure in console.":::
+![Screenshot of scripts folder structure in console.](media/24475159-folder-scripts.png)
 
 For more information, see [Folder support for scripts.](../../../apps/deploy-use/create-deploy-scripts.md#folder-support-for-scripts)
 
@@ -56,7 +56,6 @@ For more information, see [Folder support for scripts.](../../../apps/deploy-use
 HTTP-only communication is deprecated, and support is removed from this version of Configuration Manager. Enable HTTPS or Enhanced HTTP for client communication.
 
 For more information, see [Enable site system roles for HTTPS or Enhanced HTTP.](../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http) and [Deprecated features](deprecated/removed-and-deprecated-cmfeatures.md)
-
 
 ### Windows Server 2012/2012 R2 operating system site system roles are not supported from this version of Configuration Manager
 
@@ -68,21 +67,19 @@ For more information, see [Supported-operating-systems-for-site-system-servers.]
 
 Any configured Resource access profiles and deployments block Configuration manager upgrade. Consider deleting them and moving the co-management workload for Resource Access (if co-managed) to Intune.
 
-For more information, see [FAQ](../../../../configmgr/protect/plan-design/resource-access-deprecation-faq.yml) and [Resource access policies are no longer supported.](../../servers/deploy/install/list-of-prerequisite-checks.md)
+For more information, see [FAQ](../../../protect/plan-design/resource-access-deprecation-faq.yml) and [Resource access policies are no longer supported.](../../servers/deploy/install/list-of-prerequisite-checks.md)
 
 ## Software updates
 
 ### New parameter SoftwareUpdateO365Language is added to Save-CMSoftwareUpdate cmdlet
 
-A new parameter **SoftwareUpdateO365Language** is now added to PowerShell  Save-CMSoftwareUpdate cmdlet. Customers now don't have to check a specific language in the SUP Properties (causing a metadata download for that language for all updates).
+A new parameter **SoftwareUpdateO365Language** is now added to PowerShell Save-CMSoftwareUpdate cmdlet. Customers now don't have to check a specific language in the SUP Properties (causing a metadata download for that language for all updates).
 
-
-PowerShell Commandlet:  ``` Save-CMSoftwareUpdate – SoftwareUpdateO365Language <language name> (<region name>)" ```
+PowerShell Commandlet: `Save-CMSoftwareUpdate – SoftwareUpdateO365Language <language name> (<region name>)"`
 
 > [!NOTE]
+>
 > Languages need to be in O365 format to be consistent with Admin Console UI. E.g. "Hungarian (Hungary)".
-
-
 
 ## OS deployment
 
@@ -90,9 +87,7 @@ PowerShell Commandlet:  ``` Save-CMSoftwareUpdate – SoftwareUpdateO365Language
 
 Configuration Manager operating system deployment support is now added on Windows 11 ARM 64 devices. Currently Importing and customizing Arm 64 boot images, Wipe and load TS, Media creation TS, WDS PXE for Arm 64 and CMPivot is supported.
 
-:::image type="content" source="media/14959666-armosd.png" alt-text="Screenshot of arm 64 boot image in console.":::
-
-
+![Screenshot of arm 64 boot image in console.](media/14959666-armosd.png)
 
 ### Enhancement in Deploying Software Packages with Dynamic Variables
 
@@ -100,7 +95,7 @@ When deploying a Task Sequence for installing a software package using dynamic v
 
 To address this issue, we've introduced a new feature allowing administrators to specify the number of retries the system should attempt before marking the Task Sequence as failed. This retry mechanism is activated only when the 'Continue on error' checkbox is unchecked."
 
-:::image type="content" source="media/24334765-dyn-var.png" alt-text="Screenshot of changes in dynamic variable in task sequence in CM console.":::
+![Screenshot of changes in dynamic variable in task sequence in CM console.](media/24334765-dyn-var.png)
 
 For more information, see [Options for Install Application.](../../../osd/understand/task-sequence-steps.md#retry-this-step-if-computer-unexpectedly-restarts)
 
@@ -132,19 +127,20 @@ This release includes the following improvements to Bitlocker:
 For more information on BitLocker management, see [Deploy BitLocker management.](../../../protect/deploy-use/bitlocker/recovery-service.md) and [Plan for BitLocker management.](../../../protect/plan-design/bitlocker-management.md).
 
 - From this version of Configuration Manager, the Windows 11 readiness dashboard shows charts for Windows 23H2.
-- Defender Exploit Guards policy for controlled folder now accepts regex in the file path for apps.
-  For example, [C:\Folder\Subfolder\app?.exe] [C:\Folder1\Sub*Name]
+- Defender Exploit Guards policy for controlled folder now accepts regex in the file path for apps. For example, [C:\Folder\Subfolder\app?.exe] [C:\Folder1\Sub\*Name]
 
 ## Next steps
-<!--At this time, version 2403 is released for the early update ring. To install this update, you need to opt in. For more information, see [Early update ring](../../servers/manage/checklist-for-installing-update-2403.md#early-update-ring).-->
 
 As of May 06, 2024, version 2403 is globally available for all customers to install.
->[!NOTE]
+
+> [!NOTE]
+>
 > For exisiting Fast ring current branch 2403 customers, you will see Slow ring upgrade package in console. Install 2403 Slow ring package to be in production current branch.
 
 When you're ready to install this version, see [Installing updates for Configuration Manager](../../servers/manage/updates.md) and [Checklist for installing update 2403](../../servers/manage/checklist-for-installing-update-2403.md).
 
 > [!TIP]
+>
 > To install a new site, use a baseline version of Configuration Manager.
 >
 > Learn more about:

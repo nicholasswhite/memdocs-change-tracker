@@ -1,16 +1,18 @@
 ---
-title: SMS_ImageDiskInformation Class
+title: "SMS_ImageDiskInformation Server WMI Class"
 description: The SMS_ImageDiskInformation WMI class is an SMS Provider server class, in Configuration Manager, that represents all disks and partition information in an operating system image and installer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ImageDiskInformation Server WMI Class
+
 The `SMS_ImageDiskInformation` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents all disks and partition information in an operating system image and operating system installer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,114 +34,107 @@ Class SMS_ImageDiskInformation : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ImageDiskInformation` class does not define any methods.
+
+The `SMS_ImageDiskInformation` class does not define any methods.
 
 ## Properties
- `DiskIndex`
- Data type: `UInt32`
 
- Access type: Read-only
+`DiskIndex` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Disk Index of this image.
+Qualifiers: [key, read]
 
- `DiskStyle`
- Data type: `String`
+Disk Index of this image.
 
- Access type: Read-only
+`DiskStyle` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Disk style.
+Qualifiers: [read]
 
- `PackageID`
- Data type: `String`
+Disk style.
 
- Access type: Read-only
+`PackageID` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- ID of the image package.
+Qualifiers: [key, read]
 
- `PartitionFileSystem`
- Data type: `String`
+ID of the image package.
 
- Access type: Read-only
+`PartitionFileSystem` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Partition file system.
+Qualifiers: [read]
 
- `PartitionIndex`
- Data type: `UInt32`
+Partition file system.
 
- Access type: Read-only
+`PartitionIndex` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Partition index of this image.
+Qualifiers: [key, read]
 
- `PartitionIsBoot`
- Data type: `Boolean`
+Partition index of this image.
 
- Access type: Read-only
+`PartitionIsBoot` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Whether the partition is the boot partition.
+Qualifiers: [read]
 
- `PartitionLabel`
- Data type: `String`
+Whether the partition is the boot partition.
 
- Access type: Read-only
+`PartitionLabel` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Partition label.
+Qualifiers: [read]
 
- `PartitionOffset`
- Data type: `SInt64`
+Partition label.
 
- Access type: Read-only
+`PartitionOffset` Data type: `SInt64`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Partition offset.
+Qualifiers: [read]
 
- `PartitionSize`
- Data type: `SInt64`
+Partition offset.
 
- Access type: Read-only
+`PartitionSize` Data type: `SInt64`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Partition size.
+Qualifiers: [read]
 
- `PartitionStyle`
- Data type: `String`
+Partition size.
 
- Access type: Read-only
+`PartitionStyle` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Partition style.
+Qualifiers: [read]
 
- `PartitionType`
- Data type: `String`
+Partition style.
 
- Access type: Read-only
+`PartitionType` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Partition type.
+Qualifiers: [read]
+
+Partition type.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

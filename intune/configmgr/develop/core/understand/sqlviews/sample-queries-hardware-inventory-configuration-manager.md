@@ -1,7 +1,7 @@
 ---
-title: Sample queries for hardware inventory
+title: "Sample queries for hardware inventory in Configuration Manager"
 description: Sample queries that show how to join hardware inventory views to other views that contain system data.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3

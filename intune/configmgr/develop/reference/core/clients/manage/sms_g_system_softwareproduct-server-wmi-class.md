@@ -1,16 +1,18 @@
 ---
-title: SMS_G_System_SoftwareProduct Class
+title: "SMS_G_System_SoftwareProduct Server WMI Class"
 description: The SMS_G_System_SoftwareProduct class is an SMS Provider server class that provides software product information for software files that contain resource strings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_SoftwareProduct Server WMI Class
+
 The `SMS_G_System_SoftwareProduct` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides software product information for software files that contain resource strings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,97 +29,91 @@ Class SMS_G_System_SoftwareProduct : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_SoftwareProduct` class doesn't define any methods.
+
+The `SMS_G_System_SoftwareProduct` class doesn't define any methods.
 
 ## Properties
- `CompanyName`
- Data type: **String**
 
- Access type: Read/Write
+`CompanyName` Data type: **String**
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the software manufacturer taken from the company name resource string. This name can be universally changed by using the rules that are defined in [SMS_SoftwareConversionRules Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_softwareconversionrules-server-wmi-class.md).
+Qualifiers: none
 
- `ProductId`
- Data type: **UInt32**
+Name of the software manufacturer taken from the company name resource string. This name can be universally changed by using the rules that are defined in [SMS_SoftwareConversionRules Server WMI Class](sms_softwareconversionrules-server-wmi-class.md).
 
- Access type: Read/Write
+`ProductId` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Configuration Manager-supplied ID that uniquely identifies the product. The property links this product with the software file information contained in an [SMS_G_System_SoftwareFile Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_softwarefile-server-wmi-class.md) object.
+Qualifiers: [key]
 
- `ProductLanguage`
- Data type: **UInt32**
+Configuration Manager-supplied ID that uniquely identifies the product. The property links this product with the software file information contained in an [SMS_G_System_SoftwareFile Server WMI Class](sms_g_system_softwarefile-server-wmi-class.md) object.
 
- Access type: Read/Write
+`ProductLanguage` Data type: **UInt32**
 
- Qualifiers: [Subtype("Locale ID")]
+Access type: Read/Write
 
- Language taken from the language resource string.
+Qualifiers: [Subtype("Locale ID")]
 
- `ProductName`
- Data type: **String**
+Language taken from the language resource string.
 
- Access type: Read/Write
+`ProductName` Data type: **String**
 
- Qualifiers:[DefaultOrder("ASC")]
+Access type: Read/Write
 
- Value of the product name resource string.
+Qualifiers:[DefaultOrder("ASC")]
 
- `ProductVersion`
- Data type: **String**
+Value of the product name resource string.
 
- Access type: Read/Write
+`ProductVersion` Data type: **String**
 
- Qualifiers: none
+Access type: Read/Write
 
- Value of the product version resource string.
+Qualifiers: none
 
- `ResourceID`
- Data type: **UInt32**
+Value of the product version resource string.
 
- Access type: Read/Write
+`ResourceID` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: [key]
+
+See [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- The Software Inventory Agent inventories files identified in the site control file. To identify the files to inventory, the agent:
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-1. Queries the site control [SMS_SCI_ClientComp Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) objects for items having the value "Software Inventory Agent" for the `ClientComponentName` property.
+The Software Inventory Agent inventories files identified in the site control file. To identify the files to inventory, the agent:
 
-2. Loops through the embedded property list. When the value for `PropertyName` is "Inventoriable Types", the agent updates the comma-delimited list of file names (including extensions) in the `Value2` property. When the value for `PropertyName` is "Inventory Schedule", the agent updates the interval string in the `Value2` property. For information about creating an interval string, see the example for the [WriteToString Method in Class SMS_ScheduleMethods](../../../../../develop/reference/core/servers/configure/writetostring-method-in-class-sms_schedulemethods.md) method. When the value for `PropertyName` is "Report Options", the agent updates the reporting options value in the `Value` property, specifying at least one reporting option for the software inventory to be collected. The following table lists the reporting options.
+1. Queries the site control [SMS_SCI_ClientComp Server WMI Class](../../servers/configure/sms_sci_clientcomp-server-wmi-class.md) objects for items having the value "Software Inventory Agent" for the `ClientComponentName` property.
+2. Loops through the embedded property list. When the value for `PropertyName` is "Inventoriable Types", the agent updates the comma-delimited list of file names (including extensions) in the `Value2` property. When the value for `PropertyName` is "Inventory Schedule", the agent updates the interval string in the `Value2` property. For information about creating an interval string, see the example for the [WriteToString Method in Class SMS_ScheduleMethods](../../servers/configure/writetostring-method-in-class-sms_schedulemethods.md) method. When the value for `PropertyName` is "Report Options", the agent updates the reporting options value in the `Value` property, specifying at least one reporting option for the software inventory to be collected. The following table lists the reporting options.
 
-
-   |                 Reporting option                 |                                                                                                                                       Description                                                                                                                                       |
-   |--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |       Product version information. Bit 0.        |                                                                                                       Inventories products that contain company and product resource information.                                                                                                       |
-   |   Files associated with known products. Bit 1.   | Inventories files associated with products that contain company and product resource information. For example, Wwintl32.dll is inventoried because it's associated with Microsoft Word.<br /><br /> Set this bit only if the product version information reporting option is selected. |
-   | Files not associated with known products. Bit 2. |                                                                                             Inventories files that don't include company and product resource information (unknown files).                                                                                             |
-
-
+   | Reporting option | Description |
+   | --- | --- |
+   | Product version information. Bit 0. | Inventories products that contain company and product resource information. |
+   | Files associated with known products. Bit 1. | Inventories files associated with products that contain company and product resource information. For example, Wwintl32.dll is inventoried because it's associated with Microsoft Word.   Set this bit only if the product version information reporting option is selected. |
+   | Files not associated with known products. Bit 2. | Inventories files that don't include company and product resource information (unknown files). |
 3. For newly added inventory types, adds entries to the following `Path`, `Subdirectories`, and `Exclude` embedded property lists.
 
    Updates the site control file. For more information, see [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md).
 
 > [!NOTE]
->  Collecting inventory information for some files, for example, DLL files, can generate a large volume of network traffic and substantially increase the size of the Configuration Manager database. For this reason, test any changes you make in a test environment before implementing them in a production environment.
+>
+> Collecting inventory information for some files, for example, DLL files, can generate a large volume of network traffic and substantially increase the size of the Configuration Manager database. For this reason, test any changes you make in a test environment before implementing them in a production environment.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md)
- [SMS_SoftwareConversionRules Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_softwareconversionrules-server-wmi-class.md)
- [SMS_G_System_SoftwareFile Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_softwarefile-server-wmi-class.md)
- [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md)
+
+[SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md) [SMS_SoftwareConversionRules Server WMI Class](sms_softwareconversionrules-server-wmi-class.md) [SMS_G_System_SoftwareFile Server WMI Class](sms_g_system_softwarefile-server-wmi-class.md) [About the site control file](../../../../core/understand/about-the-configuration-manager-site-control-file.md)

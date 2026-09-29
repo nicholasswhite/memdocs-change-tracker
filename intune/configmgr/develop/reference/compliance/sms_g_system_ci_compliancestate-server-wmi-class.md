@@ -1,16 +1,18 @@
 ---
-title: SMS_G_System_CI_ComplianceState Class
+title: "SMS_G_System_CI_ComplianceState Server WMI Class"
 description: In Configuration Manager, the SMS_G_System_CI_ComplianceState Windows Management Instrumentation class is an SMS Provider server class that represents hardware inventory class objects for the compliance state of a configuration item.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_CI_ComplianceState Server WMI Class
+
 The `SMS_G_System_CI_ComplianceState` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents hardware inventory class objects for the compliance state of a configuration item.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,168 +38,158 @@ Class SMS_G_System_CI_ComplianceState : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_CI_ComplianceState` class does not define any methods.
+
+The `SMS_G_System_CI_ComplianceState` class does not define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `Uint32`
 
- Access type: Read
+`CI_ID` Data type: `Uint32`
 
- Qualifiers: [key]
+Access type: Read
 
- The unique ID of the configuration item. This ID is unique only for the site.
+Qualifiers: [key]
 
- `CI_UniqueID`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site.
 
- Access type: Read
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- The unique ID of the configuration item. This ID is unique across sites.
+Qualifiers: None
 
- `CIVersion`
- Data type: `UInt32`
+The unique ID of the configuration item. This ID is unique across sites.
 
- Access type: Read/Write
+`CIVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Version of the configuration item.
+Qualifiers: None
 
- `ComplianceState`
- Data type: `UInt32`
+Version of the configuration item.
 
- Access type: Read
+`ComplianceState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The compliance state of the computer for the specified configuration item.
+Qualifiers: None
 
- `ComplianceStateName`
- Data type: `String`
+The compliance state of the computer for the specified configuration item.
 
- Access type: Read
+`ComplianceStateName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- The readable name of the compliance state. Possible values are:
+Qualifiers: None
 
-|Value|Compliance state|
-|-|-|
-|0|Compliance State Unknown|
-|1|Compliant|
-|2|Non-Compliant|
-|4|Error|
+The readable name of the compliance state. Possible values are:
 
- `DesiredState`
- Data type: `UInt32`
+| Value | Compliance state |
+| --- | --- |
+| 0 | Compliance State Unknown |
+| 1 | Compliant |
+| 2 | Non-Compliant |
+| 4 | Error |
 
- Access type: Read
+`DesiredState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Desired state of the configuration item on the computer.
+Qualifiers: None
 
- `IsApplicable`
- Data type: `Uint32`
+Desired state of the configuration item on the computer.
 
- Access type: Read
+`IsApplicable` Data type: `Uint32`
 
- Qualifiers: None
+Access type: Read
 
- Value indicating if the configuration item is applicable to the computer.
+Qualifiers: None
 
- `IsDetected`
- Data type: `UInt32`
+Value indicating if the configuration item is applicable to the computer.
 
- Access type: Read
+`IsDetected` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Value indicating if the configuration item is detected on the computer.
+Qualifiers: None
 
- `LastComplianceErrorID`
- Data type: `UInt32`
+Value indicating if the configuration item is detected on the computer.
 
- Access type: Read
+`LastComplianceErrorID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- ID of the last compliance status error.
+Qualifiers: None
 
- `LocalizedDisplayName`
- Data type: `String`
+ID of the last compliance status error.
 
- Access type: Read
+`LocalizedDisplayName` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- Localized display name for the compliance state.
+Qualifiers: None
 
- `MaxNoncomplianceCriticality`
- Data type: `UInt32`
+Localized display name for the compliance state.
 
- Access type: Read
+`MaxNoncomplianceCriticality` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The maximum noncompliance severity reported by the client for the configuration item.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+The maximum noncompliance severity reported by the client for the configuration item.
 
- Access type: Read
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- See [SMS_G_System Server WMI Class](../../../develop/reference/core/clients/manage/sms_g_system_system-server-wmi-class.md).
+Qualifiers: [key]
 
- `SDMPackageVersion`
- Data type: `UInt32`
+See [SMS_G_System Server WMI Class](../core/clients/manage/sms_g_system_system-server-wmi-class.md).
 
- Access type: Read
+`SDMPackageVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Version of the System Definition Model (SDM) package that is associated with the configuration item.
+Qualifiers: None
 
- `UserID`
- Data type: `UInt32`
+Version of the System Definition Model (SDM) package that is associated with the configuration item.
 
- Access type: Read/Write
+`UserID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the user.
+Qualifiers: [key]
 
- `UserName`
- Data type: `String`
+ID of the user.
 
- Access type: Read/Write
+`UserName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the user.
+Qualifiers: None
+
+Name of the user.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Your application uses this class to update and determine the compliance state of the configuration item in the server database.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
- [SMS_G_System Server WMI Class](../../../develop/reference/core/clients/manage/sms_g_system_system-server-wmi-class.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md) [SMS_G_System Server WMI Class](../core/clients/manage/sms_g_system_system-server-wmi-class.md)

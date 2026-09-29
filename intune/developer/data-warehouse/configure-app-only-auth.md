@@ -1,7 +1,7 @@
 ---
 title: Intune Data Warehouse Application-Only Authentication
 description: This topic describes Data Warehouse application-only authentication for Microsoft Intune.
-ms.date: 11/18/2024
+ms.date: "2024-11-18T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -11,8 +11,7 @@ You can set up an application using Microsoft Entra ID and authenticate to the I
 
 ## Authorization
 
-Microsoft Entra ID uses OAuth 2.0 to enable you to authorize access to web applications and web APIs in your Microsoft Entra tenant. This guide shows you how to authenticate your application using C#. The OAuth 2.0 authorization code flow is described in section 4.1 of the OAuth 2.0 specification. For more information, see [Authorize access to web applications using OAuth 2.0 and Microsoft Entra ID](/azure/active-directory/develop/active-directory-protocols-oauth-code).
-
+Microsoft Entra ID uses OAuth 2.0 to enable you to authorize access to web applications and web APIs in your Microsoft Entra tenant. This guide shows you how to authenticate your application using C#. The OAuth 2.0 authorization code flow is described in section 4.1 of the OAuth 2.0 specification. For more information, see [Authorize access to web applications using OAuth 2.0 and Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/active-directory-protocols-oauth-code).
 
 ## Azure KeyVault
 
@@ -22,85 +21,85 @@ The following process uses a private method to process and convert an app key. T
 
 In this section, you provide details about the Web app you would like to point to at Intune. A web app is a client-server application. The server provides the web app, which includes the UI, content, and functionality. This type of app is separately maintained on the Web. You use Intune to grant a web app access to Intune. The data flow is initiated by the web app.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select  **All services** > **M365 Microsoft Entra ID** > **Microsoft Entra ID** > **App registrations**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **All services** &gt; **M365 Microsoft Entra ID** &gt; **Microsoft Entra ID** &gt; **App registrations**.
 3. Click **New registration** to display the **Register an application** pane.
 4. In the **Register an application** pane, add your app details:
 
-    - An app name, such as *Intune App-Only Auth*.
-    - The **Supported account type**.
-    - The **Redirect URI** of the application. This is the location users automatically navigate to during the authentication process. They are required to prove that they are who they say they are. For more information, see [What is application access and single sign-on with Microsoft Entra ID?](/azure/active-directory/active-directory-appssoaccess-whatis)
-
+   - An app name, such as *Intune App-Only Auth*.
+   - The **Supported account type**.
+   - The **Redirect URI** of the application. This is the location users automatically navigate to during the authentication process. They are required to prove that they are who they say they are. For more information, see [What is application access and single sign-on with Microsoft Entra ID?](https://learn.microsoft.com/en-us/azure/active-directory/active-directory-appssoaccess-whatis)
 5. Click **Register**.
 
-    >[!NOTE]
-    > Copy the **Application (client) ID** from the app pane to use later.
+   > [!NOTE]
+   >
+   > Copy the **Application (client) ID** from the app pane to use later.
 
 ## Create a key (password)
 
 In this section, Microsoft Entra ID generates a key value for your app.
 
 1. On the **App registrations** pane, select your newly created app to display the app pane.
-2. Select **Certificates & secrets** near the top of the pane to display the **Certificates & secrets** pane.
-3. Select **Client secrets** on the **Certificates & secrets** pane.
+2. Select **Certificates &amp; secrets** near the top of the pane to display the **Certificates &amp; secrets** pane.
+3. Select **Client secrets** on the **Certificates &amp; secrets** pane.
 4. Add the key **Description** and an **Expires** duration for the key.
 5. Click **Add** to save and update the application's keys.
 6. You must copy the generated key value (base64 encoded).
 
-    >[!NOTE]
-    > The key value disappears after you leave the **Certificates & secrets** pane. You cannot retrieve the key from this pane later. Copy it to use later.
+   > [!NOTE]
+   >
+   > The key value disappears after you leave the **Certificates &amp; secrets** pane. You cannot retrieve the key from this pane later. Copy it to use later.
 
 ## Grant application permissions
 
 In this section, you grant permissions to the applications.
 
-1. Select **API permissions** > **Add a permission** > **Intune** > **Application permissions**.
-5. Choose the **get_data_warehouse** option (*Get data warehouse information from Microsoft Intune*).
-6. Click **Add permissions**.
-7. Click **Done** from the **Add API access** pane.
-8. Click **Grant admin consent** from the **API permissions** pane and click **Yes** when promoted to update any existing permissions this application already has.
+1. Select **API permissions** &gt; **Add a permission** &gt; **Intune** &gt; **Application permissions**.
+2. Choose the **get_data_warehouse** option (*Get data warehouse information from Microsoft Intune*).
+3. Click **Add permissions**.
+4. Click **Done** from the **Add API access** pane.
+5. Click **Grant admin consent** from the **API permissions** pane and click **Yes** when promoted to update any existing permissions this application already has.
 
 ## Generate token
 
 Using Visual Studio, create a Console App (.NET Framework) project that supports the .NET Framework and uses C# as the coding language.
 
-1. Select **File** > **New** > **Project** to display the **New Project** dialog box.
+1. Select **File** &gt; **New** &gt; **Project** to display the **New Project** dialog box.
 2. On the left, select **Visual C#** to display all .NET Framework projects.
 3. Select **Console App (.NET Framework)**, add an app name, and then click **OK** to create the app.
 4. In **Solution Explorer**, select **Program.cs** to display the code.
 5. In Solution Explorer, add a reference to the assembly `System.Configuration`.
-6. In the pop-up menu, select **Add** > **New item**. The **Add New Item** dialog box is displayed.
+6. In the pop-up menu, select **Add** &gt; **New item**. The **Add New Item** dialog box is displayed.
 7. On the left, under **Visual C#**, select **Code**.
 8. Select **Class**, change the name of the class to *IntuneDataWarehouseClass.cs*, and click **Add**.
-9. Add the following code within the <code>Main</code> method:
+9. Add the following code within the `Main` method:
 
-    ``` csharp
-         var applicationId = ConfigurationManager.AppSettings["appId"].ToString();
-         SecureString applicationSecret = ConvertToSecureStr(ConfigurationManager.AppSettings["appKey"].ToString()); // Load as SecureString from configuration file or secret store (i.e. Azure KeyVault)
-         var tenantDomain = ConfigurationManager.AppSettings["tenantDomain"].ToString();
-         var msalContext = new AuthenticationContext($"https://login.windows.net/" + tenantDomain + "/oauth2/token");
+   ```csharp
+        var applicationId = ConfigurationManager.AppSettings["appId"].ToString();
+        SecureString applicationSecret = ConvertToSecureStr(ConfigurationManager.AppSettings["appKey"].ToString()); // Load as SecureString from configuration file or secret store (i.e. Azure KeyVault)
+        var tenantDomain = ConfigurationManager.AppSettings["tenantDomain"].ToString();
+        var msalContext = new AuthenticationContext($"https://login.windows.net/" + tenantDomain + "/oauth2/token");
 
-         AuthenticationResult authResult = msalContext.AcquireTokenAsync(
-             resource: "https://api.manage.microsoft.com/",
-             clientCredential: new ClientCredential(
-                 applicationId,
-                 new SecureClientSecret(applicationSecret))).Result;
-    ```
-
+        AuthenticationResult authResult = msalContext.AcquireTokenAsync(
+            resource: "https://api.manage.microsoft.com/",
+            clientCredential: new ClientCredential(
+                applicationId,
+                new SecureClientSecret(applicationSecret))).Result;
+   ```
 10. Add additional namespaces by adding the following code at the top of the code file:
 
-    ``` csharp
+    ```csharp
      using System.Security;
      using Microsoft.Identity.Client;
      using System.Configuration;
     ```
 
-	> [!NOTE]
-	> You must use the Microsoft Authentication Library (MSAL). For more information, see [Update your applications to use Microsoft Authentication Library (MSAL) and Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
+    > [!NOTE]
+    >
+    > You must use the Microsoft Authentication Library (MSAL). For more information, see [Update your applications to use Microsoft Authentication Library (MSAL) and Microsoft Graph API](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/update-your-applications-to-use-microsoft-authentication-library/ba-p/1257363).
+11. After the `Main` method, add the following private method to process and convert the app key:
 
-11. After the <code>Main</code> method, add the following private method to process and convert the app key:
-
-    ``` csharp
+    ```csharp
     private static SecureString ConvertToSecureStr(string appkey)
     {
         if (appkey == null)
@@ -115,13 +114,12 @@ Using Visual Studio, create a Console App (.NET Framework) project that supports
         return secureAppKey;
     }
     ```
-
 12. In the **Solution Explorer**, right-click on **References**, then select **Manage NuGet Packages**.
 13. Search for *Microsoft.Identity.Client* and install the related Microsoft NuGet package.
 14. In **Solution Explorer** select and open the *App.config* file.
-15. Add the <code>appSettings</code> section so that the xml appears as follows:
+15. Add the `appSettings` section so that the xml appears as follows:
 
-    ``` xml
+    ```xml
     <?xml version="1.0" encoding="utf-8" ?>
     <configuration>
         <startup>
@@ -134,16 +132,13 @@ Using Visual Studio, create a Console App (.NET Framework) project that supports
         </appSettings>
     </configuration>
     ```
-
-16. Update the <code>appId</code>, <code>appKey</code>, and <code>tenantDomain</code> values to match your unique app-related values.
+16. Update the `appId`, `appKey`, and `tenantDomain` values to match your unique app-related values.
 17. Build your app.
 
-    >[!NOTE]
-    > To see additional implementation code, see [Intune-Data-Warehouse code example](https://github.com/Microsoft/Intune-Data-Warehouse/tree/master/Samples/CSharp ).
+    > [!NOTE]
+    >
+    > To see additional implementation code, see [Intune-Data-Warehouse code example](https://github.com/Microsoft/Intune-Data-Warehouse/tree/master/Samples/CSharp).
 
 ## Next Steps
-Learn more about Azure Key Vault by reviewing [What is Azure Key Vault?](/azure/key-vault/key-vault-whatis)
 
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+Learn more about Azure Key Vault by reviewing [What is Azure Key Vault?](https://learn.microsoft.com/en-us/azure/key-vault/key-vault-whatis)

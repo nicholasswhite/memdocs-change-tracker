@@ -1,34 +1,34 @@
 ---
-title: Remove a Windows Driver from a Boot Image Package
+title: "How to Remove a Windows Driver from a Boot Image Package"
 description: In Configuration Manager, you remove a Windows driver from an operating system deployment boot image package by removing it from the ReferencedDrivers property of the SMS_BootImagePackage Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Remove a Windows Driver from a Boot Image Package
-In Configuration Manager, you remove a Windows driver from an operating system deployment boot image package by removing it from the `ReferencedDrivers` property of the [SMS_BootImagePackage Server WMI Class](../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md) object.
+
+In Configuration Manager, you remove a Windows driver from an operating system deployment boot image package by removing it from the `ReferencedDrivers` property of the [SMS_BootImagePackage Server WMI Class](../reference/osd/sms_bootimagepackage-server-wmi-class.md) object.
 
 > [!NOTE]
->  The driver is not removed until the boot image package is refreshed and updated on the distribution points.
+>
+> The driver is not removed until the boot image package is refreshed and updated on the distribution points.
 
 ### To remove a Windows driver from a boot image package
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the [SMS_BootImagePackage](../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md) object for the boot image package that contains the driver you want to remove.
-
-3.  Remove the driver from the `ReferencedDrivers` property. The driver is identified by its configuration item identifier represented by the `ID` property of the [SMS_Driver_Details Server WMI Class](../../develop/reference/osd/sms_driver_details-server-wmi-class.md) object. This identifier matches the `CI_ID` property of `SMS_Driver`.
-
-4.  Commit the `SMS_BootImagePackage` object changes.
-
-5.  Refresh the boot image package by calling `RefreshPkgSource`.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the [SMS_BootImagePackage](../reference/osd/sms_bootimagepackage-server-wmi-class.md) object for the boot image package that contains the driver you want to remove.
+3. Remove the driver from the `ReferencedDrivers` property. The driver is identified by its configuration item identifier represented by the `ID` property of the [SMS_Driver_Details Server WMI Class](../reference/osd/sms_driver_details-server-wmi-class.md) object. This identifier matches the `CI_ID` property of `SMS_Driver`.
+4. Commit the `SMS_BootImagePackage` object changes.
+5. Refresh the boot image package by calling `RefreshPkgSource`.
 
 ## Example
- The following example method removes the Windows driver from the boot image package. The package is identified by its `PackageID` property and the driver is identified by its `CI_ID` property.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method removes the Windows driver from the boot image package. The package is identified by its `PackageID` property and the driver is identified by its `CI_ID` property.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub RemoveDriverFromBootImagePackage(connection, driverId, packageId)
@@ -103,39 +103,44 @@ public void RemoveDriverFromBootImagePackage(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`Connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`driverID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The Windows driver identifier available in `SMS_Driver.CI_ID`.|
-|`PackageID`|-   Managed: `String`<br />-   VBScript: `String`|The boot image package identifier available in `SMS_BootImagePackage.PackageID`.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `driverID` | - Managed: `Integer` - VBScript: `Integer` | The Windows driver identifier available in `SMS_Driver.CI_ID`. |
+| `PackageID` | - Managed: `String` - VBScript: `String` | The boot image package identifier available in `SMS_BootImagePackage.PackageID`. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Operating System Deployment Driver Management](../../develop/osd/about-operating-system-deployment-driver-management.md)
- [How to Add a Windows Driver to a Configuration Manager Boot Image Package](../../develop/osd/how-to-add-a-windows-driver-to-a-configuration-manager-boot-image-package.md)
+
+[About Operating System Deployment Driver Management](about-operating-system-deployment-driver-management.md) [How to Add a Windows Driver to a Configuration Manager Boot Image Package](how-to-add-a-windows-driver-to-a-configuration-manager-boot-image-package.md)

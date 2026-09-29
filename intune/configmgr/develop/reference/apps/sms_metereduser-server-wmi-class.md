@@ -1,16 +1,18 @@
 ---
 description: Learn how to list users that have used metered applications in Configuration Manager with SMS_MeteredUser.
-title: SMS_MeteredUser Class
-ms.date: 09/20/2016
+title: "SMS_MeteredUser Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MeteredUser Server WMI Class
+
 The `SMS_MeteredUser` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists users that have used metered applications.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,54 +27,55 @@ Class SMS_MeteredUser : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MeteredUser` class does not define any methods.
+
+The `SMS_MeteredUser` class does not define any methods.
 
 ## Properties
- `Domain`
- Data type: `String`
 
- Access type: Read/Write
+`Domain` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Domain to which the metered user belongs.
+Qualifiers: None
 
- `FullName`
- Data type: `String`
+Domain to which the metered user belongs.
 
- Access type: Read/Write
+`FullName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Fully qualified domain name of the user in domain\user format.
+Qualifiers: None
 
- `MeteredUserID`
- Data type: `UInt32`
+Fully qualified domain name of the user in domain\user format.
 
- Access type: Read/Write
+`MeteredUserID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID for the metered user.
+Qualifiers: [key]
 
- `UserName`
- Data type: `String`
+ID for the metered user.
 
- Access type: Read/Write
+`UserName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the metered user.
+Qualifiers: None
+
+Name of the metered user.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- This class is the source for the `MeteredUserID` foreign key used in other classes.
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
+
+This class is the source for the `MeteredUserID` foreign key used in other classes.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

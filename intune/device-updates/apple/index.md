@@ -1,7 +1,7 @@
 ---
-title: Configure Update Policies for Apple Devices
+title: "Configure update policies for Apple devices"
 description: Learn how to configure software update policies for Apple devices using Apple's Declarative Device Management (DDM) model. Improve security, reduce user disruption, and ensure compliance with reliable, automated updates across your organization.
-ms.date: 02/24/2026
+ms.date: "2026-02-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: beflamm
 ---
@@ -20,29 +20,19 @@ This article shows how to configure update policies in Intune using Apple's Decl
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
 > The configuration of Software Update for Apple devices requires the following platforms:
 >
 > - iOS/iPadOS 17.0 and later
 > - macOS 14.0 and later
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [enrollment-methods](../../includes/requirements/enrollment-methods.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/enrollment.svg) **Enrollment methods**
+
 > The following enrollment methods are supported:
 >
 > - Device Enrollment
 > - Automated Device Enrollment
-:::column-end:::
-:::row-end:::
 
 ## Configuration
 
@@ -54,7 +44,6 @@ When designing your Apple device update strategy, align with your organization's
   - Devices autonomously install the update within the declared deadline—no manual triggers required.
 
   This model is ideal for organizations that prioritize rapid patching, regulatory compliance, and minimal IT overhead.
-
 - **Targeted version policy**: offers granular control over which OS version is installed and when. With this model:
 
   - You specify the required OS version and set a precise installation deadline.
@@ -63,33 +52,37 @@ When designing your Apple device update strategy, align with your organization's
 
   This model is best suited for environments with strict app compatibility requirements, phased deployment strategies, or formal change management workflows.
 
-# [**Latest version**](#tab/automatic-updates)
+- [**Latest version**](#tabpanel_1_automatic-updates)
+- [**Targeted version**](#tabpanel_1_manual-updates)
+
+<a id="tabpanel_1_automatic-updates"></a>
+
+
 
 1. [Create a settings catalog policy](../../device-configuration/settings-catalog/index.md) for the iOS/iPadOS or macOS platform and use the following settings:
 
-    | Category | Setting name and value |
-   |--|--|--|
-   | **Declarative Device Management** > **Software Update Enforce Latest** | **Delay in Days**<br><br> Specify the number of days that should pass before a deadline is enforced. This delay is based on either the posting date of the new update when released by Apple, or when the policy is configured. The delay only determines the target enforcement date and not the date that the update is offered to users.|
-   | **Declarative Device Management** > **Software Update Enforce Latest** | **Install Time**<br><br> Specify the local device time for when updates are enforced. The Install Time setting is configured using the 24-hour clock format where midnight is `00:00` and 11:59pm is `23:59`. Ensure that you include the leading 0 on single digit hours. For example, `01:00`, `02:00`, `03:00`.|
-   
-1. [Assign the policy](../../device-configuration/assign-device-profile.md) to a group to target users or devices.
+   | Category | Setting name and value |
+   | --- | --- |
+   | **Declarative Device Management** &gt; **Software Update Enforce Latest** | **Delay in Days**   Specify the number of days that should pass before a deadline is enforced. This delay is based on either the posting date of the new update when released by Apple, or when the policy is configured. The delay only determines the target enforcement date and not the date that the update is offered to users. |
+   | **Declarative Device Management** &gt; **Software Update Enforce Latest** | **Install Time**   Specify the local device time for when updates are enforced. The Install Time setting is configured using the 24-hour clock format where midnight is `00:00` and 11:59pm is `23:59`. Ensure that you include the leading 0 on single digit hours. For example, `01:00`, `02:00`, `03:00`. |
+2. [Assign the policy](../../device-configuration/assign-device-profile.md) to a group to target users or devices.
 
-# [**Targeted version**](#tab/manual-updates)
+<a id="tabpanel_1_manual-updates"></a>
+
+
 
 1. [Create a settings catalog policy](../../device-configuration/settings-catalog/index.md) for the iOS/iPadOS or macOS platform and use the following settings:
 
-    | Category | Setting name and value |
-    |--|--|--|
-    | **Declarative Device Management** > **Software Update** | **Details URL**<br><br> Enter a web page URL that has more information on the update. Typically, this URL is a web page hosted by your organization that users can select if they need organization-specific help with the update.|
-    | **Declarative Device Management** > **Software Update** | **Target Build Version**<br><br> Enter the target build version to update the device to, like `25A354`. The build version can include a supplemental version identifier, like `25A354a`.<br><br>If the build version you enter isn't consistent with the **Target OS Version** value you enter, then the **Target OS Version** value takes precedence.|
-    | **Declarative Device Management** > **Software Update** | **Target Date Time**<br> Select or manually enter the date and the time that specifies when to force the installation of the software update.<br><br>The **Target Date Time** setting schedules the update using the local timezone of the device. For example, an admin configures an update to install at 2PM. The policy schedules the update to happen at 2PM in the local timezone of devices that receive the policy.<br><br>If the user doesn't trigger the software update before this time, then a one-minute countdown prompt is shown to the user. When the countdown ends, the device force installs the update and forces a restart.<br>If the device is powered off when the deadline is met, when the device powers back on, there's a one hour grace period. When the grace period ends, the device force installs the update and forces a restart.|
-    | **Declarative Device Management** > **Software Update** | **Target OS Version**<br><br> Select or manually enter the target OS version to update the device to. This value is the OS version number, like `26.0`. You can also include a supplemental version identifier, like `26.0.1`.|
-
-1. [Assign the policy](../../device-configuration/assign-device-profile.md) to a group to target users or devices.
-
----
+   | Category | Setting name and value |
+   | --- | --- |
+   | **Declarative Device Management** &gt; **Software Update** | **Details URL**   Enter a web page URL that has more information on the update. Typically, this URL is a web page hosted by your organization that users can select if they need organization-specific help with the update. |
+   | **Declarative Device Management** &gt; **Software Update** | **Target Build Version**   Enter the target build version to update the device to, like `25A354`. The build version can include a supplemental version identifier, like `25A354a`.  If the build version you enter isn't consistent with the **Target OS Version** value you enter, then the **Target OS Version** value takes precedence. |
+   | **Declarative Device Management** &gt; **Software Update** | **Target Date Time**  Select or manually enter the date and the time that specifies when to force the installation of the software update.  The **Target Date Time** setting schedules the update using the local timezone of the device. For example, an admin configures an update to install at 2PM. The policy schedules the update to happen at 2PM in the local timezone of devices that receive the policy.  If the user doesn't trigger the software update before this time, then a one-minute countdown prompt is shown to the user. When the countdown ends, the device force installs the update and forces a restart. If the device is powered off when the deadline is met, when the device powers back on, there's a one hour grace period. When the grace period ends, the device force installs the update and forces a restart. |
+   | **Declarative Device Management** &gt; **Software Update** | **Target OS Version**   Select or manually enter the target OS version to update the device to. This value is the OS version number, like `26.0`. You can also include a supplemental version identifier, like `26.0.1`. |
+2. [Assign the policy](../../device-configuration/assign-device-profile.md) to a group to target users or devices.
 
 > [!NOTE]
+>
 > When an update enforcement is assigned, the device ignores software update settings, including automatic update actions. The update may install before the deadline if the device is idle.
 
 For more information about configuring Software Update policies and the available settings, see [Software Update](../../device-configuration/settings-catalog/ref-apple-settings.md#software-update).
@@ -110,8 +103,8 @@ For more information about configuring Software Update Settings policies and the
 
 Software update policy settings use the same reporting as other device configuration policies. For more information, see [Monitor device configuration policies](../../device-configuration/monitor-device-profile.md).
 
-A policy that reports *Success* only means that the configuration policy successfully installed on the device. Monitor the OS version of targeted devices to ensure that they update.\
-After devices have updated to a later OS version than configured in the policy, the policy reports an error as the device sees this task as an attempt to downgrade. It's recommended to remove the older OS version policy from devices in this state.
+A policy that reports *Success* only means that the configuration policy successfully installed on the device. Monitor the OS version of targeted devices to ensure that they update.  
+ After devices have updated to a later OS version than configured in the policy, the policy reports an error as the device sees this task as an attempt to downgrade. It's recommended to remove the older OS version policy from devices in this state.
 
 To monitor the update status of your Apple devices, see [View Software Update Reports for Apple Devices](monitor-reports.md).
 

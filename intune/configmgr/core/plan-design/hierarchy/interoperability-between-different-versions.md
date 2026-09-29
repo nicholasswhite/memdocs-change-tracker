@@ -1,7 +1,7 @@
 ---
-title: Interoperability between versions
+title: "Interoperability between different versions of Configuration Manager"
 description: Learn how to avoid conflicts between multiple Configuration Manager hierarchies on the same network.
-ms.date: 04/05/2021
+ms.date: "2021-04-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -30,11 +30,8 @@ Additionally, you can't install a client from System Center 2012 Configuration M
 The following clients and connections aren't supported:
 
 - Any System Center 2012 Configuration Manager or earlier computer client version
-
 - Any System Center 2012 Configuration Manager or earlier device management client
-
 - Windows CE Platform Builder device management client (any version)
-
 - System Center Mobile Device Manager VPN connection
 
 ### Client site assignment considerations
@@ -80,7 +77,6 @@ As long as new versions of Configuration Manager don't update the version of Win
 When you create a task sequence with a step introduced in one version of Configuration Manager that's not available in an earlier version, you might have the following issues:
 
 - An error occurs when you try to edit the task sequence from a site that's running a previous version of Configuration Manager.
-
 - The task sequence doesn't run on a computer that runs a previous version of the Configuration Manager client.
 
 ### Client to down-level management point communications
@@ -89,17 +85,14 @@ A Configuration Manager client that communicates with a management point from a 
 
 ### Package and task sequence deployments to legacy clients
 
-<!-- SCCMDocs-pr issue #3493 -->
-
 You can't deploy a package or task sequence to a client version 5.7730 or earlier. To work around this limitation, upgrade the client to a later version.
 
 ### Orchestration groups
 
-Orchestration groups can't be used in a mixed-version hierarchy. <!--SCCMDocs-pr issue ##5056, 6389000-->
+Orchestration groups can't be used in a mixed-version hierarchy.
 
 ### Assign site systems as clients to the same site
 
-<!-- 9606023 -->
 If you install the Configuration Manager client on site systems, assign them to the same site. Roles like the management point and distribution point have shared binary files between the role and the client. These collocated clients should always be the same version as the site system role.
 
 For example, for a management point in site XYZ, assign the client installed on this site system server to site XYZ.

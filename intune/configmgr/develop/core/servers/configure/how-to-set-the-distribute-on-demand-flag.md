@@ -1,29 +1,29 @@
 ---
-title: Set the Distribute on Demand Flag
+title: "How to Set the Distribute on Demand Flag"
 description: The following example shows how to set the "distribute on demand" flag property of an existing package by using the SMS_Package Server WMI Class class in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Set the Distribute on Demand Flag
-The following example shows how to set the "distribute on demand" flag property of an existing package by using the [SMS_Package Server WMI Class](../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) class in Configuration Manager.
+
+The following example shows how to set the "distribute on demand" flag property of an existing package by using the [SMS_Package Server WMI Class](../../../reference/core/servers/configure/sms_package-server-wmi-class.md) class in Configuration Manager.
 
 ### To set the distribute on demand flag
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Load the existing package object by using [SMS_Package Server WMI Class](../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) class.
-
-3.  Populate the package flag property.
-
-4.  Save the package and the new package properties.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Load the existing package object by using [SMS_Package Server WMI Class](../../../reference/core/servers/configure/sms_package-server-wmi-class.md) class.
+3. Populate the package flag property.
+4. Save the package and the new package properties.
 
 ## Example
- The following example method sets the "distribute on demand" flag for a package.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method sets the "distribute on demand" flag for a package.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -105,41 +105,43 @@ public void SetDistributeOnDemandFlag(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swebemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the package.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swebemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPackageID` | - Managed: `String` - VBScript: `String` | The ID of the package. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [Objects overview](../../understand/configuration-manager-objects-overview.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [SMS_Package Server WMI Class](../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [Objects overview](../../understand/configuration-manager-objects-overview.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [SMS_Package Server WMI Class](../../../reference/core/servers/configure/sms_package-server-wmi-class.md)

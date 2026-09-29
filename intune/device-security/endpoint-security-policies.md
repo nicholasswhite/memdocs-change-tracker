@@ -1,8 +1,8 @@
 ---
-title: Endpoint security in Microsoft Intune
+title: "Manage endpoint security in Microsoft Intune"
 description: Learn how to manage endpoint security in Microsoft Intune. Configure security policies, deploy baselines, and integrate with Defender for Endpoint to protect devices.
 keywords: Intune security policies, endpoint protection Intune, configure endpoint security, device security Intune, Microsoft Defender Intune, security baselines, zero trust Intune, ransomware protection, endpoint security node, device compliance Intune, Endpoint Security Manager, attack surface reduction Intune
-ms.date: 05/26/2026
+ms.date: "2026-05-26T00:00:00Z"
 ms.topic: overview
 ai-usage: ai-assisted
 ms.collection:
@@ -22,29 +22,22 @@ From the Endpoint security node, you can configure policies, deploy security bas
 Use the Endpoint security node to address common security challenges:
 
 - **Protect against ransomware and malware** - Deploy antivirus policies with real-time protection, configure attack surface reduction rules, enable controlled folder access, and apply security baselines. For more information, see [Manage device security with endpoint security policies](../device-configuration/endpoint-security/manage-policies.md).
-
 - **Apply zero trust principles** - Require device compliance for resource access, integrate with Conditional Access to verify security posture, use device risk signals from Defender for Endpoint, deploy disk encryption, and enforce least privilege access with Endpoint Privilege Management (EPM). For more information, see [Zero Trust with Microsoft Intune](../fundamentals/zero-trust.md).
-
-- **Secure remote and hybrid work** - Monitor compliance for remote devices, onboard devices to Defender for Endpoint through EDR policies, configure firewall policies, and use Conditional Access to block access from noncompliant devices. For more information, see [Protect data and devices with Microsoft Intune](./overview.md).
-
-- **Meet compliance requirements** - Deploy standardized security configurations using baselines aligned to industry frameworks, monitor compliance status through reporting, and configure automated actions for noncompliant devices. For more information, see [Use security baselines to configure Windows devices in Intune](./security-baselines/overview.md).
-
-- **Respond to security threats** - Review security tasks from your Defender for Endpoint team, use remote actions to remediate at-risk devices, rotate encryption keys, and monitor threat detection through dashboards. For more information, see [Use Intune to remediate vulnerabilities identified by Microsoft Defender for Endpoint](./microsoft-defender/remediate-vulnerabilities.md).
+- **Secure remote and hybrid work** - Monitor compliance for remote devices, onboard devices to Defender for Endpoint through EDR policies, configure firewall policies, and use Conditional Access to block access from noncompliant devices. For more information, see [Protect data and devices with Microsoft Intune](overview.md).
+- **Meet compliance requirements** - Deploy standardized security configurations using baselines aligned to industry frameworks, monitor compliance status through reporting, and configure automated actions for noncompliant devices. For more information, see [Use security baselines to configure Windows devices in Intune](security-baselines/overview.md).
+- **Respond to security threats** - Review security tasks from your Defender for Endpoint team, use remote actions to remediate at-risk devices, rotate encryption keys, and monitor threat detection through dashboards. For more information, see [Use Intune to remediate vulnerabilities identified by Microsoft Defender for Endpoint](microsoft-defender/remediate-vulnerabilities.md).
 
 ## Endpoint security dashboard
 
 The Endpoint security dashboard provides a consolidated view of your security posture.
 
-To access the dashboard, sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Endpoint security** > **Overview**.
+To access the dashboard, sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Endpoint security** &gt; **Overview**.
 
 The dashboard helps you quickly assess device security status and identify areas requiring attention. It displays information from multiple endpoint security areas including *Antivirus*, *Endpoint detection and response*, and *Defender for Endpoint*:
 
-- **Defender for Endpoint Connector status** - View the connection status between Intune and Defender for Endpoint. If not connected, see [Connect Microsoft Defender for Endpoint to Intune](./microsoft-defender/configure-integration.md#connect-defender-for-endpoint-to-intune) to set up the integration. The status label also links to the Microsoft Defender portal.
-
+- **Defender for Endpoint Connector status** - View the connection status between Intune and Defender for Endpoint. If not connected, see [Connect Microsoft Defender for Endpoint to Intune](microsoft-defender/configure-integration.md#connect-defender-for-endpoint-to-intune) to set up the integration. The status label also links to the Microsoft Defender portal.
 - **Windows devices onboarded to Defender for Endpoint** - View counts of devices onboarded and not onboarded for endpoint detection and response (EDR). Select **Deploy preconfigured policy** to onboard devices through Intune, or **Onboard devices to Defender for Endpoint** to use the Defender portal workflow.
-
-- **Antivirus agent status** - View summary details from the Microsoft Defender Antivirus status report, which is also available at **Reports** > *Microsoft Defender Antivirus* > **Summary**.
-
+- **Antivirus agent status** - View summary details from the Microsoft Defender Antivirus status report, which is also available at **Reports** &gt; *Microsoft Defender Antivirus* &gt; **Summary**.
 - **Other Monitoring reports** - Access additional Microsoft Defender Antivirus reports including *Detected Malware* and *Firewall Status*. There's also a link to the Defender portal for sensor and antivirus health data.
 
 ## Endpoint security features
@@ -55,19 +48,19 @@ The following sections provide details on how each capability works and link to 
 
 The *All devices* view in Endpoint security displays all devices from your Microsoft Entra ID that are available in Intune. From this centralized view, you can monitor device compliance status across your organization, drill into specific devices to identify policy violations, and take immediate remediation actions such as restarting devices, initiating malware scans, or rotating encryption keys.
 
-This consolidated device view provides security admins with a single location to assess and remediate security issues across the entire fleet, regardless of platform or enrollment method. For more information, see [Manage devices with endpoint security in Microsoft Intune](../device-management/manage-endpoint-security-devices.md).
+This consolidated device view provides security admins with a single location to assess and remediate security issues across the entire fleet, regardless of platform or enrollment method. For more information, see [Manage devices with endpoint security in Microsoft Intune](endpoint-security-devices.md).
 
 ### Security baselines
 
 Security baselines provide preconfigured groups of Windows settings with defaults recommended by Microsoft security teams. These baselines enable you to quickly establish a comprehensive security posture aligned with industry best practices and security frameworks. Intune supports multiple security baselines, including Windows devices, Defender for Endpoint, Microsoft Edge, and more.
 
-Each baseline contains Microsoft-recommended settings organized by functional area. You can deploy baselines with default settings or customize them to meet your organization's requirements. For more information, see [Use security baselines to configure Windows devices in Intune](./security-baselines/overview.md).
+Each baseline contains Microsoft-recommended settings organized by functional area. You can deploy baselines with default settings or customize them to meet your organization's requirements. For more information, see [Use security baselines to configure Windows devices in Intune](security-baselines/overview.md).
 
 ### Security tasks
 
 Security tasks enable collaboration between Defender for Endpoint and Intune teams. When Defender for Endpoint identifies vulnerabilities, Defender for Endpoint security admins create tasks in the Defender for Endpoint portal specifying affected devices, the vulnerability, and remediation guidance. These tasks appear in Intune, where Intune administrators accept them, deploy appropriate policies or configurations, then mark complete after remediation is verified. Completion status synchronizes to the Defender for Endpoint portal for validation.
 
-This workflow ensures both teams stay aligned on which devices are at risk and provides clear accountability for remediation. Security tasks require integration with Defender for Endpoint. See [Set up integration with Microsoft Defender for Endpoint](#set-up-integration-with-microsoft-defender-for-endpoint). For more information on the workflow, see [Use Intune to remediate vulnerabilities identified by Microsoft Defender for Endpoint](./microsoft-defender/remediate-vulnerabilities.md).
+This workflow ensures both teams stay aligned on which devices are at risk and provides clear accountability for remediation. Security tasks require integration with Defender for Endpoint. See [Set up integration with Microsoft Defender for Endpoint](#set-up-integration-with-microsoft-defender-for-endpoint). For more information on the workflow, see [Use Intune to remediate vulnerabilities identified by Microsoft Defender for Endpoint](microsoft-defender/remediate-vulnerabilities.md).
 
 ### Endpoint security policies
 
@@ -75,7 +68,7 @@ Endpoint security policies provide streamlined configuration options for specifi
 
 The Endpoint security node also includes device compliance and Conditional Access policies. While these policies aren't focused security policies for configuring endpoints, they're essential tools for managing device security posture and controlling access to corporate resources. Endpoint security also includes Endpoint Privilege Management policies that allow you to enforce least privilege access on Windows devices.
 
-![Manage policies](./media/endpoint-security-policies/endpoint-security-policies.png)
+![Manage policies](media/endpoint-security-policies/endpoint-security-policies.png)
 
 Endpoint security policies work alongside device configuration profiles and security baselines, so understanding which method to use for each scenario helps prevent configuration conflicts. For more information, see [Manage device security with endpoint security policies](../device-configuration/endpoint-security/manage-policies.md).
 
@@ -83,20 +76,20 @@ Endpoint security policies work alongside device configuration profiles and secu
 
 Device compliance policies establish the conditions that devices and users must meet to access corporate resources. These policies define compliance rules and evaluate whether devices meet those requirements. They report compliance status to Intune and Entra ID.
 
-Common compliance rules include OS version requirements, password requirements, device health conditions (encryption, jailbreak detection), threat level limits from Defender for Endpoint or Mobile Threat Defense partners, and required security features. Compliance policies also support [actions for noncompliance](./compliance/configure-noncompliance-actions.md) that execute on a schedule, including user notifications, marking devices noncompliant after a grace period, remote lock, or adding devices to a retire list for admin review.
+Common compliance rules include OS version requirements, password requirements, device health conditions (encryption, jailbreak detection), threat level limits from Defender for Endpoint or Mobile Threat Defense partners, and required security features. Compliance policies also support [actions for noncompliance](compliance/configure-noncompliance-actions.md) that execute on a schedule, including user notifications, marking devices noncompliant after a grace period, remote lock, or adding devices to a retire list for admin review.
 
-When integrated with Microsoft Entra Conditional Access, compliance status controls access to corporate resources. Conditional Access can use compliance data to gate access for both managed devices and devices that aren't managed. For more information, see [Set rules on devices to allow access to resources in your organization using Intune](./compliance/overview.md).
+When integrated with Microsoft Entra Conditional Access, compliance status controls access to corporate resources. Conditional Access can use compliance data to gate access for both managed devices and devices that aren't managed. For more information, see [Set rules on devices to allow access to resources in your organization using Intune](compliance/overview.md).
 
 ### Conditional Access
 
-Conditional Access policies work with Intune to control which devices and apps can access corporate resources. Intune passes device compliance status to Entra ID, which then uses Conditional Access policies to enforce access requirements. Conditional Access policies can also gate access for devices that aren't managed by using Intune, and they can use compliance details from [Mobile Threat Defense partners](./mobile-threat-defense/overview.md) you integrate with Intune.
+Conditional Access policies work with Intune to control which devices and apps can access corporate resources. Intune passes device compliance status to Entra ID, which then uses Conditional Access policies to enforce access requirements. Conditional Access policies can also gate access for devices that aren't managed by using Intune, and they can use compliance details from [Mobile Threat Defense partners](mobile-threat-defense/overview.md) you integrate with Intune.
 
 The following are two common methods of using Conditional Access with Intune:
 
 - **Device-based Conditional Access** - Ensure only managed and compliant devices can access network resources.
 - **App-based Conditional Access** - Use app protection policies to manage access to network resources by users on devices that aren't managed by using Intune.
 
-For more information, see [Learn about Conditional Access and Intune](./conditional-access-integration/overview.md).
+For more information, see [Learn about Conditional Access and Intune](conditional-access-integration/overview.md).
 
 ### Endpoint Privilege Management
 
@@ -105,13 +98,14 @@ Endpoint Privilege Management enforces least privilege access by allowing users 
 You deploy Endpoint Privilege Management by creating elevation rules that define which applications can run with administrative privileges and under what conditions. Elevation rules support multiple validation methods including file hashes, publisher certificates, and file paths. You can configure automatic elevation for trusted applications, user-confirmed elevation with optional authentication requirements, support-approved elevation where administrators review requests, or deny rules to block specific files. EPM includes detailed reporting for both managed elevations and unmanaged elevations, helping you identify elevation patterns, refine rules, and plan the transition of users from administrator to standard user accounts.
 
 > [!NOTE]
+>
 > Endpoint Privilege Management is a [Microsoft Intune advanced capability](../fundamentals/advanced-capabilities.md) that requires additional licensing beyond Microsoft Intune.
 
 For more information, see [Endpoint Privilege Management](../epm/overview.md).
 
 ## Set up integration with Microsoft Defender for Endpoint
 
-Integrating Defender for Endpoint with Intune unlocks additional capabilities in the Endpoint security node that aren't otherwise available. While Intune supports integration with several [Mobile Threat Defense partners](./mobile-threat-defense/overview.md), Defender for Endpoint offers the widest integration with Intune across Windows, macOS, iOS, and Android platforms.
+Integrating Defender for Endpoint with Intune unlocks additional capabilities in the Endpoint security node that aren't otherwise available. While Intune supports integration with several [Mobile Threat Defense partners](mobile-threat-defense/overview.md), Defender for Endpoint offers the widest integration with Intune across Windows, macOS, iOS, and Android platforms.
 
 Integration benefits include:
 
@@ -120,7 +114,7 @@ Integration benefits include:
 - **Device risk signals** - Use Defender threat levels in compliance policies and app protection policies.
 - **Controlled configuration (preview)** - Enforce Defender security settings from Intune, superseding settings from other management channels. The [controlled configuration setting](../device-configuration/endpoint-security/antivirus.md#controlled-configuration-for-microsoft-defender-settings-preview) also supports the existing tamper protection behavior.
 
-For more information, see [Integrate Microsoft Defender for Endpoint with Intune for Device Compliance](./microsoft-defender/overview.md).
+For more information, see [Integrate Microsoft Defender for Endpoint with Intune for Device Compliance](microsoft-defender/overview.md).
 
 ## Role-based access control requirements
 
@@ -132,6 +126,7 @@ To manage tasks in the Endpoint security node of the Intune admin center, an acc
 For more information, see [Role-based access control (RBAC) with Microsoft Intune](../fundamentals/role-based-access-control/overview.md) and the [Endpoint Security Manager](../fundamentals/role-based-access-control/ref-built-in-roles.md#endpoint-security-manager) role reference.
 
 > [!NOTE]
+>
 > Some workloads under Endpoint Security require additional workload-specific permissions beyond the Endpoint Security Manager role. For example, viewing Endpoint Privilege Management reports requires the **View Reports** permission under **Endpoint Privilege Management Policy Authoring**. For details, see [Reports for Endpoint Privilege Management](../epm/monitor-reports.md#prerequisites).
 
 ## Choose the right policy type
@@ -197,9 +192,7 @@ Different Intune features can manage endpoint security settings. These features 
 When two or more policies are assigned to the same device, the setting that applies depends on the policy types involved:
 
 - **Compliance policies take precedence over configuration policies**. When the same setting appears in both a compliance policy and a configuration policy (including endpoint security policies, security baselines, or device configuration), Intune uses the compliance policy value.
-
 - **Multiple compliance policies use most restrictive setting**. When multiple compliance policies configure the same setting, Intune applies the most restrictive value.
-
 - **Configuration policy conflicts require manual resolution**. When multiple configuration policies (endpoint security, security baselines, device configuration, settings catalog) set different values for the same setting, you must identify and resolve the conflict manually. The setting might fail to apply and be flagged as conflicted.
 
 ### Avoid conflicts
@@ -212,9 +205,9 @@ To avoid conflicts:
 
 For detailed information on identifying and resolving conflicts, see:
 
-- [Troubleshoot policies and profiles in Intune](/troubleshoot/mem/intune/troubleshoot-policies-in-microsoft-intune)
-- [Monitor your security baselines](./security-baselines/monitor-baselines.md#troubleshoot-using-per-setting-status)
-- [Avoid conflicts](./security-baselines/overview.md#avoid-conflicts) in the security baselines documentation.
+- [Troubleshoot policies and profiles in Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-policies-in-microsoft-intune)
+- [Monitor your security baselines](security-baselines/monitor-baselines.md#troubleshoot-using-per-setting-status)
+- [Avoid conflicts](security-baselines/overview.md#avoid-conflicts) in the security baselines documentation.
 
 ## Frequently asked questions
 
@@ -264,7 +257,7 @@ Actions depend on your compliance policy configuration:
 
 Configure:
 
-- [Security baselines](./security-baselines/overview.md)
-- [Compliance policies](./compliance/overview.md)
-- [Conditional Access integration](./conditional-access-integration/overview.md)
-- [Integration with Microsoft Defender for Endpoint](./microsoft-defender/overview.md)
+- [Security baselines](security-baselines/overview.md)
+- [Compliance policies](compliance/overview.md)
+- [Conditional Access integration](conditional-access-integration/overview.md)
+- [Integration with Microsoft Defender for Endpoint](microsoft-defender/overview.md)

@@ -1,6 +1,6 @@
 ---
-title: DetermineIfRebootPending Method
-ms.date: 09/20/2016
+title: "DetermineIfRebootPending Method in Class CCM_ClientUtilities"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -12,7 +12,7 @@ ms.service: configuration-manager
 
 The `DetermineIfRebootPending` Windows Management Instrumentation (WMI) class method in Configuration Manager.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -28,47 +28,45 @@ uint32 DetermineIfRebootPending
 ```
 
 ## Parameters
- `RebootPending`
- Data type: `Boolean`
 
- Qualifiers: [id("0"), out]
+`RebootPending` Data type: `Boolean`
 
- RebootPending.
+Qualifiers: [id("0"), out]
 
- `IsHardRebootPending`
- Data type: `Boolean`
+RebootPending.
 
- Qualifiers: [id("1"), out]
+`IsHardRebootPending` Data type: `Boolean`
 
- IsHardRebootPending.
+Qualifiers: [id("1"), out]
 
- `InGracePeriod`
- Data type: `Boolean`
+IsHardRebootPending.
 
- Qualifiers: [id("2"), out]
+`InGracePeriod` Data type: `Boolean`
 
- InGracePeriod.
+Qualifiers: [id("2"), out]
 
- `DisableHideTime`
- Data type: `DateTime`
+InGracePeriod.
 
- Qualifiers: [id("3"), out]
+`DisableHideTime` Data type: `DateTime`
 
- DisableHideTime.
+Qualifiers: [id("3"), out]
 
- `RebootDeadline`
- Data type: `DateTime`
+DisableHideTime.
 
- Qualifiers: [id("4"), out]
+`RebootDeadline` Data type: `DateTime`
 
- RebootDeadline.
+Qualifiers: [id("4"), out]
+
+RebootDeadline.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

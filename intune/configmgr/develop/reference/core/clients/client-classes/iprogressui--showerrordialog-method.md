@@ -1,7 +1,7 @@
 ---
-title: "IProgressUI::ShowErrorDialog"
+title: "IProgressUI::ShowErrorDialog method"
 description: "IProgressUI::ShowErrorDialog method"
-ms.date: 04/03/2019
+ms.date: "2019-04-03T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -68,7 +68,7 @@ Data type: `ULONG`
 
 Qualifiers: [in]
 
-Pointer to the return code of the last step that failed. The value can be obtained from the `_SMSTSLastActionRetCode` environment variable. If no custom text for `pszErrorMessage` is specified, `uErrorCode` will be displayed in [Microsoft system error code](/windows/desktop/debug/system-error-codes) format.
+Pointer to the return code of the last step that failed. The value can be obtained from the `_SMSTSLastActionRetCode` environment variable. If no custom text for `pszErrorMessage` is specified, `uErrorCode` will be displayed in [Microsoft system error code](https://learn.microsoft.com/en-us/windows/desktop/debug/system-error-codes) format.
 
 #### `uTimeoutInSeconds`
 
@@ -98,15 +98,11 @@ Pointer to the text for name of the step name that will be displayed in the defa
 
 An `HRESULT` code. Possible values include, but aren't limited to, the following value. There are no `HRESULT` values returned that are specific to this method.
 
-S_OK
-The method succeeded.
+S_OK The method succeeded.
 
 ## See also
 
 - [OS deployment client COM automation classes](operating-system-deployment-client-com-automation-classes.md)
-
 - [IProgressUI interface](iprogressui-interface.md)
-
 - [About reporting Configuration Manager custom action progress](../../../../osd/about-reporting-configuration-manager-custom-action-progress.md)
-
 - [How to use task sequence variables in a running Configuration Manager task sequence](../../../../osd/how-to-use-task-sequence-variables-in-a-running-task-sequence.md)

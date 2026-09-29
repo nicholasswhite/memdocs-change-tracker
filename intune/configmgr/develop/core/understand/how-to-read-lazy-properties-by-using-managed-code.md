@@ -1,36 +1,35 @@
 ---
-title: Lazy Properties by Using Managed Code
+title: "How to Read Lazy Properties by Using Managed Code"
 description: To read a lazy property from a Configuration Manager object returned in a query, you get the object instance, which retrieves any lazy object properties from the SMS Provider.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Read Lazy Properties by Using Managed Code
 
 To read a lazy property from a Configuration Manager object returned in a query, you get the object instance, which retrieves any lazy object properties from the SMS Provider.
 
 > [!NOTE]
-> If you know the full path to the WMI object, a call to the [GetInstance](/previous-versions/system-center/developer/cc146190(v=msdn.10)) method returns the WMI object along with any lazy properties. For more information, see [How to Read a Configuration Manager Object by Using Managed Code](../../../develop/core/understand/how-to-read-a-configuration-manager-object-by-using-managed-code.md).
+>
+> If you know the full path to the WMI object, a call to the [GetInstance](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc146190(v=msdn.10)) method returns the WMI object along with any lazy properties. For more information, see [How to Read a Configuration Manager Object by Using Managed Code](how-to-read-a-configuration-manager-object-by-using-managed-code.md).
 
-For more information, see [Configuration Manager Lazy Properties](../../../develop/core/understand/configuration-manager-lazy-properties.md).
+For more information, see [Configuration Manager Lazy Properties](configuration-manager-lazy-properties.md).
 
 ### To read lazy properties
 
-1. Set up a connection to the SMS Provider. For more information, see [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md).
-
+1. Set up a connection to the SMS Provider. For more information, see [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](how-to-connect-to-an-sms-provider-by-using-managed-code.md).
 2. Use **QueryProcessor** object to query Configuration Manager objects.
-
 3. Iterate through the query results.
-
-4. Using the **WqlConnectionManager** you obtain in step one, call [GetInstance](/previous-versions/system-center/developer/cc146190(v=msdn.10)) to get the [IResultObject](/previous-versions/system-center/developer/cc147376(v=msdn.10)) object for each queried object that you want to get lazy properties from.
+4. Using the **WqlConnectionManager** you obtain in step one, call [GetInstance](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc146190(v=msdn.10)) to get the [IResultObject](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147376(v=msdn.10)) object for each queried object that you want to get lazy properties from.
 
 ## Example
 
-The following C# code example queries for all [SMS_Collection](../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md) objects and then displays rule names obtained from the `CollectionRules` lazy property.
+The following C# code example queries for all [SMS_Collection](../../reference/core/clients/collections/sms_collection-server-wmi-class.md) objects and then displays rule names obtained from the `CollectionRules` lazy property.
 
-For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```csharp
 public void ReadLazyProperty(WqlConnectionManager connection)
@@ -75,9 +74,9 @@ public void ReadLazyProperty(WqlConnectionManager connection)
 
 This example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|`WqlConnectionManager`|A valid connection to the SMS Provider.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | `WqlConnectionManager` | A valid connection to the SMS Provider. |
 
 ## Compiling the Code
 
@@ -101,24 +100,24 @@ adminui.wqlqueryengine
 
 ## Robust Programming
 
-The Configuration Manager exceptions that can be raised are [SmsConnectionException](/previous-versions/system-center/developer/cc147431(v=msdn.10)) and [SmsQueryException](/previous-versions/system-center/developer/cc147436(v=msdn.10)). These can be caught together with [SmsException](/previous-versions/system-center/developer/cc147433(v=msdn.10)).
+The Configuration Manager exceptions that can be raised are [SmsConnectionException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147431(v=msdn.10)) and [SmsQueryException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147436(v=msdn.10)). These can be caught together with [SmsException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147433(v=msdn.10)).
 
 ## See Also
 
 [Objects overview](configuration-manager-objects-overview.md)
 
-[Configuration Manager Lazy Properties](../../../develop/core/understand/configuration-manager-lazy-properties.md)
+[Configuration Manager Lazy Properties](configuration-manager-lazy-properties.md)
 
-[How to Call a Configuration Manager Object Class Method by Using Managed Code](../../../develop/core/understand/how-to-call-a-configuration-manager-object-class-method-by-using-managed-code.md)
+[How to Call a Configuration Manager Object Class Method by Using Managed Code](how-to-call-a-configuration-manager-object-class-method-by-using-managed-code.md)
 
-[How to Connect to a Configuration Manager Provider using Managed Code](../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
+[How to Connect to a Configuration Manager Provider using Managed Code](how-to-connect-to-an-sms-provider-by-using-managed-code.md)
 
-[How to Create a Configuration Manager Object by Using Managed Code](../../../develop/core/understand/how-to-create-a-configuration-manager-object-by-using-managed-code.md)
+[How to Create a Configuration Manager Object by Using Managed Code](how-to-create-a-configuration-manager-object-by-using-managed-code.md)
 
-[How to Modify a Configuration Manager Object by Using Managed Code](../../../develop/core/understand/how-to-modify-a-configuration-manager-object-by-using-managed-code.md)
+[How to Modify a Configuration Manager Object by Using Managed Code](how-to-modify-a-configuration-manager-object-by-using-managed-code.md)
 
-[How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](../../../develop/core/understand/how-to-perform-an-asynchronous-query-by-using-managed-code.md)
+[How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](how-to-perform-an-asynchronous-query-by-using-managed-code.md)
 
-[How to Perform a Synchronous Configuration Manager Query by Using Managed Code](../../../develop/core/understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-managed-code.md)
+[How to Perform a Synchronous Configuration Manager Query by Using Managed Code](how-to-perform-a-synchronous-configuration-manager-query-by-using-managed-code.md)
 
-[How to Read a Configuration Manager Object by Using Managed Code](../../../develop/core/understand/how-to-read-a-configuration-manager-object-by-using-managed-code.md)
+[How to Read a Configuration Manager Object by Using Managed Code](how-to-read-a-configuration-manager-object-by-using-managed-code.md)

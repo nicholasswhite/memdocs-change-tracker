@@ -1,29 +1,29 @@
 ---
 title: How to Create a Software Metering Rule
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: You can create a software metering rule in Configuration Manager by creating an instance of the SMS_MeteredProductRule class and populating the properties.
 ms.service: configuration-manager
 ---
+
 # How to Create a Software Metering Rule
+
 You create a software metering rule, in Configuration Manager, by creating an instance of the `SMS_MeteredProductRule` class and populating the properties.
 
 ### To create software metering rule
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create the new software metering rule object by using the `SMS_MeteredProductRule` class.
-
-3.  Populate the new software metering rule properties.
-
-4.  Save the new software metering rule and properties.
+1. Set up a connection to the SMS Provider.
+2. Create the new software metering rule object by using the `SMS_MeteredProductRule` class.
+3. Populate the new software metering rule properties.
+4. Save the new software metering rule and properties.
 
 ## Example
- The following example method shows how to create a software metering rule by creating an instance of the `SMS_MeteredProductRule` class and populating the properties.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method shows how to create a software metering rule by creating an instance of the `SMS_MeteredProductRule` class and populating the properties.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vb
 
@@ -98,44 +98,49 @@ public void CreateSWMRule(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|----|----|----|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: `SWbemServices`|A valid connection to the SMS Provider.|
-|`newProductName`|-   Managed: `String`<br />-   VBScript: `String`|The new product name.|
-|`newFileName`|-   Managed: `String`<br />-   VBScript: `String`|The new file name.|
-|`newOriginalFileName`|-   Managed: `String`<br />-   VBScript: `String`|The new original file name.|
-|`newFileVersion`|-   Managed: `String`<br />-   VBScript: `String`|The new file version.|
-|`newLanguageID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The new language ID.|
-|`newSiteCode`|-   Managed: `String`<br />-   VBScript: `String`|The new site code.|
-|`newApplyToChildSites`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|Determines whether the rule will apply to child sites.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: `SWbemServices` | A valid connection to the SMS Provider. |
+| `newProductName` | - Managed: `String` - VBScript: `String` | The new product name. |
+| `newFileName` | - Managed: `String` - VBScript: `String` | The new file name. |
+| `newOriginalFileName` | - Managed: `String` - VBScript: `String` | The new original file name. |
+| `newFileVersion` | - Managed: `String` - VBScript: `String` | The new file version. |
+| `newLanguageID` | - Managed: `Integer` - VBScript: `Integer` | The new language ID. |
+| `newSiteCode` | - Managed: `String` - VBScript: `String` | The new site code. |
+| `newApplyToChildSites` | - Managed: `Boolean` - VBScript: `Boolean` | Determines whether the rule will apply to child sites. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Configuration Manager Software Development Kit](../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [SMS_MeteredProductRule Server WMI Class](../../develop/reference/apps/sms_meteredproductrule-server-wmi-class.md)
+
+[Configuration Manager Software Development Kit](../core/misc/system-center-configuration-manager-sdk.md) [SMS_MeteredProductRule Server WMI Class](../reference/apps/sms_meteredproductrule-server-wmi-class.md)

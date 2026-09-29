@@ -1,7 +1,7 @@
 ---
-title: Configure a VPN or Per-App VPN for Android Enterprise Devices in Microsoft Intune
+title: "Use a VPN and Per-App VPN Policy on Android Enterprise Devices in Microsoft Intune"
 description: Use an app configuration policy to add or create a VPN or per-app VPN profile for Android Enterprise devices in Microsoft Intune.
-ms.date: 11/21/2024
+ms.date: "2024-11-21T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: tycast
 ms.collection:
@@ -28,12 +28,12 @@ There are two ways to build the app configuration policy for your VPN client app
 This article shows you how to create a per-app VPN and VPN app configuration policy using both options.
 
 > [!NOTE]
+>
 > Many of the VPN client configuration parameters are similar. But, each app has its unique keys and options. Consult with your VPN vendor if you have questions.
 
 ## Before you begin
 
 - Android doesn't automatically trigger a VPN client connection when an app opens. The VPN connection must be started manually. Or, you can use [always-on VPN](../../device-configuration/templates/ref-vpn-settings-android-enterprise.md) to start the connection.
-
 - The following VPN clients support Intune app configuration policies:
 
   - Cisco AnyConnect
@@ -42,9 +42,7 @@ This article shows you how to create a per-app VPN and VPN app configuration pol
   - Palo Alto Networks GlobalProtect
   - Pulse Secure
   - SonicWall Mobile Connect
-
 - When you create the VPN policy in Intune, you'll select different keys to configure. These key names vary with the different VPN client apps. So, the key names in your environment may be different than the examples in this article.
-
 - The Configuration designer and JSON data can successfully use certificate-based authentication. If VPN authentication requires client certificates, then create the certificate profiles before you create the VPN policy. The VPN app configuration policies use the values from the certificate profiles.
 
   Android Enterprise personally owned work profile devices support SCEP and PKCS certificates. Android Enterprise fully managed, dedicated, and corporate-owned work profile devices only support SCEP certificates. For more information, see [Use certificates for authentication in Microsoft Intune](../../fundamentals/certificates/overview.md).
@@ -68,7 +66,7 @@ Get the package ID for each application that will use the VPN. For publicly avai
 
 In the following example, the package ID of the Microsoft Edge browser app is `com.microsoft.emmx`. The package ID is part of the URL:
 
-:::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-01.png" alt-text="Get the app package ID in the URL on Google Play store.":::
+![Get the app package ID in the URL on Google Play store.](media/configure-vpn-android/app-configuration-vpn-ae-01.png)
 
 For Line of Business (LOB) apps, get the package ID from the vendor or application developer.
 
@@ -80,62 +78,56 @@ For more information on certificates, see [Use certificates for authentication i
 
 When your client authentication certificate profile is deployed, it creates a certificate token in the certificate profile. This token is used to create the VPN app configuration policy.
 
-If you're not familiar with creating app configuration policies, see [Add app configuration policies for managed Android Enterprise devices](./configure-managed-android.md).
+If you're not familiar with creating app configuration policies, see [Add app configuration policies for managed Android Enterprise devices](configure-managed-android.md).
 
 ## Use the Configuration Designer
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Apps** > **Configuration** > **Create** > **Managed devices**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Apps** &gt; **Configuration** &gt; **Create** &gt; **Managed devices**.
 3. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **App config policy: Cisco AnyConnect VPN policy for Android Enterprise work profile devices**.
-    - **Description**: Enter a description for the policy. This setting is optional, but recommended.
-    - **Platform**: Select **Android Enterprise**.
-    - **Profile type**: Your options:
-      - **All Profile Types**: This option supports username and password authentication. If you use certificate-based authentication, don't use this option.
-      - **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**: This option supports certificate-based authentication, and username and password authentication.
-      - **Personally-Owned Work Profile Only**: This option supports certificate-based authentication, and username and password authentication.
-    - **Targeted app**: Select the VPN client app you previously added. In the following example, the Cisco AnyConnect VPN client app is used:
+   - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **App config policy: Cisco AnyConnect VPN policy for Android Enterprise work profile devices**.
+   - **Description**: Enter a description for the policy. This setting is optional, but recommended.
+   - **Platform**: Select **Android Enterprise**.
+   - **Profile type**: Your options:
 
-      :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-02.png" alt-text="Create an app configuration policy to configure VPN or per-app VPN in Microsoft Intune":::
+     - **All Profile Types**: This option supports username and password authentication. If you use certificate-based authentication, don't use this option.
+     - **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**: This option supports certificate-based authentication, and username and password authentication.
+     - **Personally-Owned Work Profile Only**: This option supports certificate-based authentication, and username and password authentication.
+   - **Targeted app**: Select the VPN client app you previously added. In the following example, the Cisco AnyConnect VPN client app is used:
 
+     ![Create an app configuration policy to configure VPN or per-app VPN in Microsoft Intune](media/configure-vpn-android/app-configuration-vpn-ae-02.png)
 4. Select **Next**.
 5. In **Settings**, enter the following properties:
 
-    - **Configuration settings format**: Select **Use Configuration designer**:
+   - **Configuration settings format**: Select **Use Configuration designer**:
 
-      :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-03.png" alt-text="Create an app configuration VPN policy in Microsoft Intune using Configuration Designer - example.":::
+     ![Create an app configuration VPN policy in Microsoft Intune using Configuration Designer - example.](media/configure-vpn-android/app-configuration-vpn-ae-03.png)
+   - **Add**: Shows the list of configuration keys. Select all the configuration keys needed for your configuration &gt; **OK**.
 
-    - **Add**: Shows the list of configuration keys. Select all the configuration keys needed for your configuration > **OK**.
+     In the following example, we selected a minimal list for AnyConnect VPN, including certificate-based authentication and per-app VPN:
 
-      In the following example, we selected a minimal list for AnyConnect VPN, including certificate-based authentication and per-app VPN:
+     ![Add configuration keys to a VPN app configuration policy in Microsoft Intune using Configuration Designer - example.](media/configure-vpn-android/app-configuration-vpn-ae-04.png)
+   - **Configuration value**: Enter the values for the configuration keys you selected. Remember, the key names vary depending on the VPN Client app you're using. In the keys selected in our example:
 
-      :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-04.png" alt-text="Add configuration keys to a VPN app configuration policy in Microsoft Intune using Configuration Designer - example.":::
+     - **Per App VPN Allowed Apps**: Enter the application package ID(s) you collected earlier. For example:
 
-    - **Configuration value**: Enter the values for the configuration keys you selected. Remember, the key names vary depending on the VPN Client app you're using. In the keys selected in our example:
+       ![Enter the allowed app package IDs to a VPN app configuration policy in Microsoft Intune using the Configuration Designer - example.](media/configure-vpn-android/app-configuration-vpn-ae-06.png)
+     - **KeyChain Certificate Alias** (optional): Change the **Value type** from **string** to **certificate**. Select the client certificate profile to use with VPN authentication. For example:
 
-      - **Per App VPN Allowed Apps**: Enter the application package ID(s) you collected earlier. For example:
+       ![Change the KeyChain client certificate alias in a VPN app configuration policy in Microsoft Intune using the Configuration Designer - example.](media/configure-vpn-android/app-configuration-vpn-ae-07.png)
+     - **Protocol**: Select the **SSL** or **IPsec** tunnel protocol of the VPN.
+     - **Connection Name**: Enter a user friendly name for the VPN connection. Users see this connection name on their devices. For example, enter `ContosoVPN`.
+     - **Host**: Enter the host name URL to the headend router. For example, enter `vpn.contoso.com`.
 
-        :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-06.png" alt-text="Enter the allowed app package IDs to a VPN app configuration policy in Microsoft Intune using the Configuration Designer - example.":::
-
-      - **KeyChain Certificate Alias** (optional): Change the **Value type** from **string** to **certificate**. Select the client certificate profile to use with VPN authentication. For example:
-
-        :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-07.png" alt-text="Change the KeyChain client certificate alias in a VPN app configuration policy in Microsoft Intune using the Configuration Designer - example.":::
-
-      - **Protocol**: Select the **SSL** or **IPsec** tunnel protocol of the VPN.
-      - **Connection Name**: Enter a user friendly name for the VPN connection. Users see this connection name on their devices. For example, enter `ContosoVPN`.
-      - **Host**: Enter the host name URL to the headend router. For example, enter `vpn.contoso.com`.
-
-        :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-05.png" alt-text="Protocol, connection name, and host name examples in a VPN app configuration policy in Microsoft Intune using the Configuration Designer":::
-
+       ![Protocol, connection name, and host name examples in a VPN app configuration policy in Microsoft Intune using the Configuration Designer](media/configure-vpn-android/app-configuration-vpn-ae-05.png)
 6. Select **Next**.
 7. In **Assignments**, select the groups to assign the VPN app configuration policy.
 
-    Select **Next**.
-
+   Select **Next**.
 8. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the policy is deployed to your groups. The policy is also shown in the app configuration policies list.
 
-    :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-08.png" alt-text="Review the app configuration policy using the Configuration Designer Flow in Microsoft Intune example.":::
+   ![Review the app configuration policy using the Configuration Designer Flow in Microsoft Intune example.](media/configure-vpn-android/app-configuration-vpn-ae-08.png)
 
 ## Use JSON
 
@@ -145,69 +137,60 @@ Use this option if you don't have, or don't know all the required VPN settings u
 
 In these steps, create a temporary policy. The policy won't be saved. The intent is to copy the certificate token. You'll use this token when creating the VPN policy using JSON (next section).
 
-1. In the [Microsoft Intune admin center], select **Apps** > Configuration** > **Add** > **Managed devices**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Apps** &gt; Configuration\*\* &gt; **Add** &gt; **Managed devices**.
 2. In **Basics**, enter the following properties:
 
-    - **Name**: Enter any name. This policy is temporary, and won't be saved.
-    - **Platform**: Select **Android Enterprise**.
-    - **Profile type**: Select **Personally-Owned Work Profile Only**.
-    - **Targeted app**: Select the VPN client app you previously added.
-
+   - **Name**: Enter any name. This policy is temporary, and won't be saved.
+   - **Platform**: Select **Android Enterprise**.
+   - **Profile type**: Select **Personally-Owned Work Profile Only**.
+   - **Targeted app**: Select the VPN client app you previously added.
 3. Select **Next**.
 4. In **Settings**, enter the following properties:
 
-    - **Configuration settings format**: Select **Use configuration designer**.
-    - **Add**: Shows the list of configuration keys. Select any key with a **Value type** of **string**. Select **OK**.
+   - **Configuration settings format**: Select **Use configuration designer**.
+   - **Add**: Shows the list of configuration keys. Select any key with a **Value type** of **string**. Select **OK**.
 
-      :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-11.png" alt-text="In Configuration designer, select any key with a string value type in Microsoft Intune VPN app configuration policy":::
-
+     ![In Configuration designer, select any key with a string value type in Microsoft Intune VPN app configuration policy](media/configure-vpn-android/app-configuration-vpn-ae-11.png)
 5. Change the **Value type** from **string** to **certificate**. This step lets you select the correct client certificate profile that authenticates the VPN:
 
-    :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-12.png" alt-text="Change the connection name in a VPN app configuration policy in Microsoft Intune example":::
-
+   ![Change the connection name in a VPN app configuration policy in Microsoft Intune example](media/configure-vpn-android/app-configuration-vpn-ae-12.png)
 6. Immediately change the **Value type** back to **string**. The **Configuration value** changes to a token `{{cert:GUID}}`:
 
-    :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-13.png" alt-text="The configuration value shows the certificate token in a VPN app configuration policy in Microsoft Intune":::
-
+   ![The configuration value shows the certificate token in a VPN app configuration policy in Microsoft Intune](media/configure-vpn-android/app-configuration-vpn-ae-13.png)
 7. Copy and paste this certificate token to another file, such as a text editor.
-
 8. Discard this policy. Don't save it. The only purpose is to copy and paste the certificate token.
 
 ### Create the VPN policy using JSON
 
-1. In the [Microsoft Intune admin center], select **Apps** > **Configuration** > **Create** > **Managed devices**.
-
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Apps** &gt; **Configuration** &gt; **Create** &gt; **Managed devices**.
 2. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **App config policy: JSON Cisco AnyConnect VPN policy for Android Enterprise work profile devices in entire company**.
-    - **Description**: Enter a description for the policy. This setting is optional, but recommended.
-    - **Platform**: Select **Android Enterprise**.
-    - **Profile type**: Your options:
-      - **All profile types**: This option supports username and password authentication. If you use certificate-based authentication, don't use this option.
-      - **Fully Managed, Dedicated, and Corporate-Owned work profile only**: This option supports certificate-based authentication, and username and password authentication.
-      - **Personally-Owned Work Profile Only**: This option supports certificate-based authentication, and username and password authentication.
-    - **Targeted app**: Select the VPN client app you previously added.
-
+   - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **App config policy: JSON Cisco AnyConnect VPN policy for Android Enterprise work profile devices in entire company**.
+   - **Description**: Enter a description for the policy. This setting is optional, but recommended.
+   - **Platform**: Select **Android Enterprise**.
+   - **Profile type**: Your options:
+     - **All profile types**: This option supports username and password authentication. If you use certificate-based authentication, don't use this option.
+     - **Fully Managed, Dedicated, and Corporate-Owned work profile only**: This option supports certificate-based authentication, and username and password authentication.
+     - **Personally-Owned Work Profile Only**: This option supports certificate-based authentication, and username and password authentication.
+   - **Targeted app**: Select the VPN client app you previously added.
 3. Select **Next**.
 4. In **Settings**, enter the following properties:
 
-    - **Configuration settings format**: Select **Enter JSON data**. You can edit the JSON directly.
-    - **Download JSON template**: Use this option to download, and update the template in any external editor. Be careful with text editors that use **Smart quotes**, as they may create invalid JSON.
+   - **Configuration settings format**: Select **Enter JSON data**. You can edit the JSON directly.
+   - **Download JSON template**: Use this option to download, and update the template in any external editor. Be careful with text editors that use **Smart quotes**, as they may create invalid JSON.
 
-    After you enter the values needed for your configuration, remove all settings that have `"STRING_VALUE"` or `STRING_VALUE`.
+   After you enter the values needed for your configuration, remove all settings that have `"STRING_VALUE"` or `STRING_VALUE`.
 
-    :::image type="content" source="./media/configure-vpn-android/app-configuration-vpn-ae-14.png" alt-text="Example of using the JSON Flow - Edit JSON.":::
-
+   ![Example of using the JSON Flow - Edit JSON.](media/configure-vpn-android/app-configuration-vpn-ae-14.png)
 5. Select **Next**.
 6. In **Assignments**, select the groups to assign the VPN app configuration policy.
 
-    Select **Next**.
-
+   Select **Next**.
 7. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the policy is deployed to your groups. The policy is also shown in the app configuration policies list.
 
 #### JSON example for F5 Access VPN
 
-``` JSON
+```JSON
 {
     "kind": "androidenterprise#managedConfiguration",
     "productId": "app:com.f5.edge.client_ics",
@@ -279,13 +262,9 @@ In these steps, create a temporary policy. The policy won't be saved. The intent
 
 ## Additional information
 
-- [Add app configuration policies for managed Android Enterprise devices](./configure-managed-android.md)
+- [Add app configuration policies for managed Android Enterprise devices](configure-managed-android.md)
 - [Android Enterprise device settings to configure VPN in Intune](../../device-configuration/templates/ref-vpn-settings-android-enterprise.md)
 
 ## Next steps
 
 - [Create VPN profiles to connect to VPN servers in Intune](../../device-configuration/templates/configure-vpn.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

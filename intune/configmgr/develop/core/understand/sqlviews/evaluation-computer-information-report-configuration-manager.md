@@ -1,7 +1,7 @@
 ---
-title: Evaluation of the computer information for a specific computer report
+title: "Evaluation of the Computer information for a specific computer report in Configuration Manager"
 description: A predefined report in Configuration Manager that combines multiple SQL views to obtain the required data.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
@@ -15,9 +15,9 @@ The **Computer information for a specific computer** report is one of the predef
 ## To examine the Computer information for a specific computer report
 
 1. In the Configuration Manager console, select **Monitoring**.
-1. In the **Monitoring** workspace, select Reporting, and then select **Reports**.
-1. From the list of displayed reports, select **Computer information for a specific computer** and then, in the **Home** tab, in the **Report Group** group, select **Edit**.
-1. After Report Builder opens, in the **Report Data** pane, expand **Datasets** and then double-click **DataSet0** to examine the SQL statement for the report which appears as follows:
+2. In the **Monitoring** workspace, select Reporting, and then select **Reports**.
+3. From the list of displayed reports, select **Computer information for a specific computer** and then, in the **Home** tab, in the **Report Group** group, select **Edit**.
+4. After Report Builder opens, in the **Report Data** pane, expand **Datasets** and then double-click **DataSet0** to examine the SQL statement for the report which appears as follows:
 
    ```sql
         SELECT distinct SYS.Netbios_Name0, SYS.User_Name0, SYS.User_Domain0,  SYS.Resource_Domain_OR_Workgr0,
@@ -37,17 +37,16 @@ The **Computer information for a specific computer** report is one of the predef
                     WHERE SYS.Netbios_Name0 = @variable
                     ORDER BY SYS.Netbios_Name0, SYS.Resource_Domain_OR_Workgr0
    ```
-
-1. Close the **Dataset Properties** dialog box and then double-click **DataSetAdminID** to examine the SQL statement that presents a list of possible computers for the user to choose. This appears as follows:
+5. Close the **Dataset Properties** dialog box and then double-click **DataSetAdminID** to examine the SQL statement that presents a list of possible computers for the user to choose. This appears as follows:
 
    ```sql
         SELECT dbo.fn_rbac_GetAdminIDsfromUserSIDs(@UserTokenSIDs) as userSIDs
    ```
 
-   This report contains a more complex SQL statement that combines multiple SQL views to obtain the desired data. The query results will list the NetBIOS name, user name, operating system, memory, and more with the NetBIOS name used as the variable in the report prompt **(WHERE SYS.Netbios_Name0 = @variable)**. The query retrieves information from six different SQL Server views (**v_R_System**, **v_RA_System_IPAddresses**, **v_GS_X86_PC_MEMORY**, **v_GS_COMPUTER_SYSTEM**, **v_GS_PROCESSOR**, and **v_GS_OPERATING_SYSTEM**) that are joined together by using the **ResourceID** column from the **v_R_System** view and where the NetBIOS name in the **v_R_System** view is equal to the one provided in the report prompt. Finally, the results are ordered first by the **Netbios Name** column and then the **User Domain** column.
+   This report contains a more complex SQL statement that combines multiple SQL views to obtain the desired data. The query results will list the NetBIOS name, user name, operating system, memory, and more with the NetBIOS name used as the variable in the report prompt \*\*(WHERE SYS.Netbios_Name0 = @variable)\*\*. The query retrieves information from six different SQL Server views (**v_R_System**, **v_RA_System_IPAddresses**, **v_GS_X86_PC_MEMORY**, **v_GS_COMPUTER_SYSTEM**, **v_GS_PROCESSOR**, and **v_GS_OPERATING_SYSTEM**) that are joined together by using the **ResourceID** column from the **v_R_System** view and where the NetBIOS name in the **v_R_System** view is equal to the one provided in the report prompt. Finally, the results are ordered first by the **Netbios Name** column and then the **User Domain** column.
 
    The report prompt will display **Computer Name** as the prompt text and has a variable named **variable** that will be populated by the user. You can examine details about the variables and parameters used by the report in the **Parameters** node of the **Report Data** pane.
-1. Close Report Builder.
+6. Close Report Builder.
 
 ## See also
 

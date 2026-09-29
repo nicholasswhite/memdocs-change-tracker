@@ -1,11 +1,10 @@
 ---
-title: Step 3. Integrate Mobile Threat Defense for App Protection Policy
+title: "Step 3. Integrate Mobile Threat Defense"
 description: Step 3. Integrate Mobile Threat Defense signals with Microsoft Edge for Business app protection policies in Microsoft Intune.
-ms.date: 04/30/2026
+ms.date: "2026-04-30T00:00:00Z"
 ms.topic: how-to
 ms.custom:
 ---
-
 
 # Step 3. Integrate Mobile Threat Defense
 
@@ -29,6 +28,7 @@ Intune app protection policies help secure organizational data and help ensure c
 - **Health Checks**: Under **Device conditions** you can select **Max allowed device threat level**.
 
 > [!IMPORTANT]
+>
 > Configure your [Mobile Threat Defense connectors](../../device-security/mobile-threat-defense/overview.md#mobile-threat-defense-partners) before onboarding users to these policies. If your tenant uses both Microsoft Defender for Endpoint and another MTD partner and you don't designate a primary connector, Intune defaults to Microsoft Defender for Endpoint. For guidance on protecting unenrolled devices, see [Mobile Threat Defense for unenrolled devices](../../device-security/mobile-threat-defense/enable-unenrolled-devices.md).
 
 ### Options for the threat level
@@ -86,37 +86,32 @@ Device conditions:
 - **Require device lockout remediation**: Set to **Enabled**, with the **Block access** action.
 
 > [!TIP]
+>
 > These thresholds align with the Secure Enterprise Browser framework's Level 3 (High) posture. Use scope tags and assignments to target the correct Entra ID groups for each level.
 
 > [!IMPORTANT]
+>
 > If you create an app protection policy for any protected app, the device's threat level is assessed. Depending on the configuration, devices that don't meet the configured threat level are either blocked or corporate data is selectively wiped through conditional launch. If blocked, they're prevented from accessing corporate resources until the threat on the device is resolved and reported to Intune by the chosen MTD vendor.
 
 ## Configure the MTD Connector
 
 Use the following steps to configure the MTD Connector.
 
-1. Navigate to the [Microsoft Intune admin center].
-
-2. Select **Tenant Administrator** > **Connectors and tokens** > **Mobile Threat Defense**.
-
+1. Navigate to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Tenant Administrator** &gt; **Connectors and tokens** &gt; **Mobile Threat Defense**.
 3. Select **Create** to display the **Add Connector** pane.
-
 4. From the **Select the Mobile Threat Defense connector to setup** dropdown box, select **Windows Security Center**.
 
-    > [!NOTE]
-    > In this example, you select **Windows Security Center**. For the full list of MTD Partners, see [Mobile Threat Defense partners](../../device-security/mobile-threat-defense/overview.md#mobile-threat-defense-partners).
-
+   > [!NOTE]
+   >
+   > In this example, you select **Windows Security Center**. For the full list of MTD Partners, see [Mobile Threat Defense partners](../../device-security/mobile-threat-defense/overview.md#mobile-threat-defense-partners).
 5. Select **Create** to create the connector.
-
 6. From the connector list, select the **Windows Security Center** connector to open its edit view, turn on the **Connect Windows devices for MAM** toggle, and save your changes.
 
 > [!NOTE]
+>
 > The connector's **Connection status** is **Available** after creation, and changes to **Enabled** when you turn on the **Connect Windows devices for MAM** toggle. For more information about each state, see [Connector status](../../device-security/mobile-threat-defense/overview.md#connector-status).
 
 ## Next step
 
-Continue with [Step 4](./app-configuration-step-4.md) to create app configuration policies for Microsoft Edge for Business.
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+Continue with [Step 4](app-configuration-step-4.md) to create app configuration policies for Microsoft Edge for Business.

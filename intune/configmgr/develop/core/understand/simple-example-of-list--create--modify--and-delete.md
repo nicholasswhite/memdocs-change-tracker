@@ -1,61 +1,56 @@
 ---
-title: Example of List, Create, Modify, and Delete
+title: "Simple Example of List, Create, Modify, and Delete"
 description: Learn how to use the SMS_Package class to list, create, modify and delete operations using the SMS Provider.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Simple Example of List, Create, Modify, and Delete
+
 The following example shows set of very basic methods using the `SMS_Package` class to demonstrate List, Create, Modify and Delete operations using the SMS Provider. This is a look at the structure of a basic Configuration Manager program – there are more useful method snippets in other areas of the SDK that accomplish specific tasks.
 
 > [!IMPORTANT]
->  To simplify the code example, some methods are commented out, as they need additional information (an existing package identifier). Use the `ListPackages` method to obtain the package identifier for use with the `ModifyPackage` and `DeletePackage` methods.
+>
+> To simplify the code example, some methods are commented out, as they need additional information (an existing package identifier). Use the `ListPackages` method to obtain the package identifier for use with the `ModifyPackage` and `DeletePackage` methods.
 
 ### To list packages
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Run a query, which populates a variable with a collection of `SMS_Package` class instances.
-
-3.  Enumerate through the collection and list the packages returned by the query.
+1. Set up a connection to the SMS Provider.
+2. Run a query, which populates a variable with a collection of `SMS_Package` class instances.
+3. Enumerate through the collection and list the packages returned by the query.
 
 ### To create a package
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create the new package object by using the `SMS_Package` class.
-
-3.  Populate the new package properties.
-
-4.  Save the package.
+1. Set up a connection to the SMS Provider.
+2. Create the new package object by using the `SMS_Package` class.
+3. Populate the new package properties.
+4. Save the package.
 
 ### To modify a package
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the existing package object by using the `SMS_Package` class.
-
-3.  Modify a package property.
-
-4.  Save the package.
+1. Set up a connection to the SMS Provider.
+2. Load the existing package object by using the `SMS_Package` class.
+3. Modify a package property.
+4. Save the package.
 
 ### To delete a package
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the existing package object by using the `SMS_Package` class.
-
-3.  Delete the package by using the delete method.
+1. Set up a connection to the SMS Provider.
+2. Load the existing package object by using the `SMS_Package` class.
+3. Delete the package by using the delete method.
 
 ## Example
- The following example method shows set of very basic methods using `SMS_Package` class to demonstrate List, Create, Modify and Delete operations using the SMS Provider.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following example method shows set of very basic methods using `SMS_Package` class to demonstrate List, Create, Modify and Delete operations using the SMS Provider.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 > [!NOTE]
->  The below example embeds the calling code in the code. Most other examples in SDK the simply show a method with parameters.
+>
+> The below example embeds the calling code in the code. Most other examples in SDK the simply show a method with parameters.
 
 ```c#
 
@@ -242,35 +237,39 @@ namespace BasicApp
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: `WqlConnectionManager`|A valid connection to the SMS Provider.|
-|`newPackageName`|-   Managed: `String`|The name of the new package.|
-|`newPackageDescription`|-   Managed: `String`|The description for the new package.|
-|`existingPackageID`|-   Managed: `String`|An existing Package identifier. This is a key value for the `SMS_Package` class and is used to return a specific instance of the `SMS_Package` class. The ListPackages method in the sample above returns the names and PackageIDs of the current package instances.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` | A valid connection to the SMS Provider. |
+| `newPackageName` | - Managed: `String` | The name of the new package. |
+| `newPackageDescription` | - Managed: `String` | The description for the new package. |
+| `existingPackageID` | - Managed: `String` | An existing Package identifier. This is a key value for the `SMS_Package` class and is used to return a specific instance of the `SMS_Package` class. The ListPackages method in the sample above returns the names and PackageIDs of the current package instances. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](../servers/configure/software-distribution-overview.md)
- [SMS_Package Server WMI Class](../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
+
+[Software distribution overview](../servers/configure/software-distribution-overview.md) [SMS_Package Server WMI Class](../../reference/core/servers/configure/sms_package-server-wmi-class.md)

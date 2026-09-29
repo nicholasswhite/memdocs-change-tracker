@@ -1,16 +1,18 @@
 ---
-title: SMS_Subscription Class
+title: "SMS_Subscription Server WMI Class"
 description: In Configuration Manager, the SMS_Subscription Windows Management Instrumentation class is an SMS Provider server class that represents email subscriptions.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_Subscription Server WMI Class
+
 The `SMS_Subscription` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents email subscriptions.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,126 +34,119 @@ Class SMS_Subscription : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_Subscription` class.
 
-|Method|Description|
-|------------|-----------------|
-|[GetAvailableLanguages Method in Class SMS_Subscription](../../../../../develop/reference/core/servers/manage/getavailablelanguages-method-in-class-sms_subscription.md)|Gets the available languages.|
-|[GetTestSmtpConnectionResult Method in Class SMS_Subscription](../../../../../develop/reference/core/servers/manage/gettestsmtpconnectionresult-method-in-class-sms_subscription.md)|Gets the test SMTP connection result.|
-|[TestSmtpConnection Method in Class SMS_Subscription](../../../../../develop/reference/core/servers/manage/testsmtpconnection-method-in-class-sms_subscription.md)|Tests the SMTP connection.|
+The following table lists the methods in the `SMS_Subscription` class.
+
+| Method | Description |
+| --- | --- |
+| [GetAvailableLanguages Method in Class SMS_Subscription](getavailablelanguages-method-in-class-sms_subscription.md) | Gets the available languages. |
+| [GetTestSmtpConnectionResult Method in Class SMS_Subscription](gettestsmtpconnectionresult-method-in-class-sms_subscription.md) | Gets the test SMTP connection result. |
+| [TestSmtpConnection Method in Class SMS_Subscription](testsmtpconnection-method-in-class-sms_subscription.md) | Tests the SMTP connection. |
 
 ## Properties
- `AlertIDs`
- Data type: `UInt32 Array`
 
- Access type: Read/Write
+`AlertIDs` Data type: `UInt32 Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Alert IDs included in the subscription.
+Qualifiers: [lazy]
 
- `CreatedBy`
- Data type: `String`
+Alert IDs included in the subscription.
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [not_null, read, sizelimit("512")]
+Access type: Read-only
 
- Name of the user who created the subscription.
+Qualifiers: [not_null, read, sizelimit("512")]
 
- `DateCreated`
- Data type: `DateTime`
+Name of the user who created the subscription.
 
- Access type: Read-only
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Date and time when the subscription was created.
+Qualifiers: [not_null, read]
 
- `DateLastModified`
- Data type: `DateTime`
+Date and time when the subscription was created.
 
- Access type: Read-only
+`DateLastModified` Data type: `DateTime`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Date and time when the subscription was last modified.
+Qualifiers: [not_null, read]
 
- `EmailAddress`
- Data type: `String`
+Date and time when the subscription was last modified.
 
- Access type: Read/Write
+`EmailAddress` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Email addresses.
+Qualifiers: none
 
- `EmailTemplates`
- Data type: `SMS_AlertEmailTemplate Array`
+Email addresses.
 
- Access type: Read/Write
+`EmailTemplates` Data type: `SMS_AlertEmailTemplate Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Email template for alerts included in the subscription.
+Qualifiers: [lazy]
 
- `ID`
- Data type: `UInt32`
+Email template for alerts included in the subscription.
 
- Access type: Read/Write
+`ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the subscription.
+Qualifiers: [key]
 
- `LastModifiedBy`
- Data type: `String`
+Identifier of the subscription.
 
- Access type: Read-only
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: [not_null, read, sizelimit("512")]
+Access type: Read-only
 
- User who last modified the subscription. The string can contain up to 512 characters.
+Qualifiers: [not_null, read, sizelimit("512")]
 
- `LocaleID`
- Data type: `UInt32`
+User who last modified the subscription. The string can contain up to 512 characters.
 
- Access type: Read/Write
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- LocaleID of this subscription.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+LocaleID of this subscription.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The name of the subscription.
+Qualifiers: none
 
- `Type`
- Data type: `UInt32`
+The name of the subscription.
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Type of subscription. Possible values are:
+Qualifiers: none
+
+Type of subscription. Possible values are:
 
 | Value | Type |
-| ----- | ---- |
-|1|Alert subscriptions.|
+| --- | --- |
+| 1 | Alert subscriptions. |
 
- The default value is 1.
+The default value is 1.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

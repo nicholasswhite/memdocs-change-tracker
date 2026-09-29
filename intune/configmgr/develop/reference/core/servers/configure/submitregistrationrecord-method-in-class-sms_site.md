@@ -1,16 +1,18 @@
 ---
-title: SubmitRegistrationRecord Method
+title: "SubmitRegistrationRecord Method in Class SMS_Site"
 description: A Windows Management Instrumentation class method that submits a registration record.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SubmitRegistrationRecord Method in Class SMS_Site
+
 The `SubmitRegistrationRecord` Windows Management Instrumentation (WMI) class method, in Configuration Manager, submits a registration record.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -27,76 +29,71 @@ SInt32 SubmitRegistrationRecord(
 ```
 
 #### Parameters
- `SMSID`
- Data type: `String`
 
- Qualifiers: [in]
+`SMSID` Data type: `String`
 
- The GUID used to identify the certificate. This is the value of the `SMSID` property in [SMS_CertificateInfo Server WMI Class](../../../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: [in]
 
- `Certificate`
- Data type: `String`
+The GUID used to identify the certificate. This is the value of the `SMSID` property in [SMS_CertificateInfo Server WMI Class](../../../osd/sms_certificateinfo-server-wmi-class.md).
 
- Qualifiers: [in]
+`Certificate` Data type: `String`
 
- Hexadecimal-encoded certificate.
+Qualifiers: [in]
 
- `CertificatePFX`
- Data type: `String`
+Hexadecimal-encoded certificate.
 
- Qualifiers: [in, optional]
+`CertificatePFX` Data type: `String`
 
- Hexadecimal-encoded private key for PFX file containing the certificate. The default value is "".
+Qualifiers: [in, optional]
 
- `Type`
- Data type: `SInt32`
+Hexadecimal-encoded private key for PFX file containing the certificate. The default value is "".
 
- Qualifiers: [in, optional]
+`Type` Data type: `SInt32`
 
- The type of certificate. Possible values are defined for the `Type` property of [SMS_CertificateInfo Server WMI Class](../../../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md). The default value for this parameter is BootMedia (1).
+Qualifiers: [in, optional]
 
- `ServerNam`
- Data type: `String`
+The type of certificate. Possible values are defined for the `Type` property of [SMS_CertificateInfo Server WMI Class](../../../osd/sms_certificateinfo-server-wmi-class.md). The default value for this parameter is BootMedia (1).
 
- Qualifiers: [in, optional]
+`ServerNam` Data type: `String`
 
- Name used to identify the server.
+Qualifiers: [in, optional]
 
- `UdaSetting`
- Data type: `SInt32`
+Name used to identify the server.
 
- Qualifiers: [in, optional]
+`UdaSetting` Data type: `SInt32`
 
- UdaSetting. The default value for this parameter is Disabled (0).
+Qualifiers: [in, optional]
 
-|Value|UdaSetting|
-|-|-|
-|0|Disabled|
-|1|Pending|
-|2|Auto|
+UdaSetting. The default value for this parameter is Disabled (0).
 
- `IssuedCert`
- Data type: `SInt32`
+| Value | UdaSetting |
+| --- | --- |
+| 0 | Disabled |
+| 1 | Pending |
+| 2 | Auto |
 
- Qualifiers: [in, optional]
+`IssuedCert` Data type: `SInt32`
 
- IssuedCert. . The default value for this parameter is 1.
+Qualifiers: [in, optional]
+
+IssuedCert. . The default value for this parameter is 1.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
- [ImportMachineEntry Method in Class SMS_Site](../../../../../develop/reference/core/servers/configure/importmachineentry-method-in-class-sms_site.md)
- [IsUsedCert Method in Class SMS_Site](../../../../../develop/reference/core/servers/configure/isusedcert-method-in-class-sms_site.md)
- [SMS_CertificateInfo Server WMI Class](../../../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md) [ImportMachineEntry Method in Class SMS_Site](importmachineentry-method-in-class-sms_site.md) [IsUsedCert Method in Class SMS_Site](isusedcert-method-in-class-sms_site.md) [SMS_CertificateInfo Server WMI Class](../../../osd/sms_certificateinfo-server-wmi-class.md)

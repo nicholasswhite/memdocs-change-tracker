@@ -1,16 +1,18 @@
 ---
-title: SMS_LicensedVppApps Class
+title: "SMS_LicensedVppApps Server WMI Class"
 description: The SMS_LicensedVppApps WMI class represents license Information for Apple App Store Volume Purchase Program (VPP) and Microsoft Store for Business applications.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_LicensedVppApps Server WMI Class
+
 The `SMS_LicensedVppApps` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents license Information for Apple App Store Volume Purchase Program (VPP) and Microsoft Store for Business applications.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -40,196 +42,181 @@ Class SMS_LicensedVppApps : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_LicensedVppApps` class does not define any methods.
+
+The `SMS_LicensedVppApps` class does not define any methods.
 
 ## Properties
- `ApproximateSize`
- Data type: `String`
 
- Access type: Read
+`ApproximateSize` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The approximate size of the application.
+Qualifiers: none
 
- `ApplicationID`
- Data type: `String`
+The approximate size of the application.
 
- Access type: Read
+`ApplicationID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The ID of the application.
+Qualifiers: [key]
 
- `ApplicationMetadata`
- Data type: `String`
+The ID of the application.
 
- Access type: Read
+`ApplicationMetadata` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read
 
- The application metadata.
+Qualifiers: [lazy]
 
- `AvailableLicenses`
- Data type: `SInt32`
+The application metadata.
 
- Access type: Read
+`AvailableLicenses` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read
 
- The number of available licenses for the application.
+Qualifiers: none
 
- `ContentLastModified`
- Data type: `DateTime`
+The number of available licenses for the application.
 
- Access type: Read
+`ContentLastModified` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The date and time that the content was last modified.
+Qualifiers: none
 
- `CreatedDate`
- Data type: `DateTime`
+The date and time that the content was last modified.
 
- Access type: Read
+`CreatedDate` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The date the application was created.
+Qualifiers: none
 
- `DisplayName`
- Data type: `String`
+The date the application was created.
 
- Access type: Read
+`DisplayName` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The display name of the application.
+Qualifiers: none
 
- `LastSuccessfulSync`
- Data type: `DateTime`
+The display name of the application.
 
- Access type: Read
+`LastSuccessfulSync` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The date and time of the last successful synchronization.
+Qualifiers: none
 
- `LastSync`
- Data type: `DateTime`
+The date and time of the last successful synchronization.
 
- Access type: Read
+`LastSync` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read
 
- The date and time of the last synchronization.
+Qualifiers: none
 
- `LicenseType`
- Data type: `UInt32`
+The date and time of the last synchronization.
 
- Access type: Read
+`LicenseType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- The type of license. Possible values are:
+Qualifiers: none
 
-|Value|License type|
-|-|-|
-|0|Online|
-|1|Offline|
+The type of license. Possible values are:
 
- `Platform`
- Data type: `UInt32`
+| Value | License type |
+| --- | --- |
+| 0 | Online |
+| 1 | Offline |
 
- Access type: Read
+`Platform` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The platform on which the application runs. Possible values are:
+Qualifiers: [key]
 
-|Value|Platform|
-|-|-|
-|0 or 1|Windows|
-|2|iOS|
+The platform on which the application runs. Possible values are:
 
- `Publisher`
- Data type: `String`
+| Value | Platform |
+| --- | --- |
+| 0 or 1 | Windows |
+| 2 | iOS |
 
- Access type: Read
+`Publisher` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The name of the publisher of the application.
+Qualifiers: none
 
- `SoftwareVersion`
- Data type: `String`
+The name of the publisher of the application.
 
- Access type: Read
+`SoftwareVersion` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The application version.
+Qualifiers: none
 
- `StoreCategory`
- Data type: `String`
+The application version.
 
- Access type: Read
+`StoreCategory` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The category of the application in the store.
+Qualifiers: none
 
- `StoreLink`
- Data type: `String`
+The category of the application in the store.
 
- Access type: Read
+`StoreLink` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The link to the application in the store.
+Qualifiers: none
 
- `SupportedLanguages`
- Data type: `String`
+The link to the application in the store.
 
- Access type: Read
+`SupportedLanguages` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The languages the application supports.
+Qualifiers: none
 
- `SupportedProcessors`
- Data type: `String`
+The languages the application supports.
 
- Access type: Read
+`SupportedProcessors` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The processor architectures that the application supports.
+Qualifiers: none
 
- `TotalLicenses`
- Data type: `SInt32`
+The processor architectures that the application supports.
 
- Access type: Read
+`TotalLicenses` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read
 
- The total number of licenses for the application. -1 indicates unlimited licenses.
+Qualifiers: none
+
+The total number of licenses for the application. -1 indicates unlimited licenses.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

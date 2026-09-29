@@ -1,16 +1,18 @@
 ---
 description: Learn how to use SMS_SIIB_SysResRole to represent a system role associated with a console property page resource.
-title: SMS_SIIB_SysResRole Class
-ms.date: 09/20/2016
+title: "SMS_SIIB_SysResRole Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SIIB_SysResRole Server WMI Class
+
 The `SMS_SIIB_SysResRole` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a system role associated with a Configuration Manager console property page resource.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,145 +36,137 @@ Class SMS_SIIB_SysResRole : SMS_SiteInstallItemBase
 ```
 
 ## Methods
- The `SMS_SIIB_SysResRole` class does not define any methods.
+
+The `SMS_SIIB_SysResRole` class does not define any methods.
 
 ## Properties
- `ChmFile`
- Data type: `String`
 
- Access type: Read-only
+`ChmFile` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- This property is deprecated.
+Qualifiers: None
 
- `DescriptionID`
- Data type: `UInt32`
+This property is deprecated.
 
- Access type: Read-only
+`DescriptionID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- This property is deprecated.
+Qualifiers: None
 
- `DispIconID`
- Data type: `UInt32`
+This property is deprecated.
 
- Access type: Read-only
+`DispIconID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- This property is deprecated.
+Qualifiers: None
 
- `DispNameID`
- Data type: `UInt32`
+This property is deprecated.
 
- Access type: Read-only
+`DispNameID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- This property is deprecated.
+Qualifiers: None
 
- `Flags`
- Data type: `UInt32`
+This property is deprecated.
 
- Access type: Read-only
+`Flags` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read-only
 
- Role flags. Currently the only supported flag is ASSIGNABLE (0).
+Qualifiers: [bits]
 
-|Bit|Description|
-|---------|-----------------|
-|0|ASSIGNABLE|
+Role flags. Currently the only supported flag is ASSIGNABLE (0).
 
- `GUID`
- Data type: `String`
+| Bit | Description |
+| --- | --- |
+| 0 | ASSIGNABLE |
 
- Access type: Read-only
+`GUID` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- GUID representing the Microsoft Management Console node for the property page.
+Qualifiers: None
 
- `HtmFile`
- Data type: `String`
+GUID representing the Microsoft Management Console node for the property page.
 
- Access type: Read-only
+`HtmFile` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- This property is deprecated.
+Qualifiers: None
 
- `ItemName`
- Data type: `String`
+This property is deprecated.
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ResDLL`
- Data type: `String`
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`ResDLL` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- This property is deprecated.
+Qualifiers: None
 
- `RoleName`
- Data type: `String`
+This property is deprecated.
 
- Access type: Read-only
+`RoleName` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Name of the role.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Name of the role.
 
- Access type: Read-only
+`SiteCode` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: [read]
 
- `Units`
- Data type: `String` Array
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
- Access type: Read-only
+`Units` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read-only
 
- See [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteInstallItemBase Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_siteinstallitembase-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteInstallItemBase Server WMI Class](sms_siteinstallitembase-server-wmi-class.md)

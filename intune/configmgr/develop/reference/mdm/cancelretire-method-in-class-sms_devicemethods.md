@@ -1,16 +1,18 @@
 ---
-title: CancelRetire Method
+title: "CancelRetire Method in Class SMS_DeviceMethods"
 description: The CancelRetire WMI class method cancels the retirement of this device from Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CancelRetire Method in Class SMS_DeviceMethods
+
 The `CancelRetire` Windows Management Instrumentation (WMI) class method, in Configuration Manager, cancels the retirement of this device from Configuration Manager (the device will remain managed by Configuration Manager).
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -21,19 +23,21 @@ SInt32 CancelRetire(
 ```
 
 #### Parameters
- `ResourceId`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`ResourceId` Data type: `UInt32`
 
- ID of the resource.
+Qualifiers: [in]
+
+ID of the resource.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## See Also
- [SMS_DeviceMethods Server WMI Class](../../../develop/reference/mdm/sms_devicemethods-server-wmi-class.md)
+
+[SMS_DeviceMethods Server WMI Class](sms_devicemethods-server-wmi-class.md)

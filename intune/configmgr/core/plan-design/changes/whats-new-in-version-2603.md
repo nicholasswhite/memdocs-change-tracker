@@ -1,7 +1,7 @@
 ---
-title: What's new in version 2603
+title: "What's new in version 2603 of Configuration Manager current branch"
 description: Get details about changes and new capabilities introduced in version 2603 of Configuration Manager current branch.
-ms.date: 08/05/2026
+ms.date: "2026-08-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ms.collection: tier3
@@ -20,8 +20,7 @@ To take full advantage of new Configuration Manager changes, after you update th
 
 ## General enhancements
 
-As part of Microsoft's Secure Future Initiative (SFI) the 2603 version of Configuration Manager continues to focus on security, quality, and infrastructure modernization. For more information, see the [Microsoft Trust Center](https://www.microsoft.com/trust-center/security/secure-future-initiative).
-For a list of significant customer-reported issues resolved in this release, see the [Summary of changes in Configuration Manager version 2603](../../../hotfix/2603/37426535.md) knowledge base article.
+As part of Microsoft's Secure Future Initiative (SFI) the 2603 version of Configuration Manager continues to focus on security, quality, and infrastructure modernization. For more information, see the [Microsoft Trust Center](https://www.microsoft.com/trust-center/security/secure-future-initiative). For a list of significant customer-reported issues resolved in this release, see the [Summary of changes in Configuration Manager version 2603](../../../hotfix/2603/37426535.md) knowledge base article.
 
 ### Security improvements for Network Access Account
 
@@ -82,6 +81,7 @@ This requirement applies to environments that meet the following conditions:
 - Clients authenticate using Microsoft Entra tokens, typically through a cloud management gateway (CMG)
 
 > [!NOTE]
+>
 > Environments that only use on-premises Active Directory authentication without Microsoft Entra integration aren't affected by this requirement.
 
 #### Identify the issue
@@ -94,6 +94,7 @@ System.Net.Sockets.SocketException: No connection could be made because the targ
 ```
 
 > [!IMPORTANT]
+>
 > The `MISE12034` exception can also appear for other reasons. This section specifically addresses the case where the underlying exception indicates a network connectivity problem, such as `SocketException`, `HttpRequestException`, or a connection timeout. Verify that the error message points to a network access issue before applying the resolution below.
 
 #### Resolution: Allow access to Azure authentication endpoints
@@ -114,6 +115,7 @@ As of May 27, 2026, version 2603 is globally available for all customers to inst
 When you're ready to install this version, see [Installing updates for Configuration Manager](../../servers/manage/updates.md) and [Checklist for installing update 2603](../../servers/manage/checklist-for-installing-update-2603.md).
 
 > [!TIP]
+>
 > To install a new site, use a baseline version of Configuration Manager.
 >
 > Learn more about:

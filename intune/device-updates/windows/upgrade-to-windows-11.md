@@ -1,9 +1,9 @@
 ---
-title: Upgrade Devices to Windows 11 Using Feature Updates
+title: "Upgrade devices to Windows 11 using feature updates"
 description: Learn how to upgrade Windows 10 devices to Windows 11 using feature updates in Microsoft Intune.
-ms.date: 01/14/2026
+ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: 
+ms.reviewer:
 ---
 
 # Upgrade devices to Windows 11 using feature updates
@@ -18,7 +18,7 @@ However, if a Windows 10 device that can't run Windows 11 is targeted with a Win
 
 ## Prepare to upgrade to Windows 11
 
-The first step in preparing for a Windows 11 upgrade is to ensure your devices meet the [minimum system requirements for Windows 11](/windows/whats-new/windows-11-requirements#hardware-requirements).
+The first step in preparing for a Windows 11 upgrade is to ensure your devices meet the [minimum system requirements for Windows 11](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements#hardware-requirements).
 
 You can use [endpoint analytics](../../endpoint-analytics/index.md) to determine which of your devices meet the hardware requirements. If some of your devices don't meet all the requirements, you can see exactly which ones aren't met. To use Endpoint analytics, your devices must be managed by Intune, co-managed, or have the Configuration Manager client with tenant attach enabled.
 
@@ -26,13 +26,13 @@ If you're already using Endpoint analytics, navigate to the [Work from anywhere 
 
 ## Licensing for Windows 11 versions
 
-Windows 11 includes a license agreement that can be viewed at [https://www.microsoft.com/useterms/](https://www.microsoft.com/useterms/). This license agreement is automatically accepted by an organization that submits a policy to deploy Windows 11.
+Windows 11 includes a license agreement that can be viewed at <https://www.microsoft.com/useterms/>. This license agreement is automatically accepted by an organization that submits a policy to deploy Windows 11.
 
 When you configure a policy in the Microsoft Intune admin center to deploy any Windows 11 version, the Microsoft Intune admin center displays a notice to remind you that by submitting the policy you are accepting the Windows 11 License Agreement terms on behalf of the devices, and your device users. After submitting the feature update policy, users won't see or need to accept the license agreement, making the update process seamless.
 
 This license reminder appears each time you select a Windows 11 build, even if all your Windows devices already run Windows 11. This prompt is provided because Intune doesn't track which devices will receive the policy, and its possible new devices that run Windows 10 might later enroll and be targeted by the policy.
 
-For more information including general licensing details, see the [Windows 11 documentation](/windows/whats-new/windows-11).
+For more information including general licensing details, see the [Windows 11 documentation](https://learn.microsoft.com/en-us/windows/whats-new/windows-11).
 
 ## Create policy for Windows 11
 

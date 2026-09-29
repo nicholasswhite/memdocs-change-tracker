@@ -1,16 +1,18 @@
 ---
-title: SMS_InstalledExecutable Class
+title: "SMS_InstalledExecutable Client WMI Class"
 description: The SMS_InstalledExecutable class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that identifies executable files associated with a software installation.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_InstalledExecutable Client WMI Class
+
 The `SMS_InstalledExecutable` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that identifies executable files associated with a software installation.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,199 +40,179 @@ Class SMS_InstalledExecutable
 ```
 
 ## Methods
- The `SMS_InstalledExecutable` class does not define any methods.
+
+The `SMS_InstalledExecutable` class does not define any methods.
 
 ## Properties
- `BinFileVersion`
- Data type: `String`
 
- Access type: Read-only
+`BinFileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Reserved. For internal use.
+Qualifiers: None
 
- `BinProductVersion`
- Data type: `String`
+Reserved. For internal use.
 
- Access type: Read-only
+`BinProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- Reserved. For internal use.
+Qualifiers: None
 
- `Description`
- Data type: `String`
+Reserved. For internal use.
 
- Access type: Read-only
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- File description that can be presented to users, for example, "Keyboard driver for AT-style keyboards" or "Microsoft Word for Windows".
+Qualifiers: None
 
- `ExecutableName`
- Data type: `String`
+File description that can be presented to users, for example, "Keyboard driver for AT-style keyboards" or "Microsoft Word for Windows".
 
- Access type: Read-only
+`ExecutableName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read-only
 
- Name of the file, including the extension but excluding the path, for example, "Notepad.exe".
+Qualifiers: [key]
 
- `FilePropertiesHash`
- Data type: `String`
+Name of the file, including the extension but excluding the path, for example, "Notepad.exe".
 
- Access type: Read-only
+`FilePropertiesHash` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, and `FileName` properties of the file.
+Qualifiers: None
 
- `FilePropertiesHashEx`
- Data type: `String`
+A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, and `FileName` properties of the file.
 
- Access type: Read-only
+`FilePropertiesHashEx` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, `FileName`, `FileVersion`, `BinProductVersion`, and `BinFileVersion` properties of the file.
+Qualifiers: None
 
- `FileSize`
- Data type: `UInt32`
+A unique 128-bit signature that is derived from a combination of the `Product`, `Description`, `ProductVersion`, `Publisher`, `FileName`, `FileVersion`, `BinProductVersion`, and `BinFileVersion` properties of the file.
 
- Access type: Read-only
+`FileSize` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Size of the file, in bytes.
+Qualifiers: None
 
- `FileVersion`
- Data type: `String`
+Size of the file, in bytes.
 
- Access type: Read-only
+`FileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The version of the file, for example, "12.0.4518.1014".
+Qualifiers: None
 
- `HasPatchAdded`
- Data type: `Boolean`
+The version of the file, for example, "12.0.4518.1014".
 
- Access type: Read-only
+`HasPatchAdded` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if the file was added as part of an update to the product to which it belongs.
+Qualifiers: None
 
- `InstalledFilePath`
- Data type: `String`
+`true` if the file was added as part of an update to the product to which it belongs.
 
- Access type: Read-only
+`InstalledFilePath` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The path where the file is located, for example, "C:\Program Files\Microsoft Office".
+Qualifiers: None
 
- `IsSystemFile`
- Data type: `Boolean`
+The path where the file is located, for example, "C:\Program Files\Microsoft Office".
 
- Access type: Read-only
+`IsSystemFile` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if the file is a system file.
+Qualifiers: None
 
- `IsVitalFile`
- Data type: `Boolean`
+`true` if the file is a system file.
 
- Access type: Read-only
+`IsVitalFile` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read-only
 
- `true` if the file is vital for the accurate operation of the product to which it belongs.
+Qualifiers: None
 
- `Language`
- Data type: `UInt32`
+`true` if the file is vital for the accurate operation of the product to which it belongs.
 
- Access type: Read-only
+`Language` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- ID of the language for which the file is intended, for example, "1033".
+Qualifiers: None
 
- `Product`
- Data type: `String`
+ID of the language for which the file is intended, for example, "1033".
 
- Access type: Read-only
+`Product` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The name of the product with which the file is distributed, for example, "Microsoft Windows".
+Qualifiers: None
 
- `ProductCode`
- Data type: `String`
+The name of the product with which the file is distributed, for example, "Microsoft Windows".
 
- Access type: Read-only
+`ProductCode` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read-only
 
- GUID that is the principal identifier for an application or product. For more information, see the Microsoft Windows Installer documentation.
+Qualifiers: [key]
 
- `ProductVersion`
- Data type: `String`
+GUID that is the principal identifier for an application or product. For more information, see the Microsoft Windows Installer documentation.
 
- Access type: Read-only
+`ProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The version of the product with which the file is distributed, for example, "4.2.0.2623".
+Qualifiers: None
 
- `Publisher`
- Data type: `String`
+The version of the product with which the file is distributed, for example, "4.2.0.2623".
 
- Access type: Read-only
+`Publisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read-only
 
- The company that produced the file, for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".
+Qualifiers: None
+
+The company that produced the file, for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".
 
 ## Remarks
 
 > [!NOTE]
->  This class is not currently used to support existing Asset Intelligence reports. However, it can be enabled to support custom reports.
+>
+> This class is not currently used to support existing Asset Intelligence reports. However, it can be enabled to support custom reports.
 
- This class identifies executable files associated with a software installation to:
+This class identifies executable files associated with a software installation to:
 
 - Confirm that the application is installed by looking at Configuration Manager file inventory.
-
 - Indicate what metering rules, based on the executable files, have to be set to meter the application.
-
 - Perform an application impact analysis.
 
   Because the Windows Installer (.msi) file contains a record of the installed executable files, it can be used as the source for the mapping between installed applications and executable files.
 
-  This class retrieves data from two sources. For each [SMS_InstalledSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftware-client-wmi-class.md) object, the class identifies the .msi package by looking in the `LocalPackage` property, and queries the .msi database for all .exe and .com files.
+  This class retrieves data from two sources. For each [SMS_InstalledSoftware Client WMI Class](sms_installedsoftware-client-wmi-class.md) object, the class identifies the .msi package by looking in the `LocalPackage` property, and queries the .msi database for all .exe and .com files.
 
-  For any [SMS_InstalledSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftware-client-wmi-class.md) object that has the `LocalPackage` property set to `null`, the `SMS_InstalledExecutable` class inventories all executable files in the directory that are identified by the `InstallLocation` property. Executable files that are installed outside of the main installation directory are not inventoried.
+  For any [SMS_InstalledSoftware Client WMI Class](sms_installedsoftware-client-wmi-class.md) object that has the `LocalPackage` property set to `null`, the `SMS_InstalledExecutable` class inventories all executable files in the directory that are identified by the `InstallLocation` property. Executable files that are installed outside of the main installation directory are not inventoried.
 
 > [!NOTE]
->  This class does not inventory executable files located in the %*windir*% and %*systemroot*% directories.
+>
+> This class does not inventory executable files located in the %*windir*% and %*systemroot*% directories.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Asset Intelligence Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/asset-intelligence-client-wmi-classes.md)
- [SMS_AutoStartSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_autostartsoftware-client-wmi-class.md)
- [SMS_BrowserHelperObject Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_browserhelperobject-client-wmi-class.md)
- [SMS_InstalledSoftware Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftware-client-wmi-class.md)
- [SMS_InstalledSoftwareMS Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_installedsoftwarems-client-wmi-class.md)
- [SMS_Processor Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_processor-client-wmi-class.md)
- [SMS_SoftwareShortcut Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_softwareshortcut-client-wmi-class.md)
- [SMS_SystemConsoleUsage Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleusage-client-wmi-class.md)
- [SMS_SystemConsoleUser Client WMI Class](../../../../../develop/reference/core/clients/client-classes/sms_systemconsoleuser-client-wmi-class.md)
+
+[Asset Intelligence Client WMI Classes](asset-intelligence-client-wmi-classes.md) [SMS_AutoStartSoftware Client WMI Class](sms_autostartsoftware-client-wmi-class.md) [SMS_BrowserHelperObject Client WMI Class](sms_browserhelperobject-client-wmi-class.md) [SMS_InstalledSoftware Client WMI Class](sms_installedsoftware-client-wmi-class.md) [SMS_InstalledSoftwareMS Client WMI Class](sms_installedsoftwarems-client-wmi-class.md) [SMS_Processor Client WMI Class](sms_processor-client-wmi-class.md) [SMS_SoftwareShortcut Client WMI Class](sms_softwareshortcut-client-wmi-class.md) [SMS_SystemConsoleUsage Client WMI Class](sms_systemconsoleusage-client-wmi-class.md) [SMS_SystemConsoleUser Client WMI Class](sms_systemconsoleuser-client-wmi-class.md)

@@ -1,7 +1,7 @@
 ---
-title: Features and capabilities
+title: "Features and capabilities of Configuration Manager"
 description: Learn about the primary management capabilities of Configuration Manager.
-ms.date: 07/15/2021
+ms.date: "2021-07-15T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: overview
 ms.collection: tier3
@@ -34,7 +34,7 @@ Use CMPivot to immediately query online devices, then filter and group the data 
 
 ## Application management
 
-Helps you create, manage, deploy, and monitor applications to a range of different devices that you manage. Deploy, update, and manage Microsoft 365 Apps from the Configuration Manager console. Additionally, Configuration Manager integrates with the Microsoft Store for Business and Education to deliver cloud-based apps. For more information, see [Introduction to application management](/previous-versions/troubleshoot/configmgr/introduction-to-application-management).
+Helps you create, manage, deploy, and monitor applications to a range of different devices that you manage. Deploy, update, and manage Microsoft 365 Apps from the Configuration Manager console. Additionally, Configuration Manager integrates with the Microsoft Store for Business and Education to deliver cloud-based apps. For more information, see [Introduction to application management](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/configmgr/introduction-to-application-management).
 
 ## OS deployment
 

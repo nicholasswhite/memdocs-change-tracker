@@ -1,16 +1,18 @@
 ---
 description: Learn how to use VerifyNoLoops class method to determine if the insertion of a site in Configuration Manager will result in a recursive loop of the sites.
-title: VerifyNoLoops Method
-ms.date: 09/20/2016
+title: "VerifyNoLoops Method in Class SMS_Site"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # VerifyNoLoops Method in Class SMS_Site
+
 The `VerifyNoLoops` Windows Management Instrumentation (WMI) class method, in Configuration Manager, determines if the insertion of a site in the Configuration Manager hierarchy at a specific point will result in a recursive loop of the sites.
 
- The following syntax is simplified from Managed Object Format (MOF) code and is intended to show the definition of the method.
+The following syntax is simplified from Managed Object Format (MOF) code and is intended to show the definition of the method.
 
 ## Syntax
 
@@ -24,41 +26,40 @@ SInt32 VerifyNoLoops(
 ```
 
 #### Parameters
- `CentralSiteCode`
- Data type: `String`
 
- Qualifiers: [in, SizeLimit("3")]
+`CentralSiteCode` Data type: `String`
 
- Not used.
+Qualifiers: [in, SizeLimit("3")]
 
- `TargetSiteCode`
- Data type: `String`
+Not used.
 
- Qualifiers: [in, SizeLimit("3")]
+`TargetSiteCode` Data type: `String`
 
- Site code of the child site to insert.
+Qualifiers: [in, SizeLimit("3")]
 
- `ParentSiteCode`
- Data type: `String`
+Site code of the child site to insert.
 
- Qualifiers: [in, SizeLimit("3")]
+`ParentSiteCode` Data type: `String`
 
- Site code of the site that will be the parent of the target site.
+Qualifiers: [in, SizeLimit("3")]
 
- `Result`
- Data type: `Boolean`
+Site code of the site that will be the parent of the target site.
 
- Qualifiers: [out]
+`Result` Data type: `Boolean`
 
- `true` if no loop is formed by inserting the new site in the Configuration Manager hierarchy
+Qualifiers: [out]
+
+`true` if no loop is formed by inserting the new site in the Configuration Manager hierarchy
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Example Code
- The following example shows how to call the `VerifyNoLoops` method.
+
+The following example shows how to call the `VerifyNoLoops` method.
 
 ```
 Dim Site As SWbemObject
@@ -73,10 +74,13 @@ MsgBox "NoLoop = " & NoLoop
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md)

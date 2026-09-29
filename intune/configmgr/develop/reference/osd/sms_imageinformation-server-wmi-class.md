@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent all image information in boot image, operating system image, and operating system installer using SMS_ImageInformation.
-title: SMS_ImageInformation Class
-ms.date: 09/20/2016
+title: "SMS_ImageInformation Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ImageInformation Server WMI Class
+
 The `SMS_ImageInformation` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents all image information in boot image, operating system image, and operating system installer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -39,191 +41,177 @@ Class SMS_ImageInformation : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ImageInformation` class does not define any methods.
+
+The `SMS_ImageInformation` class does not define any methods.
 
 ## Properties
- `Architecture`
- Data type: `String`
 
- Access type: Read-only
+`Architecture` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Architecture of the boot image.
+Qualifiers: [read]
 
- `CreatedBy`
- Data type: `String`
+Architecture of the boot image.
 
- Access type: Read-only
+`CreatedBy` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the user who created the image.
+Qualifiers: [read]
 
- `CreationDate`
- Data type: `String`
+Name of the user who created the image.
 
- Access type: Read-only
+`CreationDate` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time when the image was created.
+Qualifiers: [read]
 
- `Description`
- Data type: `String`
+Date and time when the image was created.
 
- Access type: Read-only
+`Description` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Description of the image.
+Qualifiers: [read]
 
- `EnableLabShell`
- Data type: `Boolean`
+Description of the image.
 
- Access type: Read-only
+`EnableLabShell` Data type: `Boolean`
 
- Qualifiers: [lazy]
+Access type: Read-only
 
- `true` if command-line support is enabled. The default value is `false`.
+Qualifiers: [lazy]
 
- `HALType`
- Data type: `String`
+`true` if command-line support is enabled. The default value is `false`.
 
- Access type: Read-only
+`HALType` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Image HAL type.
+Qualifiers: [read]
 
- `ImagePath`
- Data type: `String`
+Image HAL type.
 
- Access type: Read-only
+`ImagePath` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- For internal use only.
+Qualifiers: [read]
 
- `ImageOSVersion`
- Data type: `String`
+For internal use only.
 
- Access type: Read-only
+`ImageOSVersion` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The operating system version for the default image in the boot WIM file.
+Qualifiers: [read]
 
- `Index`
- Data type: `UInt32`
+The operating system version for the default image in the boot WIM file.
 
- Access type: Read-only
+`Index` Data type: `UInt32`
 
- Qualifiers: [lazy, read]
+Access type: Read-only
 
- A one-based number indicating which image in the source WIM file is the boot image.
+Qualifiers: [lazy, read]
 
- The default value is 1.
+A one-based number indicating which image in the source WIM file is the boot image.
 
- `Language`
- Data type: `String`
+The default value is 1.
 
- Access type: Read-only
+`Language` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Language of the image.
+Qualifiers: [read]
 
- `Name`
- Data type: `String`
+Language of the image.
 
- Access type: Read-only
+`Name` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the image.
+Qualifiers: [read]
 
- `ObjectType`
- Data type: `UInt32`
+Name of the image.
 
- Access type: Read-only
+`ObjectType` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Secured object type.
+Qualifiers: [enumeration, read]
+
+Secured object type.
 
 | Value | Object type |
-| ----- | ----------- |
-|14|SMS_OperatingSystemInstallPackage|
-|18|SMS_ImagePackage|
-|19|SMS_BootImagePackage|
+| --- | --- |
+| 14 | SMS_OperatingSystemInstallPackage |
+| 18 | SMS_ImagePackage |
+| 19 | SMS_BootImagePackage |
 
- `OSVersion`
- Data type: `String`
+`OSVersion` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Image operating system version.
+Image operating system version.
 
- `PackageID`
- Data type: `String`
+`PackageID` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [key, read]
+Qualifiers: [key, read]
 
- A unique, auto-generated key that is used to relate programs, advertisements, and distribution points to the package.
+A unique, auto-generated key that is used to relate programs, advertisements, and distribution points to the package.
 
- `PackageType`
- Data type: `UInt32`
+`PackageType` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [enumeration, read]
+Qualifiers: [enumeration, read]
 
- Image package type.
+Image package type.
 
 | Value | Package type |
-| ----- | ------------ |
-|257|PKG_TYPE_IMAGE|
-|258|PKG_TYPE_BOOTIMAGE|
-|259|PKG_TYPE_OSINSTALLIMAGE|
+| --- | --- |
+| 257 | PKG_TYPE_IMAGE |
+| 258 | PKG_TYPE_BOOTIMAGE |
+| 259 | PKG_TYPE_OSINSTALLIMAGE |
 
- `ProductType`
- Data type: `String`
+`ProductType` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Image product type.
+Image product type.
 
- `Size`
- Data type: `SInt64`
+`Size` Data type: `SInt64`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Image size.
+Image size.
 
- `Version`
- Data type: `String`
+`Version` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

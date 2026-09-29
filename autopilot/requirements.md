@@ -1,7 +1,7 @@
 ---
 title: Windows Autopilot requirements
 description: Software, Networking, Licensing, and Configuration requirements for Windows Autopilot.
-ms.date: 07/08/2025
+ms.date: "2025-07-08T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: article
@@ -20,15 +20,15 @@ appliesto:
 >
 > RSS can be used to notify when requirements are added or updated to this page. For example, the following RSS link includes this article:
 >
-> ``` url
+> ```url
 > https://learn.microsoft.com/api/search/rss?search=%22The+list+of+requirements+for+Windows+Autopilot+is+organized+into+four+different+categories%22&locale=en-us&%24filter=
 > ```
 >
 > This example includes the `&locale=en-us` variable. The `locale` variable is required, but it can be changed to another supported locale. For example, `&locale=es-es`.
 >
-> For more information on using RSS for notifications, see [How to use the docs](/intune/use-docs#notifications) in the Intune documentation.
+> For more information on using RSS for notifications, see [How to use the docs](https://learn.microsoft.com/en-us/intune/use-docs#notifications) in the Intune documentation.
 
-The list of requirements for Windows Autopilot is organized into four different categories:<!-- RSS subscription is based on this line so don't change. If the line needs to change, update RSS URL in the Tip in the article.-->
+The list of requirements for Windows Autopilot is organized into four different categories:
 
 - **Software** - OS requirements.
 - **Networking** - networking requirements.
@@ -37,7 +37,14 @@ The list of requirements for Windows Autopilot is organized into four different 
 
 Select the appropriate tab to see the relevant requirements:
 
-## [:::image type="icon" source="images/icons/software-18.svg"::: **Software**](#tab/software)
+- [![](images/icons/software-18.svg) **Software**](#tabpanel_1_software)
+- [![](images/icons/wifi-ethernet-18.svg) **Networking**](#tabpanel_1_networking)
+- [![](images/icons/license-18.svg) **Licensing**](#tabpanel_1_licensing)
+- [![](images/icons/configuration-18.svg) **Configuration**](#tabpanel_1_configuration)
+
+<a id="tabpanel_1_software"></a>
+
+
 
 ### Software requirements
 
@@ -49,7 +56,7 @@ Windows Autopilot depends on specific features available in Windows client, Micr
 
 #### Windows 11
 
-A [supported version](/windows/release-health/windows11-release-information) of Windows 11 General Availability Channel is required.
+A [supported version](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) of Windows 11 General Availability Channel is required.
 
 The following editions of Windows 11 are supported:
 
@@ -58,12 +65,12 @@ The following editions of Windows 11 are supported:
 - Windows 11 Pro for Workstations.
 - Windows 11 Enterprise.
 - Windows 11 Education.
-- [Windows 11 Enterprise LTSC](/windows/whats-new/ltsc/overview).
+- [Windows 11 Enterprise LTSC](https://learn.microsoft.com/en-us/windows/whats-new/ltsc/overview).
 - Windows 11 IoT Enterprise only when used in Microsoft Teams Rooms devices.
 
 #### Windows 10
 
-A [supported version](/windows/release-health/release-information) of Windows 10 is required.
+A [supported version](https://learn.microsoft.com/en-us/windows/release-health/release-information) of Windows 10 is required.
 
 The following editions of Windows 10 are supported:
 
@@ -72,18 +79,20 @@ The following editions of Windows 10 are supported:
 - Windows 10 Pro for Workstations.
 - Windows 10 Enterprise.
 - Windows 10 Education.
-- [Windows 10 Enterprise LTSC](/windows/whats-new/ltsc/overview).
+- [Windows 10 Enterprise LTSC](https://learn.microsoft.com/en-us/windows/whats-new/ltsc/overview).
 - Windows 10 IoT Enterprise only when used in Microsoft Teams Rooms devices.
 
 #### HoloLens
 
-- Windows Autopilot for HoloLens 2 requires a currently supported version of Windows Holographic. For more information, see [Windows Autopilot for HoloLens 2](/hololens/hololens2-autopilot).
+- Windows Autopilot for HoloLens 2 requires a currently supported version of Windows Holographic. For more information, see [Windows Autopilot for HoloLens 2](https://learn.microsoft.com/en-us/hololens/hololens2-autopilot).
 
 > [!NOTE]
 >
-> Procedures for deploying Windows Autopilot might refer to specific products and versions. The inclusion of these products in this content doesn't imply an extension of support for a version that is beyond its support lifecycle. Windows Autopilot doesn't support products that are beyond their support lifecycle. For more information, see [Microsoft Lifecycle Policy](/lifecycle/).
+> Procedures for deploying Windows Autopilot might refer to specific products and versions. The inclusion of these products in this content doesn't imply an extension of support for a version that is beyond its support lifecycle. Windows Autopilot doesn't support products that are beyond their support lifecycle. For more information, see [Microsoft Lifecycle Policy](https://learn.microsoft.com/en-us/lifecycle/).
 
-## [:::image type="icon" source="images/icons/wifi-ethernet-18.svg"::: **Networking**](#tab/networking)
+<a id="tabpanel_1_networking"></a>
+
+
 
 ### Networking requirements
 
@@ -99,7 +108,7 @@ Additional configuration might be required to grant access to required services 
 
 > [!NOTE]
 >
-> Smart card and certificate based authentication is supported during the out-of-box experience (OOBE) with [Entra Certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication). For more information, see [Entra certificate-based authentication & OOBE](/entra/identity/authentication/concept-certificate-based-authentication-smartcard#windows-out-of-the-box-experience-oobe).
+> Smart card and certificate based authentication is supported during the out-of-box experience (OOBE) with [Entra Certificate-based authentication](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication). For more information, see [Entra certificate-based authentication &amp; OOBE](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-certificate-based-authentication-smartcard#windows-out-of-the-box-experience-oobe).
 
 #### Service requirements
 
@@ -118,27 +127,27 @@ Windows Autopilot requires Windows Activation services. For more information abo
 
 ##### Microsoft Entra ID
 
-Microsoft Entra ID validates user credentials. Additionally, the device is joined or registered to Microsoft Entra ID during Windows Autopilot. For more information, see [Office 365 IP Address and URL Web service](/microsoft-365/enterprise/microsoft-365-ip-web-service).
+Microsoft Entra ID validates user credentials. Additionally, the device is joined or registered to Microsoft Entra ID during Windows Autopilot. For more information, see [Office 365 IP Address and URL Web service](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service).
 
 ##### Microsoft Intune
 
-Once authenticated, Microsoft Entra ID triggers enrollment of the device into the Intune mobile device management (MDM) service. For more information about Intune's network communication requirements, see [Network endpoints for Microsoft Intune](/intune/fundamentals/endpoints).
+Once authenticated, Microsoft Entra ID triggers enrollment of the device into the Intune mobile device management (MDM) service. For more information about Intune's network communication requirements, see [Network endpoints for Microsoft Intune](../intune/fundamentals/endpoints.md).
 
 ##### Windows Autopilot automatic device diagnostics collection
 
 For diagnostics to be able to upload successfully from the client, make sure that the URL `lgmsapeweu.blob.core.windows.net` isn't blocked on the network. Diagnostics are available for 28 days before they're removed.
 
-For more information, see [Collect diagnostics from a Windows device](/intune/device-management/actions/collect-diagnostics).
+For more information, see [Collect diagnostics from a Windows device](../intune/device-management/actions/collect-diagnostics.md).
 
 ##### Windows Update
 
-During the out-of-box experience (OOBE) process and after the Windows OS configuration, the Windows Update service retrieves needed updates. If there are problems connecting to Windows Update, see [Windows Update issues troubleshooting](/troubleshoot/windows-client/installing-updates-features-roles/windows-update-issues-troubleshooting).
+During the out-of-box experience (OOBE) process and after the Windows OS configuration, the Windows Update service retrieves needed updates. If there are problems connecting to Windows Update, see [Windows Update issues troubleshooting](https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/windows-update-issues-troubleshooting).
 
 If Windows Update is inaccessible, the Windows Autopilot process still continues but critical updates aren't available.
 
 ##### Delivery Optimization
 
-Windows Autopilot contacts the [Delivery Optimization](/windows/deployment/update/waas-delivery-optimization) service when downloading the applications and updates. This contact establishes peer-to-peer sharing of content so that only a few devices need to download it from the internet.
+Windows Autopilot contacts the [Delivery Optimization](https://learn.microsoft.com/en-us/windows/deployment/update/waas-delivery-optimization) service when downloading the applications and updates. This contact establishes peer-to-peer sharing of content so that only a few devices need to download it from the internet.
 
 - Windows Updates.
 - Microsoft Store applications and application updates.
@@ -157,19 +166,19 @@ To resolve internet names for all services, the device communicates with a DNS s
 
 ##### Diagnostics data
 
-Diagnostic data collection is enabled by default. For more information, see [Manage enterprise diagnostic data](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#manage-diagnostic-data-using-group-policy-and-mdm).
+Diagnostic data collection is enabled by default. For more information, see [Manage enterprise diagnostic data](https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#manage-diagnostic-data-using-group-policy-and-mdm).
 
 If the device can't send diagnostic data, the Windows Autopilot process still continues. However, services that depend on diagnostic data don't work.
 
 ##### Network Connection Status Indicator (NCSI)
 
-Windows must be able to tell that the device can access the internet. For more information, see [Network Connection Status Indicator (NCSI)](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#14-network-connection-status-indicator).
+Windows must be able to tell that the device can access the internet. For more information, see [Network Connection Status Indicator (NCSI)](https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#14-network-connection-status-indicator).
 
 `*.msftconnecttest.com` must be resolvable via DNS and accessible via HTTP.
 
 ##### Windows Notification Services (WNS)
 
-This service is used to enable Windows to receive notifications from applications and services. For more information, see [Microsoft Store](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#26-microsoft-store).
+This service is used to enable Windows to receive notifications from applications and services. For more information, see [Microsoft Store](https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#26-microsoft-store).
 
 If the WNS services aren't available, the Windows Autopilot process still continues without notifications.
 
@@ -181,17 +190,17 @@ If the Microsoft Store isn't accessible, the Windows Autopilot process still con
 
 ##### Microsoft 365
 
-As part of the Intune device configuration, installation of Microsoft 365 Applications for enterprise might be required. For a list that includes all Office services, DNS names, IP addresses, including Microsoft Entra ID and other services that might overlap with the previously listed services, see [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges).
+As part of the Intune device configuration, installation of Microsoft 365 Applications for enterprise might be required. For a list that includes all Office services, DNS names, IP addresses, including Microsoft Entra ID and other services that might overlap with the previously listed services, see [Office 365 URLs and IP address ranges](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges).
 
 ##### Certificate revocation lists (CRLs)
 
-Some of these services also need to check certificate revocation lists (CRLs) for certificates used in the services. For a full list, see [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Office 365 Certificate Chains](/microsoft-365/compliance/encryption-office-365-certificate-chains).
+Some of these services also need to check certificate revocation lists (CRLs) for certificates used in the services. For a full list, see [Office 365 URLs and IP address ranges](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Office 365 Certificate Chains](https://learn.microsoft.com/en-us/microsoft-365/compliance/encryption-office-365-certificate-chains).
 
 ##### Microsoft Entra hybrid join
 
 > [!IMPORTANT]
 >
-> Microsoft recommends deploying new devices as cloud-native using Microsoft Entra join. Deploying new devices as Microsoft Entra hybrid join devices isn't recommended, including through Windows Autopilot. For more information, see [Microsoft Entra joined vs. Microsoft Entra hybrid joined in cloud-native endpoints: Which option is right for your organization](/intune/solutions/cloud-native-endpoints/azure-ad-joined-hybrid-azure-ad-joined#which-option-is-right-for-your-organization).
+> Microsoft recommends deploying new devices as cloud-native using Microsoft Entra join. Deploying new devices as Microsoft Entra hybrid join devices isn't recommended, including through Windows Autopilot. For more information, see [Microsoft Entra joined vs. Microsoft Entra hybrid joined in cloud-native endpoints: Which option is right for your organization](https://learn.microsoft.com/en-us/intune/solutions/cloud-native-endpoints/azure-ad-joined-hybrid-azure-ad-joined#which-option-is-right-for-your-organization).
 
 The device can be Microsoft Entra hybrid joined. The computer should be on the internal network for Microsoft Entra hybrid join to work. For more information, see [Windows Autopilot user-driven mode](user-driven.md#user-driven-mode-for-microsoft-entra-hybrid-join).
 
@@ -199,7 +208,7 @@ The device can be Microsoft Entra hybrid joined. The computer should be on the i
 
 The TPM attestation process requires access to a set of HTTPS URLs, which are unique for each TPM provider. Ensure access to this URL pattern: `*.microsoftaik.azure.net`.
 
-Firmware TPM devices, which are only provided by Intel, AMD, or Qualcomm, don't include all needed certificates at boot time and must be able to retrieve them from the manufacturer on first use. Devices with discrete TPM chips come with these certificates preinstalled. These devices include ones from any other manufacturer. For more information, see [TPM recommendations](/windows/security/information-protection/tpm/tpm-recommendations).
+Firmware TPM devices, which are only provided by Intel, AMD, or Qualcomm, don't include all needed certificates at boot time and must be able to retrieve them from the manufacturer on first use. Devices with discrete TPM chips come with these certificates preinstalled. These devices include ones from any other manufacturer. For more information, see [TPM recommendations](https://learn.microsoft.com/en-us/windows/security/information-protection/tpm/tpm-recommendations).
 
 For each firmware TPM provider, make sure that the appropriate URL is accessible so that certificates can be successfully requested. For example:
 
@@ -211,7 +220,9 @@ For each firmware TPM provider, make sure that the appropriate URL is accessible
 
 Deploying proxy settings for Windows Autopilot should be configured on the proxy server itself. Implementing proxy settings via Intune policy isn't fully supported as it might cause issues and unexpected behavior with privileged access deployments.
 
-## [:::image type="icon" source="images/icons/license-18.svg"::: **Licensing**](#tab/licensing)
+<a id="tabpanel_1_licensing"></a>
+
+
 
 ### Licensing requirements
 
@@ -224,51 +235,48 @@ To provide needed Microsoft Entra ID and MDM functionality, including automatic 
 - [Microsoft 365 Academic A1, A3, or A5 subscription](https://www.microsoft.com/education/products/microsoft-365).
 - [Microsoft 365 Enterprise E3 or E5 subscription](https://www.microsoft.com/microsoft-365/enterprise), which include all Windows client, Microsoft 365, and EMS features (Microsoft Entra ID and Intune).
 - [Enterprise Mobility + Security E3 or E5 subscription]([https://www.microsoft.com/cloud-platform/enterprise-mobility-security](https://www.microsoft.com/licensing/product-licensing/enterprise-mobility-security), which include all needed Microsoft Entra ID and Intune features.
-- [Intune for Education subscription](/intune-education/what-is-intune-for-education), which include all needed Microsoft Entra ID and Intune features.
+- [Intune for Education subscription](https://learn.microsoft.com/en-us/intune-education/what-is-intune-for-education), which include all needed Microsoft Entra ID and Intune features.
 - [Microsoft Entra ID P1 or P2](https://azure.microsoft.com/services/active-directory/) and [Microsoft Intune subscription](https://www.microsoft.com/security/business/microsoft-intune-pricing) or an alternative MDM service.
 
 > [!NOTE]
 >
-> When a Microsoft 365 subscription is used, licenses still need to be assigned to users so they can enroll device in Intune. For more information, see [assign licenses to users so they can enroll devices in Intune](/intune/fundamentals/assign-licenses).
+> When a Microsoft 365 subscription is used, licenses still need to be assigned to users so they can enroll device in Intune. For more information, see [assign licenses to users so they can enroll devices in Intune](../intune/fundamentals/assign-licenses.md).
 
 Additionally, the following are also recommended (but not required):
 
 - [Microsoft 365 Apps for enterprise](https://www.microsoft.com/microsoft-365/enterprise/microsoft-365-apps-for-enterprise-product) - Microsoft 365 Applications for enterprise can be deployed easily via Intune or other MDM service.
-- [Windows Subscription Activation](/windows/deployment/windows-subscription-activation) - automatically step up devices from Windows Pro to Windows Enterprise edition.
+- [Windows Subscription Activation](https://learn.microsoft.com/en-us/windows/deployment/windows-subscription-activation) - automatically step up devices from Windows Pro to Windows Enterprise edition.
 
-## [:::image type="icon" source="images/icons/configuration-18.svg"::: **Configuration**](#tab/configuration)
+<a id="tabpanel_1_configuration"></a>
+
+
 
 ### Configuration requirements
 
 Before Windows Autopilot can be used, some configuration tasks are required to support the common Windows Autopilot scenarios.
 
-- **Configure Microsoft Entra automatic enrollment**. For details when using Microsoft Intune, see [Set up Windows automatic Intune enrollment](tutorial/user-driven/azure-ad-join-automatic-enrollment.md) or [Enable Windows automatic enrollment](/intune/intune-service/enrollment/windows-enroll#enable-windows-automatic-enrollment). If using a different MDM service, contact the vendor for the specific URLs or configuration needed for those services.
-
+- **Configure Microsoft Entra automatic enrollment**. For details when using Microsoft Intune, see [Set up Windows automatic Intune enrollment](tutorial/user-driven/azure-ad-join-automatic-enrollment.md) or [Enable Windows automatic enrollment](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-enroll#enable-windows-automatic-enrollment). If using a different MDM service, contact the vendor for the specific URLs or configuration needed for those services.
 - **The first user that signs in needs to have Microsoft Entra join permissions for some deployment scenarios**. For details, see [Allow users to join devices to Microsoft Entra ID](tutorial/user-driven/azure-ad-join-allow-users-to-join.md). The exception to this requirement is Windows Autopilot self-deployment mode since this method works in a userless context.
 
 The following configurations are optional but recommended. They aren't required:
 
-- **Automatically step up from Windows Pro to Windows Enterprise**. For more information, see [Windows Subscription Activation](/windows/deployment/windows-subscription-activation).
-
-- **Configure Microsoft Entra custom branding**. To display an organization-specific sign-on page, configure Microsoft Entra ID with the images and text that need to be displayed. For more information, see [Quickstart: Add company branding to your sign-in page in Microsoft Entra ID](/azure/active-directory/fundamentals/customize-branding). Key elements for Windows Autopilot include the **square logo**, **sign-in page text**, and Microsoft Entra tenant name. The tenant name is configured separately in the Microsoft Entra tenant properties.
+- **Automatically step up from Windows Pro to Windows Enterprise**. For more information, see [Windows Subscription Activation](https://learn.microsoft.com/en-us/windows/deployment/windows-subscription-activation).
+- **Configure Microsoft Entra custom branding**. To display an organization-specific sign-on page, configure Microsoft Entra ID with the images and text that need to be displayed. For more information, see [Quickstart: Add company branding to your sign-in page in Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/customize-branding). Key elements for Windows Autopilot include the **square logo**, **sign-in page text**, and Microsoft Entra tenant name. The tenant name is configured separately in the Microsoft Entra tenant properties.
 
 Specific scenarios have additional requirements. Generally, there are two specific tasks:
 
 - **Device registration**. Devices must be added to Windows Autopilot to support most Windows Autopilot scenarios. For more information, see [Register devices as Windows Autopilot devices](tutorial/user-driven/azure-ad-join-register-device.md) or [Manually register devices with Windows Autopilot](add-devices.md).
-
 - **Profile configuration**. Once devices are added to Windows Autopilot, a profile of settings needs to be applied to each device. For details see [Configure Windows Autopilot profiles](profiles.md). Microsoft Intune can automate this profile assignment. For more information, see [Create device groups for Windows Autopilot](enrollment-autopilot.md) and [Assignment of Windows Autopilot deployment profiles to devices](profiles.md#assignment-of-windows-autopilot-deployment-profiles-to-devices).
 
-For more information, see [Windows Autopilot Scenarios](windows-Autopilot-scenarios.md).
+For more information, see [Windows Autopilot Scenarios](windows-autopilot-scenarios.md).
 
 For a walkthrough for some of these and related steps, see this video:
 
-> [!VIDEO https://www.youtube.com/embed/KYVptkpsOqs]
+[Embedded video](https://www.youtube-nocookie.com/embed/KYVptkpsOqs)
 
 There are no additional hardware requirements to use Windows Autopilot, beyond the hardware requirements to run Windows. For more information, see:
 
 - [Find Windows 11 specs, features, and computer requirements](https://www.microsoft.com/windows/windows-11-specifications).
-- [How to Find Windows 10 Computer Specifications & Systems Requirements](https://www.microsoft.com/windows/windows-10-specifications).
-- [Windows minimum hardware requirements](/windows-hardware/design/minimum/minimum-hardware-requirements-overview).
-- [Windows 11 requirements](/windows/whats-new/windows-11-requirements).
-
----
+- [How to Find Windows 10 Computer Specifications &amp; Systems Requirements](https://www.microsoft.com/windows/windows-10-specifications).
+- [Windows minimum hardware requirements](https://learn.microsoft.com/en-us/windows-hardware/design/minimum/minimum-hardware-requirements-overview).
+- [Windows 11 requirements](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements).

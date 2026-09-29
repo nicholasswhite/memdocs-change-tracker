@@ -1,7 +1,7 @@
 ---
-title: Device enrollment guide for Microsoft Intune
+title: "Enrollment guide: Microsoft Intune enrollment"
 description: Enroll Android, Android Enterprise, iOS, iPadOS, Linux, macOS, and Windows devices in Intune. Decide which enrollment method to use, and get an overview of the administrator and end user tasks to enroll devices.
-ms.date: 06/24/2024
+ms.date: "2024-06-24T00:00:00Z"
 ms.topic: article
 ---
 
@@ -15,7 +15,7 @@ During enrollment, Intune installs a Mobile Device Management (MDM) certificate 
 - Compliance policies that help users and devices meet your rules.
 - Configuration policies that configure work-appropriate features and settings on devices.
 
-:::image type="content" source="media/guide/mdm-certificate.png" alt-text="Diagram that shows the device enrolls, the object is created in Microsoft Entra ID, and the MDM certificate is pushed to these devices in Microsoft Intune.":::
+![Diagram that shows the device enrolls, the object is created in Microsoft Entra ID, and the MDM certificate is pushed to these devices in Microsoft Intune.](media/guide/mdm-certificate.png)
 
 Typically, policies are deployed during enrollment. Some groups, depending on their roles in your organization, can require stricter policies than others. Many organizations start by creating a baseline of required policies for users and devices. Then, add to this baseline as needed for different groups and use cases.
 
@@ -47,7 +47,8 @@ As the admin, you add device users in the Microsoft Intune admin center, configu
 To determine if enrolling personal devices in Intune is right for your organization, go to [Intune planning guide: Personal devices vs Organization-owned devices](../fundamentals/planning-guide.md#personal-devices-vs-organization-owned-devices).
 
 > [!NOTE]
-> Intune marks devices that are [Microsoft Entra registered](/entra/identity/devices/concept-device-registration) as personally-owned devices.
+>
+> Intune marks devices that are [Microsoft Entra registered](https://learn.microsoft.com/en-us/entra/identity/devices/concept-device-registration) as personally-owned devices.
 
 ### Corporate-owned devices
 
@@ -63,26 +64,21 @@ Microsoft Intune automatically marks devices that meet certain criteria as corpo
   - [Intune licenses are assigned](../fundamentals/assign-licenses.md).
 
   For more information, go to the [Intune setup deployment guide](../fundamentals/setup-migration.md).
-
 - Your devices [are supported](../fundamentals/ref-supported-platforms.md). This requirement includes devices that are co-managed, or Microsoft Entra hybrid joined devices.
-
 - Sign in as a member of the **Policy and Profile Manager** built-in Intune role. For information on the permissions in this role, go to [Built-in role permissions for Microsoft Intune - Policy and Profile manager](../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager).
 
-  It's possible some enrollment platforms might require a more privileged Microsoft Entra role, like the **Intune Administrator** built-in role. For information on this role, go to [Microsoft Entra built-in roles - Intune Administrator](/entra/identity/role-based-access-control/permissions-reference#intune-administrator).
-
+  It's possible some enrollment platforms might require a more privileged Microsoft Entra role, like the **Intune Administrator** built-in role. For information on this role, go to [Microsoft Entra built-in roles - Intune Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator).
 - Different platforms can have other requirements. For example, iOS/iPadOS and macOS devices require an [MDM push certificate from Apple](apple/create-mdm-push-certificate.md). Any other platform requirements are listed.
 
   | Platform | Other requirements |
   | --- | --- |
   | Android | none |
   | Android Enterprise | none |
-  | iOS/iPadOS | [MDM push certificate](apple/create-mdm-push-certificate.md)<br/>Apple ID |
+  | iOS/iPadOS | [MDM push certificate](apple/create-mdm-push-certificate.md) Apple ID |
   | Linux | none |
   | macOS | [MDM push certificate](apple/create-mdm-push-certificate.md) |
   | Windows | none |
-
 - Have your user groups and device groups ready to receive your enrollment policies. If you haven't reviewed or created your group structure, and want some guidance, then go to [Planning Guide: Step 4 - Review existing policies and infrastructure](../fundamentals/planning-guide.md#step-4---review-existing-policies-and-infrastructure).
-
 - If you're bulk enrolling devices, consider creating the **Device enrollment manager** (DEM) account. The DEM account can enroll up to 1,000 mobile devices. Use this account to enroll and configure the devices before giving them to users. The DEM account is an Intune permission that applies to a Microsoft Entra user account. This type of account isn't compatible with all enrollment methods, like Apple automated device enrollment.
 
   For more information, go to [Enroll devices using a DEM account](setup-enrollment-manager.md).
@@ -93,7 +89,8 @@ If devices are currently enrolled in another MDM provider, then unenroll the dev
 
 Depending on the platform, a factory reset might be required before enrolling in Intune.
 
------
+---
+
 | Platform | Factory reset required? |
 | --- | --- |
 | Android Enterprise personally owned devices with a work profile (BYOD) | No |
@@ -106,7 +103,7 @@ Depending on the platform, a factory reset might be required before enrolling in
 | macOS | Yes |
 | Windows | No |
 
------
+---
 
 On the platforms that don't require a factory reset, when these devices enroll in Intune, they start receiving your Intune policies. If you don't configure a setting in Intune, then Intune doesn't change or update that setting. So, it's possible previously configured settings remain configured on devices.
 
@@ -125,7 +122,8 @@ There's an enrollment guide for every platform. Choose your scenario, and get st
 
 There's also a visual guide of the different enrollment options for each platform:
 
-[![A visual representation of Intune enrollment options by platform](media/guide/msft-intune-enrollment-options-thumb-landscape.png)](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf) <br/> [Download PDF version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf) | [Download Visio version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.vsdx)
+[![A visual representation of Intune enrollment options by platform](media/guide/msft-intune-enrollment-options-thumb-landscape.png)](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf)   
+ [Download PDF version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf) | [Download Visio version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.vsdx)
 
 ## Pilot groups
 
@@ -140,7 +138,7 @@ The MDM certificate renews automatically as long as enrolled devices are communi
 ## Reporting and troubleshooting
 
 - [Incomplete user enrollments](monitor-reports.md)
-- [Troubleshoot device enrollment](/troubleshoot/mem/intune/troubleshoot-device-enrollment-in-intune)
+- [Troubleshoot device enrollment](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-device-enrollment-in-intune)
 
 ## Next steps
 

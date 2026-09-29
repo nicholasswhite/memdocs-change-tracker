@@ -1,7 +1,7 @@
 ---
-title: "Device Action: Locate Device"
+title: "Device action: locate device"
 description: Locate lost or stolen devices by using the locate device feature in Microsoft Intune. Get details on security and privacy information when using the locate device action.
-ms.date: 10/27/2025
+ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 zone_pivot_groups: d4b2a9c3-d659-4922-8403-9b50d065fc07
 ---
@@ -14,27 +14,18 @@ Depending on the platform, Intune can also report the last known location if the
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
+>
 > - Android Enterprise corporate-owned dedicated (COSU)
 > - Android Enterprise corporate-owned fully managed (COBO)
 > - Android Enterprise corporate-owned work profile (COPE)
 > - iOS/iPadOS in [Supervised Mode](../../device-enrollment/apple/enable-supervised-mode.md)
 > - Windows
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [device-configuration](../../includes/requirements/device-configuration.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
+
 ::: zone pivot="ios"
 
 > To use this action, make sure devices meet the following requirements:
@@ -51,17 +42,20 @@ Depending on the platform, Intune can also report the last known location if the
 > - Intune app is installed.
 >
 > **Fully Managed Devices**:
+>
 > - The **Locate Device** feature must be explicitly enabled with a device restrictions profile.
 >
 > **Corporate-Owned Work Profile Devices**:
 >
 > - The **Locate Device** feature must be explicitly enabled with a device restrictions profile.
-> - Users must grant location permission to the Intune app. Go to: **Settings** > **Apps** > **Intune (Work tab)** > **Permissions** > **Location** > **Allow all the time**.
+> - Users must grant location permission to the Intune app. Go to: **Settings** &gt; **Apps** &gt; **Intune (Work tab)** &gt; **Permissions** &gt; **Location** &gt; **Allow all the time**.
 >
 > **Dedicated Devices**:
-> - The **Locate Device** feature is enabled by default, unless explicitly blocked with a device restriction profile.
 >
+> - The **Locate Device** feature is enabled by default, unless explicitly blocked with a device restriction profile.
+
 > [!NOTE]
+>
 > When **Locate device** is allowed, users receive a one-time notification, *Intune can access your location*, indicating that Intune has the ability to use location permissions on the device.
 
 For more information about device restrictions, see [Android template device settings list to restrict features using Intune](../../device-configuration/templates/ref-device-restrictions-android-enterprise.md).
@@ -71,61 +65,65 @@ For more information about device restrictions, see [Android template device set
 ::: zone pivot="windows"
 
 > Before you can use the locate functionality, you must configure your devices to allow it.
-> 
+>
 > 1. [Create a Settings catalog policy](../../device-configuration/settings-catalog/index.md) for the Windows platform and use the following setting:
-> 
->     | Category | Setting name | Value |
->     |--|--|--|
->     | **Privacy** | Let Apps Access Location| Force allow|
-> 
-> 1. Assign the policy to a group that contains as members the devices that you want to configure.
+>
+>    | Category | Setting name | Value |
+>    | --- | --- | --- |
+>    | **Privacy** | Let Apps Access Location | Force allow |
+> 2. Assign the policy to a group that contains as members the devices that you want to configure.
 
 ::: zone-end
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
 > To run this action, use an account with at least one of the following roles:
 >
-> - [Help Desk Operator]
-> - [School Administrator]
-> - [Custom role] that includes:
+> - [Help Desk Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [School Administrator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#school-administrator)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permissions **Remote tasks/Locate device**, **Remote tasks/Play sound to locate lost devices**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
 >
->::: zone pivot="android"
+> ::: zone pivot="android"
 >
 > For Android devices, the action is available only if the admin can read the policies that configure device location.
 >
 > The account must:
+>
 > - Have the **Device configuration/Read** permission.
 > - Have scope tag visibility to the device restriction or settings catalog policy that enables location for the device.
 >
->::: zone-end
+> ::: zone-end
 
-:::column-end:::
-:::row-end:::
 ## Locate a device
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+
+::: zone pivot="windows"
+
 1. At the top of the device overview pane, find the row of action icons. Select **Locate device**.
+
+::: zone-end
+
+::: zone pivot="ios,android"
+
+1. At the top of the device overview pane, find the row of action icons. Select **Locate** &gt; **Locate device**.
+
+::: zone-end
+
 1. After the device is located, its location is shown in **Locate device**. You can select the location pin on the map to view a location address and coordinates.
 
 ::: zone pivot="android"
 
 > [!NOTE]
+>
 > Android Enterprise corporate-owned dedicated (COSU) that aren't currently online can display their [last known location](#last-known-location) when the device last checked in within seven days.
 
 ::: zone-end
 
-   ![Map view showing the located device position with address and coordinates in the Intune admin center](media/locate/locate-device.png)
+![Map view showing the located device position with address and coordinates in the Intune admin center](media/locate/locate-device.png)
 
 ::: zone pivot="android"
 
@@ -163,22 +161,5 @@ Intune is designed to respect user privacy while providing powerful device manag
 ## Reference links
 
 - Microsoft Graph API:
-  - [locateDevice action]
-  - [playLostModeSound action]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[School Administrator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator
-
-<!--Graph API links-->
-
-[locateDevice action]: /graph/api/intune-devices-manageddevice-locatedevice
-[playLostModeSound action]: /graph/api/intune-devices-manageddevice-playlostmodesound
+  - [locateDevice action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-locatedevice)
+  - [playLostModeSound action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-playlostmodesound)

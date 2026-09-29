@@ -1,16 +1,18 @@
 ---
-title: SMS_SiteControlItem Class
+title: "SMS_SiteControlItem Server WMI Class"
 description: In Configuration Manager, the SMS_SiteControlItem WMI class is an SMS Provider server class that represents the abstract base class for all site control item classes.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SiteControlItem Server WMI Class
+
 The `SMS_SiteControlItem` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the abstract base class for all site control item classes.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,61 +27,63 @@ Class SMS_SiteControlItem : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SiteControlItem` class does not define any methods.
+
+The `SMS_SiteControlItem` class does not define any methods.
 
 ## Properties
- `FileType`
- Data type: `UInt32`
 
- Access type: Read/Write
+`FileType` Data type: `UInt32`
 
- Qualifiers: [key, enumeration:ToSubClass]
+Access type: Read/Write
 
- The property is deprecated.
+Qualifiers: [key, enumeration:ToSubClass]
 
- `ItemName`
- Data type: `String`
+The property is deprecated.
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Unique name identifying the site control item within items of the same type. The default value is "".
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+Unique name identifying the site control item within items of the same type. The default value is "".
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Unique type of the site control item. The default value is "".
+Qualifiers: [key, read]
 
- `SiteCode`
- Data type: `String`
+Unique type of the site control item. The default value is "".
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read/Write
 
- Unique three-letter site code identifying the site. The default value is "".
+Qualifiers: [key, SizeLimit("3")]
+
+Unique three-letter site code identifying the site. The default value is "".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Abstract
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  Your application uses classes derived from this class to read and update items in the site control file. These classes are named with the prefix "SMS_SCI_". An example of a derived class is [SMS_SCI_Address Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sci_address-server-wmi-class.md).
+  Your application uses classes derived from this class to read and update items in the site control file. These classes are named with the prefix "SMS_SCI_". An example of a derived class is [SMS_SCI_Address Server WMI Class](sms_sci_address-server-wmi-class.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

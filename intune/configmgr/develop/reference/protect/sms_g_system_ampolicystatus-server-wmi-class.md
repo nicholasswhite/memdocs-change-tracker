@@ -1,7 +1,7 @@
 ---
-title: SMS_G_SYSTEM_AmPolicyStatus Class
+title: "SMS_G_SYSTEM_AmPolicyStatus Server WMI Class"
 description: The SMS_G_SYSTEM_AmPolicyStatus Windows Management Instrumentation class is an SMS Provider server class in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -12,7 +12,7 @@ ms.service: configuration-manager
 
 The `SMS_G_SYSTEM_AmPolicyStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,133 +35,125 @@ Class SMS_G_SYSTEM_AmPolicyStatus : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_SYSTEM_AmPolicyStatus` class does not define any methods.
+
+The `SMS_G_SYSTEM_AmPolicyStatus` class does not define any methods.
 
 ## Properties
- `AssignmentUniqueID`
- Data type: `String`
 
- Access type: Read/Write
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique identifier for customized policy. For default policy, the value is always 'AntimalwareEx Agent'.
+Qualifiers: [key]
 
- `CollectionName`
- Data type: `String`
+Unique identifier for customized policy. For default policy, the value is always 'AntimalwareEx Agent'.
 
- Access type: Read/Write
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the collection. NULL for default policy as it's not targeted to any collection (but the whole site).
+Qualifiers: none
 
- `Error`
- Data type: `String`
+Name of the collection. NULL for default policy as it's not targeted to any collection (but the whole site).
 
- Access type: Read/Write
+`Error` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The description of error when applying the policy on this computer.
+Qualifiers: none
 
- `ErrorCode`
- Data type: `UInt32`
+The description of error when applying the policy on this computer.
 
- Access type: Read/Write
+`ErrorCode` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The error code when applying the policy on this computer.
+Qualifiers: none
 
- `ID`
- Data type: `UInt32`
+The error code when applying the policy on this computer.
 
- Access type: Read/Write
+`ID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Policy identifier. 0 for the default policy.
+Qualifiers: none
 
- `LastUpdateTime`
- Data type: `DateTime`
+Policy identifier. 0 for the default policy.
 
- Access type: Read/Write
+`LastUpdateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last message update time.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+Last message update time.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Policy name.
+Qualifiers: none
 
- `PolicyType`
- Data type: `UInt32`
+Policy name.
 
- Access type: Read/Write
+`PolicyType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Policy type. Possible values are:
+Qualifiers: none
+
+Policy type. Possible values are:
 
 | Value | Policy type |
-| ----- | ----------- |
-|1|Default AM Policy|
-|2|Customized AM Policy|
+| --- | --- |
+| 1 | Default AM Policy |
+| 2 | Customized AM Policy |
 
- `Priority`
- Data type: `UInt32`
+`Priority` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Policy priority. 10000 for the default policy as it's always the lowest priority.
+Policy priority. 10000 for the default policy as it's always the lowest priority.
 
- `ResourceID`
- Data type: `UInt32`
+`ResourceID` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Client resource identifier.
+Client resource identifier.
 
- `State`
- Data type: `UInt32`
+`State` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- The state of this policy on this computer.
+The state of this policy on this computer.
 
 | Value | Policy state |
-| ----- | ------------ |
-|1|Success|
-|2|Failure|
+| --- | --- |
+| 1 | Success |
+| 2 | Failure |
 
- `UniqueID`
- Data type: `String`
+`UniqueID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Unique identifier for the policy.
+Unique identifier for the policy.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

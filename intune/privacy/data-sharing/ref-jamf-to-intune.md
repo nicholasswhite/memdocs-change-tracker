@@ -1,12 +1,10 @@
 ---
-title: Data JAMF Pro sends to Intune
+title: "Data Jamf Pro sends to Intune"
 description: Review the list of data that Jamf Pro sends to Microsoft Intune when you integrate Jamf Pro to manage Macs with Intune.
-ms.date: 12/07/2023
+ms.date: "2023-12-07T00:00:00Z"
 ms.topic: reference
 ms.reviewer: elocholi
 ---
-
-
 
 # Data Jamf Pro sends to Intune
 

@@ -1,16 +1,18 @@
 ---
-title: SMS_ObjectContentExtraInfo Class
+title: "SMS_ObjectContentExtraInfo Server WMI Class"
 description: An SMS Provider server class that represents Application or Package Content Information.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ObjectContentExtraInfo Server WMI Class
+
 The `SMS_ObjectContentExtraInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents Application or Package Content Information.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,192 +40,179 @@ Class SMS_ObjectContentExtraInfo : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ObjectContentExtraInfo` class does not define any methods.
+
+The `SMS_ObjectContentExtraInfo` class does not define any methods.
 
 ## Properties
- `DateCreated`
- Data type: `DateTime`
 
- Access type: Read-only
+`DateCreated` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Package creation time.
+Qualifiers: [read]
 
- `Description`
- Data type: `String`
+Package creation time.
 
- Access type: Read-only
+`Description` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Description for the package or application.
+Qualifiers: [read]
 
- `FeatureType`
- Data type: `UInt32`
+Description for the package or application.
 
- Access type: Read-only
+`FeatureType` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Feature ID property for monitoring. The default value is 8.
+Qualifiers: [read]
 
- `LastUpdateDate`
- Data type: `DateTime`
+Feature ID property for monitoring. The default value is 8.
 
- Access type: Read-only
+`LastUpdateDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Package last updated time.
+Qualifiers: [read]
 
- `NumberErrors`
- Data type: `UInt32`
+Package last updated time.
 
- Access type: Read-only
+`NumberErrors` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of failed distribution point.
+Qualifiers: [read]
 
- `NumberInProgress`
- Data type: `UInt32`
+Count of failed distribution point.
 
- Access type: Read-only
+`NumberInProgress` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of pending distribution point.
+Qualifiers: [read]
 
- `NumberSuccess`
- Data type: `UInt32`
+Count of pending distribution point.
 
- Access type: Read-only
+`NumberSuccess` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of distribution point which was successfully deployed.
+Qualifiers: [read]
 
- `NumberUnknown`
- Data type: `UInt32`
+Count of distribution point which was successfully deployed.
 
- Access type: Read-only
+`NumberUnknown` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of distribution point with unknown state.
+Qualifiers: [read]
 
- `ObjectID`
- Data type: `String`
+Count of distribution point with unknown state.
 
- Access type: Read-only
+`ObjectID` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- PackageID or ModelName.
+Qualifiers: [key, read]
 
- `ObjectType`
- Data type: `UInt32`
+PackageID or ModelName.
 
- Access type: Read-only
+`ObjectType` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Object type. Possible values are listed below.
+Qualifiers: [enumeration, read]
+
+Object type. Possible values are listed below.
 
 | Value | Object type |
-| ----- | ----------- |
-|0|PKG_TYPE_REGULAR|
-|3|PKG_TYPE_DRIVER|
-|4|PKG_TYPE_TASK_SEQUENCE|
-|5|PKG_TYPE_SWUPDATES|
-|6|PKG_TYPE_DEVICE_SETTING|
-|8|PKG_CONTENT_PACKAGE|
-|257|PKG_TYPE_IMAGE|
-|258|PKG_TYPE_BOOTIMAGE|
-|259|PKG_TYPE_OSINSTALLIMAGE|
-|512|APPLICATION|
+| --- | --- |
+| 0 | PKG_TYPE_REGULAR |
+| 3 | PKG_TYPE_DRIVER |
+| 4 | PKG_TYPE_TASK_SEQUENCE |
+| 5 | PKG_TYPE_SWUPDATES |
+| 6 | PKG_TYPE_DEVICE_SETTING |
+| 8 | PKG_CONTENT_PACKAGE |
+| 257 | PKG_TYPE_IMAGE |
+| 258 | PKG_TYPE_BOOTIMAGE |
+| 259 | PKG_TYPE_OSINSTALLIMAGE |
+| 512 | APPLICATION |
 
- `ObjectTypeID`
- Data type: `UInt32`
+`ObjectTypeID` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [enumeration, read]
+Qualifiers: [enumeration, read]
 
- Secured object class ID. Possible values are listed below.
+Secured object class ID. Possible values are listed below.
 
 | Value | Object type ID |
-| ----- | -------------- |
-|2|SMS_Package|
-|14|SMS_OperatingSystemInstallPackage|
-|18|SMS_ImagePackage|
-|19|SMS_BootImagePackage|
-|21|SMS_DeviceSettingPackage|
-|23|SMS_DriverPackage|
-|24|SMS_SoftwareUpdatesPackage|
-|31|SMS_Application|
+| --- | --- |
+| 2 | SMS_Package |
+| 14 | SMS_OperatingSystemInstallPackage |
+| 18 | SMS_ImagePackage |
+| 19 | SMS_BootImagePackage |
+| 21 | SMS_DeviceSettingPackage |
+| 23 | SMS_DriverPackage |
+| 24 | SMS_SoftwareUpdatesPackage |
+| 31 | SMS_Application |
 
- `PackageID`
- Data type: `String`
+`PackageID` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Package ID.
+Package ID.
 
- `SoftwareName`
- Data type: `String`
+`SoftwareName` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Name of the package or application.
+Name of the package or application.
 
- `SourceSite`
- Data type: `String`
+`SourceSite` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Package source site.
+Package source site.
 
- `SourceSize`
- Data type: `UInt32`
+`SourceSize` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Package source size.
+Package source size.
 
- `SourceVersion`
- Data type: `UInt32`
+`SourceVersion` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Package source version.
+Package source version.
 
- `Targeted`
- Data type: `UInt32`
+`Targeted` Data type: `UInt32`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read]
+Qualifiers: [read]
 
- Count of targeted distribution point.
+Count of targeted distribution point.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

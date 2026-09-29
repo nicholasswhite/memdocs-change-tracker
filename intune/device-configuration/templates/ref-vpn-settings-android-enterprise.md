@@ -1,7 +1,7 @@
 ---
-title: Use VPN settings for Android Enterprise in Microsoft Intune
+title: "Android Enterprise device settings to configure VPN in Intune"
 description: See all the settings to create VPN connections on Android Enterprise devices in Microsoft Intune, including COBO, COSU, COPE, and BYOD. Enter the connection name, IP address, or FQDN of the VPN server. Choose how users authenticate and choose Citrix, SonicWall, Check Point Capsule, and Pulse Secure connection types.
-ms.date: 06/26/2024
+ms.date: "2024-06-26T00:00:00Z"
 ms.topic: reference
 ms.reviewer: abalwan
 params:
@@ -19,24 +19,35 @@ This feature applies to:
 - Android Enterprise corporate owned fully managed (COBO)
 - Android Enterprise corporate owned dedicated devices (COSU)
 
-As an Intune administrator, you can create and assign VPN settings to Android Enterprise devices. To learn more about VPN profiles in Intune, see [VPN profiles](./configure-vpn.md).
+As an Intune administrator, you can create and assign VPN settings to Android Enterprise devices. To learn more about VPN profiles in Intune, see [VPN profiles](configure-vpn.md).
 
 > [!NOTE]
+>
 > To configure always-on VPN, you need to:
 >
 > 1. Create a VPN profile with your connection info, as described in this article.
-> 2. Create an [Android Enterprise device restrictions](./ref-device-restrictions-android-enterprise.md) > **Corporate-owned** > **Connectivity** profile with the Always-on VPN setting configured.
+> 2. Create an [Android Enterprise device restrictions](ref-device-restrictions-android-enterprise.md) &gt; **Corporate-owned** &gt; **Connectivity** profile with the Always-on VPN setting configured.
 > 3. Assign both profiles to your groups.
 
 ## Before you begin
 
-- Create an [Android Enterprise VPN device configuration profile](./configure-vpn.md):
+- Create an [Android Enterprise VPN device configuration profile](configure-vpn.md):
 
   - Fully managed, dedicated, and corporate-owned work profile
   - Personally owned work profile
+- Some Microsoft 365 services, such as Outlook, might not perform well using third party or partner VPNs. If you're using a third party or partner VPN, and experience a latency or performance issue, then remove the VPN.
 
-- [!INCLUDE [partner-vpns](../includes/partner-vpns.md)]
+  If removing the VPN resolves the behavior, then you can:
 
+  - Work with the third party or partner VPN for possible resolutions. Microsoft doesn't provide technical support for third party or partner VPNs.
+  - Don't use a VPN with Outlook traffic.
+  - If you need to use a VPN, then use a split-tunnel VPN. And, allow the Outlook traffic to bypass the VPN.
+
+  For more information, go to:
+
+  - [Overview: VPN split tunneling for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-vpn-split-tunnel)
+  - [Using third-party network devices or solutions with Microsoft 365](https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/office-suite-issues/office-365-third-party-network-devices)
+  - [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles)
 - If you need these devices to access on-premises resources using modern authentication and Conditional Access, then you can use the [Microsoft Tunnel](../../device-security/microsoft-tunnel/overview.md), which supports split tunneling.
 
 ## Fully Managed, Dedicated, and Corporate-Owned Work Profile
@@ -62,9 +73,7 @@ The available settings depend on the VPN client you choose. Some settings are on
   - **Derived credential**: Use a certificate that is derived from a user's smart card. If no derived credential issuer is configured, Intune prompts you to add one.
 
     For more information, see [Use derived credentials in Intune](../../device-security/certificates/derived-credentials.md).
-
 - **Enter key and value pairs for the NetMotion Mobility VPN attributes**: Add or import **Keys** and **Values** that customize your VPN connection. These values are typically supplied by your VPN provider.
-
 - **Microsoft Tunnel site** (Microsoft Tunnel only): Select an existing site. The VPN client connects to the public IP address or FQDN of this site.
 
   For more information, see [Microsoft Tunnel for Intune](../../device-security/microsoft-tunnel/overview.md).
@@ -95,8 +104,8 @@ For more information, see [Use a VPN and per-app VPN policy on Android Enterpris
   - **Cisco AnyConnect**
 
     > [!NOTE]
-    > With Cisco AnyConnect in the personally owned work profile, there may be some extra steps for end users to complete the VPN connection. For more information, go to [VPN profiles - What successful VPN profiles look like](/troubleshoot/mem/intune/device-configuration/troubleshoot-vpn-profiles?tabs=android#what-successful-vpn-profiles-look-like).
-
+    >
+    > With Cisco AnyConnect in the personally owned work profile, there may be some extra steps for end users to complete the VPN connection. For more information, go to [VPN profiles - What successful VPN profiles look like](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-configuration/troubleshoot-vpn-profiles?tabs=android#what-successful-vpn-profiles-look-like).
   - **SonicWall Mobile Connect**
   - **F5 Access**
   - **Pulse Secure**
@@ -116,13 +125,10 @@ The available settings depend on the VPN client you choose. Some settings are on
   - **Derived credential**: Use a certificate that is derived from a user's smart card. If no derived credential issuer is configured, Intune prompts you to add one.
 
     For more information, see [Use derived credentials in Intune](../../device-security/certificates/derived-credentials.md).
-
 - **Fingerprint** (Check Point Capsule VPN only): Enter the fingerprint string given to you by the VPN vendor, such as `Contoso Fingerprint Code`. This fingerprint verifies that the VPN server can be trusted.
 
   When authenticating, a fingerprint is sent to the client so the client knows to trust any server that has the same fingerprint. If the device doesn't have the fingerprint, it prompts the user to trust the VPN server while showing the fingerprint. The user manually verifies the fingerprint, and chooses to trust to connect.
-
 - **Enter key and value pairs for the NetMotion Mobility VPN attributes**: Add or import **Keys** and **Values** that customize your VPN connection. These values are typically supplied by your VPN provider.
-
 - **Microsoft Tunnel site** (Microsoft Tunnel only): Select an existing site. The VPN client connects to the public IP address or FQDN of this site.
 
   For more information, see [Microsoft Tunnel for Intune](../../device-security/microsoft-tunnel/overview.md).
@@ -148,7 +154,5 @@ For more information, see [Use a VPN and per-app VPN policy on Android Enterpris
 ## Related articles
 
 - [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-
-- Create VPN profiles for [Android device administrator](./ref-vpn-settings-android.md), [iOS/iPadOS and macOS](./ref-vpn-settings-apple.md), and [Windows](./ref-vpn-settings-windows.md).
-
-- Learn how to [Troubleshoot VPN profile issues in Microsoft Intune](/troubleshoot/mem/intune/device-configuration/troubleshoot-vpn-profiles).
+- Create VPN profiles for [Android device administrator](ref-vpn-settings-android.md), [iOS/iPadOS and macOS](ref-vpn-settings-apple.md), and [Windows](ref-vpn-settings-windows.md).
+- Learn how to [Troubleshoot VPN profile issues in Microsoft Intune](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-configuration/troubleshoot-vpn-profiles).

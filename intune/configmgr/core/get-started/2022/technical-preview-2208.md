@@ -1,7 +1,7 @@
 ---
-title: Technical preview 2208
+title: "Features in Configuration Manager technical preview version 2208"
 description: Learn about new features available in the Configuration Manager technical preview branch version 2208.
-ms.date: 08/29/2022
+ms.date: "2022-08-29T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ms.collection: tier3
@@ -12,21 +12,27 @@ ms.service: configuration-manager
 
 *Applies to: Configuration Manager (technical preview branch)*
 
-This article introduces the features that are available in the technical preview for Configuration Manager, version 2208. Install this version to update and add new features to your technical preview site.<!-- baseline only statement:  When you install a new technical preview site, this release is also available as a baseline version.-->
+This article introduces the features that are available in the technical preview for Configuration Manager, version 2208. Install this version to update and add new features to your technical preview site.
 
 Review the [technical preview](../technical-preview.md) article before installing this update. That article familiarizes you with the general requirements and limitations for using a technical preview, how to update between versions, and how to provide feedback.
 
 The following sections describe the new features to try out in this version:
 
-<!-- [!INCLUDE [Example feature name](includes/2208/1234567.md)] -->
+## Intune role-based access control (RBAC) for tenant attached devices
 
-[!INCLUDE [Intune RBAC for tenant attached devices](includes/2208/8126836.md)]
-[!INCLUDE [Dark theme is now extended to additional dashboards](includes/2208/14917369.md)]
-[!INCLUDE [OSD TS might fail to resolve dependencies and reboot due to error](includes/2208/13879970.md)]
+You can now use Intune role-based access control (RBAC) when interacting with tenant attached devices from the Microsoft Intune admin center. For example, when using Intune as the role-based access control authority, a user with Intune's [Help Desk Operator role](../../../../fundamentals/role-based-access-control/overview.md#built-in-roles) doesn't need an assigned security role or additional permissions from Configuration Manager. For more information, see [Intune role-based access control for tenant attached clients.](../../../cloud-attach/use-intune-rbac.md)
 
-<!-- ## General known issues  -->
+## Dark theme is now extended to more dashboards
 
-<!--  [!INCLUDE [11018755](includes/2112/known-issue-11018755.md)] -->
+In this release, the dark theme has been extended to more dashboards, which previously didn't display the dark theme correctly. For example, the Office 365 Updates Dashboard, PCM Dashboard, and Health Attestation dashboard will now display according to the dark theme, when it's enabled.
+
+Enable this prerelease feature to experience the dark theme. For more information, see [Dark theme for the console.](../../servers/manage/admin-console.md)
+
+## Issues that are fixed
+
+If the osdinjection.xml file is directly modified, it isn't correctly preserved updating to a new Configuration Manager version. Example modifications include adding support for more binaries or for an alternate content provider (ACP). When this issue occurs, operating system deployment task sequences fail to resolve required dependencies. The smsts.log file contains the following error.
+
+`Failed to load TSCore.dll Code (0x8007007E).`
 
 ## Next steps
 

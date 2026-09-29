@@ -1,16 +1,18 @@
 ---
-title: SMS_CM_UpdateFeatures Class
+title: "SMS_CM_UpdateFeatures Server WMI Class"
 description: The  SMS_CM_UpdateFeatures Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents update feature extensions.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_CM_UpdateFeatures Server WMI Class
-The  `SMS_CM_UpdateFeatures` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents update feature extensions.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_CM_UpdateFeatures Server WMI Class
+
+The `SMS_CM_UpdateFeatures` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents update feature extensions.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,116 +34,110 @@ Class SMS_CM_UpdateFeatures : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_CM_UpdateFeatures` class.
 
-|Method|Description|
-|------------|-----------------|
-|[UpdateFeatureExposureStatus Method in Class SMS_CM_UpdateFeatures](../../../develop/reference/sum/updatefeatureexposurestatus-method-in-class-sms_cm_updatefeatures.md)|Updates the feature exposure status for an update feature extension.|
+The following table lists the methods in the `SMS_CM_UpdateFeatures` class.
+
+| Method | Description |
+| --- | --- |
+| [UpdateFeatureExposureStatus Method in Class SMS_CM_UpdateFeatures](updatefeatureexposurestatus-method-in-class-sms_cm_updatefeatures.md) | Updates the feature exposure status for an update feature extension. |
 
 ## Properties
- `DateReleased`
- Data type: `DateTime`
 
- Access type: Read/Write
+`DateReleased` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The release date of the package, including the feature.
+Qualifiers: none
 
- `Description`
- Data type: `String`
+The release date of the package, including the feature.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description for the feature extension.
+Qualifiers: none
 
- `EULA`
- Data type: `String`
+Description for the feature extension.
 
- Access type: Read/Write
+`EULA` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Microsoft Software License Terms for the feature extension.
+Qualifiers: [lazy]
 
- `Exposed`
- Data type: `UInt32`
+Microsoft Software License Terms for the feature extension.
 
- Access type: Read/Write
+`Exposed` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Bit value for exposing a feature.
+Qualifiers: none
 
- `FeatureGuid`
- Data type: `String`
+Bit value for exposing a feature.
 
- Access type: Read/Write
+`FeatureGuid` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- A unique identifier for a feature.
+Qualifiers: [key]
 
- `FeatureType`
- Data type: `SInt32`
+A unique identifier for a feature.
 
- Access type: Read/Write
+`FeatureType` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Flag indicating the latest type of the feature. The default value is 1.
+Qualifiers: none
 
- `LocaleID`
- Data type: `SInt32`
+Flag indicating the latest type of the feature. The default value is 1.
 
- Access type: Read/Write
+`LocaleID` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The locale ID for the localized data.
+Qualifiers: none
 
- `MoreInfoLink`
- Data type: `String`
+The locale ID for the localized data.
 
- Access type: Read/Write
+`MoreInfoLink` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Link to additional information about the feature extension.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+Link to additional information about the feature extension.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the feature extension.
+Qualifiers: none
 
- `Status`
- Data type: `SInt32`
+Name of the feature extension.
 
- Access type: Read/Write
+`Status` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Flag indicating whether a feature will be exposed.
+Qualifiers: none
+
+Flag indicating whether a feature will be exposed.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

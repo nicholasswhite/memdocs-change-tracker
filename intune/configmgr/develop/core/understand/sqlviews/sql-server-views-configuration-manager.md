@@ -1,7 +1,7 @@
 ---
-title: SQL Server views
+title: "SQL Server views in Configuration Manager"
 description: A Microsoft SQL Server view is a virtual table whose contents are based on the result from a SQL query.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms:assetid: a1924bed-b5fc-49a8-80ee-30b4e96defaa
@@ -16,25 +16,19 @@ A Microsoft SQL Server view is a virtual table whose contents are based on the r
 During setup, Configuration Manager creates the following SQL Server view types:
 
 - Views against static (unchanging) tables.
-
 - Views that use data from tables with a dynamic (changing) schema.
 
 For a dynamic schema, setup creates a number of SQL Server stored procedures that create the views. These stored procedures are run by Configuration Manager to refresh the views when the schema of underlying tables changes. Collection evaluation, discovery, and inventory data are examples of data for which new tables or new properties in existing tables might be created during the operation of a Configuration Manager site.
 
 ## Reporting in Configuration Manager
 
-Configuration Manager uses Microsoft SQL Server Reporting Services to allow you to generate and run reports against the Configuration Manager database, from the Configuration Manager console. This service now replaces the method used to create reports in Configuration Manager 2007, and gives the following advantages:
+Configuration Manager uses Microsoft SQL Server Reporting Services to allow you to generate and run reports against the Configuration Manager database, from the Configuration Manager console. This service now replaces the method used to create reports in Configuration Manager 2007, and gives the following advantages:
 
 - Uses an industry standard reporting system to query the Configuration Manager database.
-
 - SQL Server Reporting Services offers higher performance, availability, and scalability over the previous reporting method.
-
 - Enables users who aren't familiar with Configuration Manager reporting to generate unplanned reports.
-
 - Enables users to subscribe to reports; for example, a manager could automatically be e-mailed a report each day, detailing the status of a software update rollout.
-
 - Simplifies the creation of SQL-based reports in Configuration Manager.
-
 - Enables users to export reports in different kinds of popular formats.
 
 For more information about using reports from the Configuration Manager console, see [Introduction to reporting](../../../../core/servers/manage/introduction-to-reporting.md).
@@ -47,8 +41,8 @@ Much of the Configuration Manager SQL Server view schema maps to the SMS Provide
 
 ## Configuration Manager SQL Server view categories
 
-To effectively create reports with the required output, it's essential to know what data each of the Configuration Manager SQL Server views contains and how the views are related to each other. The following topics in this section provide detailed information about each of the view categories, what kind of data each of the views contains, and what columns can be used to **JOIN** views in SQL statements.
+To effectively create reports with the required output, it's essential to know what data each of the Configuration Manager SQL Server views contains and how the views are related to each other. The following topics in this section provide detailed information about each of the view categories, what kind of data each of the views contains, and what columns can be used to **JOIN** views in SQL statements.
 
 ## See also
 
-[Create Custom Reports by Using SQL Server Views in Configuration Manager](create-custom-reports-using-sql-server-views.md)  
+[Create Custom Reports by Using SQL Server Views in Configuration Manager](create-custom-reports-using-sql-server-views.md)

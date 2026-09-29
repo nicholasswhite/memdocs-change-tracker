@@ -1,16 +1,18 @@
 ---
-title: SMS_ResourceMap Class
+title: "SMS_ResourceMap Server WMI Class"
 description: The SMS_ResourceMap Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that maps a resource type to its resource class name and display name.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ResourceMap Server WMI Class
+
 The `SMS_ResourceMap` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that maps a resource type to its resource class name and display name.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -24,62 +26,65 @@ Class SMS_ResourceMap : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in `SMS_ResourceMap`.
 
-|Method|Description|
-|------------|-----------------|
-|[GetClassesWithData Method in Class SMS_ResourceMap](../../../../../develop/reference/core/clients/manage/getclasseswithdata-method-in-class-sms_resourcemap.md)|Gets the names of the classes that have inventory data for a resource.|
-|[Refresh Method in Class SMS_ResourceMap](../../../../../develop/reference/core/clients/manage/refresh-method-in-class-sms_resourcemap.md)|Updates the resource and inventory class definitions.|
+The following table lists the methods in `SMS_ResourceMap`.
+
+| Method | Description |
+| --- | --- |
+| [GetClassesWithData Method in Class SMS_ResourceMap](getclasseswithdata-method-in-class-sms_resourcemap.md) | Gets the names of the classes that have inventory data for a resource. |
+| [Refresh Method in Class SMS_ResourceMap](refresh-method-in-class-sms_resourcemap.md) | Updates the resource and inventory class definitions. |
 
 ## Properties
- `DisplayName`
- Data type: **String**
 
- Access type: Read/Write
+`DisplayName` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- Name displayed in the Configuration Manager console to represent the resource class name. For a list of the default resource display names, see the `ResourceType` property.
+Qualifiers: None
 
- `ResourceClassName`
- Data type: **String**
+Name displayed in the Configuration Manager console to represent the resource class name. For a list of the default resource display names, see the `ResourceType` property.
 
- Access type: Read/Write
+`ResourceClassName` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- Class name of the resource. For a list of the default resource class names, see the `ResourceType` property.
+Qualifiers: None
 
- `ResourceType`
- Data type: **UInt32**
+Class name of the resource. For a list of the default resource class names, see the `ResourceType` property.
 
- Access type: Read/Write
+`ResourceType` Data type: **UInt32**
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Type of resources on the site. Possible values are:
+Qualifiers: [key]
 
-|Resource type|Display name|Class|
-|-------------------|------------------|-----------|
-|3|User Group|`SMS_R_UserGroup`|
-|4|User|`SMS_R_User`|
-|5|System|`SMS_R_System`|
-|See the following Note|IP Network|`SMS_R_IPNetwork`|
+Type of resources on the site. Possible values are:
+
+| Resource type | Display name | Class |
+| --- | --- | --- |
+| 3 | User Group | `SMS_R_UserGroup` |
+| 4 | User | `SMS_R_User` |
+| 5 | System | `SMS_R_System` |
+| See the following Note | IP Network | `SMS_R_IPNetwork` |
 
 > [!NOTE]
->  The IP network resource type might not have a resource type value of 6. Its value depends on when Network Discovery was initiated relative to the discovery of new architectures by the Discovery Data Manager. The resource type value is 6 if the Data Discovery Manager discovered a new architecture before network discovery was initiated.
+>
+> The IP network resource type might not have a resource type value of 6. Its value depends on when Network Discovery was initiated relative to the discovery of new architectures by the Discovery Data Manager. The resource type value is 6 if the Data Discovery Manager discovered a new architecture before network discovery was initiated.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

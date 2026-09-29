@@ -1,16 +1,18 @@
 ---
-title: SMS_OS_Details Class
+title: "SMS_OS_Details Server WMI Class"
 description: An SMS Provider server class that describes the supported platforms, such as, operating system, architecture, and versions, on which a program can run.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_OS_Details Server WMI Class
+
 The `SMS_OS_Details` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes the supported platforms (operating system, architecture, and versions) on which a program can run.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,62 +27,63 @@ Class SMS_OS_Details
 ```
 
 ## Methods
- The `SMS_OS_Details` class doesn't define any methods.
+
+The `SMS_OS_Details` class doesn't define any methods.
 
 ## Properties
- `MaxVersion`
- Data type: `String`
 
- Access type: Read/Write
+`MaxVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The maximum operating system version of the range that is described by this class. The default value is "".
+Qualifiers: None
 
- `MinVersion`
- Data type: `String`
+The maximum operating system version of the range that is described by this class. The default value is "".
 
- Access type: Read/Write
+`MinVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The minimum operating system version of the range described by this class. The default value is "".
+Qualifiers: None
 
- `Name`
- Data type: `String`
+The minimum operating system version of the range described by this class. The default value is "".
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The name of the operating system. The default value is "".
+Qualifiers: None
 
- `Platform`
- Data type: `String`
+The name of the operating system. The default value is "".
 
- Access type: Read/Write
+`Platform` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The hardware platform on which the operating system runs.
+Qualifiers: None
+
+The hardware platform on which the operating system runs.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  The values you specify in this class must come from the [SMS_SupportedPlatforms Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md) class.
+  The values you specify in this class must come from the [SMS_SupportedPlatforms Server WMI Class](sms_supportedplatforms-server-wmi-class.md) class.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Program Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_program-server-wmi-class.md)
- [How to Modify the Supported Platforms for a Program](../../../../../develop/core/servers/configure/how-to-modify-the-supported-platforms-for-a-program.md)
+
+[SMS_Program Server WMI Class](sms_program-server-wmi-class.md) [How to Modify the Supported Platforms for a Program](../../../../core/servers/configure/how-to-modify-the-supported-platforms-for-a-program.md)

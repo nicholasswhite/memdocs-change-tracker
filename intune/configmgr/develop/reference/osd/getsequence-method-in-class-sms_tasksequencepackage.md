@@ -1,16 +1,18 @@
 ---
-title: GetSequence Method
+title: "GetSequence Method in Class SMS_TaskSequencePackage"
 description: The GetSequence Windows Management Instrumentation (WMI) class method gets a task sequence (SMS_TaskSequence Server WMI Class) from a task sequence package (SMS_TaskSequencePackage Server WMI Class.)
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# GetSequence Method in Class SMS_TaskSequencePackage
-The `GetSequence` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets a task sequence ([SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)) from a task sequence package ([SMS_TaskSequencePackage Server WMI Class](../../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md)).
 
- The following syntax is simplified from Managed Object Format (MOF) code, and it defines the method.
+# GetSequence Method in Class SMS_TaskSequencePackage
+
+The `GetSequence` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets a task sequence ([SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md)) from a task sequence package ([SMS_TaskSequencePackage Server WMI Class](sms_tasksequencepackage-server-wmi-class.md)).
+
+The following syntax is simplified from Managed Object Format (MOF) code, and it defines the method.
 
 ## Syntax
 
@@ -22,40 +24,43 @@ SInt32 GetSequence(
 ```
 
 #### Parameters
- `TaskSequencePackage`
- Data type: `SMS_TaskSequencePackage`
 
- Qualifiers: [in]
+`TaskSequencePackage` Data type: `SMS_TaskSequencePackage`
 
- The task sequence package that contains the requested task sequence. See [SMS_TaskSequencePackage Server WMI Class](../../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md).
+Qualifiers: [in]
 
- `TaskSequence`
- Data type: `SMS_TaskSequence`
+The task sequence package that contains the requested task sequence. See [SMS_TaskSequencePackage Server WMI Class](sms_tasksequencepackage-server-wmi-class.md).
 
- Qualifiers: [out]
+`TaskSequence` Data type: `SMS_TaskSequence`
 
- The [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md) object that represents the task sequence contained in the task sequence package specified in `TaskSequencePackage`.
+Qualifiers: [out]
+
+The [SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md) object that represents the task sequence contained in the task sequence package specified in `TaskSequencePackage`.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 > [!NOTE]
->  The task sequence is returned in the `TaskSequence` parameter.
+>
+> The task sequence is returned in the `TaskSequence` parameter.
 
 ## Remarks
- You use `GetSequence` to get a [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md) WMI object that represents a task sequence from a task sequence package. With this object, you can make changes to the task sequence and then update the task sequence package by using the [SetSequence Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/setsequence-method-in-class-sms_tasksequencepackage.md).
+
+You use `GetSequence` to get a [SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md) WMI object that represents a task sequence from a task sequence package. With this object, you can make changes to the task sequence and then update the task sequence package by using the [SetSequence Method in Class SMS_TaskSequencePackage](setsequence-method-in-class-sms_tasksequencepackage.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)
- [SMS_TaskSequencePackage Server WMI Class](../../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md)
- [SetSequence Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/setsequence-method-in-class-sms_tasksequencepackage.md)
+
+[SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md) [SMS_TaskSequencePackage Server WMI Class](sms_tasksequencepackage-server-wmi-class.md) [SetSequence Method in Class SMS_TaskSequencePackage](setsequence-method-in-class-sms_tasksequencepackage.md)

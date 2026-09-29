@@ -1,7 +1,7 @@
 ---
-title: Collection evaluation
+title: "Collection evaluation in Configuration Manager"
 description: Learn about the collection evaluation process, types, and triggers. Understand the collection evaluation graph and hierarchy.
-ms.date: 06/05/2020
+ms.date: "2020-06-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -25,16 +25,17 @@ At a high level, each individual collection evaluation and update follows these 
 ![High-level collection update process](media/high-level-collection-update-process.png)
 
 1. Execute the collection query.
-1. Add any systems that are direct members.
-1. Add members specified in the *Include* collections.
-1. Perform a logical `AND` between the returned results and the limiting collection.
-1. Remove members specified in the *exclude* collections.
-1. Compare the result set from evaluating the direct members and include collections with the results of the exclude collections.
-1. Write the changes to the database and perform updates.
-1. Trigger any dependent collections to update as well. Dependent collections are collections that the current collection limits, or that refer to the current collection using include or exclude rules.
+2. Add any systems that are direct members.
+3. Add members specified in the *Include* collections.
+4. Perform a logical `AND` between the returned results and the limiting collection.
+5. Remove members specified in the *exclude* collections.
+6. Compare the result set from evaluating the direct members and include collections with the results of the exclude collections.
+7. Write the changes to the database and perform updates.
+8. Trigger any dependent collections to update as well. Dependent collections are collections that the current collection limits, or that refer to the current collection using include or exclude rules.
 
 > [!TIP]
-> You can use management insights in the Configuration Manager console to help you manage your collections. There's a group of insights specific to [Collections](../../../servers/manage/management-insights.md#collections). There are also several insights in the [Configuration Manager Assessment](../../../servers/manage/management-insights.md#configuration-manager-assessment) group for collections.<!-- MEMDocs#967 -->
+>
+> You can use management insights in the Configuration Manager console to help you manage your collections. There's a group of insights specific to [Collections](../../../servers/manage/management-insights.md#collections). There are also several insights in the [Configuration Manager Assessment](../../../servers/manage/management-insights.md#configuration-manager-assessment) group for collections.
 
 ## Collection evaluation types and triggers
 
@@ -48,11 +49,11 @@ These types of threads handle collection evaluation, depending on evaluation typ
 The following table describes collection evaluation triggers and their corresponding evaluation types.
 
 | Trigger | Evaluation Type | Description |
-|---------|-----------------|-------------|
-|Manual|Single or Auxiliary|Manual is the highest priority collection evaluation. When an administrator requests a manual collection evaluation, the collection evaluator assigns the next available evaluation thread to the evaluation.|
-|Scheduled|Primary|The process of scheduled evaluation is the same as manual evaluation, except the evaluation is time-driven rather than event-driven.|
-|Staging|Single or Auxiliary|All collections directly or indirectly depend on **All Systems** or **All Users and User Groups**. Both of these collections do a full collection evaluation at 4:00 AM daily. A change to either of these collections triggers updates of dependent collections, based on a [full collection graph](#collection-evaluation-graph).
-|Incremental|Express|Incremental evaluation uses a collection evaluation graph to evaluate and update dependent collections if an update to the incremental collection membership changes. Configuration Manager monitors and updates resources objects in all collections that are configured for incremental updates.<br /><br />If a collection query is based on information that will be updated later, like hardware inventory, Configuration Manager only adds or removes the resource from the collection during the scheduled collection update.|
+| --- | --- | --- |
+| Manual | Single or Auxiliary | Manual is the highest priority collection evaluation. When an administrator requests a manual collection evaluation, the collection evaluator assigns the next available evaluation thread to the evaluation. |
+| Scheduled | Primary | The process of scheduled evaluation is the same as manual evaluation, except the evaluation is time-driven rather than event-driven. |
+| Staging | Single or Auxiliary | All collections directly or indirectly depend on **All Systems** or **All Users and User Groups**. Both of these collections do a full collection evaluation at 4:00 AM daily. A change to either of these collections triggers updates of dependent collections, based on a [full collection graph](#collection-evaluation-graph). |
+| Incremental | Express | Incremental evaluation uses a collection evaluation graph to evaluate and update dependent collections if an update to the incremental collection membership changes. Configuration Manager monitors and updates resources objects in all collections that are configured for incremental updates.  If a collection query is based on information that will be updated later, like hardware inventory, Configuration Manager only adds or removes the resource from the collection during the scheduled collection update. |
 
 ## Collection evaluation graph
 

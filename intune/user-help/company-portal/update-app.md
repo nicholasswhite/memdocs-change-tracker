@@ -1,29 +1,31 @@
 ---
-title: How to update the Company Portal app
+title: "Update the Company Portal app"
 description: Get the latest version of the Company Portal app on Android, iOS, macOS, and Windows devices.
-ms.date: 03/04/2026
+ms.date: "2026-03-04T00:00:00Z"
 ms.reviewer: priyar
 ---
 
 # Update the Company Portal app
 
 **Applies to**
+
 - Android
 - iOS
 - macOS
-- Windows 
-
+- Windows
 
 Get the latest version of the Microsoft Intune Company Portal app on your Android, iOS, macOS, or Windows device. We recommend using the latest version of the Company Portal app on your device because it contains the latest bug fixes and security updates.
 
 You might be required to update the app on your work or school device when:
 
-* A newer version of Company Portal becomes available.
-* Your version of Company Portal is no longer supported.
+- A newer version of Company Portal becomes available.
+- Your version of Company Portal is no longer supported.
 
 Company Portal sends notifications to your device when an update is required.
 
-[!INCLUDE [android-company-portal-version-support](../../includes/android-company-portal-version-support.md)]
+> [!IMPORTANT]
+>
+> Support for Android Company Portal versions earlier than 5.0.5421.0 ended on October 1, 2025. Devices running older versions might no longer maintain their registration status and can be marked noncompliant. To keep devices registered and compliant, users must update to a supported version of the Company Portal app.
 
 ## Update on Android device
 
@@ -36,12 +38,11 @@ Check for available Company Portal updates in the App Store. For more informatio
 After you install the updates, run a status check on your device in Company Portal.
 
 1. Open Company Portal and go to **Devices**.
-
 2. Select the device that you're currently using.
-
 3. Select **Check Status**.
 
 > [!NOTE]
+>
 > The minimum supported version of the Company Portal app for iOS/iPadOS is v5.2509.2. If you're running an older version, you'll be prompted to update the Company Portal app when you sign in.
 
 ## Update on macOS device
@@ -49,24 +50,19 @@ After you install the updates, run a status check on your device in Company Port
 To view available updates for Company Portal on a macOS device:
 
 1. Open Company Portal and go to **Help**.
-
-1. Select **Check for updates**, and then select the available update to begin installation.
-
-1. After you install the updates, run a status check on your device in Company Portal. Go to **Devices**.
-
-1. Select the device that you're currently using.
-
-1. Select **More [...]** and then choose **Check Status**.
+2. Select **Check for updates**, and then select the available update to begin installation.
+3. After you install the updates, run a status check on your device in Company Portal. Go to **Devices**.
+4. Select the device that you're currently using.
+5. Select **More [...]** and then choose **Check Status**.
 
 To turn on automatic app updates:
 
 1. Open Company Portal and go to **Help**.
-
 2. Select **Check for updates**.
-
 3. On the Microsoft AutoUpdate screen, select **Automatically download and install**.
 
 > [!NOTE]
+>
 > The minimum supported version of the Company Portal app for macOS is v5.2401.0. If you're running an older version, you'll be prompted to update the Company Portal app when you sign in.
 
 ## Update on Windows device
@@ -74,18 +70,15 @@ To turn on automatic app updates:
 To view available app updates on devices running Windows:
 
 1. Open the Microsoft Store app and go to **Downloads**.
-
-1. Select **Get Updates**.
-
-1. After you install the updates, run a status check on your device in Company Portal. Go to **Devices**.
-
-1. Select the device you're currently using.
-
-1. Select **Check access**.
+2. Select **Get Updates**.
+3. After you install the updates, run a status check on your device in Company Portal. Go to **Devices**.
+4. Select the device you're currently using.
+5. Select **Check access**.
 
 Optionally, turn on automatic updates to ensure that you don't miss updates. For more information, see [Turn on automatic app updates](https://support.microsoft.com/windows/turn-on-automatic-app-updates-70634d32-4657-dc76-632b-66048978e51b). Your organization can disable automatic app updates on devices used for work, so this option might be unavailable.
 
 > [!NOTE]
+>
 > The minimum supported version of the Company Portal app for Windows is **11.1.254.0**. If you're running an older version, update as soon as possible to avoid loss of functionality.
 
 ## Next steps

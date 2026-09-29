@@ -1,31 +1,31 @@
 ---
-title: View the Properties for an OS Image
-ms.date: 09/20/2016
+title: "How to View the Properties for an Operating System Image"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: Learn how to view an image file's properties in XML format using a Microsoft operating system's image package.
 ms.service: configuration-manager
 ---
-# How to View the Properties for an Operating System Image
-In Configuration Manager, you view the image properties for the Windows Image (WIM) file that is contained in an operating system package by calling the [SMS_ImagePackage](../../develop/reference/osd/sms_imagepackage-server-wmi-class.md) class instance [GetImageProperties](../../develop/reference/osd/getimageproperties-method-in-class-sms_imagepackage.md) method.
 
- The image properties are available in XML format.
+# How to View the Properties for an Operating System Image
+
+In Configuration Manager, you view the image properties for the Windows Image (WIM) file that is contained in an operating system package by calling the [SMS_ImagePackage](../reference/osd/sms_imagepackage-server-wmi-class.md) class instance [GetImageProperties](../reference/osd/getimageproperties-method-in-class-sms_imagepackage.md) method.
+
+The image properties are available in XML format.
 
 ### To view image properties
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the `SMS_ImagePackage` class instance that you want to update.
-
-3.  Call the [GetImageProperties](../../develop/reference/osd/getimageproperties-method-in-class-sms_imagepackage.md) class instance method.
-
-4.  Access property XML by using the *ImageProperty* parameter.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the `SMS_ImagePackage` class instance that you want to update.
+3. Call the [GetImageProperties](../reference/osd/getimageproperties-method-in-class-sms_imagepackage.md) class instance method.
+4. Access property XML by using the *ImageProperty* parameter.
 
 ## Example
- The following example displays the operating system image package property XML that defines the package.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example displays the operating system image package property XML that defines the package.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub ViewOSImage(connection,imagePackageID)
@@ -78,37 +78,42 @@ public void ViewOSImage(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|-|-|-|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`imagePackageID`|-   Managed: `String`<br />-   VBScript: `String`|The package image identifier. It is available from `SMS_ImagePackage. PackageID`.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `imagePackageID` | - Managed: `String` - VBScript: `String` | The package image identifier. It is available from `SMS_ImagePackage. PackageID`. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See also
 

@@ -1,34 +1,35 @@
 ---
-title: Read and Write to the Site Control File by Using Managed Code
+title: "How to Read and Write to the Configuration Manager Site Control File by Using Managed Code"
 description: To write to the Configuration Manager site control file by using the managed SMS Provider, get the site definition file by querying for the required resource or component.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Read and Write to the Configuration Manager Site Control File by Using Managed Code
+
 To write to the Configuration Manager site control file by using the managed SMS Provider, you get the site definition file by querying for the required resource or component. You then update the embedded property, embedded property list, or multi-string list as required.
 
 > [!NOTE]
->  You can also use connection manager [GetInstance](/previous-versions/system-center/developer/cc146190(v=msdn.10)) to get the required resource or component.
+>
+> You can also use connection manager [GetInstance](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc146190(v=msdn.10)) to get the required resource or component.
 
- The managed Configuration Manager manages the connection session to the site control file automatically for you. Therefore you treat the [IResultObject](/previous-versions/system-center/developer/cc147376(v=msdn.10)) objects returned from the query in the same way as you treat [IResultObject](/previous-versions/system-center/developer/cc147376(v=msdn.10)) objects retrieved from the SMS Provider.
+The managed Configuration Manager manages the connection session to the site control file automatically for you. Therefore you treat the [IResultObject](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147376(v=msdn.10)) objects returned from the query in the same way as you treat [IResultObject](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147376(v=msdn.10)) objects retrieved from the SMS Provider.
 
 ### To read and write to the site control file
 
-1.  Set up a connection to the SMS Provider. For more information, see [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md).
-
-2.  Use the Connection Manager **QueryProcessor** object *ExecQuery* or *GetInstance* method to get the required site control file resource or component [IResultObject](/previous-versions/system-center/developer/cc147376(v=msdn.10)) object.
-
-3.  Using the [IResultObject](/previous-versions/system-center/developer/cc147376(v=msdn.10)) update the site control file.
-
-4.  Use the [IResultObject](/previous-versions/system-center/developer/cc147376(v=msdn.10)) object [Put](/previous-versions/system-center/developer/cc146500(v=msdn.10)) method to commit the changes.
+1. Set up a connection to the SMS Provider. For more information, see [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](how-to-connect-to-an-sms-provider-by-using-managed-code.md).
+2. Use the Connection Manager **QueryProcessor** object *ExecQuery* or *GetInstance* method to get the required site control file resource or component [IResultObject](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147376(v=msdn.10)) object.
+3. Using the [IResultObject](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147376(v=msdn.10)) update the site control file.
+4. Use the [IResultObject](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147376(v=msdn.10)) object [Put](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc146500(v=msdn.10)) method to commit the changes.
 
 ## Example
- The following C# example accesses the client agent component of the site control file and creates a dummy property, property list and multi-string list. It then removes the updates that were made. The example demonstrates how to query the site control file, make updates, and commit changes to the site control file.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following C# example accesses the client agent component of the site control file and creates a dummy property, property list and multi-string list. It then removes the updates that were made. The example demonstrates how to query the site control file, make updates, and commit changes to the site control file.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```
 public void ReadWriteSCF(WqlConnectionManager connection,string siteCode)
@@ -183,39 +184,39 @@ public void ReadWriteSCF(WqlConnectionManager connection,string siteCode)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   `WqlConnectionManager`|A valid connection to the SMS Provider.|
-|`siteCode`|-   `String`|The site code for the Configuration Manager site.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - `WqlConnectionManager` | A valid connection to the SMS Provider. |
+| `siteCode` | - `String` | The site code for the Configuration Manager site. |
 
 ## Compiling the Code
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Collections
+System.Collections.Generic
 
- System.ComponentModel
+System.Collections
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- The Configuration Manager exceptions that can be raised are [SmsConnectionException](/previous-versions/system-center/developer/cc147431(v=msdn.10)) and [SmsQueryException](/previous-versions/system-center/developer/cc147436(v=msdn.10)). These can be caught together with [SmsException](/previous-versions/system-center/developer/cc147433(v=msdn.10)).
+
+The Configuration Manager exceptions that can be raised are [SmsConnectionException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147431(v=msdn.10)) and [SmsQueryException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147436(v=msdn.10)). These can be caught together with [SmsException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147433(v=msdn.10)).
 
 ## See Also
- [SMS Provider fundamentals](sms-provider-fundamentals.md)
- [About the Configuration Manager Site Control File](../../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Connect to a Configuration Manager Provider using Managed Code](../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Read a Configuration Manager Site Control File Embedded Property List](../../../develop/core/understand/how-to-read-a-configuration-manager-site-control-file-embedded-property-list.md)
- [Objects overview](configuration-manager-objects-overview.md)
+
+[SMS Provider fundamentals](sms-provider-fundamentals.md) [About the Configuration Manager Site Control File](about-the-configuration-manager-site-control-file.md) [How to Connect to a Configuration Manager Provider using Managed Code](how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Read a Configuration Manager Site Control File Embedded Property List](how-to-read-a-configuration-manager-site-control-file-embedded-property-list.md) [Objects overview](configuration-manager-objects-overview.md)

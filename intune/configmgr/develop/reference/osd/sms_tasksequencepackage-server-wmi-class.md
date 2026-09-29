@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequencePackage Class
+title: "SMS_TaskSequencePackage Server WMI Class"
 description: In Configuration Manager, the SMS_TaskSequencePackage WMI class is an SMS Provider server class that represents a task sequence package that defines the steps to run for the task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequencePackage Server WMI Class
+
 The `SMS_TaskSequencePackage` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a task sequence package that defines the steps to run for the task sequence.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -77,590 +79,539 @@ Class SMS_TaskSequencePackage : SMS_PackageBaseclass
 ```
 
 ## Methods
- The following table shows the methods in `SMS_TaskSequencePackage`.
 
-|Method|Description|
-|------------|-----------------|
-|[AddChangeNotification Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/addchangenotification-method-in-class-sms_tasksequencepackage.md)|Adds a task sequence package change notification.|
-|[AddDistributionPoints Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/adddistributionpoints-method-in-class-sms_tasksequencepackage.md)|Adds the distribution points for the task sequence package.|
-|[CheckReferencesShareType Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/checkreferencessharetype-method-in-class-sms_tasksequencepackage.md)|Checks all referred package for this task sequence and returns all that are not shared.|
-|[GetClientConfigPolicies Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/getclientconfigpolicies-method-in-class-sms_tasksequencepackage.md)|Gets all site-wide client configuration policies and their corresponding policy assignments.|
-|[GetContentHash Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/getcontenthash-method-in-class-sms_tasksequencepackage.md)|Gets the hash of specific Configuration Manager content.|
-|[GetPackageDefaultHash Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/getpackagedefaulthash-method-in-class-sms_tasksequencepackage.md)|Gets the hash of a Configuration Manager package.|
-|[GetPackageHash Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/getpackagehash-method-in-class-sms_tasksequencepackage.md)|Gets the certificate hash for the task sequence package.|
-|[GetSequence Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/getsequence-method-in-class-sms_tasksequencepackage.md)|Gets a task sequence from a task sequence package.|
-|[GetTsPolicies Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/gettspolicies-method-in-class-sms_tasksequencepackage.md)|Gets all policies associated with the specified task sequence.|
-|[GetTsPoliciesSaMedia Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/gettspoliciessamedia-method-in-class-sms_tasksequencepackage.md)|Gets all policies associated with the specified task sequence.|
-|[GetTSRelatedToDriverCategory Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/gettsrelatedtodrivercategory-method-in-class-sms_tasksequencepackage.md)|Get task sequence packages related to the specified category.|
-|[ImportSequence Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/importsequence-method-in-class-sms_tasksequencepackage.md)|Imports an `SMS_TaskSequence` object based on the provided XML.|
-|[RefreshPkgSource Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/refreshpkgsource-method-in-class-sms_tasksequencepackage.md)|Refreshes the package source at all distribution points when the package properties have not changed.|
-|[SetSequence Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/setsequence-method-in-class-sms_tasksequencepackage.md)|Updates a task sequence package with the input task sequence.|
-|[SetSourceSite Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/setsourcesite-method-in-class-sms_tasksequencepackage.md)|Sets the code of the source site for the task sequence package.|
-|[Unlock Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/unlock-method-in-class-sms_tasksequencepackage.md)|Sets the source site to the current site, which unlocks the task sequence package.|
+The following table shows the methods in `SMS_TaskSequencePackage`.
+
+| Method | Description |
+| --- | --- |
+| [AddChangeNotification Method in Class SMS_TaskSequencePackage](addchangenotification-method-in-class-sms_tasksequencepackage.md) | Adds a task sequence package change notification. |
+| [AddDistributionPoints Method in Class SMS_TaskSequencePackage](adddistributionpoints-method-in-class-sms_tasksequencepackage.md) | Adds the distribution points for the task sequence package. |
+| [CheckReferencesShareType Method in Class SMS_TaskSequencePackage](checkreferencessharetype-method-in-class-sms_tasksequencepackage.md) | Checks all referred package for this task sequence and returns all that are not shared. |
+| [GetClientConfigPolicies Method in Class SMS_TaskSequencePackage](getclientconfigpolicies-method-in-class-sms_tasksequencepackage.md) | Gets all site-wide client configuration policies and their corresponding policy assignments. |
+| [GetContentHash Method in Class SMS_TaskSequencePackage](getcontenthash-method-in-class-sms_tasksequencepackage.md) | Gets the hash of specific Configuration Manager content. |
+| [GetPackageDefaultHash Method in Class SMS_TaskSequencePackage](getpackagedefaulthash-method-in-class-sms_tasksequencepackage.md) | Gets the hash of a Configuration Manager package. |
+| [GetPackageHash Method in Class SMS_TaskSequencePackage](getpackagehash-method-in-class-sms_tasksequencepackage.md) | Gets the certificate hash for the task sequence package. |
+| [GetSequence Method in Class SMS_TaskSequencePackage](getsequence-method-in-class-sms_tasksequencepackage.md) | Gets a task sequence from a task sequence package. |
+| [GetTsPolicies Method in Class SMS_TaskSequencePackage](gettspolicies-method-in-class-sms_tasksequencepackage.md) | Gets all policies associated with the specified task sequence. |
+| [GetTsPoliciesSaMedia Method in Class SMS_TaskSequencePackage](gettspoliciessamedia-method-in-class-sms_tasksequencepackage.md) | Gets all policies associated with the specified task sequence. |
+| [GetTSRelatedToDriverCategory Method in Class SMS_TaskSequencePackage](gettsrelatedtodrivercategory-method-in-class-sms_tasksequencepackage.md) | Get task sequence packages related to the specified category. |
+| [ImportSequence Method in Class SMS_TaskSequencePackage](importsequence-method-in-class-sms_tasksequencepackage.md) | Imports an `SMS_TaskSequence` object based on the provided XML. |
+| [RefreshPkgSource Method in Class SMS_TaskSequencePackage](refreshpkgsource-method-in-class-sms_tasksequencepackage.md) | Refreshes the package source at all distribution points when the package properties have not changed. |
+| [SetSequence Method in Class SMS_TaskSequencePackage](setsequence-method-in-class-sms_tasksequencepackage.md) | Updates a task sequence package with the input task sequence. |
+| [SetSourceSite Method in Class SMS_TaskSequencePackage](setsourcesite-method-in-class-sms_tasksequencepackage.md) | Sets the code of the source site for the task sequence package. |
+| [Unlock Method in Class SMS_TaskSequencePackage](unlock-method-in-class-sms_tasksequencepackage.md) | Sets the source site to the current site, which unlocks the task sequence package. |
 
 ## Properties
- `ActionInProgress`
- Data type: `UInt32`
 
- Access type: Read-only
+`ActionInProgress` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `AlternateContentProviders`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`AlternateContentProviders` Data type: `String`
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large, lazy]
 
- `BootImageID`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`BootImageID` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- ID of the boot image package if the task sequence contains a reference to a boot image in the `References` property. For information about the boot image package, see [SMS_BootImagePackage Server WMI Class](../../../develop/reference/osd/sms_bootimagepackage-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `Category`
- Data type: `String`
+ID of the boot image package if the task sequence contains a reference to a boot image in the `References` property. For information about the boot image package, see [SMS_BootImagePackage Server WMI Class](sms_bootimagepackage-server-wmi-class.md).
 
- Access type: Read/Write
+`Category` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Task sequence package category. The default value is "". The category for the package is assigned using the `Category` property of [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `CustomProgressMsg`
- Data type: `String`
+Task sequence package category. The default value is "". The category for the package is assigned using the `Category` property of [SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md).
 
- Access type: Read/Write
+`CustomProgressMsg` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- A custom progress message specified in the Configuration Manager console.
+Qualifiers: [lazy]
 
- `DependentProgram`
- Data type: `String`
+A custom progress message specified in the Configuration Manager console.
 
- Access type: Read/Write
+`DependentProgram` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- A formatted text string defining any program that should be run before the current program. The format is "\<PackageID>;;\<ProgramName>". For more information, see [SMS_Program Server WMI Class](../../../develop/reference/core/servers/configure/sms_program-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `Description`
- Data type: `String`
+A formatted text string defining any program that should be run before the current program. The format is "&lt;PackageID&gt;;;&lt;ProgramName&gt;". For more information, see [SMS_Program Server WMI Class](../core/servers/configure/sms_program-server-wmi-class.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Duration`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Duration` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The approximate time, in minutes, that the program takes to run. The default value is 0.
+Qualifiers: None
 
- `ExtendedData`
- Data type: `UInt8` Array
+The approximate time, in minutes, that the program takes to run. The default value is 0.
 
- Access type: Read/Write
+`ExtendedData` Data type: `UInt8` Array
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large, lazy]
 
- `ExtendedDataSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ExtendedDataSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `ForcedDisconnectDelay`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ForcedDisconnectDelay` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ForcedDisconnectEnabled`
- Data type: `Boolean`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ForcedDisconnectEnabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ForcedDisconnectNumRetries`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ForcedDisconnectNumRetries` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Icon`
- Data type: `UInt8` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Icon` Data type: `UInt8` Array
 
- Qualifiers: [large]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large]
 
- `IconSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IconSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `IgnoreAddressSchedule`
- Data type: `Boolean`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`IgnoreAddressSchedule` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ISVData`
- Data type: `UInt8` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ISVData` Data type: `UInt8` Array
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [large, lazy]
 
- `ISVDataSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ISVDataSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `Language`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Language` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `LastRefreshTime`
- Data type: `DateTime`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LastRefreshTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `LocalizedCategoryInstanceNames`
- Data type: `String Array`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`LocalizedCategoryInstanceNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `Manufacturer`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Manufacturer` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFFilename`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFFilename` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFName`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFPublisher`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFPublisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `MIFVersion`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`MIFVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Name`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `NumOfPrograms`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`NumOfPrograms` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `PackageID`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read
+`PackageID` Data type: `String`
 
- Qualifiers [key]
+Access type: Read
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers [key]
 
- `PackageSize`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read
+`PackageSize` Data type: `UInt32`
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Access type: Read
 
- `PackageType`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PackageType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- For this class, the package type is PKG_TYPE_TASK_SEQUENCE (4).
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- `PkgFlags`
- Data type: `UInt32`
+For this class, the package type is PKG_TYPE_TASK_SEQUENCE (4).
 
- Access type: Read/Write
+`PkgFlags` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [bits]
 
- `PkgSourceFlag`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PkgSourceFlag` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `PkgSourcePath`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PkgSourcePath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `PreferredAddressType`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`PreferredAddressType` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `Priority`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`Priority` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ProgramFlags`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ProgramFlags` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read/Write
 
- Flags identifying the installation characteristics of the program. The default flags are default program, UNATTENDED, UNCPATH, HIDEWINDOW, ADMINRIGHTS, and ANY_PLATFORM. The default value is 152084496.
+Qualifiers: [bits]
 
-|Bit|Decimal|Hexadecimal|Description|
-|---------|-------------|-----------------|-----------------|
-|0|1|0x00000001|AUTHORIZED_DYNAMIC_INSTALL. The program is authorized for dynamic installation.|
-|1|2|0x00000002|USE_CUSTOM_PROGRESS_MSG. The program uses a customized progress message.|
-|8|256|0x00000100|WINDOWS_CE. Use Windows CE as the device program. If this value is set, the program is not offered to desktop clients.|
-|9|512|0x00000200|RUN_DEPENDANT_ALWAYS. Always run the immediate dependent of the program.|
-|10|1024|0x00000400|COUNTDOWN. Display the countdown dialog box.|
-|12|4096|0x00001000|DISABLED. The program is disabled.|
-|13|8192|0x00002000|UNATTENDED. The program requires no user interaction.|
-|14|16384|0x00004000|USERCONTEXT. The program needs to run in the user context. Always set the value to 0.|
-|15|32768|0x00008000|ADMINRIGHTS. The program must run under administrator rights.|
-|16|65536|0x00010000|EVERYUSER. The program must be run by every user for whom it is valid. This setting is valid only for mandatory jobs. Always set the value to 0.|
-|17|131072|0x00020000|NOUSERLOGGEDIN. The program is run only when no user is logged on.|
-|18|262144|0x00040000|OKTOQUIT. Program shutdown is enabled. Always set the value to 0.|
-|19|524288|0x00080000|OKTOREBOOT. Computer reboot is enabled. Always set the value to 0.|
-|20|1048576|0x00100000|USEUNCPATH. Program access uses a Universal Naming Convention (UNC) path.|
-|21|2097152|0x00200000|PERSISTCONNECTION. The program connection is persisted. Always set the value to 0.|
-|22|4194304|0x00400000|RUNMINIMIZED. Maximize the program window. Always set the value to 0.|
-|23|8388608|0x00800000|RUNMAXIMIZED. Minimize the program window. Always set the value to 0.|
-|24|16777216|0x01000000|HIDEWINDOW. Hide the program window.|
-|25|33554432|0x02000000|OKTOLOGOFF. Logoff is enabled. Always set the value to 0.|
-|26|67108864|0x04000000|RUNACCOUNT. Run the program using account access.|
-|27|134217728|0x08000000|ANY_PLATFORM. The program can run on any operating system.|
-|28|268435456|0x10000000|STILL_RUNNING. The program is currently running.|
-|29|536870912|0x20000000|SUPPORT_UNINSTALL. The program has an uninstall utility. Always set the value to 0.|
-|31|2147483648|0x80000000|SHOW_IN_ARP. Display the program in Add or Remove Programs.|
+Flags identifying the installation characteristics of the program. The default flags are default program, UNATTENDED, UNCPATH, HIDEWINDOW, ADMINRIGHTS, and ANY_PLATFORM. The default value is 152084496.
 
- `References`
- Data type: `SMS_TaskSequence_Reference` Array
+| Bit | Decimal | Hexadecimal | Description |
+| --- | --- | --- | --- |
+| 0 | 1 | 0x00000001 | AUTHORIZED_DYNAMIC_INSTALL. The program is authorized for dynamic installation. |
+| 1 | 2 | 0x00000002 | USE_CUSTOM_PROGRESS_MSG. The program uses a customized progress message. |
+| 8 | 256 | 0x00000100 | WINDOWS_CE. Use Windows CE as the device program. If this value is set, the program is not offered to desktop clients. |
+| 9 | 512 | 0x00000200 | RUN_DEPENDANT_ALWAYS. Always run the immediate dependent of the program. |
+| 10 | 1024 | 0x00000400 | COUNTDOWN. Display the countdown dialog box. |
+| 12 | 4096 | 0x00001000 | DISABLED. The program is disabled. |
+| 13 | 8192 | 0x00002000 | UNATTENDED. The program requires no user interaction. |
+| 14 | 16384 | 0x00004000 | USERCONTEXT. The program needs to run in the user context. Always set the value to 0. |
+| 15 | 32768 | 0x00008000 | ADMINRIGHTS. The program must run under administrator rights. |
+| 16 | 65536 | 0x00010000 | EVERYUSER. The program must be run by every user for whom it is valid. This setting is valid only for mandatory jobs. Always set the value to 0. |
+| 17 | 131072 | 0x00020000 | NOUSERLOGGEDIN. The program is run only when no user is logged on. |
+| 18 | 262144 | 0x00040000 | OKTOQUIT. Program shutdown is enabled. Always set the value to 0. |
+| 19 | 524288 | 0x00080000 | OKTOREBOOT. Computer reboot is enabled. Always set the value to 0. |
+| 20 | 1048576 | 0x00100000 | USEUNCPATH. Program access uses a Universal Naming Convention (UNC) path. |
+| 21 | 2097152 | 0x00200000 | PERSISTCONNECTION. The program connection is persisted. Always set the value to 0. |
+| 22 | 4194304 | 0x00400000 | RUNMINIMIZED. Maximize the program window. Always set the value to 0. |
+| 23 | 8388608 | 0x00800000 | RUNMAXIMIZED. Minimize the program window. Always set the value to 0. |
+| 24 | 16777216 | 0x01000000 | HIDEWINDOW. Hide the program window. |
+| 25 | 33554432 | 0x02000000 | OKTOLOGOFF. Logoff is enabled. Always set the value to 0. |
+| 26 | 67108864 | 0x04000000 | RUNACCOUNT. Run the program using account access. |
+| 27 | 134217728 | 0x08000000 | ANY_PLATFORM. The program can run on any operating system. |
+| 28 | 268435456 | 0x10000000 | STILL_RUNNING. The program is currently running. |
+| 29 | 536870912 | 0x20000000 | SUPPORT_UNINSTALL. The program has an uninstall utility. Always set the value to 0. |
+| 31 | 2147483648 | 0x80000000 | SHOW_IN_ARP. Display the program in Add or Remove Programs. |
 
- Access type: Read-only
+`References` Data type: `SMS_TaskSequence_Reference` Array
 
- Qualifiers: [lazy, read]
+Access type: Read-only
 
- [SMS_TaskSequence_Reference Server WMI Class](../../../develop/reference/osd/sms_tasksequence_reference-server-wmi-class.md) objects representing the packages/programs and applications referred to by steps in the task sequence.
+Qualifiers: [lazy, read]
 
- `RefreshPkgSourceFlag`
- Data type: `Boolean`
+[SMS_TaskSequence_Reference Server WMI Class](sms_tasksequence_reference-server-wmi-class.md) objects representing the packages/programs and applications referred to by steps in the task sequence.
 
- Access type: Read/Write
+`RefreshPkgSourceFlag` Data type: `Boolean`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `RefreshSchedule`
- Data type: `SMS_ScheduleToken` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type:
+`RefreshSchedule` Data type: `SMS_ScheduleToken` Array
 
- Qualifiers: [max(15), lazy]
+Access type:
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [max(15), lazy]
 
- `ReferencesCount`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`ReferencesCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Size of the array indicated by the `References` property. This represents the number of package/programs and applications referred by the task sequence.
+Qualifiers: [read]
 
- `Reserved`
- Data type: `String`
+Size of the array indicated by the `References` property. This represents the number of package/programs and applications referred by the task sequence.
 
- Access type: Read/Write
+`Reserved` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Used internally by the SMS Provider.
+Qualifiers: [lazy]
 
- `SecuredScopeNames`
- Data type: `String Array`
+Used internally by the SMS Provider.
 
- Access type: Read-only
+`SecuredScopeNames` Data type: `String Array`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `SedoObjectVersion`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SedoObjectVersion` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `Sequence`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`Sequence` Data type: `String`
 
- Qualifiers: [lazy, read]
+Access type: Read-only
 
- XML-formatted data containing task sequence information.
+Qualifiers: [lazy, read]
 
- `ShareName`
- Data type: `String`
+XML-formatted data containing task sequence information.
 
- Access type: Read/Write
+`ShareName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `ShareType`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ShareType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `SourceDate`
- Data type: `DateTime`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SourceDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `SourceSite`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `SourceVersion`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`SourceVersion` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `StoredPkgPath`
- Data type: `String`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`StoredPkgPath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `StoredPkgVersion`
- Data type: `UInt32`
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`StoredPkgVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
 
- `SupportedOperatingSystems`
- Data type: `SMS_OS_Details` Array
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`SupportedOperatingSystems` Data type: `SMS_OS_Details` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- SMS_OS_Details Server WMI Class objects that describe details for the platforms on which the program can run.
+Qualifiers: [lazy]
 
- `TaskSequenceFlags`
- Data type: `UInt32`
+SMS_OS_Details Server WMI Class objects that describe details for the platforms on which the program can run.
 
- Access type: Read/Write
+`TaskSequenceFlags` Data type: `UInt32`
 
- Qualifiers: [lazy, bits("DANGLING_REF(0)")]
+Access type: Read/Write
 
- Flags indicating task sequence package conditions. The only flag currently defined is DANGLING_REF (bit 0).
+Qualifiers: [lazy, bits("DANGLING_REF(0)")]
 
-|Bit|Description|
-|---------|-----------------|
-|0|Set if the task sequence references a package that is not defined on the site.|
+Flags indicating task sequence package conditions. The only flag currently defined is DANGLING_REF (bit 0).
 
- `Type`
- Data type: `UInt32`
+| Bit | Description |
+| --- | --- |
+| 0 | Set if the task sequence references a package that is not defined on the site. |
 
- Access type: Read-only
+`Type` Data type: `UInt32`
 
- Qualifiers: [lazy, read]
+Access type: Read-only
 
- The type of task sequence represented by the package. Possible values are:
+Qualifiers: [lazy, read]
 
-|Value|Description|
-|-----------|-----------------|
-|1|Generic task sequence|
-|2|Operating system deployment task sequence|
+The type of task sequence represented by the package. Possible values are:
 
- `Version`
- Data type: `String`
+| Value | Description |
+| --- | --- |
+| 1 | Generic task sequence |
+| 2 | Operating system deployment task sequence |
 
- Access type: Read/Write
+`Version` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_PackageBaseclass Server WMI Class](../../../develop/reference/core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_PackageBaseclass Server WMI Class](../core/servers/configure/sms_packagebaseclass-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
-
 - Icon("Package.ico")
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   To get started using this class, see How to Create an Operating System Deployment Task Sequence Package.
 
-  You create an operating system deployment task sequence package by creating an instance of the `SMS_TaskSequencePackage` class to hold a task sequence. The task sequence itself is created by using the Operating System Deployment Task Sequence Object Model, and it is associated with the task sequence package by using the [SetSequence Method in Class SMS_TaskSequencePackage](../../../develop/reference/osd/setsequence-method-in-class-sms_tasksequencepackage.md) method. The package is advertised to clients who can then run the task sequence. For more information, see How to Create an Operating System Deployment Task Sequence Package.
+  You create an operating system deployment task sequence package by creating an instance of the `SMS_TaskSequencePackage` class to hold a task sequence. The task sequence itself is created by using the Operating System Deployment Task Sequence Object Model, and it is associated with the task sequence package by using the [SetSequence Method in Class SMS_TaskSequencePackage](setsequence-method-in-class-sms_tasksequencepackage.md) method. The package is advertised to clients who can then run the task sequence. For more information, see How to Create an Operating System Deployment Task Sequence Package.
 
   For more information about the task sequence WMI objects, see About Operating System Deployment Task Sequences.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_TaskSequence Server WMI Class](../../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)
+
+[SMS_TaskSequence Server WMI Class](sms_tasksequence-server-wmi-class.md)

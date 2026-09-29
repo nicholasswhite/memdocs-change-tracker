@@ -1,7 +1,7 @@
 ---
 title: Choose a device management solution
 description: Learn about the solutions that Microsoft offers for managing PCs, servers, and devices.
-ms.date: 03/30/2023
+ms.date: "2023-03-30T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -26,21 +26,21 @@ There are several Microsoft solutions that might work best for you in different 
 Use the following table to help compare these management technologies:
 
 |  | Cloud-only | Cloud-attached | On-premises | Disconnected |
-|---------|---------|---------|---------|---------|
-| **Hyper-V host** | Not applicable | - Azure Stack<br/> - Windows Admin Center<br/> - Security Management for MDE <br/>- Virtual Machine Manager | - Azure Stack<br/> - Windows Admin Center<br/> - Virtual Machine Manager | - Azure Stack<br/> - Windows Admin Center<br/> - Virtual Machine Manager |
-| **Windows Server** | - Azure Arc <br/> - Configuration Manager<br/> - Security Management for MDE | - Azure Arc<br/> - Configuration Manager <br/> - Security Management for MDE | - Azure Arc<br/> - Configuration Manager | Configuration Manager |
+| --- | --- | --- | --- | --- |
+| **Hyper-V host** | Not applicable | - Azure Stack  - Windows Admin Center  - Security Management for MDE  - Virtual Machine Manager | - Azure Stack  - Windows Admin Center  - Virtual Machine Manager | - Azure Stack  - Windows Admin Center  - Virtual Machine Manager |
+| **Windows Server** | - Azure Arc   - Configuration Manager  - Security Management for MDE | - Azure Arc  - Configuration Manager   - Security Management for MDE | - Azure Arc  - Configuration Manager | Configuration Manager |
 | **Linux Server** | Azure Arc | Azure Arc | Azure Arc |  |
-| **Windows 10/11** | - Intune<br/> - Configuration Manager<br/> - Security Management for MDE | - Intune<br/> - Configuration Manager<br/> - Security Management for MDE | - Intune<br/> - Configuration Manager<br/> - Security Management for MDE | Configuration Manager |
+| **Windows 10/11** | - Intune  - Configuration Manager  - Security Management for MDE | - Intune  - Configuration Manager  - Security Management for MDE | - Intune  - Configuration Manager  - Security Management for MDE | Configuration Manager |
 | **Windows 7 or 8.1** | Configuration Manager | Configuration Manager | Configuration Manager | Configuration Manager |
 | **Azure Virtual Desktop** | Configuration Manager | Not applicable | Not applicable | Not applicable |
 
 For more information, see the following articles:
 
-- [What is Azure Stack?](/azure-stack/operator/azure-stack-overview)
-- [What is Windows Admin Center?](/windows-server/manage/windows-admin-center/understand/what-is)
-- [What is Virtual Machine Manager?](/system-center/vmm/overview)
-- [Azure Arc products](/azure/)
-- [What is Azure Virtual Desktop?](/azure/virtual-desktop/overview)
+- [What is Azure Stack?](https://learn.microsoft.com/en-us/azure-stack/operator/azure-stack-overview)
+- [What is Windows Admin Center?](https://learn.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/what-is)
+- [What is Virtual Machine Manager?](https://learn.microsoft.com/en-us/system-center/vmm/overview)
+- [Azure Arc products](https://learn.microsoft.com/en-us/azure/)
+- [What is Azure Virtual Desktop?](https://learn.microsoft.com/en-us/azure/virtual-desktop/overview)
 - [Security Management for Microsoft Defender for Endpoint (MDE)](../../../device-security/microsoft-defender/security-settings-management.md)
 
 For more information on the Configuration Manager and Intune solutions, continue to the next section.
@@ -60,7 +60,7 @@ There are also two tables that compare the management solutions by the following
 - [Compare by supported platforms](#bkmk_comp1)
 - [Compare by management functionality](#bkmk_comp2)
 
-### <a name="bkmk_sccm"></a> Configuration Manager client
+### Configuration Manager client
 
 This option requires installation of the Configuration Manager client on devices. It provides the most features for managing PCs, servers, and other devices in your environment.
 
@@ -72,52 +72,52 @@ This options requires utilizing Microsoft Defender for Endpoint on your devices 
 
 For more information, see [Security Management for Microsoft Defender for Endpoint (MDE)](../../../device-security/microsoft-defender/security-settings-management.md).
 
-### <a name="bkmk_comanage"></a> Co-management with Microsoft Intune
+### Co-management with Microsoft Intune
 
 Co-management is one of the primary ways to attach your existing Configuration Manager deployment to the Microsoft 365 cloud. It enables you to concurrently manage Windows devices by using both Configuration Manager and Microsoft Intune. Co-management lets you cloud-attach your existing investment in Configuration Manager by adding new functionality.
 
 For more information, see [What is co-management?](../../comanage/overview.md).
 
-### <a name="bkmk_exchange"></a> Microsoft Exchange
+### Microsoft Exchange
 
 This option uses the Exchange Server connector to connect multiple Exchange servers to Configuration Manager. It centralizes management of devices that can connect to Exchange ActiveSync. You can configure Exchange mobile device management features from the Configuration Manager console. Example features include remote device wipe and the settings control for multiple Exchange servers.
 
 For more information, see [Manage mobile devices with Configuration Manager and Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
 
-### <a name="bkmk_comp1"></a> Compare solutions by supported platforms
+### Compare solutions by supported platforms
 
-|Platform|Configuration Manager client|On-premises MDM|Configuration Manager with Exchange| Intune |
-|--------|----------------------------|---------------|-----------------------------------|--------|
-|Android| | |Yes| Yes |
-|iOS| | |Yes| Yes |
-|macOS X|Yes| |Yes| Yes |
-|Windows 10/11|Yes|Yes|Yes| Yes |
-|Windows 10 Mobile| |Yes|Yes| Yes |
-|Windows (previous versions)|Yes| |Yes|  |
-|Windows Server|Yes| |Yes|  |
-|Windows Embedded|Yes| | |  |
+| Platform | Configuration Manager client | On-premises MDM | Configuration Manager with Exchange | Intune |
+| --- | --- | --- | --- | --- |
+| Android |  |  | Yes | Yes |
+| iOS |  |  | Yes | Yes |
+| macOS X | Yes |  | Yes | Yes |
+| Windows 10/11 | Yes | Yes | Yes | Yes |
+| Windows 10 Mobile |  | Yes | Yes | Yes |
+| Windows (previous versions) | Yes |  | Yes |  |
+| Windows Server | Yes |  | Yes |  |
+| Windows Embedded | Yes |  |  |  |
 
 For a complete list of supported platforms, see the following articles:
 
 - [Supported operating systems for clients and devices for Configuration Manager](configs/supported-operating-systems-for-clients-and-devices.md)
-- [Intune supported configurations](/mem/fundamentals/ref-supported-platforms)
+- [Intune supported configurations](https://learn.microsoft.com/en-us/mem/fundamentals/ref-supported-platforms)
 
-Microsoft recommends using Intune to manage Android, iOS, and Windows 10/11 mobile devices. For more information, see [What is Microsoft Intune?](/mem/fundamentals/what-is-intune).
+Microsoft recommends using Intune to manage Android, iOS, and Windows 10/11 mobile devices. For more information, see [What is Microsoft Intune?](https://learn.microsoft.com/en-us/mem/fundamentals/what-is-intune).
 
-### <a name="bkmk_comp2"></a> Compare solutions by management functionality
+### Compare solutions by management functionality
 
-|Management functionality|Configuration Manager client|On-premises MDM|Configuration Manager with Exchange|
-|--------|----------------------------|---------------|-----------------------------------|
-|Certificate-based mutual authentication|Yes|Yes| |
-|Client installation|Yes| | |
-|Support over the internet|Yes| | |
-|Discovery|Yes| |Yes|
-|Hardware inventory|Yes|Yes|Yes|
-|Software inventory|Yes| |Yes|
-|Settings|Yes|Yes|Yes|
-|Software deployment|Yes|Yes| |
-|Software update management|Yes| | |
-|OS deployment|Yes| | |
-|Block from Configuration Manager|Yes|Yes| |
-|Quarantine and block from Exchange Server (and Configuration Manager)| | |Yes|
-|Remote wipe| |Yes|Yes|
+| Management functionality | Configuration Manager client | On-premises MDM | Configuration Manager with Exchange |
+| --- | --- | --- | --- |
+| Certificate-based mutual authentication | Yes | Yes |  |
+| Client installation | Yes |  |  |
+| Support over the internet | Yes |  |  |
+| Discovery | Yes |  | Yes |
+| Hardware inventory | Yes | Yes | Yes |
+| Software inventory | Yes |  | Yes |
+| Settings | Yes | Yes | Yes |
+| Software deployment | Yes | Yes |  |
+| Software update management | Yes |  |  |
+| OS deployment | Yes |  |  |
+| Block from Configuration Manager | Yes | Yes |  |
+| Quarantine and block from Exchange Server (and Configuration Manager) |  |  | Yes |
+| Remote wipe |  | Yes | Yes |

@@ -1,16 +1,18 @@
 ---
-title: SMS_DeviceEnrollmentProfile Class
+title: "SMS_DeviceEnrollmentProfile Server WMI Class"
 description: The SMS_DeviceEnrollmentProfile Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a device enrollment profile in the database.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DeviceEnrollmentProfile Server WMI Class
+
 The `SMS_DeviceEnrollmentProfile` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a device enrollment profile in the database.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,122 +34,116 @@ Class SMS_DeviceEnrollmentProfile : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DeviceEnrollmentProfile` class does not define any methods.
+
+The `SMS_DeviceEnrollmentProfile` class does not define any methods.
 
 ## Properties
- `CertAuthorities`
- Data type: `String` Array
 
- Access type: Read/Write
+`CertAuthorities` Data type: `String` Array
 
- Qualifiers: none
+Access type: Read/Write
 
- Each CA must have a properly configured template of CertTemplateName, and must chain to the root certificate trusted by the server hosting the ManagementUri.
+Qualifiers: none
 
- `CertCIUniqueID`
- Data type: `String`
+Each CA must have a properly configured template of CertTemplateName, and must chain to the root certificate trusted by the server hosting the ManagementUri.
 
- Access type: Read/Write
+`CertCIUniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Unique identifier for a certificate configuration item.
+Qualifiers: none
 
- `Description`
- Data type: `String`
+Unique identifier for a certificate configuration item.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Text describing the profile.
+Qualifiers: none
 
- `DevicesContainerDN`
- Data type: `String`
+Text describing the profile.
 
- Access type: Read/Write
+`DevicesContainerDN` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The location where device accounts are created.
+Qualifiers: none
 
- `DevicesGroup`
- Data type: `String`
+The location where device accounts are created.
 
- Access type: Read/Write
+`DevicesGroup` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The Security Group with enroll rights on the CA template.
+Qualifiers: none
 
- `EnrollmentSiteCode`
- Data type: `String`
+The Security Group with enroll rights on the CA template.
 
- Access type: Read/Write
+`EnrollmentSiteCode` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The site code where devices should enroll.
+Qualifiers: none
 
- `ManagementSiteCode`
- Data type: `String`
+The site code where devices should enroll.
 
- Access type: Read/Write
+`ManagementSiteCode` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The site code from where device should be managed.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+The site code from where device should be managed.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The name of the profile. This name must be unique.
+Qualifiers: none
 
- `ProfileID`
- Data type: `UInt32`
+The name of the profile. This name must be unique.
 
- Access type: Read-only
+`ProfileID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Unique identifier to differentiate the profile.
+Qualifiers: [key, read]
 
- `ProfileType`
- Data type: `UInt32`
+Unique identifier to differentiate the profile.
 
- Access type: Read/Write
+`ProfileType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The type of the profile.
+Qualifiers: none
+
+The type of the profile.
 
 | Value | Profile type |
-| ----- | ------------ |
-|1|DM|
-|2|AMT|
+| --- | --- |
+| 1 | DM |
+| 2 | AMT |
 
- `RecordExpiryMinutes`
- Data type: `UInt32`
+`RecordExpiryMinutes` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Number of minutes for which the record is valid.
+Number of minutes for which the record is valid.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Device Management Server WMI Classes](../../../develop/reference/mdm/device-management-server-wmi-classes.md)
+
+[Device Management Server WMI Classes](device-management-server-wmi-classes.md)

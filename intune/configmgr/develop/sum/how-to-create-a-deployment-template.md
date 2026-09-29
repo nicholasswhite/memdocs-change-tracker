@@ -1,31 +1,32 @@
 ---
-title: Create a Deployment Template
+title: "How to Create a Deployment Template"
 description: Create a software updates deployment template in Configuration Manager by creating an instance of the SMS_Template class and populating the properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a Deployment Template
+
 You create a software updates deployment template, in Configuration Manager, by creating an instance of the `SMS_Template` class and populating the properties.
 
 ### To create a deployment template
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create the new template object by using the `SMS_Template` class.
-
-3.  Populate the new template properties.
-
-4.  Save the new template and properties.
+1. Set up a connection to the SMS Provider.
+2. Create the new template object by using the `SMS_Template` class.
+3. Populate the new template properties.
+4. Save the new template and properties.
 
 ## Example
- The following example method shows how to create a software updates deployment template by using the `SMS_Template` class and class properties.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method shows how to create a software updates deployment template by using the `SMS_Template` class and class properties.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 > [!NOTE]
+>
 > In the following code examples, the template settings are passed into the method by using a string variable called deploymentTemplateSettings. The template settings are stored in an XML structure.
 
 VB Template Setting Example (one long string):
@@ -123,42 +124,46 @@ public void CreateSUMDeploymentTemplate(WqlConnectionManager connection,
 
 ```
 
- This example method has the following parameters:
+This example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`newTemplateName`|-   Managed: `String`<br />-   VBScript: `String`|The new template name. The template name must be unique.|
-|`newTemplateDescription`|-   Managed: `String`<br />-   VBScript: `String`|The description for the new template.|
-|`newTemplateSettings`|-   Managed: `String`<br />-   VBScript: `String`|The new template settings. The settings are in an XML structure, stored as a string.<br /><br /> <ul><li>**CollectionId**<br /><br />     The collection for the software update deployment.<br /><br /> <ul><li>A valid collection ID.</li></ul></li><li>**IncludeSub**<br /><br />     Include members of subcollections.<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**AttendedInstall**<br /><br />     Display software update notifications on clients (false will suppress notifications).<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**UTC**<br /><br />     Use Coordinated Universal Time (UTC) instead of client local time.<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**Duration**<br /><br />     Duration of the deployment.<br /><br /> <ul><li>1-24 (hours)</li><li>1-365 (days)</li><li>1-4 (weeks)</li><li>1-12 (months)</li></ul></li><li>**DurationUnits**<br /><br />     Duration units.<br /><br /> <ul><li>hours</li><li>days</li><li>weeks</li><li>months</li></ul></li><li>**SuppressServers**<br /><br />     Suppress the system restart on servers.<br /><br /> <ul><li>Checked</li><li>Unchecked</li></ul></li><li>**SuppressWorkstations**<br /><br />     Suppress the system restart on workstations.<br /><br /> <ul><li>Checked</li><li>Unchecked</li></ul></li><li>**AllowRestart**<br /><br />     Allow system restart outside of maintenance windows (for both servers and workstations).<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**Deploy2003**<br /><br />     Deploy software updates to SMS 2003 clients.<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**CollectImmediately** (SMS 2003 client specific)<br /><br />     Collect hardware inventory immediately after installing software updates.<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**LocalDPOption** (SMS 2003 client specific)<br /><br />     Specify whether to download the update source files before running the installation when a distribution point is available locally.<br /><br /> <ul><li>DownloadAndInstall</li><li>InstallFromDP</li></ul></li><li>**RemoteDPOption** (SMS 2003 client specific)<br /><br />     Specify whether to download the update source files before running the installation when no distribution point is available locally.<br /><br /> <ul><li>DownloadAndInstall</li><li>InstallFromDP</li></ul></li><li>**DisableMomAlert**<br /><br />     Disable Operations Manager alerts while software updates run.<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**GenerateMomAlert**<br /><br />     Generate Operations Manager alert when a software update installation fails.<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**UseRemoteDP**<br /><br />     Download software updates from use a remote distribution point (even when a client is connected within a slow or unreliable network boundary).<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li><li>**UseUnprotectedDP**<br /><br />     Download software updates from a unprotected distribution point (when updates are not available from any protected distribution point).<br /><br /> <ul><li>`true`</li><li>`false`</li></ul></li></ul>|
-|`newTemplateType`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The new template type. Currently the only possible value is:<br /><br /> -   `0` (SUM_DEPLOYMENT)|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `newTemplateName` | - Managed: `String` - VBScript: `String` | The new template name. The template name must be unique. |
+| `newTemplateDescription` | - Managed: `String` - VBScript: `String` | The description for the new template. |
+| `newTemplateSettings` | - Managed: `String` - VBScript: `String` | The new template settings. The settings are in an XML structure, stored as a string.    - **CollectionId**   The collection for the software update deployment.     - A valid collection ID. - **IncludeSub**   Include members of subcollections.     - `true`   - `false` - **AttendedInstall**   Display software update notifications on clients (false will suppress notifications).     - `true`   - `false` - **UTC**   Use Coordinated Universal Time (UTC) instead of client local time.     - `true`   - `false` - **Duration**   Duration of the deployment.     - 1-24 (hours)   - 1-365 (days)   - 1-4 (weeks)   - 1-12 (months) - **DurationUnits**   Duration units.     - hours   - days   - weeks   - months - **SuppressServers**   Suppress the system restart on servers.     - Checked   - Unchecked - **SuppressWorkstations**   Suppress the system restart on workstations.     - Checked   - Unchecked - **AllowRestart**   Allow system restart outside of maintenance windows (for both servers and workstations).     - `true`   - `false` - **Deploy2003**   Deploy software updates to SMS 2003 clients.     - `true`   - `false` - **CollectImmediately** (SMS 2003 client specific)   Collect hardware inventory immediately after installing software updates.     - `true`   - `false` - **LocalDPOption** (SMS 2003 client specific)   Specify whether to download the update source files before running the installation when a distribution point is available locally.     - DownloadAndInstall   - InstallFromDP - **RemoteDPOption** (SMS 2003 client specific)   Specify whether to download the update source files before running the installation when no distribution point is available locally.     - DownloadAndInstall   - InstallFromDP - **DisableMomAlert**   Disable Operations Manager alerts while software updates run.     - `true`   - `false` - **GenerateMomAlert**   Generate Operations Manager alert when a software update installation fails.     - `true`   - `false` - **UseRemoteDP**   Download software updates from use a remote distribution point (even when a client is connected within a slow or unreliable network boundary).     - `true`   - `false` - **UseUnprotectedDP**   Download software updates from a unprotected distribution point (when updates are not available from any protected distribution point).     - `true`   - `false` |
+| `newTemplateType` | - Managed: `Integer` - VBScript: `Integer` | The new template type. Currently the only possible value is:   - `0` (SUM_DEPLOYMENT) |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About software update deployments](about-software-updates-deployments.md)
- [How to Assign a Package to a Distribution Point](../../develop/core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md)
- [SMS_Template](../../develop/reference/sum/sms_template-server-wmi-class.md)
+
+[About software update deployments](about-software-updates-deployments.md) [How to Assign a Package to a Distribution Point](../core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md) [SMS_Template](../reference/sum/sms_template-server-wmi-class.md)

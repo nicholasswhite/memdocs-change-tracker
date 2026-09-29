@@ -1,16 +1,18 @@
 ---
-title: GetBusinessHours Method
+title: "GetBusinessHours Method in Class CCM_ClientUXSettings"
 description: A class method that gets the values for business hours.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetBusinessHours Method in Class CCM_ClientUXSettings
+
 The `GetBusinessHours` Windows Management Instrumentation (WMI) class method in Configuration Manager that gets the values for business hours.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,33 +26,33 @@ uint32 GetBusinessHours
 ```
 
 ## Parameters
- `WorkingDays`
- Data type: `UInt32`
 
- Qualifiers: [id("0"), out]
+`WorkingDays` Data type: `UInt32`
 
- Working days.
+Qualifiers: [id("0"), out]
 
- `StartTime`
- Data type: `UInt32`
+Working days.
 
- Qualifiers: [id("1"), out]
+`StartTime` Data type: `UInt32`
 
- Start time.
+Qualifiers: [id("1"), out]
 
- `EndTime`
- Data type: `UInt32`
+Start time.
 
- Qualifiers: [id("2"), out]
+`EndTime` Data type: `UInt32`
 
- End time.
+Qualifiers: [id("2"), out]
+
+End time.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

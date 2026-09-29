@@ -1,33 +1,31 @@
 ---
-title: Assign a Package to a Distribution Point
+title: "How to Assign a Package to a Distribution Point"
 description: In Configuration Manager, the following example shows how to assign a distribution point to a package by using the SMS_DistributionPoint and SMS_SystemResourceList classes.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Assign a Package to a Distribution Point
+
 The following example shows how to assign a distribution point to a package by using the `SMS_DistributionPoint` and `SMS_SystemResourceList` classes in Configuration Manager. You only need to assign a distribution point to a package if the package contains source files (PkgSourcePath). The package is not advertised until the program source files have been propagated to a distribution point share. You can use the default distribution point share, or you can specify a share to use. You can also specify more than one distribution point to use to distribute your package source files, although this example does not demonstrate that.
 
 ### To assign a package to a distribution point
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create a new distribution point object (this is not an actual distribution point).
-
-3.  Associate the existing package with the new distribution point object.
-
-4.  Query for a single distribution point based on the provided site code and server name.
-
-5.  Use the query results to populate the `ServerNALPath` property of the distribution point object.
-
-6.  Save the distribution point object and properties.
+1. Set up a connection to the SMS Provider.
+2. Create a new distribution point object (this is not an actual distribution point).
+3. Associate the existing package with the new distribution point object.
+4. Query for a single distribution point based on the provided site code and server name.
+5. Use the query results to populate the `ServerNALPath` property of the distribution point object.
+6. Save the distribution point object and properties.
 
 ## Example
- The following example method assigns a package to a distribution point.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method assigns a package to a distribution point.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -104,37 +102,39 @@ public void AssignPackageToDistributionPoint(WqlConnectionManager connection, st
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of the existing package.|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code.|
-|`serverName`|-   Managed: `String`<br />-   VBScript: `String`|The name of the server.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPackageID` | - Managed: `String` - VBScript: `String` | The ID of the existing package. |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code. |
+| `serverName` | - Managed: `String` - VBScript: `String` | The name of the server. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [About the site control file](../../understand/about-the-configuration-manager-site-control-file.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
- [SMS_SystemResourceList Server WMI Class](../../../../develop/reference/core/servers/configure/sms_systemresourcelist-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [About the site control file](../../understand/about-the-configuration-manager-site-control-file.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md) [SMS_SystemResourceList Server WMI Class](../../../reference/core/servers/configure/sms_systemresourcelist-server-wmi-class.md)

@@ -1,16 +1,18 @@
 ---
-title: CheckLockRequests Method
+title: "CheckLockRequests Method in Class SMS_ObjectLock"
 description: The CheckLockRequests Windows Management Instrumentation (WMI) class method, in Configuration Manager, checks multiple lock requests.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CheckLockRequests Method in Class SMS_ObjectLock
+
 The `CheckLockRequests` Windows Management Instrumentation (WMI) class method, in Configuration Manager, checks multiple lock requests.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,39 +25,41 @@ SInt32 CheckLockRequests(
 ```
 
 #### Parameters
- `RequestIDs`
- Data type: `String` Array
 
- Qualifiers: [in]
+`RequestIDs` Data type: `String` Array
 
- Array of unique identifiers of the request.
+Qualifiers: [in]
 
- `Timeout`
- Data type: `UInt32`
+Array of unique identifiers of the request.
 
- Qualifiers: [in, optional]
+`Timeout` Data type: `UInt32`
 
- Seconds to wait for lock request response.
+Qualifiers: [in, optional]
 
- `ObjectLockRequests`
- Data type: `SMS_ObjectLockRequest` Array
+Seconds to wait for lock request response.
 
- Qualifiers: [out]
+`ObjectLockRequests` Data type: `SMS_ObjectLockRequest` Array
 
- A WMI class that represents object lock request information.
+Qualifiers: [out]
+
+A WMI class that represents object lock request information.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ObjectLock Server WMI Class](../../../develop/reference/misc/sms_objectlock-server-wmi-class.md)
+
+[SMS_ObjectLock Server WMI Class](sms_objectlock-server-wmi-class.md)

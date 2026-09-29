@@ -1,17 +1,18 @@
 ---
-title: Avoid policy conflicts
+title: "Avoiding policy conflicts"
 description: Learn how to avoid policy conflicts when creating and deploying new policies.
-ms.date: 7/11/2024
+ms.date: "2024-07-11T00:00:00Z"
 ms.topic: tutorial
 ---
 
 # Avoiding policy conflicts
 
-:::image type="icon" source="../../../media/icons/16/check.svg" border="false"::: Ensure policies apply effectively to devices
+![](../../../media/icons/16/check.svg) Ensure policies apply effectively to devices
 
 Devices and users targeted with the same setting from different policies cause conflicts. When conflicts occur, Intune generates an error and doesn't apply either setting. As a result, it's important to avoid or resolve conflicts to ensure the correct configuration is applied. Use the steps in this document when creating new policies to avoid or resolve policy conflicts.
 
 > [!NOTE]
+>
 > If you only use Intune for Education to manage your devices, you can easily update the settings or apps that you have deployed to existing groups or create new groups to apply new policies or apps. You don't need to do anything extra to prevent conflicts if the members of the new groups are different from the members of the existing groups.
 
 ## 1. Determine which users or devices need the new policy
@@ -25,6 +26,7 @@ The key to avoiding policy conflicts is to understand if existing policies targe
 You can exclude groups of devices or users using the "exclude group" option or by excluding devices using [filters](../../../fundamentals/filters/overview.md).
 
 > [!TIP]
+>
 > For more information about grouping and targeting, see [Plan Education device grouping and targeting](grouping-and-targeting.md).
 
 ### Default policies for Education tenants
@@ -33,40 +35,41 @@ When Intune licenses are added to an Education tenant for the first time, a set 
 
 Default policy names:
 
-- **Devices** > **Windows** > **Configuration**
+- **Devices** &gt; **Windows** &gt; **Configuration**
   - Default Policies for EDU
   - Default Admx policy for EDU
   - Edition Upgrade
   - Shared PC Policy
-- **Devices** > **Windows** > **Windows updates** > **Update rings**
+- **Devices** &gt; **Windows** &gt; **Windows updates** &gt; **Update rings**
   - Windows Update Policy
 
 > [!NOTE]
-> If you're using Intune for Education, you can see and change these settings by navigating to **Groups** and then selecting the group **All Devices** or **All Users** > **Settings**. Select **Windows device settings** or **iOS device settings**.
+>
+> If you're using Intune for Education, you can see and change these settings by navigating to **Groups** and then selecting the group **All Devices** or **All Users** &gt; **Settings**. Select **Windows device settings** or **iOS device settings**.
 
 ### Policies created in the Intune for Education console
 
-When you configure settings in Intune for Education, corresponding policies are created in the Intune service that can be viewed and edited from the Intune admin console. Configuration profiles created by Intune for Education have a recognizable naming template that always starts with the name of the group followed by a suffix based on the template type. The *\<GROUP NAME>* part of each name represents the group that was selected in Intune for Education when the settings were configured.
+When you configure settings in Intune for Education, corresponding policies are created in the Intune service that can be viewed and edited from the Intune admin console. Configuration profiles created by Intune for Education have a recognizable naming template that always starts with the name of the group followed by a suffix based on the template type. The *&lt;GROUP NAME&gt;* part of each name represents the group that was selected in Intune for Education when the settings were configured.
 
 This list provides examples of configuration profiles created by Intune for Education. They should be reviewed for overlapping settings to determine if exclusions are required when targeting the same set of users or devices.
 
-- **Devices** > **Windows** > **Configuration**
-  - *\<GROUP NAME>* Windows10General
-  - *\<GROUP NAME>* GroupPolicyConfiguration
-  - *\<GROUP NAME>* Windows10EndpointProtection
-  - *\<GROUP NAME>* Windows10CustomDenyAdministrativeApps
-  - *\<GROUP NAME>* Windows10CustomDenyStore
-  - *\<GROUP NAME>* Windows10SharedPC
-  - *\<GROUP NAME>* Windows10EnterpriseModernAppManagement
-  - *\<GROUP NAME>* ConfigurationPolicy
-- **Devices** > **Windows** > **Enrollment** > **Windows Autopilot/Deployment Profiles**
-  - *\<GROUP NAME>* Windows10AutopilotProfile
-- **Devices** > **Windows** > **Windows updates** > **Update rings**
-  - *\<GROUP NAME>* Windows10UpdatesForBusiness
-- **Devices** > **Windows** > **Windows updates** > **Feature Updates**
-  - *\<GROUP NAME>* WindowsFeatureUpdates
-- **Endpoint security** > **Account protection**
-  - *\<GROUP NAME>*_LocalUsersAndGroupsConfig_EDU
+- **Devices** &gt; **Windows** &gt; **Configuration**
+  - *&lt;GROUP NAME&gt;* Windows10General
+  - *&lt;GROUP NAME&gt;* GroupPolicyConfiguration
+  - *&lt;GROUP NAME&gt;* Windows10EndpointProtection
+  - *&lt;GROUP NAME&gt;* Windows10CustomDenyAdministrativeApps
+  - *&lt;GROUP NAME&gt;* Windows10CustomDenyStore
+  - *&lt;GROUP NAME&gt;* Windows10SharedPC
+  - *&lt;GROUP NAME&gt;* Windows10EnterpriseModernAppManagement
+  - *&lt;GROUP NAME&gt;* ConfigurationPolicy
+- **Devices** &gt; **Windows** &gt; **Enrollment** &gt; **Windows Autopilot/Deployment Profiles**
+  - *&lt;GROUP NAME&gt;* Windows10AutopilotProfile
+- **Devices** &gt; **Windows** &gt; **Windows updates** &gt; **Update rings**
+  - *&lt;GROUP NAME&gt;* Windows10UpdatesForBusiness
+- **Devices** &gt; **Windows** &gt; **Windows updates** &gt; **Feature Updates**
+  - *&lt;GROUP NAME&gt;* WindowsFeatureUpdates
+- **Endpoint security** &gt; **Account protection**
+  - *&lt;GROUP NAME&gt;*_LocalUsersAndGroupsConfig_EDU
 
 ## 3. Assign the policy to target group
 
@@ -74,14 +77,19 @@ Once all the potential sources of conflict are reviewed and any exclusions are c
 
 ## 4. Monitoring for policy conflicts
 
-### [:::image type="icon" source="../../../media/icons/16/intune.svg"::: Intune](#tab/intune)
+- [![](../../../media/icons/16/intune.svg) Intune](#tabpanel_1_intune)
+- [![](../../../media/icons/16/intune.svg) Intune for Education](#tabpanel_1_intune-for-education)
 
-You can check for potential policy conflicts by going to **Devices** > **Monitor** > **Configuration policy assignment failure**. Find the new policy and review any conflicts in the report. The report can also be exported to CSV.
+<a id="tabpanel_1_intune"></a>
 
-### [:::image type="icon" source="../../../media/icons/16/intune.svg"::: Intune for Education](#tab/intune-for-education)
 
-You can check for potential policy conflicts by going to **Reports** > **Settings error**.
 
----
+You can check for potential policy conflicts by going to **Devices** &gt; **Monitor** &gt; **Configuration policy assignment failure**. Find the new policy and review any conflicts in the report. The report can also be exported to CSV.
+
+<a id="tabpanel_1_intune-for-education"></a>
+
+
+
+You can check for potential policy conflicts by going to **Reports** &gt; **Settings error**.
 
 If a conflict is found, remove the overlapping settings from the new policy or exclude the targeted users or devices from existing policies.

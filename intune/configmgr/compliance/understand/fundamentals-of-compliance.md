@@ -5,7 +5,7 @@ ms.collection:
  - tier1
  - essentials-compliance
 description: Learn about compliance certifications, dependencies, and features in Configuration Manager supporting data protection and regulatory requirements.
-ms.date: 12/3/2024
+ms.date: "2024-12-03T00:00:00Z"
 ---
 
 # Understand compliance in Configuration Manager
@@ -20,8 +20,8 @@ Microsoft ensures that Configuration Manager complies with various industry stan
 
 Configuration Manager leverages other Microsoft services for compliance, including:
 
-- [Microsoft Entra ID](/entra/fundamentals/whatis): Identity and access management.
-- [Microsoft Intune](/mem/intune): Enforces device compliance and conditional access policies.
+- [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/whatis): Identity and access management.
+- [Microsoft Intune](https://learn.microsoft.com/en-us/mem/intune): Enforces device compliance and conditional access policies.
 
 ## Microsoft Intune capabilities for compliance
 
@@ -30,21 +30,23 @@ Microsoft Intune helps enforce compliance policies and protect organizational da
 - **Conditional Access**: Ensures only compliant devices and apps managed by Intune can access sensitive data. See [Conditional Access](../../../device-security/conditional-access-integration/overview.md).
 - **Device Compliance Enforcement**: Enforces device compliance policies to meet organizational security requirements. See [Device Compliance Policies](../../../device-security/compliance/overview.md).
 
-For more information about Intune compliance capabilities, visit the [Microsoft Intune documentation](/mem/intune).
+For more information about Intune compliance capabilities, visit the [Microsoft Intune documentation](https://learn.microsoft.com/en-us/mem/intune).
+
 > [!NOTE]
-> For more information about how to concurrently manage Windows 10 or later devices by using both Configuration Manager and Microsoft Intune, see [What is co-management?](/mem/configmgr/comanage/overview).
+>
+> For more information about how to concurrently manage Windows 10 or later devices by using both Configuration Manager and Microsoft Intune, see [What is co-management?](https://learn.microsoft.com/en-us/mem/configmgr/comanage/overview).
 
 ## Data encryption
 
-Use Configuration Manager to manage BitLocker Drive Encryption (BDE) for on-premises Windows clients, which are joined to Active Directory. It provides full BitLocker lifecycle management that can replace the use of Microsoft BitLocker Administration and Monitoring. For more information, see [Plan for BitLocker management](/mem/configmgr/protect/plan-design/bitlocker-management).
+Use Configuration Manager to manage BitLocker Drive Encryption (BDE) for on-premises Windows clients, which are joined to Active Directory. It provides full BitLocker lifecycle management that can replace the use of Microsoft BitLocker Administration and Monitoring. For more information, see [Plan for BitLocker management](https://learn.microsoft.com/en-us/mem/configmgr/protect/plan-design/bitlocker-management).
 
 ## Compliance features
 
-Configuration Manager includes several compliance features that help organizations manage device compliance. For more information, see [Ensure device compliance with Configuration Manager](/mem/configmgr/compliance/understand/ensure-device-compliance).
+Configuration Manager includes several compliance features that help organizations manage device compliance. For more information, see [Ensure device compliance with Configuration Manager](https://learn.microsoft.com/en-us/mem/configmgr/compliance/understand/ensure-device-compliance).
 
 ## Related articles
 
 - [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement)
 - [Microsoft Trust Center](https://www.microsoft.com/trust-center)
-- [Additional privacy information](/mem/configmgr/core/plan-design/security/additional-privacy)
-- [Fundamentals of security](/mem/configmgr/core/understand/fundamentals-of-security)
+- [Additional privacy information](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/additional-privacy)
+- [Fundamentals of security](https://learn.microsoft.com/en-us/mem/configmgr/core/understand/fundamentals-of-security)

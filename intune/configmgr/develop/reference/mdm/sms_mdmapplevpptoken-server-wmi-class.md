@@ -1,16 +1,18 @@
 ---
-title: SMS_MDMAppleVppToken Class
+title: "SMS_MDMAppleVppToken Server WMI Class"
 description: An SMS Provider server class, in Configuration Manager, that represents an Apple Volume Purchase Program (VPP) token.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MDMAppleVppToken Server WMI Class
+
 The `SMS_MDMAppleVppToken` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an Apple Volume Purchase Program (VPP) token.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,135 +36,127 @@ Class SMS_MDMAppleVppToken : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_MDMAppleVppToken` class.
 
-|Method|Description|
-|------------|-----------------|
-|[SyncToken Method in Class SMS_MDMAppleVppToken](../../../develop/reference/mdm/synctoken-method-in-class-sms_mdmapplevpptoken.md)|Initiates a synchronization of an Apple VPP token.|
-|[UploadToken Method in Class SMS_MDMAppleVppToken](../../../develop/reference/mdm/uploadtoken-method-in-class-sms_mdmapplevpptoken.md)|Uploads an Apple VPP token to Intune.|
+The following table lists the methods in the `SMS_MDMAppleVppToken` class.
+
+| Method | Description |
+| --- | --- |
+| [SyncToken Method in Class SMS_MDMAppleVppToken](synctoken-method-in-class-sms_mdmapplevpptoken.md) | Initiates a synchronization of an Apple VPP token. |
+| [UploadToken Method in Class SMS_MDMAppleVppToken](uploadtoken-method-in-class-sms_mdmapplevpptoken.md) | Uploads an Apple VPP token to Intune. |
 
 ## Properties
- `Created`
- Data type: `DateTime`
 
- Access type: Read/Write
+`Created` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Date the token was created.
+Qualifiers: none
 
- `Description`
- Data type: `String`
+Date the token was created.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Description of the token.
+Qualifiers: none
 
- `ExpirationDate`
- Data type: `DateTime`
+Description of the token.
 
- Access type: Read/Write
+`ExpirationDate` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Expiration date of the token.
+Qualifiers: none
 
- `Id`
- Data type: `String`
+Expiration date of the token.
 
- Access type: Read/Write
+`Id` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The token ID.
+Qualifiers: [key]
 
- `LastSuccessfulSync`
- Data type: `DateTime`
+The token ID.
 
- Access type: Read/Write
+`LastSuccessfulSync` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The last time a synchronization with Apple was successful.
+Qualifiers: none
 
- `LastSync`
- Data type: `DateTime`
+The last time a synchronization with Apple was successful.
 
- Access type: Read/Write
+`LastSync` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The last time a synchronization with Apple occurred.
+Qualifiers: none
 
- `LastUpdated`
- Data type: `DateTime`
+The last time a synchronization with Apple occurred.
 
- Access type: Read/Write
+`LastUpdated` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The last time the token was updated.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+The last time the token was updated.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the token.
+Qualifiers: none
 
- `OrganizationName`
- Data type: `String`
+Name of the token.
 
- Access type: Read/Write
+`OrganizationName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Organization name for the token.
+Qualifiers: none
 
- `SyncErrorCode`
- Data type: `String`
+Organization name for the token.
 
- Access type: Read/Write
+`SyncErrorCode` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Error code for a synchronization error.
+Qualifiers: none
 
- `SyncStartTime`
- Data type: `DateTime`
+Error code for a synchronization error.
 
- Access type: Read/Write
+`SyncStartTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time when a synchronization was initiated.
+Qualifiers: none
 
- `SyncStatus`
- Data type: `SInt32`
+The time when a synchronization was initiated.
 
- Access type: Read/Write
+`SyncStatus` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Status of the current or last synchronization.
+Qualifiers: none
+
+Status of the current or last synchronization.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

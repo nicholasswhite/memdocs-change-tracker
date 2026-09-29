@@ -1,7 +1,7 @@
 ---
-title: Microsoft Intune cloud PKI fundamentals
+title: "Microsoft Cloud PKI fundamentals"
 description: Describes fundamentals for Microsoft Intune cloud PKI.
-ms.date: 12/06/2024
+ms.date: "2024-12-06T00:00:00Z"
 ms.topic: concept-article
 ---
 
@@ -9,7 +9,7 @@ ms.topic: concept-article
 
 *Microsoft Cloud PKI* is an Intune Suite feature that enables you as an IT pro to manage your public key infrastructure (PKI) in the cloud. You can create, configure, and manage your own certification authorities (CAs) and certificates without having to install and maintain on-premises infrastructure. The Microsoft Cloud PKI service integrates with Microsoft Entra ID and Microsoft Intune to provide identity and device management for your cloud-based devices and apps.
 
-This article describes the PKI fundamentals and concepts you  need to know when you configure Microsoft Cloud PKI. We recommend reviewing all information before you configure the Microsoft Cloud PKI service in your Intune tenant.
+This article describes the PKI fundamentals and concepts you need to know when you configure Microsoft Cloud PKI. We recommend reviewing all information before you configure the Microsoft Cloud PKI service in your Intune tenant.
 
 ## Certification authority types
 
@@ -32,13 +32,15 @@ A root CA is unique in that its certificate is *self-issued*, meaning that the c
 
 The root CA can issue certificates to other CAs or to users, computers, network devices, or services on the network. When the root CA issues a certificate to another entity, the root CA certificate signs the certificate with its private key. The signing protects against content modification and indicates that the root CA issued the certificate.
 
->[!IMPORTANT]
+> [!IMPORTANT]
+>
 > Microsoft Cloud PKI only issues certificates to network devices that are MDM-enrolled.
 
 ### Issuing certification authority
 
->[!NOTE]
->The terms *intermediate*, *issuing*, and *subordinate* are all interchangeable labels used to refer to the same role within a CA structure. Microsoft Cloud PKI uses the term *issuing* to describe this type of CA.
+> [!NOTE]
+>
+> The terms *intermediate*, *issuing*, and *subordinate* are all interchangeable labels used to refer to the same role within a CA structure. Microsoft Cloud PKI uses the term *issuing* to describe this type of CA.
 
 An issuing CA is a CA that is subordinate to another CA and can either:
 
@@ -63,15 +65,14 @@ The certificate chain engine tries to select certificates using the subject key 
 
 ### Chain validation process
 
->[!NOTE]
+> [!NOTE]
+>
 > Support for the certificate chain validation methods vary by OS platform. This section describes the methods supported on devices running Windows.
 
 On Windows, there are three chain validation processes: exact match, key match, and name match.
 
 - Exact match: If the AKI extension contains the issuer's subject, issuer serial number, and KeyID, only parent certificates that match with their subject, serial number, and KeyID are chosen in the chain-building process.
-
 - Key match: If the AKI extension contains just the KeyID, only certificates that contain a matching KeyID in the Subject Key Identifier (SKI) extension are chosen as valid issuers.
-
 - Name match: Name matching happens when no information exists in the AKI or if the AKI extension isn't in the certificate. In this case, the subject name of the issuer certificate must match the issuer attribute of the current certificate.
 
 For certificates that don't contain SKI and AKI fields, the chaining engine tries to use name matching to build a chain. When you have two certificates with the same name, the newer one is selected.
@@ -91,7 +92,7 @@ A certificate chain with an ordered list of certificates enables the relying par
 
 The following diagram illustrates the *name matching* chain validation flow.
 
-:::image type="content" source="./media/fundamentals/chain-validation.png" alt-text="Diagram of the chain validation process using the name match method." border="false":::
+![Diagram of the chain validation process using the name match method.](media/fundamentals/chain-validation.png)
 
 ### Ensure a chain of trust
 
@@ -99,9 +100,10 @@ When you use certificates to perform certificate-based authentication, you must 
 
 The root CA must be present. If the issuing CA certificate isn't present, then it can be requested by the relying party using the native certificate chain engine for the intended OS platform. The relying party can request the issuing CA certificate using the leaf certificate's *authority information access* property.
 
-:::image type="content" source="./media/fundamentals/chain-of-trust.png" alt-text="Diagram of the chain of validation process." border="false":::
+![Diagram of the chain of validation process.](media/fundamentals/chain-of-trust.png)
 
 ## Certificate-based authentication
+
 This section provides a basic understanding of the various certificates being used when a client or device performs certificate-based authentication.
 
 The following steps describe the handshake that takes place between a client and a relying party service during certificate-based authentication.
@@ -111,6 +113,6 @@ The following steps describe the handshake that takes place between a client and
 3. The relying party requests a certificate to be used for client authentication.
 4. The client presents its client authentication certificate to the relying party to authenticate.
 
-:::image type="content" source="./media/fundamentals/certificate-handshake.png" alt-text="Diagram of a handshake between a client and relying party service." border="false":::
+![Diagram of a handshake between a client and relying party service.](media/fundamentals/certificate-handshake.png)
 
 In an environment without Microsoft Cloud PKI, a private CA is responsible for issuing both the TLS/SSL certificate used by the relying party, and the device client authentication certificate. Microsoft Cloud PKI can be used to issue the device client authentication certificate, effectively replacing the private CA for this specific task.

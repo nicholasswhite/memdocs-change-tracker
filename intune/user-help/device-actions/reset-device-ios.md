@@ -1,7 +1,7 @@
 ---
-title: Reset device in Intune Company Portal
+title: "Reset device in Company Portal app for iOS"
 description: Describes what happens after you reset a device in the Intune Company Portal app for iOS and includes the steps for how to do it.
-ms.date: 02/18/2025
+ms.date: "2025-02-18T00:00:00Z"
 ms.reviewer: esmich
 ---
 
@@ -16,18 +16,18 @@ If your device is only set up to access work or school email, your email account
 The factory reset option isn't available for all iOS devices. If you're an IT support person and want to find out more about these limitations, see [Remove devices by using wipe, retire, or manually unenrolling the device](../../device-management/actions/wipe.md).
 
 ## Factory reset device
+
 To reset a device to its original, out-of-box settings:
 
 1. Open the Company Portal app on any enrolled device and sign in with your work or school account.
 2. Select **Devices**.
 3. Select the device you want to reset.
-4. Next to **Rename**, select the ellipses button > **Factory reset**.
+4. Next to **Rename**, select the ellipses button &gt; **Factory reset**.
 5. Select **Reset** to start wiping the device.
 
 ## Next steps
 
-* You can also [reset a device from the Company Portal website](reset-device-company-portal-website.md).
+- You can also [reset a device from the Company Portal website](reset-device-company-portal-website.md).
+- If you want to unenroll your device from Company Portal so that it's no longer managed by your organization, see [Remove iOS device from Intune](../unenrollment/unenroll-ios.md). After you unenroll the device, you might lose access to the work-related content on your device.
 
-* If you want to unenroll your device from Company Portal so that it's no longer managed by your organization, see [Remove iOS device from Intune](../unenrollment/unenroll-ios.md). After you unenroll the device, you might lose access to the work-related content on your device.
-
- Need additional help? Contact your IT support person. For contact information, sign in to the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
+Need additional help? Contact your IT support person. For contact information, sign in to the Company Portal app or [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).

@@ -1,7 +1,7 @@
 ---
-title: OSD infrastructure requirements
+title: "Infrastructure requirements for OS deployment in Configuration Manager"
 description: Learn the external and product dependencies and requirements for OS deployment in Configuration Manager
-ms.date: 09/08/2021
+ms.date: "2021-09-08T00:00:00Z"
 ms.subservice: osd
 ms.topic: install-set-up-deploy
 ms.collection: tier3
@@ -25,25 +25,23 @@ The Windows Assessment and Deployment Kit (ADK) is a set of tools and documentat
 For more information, see the following articles:
 
 - [Support for the Windows ADK in Configuration Manager](../../core/plan-design/configs/support-for-windows-adk.md)
+- [Download the Windows ADK](https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 
-- [Download the Windows ADK](/windows-hardware/get-started/adk-install)
-
-    > [!IMPORTANT]
-    > Make sure to download both the **Windows ADK** and the **Windows PE add-on for the ADK**.
-
-- [Windows ADK scenarios for IT Pros](/windows/deployment/windows-adk-scenarios-for-it-pros)
+  > [!IMPORTANT]
+  >
+  > Make sure to download both the **Windows ADK** and the **Windows PE add-on for the ADK**.
+- [Windows ADK scenarios for IT Pros](https://learn.microsoft.com/en-us/windows/deployment/windows-adk-scenarios-for-it-pros)
 
 #### Site systems
 
 The Windows ADK is a prerequisite for the following site systems servers:
 
 - The site server of the top-level site in the hierarchy
-
 - The site server of each primary site in the hierarchy
-
 - Every instance of the SMS Provider
 
 > [!NOTE]
+>
 > Manually install the Windows ADK on each site server before you install the Configuration Manager site.
 
 #### Windows ADK features
@@ -52,15 +50,15 @@ Install the following features of the Windows ADK:
 
 - User State Migration Tool (USMT)
 
-    > [!NOTE]
-    > USMT isn't required on the SMS Provider.
-
+  > [!NOTE]
+  >
+  > USMT isn't required on the SMS Provider.
 - Windows Deployment Tools
-
 - Windows Preinstallation Environment (Windows PE)
 
-    > [!IMPORTANT]
-    > Windows PE is a separate installer. Otherwise there's no functional difference from earlier versions of the Windows ADK.<!--SCCMDocs-pr issue 2908-->
+  > [!IMPORTANT]
+  >
+  > Windows PE is a separate installer. Otherwise there's no functional difference from earlier versions of the Windows ADK.
 
 For a list of the versions of the Windows ADK that you can use with different versions of Configuration Manager, see [Support for the Windows ADK](../../core/plan-design/configs/support-for-windows-adk.md).
 
@@ -71,8 +69,7 @@ Configuration Manager uses a USMT package that includes the USMT source files to
 For more information, see the following articles:
 
 - [Manage user state with Configuration Manager](../get-started/manage-user-state.md)
-
-- [Common migration scenarios for USMT](/windows/deployment/usmt/usmt-common-migration-scenarios)
+- [Common migration scenarios for USMT](https://learn.microsoft.com/en-us/windows/deployment/usmt/usmt-common-migration-scenarios)
 
 ### Windows PE
 
@@ -143,15 +140,10 @@ To use Configuration Manager reports for OS deployments, install and configure a
 The **Operating System Deployment Manager** security role is a built-in role that you can't change. However, you can copy the role, make changes, and then save these changes as a new custom security role. Here are some of the permissions that apply directly to OS deployments:
 
 - **Boot Image Package**: Create, Delete, Modify, Modify Folder, Move Object, Read, Set Security Scope
-
 - **Device Drivers**: Create, Delete, Modify, Modify Folder, Modify Report, Move Object, Read, Run Report
-
 - **Driver Package**: Create, Delete, Modify, Modify Folder, Move Object, Read, Set Security Scope
-
 - **Operating System Image**: Create, Delete, Modify, Modify Folder, Move Object, Read, Set Security Scope
-
 - **Operating System Upgrade Package**: Create, Delete, Modify, Modify Folder, Move Object, Read, Set Security Scope
-
 - **Task Sequence Package**: Create, Create Task Sequence Media, Delete, Modify, Modify Folder, Modify Report, Move Object, Read, Run Report, Set Security Scope
 
 For more information, see [Create custom security roles](../../core/servers/deploy/configure/configure-role-based-administration.md#create-custom-security-roles).
@@ -169,12 +161,11 @@ You can also enable PXE on a distribution point without WDS. For more informatio
 ### WDS requirements
 
 - The WDS installation on the server requires that the administrator is a member of the local Administrators group.
-
 - The WDS server must be either a member of an Active Directory domain or a domain controller for an Active Directory domain. All Windows domain and forest configurations support WDS.
-
 - If the provider is installed on a remote server, install WDS on the site server and the remote provider.
 
 > [!NOTE]
+>
 > If the server requires a restart, the installation of WDS might fail.
 
 ### Considerations when you have WDS and DHCP on the same server
@@ -182,35 +173,30 @@ You can also enable PXE on a distribution point without WDS. For more informatio
 If you plan to co-host the distribution point on a server running DHCP, consider the following configuration issues:
 
 - You need a functioning DHCP server with an active scope. WDS uses PXE, which requires a DHCP server.
-
 - A DNS server is required to run WDS.
-
 - The following UDP ports must be open on the WDS server:
 
   - Port 67 (DHCP)
-
   - Port 69 (TFTP)
-
   - Port 4011 (PXE)
 
     > [!NOTE]
+    >
     > If DHCP authorization is required on the server, you need DHCP client port 68 to be open on the server.
-
 - DHCP and WDS both require port number 67. If you co-host WDS and DHCP, you can move DHCP or the distribution point that's configured for PXE to a separate server. Or, you can use the following procedure to configure the WDS server to listen on a different port.
 
 #### How to configure the WDS server to listen on a different port
 
 1. Modify the following registry key:
 
-    `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WDSServer\Providers\WDSPXE`
+   `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WDSServer\Providers\WDSPXE`
+2. Set the registry value **UseDHCPPorts** to `0`.
+3. For the new configuration to take effect, run the following command on the server:
 
-1. Set the registry value **UseDHCPPorts** to `0`.
-
-1. For the new configuration to take effect, run the following command on the server:
-
-    `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`
+   `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`
 
 > [!NOTE]
+>
 > When you enable a PXE responder on a distribution point without WDS, it can be on the same server as the DHCP service. For more information, see [Configure at least one distribution point to accept PXE requests](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md#BKMK_Configure).
 
 ## Supported operating systems
@@ -221,19 +207,16 @@ All Windows operating systems listed as supported clients in [Supported operatin
 
 Configuration Manager supports capturing an OS image only from computers that are configured with simple volumes. The following table lists the hard disk configurations that Configuration Manager OS deployment supports on reference and destination computers:
 
-|Reference computer hard disk configuration|Destination computer hard disk configuration|
-|------------------------------------------|--------------------------------------------|
-|Basic disk|Basic disk|
-|Simple volume on a dynamic disk|Simple volume on a dynamic disk|
+| Reference computer hard disk configuration | Destination computer hard disk configuration |
+| --- | --- |
+| Basic disk | Basic disk |
+| Simple volume on a dynamic disk | Simple volume on a dynamic disk |
 
 Configuration Manager doesn't support the following hard disk configurations:
 
 - Spanned volumes
-
 - Striped volumes (RAID 0)
-
 - Mirrored volumes (RAID 1)
-
 - Parity volumes (RAID 5)
 
 If the reference disk has a basic disk, you can't capture and apply the image to a destination computer with a dynamic disk.

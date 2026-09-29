@@ -1,36 +1,35 @@
 ---
-title: View Monthly Usage Summary Information
+title: "How to View Monthly Usage Summary Information"
 description: Use the SMS_MeteredFiles, SMS_MonthlyUsageSummary, SMS_MeteredUser, and SMS_R_System classes to view the monthly usage summary information.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to View Monthly Usage Summary Information
-You view monthly usage summary information, in Configuration Manager, by using the [SMS_MeteredFiles](../../develop/reference/apps/sms_meteredfiles-server-wmi-class.md), [SMS_MonthlyUsageSummary](../../develop/reference/apps/sms_monthlyusagesummary-server-wmi-class.md), [SMS_MeteredUser](../../develop/reference/apps/sms_metereduser-server-wmi-class.md) and [SMS_R_System](../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md) classes.
+
+You view monthly usage summary information, in Configuration Manager, by using the [SMS_MeteredFiles](../reference/apps/sms_meteredfiles-server-wmi-class.md), [SMS_MonthlyUsageSummary](../reference/apps/sms_monthlyusagesummary-server-wmi-class.md), [SMS_MeteredUser](../reference/apps/sms_metereduser-server-wmi-class.md) and [SMS_R_System](../reference/core/clients/manage/sms_r_system-server-wmi-class.md) classes.
 
 > [!NOTE]
->  The metering data is only summarized at specified intervals (by default, daily at midnight). Metering data does not appear in the summarized data until the summarization task has run.
+>
+> The metering data is only summarized at specified intervals (by default, daily at midnight). Metering data does not appear in the summarized data until the summarization task has run.
 
 ### To view monthly usage summary information
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Get all the metered files ([SMS_MeteredFiles](../../develop/reference/apps/sms_meteredfiles-server-wmi-class.md)).
-
-3.  Get all the monthly file usage summary information ([SMS_MonthlyUsageSummary](../../develop/reference/apps/sms_monthlyusagesummary-server-wmi-class.md)).
-
-4.  Get all the metered users ([SMS_MeteredUser](../../develop/reference/apps/sms_metereduser-server-wmi-class.md)).
-
-5.  Get all the computer names ([SMS_R_System](../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md)).
-
-6.  Loop through the collections, displaying information as required.
+1. Set up a connection to the SMS Provider.
+2. Get all the metered files ([SMS_MeteredFiles](../reference/apps/sms_meteredfiles-server-wmi-class.md)).
+3. Get all the monthly file usage summary information ([SMS_MonthlyUsageSummary](../reference/apps/sms_monthlyusagesummary-server-wmi-class.md)).
+4. Get all the metered users ([SMS_MeteredUser](../reference/apps/sms_metereduser-server-wmi-class.md)).
+5. Get all the computer names ([SMS_R_System](../reference/core/clients/manage/sms_r_system-server-wmi-class.md)).
+6. Loop through the collections, displaying information as required.
 
 ## Example
- The following example method displays file usages summary information by using the [SMS_MeteredFiles](../../develop/reference/apps/sms_meteredfiles-server-wmi-class.md) and [SMS_FileUsageSummary](../../develop/reference/apps/sms_fileusagesummary-server-wmi-class.md) classes.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method displays file usages summary information by using the [SMS_MeteredFiles](../reference/apps/sms_meteredfiles-server-wmi-class.md) and [SMS_FileUsageSummary](../reference/apps/sms_fileusagesummary-server-wmi-class.md) classes.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -187,41 +186,42 @@ public void ViewMonthlySummaryInfo(WqlConnectionManager connection)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: **WqlConnectionManager**<br />-   VBScript: **SWbemServices**|A valid connection to the SMS Provider.|
+| --- | --- | --- |
+| `connection` | - Managed: **WqlConnectionManager** - VBScript: **SWbemServices** | A valid connection to the SMS Provider. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Configuration Manager Software Development Kit](../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [SMS_MeteredFiles Server WMI Class](../../develop/reference/apps/sms_meteredfiles-server-wmi-class.md)
- [SMS_MeteredUser Server WMI Class](../../develop/reference/apps/sms_metereduser-server-wmi-class.md)
- [SMS_MonthlyUsageSummary Server WMI Class](../../develop/reference/apps/sms_monthlyusagesummary-server-wmi-class.md)
- [SMS_R_System Server WMI Class](../reference/core/clients/manage/sms_r_system-server-wmi-class.md)
- [SMS_SummarizationInterval Server WMI Class](../../develop/reference/apps/sms_summarizationinterval-server-wmi-class.md)
+
+[Configuration Manager Software Development Kit](../core/misc/system-center-configuration-manager-sdk.md) [SMS_MeteredFiles Server WMI Class](../reference/apps/sms_meteredfiles-server-wmi-class.md) [SMS_MeteredUser Server WMI Class](../reference/apps/sms_metereduser-server-wmi-class.md) [SMS_MonthlyUsageSummary Server WMI Class](../reference/apps/sms_monthlyusagesummary-server-wmi-class.md) [SMS_R_System Server WMI Class](../reference/core/clients/manage/sms_r_system-server-wmi-class.md) [SMS_SummarizationInterval Server WMI Class](../reference/apps/sms_summarizationinterval-server-wmi-class.md)

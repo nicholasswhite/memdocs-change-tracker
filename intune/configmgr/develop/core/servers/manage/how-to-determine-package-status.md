@@ -1,24 +1,24 @@
 ---
 description: Learn multiple ways to determine package status using package summarizer classes during the software distribution process.
-title: Determine Package Status
-ms.date: 09/20/2016
+title: "How to Determine Package Status"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Determine Package Status
+
 In Configuration Manager, the software distribution process can take from several minutes to several hours, depending on the site settings, network topography, whether the package includes source files, and the number of distribution points that have been specified for the package. Creating the package, distribution points, programs, and advertisement instances initiates the software distribution process that is managed by the Configuration Manager Distribution Manager.
 
- The Distribution Manager must first distribute the package's source files, which is the time-consuming aspect of the software distribution process. Only after the source files are distributed can the advertisements be offered on a site. You can use the package summarizer classes to determine whether a package has been distributed and is ready to be advertised.
+The Distribution Manager must first distribute the package's source files, which is the time-consuming aspect of the software distribution process. Only after the source files are distributed can the advertisements be offered on a site. You can use the package summarizer classes to determine whether a package has been distributed and is ready to be advertised.
 
- The level of status detail that you want determines which of the following package summarizer classes to use:
+The level of status detail that you want determines which of the following package summarizer classes to use:
 
-- [SMS_PackageStatusDetailSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusdetailsummarizer-server-wmi-class.md)
-
-- [SMS_PackageStatusRootSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md)
-
-- [SMS_PackageStatusDistPointsSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusdistpointssummarizer-server-wmi-class.md)
+- [SMS_PackageStatusDetailSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusdetailsummarizer-server-wmi-class.md)
+- [SMS_PackageStatusRootSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md)
+- [SMS_PackageStatusDistPointsSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusdistpointssummarizer-server-wmi-class.md)
 
   The `SMS_PackageStatusDetailSummarizer` class gives you package status at the site level and the `SMS_PackageStatusRootSummarizer` class gives you package status for all sites. You can only use the `SMS_PackageStatusDistPointsSummarizer` class if your package contains source files.
 
@@ -27,21 +27,23 @@ In Configuration Manager, the software distribution process can take from severa
   To determine the status of a package, you can either create your own polling mechanism by using a timer that queries the summarizer for a specific package or you can register for a Windows Management Instrumentation (WMI) temporary intrinsic event that polls for create instance and modify instance events on the summarizer class as the following example shows. You can use your own timer mechanism, or you can create a WMI timer event.
 
 > [!NOTE]
->  Using WMI to poll for events is expensive and should be used with consideration.
+>
+> Using WMI to poll for events is expensive and should be used with consideration.
 
 ### To determine package status
 
-1.  Set up a connection to the Configuration Manager provider namespace.
-
-2.  Create an event handler to watch for the creation or modification of the [SMS_PackageStatusRootSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md).
+1. Set up a connection to the Configuration Manager provider namespace.
+2. Create an event handler to watch for the creation or modification of the [SMS_PackageStatusRootSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md).
 
 ## Example
- The following example asynchronously queries for the creation and modification of the [SMS_PackageStatusRootSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md).
+
+The following example asynchronously queries for the creation and modification of the [SMS_PackageStatusRootSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md).
 
 > [!NOTE]
->  It is not possible to use the managed provider libraries to query WMI object instance creation and modification. Therefore the C# sample is written by using the System.Management libraries.
+>
+> It is not possible to use the managed provider libraries to query WMI object instance creation and modification. Therefore the C# sample is written by using the System.Management libraries.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 Sub QueryPackageStatus (connection)
@@ -162,29 +164,29 @@ public void ObjectReady(object sender, EventArrivedEventArgs e)
 }
 ```
 
- This example method has the following parameters:
+This example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connectionPath`|Managed: `String`|A valid path to the SMS Provider. For example, `root\\sms\\site_CODE`.|
-|`Connection`|VBScript: `SWbemServices`|A valid connection to the SMS Provider. For more information, see [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connectionPath` | Managed: `String` | A valid path to the SMS Provider. For example, `root\\sms\\site_CODE`. |
+| `Connection` | VBScript: `SWbemServices` | A valid connection to the SMS Provider. For more information, see [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) |
 
 ## Compiling the Code
 
 ### Namespaces
- System
 
- System.Management
+System
+
+System.Management
 
 ### Assembly
- System.Management
+
+System.Management
 
 ## Robust Programming
- The exception that can be raised is [System.Management.ManagementException](/dotnet/api/system.management.managementexception).
+
+The exception that can be raised is [System.Management.ManagementException](https://learn.microsoft.com/en-us/dotnet/api/system.management.managementexception).
 
 ## See Also
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [SMS_PackageStatusDetailSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusdetailsummarizer-server-wmi-class.md)
- [SMS_PackageStatusRootSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md)
- [SMS_PackageStatusDistPointsSummarizer Server WMI Class](../../../../develop/reference/core/servers/configure/sms_packagestatusdistpointssummarizer-server-wmi-class.md)
- [About Configuration Manager Status Summarizers](../../../../develop/core/servers/manage/about-configuration-manager-status-summarizers.md)
+
+[How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [SMS_PackageStatusDetailSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusdetailsummarizer-server-wmi-class.md) [SMS_PackageStatusRootSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusrootsummarizer-server-wmi-class.md) [SMS_PackageStatusDistPointsSummarizer Server WMI Class](../../../reference/core/servers/configure/sms_packagestatusdistpointssummarizer-server-wmi-class.md) [About Configuration Manager Status Summarizers](about-configuration-manager-status-summarizers.md)

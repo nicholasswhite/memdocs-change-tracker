@@ -1,7 +1,7 @@
 ---
-title: View and correct personal data collected by Intune
+title: "View and correct personal data"
 description: Learn how to view and correct personal data that's been collected by Intune.
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.topic: overview
 ms.reviewer: angerobe
 ms.collection:
@@ -14,7 +14,9 @@ ms.collection:
 
 Based on their access permissions, Intune admins can view some personal data that's been collected by Intune but can't change that data. Only end users can change their device's personal data that has been collected by Intune.
 
-[!INCLUDE [GDPR-related guidance](../includes/gdpr-dsr-and-stp-note.md)]
+> [!NOTE]
+>
+> If you're interested in viewing or deleting personal data, see the [Azure Data Subject Requests for the GDPR](https://learn.microsoft.com/en-us/microsoft-365/compliance/gdpr-dsr-azure) article. If you're looking for general info about GDPR, see the [GDPR section of the Service Trust portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
 ## View personal data
 
@@ -35,7 +37,6 @@ You can learn more about Microsoft data practices by reading the Online Services
 ## Correct end user personal data
 
 Admins can't update device or app specific information. If an end user wants to correct any personal data (like the device name), they must do so directly on their device. Such changes are synchronized the next time they connect to Intune.
-
 
 ## Next steps
 

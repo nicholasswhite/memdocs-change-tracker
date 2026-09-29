@@ -1,7 +1,7 @@
 ---
 title: Monitor the CMG
 description: Monitor clients and network traffic through the cloud management gateway (CMG).
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -23,10 +23,8 @@ Clients connected through the CMG appear in the Configuration Manager console th
 Monitor traffic on the CMG using the Configuration Manager console:
 
 1. Go to the **Administration** workspace, expand **Cloud Services**, and select the **Cloud Management Gateway** node.
-
-1. Select the CMG in the list pane.
-
-1. View the traffic information in the details pane for the CMG connection point and the site system roles it connects to. These statistics show the client requests coming into these roles. The requests include policy, location, registration, content, inventory, and client notifications.<!-- SCCMDocs#1208 -->
+2. Select the CMG in the list pane.
+3. View the traffic information in the details pane for the CMG connection point and the site system roles it connects to. These statistics show the client requests coming into these roles. The requests include policy, location, registration, content, inventory, and client notifications.
 
 ## Monitor content
 
@@ -36,36 +34,47 @@ When you view the list of CMGs in the console, you can add more columns to the l
 
 ## Monitor logs
 
-[!INCLUDE [Logs for cloud management gateway](../../../plan-design/hierarchy/includes/logs-cmg.md)]
+The following table lists the log files that contain information related to the cloud management gateway.
+
+| Log name | Description | Computer with log file |
+| --- | --- | --- |
+| CloudMgr.log | Records details about deploying the cloud management gateway service, ongoing service status, and use data associated with the service. To configure the logging level, edit the **Logging level** value in the following registry key: `HKLM\SOFTWARE\ Microsoft\SMS\COMPONENTS\ SMS_CLOUD_ SERVICES_MANAGER` | The *installdir* folder on the primary site server or CAS. |
+| CMGSetup.log <sup>[Note 1](#bkmk_note1)</sup> | Records details about the second phase of the cloud management gateway deployment (local deployment in Azure). To configure the logging level, use the setting **Trace level** (**Information** (Default), **Verbose**, **Error**) on the **Azure portal\Cloud services configuration** tab. | The **%approot%\logs** on your Azure server, or the SMS/Logs folder on the site system server |
+| CMGService.log <sup>[Note 1](#bkmk_note1)</sup> | Records details about the cloud management gateway service core component in Azure. To configure the logging level, use the setting **Trace level** (**Information** (Default), **Verbose**, **Error**) on the **Azure portal\Cloud services configuration** tab. | The **%approot%\logs** on your Azure server, or the SMS/Logs folder on the site system server |
+| SMS_Cloud_ProxyConnector.log | Records details about setting up connections between the cloud management gateway service and the cloud management gateway connection point. | Site system server |
+| CMGContentService.log <sup>[Note 1](#bkmk_note1)</sup> | When you enable a CMG to also serve content from Azure storage, this log records the details of that service. | The **%approot%\logs** on your Azure server, or the SMS/Logs folder on the site system server |
+
+- For troubleshooting deployments, use **CloudMgr.log** and **CMGSetup.log**
+- For troubleshooting service health, use **CMGService.log** and **SMS_Cloud_ProxyConnector.log**.
+- For troubleshooting client traffic, use **CMGService.log** and **SMS_Cloud_ProxyConnector.log**.
+
+#### Note 1: Logs synchronized from Azure
+
+These are local Configuration Manager log files that cloud service manager syncs from Azure storage every five minutes. The cloud management gateway pushes logs to Azure storage every five minutes. So the maximum delay is 10 minutes. Verbose switches affect both local and remote logs. The actual file names include the service name and role instance identifier. For example, CMG-*ServiceName*-*RoleInstanceID*-CMGSetup.log. These log files are synced, so you don't need to RDP to the cloud management gateway to obtain them, and that option isn't supported.
 
 ## Cloud management dashboard
 
-<!--1358461-->
 The cloud management dashboard provides a centralized view for CMG usage. It also displays data about cloud users and devices.
 
 In the Configuration Manager console, go to the **Monitoring** workspace. Select the **Cloud Management** node, and view the dashboard tiles.
 
 The following screenshot shows the section of the cloud management dashboard specific for the CMG:
 
-:::image type="content" source="media/cloud-management-dashboard-cmg.png" alt-text="Cloud management dashboard tiles CMG traffic and Current online clients." lightbox="media/cloud-management-dashboard-cmg.png":::
+[![Cloud management dashboard tiles CMG traffic and Current online clients.](media/cloud-management-dashboard-cmg.png)](media/cloud-management-dashboard-cmg.png#lightbox)
 
 ## Connection analyzer
 
 To aid troubleshooting, use the CMG connection analyzer for real-time verification. The in-console utility checks the current status of the service, and the communication channel through the CMG connection point to any management points that allow CMG traffic.
 
 1. In the Configuration Manager console, go to the **Administration** workspace. Expand **Cloud Services** and select the **Cloud management gateway** node.
+2. Select the target CMG instance, and then select **Connection analyzer** in the ribbon.
+3. In the CMG connection analyzer window, select one of the following options to authenticate with the service:
 
-1. Select the target CMG instance, and then select **Connection analyzer** in the ribbon.
+   1. **Microsoft Entra user**: Use this option to simulate communication the same as a cloud-based user identity signed in to a Microsoft Entra joined Windows device. Select **Sign In** to securely enter the credentials for a Microsoft Entra user account.
+   2. **Client certificate**: Use this option to simulate communication the same as a Configuration Manager client with a [client authentication certificate](configure-authentication.md#pki-certificate).
+4. Select **Start** to start the analysis. The analyzer window displays the results. Select an entry to see more details in the Description field.
 
-1. In the CMG connection analyzer window, select one of the following options to authenticate with the service:
-
-     1. **Microsoft Entra user**: Use this option to simulate communication the same as a cloud-based user identity signed in to a Microsoft Entra joined Windows device. Select **Sign In** to securely enter the credentials for a Microsoft Entra user account.
-
-     1. **Client certificate**: Use this option to simulate communication the same as a Configuration Manager client with a [client authentication certificate](configure-authentication.md#pki-certificate).
-
-1. Select **Start** to start the analysis. The analyzer window displays the results. Select an entry to see more details in the Description field.
-
-:::image type="content" source="media/cmg-connection-analyzer.png" alt-text="Example output for the cloud management gateway (CMG) connection analyzer.":::
+![Example output for the cloud management gateway (CMG) connection analyzer.](media/cmg-connection-analyzer.png)
 
 ## Set up outbound traffic alerts
 
@@ -74,17 +83,15 @@ Outbound traffic alerts help you know when network traffic approaches a 14-day t
 You can also configure thresholds for the amount of data that you want to store on the CMG and that clients download. Use alerts for these thresholds to help you decide when to stop or delete the cloud service, adjust the content that you store on the CMG, or modify which clients can use the service.
 
 1. Go to the **Administration** workspace, expand **Cloud Services**, and select the **Cloud Management Gateway** node.
+2. Select the CMG in the list pane, and then select **Properties** in the ribbon.
+3. Go to the **Alerts** tab to enable the threshold and alerts:
 
-1. Select the CMG in the list pane, and then select **Properties** in the ribbon.
-
-1. Go to the **Alerts** tab to enable the threshold and alerts:
-
-    - Specify the **14-day data threshold for outbound data transfer** in gigabytes (GB). This threshold helps you to monitor the amount of data that transfers from the CMG to clients every two weeks. By default, this threshold is approximately **10 TB**. The default value is `10,000` GB. The site raises warning and critical alerts when transfers reach values that you define. By default, these alerts occur at 50% and 90% of the threshold.
-
-    - If the CMG is content-enabled, also specify a **storage alert threshold**. This threshold sets an upper limit on the amount of content to store on the CMG. By default, this threshold is approximately **2 TB**. The default value is `2,000` GB. Configuration Manager generates warning and critical alerts when the remaining free space reaches the levels that you specify. By default, these alerts occur at 50% and 90% of the threshold.
+   - Specify the **14-day data threshold for outbound data transfer** in gigabytes (GB). This threshold helps you to monitor the amount of data that transfers from the CMG to clients every two weeks. By default, this threshold is approximately **10 TB**. The default value is `10,000` GB. The site raises warning and critical alerts when transfers reach values that you define. By default, these alerts occur at 50% and 90% of the threshold.
+   - If the CMG is content-enabled, also specify a **storage alert threshold**. This threshold sets an upper limit on the amount of content to store on the CMG. By default, this threshold is approximately **2 TB**. The default value is `2,000` GB. Configuration Manager generates warning and critical alerts when the remaining free space reaches the levels that you specify. By default, these alerts occur at 50% and 90% of the threshold.
 
 > [!NOTE]
-> Alerts for the CMG depend on usage statistics from Azure, which can take up to 24 hours to become available. For more information about Storage Analytics for Azure, see [Storage Analytics](/azure/storage/common/storage-analytics).
+>
+> Alerts for the CMG depend on usage statistics from Azure, which can take up to 24 hours to become available. For more information about Storage Analytics for Azure, see [Storage Analytics](https://learn.microsoft.com/en-us/azure/storage/common/storage-analytics).
 >
 > In an hourly cycle, the primary site that monitors the CMG downloads transaction data from Azure. It stores this transaction data in the `CloudDP-<ServiceName>.log` file on the site server. Configuration Manager then evaluates this information against the storage and transfer quotas for each CMG. When the transfer of data reaches or exceeds the specified volume for either warnings or critical alerts, Configuration Manager generates the appropriate alert.
 >
@@ -92,10 +99,10 @@ You can also configure thresholds for the amount of data that you want to store 
 
 ## Stop CMG when it exceeds threshold
 
-<!--3735092-->
 Configuration Manager can stop a CMG service when the total data transfer goes over your limit. Use [alerts](#set-up-outbound-traffic-alerts) to trigger notifications when the usage reaches warning or critical levels. To help reduce any unexpected Azure costs because of a spike in usage, this option turns off the cloud service.
 
 > [!IMPORTANT]
+>
 > Even if the service isn't running, there are still costs associated with the cloud service. Stopping the service doesn't eliminate all associated Azure costs. To remove all cost for the cloud service, [delete the CMG](modify-cloud-management-gateway.md#delete-the-service).
 >
 > When you stop the CMG service, internet-based clients can't communicate with Configuration Manager.
@@ -117,18 +124,15 @@ Configuration Manager checks the threshold value every six minutes. If there's a
 ### Process to stop the cloud service when it exceeds threshold
 
 1. [Set up outbound traffic alerts](#set-up-outbound-traffic-alerts).
-
 2. On the **Alerts** tab of the CMG properties window, enable the option to **Stop this service when the critical threshold is exceeded**.
 
 To test this feature, temporarily reduce one of the following values:
 
 - **14-day threshold for outbound data transfer (GB)**. The default value is `10000`.
-
 - **Percentage of threshold for raising Critical alert**. The default value is `90`.
 
 ## Next steps
 
 If you need to change the configuration, you can modify the CMG:
 
-> [!div class="nextstepaction"]
-> [Modify a CMG](modify-cloud-management-gateway.md)
+[Modify a CMG](modify-cloud-management-gateway.md)

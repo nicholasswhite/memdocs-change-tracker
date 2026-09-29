@@ -1,16 +1,18 @@
 ---
 description: Learn how to use SMS_SearchFolder WMI class in Configuration Manager to perform search operations.
-title: SMS_SearchFolder Class
-ms.date: 09/20/2016
+title: "SMS_SearchFolder Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SearchFolder Server WMI Class
+
 The `SMS_SearchFolder` WMI class is an SMS Provider server class, in Configuration Manager, that behaves the same as `SMS_ObjectContainerNode`, but is only used for search operations.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,85 +30,83 @@ Class SMS_SearchFolder : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SearchFolder` class does not define any methods.
+
+The `SMS_SearchFolder` class does not define any methods.
 
 ## Properties
- `FolderId`
- Data type: `UInt32`
 
- Access type: Read/Write
+`FolderId` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The unique ID of this search folder.
+Qualifiers: [key]
 
- `GroupID`
- Data type: `String`
+The unique ID of this search folder.
 
- Access type: Read/Write
+`GroupID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The Group ID of the search folder.
+Qualifiers: None
 
- `IsSystem`
- Data type: `Boolean`
+The Group ID of the search folder.
 
- Access type: Read-only
+`IsSystem` Data type: `Boolean`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- A flag that indicates whether this is a system folder.
+Qualifiers: [read, not_null]
 
- `Name`
- Data type: `String`
+A flag that indicates whether this is a system folder.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- Folder name. Default value is New Folder.
+Qualifiers: [not_null]
 
- `ObjectType`
- Data type: `UInt32`
+Folder name. Default value is New Folder.
 
- Access type: Read/Write
+`ObjectType` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The type of the folder.
+Qualifiers: None
 
- `SearchString`
- Data type: `String`
+The type of the folder.
 
- Access type: Read/Write
+`SearchString` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Search string get/set by AdminConsole.
+Qualifiers: None
 
- `SourceSite`
- Data type: `String`
+Search string get/set by AdminConsole.
 
- Access type: Read-only
+`SourceSite` Data type: `String`
 
- Qualifiers: [read, not_null]
+Access type: Read-only
 
- The sidecode of the site that the folder originated from.
+Qualifiers: [read, not_null]
+
+The sidecode of the site that the folder originated from.
 
 ## Remarks
- In Configuration Manager, the search folder and folders were one class.  Now, in Configuration Manager, they are separate classes.  `SMS_SearchFolders` folders appear in the "Manage Searches" class of menus in the console.  The `SMS_SearchFolders` folders have no dedicated node and are used for node searches only.  `SMS_SearchFolders` folders cannot be used for global searches.
 
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+In Configuration Manager, the search folder and folders were one class. Now, in Configuration Manager, they are separate classes. `SMS_SearchFolders` folders appear in the "Manage Searches" class of menus in the console. The `SMS_SearchFolders` folders have no dedicated node and are used for node searches only. `SMS_SearchFolders` folders cannot be used for global searches.
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See also
 
-[SMS_ObjectContainerItem Server WMI Class](../../../../../develop/reference/core/servers/console/sms_objectcontaineritem-server-wmi-class.md)
+[SMS_ObjectContainerItem Server WMI Class](sms_objectcontaineritem-server-wmi-class.md)

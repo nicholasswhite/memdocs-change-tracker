@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_RestoreUserStateAction Class
-ms.date: 09/20/2016
+title: "SMS_TaskSequence_RestoreUserStateAction Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 description: Learn about the simplified syntax, methods, properties, and requirements of the SMS_TaskSequence_RestoreUserStateAction server class.
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_RestoreUserStateAction Server WMI Class
+
 The `SMS_TaskSequence_RestoreUserStateAction` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a task sequence action that initiates the User State Migration Tool (USMT) to restore user state and settings to a target computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,138 +37,125 @@ Class SMS_TaskSequence_RestoreUserStateAction : SMS_TaskSequence_Action
 ```
 
 ## Methods
- The `SMS_TaskSequence_RestoreUserStateAction` class does not define any methods.
+
+The `SMS_TaskSequence_RestoreUserStateAction` class does not define any methods.
 
 ## Properties
- `Condition`
- Data type: `SMS_TaskSequence_Condition`
 
- Access type: Read/Write
+`Condition` Data type: `SMS_TaskSequence_Condition`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `ConfigFiles`
- Data type: `String` Array
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`ConfigFiles` Data type: `String` Array
 
- Qualifiers: None
+Access type: Read/Write
 
- Configuration files used to capture user profiles. Set this property for customized user profile migration.
+Qualifiers: None
 
- `ContinueOnError`
- Data type: `Boolean`
+Configuration files used to capture user profiles. Set this property for customized user profile migration.
 
- Access type: Read/Write
+`ContinueOnError` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `ContinueOnRestore`
- Data type: `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`ContinueOnRestore` Data type: `Boolean`
 
- Qualifiers: [not_null, VariableName("OSDMigrateContinueOnRestore")]
+Access type: Read/Write
 
- `true` (default) if user state restoration should continue even if some files cannot be restored.
+Qualifiers: [not_null, VariableName("OSDMigrateContinueOnRestore")]
 
- The task sequence variable associated with this property is OSDMigrateContinueOnRestore. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
+`true` (default) if user state restoration should continue even if some files cannot be restored.
 
- `Description`
- Data type: `String`
+The task sequence variable associated with this property is OSDMigrateContinueOnRestore. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [AllowedLen("0-255")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [AllowedLen("0-255")]
 
- `Enabled`
- Data type: `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `EnableVerboseLogging`
- Data type: `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`EnableVerboseLogging` Data type: `Boolean`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- `true` to enable USMT verbose logging. The default value is `false`.
+Qualifiers: [Not_Null]
 
- `LocalAccountPassword`
- Data type: `String`
+`true` to enable USMT verbose logging. The default value is `false`.
 
- Access type: Read/Write
+`LocalAccountPassword` Data type: `String`
 
- Qualifiers: [VariableName("OSDMigrateLocalAccountPassword"), Secret]
+Access type: Read/Write
 
- Password for the local user account to reset for restored local user profiles.
+Qualifiers: [VariableName("OSDMigrateLocalAccountPassword"), Secret]
 
- The task sequence variable associated with this property is OSDMigrateLocalAccountPassword. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
+Password for the local user account to reset for restored local user profiles.
 
- `LocalAccounts`
- Data type: `Boolean`
+The task sequence variable associated with this property is OSDMigrateLocalAccountPassword. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
 
- Access type: Read/Write
+`LocalAccounts` Data type: `Boolean`
 
- Qualifiers: [VariableName("OSDMigrateLocalAccounts"), Not_Null]
+Access type: Read/Write
 
- `true` to restore the local computer account. The default value is `false`.
+Qualifiers: [VariableName("OSDMigrateLocalAccounts"), Not_Null]
 
- The task sequence variable associated with this property is OSDMigrateLocalAccounts. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
+`true` to restore the local computer account. The default value is `false`.
 
- `Mode`
- Data type: `String`
+The task sequence variable associated with this property is OSDMigrateLocalAccounts. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
 
- Access type: Read/Write
+`Mode` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- Mode for customizing the USMT file list. Possible values are shown below. The default value is Simple.
+Qualifiers: [Not_Null]
+
+Mode for customizing the USMT file list. Possible values are shown below. The default value is Simple.
 
 - Simple
-
 - Advanced
 
-  `Name`
-  Data type: `String`
+  `Name` Data type: `String`
 
   Access type: Read/Write
 
-  See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+  See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
-  `SupportedEnvironment`
-  Data type: `String`
+  `SupportedEnvironment` Data type: `String`
 
   Access type: Read/Write
 
   Qualifiers: [Not_Null:ToInstance]
 
-  See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+  See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
   The default value of this property for this task sequence action is FullOS.
 
-  `Timeout`
-  Data type: `UInt32`
+  `Timeout` Data type: `UInt32`
 
   Access type: Read/Write
 
   Qualifiers: None
 
-  See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+  See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
-  `UsmtRestorePackageID`
-  Data type: `String`
+  `UsmtRestorePackageID` Data type: `String`
 
   Access type: Read/Write
 
@@ -177,20 +166,23 @@ Class SMS_TaskSequence_RestoreUserStateAction : SMS_TaskSequence_Action
   The task sequence variable associated with this property is _OSDMigrateUsmtRestorePackageID. For more information, see [OS deployment task sequence variables](../../../osd/understand/task-sequence-variables.md).
 
 ## Remarks
- Class qualifiers for this class include:
 
- [CommandLine("osdmigrateuserstate.exe /apply /continueOnError:%%OSDMigrateContinueOnRestore%%"),
+Class qualifiers for this class include:
 
- VariablePrefix("OSDMigrate"),
+[CommandLine("osdmigrateuserstate.exe /apply /continueOnError:%%OSDMigrateContinueOnRestore%%"),
 
- ActionCategory{"UserState,3,4"},ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "RestoreUserStateControl", "TaskSequenceOptionControl"}]
+VariablePrefix("OSDMigrate"),
 
- For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+ActionCategory{"UserState,3,4"},ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "RestoreUserStateControl", "TaskSequenceOptionControl"}]
+
+For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

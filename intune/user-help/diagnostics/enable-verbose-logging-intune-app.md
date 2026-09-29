@@ -1,7 +1,7 @@
 ---
 title: Turn on verbose logging in Microsoft Intune app
 description: Turn on verbose logging in the Microsoft Intune app to improve troubleshooting on Android devices.
-ms.date: 11/08/2024
+ms.date: "2024-11-08T00:00:00Z"
 ms.reviewer: esmich
 ---
 
@@ -18,6 +18,5 @@ The logging detail level defaults to **Important** in the Microsoft Intune app. 
 3. Under **Log level detail**, select **Verbose** to increase the level of details recorded, or select **Off** to turn off logging.
 
 > [!NOTE]
+>
 > The logs sent to your IT support team include your email address.
-
-

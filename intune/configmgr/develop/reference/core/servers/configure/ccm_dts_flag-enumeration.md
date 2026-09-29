@@ -1,13 +1,15 @@
 ---
 title: CCM_DTS_FLAG Enumeration
 description: The CCM_DTS_FLAG enumeration indicates special options on download jobs.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_DTS_FLAG Enumeration
+
 The **CCM_DTS_FLAG** enumeration indicates special options on download jobs.
 
 ## Syntax
@@ -31,22 +33,24 @@ CCM_DTS_FLAG;
 
 ## Members
 
-|CTS flag|Description|
-|-|-|
-|CCM_DTS_FLAG_SINGLEFILE|Reserved.|
-|CCM_DTS_FLAG_DIRECTORY|Indicates that `szRemotePath` is a directory and that all of its contents should be downloaded. This should always be specified in the case of alternate providers.|
-|CCM_DTS_FLAG_NOTIFYPROGRESS|This indicates that progress notifications are required. Even if this flag is not specified, success and error notifications are still required.|
-|CCM_DTS_FLAG_INSECURETRANSPORT|Reserved.|
-|CCM_DTS_FLAG_TOPLEVELFILESONLY|Reserved.|
-|CCM_DTS_FLAG_SENDAUTHHEADERS|Reserved.|
-|CCM_DTS_FLAG_SENDAUTHHEADERS_MIXED|Reserved.|
-|CCM_DTS_FLAG_USEINPUTMANIFEST|Reserved.|
-|CCM_DTS_FLAG_SKIPHOSTCHANGEHANDLING|Reserved.|
+| CTS flag | Description |
+| --- | --- |
+| CCM_DTS_FLAG_SINGLEFILE | Reserved. |
+| CCM_DTS_FLAG_DIRECTORY | Indicates that `szRemotePath` is a directory and that all of its contents should be downloaded. This should always be specified in the case of alternate providers. |
+| CCM_DTS_FLAG_NOTIFYPROGRESS | This indicates that progress notifications are required. Even if this flag is not specified, success and error notifications are still required. |
+| CCM_DTS_FLAG_INSECURETRANSPORT | Reserved. |
+| CCM_DTS_FLAG_TOPLEVELFILESONLY | Reserved. |
+| CCM_DTS_FLAG_SENDAUTHHEADERS | Reserved. |
+| CCM_DTS_FLAG_SENDAUTHHEADERS_MIXED | Reserved. |
+| CCM_DTS_FLAG_USEINPUTMANIFEST | Reserved. |
+| CCM_DTS_FLAG_SKIPHOSTCHANGEHANDLING | Reserved. |
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

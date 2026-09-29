@@ -1,16 +1,18 @@
 ---
 description: Learn how to create an abstract base class representing operating system extended history for a client computer using SMS_G_System_ExtHistory.
-title: SMS_G_System_ExtHistory Class
-ms.date: 09/20/2016
+title: "SMS_G_System_ExtHistory Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_ExtHistory Server WMI Class
+
 The `SMS_G_System_ExtHistory` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that serves as an abstract base class representing operating system extended history for a client computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,51 +27,50 @@ Class SMS_G_System_ExtHistory : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_ExtHistory` class does not define any methods.
+
+The `SMS_G_System_ExtHistory` class does not define any methods.
 
 ## Properties
- `GroupID`
- Data type: `UInt32`
 
- Access type: Read-only
+`GroupID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- ID of the group that distinguishes one hardware inventory instance from another within one client resource. For example, each logical disk object for a client is assigned a unique `GroupID` value.
+Qualifiers: [key]
 
- `ResourceID`
- Data type: `UInt32`
+ID of the group that distinguishes one hardware inventory instance from another within one client resource. For example, each logical disk object for a client is assigned a unique `GroupID` value.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: [key]
 
- `RevisionID`
- Data type: `UInt32`
+See [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
 
- Access type: Read-only
+`RevisionID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read-only
 
- ID that increments if the object changes after the last time inventory was taken. The highest number indicates the most recent update. Objects with the same `ResourceID` and `GroupID` values are deltas. They differ from one another by the `RevisionID` number.
+Qualifiers: [key]
 
- `TimeStamp`
- Data type: `DateTime`
+ID that increments if the object changes after the last time inventory was taken. The highest number indicates the most recent update. Objects with the same `ResourceID` and `GroupID` values are deltas. They differ from one another by the `RevisionID` number.
 
- Access type: Read-only
+`TimeStamp` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read-only
 
- Date and time of the inventory.
+Qualifiers: None
+
+Date and time of the inventory.
 
 ## Remarks
- Your application uses this class to determine the state of a client at any given time. Names of derived extended history classes are prefixed with "SMS_GEH_System_" followed by the inventoried object name. An example class name is `SMS_GEH_System_ACCOUNT`. Your application can use the derived classes to determine the state of a hardware component on a client at a given point in time.
 
- The SMS Provider determines the state by using the information from classes derived from both [SMS_G_System_Current Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_current-server-wmi-class.md) and [SMS_G_System_History Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system_history-server-wmi-class.md). However, the application cannot query `SMS_G_System_ExtHistory` to determine the state of all hardware components on a client at a given point in time.
+Your application uses this class to determine the state of a client at any given time. Names of derived extended history classes are prefixed with "SMS_GEH_System_" followed by the inventoried object name. An example class name is `SMS_GEH_System_ACCOUNT`. Your application can use the derived classes to determine the state of a hardware component on a client at a given point in time.
 
- Your query must include the `ResourceID` and `TimeStamp` values in the WHERE clause, as shown in the following example.
+The SMS Provider determines the state by using the information from classes derived from both [SMS_G_System_Current Server WMI Class](sms_g_system_current-server-wmi-class.md) and [SMS_G_System_History Server WMI Class](sms_g_system_history-server-wmi-class.md). However, the application cannot query `SMS_G_System_ExtHistory` to determine the state of all hardware components on a client at a given point in time.
+
+Your query must include the `ResourceID` and `TimeStamp` values in the WHERE clause, as shown in the following example.
 
 ```
 SELECT * FROM SMS_GEH_System_Logical_Disk
@@ -80,10 +81,13 @@ AND Timestamp = "<timestamp>"
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md)
+
+[SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md)

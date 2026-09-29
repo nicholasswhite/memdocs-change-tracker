@@ -1,7 +1,7 @@
 ---
-title: Executable action
+title: "Configuration Manager Executable Action"
 description: The executable action runs a program or opens a file by using the program registered with Windows for that file type.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
@@ -9,13 +9,13 @@ ms.service: configuration-manager
 ---
 
 # Configuration Manager Executable Action
+
 In Configuration Manager, the executable action runs a program or opens a file by using the program registered with Windows for that file type.
 
- The following attributes and elements are specific to an action that runs a program:
+The following attributes and elements are specific to an action that runs a program:
 
--   The `ActionDescription` element `Class` attribute is set to `Executable`.
-
--   The `Executable` element is parent to `FilePath``,` the path to the program, and to `Parameters`, the parameters passed to the executable.
+- The `ActionDescription` element `Class` attribute is set to `Executable`.
+- The `Executable` element is parent to ``` FilePath``, ``` the path to the program, and to `Parameters`, the parameters passed to the executable.
 
 ## Sample Executable Action XML
 
@@ -71,9 +71,8 @@ In Configuration Manager, the executable action runs a program or opens a file b
 </ActionDescription>
 ```
 
- Other elements and attributes are documented in [ActionDescription](/previous-versions/system-center/developer/cc147252(v=msdn.10)).
+Other elements and attributes are documented in [ActionDescription](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147252(v=msdn.10)).
 
 ## See Also
- [Configuration Manager Actions](../../../../develop/core/servers/console/configuration-manager-actions.md)
- [How to Create a Configuration Manager Action](../../../../develop/core/servers/console/how-to-create-a-configuration-manager-action.md)
- [How to Find a Configuration Manager Node GUID](../../../../develop/core/servers/console/how-to-find-a-configuration-manager-console-node-guid.md)
+
+[Configuration Manager Actions](configuration-manager-actions.md) [How to Create a Configuration Manager Action](how-to-create-a-configuration-manager-action.md) [How to Find a Configuration Manager Node GUID](how-to-find-a-configuration-manager-console-node-guid.md)

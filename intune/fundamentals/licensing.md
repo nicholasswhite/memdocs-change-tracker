@@ -1,7 +1,7 @@
 ---
-title: Microsoft Intune Licensing Plans and Options
+title: "Microsoft Intune licensing"
 description: Microsoft Intune licensing options, plans, and the capabilities included with each Intune plan and Microsoft 365 license tier.
-ms.date: 05/13/2026
+ms.date: "2026-05-13T00:00:00Z"
 ms.topic: overview
 ms.collection: M365-identity-device-management
 ---
@@ -14,12 +14,12 @@ Microsoft Intune is licensed through three plans and is included in several Micr
 
 Intune capabilities are organized into three plans. The Intune documentation and the Microsoft Intune admin center use these names to indicate which capabilities require which plan:
 
-- **Microsoft Intune Plan 1**: the base service.\
-  Cloud-based unified endpoint management for devices and apps.
-- **Microsoft Intune Plan 2**: additive to Plan 1.\
-  Advanced endpoint management capabilities, including Remote Help and Advanced Analytics.
-- **Microsoft Intune Suite**: additive to Plan 1.\
-  Unifies advanced endpoint management and security capabilities. Includes Plan 2.
+- **Microsoft Intune Plan 1**: the base service.  
+   Cloud-based unified endpoint management for devices and apps.
+- **Microsoft Intune Plan 2**: additive to Plan 1.  
+   Advanced endpoint management capabilities, including Remote Help and Advanced Analytics.
+- **Microsoft Intune Suite**: additive to Plan 1.  
+   Unifies advanced endpoint management and security capabilities. Includes Plan 2.
 
 Most organizations get Intune as part of a Microsoft 365 bundle (such as Microsoft 365 E3, E5, or E7) rather than buying these plans directly. For what each bundle includes, current pricing, and how to buy, see:
 
@@ -30,7 +30,7 @@ Administrators don't always need an Intune license. For more information, see [U
 
 ## License requirements
 
-An Intune license is required for any user or device that benefits directly or indirectly from the Microsoft Intune service, including access through a [Microsoft API](/legal/microsoft-apis/terms-of-use). Intune is included only with the licenses listed on the [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) page.
+An Intune license is required for any user or device that benefits directly or indirectly from the Microsoft Intune service, including access through a [Microsoft API](https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use). Intune is included only with the licenses listed on the [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) page.
 
 ## Microsoft Intune for Education
 
@@ -39,7 +39,7 @@ Intune Plan 1 for Education is included in the following licenses:
 - Microsoft 365 Education A5
 - Microsoft 365 Education A3
 
-For licensing information about Intune for Education, see [Microsoft 365 Education](/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education).
+For licensing information about Intune for Education, see [Microsoft 365 Education](https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/microsoft-365-education).
 
 ## Device-only licenses
 
@@ -47,22 +47,16 @@ Intune offers a *device-only subscription* for managing devices that aren't affi
 
 Assign device licenses based on your estimated usage. Device licenses apply when a device is enrolled through any of the following methods:
 
-- [Windows Autopilot Self-Deploying mode](/autopilot/self-deploying)
-
+- [Windows Autopilot Self-Deploying mode](../../autopilot/self-deploying.md)
 - [Apple Device Enrollment Program without user affinity](../device-enrollment/apple/setup-automated-ios.md)
-
 - [Apple School Manager without user affinity](../device-enrollment/apple/school-manager.md)
-
 - [Apple Configurator without user affinity](../device-enrollment/apple/setup-configurator-ios.md)
-
 - [Android Enterprise dedicated](../device-enrollment/android/setup-dedicated.md)
-
 - [Using a device enrollment manager account](../device-enrollment/setup-enrollment-manager.md)
 
 ### Device-only management scenarios
 
 - Devices managed through a Microsoft Intune device-only subscription support device-targeted management scenarios for eligible enrollment methods, including shared-device and no-user-affinity scenarios.
-
 - A signed-in user without an Intune user license doesn't prevent device-targeted policies, applications, or management actions from being processed on a device managed through a device-only subscription.
 
 ### Device-only license limitations
@@ -70,9 +64,7 @@ Assign device licenses based on your estimated usage. Device licenses apply when
 When a device is enrolled by using a device license, the following Intune functions aren't supported:
 
 - [Intune app protection policies](../app-management/protection/overview.md)
-
 - [Conditional Access](../device-security/conditional-access-integration/overview.md)
-
 - User-based management features, such as email and calendaring
 
 ## Unlicensed admin access
@@ -87,6 +79,7 @@ Whether you need to enable this setting depends on when your tenant was created:
 - **Tenants created before July 2021**: Administrators require an Intune license unless the **Allow access to unlicensed admins** setting is enabled. This setting can't be undone after it's turned on.
 
 > [!IMPORTANT]
+>
 > - Intune supports up to 1000 unlicensed admins per security group. If more than 1000 administrators are needed for a role assignment, use multiple security groups.
 > - Members of nested security groups aren't included in unlicensed admins access. If you keep nested security groups, admins in those nested groups still require an Intune license even when the unlicensed admins access is enabled.
 > - It can take up to 48 hours for access changes to take effect.
@@ -95,11 +88,11 @@ Whether you need to enable this setting depends on when your tenant was created:
 
 Tenants created after July 2021 already have unlicensed admin access enabled by default. The following steps apply only to tenants created before July 2021.
 
-To enable this setting, use an account assigned the [Intune Administrator](/entra/identity/role-based-access-control/permissions-reference#intune-administrator) Microsoft Entra role. Because this role is privileged, use it only when necessary.
+To enable this setting, use an account assigned the [Intune Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator) Microsoft Entra role. Because this role is privileged, use it only when necessary.
 
-1. In the [Microsoft Intune admin center], select **Tenant administration** > **Roles** > **Administrator Licensing**.
-1. Select **Allow access to unlicensed admins**.
-1. Select **Yes** to allow access to unlicensed admins.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Tenant administration** &gt; **Roles** &gt; **Administrator Licensing**.
+2. Select **Allow access to unlicensed admins**.
+3. Select **Yes** to allow access to unlicensed admins.
 
 After you enable this setting, users who sign in to the Microsoft Intune admin center don't require an Intune license. Roles assigned to users define their scope of access.
 
@@ -119,31 +112,28 @@ You still need to assign Intune licenses for other enrollment scenarios.
 A Microsoft Intune license is created for you when you sign up for the Intune free trial. As part of this trial, you also get a trial Enterprise Mobility + Security (EMS) subscription, which includes both Microsoft Entra ID P1 or P2 and Microsoft Intune.
 
 > [!NOTE]
-> If you don't have an Intune license, sign up for the [Intune free trial](./free-trial-sign-up.md).
+>
+> If you don't have an Intune license, sign up for the [Intune free trial](free-trial-sign-up.md).
 
 To confirm your Microsoft Intune license or trial:
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **Tenant administration** > **Tenant status**. Under the **Tenant details** tab, you can see the **MDM authority**, the **Total licensed users**, and the **Total Intune licenses**.
-1. Select **Tenant administration** > **Roles** > **My permissions**.
-1. Confirm that you're an **administrator** with **full** permissions to **all** Intune resources.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Tenant administration** &gt; **Tenant status**. Under the **Tenant details** tab, you can see the **MDM authority**, the **Total licensed users**, and the **Total Intune licenses**.
+3. Select **Tenant administration** &gt; **Roles** &gt; **My permissions**.
+4. Confirm that you're an **administrator** with **full** permissions to **all** Intune resources.
 
 To confirm your Microsoft Entra ID P1 or P2 license:
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Select **Microsoft Entra ID**.
-1. Select **Overview**. On the **Overview** pane, select the **Overview** tab if it isn't already selected.
-1. Under **Basic information**, view your license.
+2. Select **Microsoft Entra ID**.
+3. Select **Overview**. On the **Overview** pane, select the **Overview** tab if it isn't already selected.
+4. Under **Basic information**, view your license.
 
-If you don't have a license for Microsoft Entra ID P1 or P2, see [Sign up for Microsoft Entra ID P1 or P2 editions](/azure/active-directory/fundamentals/active-directory-get-started-premium).
+If you don't have a license for Microsoft Entra ID P1 or P2, see [Sign up for Microsoft Entra ID P1 or P2 editions](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-get-started-premium).
 
 ## Related content
 
 - [Assign Intune licenses to your user accounts](assign-licenses.md)
-- [Microsoft Intune advanced capabilities](./advanced-capabilities.md)
-- [Set up Microsoft Intune (training module)](/training/modules/set-up-microsoft-intune?azure-portal=true)
+- [Microsoft Intune advanced capabilities](advanced-capabilities.md)
+- [Set up Microsoft Intune (training module)](https://learn.microsoft.com/en-us/training/modules/set-up-microsoft-intune?azure-portal=true)
 - [Microsoft Licensing portal](https://www.microsoft.com/licensing/default): latest information about product editions, licensing updates, and volume licensing plans.
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

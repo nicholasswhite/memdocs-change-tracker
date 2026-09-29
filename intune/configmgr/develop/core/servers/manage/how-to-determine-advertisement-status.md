@@ -1,26 +1,30 @@
 ---
 description: To determine advertisement status in Configuration Manager, you can use the queries described in this section.
-title: Determine Advertisement Status
-ms.date: 09/20/2016
+title: "How to Determine Advertisement Status"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Determine Advertisement Status
+
 To determine advertisement status in Configuration Manager, you can use the queries described in this section.
 
 > [!NOTE]
->  These queries query the status messages directly and might take some time to complete because there can be many status messages.
 >
->  For more information about using these queries, see [How to Perform a Synchronous Configuration Manager Query by Using Managed Code](../../../../develop/core/understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-managed-code.md) and [How to Perform a Synchronous Configuration Manager Query by Using WMI](../../../../develop/core/understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-wmi.md).
+> These queries query the status messages directly and might take some time to complete because there can be many status messages.
 >
->  For more queries about advertisement status and summarization, you can use [SMS_ClientAdvertisementStatus Server WMI Class](../../../../develop/reference/core/servers/configure/sms_clientadvertisementstatus-server-wmi-class.md) and [SMS_ClientAdvertisementSummary Server WMI Class](../../../../develop/reference/core/servers/configure/sms_clientadvertisementsummary-server-wmi-class.md).
+> For more information about using these queries, see [How to Perform a Synchronous Configuration Manager Query by Using Managed Code](../../understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-managed-code.md) and [How to Perform a Synchronous Configuration Manager Query by Using WMI](../../understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-wmi.md).
+>
+> For more queries about advertisement status and summarization, you can use [SMS_ClientAdvertisementStatus Server WMI Class](../../../reference/core/servers/configure/sms_clientadvertisementstatus-server-wmi-class.md) and [SMS_ClientAdvertisementSummary Server WMI Class](../../../reference/core/servers/configure/sms_clientadvertisementsummary-server-wmi-class.md).
 
 ## Queries
 
 ### Client Program Install
- The following query returns the clients that have successfully installed a program. You need to check for both message identifiers because the program can report status with an exit code (10008) or an install status MIF file (10009).
+
+The following query returns the clients that have successfully installed a program. You need to check for both message identifiers because the program can report status with an exit code (10008) or an install status MIF file (10009).
 
 ```
 ' Returns clients that have successful installed a program
@@ -35,7 +39,8 @@ ORDER BY ad.ProgramName
 ```
 
 ### Clients That Have Installed a Specific Advertised Program
- This query returns the clients that have successfully installed a specific advertised program.
+
+This query returns the clients that have successfully installed a specific advertised program.
 
 ```
 ' Returns clients that have successfully installed a specific advertised program
@@ -49,7 +54,8 @@ and   attr.AttributeValue = "<AdvertisementID>"
 ```
 
 ### Clients That Have Not Installed a Specific Advertised Program
- The previous queries show which clients successfully installed an advertised program. Determining which collection members have not installed the advertised program can be more involved if the advertisement specified subcollections. The following query determines which clients of the **All Systems** (SMS00001) collection (substitute your collection member class for SMS_CM_RES_COLL_SMS00001) have not installed the advertised program. If the advertisement specified subcollections, the query must be run for each subcollection.
+
+The previous queries show which clients successfully installed an advertised program. Determining which collection members have not installed the advertised program can be more involved if the advertisement specified subcollections. The following query determines which clients of the **All Systems** (SMS00001) collection (substitute your collection member class for SMS_CM_RES_COLL_SMS00001) have not installed the advertised program. If the advertisement specified subcollections, the query must be run for each subcollection.
 
 ```
 ' Returns which clients of a collection have not installed the advertised program
@@ -65,10 +71,5 @@ AND   attr.AttributeValue = "<AdvertisementID>")
 ```
 
 ## See Also
- [How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](../../../../develop/core/understand/how-to-perform-an-asynchronous-query-by-using-managed-code.md)
- [How to Perform a Synchronous Configuration Manager Query by Using Managed Code](../../../../develop/core/understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-managed-code.md)
- [How to Perform an Asynchronous Configuration Manager Query by Using WMI](../../../../develop/core/understand/how-to-perform-an-asynchronous-configuration-manager-query-by-using-wmi.md)
- [How to Perform a Synchronous Configuration Manager Query by Using WMI](../../../../develop/core/understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-wmi.md)
- [SMS_StatusMessage Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md)
- [SMS_StatMsgAttributes Server WMI Class](../../../../develop/reference/core/servers/manage/sms_statmsgattributes-server-wmi-class.md)
- [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md)
+
+[How to Perform an Asynchronous Configuration Manager Query by Using Managed Code](../../understand/how-to-perform-an-asynchronous-query-by-using-managed-code.md) [How to Perform a Synchronous Configuration Manager Query by Using Managed Code](../../understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-managed-code.md) [How to Perform an Asynchronous Configuration Manager Query by Using WMI](../../understand/how-to-perform-an-asynchronous-configuration-manager-query-by-using-wmi.md) [How to Perform a Synchronous Configuration Manager Query by Using WMI](../../understand/how-to-perform-a-synchronous-configuration-manager-query-by-using-wmi.md) [SMS_StatusMessage Server WMI Class](../../../reference/core/servers/manage/sms_statusmessage-server-wmi-class.md) [SMS_StatMsgAttributes Server WMI Class](../../../reference/core/servers/manage/sms_statmsgattributes-server-wmi-class.md) [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md)

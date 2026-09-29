@@ -1,7 +1,7 @@
 ---
-title: Sample queries for software updates
+title: "Sample queries for software updates in Configuration Manager"
 description: Sample queries that show how to join software updates views to each other and to views from other view categories.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 
@@ -43,7 +43,6 @@ The following query retrieves the software update deployments, by assignment ID 
     ��v_CIAssignmentToCI.AssignmentID = v_CIAssignment.AssignmentID 
     ORDER BY v_CIAssignment.AssignmentID, v_UpdateInfo.ArticleID 
 ```
-
 
 ## See also
 

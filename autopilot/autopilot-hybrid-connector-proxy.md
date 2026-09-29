@@ -3,7 +3,7 @@
 
 title: Configure proxy settings for the Intune Connector for Active Directory
 description: Covers how to configure the Intune Connector for Active Directory to work with existing on-premises proxy servers.
-ms.date: 11/24/2025
+ms.date: "2025-11-24T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: how-to
@@ -12,20 +12,19 @@ appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 10</a>
 ---
 
-
 # Configure proxy settings for the Intune Connector for Active Directory
 
 This article explains how to configure the Intune Connector for Active Directory to work with outbound proxy servers. The article is intended for customers with network environments that have existing proxies.
 
-By default, the Intune Connector for Active Directory attempts to automatically locate a proxy server on the network using Web Proxy Auto-Discovery (WPAD). If WPAD is configured in the network, other configuration might not be required. When changes are needed, the following sections describe how to override the default settings, using [the standard .NET Framework capabilities for configuring proxy settings](/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings). More options are described in that documentation.
+By default, the Intune Connector for Active Directory attempts to automatically locate a proxy server on the network using Web Proxy Auto-Discovery (WPAD). If WPAD is configured in the network, other configuration might not be required. When changes are needed, the following sections describe how to override the default settings, using [the standard .NET Framework capabilities for configuring proxy settings](https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings). More options are described in that documentation.
 
-For more information about how connectors work, see [Understand Microsoft Entra application proxy connectors](/azure/active-directory/manage-apps/application-proxy-connectors).
+For more information about how connectors work, see [Understand Microsoft Entra application proxy connectors](https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/application-proxy-connectors).
 
 ## Completely bypass outbound proxies
 
 You can configure the connector to bypass your on-premises proxy to ensure it uses direct connectivity to the Azure services. We recommend this approach, as long as your network policy allows for it, because it means that you have one less configuration to maintain.
 
-To disable outbound proxy usage for the connector, edit the `:ProgramFiles%\Microsoft Intune\ODJConnector\ODJConnectorEnrollmentWizard\ODJConnectorEnrollmentWizard.exe.config` file and set the default proxy to ` "False" ` as shown in the following code example:
+To disable outbound proxy usage for the connector, edit the `:ProgramFiles%\Microsoft Intune\ODJConnector\ODJConnectorEnrollmentWizard\ODJConnectorEnrollmentWizard.exe.config` file and set the default proxy to `"False"` as shown in the following code example:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -77,8 +76,8 @@ Be sure to make copies of the original files, in case you need to revert to the 
 Once the configuration files are modified, the Intune Connector for Active Directory service needs to be restarted.
 
 1. Open **services.msc**.
-1. Find and select the **Intune ODJConnector Service**.
-1. Select **Restart**.
+2. Find and select the **Intune ODJConnector Service**.
+3. Select **Restart**.
 
 ## Specifying an alternative proxy server
 
@@ -134,8 +133,8 @@ Be sure to make copies of the original files, in case you need to revert to the 
 Once the configuration files are modified, the Intune Connector for Active Directory service needs to be restarted.
 
 1. Open **services.msc**.
-1. Find and select the **Intune ODJConnector Service**.
-1. Select **Restart**.
+2. Find and select the **Intune ODJConnector Service**.
+3. Select **Restart**.
 
 ## Related articles
 

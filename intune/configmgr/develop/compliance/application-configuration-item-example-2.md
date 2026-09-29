@@ -1,13 +1,15 @@
 ---
 title: Application Configuration Item Example 2
 description: In Configuration Manager, the following Application Configuration Item Instance example determines whether Notepad.exe is installed.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Application Configuration Item Example 2
+
 In Configuration Manager, the following Application Configuration Item Instance example determines whether Notepad.exe is installed.
 
 ## Application Configuration Item Example
@@ -96,4 +98,5 @@ IMPORTANT:  Insert a script here - not just the name of the script, but the actu
 ```
 
 ## See Also
+
 [About authoring configuration baselines and items](about-authoring-configuration-baselines-and-configuration-items.md)

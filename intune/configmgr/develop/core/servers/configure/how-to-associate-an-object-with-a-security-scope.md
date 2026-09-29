@@ -1,30 +1,30 @@
 ---
-title: Associate an Object with a Security Scope
+title: "How to Associate an Object with a Security Scope"
 description: To assign multiple objects to a scope, use the AddMemberships Method in Class SMS_SecuredCategoryMembership.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Associate an Object with a Security Scope
+
 > [!TIP]
->  To assign multiple objects to a scope, use the [AddMemberships Method in Class SMS_SecuredCategoryMembership](../../../../develop/reference/core/servers/configure/addmemberships-method-in-class-sms_securedcategorymembership.md).
+>
+> To assign multiple objects to a scope, use the [AddMemberships Method in Class SMS_SecuredCategoryMembership](../../../reference/core/servers/configure/addmemberships-method-in-class-sms_securedcategorymembership.md).
 
 ### To assign an object a security scope
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Determine the object's key property identifier.
-
-3.  Determine the object type identifier.
-
-4.  Create a new instance of the `SMS_SecuredCategoryMembership` WMI class, setting the scope identifier, object key, and object type values.
-
-5.  Save the `SMS_SecuredCategoryMembership` object instance.
+1. Set up a connection to the SMS Provider.
+2. Determine the object's key property identifier.
+3. Determine the object type identifier.
+4. Create a new instance of the `SMS_SecuredCategoryMembership` WMI class, setting the scope identifier, object key, and object type values.
+5. Save the `SMS_SecuredCategoryMembership` object instance.
 
 ## Example
- The following code example assigns a scope identifier to a package:
+
+The following code example assigns a scope identifier to a package:
 
 ```vbs
 Sub AddObjectScope(connection, scopeId, objectKey, objectTypeId)
@@ -61,34 +61,35 @@ public void AddObjectScope(WqlConnectionManager connection, string scopeId, stri
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`scopeId`|`String`|The identifier of the security scope.|
-|objectKey|`String`|The key property value of the object to assign a scope to.|
-|objectTypeId|`Integer`|The type identifier of the object referenced in the `objectKey` parameter.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `scopeId` | `String` | The identifier of the security scope. |
+| objectKey | `String` | The key property value of the object to assign a scope to. |
+| objectTypeId | `Integer` | The type identifier of the object referenced in the `objectKey` parameter. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- Microsoft.ConfigurationManagement.ManagementProvider
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [SMS_SecuredCategoryMembership Server WMI Class](../../../../develop/reference/core/servers/configure/sms_securedcategorymembership-server-wmi-class.md)
- [How to Create a New Security Scope](../../../../develop/core/servers/configure/how-to-create-a-new-security-scope.md)
- [How to Delete a Security Scope](../../../../develop/core/servers/configure/how-to-delete-a-security-scope.md)
- [How to Remove an Object Association with a Security Scope](../../../../develop/core/servers/configure/how-to-remove-an-object-association-with-a-security-scope.md)
- [SMS_SecuredCategory Server WMI Class](../../../../develop/reference/core/servers/configure/sms_securedcategory-server-wmi-class.md)
+
+[SMS_SecuredCategoryMembership Server WMI Class](../../../reference/core/servers/configure/sms_securedcategorymembership-server-wmi-class.md) [How to Create a New Security Scope](how-to-create-a-new-security-scope.md) [How to Delete a Security Scope](how-to-delete-a-security-scope.md) [How to Remove an Object Association with a Security Scope](how-to-remove-an-object-association-with-a-security-scope.md) [SMS_SecuredCategory Server WMI Class](../../../reference/core/servers/configure/sms_securedcategory-server-wmi-class.md)

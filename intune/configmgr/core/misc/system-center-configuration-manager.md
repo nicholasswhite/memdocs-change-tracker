@@ -1,6 +1,6 @@
 ---
 title: Configuration Manager
-ms.date: 10/06/2016
+ms.date: "2016-10-06T00:00:00Z"
 ms.topic: article
 ms.subservice: other
 ROBOTS: NOINDEX
@@ -8,6 +8,7 @@ description: Placeholder file for Configuration Manager documentation
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Configuration Manager
 
 *Applies to: Configuration Manager (current branch)*

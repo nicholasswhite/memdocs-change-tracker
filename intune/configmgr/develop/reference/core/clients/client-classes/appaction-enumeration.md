@@ -1,14 +1,16 @@
 ---
 title: AppAction Enumeration
 description: Learn how the AppAction enumeration defines action types.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # AppAction Enumeration
-In Configuration Manager, the `AppAction` enumeration defines action types. This enumeration is used by the [IAppManagmentTypes Interface](../../../../../develop/reference/core/clients/client-classes/iappmanagementtypes-interface.md).
+
+In Configuration Manager, the `AppAction` enumeration defines action types. This enumeration is used by the [IAppManagmentTypes Interface](iappmanagementtypes-interface.md).
 
 ## Syntax
 
@@ -22,17 +24,13 @@ typedef enum AppAction
 ```
 
 ## Elements
- `appDiscovery`
- The action type is discovery.
 
- `appInstall`
- The action type is install.
+`appDiscovery` The action type is discovery.
 
- `appUninstall`
- The action type is uninstall.
+`appInstall` The action type is install.
+
+`appUninstall` The action type is uninstall.
 
 ## See Also
- [IAppManagementTypes Interface](../../../../../develop/reference/core/clients/client-classes/iappmanagementtypes-interface.md)
- [Application Management Client Interfaces](../../../../../develop/reference/core/clients/client-classes/application-management-client-interfaces.md)
- [Configuration Manager Software Development Kit](../../../../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [Configuration Manager Reference](../../../../../develop/reference/configuration-manager-reference.md)
+
+[IAppManagementTypes Interface](iappmanagementtypes-interface.md) [Application Management Client Interfaces](application-management-client-interfaces.md) [Configuration Manager Software Development Kit](../../../../core/misc/system-center-configuration-manager-sdk.md) [Configuration Manager Reference](../../../configuration-manager-reference.md)

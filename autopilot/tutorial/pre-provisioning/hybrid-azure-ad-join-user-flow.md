@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join - Step 10 of 11 - User flow
+title: "Pre-provision Microsoft Entra hybrid join: User flow"
 description: How to - Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join - Step 10 of 11 - User flow.
-ms.date: 07/23/2024
+ms.date: "2024-07-23T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -23,9 +23,7 @@ Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join ste
 - Step 9: [Assign Windows Autopilot device to a user (optional)](hybrid-azure-ad-join-assign-device-to-user.md)
 - Step 10: [Technician flow](hybrid-azure-ad-join-technician-flow.md)
 
-> [!div class="checklist"]
->
-> - **Step 11: User flow**
+- **Step 11: User flow**
 
 For an overview of the Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join workflow, see [Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join overview](hybrid-azure-ad-join-workflow.md#workflow).
 
@@ -37,7 +35,23 @@ For an overview of the Windows Autopilot for pre-provisioned deployment Microsof
 
 Once the technician flow step of the pre-provisioning process completes successfully and the device is resealed, the device can be delivered to the end-user. The end-user then completes the normal Windows Autopilot user-driven process. This final step is know as the user flow and involves the following steps:
 
-[!INCLUDE [Network connectivity](../includes/network-connectivity.md)]
+1. If a wired network connection is available, connect the device to the wired network connection.
+2. Power on the device.
+3. Once the device boots up, one of two things occurs depending on the state of network connectivity:
+
+   - If the device is connected to a wired network and has network connectivity, the device might reboot to apply critical security updates (if available or applicable). After the reboot to apply critical security updates, the Windows Autopilot process begins.
+   - If the device isn't connected to a wired network or if it doesn't have network connectivity, it prompts to connect to a network. Connectivity to the Internet is required:
+
+     1. The out-of-box experience (OOBE) begins and a screen asking for a country or region appears. Select the appropriate country or region, and then select **Yes**.
+     2. The keyboard screen appears to select a keyboard layout. Select the appropriate keyboard layout, and then select **Yes**.
+     3. An additional keyboard layouts screen appears. If needed, select additional keyboard layouts via **Add layout**, or select **Skip** if no additional keyboard layouts are needed.
+
+        > [!NOTE]
+        >
+        > When there's no network connectivity, the device can't download the Windows Autopilot profile to know what country/region and keyboard settings to use. For this reason, when there's no network connectivity, the country/region and keyboard screens appear even if these screens are set to hidden in the Windows Autopilot profile. These settings need to be specified in these screens in order for the network connectivity screens that follow to work properly.
+     4. The **Let's connect you to a network** screen appears. At this screen, either plug the device into a wired network (if available), or select and connect to a wireless Wi-Fi network.
+     5. Once network connectivity is established, the **Next** button should become available. Select **Next**.
+     6. At this point, the device might reboot to apply critical security updates (if available or applicable). After the reboot to apply critical security updates, the Windows Autopilot process begins.
 
 4. Once the Windows Autopilot process begins, the Enrollment Status Page (ESP) appears. The ESP displays progress during the provisioning process across three phases:
 
@@ -45,49 +59,53 @@ Once the technician flow step of the pre-provisioning process completes successf
    - **Device setup** (Device ESP)
    - **Account setup** (User ESP)
 
-    The first two phases of **Device preparation** and **Device setup** are part of the Device ESP while the final phase of **Account setup** is part of the User ESP.
+   The first two phases of **Device preparation** and **Device setup** are part of the Device ESP while the final phase of **Account setup** is part of the User ESP.
 
-    For the user flow of Windows Autopilot for pre-provisioned deployment, the **Device setup** phase of the Device ESP and the **Account setup** phase of the User ESP runs. The **Device preparation** phase of the Device ESP doesn't run during the user flow since it already ran and completed during the [Technician flow](hybrid-azure-ad-join-technician-flow.md). The **Device setup** phase of the Device ESP runs again during the user flow in case any new or additional policies or applications assigned to the device became available during the time frame that the technician flow ran and when the user flow runs after the device was delivered to the end-user.
-
+   For the user flow of Windows Autopilot for pre-provisioned deployment, the **Device setup** phase of the Device ESP and the **Account setup** phase of the User ESP runs. The **Device preparation** phase of the Device ESP doesn't run during the user flow since it already ran and completed during the [Technician flow](hybrid-azure-ad-join-technician-flow.md). The **Device setup** phase of the Device ESP runs again during the user flow in case any new or additional policies or applications assigned to the device became available during the time frame that the technician flow ran and when the user flow runs after the device was delivered to the end-user.
 5. Once the **Device setup** phase of the Device ESP is complete, user ESP begins and the **User setup** phase starts. The ESP is temporarily dismissed and the Windows sign-on screen appears:
 
-   1. Enter the keystroke <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>DEL</kbd> to initiate Windows sign-on.
-   1. Enter the on-premises domain credentials for the end-user.
+   1. Enter the keystroke `CTRL` + `ALT` + `DEL` to initiate Windows sign-on.
+   2. Enter the on-premises domain credentials for the end-user.
 
       If on-premises domain end-user credentials are different from Microsoft Entra end-user credentials, make sure that the **on-premises domain end-user credentials** are used to sign in to the device at this step. Don't use the Microsoft Entra end-user credentials to attempt to sign in to the device at this step.
-
-   1. Select <kbd>ENTER</kbd> on the keyboard to sign the end-user into the device.
-
+   3. Select `ENTER` on the keyboard to sign the end-user into the device.
 6. The Enrollment Status Page (ESP) appears again and the **Account setup** phase of the user ESP continues.
 
    1. After a short period of time, the Microsoft Entra sign-in page might appear. Sign in with the end-user's Microsoft Entra credentials.
 
       If on-premises domain end-user credentials are different from Microsoft Entra end-user credentials, make sure that **Microsoft Entra end-user credentials** are used to sign in at this step. Don't use on-premises credentials to sign in at this step.
-
-   1. Once the credentials are entered, select **Next**.
-
-   1. The **Stay signed in to all your apps** screen appears. Make sure that the option **Allow my organization to manage my device** is selected, and then select **OK**.
-
-   1. The **You're all set!** screen appears. Select **Done**.
+   2. Once the credentials are entered, select **Next**.
+   3. The **Stay signed in to all your apps** screen appears. Make sure that the option **Allow my organization to manage my device** is selected, and then select **OK**.
+   4. The **You're all set!** screen appears. Select **Done**.
 
       > [!NOTE]
       >
-      > Under certain circumstances, the Microsoft Entra sign-in page might not appear and the end-user might be automatically signed in to Microsoft Entra ID. For example, if using [Active Directory Federation Services (ADFS)](/windows-server/identity/active-directory-federation-services) and [single sign-on (SSO)](/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings). If the end-user is automatically signed in to Microsoft Entra ID, then the Windows Autopilot deployment will proceed on to the next step automatically.
-
+      > Under certain circumstances, the Microsoft Entra sign-in page might not appear and the end-user might be automatically signed in to Microsoft Entra ID. For example, if using [Active Directory Federation Services (ADFS)](https://learn.microsoft.com/en-us/windows-server/identity/active-directory-federation-services) and [single sign-on (SSO)](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings). If the end-user is automatically signed in to Microsoft Entra ID, then the Windows Autopilot deployment will proceed on to the next step automatically.
 7. Once **Account setup** and the user ESP process completes, the provisioning process completes and the ESP finishes. Select the **Sign out** button to dismiss the ESP and go to the Windows sign-on screen. At this point, the end-user can sign in to the device using their on-premises domain end-user credentials and start using the device.
 
 ## User-flow tips
 
-[!INCLUDE [Tips HAADJ screens](../includes/tips-haadj-screens.md)]
+- Depending on how the Windows Autopilot profile was configured at the **Create and assign Windows Autopilot profile** step, additional screens might appear during the Windows Autopilot deployment such as:  
+     
+  - **Language**/**Country**/**Region** or **Keyboard** screens before the Microsoft Entra sign-in page.
+  - **Privacy** screen when the user ESP/**Account** setup begins but before the Windows sign-on screen appears.
 
-[!INCLUDE [Tips HAADJ screen lock](../includes/tips-haadj-lock.md)]
+- If the device is left alone with no interaction during the **Account setup** phase of the ESP, the device might enter the Windows lock screen. If the device does enter the Windows lock screen during **Account setup** of the ESP, unlock the device by entering the keystroke `CTRL` + `ALT` + `DEL`, entering the on-premises domain credentials for the end-user, and then selecting `ENTER` on the keyboard. Unlocking the device should go back to the Enrollment Status Page (ESP) and display the current progress of **Account setup**.
 
-[!INCLUDE [Tips ESP progress](../includes/tips-esp-progress.md)]
+- To view and hide detailed progress information in the ESP during the provisioning process:  
+     
+  - **Windows 10**: To show details, next to the appropriate phase select **Show details**. To hide the details, next to the appropriate phase select **Hide details**.
+  - **Windows 11**: To show details, next to the appropriate phase select **∨**. To hide the details, next to the appropriate phase select **∧**.
 
-[!INCLUDE [Tips wait to run User flow](../includes/tips-pre-provision-wait-user-flow.md)]
+- For tokens to refresh properly between the Technician flow and the User flow, wait at least 90 minutes after running the Technician flow before running the User flow. This scenario mainly affects lab and testing scenarios, such as this tutorial, when the User flow is run within 90 minutes after the Technician flow completes.
+- The User flow should be run within six months after the Technician flow finishes. Waiting more than six months can cause the certificates used by the Intune Management Engine (IME) to no longer be valid leading to errors such as:
 
-[!INCLUDE [Tips compliance resets during User flow](../includes/tips-pre-provision-compliance-user-flow.md)]
+  `Error code: [Win32App][DetectionActionHandler] Detection for policy with id: <policy_id> resulted in action status: Failed and detection state: NotComputed.`
+
+- Compliance in Microsoft Entra ID is reset during the User flow. Devices might show as compliant in Microsoft Entra ID after the Technician flow completes, but then show as noncompliant once the User flow starts. Allow enough time after the User flow completes for compliance to reevaluate and update.
 
 ## Related content
 
-[!INCLUDE [More information user flow](../includes/more-info-user-flow.md)]
+For more information on the user flow of a Windows Autopilot for pre-provisioned deployment, see the following articles:
+
+- [User flow](../../pre-provision.md#user-flow).

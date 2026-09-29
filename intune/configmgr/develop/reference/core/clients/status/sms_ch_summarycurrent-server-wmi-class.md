@@ -1,16 +1,18 @@
 ---
-title: SMS_CH_SummaryCurrent Class
+title: "SMS_CH_SummaryCurrent Server WMI Class"
 description: In Configuration Manager, the SMS_CH_SummaryCurrent Windows Management Instrumentation class is an SMS Provider server class that represents client summary.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CH_SummaryCurrent Server WMI Class
+
 The `SMS_CH_SummaryCurrent` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents client summary.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,130 +36,121 @@ Class SMS_CH_SummaryCurrent : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CH_SummaryCurrent` class does not define any methods.
+
+The `SMS_CH_SummaryCurrent` class does not define any methods.
 
 ## Properties
- `ClientsActive`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ClientsActive` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of active clients.
+Qualifiers: none
 
- `ClientsHealthUnknown`
- Data type: `UInt32`
+Count of active clients.
 
- Access type: Read/Write
+`ClientsHealthUnknown` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of healthy unknown clients.
+Qualifiers: none
 
- `ClientsHealthy`
- Data type: `UInt32`
+Count of healthy unknown clients.
 
- Access type: Read/Write
+`ClientsHealthy` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of healthy clients.
+Qualifiers: none
 
- `ClientsHealthyActive`
- Data type: `UInt32`
+Count of healthy clients.
 
- Access type: Read/Write
+`ClientsHealthyActive` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of health and active clients.
+Qualifiers: none
 
- `ClientsHealthyInactive`
- Data type: `UInt32`
+Count of health and active clients.
 
- Access type: Read/Write
+`ClientsHealthyInactive` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of healthy and inactive clients.
+Qualifiers: none
 
- `ClientsInactive`
- Data type: `UInt32`
+Count of healthy and inactive clients.
 
- Access type: Read/Write
+`ClientsInactive` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of inactive clients.
+Qualifiers: none
 
- `ClientsRemediationSuccess`
- Data type: `UInt32`
+Count of inactive clients.
 
- Access type: Read/Write
+`ClientsRemediationSuccess` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of successfully remediated clients.
+Qualifiers: none
 
- `ClientsRemediationTotal`
- Data type: `UInt32`
+Count of successfully remediated clients.
 
- Access type: Read/Write
+`ClientsRemediationTotal` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Total count of remediated clients (successful and unsuccessful).
+Qualifiers: none
 
- `ClientsTotal`
- Data type: `UInt32`
+Total count of remediated clients (successful and unsuccessful).
 
- Access type: Read/Write
+`ClientsTotal` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of clients.
+Qualifiers: none
 
- `ClientsUnhealthy`
- Data type: `UInt32`
+Count of clients.
 
- Access type: Read/Write
+`ClientsUnhealthy` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of unhealthy clients.
+Qualifiers: none
 
- `ClientsUnhealthyActive`
- Data type: `UInt32`
+Count of unhealthy clients.
 
- Access type: Read/Write
+`ClientsUnhealthyActive` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of unhealthy and active clients.
+Qualifiers: none
 
- `ClientsUnhealthyInactive`
- Data type: `UInt32`
+Count of unhealthy and active clients.
 
- Access type: Read/Write
+`ClientsUnhealthyInactive` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of unhealthy and inactive clients.
+Qualifiers: none
 
- `CollectionID`
- Data type: `String`
+Count of unhealthy and inactive clients.
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique auto-generated ID containing eight characters that identifies the collection.
+Qualifiers: [key]
+
+Unique auto-generated ID containing eight characters that identifies the collection.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: Overview for Windows Autopilot deployment for existing devices in Intune and Configuration Manager
+title: "Step by step tutorial for Windows Autopilot deployment for existing devices in Intune and Configuration Manager"
 description: Overview for Windows Autopilot deployment for existing devices in Intune and Configuration Manager.
-ms.date: 05/23/2025
+ms.date: "2025-05-23T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -54,31 +54,25 @@ Windows Autopilot deployment for existing devices can be viewed as a method to p
 
 The following steps are needed to configure and then perform a Windows Autopilot deployment for existing devices deployment using Intune and Microsoft Configuration Manager:
 
-> [!div class="checklist"]
->
-> - Step 1: [Set up a Windows Autopilot profile](setup-autopilot-profile.md)
-> - Step 2: [Install required modules to obtain Windows Autopilot profiles from Intune](install-modules.md)
-> - Step 3: [Create JSON file for Windows Autopilot profiles](create-json-file.md)
-> - Step 4: [Create and distribute package for JSON file in Configuration Manager](create-json-package.md)
-> - Step 5: [Create Windows Autopilot task sequence in Configuration Manager](create-autopilot-task-sequence.md)
-> - Step 6: [Create collection in Configuration Manager](create-collection.md)
-> - Step 7: [Deploy a Windows Autopilot task sequence to collection in Configuration Manager](deploy-autopilot-task-sequence.md)
-> - Step 8: [Speed up the deployment process (optional)](speed-up-deployment.md)
-> - Step 9: [Run Windows Autopilot task sequence on device](run-autopilot-task-sequence.md)
-> - Step 10: [Register device for Windows Autopilot](register-device.md)
-
-<!-- INADO-27343099 -->
+- Step 1: [Set up a Windows Autopilot profile](setup-autopilot-profile.md)
+- Step 2: [Install required modules to obtain Windows Autopilot profiles from Intune](install-modules.md)
+- Step 3: [Create JSON file for Windows Autopilot profiles](create-json-file.md)
+- Step 4: [Create and distribute package for JSON file in Configuration Manager](create-json-package.md)
+- Step 5: [Create Windows Autopilot task sequence in Configuration Manager](create-autopilot-task-sequence.md)
+- Step 6: [Create collection in Configuration Manager](create-collection.md)
+- Step 7: [Deploy a Windows Autopilot task sequence to collection in Configuration Manager](deploy-autopilot-task-sequence.md)
+- Step 8: [Speed up the deployment process (optional)](speed-up-deployment.md)
+- Step 9: [Run Windows Autopilot task sequence on device](run-autopilot-task-sequence.md)
+- Step 10: [Register device for Windows Autopilot](register-device.md)
 
 > [!IMPORTANT]
 >
-> - If enrollment restrictions are configured to block personal devices from enrolling, Windows Autopilot for existing devices can't be used. For more information, see [What are enrollment restrictions?: Blocking personal Windows devices](/intune/intune-service/enrollment/enrollment-restrictions-set#blocking-personal-windows-devices).
->
+> - If enrollment restrictions are configured to block personal devices from enrolling, Windows Autopilot for existing devices can't be used. For more information, see [What are enrollment restrictions?: Blocking personal Windows devices](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/enrollment-restrictions-set#blocking-personal-windows-devices).
 > - Any devices registered using a .json file during a hybrid join scenario are normally enrolled as a Corporate device.
 
 ## Walkthrough
 
-> [!div class="nextstepaction"]
-> [Step 1: Set up a Windows Autopilot profile](setup-autopilot-profile.md)
+[Step 1: Set up a Windows Autopilot profile](setup-autopilot-profile.md)
 
 ## Related content
 

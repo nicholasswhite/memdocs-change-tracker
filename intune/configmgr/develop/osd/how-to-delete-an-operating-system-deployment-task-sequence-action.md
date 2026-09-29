@@ -1,27 +1,28 @@
 ---
-title: Delete an OS Deployment Task Sequence Action
-ms.date: 09/20/2016
+title: "How to Delete an Operating System Deployment Task Sequence Action"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: Learn about how to remove an action from an operating system deployment task sequence to delete the action from the sequence.
 ms.service: configuration-manager
 ---
+
 # How to Delete an Operating System Deployment Task Sequence Action
+
 You delete an operating system deployment task sequence action, in Configuration Manager, by removing the action from the task sequence steps.
 
 ### To delete a task sequence action
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Obtain a task sequence ([SMS_TaskSequence](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md)) object. For more information, see [How to Create an Operating System Deployment Task Sequence](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence.md).
-
-3.  Remove the action from the `SMS_TaskSequence.Steps` array property.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Obtain a task sequence ([SMS_TaskSequence](../reference/osd/sms_tasksequence-server-wmi-class.md)) object. For more information, see [How to Create an Operating System Deployment Task Sequence](how-to-create-an-operating-system-deployment-task-sequence.md).
+3. Remove the action from the `SMS_TaskSequence.Steps` array property.
 
 ## Example
- The following example method deletes an action from the task sequence. The action is identified as an action by checking the Windows Management Instrumentation (WMI) property \__SUPERCLASS to ensure it derives from [SMS_TaskSequenceAction](../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method deletes an action from the task sequence. The action is identified as an action by checking the Windows Management Instrumentation (WMI) property __SUPERCLASS to ensure it derives from [SMS_TaskSequenceAction](../reference/osd/sms_tasksequence_action-server-wmi-class.md).
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub RemoveAction (connection, taskSequence, actionName)
@@ -94,42 +95,44 @@ public void RemoveAction(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`Connection`|-   Managed:`WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`taskSequence`|-   Managed: `IResultObject`<br />-   VBScript:  [SWbemObject](/windows/win32/wmisdk/swbemobject)|The task sequence containing the action to be deleted.|
-|`actionName`|-   Managed: `String`<br />-   VBScript: `String`|The name of the action to be deleted. This can be obtained from the `SMS_TaskSequenceAction.Name` property.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection` | - Managed:`WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `taskSequence` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject) | The task sequence containing the action to be deleted. |
+| `actionName` | - Managed: `String` - VBScript: `String` | The name of the action to be deleted. This can be obtained from the `SMS_TaskSequenceAction.Name` property. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Add an Operating System Deployment Task Sequence Action](../../develop/osd/how-to-add-an-operating-system-deployment-task-sequence-action.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
+
+[Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Add an Operating System Deployment Task Sequence Action](how-to-add-an-operating-system-deployment-task-sequence-action.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md)

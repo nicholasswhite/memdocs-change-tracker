@@ -1,7 +1,7 @@
 ---
-title:  Intune Data Warehouse API
+title: "Microsoft Intune Data Warehouse API"
 description: You can use the Intune Data Warehouse API to build reports that provide insight into your enterprise mobile environment.
-ms.date: 10/30/2024
+ms.date: "2024-10-30T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -21,8 +21,9 @@ The OData (Open Data Protocol) is an Organization for the Advancement of Structu
 
 This reference section provides an overview of endpoints, supported HTTP methods, return payload formats, and documentation of the Intune Data Warehouse data model.
 
-> [!Important]
-> You can try out the latest functionality of the Data Warehouse by using the beta version. To use the beta version, your URL must contain the query parameter `api-version=beta`. The beta version offers features before they are made generally available as a supported service. As Intune adds new features, the beta version may change behavior and data contracts. Any custom code or reporting tools dependent on the beta version may break with ongoing updates. <!--If you experience problems with the beta service, follow [link to feedback process]() to report the issue or provide feedback.-->
+> [!IMPORTANT]
+>
+> You can try out the latest functionality of the Data Warehouse by using the beta version. To use the beta version, your URL must contain the query parameter `api-version=beta`. The beta version offers features before they are made generally available as a supported service. As Intune adds new features, the beta version may change behavior and data contracts. Any custom code or reporting tools dependent on the beta version may break with ongoing updates.
 
 ## OData custom client
 
@@ -30,7 +31,8 @@ You can access the Intune Data Warehouse data model through RESTful endpoints. T
 
 For more information, see [Get data from the Data Warehouse API with a REST client](setup-rest-client.md).
 
-> [!Note]
+> [!NOTE]
+>
 > You can access the [GitHub Intune Data Warehouse repo](https://github.com/Microsoft/Intune-Data-Warehouse) on Github for code samples.
 
 ## Interacting with the API
@@ -46,7 +48,7 @@ OData defines an abstract data model and a protocol that let any client access i
 
 ## Next steps
 
-Learn more about working with Microsoft Entra ID by reading the [Authentication Scenarios for Microsoft Entra ID](/azure/active-directory/develop/active-directory-authentication-scenarios).
+Learn more about working with Microsoft Entra ID by reading the [Authentication Scenarios for Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios).
 
 Find OData resources at [odata.org](https://www.odata.org).
 

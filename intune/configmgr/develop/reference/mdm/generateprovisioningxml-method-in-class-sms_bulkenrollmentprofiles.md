@@ -1,13 +1,15 @@
 ---
-title: GenerateProvisioningXML Method
+title: "GenerateProvisioningXML Method in Class SMS_BulkEnrollmentProfiles"
 description: The ImportForProfile Windows Management Instrumentation (WMI) class method generates provisioning data in XML format.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GenerateProvisioningXML Method in Class SMS_BulkEnrollmentProfiles
+
 The `ImportForProfile` Windows Management Instrumentation (WMI) class method, in Configuration Manager, generates provisioning data in XML format.
 
 ## Syntax
@@ -23,46 +25,47 @@ sint32 GenerateProvisioningXML(
 ```
 
 #### Parameters
- `BulkEnrollmentProfileID`
- Data type: `String`
 
- Qualifiers: [in]
+`BulkEnrollmentProfileID` Data type: `String`
 
- The ID of the bulk enrollment profile.
+Qualifiers: [in]
 
- `IsEncrypted`
- Data type: `Boolean`
+The ID of the bulk enrollment profile.
 
- Qualifiers: [in]
+`IsEncrypted` Data type: `Boolean`
 
- `true` if the enrollment package is password-protected. The default value is `false`.
+Qualifiers: [in]
 
- `EncrytionPassword`
- Data type: `String`
+`true` if the enrollment package is password-protected. The default value is `false`.
 
- Qualifiers: [in, optional]
+`EncrytionPassword` Data type: `String`
 
- The password used to encrypt the  enrollment package.
+Qualifiers: [in, optional]
 
- `ProvisioningDataXML`
- Data type: `String`
+The password used to encrypt the enrollment package.
 
- Qualifiers: [out]
+`ProvisioningDataXML` Data type: `String`
 
- The XML output that contains the provisioning data.
+Qualifiers: [out]
+
+The XML output that contains the provisioning data.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_BulkEnrollmentProfiles Server WMI Class](../../../develop/reference/mdm/sms_bulkenrollmentprofiles-server-wmi-class.md)
+
+[SMS_BulkEnrollmentProfiles Server WMI Class](sms_bulkenrollmentprofiles-server-wmi-class.md)

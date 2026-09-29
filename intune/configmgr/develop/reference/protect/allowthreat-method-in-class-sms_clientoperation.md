@@ -1,16 +1,18 @@
 ---
-title: AllowThreat Method
+title: "AllowThreat Method in Class SMS_ClientOperation"
 description: In Configuration Manager, the AllowThreat WMI class method that allows the specified threat to all members in a specific collection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # AllowThreat Method in Class SMS_ClientOperation
+
 The `AllowThreat` Windows Management Instrumentation (WMI) class method in Configuration Manager that allows the specified threat (identified by `ThreatID`) to all members in a specific collection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,43 +27,43 @@ uint32 AllowThreat
 ```
 
 ## Parameters
- `ThreatID`
- Data type: `UInt64`
 
- Qualifiers: [id("0"), in]
+`ThreatID` Data type: `UInt64`
 
- Threat identifier.
+Qualifiers: [id("0"), in]
 
- `AllowSettingsUniqueID`
- Data type: `String`
+Threat identifier.
 
- Qualifiers: [id("1"), in]
+`AllowSettingsUniqueID` Data type: `String`
 
- Antimalware settings (with allow threat identifier enabled) unique identifier.
+Qualifiers: [id("1"), in]
 
- `TargetCollectionID`
- Data type: `String`
+Antimalware settings (with allow threat identifier enabled) unique identifier.
 
- Qualifiers: [id("2"), in]
+`TargetCollectionID` Data type: `String`
 
- Identifier of target collection.
+Qualifiers: [id("2"), in]
 
- `OperationID`
- Data type: `UInt32`
+Identifier of target collection.
 
- Qualifiers: [id("3"), out]
+`OperationID` Data type: `UInt32`
 
- Unique identifier for the operation.
+Qualifiers: [id("3"), out]
+
+Unique identifier for the operation.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ClientOperation Server WMI Class](../../../develop/reference/protect/sms_clientoperation-server-wmi-class.md)
+
+[SMS_ClientOperation Server WMI Class](sms_clientoperation-server-wmi-class.md)

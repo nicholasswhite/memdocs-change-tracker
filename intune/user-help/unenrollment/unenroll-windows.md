@@ -1,27 +1,30 @@
 ---
-title: Remove your Windows device from Intune management
+title: "Remove your Windows device from management"
 description: Disconnect your work or school account from device running Windows.
-ms.date: 04/30/2024
+ms.date: "2024-04-30T00:00:00Z"
 ms.reviewer: jieyang
 ---
 
 # Remove your Windows device from management
 
 **Applies to**
-- Windows 
+
+- Windows
 
 Remove a registered, Windows device from management when you no longer want or need to:
-* Use your device for work or school.
-* Access work or school email, apps, or other resources.
+
+- Use your device for work or school.
+- Access work or school email, apps, or other resources.
 
 After you unregister the device, you lose device access to school or work resources.
 
-Make sure to read [What happens if you remove device from Intune](unenroll-windows.md#what-happens-if-you-remove-device-from-intune) before unenrolling your device.
+Make sure to read [What happens if you remove device from Intune](#what-happens-if-you-remove-device-from-intune) before unenrolling your device.
 
 ## What happens if you remove device from Intune
+
 This section describes how your device and access to work or school will change after you remove your device from Intune.
 
-After you unenroll a device running Windows:   
+After you unenroll a device running Windows:
 
 - Your device is removed from Company Portal.
 - You can't install apps from the Company Portal.
@@ -37,7 +40,6 @@ In addition, for Windows 8.1:
 - You might not be able to connect to your org's network via Wi-Fi or virtual private network (VPN).
 - You could lose access to internal file shares and websites from your device.
 
-
 After you unenroll a device running Windows 8.1 RT:
 
 - The Company Portal app is uninstalled from your device. Your device is removed from Company Portal and the app is uninstalled from your device.
@@ -48,24 +50,25 @@ After you unenroll a device running Windows 8.1 RT:
 - You could lose access to internal file shares and websites from your device.
 - Email apps, such as Windows Mail, can't open work email that's stored on your device.
 
-
 ## Remove Windows devices
+
 This section describes how to remove a Windows device from Intune.
 
 ### Remove in device Settings app
+
 1. Open the Settings app.
-2. Go to **Accounts** > **Access work or school**.
-3. Select the connected account that you want to remove > **Disconnect**.
+2. Go to **Accounts** &gt; **Access work or school**.
+3. Select the connected account that you want to remove &gt; **Disconnect**.
 4. To confirm device removal, select **Yes**.
 
 ## Remove Windows 8.1 PC
+
 Complete the following steps to remove a Windows 8.1 computer from Intune.
 
-1. Go to **PC Settings** > **Network** > **Workplace**.
+1. Go to **PC Settings** &gt; **Network** &gt; **Workplace**.
 2. Under **Workplace Join**, select **Leave**.
 3. Under **Turn on device management,** select **Turn off**.
 4. On the popup window that opens, select **Turn off**.
-
 
 ## Removing your personal information after removing the Company Portal
 
@@ -76,9 +79,8 @@ There are two kinds of data that the Company Portal stores on your Windows devic
 
 To delete the stored logs and cache, complete one of the following steps:
 
-* [Uninstall the Company Portal app](https://support.microsoft.com/help/4028003/windows-10-uninstall-apps-and-programs)
-
-* Reset the Company Portal app. Open the **Settings** app and select > **Apps** > **Installed apps** > **Company Portal** > **Advanced options** > **Reset**.
+- [Uninstall the Company Portal app](https://support.microsoft.com/help/4028003/windows-10-uninstall-apps-and-programs)
+- Reset the Company Portal app. Open the **Settings** app and select &gt; **Apps** &gt; **Installed apps** &gt; **Company Portal** &gt; **Advanced options** &gt; **Reset**.
 
 ## Next steps
 

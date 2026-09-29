@@ -1,7 +1,7 @@
 ---
-title: Remote control prerequisites
+title: "Prerequisites for remote control in Configuration Manager"
 description: Get the prerequisites for remote control in Configuration Manager.
-ms.date: 03/18/2022
+ms.date: "2022-03-18T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -21,6 +21,7 @@ To help improve performance, install the most up-to-date video driver on client 
 You can't use Configuration Manager remote control to remotely administer client computers that run versions of the Configuration Manager client earlier than current branch.
 
 > [!NOTE]
+>
 > No Windows services are required as an external dependency for remote control.
 
 ### Supported operating systems for the remote control viewer
@@ -46,9 +47,7 @@ Before you can run reports for remote control, install the reporting services po
 ### Security permissions
 
 - To access collection resources and to start a remote control session from the Configuration Manager console, your account needs the **Read**, **Read Resource**, and **Remote Control** permissions for the **Collection** object.
-
 - The **Remote Tools Operator** security role includes the permissions that are required to manage remote control in Configuration Manager.
-
 - Permitted viewers must be given permission to use remote control by adding these users to the **Permitted viewers of Remote Control and Remote Assistance** list in the **Remote Tools** client settings.
 
 For more information, see [Configure role-based administration](../../../servers/deploy/configure/configure-role-based-administration.md).
@@ -58,6 +57,7 @@ For more information, see [Configure role-based administration](../../../servers
 Remote tools aren't supported for clients that are connected remotely. For example, you can't remote control a client that communicates with the site through a cloud management gateway (CMG). For more information about the network ports required for remote tools, see [Ports used in Configuration Manager](../../../plan-design/hierarchy/ports.md#BKMK_PortsConsole-Client).
 
 > [!TIP]
+>
 > For tenant-attached devices, remote tools are available in the Microsoft Intune admin center. For more information, see [Support for remote tools](../cmg/supported-configurations.md#bkmk_note3).
 
 ## Next steps

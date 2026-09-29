@@ -1,7 +1,7 @@
 ---
-title: Pradeo Mobile Threat Defense connector and Microsoft Intune
+title: "Pradeo Mobile Threat Defense connector with Intune"
 description: How to set up the Pradeo Mobile Threat Protection with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -12,6 +12,7 @@ You can control mobile device access to corporate resources using Conditional Ac
 You can configure Conditional Access policies based on Pradeo risk assessment enabled through Intune device compliance policies, which you can use to allow or block noncompliant devices to access corporate resources based on detected threats.
 
 > [!NOTE]
+>
 > This Mobile Threat Defense vendor is not supported for unenrolled devices.
 
 ## Supported platforms
@@ -46,11 +47,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected:*
 
-:::image type="content" source="./media/pradeo/pradeo-maliciousapps-blocked.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/pradeo/pradeo-maliciousapps-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/pradeo/pradeo-maliciousapps-unblocked.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/pradeo/pradeo-maliciousapps-unblocked.png)
 
 ### Control access based on threat to network
 
@@ -58,11 +59,11 @@ Detect threats to your network like **Man-in-the-middle** attacks, and protect a
 
 *Block network access through Wi-Fi:*
 
-:::image type="content" source="./media/pradeo/pradeo-network-wifi-blocked.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/pradeo/pradeo-network-wifi-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/pradeo/pradeo-network-wifi-unblocked.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated.":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated.](media/pradeo/pradeo-network-wifi-unblocked.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -70,18 +71,15 @@ Detect threats to your network like **Man-in-the-middle** attacks, and prevent s
 
 *Block SharePoint Online when network threats are detected:*
 
-:::image type="content" source="./media/pradeo/pradeo-network-spo-blocked.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/pradeo/pradeo-network-spo-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/pradeo/pradeo-network-spo-unblocked.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/pradeo/pradeo-network-spo-unblocked.png)
 
 ## Next steps
 
-- [Integrate Pradeo with Intune](./setup-pradeo.md)
-
-- [Set up Pradeo apps](./assign-apps.md)
-
-- [Create Pradeo device compliance policy](./create-compliance-policy.md)
-
-- [Enable Pradeo MTD connector](./enable-connector.md)
+- [Integrate Pradeo with Intune](setup-pradeo.md)
+- [Set up Pradeo apps](assign-apps.md)
+- [Create Pradeo device compliance policy](create-compliance-policy.md)
+- [Enable Pradeo MTD connector](enable-connector.md)

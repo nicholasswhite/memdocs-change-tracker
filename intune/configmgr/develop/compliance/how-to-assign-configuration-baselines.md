@@ -1,29 +1,29 @@
 ---
-title: Assign Configuration Baselines
-ms.date: 09/20/2016
+title: "How to Assign Configuration Baselines"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: Learn how to assign a configuration baseline to a collection by creating an assignment instance, populated with a minimum set of required values, and saving.
 ms.service: configuration-manager
 ---
+
 # How to Assign Configuration Baselines
+
 In Configuration Manager, to assign a configuration baseline to a collection, an assignment instance is created, populated with a minimum set of required values, and saved.
 
 ### To assign Configuration Baselines
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create an instance of `SMS_BaselineAssignment`.
-
-3.  Populate the instance properties.
-
-4.  Save the new `SMS_BaselineAssignment` instance.
+1. Set up a connection to the SMS Provider.
+2. Create an instance of `SMS_BaselineAssignment`.
+3. Populate the instance properties.
+4. Save the new `SMS_BaselineAssignment` instance.
 
 ## Example
- The following code examples show how to create an instance of a baseline assignment.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following code examples show how to create an instance of a baseline assignment.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -148,54 +148,55 @@ public void DCMCreateAssignment(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|-   `connection`<br />-   `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`applyToSubTargets`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|`true` to apply the configuration item assignment to a subcollection.|
-|`assignmentAction`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Action associated with the configuration item assignment.|
-|`assignmentName`|-   Managed: `String`<br />-   VBScript: `String`|assignmentName|
-|`assignmentDescription`|-   Managed: `String`<br />-   VBScript: `String`|The local assignment name.|
-|`desiredConfigType`|-   Managed: `String`<br />-   VBScript: `String`|The type of the configuration item.|
-|`distributionPointLocality`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Flags that determine how the client obtains distribution points, according to distribution point locality.|
-|`evaluationSchedule`|-   Managed: `String`<br />-   VBScript: `String`|The assignment evaluation schedule.|
-|`logComplianceToWinEvent`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|`true` to log compliance status to Windows event logs.|
-|`notifyUser`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|`true` to notify the user when a configuration item is available.|
-|`sendDetailedNonComplianceStatus`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|`true` to send a detailed non-compliance status message.|
-|`startTime`|-   Managed: `String`<br />-   VBScript: `String`|The date and time when the configuration item assignment was initially offered.|
-|`suppressReboot`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Value indicating whether the client should not reboot the computer, if there is a reboot pending after the configuration item is applied.|
-|`targetCollectionID`|-   Managed: `String`<br />-   VBScript: `String`|The identifier of the collection to which the assignment is targeted.|
-|`useGMTTimes`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|`true` if the times and schedules are in Universal Coordinated Time (UTC).|
-|`baselineID`|-   Managed: `Integer` Array<br />-   VBScript: `Integer` Array|Array of IDs for the configuration items targeted by the assignment.|
+| --- | --- | --- |
+| - `connection` - `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `applyToSubTargets` | - Managed: `Boolean` - VBScript: `Boolean` | `true` to apply the configuration item assignment to a subcollection. |
+| `assignmentAction` | - Managed: `Integer` - VBScript: `Integer` | Action associated with the configuration item assignment. |
+| `assignmentName` | - Managed: `String` - VBScript: `String` | assignmentName |
+| `assignmentDescription` | - Managed: `String` - VBScript: `String` | The local assignment name. |
+| `desiredConfigType` | - Managed: `String` - VBScript: `String` | The type of the configuration item. |
+| `distributionPointLocality` | - Managed: `Integer` - VBScript: `Integer` | Flags that determine how the client obtains distribution points, according to distribution point locality. |
+| `evaluationSchedule` | - Managed: `String` - VBScript: `String` | The assignment evaluation schedule. |
+| `logComplianceToWinEvent` | - Managed: `Boolean` - VBScript: `Boolean` | `true` to log compliance status to Windows event logs. |
+| `notifyUser` | - Managed: `Boolean` - VBScript: `Boolean` | `true` to notify the user when a configuration item is available. |
+| `sendDetailedNonComplianceStatus` | - Managed: `Boolean` - VBScript: `Boolean` | `true` to send a detailed non-compliance status message. |
+| `startTime` | - Managed: `String` - VBScript: `String` | The date and time when the configuration item assignment was initially offered. |
+| `suppressReboot` | - Managed: `Integer` - VBScript: `Integer` | Value indicating whether the client should not reboot the computer, if there is a reboot pending after the configuration item is applied. |
+| `targetCollectionID` | - Managed: `String` - VBScript: `String` | The identifier of the collection to which the assignment is targeted. |
+| `useGMTTimes` | - Managed: `Boolean` - VBScript: `Boolean` | `true` if the times and schedules are in Universal Coordinated Time (UTC). |
+| `baselineID` | - Managed: `Integer` Array - VBScript: `Integer` Array | Array of IDs for the configuration items targeted by the assignment. |
 
 ## Compiling the Code
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.ComponentModel
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.ComponentModel
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Configuration Baselines and Configuration Items](../../develop/compliance/about-configuration-baselines-and-configuration-items.md)
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Connect to a Configuration Manager Provider using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to a Configuration Manager Provider Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [SMS_BaselineAssignment Server WMI Class](../../develop/reference/compliance/sms_baselineassignment-server-wmi-class.md)
+
+[About Configuration Baselines and Configuration Items](about-configuration-baselines-and-configuration-items.md) [Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Connect to a Configuration Manager Provider using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to a Configuration Manager Provider Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [SMS_BaselineAssignment Server WMI Class](../reference/compliance/sms_baselineassignment-server-wmi-class.md)

@@ -1,7 +1,7 @@
 ---
-title: "Device Action: Delete"
+title: "Device action: delete"
 description: Learn how to delete devices with Microsoft Intune.
-ms.date: 08/06/2026
+ms.date: "2026-08-06T00:00:00Z"
 ms.topic: how-to
 zone_pivot_groups: 51e33912-415a-402f-8201-8acebf3e4991
 ---
@@ -11,6 +11,7 @@ zone_pivot_groups: 51e33912-415a-402f-8201-8acebf3e4991
 Use the *delete* action in Intune to permanently remove devices that are no longer needed, being repurposed, or missing. This action helps cleanup your device inventory and ensures that unmanaged or obsolete devices no longer appear in the admin center.
 
 > [!IMPORTANT]
+>
 > A tenant can submit up to 1,000 Delete actions per day. This tenant-wide limit is cumulative across individual device actions, bulk device actions, and Microsoft Graph API requests. The Delete limit applies to Delete requests even when deleting a device triggers a Retire or Wipe command. To request a limit change, [contact Microsoft support](../../fundamentals/it-pro-support/get-support-admin-center.md). For all device action limits, see [Daily tenant limits](index.md#daily-tenant-limits).
 
 ### Delete action behavior by platform
@@ -20,17 +21,17 @@ When you use the **Delete** action in Intune, the command that triggers depends 
 - For **Apple mobile**, **macOS**, and **Windows** devices, the Delete action always triggers a **Retire** command.
 - For **Android** devices, the Delete action triggers either a **Retire** or **Wipe** command depending on the enrollment type.
 
-| Platform     | Enrollment Type                      | Action Triggered            |
-|--------------|--------------------------------------|-----------------------------|
-| Windows      | Any                                  | [Retire devices](retire.md) |
-| Apple mobile | Any                                  | [Retire devices](retire.md) |
-| macOS        | Any                                  | [Retire devices](retire.md) |
-| Android      | Device administrator                 | [Retire devices](retire.md) |
-| Android      | Personally-owned work profile (BYOD) | [Retire devices](retire.md) |
-| Android      | Corporate-owned Fully managed (COBO) | [Wipe devices](wipe.md)     |
-| Android      | Corporate-owned Dedicated (COSU)     | [Wipe devices](wipe.md)     |
-| Android      | Corporate-owned Work profile (COPE)  | [Wipe devices](wipe.md)     |
-| Android      | Open Source Project (AOSP)           | [Wipe devices](wipe.md)     |
+| Platform | Enrollment Type | Action Triggered |
+| --- | --- | --- |
+| Windows | Any | [Retire devices](retire.md) |
+| Apple mobile | Any | [Retire devices](retire.md) |
+| macOS | Any | [Retire devices](retire.md) |
+| Android | Device administrator | [Retire devices](retire.md) |
+| Android | Personally-owned work profile (BYOD) | [Retire devices](retire.md) |
+| Android | Corporate-owned Fully managed (COBO) | [Wipe devices](wipe.md) |
+| Android | Corporate-owned Dedicated (COSU) | [Wipe devices](wipe.md) |
+| Android | Corporate-owned Work profile (COPE) | [Wipe devices](wipe.md) |
+| Android | Open Source Project (AOSP) | [Wipe devices](wipe.md) |
 
 ::: zone pivot="windows"
 
@@ -47,12 +48,7 @@ Before retiring a Microsoft Entra joined device, make sure to back up any critic
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
@@ -63,44 +59,56 @@ Before retiring a Microsoft Entra joined device, make sure to back up any critic
 > - visionOS
 > - Windows
 
-:::column-end:::
-:::row-end:::
-
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
 > To run this action, use an account with at least one of the following roles:
 >
-> - [School Administrator]
-> - [Endpoint Security Manager]
-> - [Custom role] that includes:
+> - [School Administrator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#school-administrator)
+> - [Endpoint Security Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#endpoint-security-manager)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Managed devices/Delete**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
 
-:::column-end:::
-:::row-end:::
-
 ## How to delete a device from the Intune admin center
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Delete**. To confirm, select **Yes**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Delete**. To confirm, select **Yes**.
 
-[!INCLUDE [multiple-administrative-approval](includes/multiple-administrative-approval.md)]
+> [!NOTE]
+>
+> This action might be governed by an Intune access policy that requires Multiple Administrative Approval (MAA). If so, a second administrator must approve the action before it can proceed.
+>
+> For more information, see [Use access policies to require multiple administrative approvals](../../fundamentals/role-based-access-control/multi-admin-approval.md).
 
-[!INCLUDE [remove-device-from-entra-id](includes/remove-device-from-entra-id.md)]
+## Remove a device from Microsoft Entra ID
+
+After executing the action on a device from Intune, you might also want to remove its record from Microsoft Entra ID to fully disconnect it from your organization's identity infrastructure. This step helps ensure that the device no longer appears in your tenant, avoids potential confusion in device inventory, and prevents lingering access permissions or stale records that could affect compliance or reporting.
+
+For more information about removing devices from Microsoft Entra ID, see [Manage stale devices in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/devices/manage-stale-devices).
 
 ::: zone pivot="ios,macos"
 
-[!INCLUDE [remove-device-from-apple-ade](includes/remove-device-from-apple-ade.md)]
+## Remove an Apple ADE device from Apple Business Manager
+
+After executing the action on an Apple Automated Device Enrollment (ADE) device in Intune, you might also need to release the device from Apple Business Manager to fully remove it from organizational control.
+
+Follow these steps:
+
+1. Go to [business.apple.com](http://business.apple.com), navigate to the **Devices** section, and search for the device using its serial number.
+2. Select the device, opent the **...** menu, and the select **Release from Organization**.
+3. Confirm the action by checking **I understand this cannot be undone**, and then select **Continue**.
+
+> [!NOTE]
+>
+> In some cases, the iOS device must be restored with iTunes to apply this change. Please find further instructions from Apple [here](https://support.apple.com/guide/itunes/restore-to-factory-settings-itnsdb1fe305/windows).
 
 ::: zone-end
 
 ::: zone pivot="android"
+
+
+
 ::: zone-end
 
 ## Delete action status
@@ -108,29 +116,9 @@ Before retiring a Microsoft Entra joined device, make sure to back up any critic
 After you issue a **Delete** action, the device is removed from Intune management and is immediately hidden from the admin center. In the [Device actions report](../reports/overview.md#device-actions-report), the Delete action is reported with an **Action Status** of **Completed**.
 
 > [!NOTE]
+>
 > For **MDM devices**, deleting a device immediately hides it from the admin center and initiates a **Retire**. A status of **Completed** on a delete action means the process is complete on the server side; it doesn't confirm that the client device finished the **Retire**.
 
 ## Reference links
 
-- Microsoft Graph API: [delete action][GRAPH-1]
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[School Administrator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator
-[Endpoint Security Manager]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#endpoint-security-manager
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-cleanwindowsdevice
-
-<!--Other links-->
-
-[CSP-1]: /windows/client-management/mdm/cleanpc-csp
+- Microsoft Graph API: [delete action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-cleanwindowsdevice)

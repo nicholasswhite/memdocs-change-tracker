@@ -1,7 +1,7 @@
 ---
 title: Client event logs
 description: A technical reference for the possible BitLocker (MBAM) client entries in the Windows event log
-ms.date: 11/29/2019
+ms.date: "2019-11-29T00:00:00Z"
 ms.subservice: protect
 ms.topic: reference
 ms.collection: tier3
@@ -11,8 +11,6 @@ ms.service: configuration-manager
 # Client event logs
 
 *Applies to: Configuration Manager (current branch)*
-
-<!--3601034-->
 
 On a Configuration Manager client to which you deploy a BitLocker management policy, use the Windows Event Viewer to view BitLocker client event logs. Go to **Applications and Services Logs**, **Microsoft**, **Windows**, **MBAM** for both [Admin](#admin) and [Operational](#operational) event logs.
 

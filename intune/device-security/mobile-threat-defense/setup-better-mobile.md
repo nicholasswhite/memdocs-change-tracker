@@ -1,7 +1,7 @@
 ---
-title: Set up Better Mobile integration with Intune
+title: "Integrate Better Mobile with Intune"
 description: Integrate the third-party mobile threat defense solution of Better Mobile with Microsoft Intune.
-ms.date: 07/19/2024
+ms.date: "2024-07-19T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -16,17 +16,12 @@ The following steps are to be completed in the Better Mobile admin console and w
 Before starting the process of integrating Better Mobile with Intune, make sure you have the following:
 
 - Microsoft Intune Plan 1 subscription
-
 - Microsoft Entra admin credentials to grant the following permissions:
 
   - Sign in and read user profile
-
   - Access the directory as the signed-in user
-
   - Read directory data
-
   - Send device information to Intune
-
 - Admin credentials to access the Better Mobile admin console.
 
 ### Better Mobile app authorization
@@ -34,20 +29,16 @@ Before starting the process of integrating Better Mobile with Intune, make sure 
 The Better Mobile app authorization process follows:
 
 - Allow the Better Mobile service to communicate information related to device health state back to Intune.
-
 - Better Mobile syncs with Microsoft Entra Enrollment Group membership to populate its device's database.
-
 - Allow the Better Mobile admin console to use Microsoft Entra single sign-on (SSO).
-
 - Allow the Better Mobile app to sign in using Microsoft Entra SSO.
 
 ## To set up Better Mobile integration
 
 1. Go to the Better Mobile admin console and sign in with your credentials.
-2. Choose **Integration** > **EMM/MDM** > **ADD ACCOUNT**.
+2. Choose **Integration** &gt; **EMM/MDM** &gt; **ADD ACCOUNT**.
 
-     ![Image of the Better Mobile admin console](./media/setup-better-mobile/better_mobile_console.png)
-
+   ![Image of the Better Mobile admin console](media/setup-better-mobile/better_mobile_console.png)
 3. Choose **Intune**.
 4. Next to **ACCOUNT NAME**, type a descriptor.
 5. In the **Microsoft Sign in** window, enter your Intune credentials.
@@ -58,5 +49,5 @@ The Better Mobile app authorization process follows:
 
 ## Next steps
 
-- [Set up Better Mobile apps for enrolled devices](./assign-apps.md)
-- [Set up Better Mobile apps for unenrolled devices](./add-apps-unenrolled-devices.md)
+- [Set up Better Mobile apps for enrolled devices](assign-apps.md)
+- [Set up Better Mobile apps for unenrolled devices](add-apps-unenrolled-devices.md)

@@ -1,8 +1,8 @@
 ---
-title: Enable eSIM data connections in Microsoft Intune
+title: "Configure eSIM cellular profiles using imported activation codes in Intune (public preview)"
 description: Add or use eSIM to get internet and data access using different data plans. In Intune, add or import activation codes, and then assign these activation codes using a configuration profile. You can also monitor the eSIM profiles and check the status of the eSIM-enabled devices.
 keywords:
-ms.date: 06/25/2024
+ms.date: "2024-06-25T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: nicolezhao, hejimenez
 ---
@@ -21,13 +21,14 @@ In Intune, you can bulk activate eSIM codes using the following options:
 
 | Option | Platform support | Description |
 | --- | --- | --- |
-| **Import activation codes using a CSV file <br/> (this article)** | ![check-icon] Windows 11 (**supported, but not recommended**) - [Use an eSIM download server](./configure-esim-download-server.md) instead<br/> <br/>![check-icon] Windows 10 <br/>| In an eSIM policy, import one-time-use activation codes. The eSIM hardware uses the activation codes to contact the mobile operator, download the eSIM policy, and configure cellular activation. <br/><br/>Requires individual activation codes given to you by the mobile operator. |
-| **[eSIM download server](./configure-esim-download-server.md)** | ![check-icon] Windows 11 (**recommended**) <br/><br/>![error-icon]  Windows 10 | In a settings catalog policy, add your mobile operator's download server FQDN. The device contacts the download server, authenticates, and receives eSIM connection info. <br/><br/>No individual activation codes needed. |
+| **Import activation codes using a CSV file   (this article)** | ![check-icon](../../media/icons/16/check.svg) Windows 11 (**supported, but not recommended**) - [Use an eSIM download server](configure-esim-download-server.md) instead   ![check-icon](../../media/icons/16/check.svg) Windows 10 | In an eSIM policy, import one-time-use activation codes. The eSIM hardware uses the activation codes to contact the mobile operator, download the eSIM policy, and configure cellular activation.   Requires individual activation codes given to you by the mobile operator. |
+| **[eSIM download server](configure-esim-download-server.md)** | ![check-icon](../../media/icons/16/check.svg) Windows 11 (**recommended**)   ![error-icon](../../media/icons/16/error.svg) Windows 10 | In a settings catalog policy, add your mobile operator's download server FQDN. The device contacts the download server, authenticates, and receives eSIM connection info.   No individual activation codes needed. |
 
 This article describes how to import the activation codes in bulk, and then deploy these codes to your eSIM-capable devices. This feature is in [public preview](../../fundamentals/public-preview.md).
 
 > [!NOTE]
-> You can create a custom OMA-URI profile using the [eUICCs CSP](/windows/client-management/mdm/euiccs-csp). Be sure to deploy one custom profile for each device. The profile must include the device ICCID and matching activation code from the carrier for each device.
+>
+> You can create a custom OMA-URI profile using the [eUICCs CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/euiccs-csp). Be sure to deploy one custom profile for each device. The profile must include the device ICCID and matching activation code from the carrier for each device.
 
 ## Prerequisites
 
@@ -36,12 +37,11 @@ To deploy eSIM to your devices using Intune, you need the following prerequisite
 - **Windows** devices that are enrolled and MDM managed by Intune. For information on the enrollment options for Windows devices, go to [Windows enrollment guide for Microsoft Intune](../../device-enrollment/windows/guide.md).
 
   > [!IMPORTANT]
-  > [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
-
+  >
+  > On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 - **eSIM capable devices**, like the Surface LTE. To determine if your Windows device supports eSIM, go to [Use an eSIM to get a cellular data connection on your Windows PC](https://support.microsoft.com/help/4020763/windows-10-use-esim-for-cellular-data). If you're unsure if your devices support eSIM, then you can also contact your device manufacturer.
-
 - **Activation codes** provided by your mobile operator. These one time-use activation codes are added to Intune, and deployed to your eSIM capable devices. Contact your mobile operator to acquire eSIM activation codes.
-- [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
+- Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
 
 ## Deploy eSIM to devices - overview
 
@@ -58,8 +58,8 @@ This article guides you through these steps.
 
 Cellular activation codes are provided by your mobile operator in a comma-separated file (csv). When you have this file, add it to Intune using the following steps:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **eSIM cellular profiles** > **Add**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **eSIM cellular profiles** &gt; **Add**.
 3. Select the CSV file that has your activation codes.
 4. Select **OK** to save your changes.
 
@@ -78,16 +78,16 @@ When working with the `csv` file with the activation codes, be sure you or your 
 1. The first row and first cell of the `csv` is the URL of the mobile operator eSIM activation service, which is called SM-DP+ (Subscription Manager Data Preparation server). The URL should be a fully qualified domain name (FQDN) without any commas.
 2. The second and all later rows are unique one-time use activation codes that include two values:
 
-    1. First column is the unique ICCID (the identifier of the SIM chip)
-    2. Second column is the Matching ID with only a comma separating them (no comma at the end). See the following example:
+   1. First column is the unique ICCID (the identifier of the SIM chip)
+   2. Second column is the Matching ID with only a comma separating them (no comma at the end). See the following example:
 
-        :::image type="content" source="./media/enable-esim/url-activation-code-examples.png" alt-text="Mobile operator activation code sample csv file.":::
-
+      ![Mobile operator activation code sample csv file.](media/enable-esim/url-activation-code-examples.png)
 3. The cellular subscription becomes the first part of the SMDP of your mobile operator. For example, in the previous image, the first row includes the `smdp.skynet.mobile` URL of the mobile operator. Intune names the cellular subscription pool name as `smdp`:
 
-    :::image type="content" source="./media/enable-esim/subscription-pool-name-csv-file.png" alt-text="Cellular subscription pool is named the activation code sample csv file name.":::
+   ![Cellular subscription pool is named the activation code sample csv file name.](media/enable-esim/subscription-pool-name-csv-file.png)
 
 > [!IMPORTANT]
+>
 > You can't have two lists with the same provider. If you try to upload two lists with the same provider, you may get a `The request is invalid` error message.
 >
 > To add more devices with the same provider or carrier, then you must:
@@ -108,13 +108,12 @@ Create a device group that includes the eSIM capable devices. [Add groups](../..
 
 Assign the profile to the Microsoft Entra group that includes your eSIM devices.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **eSIM cellular profiles**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **eSIM cellular profiles**.
 3. In the list of profiles, select the eSIM cellular subscription pool you want to assign, and then select **Assignments**.
-4. Choose to **Include** groups or **Exclude**  groups, and then select the groups.
+4. Choose to **Include** groups or **Exclude** groups, and then select the groups.
 
-    :::image type="content" source="./media/enable-esim/include-exclude-groups.png" alt-text="Include the device group to assign the profile in Microsoft Intune.":::
-
+   ![Include the device group to assign the profile in Microsoft Intune.](media/enable-esim/include-exclude-groups.png)
 5. When you select your groups, you're choosing a Microsoft Entra group. To select multiple groups, use the **Ctrl** key, and select the groups.
 6. When done, **Save** your changes.
 
@@ -126,47 +125,47 @@ eSIM activation codes are used once. After Intune installs an activation code on
 
 After you assign the profile, you can monitor the deployment status of a subscription pool.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **eSIM cellular profiles**. All of your existing eSIM cellular subscription pools are listed.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **eSIM cellular profiles**. All of your existing eSIM cellular subscription pools are listed.
 3. Select a subscription, and review the **Deployment Status**.
 
 ### Check the profile status
 
 After you create your device profile, Intune provides graphical charts. These charts display the status of a profile, such as it being successfully assigned to devices, or if the profile shows a conflict.
 
-1. Select **Devices** > **Manage devices** > **eSIM cellular profiles** > Select an existing subscription.
+1. Select **Devices** &gt; **Manage devices** &gt; **eSIM cellular profiles** &gt; Select an existing subscription.
 2. In the **Overview** tab, the top graphical chart shows the number of devices assigned to the specific eSIM cellular subscription pool deployment.
 
-    It also shows the number of devices for other platforms that are assigned the same device profile.
+   It also shows the number of devices for other platforms that are assigned the same device profile.
 
-    Intune shows the delivery and installation status for the activation code targeted to devices.
+   Intune shows the delivery and installation status for the activation code targeted to devices.
 
-    - **Device not synced**: The targeted device hasn't synced with the Intune service since the eSIM deployment policy was created. The device must check in with Intune to receive any policy.
-    - **Activation pending**: A transient state when Intune is actively installing the activation code on the device
-    - **Active**: Activation code installation successful
-    - **Activation fail**: Activation code installation failed; Go to [Best practices & troubleshooting](#best-practices--troubleshooting) (in this article).
+   - **Device not synced**: The targeted device hasn't synced with the Intune service since the eSIM deployment policy was created. The device must check in with Intune to receive any policy.
+   - **Activation pending**: A transient state when Intune is actively installing the activation code on the device
+   - **Active**: Activation code installation successful
+   - **Activation fail**: Activation code installation failed; Go to [Best practices &amp; troubleshooting](#best-practices--troubleshooting) (in this article).
 
 #### View the detailed device status
 
 In **Device Status**, you can monitor and view a detailed list of devices you can view.
 
-1. Select **Devices** > **Manage devices** > **eSIM cellular profiles** > Select an existing subscription.
+1. Select **Devices** &gt; **Manage devices** &gt; **eSIM cellular profiles** &gt; Select an existing subscription.
 2. Select **Device Status**. Intune shows more details about the device:
 
-    - **Device Name**: Name of the device that is targeted
-    - **User**: User of the enrolled device
-    - **ICCID**: Unique code provided by the mobile operate within the activation code installed on the device
-    - **Activation Status**: Intune delivery and installation status of the activation code on the device
-    - **Cellular status**: State provided by the mobile operator. Follow up with mobile operator to troubleshoot.
-    - **Last Check-In**: Date the device last communicated with Intune
+   - **Device Name**: Name of the device that is targeted
+   - **User**: User of the enrolled device
+   - **ICCID**: Unique code provided by the mobile operate within the activation code installed on the device
+   - **Activation Status**: Intune delivery and installation status of the activation code on the device
+   - **Cellular status**: State provided by the mobile operator. Follow up with mobile operator to troubleshoot.
+   - **Last Check-In**: Date the device last communicated with Intune
 
 ### Monitor eSIM profile details on the actual device
 
-1. On your device, open **Settings** > go to **Network & Internet**.
-2. Select **Cellular** > **Manage eSIM profiles**.
+1. On your device, open **Settings** &gt; go to **Network &amp; Internet**.
+2. Select **Cellular** &gt; **Manage eSIM profiles**.
 3. The eSIM profiles are listed:
 
-    :::image type="content" source="./media/enable-esim/device-settings-cellular-profiles.png" alt-text="View the eSIM profiles in your device settings.":::
+   ![View the eSIM profiles in your device settings.](media/enable-esim/device-settings-cellular-profiles.png)
 
 ## Remove the eSIM profile from device
 
@@ -183,9 +182,10 @@ The eSIM profile is also removed when:
 - The [reset device remote action](../../device-management/actions/wipe.md) runs on the device.
 
 > [!NOTE]
+>
 > Removing the profile might not stop billing. Contact your mobile operator to check the billing status for your device.
 
-## Best practices & troubleshooting
+## Best practices &amp; troubleshooting
 
 - Be sure your `.csv` file is properly formatted. Confirm the file doesn't include duplicate codes, doesn't include multiple mobile operators, or doesn't include different data plans. Remember, each file must be unique to a mobile operator and cellular data plan.
 - Create a static device Microsoft Entra group that only includes the eSIM devices that are targeted.
@@ -197,13 +197,3 @@ The eSIM profile is also removed when:
 ## Resources
 
 [Configure device profiles](../overview.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-
-<!-- icons -->
-
-[check-icon]: ../../media/icons/16/check.svg
-[error-icon]: ../../media/icons/16/error.svg
-[info-icon]: ../../media/icons/16/info-gray.svg

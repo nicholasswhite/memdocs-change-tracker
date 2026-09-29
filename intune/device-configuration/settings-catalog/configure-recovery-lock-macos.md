@@ -1,7 +1,7 @@
 ---
-title: Configure Recovery Lock using the settings catalog
+title: "Configure Recovery Lock on macOS devices in Microsoft Intune"
 description: Add or create settings using the settings catalog to configure Recovery Lock on macOS devices. Use Recovery Lock to help protect your macOS devices against unauthorized reinstallation and wiping. Using Microsoft Intune, you can configure Recovery Lock settings, and deploy these settings to macOS devices in your organization.
-ms.date: 06/01/2026
+ms.date: "2026-06-01T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: beflamm
 ---
@@ -29,99 +29,81 @@ This article applies to:
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
 > This feature supports the following platforms:
 >
 > - **macOS 11.5 or later** and use Apple silicon
 > - Devices must be enrolled in Intune and supervised.
 >
 > Recovery Lock isn't available for macOS devices with Intel chips.
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
+
 > To configure this policy in the settings catalog, use an account with at least one of the following roles:
 >
-> - [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
+> - Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
 >
-> To run the device actions, sign in to the [Microsoft Intune admin center] with an account with one of the following roles:
+> To run the device actions, sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account with one of the following roles:
 >
-> - [Intune administrator](/entra/identity/role-based-access-control/permissions-reference#intune-administrator) Microsoft Entra role
+> - [Intune administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#intune-administrator) Microsoft Entra role
 > - An Intune [custom role](../../fundamentals/role-based-access-control/create-custom-role.md) with the following permissions:
 >
 >   - Remote tasks/Rotate macOS recovery lock password
 >   - Remote tasks/View macOS recovery lock password
-:::column-end:::
-:::row-end:::
 
 ## Create the Recovery Lock policy
 
 Use the following steps to create a Recovery Lock policy in the settings catalog.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
-    - **Platform**: Select **macOS**.
-    - **Profile type**: Select **Settings catalog**.
-
+   - **Platform**: Select **macOS**.
+   - **Profile type**: Select **Settings catalog**.
 4. Select **Create**.
 5. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the profile. Name your profiles so you can easily identify them later. For example, a good profile name is **Enable recovery lock**.
-    - **Description**: Enter a description for the profile. This setting is optional, but recommended.
-
+   - **Name**: Enter a descriptive name for the profile. Name your profiles so you can easily identify them later. For example, a good profile name is **Enable recovery lock**.
+   - **Description**: Enter a description for the profile. This setting is optional, but recommended.
 6. Select **Next**.
-
 7. In **Configuration settings**, select **Add settings**, and search for **Recovery Lock**. Select the **Recovery Lock Password** category, select **Select all these settings**, and then close the settings picker.
 
-    :::image type="content" source="./media/configure-recovery-lock-macos/recovery-lock-category-settings.png" alt-text="Screenshot that shows Recovery Lock settings in the settings catalog in Microsoft Intune and Intune admin center." lightbox="./media/configure-recovery-lock-macos/recovery-lock-category-settings.png":::
-
+   [![Screenshot that shows Recovery Lock settings in the settings catalog in Microsoft Intune and Intune admin center.](media/configure-recovery-lock-macos/recovery-lock-category-settings.png)](media/configure-recovery-lock-macos/recovery-lock-category-settings.png#lightbox)
 8. Configure the Recovery Lock settings:
 
-    - **Enable Recovery Lock Password**: Select **Enabled** to enable the Recovery Lock feature on the device.
+   - **Enable Recovery Lock Password**: Select **Enabled** to enable the Recovery Lock feature on the device.
+   - **Recovery Lock Password Rotation Schedule**: Enter the number of months before the Recovery Lock password is automatically reset, from 1 to 12 months.
 
-    - **Recovery Lock Password Rotation Schedule**: Enter the number of months before the Recovery Lock password is automatically reset, from 1 to 12 months.
+     When the schedule triggers, Intune updates the password on the device and securely stores it in the Intune admin center.
 
-      When the schedule triggers, Intune updates the password on the device and securely stores it in the Intune admin center.
-
-      Be sure to set a schedule that meets your organization's security requirements. A shorter rotation interval increases security, as it reduces risk if a password is leaked. It can also increase help desk calls if users need to access the recovery partition often.
-
+     Be sure to set a schedule that meets your organization's security requirements. A shorter rotation interval increases security, as it reduces risk if a password is leaked. It can also increase help desk calls if users need to access the recovery partition often.
 9. Select **Next**. In **Scope tags**, select **Next**.
 
-    Scope tags are optional, and this example doesn't use them. To learn more about scope tags, and what they do, go to [Use role-based access control (RBAC) and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
-
+   Scope tags are optional, and this example doesn't use them. To learn more about scope tags, and what they do, go to [Use role-based access control (RBAC) and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 10. In **Assignments**, select **Next**.
 
-    Assignments are optional, and this example doesn't use them. In production, select **Add groups**. Select a Microsoft Entra group that includes users or devices that should receive this policy. For information and guidance on assigning policies, see [Assign user and device profiles in Intune](../../device-configuration/assign-device-profile.md).
-
+    Assignments are optional, and this example doesn't use them. In production, select **Add groups**. Select a Microsoft Entra group that includes users or devices that should receive this policy. For information and guidance on assigning policies, see [Assign user and device profiles in Intune](../assign-device-profile.md).
 11. In **Review + create**, review the summary of your changes. Select **Create**.
 
     When you create the profile, your policy is automatically assigned to the users or groups you chose. If you didn't choose any users or groups, then your policy is created, but it isn't deployed.
 
-    In **Devices** > **Configuration**, your new policy is shown in the list.
+    In **Devices** &gt; **Configuration**, your new policy is shown in the list.
 
 ## Monitor Recovery Lock status and view the password
 
 When you assign the policy to devices, you can monitor its status using the [Per setting status report](../../device-management/reports/overview.md#per-setting-status-report-operational).
 
-If Recovery Lock is enabled, you can view the password in the report at **Passwords and keys** > **Recovery Lock Password**.
+If Recovery Lock is enabled, you can view the password in the report at **Passwords and keys** &gt; **Recovery Lock Password**.
 
 ## Use the rotate Recovery Lock passcode device action
 
 You can use the rotate Recovery Lock passcode device action to reset the Recovery Lock password on demand. This action is helpful if a user forgets their password, or if you want to proactively rotate the password outside of the rotation schedule you set in the policy.
 
-1. In the [Intune admin center], select **Devices** > **All devices** > select the macOS device.
-2. Select **Rotate recovery lock passcode**.
-3. Confirm the action.
+1. In the [Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **All devices** &gt; select the macOS device.
+2. Select **Secure** &gt; **Rotate Recovery Lock Passcode**.
+3. Select **Yes** to confirm the action. Intune generates a new Recovery Lock passcode.
 
 To learn more, see [Rotate Recovery Lock passcode device action](../../device-management/actions/rotate-recovery-lock-passcode.md).
 
@@ -136,8 +118,3 @@ To remove the Recovery Lock password from a device, you have the following optio
 
 - [Use the Intune settings catalog to configure settings](index.md)
 - [Common tasks you can complete using the settings catalog](common-tasks.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

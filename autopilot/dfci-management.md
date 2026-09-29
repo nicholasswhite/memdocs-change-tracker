@@ -1,7 +1,7 @@
 ---
-title: DFCI Management
+title: "Device Firmware Configuration Interface (DFCI) Management"
 description: With Windows Autopilot Deployment and Intune, Unified Extensible Firmware Interface (UEFI) settings can be managed after the device is enrolled. UEFI settings can be managed by using the Device Firmware Configuration Interface (DFCI).
-ms.date: 03/25/2025
+ms.date: "2025-03-25T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: article
@@ -12,7 +12,7 @@ appliesto:
 
 # Device Firmware Configuration Interface (DFCI) Management
 
-With Windows Autopilot Deployment and Intune, Unified Extensible Firmware Interface (UEFI) settings can be managed after the device is enrolled. UEFI settings can be managed by using the Device Firmware Configuration Interface (DFCI). DFCI [enables Windows to pass management commands](/windows/client-management/mdm/uefi-csp) from Intune to UEFI for Windows Autopilot deployed devices. This capability allows limiting end user's control over BIOS settings. For example, the boot options can be locked down to prevent users from booting up another OS, such as one that doesn't have the same security features.
+With Windows Autopilot Deployment and Intune, Unified Extensible Firmware Interface (UEFI) settings can be managed after the device is enrolled. UEFI settings can be managed by using the Device Firmware Configuration Interface (DFCI). DFCI [enables Windows to pass management commands](https://learn.microsoft.com/en-us/windows/client-management/mdm/uefi-csp) from Intune to UEFI for Windows Autopilot deployed devices. This capability allows limiting end user's control over BIOS settings. For example, the boot options can be locked down to prevent users from booting up another OS, such as one that doesn't have the same security features.
 
 If a user reinstalls a previous Windows version, installs a separate OS, or formats the hard drive, they can't override DFCI management. This feature can also prevent malware from communicating with OS processes, including elevated OS processes. DFCI's trust chain uses public key cryptography, and doesn't depend on local UEFI password security. This layer of security blocks local users from accessing managed settings from the device's UEFI menus.
 
@@ -41,7 +41,7 @@ The DFCI management lifecycle includes the following processes:
 
 See the following figure:
 
-:::image type="content" source="images/dfci.png" alt-text="Screenshot that shows Device Firmware Configuration Interface (DFCI) Management workflow":::
+![Screenshot that shows Device Firmware Configuration Interface (DFCI) Management workflow](images/dfci.png)
 
 ## Requirements
 
@@ -59,19 +59,19 @@ See the following figure:
 There are four basic steps in managing DFCI profile with Windows Autopilot:
 
 1. Create a Windows Autopilot Profile
-1. Create an Enrollment status page profile
-1. Create a DFCI profile
-1. Assign the profiles
+2. Create an Enrollment status page profile
+3. Create a DFCI profile
+4. Assign the profiles
 
-See [Create the profiles](/intune/device-configuration/templates/configure-dfci-windows#create-the-profiles) and [Assign the profiles, and reboot](/intune/device-configuration/templates/configure-dfci-windows#assign-the-profiles-and-reboot) for details.
+See [Create the profiles](../intune/device-configuration/templates/configure-dfci-windows.md#create-the-profiles) and [Assign the profiles, and reboot](../intune/device-configuration/templates/configure-dfci-windows.md#assign-the-profiles-and-reboot) for details.
 
-The existing [DFCI settings](/intune/device-configuration/templates/configure-dfci-windows#update-existing-dfci-settings) can also be changed on devices that are in use. In the existing DFCI profile, change the settings and save the changes. Since the profile is already assigned, the new DFCI settings take effect when next time the device syncs or the device reboots.
+The existing [DFCI settings](../intune/device-configuration/templates/configure-dfci-windows.md#update-existing-dfci-settings) can also be changed on devices that are in use. In the existing DFCI profile, change the settings and save the changes. Since the profile is already assigned, the new DFCI settings take effect when next time the device syncs or the device reboots.
 
 To identify whether a device is DFCI ready, the following Intune Graph API call can be used:
 
 `managedDevice/deviceFirmwareConfigurationInterfaceManaged`
 
-For more information, see [Intune devices and apps API overview](/graph/intune-concept-overview) and [Working with Intune in Microsoft Graph ](/graph/api/resources/intune-graph-overview).
+For more information, see [Intune devices and apps API overview](https://learn.microsoft.com/en-us/graph/intune-concept-overview) and [Working with Intune in Microsoft Graph](https://learn.microsoft.com/en-us/graph/api/resources/intune-graph-overview) .
 
 ## OEMs that support DFCI
 
@@ -79,7 +79,7 @@ For more information, see [Intune devices and apps API overview](/graph/intune-c
 - Asus.
 - Dynabook.
 - Fujitsu.
-- [Microsoft Surface](/surface/surface-manage-dfci-guide).
+- [Microsoft Surface](https://learn.microsoft.com/en-us/surface/surface-manage-dfci-guide).
 - Panasonic.
 - VAIO.
 - Samsung.
@@ -91,8 +91,7 @@ Other OEMs are pending.
 
 ### DFCI enrollment fails for Professional editions of Windows 11, version 24H2
 
-Date added: *October 9, 2024*
-Date updated: *February 11, 2025*
+Date added: *October 9, 2024* Date updated: *February 11, 2025*
 
 DFCI can't currently be configured during the out-of-box experience (OOBE) on devices with Professional editions of Windows 11, version 24H2
 
@@ -101,10 +100,10 @@ For devices that have already been provisioned and have Professional editions of
 If DFCI needs to be configured during OOBE provisioning on 24H2 devices, follow these steps:
 
 1. During OOBE onboarding, ensure the device is upgraded to the Enterprise edition of Windows 11, version 24H2.
-1. After upgrading to the Enterprise edition of Windows 11, version 24H2, sync the device.
-1. Once the device is synced, reboot it to get it enrolled in DFCI.
+2. After upgrading to the Enterprise edition of Windows 11, version 24H2, sync the device.
+3. Once the device is synced, reboot it to get it enrolled in DFCI.
 
 ## Related content
 
 - [Microsoft DFCI Scenarios](https://microsoft.github.io/mu/dyn/mu_feature_dfci/DfciPkg/Docs/Scenarios/DfciScenarios/).
-- [Windows Autopilot and Surface devices](/surface/windows-autopilot-and-surface-devices).
+- [Windows Autopilot and Surface devices](https://learn.microsoft.com/en-us/surface/windows-autopilot-and-surface-devices).

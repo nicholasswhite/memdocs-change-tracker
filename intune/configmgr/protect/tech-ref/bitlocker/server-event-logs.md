@@ -1,7 +1,7 @@
 ---
 title: Server event logs
 description: A technical reference for the possible BitLocker (MBAM) server entries in the Windows event log
-ms.date: 11/29/2019
+ms.date: "2019-11-29T00:00:00Z"
 ms.subservice: protect
 ms.topic: reference
 ms.collection: tier3
@@ -12,8 +12,6 @@ ms.service: configuration-manager
 # Server event logs
 
 *Applies to: Configuration Manager (current branch)*
-
-<!--3601034-->
 
 Use the Windows Event Viewer to view event logs for the following BitLocker management server components in Configuration Manager:
 
@@ -32,8 +30,6 @@ The following sections contain messages and troubleshooting information for even
 Application: {SiteName}{VirtualDirectory} is missing the following Service Principal Names (SPNs):{ListOfSpns} Register the required SPNs on the account: {ExecutionAccount}.
 
 For integrated Windows Authentication to succeed, necessary SPNs need to be in place. This message indicates that the SPN required for the application isn't correctly configured. Details contained in this event should provide more information.
-
-<!-- See "Service Principal Name (SPN)" in MBAM 2.5 Server Prerequisites for Stand-alone and Configuration Manager Integration Topologies for more information. -->
 
 ### 100: AdminServiceRecoveryDbError
 
@@ -75,11 +71,10 @@ Possible error messages:
 
 - Unable to detect client machine account or data migration user account.
 
-    Whenever a call is made to the `PostKeyRecoveryInfo`, `IsRecoveryKeyResetRequired`, `CommitRecoveryKeyRest`, or `GetTpmHash` web methods, it retrieves the caller context to obtain caller credentials. If the caller context is null or empty, the service logs this message.
-
+  Whenever a call is made to the `PostKeyRecoveryInfo`, `IsRecoveryKeyResetRequired`, `CommitRecoveryKeyRest`, or `GetTpmHash` web methods, it retrieves the caller context to obtain caller credentials. If the caller context is null or empty, the service logs this message.
 - Account verification failed for caller identity.
 
-    This message is logged if the web method is expecting the caller to be a computer account and it's not. It can also be caused if the web method is expecting the caller to be a user account, and it's not a user account or a member of a data migration group account.
+  This message is logged if the web method is expecting the caller to be a computer account and it's not. It can also be caused if the web method is expecting the caller to be a user account, and it's not a user account or a member of a data migration group account.
 
 ### 104: StatusServiceComplianceDbConfigError
 
@@ -97,15 +92,13 @@ Known errors and possible causes:
 
 - The request to URL caused an internal error.
 
-    An unhandled exception was raised in the application for the administration and monitoring website (helpdesk). Review the log entries in the **Admin** event log to find the specific exception.
-
+  An unhandled exception was raised in the application for the administration and monitoring website (helpdesk). Review the log entries in the **Admin** event log to find the specific exception.
 - An error occurred while obtaining execution context information. Unable to verify Service Principal Name (SPN) registration.
 
-    During the initial helpdesk website load operation, it checks the SPN. To verify the SPN, it requires account information, IIS Sitename, and ApplicationVirtualPath corresponding to the helpdesk website. It logs this error message when one or more of these attributes are invalid or missing.
-
+  During the initial helpdesk website load operation, it checks the SPN. To verify the SPN, it requires account information, IIS Sitename, and ApplicationVirtualPath corresponding to the helpdesk website. It logs this error message when one or more of these attributes are invalid or missing.
 - An error occurred while verifying Service Principal Name (SPN) registration.
 
-    This message indicates that a security exception is thrown when verifying the SPN. Refer to the exception contained in the event details.
+  This message indicates that a security exception is thrown when verifying the SPN. Refer to the exception contained in the event details.
 
 ### 107: SelfServicePortalError
 
@@ -113,15 +106,13 @@ Known errors and possible causes:
 
 - An error occurred while getting recovery key for a user
 
-    Indicates that an unexpected exception was thrown when a request was made to retrieve a recovery key. Refer to the exception message in the event details. If tracing is enabled on the helpdesk app, refer to trace data to obtain detailed exception messages.
-
+  Indicates that an unexpected exception was thrown when a request was made to retrieve a recovery key. Refer to the exception message in the event details. If tracing is enabled on the helpdesk app, refer to trace data to obtain detailed exception messages.
 - An error occurred while obtaining execution context information. Unable to verify Service Principal Name (SPN) registration
 
-    During an initial load operation, the self-service portal retrieves account information, IIS Sitename, and ApplicationVirtualPath for the self-service website to verify the SPN. This error message is logged when one or more of these attributes are invalid.
-
+  During an initial load operation, the self-service portal retrieves account information, IIS Sitename, and ApplicationVirtualPath for the self-service website to verify the SPN. This error message is logged when one or more of these attributes are invalid.
 - An error occurred while verifying Service Principal Name (SPN) registration. EventDetails:{ExceptionMessage}
 
-    This message indicates that a security exception was thrown while verifying the SPN. Refer to the exception contained in the event details.
+  This message indicates that a security exception was thrown while verifying the SPN. Refer to the exception contained in the event details.
 
 ### 108: DomainControllerError
 
@@ -129,11 +120,10 @@ Known errors and possible causes:
 
 - An error occurred while resolving domain name {DomainName}, a memory allocation failure occurred.
 
-    To resolve domain name, it calls the `DsGetDcName` Windows API. This message is logged when this API returns `ERROR_NOT_ENOUGH_MEMORY`, which indicates a memory allocation failure.
-
+  To resolve domain name, it calls the `DsGetDcName` Windows API. This message is logged when this API returns `ERROR_NOT_ENOUGH_MEMORY`, which indicates a memory allocation failure.
 - Could not invoke DsGetDcName method
 
-    This message indicates that the `DsGetDcName` API is unavailable on the host.
+  This message indicates that the `DsGetDcName` API is unavailable on the host.
 
 ### 109: WebAppRecoveryDbError
 
@@ -141,9 +131,9 @@ Known errors and possible causes:
 
 - An error occurred while reading the configuration of the Recovery database. The connection string to the Recovery database is not configured.
 
-    This message indicates that recovery database connection string information at `HKLM\Software\Microsoft\MBAM Server\Web\RecoveryDBConnectionString` is invalid. Verify the given registry key value.
+  This message indicates that recovery database connection string information at `HKLM\Software\Microsoft\MBAM Server\Web\RecoveryDBConnectionString` is invalid. Verify the given registry key value.
 
-If you see any of the following messages, verify whether  the app pool credentials from the IIS server can make a connection to the recovery database:
+If you see any of the following messages, verify whether the app pool credentials from the IIS server can make a connection to the recovery database:
 
 - DoesUserHaveMatchingRecoveryKey: an error occurred while getting recovery key Ids for a user.
 - QueryDriveRecoveryData: an error occurred while getting drive recovery data.
@@ -156,7 +146,7 @@ Known errors and possible causes:
 
 - An error occurred while reading the configuration of the Compliance database. The connection string to the Compliance database is not configured.
 
-    This message indicates that compliance database connection string information at `HKLM\Software\Microsoft\MBAM Server\Web\ComplianceDBConnectionString` is invalid. Verify the value of this registry key.
+  This message indicates that compliance database connection string information at `HKLM\Software\Microsoft\MBAM Server\Web\ComplianceDBConnectionString` is invalid. Verify the value of this registry key.
 
 If you see any of the following messages, verify whether the app pool credentials from the IIS server can make a connection to the compliance database:
 

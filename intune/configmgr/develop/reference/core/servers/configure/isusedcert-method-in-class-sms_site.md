@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the IsUsedCert method to verify whether the specified certificate is used.
-title: IsUsedCert Method
-ms.date: 09/20/2016
+title: "IsUsedCert Method in Class SMS_Site"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # IsUsedCert Method in Class SMS_Site
+
 The `IsUsedCert` Windows Management Instrumentation (WMI) class method, in Configuration Manager, verifies whether the specified certificate is used.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -21,24 +23,27 @@ Boolean IsUsedCert(
 ```
 
 #### Parameters
- `Certificate`
- Data type: `String`
 
- Qualifiers: [in]
+`Certificate` Data type: `String`
 
- The certificate to check against the site.
+Qualifiers: [in]
+
+The certificate to check against the site.
 
 ## Return Values
- `true` if the specified certificate is used on the site; otherwise `false`.
+
+`true` if the specified certificate is used on the site; otherwise `false`.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
- [GetClientInfo Method in Class SMS_Site](../../../../../develop/reference/core/servers/configure/getclientinfo-method-in-class-sms_site.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md) [GetClientInfo Method in Class SMS_Site](getclientinfo-method-in-class-sms_site.md)

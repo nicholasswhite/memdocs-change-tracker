@@ -1,7 +1,7 @@
 ---
-title: Collections best practices
+title: "Best practices for collections in Configuration Manager"
 description: Get recommendations for configuring collections and collection evaluation in Configuration Manager.
-ms.date: 04/13/2021
+ms.date: "2021-04-13T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: best-practice
 ms.collection: tier3
@@ -36,7 +36,7 @@ In a busy Configuration Manager environment, you can improve collection evaluati
 
 Be aware of how the collection evaluation graph works so you can design an appropriate collection structure. Don't rely on full collection evaluation to always update all collections. If an incrementally updated collection updates on a schedule, referencing collections that aren't enabled for incremental updates may not update. Because updates likely occurred during incremental evaluations, a full evaluation may not update the collection, ending the collection evaluation graph for that cycle. In that case, no referencing collection evaluations occur. For more information, see [Collection evaluation graph](collection-evaluation.md#collection-evaluation-graph).
 
-## <a name="bkmk_incremental"></a> Limit incremental updates
+## Limit incremental updates
 
 Enabling incremental updates for many collections might cause evaluation delays. It's best to limit the number of incrementally updated collections to 200. The exact number depends on:
 
@@ -89,7 +89,8 @@ Exclude:
 
 You can use the [Collection Evaluation Viewer (CEViewer)](../../../support/ceviewer.md) to monitor how many collections are being evaluated and how long each collection is taking to update. The CEViewer is in the *CD.Latest* folder on the site server.
 
-> [!Tip]
+> [!TIP]
+>
 > Starting in Configuration Manager version 2010, this functionality is built-in to the console. For more information, see, [How to view collection evaluation](collection-evaluation-view.md).
 
 To manually do a similar check with SQL, you can use the following query:

@@ -1,7 +1,7 @@
 ---
-title: Create a deployment
+title: "How to create a deployment"
 description: Examples of how to programmatically create a Configuration Manager deployment.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -13,17 +13,15 @@ ms.service: configuration-manager
 The following examples show how to create a Configuration Manager deployment with the [SMS_Advertisement](../../../reference/core/servers/configure/sms_advertisement-server-wmi-class.md) class and its properties.
 
 > [!IMPORTANT]
+>
 > The account that creates the deployment needs the **Deploy Packages** permission for the collection and **Read** permission for the package.
 
 ## Overview
 
 1. Set up a connection to the SMS Provider.
-
-1. Create a new object of the `SMS_Advertisement` class.
-
-1. Populate the new advertisement properties.
-
-1. Save the new advertisement and properties.
+2. Create a new object of the `SMS_Advertisement` class.
+3. Populate the new advertisement properties.
+4. Save the new advertisement and properties.
 
 ## Examples
 
@@ -93,18 +91,18 @@ public void CreateSWDAdvertisement(WqlConnectionManager connection, string exist
 
 The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|- Managed: `WqlConnectionManager`<br />- VBScript: [SWbemServices](/windows/desktop/WmiSdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingCollectionID`|String|The ID of an existing collection with which to associate the advertisement.|
-|`existingPackageID`|String|The ID of an existing package with which to associate the advertisement.|
-|`existingProgramName`|String|The name for the program associated with the advertisement.|
-|`newAdvertisementName`|String|The name for the new advertisement.|
-|`newAdvertisementComment`|String|A comment for the new advertisement.|
-|`newAdvertisementFlags`|Integer|Flags specifying options for the new advertisement.|
-|`newRemoteClientFlags`|Integer| Flags specifying how the program should run when the client connects either locally or remotely to a distribution point.|
-|`newAdvertisementStartOfferDateTime`|String|The time when the new advertisement is first offered.|
-|`newAdvertisementStartOfferEnabled`|Boolean|`true` if the advertisement is offered.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/desktop/WmiSdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingCollectionID` | String | The ID of an existing collection with which to associate the advertisement. |
+| `existingPackageID` | String | The ID of an existing package with which to associate the advertisement. |
+| `existingProgramName` | String | The name for the program associated with the advertisement. |
+| `newAdvertisementName` | String | The name for the new advertisement. |
+| `newAdvertisementComment` | String | A comment for the new advertisement. |
+| `newAdvertisementFlags` | Integer | Flags specifying options for the new advertisement. |
+| `newRemoteClientFlags` | Integer | Flags specifying how the program should run when the client connects either locally or remotely to a distribution point. |
+| `newAdvertisementStartOfferDateTime` | String | The time when the new advertisement is first offered. |
+| `newAdvertisementStartOfferEnabled` | Boolean | `true` if the advertisement is offered. |
 
 ## Compiling the code
 
@@ -113,17 +111,13 @@ The C# example requires:
 ### Namespaces
 
 - `System`
-
 - `Microsoft.ConfigurationManagement.ManagementProvider`
-
 - `Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine`
 
 ### Assembly
 
 - `adminui.wqlqueryengine`
-
 - `microsoft.configurationmanagement.managementprovider`
-
 - `mscorlib`
 
 ## Robust programming

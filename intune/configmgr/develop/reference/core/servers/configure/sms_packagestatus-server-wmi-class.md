@@ -1,16 +1,18 @@
 ---
 description: Learn how to provide a summary report of the health of packages and distribution points in the site within Configuration Manager.
-title: SMS_PackageStatus Class
-ms.date: 09/20/2016
+title: "SMS_PackageStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PackageStatus Server WMI Class
+
 The `SMS_PackageStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides a summary report of the health of packages and distribution points in the site.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,118 +32,112 @@ Class SMS_PackageStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_PackageStatus` class does not define any methods.
+
+The `SMS_PackageStatus` class does not define any methods.
 
 ## Properties
- `Location`
- Data type: `String`
 
- Access type: Read/Write
+`Location` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The Universal Naming Convention (UNC) path or network abstraction layer (NAL) path to where the package is stored or distributed.
+Qualifiers: None
 
- `PackageID`
- Data type: `String`
+The Universal Naming Convention (UNC) path or network abstraction layer (NAL) path to where the package is stored or distributed.
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The unique local ID for the package.
+Qualifiers: [key]
 
- `Personality`
- Data type: `SInt32`
+The unique local ID for the package.
 
- Access type: Read/Write
+`Personality` Data type: `SInt32`
 
- Qualifiers: [key, enumeration]
+Access type: Read/Write
 
- Status personality. Possible values are:
+Qualifiers: [key, enumeration]
 
-|Value|Personality|
-|-|-|
-|0|NONE|
-|1|MAC|
-|2|FPNW|
+Status personality. Possible values are:
 
- `PkgServer`
- Data type: `String`
+| Value | Personality |
+| --- | --- |
+| 0 | NONE |
+| 1 | MAC |
+| 2 | FPNW |
 
- Access type: Read/Write
+`PkgServer` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- If `Type` is MASTER (1), is the compressed copy of the package on the site server. If `Type` is COPY (2), `PkgServer` is the distribution point.
+Qualifiers: [key]
 
- `ShareName`
- Data type: `String`
+If `Type` is MASTER (1), is the compressed copy of the package on the site server. If `Type` is COPY (2), `PkgServer` is the distribution point.
 
- Access type: Read/Write
+`ShareName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The share to which the package was distributed.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+The share to which the package was distributed.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The site code for the site.
+Qualifiers: [key]
 
- `Status`
- Data type: `SInt32`
+The site code for the site.
 
- Access type: Read/Write
+`Status` Data type: `SInt32`
 
- Qualifiers: [key, enumeration]
+Access type: Read/Write
 
- Status. Possible values are:
+Qualifiers: [key, enumeration]
 
-|Value|Status|
-|-|-|
-|0|NONE|
-|1|SENT|
-|2|RECEIVED|
-|3|INSTALLED|
-|4|RETRY|
-|5|FAILED|
-|6|REMOVED|
-|7|PENDING_REMOVE|
+Status. Possible values are:
 
- `Type`
- Data type: `SInt32`
+| Value | Status |
+| --- | --- |
+| 0 | NONE |
+| 1 | SENT |
+| 2 | RECEIVED |
+| 3 | INSTALLED |
+| 4 | RETRY |
+| 5 | FAILED |
+| 6 | REMOVED |
+| 7 | PENDING_REMOVE |
 
- Access type: Read/Write
+`Type` Data type: `SInt32`
 
- Qualifiers: [key, enumeration]
+Access type: Read/Write
 
- The status type. Possible values are:
+Qualifiers: [key, enumeration]
 
-|Value|Status type|
-|-|-|
-|1|MASTER|
-|2|COPY|
+The status type. Possible values are:
 
- `UpdateTime`
- Data type: `DateTime`
+| Value | Status type |
+| --- | --- |
+| 1 | MASTER |
+| 2 | COPY |
 
- Access type: Read/Write
+`UpdateTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- When `Type` is MASTER (1), the time when the compressed copy was created or merged. When `Type` is COPY (2), `UpdateTime` is the time when the distribution point was updated.
+Qualifiers: None
+
+When `Type` is MASTER (1), the time when the compressed copy was created or merged. When `Type` is COPY (2), `UpdateTime` is the time when the distribution point was updated.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   This class is used internally by the server Distribution Manager component and is not used directly to produce any of the package status information that you see in the Configuration Manager console.
 
@@ -150,10 +146,13 @@ Class SMS_PackageStatus : SMS_BaseClass
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
+
+[SMS_Package Server WMI Class](sms_package-server-wmi-class.md)

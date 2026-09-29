@@ -1,16 +1,18 @@
 ---
-title: SetRemCtrlSettings Method
+title: "SetRemCtrlSettings Method in Class CCM_RemoteControlManager"
 description: The SetRemCtrlSettings WMI class method specifies the remote control settings on a client computer.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SetRemCtrlSettings Method in Class CCM_RemoteControlManager
+
 The `SetRemCtrlSettings` Windows Management Instrumentation (WMI) class method in Configuration Manager that specifies the remote control settings on a client computer.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -29,80 +31,75 @@ uint32 SetRemCtrlSettings
 ```
 
 ## Parameters
- `UseLocalSettings`
- Data type: `Boolean`
 
- Qualifiers: [id("0"), in]
+`UseLocalSettings` Data type: `Boolean`
 
- `true` if Remote Assistance settings, which the user might configure in a Control Panel program, should be overridden by the Configuration Manager settings.
+Qualifiers: [id("0"), in]
 
- `RemoteControlEnabled`
- Data type: `Boolean`
+`true` if Remote Assistance settings, which the user might configure in a Control Panel program, should be overridden by the Configuration Manager settings.
 
- Qualifiers: [id("1"), in]
+`RemoteControlEnabled` Data type: `Boolean`
 
- `true` if the remote control agent is enabled.
+Qualifiers: [id("1"), in]
 
- `AllowRemCtrlToUnattended`
- Data type: `Boolean`
+`true` if the remote control agent is enabled.
 
- Qualifiers: [id("2"), in]
+`AllowRemCtrlToUnattended` Data type: `Boolean`
 
- `true` if remote control of an unattended computer is allowed.
+Qualifiers: [id("2"), in]
 
- `PermissionRequired`
- Data type: `Boolean`
+`true` if remote control of an unattended computer is allowed.
 
- Qualifiers: [id("3"), in]
+`PermissionRequired` Data type: `Boolean`
 
- `true` if the user should be prompted for permission to remote control the computer.
+Qualifiers: [id("3"), in]
 
- `AccessLevel`
- Data type: `UInt32`
+`true` if the user should be prompted for permission to remote control the computer.
 
- Qualifiers: [id("4"), in]
+`AccessLevel` Data type: `UInt32`
 
- Access level allowed. Possible values are:
+Qualifiers: [id("4"), in]
 
-|Value|Access level|
-|-|-|
-|0|No access|
-|1|View only|
-|2|Full control|
+Access level allowed. Possible values are:
 
- `AudibleSignal`
- Data type: `UInt32`
+| Value | Access level |
+| --- | --- |
+| 0 | No access |
+| 1 | View only |
+| 2 | Full control |
 
- Qualifiers: [id("5"), in]
+`AudibleSignal` Data type: `UInt32`
 
- Value indicating if a control beep should be sounded during a remote control session to signify that the computer is being remotely controlled. This beep is only for Remote Control, not Remote Assistance. Possible values are:
+Qualifiers: [id("5"), in]
 
-|Value|Remote control beep|
-|-|-|
-|0|None|
-|1|Beginning and end of session|
-|2|Repeatedly|
+Value indicating if a control beep should be sounded during a remote control session to signify that the computer is being remotely controlled. This beep is only for Remote Control, not Remote Assistance. Possible values are:
 
- `ConnectionBar`
- Data type: `Boolean`
+| Value | Remote control beep |
+| --- | --- |
+| 0 | None |
+| 1 | Beginning and end of session |
+| 2 | Repeatedly |
 
- Qualifiers: [id("6"), in]
+`ConnectionBar` Data type: `Boolean`
 
- `true` to show the session connection bar.
+Qualifiers: [id("6"), in]
 
- `TaskbarIcon`
- Data type: `Boolean`
+`true` to show the session connection bar.
 
- Qualifiers: [id("7"), in]
+`TaskbarIcon` Data type: `Boolean`
 
- `true` to show the session notification icon on the taskbar.
+Qualifiers: [id("7"), in]
+
+`true` to show the session notification icon on the taskbar.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a condition expression to check for the existence of a registry key and compare it to data.
-title: SMS_TaskSequence_RegistryConditionExpression Class
-ms.date: 09/20/2016
+title: "SMS_TaskSequence_RegistryConditionExpression Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_RegistryConditionExpression Server WMI Class
+
 The `SMS_TaskSequence_RegistryConditionExpression` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a condition expression to check for the existence of a registry key and, optionally, compare it to specified data.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,77 +28,60 @@ Class SMS_TaskSequence_RegistryConditionExpression : SMS_TaskSequence_ConditionE
 ```
 
 ## Methods
- The `SMS_TaskSequence_RegistryConditionExpression` class doesn't define any methods.
+
+The `SMS_TaskSequence_RegistryConditionExpression` class doesn't define any methods.
 
 ## Properties
- `Data`
- Data type: `String`
 
- Access type: Read/Write
+`Data` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- User-specified data to compare to the registry key information.
+Qualifiers: None
 
- `KeyPath`
- Data type: `String`
+User-specified data to compare to the registry key information.
 
- Access type: Read/Write
+`KeyPath` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- Path for the registry key.
+Qualifiers: [Not_Null]
 
- `Operator`
- Data type: `String`
+Path for the registry key.
 
- Access type: Read/Write
+`Operator` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- The condition operator to use in the comparison. Possible values are:
+Qualifiers: [Not_Null]
+
+The condition operator to use in the comparison. Possible values are:
 
 - exists
-
 - nonExists
-
 - equals
-
 - notEquals
-
 - less
-
 - lessEqual
-
 - greater
-
 - greaterEqual
 
-  `Type`
-  Data type: `String`
+  `Type` Data type: `String`
 
   Access type: Read/Write
 
   Qualifiers: None
 
   Registry key type. Possible values are:
-
 - REG_BINARY
-
 - REG_DWORD
-
 - REG_EXPAND_SZ
-
 - REG_MULTI_SZ
-
 - REG_NONE
-
 - REG_QWORD
-
 - REG_SZ
 
-  `Value`
-  Data type: `String`
+  `Value` Data type: `String`
 
   Access type: Read/Write
 
@@ -105,18 +90,21 @@ Class SMS_TaskSequence_RegistryConditionExpression : SMS_TaskSequence_ConditionE
   Value of the registry key. The value length can be between 0 and 250 characters.
 
 ## Remarks
- There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- You use `SMS_TaskSequence_RegistryConditionExpression` to check for the existence of a registry key, or alternatively to check for a registry key value. For example, if you have the registry key "HKEY_LOCAL_MACHINE\SYSTEM\Select" and the DWORD value set to 'Current' under it, then, `KeyPath` would be "HKEY...\Select", `Operator` would be 'Equals' (or 'NotEquals', and so on), `Type` would be REG_DWORD, `Value` would be 'Select', and `Data` would be the numeric value to compare against the value of the registry key ('Select').
+There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
- `Type` applies only when checking for the existence of a registry value specified in `Value`; when comparing values, `Type` isn't used. This means that if 'Exists' is the `Operator` and REG_SZ is the `Type`, the result will evaluate to `False` because 'Select' is a REG_DWORD.
+You use `SMS_TaskSequence_RegistryConditionExpression` to check for the existence of a registry key, or alternatively to check for a registry key value. For example, if you have the registry key "HKEY_LOCAL_MACHINE\SYSTEM\Select" and the DWORD value set to 'Current' under it, then, `KeyPath` would be "HKEY...\Select", `Operator` would be 'Equals' (or 'NotEquals', and so on), `Type` would be REG_DWORD, `Value` would be 'Select', and `Data` would be the numeric value to compare against the value of the registry key ('Select').
 
- However, when comparing values ('Equals', 'Greater', and so on), then `Type` isn't used. Instead the value of `Data` is compared against `Value` regardless of the actual registry type and `Type`.
+`Type` applies only when checking for the existence of a registry value specified in `Value`; when comparing values, `Type` isn't used. This means that if 'Exists' is the `Operator` and REG_SZ is the `Type`, the result will evaluate to `False` because 'Select' is a REG_DWORD.
+
+However, when comparing values ('Equals', 'Greater', and so on), then `Type` isn't used. Instead the value of `Data` is compared against `Value` regardless of the actual registry type and `Type`.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

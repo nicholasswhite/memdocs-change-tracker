@@ -1,13 +1,15 @@
 ---
-title: SMS_CI_ComplianceHistory Class
+title: "SMS_CI_ComplianceHistory Server WMI Class"
 description: Learn how to use the SMS_CI_ComplianceHistory class in Configuration Manager to get the compliance history for both configuration items and configuration baselines.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CI_ComplianceHistory Server WMI Class
+
 The `SMS_CI_ComplianceHistory` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides the compliance history for both configuration items and configuration baselines.
 
 ## Syntax
@@ -34,162 +36,152 @@ Class SMS_CI_ComplianceHistory : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CI_ComplianceHistory` class does not define any methods.
+
+The `SMS_CI_ComplianceHistory` class does not define any methods.
 
 ## Properties
- `CI_ID`
- Data type: `Uint32`
 
- Access type: Read-only
+`CI_ID` Data type: `Uint32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- The unique ID of the configuration item. This ID is unique only for the site.
+Qualifiers: [key, read]
 
- `CI_UniqueID`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site.
 
- Access type: Read
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: None
+Access type: Read
 
- The unique ID of the configuration item. This ID is unique across sites.
+Qualifiers: None
 
- `CIVersion`
- Data type: `UInt32`
+The unique ID of the configuration item. This ID is unique across sites.
 
- Access type: Read/Write
+`CIVersion` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Version of the configuration item.
+Qualifiers: none
 
- `ComplianceEndDate`
- Data type: `DateTime`
+Version of the configuration item.
 
- Access type: Read
+`ComplianceEndDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read
 
- The end date from which a Configuration Item was compliant, non-compliant or error. See corresponding start date in `ComplianceStartDate`.
+Qualifiers: None
 
- `ComplianceStartDate`
- Data type: `DateTime`
+The end date from which a Configuration Item was compliant, non-compliant or error. See corresponding start date in `ComplianceStartDate`.
 
- Access type: Read-only
+`ComplianceStartDate` Data type: `DateTime`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- The start date from which a Configuration Item was compliant, non-compliant or error. See corresponding end date in `ComplianceEndDate`.
+Qualifiers: [key, read]
 
- `ComplianceValidationRuleFailures`
- Data type: `UInt32`
+The start date from which a Configuration Item was compliant, non-compliant or error. See corresponding end date in `ComplianceEndDate`.
 
- Access type: Read
+`ComplianceValidationRuleFailures` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- Number of validation rule failures.
+Qualifiers: None
 
- `DesiredState`
- Data type: `UInt32`
+Number of validation rule failures.
 
- Access type: Read
+`DesiredState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The resolved state in the context of Applications. Whether the Application was intended to be installed, uninstalled and so on.
+Qualifiers: None
 
- `IsApplicable`
- Data type: `Boolean`
+The resolved state in the context of Applications. Whether the Application was intended to be installed, uninstalled and so on.
 
- Access type: Read
+`IsApplicable` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read
 
- `true` if the configuration item is applicable on the computer.
+Qualifiers: None
 
- `IsCompliant`
- Data type: `Boolean`
+`true` if the configuration item is applicable on the computer.
 
- Access type: Read
+`IsCompliant` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read
 
- `true` if the configuration item is compliant on the computer.
+Qualifiers: None
 
- `IsDetected`
- Data type: `Boolean`
+`true` if the configuration item is compliant on the computer.
 
- Access type: Read
+`IsDetected` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read
 
- `true` if the configuration item is detected on the computer.
+Qualifiers: None
 
- `MaxNoncomplianceCriticality`
- Data type: `UInt32`
+`true` if the configuration item is detected on the computer.
 
- Access type: Read
+`MaxNoncomplianceCriticality` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- The maximum noncompliance severity reported by the client for the configuration item.
+Qualifiers: None
 
- `ModelName`
- Data type: `String`
+The maximum noncompliance severity reported by the client for the configuration item.
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Model Name of the configuration item.
+Qualifiers: none
 
- `ResourceID`
- Data type: `UInt32`
+Model Name of the configuration item.
 
- Access type: Read-only
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- The unique ID of the resource for the configuration item.
+Qualifiers: [key, read]
 
- `SDMPackageVersion`
- Data type: `UInt32`
+The unique ID of the resource for the configuration item.
 
- Access type: Read
+`SDMPackageVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read
 
- This property is deprecated. in Configuration Manageronly the Configuration Item version is used.
+Qualifiers: None
 
- `UserName`
- Data type: `String`
+This property is deprecated. in Configuration Manageronly the Configuration Item version is used.
 
- Access type: Read-only
+`UserName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- User name.
+Qualifiers: [key, read]
+
+User name.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Your application uses this class for compliance monitoring for a configuration item.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md)

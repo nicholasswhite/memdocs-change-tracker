@@ -1,7 +1,7 @@
 ---
 title: "Wipe devices with Microsoft Intune"
 description: Learn how to wipe managed devices with Microsoft Intune, choose platform-specific reset options, and prepare devices for retirement, reuse, or recovery.
-ms.date: 08/21/2026
+ms.date: "2026-09-16T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1023
@@ -16,16 +16,12 @@ Use the *Wipe* action in Intune to factory reset a device, restoring it to its d
 Depending on the platform, you can customize the wipe behavior to meet your organization's needs.
 
 > [!IMPORTANT]
+>
 > A tenant can submit up to 500 Wipe actions per day. This tenant-wide limit is cumulative across individual device actions, bulk device actions, and Microsoft Graph API requests. To request a limit change, [contact Microsoft support](../../fundamentals/it-pro-support/get-support-admin-center.md). For all device action limits, see [Daily tenant limits](index.md#daily-tenant-limits).
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This action supports the following platforms:
 >
@@ -40,26 +36,20 @@ Depending on the platform, you can customize the wipe behavior to meet your orga
 > - visionOS 1.1+
 > - Windows
 
-:::column-end:::
-:::row-end:::
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::row:::
-:::column span="1":::
-
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
-:::column-end:::
-:::column span="3":::
 > To run this action, use an account with at least one of the following roles:
 >
-> - [Help Desk Operator]
-> - [School Administrator]
-> - [Custom role] that includes:
+> - [Help Desk Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [School Administrator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#school-administrator)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
 >   - The permission **Remote tasks/Wipe**
 >   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
-:::column-end:::
-:::row-end:::
+
 ::: zone pivot="macos,android"
+
 ## Before wiping a device
+
 ::: zone-end
 
 ::: zone pivot="macos"
@@ -74,7 +64,7 @@ Review the requirements for erasing macOS devices available on [Apple's deployme
 
 Whether a device requires Google account credentials after reset depends on ownership (Android Enterprise corporate-owned work profile/fully managed/dedicated), the reset method (Settings, Recovery, or admin wipe), and whether FRP is configured. By default, Intune's admin wipe doesn't preserve FRP data.
 
-For more information, see [Factory reset protection emails setting isn't enforced after you reset an Android Enterprise device](/troubleshoot/mem/intune/device-configuration/factory-reset-protection-emails-not-enforced).
+For more information, see [Factory reset protection emails setting isn't enforced after you reset an Android Enterprise device](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/device-configuration/factory-reset-protection-emails-not-enforced).
 
 ### Samsung devices
 
@@ -90,111 +80,132 @@ To factory reset a Zebra Android device, use one of the following methods:
 
 - [Use Zebra StageNow](https://techdocs.zebra.com/stagenow/5-17/profiles/wipedevice/)
 - [Use OEM Config Data Wipe Configuration](https://techdocs.zebra.com/oemconfig/latest/mc2/)
+
 ::: zone-end
 
 ## How to wipe a device from the Intune admin center
 
 ::: zone pivot="android"
+
 > [!IMPORTANT]
-> To choose whether to remove eSIMs during a single-device wipe, use the new device view. In the [Microsoft Intune admin center], go to [**Devices**] > [**All devices**], set **Preview new device view** to **On**, and then select the device.
+>
+> To choose whether to remove eSIMs during a single-device wipe, use the new device view. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices), set **Preview new device view** to **On**, and then select the device.
+
 ::: zone-end
 
-1. In the [Microsoft Intune admin center], select [**Devices**] > [**All devices**].
-1. From the devices list, select a device.
-1. At the top of the device overview pane, find the row of action icons. Select **Wipe**.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices).
+2. From the devices list, select a device.
+3. At the top of the device overview pane, find the row of action icons. Select **Remove data** &gt; **Wipe**.
 
 ::: zone pivot="android"
+
 4. For Android Enterprise corporate-owned fully managed (COBO), corporate-owned dedicated (COSU), and corporate-owned work profile (COPE) devices, eSIMs are preserved by default. To remove the eSIMs during the wipe, select the option to remove eSIMs.
 5. Select **Wipe**.
 
 ::: zone-end
 
 ::: zone pivot="macos"
+
 4. Enter a 6-digit **Recovery PIN**. This PIN is required to reinstall the operating system on devices that don't have the T2 security chip—typically models from 2018 or earlier, or devices running macOS 10.14 or earlier. Make sure to record the PIN and share it with the device owner. The PIN won't be visible after the wipe completes.
 5. Select an option from **Obliteration Behavior**, which is used to define the fallback for devices when Erase All Contents and Settings (EACS) fails. The following options can be configured:
 
-    - **Default**: If Erase All Content and Settings (EACS) preflight fails, the device responds to Intune with an Error status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.
-    - **Do not obliterate**: If Erase All Content and Settings (EACS) preflight fails, the device responds to Intune with an Error status and doesn't attempt to erase itself. If EACS preflight succeeds but EACS fails, then the device doesn't attempt to erase itself.
-    - **Obliterate with warning**: If Erase All Content and Settings (EACS) preflight fails, the device responds with a Success status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.
-    - **Always obliterate**: The system doesn't attempt Erase All Content and Settings (EACS). T2 and later devices always obliterate.
+   - **Default**: If Erase All Content and Settings (EACS) preflight fails, the device responds to Intune with an Error status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.
+   - **Do not obliterate**: If Erase All Content and Settings (EACS) preflight fails, the device responds to Intune with an Error status and doesn't attempt to erase itself. If EACS preflight succeeds but EACS fails, then the device doesn't attempt to erase itself.
+   - **Obliterate with warning**: If Erase All Content and Settings (EACS) preflight fails, the device responds with a Success status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.
+   - **Always obliterate**: The system doesn't attempt Erase All Content and Settings (EACS). T2 and later devices always obliterate.
 6. Select **Wipe** to erase the device.
+
 ::: zone-end
 
 ::: zone pivot="windows"
+
 4. You can customize the wipe behavior with the following options:
 
-    - **Wipe device, but keep enrollment state and associated user account**
-      - Resets the device to factory settings, while preserving the user data, user accounts, and important settings.\
-        To learn more about what data is preserved, see [How push-button reset features work](/windows-hardware/manufacture/desktop/how-push-button-reset-features-work#keep-my-files).
-      - MDM policies and settings are removed, but the device remains enrolled in Intune.
-      - Uses the [doWipePersistUserData](/windows/client-management/mdm/remotewipe-csp#dowipepersistuserdata) CSP node.
-    - **Wipe device, and continue to wipe even if device loses power**
-      - Resets the device to factory settings, deleting all user data, settings, and MDM policies.
-      - Overwrites the free space to prevent data recovery.
-      - Ensures the wipe continues even if the device loses power, preventing interruption—ideal for high-security scenarios such as lost or stolen devices.
-      - Uses the [doWipeProtected](/windows/client-management/mdm/remotewipe-csp#dowipeprotected) CSP node.
-        > [!IMPORTANT]
-        > This option can prevent some devices from starting up again. The wipe process may interfere with boot recovery or firmware protections, leaving the device unrecoverable. Use only on corporate-owned devices where full data destruction is required and recovery procedures are in place.
-    - **No options selected**
-      - Resets the device to factory settings, deleting all user data, settings, and MDM policies.
-      - If the wipe is interrupted, the device attempts to roll back to its previous state. If rollback fails, the device may become unusable and require a full Windows reinstallation.
-      - Uses the [doWipe](/windows/client-management/mdm/remotewipe-csp#dowipe) CSP node.
+   - **Wipe device, but keep enrollment state and associated user account**
+     - Resets the device to factory settings, while preserving the user data, user accounts, and important settings.  
+        To learn more about what data is preserved, see [How push-button reset features work](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/how-push-button-reset-features-work#keep-my-files).
+     - MDM policies and settings are removed, but the device remains enrolled in Intune.
+     - Uses the [doWipePersistUserData](https://learn.microsoft.com/en-us/windows/client-management/mdm/remotewipe-csp#dowipepersistuserdata) CSP node.
+   - **Wipe device, and continue to wipe even if device loses power**
+     - Resets the device to factory settings, deleting all user data, settings, and MDM policies.
+     - Overwrites the free space to prevent data recovery.
+     - Ensures the wipe continues even if the device loses power, preventing interruption—ideal for high-security scenarios such as lost or stolen devices.
+     - Uses the [doWipeProtected](https://learn.microsoft.com/en-us/windows/client-management/mdm/remotewipe-csp#dowipeprotected) CSP node.
 
+       > [!IMPORTANT]
+       >
+       > This option can prevent some devices from starting up again. The wipe process may interfere with boot recovery or firmware protections, leaving the device unrecoverable. Use only on corporate-owned devices where full data destruction is required and recovery procedures are in place.
+   - **No options selected**
+     - Resets the device to factory settings, deleting all user data, settings, and MDM policies.
+     - If the wipe is interrupted, the device attempts to roll back to its previous state. If rollback fails, the device may become unusable and require a full Windows reinstallation.
+     - Uses the [doWipe](https://learn.microsoft.com/en-us/windows/client-management/mdm/remotewipe-csp#dowipe) CSP node.
 5. To confirm the wipe, select **Wipe**.
 
 ::: zone-end
+
 ::: zone pivot="ios"
+
 4. For iOS/iPadOS eSIM devices, the cellular data plan is preserved by default when you wipe a device. If you want to remove the data plan from the device when you wipe the device, select the **Also remove the devices data plan...** option.
+
 ::: zone-end
 
 ::: zone pivot="chromeos"
 
 4. Select on of the following options:
 
-    - **Remove user profiles only**: To remove all user account data. Device and enrollment policies remain on the device.
-    - **Factory reset (powerwash)**: To restore a device to its factory state, removing all personal and work data. Before using this action, [deprovision](deprovision.md) the device. Otherwise, once it connects to Wi-Fi, it will automatically enroll again.
+   - **Remove user profiles only**: To remove all user account data. Device and enrollment policies remain on the device.
+   - **Factory reset (powerwash)**: To restore a device to its factory state, removing all personal and work data. Before using this action, [deprovision](deprovision.md) the device. Otherwise, once it connects to Wi-Fi, it will automatically enroll again.
 
 For more information about wiping ChromeOS devices, see [Wipe ChromeOS device data](https://support.google.com/chrome/a/answer/1360642).
 
 ::: zone-end
 
-[!INCLUDE [multiple-administrative-approval](includes/multiple-administrative-approval.md)]
+::: zone pivot="android"
+
+## Wipe multiple Android Enterprise devices
+
+Use a bulk device action to wipe up to 100 corporate-owned fully managed (COBO), corporate-owned dedicated (COSU), or corporate-owned work profile (COPE) devices. By default, the wipe preserves the devices' eSIM data plans.
+
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select [**Devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/overview) &gt; [**All devices**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/%7E/allDevices) &gt; [**Bulk device actions**](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_Devices/BulkActionWizardBlade).
+2. On the **Basics** page, select **Android** for the operating system and **Wipe** for the device action.
+3. To remove the eSIM data plans during the wipe, select the option to also remove the devices' data plans. If you don't select the option, the wipe preserves the data plans. Select **Next**.
+4. On the **Devices** page, select up to 100 supported corporate-owned Android Enterprise devices. Select **Next**.
+5. On the **Review + create** page, review the action, and then select **Create**.
+
+::: zone-end
+
+> [!NOTE]
+>
+> This action might be governed by an Intune access policy that requires Multiple Administrative Approval (MAA). If so, a second administrator must approve the action before it can proceed.
+>
+> For more information, see [Use access policies to require multiple administrative approvals](../../fundamentals/role-based-access-control/multi-admin-approval.md).
 
 ::: zone pivot="windows"
 
-[!INCLUDE [remove-device-from-autopilot](includes/remove-device-from-autopilot.md)]
+## Remove a device from Windows Autopilot
+
+After executing the action on a device from Intune, you might also want to remove its registration from Windows Autopilot, if applicable.
+
+For more information, see [Deregister from Windows Autopilot using Intune](../../../autopilot/registration-overview.md#deregister-from-windows-autopilot-using-intune).
 
 ::: zone-end
 
 ::: zone pivot="android,ios,macos,windows"
-[!INCLUDE [remove-device-from-entra-id](includes/remove-device-from-entra-id.md)]
+
+## Remove a device from Microsoft Entra ID
+
+After executing the action on a device from Intune, you might also want to remove its record from Microsoft Entra ID to fully disconnect it from your organization's identity infrastructure. This step helps ensure that the device no longer appears in your tenant, avoids potential confusion in device inventory, and prevents lingering access permissions or stale records that could affect compliance or reporting.
+
+For more information about removing devices from Microsoft Entra ID, see [Manage stale devices in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/devices/manage-stale-devices).
+
 ::: zone-end
 
 ## Reference links
 
+- Microsoft Graph API: [wipe action](https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-wipe)
 
-- Microsoft Graph API: [wipe action][GRAPH-1]
 ::: zone pivot="windows"
-- Configuration service provider (CSP) used to initiate the action: [RemoteWipe CSP][CSP-1]
+
+- Configuration service provider (CSP) used to initiate the action: [RemoteWipe CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/remotewipe-csp)
+
 ::: zone-end
-
-<!--Intune admin center links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[**Devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview
-[**All devices**]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/allDevices
-
-<!--Role links-->
-
-[Help Desk Operator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#help-desk-operator
-[School Administrator]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#school-administrator
-[Endpoint Security Manager]: /intune/fundamentals/role-based-access-control/ref-built-in-roles#endpoint-security-manager
-[Custom role]: /intune/fundamentals/role-based-access-control/create-custom-role
-
-<!--Graph API links-->
-
-[GRAPH-1]: /graph/api/intune-devices-manageddevice-wipe
-
-<!--Other links-->
-
-[CSP-1]: /windows/client-management/mdm/remotewipe-csp

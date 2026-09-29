@@ -1,16 +1,18 @@
 ---
-title: SMS_AlertEvent Class
+title: "SMS_AlertEvent Server WMI Class"
 description: An SMS Provider server class that represents the event data for an alert.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_AlertEvent Server WMI Class
+
 The `SMS_AlertEvent` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that represents the event data for an alert.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,96 +32,91 @@ Class SMS_AlertEvent : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AlertEvent` class doesn't define any methods.
+
+The `SMS_AlertEvent` class doesn't define any methods.
 
 ## Properties
- `AlertID`
- Data type: `UInt32`
 
- Access type: Read/Write
+`AlertID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Identifier of the alert.
+Qualifiers: none
 
- `DateClosed`
- Data type: `DateTime`
+Identifier of the alert.
 
- Access type: Read/Write
+`DateClosed` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Date on which the event was closed.
+Qualifiers: none
 
- `EventData`
- Data type: `String`
+Date on which the event was closed.
 
- Access type: Read/Write
+`EventData` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Additional data about the event in XML format.
+Qualifiers: none
 
- `EventID`
- Data type: `UInt32`
+Additional data about the event in XML format.
 
- Access type: Read/Write
+`EventID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the event.
+Qualifiers: [key]
 
- `EventInstanceID`
- Data type: `String`
+Identifier of the event.
 
- Access type: Read/Write
+`EventInstanceID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Identifies the source of the alert.
+Qualifiers: none
 
- `EventResourceID`
- Data type: `UInt64`
+Identifies the source of the alert.
 
- Access type: Read/Write
+`EventResourceID` Data type: `UInt64`
 
- Qualifiers: none
+Access type: Read/Write
 
- Resource identifier of an associated computer for computer based events. Another identifier for noncomputer based alerts.
+Qualifiers: none
 
- `EventTime`
- Data type: `DateTime`
+Resource identifier of an associated computer for computer based events. Another identifier for noncomputer based alerts.
 
- Access type: Read/Write
+`EventTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time the alert was raised.
+Qualifiers: none
 
- `IsClosed`
- Data type: `Boolean`
+The time the alert was raised.
 
- Access type: Read/Write
+`IsClosed` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true`, if this event has been closed.
+Qualifiers: none
 
- `SiteCode`
- Data type: `String`
+`true`, if this event has been closed.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Site code of the site at which the event was raised.
+Qualifiers: none
+
+Site code of the site at which the event was raised.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

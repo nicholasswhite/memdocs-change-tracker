@@ -1,9 +1,9 @@
 ---
-title: Manage Specialty devices with Microsoft Intune
+title: "Specialty device management"
 description: This article provides information about specialty devices and how can you manage them with Microsoft Intune
 author: lenewsad
 ms.author: lanewsad
-ms.date: 05/12/2026
+ms.date: "2026-05-12T00:00:00Z"
 ms.topic: article
 ms.reviewer: priyar
 ms.subservice: suite
@@ -15,36 +15,24 @@ Specialty device management provides a range of management, configuration, and p
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [licensing](../includes/requirements/licensing.md)]
+![](../media/icons/16/licensing.svg) **Licensing requirements**
 
-:::column-end:::
-:::column span="3":::
+> This feature requires Microsoft Intune Plan 2 or an additional subscription. For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
 
->[!INCLUDE [additional-licensing-plan2](../includes/licensing/additional-licensing-plan2.md)]
-:::column-end:::
-:::row-end:::
+![](../media/icons/16/cloud.svg) **Cloud requirements**
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [cloud](../includes/requirements/cloud.md)]
-
-:::column-end:::
-:::column span="3":::
 > Specialty device management is supported in the following cloud environments:
+>
 > - Public cloud
 > - Sovereign cloud environments:
 >   - U.S. Government Community Cloud (GCC) High
 >   - U.S. Department of Defense (DoD)
-:::column-end:::
-:::row-end:::
 
 ### Licensing considerations
 
-For specialty devices such as headsets and AR/VR devices, for example **Apple Vision Pro**, **RealWear**, and **HTC** devices, organizations must assign a required license to the users of these devices. 
+For specialty devices such as headsets and AR/VR devices, for example **Apple Vision Pro**, **RealWear**, and **HTC** devices, organizations must assign a required license to the users of these devices.
 
-For **Microsoft Teams Rooms** devices including Microsoft Surface Hub, organizations need to have sufficient [Microsoft Teams Rooms Pro licenses](/microsoftteams/rooms/rooms-licensing), conference area phone [Teams Shared Device license](/microsoftteams/set-up-common-area-phones) or a Teams license plan that includes Microsoft Intune Plan 1, to cover the users of these devices.
+For **Microsoft Teams Rooms** devices including Microsoft Surface Hub, organizations need to have sufficient [Microsoft Teams Rooms Pro licenses](https://learn.microsoft.com/en-us/microsoftteams/rooms/rooms-licensing), conference area phone [Teams Shared Device license](https://learn.microsoft.com/en-us/microsoftteams/set-up-common-area-phones) or a Teams license plan that includes Microsoft Intune Plan 1, to cover the users of these devices.
 
 For **Microsoft HoloLens**, subscribers of Microsoft Intune (Plan 1) aren't required to add more licenses to manage HoloLens devices.
 

@@ -1,7 +1,7 @@
 ---
-title: Use VPN settings for Android DA devices in Microsoft Intune
+title: "Android device administrator settings that configure VPN in Intune"
 description: See all the settings to create VPN connections on Android device administrator devices in Microsoft Intune. Enter the connection name, IP address, or FQDN of the VPN server. Choose how users authenticate, and choose Citrix, SonicWall, Check Point Capsule, and Pulse Secure connection types.
-ms.date: 06/09/2025
+ms.date: "2025-06-09T00:00:00Z"
 ms.topic: reference
 ms.reviewer: abalwan
 ---
@@ -14,15 +14,28 @@ This feature applies to:
 
 - Android device administrator (DA)
 
-As an Intune administrator, you can create and assign VPN settings to Android devices. To learn more about VPN profiles in Intune, go to [VPN profiles](./configure-vpn.md).
+As an Intune administrator, you can create and assign VPN settings to Android devices. To learn more about VPN profiles in Intune, go to [VPN profiles](configure-vpn.md).
 
-[!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
 ## Before you begin
 
-- Create an [Android device administrator VPN device configuration profile](./configure-vpn.md).
+- Create an [Android device administrator VPN device configuration profile](configure-vpn.md).
+- Some Microsoft 365 services, such as Outlook, might not perform well using third party or partner VPNs. If you're using a third party or partner VPN, and experience a latency or performance issue, then remove the VPN.
 
-- [!INCLUDE [partner-vpns](../includes/partner-vpns.md)]
+  If removing the VPN resolves the behavior, then you can:
+
+  - Work with the third party or partner VPN for possible resolutions. Microsoft doesn't provide technical support for third party or partner VPNs.
+  - Don't use a VPN with Outlook traffic.
+  - If you need to use a VPN, then use a split-tunnel VPN. And, allow the Outlook traffic to bypass the VPN.
+
+  For more information, go to:
+
+  - [Overview: VPN split tunneling for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-vpn-split-tunnel)
+  - [Using third-party network devices or solutions with Microsoft 365](https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/office-suite-issues/office-365-third-party-network-devices)
+  - [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles)
 
 ## Base VPN
 
@@ -34,7 +47,6 @@ As an Intune administrator, you can create and assign VPN settings to Android de
   - **Username and password**: When users sign in to the VPN server, they're prompted to enter their user name and password.
 
     For more information, go to [Use derived credentials in Intune](../../device-security/certificates/derived-credentials.md).
-
 - **Connection type**: Select the VPN connection type. Your options:
 
   - **Check Point Capsule VPN**
@@ -43,7 +55,6 @@ As an Intune administrator, you can create and assign VPN settings to Android de
   - **F5 Access**
   - **Pulse Secure**
   - **Citrix SSO**
-
 - **Fingerprint** (Check Point Capsule VPN only): Enter the fingerprint string given to you by the VPN vendor, like `Contoso Fingerprint Code`. This fingerprint verifies that the VPN server can be trusted.
 
   When authenticating, a fingerprint is sent to the client so the client knows to trust any server that has the same fingerprint. If the device doesn't have the fingerprint, it prompts the user to trust the VPN server while showing the fingerprint. The user manually verifies the fingerprint, and chooses to trust to connect.
@@ -51,5 +62,4 @@ As an Intune administrator, you can create and assign VPN settings to Android de
 ## Related articles
 
 - [Assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-
-- Create VPN profiles for [Android Enterprise](./ref-vpn-settings-android-enterprise.md), [iOS/iPadOS and macOS](./ref-vpn-settings-apple.md), and [Windows](./ref-vpn-settings-windows.md).
+- Create VPN profiles for [Android Enterprise](ref-vpn-settings-android-enterprise.md), [iOS/iPadOS and macOS](ref-vpn-settings-apple.md), and [Windows](ref-vpn-settings-windows.md).

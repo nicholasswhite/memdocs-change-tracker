@@ -1,16 +1,18 @@
 ---
 description: Learn how to get an online count of the selected clients of the target collection using GetOnlineCount class method.
-title: GetOnlineCount Method
-ms.date: 09/20/2016
+title: "GetOnlineCount Method in Class SMS_CN_ClientStatus"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetOnlineCount Method in Class SMS_CN_ClientStatus
+
 The `GetOnlineCount` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that gets an online count of the selected clients of the target collection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,26 +25,27 @@ uint32 GetOnlineCount
 ```
 
 ## Parameters
- `TargetCollectionID`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`TargetCollectionID` Data type: `String`
 
- Target collection identifier.
+Qualifiers: [id("0"), in]
 
- `TargetResourceIDs`
- Data type: `UInt32` Array
+Target collection identifier.
 
- Qualifiers: [id("1"), in]
+`TargetResourceIDs` Data type: `UInt32` Array
 
- Target client resource identifiers.
+Qualifiers: [id("1"), in]
+
+Target client resource identifiers.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

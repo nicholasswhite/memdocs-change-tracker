@@ -1,9 +1,9 @@
 ---
-title: Distributed IT with multiple admins
+title: "Distributed IT environment with many admins in the same Microsoft Intune tenant"
 description: Learn about scaling guidelines for Microsoft Intune when you have a large number of local admins who need to manage their own users/devices and policies within the same tenant. Use Microsoft Intune's Role Based Access Control to manage access.
 
 ms.author: lanewsad
-ms.date: 05/28/2025
+ms.date: "2025-05-28T00:00:00Z"
 ms.topic: article
 ms.reviewer: dagerrit
 ms.collection:
@@ -13,8 +13,7 @@ ms.collection:
 
 # Distributed IT environment with many admins in the same Microsoft Intune tenant
 
-Many organizations use a distributed IT environment where they have a single Microsoft Intune tenant with multiple local admins.
-This article describes one way to scale Microsoft Intune to support multiple local admins who manage their own users, devices, and create their own policies all within a single Microsoft Intune tenant.
+Many organizations use a distributed IT environment where they have a single Microsoft Intune tenant with multiple local admins. This article describes one way to scale Microsoft Intune to support multiple local admins who manage their own users, devices, and create their own policies all within a single Microsoft Intune tenant.
 
 There's no right or wrong answer on how many admins you should have in your tenant. The article focuses on tenants that have many local administrators.
 
@@ -25,14 +24,12 @@ Each local admin can set up groups to suit their local organizational needs. The
 ## Terms used in this article
 
 - **Least privilege**: Securing access to your organization is an essential security step. Intune uses role-based access controls (RBAC) to assign administrative users permissions within Intune to administer different tasks. With the principle of *least privilege* access, your admins can perform their assigned tasks on only those users and devices that they should be empowered to manage.
-
 - **Central team**: The Central team or group includes the primary admins in your tenant. These admins can oversee all the local admins and can provide guidance to the local admins.
-
 - **Local admins**: The local admins are local and focus on policies and profiles for their specific locations; schools, hospitals, and so on.
 
 ## Role-based access control
 
-Securing access to your organization is an essential security step. Intune uses [role-based access controls](./role-based-access-control/overview.md) to grant granular permissions to your admins to control who has access to your organization's resources, and what they can do with those resources. By assigning Intune RBAC roles and adhering to principles of least privilege access, your admins can perform their assigned tasks on only those users and devices that they should be empowered to manage.
+Securing access to your organization is an essential security step. Intune uses [role-based access controls](role-based-access-control/overview.md) to grant granular permissions to your admins to control who has access to your organization's resources, and what they can do with those resources. By assigning Intune RBAC roles and adhering to principles of least privilege access, your admins can perform their assigned tasks on only those users and devices that they should be empowered to manage.
 
 The following sections briefly describe different models with guidelines under each model for managing policies, profiles, and apps between the *Central team* and the *local admins*. The models are:
 
@@ -73,21 +70,17 @@ The full delegation model proposes the following guidelines for policy managemen
 
 - Each local admin should have their own scope tag to separate each object that they fully manage.
 - When the local admin doesn't need to create, update or delete, then grant the local admin a role with read and assign permissions and avoid assigning any other role with full permission to them. With this approach, you can avoid combining permissions across scope tags.
-- Sometimes the local admins might need to create their own policies, profiles, and apps while sharing some common policies, profiles, and apps. In such cases, create a special group and assign the common policies, profiles, and apps, to this group. This group shouldn't be included in the [Scope (Group)](./role-based-access-control/overview.md#about-intune-role-assignments) of an Intune RBAC role assignment for any local admin. This approach prevents the *create*, *update*, and *delete* permissions assigned to the local admins from applying to these common policies, profiles, and apps.
-
+- Sometimes the local admins might need to create their own policies, profiles, and apps while sharing some common policies, profiles, and apps. In such cases, create a special group and assign the common policies, profiles, and apps, to this group. This group shouldn't be included in the [Scope (Group)](role-based-access-control/overview.md#about-intune-role-assignments) of an Intune RBAC role assignment for any local admin. This approach prevents the *create*, *update*, and *delete* permissions assigned to the local admins from applying to these common policies, profiles, and apps.
 
 ### Central model
 
 In the central model, a single local admin team (parent) manages multiple child orgs. Factors such as geography, business unit, or size can be used to group child orgs.
 
 - There's only one scope tag used to cover all the managed local admins.
-
 - If possible, the local admin team should standardize assignments across local admins and place all their devices into a single Microsoft Entra group for assignment. When it isn't possible to create a single Microsoft Entra group, the local admin team can create different Microsoft Entra groups to make different assignments.
-
 - If a different local admin team manages or moves an org, the following steps must be taken:
 
   - All the org's devices and users must be extracted from common Microsoft Entra groups in scope of the original local admin team.
-
   - All policies/apps/profiles assigned uniquely for that org must have their scope tag updated for the new local admin team.
 
 ### Devolved model
@@ -100,14 +93,14 @@ In the devolved model, multiple local admins (children) are managed both by thei
 
 ### Hybrid model
 
-In the hybrid model, the same parent admin is used in both Central and Devolved model at the same time.
-There are no special recommendations for this model.
+In the hybrid model, the same parent admin is used in both Central and Devolved model at the same time. There are no special recommendations for this model.
 
 ## Feature specific guidelines
 
 Depending on the business requirements for each feature, guidelines provided in this section can recommend that you create policies per local admin and possibly delegate the permissions needed for creating objects to the local administrators.
 
 > [!NOTE]
+>
 > The guidance provided in this section doesn't address every feature, but only covers those areas for which we have special instructions.
 
 ### App protection policy
@@ -138,8 +131,7 @@ Compliance policies in Intune define the rules and settings that users and devic
 
 #### Central team
 
-The Central team should create common compliance policies for local admins to choose from and only, if necessary, create exception policies. For more information, see [Use compliance policies to set rules for devices you manage with Intune](../device-security/compliance/overview.md).
-Creating policies includes the creation of custom compliance policy scripts because they're subject to the same scale as normal compliance policy.
+The Central team should create common compliance policies for local admins to choose from and only, if necessary, create exception policies. For more information, see [Use compliance policies to set rules for devices you manage with Intune](../device-security/compliance/overview.md). Creating policies includes the creation of custom compliance policy scripts because they're subject to the same scale as normal compliance policy.
 
 For more information on how to create a compliance policy, see [Create a compliance policy in Microsoft Intune](../device-security/compliance/create-policy.md#create-the-policy).
 
@@ -160,9 +152,7 @@ In this section:
 #### Device restrictions and general configuration
 
 - Grant local admins permission to create, update, delete within their own scope.
-
 - Use the **Settings Catalog** and **security baselines** to the maximum possible extent, instead of profiles created in the Configuration profiles list, to mitigate scale in the Microsoft Intune admin center.
-
 - In general, the central team should try to centrally monitor the content of configurations and replace duplicate profiles where possible with a shared profile.
 
 #### Resource access
@@ -185,7 +175,6 @@ The [Full delegation model](#full-delegation-model) is recommended.
 ### Certificates
 
 - We recommend you use permissions through the Central team to onboard and offboard connectors as needed. Onboard connectors for each local admin to support certificate issuance.
-
 - Don't grant the local admins permission to update or delete connectors.
 
 ### Applications
@@ -195,39 +184,38 @@ Grant local admins full permissions to manage apps to the extent of their scope.
 In this section:
 
 - Apple Volume Purchase Program
-
 - Windows
-
 - Android
 
 For more information, see [Manage apps](../app-management/deployment/index.md).
 
 #### Apple Volume Purchase Program
 
-Currently, there are no scale concerns for the supported number of Volume Purchase Program tokens.
-For more information, see [How many tokens can I upload.](../app-management/deployment/manage-vpp-apple.md#how-many-tokens-can-i-upload).
+Currently, there are no scale concerns for the supported number of Volume Purchase Program tokens. For more information, see [How many tokens can I upload.](../app-management/deployment/manage-vpp-apple.md#how-many-tokens-can-i-upload).
 
 #### Windows
 
 - Local admins can create Win32 apps as needed within the cross-platform, line-of-business app and web-link limit. For more information, see [Win32 app management](../app-management/deployment/win32.md).
 
   > [!NOTE]
-  > Microsoft Store for Business is being retired. Starting with Windows 11, you have a new option for your private volume-licensed apps. For more information, see [Private app repository in Windows 11](/windows/application-management/private-app-repository-mdm-company-portal-windows-11) and [Update to Microsoft Intune integration with the Microsoft Store on Windows](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/update-to-endpoint-manager-integration-with-the-microsoft-store/ba-p/3585077).
+  >
+  > Microsoft Store for Business is being retired. Starting with Windows 11, you have a new option for your private volume-licensed apps. For more information, see [Private app repository in Windows 11](https://learn.microsoft.com/en-us/windows/application-management/private-app-repository-mdm-company-portal-windows-11) and [Update to Microsoft Intune integration with the Microsoft Store on Windows](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/update-to-endpoint-manager-integration-with-the-microsoft-store/ba-p/3585077).
 
 #### Android
 
 - Local admins should choose from existing store apps or ask the central team to add new Android store apps. Local admins shouldn't create new Android store apps. The total number of objects might become large and difficult to manage.
-
 - Local admins can create Android line-of-business apps, as needed, within the cross-platform, line-of-business app and web-link limit.
-
 - Central team must add Managed Google Play apps.
+
   - The central team can only see Managed Google Play apps available in their tenant's country or region. If the central team needs a Managed Google Play app only available in specific countries or regions, they might need to work with the app developer to get it listed correctly.
   - The central team should manage all content related to managed Google Play apps, including private apps, web apps, and collections. For example, if a customer plans on using the [Managed Google Play iframe to publish private apps](https://support.google.com/googleplay/work/answer/9146439?hl=en), they have to do that with a single developer account owned by the central team.
   - The central team can select a single scope tag as the Managed Google Play scope tag. It has a special dropdown in the Managed Google Play connector page. The scope tag will apply to all Managed Google Play apps after the central team adds them to the console, but won't apply retroactively to apps that have already been added. We highly recommend that the central team [set the scope tag](../device-enrollment/android/connect-managed-google-play.md) before they add apps and then assign each regional team that scope tag. Otherwise, regional admins might not be able to see their Managed Google Play apps.
 - Only one OEMConfig policy is supported per device, except for Zebra devices. With Zebra devices, we recommended that you have the smallest number of policies possible because the time to enforce the policy is additive. For example, if you assign six policies with the assumption that they'll layer on top of each other, it takes around 6X longer to start working on the device than a single policy.
 
 > [!NOTE]
+>
 > Exercise extreme consideration and caution when setting high-priority update mode on many different apps and groups. This is for multiple reasons:
+>
 > - Although many apps can be set to high-priority mode, only one app update can be installed at a time. One large app update could potentially block many smaller updates until the large app is done installing.
 > - Depending on when apps release new updates, there could be a sudden spike in your network usage if app releases coincide. If Wi-Fi isn't available on some devices, there could also be a spike in cellular usage.
 > - Although disruptive user experiences have already been mentioned, the problem grows as more apps are set to high-priority update mode.
@@ -248,8 +236,7 @@ In this section:
 #### Windows Autopilot
 
 - Grant local admins the permissions to read Windows Autopilot devices and upload new Windows Autopilot devices.
-- Local admins shouldn't create Windows Autopilot profiles. When you delegate to a large number of administrators, the total number of objects might become large and difficult to manage. The best practice varies per feature area.
-For more information on Windows Autopilot, see [Use Windows Autopilot to enroll Windows devices in Intune](/autopilot/tutorial/autopilot-scenarios).
+- Local admins shouldn't create Windows Autopilot profiles. When you delegate to a large number of administrators, the total number of objects might become large and difficult to manage. The best practice varies per feature area. For more information on Windows Autopilot, see [Use Windows Autopilot to enroll Windows devices in Intune](../../autopilot/tutorial/autopilot-scenarios.md).
 
 #### Enrollment status page
 
@@ -270,14 +257,12 @@ When you delegate to a large number of administrators, the total number of objec
 #### Enrollment restrictions
 
 - The same set of permissions govern both device configuration and Enrollment restrictions. When you grant permissions to create for device configuration, then you're also granting permissions to create for enrollment restrictions. However, local admins shouldn't be given permission to create enrollment restriction profiles. Instead instruct them not to create new Enrollment restrictions profiles.
-
 - Enrollment device limit restrictions define how many devices each user can enroll. The enrollment device limit restrictions should cover all possible device limits for local admins to share. For more information, see [What are enrollment restrictions](../device-enrollment/restrictions.md#available-restrictions).
-
 - The Central team should standardize Device Type restrictions as much as possible and add new restrictions but only as special exceptions after a local admin reviews existing restrictions.
 
 #### Device categories
 
-The Device categories (**Devices** > **Device categories**) feature doesn't have its own permissions family. Instead, its permissions are governed by the permissions set under *Organization*. Go to **Tenant administration > Roles**. Select a custom or built-in role and select **Properties**. Here you can assign permissions, one of them being *Organization*.
+The Device categories (**Devices** &gt; **Device categories**) feature doesn't have its own permissions family. Instead, its permissions are governed by the permissions set under *Organization*. Go to **Tenant administration &gt; Roles**. Select a custom or built-in role and select **Properties**. Here you can assign permissions, one of them being *Organization*.
 
 Central teams can create Device Categories. However, local admins shouldn't be allowed to create, update, or delete device categories, as it would require granting them permissions on *Organization* which grants them access to other tenant-level features governed by *Organization* permissions.
 

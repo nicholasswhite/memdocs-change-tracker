@@ -1,16 +1,18 @@
 ---
-title: SMS_MeteredProductRule Class
+title: "SMS_MeteredProductRule Server WMI Class"
 description: The SMS_MeteredProductRule WMI class is an SMS Provider server class that represents the rules that describe which files to meter.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MeteredProductRule Server WMI Class
+
 The `SMS_MeteredProductRule` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the rules that describe which files to meter.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -34,149 +36,131 @@ Class SMS_MeteredProductRule : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_MeteredProductRule` class does not define any methods.
+
+The `SMS_MeteredProductRule` class does not define any methods.
 
 ## Properties
- `ApplyToChildSites`
- Data type: `Boolean`
 
- Access type: Read/Write
+`ApplyToChildSites` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` (default) if the rule is applied to child sites.
+Qualifiers: None
 
- `Comment`
- Data type: `String`
+`true` (default) if the rule is applied to child sites.
 
- Access type: Read/Write
+`Comment` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Comment describing the rule.
+Qualifiers: None
 
- `Enabled`
- Data type: `Boolean`
+Comment describing the rule.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the rule is enabled. Data is only collected by the client if the rule is enabled.
+Qualifiers: None
 
- `FileName`
- Data type: `String`
+`true` if the rule is enabled. Data is only collected by the client if the rule is enabled.
 
- Access type: Read/Write
+`FileName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the file to be metered. This property is used for matching.
+Qualifiers: None
 
- `FileVersion`
- Data type: `String`
+Name of the file to be metered. This property is used for matching.
 
- Access type: Read/Write
+`FileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Version of the file being metered. This property is used for matching and matches to the `FileVersion` property stored in the file version information. It can contain wildcards, such as * (match multiple characters) and ? (match a single character). An empty `FileVersion` property only matches to those executable files that have no version.
+Qualifiers: None
 
- `LanguageID`
- Data type: `UInt32`
+Version of the file being metered. This property is used for matching and matches to the `FileVersion` property stored in the file version information. It can contain wildcards, such as \* (match multiple characters) and ? (match a single character). An empty `FileVersion` property only matches to those executable files that have no version.
 
- Access type: Read/Write
+`LanguageID` Data type: `UInt32`
 
- Qualifiers: [Subtype("Locale Id")]
+Access type: Read/Write
 
- Language ID of the rule being metered. This property matches the `Language` property stored in the file version information. If it is set to 65535, it matches any language.
+Qualifiers: [Subtype("Locale Id")]
 
- `LastUpdateTime`
- Data type: `DateTime`
+Language ID of the rule being metered. This property matches the `Language` property stored in the file version information. If it is set to 65535, it matches any language.
 
- Access type: Read/Write
+`LastUpdateTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Last time the rule definition was changed.
+Qualifiers: None
 
- `OriginalFileName`
- Data type: `String`
+Last time the rule definition was changed.
 
- Access type: Read/Write
+`OriginalFileName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Original file name. This property is used for matching and matches the `OriginalFileName` property stored in the file version information. Because `FileName` is the Resource Explorer name of the file and might be changed by users, `OriginalFileName` is used to ensure that the file is metered.
+Qualifiers: None
 
- `ProductName`
- Data type: `String`
+Original file name. This property is used for matching and matches the `OriginalFileName` property stored in the file version information. Because `FileName` is the Resource Explorer name of the file and might be changed by users, `OriginalFileName` is used to ensure that the file is metered.
 
- Access type: Read/Write
+`ProductName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the product being metered. This is the display name of the rule and is not used in matching.
+Qualifiers: None
 
- `RuleID`
- Data type: `UInt32`
+Name of the product being metered. This is the display name of the rule and is not used in matching.
 
- Access type: Read/Write
+`RuleID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID for the rule.
+Qualifiers: [key]
 
- `SecurityKey`
- Data type: `String`
+ID for the rule.
 
- Access type: Read/Write
+`SecurityKey` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Security key for the rule.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Security key for the rule.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Site code of the site on which the rule runs. The rule applies to clients of this site and to the clients of child sites if `ApplyToChildSites` is set to `true`.
+Qualifiers: None
 
- `SourceSite`
- Data type: `String`
+Site code of the site on which the rule runs. The rule applies to clients of this site and to the clients of child sites if `ApplyToChildSites` is set to `true`.
 
- Access type: Read/Write
+`SourceSite` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Site where the rule was created.
+Qualifiers: None
+
+Site where the rule was created.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
   Software metering rules instruct the Software Metering Agent which processes to monitor on the client. Your application creates a new rule by creating an instance of this class. The following properties of this class have to be provided:
-
 - `ProductName`
-
 - `FileName`
-
 - `OriginalFileName`
-
 - `FileVersion`
-
 - `LanguageID`
-
 - `SiteCode`
-
 - `ApplyToChildSites`
-
 - `Enabled`
 
   The `Comment` property is optional. `OriginalFileName` can be used instead of `FileName`, both can be supplied, or `FileName` only can be supplied. If either the `FileName` value or the `OriginalFileName` value matches the file, the file is metered.
@@ -186,7 +170,9 @@ Class SMS_MeteredProductRule : SMS_BaseClass
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

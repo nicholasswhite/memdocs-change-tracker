@@ -1,7 +1,7 @@
 ---
 title: Configure Endpoint Protection on a standalone client
 description: Learn how to configure Endpoint Protection on a standalone client.
-ms.date: 07/22/2020
+ms.date: "2026-09-18T00:00:00Z"
 ms.subservice: protect
 ms.topic: how-to
 ms.collection: tier3
@@ -12,9 +12,14 @@ ms.service: configuration-manager
 
 *Applies to: Configuration Manager (current branch)*
 
+> [!IMPORTANT]
+>
+> The legacy System Center Endpoint Protection installer (`scepinstall.exe`) is deprecated. Starting in Configuration Manager version 2609, it is no longer included with Configuration Manager.
+
 Your organization may have a number of standalone clients that you cannot manage or protect with Microsoft Configuration Manager. Without any endpoint protection in place, these standalone clients are vulnerable to potential malware attacks. To protect such standalone clients, you can manually configure them with Endpoint Protection, as described in this topic.
 
 > [!NOTE]
+>
 > If you install the endpoint protection client on a device that's not managed by Configuration Manager, a [Management License (ML)](https://www.microsoft.com/licensing/product-licensing/client-access-license) may be required for the device.
 
 To configure Endpoint Protection on a standalone client manually:
@@ -43,14 +48,15 @@ To create an antimalware policy for the standalone client:
 3. On the **Home** tab, in the **Create** group, click **Create Antimalware Policy**.
 4. In the **General** section of the **Create Antimalware Policy** dialog box, enter a name and a description for the policy.
 5. In the **Create Antimalware Policy** dialog box, configure the settings that you require for this antimalware policy, and then click **OK**. For a list of settings that you can configure, see [List of Antimalware Policy Settings](endpoint-antimalware-policies.md#list-of-antimalware-policy-settings).
-    > [!NOTE]
-    > For the **Definition Updates** setting, select **Updates distributed from Microsoft Update** and **Updates distributed from Microsoft Malware Protection Center** if your standalone client is connected to the internet.
-    > Alternatively, select **Updates from UNC file shares** to distribute the policy definitions through network share. Then, add one or more UNC paths to the location of the definition updates files on a network share.
 
+   > [!NOTE]
+   >
+   > For the **Definition Updates** setting, select **Updates distributed from Microsoft Update** and **Updates distributed from Microsoft Malware Protection Center** if your standalone client is connected to the internet. Alternatively, select **Updates from UNC file shares** to distribute the policy definitions through network share. Then, add one or more UNC paths to the location of the definition updates files on a network share.
 6. Export the newly created policy as an XML:
-    1. In the **Antimalware Policies** list, right-click your policy.
-    1. Select **Export**.
-    1. Save the policy as an XML, for example, **standalone.xml**.
+
+   1. In the **Antimalware Policies** list, right-click your policy.
+   2. Select **Export**.
+   3. Save the policy as an XML, for example, **standalone.xml**.
 7. Transfer the new antimalware policy XML to the target standalone client on which you want to configure Endpoint Protection.
 
 ## Transfer Endpoint Protection client installation package to the standalone client
@@ -63,6 +69,7 @@ In this step, you copy the Endpoint Protection client installation package (**sc
 4. Transfer **scepinstall.exe** to the target standalone client on which you want to install the Endpoint Protection client software.
 
 ## Install Endpoint Protection on the standalone client
+
 In this step, you run the installer package (**scepinstall.exe**) and the antimalware policy (both previously transferred from the Configuration Manager server) from the command prompt on the standalone client.
 
 To install Endpoint Protection on the standalone client:
@@ -71,17 +78,16 @@ To install Endpoint Protection on the standalone client:
 2. Change directory to the folder where you saved the **scepinstall.exe** installer file.
 3. Enter the following command to run **scepinstall.exe** with the antimalware policy:
 
-    ```cmd
-    scepinstall.exe /policy <full path>\<policy file>
-    ```
+   ```cmd
+   scepinstall.exe /policy <full path>\<policy file>
+   ```
 
-    Replace `full path` with the path where you saved the antimalware policy XML file and `policy file` with the antimalware policy file name.
+   Replace `full path` with the path where you saved the antimalware policy XML file and `policy file` with the antimalware policy file name.
 
-    The installer is extracted and the installation wizard is launched.
-
+   The installer is extracted and the installation wizard is launched.
 4. Follow the on-screen instructions to complete the client installation.
 
-    On the last screen of the installation wizard, the option to scan the computer for potential threats after getting the latest updates is selected by default. You can clear the checkbox to skip the scanning.
+   On the last screen of the installation wizard, the option to scan the computer for potential threats after getting the latest updates is selected by default. You can clear the checkbox to skip the scanning.
 
 ## Change antimalware policy settings on a standalone Endpoint Protection client
 

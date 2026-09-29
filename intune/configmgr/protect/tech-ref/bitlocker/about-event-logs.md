@@ -1,7 +1,7 @@
 ---
 title: BitLocker event logs
 description: Learn about how to work with BitLocker information in the Windows Event Log to troubleshoot problems
-ms.date: 11/29/2019
+ms.date: "2019-11-29T00:00:00Z"
 ms.subservice: protect
 ms.topic: troubleshooting
 ms.collection: tier3
@@ -34,11 +34,12 @@ In Windows Event Viewer, select a specific log. For example, **Admin**. Go to th
 - **Maximum log size (KB)**: by default, this setting is `1028` (1 MB) for all logs.
 - **When maximum event log size is reached**: by default, the **Admin** and **Operational** logs are set to **Overwrite events as needed (oldest events first)**.
 
-## <a name="bkmk_debug"></a> Analytic and debug logs
+## Analytic and debug logs
 
 You can enable more detailed logs for troubleshooting purposes. In Event Viewer, go to the **View** menu, and select **Show Analytic and Debug Logs**. Now when you browse to the log channel, you'll see two additional logs: **Analytic** and **Debug**.
 
 > [!TIP]
+>
 > By default, these logs have the following properties:
 >
 > - **Maximum log size (KB)**: `1028` (1 MB)
@@ -48,7 +49,7 @@ You can enable more detailed logs for troubleshooting purposes. In Event Viewer,
 
 Especially with the [analytic and debug logs](#bkmk_debug), you may find it easier to review the logs entries in a single text file. Use the following PowerShell commands to export the event log entries to text files:
 
-``` PowerShell
+```PowerShell
 # Out-String with a larger -Width does a better job compared to using Out-File with -Width. -Oldest is only required with debug/analytic logs.
 
 # Debug log

@@ -1,16 +1,18 @@
 ---
 description: Learn how to set the value for SuppressComputerActivityInPresentationMode in Configuration Manager using SetSuppressComputerActivityInPresentationMode class.
-title: SetSuppressComputerActivityInPresentationMode Method
-ms.date: 09/20/2016
+title: "SetSuppressComputerActivityInPresentationMode Method in Class CCM_ClientUXSettings"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SetSuppressComputerActivityInPresentationMode Method in Class CCM_ClientUXSettings
+
 The `SetSuppressComputerActivityInPresentationMode` Windows Management Instrumentation (WMI) class method, in Configuration Manager, that sets the value for `SuppressComputerActivityInPresentationMode`.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,19 +24,21 @@ uint32 SetSuppressComputerActivityInPresentationMode
 ```
 
 ## Parameters
- `SuppressComputerActivityInPresentationMode`
- Data type: `Boolean`
 
- Qualifiers: [id("0"), in]
+`SuppressComputerActivityInPresentationMode` Data type: `Boolean`
 
- `true` to suppress computer activity in presentation mode.
+Qualifiers: [id("0"), in]
+
+`true` to suppress computer activity in presentation mode.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

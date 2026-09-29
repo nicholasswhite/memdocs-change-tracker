@@ -1,7 +1,7 @@
 ---
-title: Reset device from Intune Company Portal for Android
+title: "Reset device in Company Portal app for Android"
 description: Learn how to factory reset a used, lost, or stolen device in Company Portal for Android.
-ms.date: 07/01/2024
+ms.date: "2024-07-01T00:00:00Z"
 ms.reviewer: arnab
 ---
 
@@ -11,18 +11,18 @@ Use the Company Portal app for Android to reset a used, lost, or stolen device b
 
 The reset option may not be available for every device that appears in Company Portal. Your organization can choose to hide the option.
 
-
 ## Factory reset device
+
 To reset a device to its original, out-of-box settings:
 
 1. Open the Company Portal app on any managed device and sign in with your work or school account.
 2. Select **DEVICES**.
 3. Select the device you want to reset.
-4. Select the menu button > **Factory Reset**.
+4. Select the menu button &gt; **Factory Reset**.
 5. Select **RESET** to start wiping the device.
 
-
 ## Remove work content and access on Knox device
+
 If you're on a Samsung Knox device, you can use the device removal option to remove all work-related content from your device. This option deletes:
 
 - School or work-related apps connected to your organization.
@@ -35,15 +35,11 @@ To remove work-related data from a Knox-enrolled device:
 1. Open the Company Portal app and sign in with your work or school account.
 2. Select **DEVICES**.
 3. Select the device you want to reset.
-4. Select the menu button > **Factory Reset**.
+4. Select the menu button &gt; **Factory Reset**.
 5. Select **RESET** to start the reset.
-
-
 
 ## Next steps
 
-* You can also [reset a device from the Company Portal website](reset-device-company-portal-website.md).
-
-* If you want to unenroll your device from Company Portal so that it's no longer managed by your organization, see [Remove Android device from Intune](../unenrollment/unenroll-android.md). Removing the device effectively removes it from Intune and may cause you to lose access to the work-related content on your device.
-
-* Need additional help? Contact your IT support person. For contact information, check the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
+- You can also [reset a device from the Company Portal website](reset-device-company-portal-website.md).
+- If you want to unenroll your device from Company Portal so that it's no longer managed by your organization, see [Remove Android device from Intune](../unenrollment/unenroll-android.md). Removing the device effectively removes it from Intune and may cause you to lose access to the work-related content on your device.
+- Need additional help? Contact your IT support person. For contact information, check the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).

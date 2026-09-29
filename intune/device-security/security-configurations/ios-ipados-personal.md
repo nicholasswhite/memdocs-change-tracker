@@ -1,14 +1,14 @@
 ---
-title: iOS/iPadOS personal device security configurations
+title: "iOS/iPadOS personal device security configuration examples"
 description: Review example personal device security configurations of basic, enhanced, and high security for iOS devices.
-ms.date: 03/20/2025
+ms.date: "2025-03-20T00:00:00Z"
 ms.topic: reference
 ms.reviewer:
 ---
 
 # iOS/iPadOS personal device security configuration examples
 
-In support of the [Microsoft Zero Trust security model](/security/zero-trust/zero-trust-identity-device-access-policies-common), this article provides example configurations you can use with Microsoft Intune to configure iOS/iPad device compliance settings for mobile users using personal devices. These examples include three levels of device security configuration that align with Zero Trust principles.
+In support of the [Microsoft Zero Trust security model](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-identity-device-access-policies-common), this article provides example configurations you can use with Microsoft Intune to configure iOS/iPad device compliance settings for mobile users using personal devices. These examples include three levels of device security configuration that align with Zero Trust principles.
 
 When using these examples, work with your security team to evaluate the threat environment, risk appetite, and the effect the different levels and configurations can have on usability. After reviewing and adjusting the examples to meet the needs of your organization, you can incorporate them within a ring deployment methodology for testing and production use by importing the sample [iOS/iPadOS Security Configuration Framework JSON templates](https://github.com/microsoft/Intune-Config-Frameworks/tree/master/iOS) with [Intune's PowerShell scripts](https://github.com/microsoftgraph/powershell-intune-samples).
 
@@ -25,10 +25,10 @@ The following table lists only configured settings. Settings not listed in the t
 ### Device restrictions
 
 | Category | Setting | Value | Notes |
-| -------- | ------- | ----- | ----- |
+| --- | --- | --- | --- |
 | App Store, Doc Viewing, Gaming | Treat AirDrop as an unmanaged destination | Yes |  |
 | Built-in Apps | Block Siri while device is locked | Yes |  |
-| Built-in Apps | Require Safari fraud warnings  | Yes |  |
+| Built-in Apps | Require Safari fraud warnings | Yes |  |
 | Cloud and Storage | Force encrypted backup | Yes |  |
 | Cloud and Storage | Block managed apps from storing data in iCloud | Yes |  |
 | Connected Devices | Force Apple Watch wrist detection | Yes |  |
@@ -42,7 +42,7 @@ The following table lists only configured settings. Settings not listed in the t
 | Password | Minimum password length | 6 | Organizations should update this setting to match their password policy. |
 | Password | Number of sign-in failures before wiping the device | 10 | Organizations should update this setting to match their password policy. |
 | Password | Maximum minutes after screen lock before password is required | 5 | Organizations should update this setting to match their password policy. |
-| Password | Maximum minutes of inactivity until screen locks  | 5 | Organizations should update this setting to match their password policy. |
+| Password | Maximum minutes of inactivity until screen locks | 5 | Organizations should update this setting to match their password policy. |
 
 ## Personal enhanced security (level 2)
 
@@ -55,13 +55,13 @@ The level 2 settings include all the policy settings recommended for level 1. Ho
 ### Device restrictions
 
 | Category | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | App Store, Doc Viewing, Gaming | Block viewing corporate documents in unmanaged apps | Yes |  |
 | App Store, Doc Viewing, Gaming | Block viewing non-corporate documents in corporate apps | Not configured | Enabling this device restriction blocks Outlook for iOS’s ability to export contacts. This setting isn't recommended if using Outlook for iOS. For more information, see [Support Tip: Enabling Outlook iOS Contact Sync with iOS12 MDM Controls](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-enabling-outlook-ios-contact-sync-with-ios12-mdm/ba-p/298453). |
 | App Store, Doc Viewing, Gaming | Allow managed apps to write contacts to unmanaged contacts accounts | Yes | This setting is needed to allow Outlook for iOS to export contacts when **Block viewing corporate documents in unmanaged apps** is set to *Yes*. For more information, see [Support Tip: Enabling Outlook iOS Contact Sync with iOS12 MDM Controls](https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-enabling-outlook-ios-contact-sync-with-ios12-mdm/ba-p/298453). |
 | App Store, Doc Viewing, Gaming | Allow copy/paste to be affected by managed open-in | Not configured | Enabling this setting blocks personal accounts within managed Microsoft apps from sharing data to unmanaged apps. |
-| Built-in Apps | Block Siri for dictation   | Yes |  |
-| Built-in Apps | Block Siri for translation   | Yes |  |
+| Built-in Apps | Block Siri for dictation | Yes |  |
+| Built-in Apps | Block Siri for translation | Yes |  |
 | Cloud Storage | Block backup of enterprise books | Yes |  |
 | Cloud Storage | Block notes and highlights sync for enterprise books | Yes |  |
 | General | Block sending diagnostic and usage data to Apple | Yes |  |
@@ -86,7 +86,7 @@ The policy settings enforced in level 3 include all the policy settings recommen
 ### Device restrictions
 
 | Category | Setting | Value | Notes |
-| ----- | ----- | ----- | ----- |
+| --- | --- | --- | --- |
 | Cloud and Storage | Block Handoff | Yes |  |
 | Connected Devices | Require AirPlay outgoing requests pairing password | Yes |  |
 | Connected Devices | Block Apple Watch auto unlock | Yes |  |
@@ -98,5 +98,5 @@ The policy settings enforced in level 3 include all the policy settings recommen
 
 ## Related articles
 
-- [Configure device compliance security policies](./ios-ipados-compliance.md)
-- [Configure device security policies for supervised devices](./ios-ipados-supervised.md)
+- [Configure device compliance security policies](ios-ipados-compliance.md)
+- [Configure device security policies for supervised devices](ios-ipados-supervised.md)

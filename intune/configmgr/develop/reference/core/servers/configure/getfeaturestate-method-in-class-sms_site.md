@@ -1,16 +1,18 @@
 ---
-title: GetFeatureState Method
+title: "GetFeatureState Method in Class SMS_Site"
 description: A Windows Management Instrumentation class method that gets the enabled and disabled state of a feature.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetFeatureState Method in Class SMS_Site
+
 The `GetFeatureState` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets the enabled/disabled state of a feature.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -23,43 +25,45 @@ SInt32 GetFeatureState (
 ```
 
 #### Parameters
- `SiteCode`
- Data type: `String`
 
- Qualifiers: [in]
+`SiteCode` Data type: `String`
 
- Site code of site to check. NULL indicates the current site.
+Qualifiers: [in]
 
- `FeatureID`
- Data type: `UInt32`
+Site code of site to check. NULL indicates the current site.
 
- Qualifiers: [in]
+`FeatureID` Data type: `UInt32`
 
- Feature identifier. Possible values are:
+Qualifiers: [in]
 
-|Value|Feature|
-|-|-|
-|1|SleepServer|
+Feature identifier. Possible values are:
 
- `IsEnabled`
- Data type: `Boolean`
+| Value | Feature |
+| --- | --- |
+| 1 | SleepServer |
 
- Qualifiers: [out]
+`IsEnabled` Data type: `Boolean`
 
- `true` if the feature is enabled.
+Qualifiers: [out]
+
+`true` if the feature is enabled.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md)

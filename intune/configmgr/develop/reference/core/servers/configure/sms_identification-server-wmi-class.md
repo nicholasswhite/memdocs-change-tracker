@@ -1,16 +1,18 @@
 ---
-title: SMS_Identification Class
+title: "SMS_Identification Server WMI Class"
 description: The SMS_Identification Windows Management Instrumentation (WMI) class is an SMS Provider server class that provides basic information about the installed SMS_Site Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_Identification Server WMI Class
-The `SMS_Identification` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides basic information about the installed [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md) object, for example, its language version, site code, and provider. This class should return only one instance.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_Identification Server WMI Class
+
+The `SMS_Identification` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides basic information about the installed [SMS_Site Server WMI Class](sms_site-server-wmi-class.md) object, for example, its language version, site code, and provider. This class should return only one instance.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,192 +40,181 @@ Class SMS_Identification : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in `SMS_Identification`.
 
-|Method|Description|
-|------------|-----------------|
-|[GetCurrentUser Method in Class SMS_Identification](../../../../../develop/reference/core/servers/configure/getcurrentuser-method-in-class-sms_identification.md)|Gets the domain\user name being used by the SMS Provider for authentication.|
-|[GetFileBinary Method in Class SMS_Identification](../../../../../develop/reference/core/servers/configure/getfilebinary-method-in-class-sms_identification.md)|Gets the binary user interface for a feature.|
-|[GetProviderVersion Method in Class SMS_Identification](../../../../../develop/reference/core/servers/configure/getproviderversion-method-in-class-sms_identification.md)|Gets the product version string from the version resources of the SMS Provider DLL.|
-|[GetSiteID Method in Class SMS_Identification](../../../../../develop/reference/core/servers/configure/getsiteid-method-in-class-sms_identification.md)|Gets the unique ID of the installed Configuration Manager site.|
+The following table lists the methods in `SMS_Identification`.
+
+| Method | Description |
+| --- | --- |
+| [GetCurrentUser Method in Class SMS_Identification](getcurrentuser-method-in-class-sms_identification.md) | Gets the domain\user name being used by the SMS Provider for authentication. |
+| [GetFileBinary Method in Class SMS_Identification](getfilebinary-method-in-class-sms_identification.md) | Gets the binary user interface for a feature. |
+| [GetProviderVersion Method in Class SMS_Identification](getproviderversion-method-in-class-sms_identification.md) | Gets the product version string from the version resources of the SMS Provider DLL. |
+| [GetSiteID Method in Class SMS_Identification](getsiteid-method-in-class-sms_identification.md) | Gets the unique ID of the installed Configuration Manager site. |
 
 ## Properties
- `License`
- Data type: `UInt32`
 
- Access type: Read
+`License` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- License type of the installation. Possible values are:
+Qualifiers: none
 
-|Value|License type|
-|-|-|
-|0|Evaluation|
-|1|Non-evaluation|
+License type of the installation. Possible values are:
 
- `LocaleID`
- Data type: `UInt32`
+| Value | License type |
+| --- | --- |
+| 0 | Evaluation |
+| 1 | Non-evaluation |
 
- Access type: Read/Write
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: [Subtype("Locale Id")]
+Access type: Read/Write
 
- ID of the locale used by the Configuration Manager installation, for example, English (1033) or German (1031).
+Qualifiers: [Subtype("Locale Id")]
 
- `MonthlyReleaseVersion`
- Data type: `UInt32`
+ID of the locale used by the Configuration Manager installation, for example, English (1033) or German (1031).
 
- Access type: Read/Write
+`MonthlyReleaseVersion` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Monthly Configuration Manager release version.
+Qualifiers: none
 
- `Reserved`
- Data type: `UInt32`
+Monthly Configuration Manager release version.
 
- Access type: Read
+`Reserved` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read
 
- For internal use only.
+Qualifiers: none
 
- `ServiceAccountName`
- Data type: `String`
+For internal use only.
 
- Access type: Read/Write
+`ServiceAccountName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the Configuration Manager service account, which is a special user account having administrative privileges, that uses Configuration Manager to perform certain activities. The value includes the domain.
+Qualifiers: None
 
- `SMSAvailableConsoleVersion`
- Data type: `String`
+Name of the Configuration Manager service account, which is a special user account having administrative privileges, that uses Configuration Manager to perform certain activities. The value includes the domain.
 
- Access type: Read/Write
+`SMSAvailableConsoleVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Available Configuration Manager console version.
+Qualifiers: None
 
- `SMSBuildNumber`
- Data type: `UInt32`
+Available Configuration Manager console version.
 
- Access type: Read/Write
+`SMSBuildNumber` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Build version number of the installed Configuration Manager software.
+Qualifiers: None
 
- `SMSMinBuildNumber`
- Data type: `UInt32`
+Build version number of the installed Configuration Manager software.
 
- Access type: Read/Write
+`SMSMinBuildNumber` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- This property is deprecated.
+Qualifiers: None
 
- `SMSProviderServer`
- Data type: `String`
+This property is deprecated.
 
- Access type: Read/Write
+`SMSProviderServer` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the server on which the SMS Provider is installed.
+Qualifiers: None
+
+Name of the server on which the SMS Provider is installed.
 
 > [!NOTE]
->  If a site has multiple SMS Providers installed, this will just return one of them.
+>
+> If a site has multiple SMS Providers installed, this will just return one of them.
 
- `SMSSiteServer`
- Data type: `String`
+`SMSSiteServer` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Name of the server on which the Configuration Manager site server components are installed.
+Name of the server on which the Configuration Manager site server components are installed.
 
- `SMSVersion`
- Data type: `String`
+`SMSVersion` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Major version number of the Configuration Manager installation, for example, 2.0. For the complete version number, see the `Version` property of [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md).
+Major version number of the Configuration Manager installation, for example, 2.0. For the complete version number, see the `Version` property of [SMS_Site Server WMI Class](sms_site-server-wmi-class.md).
 
- `ThisSiteCode`
- Data type: `String`
+`ThisSiteCode` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Site code for the installation.
+Site code for the installation.
 
- `ThisSiteName`
- Data type: `String`
+`ThisSiteName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Friendly name of the site.
+Friendly name of the site.
 
- `UIManifestHash`
- Data type: `String`
+`UIManifestHash` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Hash of the UIManifest.xml file stored on the site server.
+Hash of the UIManifest.xml file stored on the site server.
 
- `UIManifestHashAlgorithm`
- Data type: `String`
+`UIManifestHashAlgorithm` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Hash algorithm used to calculate the hash of the UIManifest.xml file stored on the site server.
+Hash algorithm used to calculate the hash of the UIManifest.xml file stored on the site server.
 
- `UIUpdateManifestHash`
- Data type: `String`
+`UIUpdateManifestHash` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Hash of the UIUpdatemanifest.xml file stored on the site server.
+Hash of the UIUpdatemanifest.xml file stored on the site server.
 
- `UIUpdateManifestHashAlgorithm`
- Data type: `String`
+`UIUpdateManifestHashAlgorithm` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Hash algorithm used to calculate the hash of the UIUpdatemanifest.xml file stored on the site server.
+Hash algorithm used to calculate the hash of the UIUpdatemanifest.xml file stored on the site server.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_Site Server WMI Class](sms_site-server-wmi-class.md)

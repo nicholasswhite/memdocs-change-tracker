@@ -1,16 +1,18 @@
 ---
-title: SubmitCertificate Method
+title: "SubmitCertificate Method in Class SMS_CertificateData"
 description: The SubmitCertificate Windows Management Instrumentation (WMI) class method in Configuration Manager submits the specified certificate.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SubmitCertificate Method in Class SMS_CertificateData
+
 The `SubmitCertificate` Windows Management Instrumentation (WMI) class method in Configuration Manager that submits the specified certificate.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -26,54 +28,53 @@ uint32 SubmitCertificate
 ```
 
 ## Parameters
- `CertType`
- Data type: `UInt32`
 
- Qualifiers: [id("0"), in]
+`CertType` Data type: `UInt32`
 
- Required. Certificate type. Possible values are:
+Qualifiers: [id("0"), in]
+
+Required. Certificate type. Possible values are:
 
 | Value | Certificate type |
-| ----- | ---------------- |
-|1|Windows Intune Subscription|
+| --- | --- |
+| 1 | Windows Intune Subscription |
 
- `CertData`
- Data type: `UInt8 Array`
+`CertData` Data type: `UInt8 Array`
 
- Qualifiers: [id("1"), in]
+Qualifiers: [id("1"), in]
 
- Required. Certificate PFX data.
+Required. Certificate PFX data.
 
- `Password`
- Data type: `UInt8 Array`
+`Password` Data type: `UInt8 Array`
 
- Qualifiers: [id("2"), in, optional]
+Qualifiers: [id("2"), in, optional]
 
- Optional. Password to read the certificate PFX data.
+Optional. Password to read the certificate PFX data.
 
- `Name`
- Data type: `String`
+`Name` Data type: `String`
 
- Qualifiers: [id("3"), in, optional]
+Qualifiers: [id("3"), in, optional]
 
- Optional. Certificate name.
+Optional. Certificate name.
 
- `Description`
- Data type: `String`
+`Description` Data type: `String`
 
- Qualifiers: [id("4"), in, optional]
+Qualifiers: [id("4"), in, optional]
 
- Optional. Certificate description.
+Optional. Certificate description.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_CertificateData Server WMI Class](../../../develop/reference/osd/sms_certificatedata-server-wmi-class.md)
+
+[SMS_CertificateData Server WMI Class](sms_certificatedata-server-wmi-class.md)

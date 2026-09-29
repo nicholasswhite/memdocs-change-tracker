@@ -1,7 +1,7 @@
 ---
 title: Run Meter Summarization Tool
 description: Use the Run Meter Summarization Tool to trigger the software metering summarization tasks in Configuration Manager.
-ms.date: 07/30/2018
+ms.date: "2018-07-30T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -18,31 +18,27 @@ These tasks summarize the data in the **MeterData** SQL Server table, and write 
 
 This tool runs the **File Usage Summary** and **Monthly Usage Summary** software metering data summarization tasks. It summarizes all existing meter data without the usual 12-hour waiting period. Run it on the SQL Server that hosts the site database. If summarization is successful, the exit code is set to `0`. If there was an error, the exit code is `1`.
 
-
-
 ## Usage
 
 ### Command Line
 
-`runmetersumm  [sms database name]  <delay in hours for summarization <default=0>>`
-
+`runmetersumm [sms database name] <delay in hours for summarization <default=0>>`
 
 ### Options
 
 #### Database name
+
 The name of the site database on the SQL Server.
 
 #### Delay in hours for summarization
-The tool summarizes the software metering usage generated before the delay. By default, this delay is zero.
 
+The tool summarizes the software metering usage generated before the delay. By default, this delay is zero.
 
 ### Example
 
 #### Summarize the software metering usage generated 12 hours ago
 
 `runmetersumm CCM_ABC <12>`
-
-
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
-title: Manual registration of devices for Windows Autopilot
+title: "Manual registration overview"
 description: Manual registration overview.
-ms.date: 03/27/2025
+ms.date: "2025-03-27T00:00:00Z"
 ms.topic: how-to
 ms.collection:
   - M365-modern-desktop
@@ -22,7 +22,7 @@ Ideally, the OEM, reseller, or distributor from which the device was purchased p
 
 The following diagram shows how manual registration and OEM registration might be used to deploy both new and existing devices with Windows Autopilot.
 
-:::image type="content" source="images/image2.png" alt-text="Screenshot that shows Windows Autopilot device registration process.":::
+![Screenshot that shows Windows Autopilot device registration process.](images/image2.png)
 
 For a list of participant device manufacturers and device resellers, see [Windows Autopilot device manufacturers and resellers](https://www.microsoft.com/microsoft-365/windows/windows-autopilot).
 
@@ -38,27 +38,24 @@ After the hardware hashes are captured from existing devices, they can be upload
 
 - [Microsoft Intune](add-devices.md) - Intune is the preferred mechanism for all customers.
 
-  - The [Microsoft Intune admin center] is used for Intune device enrollment.
-
+  - The [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) is used for Intune device enrollment.
 - Partner Center - Partner Center is used by CSP partners to register devices on behalf of customers.
-
-- Microsoft 365 Business & Office 365 Admin - Microsoft 365 Business & Office 365 Admin is typically used by small and medium businesses (SMBs) who manage their devices using Microsoft 365 Business.
-
+- Microsoft 365 Business &amp; Office 365 Admin - Microsoft 365 Business &amp; Office 365 Admin is typically used by small and medium businesses (SMBs) who manage their devices using Microsoft 365 Business.
 - Microsoft Store for Business - Since Microsoft Store for Business is deprecated, use another method instead.
 
 > [!IMPORTANT]
 >
-> Microsoft Store for Business and Microsoft Store for Education is deprecated. The current capabilities of free apps can be used while they're still available. For more information about this change, see [Evolving the Microsoft Store for Business and Education](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/evolving-the-microsoft-store-for-business-and-education/ba-p/2569423) and [Microsoft Store for Business and Education](/microsoft-store/).
+> Microsoft Store for Business and Microsoft Store for Education is deprecated. The current capabilities of free apps can be used while they're still available. For more information about this change, see [Evolving the Microsoft Store for Business and Education](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/evolving-the-microsoft-store-for-business-and-education/ba-p/2569423) and [Microsoft Store for Business and Education](https://learn.microsoft.com/en-us/microsoft-store/).
 
 A summary of each platform's capabilities is provided in the following table:
 
 | Platform/Portal | Register devices? | Create/Assign profile | Acceptable Device ID |
-|---|---|--|--|
+| --- | --- | --- | --- |
 | OEM Direct API | YES - 1000 at a time max | NO | Tuple or PKID |
-| [Partner Center](/partner-center/autopilot) | YES - 1000 at a time max | YES<sup>3</sup> | Tuple or PKID or 4K HH |
+| [Partner Center](https://learn.microsoft.com/en-us/partner-center/autopilot) | YES - 1000 at a time max | YES<sup>3</sup> | Tuple or PKID or 4K HH |
 | [Intune](add-devices.md) | YES - 500 at a time max | YES<sup>12</sup> | 4K HH |
-| [Microsoft Store for Business](/microsoft-store/add-profile-to-devices#manage-autopilot-deployment-profiles) | YES - 1000 at a time max | YES<sup>4</sup> | 4K HH |
-| [Microsoft 365 Business Premium](/microsoft-365/business/create-and-edit-autopilot-profiles) | YES - 1000 at a time max | YES<sup>3</sup> | 4K HH |
+| [Microsoft Store for Business](https://learn.microsoft.com/en-us/microsoft-store/add-profile-to-devices#manage-autopilot-deployment-profiles) | YES - 1000 at a time max | YES<sup>4</sup> | 4K HH |
+| [Microsoft 365 Business Premium](https://learn.microsoft.com/en-us/microsoft-365/business/create-and-edit-autopilot-profiles) | YES - 1000 at a time max | YES<sup>3</sup> | 4K HH |
 
 - **<sup>1</sup>** Microsoft recommended platform to use.
 - **<sup>2</sup>** Intune license required.
@@ -69,7 +66,7 @@ For more information about device IDs, see the following articles:
 
 - [Device identification](registration-overview.md#device-identification).
 - [Windows Autopilot device guidelines](autopilot-device-guidelines.md).
-- [Add devices to a customer account](/partner-center/autopilot).
+- [Add devices to a customer account](https://learn.microsoft.com/en-us/partner-center/autopilot).
 
 ## Manually register devices with Windows Autopilot
 
@@ -85,7 +82,3 @@ For a how to guide on how to register devices with Windows Autopilot, see one of
 ## Related content
 
 - [Registration overview](registration-overview.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

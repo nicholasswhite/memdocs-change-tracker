@@ -1,7 +1,7 @@
 ---
 description: Learn how to create a static collection with defined attributes and members within Configuration Manager.
-title: "Create a Static Collection"
-ms.date: "09/20/2016"
+title: "How to Create a Static Collection"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,67 +9,62 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Create a Static Collection
-In Configuration Manager, your application uses [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md) to define the attributes of a collection, such as the membership rules and the refresh schedule. The `MemberClassName` property contains the system-generated class name that contains the members of the collection.  
 
- Members of a collection are specified by using direct rules, query rules, or both. Direct rules define an explicit resource, and query rules define a dynamic collection that is regularly evaluated based on the current state of the site.  
+In Configuration Manager, your application uses [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md) to define the attributes of a collection, such as the membership rules and the refresh schedule. The `MemberClassName` property contains the system-generated class name that contains the members of the collection.
 
-> [!NOTE]
->  When creating a direct membership rule, remember that the rule must always have the same name as the computer that the rule specifies.  
-
- Your application uses the [SMS_CollectionRuleDirect Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionruledirect-server-wmi-class.md) class to define direct rules. This approach is used for resources that are static in nature. For example, if you have a limited number of licenses for a particular software application, the application should use direct rules to advertise to specific computers or users.  
-
- Collections are closely tied to packages, programs and advertisements. For more information, see [Software Distribution Overview](../../../../develop/core/servers/configure/software-distribution-overview.md).  
-
- The following examples require the following values:  
-
--   A Windows Management Instrumentation (WMI) connection object.  
-
--   A new static collection name.  
-
--   A new static collection comment.  
-
--   The 'owned by this site' flag.  
-
--   A resource class name.  
-
--   A resource ID.  
-
--   A collection identifier to limit the scope of membership.  
+Members of a collection are specified by using direct rules, query rules, or both. Direct rules define an explicit resource, and query rules define a dynamic collection that is regularly evaluated based on the current state of the site.
 
 > [!NOTE]
->  If the All Systems (SMS00001) collection has been removed from the site server, the VBScript example will not work.  
+>
+> When creating a direct membership rule, remember that the rule must always have the same name as the computer that the rule specifies.
 
- Example of the subroutine call in Visual Basic:  
+Your application uses the [SMS_CollectionRuleDirect Server WMI Class](../../../reference/core/clients/collections/sms_collectionruledirect-server-wmi-class.md) class to define direct rules. This approach is used for resources that are static in nature. For example, if you have a limited number of licenses for a particular software application, the application should use direct rules to advertise to specific computers or users.
 
-```  
+Collections are closely tied to packages, programs and advertisements. For more information, see [Software Distribution Overview](../../servers/configure/software-distribution-overview.md).
+
+The following examples require the following values:
+
+- A Windows Management Instrumentation (WMI) connection object.
+- A new static collection name.
+- A new static collection comment.
+- The 'owned by this site' flag.
+- A resource class name.
+- A resource ID.
+- A collection identifier to limit the scope of membership.
+
+> [!NOTE]
+>
+> If the All Systems (SMS00001) collection has been removed from the site server, the VBScript example will not work.
+
+Example of the subroutine call in Visual Basic:
+
+```
 Call CreateStaticCollection(swbemconnection, "New Static Collection Name", "New static collection comment.", true, "SMS_R_System", 2, "SMS00001")  
-```  
+```
 
- Example of the method call in C#:  
+Example of the method call in C#:
 
-```  
+```
 CreateStaticCollection (WMIConnection, "New Static Collection Name", "New static collection comment.", true, "SMS_R_System", 2, "SMS00001")  
-```  
+```
 
-### To create a static collection  
+### To create a static collection
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).  
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Create the new collection object by using the [SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md) class.
+3. Create the direct rule by using the [SMS_CollectionRuleDirect Server WMI Class](../../../reference/core/clients/collections/sms_collectionruledirect-server-wmi-class.md) class.
+4. Add the rule to the collection.
+5. Refresh the collection.
 
-2.  Create the new collection object by using the [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md) class.  
+## Example
 
-3.  Create the direct rule by using the [SMS_CollectionRuleDirect Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionruledirect-server-wmi-class.md) class.  
+The following example method creates a collection.
 
-4.  Add the rule to the collection.  
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
-5.  Refresh the collection.  
-
-## Example  
- The following example method creates a collection.  
-
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).  
-
-```vbs  
+```vbs
 
 ' Set up a connection to the local provider.  
 Set swbemLocator = CreateObject("WbemScripting.SWbemLocator")  
@@ -115,9 +110,9 @@ Sub CreateStaticCollection(connection, newCollectionName, newCollectionComment, 
     newCollection.RequestRefresh False  
 
 End Sub  
-```  
+```
 
-```c#  
+```c#
 public void CreateStaticCollection(WqlConnectionManager connection, string newCollectionName, string newCollectionComment, bool ownedByThisSite, string resourceClassName, int resourceID, string limitToCollectionID)  
 {  
     try  
@@ -161,50 +156,53 @@ public void CreateStaticCollection(WqlConnectionManager connection, string newCo
         throw;  
     }  
 }  
-```  
+```
 
- The example method has the following parameters:  
+The example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|  
-|`newCollectionName`|-   Managed: `String`<br />-   VBScript: `String`|The unique name that represents the collection in the Configuration Manager console.|  
-|`newCollectionComment`|-   Managed: `String`<br />-   VBScript: `String`|General comment or note that documents the collection.|  
-|`ownedByThisSite`|-   Managed: `Boolean`<br />-   VBScript: `Boolean`|`true` if the collection originated at the local Configuration Manager site.|  
-|`resourceClassName`|-   Managed: `String`<br />-   VBScript: `String`|The resource name of the static rule object.|  
-|`resourceID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The resource ID.|  
-|`limitToCollectionID`|-   Managed: `String`<br />-   VBScript: `String`|Collection identifier to limit the scope of membership.|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `newCollectionName` | - Managed: `String` - VBScript: `String` | The unique name that represents the collection in the Configuration Manager console. |
+| `newCollectionComment` | - Managed: `String` - VBScript: `String` | General comment or note that documents the collection. |
+| `ownedByThisSite` | - Managed: `Boolean` - VBScript: `Boolean` | `true` if the collection originated at the local Configuration Manager site. |
+| `resourceClassName` | - Managed: `String` - VBScript: `String` | The resource name of the static rule object. |
+| `resourceID` | - Managed: `Integer` - VBScript: `Integer` | The resource ID. |
+| `limitToCollectionID` | - Managed: `String` - VBScript: `String` | Collection identifier to limit the scope of membership. |
 
-## Compiling the Code  
- The C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System  
+The C# example requires:
 
- System.Collections.Generic  
+### Namespaces
 
- System.ComponentModel  
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider  
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine  
+System.ComponentModel
 
-### Assembly  
- adminui.wqlqueryengine  
+Microsoft.ConfigurationManagement.ManagementProvider
 
- microsoft.configurationmanagement.managementprovider  
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+### Assembly
 
-## .NET Framework Security  
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).  
+adminui.wqlqueryengine
 
-## See Also  
- [SMS_Collection Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)   
- [SMS_CollectionRuleDirect Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionruledirect-server-wmi-class.md)   
- [Software distribution overview](../../servers/configure/software-distribution-overview.md)
- [About deployments](../../servers/configure/about-software-distribution-deployments.md)
- [Objects overview](../../understand/configuration-manager-objects-overview.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)   
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
+microsoft.configurationmanagement.managementprovider
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../servers/configure/role-based-administration.md).
+
+## See Also
+
+[SMS_Collection Server WMI Class](../../../reference/core/clients/collections/sms_collection-server-wmi-class.md)  
+ [SMS_CollectionRuleDirect Server WMI Class](../../../reference/core/clients/collections/sms_collectionruledirect-server-wmi-class.md)  
+ [Software distribution overview](../../servers/configure/software-distribution-overview.md) [About deployments](../../servers/configure/about-software-distribution-deployments.md) [Objects overview](../../understand/configuration-manager-objects-overview.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)  
+ [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)

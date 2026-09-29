@@ -1,7 +1,7 @@
 ---
-title: Platforms and policy types supported by assignment filters
+title: "List of platforms, policies, and app types supported by assignment filters in Microsoft Intune"
 description: Learn which apps, compliance policies, and device configuration profiles and their platforms support assignment filters in Microsoft Intune.
-ms.date: 03/31/2026
+ms.date: "2026-09-17T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mattcall
 ---
@@ -12,38 +12,49 @@ ms.reviewer: mattcall
 
 This article lists the app types, compliance policies, device configuration profiles, and app configuration policies that support assignment filters. It also lists the workloads that aren't supported.
 
-[!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
 ## Before you begin
 
-- :::image type="icon" source="../../media/icons/16/check.svg" border="false":::: Supports assignment filters.
-- :::image type="icon" source="../../media/icons/16/error.svg" border="false":::: Doesn't support assignment filters.
+- ![](../../media/icons/16/check.svg) : Supports assignment filters.
+- ![](../../media/icons/16/error.svg) : Doesn't support assignment filters.
 - N/A: Doesn't apply to the platform.
 
 > [!IMPORTANT]
-> [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
+>
+> On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
 ## Supported app types for managed devices
 
 You can use assignment filters for some common app policies on the following platforms. For a list of what's not supported on managed devices, go to [not supported](#not-supported-on-managed-devices) (in this article).
 
-# [Windows](#tab/windows-apps)
+- [Windows](#tabpanel_1_windows-apps)
+- [Android](#tabpanel_1_android-apps)
+- [Apple](#tabpanel_1_apple-apps)
+
+<a id="tabpanel_1_windows-apps"></a>
+
+
 
 ### Windows
 
 | App type | Supported |
 | --- | --- |
-| Store app | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Microsoft 365 apps | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Microsoft Edge version 77 and newer | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Store app | ![](../../media/icons/16/check.svg) |
+| Microsoft 365 apps | ![](../../media/icons/16/check.svg) |
+| Microsoft Edge version 77 and newer | ![](../../media/icons/16/check.svg) |
 | Microsoft Defender for Endpoint | N/A |
-| Web link | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
-| Windows web link | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Line-of-business apps | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Windows app (Win32) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Microsoft Store for Business | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Web link | ![](../../media/icons/16/error.svg) |
+| Windows web link | ![](../../media/icons/16/check.svg) |
+| Line-of-business apps | ![](../../media/icons/16/check.svg) |
+| Windows app (Win32) | ![](../../media/icons/16/check.svg) |
+| Microsoft Store for Business | ![](../../media/icons/16/check.svg) |
 
-# [Android](#tab/android-apps)
+<a id="tabpanel_1_android-apps"></a>
+
+
 
 ### Android Enterprise
 
@@ -55,54 +66,57 @@ You can use assignment filters for some common app policies on the following pla
 | Microsoft Defender for Endpoint | N/A |
 | Web link | N/A |
 | Line-of-business apps | N/A |
-| Android Enterprise system app  | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Managed Google Play store app | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Managed Google Play web link | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Managed Android line-of-business app | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Android Enterprise system app | ![](../../media/icons/16/check.svg) |
+| Managed Google Play store app | ![](../../media/icons/16/check.svg) |
+| Managed Google Play web link | ![](../../media/icons/16/check.svg) |
+| Managed Android line-of-business app | ![](../../media/icons/16/check.svg) |
 
 > [!NOTE]
+>
 > Assignment filters aren't supported on Android Enterprise personally-owned devices with work profile (BYOD) when used in "Available" app assignments. If users are targeted with an "Available" app intent, then the app continues to show as available to install from the Google managed play store. Any include or exclude filtering is ignored.
 
 ### Android device administrator
 
 | App type | Supported |
 | --- | --- |
-| Store app | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Store app | ![](../../media/icons/16/check.svg) |
 | Microsoft 365 apps | N/A |
 | Microsoft Edge version 77 and newer | N/A |
 | Microsoft Defender for Endpoint | N/A |
-| Web link | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
-| Line-of-business apps | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Web link | ![](../../media/icons/16/error.svg) |
+| Line-of-business apps | ![](../../media/icons/16/check.svg) |
 
-[!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
-# [Apple](#tab/apple-apps)
+<a id="tabpanel_1_apple-apps"></a>
+
+
 
 ### iOS/iPadOS
 
 | App type | Supported |
 | --- | --- |
-| Store app | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Store app | ![](../../media/icons/16/check.svg) |
 | Microsoft 365 apps | N/A |
 | Microsoft Edge version 77 and newer | N/A |
 | Microsoft Defender for Endpoint | N/A |
-| Web link | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
-| iOS/iPadOS web clip | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Line-of-business apps | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| iOS/iPadOS volume purchase program (VPP) app | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Web link | ![](../../media/icons/16/error.svg) |
+| iOS/iPadOS web clip | ![](../../media/icons/16/check.svg) |
+| Line-of-business apps | ![](../../media/icons/16/check.svg) |
+| iOS/iPadOS volume purchase program (VPP) app | ![](../../media/icons/16/check.svg) |
 
 ### macOS
 
 | App type | Supported |
 | --- | --- |
 | Store app | N/A |
-| Microsoft 365 apps | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Microsoft Edge version 77 and newer | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Microsoft Defender for Endpoint | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Web link | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
-| Line-of-business apps | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-
----
+| Microsoft 365 apps | ![](../../media/icons/16/check.svg) |
+| Microsoft Edge version 77 and newer | ![](../../media/icons/16/check.svg) |
+| Microsoft Defender for Endpoint | ![](../../media/icons/16/check.svg) |
+| Web link | ![](../../media/icons/16/error.svg) |
+| Line-of-business apps | ![](../../media/icons/16/check.svg) |
 
 ## [App configuration policies](../../app-management/configuration/overview.md)
 
@@ -111,7 +125,6 @@ You can use assignment filters for some common app policies on the following pla
   - Android
   - iOS/iPadOS
   - Windows
-
 - For **managed devices**, you can use assignment filters for app configuration policies on the following platforms:
 
   - Android Enterprise
@@ -124,7 +137,6 @@ You can use assignment filters for some common app policies on the following pla
   - Android
   - iOS/iPadOS
   - Windows
-
 - For **managed devices**, assignment filters aren't supported for app protection policies. For other features not supported on managed devices, go to [not supported](#not-supported-on-managed-devices) (in this article).
 
 ## Compliance policies
@@ -142,86 +154,94 @@ You can use assignment filters for some common app policies on the following pla
 ## Device configuration profiles and Endpoint security
 
 - For **managed apps**, assignment filters aren't supported for device configuration profiles and endpoint security policies.
-
 - On **managed devices**, you can use filters for some common device configuration policies on the platforms listed in the following tables. For a list of what's not supported, go to [not supported](#not-supported-on-managed-devices) (in this article).
 
 > [!NOTE]
+>
 > Some profile types are only available for specific platforms. For example, the **Device features** profile type includes settings that are only available for iOS/iPadOS and macOS devices.
 >
 > For a list of all device configuration profiles, and the platforms they apply to, go to [Apply features and settings on your devices](../../device-configuration/overview.md).
 
-# [Windows](#tab/windows-device-configuration)
+- [Windows](#tabpanel_2_windows-device-configuration)
+- [Android](#tabpanel_2_android-device-configuration)
+- [Apple](#tabpanel_2_apple-device-configuration)
+
+<a id="tabpanel_2_windows-device-configuration"></a>
+
+
 
 ### Windows
 
 | Profile type | Supported |
 | --- | --- |
-| Update rings for Windows | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| &nbsp; | &nbsp; |
-| **Device configuration profile** | &nbsp; |
-| Custom | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Update rings for Windows | ![](../../media/icons/16/check.svg) |
+|  |  |
+| **Device configuration profile** |  |
+| Custom | ![](../../media/icons/16/check.svg) |
 | Derived credential | N/A |
-| Delivery optimization | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Device restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Device Restrictions (Windows 10 Team) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Delivery optimization | ![](../../media/icons/16/check.svg) |
+| Device restrictions | ![](../../media/icons/16/check.svg) |
+| Device Restrictions (Windows 10 Team) | ![](../../media/icons/16/check.svg) |
 | Device Features | N/A |
-| Device Firmware Configuration Interface (DFCI) on Windows on supported UEFI | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Domain Join | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Edition upgrade and S mode switch | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Email | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Endpoint analytics Remediations scripts|:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Endpoint Protection | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Enrollment device platform restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: <br/> Support for a subset of filter properties including device `osVersion`, `operatingSystemSKU`, and `enrollmentProfileName` |
-| Kiosk | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Network boundary | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS imported certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| SCEP certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Secure assessment (Education) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Settings catalog | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Shared multi-user device | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Trusted certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| VPN | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Wi-Fi | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Wired network | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
-| Windows health monitoring | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| &nbsp; | &nbsp; |
-| **Endpoint Security profile** | &nbsp; |
-| Account protection | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: <br/> **Account protection**, **Local user group membership**, and **Local admin password solution (Windows LAPS)** |
-| Antivirus | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Attack surface reduction | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: <br/> Excludes **Web protection (Microsoft Edge Legacy)**, **Application control**, and **App and browser isolation** |
-| Disk encryption | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Endpoint detection and response | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Endpoint Privilege Management (EPM) |:::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Firewall | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Microsoft Defender for Endpoint (Windows Desktop) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Security baselines | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
+| Device Firmware Configuration Interface (DFCI) on Windows on supported UEFI | ![](../../media/icons/16/check.svg) |
+| Domain Join | ![](../../media/icons/16/check.svg) |
+| Edition upgrade and S mode switch | ![](../../media/icons/16/check.svg) |
+| Email | ![](../../media/icons/16/check.svg) |
+| Endpoint analytics Remediations scripts | ![](../../media/icons/16/check.svg) |
+| Endpoint Protection | ![](../../media/icons/16/check.svg) |
+| Enrollment device platform restrictions | ![](../../media/icons/16/check.svg)   Support for a subset of filter properties including device `osVersion`, `operatingSystemSKU`, and `enrollmentProfileName` |
+| Kiosk | ![](../../media/icons/16/check.svg) |
+| Network boundary | ![](../../media/icons/16/check.svg) |
+| PKCS certificate | ![](../../media/icons/16/check.svg) |
+| PKCS imported certificate | ![](../../media/icons/16/check.svg) |
+| SCEP certificate | ![](../../media/icons/16/check.svg) |
+| Secure assessment (Education) | ![](../../media/icons/16/check.svg) |
+| Settings catalog | ![](../../media/icons/16/check.svg) |
+| Shared multi-user device | ![](../../media/icons/16/check.svg) |
+| Trusted certificate | ![](../../media/icons/16/check.svg) |
+| VPN | ![](../../media/icons/16/check.svg) |
+| Wi-Fi | ![](../../media/icons/16/check.svg) |
+| Wired network | ![](../../media/icons/16/error.svg) |
+| Windows health monitoring | ![](../../media/icons/16/check.svg) |
+|  |  |
+| **Endpoint Security profile** |  |
+| Account protection | ![](../../media/icons/16/check.svg)   **Account protection**, **Local user group membership**, and **Local admin password solution (Windows LAPS)** |
+| Antivirus | ![](../../media/icons/16/check.svg) |
+| Attack surface reduction | ![](../../media/icons/16/check.svg)   Excludes **Web protection (Microsoft Edge Legacy)**, **Application control**, and **App and browser isolation** |
+| Disk encryption | ![](../../media/icons/16/check.svg) |
+| Endpoint detection and response | ![](../../media/icons/16/check.svg) |
+| Endpoint Privilege Management (EPM) | ![](../../media/icons/16/check.svg) |
+| Firewall | ![](../../media/icons/16/check.svg) |
+| Microsoft Defender for Endpoint (Windows Desktop) | ![](../../media/icons/16/check.svg) |
+| Security baselines | ![](../../media/icons/16/error.svg) |
 
-# [Android](#tab/android-device-configuration)
+<a id="tabpanel_2_android-device-configuration"></a>
+
+
 
 ### Android Enterprise
 
 | Profile type | Supported |
 | --- | --- |
-| **Device configuration profile** | &nbsp; |
-| Custom | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Derived credential | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Device restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| **Device configuration profile** |  |
+| Custom | ![](../../media/icons/16/check.svg) |
+| Derived credential | ![](../../media/icons/16/check.svg) |
+| Device restrictions | ![](../../media/icons/16/check.svg) |
 | Device Restrictions (Windows 10 Team) | N/A |
 | Device Features | N/A |
-| Email | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Email | ![](../../media/icons/16/check.svg) |
 | Endpoint Protection | N/A |
-| Enrollment device platform restrictions | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
-| OEMConfig | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS imported certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| SCEP certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Settings catalog | N/A |
-| Trusted certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| VPN | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Wi-Fi | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| &nbsp; | &nbsp; |
-| **Endpoint Security profile** | &nbsp; |
+| Enrollment device platform restrictions | ![](../../media/icons/16/error.svg) |
+| OEMConfig | ![](../../media/icons/16/check.svg) |
+| PKCS certificate | ![](../../media/icons/16/check.svg) |
+| PKCS imported certificate | ![](../../media/icons/16/check.svg) |
+| SCEP certificate | ![](../../media/icons/16/check.svg) |
+| Settings catalog | ![](../../media/icons/16/check.svg) |
+| Trusted certificate | ![](../../media/icons/16/check.svg) |
+| VPN | ![](../../media/icons/16/check.svg) |
+| Wi-Fi | ![](../../media/icons/16/check.svg) |
+|  |  |
+| **Endpoint Security profile** |  |
 | Account protection | N/A |
 | Antivirus | N/A |
 | Attack surface reduction | N/A |
@@ -234,36 +254,37 @@ You can use assignment filters for some common app policies on the following pla
 
 | Profile type | Supported |
 | --- | --- |
-| **Device configuration profile** | &nbsp; |
-| Device restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| SCEP certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Trusted certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| **Device configuration profile** |  |
+| Device restrictions | ![](../../media/icons/16/check.svg) |
+| PKCS certificate | ![](../../media/icons/16/check.svg) |
+| SCEP certificate | ![](../../media/icons/16/check.svg) |
+| Settings catalog | ![](../../media/icons/16/check.svg) |
+| Trusted certificate | ![](../../media/icons/16/check.svg) |
 
 ### Android device administrator
 
 | Profile type | Supported |
 | --- | --- |
-| **Device configuration profile** | &nbsp; |
-| Custom | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| **Device configuration profile** |  |
+| Custom | ![](../../media/icons/16/check.svg) |
 | Derived credential | N/A |
-| Device restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Device restrictions | ![](../../media/icons/16/check.svg) |
 | Device restrictions (Windows 10 Team) | N/A |
 | Device features | N/A |
 | Email | N/A |
-| Email (Samsung KNOX only) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Email (Samsung KNOX only) | ![](../../media/icons/16/check.svg) |
 | Endpoint Protection | N/A |
-| Enrollment device platform restrictions | :::image type="icon" source="../../media/icons/16/error.svg" border="false"::: |
-| MX profile (Zebra only) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS imported certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| SCEP certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Enrollment device platform restrictions | ![](../../media/icons/16/error.svg) |
+| MX profile (Zebra only) | ![](../../media/icons/16/check.svg) |
+| PKCS certificate | ![](../../media/icons/16/check.svg) |
+| PKCS imported certificate | ![](../../media/icons/16/check.svg) |
+| SCEP certificate | ![](../../media/icons/16/check.svg) |
 | Settings catalog | N/A |
-| Trusted certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| VPN | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Wi-Fi | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| &nbsp; | &nbsp; |
-| **Endpoint Security profile** | &nbsp; |
+| Trusted certificate | ![](../../media/icons/16/check.svg) |
+| VPN | ![](../../media/icons/16/check.svg) |
+| Wi-Fi | ![](../../media/icons/16/check.svg) |
+|  |  |
+| **Endpoint Security profile** |  |
 | Account protection | N/A |
 | Antivirus | N/A |
 | Attack surface reduction | N/A |
@@ -272,74 +293,74 @@ You can use assignment filters for some common app policies on the following pla
 | Firewall | N/A |
 | Security baselines | N/A |
 
-# [Apple](#tab/apple-device-configuration)
+<a id="tabpanel_2_apple-device-configuration"></a>
+
+
 
 ### iOS/iPadOS
 
 | Profile type | Supported |
 | --- | --- |
-| **Device configuration profile** | &nbsp; |
-| Custom | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Derived credential | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Device restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| **Device configuration profile** |  |
+| Custom | ![](../../media/icons/16/check.svg) |
+| Derived credential | ![](../../media/icons/16/check.svg) |
+| Device restrictions | ![](../../media/icons/16/check.svg) |
 | Device Restrictions (Windows 10 Team) | N/A |
-| Device Features | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Email | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Device Features | ![](../../media/icons/16/check.svg) |
+| Email | ![](../../media/icons/16/check.svg) |
 | Endpoint Protection | N/A |
-| Enrollment device platform restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS imported certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| SCEP certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Settings catalog (MDM) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Settings catalog (DDM) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Trusted certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| VPN | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Wi-Fi | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| &nbsp; | &nbsp; |
-| **Endpoint Security profile** | &nbsp; |
+| Enrollment device platform restrictions | ![](../../media/icons/16/check.svg) |
+| PKCS certificate | ![](../../media/icons/16/check.svg) |
+| PKCS imported certificate | ![](../../media/icons/16/check.svg) |
+| SCEP certificate | ![](../../media/icons/16/check.svg) |
+| Settings catalog (MDM) | ![](../../media/icons/16/check.svg) |
+| Settings catalog (DDM) | ![](../../media/icons/16/check.svg) |
+| Trusted certificate | ![](../../media/icons/16/check.svg) |
+| VPN | ![](../../media/icons/16/check.svg) |
+| Wi-Fi | ![](../../media/icons/16/check.svg) |
+|  |  |
+| **Endpoint Security profile** |  |
 | Account protection | N/A |
 | Antivirus | N/A |
 | Attack surface reduction | N/A |
 | Disk encryption | N/A |
 | Endpoint detection and response | N/A |
-| Firewall | N/A  |
+| Firewall | N/A |
 | Security baselines | N/A |
 
 ### macOS
 
 | Profile type | Supported |
 | --- | --- |
-| **Device configuration profile** | &nbsp; |
-| Custom | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| **Device configuration profile** |  |
+| Custom | ![](../../media/icons/16/check.svg) |
 | Derived credential | N/A |
-| Device restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Device restrictions | ![](../../media/icons/16/check.svg) |
 | Device restrictions (Windows 10 Team) | N/A |
-| Device features | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Device features | ![](../../media/icons/16/check.svg) |
 | Email | N/A |
-| Endpoint Protection | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Enrollment device platform restrictions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Extensions | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| PKCS imported certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Preference file | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| SCEP certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Settings catalog (MDM) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Settings catalog (DDM) | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Trusted certificate | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| VPN | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Wi-Fi | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| Wired network | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
-| &nbsp; | &nbsp; |
-| **Endpoint Security profile** | &nbsp; |
+| Endpoint Protection | ![](../../media/icons/16/check.svg) |
+| Enrollment device platform restrictions | ![](../../media/icons/16/check.svg) |
+| Extensions | ![](../../media/icons/16/check.svg) |
+| PKCS certificate | ![](../../media/icons/16/check.svg) |
+| PKCS imported certificate | ![](../../media/icons/16/check.svg) |
+| Preference file | ![](../../media/icons/16/check.svg) |
+| SCEP certificate | ![](../../media/icons/16/check.svg) |
+| Settings catalog (MDM) | ![](../../media/icons/16/check.svg) |
+| Settings catalog (DDM) | ![](../../media/icons/16/check.svg) |
+| Trusted certificate | ![](../../media/icons/16/check.svg) |
+| VPN | ![](../../media/icons/16/check.svg) |
+| Wi-Fi | ![](../../media/icons/16/check.svg) |
+| Wired network | ![](../../media/icons/16/check.svg) |
+|  |  |
+| **Endpoint Security profile** |  |
 | Account protection | N/A |
-| Antivirus | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Antivirus | ![](../../media/icons/16/check.svg) |
 | Attack surface reduction | N/A |
-| Disk encryption | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Disk encryption | ![](../../media/icons/16/check.svg) |
 | Endpoint detection and response | N/A |
-| Firewall | :::image type="icon" source="../../media/icons/16/check.svg" border="false"::: |
+| Firewall | ![](../../media/icons/16/check.svg) |
 | Security baselines | N/A |
-
----
 
 ## Not supported on managed devices
 
@@ -349,7 +370,6 @@ The following features on managed devices don't support using assignment filters
 - App protection policies for Android and iOS/iPadOS
 
   You can use assignment filters on app protection policies for managed apps. For more information on managed apps, go to [Use filters when assigning your apps, policies, and profiles in Intune](overview.md).
-
 - End user experiences customization policies
 - Enrollment notifications
 - Feature updates for Windows

@@ -1,19 +1,22 @@
 ---
-title: SMS_AmPolicySummary Class
+title: "SMS_AmPolicySummary Server WMI Class"
 description: The SMS_AmPolicySummary Windows Management Instrumentation class is an SMS Provider server class in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_AmPolicySummary Server WMI Class
+
 The `SMS_AmPolicySummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the endpoint protection client antimalware policy status.
 
 > [!IMPORTANT]
->  This class is only for customized antimalware policy summary.
+>
+> This class is only for customized antimalware policy summary.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,112 +38,105 @@ Class SMS_AmPolicySummary : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AmPolicySummary` class does not define any methods.
+
+The `SMS_AmPolicySummary` class does not define any methods.
 
 ## Properties
- `AppliedCount`
- Data type: `UInt32`
 
- Access type: Read/Write
+`AppliedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The number of clients that applied this particular antimalware policy
+Qualifiers: none
 
- `AssignmentTime`
- Data type: `DateTime`
+The number of clients that applied this particular antimalware policy
 
- Access type: Read/Write
+`AssignmentTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Local time the customized setting is deployed.
+Qualifiers: none
 
- `ClientSettingsID`
- Data type: `UInt32`
+Local time the customized setting is deployed.
 
- Access type: Read/Write
+`ClientSettingsID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Unique identifier of the antimalware setting.
+Qualifiers: none
 
- `CollectionID`
- Data type: `String`
+Unique identifier of the antimalware setting.
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Collection identifier.
+Qualifiers: none
 
- `CollectionName`
- Data type: `String`
+Collection identifier.
 
- Access type: Read/Write
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Collection name.
+Qualifiers: none
 
- `FailureCount`
- Data type: `UInt32`
+Collection name.
 
- Access type: Read/Write
+`FailureCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The number of clients that failed to apply this particular antimalware policy.
+Qualifiers: none
 
- `ID`
- Data type: `UInt32`
+The number of clients that failed to apply this particular antimalware policy.
 
- Access type: Read/Write
+`ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the antimalware setting assignment.
+Qualifiers: [key]
 
- `LastClientUpdateTime`
- Data type: `DateTime`
+Identifier of the antimalware setting assignment.
 
- Access type: Read/Write
+`LastClientUpdateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last update from all assigned clients.
+Qualifiers: none
 
- `NotAppliedCount`
- Data type: `UInt32`
+Last update from all assigned clients.
 
- Access type: Read/Write
+`NotAppliedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients that are not applicable to apply the policy.
+Qualifiers: none
 
- `TotalCount`
- Data type: `UInt32`
+Number of clients that are not applicable to apply the policy.
 
- Access type: Read/Write
+`TotalCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Total number of clients assigned the policy.
+Qualifiers: none
 
- `UnknownCount`
- Data type: `UInt32`
+Total number of clients assigned the policy.
 
- Access type: Read/Write
+`UnknownCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of unknown clients.
+Qualifiers: none
+
+Number of unknown clients.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

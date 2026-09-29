@@ -1,13 +1,15 @@
 ---
 description: Learn how to represent the platforms that Configuration Manager supports using the SMS_SupportedPlatforms.
-title: SMS_SupportedPlatforms Class
-ms.date: 09/20/2016
+title: "SMS_SupportedPlatforms Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SupportedPlatforms Server WMI Class
+
 The `SMS_SupportedPlatforms` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the platforms (operating system, architecture, and versions) that Configuration Manager supports.
 
 ## Syntax
@@ -29,118 +31,113 @@ Class SMS_SupportedPlatforms : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_SupportedPlatforms` class.
 
-|Method|Description|
-|------------|-----------------|
-|[Enable Method in Class SMS_SupportedPlatforms](../../../../../develop/reference/core/servers/configure/enable-method-in-class-sms_supportedplatforms.md)|Enables or disables the platforms.|
+The following table lists the methods in the `SMS_SupportedPlatforms` class.
+
+| Method | Description |
+| --- | --- |
+| [Enable Method in Class SMS_SupportedPlatforms](enable-method-in-class-sms_supportedplatforms.md) | Enables or disables the platforms. |
 
 ## Properties
- `CI_UniqueID`
- Data type: `String`
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The unique ID of the Configuration Item that defines the platform rules.
+Qualifiers: none
 
- `Condition`
- Data type: `String`
+The unique ID of the Configuration Item that defines the platform rules.
 
- Access type: Read/Write
+`Condition` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The XML data that specifies the WQL that the client uses to check the supported platforms.
+Qualifiers: None
 
- `DisplayText`
- Data type: `String`
+The XML data that specifies the WQL that the client uses to check the supported platforms.
 
- Access type: Read/Write
+`DisplayText` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the platform that humans can read. It is used if the resource string does not exist.
+Qualifiers: None
 
- `IsSupported`
- Data type: `Boolean`
+Name of the platform that humans can read. It is used if the resource string does not exist.
 
- Access type: Read/Write
+`IsSupported` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true`, if the platform is supported as client operating system.
+Qualifiers: none
 
- `OSMaxVersion`
- Data type: `String`
+`true`, if the platform is supported as client operating system.
 
- Access type: Read/Write
+`OSMaxVersion` Data type: `String`
 
- Qualifiers: [key, Not_null]
+Access type: Read/Write
 
- Highest version number for the platform. A version of 99.99.9999.9999 denotes all future versions.
+Qualifiers: [key, Not_null]
 
- `OSMinVersion`
- Data type: `String`
+Highest version number for the platform. A version of 99.99.9999.9999 denotes all future versions.
 
- Access type: Read/Write
+`OSMinVersion` Data type: `String`
 
- Qualifiers: [key, Not_null]
+Access type: Read/Write
 
- Lowest version number for the platform. A version of 0.00.0000.0 denotes all previous versions.
+Qualifiers: [key, Not_null]
 
- `OSName`
- Data type: `String`
+Lowest version number for the platform. A version of 0.00.0000.0 denotes all previous versions.
 
- Access type: Read/Write
+`OSName` Data type: `String`
 
- Qualifiers: [key, Not_null]
+Access type: Read/Write
 
- Name of the operating system for the platform, for example, "Win NT".
+Qualifiers: [key, Not_null]
 
- `OSPlatform`
- Data type: `String`
+Name of the operating system for the platform, for example, "Win NT".
 
- Access type: Read/Write
+`OSPlatform` Data type: `String`
 
- Qualifiers: [key, Not_null]
+Access type: Read/Write
 
- Name of the computer architecture for the platform, for example, I386.
+Qualifiers: [key, Not_null]
 
- `ResourceDll`
- Data type: `String`
+Name of the computer architecture for the platform, for example, I386.
 
- Access type: Read/Write
+`ResourceDll` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the resource DLL containing the localized name of the platform.
+Qualifiers: None
 
- `StringId`
- Data type: `UInt32`
+Name of the resource DLL containing the localized name of the platform.
 
- Access type: Read/Write
+`StringId` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- String ID in the resource DLL containing the localized name of the platform.
+Qualifiers: None
+
+String ID in the resource DLL containing the localized name of the platform.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- This class is populated when Configuration Manager is installed. Your application cannot add, update, or delete instances of this class by using WMI. However, new instances are added to the class when a package definition file is processed that contains a platform that is not identified by a class instance.
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
- Your application uses the information contained in this class to populate `SMS_OS_Details` objects. For more information, see the `SupportedOperatingSystems` property of [SMS_Program Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_program-server-wmi-class.md).
+This class is populated when Configuration Manager is installed. Your application cannot add, update, or delete instances of this class by using WMI. However, new instances are added to the class when a package definition file is processed that contains a platform that is not identified by a class instance.
+
+Your application uses the information contained in this class to populate `SMS_OS_Details` objects. For more information, see the `SupportedOperatingSystems` property of [SMS_Program Server WMI Class](sms_program-server-wmi-class.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_OS_Details Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_os_details-server-wmi-class.md)
- [SMS_Program Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_program-server-wmi-class.md)
+
+[SMS_OS_Details Server WMI Class](sms_os_details-server-wmi-class.md) [SMS_Program Server WMI Class](sms_program-server-wmi-class.md)

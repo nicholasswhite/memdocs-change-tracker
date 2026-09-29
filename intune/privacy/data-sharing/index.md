@@ -1,7 +1,7 @@
 ---
 title: Data security and sharing in Intune
 description: Learn how personal data is secured and shared in Intune.
-ms.date: 12/07/2023
+ms.date: "2023-12-07T00:00:00Z"
 ms.topic: overview
 ms.reviewer: angerobe
 ms.collection:
@@ -39,6 +39,7 @@ Sharing data with such entities is done to aid customer and technical support, s
 A tenant's contract with the third party governs the Intune personal data held in the third party's service. It also grants Intune the permission to transmit data to the third party service.
 
 For information about data shared with certain third parties, see the following articles:
+
 - [Data Intune sends to Apple](ref-intune-to-apple.md)
 - [Data Intune sends to Google](ref-intune-to-google.md)
 - [Data Apple sends to Intune](ref-apple-to-intune.md)
@@ -49,8 +50,7 @@ For information about data shared with certain third parties, see the following 
 
 Microsoft Intune doesn't share any data with Configuration Manager. Configuration Manager is an on-premise product deployed, managed, and operated directly by the customer. The diagnostics and usage data that is collected by Configuration Manager are only to improve the installation experience, quality, and security of future releases.
 
-To learn more, see [Diagnostics and usage data for Configuration Manager](/configmgr/core/plan-design/diagnostics/diagnostics-and-usage-data).
-
+To learn more, see [Diagnostics and usage data for Configuration Manager](https://learn.microsoft.com/en-us/configmgr/core/plan-design/diagnostics/diagnostics-and-usage-data).
 
 ## Next steps
 

@@ -1,13 +1,15 @@
 ---
 description: Learn how to invoke the Content Transfer Manager using the ICcmContentTransferManager4 interface and the associated parameters.
 title: ICcmContentTransferManager4 Interface
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ICcmContentTransferManager4 Interface
+
 The **ICcmContentTransferManager4** interface is used by clients to invoke the Content Transfer Manager.
 
 ## Syntax
@@ -48,145 +50,126 @@ interface ICcmContentTransferManager4 : IUnknown
 ```
 
 #### Parameters
- `szContentId`
- Data type: LPCWSTR
 
- Qualifiers: [in]
+`szContentId` Data type: LPCWSTR
 
- The content/package ID to download.
+Qualifiers: [in]
 
- `szContentVersion`
- Data type: LPCWSTR
+The content/package ID to download.
 
- Qualifiers: [in]
+`szContentVersion` Data type: LPCWSTR
 
- The content/package version to download.
+Qualifiers: [in]
 
- `eContentType`
- Data type: CCM_CONTENTTYPE
+The content/package version to download.
 
- Qualifiers: [in]
+`eContentType` Data type: CCM_CONTENTTYPE
 
- The type of content.
+Qualifiers: [in]
 
- `Priority`
- Data type: CCM_CONTENTPRIORITY
+The type of content.
 
- Qualifiers: [in]
+`Priority` Data type: CCM_CONTENTPRIORITY
 
- The content priority.
+Qualifiers: [in]
 
- `dwDTSFlags`
- Data type: DWORD
+The content priority.
 
- Qualifiers: [in]
+`dwDTSFlags` Data type: DWORD
 
- See the CCM_DTS_FLAG enumeration.
+Qualifiers: [in]
 
- `dwFlags`
- Data type: DWORD
+See the CCM_DTS_FLAG enumeration.
 
- Qualifiers: [in]
+`dwFlags` Data type: DWORD
 
- See the CCM_CONTENTFLAG enumeration.
+Qualifiers: [in]
 
- `szOriginalPath`
- Data type: LPCWSTR
+See the CCM_CONTENTFLAG enumeration.
 
- Qualifiers: [in, unique]
+`szOriginalPath` Data type: LPCWSTR
 
- The previous source directory, may be NULL.
+Qualifiers: [in, unique]
 
- `szTempPath`
- Data type: LPCWSTR
+The previous source directory, may be NULL.
 
- Qualifiers: [in, unique]
+`szTempPath` Data type: LPCWSTR
 
- The temporary work directory, may be NULL.
+Qualifiers: [in, unique]
 
- `szDestPath`
- Data type: LPCWSTR
+The temporary work directory, may be NULL.
 
- Qualifiers: [in]
+`szDestPath` Data type: LPCWSTR
 
- The destination directory.
+Qualifiers: [in]
 
- `szMetaDestPath`
- Data type: LPCWSTR
+The destination directory.
 
- Qualifiers: [in, unique]
+`szMetaDestPath` Data type: LPCWSTR
 
- The destination directory for metadata.
+Qualifiers: [in, unique]
 
- `NotifyClsId`
- Data type: REFGUID
+The destination directory for metadata.
 
- Qualifiers: [in]
+`NotifyClsId` Data type: REFGUID
 
- The notification handler CLSID.
+Qualifiers: [in]
 
- `dwNotifyKBytes`
- Data type: DWORD
+The notification handler CLSID.
 
- Qualifiers: [in]
+`dwNotifyKBytes` Data type: DWORD
 
- dwNotifyKBytes
+Qualifiers: [in]
 
- `szOwnerSID`
- Data type: LPCWSTR
+dwNotifyKBytes
 
- Qualifiers: [in]
+`szOwnerSID` Data type: LPCWSTR
 
- The user context in which the download should be performed.
+Qualifiers: [in]
 
- `dwLocationTimeout`
- Data type: DWORD
+The user context in which the download should be performed.
 
- Qualifiers: [in]
+`dwLocationTimeout` Data type: DWORD
 
- The location request timeout in seconds.
+Qualifiers: [in]
 
- `dwDownloadTimeout`
- Data type: DWORD
+The location request timeout in seconds.
 
- Qualifiers: [in]
+`dwDownloadTimeout` Data type: DWORD
 
- The download request timeout in seconds.
+Qualifiers: [in]
 
- `dwPerDPInactivityTimeout`
- Data type: DWORD
+The download request timeout in seconds.
 
- Qualifiers: [in]
+`dwPerDPInactivityTimeout` Data type: DWORD
 
- The download inactivity timeout per distribution point in seconds.
+Qualifiers: [in]
 
- `dwTotalInactivityTimeout`
- Data type: DWORD
+The download inactivity timeout per distribution point in seconds.
 
- Qualifiers: [in]
+`dwTotalInactivityTimeout` Data type: DWORD
 
- The total download inactivity timeout in seconds.
+Qualifiers: [in]
 
- `szSignatureHash`
- Data type: LPCWSTR
+The total download inactivity timeout in seconds.
 
- Qualifiers: [in, unique]
+`szSignatureHash` Data type: LPCWSTR
 
- The hexadecimal encoded hash of signature file for delta download, may be NULL.
+Qualifiers: [in, unique]
 
- `dwMaxChunkBatchSize`
- Data type: DWORD
+The hexadecimal encoded hash of signature file for delta download, may be NULL.
 
- Qualifiers: [in]
+`dwMaxChunkBatchSize` Data type: DWORD
 
- The maximum number of chunks to download at once.
+Qualifiers: [in]
 
- `szAltProvSettings`
- Data type: LPCWSTR
+The maximum number of chunks to download at once.
 
- Qualifiers: [in, unique]
+`szAltProvSettings` Data type: LPCWSTR
 
- The XML used to describe allowed alternate download providers and settings for each, may be NULL.
+Qualifiers: [in, unique]
+
+The XML used to describe allowed alternate download providers and settings for each, may be NULL.
 
 ```
 <AlternateDownloadSettings SchemaVersion="1.0">
@@ -199,20 +182,22 @@ interface ICcmContentTransferManager4 : IUnknown
 
 ```
 
- `*pJobID`
- Data type: GUID
+`*pJobID` Data type: GUID
 
- Qualifiers: [in]
+Qualifiers: [in]
 
- The job ID which should be used for reference on subsequent calls.
+The job ID which should be used for reference on subsequent calls.
 
 ## Return Values
- None.
+
+None.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

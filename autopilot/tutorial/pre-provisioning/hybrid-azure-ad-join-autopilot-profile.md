@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join - Step 7 of 11 - Create and assign pre-provisioned Microsoft Entra hybrid join Windows Autopilot profile
+title: "Pre-provision Microsoft Entra hybrid join: Create and assign a pre-provisioned Microsoft Entra hybrid join Windows Autopilot profile"
 description: How to - Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join - Step 7 of 11 - Create and assign hybrid pre-provisioned Microsoft Entra join Windows Autopilot profile.
-ms.date: 09/13/2024
+ms.date: "2024-09-13T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -19,9 +19,7 @@ Windows Autopilot for pre-provisioned deployment Microsoft Entra hybrid join ste
 - Step 5: [Create a device group](hybrid-azure-ad-join-device-group.md)
 - Step 6: [Configure and assign Windows Autopilot Enrollment Status Page (ESP)](hybrid-azure-ad-join-esp.md)
 
-> [!div class="checklist"]
->
-> - **Step 7: Create and assign Microsoft Entra hybrid join Windows Autopilot profile**
+- **Step 7: Create and assign Microsoft Entra hybrid join Windows Autopilot profile**
 
 - Step 8: [Configure and assign domain join profile](hybrid-azure-ad-join-domain-join-profile.md)
 - Step 9: [Assign Windows Autopilot device to a user (optional)](hybrid-azure-ad-join-assign-device-to-user.md)
@@ -42,45 +40,99 @@ The difference between a Microsoft Entra join and a Microsoft Entra hybrid join 
 
 To create a pre-provisioned Microsoft Entra hybrid join Windows Autopilot profile, follow these steps:
 
-[!INCLUDE [Windows Autopilot profiles before steps](../includes/autopilot-profile-steps-before.md)]
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Devices** in the left hand pane.
+3. In the **Devices | Overview** screen, under **By platform**, select **Windows**.
+4. In the **Windows | Windows devices** screen, under **Device onboarding**, select **Enrollment**.
+5. In the **Windows | Windows enrollment** screen, under **Windows Autopilot**, select **Deployment Profiles**.
+6. In the **Windows Autopilot deployment profiles** screen, select the **Create Profile** drop down menu and then select **Windows PC**.
+7. The **Create profile** screen opens. In the **Basics** page:
+
+   1. Next to **Name**, enter a name for the Windows Autopilot profile.
+   2. Next to **Description**, enter a description.
+   3. Select **Next**.
+
+      > [!NOTE]
+      >
+      > Microsoft recommends setting the option **Convert all targeted devices to Autopilot** to **Yes**. This tutorial concentrates on new devices where the device is manually imported as a Windows Autopilot device using the hardware hash. However, this option can be helpful when assigning Windows Autopilot profiles to device groups that contain existing devices. For example, this option is helpful when using the [Windows Autopilot for existing devices](../existing-devices/existing-devices-workflow.md) scenario. With Windows Autopilot for existing devices, existing devices might need to be registered as a Windows Autopilot device after the Windows Autopilot deployment completes. For more information, see [Register device for Windows Autopilot](../existing-devices/register-device.md).
 
 8. In the **Out-of-box experience (OOBE)** page:
 
-      - For **Deployment mode**, select **User-driven**.
+   - For **Deployment mode**, select **User-driven**.
+   - For **Join to Microsoft Entra ID as**, select **Microsoft Entra hybrid joined**. After this option is selected, several the options underneath this option will change.
+   - For **Skip AD connectivity check**, select **No**. This section of the tutorial assumes that the device undergoing Windows Autopilot is an on-premises internal client and that has direct connectivity to the on-premises domain and domain controllers. For off-premise/Internet scenarios where VPN connectivity is required, see [Off-premises/Internet scenarios and VPN connectivity](#off-premisesinternet-scenarios-and-vpn-connectivity).
+   - For **Microsoft Software License Terms**, select **Hide** to skip the EULA page.
+   - For **Privacy settings**, select **Hide** to skip the privacy settings.
+   - For **Hide change account options**, select **Hide**.
+   - For **User account type**, select the desired account type for the user (**Administrator** or **Standard** user). If **Administrator** is chosen, the user is added to the local Admin group.
+   - For **Allow pre-provisioned deployment**, select **Yes**.
+   - For **Language (Region)**, select **Operating system default** to use the default language for the operating system being configured. If another language is desired, select the desired language from the drop-down list.
+   - For **Automatically configure keyboard**, select **Yes** to skip the keyboard selection page.
+   - The **Apply device name template** is greyed out for Microsoft Entra hybrid join scenarios. Although not as robust, device names can be specified during the [Configure and assign domain join profile](hybrid-azure-ad-join-domain-join-profile.md) step.
 
-      - For **Join to Microsoft Entra ID as**, select **Microsoft Entra hybrid joined**. After this option is selected, several the options underneath this option will change.
+   > [!NOTE]
+   >
+   > The above settings are selected to minimize needed user interaction during device setup. However, some of the settings that are hidden can instead be shown as desired. For example, some regions might require that **Privacy settings** always be shown.
 
-      - For **Skip AD connectivity check**, select **No**. This section of the tutorial assumes that the device undergoing Windows Autopilot is an on-premises internal client and that has direct connectivity to the on-premises domain and domain controllers. For off-premise/Internet scenarios where VPN connectivity is required, see [Off-premises/Internet scenarios and VPN connectivity](#off-premisesinternet-scenarios-and-vpn-connectivity).
+   > [!NOTE]
+   >
+   > If the language/region and keyboard screens are set to hidden, they might still be displayed if there's no network connectivity at the start of the Windows Autopilot deployment. When there's no network connectivity at the start of the deployment, the Windows Autopilot profile, where the settings to hide these screens is defined, hasn't downloaded yet. Once network connectivity is established, the Windows Autopilot profile is downloaded and any additional screen settings should work as expected.
 
-      - For **Microsoft Software License Terms**, select **Hide** to skip the EULA page.
+9. Once the options in the **Out-of-box experience (OOBE)** page are configured as desired, select **Next**.
+10. In the **Assignments** page:
 
-      - For **Privacy settings**, select **Hide** to skip the privacy settings.
+    1. Under **Included groups**, select **Add groups**.
 
-      - For **Hide change account options**, select **Hide**.
+    > [!NOTE]
+    >
+    > Make sure to add the correct device groups under **Included groups** and not under **Excluded groups**. Accidentally adding the desired device groups under **Excluded groups** prevents devices in those device groups from receiving the Windows Autopilot profile.
 
-      - For **User account type**, select the desired account type for the user (**Administrator** or **Standard** user). If **Administrator** is chosen, the user is added to the local Admin group.
-
-      - For **Allow pre-provisioned deployment**, select **Yes**.
-
-      - For **Language (Region)**, select **Operating system default** to use the default language for the operating system being configured. If another language is desired, select the desired language from the drop-down list.
-
-      - For **Automatically configure keyboard**, select **Yes** to skip the keyboard selection page.
-
-      - The **Apply device name template** is greyed out for Microsoft Entra hybrid join scenarios. Although not as robust, device names can be specified during the [Configure and assign domain join profile](hybrid-azure-ad-join-domain-join-profile.md) step.
-
-      > [!NOTE]
-      >
-      > The above settings are selected to minimize needed user interaction during device setup. However, some of the settings that are hidden can instead be shown as desired. For example, some regions might require that **Privacy settings** always be shown.
-
-      > [!NOTE]
-      >
-      > If the language/region and keyboard screens are set to hidden, they might still be displayed if there's no network connectivity at the start of the Windows Autopilot deployment. When there's no network connectivity at the start of the deployment, the Windows Autopilot profile, where the settings to hide these screens is defined, hasn't downloaded yet. Once network connectivity is established, the Windows Autopilot profile is downloaded and any additional screen settings should work as expected.
-
-[!INCLUDE [Windows Autopilot profiles after steps](../includes/autopilot-profile-steps-after.md)]
+    1. In the **Select groups to include** window that opens, select the groups that the Windows Autopilot profile should be assigned to. These device groups are normally the device groups created in the previous **Create device group** step. Once done, select **Select**.
+    2. Under **Included groups** &gt; **Groups**, ensure the correct groups are selected, and then select **Next**.
+11. In the **Review + Create** page, verify that all settings are set correctly, and then select **Create** to create the Windows Autopilot profile.
 
 ## Verify device has a Windows Autopilot profile assigned to it
 
-[!INCLUDE [How to verify a device has a Windows Autopilot profile assigned to it in Intune](../includes/verify-autopilot-profile-assignment.md)]
+Before deploying a device, ensure that a Windows Autopilot profile is assigned to a device group that the device is a member of. Windows Autopilot profile assignment to a device can take some time after the Windows Autopilot profile is assigned to the device group or after the device is added to the device group. To verify that the profile is assigned to a device, follow these steps:
+
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Devices** in the left hand pane.
+3. In the **Devices | Overview** screen, under **By platform**, select **Windows**.
+4. In the **Windows | Windows devices** screen, under **Device onboarding**, select **Enrollment**.
+5. In the **Windows | Windows enrollment** screen, under **Windows Autopilot**, select **Devices**.
+6. In the **Windows Autopilot devices** screen that opens:
+
+   1. Find the desired device that Windows Autopilot deployment profile assignment status needs to be checked.
+   2. Once the device is located, its current status is listed under the **Profile status** column. The status has one of the following values:
+
+      - **Not assigned**: A Windows Autopilot deployment profile isn't assigned to the device.
+      - **Assigning**: A Windows Autopilot deployment profile is being assigned to the device.
+      - **Assigned**: A Windows Autopilot deployment profile is assigned to the device.
+      - **Fix pending**: When a hardware change occurs on a device, this status displays while Intune tries to register the new hardware. When the link for the **Fix pending** status is selected, the following message appears:
+
+        **We've detected a hardware change on this device. We're trying to automatically register the new hardware. You don't need to do anything now; the status will be updated at the next check in with the result.**
+
+        If Intune is able to successfully register the new hardware, Intune updates the profile status when the device next checks into Intune. For more information on the **Fix pending** status, see the following articles:
+
+        - [Why is the Windows Autopilot profile not applied after a hardware change occurred on a device?](../../troubleshooting-faq.yml#why-is-the-windows-autopilot-profile-not-applied-after-a-hardware-change-occurred-on-a-device-).
+        - [Return of key functionality for Windows Autopilot sign-in and deployment experience](https://techcommunity.microsoft.com/t5/intune-customer-success/return-of-key-functionality-for-windows-autopilot-sign-in-and/ba-p/3583130).
+        - [Windows Autopilot motherboard replacement scenario guidance](../../autopilot-motherboard-replacement.md)
+      - **Attention required**: If Intune is unable to register the new hardware after a hardware change occurs on a device, the device can't receive the Windows Autopilot profile until the device is reset and the device re-registers. For more information on this status and how to deregister/re-register a device, see the following articles:
+
+        - [Why is the Windows Autopilot profile not applied after a hardware change occurred on a device?](../../troubleshooting-faq.yml#why-is-the-windows-autopilot-profile-not-applied-after-a-hardware-change-occurred-on-a-device-).
+        - [Return of key functionality for Windows Autopilot sign-in and deployment experience](https://techcommunity.microsoft.com/t5/intune-customer-success/return-of-key-functionality-for-windows-autopilot-sign-in-and/ba-p/3583130).
+        - [Windows Autopilot motherboard replacement scenario guidance](../../autopilot-motherboard-replacement.md)
+        - [Deregister a device](../../registration-overview.md#deregister-a-device)
+
+      Before starting the Windows Autopilot deployment process on a device, make sure that in the **Windows Autopilot devices** page:
+
+      - The device's **Profile status** status is **Assigned**.
+      - In the properties of the device, **Date assigned** has a value.
+      - In the properties of the device, **Assigned profile** displays the expected Windows Autopilot profile.
+
+> [!NOTE]
+>
+> Intune periodically checks for new devices in the assigned device groups, and then begins the process of assigning profiles to those devices. Due to several different factors involved in the process of Windows Autopilot profile assignment, an estimated time for the assignment can vary from scenario to scenario. These factors can include Microsoft Entra groups, membership rules, hash of a device, Intune and Windows Autopilot services, and internet connection. The assignment time varies depending on all the factors and variables involved in a specific scenario.
 
 ## Off-premises/Internet scenarios and VPN connectivity
 
@@ -106,11 +158,13 @@ The VPN solution would need to be installed and configured via Intune during the
 
 ## Next step: Configure and assign domain join profile
 
-> [!div class="nextstepaction"]
-> [Step 8: Configure and assign domain join profile](hybrid-azure-ad-join-domain-join-profile.md)
+[Step 8: Configure and assign domain join profile](hybrid-azure-ad-join-domain-join-profile.md)
 
 ## Related content
 
-[!INCLUDE [More information Windows Autopilot profile](../includes/more-info-autopilot-profile.md)]
+For more information on configuring Windows Autopilot profiles, see the following articles:
+
+- [Configure Windows Autopilot profiles](../../profiles.md).
+
 - [User-driven mode for Microsoft Entra hybrid join with VPN support](../../user-driven.md#user-driven-mode-for-microsoft-entra-hybrid-join-with-vpn-support).
 - [VPNs](../../windows-autopilot-hybrid.md#vpns).

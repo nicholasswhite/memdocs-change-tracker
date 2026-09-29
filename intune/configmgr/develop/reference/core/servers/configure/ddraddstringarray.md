@@ -1,13 +1,15 @@
 ---
 title: DDRAddStringArray
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 description: Learn how the DDRAddStringArray function, in Configuration Manager, adds a string array property to the data discovery record.
 ms.service: configuration-manager
 ---
+
 # DDRAddStringArray
+
 The `DDRAddStringArray` function, in Configuration Manager, adds a string array property to the data discovery record (DDR).
 
 ## Syntax
@@ -18,49 +20,47 @@ HRESULT DDRAddStringArray();
 ```
 
 #### Parameters
- `sName`
- Name of the class property.
 
- `sArray`
- Array of strings assigned to the property. You can only enter string values from the single-byte character set.
+`sName` Name of the class property.
 
- `nArraySize`
- Number of elements in `sArray`.
+`sArray` Array of strings assigned to the property. You can only enter string values from the single-byte character set.
 
- `nSQLWidth`
- Maximum length of a string that can be assigned to this property. This value does not include the NULL character. For SMS 2003, this value cannot be greater than 900 characters. For SMS 2.0, this value cannot be greater than 255 characters.
+`nArraySize` Number of elements in `sArray`.
 
- `dwFlags`
- Characteristics of the property, such as a key field used for comparisons. Enter the following flag or a zero.
+`nSQLWidth` Maximum length of a string that can be assigned to this property. This value does not include the NULL character. For SMS 2003, this value cannot be greater than 900 characters. For SMS 2.0, this value cannot be greater than 255 characters.
 
-|Flag|Description|
-|----------|-----------------|
-|ADDPROP_KEY (Hexadecimal 8)|Identifies this property as a key field during a comparison of this DDR with class instances in the database. If an instance in the database matches the data of the DDR key properties, the instance is updated; otherwise, a new instance is created.|
+`dwFlags` Characteristics of the property, such as a key field used for comparisons. Enter the following flag or a zero.
+
+| Flag | Description |
+| --- | --- |
+| ADDPROP_KEY (Hexadecimal 8) | Identifies this property as a key field during a comparison of this DDR with class instances in the database. If an instance in the database matches the data of the DDR key properties, the instance is updated; otherwise, a new instance is created. |
 
 ## Return Values
- If the function succeeds, the return value is S_OK.
 
- If the [DDRNew](../../../../../develop/reference/core/servers/configure/ddrnew.md) function has not been called, the return value is S_FALSE.
+If the function succeeds, the return value is S_OK.
+
+If the [DDRNew](ddrnew.md) function has not been called, the return value is S_FALSE.
 
 ## Remarks
- Strings longer than the maximum length specified in `nSQLWidth` are truncated.
 
- You can use underscores, concatenation, or spaces for property names that contain multiple words. For example, you can specify `sName` as `License_Number`, `LicenseNumber`, or `LicenseNumber`. If you specify `sName` as `LicenseNumber`, the Data Discovery Manager (DDM) concatenates the words, which results in `LicenseNumber`. However, the column name, which is created in the database, is `License_Number`. You must use the same convention when you add DDRs that create or update instances in an existing resource class.
+Strings longer than the maximum length specified in `nSQLWidth` are truncated.
+
+You can use underscores, concatenation, or spaces for property names that contain multiple words. For example, you can specify `sName` as `License_Number`, `LicenseNumber`, or `LicenseNumber`. If you specify `sName` as `LicenseNumber`, the Data Discovery Manager (DDM) concatenates the words, which results in `LicenseNumber`. However, the column name, which is created in the database, is `License_Number`. You must use the same convention when you add DDRs that create or update instances in an existing resource class.
 
 ## Requirements
 
 ## Runtime Requirements
- smsrsgenctl.dll
 
- smsrsgen.dll
+smsrsgenctl.dll
 
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+smsrsgen.dll
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [DDRAddIntegerArray](../../../../../develop/reference/core/servers/configure/ddraddintegerarray.md)
- [DDRAddString](../../../../../develop/reference/core/servers/configure/ddraddstring.md)
- [DDRPropertyFlagsEnum Enumeration](../../../../../develop/reference/core/servers/configure/ddrpropertyflagsenum-enumeration.md)
- [SMSResGen COM Automation Class](../../../../../develop/reference/core/servers/configure/smsresgen-com-automation-class.md)
+
+[DDRAddIntegerArray](ddraddintegerarray.md) [DDRAddString](ddraddstring.md) [DDRPropertyFlagsEnum Enumeration](ddrpropertyflagsenum-enumeration.md) [SMSResGen COM Automation Class](smsresgen-com-automation-class.md)

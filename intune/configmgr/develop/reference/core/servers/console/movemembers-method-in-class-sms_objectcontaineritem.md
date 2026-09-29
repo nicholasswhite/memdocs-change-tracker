@@ -1,16 +1,18 @@
 ---
 description: Learn how to use Configuration Manager MoveMembers Windows Management Instrumentation (WMI) class method to move folder items to another folder.
-title: MoveMembers Method
-ms.date: 09/20/2016
+title: "MoveMembers Method in Class SMS_ObjectContainerItem"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # MoveMembers Method in Class SMS_ObjectContainerItem
+
 The `MoveMembers` Windows Management Instrumentation (WMI) class method, in Configuration Manager, moves folder items to another folder.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,46 +26,47 @@ SInt32 MoveMembers(
 ```
 
 #### Parameters
- `InstanceKeys`
- Data type: `String` Array
 
- Qualifiers: [in]
+`InstanceKeys` Data type: `String` Array
 
- Instance keys that identify the folder items to move.
+Qualifiers: [in]
 
- `ContainerNodeID`
- Data type: `UInt32`
+Instance keys that identify the folder items to move.
 
- Qualifiers: [in]
+`ContainerNodeID` Data type: `UInt32`
 
- ID of the folder, or node, from which to copy the items.
+Qualifiers: [in]
 
- `TargetContainerNodeID`
- Data type: `UInt32`
+ID of the folder, or node, from which to copy the items.
 
- Qualifiers: [in]
+`TargetContainerNodeID` Data type: `UInt32`
 
- ID of the folder, or node, to which to move the items.
+Qualifiers: [in]
 
- `ObjectType`
- Data type: `UInt32`
+ID of the folder, or node, to which to move the items.
 
- Qualifiers: [in]
+`ObjectType` Data type: `UInt32`
 
- The type of object supported by the console folder.
+Qualifiers: [in]
+
+The type of object supported by the console folder.
 
 ## Return Value
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
- An item cannot be moved to a folder of a different type. The `ObjectType` properties of [SMS_ObjectContainerNode Server WMI Class](../../../../../develop/reference/core/servers/console/sms_objectcontainernode-server-wmi-class.md) and [SMS_ObjectContainerItem Server WMI Class](../../../../../develop/reference/core/servers/console/sms_objectcontaineritem-server-wmi-class.md) can be used to determine object types.
+
+An item cannot be moved to a folder of a different type. The `ObjectType` properties of [SMS_ObjectContainerNode Server WMI Class](sms_objectcontainernode-server-wmi-class.md) and [SMS_ObjectContainerItem Server WMI Class](sms_objectcontaineritem-server-wmi-class.md) can be used to determine object types.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

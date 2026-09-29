@@ -1,16 +1,18 @@
 ---
 description: Learn how to get the referenced entities of the specified entities in Configuration Manager using GetEntityReferences class method.
-title: GetEntityReferences Method
-ms.date: 09/20/2016
+title: "GetEntityReferences Method in Class SMS_MigrationEntity"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetEntityReferences Method in Class SMS_MigrationEntity
+
 The `GetEntityReferences` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets the referenced entities of the specified entities.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,47 +26,47 @@ SInt32 GetEntityReferences(
 ```
 
 #### Parameters
- `entityIDs`
- Data type: `UInt32` array
 
- Qualifiers: [in]
+`entityIDs` Data type: `UInt32` array
 
- List of entities input.
+Qualifiers: [in]
 
- `referenceType`
- Data type: `UInt32`
+List of entities input.
 
- Qualifiers: [in]
+`referenceType` Data type: `UInt32`
 
- Reference type.
+Qualifiers: [in]
 
- `referenceDirection`
- Data type: `Boolean` array
+Reference type.
 
- Qualifiers: [in]
+`referenceDirection` Data type: `Boolean` array
 
- A flag indicating whether this is querying referencing or being referenced.
+Qualifiers: [in]
 
- `entityReferenceList`
- Data type: `UInt32` Array
+A flag indicating whether this is querying referencing or being referenced.
 
- Qualifiers: `[out]`
+`entityReferenceList` Data type: `UInt32` Array
 
- List of entities queried.
+Qualifiers: `[out]`
+
+List of entities queried.
 
 ## Return Values
- An  `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).
 
 ## See also
 
-[SMS_MigrationEntity Server WMI Class](../../../../develop/reference/core/migration/sms_migrationentity-server-wmi-class.md)
+[SMS_MigrationEntity Server WMI Class](sms_migrationentity-server-wmi-class.md)

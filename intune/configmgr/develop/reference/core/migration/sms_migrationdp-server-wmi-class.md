@@ -1,16 +1,18 @@
 ---
-title: SMS_MigrationDP Class
+title: "SMS_MigrationDP Server WMI Class"
 description: The SMS_MigrationDP WMI class is an SMS Provider server class that represents the shared distribution points between the current active Configuration Manager 2007 hierarchy and the System Center 2012 Configuration Manager hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MigrationDP Server WMI Class
+
 The `SMS_MigrationDP` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the shared distribution points between the current active Configuration Manager 2007 hierarchy and the System Center 2012 Configuration Manager hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -68,443 +70,401 @@ Class SMS_MigrationDP : SMS_DistributionPointInfoBase
 ```
 
 ## Methods
- The `SMS_MigrationDP` class does not define any methods.
+
+The `SMS_MigrationDP` class does not define any methods.
 
 ## Properties
- `AdditionalRoleInstalled`
- Data type: `Boolean`
 
- Access type: Read-only
+`AdditionalRoleInstalled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if there is any additional site role installed.
+Qualifiers: none
 
- `AddressScheduleEnabled`
- Data type: `Boolean`
+`true` if there is any additional site role installed.
 
- Access type: Read-only
+`AddressScheduleEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if a schedule on an address is configured.
+Qualifiers: none
 
- `AttachingSite`
- Data type: `String`
+`true` if a schedule on an address is configured.
 
- Access type: Read-only
+`AttachingSite` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The site server name of the source primary site that this distribution point is reporting to in the source hierarchy.
+Qualifiers: none
 
- `AttachingSitecode`
- Data type: `String`
+The site server name of the source primary site that this distribution point is reporting to in the source hierarchy.
 
- Access type: Read-only
+`AttachingSitecode` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The site code of the source primary site that this distribution point is reporting to in the source hierarchy.
+Qualifiers: none
 
- `BindExcept`
- Data type: `String`
+The site code of the source primary site that this distribution point is reporting to in the source hierarchy.
 
- Access type: Read-only
+`BindExcept` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- PXE Bind Exception.
+Qualifiers: none
 
- `BindPolicy`
- Data type: `Boolean`
+PXE Bind Exception.
 
- Access type: Read-only
+`BindPolicy` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if PXE bind policy exists.
+Qualifiers: none
 
- `BitsEnabled`
- Data type: `Boolean`
+`true` if PXE bind policy exists.
 
- Access type: Read-only
+`BitsEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if BITS is enabled on the distribution point.
+Qualifiers: none
 
- `CertificateType`
- Data type: `Boolean`
+`true` if BITS is enabled on the distribution point.
 
- Access type: Read-only
+`CertificateType` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- PXE certificate type.
+Qualifiers: none
 
- `Communication`
- Data type: `UInt32`
+PXE certificate type.
 
- Access type: Read-only
+`Communication` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- HTTP or HTTPS.
+Qualifiers: none
 
- `Description`
- Data type: `String`
+HTTP or HTTPS.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Description of the distribution point.
+Qualifiers: None
 
- `DPFlags`
- Data type: `UInt32`
+Description of the distribution point.
 
- Access type: Read-only
+`DPFlags` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Distribution point flags.
+Qualifiers: [enumeration, read]
 
-|Value|Distribution point flags|
-|-|-|
-|0|DP_TYPE_READONLY|
+Distribution point flags.
 
- `Drive`
- Data type: `String`
+| Value | Distribution point flags |
+| --- | --- |
+| 0 | DP_TYPE_READONLY |
 
- Access type: Read-only
+`Drive` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The default drive.
+Qualifiers: none
 
- `EligibleForUpgrade`
- Data type: `Boolean`
+The default drive.
 
- Access type: Read/Write
+`EligibleForUpgrade` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the distribution point is eligible for upgrade.
+Qualifiers: none
 
- `GroupCount`
- Data type: `UInt32`
+`true` if the distribution point is eligible for upgrade.
 
- Access type: Read-only
+`GroupCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- The number of distribution point groups that contain this distribution point.
+Qualifiers: none
 
- `HasRelationship`
- Data type: `Boolean`
+The number of distribution point groups that contain this distribution point.
 
- Access type: Read-only
+`HasRelationship` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if this distribution point is assigned to a distribution point group.
+Qualifiers: [read]
 
- `HealthCheckEnabled`
- Data type: `Boolean`
+`true` if this distribution point is assigned to a distribution point group.
 
- Access type: Read-only
+`HealthCheckEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if health check on this distribution point is enabled.
+Qualifiers: none
 
- `HealthCheckPriority`
- Data type: `UInt32`
+`true` if health check on this distribution point is enabled.
 
- Access type: Read-only
+`HealthCheckPriority` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Distribution point health manager thread priority.
+Qualifiers: none
 
- `HealthCheckSchedule`
- Data type: `String`
+Distribution point health manager thread priority.
 
- Access type: Read-only
+`HealthCheckSchedule` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Schedule for health check.
+Qualifiers: none
 
- `HostedPackageNum`
- Data type: `UInt32`
+Schedule for health check.
 
- Access type: Read-only
+`HostedPackageNum` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Total number of packages stored on the distribution point.
+Qualifiers: none
 
- `ID`
- Data type: `UInt32`
+Total number of packages stored on the distribution point.
 
- Access type: Read-only
+`ID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Distribution point id in the database.
+Qualifiers: [read]
 
- `IdentityGUID`
- Data type: `String`
+Distribution point id in the database.
 
- Access type: Read-only
+`IdentityGUID` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Identity GUID.
+Qualifiers: none
 
- `InternetFacing`
- Data type: `Boolean`
+Identity GUID.
 
- Access type: Read-only
+`InternetFacing` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this distribution point is internet facing.
+Qualifiers: none
 
- `IsActive`
- Data type: `Boolean`
+`true` if this distribution point is internet facing.
 
- Access type: Read-only
+`IsActive` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if PXE is active.
+Qualifiers: none
 
- `IsMulticast`
- Data type: `Boolean`
+`true` if PXE is active.
 
- Access type: Read-only
+`IsMulticast` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this distribution point is multicast enabled.
+Qualifiers: none
 
- `IsPeerDP`
- Data type: `Boolean`
+`true` if this distribution point is multicast enabled.
 
- Access type: Read-only
+`IsPeerDP` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this distribution point is a branch distribution point.
+Qualifiers: none
 
- `IsProtected`
- Data type: `Boolean`
+`true` if this distribution point is a branch distribution point.
 
- Access type: Read-only
+`IsProtected` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this distribution point is protected.
+Qualifiers: none
 
- `IsPullDP`
- Data type: `Boolean`
+`true` if this distribution point is protected.
 
- Access type: Read/Write
+`IsPullDP` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the distribution point is a pull distribution point. The default value is `false`.
+Qualifiers: none
 
- `IsPXE`
- Data type: `Boolean`
+`true` if the distribution point is a pull distribution point. The default value is `false`.
 
- Access type: Read-only
+`IsPXE` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- PXE is enabled.
+Qualifiers: none
 
- `MBytesFree`
- Data type: `UInt32`
+PXE is enabled.
 
- Access type: Read-only
+`MBytesFree` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Total MBytes of free space.
+Qualifiers: none
 
- `MBytesPackageSize`
- Data type: `UInt32`
+Total MBytes of free space.
 
- Access type: Read-only
+`MBytesPackageSize` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- Total Mbytes of packages distributed on this distribution point.
+Qualifiers: none
 
- `NALPath`
- Data type: `String`
+Total Mbytes of packages distributed on this distribution point.
 
- Access type: Read-only
+`NALPath` Data type: `String`
 
- Qualifiers: [key, key]
+Access type: Read-only
 
- Distribution point NALPath.
+Qualifiers: [key, key]
 
- `Name`
- Data type: `String`
+Distribution point NALPath.
 
- Access type: Read-only
+`Name` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Network operating system path.
+Qualifiers: [read]
 
- `OperatingSystem`
- Data type: `String`
+Network operating system path.
 
- Access type: Read-only
+`OperatingSystem` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Operating system of this computer.
+Qualifiers: none
 
- `OSVersion`
- Data type: `String`
+Operating system of this computer.
 
- Access type: Read-only
+`OSVersion` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The operating system of the branch distribution point. An empty string means the operating system is undetected.
+Qualifiers: none
 
- `PreStagingAllowed`
- Data type: `Boolean`
+The operating system of the branch distribution point. An empty string means the operating system is undetected.
 
- Access type: Read-only
+`PreStagingAllowed` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if this distribution point is allowed to pre-stage contents.
+Qualifiers: none
 
- `Priority`
- Data type: `UInt32`
+`true` if this distribution point is allowed to pre-stage contents.
 
- Access type: Read/Write
+`Priority` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Distribution priority. The default value is 1.
+Qualifiers: none
 
- `PXEPassword`
- Data type: `String`
+Distribution priority. The default value is 1.
 
- Access type: Read-only
+`PXEPassword` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- PXE password.
+Qualifiers: none
 
- `RateLimitsEnabled`
- Data type: `Boolean`
+PXE password.
 
- Access type: Read-only
+`RateLimitsEnabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if rate limits are configured.
+Qualifiers: none
 
- `ResourceType`
- Data type: `String`
+`true` if rate limits are configured.
 
- Access type: Read-only
+`ResourceType` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- See [SMS_CollectionMember Server WMI Class](../../../../develop/reference/core/clients/collections/sms_collectionmember-server-wmi-class.md).
+Qualifiers: none
 
- `ResponseDelay`
- Data type: `UInt32`
+See [SMS_CollectionMember Server WMI Class](../clients/collections/sms_collectionmember-server-wmi-class.md).
 
- Access type: Read-only
+`ResponseDelay` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- PXE response delay.
+Qualifiers: none
 
- `ServerName`
- Data type: `String`
+PXE response delay.
 
- Access type: Read-only
+`ServerName` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Distribution point server name.
+Qualifiers: none
 
- `ShareName`
- Data type: `String`
+Distribution point server name.
 
- Access type: Read-only
+`ShareName` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- Distribution point share name.
+Qualifiers: none
 
- `SiteCode`
- Data type: `String`
+Distribution point share name.
 
- Access type: Read-only
+`SiteCode` Data type: `String`
 
- Qualifiers: [sizelimit]
+Access type: Read-only
 
- The site code that this distribution point is reporting to in the destination hierarchy.
+Qualifiers: [sizelimit]
 
- `SiteName`
- Data type: `String`
+The site code that this distribution point is reporting to in the destination hierarchy.
 
- Access type: Read-only
+`SiteName` Data type: `String`
 
- Qualifiers: none
+Access type: Read-only
 
- The site name.
+Qualifiers: none
 
- `SupportUnknownMachines`
- Data type: `Boolean`
+The site name.
 
- Access type: Read-only
+`SupportUnknownMachines` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read-only
 
- `true` if PXE supports unknown computers.
+Qualifiers: none
 
- `TransferRate`
- Data type: `UInt32`
+`true` if PXE supports unknown computers.
 
- Access type: Read/Write
+`TransferRate` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The average transfer rate in Kbps. The default value is 0.
+Qualifiers: none
 
- `UdaSetting`
- Data type: `UInt32`
+The average transfer rate in Kbps. The default value is 0.
 
- Access type: Read-only
+`UdaSetting` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read-only
 
- PXE UDA setting.
+Qualifiers: none
+
+PXE UDA setting.
 
 ## Remarks
- To get the distribution points of a specific source primary site shared, set the `EnabledDPSharing` property of `SMS_MigrationSiteMapping` to true. The instance of this class carries the properties of the distribution point in the source hierarchy, so it can be used to create the distribution point upgrade job to upgrade the shared distribution point to a regular distribution point.
+
+To get the distribution points of a specific source primary site shared, set the `EnabledDPSharing` property of `SMS_MigrationSiteMapping` to true. The instance of this class carries the properties of the distribution point in the source hierarchy, so it can be used to create the distribution point upgrade job to upgrade the shared distribution point to a regular distribution point.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../core/reqs/server-development-requirements.md).

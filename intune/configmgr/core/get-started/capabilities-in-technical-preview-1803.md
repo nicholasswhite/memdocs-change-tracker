@@ -1,7 +1,7 @@
 ---
-title: Technical Preview 1803
+title: "Capabilities in Technical Preview 1803 for Configuration Manager"
 description: Learn about new features available in the Configuration Manager Technical Preview version 1803.
-ms.date: 03/27/2018
+ms.date: "2018-03-27T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ROBOTS: NOINDEX
@@ -18,39 +18,29 @@ This article introduces the features that are available in the Technical Preview
 
 Review the [Technical Preview](technical-preview.md) article before installing this update. That article familiarizes you with the general requirements and limitations for using a technical preview, how to update between versions, and how to provide feedback.
 
-
-<!--  Known Issues Template
-## Known Issues in this Technical Preview:
--   **Issue Name**. Details
-    Workaround details.
--->
-
-
-</br>
+  
 
 **The following are new features you can try out with this version.**
 
-
-
-
 ## Pull-distribution points support cloud distribution points as source
-<!--1321554-->
-Many customers use [pull-distribution points](../plan-design/hierarchy/use-a-pull-distribution-point.md) in remote or branch offices, which download content from a source distribution point across the WAN. If your remote offices have a better connection to the internet, or to reduce load on your WAN links, you can now use a [cloud distribution point](/previous-versions/troubleshoot/configmgr/use-a-cloud-based-distribution-point) in Microsoft Azure as the source. When you add a source on the **Pull Distribution Point** tab of the distribution point properties, any cloud distribution point in the site is now listed as an available distribution point. The behavior of both site system roles remains the same otherwise.
+
+Many customers use [pull-distribution points](../plan-design/hierarchy/use-a-pull-distribution-point.md) in remote or branch offices, which download content from a source distribution point across the WAN. If your remote offices have a better connection to the internet, or to reduce load on your WAN links, you can now use a [cloud distribution point](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/configmgr/use-a-cloud-based-distribution-point) in Microsoft Azure as the source. When you add a source on the **Pull Distribution Point** tab of the distribution point properties, any cloud distribution point in the site is now listed as an available distribution point. The behavior of both site system roles remains the same otherwise.
 
 ### Prerequisites
+
 - The pull-distribution point needs internet access to communicate with Microsoft Azure.
 - The content must be distributed to the source cloud distribution point.
 
-> [!Note]
-> This feature does incur charges to your Azure subscription for data storage and network egress. For more information, see the [Cost of using cloud-based distribution](/previous-versions/troubleshoot/configmgr/use-a-cloud-based-distribution-point#bkmk_cost).
-
-
+> [!NOTE]
+>
+> This feature does incur charges to your Azure subscription for data storage and network egress. For more information, see the [Cost of using cloud-based distribution](https://learn.microsoft.com/en-us/previous-versions/troubleshoot/configmgr/use-a-cloud-based-distribution-point#bkmk_cost).
 
 ## Partial download support in client peer cache to reduce WAN utilization
-<!--1357346-->
+
 Client peer cache sources can now divide content into parts. These parts minimize the network transfer to reduce WAN utilization. The management point provides more detailed tracking of the content parts. It tries to eliminate more than one download of the same content per boundary group.
 
 ### Example scenario
+
 Contoso has a single primary site with two boundary groups: Headquarters (HQ) and Branch Office. There is a 30-minute fallback relationship between the boundary groups. The management point and distribution point for the site are only in the HQ boundary. The branch office location has no local distribution point. Two of the four clients at the branch office are configured as peer cache sources.
 
 ![Diagram of network configuration as described for the example scenario](media/1357346-peer-cache-source-parts.png)
@@ -65,65 +55,66 @@ Contoso has a single primary site with two boundary groups: Headquarters (HQ) an
 8. This process continues until both client peer cache sources have all of the parts from each other. The management point prioritizes parts from the remote distribution point before instructing the peer cache sources to download parts from local peers.
 9. Client3 is the first to refresh policy after the 30-minute fallback period expires. It now checks back with the management point, which informs the client of new local sources. Instead of downloading the content in full from the distribution point across the WAN, it downloads the content in full from one of the client peer cache sources. Clients prioritize local peer sources.
 
-> [!Note]
+> [!NOTE]
+>
 > If the number of client peer cache sources is greater than the number of content parts, then the management point instructs the additional peer cache sources to wait for fallback like a normal client.
 
-
 ### Try it out!
- Try to complete the tasks. Then send **Feedback** from the **Home** tab of the ribbon letting us know how it worked.
+
+Try to complete the tasks. Then send **Feedback** from the **Home** tab of the ribbon letting us know how it worked.
 
 1. Set up [boundary groups](../servers/deploy/configure/boundary-groups.md) and [peer cache sources](../plan-design/hierarchy/client-peer-cache.md) per normal.
 2. In the Configuration Manager console, go to the **Administration** workspace, expand **Site Configuration**, and select **Sites**. Click **Hierarchy Settings** in the ribbon.
 3. On the **General** tab, enable the option to **Configure client peer cache sources to divide content into parts**.
 4. Create a required deployment with content.
 
-   > [!Note]
+   > [!NOTE]
+   >
    > This functionality only works when the client downloads content in the background, such as with a required deployment. On-demand downloads, such as when the user installs an available deployment in Software Center, behaves as usual.
-
-1. To see them handling the download of content in parts, examine the **ContentTransferManager.log** on the client peer cache source and the **MP_Location.log** on the management point.
-
-
-
+5. To see them handling the download of content in parts, examine the **ContentTransferManager.log** on the client peer cache source and the **MP_Location.log** on the management point.
 
 ## Maintenance windows in Software Center
-<!--1358131-->
+
 Software Center now displays the next scheduled maintenance window. On the Installation Status tab, switch the view from All to Upcoming. It displays the time range and the list of deployments that are scheduled. The list is blank if there are no future maintenance windows.
 
 ![Software Center showing the list of upcoming deployments on the Installation Status tab](media/1358131-software-center-maintenance-windows.png)
 
-
 ## Custom tab for webpage in Software Center
-<!--1358132-->
+
 You can now create a customized tab to open a webpage in Software Center. This feature allows you to show content to your end users in a consistent, reliable way. The following list includes a few examples:
+
 - Contact IT: information on how to contact your organization's IT department
 - IT Support Center: IT self-service actions such as searching a knowledge base or opening a support ticket.
 - End-user documentation: articles for users in your organization on various IT topics such as using applications or upgrading to Windows 10.
 
-
 ### Try it out!
- Try to complete the tasks. Then send **Feedback** from the **Home** tab of the ribbon letting us know how it worked.
+
+Try to complete the tasks. Then send **Feedback** from the **Home** tab of the ribbon letting us know how it worked.
 
 1. In the Configuration Manager console, **Administration** workspace, **Client Settings** node, open the **Default Client Settings** policy.
 2. Select the **Software Center** group.
 3. For **Software Center settings**, click **Customize**.
 4. Switch to the **Tabs** tab.
 5. Enable the option to **Specify a custom tab for Software Center**.
-    1. Enter a name in the **Tab name** text field. This name is what displays to the user in Software Center.
-    2. Enter a valid URL in the **Content URL** text field. This URL is the content that Software Center displays when users click this tab.
+   1. Enter a name in the **Tab name** text field. This name is what displays to the user in Software Center.
+   2. Enter a valid URL in the **Content URL** text field. This URL is the content that Software Center displays when users click this tab.
 
-> [!Tip]
+> [!TIP]
+>
 > Software Center uses Internet Explorer components for rendering the web page.
 
 ## Enable third party software update support on clients
 
-You can now enable configuration of Configuration Manager clients for third party software updates. When you **Enable third party software updates** for the SUP component properties, the SUP will download the signing certificate used by WSUS for third party updates. <!--1357605-->
+You can now enable configuration of Configuration Manager clients for third party software updates. When you **Enable third party software updates** for the SUP component properties, the SUP will download the signing certificate used by WSUS for third party updates.
 
 Selecting **Enable third party software updates** in client settings does the following:
+
 - On the client, it sets the policy for 'Allow signed updates for an intranet Microsoft update service location'
 - Installs the signing certificate to the Trusted Publisher store on the client.
 
 ### Try it out!
- Try to complete the tasks. Then send **Feedback** from the **Home** tab of the ribbon letting us know how it worked.
+
+Try to complete the tasks. Then send **Feedback** from the **Home** tab of the ribbon letting us know how it worked.
 
 1. On the topmost site in the Configuration Manager hierarchy, go to the **Administration** node, expand **Site Configuration**, then **Sites**.
 2. Right-click on your topmost site server and select **Configure Site Components** then **Software Update Point**.
@@ -132,12 +123,13 @@ Selecting **Enable third party software updates** in client settings does the fo
 5. Ensure **Enable third party software updates** is set to **Yes**.
 
 ## Enable copy/paste of asset details from monitoring views
-As a result of your feedback, you can now enable copy/paste functionality in the asset details pane in deployment and distribution status monitoring views.  <!--1357552-->
+
+As a result of your feedback, you can now enable copy/paste functionality in the asset details pane in deployment and distribution status monitoring views.
 
 ## SCAP Extensions
+
 The pre-release version of SCAP Extensions is available in the Cd.latest folder under SMSSETUP\TOOLS\ConfigMgrSCAPExtension\ConfigMgrExtensionsForSCAP.msi. This pre-release version of the SCAP extensions can be installed on any currently supported versions of Configuration Manager current branch and LTSB 1606.
 
-
-
 ## Next steps
+
 For information about installing or updating the technical preview branch, see [Technical Preview for Configuration Manager](technical-preview.md).

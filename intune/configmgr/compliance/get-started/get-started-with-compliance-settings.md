@@ -1,7 +1,7 @@
 ---
-title: Get started with compliance settings
+title: "Get started with compliance settings in Configuration Manager"
 description: Learn about core concepts and how compliance settings work
-ms.date: 01/04/2022
+ms.date: "2022-01-04T00:00:00Z"
 ms.subservice: compliance
 ms.topic: get-started
 ms.collection: tier3
@@ -21,31 +21,28 @@ Compliance settings let you manage the configuration and compliance of clients i
 Configuration items fall into two main categories:
 
 - **Settings for devices that are managed with the Configuration Manager client** - typically devices on which you've installed Configuration Manager client software to let you manage the device.
-
 - **Settings for devices that are managed without the Configuration Manager client** - typically devices that are managed with Microsoft Intune, or with Configuration Manager on-premises device management.
 
 ## What devices are supported?
 
 | Device type | More information |
-|------------|----------------------|
-| Windows PCs (with the Configuration Manager client) | Create custom configuration items to assess objects such as registry keys, files, and Active Directory attributes.<br /><br /> When you use the Windows 10 or later configuration item type, select settings from a predefined list. |
+| --- | --- |
+| Windows PCs (with the Configuration Manager client) | Create custom configuration items to assess objects such as registry keys, files, and Active Directory attributes.   When you use the Windows 10 or later configuration item type, select settings from a predefined list. |
 | Windows PCs (enrolled with on-premises MDM) | Select settings from a predefined list. |
 | Windows Phone devices (enrolled with on-premises MDM) | Select settings from a predefined list. |
 | Mac computers (with the Configuration Manager client) | Create custom configuration items to assess objects such as macOS preferences, and results returned by a script. |
 
 > [!NOTE]
-> On-premises MDM and the Configuration Manager client for macOS are both deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).<!-- 12454901,12927803 -->
+>
+> On-premises MDM and the Configuration Manager client for macOS are both deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
 ## What is a configuration item?
 
 A configuration item is a container that stores specific information. The information you configure depends on the configuration item type. Configuration items can include the following information:
 
 - **Detection method information** is only for Windows configuration items that contain application settings. It detects whether an application is installed. This detection uses the Windows installer file for the application, or by using a custom script.
-
 - **Settings** represent the business or technical conditions to assess compliance on client devices. Configure a new setting or browse to an existing setting on a reference computer.
-
 - **Compliance rules** specify the conditions that define the compliance of a configuration item setting. Before the client evaluates a setting for compliance, it must have at least one compliance rule. Some settings remediate noncompliant values. Create new rules, or browse to an existing setting in any configuration item and select rules in it.
-
 - **Supported platforms** are the device platforms you define on which the client evaluates compliance of the configuration items. If you deploy a configuration item to a device that is not in the supported platforms list, it does not evaluate compliance.
 
 ## What is a configuration baseline?

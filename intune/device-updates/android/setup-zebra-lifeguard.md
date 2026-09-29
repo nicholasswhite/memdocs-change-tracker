@@ -1,7 +1,7 @@
 ---
 title: Zebra LifeGuard Over-the-Air Integration with Microsoft Intune
 description: Use Microsoft Intune to manage firmware updates for supported Zebra devices.
-ms.date: 07/23/2026
+ms.date: "2026-07-23T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: jieyan
 ms.subservice: suite
@@ -19,116 +19,83 @@ Intune manages the creation, management, and monitoring of these deployments thr
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
-:::column-end:::
-:::column span="3":::
 > FOTA updates are supported on Android Enterprise devices enrolled in Intune. This includes the following enrollment types:
+>
 > - Android Enterprise corporate-owned dedicated (COSU)
 > - Android Enterprise corporate-owned fully managed (COBO)
 >
 > For information about which Zebra devices work with the service based on the platform, see [Zebra LifeGuard device requirements](https://techdocs.zebra.com/lifeguard/update/#devicerequirements).
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [network-connectivity](../../includes/requirements/network-connectivity.md)]
+![](../../media/icons/16/network-connectivity.svg) **Network and connectivity requirements**
 
-:::column-end:::
-:::column span="3":::
 > For information about services ports and endpoints used by Zebra OTA updates, refer to [Zebra Lifeguard Over the Air FOTA Updates Ports](https://supportcommunity.zebra.com/s/article/000022419).
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [licensing](../../includes/requirements/licensing.md)]
+![](../../media/icons/16/licensing.svg) **Licensing requirements**
 
-:::column-end:::
-:::column span="3":::
-
->[!INCLUDE [additional-licensing-plan2](../../includes/licensing/additional-licensing-plan2.md)]
+> This feature requires Microsoft Intune Plan 2 or an additional subscription. For licensing options, see [Microsoft Intune plans and pricing](https://aka.ms/MicrosoftIntunePricing) and [Microsoft 365 Security Enterprise Plans](https://www.microsoft.com/security/pricing/enterprise-plans).
 >
->You must have access to all appropriate Zebra licenses and entitlements to use the LG OTA service. For more information, contact Zebra support or see the [Zebra LifeGuard FAQ](https://techdocs.zebra.com/lifeguard/faq/).
-:::column-end:::
-:::row-end:::
+> You must have access to all appropriate Zebra licenses and entitlements to use the LG OTA service. For more information, contact Zebra support or see the [Zebra LifeGuard FAQ](https://techdocs.zebra.com/lifeguard/faq/).
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [rbac](../../includes/requirements/rbac.md)]
+![](../../media/icons/16/rbac.svg) **Roles requirements**
 
-:::column-end:::
-:::column span="3":::
->Administrators need the following role-based access control (RBAC) permissions:
->  - [Mobile apps] (to create and deploy app configuration profiles)
->  - [Android FOTA] (to manage firmware OTA updates)
-:::column-end:::
-:::row-end:::
+> Administrators need the following role-based access control (RBAC) permissions:
+>
+> - [Mobile apps](../../fundamentals/role-based-access-control/create-custom-role.md#mobile-apps) (to create and deploy app configuration profiles)
+> - [Android FOTA](../../fundamentals/role-based-access-control/create-custom-role.md#android-fota) (to manage firmware OTA updates)
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [tenant-configuration](../../includes/requirements/tenant-configuration.md)]
+![](../../media/icons/16/tenant-administration.svg) **Tenant configuration requirements**
 
-:::column-end:::
-:::column span="3":::
 > Managed Google Play must be configured for your tenant. For setup instructions, see [Set up Managed Google Play](../../device-enrollment/android/connect-managed-google-play.md).
-:::column-end:::
-:::row-end:::
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [cloud](../../includes/requirements/cloud.md)]
+![](../../media/icons/16/cloud.svg) **Cloud requirements**
 
-:::column-end:::
-:::column span="3":::
 > Zebra LifeGuard Over-the-Air updates are supported in the following cloud environments:
+>
 > - Public cloud
 > - Sovereign cloud environments:
 >   - U.S. Government Community Cloud (GCC) High
 >   - U.S. Department of Defense (DoD)
-:::column-end:::
-:::row-end:::
 
 ## Process overview
 
 The process for using LG OTA via Intune is as follows:
 
 1. [Set up the Zebra connector](#step-1-set-up-zebra-connector).
-1. [Enroll devices with Zebra LG OTA service](#step-2-enroll-devices-with-zebra-lg-ota-service).
-    - [Approve and deploy required apps for your tenant](#2a-approve-and-deploy-required-apps-for-your-tenant).
-    - [Create app configuration policy](#2b-create-app-configuration-policy).
-1. [Create and assign deployments in Intune](#step-3-create-and-assign-deployments).
-1. [View and manage deployments](#step-4-view-and-manage-deployments).
+2. [Enroll devices with Zebra LG OTA service](#step-2-enroll-devices-with-zebra-lg-ota-service).
+   - [Approve and deploy required apps for your tenant](#2a-approve-and-deploy-required-apps-for-your-tenant).
+   - [Create app configuration policy](#2b-create-app-configuration-policy).
+3. [Create and assign deployments in Intune](#step-3-create-and-assign-deployments).
+4. [View and manage deployments](#step-4-view-and-manage-deployments).
 
 ## Before you start
 
 You must enroll devices separately with the Zebra LG OTA service before devices can be updated. We recommend that you identify the devices to use with LG OTA, and create a group containing only those devices, to make the enrollment process easier.
 
-<a name='step-1-set-up-zebra-connector'></a>
-
 ## Step 1: Set up the Zebra connector
 
 In the Microsoft Intune admin center, you can link Intune and Zebra.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Tenant administration** > **Connectors and tokens** > **Firmware over-the-air update**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Tenant administration** &gt; **Connectors and tokens** &gt; **Firmware over-the-air update**.
 3. Select **Zebra**. A context panel appears and guides you through the process of setting up your tenant for LG OTA.
 4. Select **Connect** and consent to data sharing with Zebra. The context panel is refreshed, and a temporary authorization link becomes enabled in the context panel.
 5. Select the authorization link and follow the prompts on the Zebra portal to authorize access for Intune.
 
-  > [!IMPORTANT]
-  > Remember the email address of the Zebra account you use to authorize Intune. You'll need this if you contact Zebra for support. Intune doesn't store this information.
+> [!IMPORTANT]
+>
+> Remember the email address of the Zebra account you use to authorize Intune. You'll need this if you contact Zebra for support. Intune doesn't store this information.
 
-  > [!NOTE]
-  > This authorization link expires in 10 minutes. If it expires, select **Refresh** to generate a new link.
+> [!NOTE]
+>
+> This authorization link expires in 10 minutes. If it expires, select **Refresh** to generate a new link.
 
 6. After the authorization process is complete, an enrollment token will auto-populate within the context panel. If the token doesn't appear, select **Refresh**. Copy the enrollment token to your clipboard, as you'll need the token later.
 
-  > [!NOTE]
-  > Before you select **Copy** from the context panel, make sure to select **Show Token**. Not doing this will send asterisks to your clipboard rather than the token value.
+> [!NOTE]
+>
+> Before you select **Copy** from the context panel, make sure to select **Show Token**. Not doing this will send asterisks to your clipboard rather than the token value.
 
 ## Step 2: Enroll Devices with Zebra LG OTA Service
 
@@ -151,11 +118,11 @@ Next, assign **Zebra Enrollment Manager** and **Zebra Common Transport Layer** a
 
 If you're planning to use LG OTA to update a device running on Android 11, you need to enable another Zebra package as a system app. For more information on how to enable system apps, see [Manage Android Enterprise system apps in Microsoft Intune](../../app-management/configuration/manage-system-apps-android.md)
 
-|Build|System app to be enabled|
-|--------|------------------------------|
-|Any build of Android 11 that is earlier than 11-20-18.00-RG-U00 |com.symbol.tool.stagenow|
-|11-20-18.00-RG-U00 or 11-20-18.00-RG-U02|com.zebra.devicemanager|
-|Any build of Android 11 that is later than 11-20-18.00-RG-U02 |(None required)|
+| Build | System app to be enabled |
+| --- | --- |
+| Any build of Android 11 that is earlier than 11-20-18.00-RG-U00 | com.symbol.tool.stagenow |
+| 11-20-18.00-RG-U00 or 11-20-18.00-RG-U02 | com.zebra.devicemanager |
+| Any build of Android 11 that is later than 11-20-18.00-RG-U02 | (None required) |
 
 ### 2b: Create app configuration policy
 
@@ -166,19 +133,15 @@ For more information, see [Add app configuration policies for managed Android En
 #### Policy targeting Zebra Enrollment Manager app
 
 1. Select **Add** and then select **Managed Devices**.
-
 2. Complete the fields in the **Basic** tab and select **Next**.
-
 3. In the **Settings** tab, under the **Permissions** section, select **Add** to add the following permission override:
 
-    1. **Permission**: Phone state (read)
-    2. **Permission state**: set to Auto grant
-
+   1. **Permission**: Phone state (read)
+   2. **Permission state**: set to Auto grant
 4. In the **Settings** tab, under the **Configuration Settings** section, select **Add** to add the following two configuration settings:
 
-    1. **Action**: Set Configuration value to Claim Device.
-    2. **Claim Device Token**: Paste the enrollment token that you copied in the earlier step into the **Configuration value** field.
-
+   1. **Action**: Set Configuration value to Claim Device.
+   2. **Claim Device Token**: Paste the enrollment token that you copied in the earlier step into the **Configuration value** field.
 5. Assign this configuration policy to all the same devices that you assigned the app earlier.
 6. Navigate through the tabs and complete the fields.
 
@@ -188,66 +151,65 @@ For more information, see [Add app configuration policies for managed Android En
 2. Complete the fields in the **Basic** tab and select **Next**.
 3. In the **Settings** tab, under the **Permissions** section, select **Add** to add the following permission override:
 
-    1. **Permission**: Phone state (read)
-    2. **Permission state**: set to Auto grant
-
+   1. **Permission**: Phone state (read)
+   2. **Permission state**: set to Auto grant
 4. Assign this configuration policy to all the same devices that you assigned the app earlier.
 5. Navigate through the tabs and complete the fields.
 
-Wait at least 15 minutes for the required apps and app configuration policy to reach the devices. If needed, use the Intune app on the device to force a sync by navigating to the Intune app > select the **More** menu (**...**), and select **Sync**.
+Wait at least 15 minutes for the required apps and app configuration policy to reach the devices. If needed, use the Intune app on the device to force a sync by navigating to the Intune app &gt; select the **More** menu (**...**), and select **Sync**.
 
-After synchronization is complete, the devices that support LG OTA will contact Zebra LG OTA service to be enrolled in the LG OTA service and are associated with the  Microsoft Intune/Zebra accounts. You can then deploy firmware updates to these LG OTA enrolled devices.
+After synchronization is complete, the devices that support LG OTA will contact Zebra LG OTA service to be enrolled in the LG OTA service and are associated with the Microsoft Intune/Zebra accounts. You can then deploy firmware updates to these LG OTA enrolled devices.
 
 ## Step 3: Create and Assign Deployments
 
 > [!NOTE]
+>
 > LG OTA deployments are fire and forget actions and are not persistent policies that enforce compliance. Therefore, Microsoft refers to them as deployments rather than policy. For example, if an upgrade fails initially but later the issue is remediated, LG OTA will not try to update the device even after the issue is remediated.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **By platform** > **Android** > **Manage updates** > **Android FOTA deployments** to create and manage FOTA deployments.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **By platform** &gt; **Android** &gt; **Manage updates** &gt; **Android FOTA deployments** to create and manage FOTA deployments.
 3. Select **Create deployment**.
 4. On the **Basics** tab, specify a name for this policy, specify a description (optional), and then select **Next**.
 5. On the **Settings** tab, configure the deployment settings you'd like to use.
 
-    > [!NOTE]
-    > Zebra does not support firmware downgrades through LG OTA. Downgrading the operating system on a device causes an Enterprise Reset, wiping all user data and potentially leaving the device in an unmanaged state.
-    > For more information on available settings, see [Zebra documentation](https://techdocs.zebra.com/lifeguard).
+   > [!NOTE]
+   >
+   > Zebra does not support firmware downgrades through LG OTA. Downgrading the operating system on a device causes an Enterprise Reset, wiping all user data and potentially leaving the device in an unmanaged state. For more information on available settings, see [Zebra documentation](https://techdocs.zebra.com/lifeguard).
 
-    1. In the **Update** area, configure the following options:
+   1. In the **Update** area, configure the following options:
 
-        1. Select the target firmware or update to deploy for the devices in this deployment.
-            1. **Release**: Select if you want to install the *Latest release* available for the device, or *Custom* to choose specific firmware.
-            1. **Model**: Choose the device model you want to target with this deployment. If you're not sure which firmware to select, or for model and version compatibility, see [Zebra documentation](https://techdocs.zebra.com/lifeguard).
-        > [!NOTE]
-        > If you assign the deployment to a group containing devices of other models, only devices of the selected model are updated.
+      1. Select the target firmware or update to deploy for the devices in this deployment.
+         1. **Release**: Select if you want to install the *Latest release* available for the device, or *Custom* to choose specific firmware.
+         2. **Model**: Choose the device model you want to target with this deployment. If you're not sure which firmware to select, or for model and version compatibility, see [Zebra documentation](https://techdocs.zebra.com/lifeguard).
 
-    1. In the **Deployment Schedule** area, configure the following options:
+      > [!NOTE]
+      >
+      > If you assign the deployment to a group containing devices of other models, only devices of the selected model are updated.
+   2. In the **Deployment Schedule** area, configure the following options:
 
-        1. Select when the update is deployed.
-        1. **Schedule Mode**: Choose when you want the deployment to start running.
-            1. **Run as soon as possible**: The deployment starts running immediately and lasts for 28 days after you select **Create** at the end of this flow.
-            1. **Scheduled**: More options are available when you select **Scheduled**.
-        1. **Time zone**: Select a time zone for the devices being updated.
-        1. **Start**: Specify when the deployment must start running.
-        1. **End**: If you don't specify an end time, the deployment runs for 28 days.
+      1. Select when the update is deployed.
+      2. **Schedule Mode**: Choose when you want the deployment to start running.
+         1. **Run as soon as possible**: The deployment starts running immediately and lasts for 28 days after you select **Create** at the end of this flow.
+         2. **Scheduled**: More options are available when you select **Scheduled**.
+      3. **Time zone**: Select a time zone for the devices being updated.
+      4. **Start**: Specify when the deployment must start running.
+      5. **End**: If you don't specify an end time, the deployment runs for 28 days.
+   3. In the **Installation Schedule** area, configure the following options:
 
-    1. In the **Installation Schedule** area, configure the following options:
+      1. Select when the installation can take place. If you don't specify, devices start installing updates once the deployment starts running.
+         1. **Time zone**: select the time zone for the devices being updated. The time zone you select must match the time zone selected in **Deployment schedule**, if you defined a deployment schedule.
+      2. **Start/End**: Specify when you want to allow the updates to be installed. Once installation begins, a complete installation is attempted even if it's past the end time.
+      3. **Delay installation until**: On devices Android 10 and earlier, Zebra supports delaying installation to a specific time after the device downloads an update. On Android 11 and later, this setting doesn't do anything, as updates are installed in the background while being downloaded.
+   4. In the **Device conditions** area, configure the following options:
 
-        1. Select when the installation can take place. If you don't specify, devices start installing updates once the deployment starts running.
-            1. **Time zone**: select the time zone for the devices being updated. The time zone you select must match the time zone selected in **Deployment schedule**, if you defined a deployment schedule.
-        1. **Start/End**: Specify when you want to allow the updates to be installed. Once installation begins, a complete installation is attempted even if it's past the end time.
-        1. **Delay installation until**: On devices Android 10 and earlier, Zebra supports delaying installation to a specific time after the device downloads an update. On Android 11 and later, this setting doesn't do anything, as updates are installed in the background while being downloaded.
-
-    1. In the **Device conditions** area, configure the following options:
-
-        1. Specify device conditions that must be met for downloading and installation to take place.
-            1. **Minimum battery level**: battery level between 30-100%
-            1. **Require device to be connected to charger**: yes/no
-            1. **Network type**: choose the type of network the device must be connected to for downloading and installation to take place.
-1. When ready, select **Next** to continue to *Assignments*.
-1. On the **Assignments** tab, choose **+ Select groups to include** and then assign your deployments to one or more groups. Review these [important guidelines for assignment](#important-guidelines-for-assignment). When ready, select **Next** to continue.
-1. On the **Review + create** tab, review your settings.
-1. When ready, select **Create** to create the deployment. The deployment is created with Zebra for the list of assigned devices.
+      1. Specify device conditions that must be met for downloading and installation to take place.
+         1. **Minimum battery level**: battery level between 30-100%
+         2. **Require device to be connected to charger**: yes/no
+         3. **Network type**: choose the type of network the device must be connected to for downloading and installation to take place.
+6. When ready, select **Next** to continue to *Assignments*.
+7. On the **Assignments** tab, choose **+ Select groups to include** and then assign your deployments to one or more groups. Review these [important guidelines for assignment](#important-guidelines-for-assignment). When ready, select **Next** to continue.
+8. On the **Review + create** tab, review your settings.
+9. When ready, select **Create** to create the deployment. The deployment is created with Zebra for the list of assigned devices.
 
 ### Important guidelines for assignment
 
@@ -270,15 +232,12 @@ If devices are later removed from an assigned group after the deployment is crea
 - On April 1, the deployment starts running as scheduled. Now, devices A, B, C, D are updated from v3 to v4.
 
 > [!NOTE]
-> A device can only be part of one deployment at a time.
-> Deployments are only supported for devices, not users. For example, if you assign a deployment to a group containing a device A and a user B who is associated with device B, only device A will receive the deployment.
-> Assignment filters are not currently supported.
-> Deployments that are assigned to empty groups, or groups containing no eligible devices, will fail.
-> If you assigned to or targeted an empty group, it will fail.
+>
+> A device can only be part of one deployment at a time. Deployments are only supported for devices, not users. For example, if you assign a deployment to a group containing a device A and a user B who is associated with device B, only device A will receive the deployment. Assignment filters are not currently supported. Deployments that are assigned to empty groups, or groups containing no eligible devices, will fail. If you assigned to or targeted an empty group, it will fail.
 
 ## Step 4: View and Manage Deployments
 
-After deployments are completed, you can view them from Devices > Android > Android FOTA deployments (Preview).
+After deployments are completed, you can view them from Devices &gt; Android &gt; Android FOTA deployments (Preview).
 
 Reporting displays information for eligible devices only and is currently refreshed every hour. For example, if you assign a deployment to a group containing non-Zebra devices, or Zebra devices that aren't enrolled with the LG OTA service, those devices aren't included in the Android FOTA deployments reports.
 
@@ -292,15 +251,15 @@ Each deployment displays details related to:
 
 The status of a deployment is different from the status of individual devices in the deployment. For example, if you create a deployment that targets two devices and only one is successfully updated, the deployment is considered *Completed*. However, it shows one device as failed and one as successful.
 
-|Intune deployment status|Description|
-|--------|------------------------------|
-|Creation in progress |Intune has sent a deployment request to Zebra service.|
-|Failed to create |Failed to create deployment in the Zebra service.|
-|Created|Deployment is created but start date hasn't been reached.|
-|Deployment in progress|Start date has been reached, and end date hasn't passed.|
-|Completed|The deployment end date has passed.|
-|Cancellation requested|Intune has sent a cancellation request to the Zebra service.|
-|Canceled|Deployment is successfully canceled with the Zebra service.|
+| Intune deployment status | Description |
+| --- | --- |
+| Creation in progress | Intune has sent a deployment request to Zebra service. |
+| Failed to create | Failed to create deployment in the Zebra service. |
+| Created | Deployment is created but start date hasn't been reached. |
+| Deployment in progress | Start date has been reached, and end date hasn't passed. |
+| Completed | The deployment end date has passed. |
+| Cancellation requested | Intune has sent a cancellation request to the Zebra service. |
+| Canceled | Deployment is successfully canceled with the Zebra service. |
 
 By selecting the **More (…)** menu next to a deployment, or by selecting the deployment details, you can attempt to **Cancel a deployment** that is in progress or **Delete** a completed deployment from Intune. Zebra doesn't support editing of already created deployments.
 
@@ -316,22 +275,10 @@ By selecting the **More (…)** menu next to a deployment, or by selecting the d
   - Code NOTAPPLICABLE: the device isn't enrolled with the LG OTA service, or not eligible for this update
   - Numeric error code. For example, 4009. Contact Zebra support for more details on next steps.
 
-<a name='disconnecting-zebra-connector'></a>
-
 ## Disconnect the Zebra connector
 
 To disconnect the Zebra connector:
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Select **[Tenant administration]** > **[Connectors and tokens]** > **[Firmware over-the-air update]**.
-1. Select **Disconnect** and confirm the disconnection. This disconnects your Intune tenant from Zebra. Existing deployments aren't affected.
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
-[Tenant administration]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/~/tenantStatus
-[Connectors and tokens]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/~/connectorsAndTokens
-[Firmware over-the-air update]: https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminConnectorsMenu/~/fotaUpdate
-
-[Android FOTA]: /intune/fundamentals/role-based-access-control/create-custom-role#android-fota
-[Mobile apps]: /intune/fundamentals/role-based-access-control/create-custom-role#mobile-apps
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **[Tenant administration](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/%7E/tenantStatus)** &gt; **[Connectors and tokens](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/%7E/connectorsAndTokens)** &gt; **[Firmware over-the-air update](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminConnectorsMenu/%7E/fotaUpdate)**.
+3. Select **Disconnect** and confirm the disconnection. This disconnects your Intune tenant from Zebra. Existing deployments aren't affected.

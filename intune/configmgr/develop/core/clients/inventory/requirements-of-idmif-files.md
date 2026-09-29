@@ -1,7 +1,7 @@
 ---
 title: Requirements of IDMIF files
 description: Two delta header comments are required for an IDMIF file, the name of the architecture you want to create or modify and a unique ID for the instance.
-ms.date: 01/03/2017
+ms.date: "2017-01-03T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
@@ -11,15 +11,15 @@ ms.service: configuration-manager
 ---
 
 # Requirements of IDMIF files
+
 Two delta header comments are required for an IDMIF file. Other comments are optional. The comments you must include are:
 
--   The name of the architecture you want to create or modify: //Architecture<*ArchitectureName*>
-
--   A unique ID for this instance: //UniqueID<*UniqueID*>
+- The name of the architecture you want to create or modify: //Architecture&lt;*ArchitectureName*&gt;
+- A unique ID for this instance: //UniqueID&lt;*UniqueID*&gt;
 
 The unique ID can be any unique ID. Each architecture has one or more instances within the SMS site database. The unique ID is the key for this specific instance.
 
-Also, although it is not required, you should use the agent name, especially with a large or complicated custom MIF file that might be updated by more than one agent: //AgentID<*AgentName*>
+Also, although it is not required, you should use the agent name, especially with a large or complicated custom MIF file that might be updated by more than one agent: //AgentID&lt;*AgentName*&gt;
 
 If you do not include this attribute, hardware inventory might overwrite the information your IDMIF file places in the SMS site database.
 
@@ -30,7 +30,8 @@ There is another requirement of any IDMIF file. Whenever you create an IDMIF fil
 Also, if you create any class that has more than one instance, you must include at least one key value within the class, to avoid having each instance overwrite previous instances.
 
 > [!IMPORTANT]
-> The formatting of the comments must be exactly the same as that given here. The only part that you can change is the part in italics. The < and > characters must be included.
+>
+> The formatting of the comments must be exactly the same as that given here. The only part that you can change is the part in italics. The &lt; and &gt; characters must be included.
 
 IDMIF files must be stored in the following folder on Advanced Clients: *%Windir%\System32\CCM\Inventory\Idmifs*
 
@@ -80,15 +81,18 @@ Start Component
             End Attribute
     End Group
 
-```  
+```
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+## Robust Programming
 
-## .NET Framework Security  
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).  
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
-## See Also  
- [Configuration Manager Software Development Kit](../../../../develop/core/misc/system-center-configuration-manager-sdk.md)   
- [About Configuration Manager Inventory](../../../../develop/core/clients/inventory/about-configuration-manager-inventory.md)   
- [How to Configure Hardware Inventory Settings](../../../../develop/core/clients/inventory/how-to-configure-hardware-inventory-settings.md)
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../servers/configure/role-based-administration.md).
+
+## See Also
+
+[Configuration Manager Software Development Kit](../../misc/system-center-configuration-manager-sdk.md)  
+ [About Configuration Manager Inventory](about-configuration-manager-inventory.md)  
+ [How to Configure Hardware Inventory Settings](how-to-configure-hardware-inventory-settings.md)

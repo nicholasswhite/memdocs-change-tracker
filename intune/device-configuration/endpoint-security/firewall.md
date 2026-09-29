@@ -1,10 +1,9 @@
 ---
-title: Manage firewall settings with endpoint security policies in Microsoft Intune
+title: "Firewall policy for endpoint security in Intune"
 description: Configure and deploy policies for devices you manage with endpoint security firewall policy in Microsoft Intune.
-ms.date: 09/18/2024
+ms.date: "2024-09-18T00:00:00Z"
 ms.topic: reference
 ms.reviewer: laarrizz
-
 ---
 
 # Firewall policy for endpoint security in Intune
@@ -13,7 +12,7 @@ Use the endpoint security Firewall policy in Intune to configure a devices built
 
 While you can configure the same firewall settings by using Endpoint Protection profiles for device configuration, the device configuration profiles include additional categories of settings. These additional settings are unrelated to firewalls and can complicate the task of configuring only firewall settings for your environment.
 
-Find the endpoint security policies for firewalls under *Manage* in the **Endpoint security** node of the [Microsoft Intune admin center].
+Find the endpoint security policies for firewalls under *Manage* in the **Endpoint security** node of the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 ## Prerequisites for Firewall profiles
 
@@ -22,11 +21,12 @@ Find the endpoint security policies for firewalls under *Manage* in the **Endpoi
 - Any supported version of macOS
 
 > [!IMPORTANT]
-> [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
+>
+> On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
 > [!IMPORTANT]
 >
-> Windows has updated how the Windows Firewall configuration service provider (CSP) enforces rules from Atomic blocks of firewall rules. The [***Windows Firewall CSP***](/windows/client-management/mdm/firewall-csp) on a device implements the firewall rule settings from your Intune endpoint security Firewall policies. Beginning with the following versions of Windows, the updated CSP behavior now enforces an all-or-nothing application of firewall rules from each Atomic block of rules:
+> Windows has updated how the Windows Firewall configuration service provider (CSP) enforces rules from Atomic blocks of firewall rules. The [***Windows Firewall CSP***](https://learn.microsoft.com/en-us/windows/client-management/mdm/firewall-csp) on a device implements the firewall rule settings from your Intune endpoint security Firewall policies. Beginning with the following versions of Windows, the updated CSP behavior now enforces an all-or-nothing application of firewall rules from each Atomic block of rules:
 >
 > - Windows 11 21H2
 > - Windows 11 22H2
@@ -36,11 +36,11 @@ Find the endpoint security policies for firewalls under *Manage* in the **Endpoi
 
 ## Role-based access controls (RBAC)
 
-For guidance on assigning the right level of permissions and rights to manage Intune firewall policy, see [Role-based access control for endpoint security](./manage-policies.md#role-based-access-control-for-endpoint-security).
+For guidance on assigning the right level of permissions and rights to manage Intune firewall policy, see [Role-based access control for endpoint security](manage-policies.md#role-based-access-control-for-endpoint-security).
 
 ## Firewall profiles
 
-Find guidance for creating endpoint security profiles at [Create an endpoint security policy](./manage-policies.md).
+Find guidance for creating endpoint security profiles at [Create an endpoint security policy](manage-policies.md).
 
 ### Devices managed by Intune
 
@@ -50,7 +50,7 @@ Find guidance for creating endpoint security profiles at [Create an endpoint sec
 
 **Platform: Windows**:
 
- For information about configuring settings in the following profiles, see the [Firewall configuration service provider (CSP)](/windows/client-management/mdm/firewall-csp).
+For information about configuring settings in the following profiles, see the [Firewall configuration service provider (CSP)](https://learn.microsoft.com/en-us/windows/client-management/mdm/firewall-csp).
 
 > [!NOTE]
 >
@@ -61,15 +61,14 @@ Find guidance for creating endpoint security profiles at [Create an endpoint sec
 > Profiles for this new platform use the settings format as found in the Settings Catalog. Each new profile template for this new platform includes the same settings as the older profile template it replaces. With this change you can no longer create new versions of the old profiles. Your existing instances of the old profile remain available to use and edit.
 
 - **Windows Firewall** – Configure settings for Windows Firewall with Advanced Security. Windows Firewall provides host-based, two-way network traffic filtering for a device and can block unauthorized network traffic flowing into or out of the local device.
-
 - **Windows Firewall rules** - Define granular Firewall rules, including specific ports, protocols, applications and networks, and to allow or block network traffic. Each instance of this profile supports up to 150 custom rules.
 
   > [!TIP]
   >
-  > Use of the **Policy App Id** setting, which is described in the [*MdmStore/FirewallRules/{FirewallRuleName}/PolicyAppId*](/windows/client-management/mdm/Firewall-csp?WT.mc_id=Portal-fx#mdmstorefirewallrulesfirewallrulenamepolicyappid) CSP, requires that your environment use *Windows Defender Application Control* (WDAC) tagging. For more information, see the following Windows Defender articles:
-  > - [About application control for Windows](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
-  > - [WDAC Application ID (AppId) Tagging guide](/windows/security/threat-protection/windows-defender-application-control/appidtagging/windows-defender-application-control-appid-tagging-guide)
-
+  > Use of the **Policy App Id** setting, which is described in the [*MdmStore/FirewallRules/{FirewallRuleName}/PolicyAppId*](https://learn.microsoft.com/en-us/windows/client-management/mdm/Firewall-csp?WT.mc_id=Portal-fx#mdmstorefirewallrulesfirewallrulenamepolicyappid) CSP, requires that your environment use *Windows Defender Application Control* (WDAC) tagging. For more information, see the following Windows Defender articles:
+  >
+  > - [About application control for Windows](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
+  > - [WDAC Application ID (AppId) Tagging guide](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/appidtagging/windows-defender-application-control-appid-tagging-guide)
 - **Windows Hyper-V Firewall Rules** The Windows Hyper-V Firewall Rules template allows you to control firewall rules that will apply to specific Hyper-V containers on Windows, including applications like the Windows Subsystem for Linux (WSL) and the Windows Subsystem for Android (WSA)
 
 #### Add reusable settings groups to profiles for Firewall rules
@@ -89,13 +88,37 @@ Each rule you add to the profile can include both reusable settings groups and i
 
 > [!NOTE]
 >
-> Inbound FQDN rules aren't natively supported. However, it's possible to use *pre-hydration* scripts to generate inbound IP entries for the rule. For more information, see [Windows Firewall dynamic keywords](/windows/security/operating-system-security/network-security/windows-firewall/dynamic-keywords) in the Windows Firewall documentation.
+> Inbound FQDN rules aren't natively supported. However, it's possible to use *pre-hydration* scripts to generate inbound IP entries for the rule. For more information, see [Windows Firewall dynamic keywords](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/windows-firewall/dynamic-keywords) in the Windows Firewall documentation.
 
 For prerequisites and guidance on configuring reusable groups, and then adding them to this profile, see [Use reusable groups of settings with Intune policies](../../device-security/reusable-settings-groups.md).
 
 ### Devices managed by Configuration Manager
 
-[!INCLUDE [Firewall policy prerequisites](../../includes/tenant-attach-firewall-prerequisites.md)]
+#### Firewall
+
+*Support for devices managed by Configuration Manager is in Preview.*
+
+Manage [Firewall policy settings for Configuration Manager devices](ref-firewall-settings-tenant-attach.md), when you use tenant attach.
+
+**Policy path**:
+
+- Endpoint security &gt; Firewall
+
+**Profiles**:
+
+- Windows Firewall (ConfigMgr)
+
+**Required version of Configuration Manager**:
+
+- Configuration Manager current branch version 2006 or later, with in-console update Configuration Manager 2006 Hotfix (KB4578605)
+
+**Supported Configuration Manager device platforms**:
+
+- Windows (x86, x64, ARM64)
+
+  > [!IMPORTANT]
+  >
+  > On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
 ## Firewall rule mergers and policy conflicts
 
@@ -120,27 +143,23 @@ The reports for Firewall policy display status details about the firewall status
 - Windows
 
 > [!IMPORTANT]
-> [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
-
+>
+> On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
 ### Summary
 
-Summary is the default view when you open the Firewall node. Open the [Microsoft Intune admin center], and then go to **Endpoint security** > **Firewall** > **Summary**.
+Summary is the default view when you open the Firewall node. Open the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), and then go to **Endpoint security** &gt; **Firewall** &gt; **Summary**.
 
 This view provides:
 
 - An aggregate count of devices that have the firewall turned off.
 - A list of your Firewall policies, including the name, type, if it's assigned, and when it was last modified.
 
->  [!IMPORTANT]
-> Per-setting reporting is available for most Endpoint Security policies. For Firewall Rules and Attack Surface Reduction (ASR) Rules policies managed through MDM, reporting is limited to policy-level status and doesn't include per-setting reporting statuses. To view per-setting status for Firewall Rules and ASR Rules policies, devices must be enrolled with [Defender for Endpoint security settings management](/intune/device-security/microsoft-defender/security-settings-management).
-
-
 ### MDM devices running Windows with firewall off
 
-This report is located in the Endpoint security node. Open the [Microsoft Intune admin center], and then go to **Endpoint security** > **Firewall** > **MDM devices running Windows 10 or later with firewall off**.
+This report is located in the Endpoint security node. Open the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), and then go to **Endpoint security** &gt; **Firewall** &gt; **MDM devices running Windows 10 or later with firewall off**.
 
-Data is reported through the Windows [DeviceStatus CSP](/windows/client-management/mdm/devicestatus-csp), and identifies each device where the Firewall is off. By default, visible details include:
+Data is reported through the Windows [DeviceStatus CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/devicestatus-csp), and identifies each device where the Firewall is off. By default, visible details include:
 
 - Device name
 - Firewall status
@@ -148,19 +167,17 @@ Data is reported through the Windows [DeviceStatus CSP](/windows/client-manageme
 - Target (The method of device management)
 - Last check in time
 
-> [!div class="mx-imgBorder"]
-> ![View the Firewall Off](./media/firewall/firewall-off-report.png)
+![View the Firewall Off](media/firewall/firewall-off-report.png)
 
 ### MDM Firewall status for Windows
 
 *This organizational report is also described in [Intune Reports](../../device-management/reports/overview.md#mdm-firewall-status-for-windows-organizational)*.
 
-As an organizational report, this report is available from the **Reports** node. Open the [Microsoft Intune admin center], and then go to **Reports** > **Firewall** > **MDM Firewall status for Windows**.
+As an organizational report, this report is available from the **Reports** node. Open the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), and then go to **Reports** &gt; **Firewall** &gt; **MDM Firewall status for Windows**.
 
-> [!div class="mx-imgBorder"]
-> ![Select firewall reports](./media/firewall/select-firewall-reports.png)
+![Select firewall reports](media/firewall/select-firewall-reports.png)
 
-Data is reported through the Windows [DeviceStatus CSP](/windows/client-management/mdm/devicestatus-csp), and reports on the status of the firewall on your managed devices. You can filter returns for this report by using one or more of the status detail categories.
+Data is reported through the Windows [DeviceStatus CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/devicestatus-csp), and reports on the status of the firewall on your managed devices. You can filter returns for this report by using one or more of the status detail categories.
 
 Status details include:
 
@@ -172,8 +189,7 @@ Status details include:
 
 You can filter returns for this report by using one or more of the status detail categories.
 
-> [!div class="mx-imgBorder"]
-> ![View the Firewall Status report](./media/firewall/firewall-status.png)
+![View the Firewall Status report](media/firewall/firewall-status.png)
 
 ## Investigate issues for Firewall rules
 
@@ -184,30 +200,29 @@ To learn more about Firewall rules in Intune, and how to troubleshoot common pro
 Additional common firewall rule issues:
 
 **Event Viewer: RemotePortRanges or LocalPortRanges "The parameter is incorrect"**
-> [!div class="mx-imgBorder"]
-> ![RemotePortRangesFailure](./media/firewall/remoteportrangeparameterincorrect.png)
+
+![RemotePortRangesFailure](media/firewall/remoteportrangeparameterincorrect.png)
+
 - Verify configured ranges are ascending (Example: 1-5 is correct, 5-1 will cause this error)
 - Verify configured ranges are within the overall port range of 0-65535
 - If either remote port ranges or local port ranges are configured in a rule, protocol **must** also be configured with 6 (TCP) **or** 17 (UDP)
 
 **Event Viewer: "...Name), Result: (The parameter is incorrect)"**
-> [!div class="mx-imgBorder"]
-> ![Screen capture of the Name Failure](./media/firewall/nameparameterincorrect.png)
+
+![Screen capture of the Name Failure](media/firewall/nameparameterincorrect.png)
+
 - If edge traversal is enabled in a rule, the rule direction **must** be set to "This rule applies to inbound traffic".
 
 **Event Viewer: "...InterfaceTypes), Result: (The parameter is incorrect)"**
-> [!div class="mx-imgBorder"]
-> ![Screen capture of the Interface Types Failure](./media/firewall/interfacetypesfailure.png)
+
+![Screen capture of the Interface Types Failure](media/firewall/interfacetypesfailure.png)
+
 - If "All" interface type is enabled in a rule, the other interface types **must not** be selected.
 
 ## Next steps
 
-[Configure Endpoint security policies](./manage-policies.md#create-endpoint-security-policies)
+[Configure Endpoint security policies](manage-policies.md#create-endpoint-security-policies)
 
 View details for the settings in the deprecated Firewall profiles for the deprecated *Windows 10 and later* platform:
 
-- [Firewall profile settings](./ref-firewall-settings.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+- [Firewall profile settings](ref-firewall-settings.md).

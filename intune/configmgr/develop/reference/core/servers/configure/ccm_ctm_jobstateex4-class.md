@@ -1,13 +1,15 @@
 ---
 description: Learn how to represent the state information for a single Content Transfer Manager job using CCM_CTM_JobStateEx4 class.
 title: CCM_CTM_JobStateEx4 Class
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_CTM_JobStateEx4 Class
+
 The **CCM_CTM_JobStateEx4** class, in Configuration Manager, represents the state information for a single Content Transfer Manager job.
 
 ## Syntax
@@ -26,58 +28,57 @@ class CCM_CTM_JobStateEx4
 ```
 
 #### Parameters
- `ProviderSettingsFromRequest`
- Data type: String
 
- Qualifiers: [in]
+`ProviderSettingsFromRequest` Data type: String
 
- XML describing the allowed alternate providers and provider-specific settings.
+Qualifiers: [in]
 
- `CurrentProviderPriority`
- Data type: UInt32
+XML describing the allowed alternate providers and provider-specific settings.
 
- Qualifiers: [in]
+`CurrentProviderPriority` Data type: UInt32
 
- Priority in the face of multiple alternate provider choices. For future use.
+Qualifiers: [in]
 
- `CurrentProviderLogicalName`
- Data type: String
+Priority in the face of multiple alternate provider choices. For future use.
 
- Qualifiers: [in]
+`CurrentProviderLogicalName` Data type: String
 
- The name of the current provider. This value must match the value specified to the SMS provider.
+Qualifiers: [in]
 
- `CurrentProviderCLSID`
- Data type: String
+The name of the current provider. This value must match the value specified to the SMS provider.
 
- Qualifiers: [in]
+`CurrentProviderCLSID` Data type: String
 
- The COM class ID corresponding to the current provider.
+Qualifiers: [in]
 
- `CurrentProviderGlobalSettings`
- Data type: String
+The COM class ID corresponding to the current provider.
 
- Qualifiers: [in]
+`CurrentProviderGlobalSettings` Data type: String
 
- Provider-specific data for the current provider.
+Qualifiers: [in]
 
- `CurrentProviderSettingsFromRequest`
- Data type: String
+Provider-specific data for the current provider.
 
- Qualifiers: [in]
+`CurrentProviderSettingsFromRequest` Data type: String
 
- Provider-specific settings for the current provider.
+Qualifiers: [in]
+
+Provider-specific settings for the current provider.
 
 ## Return Values
- None.
+
+None.
 
 ## Remarks
- There will be an instance of this class for each job started by the Content Transfer Manager.
+
+There will be an instance of this class for each job started by the Content Transfer Manager.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

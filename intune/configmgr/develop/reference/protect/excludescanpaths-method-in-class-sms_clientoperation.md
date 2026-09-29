@@ -1,16 +1,18 @@
 ---
 description: Learn how to exclude scan paths from all members in a specified collection using the ExcludeScanPaths class method in Configuration Manager.
-title: ExcludeScanPaths Method
-ms.date: 09/20/2016
+title: "ExcludeScanPaths Method in Class SMS_ClientOperation"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ExcludeScanPaths Method in Class SMS_ClientOperation
+
 The `ExcludeScanPaths` Windows Management Instrumentation (WMI) class method in Configuration Manager that excludes scan paths from all members in specified collection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -26,47 +28,45 @@ uint32 ExcludeScanPaths
 ```
 
 ## Parameters
- `ThreatID`
- Data type: `UInt64`
 
- Qualifiers: [id("0"), in]
+`ThreatID` Data type: `UInt64`
 
- ThreatID.
+Qualifiers: [id("0"), in]
 
- `ExclusionSettingsUniqueID`
- Data type: `String`
+ThreatID.
 
- Qualifiers: [id("1"), in]
+`ExclusionSettingsUniqueID` Data type: `String`
 
- ExclusionSettingsUniqueID.
+Qualifiers: [id("1"), in]
 
- `ExcludedPaths`
- Data type: `String Array`
+ExclusionSettingsUniqueID.
 
- Qualifiers: [id("2"), in]
+`ExcludedPaths` Data type: `String Array`
 
- ExcludedPaths.
+Qualifiers: [id("2"), in]
 
- `TargetCollectionID`
- Data type: `String`
+ExcludedPaths.
 
- Qualifiers: [id("3"), in]
+`TargetCollectionID` Data type: `String`
 
- TargetCollectionID.
+Qualifiers: [id("3"), in]
 
- `OperationID`
- Data type: `UInt32`
+TargetCollectionID.
 
- Qualifiers: [id("4"), out]
+`OperationID` Data type: `UInt32`
 
- OperationID.
+Qualifiers: [id("4"), out]
+
+OperationID.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

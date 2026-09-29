@@ -1,7 +1,7 @@
 ---
-title: Turn on iOS/iPadOS supervised mode with Microsoft Intune
+title: "Turn on iOS/iPadOS supervised mode"
 description: Learn how to turn on iOS/iPadOS supervised mode with Intune.
-ms.date: 04/29/2026
+ms.date: "2026-04-29T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -11,7 +11,7 @@ Apple iOS/iPadOS supervised mode gives administrators more options when managing
 
 Intune supports supervised mode as part of the Apple [Device Enrollment Program (DEP)](setup-automated-ios.md).
 
-For a list of Apple controls that require supervision, see Apple's [Payload settings reference](https://support.apple.com/guide/deployment/dep2c1b2a43a/web).  
+For a list of Apple controls that require supervision, see Apple's [Payload settings reference](https://support.apple.com/guide/deployment/dep2c1b2a43a/web).
 
 ## Turn on supervised mode after enrollment
 

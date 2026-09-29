@@ -1,7 +1,7 @@
 ---
 title: Flowchart - Manage content library
 description: Understand the process when the site moves the content library to a remote location.
-ms.date: 07/30/2018
+ms.date: "2018-07-30T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -13,6 +13,7 @@ ms.service: configuration-manager
 *Applies to: Configuration Manager (current branch)*
 
 This flowchart diagram shows the process by which the site moves the content library to a remote location. For more information, see the following articles:
+
 - [The content library](the-content-library.md)
 - [Site server high availability](../../servers/deploy/configure/site-server-high-availability.md)
 

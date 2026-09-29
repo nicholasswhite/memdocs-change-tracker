@@ -1,7 +1,7 @@
 ---
-title: "SMS_CM_UpdatePackTopLevelMonitoring Class"
+title: "SMS_CM_UpdatePackTopLevelMonitoring Server WMI Class"
 description: "An SMS Provider server class that gets the top-level installation stages and status per site."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_CM_UpdatePackTopLevelMonitoring Server WMI Class
-The  `SMS_CM_UpdatePackTopLevelMonitoring` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get the top level installation stages and status per site.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_CM_UpdatePackTopLevelMonitoring` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that is used to get the top level installation stages and status per site.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_CM_UpdatePackTopLevelMonitoring: SMS_BaseClass  
 {  
     DateTime MessageTime;  
@@ -29,97 +31,101 @@ Class SMS_CM_UpdatePackTopLevelMonitoring: SMS_BaseClass
     String StageName;  
 };  
 
-```  
+```
 
-## Methods  
- The `SMS_CM_UpdatePackTopLevelMonitoring` class does not define any methods.  
+## Methods
 
-## Properties  
- `MessageTime`  
- Data type: `DateTime`  
+The `SMS_CM_UpdatePackTopLevelMonitoring` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [read]  
+`MessageTime`  
+ Data type: `DateTime`
 
- The time that the message was created.  
+Access type: Read-only
 
- `PackageGuid`  
- Data type: `String`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The time that the message was created.
 
- Qualifiers: [read, key, not_null]  
+`PackageGuid`  
+ Data type: `String`
 
- Unique identifier of the update package.  
+Access type: Read-only
 
- `SiteCode`  
- Data type: `String`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+Unique identifier of the update package.
 
- Qualifiers: [read, key, not_null]  
+`SiteCode`  
+ Data type: `String`
 
- Unique identifier of the site.  
+Access type: Read-only
 
- `SiteNumber`  
- Data type: `Sint32`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+Unique identifier of the site.
 
- Qualifiers: [read, key, not_null]  
+`SiteNumber`  
+ Data type: `Sint32`
 
- Unique identifier of the site.  
+Access type: Read-only
 
- `SiteType`  
- Data type: `SInt32`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+Unique identifier of the site.
 
- Qualifiers: [read]  
+`SiteType`  
+ Data type: `SInt32`
 
- The type of site to which the `SubStage` applies.  
+Access type: Read-only
 
- `StageCompleted`  
- Data type: `SInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+The type of site to which the `SubStage` applies.
 
- Qualifiers: [read]  
+`StageCompleted`  
+ Data type: `SInt32`
 
- Indicates whether the stage has completed.  
+Access type: Read-only
 
- `StageId`  
- Data type: `Sint32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+Indicates whether the stage has completed.
 
- Qualifiers: [read, key, not_null]  
+`StageId`  
+ Data type: `Sint32`
 
- The top-level stage with which the `SubStage` is associated.  
+Access type: Read-only
 
- `StageName`  
- Data type: `String`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+The top-level stage with which the `SubStage` is associated.
 
- Qualifiers: [read]  
+`StageName`  
+ Data type: `String`
 
- The name of the stage.  
+Access type: Read-only
 
-## Remarks  
- Class qualifiers for this class include:  
+Qualifiers: [read]
 
-- Dynamic  
+The name of the stage.
 
-- Read (read-only)  
+## Remarks
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+Class qualifiers for this class include:
 
-## Requirements  
+- Dynamic
+- Read (read-only)
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
+
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

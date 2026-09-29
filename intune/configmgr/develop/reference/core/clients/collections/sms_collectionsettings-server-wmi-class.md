@@ -1,14 +1,16 @@
 ---
-title: SMS_CollectionSettings Class
+title: "SMS_CollectionSettings Server WMI Class"
 description: Learn how the SMS_CollectionSettings class is an SMS Provider server class that represents settings for an SMS_Collection Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CollectionSettings Server WMI Class
-The `SMS_CollectionSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents settings for an [SMS_Collection Server WMI Class](../../../../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md) object.
+
+The `SMS_CollectionSettings` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents settings for an [SMS_Collection Server WMI Class](sms_collection-server-wmi-class.md) object.
 
 ## Syntax
 
@@ -39,202 +41,187 @@ Class SMS_CollectionSettings : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CollectionSettings` class does not define any methods.
+
+The `SMS_CollectionSettings` class does not define any methods.
 
 ## Properties
- `ClusterCount`
- Data type: `UInt32`
 
- Access type: Read/Write
+`ClusterCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of computers that can be offline in a cluster. The default value is 1.
+Qualifiers: none
 
- `ClusterPercentage`
- Data type: `UInt32`
+Number of computers that can be offline in a cluster. The default value is 1.
 
- Access type: Read/Write
+`ClusterPercentage` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Percent of computers that can be offline in a cluster. The default value is 50.
+Qualifiers: none
 
- `ClusterTimeout`
- Data type: `UInt32`
+Percent of computers that can be offline in a cluster. The default value is 50.
 
- Access type: Read/Write
+`ClusterTimeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Timeout for the scripts. The default value is 600.
+Qualifiers: none
 
- `CollectionID`
- Data type: `String`
+Timeout for the scripts. The default value is 600.
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read/Write
 
- A unique key that maps to the parent collection. The default value is "".
+Qualifiers: [key, read]
 
- `CollectionVariablePrecedence`
- Data type: `UInt32`
+A unique key that maps to the parent collection. The default value is "".
 
- Access type: Read/Write
+`CollectionVariablePrecedence` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Precedence that is used for conflict resolution. The default value is 1.
+Qualifiers: None
 
- `CollectionVariables`
- Data type: `SMS_CollectionVariable` Array
+Precedence that is used for conflict resolution. The default value is 1.
 
- Access type: Read-only
+`CollectionVariables` Data type: `SMS_CollectionVariable` Array
 
- Qualifiers: [read, lazy]
+Access type: Read-only
 
- SMS_CollectionVariable Server WMI Class objects representing collection variables.
+Qualifiers: [read, lazy]
 
- `LastModificationTime`
- Data type: `DateTime`
+SMS_CollectionVariable Server WMI Class objects representing collection variables.
 
- Access type: Read-only
+`LastModificationTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last modification date and time for collection settings.
+Qualifiers: [read]
 
- `LocaleID`
- Data type: `UInt32`
+Last modification date and time for collection settings.
 
- Access type: Read/Write
+`LocaleID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Locale ID to use in converting the localized name and description. The default value is 1033 (U.S. English).
+Qualifiers: None
 
- You can get the locale for the Configuration Manager installation from the [SMS_Identification Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_identification-server-wmi-class.md)`LocaleID` property.
+Locale ID to use in converting the localized name and description. The default value is 1033 (U.S. English).
 
- `PostAction`
- Data type: `String`
+You can get the locale for the Configuration Manager installation from the [SMS_Identification Server WMI Class](../../servers/configure/sms_identification-server-wmi-class.md)`LocaleID` property.
 
- Access type: Read/Write
+`PostAction` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The Windows PowerShell script to run after an update deployment.
+Qualifiers: None
 
- `PreAction`
- Data type: `String`
+The Windows PowerShell script to run after an update deployment.
 
- Access type: Read/Write
+`PreAction` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The Windows PowerShell script to run before an update deployment.
+Qualifiers: None
 
- `PollingInterval`
- Data type: `UInt32`
+The Windows PowerShell script to run before an update deployment.
 
- Access type: Read/Write
+`PollingInterval` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Policy polling interval, in minutes. The default value is 5.
+Qualifiers: None
 
- `PollingIntervalEnabled`
- Data type: `Boolean`
+Policy polling interval, in minutes. The default value is 5.
 
- Access type: Read/Write
+`PollingIntervalEnabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the polling interval is enabled. The default value is `false`.
+Qualifiers: None
 
- `PowerConfigs`
- Data type: `SMS_PowerConfig` Array
+`true` if the polling interval is enabled. The default value is `false`.
 
- Access type: Read-only
+`PowerConfigs` Data type: `SMS_PowerConfig` Array
 
- Qualifiers: [read, lazy]
+Access type: Read-only
 
- SMS_PowerConfig Server WMI Class objects representing the power configuration for a specific collection.
+Qualifiers: [read, lazy]
 
- `RebootCountdown`
- Data type: `UInt32`
+SMS_PowerConfig Server WMI Class objects representing the power configuration for a specific collection.
 
- Access type: Read/Write
+`RebootCountdown` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Reboot countdown. The default value is 5.
+Qualifiers: None
 
- `RebootCountdownEnabled`
- Data type: `Boolean`
+Reboot countdown. The default value is 5.
 
- Access type: Read/Write
+`RebootCountdownEnabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if reboot countdown is enabled. The default value is `false`.
+Qualifiers: None
 
- `RebootCountdownFinalWindow`
- Data type: `UInt32`
+`true` if reboot countdown is enabled. The default value is `false`.
 
- Access type: Read/Write
+`RebootCountdownFinalWindow` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The point at which the final maintenance window is shown for the reboot countdown. The default value is 5.
+Qualifiers: None
 
- `ServiceWindows`
- Data type: `SMS_ServiceWindow` Array
+The point at which the final maintenance window is shown for the reboot countdown. The default value is 5.
 
- Access type: Read-only
+`ServiceWindows` Data type: `SMS_ServiceWindow` Array
 
- Qualifiers: [read, lazy]
+Access type: Read-only
 
- [SMS_ServiceWindow Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_servicewindow-server-wmi-class.md) objects representing maintenance windows that are used for making the collection settings.
+Qualifiers: [read, lazy]
 
- `SourceSite`
- Data type: `String`
+[SMS_ServiceWindow Server WMI Class](../../servers/configure/sms_servicewindow-server-wmi-class.md) objects representing maintenance windows that are used for making the collection settings.
 
- Access type: Read Only
+`SourceSite` Data type: `String`
 
- Qualifiers: [SizeLimit("3"), Not_null]
+Access type: Read Only
 
- Site code of the source site.
+Qualifiers: [SizeLimit("3"), Not_null]
 
- `UseCluster`
- Data type: `UInt32`
+Site code of the source site.
 
- Access type: Read/Write
+`UseCluster` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- A non-zero value indicates that the  collection is being used as a cluster. The default value is 0.
+Qualifiers: none
 
- `UseClusterPercentage`
- Data type: `UInt32`
+A non-zero value indicates that the collection is being used as a cluster. The default value is 0.
 
- Access type: Read/Write
+`UseClusterPercentage` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies whether to use the ClusterPercentage property. The default value is 1.
+Qualifiers: none
+
+Specifies whether to use the ClusterPercentage property. The default value is 1.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: Multiple Managed Accounts for App Protection Policies
+title: "Multiple managed accounts for app protection policies"
 description: Learn how the Multiple Managed Accounts (MMA) feature in Microsoft Intune MAM enables users to manage more than one work or school account within a single app.
-ms.date: 05/15/2026
+ms.date: "2026-05-15T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: cdemello
 ai-usage: ai-assisted
@@ -15,6 +15,7 @@ ms.collection:
 The Multiple Managed Accounts (MMA) feature in Intune mobile application management (MAM) enables users to add and manage more than one MAM-enabled account within a single app. With MMA, app protection policies are enforced independently for each account, as defined by the admin. This is especially useful for scenarios such as consultants working across organizations, company acquisitions, or users managing multiple mailboxes within the same tenant.
 
 > [!NOTE]
+>
 > This feature is rolling out gradually and may not yet be available in your tenant.
 
 ## Key scenarios
@@ -35,9 +36,8 @@ The following account configurations are supported with MMA:
 
 Support for additional apps and platforms is coming soon.
 
-
 | App | Platform | Minimum version |
-|-----|----------|-----------------|
+| --- | --- | --- |
 | Microsoft Teams | iOS/iPadOS | v8.10.0 or later |
 | Microsoft Outlook | iOS/iPadOS | v5.2626.0 or later |
 
@@ -49,6 +49,7 @@ Apps that support MMA handle multiple managed accounts in one of two ways:
 - **Mixed view**: The app displays data from multiple accounts in a shared view, such as a combined inbox or calendar. Policy enforcement for app access and conditional launch applies when the app opens, and the policies for each account are evaluated independently. Outlook is an example of a mixed view app.
 
 > [!IMPORTANT]
+>
 > Mixed views always enforce a full lockdown (most restrictive behavior), regardless of individual account policies. In a mixed view, cut, copy, and paste are fully blocked (including within the app view), screen capture and screenshots are blocked, and other data protection controls default to the most restrictive behavior. This applies even if a single managed account policy would otherwise allow these actions.
 >
 > This behavior change also affects scenarios when there's a single managed account with unmanaged accounts in a mixed view (for example, an Outlook inbox or calendar).
@@ -87,10 +88,6 @@ Platform-specific behavior applies:
 
 - **iOS**: Enabling `IntuneMAMAllowedAccountsOnly` restricts an app to a single managed account on managed devices. While this setting wasn't designed for MMA, its effect is that MMA is effectively disabled, even in apps that otherwise support MMA.
 
-<!--
-- **Android**: The **Allowed account UPNs** app configuration policy controls which accounts are allowed to sign in to an app on managed devices. Configuring this setting can incidentally limit MMA participation.
--->
-
 ### Biometrics and PIN
 
 #### How are biometric and PIN prompts handled with multiple accounts?
@@ -105,21 +102,6 @@ Platform-specific behavior applies:
 
 - **iOS**: Third-party keyboards are blocked at the app level. This behavior is identity-agnostic and applies to all accounts, regardless of MMA or view type.
 
-<!--
-- **Android**:
-  - In segmented views, approved keyboards are enforced per account.
-  - In mixed views, the allowed keyboard set is the union of approved keyboards across accounts.
--->
-
-
-<!--
-### Managed Google Play (Android)
-
-#### Can multiple users be managed Google Play users?
-
-No. Only one managed Google Play user can exist on a device at a time. When that user signs out of all MAM apps, the managed Google Play association is removed. Another user must sign in (typically via Company Portal) to establish a new managed Google Play user. MMA doesn't change this behavior.
--->
-
 ### Mobile Threat Defense (MTD)
 
 #### How does MTD work with multiple managed accounts?
@@ -131,13 +113,12 @@ MTD device threat level is evaluated at the device level, not per managed accoun
 **Cross-tenant scenarios**: If managed accounts from different tenants use the same MTD provider, each tenant has a separate device record. In this case, an MTD provider might support multiple accounts by reporting device threat level separately for each tenant.
 
 > [!IMPORTANT]
+>
 > MTD behavior depends on how the MTD provider integrates with Microsoft Entra ID and reports device threat level per Entra device record (device ID). Admins should validate supported MMA scenarios and security requirement handling with their MTD vendor before relying on MTD enforcement for multiple managed accounts.
 
 ## Troubleshooting
 
 ### A user can't add a second managed account
-
-<!--- Check whether the **Allow org accounts only** setting on iOS or the **Allowed account UPNs** setting on Android is restricting the ability to add a second managed account.-->
 
 - Check whether the **Allow org accounts only** setting on iOS is restricting the ability to add a second managed account.
 - Verify the user is attempting to sign in to an app that supports MMA. See [Currently supported apps](#currently-supported-apps).
@@ -154,7 +135,3 @@ MTD device threat level is evaluated at the device level, not per managed accoun
 
 - [App protection policies overview](overview.md)
 - [Benefits of Intune App SDK](../../developer/app-sdk/index.md)
-
-<!--
-- [Manage Teams for iOS and Android with Intune](../configuration/configure-teams-mobile.md)
--->

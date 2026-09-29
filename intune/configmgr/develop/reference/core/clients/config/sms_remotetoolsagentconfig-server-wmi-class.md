@@ -1,16 +1,18 @@
 ---
-title: SMS_RemoteToolsAgentConfig Class
+title: "SMS_RemoteToolsAgentConfig Server WMI Class"
 description: Learn how the SMS_RemoteToolsAgentConfig class is an SMS Provider server class that specifies the Remote Control settings on client computers.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_RemoteToolsAgentConfig Server WMI Class
+
 The `SMS_RemoteToolsAgentConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies the Remote Control settings on client computers.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -41,212 +43,196 @@ Class SMS_RemoteToolsAgentConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_RemoteToolsAgentConfig` class doesn't define any methods.
+
+The `SMS_RemoteToolsAgentConfig` class doesn't define any methods.
 
 ## Properties
- `AccessLevel`
- Data type: `UInt32`
 
- Access type: Read/Write
+`AccessLevel` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Access level allowed.
+Qualifiers: none
 
-|Possible values|
-|----|
-|No Access|
-|View Only|
-|Full Control|
+Access level allowed.
 
- `AgentID`
- Data type: `UInt32`
+| Possible values |
+| --- |
+| No Access |
+| View Only |
+| Full Control |
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The Remote Tools Agent Config ID is 3.
+Qualifiers: [key, read]
 
- `AllowClientChange`
- Data type: `Boolean`
+Identifies the client agent component. The Remote Tools Agent Config ID is 3.
 
- Access type: Read/Write
+`AllowClientChange` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Users can change policy or notification settings in Software Center.
+Qualifiers: none
 
- `AllowLocalAdminToDoRemoteControl`
- Data type: `Boolean`
+Users can change policy or notification settings in Software Center.
 
- Access type: Read/Write
+`AllowLocalAdminToDoRemoteControl` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Grant Remote Control permission to local Administrators group.
+Qualifiers: none
 
- `AllowRAUnsolicitedControl`
- Data type: `Boolean`
+Grant Remote Control permission to local Administrators group.
 
- Access type: Read/Write
+`AllowRAUnsolicitedControl` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client should configure Remote Assistance to allow a remote Unsolicited Control request.
+Qualifiers: none
 
- `AllowRAUnsolicitedView`
- Data type: `Boolean`
+`true` if the client should configure Remote Assistance to allow a remote Unsolicited Control request.
 
- Access type: Read/Write
+`AllowRAUnsolicitedView` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client should configure Remote Assistance to allow a remote Unsolicited View request.
+Qualifiers: none
 
- `AllowRemCtrlToUnattended`
- Data type: `Boolean`
+`true` if the client should configure Remote Assistance to allow a remote Unsolicited View request.
 
- Access type: Read/Write
+`AllowRemCtrlToUnattended` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Allow Remote Control of an unattended computer.
+Qualifiers: none
 
- `AudibleSignal`
- Data type: `UInt32`
+Allow Remote Control of an unattended computer.
 
- Access type: Read/Write
+`AudibleSignal` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Value indicating if a control beep should be sounded during a remote control session to signify that the computer is being remotely controlled. This is only for Remote Control, not Remote Assistance. Possible values are:
+Qualifiers: none
 
-|Value|Definition|
-|----|----|
-|0|None|
-|1|Beginning and end of the session|
-|2|Repeatedly|
+Value indicating if a control beep should be sounded during a remote control session to signify that the computer is being remotely controlled. This is only for Remote Control, not Remote Assistance. Possible values are:
 
- `Enabled`
- Data type: `Boolean`
+| Value | Definition |
+| --- | --- |
+| 0 | None |
+| 1 | Beginning and end of the session |
+| 2 | Repeatedly |
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the agent is enabled.
+Qualifiers: none
 
- `EnableRA`
- Data type: `Boolean`
+`true` if the agent is enabled.
 
- Access type: Read/Write
+`EnableRA` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client should enable Remote Assistance for the client.
+Qualifiers: none
 
- `EnableTS`
- Data type: `Boolean`
+`true` if the client should enable Remote Assistance for the client.
 
- Access type: Read/Write
+`EnableTS` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- This applied to the remote control setting 'Allow permitted viewers to connect using Remote Desktop Connection at admin console UI item. This property can be set only when ManageTS is true.
+Qualifiers: none
 
- `EnforceRAandTSSettings`
- Data type: `Boolean`
+This applied to the remote control setting 'Allow permitted viewers to connect using Remote Desktop Connection at admin console UI item. This property can be set only when ManageTS is true.
 
- Access type: Read/Write
+`EnforceRAandTSSettings` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if Remote Assistance settings, which might be configured by the user in a Control Panel program, should be overridden by the Configuration Manager settings. This matches 'Manage solicited Remote Assistance settings'.
+Qualifiers: none
 
- `FirewallExceptionProfiles`
- Data type: `UInt32`
+`true` if Remote Assistance settings, which might be configured by the user in a Control Panel program, should be overridden by the Configuration Manager settings. This matches 'Manage solicited Remote Assistance settings'.
 
- Access type: Read/Write
+`FirewallExceptionProfiles` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Firewall profile setting masks which combines them as an OR of domain profile 0x4, private profile 0x2, and public profile 0x1.
+Qualifiers: none
 
- `ManageRA`
- Data type: `Boolean`
+Firewall profile setting masks which combines them as an OR of domain profile 0x4, private profile 0x2, and public profile 0x1.
 
- Access type: Read/Write
+`ManageRA` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if the client should set local Remote Assistance settings. This matches 'Manage unsolicited Remote Assistance settings'.
+Qualifiers: none
 
- `ManageTS`
- Data type: `Boolean`
+`true` if the client should set local Remote Assistance settings. This matches 'Manage unsolicited Remote Assistance settings'.
 
- Access type: Read/Write
+`ManageTS` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Configuration Manager manages Remote Desktop settings. This applies to the 'Manage Remote Desktop Settings' in the Admin Console's remote desktop settings.
+Qualifiers: none
 
- `PermissionRequired`
- Data type: `Boolean`
+Configuration Manager manages Remote Desktop settings. This applies to the 'Manage Remote Desktop Settings' in the Admin Console's remote desktop settings.
 
- Access type: Read/Write
+`PermissionRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Value indicating that the helpdesk administrator is required to get permission from the remote user before starting remote control session. This is only applied when remote user is on an active session.
+Qualifiers: none
 
-|Value|Definition|
-|----|----|
-|false|Bypass remote control permission dialog.|
-|true|Ask permission to start a remote control session.|
+Value indicating that the helpdesk administrator is required to get permission from the remote user before starting remote control session. This is only applied when remote user is on an active session.
 
- `PermittedViewers`
- Data type: `String Array`
+| Value | Definition |
+| --- | --- |
+| false | Bypass remote control permission dialog. |
+| true | Ask permission to start a remote control session. |
 
- Access type: Read/Write
+`PermittedViewers` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The list of user and group names that are allowed to use Remote Tools and Remote Assistance for the client. The format of the string is \<domain or computer>\\<user or group name\>.
+Qualifiers: none
 
- `RemCtrlConnectionBar`
- Data type: `Boolean`
+The list of user and group names that are allowed to use Remote Tools and Remote Assistance for the client. The format of the string is &lt;domain or computer&gt;\&lt;user or group name&gt;.
 
- Access type: Read/Write
+`RemCtrlConnectionBar` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Show session connection bar.
+Qualifiers: none
 
- `RemCtrlTaskbarIcon`
- Data type: `Boolean`
+Show session connection bar.
 
- Access type: Read/Write
+`RemCtrlTaskbarIcon` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Show session notification icon on taskbar.
+Qualifiers: none
 
- `TSUserAuthentication`
- Data type: `Boolean`
+Show session notification icon on taskbar.
 
- Access type: Read/Write
+`TSUserAuthentication` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- Allow connection only from computers running Remote Desktop with network-level authentication selected in Vista or later OSs.  This can be set only if EnableTS is true.
+Qualifiers: none
+
+Allow connection only from computers running Remote Desktop with network-level authentication selected in Vista or later OSs. This can be set only if EnableTS is true.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

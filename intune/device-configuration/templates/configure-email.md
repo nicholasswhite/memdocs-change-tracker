@@ -1,7 +1,7 @@
 ---
-title: Configure email settings in Microsoft Intune
+title: "Add email settings to devices using Intune"
 description: Create an email device configuration profile in Microsoft Intune, and deploy this profile to Android device administrator, Android Enterprise, iOS, iPadOS, and Windows devices. Use email profiles to configure common email settings, including a Microsoft Exchange email server. Add authentication methods to connect to corporate email on devices you manage.
-ms.date: 02/19/2025
+ms.date: "2025-02-19T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: sheetg
 ---
@@ -31,20 +31,19 @@ You can use email profiles to configure email settings for the following devices
 
 This article shows you how to create an email profile in Microsoft Intune. It also includes links to the different platforms for more specific settings.
 
-[!INCLUDE [android_device_administrator_support](../../includes/android-device-administrator-support.md)]
+> [!IMPORTANT]
+>
+> Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
 
 ## Before you begin
 
-- [!INCLUDE [minimum-rbac-role-policy-profile-manager](../../includes/minimum-rbac-role-policy-profile-manager.md)]
-
+- Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with an account that has the **[Policy and Profile Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)** built-in role. For more information on the built-in roles, go to [Role-based access control for Microsoft Intune](../../fundamentals/role-based-access-control/overview.md).
 - Email profiles are deployed for the user who enrolled the device. To configure the email profile, Intune uses the Microsoft Entra properties in the email profile of the user during enrollment. The email app your organization uses must support Microsoft Entra identities.
-
 - Email is based on identity and user settings. Email profiles are typically assigned to user groups, not device groups. Some considerations:
 
   - If the email profile includes user certificates, then assign the email profile to user groups. You can assign multiple user certificate profiles. These multiple profiles create a chain of profile deployments. Deploy this profile chain to user groups.
 
     If one profile in this chain is deployed to a device group, users can be continuously prompted to enter their password.
-
   - Device groups are typically used when there's not a primary user, or if you don't know who the user will be. Email profiles targeted to device groups (not user groups) might not be delivered to the device.
 
     For example, your email profile targets an all iOS/iPadOS devices group. Be sure all these devices have a user.
@@ -52,7 +51,7 @@ This article shows you how to create an email profile in Microsoft Intune. It al
     - If any device doesn't have a user, then the email profile might not deploy. You limit the profile, and could miss some devices.
     - If the device has a primary user, then deploying to device groups should work.
 
-    For more information on possible issues with using device groups, see [Common issues with email profiles](/troubleshoot/mem/intune/troubleshoot-email-profiles-in-microsoft-intune).
+    For more information on possible issues with using device groups, see [Common issues with email profiles](https://learn.microsoft.com/en-us/troubleshoot/mem/intune/troubleshoot-email-profiles-in-microsoft-intune).
 
 ## Step 1 - Deploy your email app
 
@@ -71,7 +70,6 @@ In Intune, you can use organization owned devices and personally owned devices:
   These devices have a built-in email app that's typically hidden when the device enrolls in Intune. This behavior also depends on the OEM, so it can be different on your devices.
 
   The built-in email app is also considered a system app. For more information on system apps and Intune, go to [Manage Android Enterprise system apps in Microsoft Intune](../../app-management/configuration/manage-system-apps-android.md).
-
 - **Android Enterprise personally owned devices with a work profile**: End users own these devices. Users enroll their devices and a work profile is automatically created. You manage the work profile, including apps and data in the work profile.
 
   For more information on the enrollment options for personal devices, go to [Deployment guide: Enroll Android devices - BYOD: Android Enterprise personally owned devices with a work profile](../../device-enrollment/android/guide.md#byod-android-enterprise-personally-owned-devices-with-a-work-profile).
@@ -82,21 +80,30 @@ In Intune, you can use organization owned devices and personally owned devices:
 
 On both types of Android Enterprise devices, you can add and deploy an email app. Your options:
 
-# [Outlook](#tab/outlook-android)
+- [Outlook](#tabpanel_1_outlook-android)
+- [Gmail](#tabpanel_1_gmail)
+- [Nine Work](#tabpanel_1_nine-work)
+- [Other email apps](#tabpanel_1_other-email-apps-android)
+
+<a id="tabpanel_1_outlook-android"></a>
+
+
 
 The **Microsoft Outlook** app is available in the managed Play Store. To use Outlook as the email app, add the Outlook app to Intune, and assign the app to your users or user groups. The app also installs.
 
 After the app is deployed and installed:
 
 - If you want to customize Outlook or preconfigure it with your organization settings, then you can [create an app configuration policy](../../app-management/configuration/configure-managed-android.md) (opens another Microsoft article). When the policy is ready, deploy this app configuration policy to your users or user groups. App configuration policies are optional.
-
 - If you don't want to customize Outlook or preconfigure it for your users, you don't have to. After Outlook is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
 
-# [Gmail](#tab/gmail)
+<a id="tabpanel_1_gmail"></a>
+
+
 
 The **Gmail** app is available in the managed Play Store. To use Gmail as the email app, add the Gmail app to Intune, and assign the app to your users or user groups. The app also installs.
 
 > [!TIP]
+>
 > If your profile uses Gmail and you want to use modern authentication, then you might have to deploy the Google Chrome app to the work profile.
 
 After the app is deployed and installed:
@@ -104,16 +111,15 @@ After the app is deployed and installed:
 - On **Android Enterprise organization-owned devices**:
 
   - If you want to customize Gmail or preconfigure it with your organization settings, then you can [create an app configuration policy](../../app-management/configuration/configure-managed-android.md) (opens another Microsoft article). When the policy is ready, deploy this app configuration policy to your users or user groups. App configuration policies are optional.
-
   - If you don't want to customize Gmail or preconfigure it for your users, you don't have to. After Gmail is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
-
 - On **Android Enterprise personally owned devices with a work profile**:
 
   - If you want to customize Gmail or preconfigure it with your organization settings, then you can [create an email device configuration profile](#step-2---create-the-email-profile) (in this article). When the profile is ready, deploy this email device configuration profile to your users or user groups. The profile includes the settings that connect the Gmail app to your email system, such as Microsoft Exchange. Email device configuration profiles are optional.
-
   - If you don't want to customize Gmail or preconfigure it for your users, you don't have to. After Gmail is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
 
-# [Nine Work](#tab/nine-work)
+<a id="tabpanel_1_nine-work"></a>
+
+
 
 The **Nine Work** app is available in the managed Play Store. To use Nine Work as the email app, add the Nine Work app to Intune, and assign the app to your users or user groups. The app also installs.
 
@@ -122,35 +128,32 @@ After the app is deployed and installed:
 - On **Android Enterprise organization-owned devices**:
 
   - If you want to customize Nine Work or preconfigure it with your organization settings, then you can [create an app configuration policy](../../app-management/configuration/configure-managed-android.md) (opens another Microsoft article). When the policy is ready, deploy this app configuration policy to your users or user groups. App configuration policies are optional.
-
   - If you don't want to customize Nine Work or preconfigure it for your users, you don't have to. After Nine Work is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
-
 - On **Android Enterprise personally owned devices with a work profile**:
 
   - If you want to customize Nine Work or preconfigure it with your organization settings, then you can [create an email device configuration profile](#step-2---create-the-email-profile) (in this article). When the profile is ready, deploy this email device configuration profile to your users or user groups. The profile includes the settings that connect the Nine Work app to your email system, such as Microsoft Exchange. Email device configuration profiles are optional.
-
   - If you don't want to customize Nine Work or preconfigure it for your users, you don't have to. After Nine Work is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
 
-# [Other email apps](#tab/other-email-apps-android)
+<a id="tabpanel_1_other-email-apps-android"></a>
+
+
 
 **Other email apps** that support Microsoft Entra identities are available in the managed Play Store. To use these email apps, add the app to Intune, and assign the app to your users or user groups. The app also installs.
 
 After the app is deployed and installed:
 
 - If you want to customize the app or preconfigure it with your organization settings, then you can [create an app configuration policy](../../app-management/configuration/configure-managed-android.md) (opens another Microsoft article). When the policy is ready, deploy this app configuration policy to your users or user groups. App configuration policies are optional.
-
 - If you don't want to customize the app or preconfigure it for your users, you don't have to. After the app is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
-
----
 
 For more information on app configuration policies, go to:
 
 - [Learn about app configuration policies in Microsoft Intune](../../app-management/configuration/overview.md)
 - [Add app configuration policies for managed Android Enterprise devices](../../app-management/configuration/configure-managed-android.md)
 - [Manage messaging collaboration access by using Outlook for iOS and Android with Microsoft Intune](../../app-management/configuration/configure-outlook.md)
-- [Deploy Outlook for iOS and Android app configuration settings in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
+- [Deploy Outlook for iOS and Android app configuration settings in Exchange Online](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
 
 > [!TIP]
+>
 > When you create an app configuration policy, you select the enrollment type – **Managed devices** or **Managed apps**. Be sure you know what to choose.
 >
 > For more information on these options, go to [App configuration policies for Microsoft Intune](../../app-management/configuration/overview.md).
@@ -160,7 +163,6 @@ For more information on app configuration policies, go to:
 In Intune, you can use organization owned devices and personally owned devices:
 
 - **Organization owned devices**: The organization owns these devices, they're enrolled in Intune, and are fully managed by you.
-
 - **Personally owned devices**: End users own these devices. Users can enroll their entire devices in Intune to be fully managed by you. Or, they can enroll only the apps that access organization data.
 
   For more information on the enrollment options for personal devices, go to [Deployment guide: Enroll iOS and iPadOS devices - BYOD User and Device enrollment](../../device-enrollment/apple/guide-ios-ipados.md#byod-user-and-device-enrollment).
@@ -171,43 +173,49 @@ In Intune, you can use organization owned devices and personally owned devices:
 
 On all iOS/iPadOS devices, you can add and deploy an email app. Your options:
 
-# [Outlook](#tab/outlook-ios)
+- [Outlook](#tabpanel_2_outlook-ios)
+- [Built-in Mail app](#tabpanel_2_built-in-mail-app-ios)
+- [Other email apps](#tabpanel_2_other-email-apps-ios)
+
+<a id="tabpanel_2_outlook-ios"></a>
+
+
 
 The **Microsoft Outlook** app is available in the App Store. To use Outlook as the email app, add the Outlook app to Intune, and assign the app to your users or user groups. The app also installs.
 
 After the app is deployed and installed:
 
 - If you want to customize Outlook or preconfigure it with your organization settings, then you can [create an app configuration policy](../../app-management/configuration/configure-managed-ios.md) (opens another Microsoft article). When the policy is ready, deploy this app configuration policy to your users or user groups. App configuration policies are optional.
-
 - If you don't want to customize Outlook or preconfigure it for your users, you don't have to. After Outlook is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
 
-# [Built-in Mail app](#tab/built-in-mail-app-ios)
+<a id="tabpanel_2_built-in-mail-app-ios"></a>
+
+
 
 The **Built-in Mail app** is preinstalled with the OS and can be used to access personal email and organization email. If you don't want to use the built-in Mail app, then organizations that use Conditional Access (CA) can create CA policies to block native mail apps. Or, use CA to only allow specific apps.
 
 - If you want to customize the Mail app or preconfigure it with your organization settings, then you can [create an email device configuration profile](#step-2---create-the-email-profile) (in this article). When the profile is ready, deploy this email device configuration profile to your users or user groups. The profile includes the settings that connect the Mail app to your email system, such as Microsoft Exchange. Email device configuration profiles are optional.
-
 - If you don't want to customize the Mail app or preconfigure it for your users, you don't have to. To use the Mail app for organization email, users need to enter the information that connects to their work or school account, like the email server link and more.
 
-# [Other email apps](#tab/other-email-apps-ios)
+<a id="tabpanel_2_other-email-apps-ios"></a>
+
+
 
 **Other email apps** that support Microsoft Entra identities are available in the App Store. To use these email apps, add the app to Intune, and assign the app to your users or user groups. The app also installs.
 
 After the app is deployed and installed:
 
 - If you want to customize the app or preconfigure it with your organization settings, then you can [create an app configuration policy](../../app-management/configuration/configure-managed-ios.md) (opens another Microsoft article). When the policy is ready, deploy this app configuration policy to your users or user groups. App configuration policies are optional.
-
 - If you don't want to customize the app or preconfigure it for your users, you don't have to. After the app is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
-
----
 
 For more information on app configuration policies, go to:
 
 - [Learn about app configuration policies in Microsoft Intune](../../app-management/configuration/overview.md)
 - [Add app configuration policies for managed iOS/iPadOS devices](../../app-management/configuration/configure-managed-ios.md)
-- [Deploy Outlook for iOS and Android app configuration settings in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
+- [Deploy Outlook for iOS and Android app configuration settings in Exchange Online](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune)
 
 > [!TIP]
+>
 > When you create an app configuration policy, you select the enrollment type – **Managed devices** or **Managed apps**. Be sure you know what to choose.
 >
 > For more information on these options, go to [App configuration policies for Microsoft Intune](../../app-management/configuration/overview.md).
@@ -217,7 +225,6 @@ For more information on app configuration policies, go to:
 In Intune, you can use organization owned devices and personally owned devices:
 
 - **Organization owned devices**: The organization owns these devices, they're enrolled in Intune, and are fully managed by you.
-
 - **Personally owned devices**: End users own these devices. Users can enroll their entire devices in Intune to be fully managed by you.
 
   For more information on the enrollment options for personal devices, go to [Deployment guide: Enroll Windows devices - BYOD: User enrollment](../../device-enrollment/windows/guide.md#byod-user-enrollment).
@@ -226,85 +233,82 @@ In Intune, you can use organization owned devices and personally owned devices:
 
 On all Windows devices, you can add and deploy an email app. Your options:
 
-# [Outlook](#tab/outlook-windows)
+- [Outlook](#tabpanel_3_outlook-windows)
+- [Built-in Mail app](#tabpanel_3_built-in-mail-app-windows)
+- [Other email apps](#tabpanel_3_other-email-apps-windows)
+
+<a id="tabpanel_3_outlook-windows"></a>
+
+
 
 The **Microsoft Outlook** app is available in the Microsoft 365 Apps suite. To use Outlook as the email app, add the Outlook app to Intune, and assign the app to your users or user groups. The app also installs.
 
 After the app is deployed and installed:
 
 - If you want to customize Outlook or preconfigure it with your organization settings, then you can [create an email device configuration profile](#step-2---create-the-email-profile) (in this article). When the profile is ready, deploy this email device configuration profile to your users or user groups. The profile includes the settings that connect the Outlook app to your email system, such as Microsoft Exchange. Email device configuration profiles are optional.
-
 - If you don't want to customize Outlook or preconfigure it for your users, you don't have to. After Outlook is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
 
-# [Built-in Mail app](#tab/built-in-mail-app-windows)
+<a id="tabpanel_3_built-in-mail-app-windows"></a>
+
+
 
 The **Built-in Mail app** is preinstalled with the OS and can be used to access personal email and organization email. If you don't want to use the built-in Mail app, then organizations that use Conditional Access (CA) can create CA policies to block native mail apps. Or, use CA to only allow specific apps.
 
 - If you want to customize the Mail app or preconfigure it with your organization settings, then you can [create an email device configuration profile](#step-2---create-the-email-profile) (in this article). When the profile is ready, deploy this email device configuration profile to your users or user groups. The profile includes the settings that connect the Mail app to your email system, such as Microsoft Exchange. Email device configuration profiles are optional.
-
 - If you don't want to customize the Mail app or preconfigure it for your users, you don't have to. To use the Mail app for organization email, users need to enter the information that connects to their work or school account, like the email server link and more.
 
-# [Other email apps](#tab/other-email-apps-windows)
+<a id="tabpanel_3_other-email-apps-windows"></a>
+
+
 
 **Other email apps** that support Microsoft Entra identities are available in the Microsoft Store. To use these email apps, add the app to Intune, and assign the app to your users or user groups. The app also installs.
 
 After the app is deployed and installed:
 
 - If you want to customize the email app or preconfigure it with your organization settings, then you can [create an email device configuration profile](#step-2---create-the-email-profile) (in this article). When the profile is ready, deploy this email device configuration profile to your users or user groups. The profile includes the settings that connect the email app to your email system, such as Microsoft Exchange. Email device configuration profiles are optional.
-
 - If you don't want to customize the app or preconfigure it for your users, you don't have to. After the app is installed, users need to enter the information that connects to their work or school account, like the email server link and more.
-
----
 
 ## Step 2 - Create the email profile
 
 After the email app is assigned to the device, this next step creates the device configuration policy that configures the email connection. If your email app uses an app configuration policy to configure the app, then skip this step.
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Devices** > **Manage devices** > **Configuration** > **Create** > **New policy**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **New policy**.
 3. Enter the following properties:
 
-    - **Platform**: Select the platform of your devices. Your options:
+   - **Platform**: Select the platform of your devices. Your options:
 
-        - **Android device administrator** (Samsung Android Knox Standard only)
-        - **Android Enterprise** personally owned work profiles
-        - **iOS/iPadOS**
-        - **Windows 10 and later**
-
-    - **Profile type**: Select **Email**. Or, select **Templates** > **Email**.
-
+     - **Android device administrator** (Samsung Android Knox Standard only)
+     - **Android Enterprise** personally owned work profiles
+     - **iOS/iPadOS**
+     - **Windows 10 and later**
+   - **Profile type**: Select **Email**. Or, select **Templates** &gt; **Email**.
 4. Select **Create**.
 5. In **Basics**, enter the following properties:
 
-    - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **Email settings for all Windows devices**.
-    - **Description**: Enter a description for the policy. This setting is optional, but recommended.
-
+   - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **Email settings for all Windows devices**.
+   - **Description**: Enter a description for the policy. This setting is optional, but recommended.
 6. Select **Next**.
-
 7. In **Configuration settings**, depending on the platform you chose, the settings you can configure are different. Select your platform for detailed settings:
 
-    - [Android device administrator (Samsung Knox Standard)](./ref-email-settings-android.md)
-    - [Android Enterprise](./ref-email-settings-android-enterprise.md)
-    - [iOS/iPadOS](./ref-email-settings-ios.md)
-    - [Windows](./ref-email-settings-windows.md)
-
+   - [Android device administrator (Samsung Knox Standard)](ref-email-settings-android.md)
+   - [Android Enterprise](ref-email-settings-android-enterprise.md)
+   - [iOS/iPadOS](ref-email-settings-ios.md)
+   - [Windows](ref-email-settings-windows.md)
 8. Select **Next**.
 9. In **Scope tags** (optional), assign a tag to filter the profile to specific IT groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. For more information about scope tags, see [Use role-based access control (RBAC) and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 
-    Select **Next**.
-
+   Select **Next**.
 10. In **Assignments**, select the users or device groups that will receive your profile. For more information on assigning profiles, see [Before you begin](#before-you-begin) (in this article). [Assign user and device profiles](../assign-device-profile.md) also some guidance.
 
     Select **Next**.
-
 11. In **Review + create**, review your settings. When you select **Create**, your changes are saved, and the profile is assigned. The policy is also shown in the profiles list.
 
 ## Remove an email profile
 
 There are different ways to remove an email profile from devices, even when there's only one email profile on the device:
 
-- **Option 1**: Open the email profile (**Devices** > **Manage devices** > **Configuration** > select your profile), and select **Assignments**. The **Include** tab shows the groups that are assigned the profile. Right-click the group > **Remove**. Be sure to **Save** your changes.
-
+- **Option 1**: Open the email profile (**Devices** &gt; **Manage devices** &gt; **Configuration** &gt; select your profile), and select **Assignments**. The **Include** tab shows the groups that are assigned the profile. Right-click the group &gt; **Remove**. Be sure to **Save** your changes.
 - **Option 2**: [Wipe or retire the device](../../device-management/actions/wipe.md). You can use these actions to selectively or fully remove data and settings.
 
 ## Secure email access
@@ -316,7 +320,6 @@ You can help secure email profiles using the following options:
   If you use certificate-based authentication for your email profile, then deploy the email profile, certificate profile, and trusted root profile to the same groups. This deployment makes sure each device can recognize the legitimacy of your certificate authority.
 
   For more information about how to create and use certificate profiles in Intune, see [How to configure certificates with Intune](../../fundamentals/certificates/overview.md).
-
 - **User name and password**: The end user authenticates to the native mail server by entering a user name and password. The password doesn't exist in the email profile. So, the end user enters the password when connecting to email.
 
 ## How Intune handles existing email accounts
@@ -324,13 +327,10 @@ You can help secure email profiles using the following options:
 If the user already configured an email account, then the email profile is assigned differently, depending on the platform.
 
 - **Android device administrator Samsung Knox Standard**: An existing, duplicate email profile is detected based on the email address, and overwrites it with the Intune profile. Android doesn't use the host name to identify the profile. Don't create multiple email profiles using the same email address on different hosts. The profiles overwrite each other.
-
 - **Android Enterprise personally owned work profiles**: Intune provides two Android work email apps that you can configure: Gmail and Nine Work. These apps are available in the Google Play Store, and install in the personally owned work profile. These apps don't create duplicate profiles. To use email connectivity, deploy one of these email apps to your user devices. Then, create and deploy the email profile.
 
   You can also use certificate profiles on Gmail and Nine Work. Any Gmail or Nine Work device configuration policies that you create continue to apply to the device. It's not necessary to move them to app configuration policies. Email apps, such as Nine Work, might not be free. Review the app's licensing details, or contact the app company with any questions.
-
 - **iOS/iPadOS**: An existing, duplicate email profile is detected based on host name and email address. The duplicate email profile blocks the assignment of an Intune profile. In this case, the Company Portal app notifies the user that they aren't compliant, and prompts the end user to manually remove the configured profile. To help prevent this scenario, tell your end users to enroll *before* installing an email profile, which allows Intune to set up the profile.
-
 - **Windows:** An existing, duplicate email profile is detected based on host name and email address. Intune overwrites the existing email profile created by the end user.
 
 ## Changes to assigned email profiles
@@ -340,7 +340,3 @@ If you make changes to an email profile you previously assigned, end users might
 ## Related articles
 
 Once the profile is created, it might not be doing anything yet. Be sure to [assign the profile](../assign-device-profile.md) and [monitor its status](../monitor-device-profile.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

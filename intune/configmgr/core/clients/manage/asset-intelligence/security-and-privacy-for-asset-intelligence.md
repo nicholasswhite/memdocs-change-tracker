@@ -1,7 +1,7 @@
 ---
-title: Asset Intelligence security & privacy
+title: "Security and privacy for Asset Intelligence in Configuration Manager"
 description: Security guidance and privacy information for Asset Intelligence in Configuration Manager.
-ms.date: 05/05/2021
+ms.date: "2021-05-05T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -35,15 +35,9 @@ Asset Intelligence doesn't send information about users, computers, or license u
 When you submit information to System Center Online, understand the following privacy implications:
 
 - Upload applies only to generic software title information that you choose to send to Microsoft. For example, software name and publisher. Inventory information isn't sent to Microsoft.
-
 - Upload never occurs automatically, and the system isn't designed for this task to be automated. Manually select and approve the upload of each software title.
-
 - Before the upload process starts, the Configuration Manager console shows you exactly what data it will upload.
-
 - License information isn't sent to Microsoft. Configuration Manager stores the license information in a separate area of the site database, and it can't be sent to Microsoft.
-
 - Any software title that you upload becomes public. The knowledge of that software and its categorization become part of the online Asset Intelligence catalog. Other customers can then download the catalog updates.
-
 - The source of the software title isn't recorded in the Asset Intelligence catalog, and it isn't made available to other customers. Still verify that you don't include any application titles that contain any private information.
-
 - You can't recall uploaded data.

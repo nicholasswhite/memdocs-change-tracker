@@ -1,16 +1,18 @@
 ---
-title: ApplyPolicyEx Method
+title: "ApplyPolicyEx Method in Class CCM_SoftwareCatalogUtilities"
 description: The ApplyPolicyEx WMI class method, in Configuration Manager, applies policy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ApplyPolicyEx Method in Class CCM_SoftwareCatalogUtilities
+
 The `ApplyPolicyEx` Windows Management Instrumentation (WMI) class method in Configuration Manager that applies policy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,40 +27,39 @@ uint32 ApplyPolicyEx
 ```
 
 ## Parameters
- `Body`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`Body` Data type: `String`
 
- Policy body.
+Qualifiers: [id("0"), in]
 
- `BodySignature`
- Data type: `String`
+Policy body.
 
- Qualifiers: [id("1"), in]
+`BodySignature` Data type: `String`
 
- Policy body signature.
+Qualifiers: [id("1"), in]
 
- `BodySource`
- Data type: `String`
+Policy body signature.
 
- Qualifiers: [id("2"), in]
+`BodySource` Data type: `String`
 
- Policy body source.
+Qualifiers: [id("2"), in]
 
- `Id`
- Data type: `String`
+Policy body source.
 
- Qualifiers: [id("3"), out]
+`Id` Data type: `String`
 
- Identifier.
+Qualifiers: [id("3"), out]
+
+Identifier.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

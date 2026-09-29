@@ -1,16 +1,18 @@
 ---
-title: CCM_Policy_Expression Class
+title: "CCM_Policy_Expression Client WMI Class"
 description: A client Windows Management Instrumentation class that represents a policy expression, which evaluates to either true or false.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Policy_Expression Client WMI Class
+
 In Configuration Manager, the `CCM_Policy_Expression` class is a client Windows Management Instrumentation (WMI) class that represents a policy expression that evaluates to either `true` or `false`.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,59 +27,59 @@ Class CCM_Policy_Expression : CCM_Policy_Config
 ```
 
 ## Methods
- The `CCM_Policy_Expression` class doesn't define any methods.
+
+The `CCM_Policy_Expression` class doesn't define any methods.
 
 ## Properties
- `ExpressionData`
- Data type: `String`
 
- Access type: Read/Write
+`ExpressionData` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- Data representing the expression to evaluate. The actual format is specific to the expression type. For more information, see `ExpressionType`.
+Qualifiers: [Not_Null:ToInstance]
 
- `ExpressionLanguage`
- Data type: `String`
+Data representing the expression to evaluate. The actual format is specific to the expression type. For more information, see `ExpressionType`.
 
- Access type: Read/Write
+`ExpressionLanguage` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- The type of expression, which must map to an object that contains information about the handler responsible for evaluating this expression type.
+Qualifiers: [Not_Null:ToInstance]
 
- `ExpressionState`
- Data type: `Boolean`
+The type of expression, which must map to an object that contains information about the handler responsible for evaluating this expression type.
 
- Access type: Read/Write
+`ExpressionState` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- Current state of the expression. This value indicates the result of the last expression evaluation, or `null` if the expression has never been evaluated.
+Qualifiers: None
 
- `ExpressionType`
- Data type: `String`
+Current state of the expression. This value indicates the result of the last expression evaluation, or `null` if the expression has never been evaluated.
 
- Access type: Read/Write
+`ExpressionType` Data type: `String`
 
- Qualifiers: [Not_Null:ToInstance]
+Access type: Read/Write
 
- Type that determines how the expression is evaluated. Possible values are:
+Qualifiers: [Not_Null:ToInstance]
 
+Type that determines how the expression is evaluated. Possible values are:
 
 | Value | Description |
-| ----- | ----------- |
-|Once|The expression is evaluated only once.|
-|Until-true|The expression continues to be reevaluated until evaluation returns `true`.|
-|Continuous|The expression is always reevaluated.|
+| --- | --- |
+| Once | The expression is evaluated only once. |
+| Until-true | The expression continues to be reevaluated until evaluation returns `true`. |
+| Continuous | The expression is always reevaluated. |
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Policy Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/policy-agent-client-wmi-classes.md)
+
+[Policy Agent Client WMI Classes](policy-agent-client-wmi-classes.md)

@@ -1,7 +1,7 @@
 ---
-title: What's new in version 2503
+title: "What's new in version 2503 of Configuration Manager current branch"
 description: Get details about changes and new capabilities introduced in version 2503 of Configuration Manager current branch.
-ms.date: 03/31/2025
+ms.date: "2025-03-31T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ms.collection: tier3
@@ -20,39 +20,28 @@ To take full advantage of new Configuration Manager changes, after you update th
 
 ## General enhancements
 
-As part of Microsoft's Secure Future Initiative (SFI) the 2503 version of Configuration Manager focuses on security and quality updates. For more information, see the [Microsoft Trust Center](https://www.microsoft.com/trust-center/security/secure-future-initiative).
-For a list of significant customer-reported issues resolved in this release, see the [Summary of changes in Configuration Manager version 2503](../../../hotfix/2503/31909343.md) knowledge base article.
-
+As part of Microsoft's Secure Future Initiative (SFI) the 2503 version of Configuration Manager focuses on security and quality updates. For more information, see the [Microsoft Trust Center](https://www.microsoft.com/trust-center/security/secure-future-initiative). For a list of significant customer-reported issues resolved in this release, see the [Summary of changes in Configuration Manager version 2503](../../../hotfix/2503/31909343.md) knowledge base article.
 
 ## Known Issues
 
- - Upgrade SQL 2012 or 2014 Express, Standard, Enterprise edition to SQL 2016 or latest version. **VC++ Redistributable Version** needs to be upgraded to latest version on **Secondary sites**. [Download Latest Microsoft Visual C++ Redistributable Version](https://aka.ms/vs/17/release/vc_redist.x64.exe).
+- Upgrade SQL 2012 or 2014 Express, Standard, Enterprise edition to SQL 2016 or latest version. **VC++ Redistributable Version** needs to be upgraded to latest version on **Secondary sites**. [Download Latest Microsoft Visual C++ Redistributable Version](https://aka.ms/vs/17/release/vc_redist.x64.exe).
 
 ### Microsoft ODBC redistributable
- - The Microsoft ODBC redistributable component is updated to version **18.4.1.1** on all Site servers and Management Points.
- - ConfigMgrPreReq will throw an error stalling the upgrade if it detects a version lower than that.
-    
-    > INFO: Microsoft ODBC Driver 18 for SQL Server is installed but it is older than the required version.  
-    > SQL client prerequisite missing for Configuration Manager setup.;    Error;    Install the Microsoft ODBC driver 18 for SQL setup from https://go.microsoft.com/fwlink/?linkid=2299909. More information https://go.microsoft.com/fwlink/?linkid=2226618
 
+- The Microsoft ODBC redistributable component is updated to version **18.4.1.1** on all Site servers and Management Points.
+- ConfigMgrPreReq will throw an error stalling the upgrade if it detects a version lower than that.
 
-<!-- ## Deprecated features
-
-Learn about support changes before they're implemented in [removed and deprecated items](deprecated/removed-and-deprecated.md).
-
- - MDT Integration with CM and Standalone is no longer supported with Configuration Manager deprecation first announced in December 2024 and planned end of support the first release after Oct 10, 2025. Customers should remove MDT Task sequence steps, followed by removing MDT integration, to avoid TS corruption and modification failures.
-
-For more information, see [Removed and deprecated features for Configuration Manager.](deprecated/removed-and-deprecated-cmfeatures.md). -->
+  > INFO: Microsoft ODBC Driver 18 for SQL Server is installed but it is older than the required version.  
+  >  SQL client prerequisite missing for Configuration Manager setup.; Error; Install the Microsoft ODBC driver 18 for SQL setup from <https://go.microsoft.com/fwlink/?linkid=2299909>. More information <https://go.microsoft.com/fwlink/?linkid=2226618>
 
 ## Next steps
-<!-- At this time, version 2503 is released for the early update ring. To install this update, you need to opt in. For more information, see [Early update ring](../../servers/manage/checklist-for-installing-update-2503.md#early-update-ring). -->
 
 As of April 23, 2025, version 2503 is globally available for all customers to install.
 
 When you're ready to install this version, see [Installing updates for Configuration Manager](../../servers/manage/updates.md) and [Checklist for installing update 2503](../../servers/manage/checklist-for-installing-update-2503.md).
 
-
 > [!TIP]
+>
 > To install a new site, use a baseline version of Configuration Manager.
 >
 > Learn more about:

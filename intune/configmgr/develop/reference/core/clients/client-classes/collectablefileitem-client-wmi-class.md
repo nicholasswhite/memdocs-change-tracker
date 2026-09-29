@@ -1,16 +1,18 @@
 ---
-title: CollectableFileItem Class
+title: "CollectableFileItem Client WMI Class"
 description: In Configuration Manager, the CollectableFileItem class is a client Windows Management Instrumentation class that defines attributes of a file collection rule.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CollectableFileItem Client WMI Class
+
 In Configuration Manager, the **CollectableFileItem** class is a client Windows Management Instrumentation (WMI) class that defines attributes of a file collection rule. The rule attributes define criteria, such as file name, directory paths, and file size limits. An example is `collect *.mif in %windir% up to 10 KB`.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,150 +37,139 @@ Class CollectableFileItem : SMS_FileCollectionAgent_Policy
 ```
 
 ## Methods
- The `CollectableFileItem` class does not define any methods.
+
+The `CollectableFileItem` class does not define any methods.
 
 ## Properties
- `ExcludeCompressedEncrypted`
- Data type: `Boolean`
 
- Access type: Read/Write
+`ExcludeCompressedEncrypted` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- Flag indicating whether compressed or encrypted files and directories or both should be excluded from the scan. This property value is typically translated into the **FileSystemFile**, **IsCompressed**, and **IsEncrypted** property query value.
+Qualifiers: None
 
- `FileCollectionActionID`
- Data type: `String`
+Flag indicating whether compressed or encrypted files and directories or both should be excluded from the scan. This property value is typically translated into the **FileSystemFile**, **IsCompressed**, and **IsEncrypted** property query value.
 
- Access type: Read/Write
+`FileCollectionActionID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID that matches the **FileCollectionActionID** property for an associated [FileCollectionAction Client WMI Class](../../../../../develop/reference/core/clients/client-classes/filecollectionaction-client-wmi-class.md) object. The Inventory Agent uses this value to find the [CollectableFileItem Client WMI Class](../../../../../develop/reference/core/clients/client-classes/collectablefileitem-client-wmi-class.md) class for a particular file collection action.
+Qualifiers: None
 
- `FileItemID`
- Data type: `String`
+ID that matches the **FileCollectionActionID** property for an associated [FileCollectionAction Client WMI Class](filecollectionaction-client-wmi-class.md) object. The Inventory Agent uses this value to find the [CollectableFileItem Client WMI Class](collectablefileitem-client-wmi-class.md) class for a particular file collection action.
 
- Access type: Read/Write
+`FileItemID` Data type: `String`
 
- Qualifiers: [realkey]
+Access type: Read/Write
 
- Unique ID for a **CollectableFileItem** object.
+Qualifiers: [realkey]
 
- `FileSpec`
- Data type: `String`
+Unique ID for a **CollectableFileItem** object.
 
- Access type: Read/Write
+`FileSpec` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- File mask, including wildcards, used to specify file names that should be collected, for example, Virussig.dat, Boot*.ini, and \*.mif.
+Qualifiers: None
 
- `MaxItemFileSize`
- Data type: `UInt32`
+File mask, including wildcards, used to specify file names that should be collected, for example, Virussig.dat, Boot\*.ini, and \*.mif.
 
- Access type: Read/Write
+`MaxItemFileSize` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Total size, in bytes, allowed for files collected under this rule. For example, collect files up to a total of 128 KB for this rule.
+Qualifiers: None
 
- `PolicyID`
- Data type: `String`
+Total size, in bytes, allowed for files collected under this rule. For example, collect files up to a total of 128 KB for this rule.
 
- Access type: Read/Write
+`PolicyID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique ID of the policy.
+Qualifiers: [key]
 
- `PolicyInstanceID`
- Data type: `String`
+Unique ID of the policy.
 
- Access type: Read/Write
+`PolicyInstanceID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique ID of the policy instance.
+Qualifiers: [key]
 
- `PolicyPrecedence`
- Data type: `UInt32`
+Unique ID of the policy instance.
 
- Access type: Read/Write
+`PolicyPrecedence` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Precedence for the policy.
+Qualifiers: None
 
- `PolicyRuleID`
- Data type: `String`
+Precedence for the policy.
 
- Access type: Read/Write
+`PolicyRuleID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique ID of the rule used to create the policy.
+Qualifiers: [key]
 
- `PolicySource`
- Data type: `String`
+Unique ID of the rule used to create the policy.
 
- Access type: Read/Write
+`PolicySource` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Source of the policy.
+Qualifiers: [key]
 
- `PolicyVersion`
- Data type: `String`
+Source of the policy.
 
- Access type: Read/Write
+`PolicyVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Version of the policy.
+Qualifiers: [key]
 
- `ScanSubdirectories`
- Data type: `Boolean`
+Version of the policy.
 
- Access type: Read/Write
+`ScanSubdirectories` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- Flag indicating whether the file scan should scan subdirectories or only scan the root directory specified by **SearchPath**. This property value is used to format the **FileSystemFilePath** property query value, such as, c:\\\\* vs. c:\\\\.
+Qualifiers: None
 
- `SearchPath`
- Data type: `String`
+Flag indicating whether the file scan should scan subdirectories or only scan the root directory specified by **SearchPath**. This property value is used to format the **FileSystemFilePath** property query value, such as, c:\\\* vs. c:\\.
 
- Access type: Read/Write
+`SearchPath` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Root directory of the scan, for example, c:\\, %*windir*%, and d:\myapplication\\. This property is translated into the **FileSystemFilePath** property value.
+Qualifiers: None
 
- `Timeout`
- Data type: `UInt32`
+Root directory of the scan, for example, c:\, %*windir*%, and d:\myapplication\. This property is translated into the **FileSystemFilePath** property value.
 
- Access type: Read/Write
+`Timeout` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Timeout value, in milliseconds. If a **FileSystemFile** query initiated by the Inventory Agent during a file collection scan runs longer than the specified timeout value, the query is canceled. The default value is 7,200,000 milliseconds.
+Qualifiers: None
+
+Timeout value, in milliseconds. If a **FileSystemFile** query initiated by the Inventory Agent during a file collection scan runs longer than the specified timeout value, the query is canceled. The default value is 7,200,000 milliseconds.
 
 ## Remarks
- The Inventory Agent uses each instance of this class to build a **FileSystemFile** query and collects the files matching the rule attributes. This class is similar to **InventoryDataItem**, although the properties are less directly translated into a WQL statement. However, the item properties are used to format the specific **FileSystemFile** query for the rule and are then used to identify files matching the attribute criteria. These matching files are then attached to the generated collected file report.
 
- Each **CollectableFileItem** instance contains a reference to a **FileCollectionAction** instance; multiple **CollectableFileItem** rules are used to build the combined collected file report for a single **FileCollectionAction** instance.
+The Inventory Agent uses each instance of this class to build a **FileSystemFile** query and collects the files matching the rule attributes. This class is similar to **InventoryDataItem**, although the properties are less directly translated into a WQL statement. However, the item properties are used to format the specific **FileSystemFile** query for the rule and are then used to identify files matching the attribute criteria. These matching files are then attached to the generated collected file report.
+
+Each **CollectableFileItem** instance contains a reference to a **FileCollectionAction** instance; multiple **CollectableFileItem** rules are used to build the combined collected file report for a single **FileCollectionAction** instance.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Inventory Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/inventory-agent-client-wmi-classes.md)
- [FileCollectionAction Client WMI Class](../../../../../develop/reference/core/clients/client-classes/filecollectionaction-client-wmi-class.md)
- [FileSystemFile Client WMI Class](../../../../../develop/reference/core/clients/client-classes/filesystemfile-client-wmi-class.md)
- [InventoryDataItem Client WMI Class](../../../../../develop/reference/core/clients/client-classes/inventorydataitem-client-wmi-class.md)
+
+[Inventory Agent Client WMI Classes](inventory-agent-client-wmi-classes.md) [FileCollectionAction Client WMI Class](filecollectionaction-client-wmi-class.md) [FileSystemFile Client WMI Class](filesystemfile-client-wmi-class.md) [InventoryDataItem Client WMI Class](inventorydataitem-client-wmi-class.md)

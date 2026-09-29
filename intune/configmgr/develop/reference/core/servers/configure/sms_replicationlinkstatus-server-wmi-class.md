@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the database link status between the child and parent site for each replication group with SMS_ReplicationLinkStatus.
-title: SMS_ReplicationLinkStatus Class
-ms.date: 09/20/2016
+title: "SMS_ReplicationLinkStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_ReplicationLinkStatus Server WMI Class
+
 The `SMS_ReplicationLinkStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that represents the database link status between the child and parent site for each replication group.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -35,141 +37,131 @@ Class SMS_ReplicationLinkStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_ReplicationLinkStatus` class doesn't define any methods.
+
+The `SMS_ReplicationLinkStatus` class doesn't define any methods.
 
 ## Properties
- `ChildLastReceived`
- Data type: `DateTime`
 
- Access type: Read-only
+`ChildLastReceived` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The time of last received message for this replication group on the child site.
+Qualifiers: [read]
 
- `ChildLastSent`
- Data type: `DateTime`
+The time of last received message for this replication group on the child site.
 
- Access type: Read-only
+`ChildLastSent` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The time of last message for this replication group sent from the child site.
+Qualifiers: [read]
 
- `ChildSite`
- Data type: `String`
+The time of last message for this replication group sent from the child site.
 
- Access type: Read-only
+`ChildSite` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Site code of the child site.
+Qualifiers: [key, read]
 
- `DegradedSyncs`
- Data type: `UInt32`
+Site code of the child site.
 
- Access type: Read-only
+`DegradedSyncs` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- If the link status is degraded, this will show the synchronization intervals from the last synchronization finish time.
+Qualifiers: [read]
 
- `FailedSyncs`
- Data type: `UInt32`
+If the link status is degraded, this will show the synchronization intervals from the last synchronization finish time.
 
- Access type: Read-only
+`FailedSyncs` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- If the link status is failed, this will show the synchronization intervals from last synchronization finish time.
+Qualifiers: [read]
 
- `InitializationPercent`
- Data type: `UInt32`
+If the link status is failed, this will show the synchronization intervals from last synchronization finish time.
 
- Access type: Read-only
+`InitializationPercent` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Reinitialization progress for this replication group.
+Qualifiers: [read]
 
- `InitializationStatus`
- Data type: `UInt32`
+Reinitialization progress for this replication group.
 
- Access type: Read-only
+`InitializationStatus` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Reinitialization status.
+Qualifiers: [read]
 
- `ParentLastReceived`
- Data type: `DateTime`
+Reinitialization status.
 
- Access type: Read-only
+`ParentLastReceived` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Time of the last received message for this replication group on the parent site.
+Qualifiers: [read]
 
- `ParentLastSent`
- Data type: `DateTime`
+Time of the last received message for this replication group on the parent site.
 
- Access type: Read-only
+`ParentLastSent` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Time of the last message for this replication group sent from the parent site.
+Qualifiers: [read]
 
- `ParentSite`
- Data type: `String`
+Time of the last message for this replication group sent from the parent site.
 
- Access type: Read-only
+`ParentSite` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Site code of the parent site.
+Qualifiers: [key, read]
 
- `RecoveryStatus`
- Data type: `UInt32`
+Site code of the parent site.
 
- Access type: Read-only
+`RecoveryStatus` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Recovery status.
+Qualifiers: [read]
 
- `ReplicationGroup`
- Data type: `String`
+Recovery status.
 
- Access type: Read-only
+`ReplicationGroup` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Name of the replication group. See [SMS_ReplicationGroup Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_replicationgroup-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ReplicationPattern`
- Data type: `String`
+Name of the replication group. See [SMS_ReplicationGroup Server WMI Class](sms_replicationgroup-server-wmi-class.md).
 
- Access type: Read-only
+`ReplicationPattern` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Replication pattern. See [SMS_ReplicationGroup Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_replicationgroup-server-wmi-class.md).
+Qualifiers: [read]
 
- `SyncInterval`
- Data type: `UInt32`
+Replication pattern. See [SMS_ReplicationGroup Server WMI Class](sms_replicationgroup-server-wmi-class.md).
 
- Access type: Read-only
+`SyncInterval` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Synchronization interval, in minutes, for the replication group.
+Qualifiers: [read]
+
+Synchronization interval, in minutes, for the replication group.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,7 +1,7 @@
 ---
-title: Prerequisites for sites
+title: "Prerequisites for installing Configuration Manager sites"
 description: Learn about prerequisites for installing the different types of Configuration Manager sites.
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -24,10 +24,9 @@ The following prerequisites apply to installing one of the following types:
 
 If you're installing a CAS as part of a hierarchy expansion, see the section for [Expanding a stand-alone primary site](#bkmk_expand).
 
-### <a name="bkmk_PrereqPri"></a> Prerequisites for installing a primary site or a CAS
+### Prerequisites for installing a primary site or a CAS
 
 - The necessary Windows Server roles, features, and Windows components must be installed. For more information, see [Site system prerequisites](../../../plan-design/configs/site-and-site-system-prerequisites.md#central-administration-site-and-primary-site-servers)
-
 - The user account that installs the site must have the following permissions:
 
   - **Administrator** on the following servers:
@@ -35,36 +34,27 @@ If you're installing a CAS as part of a hierarchy expansion, see the section for
     - The site server
     - Each SQL Server that hosts the **site database**
     - Each instance of the **SMS Provider** for the site
-
   - **Sysadmin** on the instance of SQL Server that hosts the site database
 
     > [!IMPORTANT]
+    >
     > When Configuration Manager setup finishes, the site server computer account still needs **sysadmin** permissions to SQL Server. Don't remove the SQL Server sysadmin permissions from this account.
     >
     > For more information on the need for these permissions after setup is complete, see [Accounts: Elevated permissions](../../../plan-design/hierarchy/accounts.md#elevated-permissions).
-
 - If you're installing a primary site, you may also need **Administrator** permissions on additional servers. For example, where you install the initial management point and distribution point, if not on the site server.
-
 - If you're installing a new child primary site below a CAS, you need the following additional permissions:
 
   - **Administrator** on the site server that hosts the CAS
-
   - **Administrator** on the SQL Server that hosts the CAS site database
-
   - Role-based administration permissions within Configuration Manager that are equivalent to the security role of **Infrastructure Administrator** or **Full Administrator**
-
 - Use the correct installation source files, and run setup from that location. For information about the correct source files to use to install different types of sites, see [Prepare to install site: Options for installing different types of sites](prepare-to-install-sites.md#bkmk_options).
-
 - The site server needs access to the latest setup files from Microsoft. Use one of the following methods:
 
   - Before you start the install, download and store a copy of these files on your local network. For more information, see [Setup Downloader](setup-downloader.md).
-
   - If a local copy of these files isn't available, the site server needs access to the internet. It downloads these files from Microsoft during the installation. For more information, see [Internet access requirements](../../../plan-design/network/internet-endpoints.md).
-
 - The site server and site database server must meet all prerequisite configurations. Before starting Configuration Manager setup, [manually run Prerequisite Checker](prerequisite-checker.md) to identify and fix problems.
 
-### <a name="bkmk_expand"></a> Prerequisites to expand a stand-alone primary site
-<!-- "site expansion" scenario -->
+### Prerequisites to expand a stand-alone primary site
 
 A stand-alone primary site must meet the following prerequisites before you can expand it into a hierarchy with a CAS:
 
@@ -114,7 +104,7 @@ Configuration Manager only supports these roles at the top-level site of the hie
 
 All other site system roles can remain installed at the primary site.
 
-Configuration Manager setup also includes a [prerequisite check](list-of-prerequisite-checks.md#cloud-management-gateway-on-the-expanded-primary-site) that the standalone primary site doesn't include the [cloud management gateway](../../../clients/manage/cmg/overview.md) (CMG) service. Before you expand the site to a hierarchy, remove the CMG. Then redeploy it from the new CAS.<!-- memdocs#2374 -->
+Configuration Manager setup also includes a [prerequisite check](list-of-prerequisite-checks.md#cloud-management-gateway-on-the-expanded-primary-site) that the standalone primary site doesn't include the [cloud management gateway](../../../clients/manage/cmg/overview.md) (CMG) service. Before you expand the site to a hierarchy, remove the CMG. Then redeploy it from the new CAS.
 
 #### Open the SQL Server Service Broker port
 
@@ -126,7 +116,7 @@ To successfully replicate data between a CAS and a primary site, Configuration M
 
 After you expand the site, you need to reconfigure the following Azure services with Configuration Manager:
 
-- [Log Analytics](/azure/azure-monitor/platform/collect-sccm?context=/mem/configmgr/core/context/core-context)
+- [Log Analytics](https://learn.microsoft.com/en-us/azure/azure-monitor/platform/collect-sccm?context=/mem/configmgr/core/context/core-context)
 - [Microsoft Store for Business](../../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md)
 - [Tenant attach](../../../../tenant-attach/device-sync-actions.md)
 
@@ -134,25 +124,21 @@ The easiest method is to renew the Microsoft Entra tenant secret key. For more i
 
 Instead of renewing the secret key, remove and then recreate the connection to that service.
 
-## <a name="bkmk_secondary"></a> Secondary sites
+## Secondary sites
 
 The following prerequisites are for installing secondary sites:
 
 - The necessary Windows Server roles, features, and Windows components must be installed. For more information, see [Site system prerequisites](../../../plan-design/configs/site-and-site-system-prerequisites.md#secondary-site-server).
-
 - The administrator who configures the installation of the secondary site in the Configuration Manager console needs role-based administration permissions that are equivalent to the security role of **Infrastructure Administrator** or **Full Administrator**.
-
 - Add the computer account of the parent primary site to the **Administrators** group on the secondary site server.
-
 - When the secondary site uses a previously installed instance of SQL Server to host the secondary site database:
 
   - The computer account of the parent primary site needs **sysadmin** permissions on the instance of SQL Server on the secondary site server.
-
   - The **Local System** account of the secondary site server computer needs **sysadmin** permissions on the instance of SQL Server on the secondary site server.
 
     > [!IMPORTANT]
+    >
     > When Configuration Manager setup finishes, both accounts still need **sysadmin** permissions to SQL Server. Don't remove the sysadmin permissions from these accounts.
-
 - The secondary site server must meet all prerequisite configurations. These configurations include SQL Server and the default site system roles of the management point and distribution point.
 
 ## Next steps

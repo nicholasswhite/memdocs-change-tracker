@@ -1,7 +1,7 @@
 ---
 title: CCM_DTS_PRIORITY enumeration
 description: The CCM_DTS_PRIORITY enumeration indicates the priority of the download.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -27,12 +27,12 @@ typedef enum
 
 ## Members
 
-|Priority flag|Description|
-|-|-|
-|CCM_DTS_PRIORITY_FOREGROUND|The highest priority.|
-|CCM_DTS_PRIORITY_HIGH|High priority.|
-|CCM_DTS_PRIORITY_NORMAL|Normal priority.|
-|CCM_DTS_PRIORITY_LOW|Low priority.|
+| Priority flag | Description |
+| --- | --- |
+| CCM_DTS_PRIORITY_FOREGROUND | The highest priority. |
+| CCM_DTS_PRIORITY_HIGH | High priority. |
+| CCM_DTS_PRIORITY_NORMAL | Normal priority. |
+| CCM_DTS_PRIORITY_LOW | Low priority. |
 
 ## Remarks
 

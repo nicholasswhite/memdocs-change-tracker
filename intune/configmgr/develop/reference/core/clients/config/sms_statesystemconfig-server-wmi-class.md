@@ -1,16 +1,18 @@
 ---
-title: SMS_StateSystemConfig Class
+title: "SMS_StateSystemConfig Server WMI Class"
 description: In Configuration Manager, the SMS_StateSystemConfig WMI class is an SMS Provider server class that specifies how client computers report state messages.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_StateSystemConfig Server WMI Class
+
 The `SMS_StateSystemConfig` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that specifies how client computers report state messages.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,69 +29,67 @@ Class SMS_StateSystemConfig : SMS_ClientAgentConfig_BaseClass
 ```
 
 ## Methods
- The `SMS_StateSystemConfig` class does not define any methods.
+
+The `SMS_StateSystemConfig` class does not define any methods.
 
 ## Properties
- `AgentID`
- Data type: `UInt32`
 
- Access type: Read-only
+`AgentID` Data type: `UInt32`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Identifies the client agent component. The State System Config Agent ID is 16.
+Qualifiers: [key, read]
 
- `BulkSendInterval`
- Data type: `UInt32`
+Identifies the client agent component. The State System Config Agent ID is 16.
 
- Access type: Read/Write
+`BulkSendInterval` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reporting cycle, in minutes, for state messages with normal priority.
+Qualifiers: none
 
- `BulkSendIntervalHigh`
- Data type: `UInt32`
+Reporting cycle, in minutes, for state messages with normal priority.
 
- Access type: Read/Write
+`BulkSendIntervalHigh` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reporting cycle, in minutes, for state messages with high priority.
+Qualifiers: none
 
- `BulkSendIntervalLow`
- Data type: `UInt32`
+Reporting cycle, in minutes, for state messages with high priority.
 
- Access type: Read/Write
+`BulkSendIntervalLow` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reporting cycle, in minutes, for state messages with low priority.
+Qualifiers: none
 
- `CacheCleanoutInterval`
- Data type: `String`
+Reporting cycle, in minutes, for state messages with low priority.
 
- Access type: Read/Write
+`CacheCleanoutInterval` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: none
 
- `CacheMaxAge`
- Data type: `UInt32`
+Reserved for future use.
 
- Access type: Read/Write
+`CacheMaxAge` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Reserved for future use.
+Qualifiers: none
+
+Reserved for future use.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

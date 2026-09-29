@@ -1,7 +1,7 @@
 ---
-title: Prepare for OS deployment
+title: "Prepare for OS deployment in Configuration Manager"
 description: Learn about how to prepare for operating system deployments in Configuration Manager
-ms.date: 02/22/2019
+ms.date: "2019-02-22T00:00:00Z"
 ms.subservice: osd
 ms.topic: install-set-up-deploy
 ms.collection: tier3
@@ -14,21 +14,13 @@ ms.service: configuration-manager
 
 There are several things you must do in Configuration Manager before you can deploy operating systems. Use the following articles to prepare for OS deployment:
 
--   [Manage boot images](manage-boot-images.md)
-
--   [Manage OS images](manage-operating-system-images.md)
-
--   [Manage OS upgrade packages](manage-operating-system-upgrade-packages.md)
-
--   [Manage drivers](manage-drivers.md)
-
--   [Manage user state](manage-user-state.md)
-
--   [Prepare for unknown computer deployments](prepare-for-unknown-computer-deployments.md)
-
--   [Associate users with a destination computer](associate-users-with-a-destination-computer.md)
-
-
+- [Manage boot images](manage-boot-images.md)
+- [Manage OS images](manage-operating-system-images.md)
+- [Manage OS upgrade packages](manage-operating-system-upgrade-packages.md)
+- [Manage drivers](manage-drivers.md)
+- [Manage user state](manage-user-state.md)
+- [Prepare for unknown computer deployments](prepare-for-unknown-computer-deployments.md)
+- [Associate users with a destination computer](associate-users-with-a-destination-computer.md)
 
 ### OS image size
 
@@ -37,7 +29,6 @@ OS images are large in size. For example, the image size for Windows 7 is 3 GB o
 Also make sure that you plan for sufficient disk storage space on the distribution points that host the OS images.
 
 For more information, see [Additional planning considerations for distribution points](prepare-site-system-roles-for-operating-system-deployments.md#additional-planning-considerations-for-distribution-points).
-
 
 ### Client cache size
 

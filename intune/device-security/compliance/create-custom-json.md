@@ -1,25 +1,20 @@
-﻿---
-title: Create a JSON file for custom compliance settings in Microsoft Intune
+---
+title: "Custom compliance JSON files for Microsoft Intune"
 description: Create the JSON file that defines custom settings and values for use with device compliance policies in Intune.
-ms.date: 08/15/2025
+ms.date: "2025-08-15T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: ilwu
 ---
 
 # Custom compliance JSON files for Microsoft Intune
 
-To support [custom settings for compliance](./custom-settings.md) for Microsoft Intune, create a JSON file that identifies the settings and value pairs you want to use for custom compliance. The JSON defines what a discovery script evaluates for compliance on the device.
+To support [custom settings for compliance](custom-settings.md) for Microsoft Intune, create a JSON file that identifies the settings and value pairs you want to use for custom compliance. The JSON defines what a discovery script evaluates for compliance on the device.
 
 Include the JSON file in a compliance policy when you configure a policy to assess custom compliance settings.
 
 ## Requirements
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > - Linux:
 >   - Ubuntu Desktop, version 24.04 LTS or 26.04 LTS
@@ -27,13 +22,10 @@ Include the JSON file in a compliance policy when you configure a policy to asse
 >   - macOS
 > - Windows
 
-:::column-end:::
-:::row-end:::
-
 A correctly formatted JSON file must include the following information:
 
 - **SettingName** - The name of the custom setting to use for base compliance. This name is case-sensitive.
-- **Operator** - Represents a specific action that's used to build a compliance rule. For options, see the list of supported operators in this article.  
+- **Operator** - Represents a specific action that's used to build a compliance rule. For options, see the list of supported operators in this article.
 - **DataType** - The type of data that you can use to build your compliance rule. For options, see the following list of *supported DataTypes*.
 - **Operand** - Represents the values that the operator works on.
 - **MoreInfoURL** - A URL that device users can view and use to learn more about the compliance requirement if their device is noncompliant for a setting. You can also use this URL to link to instructions to help users bring their device into compliance for this setting.
@@ -84,7 +76,7 @@ Your policy can be up to 100 KB and include 100 rules.
 - zh_CN
 - zh_TW
 
-For more information, see [Available languages for Windows](/windows-hardware/manufacture/desktop/available-language-packs-for-windows).
+For more information, see [Available languages for Windows](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows).
 
 ## Example JSON file
 
@@ -154,6 +146,6 @@ For more information, see [Available languages for Windows](/windows-hardware/ma
 
 ## Next steps
 
-- [Use custom compliance settings](./custom-settings.md)
-- [Create a discovery script for custom compliance settings](./create-custom-script.md)
-- [Create a compliance policy](./create-policy.md)
+- [Use custom compliance settings](custom-settings.md)
+- [Create a discovery script for custom compliance settings](create-custom-script.md)
+- [Create a compliance policy](create-policy.md)

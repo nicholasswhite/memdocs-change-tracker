@@ -1,16 +1,18 @@
 ---
-title: SMS_DistributionDPStatus Class
+title: "SMS_DistributionDPStatus Server WMI Class"
 description: The SMS_DistributionDPStatus WMI class is an SMS Provider server class, in Configuration Manager, that represents a status message reported by a distribution point site system role.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DistributionDPStatus Server WMI Class
+
 The `SMS_DistributionDPStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a status message reported by a distribution point site system role.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -48,280 +50,257 @@ Class SMS_DistributionDPStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DistributionDPStatus` class does not define any methods.
+
+The `SMS_DistributionDPStatus` class does not define any methods.
 
 ## Properties
- `GroupCount`
- Data type: `UInt32`
 
- Access type: Read-only
+`GroupCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The number of distribution point groups.
+Qualifiers: [read]
 
- `ID`
- Data type: `UInt64`
+The number of distribution point groups.
 
- Access type: Read-only
+`ID` Data type: `UInt64`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Distribution point ID. This value is stored in the database.
+Qualifiers: [key, read]
 
- `InsString1`
- Data type: `String`
+Distribution point ID. This value is stored in the database.
 
- Access type: Read-only
+`InsString1` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 1.
+Qualifiers: [read]
 
- `InsString10`
- Data type: `String`
+Inserted string 1.
 
- Access type: Read-only
+`InsString10` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 10.
+Qualifiers: [read]
 
- `InsString2`
- Data type: `String`
+Inserted string 10.
 
- Access type: Read-only
+`InsString2` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 2.
+Qualifiers: [read]
 
- `InsString3`
- Data type: `String`
+Inserted string 2.
 
- Access type: Read-only
+`InsString3` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 3.
+Qualifiers: [read]
 
- `InsString4`
- Data type: `String`
+Inserted string 3.
 
- Access type: Read-only
+`InsString4` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 4.
+Qualifiers: [read]
 
- `InsString5`
- Data type: `String`
+Inserted string 4.
 
- Access type: Read-only
+`InsString5` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 5.
+Qualifiers: [read]
 
- `InsString6`
- Data type: `String`
+Inserted string 5.
 
- Access type: Read-only
+`InsString6` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 6.
+Qualifiers: [read]
 
- `InsString7`
- Data type: `String`
+Inserted string 6.
 
- Access type: Read-only
+`InsString7` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 7.
+Qualifiers: [read]
 
- `InsString8`
- Data type: `String`
+Inserted string 7.
 
- Access type: Read-only
+`InsString8` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 8.
+Qualifiers: [read]
 
- `InsString9`
- Data type: `String`
+Inserted string 8.
 
- Access type: Read-only
+`InsString9` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Inserted string 9.
+Qualifiers: [read]
 
- `IsPeerDP`
- Data type: `Boolean`
+Inserted string 9.
 
- Access type: Read-only
+`IsPeerDP` Data type: `Boolean`
 
- Qualifiers: [read]
+Access type: Read-only
 
- `true` if this is a branch distribution point.
+Qualifiers: [read]
 
- `LastStatusID`
- Data type: `UInt64`
+`true` if this is a branch distribution point.
 
- Access type: Read-only
+`LastStatusID` Data type: `UInt64`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last status ID.
+Qualifiers: [read]
 
- `LastUpdateDate`
- Data type: `DateTime`
+Last status ID.
 
- Access type: Read-only
+`LastUpdateDate` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date of the last status update.
+Qualifiers: [read]
 
- `MessageCategory`
- Data type: `UInt32`
+Date of the last status update.
 
- Access type: Read-only
+`MessageCategory` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Status message category.
+Qualifiers: [read]
 
- `MessageFullID`
- Data type: `UInt32`
+Status message category.
 
- Access type: Read-only
+`MessageFullID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Status message full ID with severity.
+Qualifiers: [read]
 
- `MessageID`
- Data type: `UInt32`
+Status message full ID with severity.
 
- Access type: Read-only
+`MessageID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Status message ID.
+Qualifiers: [read]
 
- `MessageSeverity`
- Data type: `UInt32`
+Status message ID.
 
- Access type: Read-only
+`MessageSeverity` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Status message severity.
+Qualifiers: [enumeration, read]
 
-|Value|Status message severity|
-|-|-|
-|0x40000000|Success|
-|0x80000000|Warning|
-|0xC0000000|Error|
+Status message severity.
 
- `MessageState`
- Data type: `UInt32`
+| Value | Status message severity |
+| --- | --- |
+| 0x40000000 | Success |
+| 0x80000000 | Warning |
+| 0xC0000000 | Error |
 
- Access type: Read-only
+`MessageState` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Message state.
+Qualifiers: [enumeration, read]
 
-|Value|Message state|
-|-|-|
-|1|Success|
-|2|InProgress|
-|3|Error|
+Message state.
 
- `NalPath`
- Data type: `String`
+| Value | Message state |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 3 | Error |
 
- Access type: Read-only
+`NalPath` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Distribution point NALPath.
+Qualifiers: [read]
 
- `Name`
- Data type: `String`
+Distribution point NALPath.
 
- Access type: Read-only
+`Name` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Distribution point name.
+Qualifiers: [read]
 
- `ObjectID`
- Data type: `String`
+Distribution point name.
 
- Access type: Read-only
+`ObjectID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- PackageID or ModelName.
+Qualifiers: [read]
 
- `ObjectTypeID`
- Data type: `UInt32`
+PackageID or ModelName.
 
- Access type: Read-only
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- Secured object class ID.
+Qualifiers: [enumeration, read]
 
-|Value|Object type|
-|-|-|
-|2|SMS_Package|
-|14|SMS_OperatingSystemInstallPackage|
-|18|SMS_ImagePackage|
-|19|SMS_BootImagePackage|
-|23|SMS_DriverPackage|
-|24|SMS_SoftwareUpdatesPackage|
-|31|SMS_Application|
+Secured object class ID.
 
- `PackageID`
- Data type: `String`
+| Value | Object type |
+| --- | --- |
+| 2 | SMS_Package |
+| 14 | SMS_OperatingSystemInstallPackage |
+| 18 | SMS_ImagePackage |
+| 19 | SMS_BootImagePackage |
+| 23 | SMS_DriverPackage |
+| 24 | SMS_SoftwareUpdatesPackage |
+| 31 | SMS_Application |
 
- Access type: Read-only
+`PackageID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Package ID deployed to this distribution point.
+Qualifiers: [read]
 
- `ResourceType`
- Data type: `String`
+Package ID deployed to this distribution point.
 
- Access type: Read-only
+`ResourceType` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Resource type.
+Qualifiers: [read]
 
- `SiteCode`
- Data type: `String`
+Resource type.
 
- Access type: Read-only
+`SiteCode` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Source site for this status.
+Qualifiers: [read]
+
+Source site for this status.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,17 +1,17 @@
 ---
-title: Monitor the Microsoft Tunnel VPN solution for Microsoft Intune
+title: "Monitor Microsoft Tunnel"
 description: Monitor the status of Microsoft Tunnel Gateway, a VPN server that runs on Linux. Microsoft Tunnel enables your Intune managed cloud-based devices to reach your on-premises infrastructure.
-ms.date: 10/14/2024
+ms.date: "2024-10-14T00:00:00Z"
 ms.topic: how-to
 ---
 
 # Monitor Microsoft Tunnel
 
-After installation of Microsoft Tunnel, you can view the server configuration and server health in the [Microsoft Intune admin center].
+After installation of Microsoft Tunnel, you can view the server configuration and server health in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 
 ## Use the admin center UI
 
-Sign in to [Microsoft Intune admin center], and go to **Tenant administration** > **Microsoft Tunnel Gateway** > **Health status**.
+Sign in to [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), and go to **Tenant administration** &gt; **Microsoft Tunnel Gateway** &gt; **Health status**.
 
 Next, select a server and then open the **Health check** tab to view that servers health status metrics. By default, each metric uses predefined threshold values that determine the status. The following metrics [support customization of these thresholds](#manage-health-status-thresholds):
 
@@ -23,50 +23,49 @@ Next, select a server and then open the **Health check** tab to view that server
 Default values for server health metrics:
 
 - **Last check-in** – When the Tunnel Gateway server last checked in with Intune.
+
   - *Healthy* – The last check-in was within the last five minutes.
   - *Unhealthy* – The last check-in was over five minutes ago.
-
 - **Current connections** – The number of unique connections that were active at the last server check-in.
+
   - *Healthy* – There were 4,990 or fewer connections
   - *Unhealthy* – There were more than 4,990 active connections
-
 - **Throughput** – The megabits bits per second of traffic passing through the Tunnel Gateway NIC at the last server check-in.
-
 - **CPU usage** – The average CPU use by the Tunnel Gateway server every five minutes.
+
   - *Healthy* - 95% or less
   - *Warning* - 96% to 99%
   - *Unhealthy* - 100% use
-
 - **CPU cores** – The number of CPU cores available on this server.
+
   - *Healthy* - 4 or more cores
   - *Warning* - 1, 2, or 3 cores
   - *Unhealthy* -0 cores
-
 - **Memory usage** – The average memory use by the Tunnel Gateway server every 5 minutes.
+
   - *Healthy* - 95% or less
   - *Warning* - 96% to 99%
   - *Unhealthy* - 100% use
-
 - **Disk space usage** – The amount of disk space that the Tunnel Gateway server uses.
+
   - *Healthy* - Above 5 GB
   - *Warning* - 3-5 GB
   - *Unhealthy* - Below 3 GB
-
 - **Latency** – The average amount of time it takes for IP packets to arrive and then exit the network interface.
+
   - *Healthy* - Less than 10 milliseconds
   - *Warning* - 10 milliseconds to 20 milliseconds
   - *Unhealthy* - More than 20 milliseconds
-
 - **Management agent certificate** – The management agent certificate is used by Tunnel Gateway to authenticate with Intune so it's important to renew it before it expires. However, it should automatically renew itself.
+
   - *Healthy* - Certificate expiration is more than 30 days away.
   - *Warning* - Certificate expiration is less than 30 days away.
   - *Unhealthy* - Certificate is expired.
-
 - **TLS certificate** - The number of days until the Transport Layer Security (TLS) certificate that secures traffic between clients and the Tunnel Gateway server expires.
+
   - *Healthy* - More than 30 days
   - *Warning* - 30 days or less
   - *Unhealthy* - The certificate is expired
-
 - **TLS certificate revocation** – The Tunnel Gateway attempts to check the revocation status of the Transport Layer Security (TLS) certificate using an Online Certificate Status Protocol (OCSP) or certificate revocation list (CRL) address as defined by the TLS certificate. This check requires the server to have access to the OCSP endpoint or CRL address as defined in the certificate.
 
   - *Healthy* - The TLS certificate isn't revoked.
@@ -76,32 +75,32 @@ Default values for server health metrics:
   Plan to replace a revoked TLS certificate.
 
   To learn more about Online Certificate Status Protocol (OCSP), see [Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol) at wikipedia.org.
+- **Internal network accessibility** – Status from the most recent check of the internal URL. You configure the URL as part of a [Tunnel Site configuration](install.md#to-create-a-site-configuration).
 
-- **Internal network accessibility** – Status from the most recent check of the internal URL. You configure the URL as part of a [Tunnel Site configuration](./install.md#to-create-a-site-configuration).
   - *Healthy* - The server can access the URL specified in the site properties.
   - *Unhealthy* - The server can't access the URL specified in the site properties.
   - *Unknown* - This status appears when you haven't set a URL in the site properties. This status doesn’t affect the overall status of the site.
-
 - **Upgradeability** – The ability of the server to contact the Microsoft Container Repository, which permits Tunnel Gateway to upgrade when versions become available.
+
   - *Healthy* - Server hasn't contacted the Microsoft Container Repository within the last 5 minutes.
   - *Unhealthy* - Server hasn't contacted the Microsoft Container Repository for more than 5 minutes.
-
 - **Server version** - The status of the Tunnel Gateway Server software, in relation to the most recent version.
+
   - *Healthy* - Up to date with the most recent software version
   - *Warning* - One version behind
   - *Unhealthy* - Two or more versions behind, and out of support
 
-  When *Server version* isn’t *Healthy*, plan to [install upgrades for Microsoft Tunnel](./upgrade.md).
-
+  When *Server version* isn’t *Healthy*, plan to [install upgrades for Microsoft Tunnel](upgrade.md).
 - **Server container** – Determines if the container hosting the Microsoft Tunnel server is running.
+
   - *Healthy* - Server container status is healthy.
   - *Unhealthy* - Server container status isn't healthy.
-
 - **Server configuration** – Determines if the server configuration is applied successfully to the Tunnel server from Microsoft Intune site settings.
+
   - *Healthy* - Server configuration was successfully applied.
   - *Unhealthy* - Server configuration couldn't be applied.
-
 - **Server logs** – Determines if logs have been uploaded to the server within the last 60 minutes.
+
   - *Healthy* - Server logs were uploaded within the last 60 minutes.
   - *Unhealthy* - Server logs haven't been uploaded in the last 60 minutes.
 
@@ -116,23 +115,20 @@ You can customize the following Microsoft Tunnel health status metrics to change
 
 **To modify a metrics threshold value**:
 
-:::image type="content" source="./media/monitor/thresholds.png" alt-text="Screen capture of how to select and configure health status thresholds.":::
+![Screen capture of how to select and configure health status thresholds.](media/monitor/thresholds.png)
 
-1. Sign in to [Microsoft Intune admin center] and go to **Tenant administration** > **Microsoft Tunnel Gateway** > **Health status**.
-
+1. Sign in to [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) and go to **Tenant administration** &gt; **Microsoft Tunnel Gateway** &gt; **Health status**.
 2. Select **Configure thresholds**.
-
 3. On the *Configured thresholds* page, set new thresholds for each health check category that you want to customize.
+
    - Threshold values apply to all servers at all sites.
    - Select **Revert to default** to restore *all* thresholds back to their default values.
-
 4. Select **Save**.
-
 5. On the Health status pane, select **Refresh** to update the status of all servers based on the customized threshold values.
 
 After you modify thresholds, the values on a servers *Health check* tab automatically update to reflect its status, based on the current thresholds.
 
-:::image type="content" source="./media/monitor/server-health-check.png" alt-text="Screen capture of a servers Health check view.":::
+![Screen capture of a servers Health check view.](media/monitor/server-health-check.png)
 
 ## Health status trends for Tunnel servers
 
@@ -149,17 +145,15 @@ The health status trend charts are available for the following metrics:
 
 To view trend charts:
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Go to **Tenant administration** > **Microsoft Tunnel Gateway** > **Health status** > *Select a server*, and then select **Trends**
-
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Go to **Tenant administration** &gt; **Microsoft Tunnel Gateway** &gt; **Health status** &gt; *Select a server*, and then select **Trends**
 3. Use the **Metric** drop-down to select the metric chart you want to view.
 
 ## Use mst-cli command-line tool
 
 Use the **mst-cli** command-line tool to get information about the Microsoft Tunnel server. This file is added to the Linux server when the Microsoft Tunnel installs. The tool is located at: **/usr/sbin/mst-cli**.
 
-For more information and command-line examples, see [mst-cli command-line tool for Microsoft Tunnel](./ref-file-commands.md#mst-cli-command-line-tool-for-microsoft-tunnel-gateway).
+For more information and command-line examples, see [mst-cli command-line tool for Microsoft Tunnel](ref-file-commands.md#mst-cli-command-line-tool-for-microsoft-tunnel-gateway).
 
 ## View Microsoft Tunnel logs
 
@@ -177,7 +171,8 @@ Microsoft Tunnel logs information to the Linux server logs in the *syslog* forma
   - *Feb 25 16:37:56 MSTunnelTest-VM ocserv-access[9528]: ACCESS_LOG,41150dc4-238x-4dwv-9q89-55e987f30c32,f5132455-ef2dd-225a-a693-afbbqed482dce,tcp,169.254.54.149:49462,10.88.0.5:80,112,60,10*
 
   > [!IMPORTANT]
-  > In **ocserv-access**, the *deviceId* value identifies the unique installation instance of Microsoft Defender that runs on a device, and does not identify either the Intune device ID or Microsoft Entra device ID. If Defender is uninstalled and then reinstalled on a device, a new instance for the *DeviceId** is generated.
+  >
+  > In **ocserv-access**, the *deviceId* value identifies the unique installation instance of Microsoft Defender that runs on a device, and does not identify either the Intune device ID or Microsoft Entra device ID. If Defender is uninstalled and then reinstalled on a device, a new instance for the *DeviceId*\* is generated.
 
   To enable access logging:
 
@@ -186,7 +181,6 @@ Microsoft Tunnel logs information to the Linux server logs in the *syslog* forma
   3. Run `mst-cli server restart` to restart the server.
 
   If access logs are too noisy, you can turn off DNS connection logging by setting TRACE_SESSIONS=1 and restarting the server.
-
 - **OCSERV_TELEMETRY** - Display telemetry details for connections to Tunnel.
 
   Telemetry logs have the following format, with the values for *bytes_in*, *bytes_out*, and *duration* being used only for disconnect operations: `<operation><client_ip><server_ip><gateway_ip><assigned_ip><user_id><device_id><user_agent><bytes_in><bytes_out><duration>` For example:
@@ -194,7 +188,8 @@ Microsoft Tunnel logs information to the Linux server logs in the *syslog* forma
   - *Oct 20 19:32:15 mstunnel ocserv[4806]: OCSERV_TELEMETRY,connect,31258,73.20.85.75,172.17.0.3,169.254.0.1,169.254.107.209,3780e1fc-3ac2-4268-a1fd-dd910ca8c13c, 5A683ECC-D909-4E5F-9C67-C0F595A4A70E,MobileAccess iOS 1.1.34040102*
 
   > [!IMPORTANT]
-  > In **OCSERV_TELEMETRY**, the *deviceId* value identifies the unique installation instance of Microsoft Defender that runs on a device, and does not identify either the Intune device ID or Microsoft Entra device ID. If Defender is uninstalled and then reinstalled on a device, a new instance for the *DeviceId** is generated.
+  >
+  > In **OCSERV_TELEMETRY**, the *deviceId* value identifies the unique installation instance of Microsoft Defender that runs on a device, and does not identify either the Intune device ID or Microsoft Entra device ID. If Defender is uninstalled and then reinstalled on a device, a new instance for the *DeviceId*\* is generated.
 
 Command line examples for *journalctl*:
 
@@ -207,8 +202,7 @@ More options for *journalctl*:
 
 - `journalctl -h` – Display command help for *journalctl*.
 - `man journalctl` – Display additional information.
-- `man journalctl.conf` Display information on configuration
-For more information about *journalctl*, see the documentation for the version of Linux that you use.
+- `man journalctl.conf` Display information on configuration For more information about *journalctl*, see the documentation for the version of Linux that you use.
 
 ## Easy upload of diagnostic logs for Tunnel servers
 
@@ -218,8 +212,7 @@ You can collect and upload verbose logs from an event before opening a support i
 
 **To use this capability**:
 
-1. Open the [Microsoft Intune admin center] go to **Tenant administration** > **Microsoft Tunnel Gateway** > select a *server* > and then select the **Logs** tab.
-
+1. Open the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) go to **Tenant administration** &gt; **Microsoft Tunnel Gateway** &gt; select a *server* &gt; and then select the **Logs** tab.
 2. On the *Logs* tab, locate the *Send verbose server logs* section and select **Send logs**.
 
 When you select *Send logs* for a Tunnel server, the following process begins:
@@ -236,7 +229,7 @@ Each set of logs that Intune collects and uploads is identified as a separate se
 - The log sets *verbosity level*
 - The log collection *status* (completed, failed, or in progress)
 
-:::image type="content" source="./media/monitor/send-server-logs-tab.png" alt-text="Screen capture that shows the Send verbose server logs interface.":::
+![Screen capture that shows the Send verbose server logs interface.](media/monitor/send-server-logs-tab.png)
 
 After you reproduce an issue during verbose log collection phase, Microsoft can use the collected logs to investigate it.
 
@@ -259,17 +252,18 @@ The following are known issues for Microsoft Tunnel.
 
 ### Server health
 
-#### Clients can successfully use the Tunnel when Server health status shows as offline<!-- 14878305 -->
+#### Clients can successfully use the Tunnel when Server health status shows as offline
 
-**Issue**: On the [Tunnel *Health status* tab](./monitor.md), a server’s health status reports as offline indicating that it's disconnected, even though users can reach the tunnel server and connect to the organization’s resources.
+**Issue**: On the [Tunnel *Health status* tab](monitor.md), a server’s health status reports as offline indicating that it's disconnected, even though users can reach the tunnel server and connect to the organization’s resources.
 
 **Solution**: To resolve this issue, you must reinstall Microsoft Tunnel, which re-enrolls the Tunnel server agent with Intune. To prevent this issue, install updates for the Tunnel agent and server soon after they're released. Use the Tunnel server health metrics in the Microsoft Intune admin center to monitor server health.
 
-#### With Podman, you see “Error executing checkup” in the mstunnel_monitor log<!-- 14878316 -->
+#### With Podman, you see “Error executing checkup” in the mstunnel_monitor log
 
-**Issue**: Podman fails to identify or see the active containers are running, and reports “Error executing checkup” in the [mstunnel_monitor log](./monitor.md#view-microsoft-tunnel-logs) of the Tunnel server. The following are examples of the errors:
+**Issue**: Podman fails to identify or see the active containers are running, and reports “Error executing checkup” in the [mstunnel_monitor log](#view-microsoft-tunnel-logs) of the Tunnel server. The following are examples of the errors:
 
 - Agent:
+
   ```
   Error executing Checkup
   Error details
@@ -280,8 +274,8 @@ The following are known issues for Microsoft Tunnel.
   \t\t<> MonitorServices /usr/sbin/mst-cli Message: Failure starting service mstunnel-agent
   \t\t<> main /usr/sbin/mstunnel_monitor Message: NA
   ```
-
 - Server:
+
   ```
   Error executing Checkup
   Error details
@@ -295,7 +289,7 @@ The following are known issues for Microsoft Tunnel.
 
 **Solution**: To resolve this issue, manually [restart the Podman containers](https://docs.podman.io/en/latest/markdown/podman-restart.1.html). Podman should then be able to identify the containers. If the problem persists, or returns, consider using ***cron*** to create a job that automatically restarts the containers when this issue is seen.
 
-#### With Podman, you see System.DateTime errors in the mstunnel-agent log<!-- 14878334 -->
+#### With Podman, you see System.DateTime errors in the mstunnel-agent log
 
 **Issue**: When you use Podman, the mstunnel-agent log might contain errors similar to the following entries:
 
@@ -320,8 +314,4 @@ If this issue persists, consider automating the restart command by using the cro
 
 ## Related content
 
-[Reference for Microsoft Tunnel](./ref-file-commands.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+[Reference for Microsoft Tunnel](ref-file-commands.md)

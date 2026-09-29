@@ -1,7 +1,7 @@
 ---
-title: Surface Hub Windows 10 Team device restrictions in Microsoft Intune
+title: "Windows 10 Team settings to allow or restrict features on Surface Hub devices using Intune"
 description: Add or configure Surface Hub devices settings running Windows 10 Team. Add a wake-up screen, create a maintenance window, use Miracast, and more in Microsoft Intune.
-ms.date: 10/14/2025
+ms.date: "2025-10-14T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mikedano
 ROBOTS: NOINDEX, NOFOLLOW
@@ -10,18 +10,19 @@ ROBOTS: NOINDEX, NOFOLLOW
 # Windows 10 Team settings to allow or restrict features on Surface Hub devices using Intune
 
 > [!IMPORTANT]
-> [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
+>
+> On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
-This article describes some of the Microsoft Intune device restrictions settings that you can configure for Surface Hub devices running [Windows 10 Team](/surface-hub/differences-between-surface-hub-and-windows-10-enterprise).
+This article describes some of the Microsoft Intune device restrictions settings that you can configure for Surface Hub devices running [Windows 10 Team](https://learn.microsoft.com/en-us/surface-hub/differences-between-surface-hub-and-windows-10-enterprise).
 
 ## Before you begin
 
-- Create a [Windows 10 Teams device restrictions configuration profile](./configure-device-restrictions.md#create-the-profile).
-- [!INCLUDE [not-all-settings-are-documented](../includes/not-all-settings-are-documented.md)]
+- Create a [Windows 10 Teams device restrictions configuration profile](configure-device-restrictions.md#create-the-profile).
+- Intune might support more settings than the settings listed in this article. Not all settings are documented, and won't be documented. To see the settings you can configure, create a device configuration policy, and select **Settings catalog**. For more information, go to [settings catalog](../settings-catalog/index.md).
 
 ## Apps and experience
 
-These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehub-csp).
+These settings use the [SurfaceHub CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/surfacehub-csp).
 
 - **Wake screen when someone in room**: **Block** prevents the screen from waking automatically when its sensor detects someone in the room. When set to **Not configured** (default), Intune doesn't change or update this setting.
 - **Meeting information displayed on welcome screen**: Select the information that shows on the Meetings tile of the Welcome screen. Your options:
@@ -41,7 +42,7 @@ These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehu
 
 ## Maintenance
 
-These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehub-csp).
+These settings use the [SurfaceHub CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/surfacehub-csp).
 
 - **Maintenance window for updates**: **Enable** creates a maintenance window when updates can be installed. Enter the maintenance window **Start time**, and the **Duration in hours**, from 1-5 hours.
 
@@ -49,7 +50,7 @@ These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehu
 
 ## Session
 
-These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehub-csp).
+These settings use the [SurfaceHub CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/surfacehub-csp).
 
 - **Volume**: Enter the default volume value for a new session, from 0-100. When left blank, Intune doesn't change or update this setting. By default, the OS might set the volume to 45.
 - **Screen timeout**: Enter the number of minutes until the Hub screen turns off.
@@ -59,7 +60,7 @@ These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehu
 
 ## Wireless projection
 
-These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehub-csp).
+These settings use the [SurfaceHub CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/surfacehub-csp).
 
 - **PIN for wireless projection**: **Require** forces users to enter a PIN before using the wireless projection features on the device. When set to **Not configured** (default), Intune doesn't change or update this setting.
 - **Miracast wireless projection**: **Block** prevents using Miracast-enabled devices to project. When set to **Not configured** (default), Intune doesn't change or update this setting.
@@ -67,6 +68,5 @@ These settings use the [SurfaceHub CSP](/windows/client-management/mdm/surfacehu
 
 ## Related articles
 
-- [Create a device restriction configuration profile](./configure-device-restrictions.md).
-
+- [Create a device restriction configuration profile](configure-device-restrictions.md).
 - [Assign the profile](../assign-device-profile.md), and [monitor its status](../monitor-device-profile.md).

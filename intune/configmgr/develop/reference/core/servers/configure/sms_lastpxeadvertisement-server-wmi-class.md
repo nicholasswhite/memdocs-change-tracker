@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the last PXE advertisement using the SMS_LastPXEAdvertisement class in Configuration Manager.
-title: SMS_LastPXEAdvertisement Class
-ms.date: 09/20/2016
+title: "SMS_LastPXEAdvertisement Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_LastPXEAdvertisement Server WMI Class
+
 The `SMS_LastPXEAdvertisement` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the last PXE advertisement.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,60 +28,59 @@ Class SMS_LastPXEAdvertisement : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_LastPXEAdvertisement` class does not define any methods.
+
+The `SMS_LastPXEAdvertisement` class does not define any methods.
 
 ## Properties
- `AdvertisementID`
- Data type: `String`
 
- Access type: Read/Write
+`AdvertisementID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The advertisement ID.
+Qualifiers: none
 
- `LastPXEAdvertisementTime`
- Data type: `DateTime`
+The advertisement ID.
 
- Access type: Read/Write
+`LastPXEAdvertisementTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The time of last PXE advertisement for this equipment.
+Qualifiers: none
 
- `NetbiosName`
- Data type: `String`
+The time of last PXE advertisement for this equipment.
 
- Access type: Read/Write
+`NetbiosName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The NETBIOS name for the resource, which is often the same as the host name.
+Qualifiers: none
 
- `ResourceId`
- Data type: `UInt32`
+The NETBIOS name for the resource, which is often the same as the host name.
 
- Access type: Read/Write
+`ResourceId` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Key of the item.
+Qualifiers: [key]
 
- `SMBIOSGUID`
- Data type: `String`
+Key of the item.
 
- Access type: Read/Write
+`SMBIOSGUID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The GUID of the BIOS.
+Qualifiers: none
+
+The GUID of the BIOS.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

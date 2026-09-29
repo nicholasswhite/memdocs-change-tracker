@@ -1,16 +1,18 @@
 ---
 description: Learn how to use Configuration Manager RequestWipe Windows Management Instrumentation (WMI) class method to remove Microsoft Exchange and Configuration Manager software from the mobile device or Exchange ActiveSync device.
-title: RequestWipe Method
-ms.date: 09/20/2016
+title: "RequestWipe Method in Class SMS_DeviceMethods"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # RequestWipe Method in Class SMS_DeviceMethods
+
 The `RequestWipe` Windows Management Instrumentation (WMI) class method, in Configuration Manager, removes Microsoft Exchange and Configuration Manager software from the mobile device or Exchange ActiveSync device.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,26 +24,27 @@ SInt32 RequestWipe(
 ```
 
 #### Parameters
- `ResourceId`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`ResourceId` Data type: `UInt32`
 
- ID of the resource to remove software from.
+Qualifiers: [in]
 
- `EASIdentities`
- Data type: `String` Array
+ID of the resource to remove software from.
 
- Qualifiers: [in]
+`EASIdentities` Data type: `String` Array
 
- Array of Exchange ActiveSync identities.
+Qualifiers: [in]
+
+Array of Exchange ActiveSync identities.
 
 ## Return Values
- An `SInt32`data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32`data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## See Also
- [SMS_DeviceMethods Server WMI Class](../../../develop/reference/mdm/sms_devicemethods-server-wmi-class.md)
+
+[SMS_DeviceMethods Server WMI Class](sms_devicemethods-server-wmi-class.md)

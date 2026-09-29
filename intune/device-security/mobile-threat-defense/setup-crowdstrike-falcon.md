@@ -1,7 +1,7 @@
 ---
-title: Set up CrowdStrike Falcon for Mobile integration with Intune
+title: "Integrate CrowdStrike Falcon for Mobile with Microsoft Intune"
 description: How to set up CrowdStrike Falcon Threat Defense with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 02/12/2025
+ms.date: "2025-02-12T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -26,7 +26,6 @@ Before starting the process of integrating CrowdStrike Falcon with Intune, make 
   - Access the directory as the signed-in user
   - Read directory data
   - Send device information to Intune
-
 - Admin credentials to access the CrowdStrike Falcon for Mobile console.
 
 ### CrowdStrike Falcon app authorization
@@ -34,11 +33,8 @@ Before starting the process of integrating CrowdStrike Falcon with Intune, make 
 The CrowdStrike Falcon app authorization process consists of the following steps:
 
 - Allow the CrowdStrike Falcon for Mobile service to communicate information related to device health state back to Intune.
-
 - CrowdStrike Falcon syncs with Microsoft Entra Enrollment Group membership to populate its device's database.
-
 - Allow the CrowdStrike Falcon for Mobile console to use Microsoft Entra single sign-on (SSO).
-
 - Allow the CrowdStrike Falcon app to sign in using Microsoft Entra SSO.
 
 ## Set up CrowdStrike Falcon for Mobile integration
@@ -47,4 +43,4 @@ CrowdStrike documents the integration steps at [Integrating Falcon for Mobile wi
 
 ## Related content
 
-- [Set up CrowdStrike Falcon apps](./assign-apps.md)
+- [Set up CrowdStrike Falcon apps](assign-apps.md)

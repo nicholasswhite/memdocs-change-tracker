@@ -1,7 +1,7 @@
 ---
 description: Learn how to represent a summary for a given software update in given software updates deployment in Configuration Manager.
-title: "SMS_UpdateDeploymentSummary Class"
-ms.date: "09/20/2016"
+title: "SMS_UpdateDeploymentSummary Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -9,14 +9,16 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # SMS_UpdateDeploymentSummary Server WMI Class
-The `SMS_UpdateDeploymentSummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a summary for a given software update in given software updates deployment.  
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.  
+The `SMS_UpdateDeploymentSummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a summary for a given software update in given software updates deployment.
 
-## Syntax  
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
-```  
+## Syntax
+
+```
 Class SMS_UpdateDeploymentSummary : SMS_BaseClass  
 {  
       Boolean AssignmentEnabled;  
@@ -36,172 +38,177 @@ Class SMS_UpdateDeploymentSummary : SMS_BaseClass
       UInt32 NumUnknown;  
       DateTime StartTime;  
 };  
-```  
+```
 
-## Methods  
- The `SMS_UpdateDeploymentSummary` class does not define any methods.  
+## Methods
 
-## Properties  
- `AssignmentEnabled`  
- Data type: `Boolean`  
+The `SMS_UpdateDeploymentSummary` class does not define any methods.
 
- Access type: Read-only  
+## Properties
 
- Qualifiers: [read]  
+`AssignmentEnabled`  
+ Data type: `Boolean`
 
- `true` if the assignment is enabled.  
+Access type: Read-only
 
- `AssignmentID`  
- Data type: `UInt32`  
+Qualifiers: [read]
 
- Access type: Read-only  
+`true` if the assignment is enabled.
 
- Qualifiers: [read, key, not_null]  
+`AssignmentID`  
+ Data type: `UInt32`
 
- The ID for the configuration item assignment.  
+Access type: Read-only
 
- `AssignmentName`  
- Data type: `String`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+The ID for the configuration item assignment.
 
- Qualifiers: [read, not_null]  
+`AssignmentName`  
+ Data type: `String`
 
- The name of the configuration item assignment.  
+Access type: Read-only
 
- `AssignmentUniqueID`  
- Data type: `String`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+The name of the configuration item assignment.
 
- Qualifiers: [read, not_null]  
+`AssignmentUniqueID`  
+ Data type: `String`
 
- The unique ID of the configuration item assignment.  
+Access type: Read-only
 
- `CI_ID`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+The unique ID of the configuration item assignment.
 
- Qualifiers: [read, key, not_null]  
+`CI_ID`  
+ Data type: `UInt32`
 
- The ID of the software update configuration item. This ID is only unique for the site.  
+Access type: Read-only
 
- `CollectionID`  
- Data type: `String`  
+Qualifiers: [read, key, not_null]
 
- Access type: Read-only  
+The ID of the software update configuration item. This ID is only unique for the site.
 
- Qualifiers: [read, not_null]  
+`CollectionID`  
+ Data type: `String`
 
- The ID for the collection associated with the update deployment.  
+Access type: Read-only
 
- `CollectionName`  
- Data type: `String`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+The ID for the collection associated with the update deployment.
 
- Qualifiers: [read, not_null]  
+`CollectionName`  
+ Data type: `String`
 
- The name of the collection associated with the update deployment.  
+Access type: Read-only
 
- `IncludeSubCollections`  
- Data type: `Boolean`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+The name of the collection associated with the update deployment.
 
- Qualifiers: [read, not_null]  
+`IncludeSubCollections`  
+ Data type: `Boolean`
 
- This property is deprecated in Configuration Manager.  
+Access type: Read-only
 
- `NumFailed`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+This property is deprecated in Configuration Manager.
 
- Qualifiers: [read, not_null]  
+`NumFailed`  
+ Data type: `UInt32`
 
- Number of computers for which the configuration item installation failed.  
+Access type: Read-only
 
- `NumInstalled`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+Number of computers for which the configuration item installation failed.
 
- Qualifiers: [read, not_null]  
+`NumInstalled`  
+ Data type: `UInt32`
 
- Number of computers for which the configuration item was installed by enforcement.  
+Access type: Read-only
 
- `NumMissing`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+Number of computers for which the configuration item was installed by enforcement.
 
- Qualifiers: [read, not_null]  
+`NumMissing`  
+ Data type: `UInt32`
 
- Number of computers for which the configuration item is missing.  
+Access type: Read-only
 
- `NumNotApplicable`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+Number of computers for which the configuration item is missing.
 
- Qualifiers: [read, not_null]  
+`NumNotApplicable`  
+ Data type: `UInt32`
 
- Number of computers for which the configuration item is not applicable.  
+Access type: Read-only
 
- `NumPresent`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+Number of computers for which the configuration item is not applicable.
 
- Qualifiers: [read, not_null]  
+`NumPresent`  
+ Data type: `UInt32`
 
- Number of computers for which the configuration item is already installed.  
+Access type: Read-only
 
- `NumTotal`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+Number of computers for which the configuration item is already installed.
 
- Qualifiers: [read, not_null]  
+`NumTotal`  
+ Data type: `UInt32`
 
- Total number of computers in the collection.  
+Access type: Read-only
 
- `NumUnknown`  
- Data type: `UInt32`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+Total number of computers in the collection.
 
- Qualifiers: [read, not_null]  
+`NumUnknown`  
+ Data type: `UInt32`
 
- Number of computers for which the state of the configuration item is unknown.  
+Access type: Read-only
 
- `StartTime`  
- Data type: `DateTime`  
+Qualifiers: [read, not_null]
 
- Access type: Read-only  
+Number of computers for which the state of the configuration item is unknown.
 
- Qualifiers: [read]  
+`StartTime`  
+ Data type: `DateTime`
 
- The date and time when the assignment was initially offered.  
+Access type: Read-only
 
-## Remarks  
- Class qualifiers for this class include:  
+Qualifiers: [read]
 
-- Secured  
+The date and time when the assignment was initially offered.
 
-- Read (read-only)  
+## Remarks
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).  
+Class qualifiers for this class include:
 
-## Requirements  
+- Secured
+- Read (read-only)
 
-### Runtime Requirements  
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).  
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-### Development Requirements  
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).  
+## Requirements
 
-## See Also  
- [About software update deployments](../../sum/about-software-updates-deployments.md)
+### Runtime Requirements
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
+
+### Development Requirements
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
+
+## See Also
+
+[About software update deployments](../../sum/about-software-updates-deployments.md)

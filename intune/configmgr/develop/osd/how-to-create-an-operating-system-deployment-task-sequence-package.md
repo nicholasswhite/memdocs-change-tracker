@@ -1,35 +1,35 @@
 ---
-title: Create an OS Deployment Task Sequence Package
+title: "How to Create an Operating System Deployment Task Sequence Package"
 description: creates an instance of the SMS_TaskSequencePackage class. It is advertised to clients who can then run the task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create an Operating System Deployment Task Sequence Package
-You create an operating system deployment task sequence, in Configuration Manager, by creating an instance of the [SMS_TaskSequencePackage](../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md) class. This class derives from the [SMS_Package](../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) class and holds the task sequence. It is advertised to clients who can then run the task sequence. The task sequence is associated with the task sequence package by using the `SMS_TaskSequencePackage` class [SetSequence](../../develop/reference/osd/setsequence-method-in-class-sms_tasksequencepackage.md) method.
 
- You can organize task sequence packages into categories by assigning a category to them with the [SMS_TaskSequence](../../develop/reference/osd/sms_tasksequence-server-wmi-class.md) class *Category* property.
+You create an operating system deployment task sequence, in Configuration Manager, by creating an instance of the [SMS_TaskSequencePackage](../reference/osd/sms_tasksequencepackage-server-wmi-class.md) class. This class derives from the [SMS_Package](../reference/core/servers/configure/sms_package-server-wmi-class.md) class and holds the task sequence. It is advertised to clients who can then run the task sequence. The task sequence is associated with the task sequence package by using the `SMS_TaskSequencePackage` class [SetSequence](../reference/osd/setsequence-method-in-class-sms_tasksequencepackage.md) method.
 
- For more information about creating task sequences, see [How to Create a Task Sequence](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence.md). For more information about task sequence packages, see the [Task Sequencing Object Model](../../develop/osd/operating-system-deployment-task-sequence-object-model.md).
+You can organize task sequence packages into categories by assigning a category to them with the [SMS_TaskSequence](../reference/osd/sms_tasksequence-server-wmi-class.md) class *Category* property.
 
- You advertise a task sequence package in the same way that you advertise a Configuration Manager package `SMS_Package`. For more information, see [How to Create an Advertisement](../../develop/core/servers/configure/how-to-create-an-advertisement.md).
+For more information about creating task sequences, see [How to Create a Task Sequence](how-to-create-an-operating-system-deployment-task-sequence.md). For more information about task sequence packages, see the [Task Sequencing Object Model](operating-system-deployment-task-sequence-object-model.md).
+
+You advertise a task sequence package in the same way that you advertise a Configuration Manager package `SMS_Package`. For more information, see [How to Create an Advertisement](../core/servers/configure/how-to-create-an-advertisement.md).
 
 ### To create a task sequence package
 
-1.  Set up a connection to the SMS Provider. For more information, see [About the SMS Provider in Configuration Manager](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md).
-
-2.  Create an instance of `SMS_TaskSequencePackage`.
-
-3.  Populate the task sequence package properties.
-
-4.  Call the `SMS_TaskSequencePackage` class `SetSequence` method to associate a task sequence (`SMS_TaskSequence`) with the task sequence package.
+1. Set up a connection to the SMS Provider. For more information, see [About the SMS Provider in Configuration Manager](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md).
+2. Create an instance of `SMS_TaskSequencePackage`.
+3. Populate the task sequence package properties.
+4. Call the `SMS_TaskSequencePackage` class `SetSequence` method to associate a task sequence (`SMS_TaskSequence`) with the task sequence package.
 
 ## Example
- The following example method creates a task sequence package (`SMS_TaskSequencePackage`) and associates task sequence (`SMS_TaskSequence`) with it.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method creates a task sequence package (`SMS_TaskSequencePackage`) and associates task sequence (`SMS_TaskSequence`) with it.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub CreateTaskSequencePackage (connection, taskSequence)
@@ -102,41 +102,43 @@ public IResultObject CreateTaskSequencePackage(
 
 ```
 
- This example method has the following parameters:
+This example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`taskSequence`|-   Managed: `IResultObject`<br />-   VBScript: [SWbemObject](/windows/win32/wmisdk/swbemobject)|A valid task sequence `SMS_TaskSequence`|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `taskSequence` | - Managed: `IResultObject` - VBScript: [SWbemObject](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemobject) | A valid task sequence `SMS_TaskSequence` |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Objects overview](../core/understand/configuration-manager-objects-overview.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../../develop/core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md)
- [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../../develop/core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md)
- [How to Create a Task Sequence](../../develop/osd/how-to-create-an-operating-system-deployment-task-sequence.md)
- [Task sequence overview](operating-system-deployment-task-sequences-overview.md)
+
+[Objects overview](../core/understand/configuration-manager-objects-overview.md) [How to Connect to an SMS Provider in Configuration Manager by Using Managed Code](../core/understand/how-to-connect-to-an-sms-provider-by-using-managed-code.md) [How to Connect to an SMS Provider in Configuration Manager by Using WMI](../core/understand/how-to-connect-to-an-sms-provider-in-configuration-manager-by-using-wmi.md) [How to Create a Task Sequence](how-to-create-an-operating-system-deployment-task-sequence.md) [Task sequence overview](operating-system-deployment-task-sequences-overview.md)

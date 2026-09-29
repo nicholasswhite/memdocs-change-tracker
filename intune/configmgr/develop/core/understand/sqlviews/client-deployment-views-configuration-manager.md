@@ -1,7 +1,7 @@
 ---
-title: Client deployment views
+title: "Client deployment views in Configuration Manager"
 description: Views that contain information about the deployment state of Configuration Manager client computers and devices.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -21,15 +21,10 @@ Lists all Configuration Manager clients, by SMSID, and the last client deploymen
 The view can be joined to other views by using the **SMSID**, **FQDN**, **NetBiosName**, and **LastMessageStateID** columns.
 
 - **LastMessageStateID**: The state ID for topic type 800.
-
-- **DeploymentBeginTime**: The last message time when the message's state ID is STATE_STATEID_CLIENT_DEPLOYMENT_STARTED (100), telling the server that the deployment starts. It clears the DeploymentEndTime time.<!-- SCCMDocs#1578 -->
-
+- **DeploymentBeginTime**: The last message time when the message's state ID is STATE_STATEID_CLIENT_DEPLOYMENT_STARTED (100), telling the server that the deployment starts. It clears the DeploymentEndTime time.
 - **DeploymentEndTime**: The last message time when the state ID is STATE_STATEID_CLIENT_DEPLOYMENT_SUCCEEDED (400) or STATE_STATEID_CLIENT_DEPLOYMENT_SUCCEEDED_REBOOT_SUCCEEDED (401). This tells the server that the deployment ends.
-
 - **AssignmentBeginTime**: The time when getting state ID STATE_STATEID_CLIENT_ASSIGNMENT_STARTED (500).
-
 - **AssignmentEndTime**: The time that the assignment was done with ID STATE_STATEID_CLIENT_ASSIGNMENT_SUCCEEDED (700).
-
 - The Configuration Manager states are listed in the **v_StateNames** view.
 
 ### v_DeviceClientDeploymentState
@@ -40,13 +35,11 @@ The view can be joined to other views by using the **DeviceClientID**, **DeviceN
 
 ### v_CombinedDeviceResources
 
-Lists information about all devices in the Configuration Manager site, by machine ID. The columns in this view display information such as the client name, GUID, operating system, assigned site code, domain, the client version and whether the device is a virtual machine.
-This view can be joined to other views by using the **MachineID** column.
+Lists information about all devices in the Configuration Manager site, by machine ID. The columns in this view display information such as the client name, GUID, operating system, assigned site code, domain, the client version and whether the device is a virtual machine. This view can be joined to other views by using the **MachineID** column.
 
 ### v_CP_Machine
 
-Lists information about client push attempts to install the client on computers. Includes the computer name, when the last attempt to install the client occurred, the assigned site code, the number of attempts made, and the current status.
-This view can be joined to other views by using the **MachineID** column.
+Lists information about client push attempts to install the client on computers. Includes the computer name, when the last attempt to install the client occurred, the assigned site code, the number of attempts made, and the current status. This view can be joined to other views by using the **MachineID** column.
 
 ## Client notification views
 
@@ -56,58 +49,47 @@ The client notification views are described in this section.
 
 ### v_BGB_ResTask
 
-List information about the tasks performed on devices by Configuration Manager client notification.
-This view can be joined to other views by using the **ResourceID** column.
+List information about the tasks performed on devices by Configuration Manager client notification. This view can be joined to other views by using the **ResourceID** column.
 
 ### v_BGB_ResTaskPush
 
-Lists information about the tasks deployed by Configuration Manager client notification, including the task ID, deployment ID, and status.
-This view can be joined to other views by using the **ResourceID** column.
+Lists information about the tasks deployed by Configuration Manager client notification, including the task ID, deployment ID, and status. This view can be joined to other views by using the **ResourceID** column.
 
 ### v_BGB_Task
 
-Lists information about all tasks that have been deployed by client notification. This includes the task ID, when the task was created and whether it has expired.
-This view can be joined to other views by using the **TaskID** column.
+Lists information about all tasks that have been deployed by client notification. This includes the task ID, when the task was created and whether it has expired. This view can be joined to other views by using the **TaskID** column.
 
 ### v_BgbMP
 
-List the server name and database IDs of the management points that send out client notifications.
-This view can be joined to other views by using the **ServerName** column.
+List the server name and database IDs of the management points that send out client notifications. This view can be joined to other views by using the **ServerName** column.
 
 ### v_BgbServerCurrent
 
-Lists status information about online and offline clients for each server that sends client notification requests.
-This view can be joined to other views by using the **ServerID** column.
+Lists status information about online and offline clients for each server that sends client notification requests. This view can be joined to other views by using the **ServerID** column.
 
 ### v_ClientAction
 
-Lists information about client notification actions that were taken. This information appears in the **Client Operations** node of the Configuration Manager console.
-This view can be joined to other views by using the **ID** column.
+Lists information about client notification actions that were taken. This information appears in the **Client Operations** node of the Configuration Manager console. This view can be joined to other views by using the **ID** column.
 
 ### v_ClientActionImportance
 
-Lists information about the priority of client notification tasks as shown in the **Client Operations** node of the Configuration Manager console.
-This view can be joined to other views by using the **ClientOperationID** column.
+Lists information about the priority of client notification tasks as shown in the **Client Operations** node of the Configuration Manager console. This view can be joined to other views by using the **ClientOperationID** column.
 
 ### v_ClientActionResult
 
-Lists information about the results of client notification actions that are shown in the **Client Operations** node of the Configuration Manager console.
-This view can be joined to other views by using the **MachineID** column.
+Lists information about the results of client notification actions that are shown in the **Client Operations** node of the Configuration Manager console. This view can be joined to other views by using the **MachineID** column.
 
 ### v_ClientOperationInProcessing
 
-Lists the ID number of client notification operations that are currently being processed.
-It is unlikely that this view will be joined to other views.
+Lists the ID number of client notification operations that are currently being processed. It is unlikely that this view will be joined to other views.
 
 ### v_ClientOperationLinkedObjects
 
-Lists information about objects that are linked to client notification actions.
-It is unlikely that this view will be joined to other views.
+Lists information about objects that are linked to client notification actions. It is unlikely that this view will be joined to other views.
 
 ### v_ClientOperationTargets
 
-Lists information about the computers on which client notification actions took place.
-This view can be joined to other views by using the **MachineID** column.
+Lists information about the computers on which client notification actions took place. This view can be joined to other views by using the **MachineID** column.
 
 ## See also
 

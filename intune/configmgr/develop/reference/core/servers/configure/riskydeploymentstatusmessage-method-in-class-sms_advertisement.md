@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the RiskyDeploymentStatusMessage method to send a warning status message about a user deployment to a risky collection.
-title: RiskyDeploymentStatusMessage Method
-ms.date: 09/20/2016
+title: "RiskyDeploymentStatusMessage Method in Class SMS_Advertisement"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # RiskyDeploymentStatusMessage Method in Class SMS_Advertisement
+
 The `RiskyDeploymentStatusMessage` Windows Management Instrumentation (WMI) class method, in Configuration Manager, sends a warning status message about a user deployment to a risky collection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -25,46 +27,47 @@ SInt32 RiskyDeploymentStatusMessage (
 ```
 
 #### Parameters
- `DeploymentID`
- Data type: `String`
 
- Qualifiers: [in]
+`DeploymentID` Data type: `String`
 
- Deployment ID.
+Qualifiers: [in]
 
- `DeploymentName`
- Data type: `String`
+Deployment ID.
 
- Qualifiers: [in]
+`DeploymentName` Data type: `String`
 
- Name of the deployment.
+Qualifiers: [in]
 
- `PackageID`
- Data type: `String`
+Name of the deployment.
 
- Qualifiers: [in]
+`PackageID` Data type: `String`
 
- Package ID of the deployment.
+Qualifiers: [in]
 
- `CollectionID`
- Data type: `String`
+Package ID of the deployment.
 
- Qualifiers: [in]
+`CollectionID` Data type: `String`
 
- Collection ID of the deployment.
+Qualifiers: [in]
+
+Collection ID of the deployment.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Advertisement Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_advertisement-server-wmi-class.md)
+
+[SMS_Advertisement Server WMI Class](sms_advertisement-server-wmi-class.md)

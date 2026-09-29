@@ -1,7 +1,7 @@
 ---
-title: Using query designer to write report SQL statements
+title: "Using query designer to write report SQL statements for Configuration Manager reports"
 description: Information about using query designer to write report SQL statements for Configuration Manager reports.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: article
 

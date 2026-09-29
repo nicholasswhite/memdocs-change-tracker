@@ -1,7 +1,7 @@
 ---
 title: How to Create an Application with the Script Deployment Type
 description: Use the SDK to create an app with the script deployment type.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,52 +9,47 @@ ms.service: configuration-manager
 ---
 
 # How to Create an Application with the Script Deployment Type
-Applications are new to Configuration Manager.  Prior to Configuration Manager, a package was the basic object that was used to install software.  Now, a more flexible and complete model exists for applications in Configuration Manager.  Software based on this new model is referred to as an application.  Packages still exist in Configuration Manager, but they are defined and behave in much the same manner as packages did in Configuration Manager.
 
- The application model defines a standard set of properties and metadata that is used by the system to manage the lifecycle of the application. As applications are modeled, the application itself can be a building block used to help define other applications in the system. For example, .NET Framework can be defined as an application, and then it can be referenced by a parent application as a dependency that must be present or installed before the parent application is installed.
+Applications are new to Configuration Manager. Prior to Configuration Manager, a package was the basic object that was used to install software. Now, a more flexible and complete model exists for applications in Configuration Manager. Software based on this new model is referred to as an application. Packages still exist in Configuration Manager, but they are defined and behave in much the same manner as packages did in Configuration Manager.
+
+The application model defines a standard set of properties and metadata that is used by the system to manage the lifecycle of the application. As applications are modeled, the application itself can be a building block used to help define other applications in the system. For example, .NET Framework can be defined as an application, and then it can be referenced by a parent application as a dependency that must be present or installed before the parent application is installed.
 
 ## To Create an Application with the Script Deployment Type
- In order to get started with creating an application, the following section defines a simple application and its basic properties.  Assuming that all applications you create are new from the Configuration Manager perspective, then adding a new application into Configuration Manager is relatively straightforward. When applications may already exist, and may have relationships to other applications, either through dependencies or supersedence is more complicated and not covered in the example below.
 
- A simple command-line program that demonstrates how to create the model and persist to the database through the SMS Provider is shown below. As a sample, it contains strings that are hard-coded, and should not be considered a real world application for automating application creation. Additionally, there is minimal error handling. However, this example should be enough to get you started.
+In order to get started with creating an application, the following section defines a simple application and its basic properties. Assuming that all applications you create are new from the Configuration Manager perspective, then adding a new application into Configuration Manager is relatively straightforward. When applications may already exist, and may have relationships to other applications, either through dependencies or supersedence is more complicated and not covered in the example below.
+
+A simple command-line program that demonstrates how to create the model and persist to the database through the SMS Provider is shown below. As a sample, it contains strings that are hard-coded, and should not be considered a real world application for automating application creation. Additionally, there is minimal error handling. However, this example should be enough to get you started.
 
 ### Other references
 
 For more information, see the following blog posts:
 
-- [How to Create a Basic App using the Configuration Manager 2012 Beta 2 SDK](/archive/blogs/one_line_of_code_at_a_time/how-to-create-a-basic-app-using-the-configuration-manager-2012-beta-2-sdk)
-
-- [Adam Meltzer's Configuration Manager blog](/archive/blogs/ameltzer/)
+- [How to Create a Basic App using the Configuration Manager 2012 Beta 2 SDK](https://learn.microsoft.com/en-us/archive/blogs/one_line_of_code_at_a_time/how-to-create-a-basic-app-using-the-configuration-manager-2012-beta-2-sdk)
+- [Adam Meltzer's Configuration Manager blog](https://learn.microsoft.com/en-us/archive/blogs/ameltzer/)
 
 ##### To Create an Application with the Script Deployment Type
 
 1. Initialize the provider connection and ApplicationFactory. (The application factory is a wrapper that makes creating the provider classes a little easier.)
-
 2. Create the application and the deployment type.
-
 3. Persist the application to the provider.
 
    To use this sample, create a new command-line C# application and copy and replace the code shown. You'll need to add references to the five assemblies below are all found in the adminconsole\bin directory:
 
 - AdminUI.AppManFoundation.dll
 
-   A wrapper encapsulating Configuration Manager provider functionality for creating applications.
-
+  A wrapper encapsulating Configuration Manager provider functionality for creating applications.
 - AdminUI.WqlQueryEngine.dll
 
-   The WqlConnectionManager.
-
+  The WqlConnectionManager.
 - Microsoft.ConfigurationManagement.ApplicationManagement.dll
 
-   The core application model, used to serialize/deserialize applications.
-
+  The core application model, used to serialize/deserialize applications.
 - Microsoft.ConfigurationManagement.ApplicationManagement.MsiInstaller.dll
 
-   An implementation of the Windows Installer and Script Deployment Types.
-
+  An implementation of the Windows Installer and Script Deployment Types.
 - Microsoft.ConfigurationManagement.ManagementProvider.dll
 
-   The Configuration Manager managed WMI interface.
+  The Configuration Manager managed WMI interface.
 
   After compiling and running the application, the output for the application will show this output when it is successful.
 
@@ -74,6 +69,7 @@ Successfully saved application.
 The following example method creates an application with the script deployment type and persists into the Configuration Manager database.
 
 > [!NOTE]
+>
 > This code is a sample. It doesn't contain error handling for all cases, nor demonstrate relationships such as dependencies and supersedence. It also doesn't demonstrate creating requirement rules for a deployment type.
 
 ```c#
@@ -221,34 +217,37 @@ namespace ApplicationCreator
 ```
 
 ### Namespaces
- System
 
- System.IO
+System
 
- Microsoft.ConfigurationManagement.AdminConsole.AppManFoundation
+System.IO
 
- Microsoft.ConfigurationManagement.ApplicationManagement
+Microsoft.ConfigurationManagement.AdminConsole.AppManFoundation
 
- Microsoft.ConfigurationManagement.ManagementProvider
+Microsoft.ConfigurationManagement.ApplicationManagement
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- AdminUI.AppManFoundation.dll
 
- AdminUI.WqlQueryEngine.dll
+AdminUI.AppManFoundation.dll
 
- Microsoft.ConfigurationManagement.ApplicationManagement.dll
+AdminUI.WqlQueryEngine.dll
 
- Microsoft.ConfigurationManagement.ApplicationManagement.MsiInstaller.dll
+Microsoft.ConfigurationManagement.ApplicationManagement.dll
 
- Microsoft.ConfigurationManagementProvider.dll
+Microsoft.ConfigurationManagement.ApplicationManagement.MsiInstaller.dll
 
- AdminUI.DcmObjectWrapper.dll
+Microsoft.ConfigurationManagementProvider.dll
 
- DcmObjectModel.dll
+AdminUI.DcmObjectWrapper.dll
 
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+DcmObjectModel.dll
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## See Also
- [SMS_Collection Server WMI Class](../../develop/reference/core/clients/collections/sms_collection-server-wmi-class.md)
+
+[SMS_Collection Server WMI Class](../reference/core/clients/collections/sms_collection-server-wmi-class.md)

@@ -1,57 +1,53 @@
 ---
-title: Read and Write to the Site Control File by Using WMI
+title: "How to Read and Write to the Configuration Manager Site Control File by Using WMI"
 description: In Configuration Manager, you write to the site control file using Windows Management Instrumentation (WMI) by using the `SMS_SiteControlFile` class methods.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Read and Write to the Configuration Manager Site Control File by Using WMI
+
 In Configuration Manager, you write to the site control file using Windows Management Instrumentation (WMI) by using the `SMS_SiteControlFile` class methods.
 
- When writing to the site control file by using WMI, you use a session handle to identify your application. This is used to manage concurrent updates to the file.
+When writing to the site control file by using WMI, you use a session handle to identify your application. This is used to manage concurrent updates to the file.
 
- When you have finished writing to the site control file, you must commit your changes.
+When you have finished writing to the site control file, you must commit your changes.
 
- [SMS_SiteControlFile](../../../develop/reference/core/servers/configure/sms_sitecontrolfile-server-wmi-class.md) has the following methods to manage changes to the site control file.
+[SMS_SiteControlFile](../../reference/core/servers/configure/sms_sitecontrolfile-server-wmi-class.md) has the following methods to manage changes to the site control file.
 
-|Method|Description|
-|------------|-----------------|
-|`CommitSCF`|Applies your changes to the Configuration Manager database.|
-|`RefreshSCF`|Refreshes your in-memory copy of the site control file with any recent changes from the Configuration Manager database.|
-|`GetSessionHandle`|Gets your in-memory copy of the site control file and a session handle. You place the session handle in an `IWbemContext` object that is passed to all `IWbemServices` methods.|
-|`ReleaseSessionHandle`|Releases your in-memory copy of the site control file and any resources associated with your session handle.|
+| Method | Description |
+| --- | --- |
+| `CommitSCF` | Applies your changes to the Configuration Manager database. |
+| `RefreshSCF` | Refreshes your in-memory copy of the site control file with any recent changes from the Configuration Manager database. |
+| `GetSessionHandle` | Gets your in-memory copy of the site control file and a session handle. You place the session handle in an `IWbemContext` object that is passed to all `IWbemServices` methods. |
+| `ReleaseSessionHandle` | Releases your in-memory copy of the site control file and any resources associated with your session handle. |
 
 > [!CAUTION]
->  You should be experienced in managing a site's configuration before using the SMS Provider classes to modify the site configuration. You can cause great harm to a site by changing some configurable items. You should use extreme caution or avoid using the `SMS_SCI_FileDefinition` and `SMS_SCI_SiteDefinition` classes altogether. These classes manage the site control file itself. If you are not careful, you can render the site useless.
+>
+> You should be experienced in managing a site's configuration before using the SMS Provider classes to modify the site configuration. You can cause great harm to a site by changing some configurable items. You should use extreme caution or avoid using the `SMS_SCI_FileDefinition` and `SMS_SCI_SiteDefinition` classes altogether. These classes manage the site control file itself. If you are not careful, you can render the site useless.
 
 ### To write to the site control file
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
-
-2.  Create a `SWbemNameValue` value set to hold your context data.
-
-3.  Get a session handle from `SMS_SiteControlFile` class `GetSessionHandle`.
-
-4.  Add the session handle to your context data.
-
-5.  Call the `SMS_SiteControlFile` object `RefreshSCF` to get the latest copy of the site control file. Use the context data in the call.
-
-6.  Query for the site control file resource you want to update using your context data.
-
-7.  Update the resource using your context data.
-
-8.  Commit your changes to the site control file using the `SMS_SiteControlFile` object `CommitSCF` method.
-
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](sms-provider-fundamentals.md).
+2. Create a `SWbemNameValue` value set to hold your context data.
+3. Get a session handle from `SMS_SiteControlFile` class `GetSessionHandle`.
+4. Add the session handle to your context data.
+5. Call the `SMS_SiteControlFile` object `RefreshSCF` to get the latest copy of the site control file. Use the context data in the call.
+6. Query for the site control file resource you want to update using your context data.
+7. Update the resource using your context data.
+8. Commit your changes to the site control file using the `SMS_SiteControlFile` object `CommitSCF` method.
 9. Call the `SMS_SiteControlFile` object `ReleaseSessionHandle` method to release your session handle.
 
 ## Example
- The following VBScript example access the client agent component of the site control file and creates a dummy property, property list and multi-string list. It then removes the updates that were made. The example demonstrates how to set up the session handle, get the site control file, query the site control file, make updates and commit changes to the site control file.
 
- In the example, the `LocaleID` property is hard-coded to English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../../../develop/reference/core/servers/configure/sms_identification-server-wmi-class.md) `LocaleID` property.
+The following VBScript example access the client agent component of the site control file and creates a dummy property, property list and multi-string list. It then removes the updates that were made. The example demonstrates how to set up the session handle, get the site control file, query the site control file, make updates and commit changes to the site control file.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+In the example, the `LocaleID` property is hard-coded to English (U.S.). If you need the locale for non-U.S. installations, you can get it from the [SMS_Identification Server WMI Class](../../reference/core/servers/configure/sms_identification-server-wmi-class.md) `LocaleID` property.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```vbs
 Sub ReadWriteScf(connection, siteCode)
@@ -247,41 +243,45 @@ End Sub
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`|-   [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`siteCode`|-   `String`|The site code for the Configuration Manager site.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `siteCode` | - `String` | The site code for the Configuration Manager site. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Collections
+System.Collections.Generic
 
- System.Text
+System.Collections
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../servers/configure/role-based-administration.md).
 
 ## See Also
- [Windows Management Instrumentation](/windows/win32/wmisdk/wmi-start-page)
- [About the Configuration Manager Site Control File](../../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Read a Configuration Manager Site Control File Embedded Property List](../../../develop/core/understand/how-to-read-a-configuration-manager-site-control-file-embedded-property-list.md)
+
+[Windows Management Instrumentation](https://learn.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page) [About the Configuration Manager Site Control File](about-the-configuration-manager-site-control-file.md) [How to Read a Configuration Manager Site Control File Embedded Property List](how-to-read-a-configuration-manager-site-control-file-embedded-property-list.md)

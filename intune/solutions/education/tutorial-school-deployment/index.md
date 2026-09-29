@@ -1,7 +1,7 @@
 ---
-title: Introduction to the tutorial for deploying and managing devices in a school
+title: "Tutorial: deploy and manage devices in a school"
 description: Introduction to deployment and management of devices in education environments.
-ms.date: 5/2/2024
+ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 ---
 
@@ -21,6 +21,7 @@ This tutorial is intended for education professionals responsible for deploying 
 This content provides a comprehensive path for schools to deploy and manage new devices with Microsoft Intune. It includes step-by-step information how to manage devices throughout their lifecycle.
 
 > [!NOTE]
+>
 > Depending on your school setup scenario, you may not need to implement all steps.
 
 ## Device lifecycle management
@@ -31,10 +32,10 @@ Microsoft 365 Education provides tools and services that enable simplified manag
 
 Microsoft Intune services include:
 
-- [Microsoft Intune][MEM-1]
-- [Microsoft Intune for Education][INT-1]
-- [Windows Autopilot][MEM-4]
-- [Microsoft Surface Management Portal][MEM-5]
+- [Microsoft Intune](../../../fundamentals/what-is-intune.md)
+- [Microsoft Intune for Education](https://learn.microsoft.com/en-us/intune-education/what-is-intune-for-education)
+- [Windows Autopilot](https://learn.microsoft.com/en-us/autopilot/windows-autopilot)
+- [Microsoft Surface Management Portal](../../../device-management/tools/surface-management-portal.md)
 
 These services are part of the Microsoft 365 stack to help secure access, protect data, and manage risk.
 
@@ -44,7 +45,7 @@ Devices can be managed with Intune, enabling simplified management of multiple d
 
 From enrollment, through configuration and protection, to resetting, Intune helps school IT administrators manage and optimize the devices throughout their lifecycle:
 
-:::image type="content" source="./media/index/device-lifecycle.png" alt-text="The device lifecycle for Intune-managed devices" border="false":::
+![The device lifecycle for Intune-managed devices](media/index/device-lifecycle.png)
 
 - **Enroll:** to enable remote device management, devices must be enrolled in Intune with an account in your Microsoft Entra tenant. Some enrollment methods require an IT administrator to initiate enrollment, while others require students to complete the initial device setup process. This document discusses the facets of various device enrollment methodologies
 - **Configure:** once the devices are enrolled in Intune, applications and settings are applied.
@@ -66,14 +67,4 @@ In the remainder of this tutorial, we discuss the key concepts and benefits of m
 
 Let's begin with the creation and configuration of your Microsoft Entra tenant and Intune environment.
 
-> [!div class="nextstepaction"]
-> [Next: Plan enrollment >](enrollment-planning.md)
-
-<!-- Reference links in article -->
-
-[MEM-1]: ../../../fundamentals/what-is-intune.md
-[MEM-2]: /mem/configmgr/core/understand/introduction
-[MEM-4]: /autopilot/windows-autopilot
-[MEM-5]: ../../../device-management/tools/surface-management-portal.md
-
-[INT-1]: /intune-education/what-is-intune-for-education
+[Next: Plan enrollment &gt;](enrollment-planning.md)

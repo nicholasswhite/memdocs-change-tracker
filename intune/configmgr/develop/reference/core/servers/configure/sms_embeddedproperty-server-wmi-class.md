@@ -1,16 +1,18 @@
 ---
-title: SMS_EmbeddedProperty Class
+title: "SMS_EmbeddedProperty Server WMI Class"
 description:  An SMS Provider that represents a general-purpose embedded property. The property is used by the site control file to define the properties of a site control item.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_EmbeddedProperty Server WMI Class
+
 The `SMS_EmbeddedProperty` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that represents a general-purpose embedded property used by the site control file to define the properties of a site control item.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,74 +28,73 @@ Class SMS_EmbeddedProperty
 ```
 
 ## Methods
- The `SMS_EmbeddedProperty` class doesn't define any methods.
+
+The `SMS_EmbeddedProperty` class doesn't define any methods.
 
 ## Properties
- `ItemType`
- Data type: **String**
 
- Access type: Read-only
+`ItemType` Data type: **String**
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- Property token item, site control file.
+Qualifiers: [key, read]
 
- `PropertyName`
- Data type: **String**
+Property token item, site control file.
 
- Access type: Read/Write
+`PropertyName` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the property. The name is case sensitive and might contain several words, such as "Startup Schedule". The default value is "".
+Qualifiers: None
 
- `Value`
- Data type: **UInt32**
+Name of the property. The name is case sensitive and might contain several words, such as "Startup Schedule". The default value is "".
 
- Access type: Read/Write
+`Value` Data type: **UInt32**
 
- Qualifiers: None
+Access type: Read/Write
 
- A numeric value if the property is numeric. The default value is 0.
+Qualifiers: None
 
- `Value1`
- Data type: **String**
+A numeric value if the property is numeric. The default value is 0.
 
- Access type: Read/Write
+`Value1` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- A string value if the property is a string. The value is a registry data type if the property comes from the system registry. Otherwise, the value is the actual string for the property. The default value is "".
+Qualifiers: None
 
- `Value2`
- Data type: **String**
+A string value if the property is a string. The value is a registry data type if the property comes from the system registry. Otherwise, the value is the actual string for the property. The default value is "".
 
- Access type: Read/Write
+`Value2` Data type: **String**
 
- Qualifiers: None
+Access type: Read/Write
 
- A value to indicate the string value of the property if `Value1` indicates a `REG_SZ` registry data type. The default value is "".
+Qualifiers: None
+
+A value to indicate the string value of the property if `Value1` indicates a `REG_SZ` registry data type. The default value is "".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Embedded
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  Some properties contain multiple property values and store values in both `Value1` and `Value2`. Properties that contain multi-string registry data types use the [SMS_Client_Reg_MultiString_List Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_client_reg_multistring_list-server-wmi-class.md).
+  Some properties contain multiple property values and store values in both `Value1` and `Value2`. Properties that contain multi-string registry data types use the [SMS_Client_Reg_MultiString_List Server WMI Class](sms_client_reg_multistring_list-server-wmi-class.md).
 
   There's no list that defines the properties for each site control item. Property names that contain the word "Reserved" can't be modified.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteControlFile Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolfile-server-wmi-class.md)
- [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteControlFile Server WMI Class](sms_sitecontrolfile-server-wmi-class.md) [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md)

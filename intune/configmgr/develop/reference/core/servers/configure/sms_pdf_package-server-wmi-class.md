@@ -1,16 +1,18 @@
 ---
-title: SMS_PDF_Package Class
+title: "SMS_PDF_Package Server WMI Class"
 description: In Configuration Manager, the SMS_PDF_Package Windows Management Instrumentation class is an SMS Provider server class that represents a package definition file template from which to create an initialized package.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PDF_Package Server WMI Class
+
 The `SMS_PDF_Package` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a package definition file (PDF) template from which to create an initialized package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,128 +33,123 @@ Class SMS_PDF_Package : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_PDF_Package` class.
 
-|Method|Description|
-|------------|-----------------|
-|[GetPDFData Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/getpdfdata-method-in-class-sms_pdf_package.md)|Gets `SMS_Package` and `SMS_Program` objects for a loaded package definition file.|
-|[LoadIconForPDF Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/loadiconforpdf-method-in-class-sms_pdf_package.md)|Imports a required icon for a package definition file.|
-|[LoadPDF Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/loadpdf-method-in-class-sms_pdf_package.md)|Imports a package definition file into the package definition file store.|
-|[ProcessInBox Method in Class SMS_PDF_Package](../../../../../develop/reference/core/servers/configure/processinbox-method-in-class-sms_pdf_package.md)|Imports package definition files from the package definition file inbox.|
+The following table lists the methods in the `SMS_PDF_Package` class.
+
+| Method | Description |
+| --- | --- |
+| [GetPDFData Method in Class SMS_PDF_Package](getpdfdata-method-in-class-sms_pdf_package.md) | Gets `SMS_Package` and `SMS_Program` objects for a loaded package definition file. |
+| [LoadIconForPDF Method in Class SMS_PDF_Package](loadiconforpdf-method-in-class-sms_pdf_package.md) | Imports a required icon for a package definition file. |
+| [LoadPDF Method in Class SMS_PDF_Package](loadpdf-method-in-class-sms_pdf_package.md) | Imports a package definition file into the package definition file store. |
+| [ProcessInBox Method in Class SMS_PDF_Package](processinbox-method-in-class-sms_pdf_package.md) | Imports package definition files from the package definition file inbox. |
 
 ## Properties
- `Icon`
- Data type: `UInt8` Array
 
- Access type: Read/Write
+`Icon` Data type: `UInt8` Array
 
- Qualifiers: [lazy, large]
+Access type: Read/Write
 
- Icon to associate with the package in the Configuration Manager console.
+Qualifiers: [lazy, large]
 
- `IconSize`
- Data type: `UInt32`
+Icon to associate with the package in the Configuration Manager console.
 
- Access type: Read/Write
+`IconSize` Data type: `UInt32`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Size, in bytes, of the icon. The default value is 0.
+Qualifiers: [lazy]
 
- `Language`
- Data type: `String`
+Size, in bytes, of the icon. The default value is 0.
 
- Access type: Read/Write
+`Language` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Language for the package, for example, English.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+Language for the package, for example, English.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the package.
+Qualifiers: None
 
- `PDFFileName`
- Data type: `String`
+Name of the package.
 
- Access type: Read/Write
+`PDFFileName` Data type: `String`
 
- Qualifiers: [SizeLimit("100")]
+Access type: Read/Write
 
- File name of the package definition file. The file name does not include the .sms file name extension.
+Qualifiers: [SizeLimit("100")]
 
- `PDFID`
- Data type: `UInt32`
+File name of the package definition file. The file name does not include the .sms file name extension.
 
- Access type: Read/Write
+`PDFID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique auto-generated ID for the package definition file.
+Qualifiers: [key]
 
- `Publisher`
- Data type: `String`
+Unique auto-generated ID for the package definition file.
 
- Access type: Read/Write
+`Publisher` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Manufacturer of the package.
+Qualifiers: None
 
- `RequiredIconNames`
- Data type: `String` Array
+Manufacturer of the package.
 
- Access type: Read/Write
+`RequiredIconNames` Data type: `String` Array
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Icons still required to be loaded.
+Qualifiers: [lazy]
 
- `Status`
- Data type: `UInt32`
+Icons still required to be loaded.
 
- Access type: Read/Write
+`Status` Data type: `UInt32`
 
- Qualifiers: [lazy, Enumeration]
+Access type: Read/Write
 
- Load status of the package definition file. Possible values are:
+Qualifiers: [lazy, Enumeration]
 
-|Value|Load status|
-|-|-|
-|0|Loaded|
-|1|RequiresIcon|
+Load status of the package definition file. Possible values are:
 
- `Version`
- Data type: `String`
+| Value | Load status |
+| --- | --- |
+| 0 | Loaded |
+| 1 | RequiresIcon |
 
- Access type: Read/Write
+`Version` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Version number of the package.
+Qualifiers: None
+
+Version number of the package.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  This class contains methods that store the package definition file template in the package definition file store and that produce [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) objects and [SMS_Program Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_program-server-wmi-class.md) objects from the template.
+  This class contains methods that store the package definition file template in the package definition file store and that produce [SMS_Package Server WMI Class](sms_package-server-wmi-class.md) objects and [SMS_Program Server WMI Class](sms_program-server-wmi-class.md) objects from the template.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
- [SMS_Program Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_program-server-wmi-class.md)
+
+[SMS_Package Server WMI Class](sms_package-server-wmi-class.md) [SMS_Program Server WMI Class](sms_program-server-wmi-class.md)

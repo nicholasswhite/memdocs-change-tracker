@@ -1,16 +1,18 @@
 ---
-title: SMS_MDMBulkEnrollmentPackages Class
+title: "SMS_MDMBulkEnrollmentPackages Server WMI Class"
 description: The SMS_MDMBulkEnrollmentPackages WMI class is an SMS Provider server class that represents on-premises Mobile Device Management bulk enrollment packages.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_MDMBulkEnrollmentPackages Server WMI Class
-The  `SMS_MDMBulkEnrollmentPackages` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents On-premises Mobile Device Management  (MDM) bulk enrollment packages.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_MDMBulkEnrollmentPackages Server WMI Class
+
+The `SMS_MDMBulkEnrollmentPackages` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents On-premises Mobile Device Management (MDM) bulk enrollment packages.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,107 +33,102 @@ Class SMS_MDMBulkEnrollmentPackages : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_MDMBulkEnrollmentPackages` class.
 
-|Method|Description|
-|------------|-----------------|
-|[ImportForProfile Method in Class SMS_MDMBulkEnrollmentPackages](../../../develop/reference/mdm/importforprofile-method-in-class-sms_mdmbulkenrollmentpackages.md)|Imports an MDM bulk enrollment package for a profile.|
+The following table lists the methods in the `SMS_MDMBulkEnrollmentPackages` class.
+
+| Method | Description |
+| --- | --- |
+| [ImportForProfile Method in Class SMS_MDMBulkEnrollmentPackages](importforprofile-method-in-class-sms_mdmbulkenrollmentpackages.md) | Imports an MDM bulk enrollment package for a profile. |
 
 ## Properties
- `CertificateId`
- Data type: `String`
 
- Access type: Read/Write
+`CertificateId` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique certificate ID, as a GUID.
+Qualifiers: [key]
 
- `CreationTime`
- Data type: `DateTime`
+Unique certificate ID, as a GUID.
 
- Access type: Read-only
+`CreationTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The time the package was created.
+Qualifiers: [read]
 
- `ExpiryTime`
- Data type: `DateTime`
+The time the package was created.
 
- Access type: Read-only
+`ExpiryTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The time the package expires.
+Qualifiers: [read]
 
- `Package_ID`
- Data type: `UInt32`
+The time the package expires.
 
- Access type: Read/Write
+`Package_ID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Package ID.
+Qualifiers: [key]
 
- `PackageName`
- Data type: `String`
+Package ID.
 
- Access type: Read/Write
+`PackageName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Package name.
+Qualifiers: none
 
- `Profile_ID`
- Data type: `uint32`
+Package name.
 
- Access type: Read/Write
+`Profile_ID` Data type: `uint32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Profile ID.
+Qualifiers: [key]
 
- `Profile_UniqueID`
- Data type: `String`
+Profile ID.
 
- Access type: Read/Write
+`Profile_UniqueID` Data type: `String`
 
- Qualifiers: [unique, not_null]
+Access type: Read/Write
 
- Unique ID of the Profile.
+Qualifiers: [unique, not_null]
 
- `ProfileName`
- Data type: `String`
+Unique ID of the Profile.
 
- Access type: Read/Write
+`ProfileName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Profile name.
+Qualifiers: none
 
- `State`
- Data type: `uint32`
+Profile name.
 
- Access type: Read/Write
+`State` Data type: `uint32`
 
- Qualifiers: none
+Access type: Read/Write
 
- State of the package.
+Qualifiers: none
+
+State of the package.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

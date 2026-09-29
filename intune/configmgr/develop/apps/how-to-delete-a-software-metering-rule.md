@@ -1,30 +1,32 @@
 ---
-title: Delete a Software Metering Rule
+title: "How to Delete a Software Metering Rule"
 description: Delete a software metering rule by loading the instance of the rule identified by the software metering rule ID, and calling the delete method.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete a Software Metering Rule
+
 You delete a software metering rule, in Configuration Manager, by loading the instance of the software metering rule that is identified by the software metering rule ID and calling the delete method.
 
 ### To delete a software metering rule
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the software metering rule object by using the [SMS_MeteredProductRule](../../develop/reference/apps/sms_meteredproductrule-server-wmi-class.md) class and a known software metering rule ID.
-
-3.  Delete the software metering rule by using the delete method.
+1. Set up a connection to the SMS Provider.
+2. Load the software metering rule object by using the [SMS_MeteredProductRule](../reference/apps/sms_meteredproductrule-server-wmi-class.md) class and a known software metering rule ID.
+3. Delete the software metering rule by using the delete method.
 
 ## Example
- The following example method shows how to delete a software metering rule by loading an instance of the software metering rule that is identified by the software metering rule ID and calling the delete method.
+
+The following example method shows how to delete a software metering rule by loading an instance of the software metering rule that is identified by the software metering rule ID and calling the delete method.
 
 > [!IMPORTANT]
->  The rule ID corresponds to the value stored in the property `RuleID`. The Configuration Manager console displays a **Rule ID** column, which actually corresponds to the value stored in the property `SecurityID`.
+>
+> The rule ID corresponds to the value stored in the property `RuleID`. The Configuration Manager console displays a **Rule ID** column, which actually corresponds to the value stored in the property `SecurityID`.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -79,38 +81,43 @@ public void DeleteSWMRule(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingSWMRuleID`|-   Managed: `String`<br />-   VBScript: `String`|Identifies a specific software metering rule. In this case, identifies the specific software metering rule that will be deleted.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingSWMRuleID` | - Managed: `String` - VBScript: `String` | Identifies a specific software metering rule. In this case, identifies the specific software metering rule that will be deleted. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [Configuration Manager Software Development Kit](../../develop/core/misc/system-center-configuration-manager-sdk.md)
- [SMS_MeteredProductRule Server WMI Class](../../develop/reference/apps/sms_meteredproductrule-server-wmi-class.md)
+
+[Configuration Manager Software Development Kit](../core/misc/system-center-configuration-manager-sdk.md) [SMS_MeteredProductRule Server WMI Class](../reference/apps/sms_meteredproductrule-server-wmi-class.md)

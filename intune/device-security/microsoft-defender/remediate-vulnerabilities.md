@@ -1,15 +1,15 @@
 ---
-title: Use Intune to remediate vulnerabilities found by Microsoft Defender for Endpoint
+title: "Use Microsoft Intune security tasks to remediate device vulnerabilities identified by Microsoft Defender for Endpoint"
 description: Integrate Microsoft Defender Vulnerability Management with Intune to create security tasks, track remediation, and reduce vulnerability exposure across managed devices.
-ms.date: 04/08/2026
+ms.date: "2026-04-08T00:00:00Z"
 ms.topic: how-to
 ---
 
 # Use Microsoft Intune security tasks to remediate device vulnerabilities identified by Microsoft Defender for Endpoint
 
-When you [integrate Microsoft Defender for Endpoint with Microsoft Intune](./configure-integration.md#connect-defender-for-endpoint-to-intune), you can use Microsoft Defender Vulnerability Management through Intune security tasks. These tasks help Intune admins understand and address current vulnerabilities based on guidance from Defender for Endpoint. This integration enhances the discovery and prioritization of vulnerabilities, improving remediation response times across your environment.
+When you [integrate Microsoft Defender for Endpoint with Microsoft Intune](configure-integration.md#connect-defender-for-endpoint-to-intune), you can use Microsoft Defender Vulnerability Management through Intune security tasks. These tasks help Intune admins understand and address current vulnerabilities based on guidance from Defender for Endpoint. This integration enhances the discovery and prioritization of vulnerabilities, improving remediation response times across your environment.
 
-[Microsoft Defender Vulnerability Management](/defender-vulnerability-management/defender-vulnerability-management) is part of [Microsoft Defender for Endpoint](/defender-endpoint/microsoft-defender-endpoint).
+[Microsoft Defender Vulnerability Management](https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management) is part of [Microsoft Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint).
 
 ## Prerequisites
 
@@ -20,14 +20,14 @@ When you [integrate Microsoft Defender for Endpoint with Microsoft Intune](./con
 
 Intune configurations for Defender for Endpoint:
 
-- Configure a service-to-service connection with Microsoft Defender for Endpoint, and enable the **Microsoft Intune connection** in the Microsoft Defender portal. This connection allows security admins to create Intune security tasks when submitting remediation requests. For setup instructions, see [Connect Microsoft Defender for Endpoint to Intune](./configure-integration.md#connect-defender-for-endpoint-to-intune).
-- Deploy policies to onboard devices to Defender for Endpoint and enable risk assessment. See [Configure Microsoft Defender for Endpoint with Intune](./configure-integration.md).
+- Configure a service-to-service connection with Microsoft Defender for Endpoint, and enable the **Microsoft Intune connection** in the Microsoft Defender portal. This connection allows security admins to create Intune security tasks when submitting remediation requests. For setup instructions, see [Connect Microsoft Defender for Endpoint to Intune](configure-integration.md#connect-defender-for-endpoint-to-intune).
+- Deploy policies to onboard devices to Defender for Endpoint and enable risk assessment. See [Configure Microsoft Defender for Endpoint with Intune](configure-integration.md).
 
 ## How integration works
 
 After you integrate Intune with Defender for Endpoint, Defender Vulnerability Management identifies vulnerabilities on your managed devices.
 
-In the Defender portal, [security admins can review endpoint vulnerabilities](/defender-vulnerability-management/defender-vulnerability-management#remediation-and-tracking) and create Intune security tasks for remediation. These tasks appear in the Intune admin center, where Intune admins can act and remediate issues based on Defender's guidance:
+In the Defender portal, [security admins can review endpoint vulnerabilities](https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management#remediation-and-tracking) and create Intune security tasks for remediation. These tasks appear in the Intune admin center, where Intune admins can act and remediate issues based on Defender's guidance:
 
 - Defender for Endpoint identifies vulnerabilities through scans and assessments.
 - Not all identified vulnerabilities support remediation through Intune; only compatible vulnerabilities result in security tasks.
@@ -73,31 +73,31 @@ Common security task remediations include:
 
 ## Work with security tasks
 
-Before you can manage security tasks in the Intune admin center, a security admin must first create them in the Defender portal. Security admins create tasks by submitting remediation requests through Defender Vulnerability Management. For instructions, see [Remediate vulnerabilities with Microsoft Defender Vulnerability Management](/defender-vulnerability-management/tvm-remediation#request-remediation) in the Defender documentation.
+Before you can manage security tasks in the Intune admin center, a security admin must first create them in the Defender portal. Security admins create tasks by submitting remediation requests through Defender Vulnerability Management. For instructions, see [Remediate vulnerabilities with Microsoft Defender Vulnerability Management](https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-remediation#request-remediation) in the Defender documentation.
 
-[!INCLUDE [manage-admin-tasks](../../includes/manage-admin-tasks.md)]
+> [!TIP]
+>
+> You can also manage these tasks from the centralized [**Admin tasks**](../../governance/admin-tasks.md) pane in the Intune admin center.
 
 To manage security tasks:
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Select **Endpoint security** > **Security tasks**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint security** &gt; **Security tasks**.
 3. Choose a security task to view its details. In the task window, you can select additional links, including:
+
    - MANAGED APPS - View the app that's vulnerable. When the vulnerability applies to multiple apps, Intune displays a filtered list of apps.
    - DEVICES - View a list of the *Vulnerable devices* from which you can link through to an entry with more details for the vulnerability on that device.
    - REQUESTOR - Use the link to send mail to the admin who submitted this security task.
    - NOTES - Read custom messages submitted by the requestor when opening the security task.
-
 4. Select **Accept** or **Reject** to send notification to Defender for Endpoint for your planned action. When you accept or reject a task, you can submit notes, which are sent to Defender for Endpoint.
-
 5. After accepting a task, reopen the security task (if it closed), and follow the REMEDIATION details to remediate the vulnerability. The instructions provided by Defender for Endpoint in the security task details vary depending on the vulnerability involved.
-
 6. After completing the remediation steps, open the security task and select **Complete Task**. This action updates the security task status in both Intune and Defender for Endpoint.
 
 > [!NOTE]
-> Each remediation request in Defender for Endpoint is [limited to 10,000 devices](/defender-vulnerability-management/tvm-remediation#remediation-request-steps). If a vulnerability affects more devices, the resulting security task in Intune covers only 10,000 of them.
+>
+> Each remediation request in Defender for Endpoint is [limited to 10,000 devices](https://learn.microsoft.com/en-us/defender-vulnerability-management/tvm-remediation#remediation-request-steps). If a vulnerability affects more devices, the resulting security task in Intune covers only 10,000 of them.
 
-Successful remediation can reduce the risk exposure score in Defender for Endpoint based on subsequent status updates from the remediated devices. You can [monitor these risk levels](./monitor.md) to track compliance improvements over time.
+Successful remediation can reduce the risk exposure score in Defender for Endpoint based on subsequent status updates from the remediated devices. You can [monitor these risk levels](monitor.md) to track compliance improvements over time.
 
 ## Troubleshooting
 
@@ -110,11 +110,7 @@ If security tasks don't appear in Intune:
 
 ## Next steps
 
-- [Set up the integration](./overview.md) - Complete prerequisites and connect services.
-- [Monitor compliance for risk levels](./monitor.md) - Track device risk scores.
-- [Review Microsoft Defender Vulnerability Management](/defender-vulnerability-management/defender-vulnerability-management) - Understand security recommendations.
+- [Set up the integration](overview.md) - Complete prerequisites and connect services.
+- [Monitor compliance for risk levels](monitor.md) - Track device risk scores.
+- [Review Microsoft Defender Vulnerability Management](https://learn.microsoft.com/en-us/defender-vulnerability-management/defender-vulnerability-management) - Understand security recommendations.
 - [Learn about Mobile Threat Defense](../mobile-threat-defense/overview.md) - Explore other threat protection options for Intune.
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

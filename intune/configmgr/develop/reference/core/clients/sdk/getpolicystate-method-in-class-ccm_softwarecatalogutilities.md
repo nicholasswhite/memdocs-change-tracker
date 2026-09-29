@@ -1,16 +1,18 @@
 ---
-title: GetPolicyState Method
+title: "GetPolicyState Method in Class CCM_SoftwareCatalogUtilities"
 description: A Windows Management Instrumentation (WMI) class method that returns the state of a policy object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetPolicyState Method in Class CCM_SoftwareCatalogUtilities
+
 The `GetPolicyState` Windows Management Instrumentation (WMI) class method in Configuration Manager that returns the state of a policy object.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,45 +26,45 @@ uint32 GetPolicyState
 ```
 
 ## Parameters
- `Id`
- Data type: `String`
 
- Qualifiers: [id("0"), in]
+`Id` Data type: `String`
 
- Unique ID of the policy object.
+Qualifiers: [id("0"), in]
 
- `Status`
- Data type: `UInt32`
+Unique ID of the policy object.
 
- Qualifiers: [id("1"), out]
+`Status` Data type: `UInt32`
 
- Current status.
+Qualifiers: [id("1"), out]
 
- `State`
- Data type: `UInt32`
+Current status.
 
- Qualifiers: [id("2"), out]
+`State` Data type: `UInt32`
 
- Current state of the policy object. Possible values are:
+Qualifiers: [id("2"), out]
 
-|Value|State|
-|-|-|
-|NULL|The policy object is inactive and hasn't been downloaded. This value is the default value.|
-|DownloadPending|The evaluator determines that the policy object needs to be applied and should be downloaded. This state is a temporary one used during the evaluation process.|
-|DownloadStarted|The policy object has been requested from the management point and is in the process of being downloaded.|
-|DownloadComplete|The policy object finished downloading from the management point but hasn't been compiled into WMI yet.|
-|Inactive|The policy object is downloaded and compiled, but has no active assignments.|
-|Applied|The policy object is currently active, but pending revaluation. This state is a temporary one used during the evaluation process. If the evaluation determines that the policy object should no longer be active, its actions must be revoked.|
-|ApplyPending|The policy object is currently inactive, but now has active assignments and actions that should be applied. This state is a temporary one used during the evaluation process.|
-|Active|The policy object is currently active and has been applied.|
-|NotApplicable|The policy object isn't applicable. <br /><br /> This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.|
+Current state of the policy object. Possible values are:
+
+| Value | State |
+| --- | --- |
+| NULL | The policy object is inactive and hasn't been downloaded. This value is the default value. |
+| DownloadPending | The evaluator determines that the policy object needs to be applied and should be downloaded. This state is a temporary one used during the evaluation process. |
+| DownloadStarted | The policy object has been requested from the management point and is in the process of being downloaded. |
+| DownloadComplete | The policy object finished downloading from the management point but hasn't been compiled into WMI yet. |
+| Inactive | The policy object is downloaded and compiled, but has no active assignments. |
+| Applied | The policy object is currently active, but pending revaluation. This state is a temporary one used during the evaluation process. If the evaluation determines that the policy object should no longer be active, its actions must be revoked. |
+| ApplyPending | The policy object is currently inactive, but now has active assignments and actions that should be applied. This state is a temporary one used during the evaluation process. |
+| Active | The policy object is currently active and has been applied. |
+| NotApplicable | The policy object isn't applicable.    This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later. |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

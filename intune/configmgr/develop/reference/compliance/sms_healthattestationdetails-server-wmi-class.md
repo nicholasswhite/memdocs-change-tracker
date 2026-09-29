@@ -1,16 +1,18 @@
 ---
-title: SMS_HealthAttestationDetails Class
+title: "SMS_HealthAttestationDetails Server WMI Class"
 description: The SMS_HealthAttestationDetails Windows Management Instrumentation class is an SMS Provider server class, in Configuration Manager, that represents Health Attestation details.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_HealthAttestationDetails Server WMI Class
+
 The `SMS_HealthAttestationDetails` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents Health Attestation details.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,165 +40,154 @@ Class SMS_HealthAttestationDetails : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_HealthAttestationDetails` class does not define any methods.
+
+The `SMS_HealthAttestationDetails` class does not define any methods.
 
 ## Properties
- `AIKPresent`
- Data type: `UInt32`
 
- Access type: Read/Write
+`AIKPresent` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates whether the Windows Automated Installation Kit (Windows AIK) is present.
+Qualifiers: none
 
- `BitlockerStatus`
- Data type: `SInt32`
+Indicates whether the Windows Automated Installation Kit (Windows AIK) is present.
 
- Access type: Read/Write
+`BitlockerStatus` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The status of BitLocker.
+Qualifiers: none
 
- `BootDebuggingEnabled`
- Data type: `UInt32`
+The status of BitLocker.
 
- Access type: Read/Write
+`BootDebuggingEnabled` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates whether boot debugging is enabled.
+Qualifiers: none
 
- `CertRetrievalStatus`
- Data type: `UInt32`
+Indicates whether boot debugging is enabled.
 
- Access type: Read/Write
+`CertRetrievalStatus` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- The status of the certificate retrieval.
+Qualifiers: none
 
- `CodeIntegrityEnabled`
- Data type: `UInt32`
+The status of the certificate retrieval.
 
- Access type: Read/Write
+`CodeIntegrityEnabled` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates whether code integrity is enabled.
+Qualifiers: none
 
- `DateIssued`
- Data type: `DateTime`
+Indicates whether code integrity is enabled.
 
- Access type: Read/Write
+`DateIssued` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- The date and time that the certificate was issued.
+Qualifiers: none
 
- `DEPPolicy`
- Data type: `UInt64`
+The date and time that the certificate was issued.
 
- Access type: Read/Write
+`DEPPolicy` Data type: `UInt64`
 
- Qualifiers: none
+Access type: Read/Write
 
- The Apple Device Enrollment Program (DEP) policy.
+Qualifiers: none
 
- `DeviceItemKey`
- Data type: `UInt32`
+The Apple Device Enrollment Program (DEP) policy.
 
- Access type: Read/Write
+`DeviceItemKey` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The device key.
+Qualifiers: [key]
 
- `ELAMDriverLoaded`
- Data type: `UInt32`
+The device key.
 
- Access type: Read/Write
+`ELAMDriverLoaded` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies whether the Early-Launch Anti-Malware (ELAM) driver is loaded.
+Qualifiers: none
 
- `HASSupported`
- Data type: `UInt32`
+Specifies whether the Early-Launch Anti-Malware (ELAM) driver is loaded.
 
- Access type: Read/Write
+`HASSupported` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies whether health attestation is supported.
+Qualifiers: none
 
- `OSKernelDebuggingEnabled`
- Data type: `UInt32`
+Specifies whether health attestation is supported.
 
- Access type: Read/Write
+`OSKernelDebuggingEnabled` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Indicates whether operating system kernel debugging is enabled.
+Qualifiers: none
 
- `SafeMode`
- Data type: `UInt32`
+Indicates whether operating system kernel debugging is enabled.
 
- Access type: Read/Write
+`SafeMode` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- `SecureBootEnabled`
- Data type: `UInt32`
+Qualifiers: none
 
- Access type: Read/Write
+`SecureBootEnabled` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies whether secure boot is enabled.
+Qualifiers: none
 
- `TestSigningEnabled`
- Data type: `UInt32`
+Specifies whether secure boot is enabled.
 
- Access type: Read/Write
+`TestSigningEnabled` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies whether test-signing is enabled.
+Qualifiers: none
 
- `VSMEnabled`
- Data type: `UInt32`
+Specifies whether test-signing is enabled.
 
- Access type: Read/Write
+`VSMEnabled` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Specifies whether VSM is enabled.
+Qualifiers: none
 
- `WinPE`
- Data type: `UInt32`
+Specifies whether VSM is enabled.
 
- Access type: Read/Write
+`WinPE` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
+
+Qualifiers: none
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Compliance Settings (DCM) Server WMI Classes](../../../develop/reference/compliance/compliance-settings-dcm-server-wmi-classes.md)
+
+[Configuration Manager Compliance Settings (DCM) Server WMI Classes](compliance-settings-dcm-server-wmi-classes.md)

@@ -1,7 +1,7 @@
 ---
-title: Associate users with a computer
+title: "Associate users with a destination computer in Configuration Manager"
 description: Configure Configuration Manager to associate users with destination computers when deploying operating systems.
-ms.date: 07/17/2025
+ms.date: "2025-07-17T00:00:00Z"
 ms.subservice: osd
 ms.topic: article
 ms.collection: tier3
@@ -23,7 +23,7 @@ There are several methods by which you can integrate user device affinity into y
 > [!NOTE]
 >
 > When integrating user device affinity in OS deployments, the value of the **SMSTSAssignUsersMode** variable needs to match the value configured in the boot method (PXE, bootable media, pre-staged media).
-> 
+>
 > If the values don't match, then device affinity isn't set.
 
 ### Create a task sequence that includes the **SMSTSAssignUsersMode** variable
@@ -31,7 +31,6 @@ There are several methods by which you can integrate user device affinity into y
 Add the **SMSTSAssignUsersMode** variable to the beginning of your task sequence by using the [Set Task Sequence Variable](../understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) step. This variable specifies how the task sequence handles the user information.
 
 For more information, see [Task sequence variables](../understand/task-sequence-variables.md#SMSTSAssignUsersMode).
-
 
 ### Create a prestart command that gathers the user information
 
@@ -41,7 +40,6 @@ This prestart command must set the **SMSTSUDAUsers** variable that's used when t
 
 For more information, see [Task sequence variables](../understand/task-sequence-variables.md#SMSTSUDAUsers).
 
-
 ### Configure how distribution points and media associate the user with the destination computer
 
 The distribution point or media supports associating users with the destination computer where the OS is deployed. Use one of the following methods:
@@ -49,6 +47,5 @@ The distribution point or media supports associating users with the destination 
 - [Configure a distribution point to accept PXE boot requests](prepare-site-system-roles-for-operating-system-deployments.md#configuring-distribution-points-to-accept-pxe-requests)
 - [Create bootable media](../deploy-use/create-bootable-media.md)
 - [Create pre-staged media](../deploy-use/create-prestaged-media.md)
-
 
 Configuring user device affinity support doesn't have a built-in method to validate the user identity. This behavior is important when a technician is provisioning the computer and enters the information on behalf of the user. In addition to setting how task sequence handles the user information, configuring these options on the distribution point and media provides the ability to restrict the deployments that are started from a PXE boot or from a specific type of media.

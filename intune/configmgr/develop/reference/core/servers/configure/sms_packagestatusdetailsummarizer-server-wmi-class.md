@@ -1,16 +1,18 @@
 ---
-title: SMS_PackageStatusDetailSummarizer Class
+title: "SMS_PackageStatusDetailSummarizer Server WMI Class"
 description: In Configuration Manager, the SMS_PackageStatusDetailSummarizer Windows Management Instrumentation class is an SMS Provider server class that lists the distribution summary for a given package for a given site in a hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PackageStatusDetailSummarizer Server WMI Class
+
 The `SMS_PackageStatusDetailSummarizer` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists the distribution summary for a given package for a given site in a hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -31,110 +33,105 @@ Class SMS_PackageStatusDetailSummarizer : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_PackageStatusDetailSummarizer` class does not define any methods.
+
+The `SMS_PackageStatusDetailSummarizer` class does not define any methods.
 
 ## Properties
- `Failed`
- Data type: `UInt32`
 
- Access type: Read/Write
+`Failed` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Total number of distribution points in the site that have exceeded the number of retries allowed during an installation or removal operation and that are currently in a state of installation-failed or retry-failed.
+Qualifiers: None
 
- `Installed`
- Data type: `UInt32`
+Total number of distribution points in the site that have exceeded the number of retries allowed during an installation or removal operation and that are currently in a state of installation-failed or retry-failed.
 
- Access type: Read/Write
+`Installed` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Total number of distribution points in the site that have successfully installed the current source version of the package.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+Total number of distribution points in the site that have successfully installed the current source version of the package.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name assigned to the package.
+Qualifiers: None
 
- `PackageID`
- Data type: `String`
+Name assigned to the package.
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [ key, SizeLimit("8")]
+Access type: Read/Write
 
- ID assigned by Configuration Manager for the package.
+Qualifiers: [ key, SizeLimit("8")]
 
- `Retrying`
- Data type: `UInt32`
+ID assigned by Configuration Manager for the package.
 
- Access type: Read/Write
+`Retrying` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Total number of distribution points in the site that have had at least one failure during an installation or removal operation but have not yet exceeded the number of retries allowed and are currently in a state of installation-retrying or removal-retrying.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Total number of distribution points in the site that have had at least one failure during an installation or removal operation but have not yet exceeded the number of retries allowed and are currently in a state of installation-retrying or removal-retrying.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read/Write
 
- Site code for each site that has at least one distribution point specified for the package.
+Qualifiers: [key, SizeLimit("3")]
 
- `SiteName`
- Data type: `String`
+Site code for each site that has at least one distribution point specified for the package.
 
- Access type: Read/Write
+`SiteName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Friendly display name for the site.
+Qualifiers: None
 
- `SourceVersion`
- Data type: `UInt32`
+Friendly display name for the site.
 
- Access type: Read/Write
+`SourceVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Version of the package source files.
+Qualifiers: None
 
- `SummaryDate`
- Data type: `DateTime`
+Version of the package source files.
 
- Access type: Read/Write
+`SummaryDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Date and time, in Universal Coordinated Time (UTC) when a change in package status for this site was most recently reported.
+Qualifiers: None
 
- `Targeted`
- Data type: `UInt32`
+Date and time, in Universal Coordinated Time (UTC) when a change in package status for this site was most recently reported.
 
- Access type: Read/Write
+`Targeted` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The total number of distribution points in the site that are targeted for the package.
+Qualifiers: None
+
+The total number of distribution points in the site that are targeted for the package.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

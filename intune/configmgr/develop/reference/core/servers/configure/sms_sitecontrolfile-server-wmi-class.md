@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_SiteControlFile class which represents the site control file and methods to maintain version control of the site control file.
-title: SMS_SiteControlFile Class
-ms.date: 09/20/2016
+title: "SMS_SiteControlFile Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SiteControlFile Server WMI Class
+
 The `SMS_SiteControlFile` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the site control file and contains methods to maintain version control of the site control file.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,80 +29,79 @@ Class SMS_SiteControlFile : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SiteControlFile` class does not define any methods.
+
+The `SMS_SiteControlFile` class does not define any methods.
 
 ## Properties
- `BuildNumber`
- Data type: `String`
 
- Access type: Read/Write
+`BuildNumber` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Build number of the Configuration Manager installation that creates the site control file. The default value is "".
+Qualifiers: [lazy]
 
- `FileType`
- Data type: `UInt32`
+Build number of the Configuration Manager installation that creates the site control file. The default value is "".
 
- Access type: Read/Write
+`FileType` Data type: `UInt32`
 
- Qualifiers: [key, enumeration:ToSubClass]
+Access type: Read/Write
 
- This property is deprecated.
+Qualifiers: [key, enumeration:ToSubClass]
 
- `FormatVersion`
- Data type: `String`
+This property is deprecated.
 
- Access type: Read/Write
+`FormatVersion` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Version of the site control file format. The default value is "".
+Qualifiers: [lazy]
 
- `SCFData`
- Data type: `String`
+Version of the site control file format. The default value is "".
 
- Access type: Read/Write
+`SCFData` Data type: `String`
 
- Qualifiers: [lazy, large]
+Access type: Read/Write
 
- Current site control file data in text format (accumulated deltas).
+Qualifiers: [lazy, large]
 
- `SerialNumber`
- Data type: `UInt32`
+Current site control file data in text format (accumulated deltas).
 
- Access type: ReadWrite
+`SerialNumber` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: ReadWrite
 
- Unique ID of the file itself. The number is incremented every time the file changes. The default value is 0.
+Qualifiers: [key]
 
- `SiteCode`
- Data type: `String`
+Unique ID of the file itself. The number is incremented every time the file changes. The default value is 0.
 
- Access type: Read-only
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, read, SizeLimit("3")]
+Access type: Read-only
 
- Site code of the site associated with the site control file. The default value is "".
+Qualifiers: [key, read, SizeLimit("3")]
+
+Site code of the site associated with the site control file. The default value is "".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
-  Your application uses the methods of this class to perform version control of the site control file. To update the contents of the site control file, the application should use classes derived from [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+  Your application uses the methods of this class to perform version control of the site control file. To update the contents of the site control file, the application should use classes derived from [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md)

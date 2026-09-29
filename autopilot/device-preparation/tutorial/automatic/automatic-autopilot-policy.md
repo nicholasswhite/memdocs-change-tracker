@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot device preparation in automatic mode for Windows 365 - Step 4 of 6 - Create a Windows Autopilot device preparation policy
+title: "Windows Autopilot device preparation in automatic mode for Windows 365: Create a Windows Autopilot device preparation policy"
 description: How to - Windows Autopilot device preparation in automatic mode for Windows 365 - Step 4 of 6 - Create a Windows Autopilot device preparation policy.
-ms.date: 06/11/2025
+ms.date: "2025-06-11T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -15,9 +15,7 @@ Windows Autopilot device preparation in automatic mode for Windows 365 steps:
 - Step 2: [Create an assigned device group](automatic-device-group.md)
 - Step 3: [Assign applications and PowerShell scripts to device group](automatic-assign-apps-scripts.md)
 
-> [!div class="checklist"]
->
-> - **Step 4: Create Windows Autopilot device preparation policy**
+- **Step 4: Create Windows Autopilot device preparation policy**
 
 - Step 5: [Create a Cloud PC provisioning policy](automatic-cloud-pc-provisioning-policy.md)
 - Step 6: [Monitor the deployment](automatic-monitor.md)
@@ -30,88 +28,68 @@ The Windows Autopilot policy specifies how the device is configured during Windo
 
 To create an automatic mode for Windows 365 Windows Autopilot device preparation policy, follow these steps:
 
-1. Sign in to the [Microsoft Intune admin center].
-
-1. In the **Home** screen, select **Devices** in the left hand pane.
-
-1. In the **Devices | Overview** screen, under **By platform**, select **Windows**.
-
-1. In the **Windows | Windows devices** screen, under **Device onboarding**, select **Enrollment**.
-
-1. In the **Windows | Windows enrollment** screen, under **Windows Autopilot device preparation**, select **Device preparation policies**.
-
-1. In the **Device preparation policies** screen, select **Create**, and then select **Automatic**.
-
-1. The **Create profile** screen opens. In the **Introduction** page, select **Next**.
-
-1. In the **Basics** page:
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Devices** in the left hand pane.
+3. In the **Devices | Overview** screen, under **By platform**, select **Windows**.
+4. In the **Windows | Windows devices** screen, under **Device onboarding**, select **Enrollment**.
+5. In the **Windows | Windows enrollment** screen, under **Windows Autopilot device preparation**, select **Device preparation policies**.
+6. In the **Device preparation policies** screen, select **Create**, and then select **Automatic**.
+7. The **Create profile** screen opens. In the **Introduction** page, select **Next**.
+8. In the **Basics** page:
 
    1. In the **Name** text box, enter a name for the Windows Autopilot device preparation policy.
+   2. In the **Description** text box, if desired, enter a description for the Windows Autopilot device preparation policy.
+   3. Once a name and description is entered, select **Next**.
+9. In the **Device group** page, select the **Search by group name..** box, and then either select or search for the device group created in [Step 3: Create an assigned device group](automatic-device-group.md). Once the correct device group is selected, select **Next**.
+10. In the **Configuration settings** page:
 
-   1. In the **Description** text box, if desired, enter a description for the Windows Autopilot device preparation policy.
+    1. The **Apps** section allows selection of up to 10 managed applications reference with the deployment. The applications specified here should be the essential applications that should be installed on the device before the end-user can start using the device. Under the **Apps** section:
 
-   1. Once a name and description is entered, select **Next**.
+       1. Select **Add**. The **Select Apps** pane opens.
 
-1. In the **Device group** page, select the **Search by group name..** box, and then either select or search for the device group created in [Step 3: Create an assigned device group](automatic-device-group.md). Once the correct device group is selected, select **Next**.
+          1. In the **Select Apps** pane:
+          2. Scroll through the list of applications or use the **Search** box to search for desired applications.
+          3. Once a desired application is found, select the **Add** button next to the application. The application is added to the list under **Selected Apps**.
+          4. Once all of the desired applications are selected, select **Save**.
 
-1. In the **Configuration settings** page:
+       All of the selected applications should display under **Allowed Applications**.
 
-   1. The **Apps** section allows selection of up to 10 managed applications reference with the deployment. The applications specified here should be the essential applications that should be installed on the device before the end-user can start using the device. Under the **Apps** section:
+       > [!IMPORTANT]
+       >
+       > The applications selected in this setting should be assigned to the device security group previously specified in the **Device group** page. If applicable, the applications should also be configured to install in the **System** context since it's installed during OOBE when no user is signed in.
 
-      1. Select **Add**. The **Select Apps** pane opens.
+       > [!NOTE]
+       >
+       > The following types of applications are supported for use with Windows Autopilot device preparation:
+       >
+       > - [Line-of-business (LOB)](../../../../intune/app-management/deployment/add-lob-windows.md).
+       > - [Win32](../../../../intune/app-management/deployment/create-win32-package.md).
+       > - [Microsoft Store](../../../../intune/app-management/deployment/add-microsoft-store.md) - only Microsoft Store apps that support WinGet are supported.
+       > - [Microsoft 365](../../../../intune/app-management/deployment/add-microsoft-365-windows.md).
+       >
+       > In addition, Windows Autopilot device preparation supports deploying both Win32 and line-of-business (LOB) applications in the same deployment.
+    2. The **Scripts** section allows selection of up to 10 PowerShell scripts to install during the deployment. The PowerShell scripts specified here should be the essential PowerShell scripts that should run on the device before the end-user can start using the device. Under the **Scripts** section:
 
-         1. In the **Select Apps** pane:
+       1. Select **Add**. The **Select Scripts** pane opens.
+       2. In the **Select Scripts** pane:
 
-         1. Scroll through the list of applications or use the **Search** box to search for desired applications.
+          1. Scroll through the list of PowerShell scripts or use the **Search** box to search for desired PowerShell scripts.
+          2. Once a desired PowerShell script is found, select the **Add** button next to the PowerShell script. The PowerShell script is added to the list under **Selected Scripts**.
+          3. Once all of the desired PowerShell scripts are selected, select **Save**.
 
-         1. Once a desired application is found, select the **Add** button next to the application. The application is added to the list under **Selected Apps**.
+       All of the selected PowerShell scripts should display under **Allowed Scripts**.
 
-         1. Once all of the desired applications are selected, select **Save**.
+    > [!IMPORTANT]
+    >
+    > The PowerShell scripts selected in this setting should be assigned to the device security group previously specified in the **Device group** page. The PowerShell script should also be configured to run in the **System** context since the PowerShell scripts run during OOBE when no user is signed in. The PowerShell script can be set to run in the **System** context by setting the option **Run this script using the logged on credentials** to **No** in the properties of the PowerShell script.
 
-        All of the selected applications should display under **Allowed Applications**.
-
-      > [!IMPORTANT]
-      >
-      > The applications selected in this setting should be assigned to the device security group previously specified in the **Device group** page. If applicable, the applications should also be configured to install in the **System** context since it's installed during OOBE when no user is signed in.
-
-      > [!NOTE]
-      >
-      > The following types of applications are supported for use with Windows Autopilot device preparation:
-      >
-      > - [Line-of-business (LOB)](/intune/app-management/deployment/add-lob-windows).
-      > - [Win32](/intune/app-management/deployment/create-win32-package).
-      > - [Microsoft Store](/intune/app-management/deployment/add-microsoft-store) - only Microsoft Store apps that support WinGet are supported.
-      > - [Microsoft 365](/intune/app-management/deployment/add-microsoft-365-windows).
-      >
-      > In addition, Windows Autopilot device preparation supports deploying both Win32 and line-of-business (LOB) applications in the same deployment.
-
-   1. The **Scripts** section allows selection of up to 10 PowerShell scripts to install during the deployment. The PowerShell scripts specified here should be the essential PowerShell scripts that should run on the device before the end-user can start using the device. Under the **Scripts** section:
-
-      1. Select **Add**. The **Select Scripts** pane opens.
-
-      1. In the **Select Scripts** pane:
-
-         1. Scroll through the list of PowerShell scripts or use the **Search** box to search for desired PowerShell scripts.
-
-         1. Once a desired PowerShell script is found, select the **Add** button next to the PowerShell script. The PowerShell script is added to the list under **Selected Scripts**.
-
-         1. Once all of the desired PowerShell scripts are selected, select **Save**.
-
-        All of the selected PowerShell scripts should display under **Allowed Scripts**.
-
-   > [!IMPORTANT]
-   >
-   > The PowerShell scripts selected in this setting should be assigned to the device security group previously specified in the **Device group** page. The PowerShell script should also be configured to run in the **System** context since the PowerShell scripts run during OOBE when no user is signed in. The PowerShell script can be set to run in the **System** context by setting the option **Run this script using the logged on credentials** to **No** in the properties of the PowerShell script.
-
-   1. Once all of the desired **Apps** and **Scripts** are selected, select **Next**.
-
-1. In the **Scope tags** page, select **Next**.
+    1. Once all of the desired **Apps** and **Scripts** are selected, select **Next**.
+11. In the **Scope tags** page, select **Next**.
 
     > [!NOTE]
     >
-    > **Scope tags** are optional. For this tutorial, scope tags are being skipped and left at the default scope tag. However if a custom scope tag needs to be specified, do so at this page. For more information about scope tags, see [Use role-based access control and scope tags for distributed IT](/intune/fundamentals/role-based-access-control/scope-tags).
-
-1. In the **Review + create** page, review all settings to make sure they're all correct. Once everything is verified, select **Save** to finish creating the Windows Autopilot device preparation policy.
+    > **Scope tags** are optional. For this tutorial, scope tags are being skipped and left at the default scope tag. However if a custom scope tag needs to be specified, do so at this page. For more information about scope tags, see [Use role-based access control and scope tags for distributed IT](../../../../intune/fundamentals/role-based-access-control/scope-tags.md).
+12. In the **Review + create** page, review all settings to make sure they're all correct. Once everything is verified, select **Save** to finish creating the Windows Autopilot device preparation policy.
 
 > [!TIP]
 >
@@ -119,9 +97,4 @@ To create an automatic mode for Windows 365 Windows Autopilot device preparation
 
 ## Next step: Create a Cloud PC provisioning policy
 
-> [!div class="nextstepaction"]
-> [Step 5: Create a Cloud PC provisioning policy](automatic-cloud-pc-provisioning-policy.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+[Step 5: Create a Cloud PC provisioning policy](automatic-cloud-pc-provisioning-policy.md)

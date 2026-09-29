@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_OSExpressionGroup Class
+title: "SMS_TaskSequence_OSExpressionGroup Server WMI Class"
 description: In Configuration Manager, the SMS_TaskSequence_OSExpressionGroup WMI class is an SMS Provider server class that represents an evaluation of a single operating system platform in a task sequence.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_TaskSequence_OSExpressionGroup Server WMI Class
-The `SMS_TaskSequence_OSExpressionGroup` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an evaluation of a single operating system platform in a task sequence. An object of this type is always contained by an [SMS_TaskSequence_OSConditionGroup Server WMI Class](../../../develop/reference/osd/sms_tasksequence_osconditiongroup-server-wmi-class.md) object.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_TaskSequence_OSExpressionGroup Server WMI Class
+
+The `SMS_TaskSequence_OSExpressionGroup` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an evaluation of a single operating system platform in a task sequence. An object of this type is always contained by an [SMS_TaskSequence_OSConditionGroup Server WMI Class](sms_tasksequence_osconditiongroup-server-wmi-class.md) object.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,90 +30,87 @@ Class SMS_TaskSequence_OSExpressionGroup : SMS_TaskSequence_ConditionOperator
 ```
 
 ## Methods
- The `SMS_TaskSequence_OSExpressionGroup` class does not define any methods.
+
+The `SMS_TaskSequence_OSExpressionGroup` class does not define any methods.
 
 ## Properties
- `Name`
- Data type: `String`
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Optional. The name of an operating system, for example, "Windows XP SP2". The default value is "". See the `DisplayText` property for `SMS_SupportedPlatforms`.
+Qualifiers: None
 
- `Operands`
- Data type: `SMS_TaskSequence_WMIConditionExpression`Array
+Optional. The name of an operating system, for example, "Windows XP SP2". The default value is "". See the `DisplayText` property for `SMS_SupportedPlatforms`.
 
- Access type: Read/Write
+`Operands` Data type: `SMS_TaskSequence_WMIConditionExpression`Array
 
- Qualifiers: [Not_NULL]
+Access type: Read/Write
 
- See [SMS_TaskSequence_ConditionOperator Server WMI Class](../../../develop/reference/osd/sms_tasksequence_conditionoperator-server-wmi-class.md).
+Qualifiers: [Not_NULL]
 
- Each element of this property is an [SMS_TaskSequence_WMIConditionExpression Server WMI Class](../../../develop/reference/osd/sms_tasksequence_wmiconditionexpression-server-wmi-class.md) object that matches the WQL query for the `SMS_SupportedPlatforms` Server WMI Class object indexed by the platform keys. The expressions are typically built from the WQL query stored in the `Condition` property of `SMS_SupportedPlatforms`. There must be at least one [SMS_TaskSequence_WMIConditionExpression Server WMI Class](../../../develop/reference/osd/sms_tasksequence_wmiconditionexpression-server-wmi-class.md) contained by the [SMS_TaskSequence_OSExpressionGroup Server WMI Class](../../../develop/reference/osd/sms_tasksequence_osexpressiongroup-server-wmi-class.md).
+See [SMS_TaskSequence_ConditionOperator Server WMI Class](sms_tasksequence_conditionoperator-server-wmi-class.md).
 
- `OperatorType`
- Data type: `String`
+Each element of this property is an [SMS_TaskSequence_WMIConditionExpression Server WMI Class](sms_tasksequence_wmiconditionexpression-server-wmi-class.md) object that matches the WQL query for the `SMS_SupportedPlatforms` Server WMI Class object indexed by the platform keys. The expressions are typically built from the WQL query stored in the `Condition` property of `SMS_SupportedPlatforms`. There must be at least one [SMS_TaskSequence_WMIConditionExpression Server WMI Class](sms_tasksequence_wmiconditionexpression-server-wmi-class.md) contained by the [SMS_TaskSequence_OSExpressionGroup Server WMI Class](sms_tasksequence_osexpressiongroup-server-wmi-class.md).
 
- Access type: Read/Write
+`OperatorType` Data type: `String`
 
- Qualifiers: [Not_NULL]
+Access type: Read/Write
 
- See [SMS_TaskSequence_ConditionOperator Server WMI Class](../../../develop/reference/osd/sms_tasksequence_conditionoperator-server-wmi-class.md).
+Qualifiers: [Not_NULL]
 
- The only operator type supported by this class is "and".
+See [SMS_TaskSequence_ConditionOperator Server WMI Class](sms_tasksequence_conditionoperator-server-wmi-class.md).
 
- `PlatformArchKey`
- Data type: `String`
+The only operator type supported by this class is "and".
 
- Access type: Read/Write
+`PlatformArchKey` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- Platform key that maps to the `OSPlatform` property for `SMS_SupportedPlatforms` objects. For more information, see the Remarks section later in this topic.
+Qualifiers: [Not_Null]
 
- `PlatformMaxVerKey`
- Data type: `String`
+Platform key that maps to the `OSPlatform` property for `SMS_SupportedPlatforms` objects. For more information, see the Remarks section later in this topic.
 
- Access type: Read/Write
+`PlatformMaxVerKey` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- Platform key that maps to the `OSMaxVersion` property for `SMS_SupportedPlatforms` objects. For more information, see the Remarks section later in this topic.
+Qualifiers: [Not_Null]
 
- `PlatformMinVerKey`
- Data type: `String`
+Platform key that maps to the `OSMaxVersion` property for `SMS_SupportedPlatforms` objects. For more information, see the Remarks section later in this topic.
 
- Access type: Read/Write
+`PlatformMinVerKey` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- Platform key that maps to the `OSMinVersion` property for SMS_SupportedPlatforms objects. For more information, see the Remarks section later in this topic.
+Qualifiers: [Not_Null]
 
- `PlatformTypeKey`
- Data type: `String`
+Platform key that maps to the `OSMinVersion` property for SMS_SupportedPlatforms objects. For more information, see the Remarks section later in this topic.
 
- Access type: Read/Write
+`PlatformTypeKey` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- Platform key that maps to the `OSName` property for `SMS_SupportedPlatforms` objects. For more information, see the Remarks section later in this topic.
+Qualifiers: [Not_Null]
+
+Platform key that maps to the `OSName` property for `SMS_SupportedPlatforms` objects. For more information, see the Remarks section later in this topic.
 
 ## Remarks
- There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- The platform strings specified by `PlatformArchKey`, `PlatformMaxVerKey`, `PlatformMinVerKey`, and `PlatformTypeKey` are used to index the corresponding `SMS_SupportedPlatforms` object instance for the expression.
+There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
+
+The platform strings specified by `PlatformArchKey`, `PlatformMaxVerKey`, `PlatformMinVerKey`, and `PlatformTypeKey` are used to index the corresponding `SMS_SupportedPlatforms` object instance for the expression.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_TaskSequence_ConditionOperator Server WMI Class](../../../develop/reference/osd/sms_tasksequence_conditionoperator-server-wmi-class.md)
- [SMS_SupportedPlatforms Server WMI Class](../../../develop/reference/core/servers/configure/sms_supportedplatforms-server-wmi-class.md)
- [SMS_TaskSequence_WMIConditionExpression Server WMI Class](../../../develop/reference/osd/sms_tasksequence_wmiconditionexpression-server-wmi-class.md)
+
+[SMS_TaskSequence_ConditionOperator Server WMI Class](sms_tasksequence_conditionoperator-server-wmi-class.md) [SMS_SupportedPlatforms Server WMI Class](../core/servers/configure/sms_supportedplatforms-server-wmi-class.md) [SMS_TaskSequence_WMIConditionExpression Server WMI Class](sms_tasksequence_wmiconditionexpression-server-wmi-class.md)

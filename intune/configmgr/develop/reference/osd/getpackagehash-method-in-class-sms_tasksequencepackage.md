@@ -1,16 +1,18 @@
 ---
 description: Learn how to get the hash of a Configuration Manager package using GetPackageHash class method in Configuration Manager.
-title: GetPackageHash Method
-ms.date: 09/20/2016
+title: "GetPackageHash Method in Class SMS_TaskSequencePackage"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetPackageHash Method in Class SMS_TaskSequencePackage
+
 The `GetPackageHash` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets the hash of a Configuration Manager package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,50 +26,51 @@ SInt32 GetPackageHash(
 ```
 
 #### Parameters
- `PackageID`
- Data type: `String`
 
- Qualifiers: [in]
+`PackageID` Data type: `String`
 
- ID of the task sequence package.
+Qualifiers: [in]
 
- `SourceVersion`
- Data type: `UInt32`
+ID of the task sequence package.
 
- Qualifiers: [in]
+`SourceVersion` Data type: `UInt32`
 
- The version of the package available at the site. This version is indicated by the `SourceVersion` property of [SMS_TaskSequencePackage Server WMI Class](../../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md).
+Qualifiers: [in]
 
- `Hash`
- Data type: `String`
+The version of the package available at the site. This version is indicated by the `SourceVersion` property of [SMS_TaskSequencePackage Server WMI Class](sms_tasksequencepackage-server-wmi-class.md).
 
- Qualifiers: [out]
+`Hash` Data type: `String`
 
- The hash for the package content.
+Qualifiers: [out]
 
- `HashVersion`
- Data type: `UInt32`
+The hash for the package content.
 
- Qualifiers: [out]
+`HashVersion` Data type: `UInt32`
 
- The type of the requested hash which can be one of the following values.
+Qualifiers: [out]
 
- 1 - MD5 hash
+The type of the requested hash which can be one of the following values.
 
- 2 - SHA-1 hash
+1 - MD5 hash
+
+2 - SHA-1 hash
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_TaskSequencePackage Server WMI Class](../../../develop/reference/osd/sms_tasksequencepackage-server-wmi-class.md)
+
+[SMS_TaskSequencePackage Server WMI Class](sms_tasksequencepackage-server-wmi-class.md)

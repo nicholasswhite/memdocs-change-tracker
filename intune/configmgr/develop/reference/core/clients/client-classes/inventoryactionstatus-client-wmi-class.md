@@ -1,16 +1,18 @@
 ---
 title: InventoryActionStatus Client WMI Class
 description: The InventoryActionStatus class is a client Windows Management Instrumentation (WMI) class that defines the status of an inventory action.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # InventoryActionStatus Client WMI Class
+
 In Configuration Manager, the `InventoryActionStatus` class is a client Windows Management Instrumentation (WMI) class that defines the status of an inventory action.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,61 +28,61 @@ Class InventoryActionStatus
 ```
 
 ## Methods
- The `InventoryActionStatus` class does not define any methods.
+
+The `InventoryActionStatus` class does not define any methods.
 
 ## Properties
- `InventoryActionID`
- Data type: `String`
 
- Access type: Read/Write
+`InventoryActionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The inventory action ID.
+Qualifiers: [key]
 
- `LastCycleStartedDate`
- Data type: `DateTime`
+The inventory action ID.
 
- Access type: Read/Write
+`LastCycleStartedDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The time when the last inventory cycle started.
+Qualifiers: None
 
- `LastMajorReportVersion`
- Data type: `UInt32`
+The time when the last inventory cycle started.
 
- Access type: Read/Write
+`LastMajorReportVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The major version of the last major report.
+Qualifiers: None
 
- `LastMinorReportVersion`
- Data type: `UInt32`
+The major version of the last major report.
 
- Access type: Read/Write
+`LastMinorReportVersion` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The minor version on the last report.
+Qualifiers: None
 
- `LastReportDate`
- Data type: `DateTime`
+The minor version on the last report.
 
- Access type: Read/Write
+`LastReportDate` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time of the last report.
+Qualifiers: None
+
+The date and time of the last report.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Inventory Agent Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/inventory-agent-client-wmi-classes.md)
+
+[Inventory Agent Client WMI Classes](inventory-agent-client-wmi-classes.md)

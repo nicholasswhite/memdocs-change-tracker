@@ -1,16 +1,18 @@
 ---
-title: SMS_CIContentFiles Class
+title: "SMS_CIContentFiles Server WMI Class"
 description: In Configuration Manager, the SMS_CIContentFiles Windows Management Instrumentation class is an SMS Provider server class that lists all files associated with the content of a specific SMS_SoftwareUpdate Server WMI Class object.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_CIContentFiles Server WMI Class
-The `SMS_CIContentFiles` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists all files associated with the content of a specific [SMS_SoftwareUpdate Server WMI Class](../../../develop/reference/sum/sms_softwareupdate-server-wmi-class.md) object.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_CIContentFiles Server WMI Class
+
+The `SMS_CIContentFiles` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that lists all files associated with the content of a specific [SMS_SoftwareUpdate Server WMI Class](sms_softwareupdate-server-wmi-class.md) object.
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,149 +35,141 @@ Class SMS_CIContentFiles : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CIContentFiles` class does not define any methods.
+
+The `SMS_CIContentFiles` class does not define any methods.
 
 ## Properties
- `CI_UniqueID`
- Data type: `String`
 
- Access type: Read-only
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `ContentID`
- Data type: `UInt32`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`ContentID` Data type: `UInt32`
 
- Qualifiers: [read, key, Not_null]
+Access type: Read-only
 
- ID for the software update content. See the `ContentID` property of [SMS_CIToContent Server WMI Class](../../../develop/reference/sum/sms_citocontent-server-wmi-class.md).
+Qualifiers: [read, key, Not_null]
 
- `FileHash`
- Data type: `String`
+ID for the software update content. See the `ContentID` property of [SMS_CIToContent Server WMI Class](sms_citocontent-server-wmi-class.md).
 
- Access type: Read-only
+`FileHash` Data type: `String`
 
- Qualifiers: [read, Not_null]
+Access type: Read-only
 
- The file hash.
+Qualifiers: [read, Not_null]
 
- `FileName`
- Data type: `String`
+The file hash.
 
- Access type: Read-only
+`FileName` Data type: `String`
 
- Qualifiers: [read, key, Not_null]
+Access type: Read-only
 
- File name, including the subdirectory path under the root directory.
+Qualifiers: [read, key, Not_null]
 
- `FileSize`
- Data type: `SInt64`
+File name, including the subdirectory path under the root directory.
 
- Access type: Read-only
+`FileSize` Data type: `SInt64`
 
- Qualifiers: [read, Not_null]
+Access type: Read-only
 
- The size of the file.
+Qualifiers: [read, Not_null]
 
- `FileVersion`
- Data type: `String`
+The size of the file.
 
- Access type: Read-only
+`FileVersion` Data type: `String`
 
- Qualifiers: [read, Not_null]
+Access type: Read-only
 
- The file version.
+Qualifiers: [read, Not_null]
 
- `ImportPath`
- Data type: `String`
+The file version.
 
- Access type: Read-only
+`ImportPath` Data type: `String`
 
- Qualifiers: [read, Not_null]
+Access type: Read-only
 
- The file location (including file name) relative to the import root.
+Qualifiers: [read, Not_null]
 
- `IsSigned`
- Data type: `Boolean`
+The file location (including file name) relative to the import root.
 
- Access type: Read-only
+`IsSigned` Data type: `Boolean`
 
- Qualifiers: [read, Not_null]
+Access type: Read-only
 
- `true` if the software update content is signed.
+Qualifiers: [read, Not_null]
 
- `LanguageID`
- Data type: `UInt32`
+`true` if the software update content is signed.
 
- Access type: Read-only
+`LanguageID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The language attribute of the file.
+Qualifiers: [read]
 
- `ModelName`
- Data type: `String`
+The language attribute of the file.
 
- Access type: Read-only
+`ModelName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: [read]
 
- `ObjectTypeID`
- Data type: `UInt32`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read-only
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: [read, Not_null]
+Access type: Read-only
 
- Secured object class ID. Possible values are listed below.
+Qualifiers: [read, Not_null]
+
+Secured object class ID. Possible values are listed below.
 
 | ID value | Object type |
-| -------- | ----------- |
-|0|PKG_TYPE_REGULAR|
-|3|PKG_TYPE_DRIVER|
-|4|PKG_TYPE_TASK_SEQUENCE|
-|5|PKG_TYPE_SWUPDATES|
-|6|PKG_TYPE_DEVICE_SETTING|
-|8|PKG_CONTENT_PACKAGE|
-|257|PKG_TYPE_IMAGE|
-|258|PKG_TYPE_BOOTIMAGE|
-|259|PKG_TYPE_OSINSTALLIMAGE|
-|512|APPLICATION|
+| --- | --- |
+| 0 | PKG_TYPE_REGULAR |
+| 3 | PKG_TYPE_DRIVER |
+| 4 | PKG_TYPE_TASK_SEQUENCE |
+| 5 | PKG_TYPE_SWUPDATES |
+| 6 | PKG_TYPE_DEVICE_SETTING |
+| 8 | PKG_CONTENT_PACKAGE |
+| 257 | PKG_TYPE_IMAGE |
+| 258 | PKG_TYPE_BOOTIMAGE |
+| 259 | PKG_TYPE_OSINSTALLIMAGE |
+| 512 | APPLICATION |
 
- `SourceURL`
- Data type: `String`
+`SourceURL` Data type: `String`
 
- Access type: Read-only
+Access type: Read-only
 
- Qualifiers: [read, Not_null]
+Qualifiers: [read, Not_null]
 
- URL where the source for the content file is located.
+URL where the source for the content file is located.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
-
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
-  This class is used to determine update files to download for a particular update, for example, when there are different locales associated with the update. When using this class, first identify which contents need to be downloaded by querying [SMS_CIToContent Server WMI Class](../../../develop/reference/sum/sms_citocontent-server-wmi-class.md) and obtain the list of `ContentID` properties matching the specific language criteria. Given the list, you can then obtain the associated download URL and the related properties for the content files from `SMS_CIContentFiles`.
+  This class is used to determine update files to download for a particular update, for example, when there are different locales associated with the update. When using this class, first identify which contents need to be downloaded by querying [SMS_CIToContent Server WMI Class](sms_citocontent-server-wmi-class.md) and obtain the list of `ContentID` properties matching the specific language criteria. Given the list, you can then obtain the associated download URL and the related properties for the content files from `SMS_CIContentFiles`.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_SoftwareUpdate Server WMI Class](../../../develop/reference/sum/sms_softwareupdate-server-wmi-class.md)
- [SMS_CIToContent Server WMI Class](../../../develop/reference/sum/sms_citocontent-server-wmi-class.md)
+
+[SMS_SoftwareUpdate Server WMI Class](sms_softwareupdate-server-wmi-class.md) [SMS_CIToContent Server WMI Class](sms_citocontent-server-wmi-class.md)

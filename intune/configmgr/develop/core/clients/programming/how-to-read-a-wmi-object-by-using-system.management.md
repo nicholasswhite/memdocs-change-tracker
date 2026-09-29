@@ -1,7 +1,7 @@
 ---
 description: Learn how to use a ManagementObject object to read the Windows Management Instrumentation (WMI) object in Configuration Manager.
-title: "Read a WMI Object by Using System.Management"
-ms.date: "09/20/2016"
+title: "How to Read a WMI Object by Using System.Management"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,29 +9,27 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Read a WMI Object by Using System.Management
-To read a Configuration Manager client Windows Management Instrumentation (WMI) object, in Configuration Manager, you use a `ManagementObject` object to read the WMI object.  
 
-### To read a WMI object  
+To read a Configuration Manager client Windows Management Instrumentation (WMI) object, in Configuration Manager, you use a `ManagementObject` object to read the WMI object.
 
-1.  Set up a connection to the Configuration Manager client WMI namespace. For more information, see [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](../../../../develop/core/clients/programming/how-to-connect-to-the-client-wmi-namespace.md).  
+### To read a WMI object
 
-2.  Create a `ManagementObject` object.  
+1. Set up a connection to the Configuration Manager client WMI namespace. For more information, see [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](how-to-connect-to-the-client-wmi-namespace.md).
+2. Create a `ManagementObject` object.
+3. Create a `ManagementPath` object with the `ManagementScope` path you obtain from step one.
+4. Assign the `ManagementPath` object to the `ManagementObject` path property.
+5. Call the `ManagementObject` object Get method to get the object from the WMI provider.
+6. Use the `ManagementObject` object to read the WMI provider object properties.
 
-3.  Create a `ManagementPath` object with the `ManagementScope` path you obtain from step one.  
+## Example
 
-4.  Assign the `ManagementPath` object to the `ManagementObject` path property.  
+The following C# code example gets the Configuration Manager client WMI object [SMS_Client](../../../reference/core/clients/client-classes/sms_client-client-wmi-class.md) object and displays its properties.
 
-5.  Call the `ManagementObject` object Get method to get the object from the WMI provider.  
+For information about calling the sample code, see [How to Call a WMI Class Method by Using System.Management](how-to-call-a-wmi-class-method-by-using-system.management.md).
 
-6.  Use the `ManagementObject` object to read the WMI provider object properties.  
-
-## Example  
- The following C# code example gets the Configuration Manager client WMI object [SMS_Client](../../../../develop/reference/core/clients/client-classes/sms_client-client-wmi-class.md) object and displays its properties.  
-
- For information about calling the sample code, see [How to Call a WMI Class Method by Using System.Management](../../../../develop/core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md).  
-
-```c#  
+```c#
 
 void ReadObject(ManagementScope scope)  
 {  
@@ -59,30 +57,34 @@ void ReadObject(ManagementScope scope)
         throw;  
     }  
 }  
-```  
+```
 
- This example method has the following parameters:  
+This example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|`scope`|-   `ManagementScope`|The client management scope. The namespace should be root\ccm.|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `scope` | - `ManagementScope` | The client management scope. The namespace should be root\ccm. |
 
-## Compiling the Code  
+## Compiling the Code
 
-### Namespaces  
- System  
+### Namespaces
 
- System.Management  
+System
 
-### Assembly  
- System.Management  
+System.Management
 
-## Robust Programming  
- The exception that can be raised is [System.Management.ManagementException](/dotnet/api/system.management.managementexception).  
+### Assembly
 
-## See Also  
- [About Configuration Manager WMI Programming](../../../../develop/core/clients/programming/about-configuration-manager-wmi-programming.md)   
- [How to Call a WMI Class Method by Using System.Management](../../../../develop/core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md)   
- [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](../../../../develop/core/clients/programming/how-to-connect-to-the-client-wmi-namespace.md)   
- [How to Perform an Asynchronous Query by Using System.Management](../../../../develop/core/clients/programming/how-to-perform-an-asynchronous-query-by-using-system.management.md)   
- [How to Perform a Synchronous Query by Using System.Management](../../../../develop/core/clients/programming/how-to-perform-a-synchronous-query-by-using-system.management.md)
+System.Management
+
+## Robust Programming
+
+The exception that can be raised is [System.Management.ManagementException](https://learn.microsoft.com/en-us/dotnet/api/system.management.managementexception).
+
+## See Also
+
+[About Configuration Manager WMI Programming](about-configuration-manager-wmi-programming.md)  
+ [How to Call a WMI Class Method by Using System.Management](how-to-call-a-wmi-class-method-by-using-system.management.md)  
+ [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](how-to-connect-to-the-client-wmi-namespace.md)  
+ [How to Perform an Asynchronous Query by Using System.Management](how-to-perform-an-asynchronous-query-by-using-system.management.md)  
+ [How to Perform a Synchronous Query by Using System.Management](how-to-perform-a-synchronous-query-by-using-system.management.md)

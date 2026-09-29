@@ -1,20 +1,22 @@
 ---
 description: The following examples demonstrate various Microsoft Configuration Manager SQL view queries.
-title: See a View by Using SQL Server
-ms.date: 09/20/2016
+title: "How to See a Configuration Manager View by Using SQL Server"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to See a Configuration Manager View by Using SQL Server
+
 The following examples demonstrate various Microsoft Configuration Manager SQL view queries.
 
 ## Examples
 
 #### To determine the display name of a resource type from the resource type number
 
--   In SQL Server, query the Configuration Manager database with the following SQL statement:
+- In SQL Server, query the Configuration Manager database with the following SQL statement:
 
 ```
 select DisplayName from v_ResourceMap where ResourceType=5
@@ -22,7 +24,7 @@ select DisplayName from v_ResourceMap where ResourceType=5
 
 #### To determine discovery properties for a particular resource type
 
--   In SQL Server, query the Configuration Manager database with the following SQL statement:
+- In SQL Server, query the Configuration Manager database with the following SQL statement:
 
 ```
 select * from v_ResourceAttributeMap where ResourceType=5
@@ -30,7 +32,7 @@ select * from v_ResourceAttributeMap where ResourceType=5
 
 #### To list the inventory groups for a particular resource type
 
--   In SQL Server, query the Configuration Manager database with the following SQL statement:
+- In SQL Server, query the Configuration Manager database with the following SQL statement:
 
 ```
 select InvClassName from v_GroupMap where ResourceType = 5

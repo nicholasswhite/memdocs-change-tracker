@@ -1,29 +1,30 @@
 ---
-title: Handle Asynchronous Errors by Using Managed Code
+title: "How to Handle Configuration Manager Asynchronous Errors by Using Managed Code"
 description: To handle a Configuration Manager error raised during an asynchronous query, test the RunWorkerCompletedEventArgs parameter Error Exception property passed to the SmsBackgroundWorker.QueryProcessorCompleted event handler.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# How to Handle Configuration Manager Asynchronous Errors by Using Managed Code
-To handle a Configuration Manager error that is raised during an asynchronous query, you test the `RunWorkerCompletedEventArgs` parameter [Error](/previous-versions/t1yswz5k(v=vs.90)) Exception property that is passed to the [SmsBackgroundWorker.QueryProcessorCompleted](/previous-versions/system-center/developer/cc143778(v=msdn.10)) event handler. If [Error](/previous-versions/t1yswz5k(v=vs.90)) is not `null`, an exception has occurred and you use [Error](/previous-versions/t1yswz5k(v=vs.90)) to discover the cause.
 
- If [Error](/previous-versions/t1yswz5k(v=vs.90)) is an [SmsQueryException](/previous-versions/system-center/developer/cc147436(v=msdn.10)), you can use it to get to the underlying `__ExtendedException` or `SMS_ExtendedException`. Because the managed SMS Provider library does not wrap these exceptions you will need to use the System.Management namespace [ManagementException](/dotnet/api/system.management.managementexception) object to access them.
+# How to Handle Configuration Manager Asynchronous Errors by Using Managed Code
+
+To handle a Configuration Manager error that is raised during an asynchronous query, you test the `RunWorkerCompletedEventArgs` parameter [Error](https://learn.microsoft.com/en-us/previous-versions/t1yswz5k(v=vs.90)) Exception property that is passed to the [SmsBackgroundWorker.QueryProcessorCompleted](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc143778(v=msdn.10)) event handler. If [Error](https://learn.microsoft.com/en-us/previous-versions/t1yswz5k(v=vs.90)) is not `null`, an exception has occurred and you use [Error](https://learn.microsoft.com/en-us/previous-versions/t1yswz5k(v=vs.90)) to discover the cause.
+
+If [Error](https://learn.microsoft.com/en-us/previous-versions/t1yswz5k(v=vs.90)) is an [SmsQueryException](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc147436(v=msdn.10)), you can use it to get to the underlying `__ExtendedException` or `SMS_ExtendedException`. Because the managed SMS Provider library does not wrap these exceptions you will need to use the System.Management namespace [ManagementException](https://learn.microsoft.com/en-us/dotnet/api/system.management.managementexception) object to access them.
 
 ### To handle an asynchronous query error
 
-1.  Create an asynchronous query.
-
-2.  In the asynchronous query [SmsBackgroundWorker.QueryProcessorCompleted](/previous-versions/system-center/developer/cc143778(v=msdn.10)) event handler, implement the code in the following example.
-
-3.  Run the asynchronous query. To test the exception handler, pass a badly formed query string such as `Select & from &&&` to the [QueryProcessorBase.ProcessQuery](/previous-versions/system-center/developer/cc146295(v=msdn.10)) method.
+1. Create an asynchronous query.
+2. In the asynchronous query [SmsBackgroundWorker.QueryProcessorCompleted](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc143778(v=msdn.10)) event handler, implement the code in the following example.
+3. Run the asynchronous query. To test the exception handler, pass a badly formed query string such as `Select & from &&&` to the [QueryProcessorBase.ProcessQuery](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc146295(v=msdn.10)) method.
 
 ## Example
- The following example implements a [SmsBackgroundWorker.QueryProcessorCompleted](/previous-versions/system-center/developer/cc143778(v=msdn.10)) event handler.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../develop/core/understand/calling-code-snippets.md).
+The following example implements a [SmsBackgroundWorker.QueryProcessorCompleted](https://learn.microsoft.com/en-us/previous-versions/system-center/developer/cc143778(v=msdn.10)) event handler.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](calling-code-snippets.md).
 
 ```c#
 void bw1_QueryProcessorCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -68,40 +69,45 @@ void bw1_QueryProcessorCompleted(object sender, RunWorkerCompletedEventArgs e)
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`sender`|-   `Object`|The source of the event.|
-|`e`|-   `RunWorkerCompletedEventArgs`|The event data.<br /><br /> For more information, see [RunWorkerCompletedEventArgs Class](/dotnet/api/system.componentmodel.runworkercompletedeventargs).|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `sender` | - `Object` | The source of the event. |
+| `e` | - `RunWorkerCompletedEventArgs` | The event data.   For more information, see [RunWorkerCompletedEventArgs Class](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.runworkercompletedeventargs). |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
 
- System.Management
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
- System.ComponentModel
+System.Management
+
+System.ComponentModel
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
 
- System.Management
+adminui.wqlqueryengine
+
+System.Management
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](about-configuration-manager-errors.md).
 
 ## See Also
- [About errors](about-configuration-manager-errors.md)
+
+[About errors](about-configuration-manager-errors.md)

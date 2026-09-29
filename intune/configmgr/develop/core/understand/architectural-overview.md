@@ -1,7 +1,7 @@
 ---
 title: Architectural overview
 description: A description of Configuration Manager server and client architectures.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: concept-article
 ms.collection: tier3
@@ -49,19 +49,19 @@ Configuration Manager gathers system data from the various resources in the site
 
 Configuration Manager provides an open architecture that enables you to write applications and scripts that automate and customize Configuration Manager features, such as Software Distribution. You can also create and install customized programs that you can start from the Configuration Manager console.
 
-![The WBEM interface with the SMS architecture](../../../develop/core/understand/media/cm_architecture2.gif)
+![The WBEM interface with the SMS architecture](media/cm_architecture2.gif)
 
 Terms and concepts that relate to Configuration Manager architecture originate from various sources. Some originated with the Desktop Management Task Force (DMTF) and were created to describe managed objects. Others are standard COM and Web-Based Enterprise Management (WBEM) initiative terms and concepts. Still others are specific to Configuration Manager.
 
-|Term|Definition|
-|----------|----------------|
-|Windows Management|The Microsoft implementation of one of the DMTF standards for identifying and manipulating managed objects.|
-|CIM Object Manager|The primary component in the management infrastructure of the WBEM technology. Client applications access the CIM Object Manager to find the correct provider.|
-|SMS Provider|The WBEM provider that exposes the Configuration Manager site database. The SMS Provider acts as an intermediary between the CIM Object Manager and any Configuration Manager data. The SMS Provider also accesses the Configuration Manager site database to provide data to the Configuration Manager console.|
-|Configuration Manager Site Database|A SQL Server database that stores Configuration Manager data. The managed objects (such as disk drives or collections) stored in the Configuration Manager site database are represented by instances of Configuration Manager classes in the database rather than records in a database.|
-|WBEM Application|An executable application that makes API calls to the CIM Object Manager to view or manage data from providers.|
-|Windows Management Service|A Windows service that starts and stops the CIM Object Manager.|
-|Configuration Manager Console|A WBEM application.|
+| Term | Definition |
+| --- | --- |
+| Windows Management | The Microsoft implementation of one of the DMTF standards for identifying and manipulating managed objects. |
+| CIM Object Manager | The primary component in the management infrastructure of the WBEM technology. Client applications access the CIM Object Manager to find the correct provider. |
+| SMS Provider | The WBEM provider that exposes the Configuration Manager site database. The SMS Provider acts as an intermediary between the CIM Object Manager and any Configuration Manager data. The SMS Provider also accesses the Configuration Manager site database to provide data to the Configuration Manager console. |
+| Configuration Manager Site Database | A SQL Server database that stores Configuration Manager data. The managed objects (such as disk drives or collections) stored in the Configuration Manager site database are represented by instances of Configuration Manager classes in the database rather than records in a database. |
+| WBEM Application | An executable application that makes API calls to the CIM Object Manager to view or manage data from providers. |
+| Windows Management Service | A Windows service that starts and stops the CIM Object Manager. |
+| Configuration Manager Console | A WBEM application. |
 
 ### Configuration Manager and the WBEM architecture
 
@@ -84,9 +84,7 @@ A Configuration Manager client computer is any computer in your organization tha
 Configuration Manager client software:
 
 - Runs almost entirely as services, processes, or applications started from Configuration Manager services.
-
 - Runs from the client computer (as opposed to over the network).
-
 - Maintains history information for most function so the client computer (such as software and hardware inventory).
 
 ## See also

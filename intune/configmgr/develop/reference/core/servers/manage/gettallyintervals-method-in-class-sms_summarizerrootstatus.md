@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the GetTallyIntervals method to get an array of tally intervals and the default interval.
-title: GetTallyIntervals Method
-ms.date: 09/20/2016
+title: "GetTallyIntervals Method in Class SMS_SummarizerRootStatus"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetTallyIntervals Method in Class SMS_SummarizerRootStatus
+
 The `GetTallyIntervals` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets an array of tally intervals and the default interval.
 
- The following syntax is simplified from Managed Object Format (MOF) code and is intended to show the definition of the method.
+The following syntax is simplified from Managed Object Format (MOF) code and is intended to show the definition of the method.
 
 ## Syntax
 
@@ -24,44 +26,45 @@ SInt32 GetTallyIntervals(
 ```
 
 #### Parameters
- `SiteCode`
- Data type: `String`
 
- Qualifiers: [in, SizeLimit("3")]
+`SiteCode` Data type: `String`
 
- The site code of the site for which the status is reported.
+Qualifiers: [in, SizeLimit("3")]
 
- `ComponentName`
- Data type: `String`
+The site code of the site for which the status is reported.
 
- Qualifiers: [in, SizeLimit("3")]
+`ComponentName` Data type: `String`
 
- The name of the component.
+Qualifiers: [in, SizeLimit("3")]
 
- `TallyIntervals`
- Data type: `String` Array
+The name of the component.
 
- Qualifiers: [out]
+`TallyIntervals` Data type: `String` Array
 
- The tally intervals.
+Qualifiers: [out]
 
- `DefaultInterval`
- Data type: `String`
+The tally intervals.
 
- Qualifiers: [out]
+`DefaultInterval` Data type: `String`
 
- The default interval.
+Qualifiers: [out]
+
+The default interval.
 
 ## Return Values
- An `SInt32` data type.
+
+An `SInt32` data type.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_SummarizerRootStatus Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_summarizerrootstatus-server-wmi-class.md)
+
+[SMS_SummarizerRootStatus Server WMI Class](sms_summarizerrootstatus-server-wmi-class.md)

@@ -1,7 +1,7 @@
 ---
-title: Manage Windows Feature Updates
+title: "Manage Windows feature updates"
 description: Learn how to use Microsoft Intune policies to manage Windows feature updates.
-ms.date: 01/14/2026
+ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: davidmeb; bryanke; davguy
 ---
@@ -10,19 +10,81 @@ ms.reviewer: davidmeb; bryanke; davguy
 
 Windows feature updates are periodic releases that introduce new Windows capabilities, improvements, and changes to existing functionality. These updates typically ship once per year and represent a full operating system upgrade, such as moving a device from one Windows version to a newer release. Because feature updates can affect user experience, application compatibility, and device readiness, organizations often deploy them using controlled and phased rollouts.
 
-In Microsoft Intune, Windows feature updates are managed through **feature update policies**, which provide a dedicated policy surface for controlling which Windows version devices are offered and when that version can install. This policy uses cloud‑based update orchestration and can be used alongside other Windows update policies, such as quality updates and driver updates. Depending on your deployment model, feature updates may be managed manually through Intune or automatically through Windows Autopatch. Client‑side update behavior—such as restart experience and installation timing—continues to be influenced by standard Windows Update policy settings, including [update rings](manage-update-rings.md) and [Windows Update client policies](/windows/deployment/update/waas-configure-wufb).
+In Microsoft Intune, Windows feature updates are managed through **feature update policies**, which provide a dedicated policy surface for controlling which Windows version devices are offered and when that version can install. This policy uses cloud‑based update orchestration and can be used alongside other Windows update policies, such as quality updates and driver updates. Depending on your deployment model, feature updates may be managed manually through Intune or automatically through Windows Autopatch. Client‑side update behavior—such as restart experience and installation timing—continues to be influenced by standard Windows Update policy settings, including [update rings](manage-update-rings.md) and [Windows Update client policies](https://learn.microsoft.com/en-us/windows/deployment/update/waas-configure-wufb).
 
 Feature update policies allow you to **lock devices to a specific Windows release** or **target an upgrade to a newer version** while preventing devices from moving beyond that version. This approach helps ensure version compliance, reduce unexpected upgrades, and coordinate OS updates with application readiness and organizational rollout plans.
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites-network](includes/prerequisites-network.md)]
-[!INCLUDE [prerequisites-cloud](includes/prerequisites-cloud.md)]
-[!INCLUDE [prerequisites-tenant](includes/prerequisites-tenant.md)]
-[!INCLUDE [prerequisites-licensing](includes/prerequisites-licensing.md)]
-[!INCLUDE [prerequisites-platform](includes/prerequisites-platform.md)]
-[!INCLUDE [prerequisites-device-configuration](includes/prerequisites-device-configuration.md)]
-[!INCLUDE [prerequisites-rbac](includes/prerequisites-rbac.md)]
+![](../../media/icons/16/network-connectivity.svg) **Network and connectivity requirements**
+
+> Devices must have internet access and be able to reach required Microsoft endpoints:
+>
+> - [Intune service endpoints](../../fundamentals/endpoints.md#access-for-managed-devices)
+> - [Windows Update endpoints](https://learn.microsoft.com/en-us/windows/privacy/manage-windows-1809-endpoints#windows-update)
+> - [Windows Autopatch endpoints](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/prepare/windows-autopatch-configure-network)
+
+![](../../media/icons/16/cloud.svg) **Cloud requirements**
+
+> This feature is supported in the following cloud environments:
+>
+> - Public cloud
+> - Government Community Cloud (GCC)
+
+![](../../media/icons/16/tenant-administration.svg) **Tenant configuration requirements**
+
+> To enable reporting for this feature, ensure your organization allows Intune to access Windows diagnostic data collected from enrolled devices.
+>
+> For details, see [Enable use of Windows diagnostic data](../../privacy/enable-windows-diagnostic-data.md).
+
+![](../../media/icons/16/licensing.svg) **Licensing requirements**
+
+> To use this feature, the following licenses are required:
+>
+> - [Microsoft Intune Plan 1](../../fundamentals/licensing.md)
+> - A Windows license that includes the [Autopatch entitlement](https://learn.microsoft.com/en-us/windows/deployment/windows-autopatch/prepare/windows-autopatch-prerequisites#licenses-and-entitlements).
+
+![](../../media/icons/16/devices.svg) **Device platform requirements**
+
+> This feature supports the following Windows editions:
+>
+> - Pro
+> - Pro Education
+> - Enterprise
+> - Education
+>
+> > [!NOTE]
+> >
+> > Windows Enterprise LTSC (Long Term Service Channel) isn't supported. Use update ring policies instead.
+
+![](../../media/icons/16/configuration.svg) **Device configuration requirements**
+
+> This policy type supports devices that are:
+>
+> - Managed by Intune
+> - Microsoft Entra joined
+> - Microsoft Entra hybrid joined
+>
+> Devices must also meet the following requirements:
+>
+> - Telemetry must be turned on, with a minimum setting of [**Required**](../../device-configuration/templates/ref-device-restrictions-windows.md#reporting-and-telemetry).
+> - The *Microsoft Account Sign-In Assistant* service (`wlidsvc`) must be enabled and running.
+
+![](../../media/icons/16/rbac.svg) **Roles requirements**
+
+> To manage this feature, use an account with at least one of the following roles:
+>
+> - [Policy and Profile manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#policy-and-profile-manager)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) that includes:
+>   - The **Device configurations** permissions **Assign**,**Create**,**Delete**,**View Reports**,**Update**, and **Read**
+>   - Permissions that provide visibility into and access to managed devices in Intune (for example, Organization/Read, Managed devices/Read)
+>
+> To view the reports for this feature, use an account with at least one of the following roles:
+>
+> - [Endpoint Security Manager](../../fundamentals/role-based-access-control/ref-built-in-roles.md#endpoint-security-manager)
+> - [Read Only Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#read-only-operator)
+> - [Help Desk Operator](../../fundamentals/role-based-access-control/ref-built-in-roles.md#help-desk-operator)
+> - [Custom role](../../fundamentals/role-based-access-control/create-custom-role.md) with the **Managed devices**/**View Reports** permission.
 
 ## Plan feature update deployments
 
@@ -51,11 +113,11 @@ Feature update policies can be used on their own or as part of Windows Autopatch
 If a device managed by Autopatch is no longer targeted by a feature update policy, the device remains enrolled in Autopatch. This behavior helps prevent unintended upgrades while administrators adjust policy targeting or deployment plans.
 
 As a result, when a feature update policy no longer applies to a device, that device isn't offered any feature update until one of the following happens:
-  - The device is assigned to a new feature update profile.
-  - The device is unenrolled from Intune, which unenrolls the device from feature update management by Autopatch.
-  - You use the [Windows Autopatch graph API](/graph/windowsupdates-enroll) to [remove the device](/graph/api/windowsupdates-updatableasset-unenrollassets) from feature update management.
+
+- The device is assigned to a new feature update profile.
+- The device is unenrolled from Intune, which unenrolls the device from feature update management by Autopatch.
+- You use the [Windows Autopatch graph API](https://learn.microsoft.com/en-us/graph/windowsupdates-enroll) to [remove the device](https://learn.microsoft.com/en-us/graph/api/windowsupdates-updatableasset-unenrollassets) from feature update management.
 
 ## Next steps
 
-> [!div class="nextstepaction"]
-> [Learn how to manage Windows feature update policies](configure-feature-update-policy.md)
+[Learn how to manage Windows feature update policies](configure-feature-update-policy.md)

@@ -1,7 +1,7 @@
 ---
 title: Use direct enrollment for macOS devices
 description: Deploy and enroll macOS devices in Microsoft Intune using direct enrollment with Apple Configurator.
-ms.date: 04/03/2024
+ms.date: "2024-04-03T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: scottbreenmsft
 ---
@@ -24,9 +24,11 @@ Devices are deployed without user affinity. If you need devices to have user aff
 
 See the following visual guide for a summary of all enrollment options and features available for macOS:
 
-[![A visual representation of Intune enrollment options by platform](../media/guide/msft-intune-enrollment-options-thumb-landscape.png)](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf) <br/> [Download PDF version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf) | [Download Visio version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.vsdx)
+[![A visual representation of Intune enrollment options by platform](../media/guide/msft-intune-enrollment-options-thumb-landscape.png)](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf)   
+ [Download PDF version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf) | [Download Visio version](https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.vsdx)
 
 ## Apps
+
 Apps requiring user affinity, such as the Intune Company Portal app, aren't supported on Macs enrolled via direct enrollment. The Company Portal app isn't used, needed, or supported for enrollments without user affinity. Be sure device users don't install the Company Portal app from the Apple App Store on enrolled devices.
 
 ## Certificates
@@ -39,33 +41,17 @@ Devices that are already enrolled in Intune do not get an ACME certificate unles
 
 ## Prerequisites
 
-:::row:::
-:::column span="1":::
-[!INCLUDE [platform](../../includes/requirements/platform.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/devices.svg) **Device platform requirements**
 
 > This enrollment method supports the following platforms:
 >
 > - macOS
 
-:::column-end:::
-:::row-end:::
-
-:::row:::
-:::column span="1":::
-[!INCLUDE [tenant-configuration](../../includes/requirements/tenant-configuration.md)]
-
-:::column-end:::
-:::column span="3":::
+![](../../media/icons/16/tenant-administration.svg) **Tenant configuration requirements**
 
 > - Set [MDM authority](../../fundamentals/setup-mdm-authority.md).
 > - [An Apple MDM push certificate](create-mdm-push-certificate.md).
 > - Access to Microsoft Intune admin center and Apple Configurator.
-
-:::column-end:::
-:::row-end:::
 
 You also need:
 
@@ -74,50 +60,54 @@ You also need:
 
 If the Mac you're setting up is enrolled in another MDM provider, you must unenroll it before you can enroll it in Intune.
 
-  > [!NOTE]
-  > This enrollment method doesn't support device enrollment restrictions. Make sure you don't have device platform restrictions targeted at any Apple devices, because it will cause the enrollment profile download to fail. In this scenario, admins might see the following error during enrollment:  
-> 
+> [!NOTE]
+>
+> This enrollment method doesn't support device enrollment restrictions. Make sure you don't have device platform restrictions targeted at any Apple devices, because it will cause the enrollment profile download to fail. In this scenario, admins might see the following error during enrollment:
+>
 > **File download error. Failed to dynamically fetch target download uri.**
-> 
+>
 > Additionally, if an enrollment profile is downloaded before a restriction is configured and then used after the restriction is enabled, enrollment will fail.
 
 ## Step 1: Create enrollment profile
 
 A device enrollment profile defines the settings applied during direct enrollment. These settings are applied only once. Follow these steps to create an Apple Configurator enrollment profile for the Macs you're enrolling.
 
-1. Sign in to the [Microsoft Intune admin center].
-1. Go to **Devices** > **Enrollment**.
-1. Select the **Apple** tab.
-1. Under **Bulk Enrollment Methods**, select **Apple Configurator**.
-1. Go to **Profiles** > **Create**.
-5. The **Create Enrollment Profile** page opens. For **Basics**, type a **Name** and **Description** for the profile. These details can help you quickly find your profile in the admin center. Device users don't see these details.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Go to **Devices** &gt; **Enrollment**.
+3. Select the **Apple** tab.
+4. Under **Bulk Enrollment Methods**, select **Apple Configurator**.
+5. Go to **Profiles** &gt; **Create**.
+6. The **Create Enrollment Profile** page opens. For **Basics**, type a **Name** and **Description** for the profile. These details can help you quickly find your profile in the admin center. Device users don't see these details.
 
-  > [!TIP]
-  > You can use the name field to create a dynamic membership rule for Microsoft Entra groups. The *enrollmentProfileName* parameter lets you quickly assign devices with this enrollment profile to the appropriate groups. For more information, see [Dynamic group rule syntax](/azure/active-directory/enterprise-users/groups-dynamic-membership#rules-for-devices).
+> [!TIP]
+>
+> You can use the name field to create a dynamic membership rule for Microsoft Entra groups. The *enrollmentProfileName* parameter lets you quickly assign devices with this enrollment profile to the appropriate groups. For more information, see [Dynamic group rule syntax](https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership#rules-for-devices).
 
 5. For **User Affinity**, choose **Enroll without user affinity**. This configuration confirms that you're setting up devices without user association. Direct enrollment *with user affinity*, although available, isn't supported on Macs.
-
 6. Select **Create** to save the profile.
 
 ## Step 2: Export enrollment profile
+
 In this step, you export the enrollment profile.
 
 1. After you create the profile in the admin center, go to **Profiles**.
-1. Choose the profile you want to export. Then select **Export profile**.
-1. A new pane opens. Under **Direct enrollment**, choose **Download profile**.
-1. Save the `.mobileconfig` file.  An enrollment profile file is only valid for two weeks. After that time, you must recreate it.
+2. Choose the profile you want to export. Then select **Export profile**.
+3. A new pane opens. Under **Direct enrollment**, choose **Download profile**.
+4. Save the `.mobileconfig` file. An enrollment profile file is only valid for two weeks. After that time, you must recreate it.
 
-     > [!NOTE]
-     > You can download as many enrollment profiles as you need. Downloading a new profile does not render the previous one invalid, however, it also doesn't extend the expiration date for the previously downloaded file.
+   > [!NOTE]
+   >
+   > You can download as many enrollment profiles as you need. Downloading a new profile does not render the previous one invalid, however, it also doesn't extend the expiration date for the previously downloaded file.
 
 ## Step 3: Install enrollment profile
+
 In this step, you install the enrollment profile on the enrolling Mac.
 
 1. Transfer the `.mobileconfig` file from your device to the Mac you want to enroll.
-1. Double-click the file to open it.
-1. When you're prompted to install the management profile, select **Install**.
-1. Select **Install** again to confirm you want to install the management profile.
-1. Sign in with an administrator account on the Mac, and then select **OK**.
+2. Double-click the file to open it.
+3. When you're prompted to install the management profile, select **Install**.
+4. Select **Install** again to confirm you want to install the management profile.
+5. Sign in with an administrator account on the Mac, and then select **OK**.
 
 The Mac is now enrolled in Microsoft Intune and ready-to-manage. Other profiles assigned to the device begin installing immediately.
 
@@ -128,7 +118,3 @@ Start managing enrolled devices in the Microsoft Intune admin center.
 - [Tutorial - Walkthrough the Microsoft Intune admin center](../../fundamentals/tutorial-admin-center-walkthrough.md)
 - [Remote Device Actions In Microsoft Intune](../../device-management/actions/index.md)
 - [Microsoft Intune advanced capabilities](../../fundamentals/advanced-capabilities.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

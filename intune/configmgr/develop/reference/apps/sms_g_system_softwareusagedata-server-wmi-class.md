@@ -1,16 +1,18 @@
 ---
-title: SMS_G_System_SoftwareUsageData Class
+title: "SMS_G_System_SoftwareUsageData Server WMI Class"
 description: Provides a view of raw metering data that combines file and user information with the raw data.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_System_SoftwareUsageData Server WMI Class
+
 The `SMS_G_System_SoftwareUsageData` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that provides a view of raw metering data that combines file and user information with the raw data.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -41,202 +43,187 @@ Class SMS_G_System_SoftwareUsageData : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_SoftwareUsageData` class does not define any methods.
+
+The `SMS_G_System_SoftwareUsageData` class does not define any methods.
 
 ## Properties
- `CompanyName`
- Data type: `String`
 
- Access type: Read/Write
+`CompanyName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the company that made the file, taken from the `Company` property of the file version resources.
+Qualifiers: None
 
- `EndNotCaptured`
- Data type: `Boolean`
+Name of the company that made the file, taken from the `Company` property of the file version resources.
 
- Access type: Read/Write
+`EndNotCaptured` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the metering agent could not capture the actual end time of the process.
+Qualifiers: None
 
- `EndTimeGMT`
- Data type: `DateTime`
+`true` if the metering agent could not capture the actual end time of the process.
 
- Access type: Read/Write
+`EndTimeGMT` Data type: `DateTime`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- The date and time, in Universal Coordinated Time (UTC), when the process stopped running, if `StillRunning` is `false`. If it is `true`, `EndTimeGMT` indicates the time when the data was reported.
+Qualifiers: [key]
 
- `EndTimeLocal`
- Data type: `DateTime`
+The date and time, in Universal Coordinated Time (UTC), when the process stopped running, if `StillRunning` is `false`. If it is `true`, `EndTimeGMT` indicates the time when the data was reported.
 
- Access type: Read/Write
+`EndTimeLocal` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time, in the local time zone of the client, when the process stopped running, if `StillRunning` is `false`. If it is `true`, `EndTimeLocal` indicates the time when the data was reported.
+Qualifiers: None
 
- `FileDescription`
- Data type: `String`
+The date and time, in the local time zone of the client, when the process stopped running, if `StillRunning` is `false`. If it is `true`, `EndTimeLocal` indicates the time when the data was reported.
 
- Access type: Read/Write
+`FileDescription` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Description of the metered file, taken from the files version resources.
+Qualifiers: None
 
- `FileID`
- Data type: `SInt64`
+Description of the metered file, taken from the files version resources.
 
- Access type: Read/Write
+`FileID` Data type: `SInt64`
 
- Qualifiers: None
+Access type: Read/Write
 
- ID of the file that was metered. To find the file information, the application matches this property to the ID in [SMS_ProductFileInfo Server WMI Class](../../../develop/reference/apps/sms_productfileinfo-server-wmi-class.md). To find the rules that caused the file to be metered, the application matches `FileID` to the ID in [SMS_MeteredFiles Server WMI Class](../../../develop/reference/apps/sms_meteredfiles-server-wmi-class.md).
+Qualifiers: None
 
- `FileName`
- Data type: `String`
+ID of the file that was metered. To find the file information, the application matches this property to the ID in [SMS_ProductFileInfo Server WMI Class](sms_productfileinfo-server-wmi-class.md). To find the rules that caused the file to be metered, the application matches `FileID` to the ID in [SMS_MeteredFiles Server WMI Class](sms_meteredfiles-server-wmi-class.md).
 
- Access type: Read/Write
+`FileName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- File name of the metered file if the metering rule matched the file name. If it did not match, but the `OriginalFileName` property of the rule matched the original file name in the files version resources, this property represents the original file name.
+Qualifiers: None
 
- `FileSize`
- Data type: `UInt32`
+File name of the metered file if the metering rule matched the file name. If it did not match, but the `OriginalFileName` property of the rule matched the original file name in the files version resources, this property represents the original file name.
 
- Access type: Read/Write
+`FileSize` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Size of the metered file.
+Qualifiers: None
 
- `FileVersion`
- Data type: `String`
+Size of the metered file.
 
- Access type: Read/Write
+`FileVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- File version of the metered file, taken from the file version resources.
+Qualifiers: None
 
- `InTSSession`
- Data type: `Boolean`
+File version of the metered file, taken from the file version resources.
 
- Access type: Read/Write
+`InTSSession` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the file was used in a Terminal Server session. Set this property to `false` if the file was used in a console session.
+Qualifiers: None
 
- `MeterDataID`
- Data type: `String`
+`true` if the file was used in a Terminal Server session. Set this property to `false` if the file was used in a console session.
 
- Access type: Read/Write
+`MeterDataID` Data type: `String`
 
- Qualifiers:
+Access type: Read/Write
 
- [key]
+Qualifiers:
 
- Unique ID of a particular instance of a running process on a computer. A record with this ID is created every time the client reports on the same instance of a running program.
+[key]
 
- `ProductLanguage`
- Data type: `UInt32`
+Unique ID of a particular instance of a running process on a computer. A record with this ID is created every time the client reports on the same instance of a running program.
 
- Access type: Read/Write
+`ProductLanguage` Data type: `UInt32`
 
- Qualifiers: [Subtype("Locale Id")]
+Access type: Read/Write
 
- Language ID of the metered file, taken from the file version resources.
+Qualifiers: [Subtype("Locale Id")]
 
- `ProductName`
- Data type: `String`
+Language ID of the metered file, taken from the file version resources.
 
- Access type: Read/Write
+`ProductName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Product name of the metered file, taken from the file version resources. This is not the product name of the rule that caused the file to be metered.
+Qualifiers: None
 
- `ProductVersion`
- Data type: `String`
+Product name of the metered file, taken from the file version resources. This is not the product name of the rule that caused the file to be metered.
 
- Access type: Read/Write
+`ProductVersion` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Product version of the metered file, taken from the file version resources.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Product version of the metered file, taken from the file version resources.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System Server WMI Class](../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: [key]
 
- For this class, this property represents the ID of the computer that executed the metered program. To find the computer information, your application finds the record with the same resource ID in the [SMS_R_System Server WMI Class](../../../develop/reference/core/clients/manage/sms_r_system-server-wmi-class.md) class.
+See [SMS_G_System Server WMI Class](../core/clients/manage/sms_g_system-server-wmi-class.md).
 
- `StartNotCaptured`
- Data type: `Boolean`
+For this class, this property represents the ID of the computer that executed the metered program. To find the computer information, your application finds the record with the same resource ID in the [SMS_R_System Server WMI Class](../core/clients/manage/sms_r_system-server-wmi-class.md) class.
 
- Access type: Read/Write
+`StartNotCaptured` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the metering agent could not capture the actual start time of the process.
+Qualifiers: None
 
- `StartTimeGMT`
- Data type: `DateTime`
+`true` if the metering agent could not capture the actual start time of the process.
 
- Access type: Read/Write
+`StartTimeGMT` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time, in Universal Coordinated Time (UTC), when the program started.
+Qualifiers: None
 
- `StartTimeLocal`
- Data type: `DateTime`
+The date and time, in Universal Coordinated Time (UTC), when the program started.
 
- Access type: Read/Write
+`StartTimeLocal` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- The date and time, in the local time zone of the client, when the program started.
+Qualifiers: None
 
- `StillRunning`
- Data type: `Boolean`
+The date and time, in the local time zone of the client, when the program started.
 
- Access type: Read/Write
+`StillRunning` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the program is still running. Set this property to `false` if `EndTime` represents the actual end time of the metered program.
+Qualifiers: None
 
- `UserName`
- Data type: `String`
+`true` if the program is still running. Set this property to `false` if `EndTime` represents the actual end time of the metered program.
 
- Access type: Read/Write
+`UserName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Fully qualified user name of the user of the metered application.
+Qualifiers: None
+
+Fully qualified user name of the user of the metered application.
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
 
- This class counts the number of distinct users and computers that used a metered file during a particular interval on a particular site.
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
+
+This class counts the number of distinct users and computers that used a metered file during a particular interval on a particular site.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

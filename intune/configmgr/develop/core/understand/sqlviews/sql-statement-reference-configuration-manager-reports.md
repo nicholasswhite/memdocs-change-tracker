@@ -1,7 +1,7 @@
 ---
-title: SQL statement reference for reports
+title: "SQL statement reference for Configuration Manager reports"
 description: Information about SQL Server statements that can be used when creating Configuration�Manager reports.
-ms.date: 04/30/2019
+ms.date: "2019-04-30T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 
@@ -31,6 +31,7 @@ For information about how to write basic queries, see your SQL Server documentat
 Aggregate functions (such as SUM, AVG, COUNT, COUNT(\*), MAX, and MIN) generate summary values in query result sets. An aggregate function (with the exception of COUNT(\*)) processes all the selected values in a single column to produce a single result value. Aggregate functions can be applied to all rows in a view, to a subset of the view specified by a WHERE clause, or to one or more groups of rows in the view. When an aggregate function is applied, a single value is generated from each set of rows.
 
 > [!IMPORTANT]
+>
 > Be aware that NULL values are not included in aggregate results. For example, if you have 100 records and 8 of them have a NULL column value for the property that you are counting, the count will return only 92 results.
 
 An example of using the COUNT(\*) aggregate function is displayed in the following query (from the **Count clients for each site** predefined report) and example result set.
@@ -49,10 +50,10 @@ GROUP BY SiteCode, SiteName, ReportingSiteCode
 ORDER BY SiteCode
 ```
 
-|SiteCode|SiteName|ReportingSiteCode|Count|
-|--- |--- |--- |--- |
-|ABC|ABC Site||928|
-|123|123 Site|ABC|1010|
+| SiteCode | SiteName | ReportingSiteCode | Count |
+| --- | --- | --- | --- |
+| ABC | ABC Site |  | 928 |
+| 123 | 123 Site | ABC | 1010 |
 
 ## Date and Time functions
 
@@ -68,9 +69,9 @@ The following example results in the current system date and time:
 SELECT GETDATE()
 ```
 
-|(no column name)|
-|--- |
-|2005-05-29 10:10:03.001|
+| (no column name) |
+| --- |
+| 2005-05-29 10:10:03.001 |
 
 ## DATEADD (datepart, number, date)
 
@@ -84,9 +85,9 @@ The following example results in a date that is two days from May 29, 2005:
 SELECT DATEADD([day], 2, '2005-05-29 10:10:03.001')
 ```
 
-|(no column name)|
-|--- |
-|2005-05-31 10:10:03.001|
+| (no column name) |
+| --- |
+| 2005-05-31 10:10:03.001 |
 
 ## DATEDIFF (datepart , startdate , enddate)
 
@@ -102,9 +103,9 @@ SELECT DATEDIFF (minute, '2005-05-29 10:10:03.001',
 '2005-06-12 09:28:11.111')
 ```
 
-|(no column name)|
-|--- |
-|20118|
+| (no column name) |
+| --- |
+| 20118 |
 
 ## DATEPART (datepart , date)
 
@@ -118,9 +119,9 @@ The following example results in the month in the specified date:
 SELECT DATEPART (month, '2005-05-29 10:10:03.001')
 ```
 
-|(no column name)|
-|--- |
-|5|
+| (no column name) |
+| --- |
+| 5 |
 
 ## Combining Date and Time functions
 
@@ -132,9 +133,9 @@ The following example results in the current date and time (2005-05-29 10:10:03.
 SELECT DATEADD([day], - 100, GETDATE())
 ```
 
-|(no column name)|
-|--- |
-|2005-02-18 10:10:03.001|
+| (no column name) |
+| --- |
+| 2005-02-18 10:10:03.001 |
 
 ## Example query using Date and Time functions
 
@@ -156,13 +157,13 @@ GROUP BY SiteCode, MessageID
 ORDER BY SiteCode, MessageID
 ```
 
-|Site Code|MessageID|Count|End Date|
-|--- |--- |--- |--- |
-|ABC|500|190|2005-05-29 10:10:03.001|
-|ABC|501|130|2005-05-29 10:10:03.001|
-|ABC|502|190|2005-05-29 10:10:03.001|
-|ABC|1105|85|2005-05-29 10:10:03.001|
-|ABC|1106|5|2005-05-29 10:10:03.001|
+| Site Code | MessageID | Count | End Date |
+| --- | --- | --- | --- |
+| ABC | 500 | 190 | 2005-05-29 10:10:03.001 |
+| ABC | 501 | 130 | 2005-05-29 10:10:03.001 |
+| ABC | 502 | 190 | 2005-05-29 10:10:03.001 |
+| ABC | 1105 | 85 | 2005-05-29 10:10:03.001 |
+| ABC | 1106 | 5 | 2005-05-29 10:10:03.001 |
 
 ## JOINS
 
@@ -182,10 +183,10 @@ FROM v_R_System INNER JOIN v_GS_WORKSTATION_STATUS
 ON v_R_System.ResourceID = v_GS_WORKSTATION_STATUS.ResourceID
 ```
 
-|Machine Name|Last HW Scan|
-|--- |--- |
-|Client1|2005-05-29 10:10:03.001|
-|Client3|2005-06-12 09:28:11.110|
+| Machine Name | Last HW Scan |
+| --- | --- |
+| Client1 | 2005-05-29 10:10:03.001 |
+| Client3 | 2005-06-12 09:28:11.110 |
 
 ## Outer joins
 
@@ -205,11 +206,11 @@ FROM v_R_System LEFT OUTER JOIN v_GS_WORKSTATION_STATUS
 ON v_R_System.ResourceID = v_GS_WORKSTATION_STATUS.ResourceID
 ```
 
-|Machine Name|Last HW Scan|
-|--- |--- |
-|Client1|2005-05-29 10:10:03.001|
-|Client2|NULL|
-|Client3|2005-06-12 09:28:11.110|
+| Machine Name | Last HW Scan |
+| --- | --- |
+| Client1 | 2005-05-29 10:10:03.001 |
+| Client2 | NULL |
+| Client3 | 2005-06-12 09:28:11.110 |
 
 ## Right outer joins
 

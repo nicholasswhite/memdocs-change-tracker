@@ -1,34 +1,34 @@
 ---
-title: Modify the Supported Platforms for a Program
+title: "How to Modify the Supported Platforms for a Program"
 description: Add supported platforms to a package by obtaining specific instances of the SMS_Package and SMS_Program classes.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Modify the Supported Platforms for a Program
+
 Your application can add supported platforms to a package, in Configuration Manager, by obtaining specific instances of the `SMS_Package` and `SMS_Program` classes and then adding an instance of the `SMS_OS_Details` class to the `SupportedOperatingSystems` property.
 
 ### To modify the supported platforms for a program
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Obtain an existing package object by using the `SMS_Package` class.
-
-3.  Obtain an existing program object by using the `SMS_Program` class.
-
-4.  Create and populate an instance of the `SMS_OS_Details` class.
-
-5.  Add the new `SMS_OS_Details` instance to the `SupportedOperatingSystems` property of the program object (from step 3).
+1. Set up a connection to the SMS Provider.
+2. Obtain an existing package object by using the `SMS_Package` class.
+3. Obtain an existing program object by using the `SMS_Program` class.
+4. Create and populate an instance of the `SMS_OS_Details` class.
+5. Add the new `SMS_OS_Details` instance to the `SupportedOperatingSystems` property of the program object (from step 3).
 
 ## Example
- The following example method shows how to add supported platforms for a program.
+
+The following example method shows how to add supported platforms for a program.
 
 > [!NOTE]
->  A slight variation of this example could change property values for all of the programs associated with a specific package. For an example, see the [How to List All Programs and Their Maximum Run Time Value](../../../../develop/core/servers/configure/how-to-list-all-programs-and-their-maximum-run-time-value.md) code example. However, for a more efficient method of accessing a specific program, using the `PackageID` and `ProgramName`, see the [How to Modify Program Properties](../../../../develop/core/servers/configure/how-to-modify-program-properties.md) code example.
+>
+> A slight variation of this example could change property values for all of the programs associated with a specific package. For an example, see the [How to List All Programs and Their Maximum Run Time Value](how-to-list-all-programs-and-their-maximum-run-time-value.md) code example. However, for a more efficient method of accessing a specific program, using the `PackageID` and `ProgramName`, see the [How to Modify Program Properties](how-to-modify-program-properties.md) code example.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 Sub ModifySupportedPlatformsForProgram(connection,          _
@@ -178,39 +178,44 @@ public void ModifyProgramSupportedPlatforms(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The package ID for an existing package.|
-|`existingProgramName`|-   Managed: `String`<br />-   VBScript: `String`|The program name for an existing program.|
-|`newMaxVersion`|-   Managed: `String`<br />-   VBScript: `String`|The maximum supported version.|
-|`newMinVersionsion`|-   Managed: `String`<br />-   VBScript: `String`|The minimum supported version.|
-|`newName`|-   Managed: `String`<br />-   VBScript: `String`|The modified program name.|
-|`newPlatform`|-   Managed: `String`<br />-   VBScript: `String`|The new platform.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPackageID` | - Managed: `String` - VBScript: `String` | The package ID for an existing package. |
+| `existingProgramName` | - Managed: `String` - VBScript: `String` | The program name for an existing program. |
+| `newMaxVersion` | - Managed: `String` - VBScript: `String` | The maximum supported version. |
+| `newMinVersionsion` | - Managed: `String` - VBScript: `String` | The minimum supported version. |
+| `newName` | - Managed: `String` - VBScript: `String` | The modified program name. |
+| `newPlatform` | - Managed: `String` - VBScript: `String` | The new platform. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
+
+[Software distribution overview](software-distribution-overview.md)

@@ -1,16 +1,18 @@
 ---
-title: SMS_TopThreatSummary Class
+title: "SMS_TopThreatSummary Server WMI Class"
 description: An SMS Provider server class, in Configuration Manager, that summarizes the top threats per collection.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TopThreatSummary Server WMI Class
+
 The `SMS_TopThreatSummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that summarizes the top threats per collection.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -38,177 +40,164 @@ Class SMS_TopThreatSummary : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_TopThreatSummary` class does not define any methods.
+
+The `SMS_TopThreatSummary` class does not define any methods.
 
 ## Properties
- `CollectionID`
- Data type: `String`
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of the collection.
+Qualifiers: [key]
 
- `CollectionMembers`
- Data type: `UInt32`
+Identifier of the collection.
 
- Access type: Read/Write
+`CollectionMembers` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Count of collection members.
+Qualifiers: none
 
- `CollectionName`
- Data type: `String`
+Count of collection members.
 
- Access type: Read/Write
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the collection.
+Qualifiers: none
 
- `FailedCount`
- Data type: `UInt32`
+Name of the collection.
 
- Access type: Read/Write
+`FailedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Failed action client count.
+Qualifiers: none
 
- `FirstDetectionTime`
- Data type: `DateTime`
+Failed action client count.
 
- Access type: Read/Write
+`FirstDetectionTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- First time the malware is detected.
+Qualifiers: none
 
- `InfectedCount`
- Data type: `UInt32`
+First time the malware is detected.
 
- Access type: Read/Write
+`InfectedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Infected client count.
+Qualifiers: none
 
- `IsAllowed`
- Data type: `Boolean`
+Infected client count.
 
- Access type: Read/Write
+`IsAllowed` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if we've trigger the action to allow this malware in this collection.
+Qualifiers: none
 
- `IsExcluded`
- Data type: `Boolean`
+`true` if we've trigger the action to allow this malware in this collection.
 
- Access type: Read/Write
+`IsExcluded` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if we've chosen to exclude this malware path (in the scan list) in this collection.
+Qualifiers: none
 
- `IsRestored`
- Data type: `Boolean`
+`true` if we've chosen to exclude this malware path (in the scan list) in this collection.
 
- Access type: Read/Write
+`IsRestored` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` if we've tried to restore this malware in this collection.
+Qualifiers: none
 
- `LastDetectionTime`
- Data type: `DateTime`
+`true` if we've tried to restore this malware in this collection.
 
- Access type: Read/Write
+`LastDetectionTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last detection time.
+Qualifiers: none
 
- `LastUpdateTime`
- Data type: `DateTime`
+Last detection time.
 
- Access type: Read/Write
+`LastUpdateTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last update time.
+Qualifiers: none
 
- `PendingCount`
- Data type: `UInt32`
+Last update time.
 
- Access type: Read/Write
+`PendingCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients with pending actions to finish the remediation of the malware in this collection.
+Qualifiers: none
 
- `RemediatedCount`
- Data type: `UInt32`
+Number of clients with pending actions to finish the remediation of the malware in this collection.
 
- Access type: Read/Write
+`RemediatedCount` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients where malware was remediated successfully in the collection.
+Qualifiers: none
 
- `Severity`
- Data type: `UInt32`
+Number of clients where malware was remediated successfully in the collection.
 
- Access type: Read/Write
+`Severity` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Threat severity. Possible values are:
+Qualifiers: none
+
+Threat severity. Possible values are:
 
 | Value | Threat severity |
-| ----- | --------------- |
-|0|Not Yet Classified|
-|1|Low|
-|2|Medium|
-|3|Not Used|
-|4|High|
-|5|Severe|
+| --- | --- |
+| 0 | Not Yet Classified |
+| 1 | Low |
+| 2 | Medium |
+| 3 | Not Used |
+| 4 | High |
+| 5 | Severe |
 
- `ThreatCategoryID`
- Data type: `UInt32`
+`ThreatCategoryID` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Category identifier of the threat.
+Category identifier of the threat.
 
- `ThreatID`
- Data type: `UInt64`
+`ThreatID` Data type: `UInt64`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- Identifier of the threat.
+Identifier of the threat.
 
- `ThreatName`
- Data type: `String`
+`ThreatName` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: none
+Qualifiers: none
 
- Name of the threat.
+Name of the threat.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

@@ -1,16 +1,18 @@
 ---
-title: SMS_DCMDeploymentCompliantDetailsPerAsset Class
+title: "SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class"
 description: Learn how to use the SMS_DCMDeploymentCompliantDetailsPerAsset class in Configuration Manager set compliant asset details for a deployment.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DCMDeploymentCompliantDetailsPerAsset Server WMI Class
+
 The `SMS_DCMDeploymentCompliantDetailsPerAsset` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the compliant asset details for a deployment.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -52,329 +54,302 @@ Class SMS_DCMDeploymentCompliantDetailsPerAsset : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DCMDeploymentCompliantDetailsPerAsset` class does not define any methods.
+
+The `SMS_DCMDeploymentCompliantDetailsPerAsset` class does not define any methods.
 
 ## Properties
- `ADUserName`
- Data type: `String`
 
- Access type: Read-only
+`ADUserName` Data type: `String`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Active Directory user name.
+Qualifiers: [key, not_null, read]
 
- `AssetID`
- Data type: `UInt32`
+Active Directory user name.
 
- Access type: Read-only
+`AssetID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The ID of the asset.
+Qualifiers: [not_null, read]
 
- `AssetType`
- Data type: `UInt32`
+The ID of the asset.
 
- Access type: Read-only
+`AssetType` Data type: `UInt32`
 
- Qualifiers: [enumeration, not_null, read]
+Access type: Read-only
 
- Type of the asset. Possible values are:
+Qualifiers: [enumeration, not_null, read]
 
-|Value|Asset type|
-|-|-|
-|0|USER|
-|1|MACHINE|
+Type of the asset. Possible values are:
 
- `AssignmentID`
- Data type: `UInt32`
+| Value | Asset type |
+| --- | --- |
+| 0 | USER |
+| 1 | MACHINE |
 
- Access type: Read-only
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- The assignment ID.
+Qualifiers: [key, not_null, read]
 
- `AssignmentUniqueID`
- Data type: `String`
+The assignment ID.
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The ID of the configuration item assignment. This ID is unique only for the site.
+Qualifiers: [not_null, read]
 
- `BL_ID`
- Data type: `UInt32`
+The ID of the configuration item assignment. This ID is unique only for the site.
 
- Access type: Read-only
+`BL_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Baseline database identifier that is deployed using this assignment.
+Qualifiers: [key, not_null, read]
 
- `BLName`
- Data type: `String`
+Baseline database identifier that is deployed using this assignment.
 
- Access type: Read-only
+`BLName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Baseline name that is deployed using this assignment.
+Qualifiers: [read]
 
- `BLRevision`
- Data type: `UInt32`
+Baseline name that is deployed using this assignment.
 
- Access type: Read-only
+`BLRevision` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Baseline version that is deployed using this assignment.
+Qualifiers: [not_null, read]
 
- `CI_ID`
- Data type: `UInt32`
+Baseline version that is deployed using this assignment.
 
- Access type: Read-only
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- The unique ID of the configuration item. This ID is unique only for the site.
+Qualifiers: [key, not_null, read]
 
- `CIName`
- Data type: `String`
+The unique ID of the configuration item. This ID is unique only for the site.
 
- Access type: Read-only
+`CIName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the configuration item.
+Qualifiers: [read]
 
- `ClientType`
- Data type: `UInt32`
+The name of the configuration item.
 
- Access type: Read-only
+`ClientType` Data type: `UInt32`
 
- Qualifiers: [enumeration, not_null, read]
+Access type: Read-only
 
- Type of client. Possible values are:
+Qualifiers: [enumeration, not_null, read]
 
-|Value|Client type|
-|-|-|
-|1|WINDOWS_CLIENT|
-|2|WINDOWS_MOBILE|
+Type of client. Possible values are:
 
- `ClientTypeDisplay`
- Data type: `String`
+| Value | Client type |
+| --- | --- |
+| 1 | WINDOWS_CLIENT |
+| 2 | WINDOWS_MOBILE |
 
- Access type: Read-only
+`ClientTypeDisplay` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The name of the client type in the console.
+Qualifiers: [read]
 
- `DeviceName`
- Data type: `String`
+The name of the client type in the console.
 
- Access type: Read-only
+`DeviceName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the device of the targeted asset.
+Qualifiers: [read]
 
- `DiscoveredValue`
- Data type: `String`
+Name of the device of the targeted asset.
 
- Access type: Read-only
+`DiscoveredValue` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Value of the setting that was discovered and reported when the rule is non-compliant.
+Qualifiers: [read]
 
- `InstanceData`
- Data type: `String`
+Value of the setting that was discovered and reported when the rule is non-compliant.
 
- Access type: Read-only
+`InstanceData` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Discovered path of the instance of the setting being referenced by the non-compliant rule.
+Qualifiers: [read]
 
- `IsBaselineRule`
- Data type: `Boolean`
+Discovered path of the instance of the setting being referenced by the non-compliant rule.
 
- Access type: Read-only
+`IsBaselineRule` Data type: `Boolean`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- `true` if this is a baseline rule.
+Qualifiers: [not_null, read]
 
- `ItemKey`
- Data type: `UInt32`
+`true` if this is a baseline rule.
 
- Access type: Read-only
+`ItemKey` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Database identifier of the asset being reported for.
+Qualifiers: [key, not_null, read]
 
- `PreviousValue`
- Data type: `String`
+Database identifier of the asset being reported for.
 
- Access type: Read-only
+`PreviousValue` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Value of the setting discovered during the prior evaluation of the baseline.
+Qualifiers: [read]
 
- `Revision`
- Data type: `UInt32`
+Value of the setting discovered during the prior evaluation of the baseline.
 
- Access type: Read-only
+`Revision` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Version of the baseline deployed using this assignment.
+Qualifiers: [not_null, read]
 
- `Rule_ID`
- Data type: `UInt32`
+Version of the baseline deployed using this assignment.
 
- Access type: Read-only
+`Rule_ID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- The database identifier of a rule defined in a configuration item.
+Qualifiers: [key, not_null, read]
 
- `RuleDescription`
- Data type: `String`
+The database identifier of a rule defined in a configuration item.
 
- Access type: Read-only
+`RuleDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Descriptive name that identifies the rule.
+Qualifiers: [read]
 
- `RuleName`
- Data type: `String`
+Descriptive name that identifies the rule.
 
- Access type: Read-only
+`RuleName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the rule.
+Qualifiers: [read]
 
- `RuleStateDisplay`
- Data type: `String`
+Name of the rule.
 
- Access type: Read-only
+`RuleStateDisplay` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Represents the state of the rule reported by the asset. Possible values are:
+Qualifiers: [not_null, read]
 
-|Value|
-|-|
-|Compliant|
-|Non-compliant|
-|Error|
-|Conflict|
+Represents the state of the rule reported by the asset. Possible values are:
 
- `RuleSubStateDisplay`
- Data type: `String`
+| Value |
+| --- |
+| Compliant |
+| Non-compliant |
+| Error |
+| Conflict |
 
- Access type: Read-only
+`RuleSubStateDisplay` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Represents the sub state of the rule reported by the asset. Possible values are:
+Qualifiers: [not_null, read]
 
-|Value|
-|-|
-|Not-Applicable|
-|Not-Detected|
+Represents the sub state of the rule reported by the asset. Possible values are:
 
- `Setting_ID`
- Data type: `UInt32`
+| Value |
+| --- |
+| Not-Applicable |
+| Not-Detected |
 
- Access type: Read-only
+`Setting_ID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Database identifier of a setting in the configuration item.
+Qualifiers: [not_null, read]
 
- `SettingDescription`
- Data type: `String`
+Database identifier of a setting in the configuration item.
 
- Access type: Read-only
+`SettingDescription` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Description of a setting in the configuration item.
+Qualifiers: [read]
 
- `SettingName`
- Data type: `String`
+Description of a setting in the configuration item.
 
- Access type: Read-only
+`SettingName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of a setting in the configuration item.
+Qualifiers: [read]
 
- `StatusType`
- Data type: `UInt32`
+Name of a setting in the configuration item.
 
- Access type: Read-only
+`StatusType` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Status of the deployment to the targeted asset. Possible values are:
+Qualifiers: [key, not_null, read]
 
-|Value|Deployment status|
-|-|-|
-|1|Success|
-|2|InProgress|
-|4|Unknown|
+Status of the deployment to the targeted asset. Possible values are:
 
- `SubStatusType`
- Data type: `UInt32`
+| Value | Deployment status |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 4 | Unknown |
 
- Access type: Read-only
+`SubStatusType` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Substatus type. Possible values are:
+Qualifiers: [key, not_null, read]
 
-|Value|Substatus type|
-|-|-|
-|0|Compliant|
-|1|Not-Applicable|
-|2|Not-Detected|
-|3|Enforced|
+Substatus type. Possible values are:
 
- `TargetCollectionID`
- Data type: `String`
+| Value | Substatus type |
+| --- | --- |
+| 0 | Compliant |
+| 1 | Not-Applicable |
+| 2 | Not-Detected |
+| 3 | Enforced |
 
- Access type: Read-only
+`TargetCollectionID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- The ID of the collection to which the assignment is targeted.
+Qualifiers: [not_null, read]
 
- `ValidationRule`
- Data type: `String`
+The ID of the collection to which the assignment is targeted.
 
- Access type: Read-only
+`ValidationRule` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- The validation criteria defined for the rule in the configuration item.
+Qualifiers: [read]
+
+The validation criteria defined for the rule in the configuration item.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

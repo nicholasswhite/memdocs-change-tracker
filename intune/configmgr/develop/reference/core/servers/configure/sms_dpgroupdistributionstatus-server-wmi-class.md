@@ -1,16 +1,18 @@
 ---
 description: Learn how the SMS_DPGroupDistributionStatus Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes distribution information for a given distribution point group.
-title: SMS_DPGroupDistributionStatus Class
-ms.date: 09/20/2016
+title: "SMS_DPGroupDistributionStatus Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DPGroupDistributionStatus Server WMI Class
+
 The `SMS_DPGroupDistributionStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that describes distribution information for a given distribution point group.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -27,67 +29,65 @@ Class SMS_DPGroupDistributionStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DPGroupDistributionStatus` class doesn't define any methods.
+
+The `SMS_DPGroupDistributionStatus` class doesn't define any methods.
 
 ## Properties
- `Assets`
- Data type: `UInt32`
 
- Access type: Read-only
+`Assets` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of distribution points.
+Qualifiers: [read]
 
- `ContentCount`
- Data type: `UInt32`
+Count of distribution points.
 
- Access type: Read-only
+`ContentCount` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Count of packages or applications distributed to this distribution point group.
+Qualifiers: [read]
 
- `GroupID`
- Data type: `String`
+Count of packages or applications distributed to this distribution point group.
 
- Access type: Read/Write
+`GroupID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique identifier for the distribution point group.
+Qualifiers: [key]
 
- `MessageCategory`
- Data type: `UInt32`
+Unique identifier for the distribution point group.
 
- Access type: Read/Write
+`MessageCategory` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Status message category.
+Qualifiers: [key]
 
- `MessageType`
- Data type: `UInt32`
+Status message category.
 
- Access type: Read-only
+`MessageType` Data type: `UInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- See [SMS_StatusMessage Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statusmessage-server-wmi-class.md).
+Qualifiers: [enumeration, read]
 
- `StatusTime`
- Data type: `DateTime`
+See [SMS_StatusMessage Server WMI Class](../manage/sms_statusmessage-server-wmi-class.md).
 
- Access type: Read-only
+`StatusTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date and time, in Universal Coordinated Time (UTC), when the status message was created.
+Qualifiers: [read]
+
+Date and time, in Universal Coordinated Time (UTC), when the status message was created.
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

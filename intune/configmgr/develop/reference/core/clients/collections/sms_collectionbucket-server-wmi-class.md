@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the joining of collection and bucket with the SMS_CollectionBucket class.
-title: SMS_CollectionBucket Class
-ms.date: 09/20/2016
+title: "SMS_CollectionBucket Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CollectionBucket Server WMI Class
+
 The `SMS_CollectionBucket` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents joining of collection and bucket. By default, all collections will have a client health related bucket, while the endpoint protection bucket is only applicable to endpoint protection allowed collections.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,56 +27,56 @@ Class SMS_CollectionBucket : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_CollectionBucket` class does not define any methods.
+
+The `SMS_CollectionBucket` class does not define any methods.
 
 ## Properties
- `Bucket`
- Data type: `String`
 
- Access type: Read/Write
+`Bucket` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Bucket summarized.
+Qualifiers: [key]
 
- `CollectionID`
- Data type: `String`
+Bucket summarized.
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of collection summarized.
+Qualifiers: [key]
 
- `CollectionName`
- Data type: `String`
+Identifier of collection summarized.
 
- Access type: Read/Write
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of collection summarized.
+Qualifiers: none
 
- `FeatureType`
- Data type: `UInt32`
+Name of collection summarized.
 
- Access type: Read/Write
+`FeatureType` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Identifier of feature type.
+Qualifiers: [key]
+
+Identifier of feature type.
 
 | Value | Feature Type |
-| ----- | ------------ |
-|1|EndPoint Protection|
-|2|Client Check|
+| --- | --- |
+| 1 | EndPoint Protection |
+| 2 | Client Check |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

@@ -1,8 +1,8 @@
 ---
-title: Tutorial - Protect Exchange Online email on managed iOS devices
+title: "Tutorial: Protect Exchange Online email on managed iOS devices with Microsoft Intune"
 description: Secure Exchange Online email on iOS devices by using Microsoft Intune compliance policies and Microsoft Entra Conditional Access to require managed devices and the Outlook app.
 ms.author: lanewsad
-ms.date: 04/20/2026
+ms.date: "2026-04-20T00:00:00Z"
 ms.topic: tutorial
 ms.reviewer: demerson
 ai-usage: ai-assisted
@@ -17,9 +17,8 @@ This tutorial shows you how to use Microsoft Intune device compliance policies w
 
 In this tutorial, you'll learn how to:
 
-> [!div class="checklist"]
-> - Create an Intune iOS device compliance policy that sets the conditions a device must meet to be considered compliant.
-> - Create a Microsoft Entra Conditional Access policy that requires iOS devices to enroll in Intune, comply with Intune policies, and use the Outlook mobile app to access Exchange Online email.
+- Create an Intune iOS device compliance policy that sets the conditions a device must meet to be considered compliant.
+- Create a Microsoft Entra Conditional Access policy that requires iOS devices to enroll in Intune, comply with Intune policies, and use the Outlook mobile app to access Exchange Online email.
 
 ## Prerequisites
 
@@ -33,7 +32,7 @@ This tutorial requires a test tenant with the following subscriptions:
 
 ## Sign in to Intune
 
-For this tutorial, sign in to the [Microsoft Intune admin center] with the account you created when you signed up for the Intune trial subscription.
+For this tutorial, sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) with the account you created when you signed up for the Intune trial subscription.
 
 ## Create an email device profile
 
@@ -60,24 +59,21 @@ After you create the app protection policy, return here to continue.
 
 Set up an Intune device compliance policy to set the conditions that a device must meet to be considered compliant. For this tutorial, you create a device compliance policy for iOS devices. Compliance policies are platform-specific, so you need a separate compliance policy for each device platform you want to evaluate.
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Select **Devices** > **Compliance**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Compliance**.
 3. On the **Policies** tab, choose **Create policy**.
 4. On the *Create a policy* page, for *Platform* select **iOS/iPadOS**, and then select **Create** to continue.
-
 5. On the **Basics** tab, enter the following properties:
 
    - **Name**: Enter a descriptive name for the new profile. For this example, enter **iOS compliance policy test**.
    - **Description**: Optional - Enter **iOS compliance policy test**.
 
    Select **Next** to continue.
-
 6. On the **Compliance settings** tab:
 
    1. Expand *Email*, and then set **Unable to set up email on the device** to **Require**.
-   1. Expand *Device Health*, and set **Jailbroken devices** to **Block**.
-   1. Expand *System Security*, and configure the following settings:
+   2. Expand *Device Health*, and set **Jailbroken devices** to **Block**.
+   3. Expand *System Security*, and configure the following settings:
 
       - **Require a password to unlock mobile devices** to **Require**
       - **Simple passwords** to **Block**
@@ -94,14 +90,11 @@ Set up an Intune device compliance policy to set the conditions that a device mu
 
    To continue, select **Next**.
 
-   :::image type="content" source="./media/protect-email-enrolled-devices/ios-compliance-policy-system-security.png" alt-text="Configuration of the iOS compliance policy.":::
-
+   ![Configuration of the iOS compliance policy.](media/protect-email-enrolled-devices/ios-compliance-policy-system-security.png)
 7. Select **Next** to skip **Actions for noncompliance**.
-
 8. On the **Assignments** tab, for *Included groups*, select **Add all devices**, or select a group that contains only those devices that should receive this policy. Be sure to use the same assignment as you used for the [email device profile](#create-an-email-device-profile).
 
    Select **Next** to continue.
-
 9. On the **Review + create** tab, review your settings. When you select **Create**, your changes are saved, and the profile is assigned.
 
 ## Create the Conditional Access policy
@@ -115,14 +108,10 @@ The Conditional Access policy will:
 
 You can configure Conditional Access policies in either the Microsoft Entra admin center or the Microsoft Intune admin center. The following steps use the Intune admin center.
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Select **Endpoint security** > **Conditional Access** > **Create new policy**.
-
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Endpoint security** &gt; **Conditional Access** &gt; **Create new policy**.
 3. For **Name**, enter **Test policy for Microsoft 365 email**.
-
 4. Under **Assignments**, for *Users or agents*, select **0 users and groups selected**. On the **Include** tab, select **All users**. The value for *Users* updates to *All users*.
-
 5. Also under **Assignments**, for *Target resources* select **No target resources selected**. For the *Select what this policy applies to* drop-down, select **Resources (formerly cloud apps)**.
 
    Next, to protect *Microsoft 365 Exchange Online* email, select that app:
@@ -131,42 +120,32 @@ You can configure Conditional Access policies in either the Microsoft Entra admi
    2. For *Select specific resources*, select **None** to open the *Resources* pane.
    3. From the resources list, select the checkbox for **Office 365 Exchange Online**, and then choose **Select**.
 
-   :::image type="content" source="./media/protect-email-enrolled-devices/ios-ca-policy-cloud-apps.png" alt-text="Select Office 365 Exchange Online to add to the policy.":::
-
+   ![Select Office 365 Exchange Online to add to the policy.](media/protect-email-enrolled-devices/ios-ca-policy-cloud-apps.png)
 6. Also under **Assignments**, for *Conditions* select **0 conditions selected**. On the new page that's available, for *Device platforms* select **Not configured** to open the *Device platforms* pane.
+
    1. Set *Configure* to **Yes**.
-   1. On the *Include* tab select **Any device**, and then select **Done**.
+   2. On the *Include* tab select **Any device**, and then select **Done**.
 
-   :::image type="content" source="./media/protect-email-enrolled-devices/ios-ca-policy-cloud-device-platforms.png" alt-text="Configure the device platforms":::
-
-7. Once again, under *Assignments*, open **Conditions** > **Client apps**.
+   ![Configure the device platforms](media/protect-email-enrolled-devices/ios-ca-policy-cloud-device-platforms.png)
+7. Once again, under *Assignments*, open **Conditions** &gt; **Client apps**.
 
    1. Set **Configure** to **Yes**.
-
    2. For this tutorial, select **Mobile apps and desktop clients**, part of *Modern authentication clients* (which refers to apps like Outlook for iOS and Outlook for Android). Clear all other check boxes.
-
    3. Select **Done**, and then select **Done** again.
 
-   :::image type="content" source="./media/protect-email-enrolled-devices/ios-ca-policy-client-apps.png" alt-text="Select apps and clients as conditions for the policy.":::
-
+   ![Select apps and clients as conditions for the policy.](media/protect-email-enrolled-devices/ios-ca-policy-client-apps.png)
 8. Under *Access controls*, for *Grant* select **Not configured** to open the *Grant* pane:
 
    1. On the *Grant* pane, select **Grant access**.
-
    2. Select **Require device to be marked as compliant**.
-
    3. Select **Require app protection policy**.
-
    4. Under *For multiple controls*, select **Require all the selected controls**. This setting ensures that both requirements you selected are enforced when a device tries to access email.
-
    5. Choose **Select**.
 
-   :::image type="content" source="./media/protect-email-enrolled-devices/ios-ca-policy-grant-access.png" alt-text="Select controls":::
-
+   ![Select controls](media/protect-email-enrolled-devices/ios-ca-policy-grant-access.png)
 9. Under **Enable policy**, select **On**.
 
-   :::image type="content" source="./media/protect-email-enrolled-devices/ios-ca-policy-enable-policy.png" alt-text="To enable policy, set the Enable policy slider to On.":::
-
+   ![To enable policy, set the Enable policy slider to On.](media/protect-email-enrolled-devices/ios-ca-policy-enable-policy.png)
 10. Select **Create** to save your changes. The profile is assigned.
 
 > [!NOTE]
@@ -175,43 +154,32 @@ You can configure Conditional Access policies in either the Microsoft Entra admi
 >
 > If you have a Conditional Access Policy that restricts authentication requests for Exchange Online resources, users must meet the Exchange Policy requirements before signing in to Teams. Failure to comply with these policies affects the ability to sign in to Teams.
 >
-> For more information, see [Microsoft documentation on service dependencies and policy enforcement](/entra/identity/conditional-access/service-dependencies#policy-enforcement).
+> For more information, see [Microsoft documentation on service dependencies and policy enforcement](https://learn.microsoft.com/en-us/entra/identity/conditional-access/service-dependencies#policy-enforcement).
 
 ## Try it out
 
 With the policies you've created, any iOS device that attempts to sign in to Microsoft 365 email must enroll in Intune and use the Outlook mobile app for iOS/iPadOS. To test this scenario on an iOS device, try signing in to Exchange Online using credentials for a user in your test tenant. You're prompted to enroll the device and install the Outlook mobile app.
 
-1. To test on an iPhone, go to **Settings** > **Apps** > **Mail** > **Mail Accounts** > **Add Account**, and then select **Microsoft Exchange**.
+1. To test on an iPhone, go to **Settings** &gt; **Apps** &gt; **Mail** &gt; **Mail Accounts** &gt; **Add Account**, and then select **Microsoft Exchange**.
 
    > [!NOTE]
+   >
    > The path in Settings can vary by iOS version. The preceding steps are based on iOS 26. For the latest steps, see [Add an email account to your iPhone or iPad](https://support.apple.com/102619) on the Apple support site.
-
 2. Enter the email address for a user in your test tenant, and then press **Next**.
-
 3. Press **Sign In**.
-
 4. Enter the test user's password, and press **Sign in**.
-
 5. A message appears that says your device must be managed to access the resource, along with an option to enroll.
 
 ## Clean up resources
 
 When the test policies are no longer needed, you can remove them.
 
-1. Sign in to the [Microsoft Intune admin center].
-
-2. Select **Devices** > **Compliance**.
-
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Devices** &gt; **Compliance**.
 3. In the **Policy name** list, select your test policy, and then select **Delete**. Confirm the deletion.
-
-4. Select **Endpoint security** > **Conditional Access**.
-
+4. Select **Endpoint security** &gt; **Conditional Access**.
 5. Select your test policy, and then select **Delete**. Confirm the deletion.
 
 ## Next steps
 
 In this tutorial, you created policies that require iOS devices to enroll in Intune and use the Outlook app to access Exchange Online email. To learn about using Intune with Conditional Access to protect other apps and services, see [Set up Conditional Access](../../device-security/conditional-access-integration/overview.md).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

@@ -1,34 +1,35 @@
 ---
-title: Create a Deployment Package
+title: "How to Create a Deployment Package"
 description: A software updates deployment package initiated by creating an instance of the SMS_SoftwareUpdatesPackage class and populating the properties.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Create a Deployment Package
+
 You create a software updates deployment package, in Configuration Manager, by creating an instance of the `SMS_SoftwareUpdatesPackage` class and populating the properties.
 
 ### To create a software updates deployment package
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Create the new package object by using the `SMS_SoftwareUpdatesPackage` class.
-
-3.  Populate the new package properties.
-
-4.  Save the new package and properties.
+1. Set up a connection to the SMS Provider.
+2. Create the new package object by using the `SMS_SoftwareUpdatesPackage` class.
+3. Populate the new package properties.
+4. Save the new package and properties.
 
 ## Example
- The following example method shows how to create a software updates deployment package by using the `SMS_SoftwareUpdatesPackage` class and class properties.
+
+The following example method shows how to create a software updates deployment package by using the `SMS_SoftwareUpdatesPackage` class and class properties.
 
 > [!NOTE]
->  The package location must be unique, and the updates must be available in the package source.
+>
+> The package location must be unique, and the updates must be available in the package source.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
- Example of the subroutine call in Visual Basic:
+Example of the subroutine call in Visual Basic:
 
 ```vbscript
 
@@ -40,7 +41,7 @@ Call CreateSUMDeploymentPackage(swbemServices,                  _
 
 ```
 
- Example of the method call in C#:
+Example of the method call in C#:
 
 ```csharp
 
@@ -114,42 +115,46 @@ public void CreateSUMDeploymentPackage(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`newDeploymentPackageName`|-   Managed: `String`<br />-   VBScript: `String`|The new deployment package name.|
-|`newDeploymentPackageDescription`|-   Managed: `String`<br />-   VBScript: `String`|The description for the new deployment package.|
-|`newPackageSourceFlag`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The new package source flag.|
-|`newPackageSourcePath`|-   Managed: `String`<br />-   VBScript: `String`|The new package source path.<br /><br /> The package location must be unique and the updates must be available in the package source.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `newDeploymentPackageName` | - Managed: `String` - VBScript: `String` | The new deployment package name. |
+| `newDeploymentPackageDescription` | - Managed: `String` - VBScript: `String` | The description for the new deployment package. |
+| `newPackageSourceFlag` | - Managed: `Integer` - VBScript: `Integer` | The new package source flag. |
+| `newPackageSourcePath` | - Managed: `String` - VBScript: `String` | The new package source path.   The package location must be unique and the updates must be available in the package source. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About software update deployments](about-software-updates-deployments.md)
- [How to Assign a Package to a Distribution Point](../../develop/core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md)
- [SMS_SoftwareUpdatesPackage](../../develop/reference/sum/sms_softwareupdatespackage-server-wmi-class.md)
+
+[About software update deployments](about-software-updates-deployments.md) [How to Assign a Package to a Distribution Point](../core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md) [SMS_SoftwareUpdatesPackage](../reference/sum/sms_softwareupdatespackage-server-wmi-class.md)

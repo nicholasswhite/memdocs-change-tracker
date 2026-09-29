@@ -1,16 +1,18 @@
 ---
 description: Learn how to map network abstraction layer (NAL) paths, resource types, site codes, and role names for system resources located on site servers.
-title: SMS_SystemResourceList Class
-ms.date: 09/20/2016
+title: "SMS_SystemResourceList Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SystemResourceList Server WMI Class
+
 The `SMS_SystemResourceList` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that maps network abstraction layer (NAL) paths, resource types, site codes, and role names for system resources located on site servers.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -30,112 +32,109 @@ Class SMS_SystemResourceList : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_SystemResourceList` class doesn't define any methods.
+
+The `SMS_SystemResourceList` class doesn't define any methods.
 
 ## Properties
- `InternetEnabled`
- Data type: `Boolean`
 
- Access type: Read Only
+`InternetEnabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read Only
 
- `true` if this role system resource is Internet enabled. The default value is `false`.
+Qualifiers: None
 
- `InternetShared`
- Data type: `Boolean`
+`true` if this role system resource is Internet enabled. The default value is `false`.
 
- Access type: Read Only
+`InternetShared` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read Only
 
- `true` if the site system resource instance can serve both internet clients and intranet clients. It has meaning only if the `InternetEnabled` property is also set to `true`.
+Qualifiers: None
 
- `NALPath`
- Data type: `String`
+`true` if the site system resource instance can serve both internet clients and intranet clients. It has meaning only if the `InternetEnabled` property is also set to `true`.
 
- Access type: Read Only
+`NALPath` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read Only
 
- NAL path of the system resource. The default value is "".
+Qualifiers: [key]
 
- `ResourceType`
- Data type: `String`
+NAL path of the system resource. The default value is "".
 
- Access type: Read Only
+`ResourceType` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read Only
 
- Type of the system resource, such as a Windows NT Server. The default value is "".
+Qualifiers: [key]
 
- `RoleName`
- Data type: `String`
+Type of the system resource, such as a Windows NT Server. The default value is "".
 
- Access type: Read Only
+`RoleName` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read Only
 
- Role of the server. The default value is "".
+Qualifiers: [key]
 
- `ServerName`
- Data type: `String`
+Role of the server. The default value is "".
 
- Access type: Read Only
+`ServerName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Name of the server. The default value is "".
+Qualifiers: None
 
- `ServerRemoteName`
- Data type: `String`
+Name of the server. The default value is "".
 
- Access type: Read Only
+`ServerRemoteName` Data type: `String`
 
- Qualifiers: None
+Access type: Read Only
 
- Fully qualified domain name (FQDN) for the site system on the intranet. The default value is "".
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Fully qualified domain name (FQDN) for the site system on the intranet. The default value is "".
 
- Access type: Read Only
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read Only
 
- Site that owns the system resource. The default value is "".
+Qualifiers: [key, SizeLimit("3")]
 
- `SslState`
- Data type: `UInt32`
+Site that owns the system resource. The default value is "".
 
- Access type: Read Only
+`SslState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read Only
 
- SSL state description. Possible values are:
+Qualifiers: None
 
-|Value|SSL state|
-|-|-|
-|0|HTTP|
-|1|HTTPS|
-|2|Not applicable. The property is only applicable for a site system role that is client facing.|
-|3|Always HTTPS|
-|4|Always HTTP|
+SSL state description. Possible values are:
+
+| Value | SSL state |
+| --- | --- |
+| 0 | HTTP |
+| 1 | HTTPS |
+| 2 | Not applicable. The property is only applicable for a site system role that is client facing. |
+| 3 | Always HTTPS |
+| 4 | Always HTTP |
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md)

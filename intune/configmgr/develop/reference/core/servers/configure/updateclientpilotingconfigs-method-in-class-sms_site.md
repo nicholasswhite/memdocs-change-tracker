@@ -1,16 +1,18 @@
 ---
-title: UpdateClientPilotingConfigs Method
+title: "UpdateClientPilotingConfigs Method in Class SMS_Site"
 description: UpdateClientPilotingConfigs, in Configuration Manager, updates the configurations for client piloting settings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# UpdateClientPilotingConfigs Method in Class SMS_Site
-The `UpdateClientPilotingConfigs` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the  configurations for client piloting settings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+# UpdateClientPilotingConfigs Method in Class SMS_Site
+
+The `UpdateClientPilotingConfigs` Windows Management Instrumentation (WMI) class method, in Configuration Manager, updates the configurations for client piloting settings.
+
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -24,39 +26,41 @@ SInt32 UpdateClientPilotingConfigs (
 ```
 
 #### Parameters
- `IsEnabled`
- Data type: `Boolean`
 
- Qualifiers: [in]
+`IsEnabled` Data type: `Boolean`
 
- Indicates whether client piloting testing mode is enabled.
+Qualifiers: [in]
 
- `IsAccepted`
- Data type: `Boolean`
+Indicates whether client piloting testing mode is enabled.
 
- Qualifiers: [in]
+`IsAccepted` Data type: `Boolean`
 
- Indicates whether the new client binaries are accepted. If `IsEnabled` is `true`, this parameter is ignored and is always `false`.
+Qualifiers: [in]
 
- `TargetCollectionID`
- Data type: `String`
+Indicates whether the new client binaries are accepted. If `IsEnabled` is `true`, this parameter is ignored and is always `false`.
 
- Qualifiers: [in]
+`TargetCollectionID` Data type: `String`
 
- Targeted collection ID.
+Qualifiers: [in]
+
+Targeted collection ID.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md)

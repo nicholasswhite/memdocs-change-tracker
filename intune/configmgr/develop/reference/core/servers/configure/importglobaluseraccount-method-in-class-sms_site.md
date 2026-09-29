@@ -1,16 +1,18 @@
 ---
-title: ImportGlobalUserAccount Method
+title: "ImportGlobalUserAccount Method in Class SMS_Site"
 description: A Windows Management Instrumentation class method that encrypts data that's shared in the hierarchy.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ImportGlobalUserAccount Method in Class SMS_Site
+
 The `ImportGlobalUserAccount` Windows Management Instrumentation (WMI) class method, in Configuration Manager, encrypts data that is shared in the hierarchy.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,32 +24,35 @@ SInt32 ImportGlobalUserAccount(
 ```
 
 #### Parameters
- `UserName`
- Data type: `String`
 
- Qualifiers: [in]
+`UserName` Data type: `String`
 
- Name of the user account to import.
+Qualifiers: [in]
 
- `Password`
- Data type: `Uint8` Array
+Name of the user account to import.
 
- Qualifiers: [in]
+`Password` Data type: `Uint8` Array
 
- Password.
+Qualifiers: [in]
+
+Password.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md)

@@ -1,13 +1,15 @@
 ---
-title: GetFeatures Method
+title: "GetFeatures Method in Class SMS_WhatsNewFeature"
 description: This article describes the Get Features Method in Class SMS_WhatsNewFeature. The syntax is detailed below.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetFeatures Method in Class SMS_WhatsNewFeature
+
 For internal use only.
 
 ## Syntax
@@ -23,46 +25,47 @@ SInt32 GetFeatures(
 ```
 
 #### Parameters
- `MinMilestone`
- Data type: `UInt32`
 
- Qualifiers: [in]
+`MinMilestone` Data type: `UInt32`
 
- Reserved for internal use.
+Qualifiers: [in]
 
- `MaxMilestone`
- Data type: `UInt32`
+Reserved for internal use.
 
- Qualifiers: [in]
+`MaxMilestone` Data type: `UInt32`
 
- Reserved for internal use.
+Qualifiers: [in]
 
- `LocaleID`
- Data type: `UInt32`
+Reserved for internal use.
 
- Qualifiers: [in]
+`LocaleID` Data type: `UInt32`
 
- Reserved for internal use.
+Qualifiers: [in]
 
- `Features`
- Data type: `SMS_WhatsNewFeature Array`
+Reserved for internal use.
 
- Qualifiers: [out]
+`Features` Data type: `SMS_WhatsNewFeature Array`
 
- Reserved for internal use.
+Qualifiers: [out]
+
+Reserved for internal use.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For more information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For more information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_WhatsNewFeature Server WMI Class](../../../develop/reference/misc/sms_whatsnewfeature-server-wmi-class.md)
+
+[SMS_WhatsNewFeature Server WMI Class](sms_whatsnewfeature-server-wmi-class.md)

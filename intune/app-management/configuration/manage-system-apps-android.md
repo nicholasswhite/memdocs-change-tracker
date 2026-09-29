@@ -1,7 +1,7 @@
 ---
-title: Manage Android Enterprise System Apps in Microsoft Intune
+title: "Manage Android Enterprise system apps in Microsoft Intune"
 description: Learn how to manage Android Enterprise system apps in Microsoft Intune.
-ms.date: 08/18/2025
+ms.date: "2025-08-18T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: priyar
 ms.collection:
@@ -18,14 +18,13 @@ Before you assign an Android Enterprise system app to a device, you must first e
 
 You can enable an Android Enterprise system app in Intune using the following steps:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Apps** > **All Apps** > **Create**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Apps** &gt; **All Apps** &gt; **Create**.
 3. In the **Select app type** pane, under the available **Other** types, select **Android Enterprise system app**.
-4. Click **Select**. The **Add app** steps are displayed.
-In the **App information** page, add the app details:
-    - **App Name**: Enter the name of the app.
-    - **Publisher**: Enter the name of the publisher of the app.
-    - **Package Name**: Enter a package name. Intune will validate that the package name is valid.
+4. Click **Select**. The **Add app** steps are displayed. In the **App information** page, add the app details:
+   - **App Name**: Enter the name of the app.
+   - **Publisher**: Enter the name of the publisher of the app.
+   - **Package Name**: Enter a package name. Intune will validate that the package name is valid.
 5. Click **Next** to display the **Scope tags** page.
 6. Click **Select scope tags** to optionally add scope tags for the app. For more information, see [Use role-based access control (RBAC) and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 7. Click **Next** to display the **Assignments** page.
@@ -36,6 +35,7 @@ In the **App information** page, add the app details:
 The **Overview** blade of the app you've created is displayed.
 
 > [!NOTE]
+>
 > You'll need to work with the OEM of your device to find the package name of the app you would like to enable/disable.
 >
 > You can't create an Android Enterprise system app when there's the same app in Managed Google Play in Intune.
@@ -48,41 +48,36 @@ The app you've created is displayed in the apps list, where you can assign it to
 
 You can disable an Android Enterprise system app in Intune using the following steps:
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Apps** > **All Apps**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Apps** &gt; **All Apps**.
 3. Select the system app from the app list.
 4. Change the assignment for the app to **Uninstalled** and save.
 
 ## Disable a new system app
 
-1. Sign in to the [Microsoft Intune admin center].
-2. Select **Apps** > **Android** > **Create**.
-3. In **Select app type**, select **Other** > **Android Enterprise system app**.
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. Select **Apps** &gt; **Android** &gt; **Create**.
+3. In **Select app type**, select **Other** &gt; **Android Enterprise system app**.
 4. Click **Select**. In **App information**, add the app details:
-    - **App Name**: Enter the name of the app.
-    - **Publisher**: Enter the name of the publisher of the app.
-    - **Package Name**: Enter a package name, like `com.microsoft.word`. Intune validates that the package name is valid.
 
-    For example, to disable the on-device AI experience, you can block the AICore system service by entering the following:
+   - **App Name**: Enter the name of the app.
+   - **Publisher**: Enter the name of the publisher of the app.
+   - **Package Name**: Enter a package name, like `com.microsoft.word`. Intune validates that the package name is valid.
 
-    - **Name**: Enter `AICore`.
-    - **Publisher**: Enter `Google Android`.
-    - **Package Name**: Enter `com.google.android.aicore`.
+   For example, to disable the on-device AI experience, you can block the AICore system service by entering the following:
 
-6. Select **Next**.
-7. Click **Select scope tags** to optionally add scope tags for the app. For more information, see [Use role-based access control (RBAC) and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
+   - **Name**: Enter `AICore`.
+   - **Publisher**: Enter `Google Android`.
+   - **Package Name**: Enter `com.google.android.aicore`.
+5. Select **Next**.
+6. Click **Select scope tags** to optionally add scope tags for the app. For more information, see [Use role-based access control (RBAC) and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 
-    Select **Next**.
+   Select **Next**.
+7. In **Assignments** &gt; **Uninstall**, select the group assignments for the app. When you select **Uninstall**, the app is disabled.
 
-8. In **Assignments** > **Uninstall**, select the group assignments for the app. When you select **Uninstall**, the app is disabled.
-
-    For more information, see [Add groups to organize users and devices](../../fundamentals/tenant-administration/add-groups.md).
-9. Select **Next**. In **Review + create**, review the values and settings you entered for the app. When you're done, select **Create** to disable the app in Intune.
+   For more information, see [Add groups to organize users and devices](../../fundamentals/tenant-administration/add-groups.md).
+8. Select **Next**. In **Review + create**, review the values and settings you entered for the app. When you're done, select **Create** to disable the app in Intune.
 
 ## Next steps
 
 - [Assign apps to groups](../deployment/assign-groups.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

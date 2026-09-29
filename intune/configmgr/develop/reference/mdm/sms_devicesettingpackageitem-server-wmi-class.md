@@ -1,16 +1,18 @@
 ---
 description: Learn how the SMS_DeviceSettingPackageItem Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that associates a device setting configuration item with a device setting package.
-title: SMS_DeviceSettingPackageItem Class
-ms.date: 09/20/2016
+title: "SMS_DeviceSettingPackageItem Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DeviceSettingPackageItem Server WMI Class
+
 The `SMS_DeviceSettingPackageItem` Windows Management Instrumentation (WMI) class is an SMS Provider server class in Configuration Manager that associates a device setting configuration item with a device setting package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,43 +25,45 @@ Class SMS_DeviceSettingPackageItem : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DeviceSettingPackageItem` class doesn't define any methods.
+
+The `SMS_DeviceSettingPackageItem` class doesn't define any methods.
 
 ## Properties
- `DeviceSettingItemUniqueID`
- Data type: `String`
 
- Access type: Read/Write
+`DeviceSettingItemUniqueID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- GUID or unique ID for the [SMS_DeviceSettingItem Server WMI Class](../../../develop/reference/mdm/sms_devicesettingitem-server-wmi-class.md) object that is contained in the [SMS_DeviceSettingPackage Server WMI Class](../../../develop/reference/mdm/sms_devicesettingpackage-server-wmi-class.md) object represented by `PackageID`. The default value is "".
+Qualifiers: [key]
 
- `PackageID`
- Data type: `String`
+GUID or unique ID for the [SMS_DeviceSettingItem Server WMI Class](sms_devicesettingitem-server-wmi-class.md) object that is contained in the [SMS_DeviceSettingPackage Server WMI Class](sms_devicesettingpackage-server-wmi-class.md) object represented by `PackageID`. The default value is "".
 
- Access type: Read/Write
+`PackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- ID of the [SMS_DeviceSettingPackage Server WMI Class](../../../develop/reference/mdm/sms_devicesettingpackage-server-wmi-class.md) object that contains the item represented by `DeviceSettingItemUniqueID`. The default value is "".
+Qualifiers: [key]
+
+ID of the [SMS_DeviceSettingPackage Server WMI Class](sms_devicesettingpackage-server-wmi-class.md) object that contains the item represented by `DeviceSettingItemUniqueID`. The default value is "".
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Secured
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Device Management Server WMI Classes](../../../develop/reference/mdm/device-management-server-wmi-classes.md)
- [SMS_DeviceSettingItem Server WMI Class](../../../develop/reference/mdm/sms_devicesettingitem-server-wmi-class.md)
- [SMS_DeviceSettingPackage Server WMI Class](../../../develop/reference/mdm/sms_devicesettingpackage-server-wmi-class.md)
+
+[Device Management Server WMI Classes](device-management-server-wmi-classes.md) [SMS_DeviceSettingItem Server WMI Class](sms_devicesettingitem-server-wmi-class.md) [SMS_DeviceSettingPackage Server WMI Class](sms_devicesettingpackage-server-wmi-class.md)

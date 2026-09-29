@@ -1,25 +1,27 @@
 ---
-title: Delete Status Messages
+title: "How to Delete Status Messages"
 description: In Configuration Manager, you delete status messages by calling the SMS_StatusMessage class DeleteByID method and supplying an array of status message RecordID identifiers.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Delete Status Messages
+
 In Configuration Manager, you delete status messages by calling the `SMS_StatusMessage` class `DeleteByID` method and supplying an array of status message `RecordID` identifiers. Alternatively, you can call the `SMS_StatusMessage` class `DeleteByQuery` method and supply a WQL query that identifies the status messages to be deleted.
 
 ### To delete a status message
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Call the `SMS_StatusMessage` class `DeleteByID` method with an array of record identifiers for the status messages to be deleted.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Call the `SMS_StatusMessage` class `DeleteByID` method with an array of record identifiers for the status messages to be deleted.
 
 ## Example
- The following example deletes a single status message identified by the `recordId` identifier.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example deletes a single status message identified by the `recordId` identifier.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 Sub DeleteStatusMessage(connection, recordId)
@@ -84,38 +86,43 @@ public void DeleteStatusMessage(WqlConnectionManager connection, Int64 recordId)
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`Connection`|-   Managed: [WqlConnectionManager](../../understand/managed-sms-provider-fundamentals-in-configuration-manager.md#wqlconnectionmanager)<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).|
-|`recordId`|-   Managed: `Integer`<br />-   VBScript: `Integer`|The status message identifier. This is `SMS_StatusMessage` object `RecordID` property for the status message to be deleted.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Connection` | - Managed: [WqlConnectionManager](../../understand/managed-sms-provider-fundamentals-in-configuration-manager.md#wqlconnectionmanager) - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md). |
+| `recordId` | - Managed: `Integer` - VBScript: `Integer` | The status message identifier. This is `SMS_StatusMessage` object `RecordID` property for the status message to be deleted. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../configure/role-based-administration.md).
 
 ## See Also
- [About status messages](about-configuration-manager-status-messages.md)
- [How to Report User-Defined Status Messages Using WMI](../../../../develop/core/servers/manage/how-to-report-user-defined-status-messages.md)
+
+[About status messages](about-configuration-manager-status-messages.md) [How to Report User-Defined Status Messages Using WMI](how-to-report-user-defined-status-messages.md)

@@ -1,16 +1,18 @@
 ---
-title: SMS_DistributionJob Class
+title: "SMS_DistributionJob Server WMI Class"
 description: An SMS Provider server class that represents a distribution point job.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DistributionJob Server WMI Class
+
 The `SMS_DistributionJob` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a distribution point job.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,168 +38,157 @@ Class SMS_DistributionJob : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_DistributionJob` class does not define any methods.
+
+The `SMS_DistributionJob` class does not define any methods.
 
 ## Properties
- `Action`
- Data type: `UInt32`
 
- Access type: Read/Write
+`Action` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Current job action. Possible values are:
+Qualifiers: None
 
-|Value|Job action|
-|-|-|
-|1|DISTSRC_ACTION_UPDATE|
-|2|DISTSRC_ACTION_ADD|
-|5|DISTSRC_ACTION_CANCEL|
+Current job action. Possible values are:
 
- `CreationTime`
- Data type: `Datetime`
+| Value | Job action |
+| --- | --- |
+| 1 | DISTSRC_ACTION_UPDATE |
+| 2 | DISTSRC_ACTION_ADD |
+| 5 | DISTSRC_ACTION_CANCEL |
 
- Access type: Read-only
+`CreationTime` Data type: `Datetime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Job creation time.
+Qualifiers: [read]
 
- `DPID`
- Data type: `UInt32`
+Job creation time.
 
- Access type: Read-only
+`DPID` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Distribution point identifier.
+Qualifiers: [read]
 
- `DynamicOrder`
- Data type: `UInt32`
+Distribution point identifier.
 
- Access type: Read/Write
+`DynamicOrder` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Dynamic order for the job.
+Qualifiers: None
 
- `JobID`
- Data type: `UInt64`
+Dynamic order for the job.
 
- Access type: Read-only
+`JobID` Data type: `UInt64`
 
- Qualifiers: [read, key]
+Access type: Read-only
 
- Job identifier.
+Qualifiers: [read, key]
 
- `LastUpdateTime`
- Data type: `Datetime`
+Job identifier.
 
- Access type: Read-only
+`LastUpdateTime` Data type: `Datetime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Last update time of the job.
+Qualifiers: [read]
 
- `NALPath`
- Data type: `String`
+Last update time of the job.
 
- Access type: Read-only
+`NALPath` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Distribution point NAL path.
+Qualifiers: [read]
 
- `PackageVersion`
- Data type: `UInt32`
+Distribution point NAL path.
 
- Access type: Read-only
+`PackageVersion` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Package version.
+Qualifiers: [read]
 
- `PkgID`
- Data type: `String`
+Package version.
 
- Access type: Read-only
+`PkgID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Package identifier.
+Qualifiers: [read]
 
- `RemainingSize`
- Data type: `UInt32`
+Package identifier.
 
- Access type: Read-only
+`RemainingSize` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Remaining size of the distribution job.
+Qualifiers: [read]
 
- `ReStartTime`
- Data type: `UInt32`
+Remaining size of the distribution job.
 
- Access type: Read/Write
+`ReStartTime` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Job restart time.
+Qualifiers: None
 
- `RetryCount`
- Data type: `UIn32`
+Job restart time.
 
- Access type: Read-only
+`RetryCount` Data type: `UIn32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Retry count.
+Qualifiers: [read]
 
- `StartTime`
- Data type: `Datetime`
+Retry count.
 
- Access type: Read-only
+`StartTime` Data type: `Datetime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Job start time.
+Qualifiers: [read]
 
- `State`
- Data type: `UInt32`
+Job start time.
 
- Access type: Read-only
+`State` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Current job state. Possible values are:
+Qualifiers: [read]
 
- `TotalSize`
- Data type: `UInt64`
+Current job state. Possible values are:
 
- Access type: Read-only
+`TotalSize` Data type: `UInt64`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Date of the last status update.
+Qualifiers: [read]
 
-|Value|Job state|
-|-|-|
-|0|DISTSRC_STATE_PENDING|
-|1|DISTSRC_STATE_READY|
-|2|DISTSRC_STATE_STARTED|
-|3|DISTSRC_STATE_INPROGRESS|
-|4|DISTSRC_STATE_PENDING_RESTART|
-|5|DISTSRC_STATE_COMPLETE|
-|6|DISTSRC_STATE_FAILED|
-|7|DISTSRC_STATE_CANCELLED|
-|8|DISTSRC_STATE_SUSPENDED|
+Date of the last status update.
+
+| Value | Job state |
+| --- | --- |
+| 0 | DISTSRC_STATE_PENDING |
+| 1 | DISTSRC_STATE_READY |
+| 2 | DISTSRC_STATE_STARTED |
+| 3 | DISTSRC_STATE_INPROGRESS |
+| 4 | DISTSRC_STATE_PENDING_RESTART |
+| 5 | DISTSRC_STATE_COMPLETE |
+| 6 | DISTSRC_STATE_FAILED |
+| 7 | DISTSRC_STATE_CANCELLED |
+| 8 | DISTSRC_STATE_SUSPENDED |
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

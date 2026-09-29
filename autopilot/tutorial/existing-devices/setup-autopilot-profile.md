@@ -1,7 +1,7 @@
 ---
-title: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 1 of 10 - Set up a Windows Autopilot profile
+title: "Windows Autopilot deployment for existing devices: Set up a Windows Autopilot profile"
 description: Windows Autopilot deployment for existing devices in Intune and Configuration Manager - Step 1 of 10 - Set up a Windows Autopilot profile.
-ms.date: 06/13/2025
+ms.date: "2025-06-13T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -12,9 +12,7 @@ appliesto:
 
 Windows Autopilot user-driven Microsoft Entra join steps:
 
-> [!div class="checklist"]
->
-> - **Step 1: Set up a Windows Autopilot profile**
+- **Step 1: Set up a Windows Autopilot profile**
 
 - Step 2: [Install required modules to obtain Windows Autopilot profiles from Intune](install-modules.md)
 - Step 3: [Create JSON file for Windows Autopilot profiles](create-json-file.md)
@@ -49,9 +47,10 @@ Once a valid Windows Autopilot profile is created and confirmed working on an ex
 
 ## Next step: Install required modules to obtain Windows Autopilot profiles from Intune
 
-> [!div class="nextstepaction"]
-> [Step 2: Install required modules to obtain Windows Autopilot profiles from Intune](install-modules.md)
+[Step 2: Install required modules to obtain Windows Autopilot profiles from Intune](install-modules.md)
 
 ## Related content
 
-[!INCLUDE [More information Windows Autopilot profile](../includes/more-info-autopilot-profile.md)]
+For more information on configuring Windows Autopilot profiles, see the following articles:
+
+- [Configure Windows Autopilot profiles](../../profiles.md).

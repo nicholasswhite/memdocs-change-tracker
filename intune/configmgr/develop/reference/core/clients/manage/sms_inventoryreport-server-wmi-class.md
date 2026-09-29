@@ -1,16 +1,18 @@
 ---
-title: SMS_InventoryReport Class
+title: "SMS_InventoryReport Server WMI Class"
 description: The SMS_InventoryReport WMI class is an SMS Provider server class that represents the classes and properties that are enabled to be collected.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_InventoryReport Server WMI Class
+
 The `SMS_InventoryReport` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the classes and properties that are enabled to be collected.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,64 +28,63 @@ Class SMS_InventoryReport : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_InventoryReport` class.
 
-|Method|Description|
-|------------|-----------------|
-|[ImportInventoryReport Method in Class SMS_InventoryReport](../../../../../develop/reference/core/clients/manage/importinventoryreport-method-in-class-sms_inventoryreport.md)|Imports new inventory classes and enables the collection of existing classes.|
+The following table lists the methods in the `SMS_InventoryReport` class.
+
+| Method | Description |
+| --- | --- |
+| [ImportInventoryReport Method in Class SMS_InventoryReport](importinventoryreport-method-in-class-sms_inventoryreport.md) | Imports new inventory classes and enables the collection of existing classes. |
 
 ## Properties
- `DefaultTimeout`
- Data type: `UInt32`
 
- Access type: Read/Write
+`DefaultTimeout` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The default timeout of the inventory collection cycle on the client.
+Qualifiers: [not_null]
 
- `Description`
- Data type: `String`
+The default timeout of the inventory collection cycle on the client.
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The description of the inventory report.
+Qualifiers: [not_null]
 
- `InventoryReportID`
- Data type: `String`
+The description of the inventory report.
 
- Access type: Read/Write
+`InventoryReportID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- A GUID that represents the inventory report type.
+Qualifiers: [key]
 
- `ReportClasses`
- Data type: `Object Array`
+A GUID that represents the inventory report type.
 
- Access type: Read/Write
+`ReportClasses` Data type: `Object Array`
 
- Qualifiers: none
+Access type: Read/Write
 
- The classes that are enabled for collection in this report.
+Qualifiers: none
 
- `ReportTimeout`
- Data type: `UInt32`
+The classes that are enabled for collection in this report.
 
- Access type: Read/Write
+`ReportTimeout` Data type: `UInt32`
 
- Qualifiers: [not_null]
+Access type: Read/Write
 
- The timeout of the inventory collection cycle on the client.
+Qualifiers: [not_null]
+
+The timeout of the inventory collection cycle on the client.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

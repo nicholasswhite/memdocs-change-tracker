@@ -1,7 +1,7 @@
 ---
-title: Configure CMG client authentication
+title: "Configure client authentication for cloud management gateway"
 description: Configure authentication methods for clients to use a cloud management gateway (CMG).
-ms.date: 08/02/2021
+ms.date: "2021-08-02T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -20,8 +20,6 @@ The next step in the setup of a cloud management gateway (CMG) is to configure h
 
 This article describes how to configure each of these options. For more foundational information, see [Plan for CMG client authentication methods](plan-client-authentication.md).
 
-<a name='azure-ad'></a>
-
 ## Microsoft Entra ID
 
 If your internet-based devices are running Windows 10 or later, use Microsoft Entra modern authentication with the CMG. This authentication method is the only one that enables user-centric scenarios.
@@ -31,10 +29,9 @@ This authentication method requires the following configurations:
 - The devices need to be either cloud domain-joined or Microsoft Entra hybrid joined, and the user also needs a Microsoft Entra identity.
 
   > [!TIP]
-  > To check if a device is cloud-joined, run `dsregcmd.exe /status` in a command prompt. If the device is Microsoft Entra joined or hybrid-joined, the **AzureAdjoined** field in the results shows **YES**. For more information, see [dsregcmd command - device state](/azure/active-directory/devices/troubleshoot-device-dsregcmd).
-
+  >
+  > To check if a device is cloud-joined, run `dsregcmd.exe /status` in a command prompt. If the device is Microsoft Entra joined or hybrid-joined, the **AzureAdjoined** field in the results shows **YES**. For more information, see [dsregcmd command - device state](https://learn.microsoft.com/en-us/azure/active-directory/devices/troubleshoot-device-dsregcmd).
 - One of the primary requirements for using Microsoft Entra authentication for internet-based clients with a CMG is to integrate the site with Microsoft Entra ID. You already completed that action in the [prior step](configure-azure-ad.md).
-
 - There are a few other requirements, depending upon your environment:
 
   - Enable user discovery methods for hybrid identities
@@ -56,7 +53,6 @@ Create and issue this certificate from your PKI, which is outside of the context
 The CMG client authentication certificate supports the following configurations:
 
 - 2048-bit or 4096-bit key length
-
 - This certificate supports key storage providers for certificate private keys (v3). For more information, see [CNG v3 certificates overview](../../../plan-design/network/cng-certificates-overview.md).
 
 ### Export the client certificate's trusted root
@@ -66,44 +62,36 @@ The CMG has to trust the client authentication certificates to establish the HTT
 Make sure to export all certificates in the trust chain. For example, if the client authentication certificate is issued by an intermediate CA, export both the intermediate and root CA certificates.
 
 > [!NOTE]
-> When clients use either Microsoft Entra ID or tokens for authentication, this certificate isn't required. Export this certificate only when clients are not joined to Entra ID and instead use PKI certificates for authentication. 
+>
+> When clients use either Microsoft Entra ID or tokens for authentication, this certificate isn't required. Export this certificate only when clients are not joined to Entra ID and instead use PKI certificates for authentication.
 
 After you issue a client authentication certificate to a computer, use this process on that computer to export the trusted root certificate.
 
 1. Open the Start menu. Type "run" to open the Run window. Open `mmc`.
+2. From the File menu, choose **Add/Remove Snap-in...**.
+3. In the Add or Remove Snap-ins dialog box, select **Certificates**, then select **Add**.
 
-1. From the File menu, choose **Add/Remove Snap-in...**.
+   1. In the Certificates snap-in dialog box, select **Computer account**, then select **Next**.
+   2. In the Select Computer dialog box, select **Local computer**, then select **Finish**.
+   3. In the Add or Remove Snap-ins dialog box, select **OK**.
+4. Expand **Certificates**, expand **Personal**, and select **Certificates**.
+5. Select a certificate whose Intended Purpose is **Client Authentication**.
 
-1. In the Add or Remove Snap-ins dialog box, select **Certificates**, then select **Add**.
-
-    1. In the Certificates snap-in dialog box, select **Computer account**, then select **Next**.
-
-    1. In the Select Computer dialog box, select **Local computer**, then select **Finish**.
-
-    1. In the Add or Remove Snap-ins dialog box, select **OK**.
-
-1. Expand **Certificates**, expand **Personal**, and select **Certificates**.
-
-1. Select a certificate whose Intended Purpose is **Client Authentication**.
-
-    1. From the Action menu, select **Open**.
-
-    1. Go to the **Certification Path** tab.
-
-    1. Select the next certificate up the chain, and select **View Certificate**.
-
-1. On this new Certificate dialog box, go to the **Details** tab. Select **Copy to File...**.
-
-1. Complete the Certificate Export Wizard using the default certificate format, **DER encoded binary X.509 (.CER)**. Make note of the name and location of the exported certificate.
-
-1. Export all of the certificates in the certification path of the original client authentication certificate. Make note of which exported certificates are intermediate CAs, and which ones are trusted root CAs.
+   1. From the Action menu, select **Open**.
+   2. Go to the **Certification Path** tab.
+   3. Select the next certificate up the chain, and select **View Certificate**.
+6. On this new Certificate dialog box, go to the **Details** tab. Select **Copy to File...**.
+7. Complete the Certificate Export Wizard using the default certificate format, **DER encoded binary X.509 (.CER)**. Make note of the name and location of the exported certificate.
+8. Export all of the certificates in the certification path of the original client authentication certificate. Make note of which exported certificates are intermediate CAs, and which ones are trusted root CAs.
 
 ### CMG connection point
 
 To securely forward client requests, the CMG connection point requires a secure connection with the management point. If you're using PKI client authentication, and the internet-enabled management point is HTTPS, issue a client authentication certificate to the site system server with the CMG connection point role.
 
 > [!NOTE]
+>
 > The CMG connection point doesn't require a client authentication certificate in the following scenarios:
+>
 > - Clients use Microsoft Entra authentication.
 > - Clients use Configuration Manager token-based authentication.
 > - The Management Points enabled for CMG traffic are configured for Enhanced HTTP.
@@ -128,15 +116,15 @@ If Entra ID authentication is not available, configure a management point for HT
 
 1. Create and issue a web server certificate from your PKI or a third-party provider, which are outside of the context of Configuration Manager. For example, use Active Directory Certificate Services and group policy to issue a web server certificate to the site system server with the management point role. For more information, see the following articles:
 
-    - [PKI certificate requirements](../../../plan-design/network/pki-certificate-requirements.md)
-    - [Example deployment of PKI certificates: Deploy the web server certificate for site systems that run IIS](../../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012)
+   - [PKI certificate requirements](../../../plan-design/network/pki-certificate-requirements.md)
+   - [Example deployment of PKI certificates: Deploy the web server certificate for site systems that run IIS](../../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012)
+2. On the properties of the management point role, set the client connections to **HTTPS**.
 
-1. On the properties of the management point role, set the client connections to **HTTPS**.
+   > [!TIP]
+   >
+   > After you set up the CMG, you'll configure other settings for this management point.
 
-    > [!TIP]
-    > After you set up the CMG, you'll configure other settings for this management point.
-
-If your environment has multiple management points, you don't have to enable them all for CMG. Configure the CMG-enabled management points as **Internet only**. Then your on-premises clients don't try to use them.<!-- SCCMDocs#1676 -->
+If your environment has multiple management points, you don't have to enable them all for CMG. Configure the CMG-enabled management points as **Internet only**. Then your on-premises clients don't try to use them.
 
 #### Management point client connection mode summary
 
@@ -144,28 +132,28 @@ These tables summarize whether the management point requires EHTTP or HTTPS, dep
 
 - *Workgroup*: The device isn't joined to a domain or Microsoft Entra ID, but has a [client authentication certificate](#pki-certificate).
 - *AD domain-joined*: You join the device to an on-premises Active Directory domain.
-- *Microsoft Entra joined*: Also known as cloud domain-joined, you join the device to a Microsoft Entra tenant. For more information, see [Microsoft Entra joined devices](/azure/active-directory/devices/concept-azure-ad-join).
-- *Hybrid-joined*: You join the device to your on-premises Active Directory and register it with your Microsoft Entra ID. For more information, see [Microsoft Entra hybrid joined devices](/azure/active-directory/devices/concept-azure-ad-join-hybrid).
+- *Microsoft Entra joined*: Also known as cloud domain-joined, you join the device to a Microsoft Entra tenant. For more information, see [Microsoft Entra joined devices](https://learn.microsoft.com/en-us/azure/active-directory/devices/concept-azure-ad-join).
+- *Hybrid-joined*: You join the device to your on-premises Active Directory and register it with your Microsoft Entra ID. For more information, see [Microsoft Entra hybrid joined devices](https://learn.microsoft.com/en-us/azure/active-directory/devices/concept-azure-ad-join-hybrid).
 - *HTTPS*: On the management point properties, you set the client connections to **HTTPS**.
 - *E-HTTP*: On the site properties, **Communication Security** tab, you set the site system settings to **HTTPS or EHTTP**, and you enable the option to **Use Configuration Manager-generated certificates for HTTP site systems**. You configure the management point for EHTTP, and the management point is ready for CMG communication.
 
 > [!IMPORTANT]
-> Starting in Configuration Manager version 2103, sites that allow HTTP-only client communication are deprecated and the site must be configured for Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).<!-- 9390933,9572265 -->
+>
+> Starting in Configuration Manager version 2103, sites that allow HTTP-only client communication are deprecated and the site must be configured for Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).
 
 ##### For internet-based clients communicating with the CMG
 
 Configure an on-premises management point to allow connections from the CMG with the following client connection mode:
 
 | Internet-based client | Management point |
-|------------------|------------------|
+| --- | --- |
 | Workgroup <sup>[Note 1](#bkmk_note1)</sup> | E-HTTP, HTTPS |
 | AD domain-joined <sup>[Note 1](#bkmk_note1)</sup> | E-HTTP, HTTPS |
-| Microsoft Entra joined  | E-HTTP, HTTPS |
-| Hybrid-joined    | E-HTTP, HTTPS |
+| Microsoft Entra joined | E-HTTP, HTTPS |
+| Hybrid-joined | E-HTTP, HTTPS |
 
-<a name="bkmk_note1"></a>
-
-> [!Note]
+> [!NOTE]
+>
 > **Note 1**: This configuration requires the client has a [client authentication certificate](#pki-certificate), and only supports device-centric scenarios.
 
 ##### For on-premises clients communicating with the on-premises management point
@@ -173,18 +161,18 @@ Configure an on-premises management point to allow connections from the CMG with
 Configure an on-premises management point with the following client connection mode:
 
 | On-premises client | Management point |
-|------------------|------------------|
-| Workgroup        | EHTTP, HTTPS |
+| --- | --- |
+| Workgroup | EHTTP, HTTPS |
 | AD domain-joined | EHTTP, HTTPS |
-| Microsoft Entra joined  | EHTTP, HTTPS       |
-| Hybrid-joined    | EHTTP, HTTPS |
+| Microsoft Entra joined | EHTTP, HTTPS |
+| Hybrid-joined | EHTTP, HTTPS |
 
 > [!NOTE]
+>
 > On-premises AD domain-joined clients support both device- and user-centric scenarios communicating with an EHTTP or HTTPS management point.
 
 ## Next steps
 
 You're now ready to create the CMG in Configuration Manager:
 
-> [!div class="nextstepaction"]
-> [Set up CMG](setup-cloud-management-gateway.md)
+[Set up CMG](setup-cloud-management-gateway.md)

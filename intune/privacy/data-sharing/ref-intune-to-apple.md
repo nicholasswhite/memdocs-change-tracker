@@ -1,7 +1,7 @@
 ---
 title: Data Intune sends to Apple
 description: List of data that Intune sends to Apple.
-ms.date: 12/07/2023
+ms.date: "2023-12-07T00:00:00Z"
 ms.topic: reference
 ms.reviewer:
 ---
@@ -12,7 +12,7 @@ When any of the following Apple services are enabled on a device, Microsoft Intu
 
 - [Apple Device Enrollment Program (DEP)](../../device-enrollment/apple/setup-automated-ios.md)
 - [Apple MDM Push certificate (APNS)](../../device-enrollment/apple/create-mdm-push-certificate.md)
-- [Apple School Manager (ASM)](/schooldatasync/apple-school-manager-integration-with-intune-for-education-and-school-data-sync)
+- [Apple School Manager (ASM)](https://learn.microsoft.com/en-us/schooldatasync/apple-school-manager-integration-with-intune-for-education-and-school-data-sync)
 - [Apple Volume Purchase Program (VPP)](../../app-management/deployment/manage-vpp-apple.md)
 
 Before Microsoft Intune can establish a connection, you must create an Apple account for each of the Apple services.
@@ -20,7 +20,7 @@ Before Microsoft Intune can establish a connection, you must create an Apple acc
 The following table lists the data that Microsoft Intune sends from a device to the enabled Apple services.
 
 | Service | Data sent to Apple | Used for |
-|---|---| ---|
+| --- | --- | --- |
 | [APNS](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/3-MDM_Protocol/MDM_Protocol.html#//apple_ref/doc/uid/TP40017387-CH3-SW2) | Token, PushMagic | If the server accepts the device, the device provides its push notification device token to the server. The server should use this token to send push messages to the device. This check-in message also contains a PushMagic string. The server must remember this string and include it in any push messages it sends to the device. |
 | [ASM/DEP](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/3-MDM_Protocol/MDM_Protocol.html#//apple_ref/doc/uid/TP40017387-CH3-SW2) | Server token | Push notification device token used to authenticate to Apple service. |
 | ASM/DEP | server_name | An identifiable name for the MDM server. |

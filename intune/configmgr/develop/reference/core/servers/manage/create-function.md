@@ -1,13 +1,15 @@
 ---
 title: Create Function
 description: The Create function creates a status MIF file that Configuration Manager uses to correlate the install status for an advertisement.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # Create Function
+
 The `Create` function creates a status MIF file that Configuration Manager uses to correlate the install status for an advertisement.
 
 ## Syntax
@@ -26,43 +28,38 @@ StatusMIF.Create(
 ```
 
 #### Parameters
- `bstrFileName`
- Unique name for the MIF file. A file name extension must be .mif. The function writes the file to the %TEMP% directory.
 
- `bstrCompany`
- Manufacturer or publisher of the product, for example, Microsoft. This parameter is limited to 64 characters.
+`bstrFileName` Unique name for the MIF file. A file name extension must be .mif. The function writes the file to the %TEMP% directory.
 
- `bstrProduct`
- Product or program name, for example, Office 2000. This parameter is limited to 64 characters.
+`bstrCompany` Manufacturer or publisher of the product, for example, Microsoft. This parameter is limited to 64 characters.
 
- `bstrVersion`
- Version of the product, for example, 8.0a. This parameter is limited to 64 characters.
+`bstrProduct` Product or program name, for example, Office 2000. This parameter is limited to 64 characters.
 
- `bstrLocale`
- Country/region or language code, for example, ENU. This parameter is optional and is limited to 16 characters.
+`bstrVersion` Version of the product, for example, 8.0a. This parameter is limited to 64 characters.
 
- `bstrSerialNo`
- Serial number of the product. This parameter is optional and is limited to 64 characters.
+`bstrLocale` Country/region or language code, for example, ENU. This parameter is optional and is limited to 16 characters.
 
- `bstrMessage`
- Descriptive message about the status of the installation, added to the program status message. This parameter is limited to 128 characters.
+`bstrSerialNo` Serial number of the product. This parameter is optional and is limited to 64 characters.
 
- `bStatus`
- `true` if the install status is success.
+`bstrMessage` Descriptive message about the status of the installation, added to the program status message. This parameter is limited to 128 characters.
+
+`bStatus` `true` if the install status is success.
 
 ## Return Values
- None.
+
+None.
 
 ## Remarks
- Your installation (setup) application must create only one install status MIF file for the package. The file name must be unique so that multiple installations in a single session can report status without a conflict.
 
- Installations that run on localized versions of Configuration Manager must specify values in the appropriate format: ANSI format for European languages; DBCS format for East Asia languages.
+Your installation (setup) application must create only one install status MIF file for the package. The file name must be unique so that multiple installations in a single session can report status without a conflict.
 
- Your application must call `InstallStatusMIF` before the installation exits. The MIF file is not reported to Configuration Manager if the installation creates another process that calls `InstallStatusMIF`.
+Installations that run on localized versions of Configuration Manager must specify values in the appropriate format: ANSI format for European languages; DBCS format for East Asia languages.
 
- Note that the parameters `bstrFilename`, `bstrCompany`, `bstrProduct`, and `bstrVersion` are directly related to the [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md) properties `MIFFileName`, `MIFPublisher`, `MIFName`, and `MIFVersion`, respectively. These parameters and properties must contain the same values.
+Your application must call `InstallStatusMIF` before the installation exits. The MIF file is not reported to Configuration Manager if the installation creates another process that calls `InstallStatusMIF`.
 
- The example in the next section shows how to call the `Create` method.
+Note that the parameters `bstrFilename`, `bstrCompany`, `bstrProduct`, and `bstrVersion` are directly related to the [SMS_Package Server WMI Class](../configure/sms_package-server-wmi-class.md) properties `MIFFileName`, `MIFPublisher`, `MIFName`, and `MIFVersion`, respectively. These parameters and properties must contain the same values.
+
+The example in the next section shows how to call the `Create` method.
 
 ## Example
 
@@ -81,14 +78,15 @@ StatusMIF.Create(
 ```
 
 ## Requirements
- **Windows NT/2000**: Requires Windows NT 4.0 or later.
 
- **Windows 95/98**: Requires Windows 95 or later.
+**Windows NT/2000**: Requires Windows NT 4.0 or later.
 
- **Version**: Requires SMS 2.0.
+**Windows 95/98**: Requires Windows 95 or later.
 
- **Library**: Included as a resource in IsMIFCom.dll (Visual Basic).
+**Version**: Requires SMS 2.0.
+
+**Library**: Included as a resource in IsMIFCom.dll (Visual Basic).
 
 ## See Also
- [Status MIF Functions](../../../../../develop/reference/core/servers/manage/status-mif-functions.md)
- [SMS_Package Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_package-server-wmi-class.md)
+
+[Status MIF Functions](status-mif-functions.md) [SMS_Package Server WMI Class](../configure/sms_package-server-wmi-class.md)

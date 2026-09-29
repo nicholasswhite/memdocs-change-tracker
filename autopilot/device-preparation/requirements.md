@@ -1,7 +1,7 @@
 ---
 title: Windows Autopilot device preparation requirements
 description: Software, Networking, Licensing, Configuration, and RBAC requirements for Windows Autopilot device preparation. # RSS subscription is based on this description so don't change. If the description needs to change, update RSS URL in the Tip in the article.
-ms.date: 06/11/2025
+ms.date: "2025-06-11T00:00:00Z"
 ms.collection:
   - M365-modern-desktop
 ms.topic: article
@@ -18,13 +18,13 @@ appliesto:
 >
 > RSS can be used to notify when requirements are added or updated to this page. For example, the following RSS link includes this article:
 >
-> ``` url
+> ```url
 > https://learn.microsoft.com/api/search/rss?search=%22Software%2C+Networking%2C+Licensing%2C+Configuration%2C+and+RBAC+requirements+for+Windows+Autopilot+device%22&locale=en-us&%24filter=
 > ```
 >
 > This example includes the `&locale=en-us` variable. The `locale` variable is required, but it can be changed another supported locale. For example, `&locale=es-es`.
 >
-> For more information on using RSS for notifications, see [How to use the docs](/intune/use-docs#notifications) in the Intune documentation.
+> For more information on using RSS for notifications, see [How to use the docs](https://learn.microsoft.com/en-us/intune/use-docs#notifications) in the Intune documentation.
 
 The list of requirements for Windows Autopilot device preparation is organized into five different categories:
 
@@ -36,7 +36,15 @@ The list of requirements for Windows Autopilot device preparation is organized i
 
 Select the appropriate tab to see the relevant requirements:
 
-## [:::image type="icon" source="../images/icons/software-18.svg"::: **Software**](#tab/software)
+- [![](../images/icons/software-18.svg) **Software**](#tabpanel_1_software)
+- [![](../images/icons/wifi-ethernet-18.svg) **Networking**](#tabpanel_1_networking)
+- [![](../images/icons/license-18.svg) **Licensing**](#tabpanel_1_licensing)
+- [![](../images/icons/configuration-18.svg) **Configuration**](#tabpanel_1_configuration)
+- [![](../images/icons/permissions-18.svg) **RBAC**](#tabpanel_1_rbac)
+
+<a id="tabpanel_1_software"></a>
+
+
 
 ### Software requirements
 
@@ -66,9 +74,11 @@ The following editions are supported:
 - Windows 11 Pro for Workstations.
 - Windows 11 Enterprise.
 - Windows 11 Education.
-- [Windows 11 Enterprise LTSC](/windows/whats-new/ltsc/overview).
+- [Windows 11 Enterprise LTSC](https://learn.microsoft.com/en-us/windows/whats-new/ltsc/overview).
 
-## [:::image type="icon" source="../images/icons/wifi-ethernet-18.svg"::: **Networking**](#tab/networking)
+<a id="tabpanel_1_networking"></a>
+
+
 
 ### Networking requirements
 
@@ -84,7 +94,7 @@ Additional configuration might be required to grant access to required services 
 
 > [!NOTE]
 >
-> Smart card and certificate based authentication isn't supported during the out-of-box experience (OOBE). For more information, see [Smartcards and certificate-based authentication](/azure/active-directory/devices/azureadjoin-plan#smartcards-and-certificate-based-authentication).
+> Smart card and certificate based authentication isn't supported during the out-of-box experience (OOBE). For more information, see [Smartcards and certificate-based authentication](https://learn.microsoft.com/en-us/azure/active-directory/devices/azureadjoin-plan#smartcards-and-certificate-based-authentication).
 
 #### Service requirements
 
@@ -102,30 +112,30 @@ Windows Autopilot device preparation requires Windows Activation services. For m
 
 #### Microsoft Entra ID
 
-Microsoft Entra ID validates user credentials. Additionally, the device is joined to Microsoft Entra ID during Windows Autopilot device preparation. For more information, see [Office 365 IP Address and URL Web service](/microsoft-365/enterprise/microsoft-365-ip-web-service).
+Microsoft Entra ID validates user credentials. Additionally, the device is joined to Microsoft Entra ID during Windows Autopilot device preparation. For more information, see [Office 365 IP Address and URL Web service](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service).
 
 #### Microsoft Intune
 
 Once authenticated, Microsoft Entra ID triggers enrollment of the device into the Intune mobile device management (MDM) service. For more information about Intune's network communication requirements, see the following articles:
 
-- [Network endpoints for Microsoft Intune](/intune/fundamentals/endpoints).
-- [Network requirements for PowerShell scripts and Win32 apps](/intune/fundamentals/endpoints).
+- [Network endpoints for Microsoft Intune](../../intune/fundamentals/endpoints.md).
+- [Network requirements for PowerShell scripts and Win32 apps](../../intune/fundamentals/endpoints.md).
 
 #### Windows Autopilot device preparation automatic device diagnostics collection
 
 For diagnostics to be able to upload successfully from the client, make sure that the URL `lgmsapeweu.blob.core.windows.net` isn't blocked on the network. Diagnostics are available for 28 days before they're removed.
 
-For more information, see [Collect diagnostics from a Windows device](/intune/device-management/actions/collect-diagnostics).
+For more information, see [Collect diagnostics from a Windows device](../../intune/device-management/actions/collect-diagnostics.md).
 
 #### Windows Update
 
-During the out-of-box experience (OOBE) process and after the Windows OS configuration, the Windows Update service retrieves needed updates. If there are problems connecting to Windows Update, see [Windows Update issues troubleshooting](/troubleshoot/windows-client/installing-updates-features-roles/windows-update-issues-troubleshooting).
+During the out-of-box experience (OOBE) process and after the Windows OS configuration, the Windows Update service retrieves needed updates. If there are problems connecting to Windows Update, see [Windows Update issues troubleshooting](https://learn.microsoft.com/en-us/troubleshoot/windows-client/installing-updates-features-roles/windows-update-issues-troubleshooting).
 
 If Windows Update is inaccessible, the Windows Autopilot device preparation process still continues but critical updates aren't available.
 
 #### Delivery Optimization
 
-Windows Autopilot device preparation contacts the [Delivery Optimization](/windows/deployment/update/waas-delivery-optimization) service when downloading the applications and updates. This contact establishes peer-to-peer sharing of content so that only a few devices need to download it from the internet.
+Windows Autopilot device preparation contacts the [Delivery Optimization](https://learn.microsoft.com/en-us/windows/deployment/update/waas-delivery-optimization) service when downloading the applications and updates. This contact establishes peer-to-peer sharing of content so that only a few devices need to download it from the internet.
 
 - Windows Updates.
 - Microsoft Store applications and application updates.
@@ -144,19 +154,19 @@ To resolve internet names for all services, the device communicates with a DNS s
 
 #### Diagnostics data
 
-Diagnostic data collection is enabled by default. For more information, see [Manage enterprise diagnostic data](/windows/privacy/configure-windows-diagnostic-data-in-your-organization#manage-diagnostic-data-using-group-policy-and-mdm).
+Diagnostic data collection is enabled by default. For more information, see [Manage enterprise diagnostic data](https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#manage-diagnostic-data-using-group-policy-and-mdm).
 
 If the device can't send diagnostic data, the Windows Autopilot device preparation process still continues. However, services that depend on diagnostic data don't work.
 
 #### Network Connection Status Indicator (NCSI)
 
-Windows must be able to tell that the device can access the internet. For more information, see [Network Connection Status Indicator (NCSI)](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#14-network-connection-status-indicator).
+Windows must be able to tell that the device can access the internet. For more information, see [Network Connection Status Indicator (NCSI)](https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#14-network-connection-status-indicator).
 
 `*.msftconnecttest.com` must be resolvable via DNS and accessible via HTTP.
 
 #### Windows Notification Services (WNS)
 
-This service is used to enable Windows to receive notifications from applications and services. For more information, see [Microsoft Store](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#26-microsoft-store).
+This service is used to enable Windows to receive notifications from applications and services. For more information, see [Microsoft Store](https://learn.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#26-microsoft-store).
 
 If the WNS services aren't available, the Windows Autopilot device preparation process still continues without notifications.
 
@@ -168,17 +178,19 @@ If the Microsoft Store isn't accessible, the Windows Autopilot process still con
 
 #### Microsoft 365
 
-As part of the Intune device configuration, installation of Microsoft 365 Applications for enterprise might be required. For a list that includes all Office services, DNS names, IP addresses, including Microsoft Entra ID and other services that might overlap with the previously listed services, see [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges).
+As part of the Intune device configuration, installation of Microsoft 365 Applications for enterprise might be required. For a list that includes all Office services, DNS names, IP addresses, including Microsoft Entra ID and other services that might overlap with the previously listed services, see [Office 365 URLs and IP address ranges](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges).
 
 #### Certificate revocation lists (CRLs)
 
-Some of these services also need to check certificate revocation lists (CRLs) for certificates used in the services. For a full list, see [Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Office 365 Certificate Chains](/microsoft-365/compliance/encryption-office-365-certificate-chains).
+Some of these services also need to check certificate revocation lists (CRLs) for certificates used in the services. For a full list, see [Office 365 URLs and IP address ranges](https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Office 365 Certificate Chains](https://learn.microsoft.com/en-us/microsoft-365/compliance/encryption-office-365-certificate-chains).
 
 #### Proxy settings
 
 Deploying proxy settings for Windows Autopilot device preparation should be configured on the proxy server itself. Implementing proxy settings via Intune policy isn't fully supported as it might cause issues and unexpected behavior with privileged access deployments.
 
-## [:::image type="icon" source="../images/icons/license-18.svg"::: **Licensing**](#tab/licensing)
+<a id="tabpanel_1_licensing"></a>
+
+
 
 ### Licensing requirements
 
@@ -191,137 +203,119 @@ To provide needed Microsoft Entra ID and MDM functionality, including automatic 
 - [Microsoft 365 Academic A1, A3, or A5 subscription](https://www.microsoft.com/education/products/microsoft-365).
 - [Microsoft 365 Enterprise E3 or E5 subscription](https://www.microsoft.com/microsoft-365/enterprise), which include all Windows client, Microsoft 365, and EMS features (Microsoft Entra ID and Intune).
 - Enterprise Mobility + Security E3 or E5 subscription, which include all needed Microsoft Entra ID and Intune features.
-- [Intune for Education subscription](/intune-education/what-is-intune-for-education), which include all needed Microsoft Entra ID and Intune features.
+- [Intune for Education subscription](https://learn.microsoft.com/en-us/intune-education/what-is-intune-for-education), which include all needed Microsoft Entra ID and Intune features.
 - [Microsoft Entra ID P1 or P2](https://azure.microsoft.com/services/active-directory/) and [Microsoft Intune subscription](https://www.microsoft.com/security/business/microsoft-intune-pricing) or an alternative MDM service.
 
 > [!NOTE]
 >
-> When a Microsoft 365 subscription is used, licenses still need to be assigned to users so they can enroll device in Intune. For more information, see [assign licenses to users so they can enroll devices in Intune](/intune/fundamentals/assign-licenses).
+> When a Microsoft 365 subscription is used, licenses still need to be assigned to users so they can enroll device in Intune. For more information, see [assign licenses to users so they can enroll devices in Intune](../../intune/fundamentals/assign-licenses.md).
 
 Additionally, the following are also recommended, but not required:
 
 - [Microsoft 365 Apps for enterprise](https://www.microsoft.com/microsoft-365/enterprise/microsoft-365-apps-for-enterprise-product) - Microsoft 365 Applications for enterprise can be deployed easily via Intune or other MDM service.
-- [Windows Subscription Activation](/windows/deployment/windows-subscription-activation) - automatically step up devices from Windows Pro to Windows Enterprise edition.
+- [Windows Subscription Activation](https://learn.microsoft.com/en-us/windows/deployment/windows-subscription-activation) - automatically step up devices from Windows Pro to Windows Enterprise edition.
 
-## [:::image type="icon" source="../images/icons/configuration-18.svg"::: **Configuration**](#tab/configuration)
+<a id="tabpanel_1_configuration"></a>
+
+
 
 ### Configuration requirements
 
 Before Windows Autopilot device preparation can be used, some configuration tasks are required to support the common Windows Autopilot device preparation scenarios.
 
-- **Configure Microsoft Entra automatic enrollment**. For Microsoft Intune, see [Set up Windows automatic Intune enrollment](tutorial/user-driven/entra-join-automatic-enrollment.md) and [Enable Windows automatic enrollment](/intune/intune-service/enrollment/windows-enroll#enable-windows-automatic-enrollment) for details. If using a different mobile device management (MDM) service, contact the vendor for the specific URLs or configuration needed for those services.
-
+- **Configure Microsoft Entra automatic enrollment**. For Microsoft Intune, see [Set up Windows automatic Intune enrollment](tutorial/user-driven/entra-join-automatic-enrollment.md) and [Enable Windows automatic enrollment](https://learn.microsoft.com/en-us/intune/intune-service/enrollment/windows-enroll#enable-windows-automatic-enrollment) for details. If using a different mobile device management (MDM) service, contact the vendor for the specific URLs or configuration needed for those services.
 - **The first user that signs in needs to have Microsoft Entra join permissions**. For more information, see [Allow users to join devices to Microsoft Entra ID](tutorial/user-driven/entra-join-allow-users-to-join.md).
 
 The following configurations are optional but recommended. They aren't required:
 
-- **Automatically step up from Windows Pro to Windows Enterprise**. For more information, see [Windows Subscription Activation](/windows/deployment/windows-subscription-activation).
+- **Automatically step up from Windows Pro to Windows Enterprise**. For more information, see [Windows Subscription Activation](https://learn.microsoft.com/en-us/windows/deployment/windows-subscription-activation).
 
 There are no additional hardware requirements to use Windows Autopilot device preparation, beyond the hardware requirements to run Windows. For more information, see:
 
 - [Find Windows 11 specs, features, and computer requirements](https://www.microsoft.com/windows/windows-11-specifications).
-- [Windows minimum hardware requirements](/windows-hardware/design/minimum/minimum-hardware-requirements-overview).
-- [Windows 11 requirements](/windows/whats-new/windows-11-requirements).
+- [Windows minimum hardware requirements](https://learn.microsoft.com/en-us/windows-hardware/design/minimum/minimum-hardware-requirements-overview).
+- [Windows 11 requirements](https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements).
 
-## [:::image type="icon" source="../images/icons/permissions-18.svg"::: **RBAC**](#tab/rbac)
+<a id="tabpanel_1_rbac"></a>
+
+
 
 ### Required RBAC permissions
 
 The following role-based access control (RBAC) permissions are required in a role in Intune for a user to administer Windows Autopilot device preparation:
 
 - **Device configurations**
+
   - Read
   - Delete
   - Assign
   - Create
   - Update
-
 - **Enrollment programs**
+
   - Enrollment time device membership assignment
-
 - **Managed apps**
-  - Read
 
+  - Read
 - **Mobile apps**
-  - Read
 
+  - Read
 - **Organization**
+
   - Read
 
 To create a custom role with these permissions for use with Windows Autopilot device preparation:
 
-1. Sign in to the [Microsoft Intune admin center].
-
-1. In the **Home** screen, select **Tenant administration** in the left hand pane.
-
-1. In the **Tenant admin | Tenant status** screen, select **Roles**.
-
-1. In the **Endpoint Manager roles | All roles** screen, make sure **All roles** is selected under **Manage**.
-
-1. Select the **Create** drop down menu and then select **Intune role**. The **Add Custom Role** screen opens.
-
-1. In the **Add Custom Role** screen:
+1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
+2. In the **Home** screen, select **Tenant administration** in the left hand pane.
+3. In the **Tenant admin | Tenant status** screen, select **Roles**.
+4. In the **Endpoint Manager roles | All roles** screen, make sure **All roles** is selected under **Manage**.
+5. Select the **Create** drop down menu and then select **Intune role**. The **Add Custom Role** screen opens.
+6. In the **Add Custom Role** screen:
 
    1. In the **Basics** page:
 
       1. **Name** - enter a name for the custom role, such as **Windows Autopilot device preparation administrator**.
-
-      1. **Description** - enter a description for the custom role.
-
-   1. Select **Next**.
-
-   1. In the **Permissions** page, under **Select a category below to configure settings.**, scroll through the list to find the following settings. Once the setting is located, expand it, and then change to the following permissions:
+      2. **Description** - enter a description for the custom role.
+   2. Select **Next**.
+   3. In the **Permissions** page, under **Select a category below to configure settings.**, scroll through the list to find the following settings. Once the setting is located, expand it, and then change to the following permissions:
 
       - **Device configurations**
 
-         - **Read**: Yes
-         - **Delete**: Yes
-         - **Assign**: Yes
-         - **Create**: Yes
-         - **Update**: Yes
+        - **Read**: Yes
+        - **Delete**: Yes
+        - **Assign**: Yes
+        - **Create**: Yes
+        - **Update**: Yes
 
         **View Reports** can be left at the default of **No**.
-
       - **Enrollment programs**
 
-         - **Enrollment time device membership assignment**: Yes
+        - **Enrollment time device membership assignment**: Yes
 
         All other permissions can be left at the default of **No**.
-
       - **Managed apps**
 
-         - **Read**: Yes
+        - **Read**: Yes
 
         All other permissions can be left at the default of **No**.
-
       - **Mobile apps**
 
-         - **Read**: Yes
+        - **Read**: Yes
 
         All other permissions can be left at the default of **No**.
-
       - **Organization**
 
-         - **Read**: Yes
+        - **Read**: Yes
 
         All other permissions can be left at the default of **No**.
+   4. Once all permissions are set correctly, select **Next**.
+   5. In the **Scope tags** page, select **Next**.
 
-   1. Once all permissions are set correctly, select **Next**.
+      > [!NOTE]
+      >
+      > **Scope tags** are optional. If a custom scope tag needs to be specified, do so at this page. For more information about scope tags, see [Use role-based access control and scope tags for distributed IT](../../intune/fundamentals/role-based-access-control/scope-tags.md).
+   6. In the **Review + create** page, verify that all permissions are correct, and then select **Create**.
+7. The new custom Windows Autopilot device preparation role can now be assigned to users who administer Windows Autopilot device preparation.
 
-   1. In the **Scope tags** page, select **Next**.
-
-        > [!NOTE]
-        >
-        > **Scope tags** are optional. If a custom scope tag needs to be specified, do so at this page. For more information about scope tags, see [Use role-based access control and scope tags for distributed IT](/intune/fundamentals/role-based-access-control/scope-tags).
-
-   1. In the **Review + create** page, verify that all permissions are correct, and then select **Create**.
-
-1. The new custom Windows Autopilot device preparation role can now be assigned to users who administer Windows Autopilot device preparation.
-
-For more information, see [Role-based access control (RBAC) with Microsoft Intune](/intune/fundamentals/role-based-access-control/overview).
-
----
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431
+For more information, see [Role-based access control (RBAC) with Microsoft Intune](../../intune/fundamentals/role-based-access-control/overview.md).

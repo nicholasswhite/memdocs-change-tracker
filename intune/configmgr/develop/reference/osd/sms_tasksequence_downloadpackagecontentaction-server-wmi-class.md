@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_DownloadPackageContentAction Class
+title: "SMS_TaskSequence_DownloadPackageContentAction Server WMI Class"
 description: Represents a task sequence action that downloads the contents of a package.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_DownloadPackageContentAction Server WMI Class
+
 The `SMS_TaskSequence_DownloadPackageContentAction` Windows Management Instrumentation (WMI) class is an SMS provider server class, in Configuration Manager, that represents a task sequence action that downloads the contents of a package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,145 +38,135 @@ Class SMS_TaskSequence_DownloadPackageContentAction : SMS_TaskSequence_Action
 ```
 
 ## Methods
- The `SMS_TaskSequence_DownloadPackageContentAction` class does not define any methods.
+
+The `SMS_TaskSequence_DownloadPackageContentAction` class does not define any methods.
 
 ## Properties
- `Condition`
- Data type:  `SMS_TaskSequence_Condition`
 
- Access type: Read/Write
+`Condition` Data type: `SMS_TaskSequence_Condition`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `ContinueDownloadOnError`
- Data type:   `Boolean`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`ContinueDownloadOnError` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read/Write
 
- `true` to continue to the next package if a package fails to download.  The default value is `true`.
+Qualifiers: none
 
- `ContinueOnError`
- Data type: `Boolean`
+`true` to continue to the next package if a package fails to download. The default value is `true`.
 
- Access type: Read/Write
+`ContinueOnError` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `Description`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Description` Data type: `String`
 
- Qualifiers: [AllowedLen("0-255")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [AllowedLen("0-255")]
 
- `DestinationCustomPath`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`DestinationCustomPath` Data type: `String`
 
- Qualifiers:   [VariableName("OSDDownloadDestinationPath")]
+Access type: Read/Write
 
- The destination path.
+Qualifiers: [VariableName("OSDDownloadDestinationPath")]
 
- `DestinationLocationType`
- Data type: `String`
+The destination path.
 
- Access type: Read/Write
+`DestinationLocationType` Data type: `String`
 
- Qualifiers:  [Not_Null, ValueMap]
+Access type: Read/Write
 
- The destination location type. The default value is TSCache. Possible values are:
+Qualifiers: [Not_Null, ValueMap]
 
-|Value|
-|-|
-|TSCache|
-|CCMCache|
-|Custom|
+The destination location type. The default value is TSCache. Possible values are:
 
- `DestinationVariable`
- Data type: `String`
+| Value |
+| --- |
+| TSCache |
+| CCMCache |
+| Custom |
 
- Access type: Read/Write
+`DestinationVariable` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The destination variable.
+Qualifiers: none
 
- `DownloadPackages`
- Data type: `String`
+The destination variable.
 
- Access type: Read/Write
+`DownloadPackages` Data type: `String`
 
- Qualifiers: [Not_Null, TaskSequencePackageList]
+Access type: Read/Write
 
- Comma separated list of package Ids to be downloaded.
+Qualifiers: [Not_Null, TaskSequencePackageList]
 
- `Enabled`
- Data type: `Boolean`
+Comma separated list of package Ids to be downloaded.
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: None
 
- `Name`
- Data type: `String`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [AllowedLen("1-100")]
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: [AllowedLen("1-100")]
 
- `NumPackages`
- Data type: `UInt32`
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`NumPackages` Data type: `UInt32`
 
- Qualifiers: [VariableName("OSDPackageCount")]
+Access type: Read/Write
 
- The total number of packages.
+Qualifiers: [VariableName("OSDPackageCount")]
 
- `PackageInfo`
- Data type:   `SMS_TaskSequence_PackageInfo Array`
+The total number of packages.
 
- Access type: Read/Write
+`PackageInfo` Data type: `SMS_TaskSequence_PackageInfo Array`
 
- Qualifiers: [VariableName("OSDPackage")]
+Access type: Read/Write
 
- An array of task sequence information package information.
+Qualifiers: [VariableName("OSDPackage")]
 
- `SupportedEnvironment`
- Data type: `String`
+An array of task sequence information package information.
 
- Access type: Read/Write
+`SupportedEnvironment` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- The default value is WinPEandFullOS. See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: none
 
- `Timeout`
- Data type: `UInt32`
+The default value is WinPEandFullOS. See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
- Access type: Read/Write
+`Timeout` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_TaskSequence_Action Server WMI Class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+Qualifiers: none
+
+See [SMS_TaskSequence_Action Server WMI Class](sms_tasksequence_action-server-wmi-class.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

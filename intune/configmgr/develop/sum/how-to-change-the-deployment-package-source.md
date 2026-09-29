@@ -1,37 +1,39 @@
 ---
-title: Change the Deployment Package Source
-ms.date: 09/20/2016
+title: "How to Change the Deployment Package Source"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: You change the deployment package source for a software updates deployment package in Configuration Manager by obtaining an instance of the SMS_SoftwareUpdatesPackage class and using the ValidateNewPackageSource method.
 ms.service: configuration-manager
 ---
+
 # How to Change the Deployment Package Source
-You change the deployment package source for a software updates deployment package, in Configuration Manager, by obtaining an instance of the [SMS_SoftwareUpdatesPackage](../../develop/reference/sum/sms_softwareupdatespackage-server-wmi-class.md) class and by using the [ValidateNewPackageSource](../../develop/reference/sum/validatenewpackagesource-method-in-class-sms_softwareupdatespackage.md) method.
+
+You change the deployment package source for a software updates deployment package, in Configuration Manager, by obtaining an instance of the [SMS_SoftwareUpdatesPackage](../reference/sum/sms_softwareupdatespackage-server-wmi-class.md) class and by using the [ValidateNewPackageSource](../reference/sum/validatenewpackagesource-method-in-class-sms_softwareupdatespackage.md) method.
 
 > [!NOTE]
->  The package source for most other types of packages can be changed in the console. However, this option is not available for software updates packages.
+>
+> The package source for most other types of packages can be changed in the console. However, this option is not available for software updates packages.
 
 ### To change the deployment package source
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Obtain an existing package object by using the `SMS_SoftwareUpdatesPackage` class.
-
-3.  Verify the package source by using the `ValidateNewPackageSource` method.
-
-4.  Change the package source for an existing software updates deployment package by changing the `PkgSourcePath` property of the package.
+1. Set up a connection to the SMS Provider.
+2. Obtain an existing package object by using the `SMS_SoftwareUpdatesPackage` class.
+3. Verify the package source by using the `ValidateNewPackageSource` method.
+4. Change the package source for an existing software updates deployment package by changing the `PkgSourcePath` property of the package.
 
 ## Example
- The following example method shows how to change the deployment package source for a software updates deployment package by using the `SMS_SoftwareUpdatesPackage` class and the `ValidateNewPackageSource` method.
+
+The following example method shows how to change the deployment package source for a software updates deployment package by using the `SMS_SoftwareUpdatesPackage` class and the `ValidateNewPackageSource` method.
 
 > [!NOTE]
->  All of the updates available in the old package source must be available in the new package source (the content source path, passed in as the `newPackageSourceLocation` variable in the below scripts).
+>
+> All of the updates available in the old package source must be available in the new package source (the content source path, passed in as the `newPackageSourceLocation` variable in the below scripts).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
- Example of the subroutine call in Visual Basic:
+Example of the subroutine call in Visual Basic:
 
 ```vbscript
 
@@ -46,7 +48,7 @@ Call ChangeDeploymentPackageSource(swbemServices,             _
 
 ```
 
- Example of the method call in C#:
+Example of the method call in C#:
 
 ```csharp
 
@@ -145,41 +147,45 @@ public void ChangeDeploymentPackageSource(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingSUMPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The package ID for an existing software updates deployment package.|
-|`validateNewPackageSource`|-   Managed: `dictionary` object|The `validateNewPackageSource` is a dictionary object containing the parameters that the `ValidateNewPackageSource` method requires.<br /><br /> `PackageSource`|
-|`newPackageSourceLocation`|-   Managed: `String`<br />-   VBScript: `String`|The new deployment package source location. The source path must be a Universal Naming Convention (UNC) path. All of the updates available in the old package source must be available in the new package source.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingSUMPackageID` | - Managed: `String` - VBScript: `String` | The package ID for an existing software updates deployment package. |
+| `validateNewPackageSource` | - Managed: `dictionary` object | The `validateNewPackageSource` is a dictionary object containing the parameters that the `ValidateNewPackageSource` method requires.   `PackageSource` |
+| `newPackageSourceLocation` | - Managed: `String` - VBScript: `String` | The new deployment package source location. The source path must be a Universal Naming Convention (UNC) path. All of the updates available in the old package source must be available in the new package source. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About software update deployments](about-software-updates-deployments.md)
- [SMS_SoftwareUpdatesPackage](../../develop/reference/sum/sms_softwareupdatespackage-server-wmi-class.md)
- [ValidateNewPackageSource Method in Class SMS_SoftwareUpdatesPackage](../../develop/reference/sum/validatenewpackagesource-method-in-class-sms_softwareupdatespackage.md)
+
+[About software update deployments](about-software-updates-deployments.md) [SMS_SoftwareUpdatesPackage](../reference/sum/sms_softwareupdatespackage-server-wmi-class.md) [ValidateNewPackageSource Method in Class SMS_SoftwareUpdatesPackage](../reference/sum/validatenewpackagesource-method-in-class-sms_softwareupdatespackage.md)

@@ -1,7 +1,7 @@
 ---
-title: Startup Performance Report in Endpoint Analytics
+title: "Startup performance report"
 description: Learn how startup performance in Microsoft Intune endpoint analytics helps analyze boot times, identify issues, and optimize device performance.
-ms.date: 12/03/2025
+ms.date: "2025-12-03T00:00:00Z"
 ms.topic: concept-article
 ---
 
@@ -11,16 +11,15 @@ The startup performance report in endpoint analytics provides insights into the 
 
 ## Before you begin
 
-> [!div class="checklist"]
-> - Review [Scores, baselines, and insights in endpoint analytics](scores.md) to understand these concepts.
-> - Confirm that your environment meets all [prerequisites](index.md#prerequisites).
-> - Clients require a restart to fully enable all analytics.
+- Review [Scores, baselines, and insights in endpoint analytics](scores.md) to understand these concepts.
+- Confirm that your environment meets all [prerequisites](index.md#prerequisites).
+- Clients require a restart to fully enable all analytics.
 
 ## Review the report
 
-In the [Microsoft Intune admin center][INT-AC], select **Reports** > **Endpoint analytics** > **Startup performance**.
+In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Reports** &gt; **Endpoint analytics** &gt; **Startup performance**.
 
-:::image type="content" source="media/startup-performance/startup-performance.png" lightbox="media/startup-performance/startup-performance.png" alt-text="Screenshot of the Startup score tab in endpoint analytics.":::
+[![Screenshot of the Startup score tab in endpoint analytics.](media/startup-performance/startup-performance.png)](media/startup-performance/startup-performance.png#lightbox)
 
 The retention period for device boot and sign-in events is 29 days. If a device hasn't uploaded a boot or sign-in event in the past 29 days, it doesn't appear in the startup performance report.
 
@@ -53,6 +52,7 @@ Startup performance provides an insight on the number of devices that have delay
 Select a particular device, to see its boot and sign-in history. The history helps you determine if the issue is a regression and when it might have occurred.
 
 > [!TIP]
+>
 > While there are many articles on how to optimize Group Policies performance, you might choose to migrate to cloud-management instead. Migrating to cloud-management allows you to use [Intune security baselines](../device-security/security-baselines/overview.md) and [Group Policy analytics](../device-configuration/import-group-policy-analytics.md).
 
 ### Slow boot and sign-in times
@@ -75,7 +75,8 @@ In the model performance tab, two default columns allow you to review both the a
 
 Review boot and sign-in metrics for all your devices. You can sort by a particular metric to see which devices have the worst scores for that metric to help with troubleshooting. You can also search for a device by name.
 
-> [!Note]
+> [!NOTE]
+>
 > In the device performance tab, admins only see devices they have access to according to their assigned scope tags. To learn more about scope tags, see [Scope tags for distributed IT](../fundamentals/role-based-access-control/scope-tags.md). Aggregated insights, such as scores and summary views are calculated using all enrolled devices in the tenant. To apply scope tags to aggregated insights, see [Device scopes in endpoint analytics](../advanced-analytics/device-scopes.md).
 
 #### Device level drill-in view
@@ -86,30 +87,32 @@ The **OS restart history** table contains the following information:
 
 - The **Restart category** for each reboot
 - For Stop errors:
-  - The [stop code](/windows-hardware/drivers/debugger/bug-check-code-reference2) also called the bug check code
+  - The [stop code](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-code-reference2) also called the bug check code
   - A **Failure bucket ID** that can be used for diagnostics when working with Microsoft support
 
-:::image type="content" source="media/startup-performance/os-restart-history.png" alt-text="OS restart history under the Device page" lightbox="media/startup-performance/os-restart-history.png":::
+[![OS restart history under the Device page](media/startup-performance/os-restart-history.png)](media/startup-performance/os-restart-history.png#lightbox)
 
 The **OS restart history** table shows the 10 most recent restarts that occurred within the last 30 days. Because this table updates with low latency, new restarts typically appear here before they show up in the daily aggregates on the **Device performance** tab.
 
->[!NOTE]
+> [!NOTE]
+>
 > The restart count in the **OS restart history** table may differ from the count shown under the **Device performance** tab. This difference is expected:
+>
 > - The **OS restart history** table is limited to the 10 most recent restarts.
 > - The **Device performance** tab aggregates daily data for the last 30 days.
 
 ### Startup processes
 
 Startup processes can negatively affect user experience by increasing the length of time that users must wait for the desktop to become responsive. This tab shows you which processes are impacting the sign-in "time to responsive desktop" phase and keeps the CPU above 50% after the desktop is rendered. The table only lists processes that affect a minimum of 10 devices in your tenant. When you review the startup processes, the following data calculations are displayed:
-  - **Device count**: The count of devices that experienced a delay to a responsive desktop from the process.
-  - **Median delay**: The median delay time of the process for the counted devices.
-  - **Total delay**: The sum of the delays for all of the counted devices.
+
+- **Device count**: The count of devices that experienced a delay to a responsive desktop from the process.
+- **Median delay**: The median delay time of the process for the counted devices.
+- **Total delay**: The sum of the delays for all of the counted devices.
 
 ### Restart frequency
 
-:::image type="content" source="media/startup-performance/restart-frequency.png" alt-text="Restart frequency tab under Startup Performance" lightbox="media/startup-performance/restart-frequency.png":::
+[![Restart frequency tab under Startup Performance](media/startup-performance/restart-frequency.png)](media/startup-performance/restart-frequency.png#lightbox)
 
-<!--IN6225459-->
 Reboot frequency can affect a user's experience. A device that reboots daily due to Stop errors results in poor user experience even if the boot times are fast. We've recently added insights into restart frequencies within your organization to help you identify problematic devices.
 
 Review aggregates of restart frequency counts for each of the [restart categories](#restart-categories) over the last 30 days. For each restart category, the following information is displayed:
@@ -137,7 +140,3 @@ Each restart is categorized into one of six categories. They're described as eit
 - **Restart (no update)**: Ideally this category should be close to zero since there shouldn't be a reason to restart a device beyond monthly patching.
 
 The difference between **Shutdown (no update)** and **Restart (no update)** is the user's action. A shutdown or restart doesn't have to be initiated through the start menu, it could be initiated other ways too.
-
-<!-- admin center links -->
-
-[INT-AC]: https://go.microsoft.com/fwlink/?linkid=2109431

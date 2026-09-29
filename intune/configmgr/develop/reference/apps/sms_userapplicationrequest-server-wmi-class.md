@@ -1,16 +1,18 @@
 ---
-title: SMS_UserApplicationRequest Class
+title: "SMS_UserApplicationRequest Server WMI Class"
 description: In Configuration Manager, the SMS_UserApplicationRequest WMI class is an SMS Provider server class that represents a user's application request.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_UserApplicationRequest Server WMI Class
+
 The `SMS_UserApplicationRequest` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a user's application request.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,127 +34,121 @@ Class SMS_UserApplicationRequest :
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_UserApplicationRequest` class.
 
-|Method|Description|
-|------------|-----------------|
-|[Approve Method in Class SMS_UserApplicationRequest](../../../develop/reference/apps/approve-method-in-class-sms_userapplicationrequest.md)|Approves a user application request.|
-|[Deny Method in Class SMS_UserApplicationRequest](../../../develop/reference/apps/deny-method-in-class-sms_userapplicationrequest.md)|Denies a user application request.|
+The following table lists the methods in the `SMS_UserApplicationRequest` class.
+
+| Method | Description |
+| --- | --- |
+| [Approve Method in Class SMS_UserApplicationRequest](approve-method-in-class-sms_userapplicationrequest.md) | Approves a user application request. |
+| [Deny Method in Class SMS_UserApplicationRequest](deny-method-in-class-sms_userapplicationrequest.md) | Denies a user application request. |
 
 ## Properties
- `Application`
- Data type: `String`
 
- Access type: Read/Write
+`Application` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the application.
+Qualifiers: none
 
- `CI_UniqueID`
- Data type: `String`
+Name of the application.
 
- Access type: Read/Write
+`CI_UniqueID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Unique ID of the configuration item. This ID is unique across sites.
+Qualifiers: none
 
- `Comments`
- Data type: `String`
+Unique ID of the configuration item. This ID is unique across sites.
 
- Access type: Read/Write
+`Comments` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Last set of comments for the request.
+Qualifiers: none
 
- `CurrentState`
- Data type: `UInt32`
+Last set of comments for the request.
 
- Access type: Read/Write
+`CurrentState` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Current state of the application request. Possible values are:
+Qualifiers: none
 
-|Value|Current state|
-|-|-|
-|1|Requested|
-|2|Canceled|
-|3|Denied|
-|4|Approved|
+Current state of the application request. Possible values are:
 
- `LastModifiedBy`
- Data type: `String`
+| Value | Current state |
+| --- | --- |
+| 1 | Requested |
+| 2 | Canceled |
+| 3 | Denied |
+| 4 | Approved |
 
- Access type: Read/Write
+`LastModifiedBy` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- User who last modified the request.
+Qualifiers: none
 
- `LastModifiedDate`
- Data type: `DateTime`
+User who last modified the request.
 
- Access type: Read/Write
+`LastModifiedDate` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Date and time for the last modification of this request.
+Qualifiers: none
 
- `ModelName`
- Data type: `String`
+Date and time for the last modification of this request.
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Model name of the requested application.
+Qualifiers: none
 
- `RequestGuid`
- Data type: `String`
+Model name of the requested application.
 
- Access type: Read/Write
+`RequestGuid` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique GUID for the request.
+Qualifiers: [key]
 
- `RequestHistory`
- Data type: `SMS_UserApplicationRequestHistoryItem Array`
+Unique GUID for the request.
 
- Access type: Read/Write
+`RequestHistory` Data type: `SMS_UserApplicationRequestHistoryItem Array`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- History of the request, one entry per update that was done.
+Qualifiers: [lazy]
 
- `User`
- Data type: `String`
+History of the request, one entry per update that was done.
 
- Access type: Read/Write
+`User` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- User that requested the application.
+Qualifiers: none
 
- `UserSid`
- Data type: `String`
+User that requested the application.
 
- Access type: Read/Write
+`UserSid` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- Security identifier of the user that requested the application.
+Qualifiers: [lazy]
+
+Security identifier of the user that requested the application.
 
 ## Remarks
 
 ## Requirements
- A user application request is unique for a given user and application.
+
+A user application request is unique for a given user and application.
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

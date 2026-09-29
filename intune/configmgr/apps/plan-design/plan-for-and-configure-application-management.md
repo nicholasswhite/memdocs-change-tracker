@@ -1,7 +1,7 @@
 ---
-title: Plan for application management
+title: "Plan for and configure application management in Configuration Manager"
 description: Implement and configure the necessary dependencies for deploying applications in Configuration Manager.
-ms.date: 08/02/2021
+ms.date: "2021-08-02T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -80,9 +80,7 @@ For more information, see the following articles:
 ### Security permissions for application management
 
 - The **Application Author** security role includes the required permissions to create, change, and retire applications.
-
 - The **Application Deployment Manager** security role includes required permissions to deploy applications.
-
 - The **Application Administrator** security role has all the permissions from both the **Application Author** and the **Application Deployment Manager** security roles.
 
 For more information, see [Configure role-based administration](../../core/servers/deploy/configure/configure-role-based-administration.md).
@@ -91,32 +89,28 @@ For more information, see [Configure role-based administration](../../core/serve
 
 To create virtual applications in Configuration Manager, install App-V 4.6 SP1 or later on devices.
 
-App-V is included with all supported versions of Windows 10 Enterprise edition. For more information, see [Getting started with App-V for Windows 10](/windows/application-management/app-v/appv-getting-started).
+App-V is included with all supported versions of Windows 10 Enterprise edition. For more information, see [Getting started with App-V for Windows 10](https://learn.microsoft.com/en-us/windows/application-management/app-v/appv-getting-started).
 
 ## Remove the application catalog
 
-<!-- SCCMDocs-pr issue 3051 -->
-
 Support ended for the application catalog roles with version 1910. Software Center can deliver all app deployments without the application catalog. For more information, see [Removed and deprecated features](../../core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
-Starting in version 2107, you can't update the site if it has either of the application catalog site system roles. Remove these roles before you update to version 2107.<!-- 10158844 -->
+Starting in version 2107, you can't update the site if it has either of the application catalog site system roles. Remove these roles before you update to version 2107.
 
 If your site still has an application catalog, use the following process to remove it:
 
 1. Update all Configuration Manager clients to the latest supported version.
-
-1. Set branding for Software Center, instead of in the properties of the application catalog web site role. For more information, see [Software Center client settings](../../core/clients/deploy/about-client-settings.md#software-center).
-
-1. Review the default and any custom client settings. In the **Computer Agent** group, make sure the **Default Application Catalog website point** is `(none)`.
-
-1. Remove the **application catalog website** and **application catalog web service** site system roles from all primary sites. For more information, see [Uninstall a site system role](../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#bkmk_role).
+2. Set branding for Software Center, instead of in the properties of the application catalog web site role. For more information, see [Software Center client settings](../../core/clients/deploy/about-client-settings.md#software-center).
+3. Review the default and any custom client settings. In the **Computer Agent** group, make sure the **Default Application Catalog website point** is `(none)`.
+4. Remove the **application catalog website** and **application catalog web service** site system roles from all primary sites. For more information, see [Uninstall a site system role](../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#bkmk_role).
 
 After you remove the application catalog roles, Software Center starts using the management point for user-targeted, available deployments. To verify this behavior on a specific client, review the `SCClient_<username>.log`, and look for an entry similar to the following line:
 
 `Using endpoint Url: https://mp.contoso.com/CMUserService_WindowsAuth, Windows authentication`
 
 > [!NOTE]
-> If you have any tools or automation that used the ApplicationViewService.asmx SOAP endpoint on the application catalog website point, you need to change it. Update the URL in your tool to use the management point user service endpoint. For example, `https://mp.contoso.com/CMUserService_WindowsAuth`<!-- 10158844 -->
+>
+> If you have any tools or automation that used the ApplicationViewService.asmx SOAP endpoint on the application catalog website point, you need to change it. Update the URL in your tool to use the management point user service endpoint. For example, `https://mp.contoso.com/CMUserService_WindowsAuth`
 
 ## Next steps
 

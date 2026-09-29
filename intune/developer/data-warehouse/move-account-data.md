@@ -1,7 +1,7 @@
 ---
 title: Move Your Intune Data Warehouse Account Data
 description: Understand how to back up your Intune Data Warehouse data when moving your account.
-ms.date: 06/09/2025
+ms.date: "2025-06-09T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -11,44 +11,50 @@ By requesting an account move, you're requesting that your data center is change
 
 ## Back up your Data Warehouse data
 
-To back up your Data Warehouse data, you must save your Data Warehouse data into a *.csv* file using the  Data Warehouse API:
+To back up your Data Warehouse data, you must save your Data Warehouse data into a *.csv* file using the Data Warehouse API:
 
 1. Follow the one-time process in [Get data from the Intune Data Warehouse API with a REST client](setup-rest-client.md) if you’re using the Data Warehouse API for the first time.
 2. Download all your data as CSV files by using the PowerShell sample [Access the Intune Data Warehouse with PowerShell](https://github.com/Microsoft/Intune-Data-Warehouse/tree/master/Samples/PowerShell).
 
 ## Back up your trend charts from the Microsoft Intune admin center
 
-Some trend charts in your view of the [Microsoft Intune admin center] resets. You can back up these charts by running the following script in **Graph**:  
+Some trend charts in your view of the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431) resets. You can back up these charts by running the following script in **Graph**:
 
-### Terms & Conditions Acceptance reports
-1. In the[Microsoft Intune admin center], select **Tenant administration** > **Terms & Conditions**.
-2. For each **Terms & Condition** item that you select, select **Acceptance Report** > **Export**.
+### Terms &amp; Conditions Acceptance reports
+
+1. In the[Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Tenant administration** &gt; **Terms &amp; Conditions**.
+2. For each **Terms &amp; Condition** item that you select, select **Acceptance Report** &gt; **Export**.
 3. Save the report locally.
 
 ### App Protection reports
-1. Select **Apps** -> **Monitor** -> **App protection status** in the [Microsoft Intune admin center].
+
+1. Select **Apps** -&gt; **Monitor** -&gt; **App protection status** in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. To save each report, select the download icon ( ⤓ ).
 
 ### Device Configuration charts
-1. In the [Microsoft Intune admin center], select **Devices** > **Manage devices** > **Configuration** > **Export**.
+
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Export**.
 2. Using Microsoft [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), download the data behind the charts.
-    - For deployment status of all device configuration profiles for all devices, see [Device deployment status](https://graph.microsoft.com/beta/reports/deviceConfigurationDeviceActivity/content).
 
-    - For deployment status of all device configuration profiles for all users, see [User deployment status](https://graph.microsoft.com/beta/reports/deviceConfigurationUserActivity/content).
+   - For deployment status of all device configuration profiles for all devices, see [Device deployment status](https://graph.microsoft.com/beta/reports/deviceConfigurationDeviceActivity/content).
+   - For deployment status of all device configuration profiles for all users, see [User deployment status](https://graph.microsoft.com/beta/reports/deviceConfigurationUserActivity/content).
+   - For profile deployment status, see [Provide deployment status](https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations?$select=id,displayName,lastModifiedDateTime,deviceStatusOverview&$expand=deviceStatusOverview).
 
-    - For profile deployment status, see [Provide deployment status](https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations?$select=id,displayName,lastModifiedDateTime,deviceStatusOverview&$expand=deviceStatusOverview).
-
-    > [!NOTE]
-    > You must have a valid authentication token to access the device configuration and deployment status information.
+   > [!NOTE]
+   >
+   > You must have a valid authentication token to access the device configuration and deployment status information.
 
 ## Device Enrollment charts
-1. In the [Microsoft Intune admin center], select **Devices** > **Monitor** > **Assignment status** > **Export**.
-2. Using Microsoft [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), download the data behind the charts.
-    - For enrollment status, copy this [enrollment status query](https://graph.microsoft.com/beta/reports/managedDeviceEnrollmentFailureTrends()/content) and paste it into [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-    - For top enrollment failures this week, copy this [enrollment failures query](https://graph.microsoft.com/beta/reports/managedDeviceEnrollmentTopFailures(period=null)/content) and paste it into [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 
-    > [!NOTE]
-    > You must have a valid authentication token to access the device enrollment data.
+1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), select **Devices** &gt; **Monitor** &gt; **Assignment status** &gt; **Export**.
+2. Using Microsoft [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), download the data behind the charts.
+
+   - For enrollment status, copy this [enrollment status query](https://graph.microsoft.com/beta/reports/managedDeviceEnrollmentFailureTrends()/content) and paste it into [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
+   - For top enrollment failures this week, copy this [enrollment failures query](https://graph.microsoft.com/beta/reports/managedDeviceEnrollmentTopFailures(period=null)/content) and paste it into [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
+
+   > [!NOTE]
+   >
+   > You must have a valid authentication token to access the device enrollment data.
 
 ## After a Data Warehouse account move
 
@@ -62,7 +68,3 @@ Customer X requests an account move to begin on January 6, 2018. In response to 
 
 - Learn [what's new each week in Intune](../../whats-new/index.md). You can also find out about upcoming changes, important notices about the service, and information about past releases.
 - Read the [Microsoft Intune Blog](https://techcommunity.microsoft.com/t5/microsoft-intune-blog/bg-p/MicrosoftEndpointManagerBlog).
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

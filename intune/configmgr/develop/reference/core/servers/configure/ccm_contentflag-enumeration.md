@@ -1,13 +1,15 @@
 ---
 title: CCM_CONTENTFLAG Enumeration
 description: Learn about the CCM_CONTENTFLAG Enumeration that contains options for transferring content.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_CONTENTFLAG Enumeration
+
 The **CCM_CONTENTFLAG** enumeration contains options for transferring content.
 
 ## Syntax
@@ -30,22 +32,24 @@ CCM_CONTENTFLAG;
 
 ## Members
 
-|Content flag|Description|
-|-|-|
-|CCM_CONTENTFLAG_LOCAL_ONLY|Local only.|
-|CCM_CONTENTFLAG_REMOTE_ONLY|Remote only.|
-|CCM_CONTENTFLAG_LOCAL_OR_REMOTE|Local or remote.|
-|CCM_CONTENTFLAG_PROTECTED_ONLY|Protected only.|
-|CCM_CONTENTFLAG_ALLOW_CACHING|Allow caching.|
-|CCM_CONTENTFLAG_PEERDP|Branch distribution point.|
-|CCM_CONTENTFLAG_REMOTE_NOLOCALPEERDP|No local branch distribution point.|
-|CCM_CONTENTFLAG_DELTA_DOWNLOAD|Delta download.|
-|CCM_CONTENTFLAG_ALLOW_ALTERNATE_PROVIDERS|Allow alternate providers.|
+| Content flag | Description |
+| --- | --- |
+| CCM_CONTENTFLAG_LOCAL_ONLY | Local only. |
+| CCM_CONTENTFLAG_REMOTE_ONLY | Remote only. |
+| CCM_CONTENTFLAG_LOCAL_OR_REMOTE | Local or remote. |
+| CCM_CONTENTFLAG_PROTECTED_ONLY | Protected only. |
+| CCM_CONTENTFLAG_ALLOW_CACHING | Allow caching. |
+| CCM_CONTENTFLAG_PEERDP | Branch distribution point. |
+| CCM_CONTENTFLAG_REMOTE_NOLOCALPEERDP | No local branch distribution point. |
+| CCM_CONTENTFLAG_DELTA_DOWNLOAD | Delta download. |
+| CCM_CONTENTFLAG_ALLOW_ALTERNATE_PROVIDERS | Allow alternate providers. |
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

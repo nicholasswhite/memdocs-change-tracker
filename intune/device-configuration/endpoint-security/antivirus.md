@@ -1,11 +1,10 @@
 ---
-title: Manage antivirus settings with endpoint security policies in Microsoft Intune
+title: "Antivirus policy for endpoint security in Microsoft Intune"
 description: Configure and deploy policies and use reports for devices you manage with endpoint security antivirus policy in Microsoft Intune.
-ms.date: 07/17/2026
+ms.date: "2026-07-17T00:00:00Z"
 ms.topic: reference
 ai-usage: ai-assisted
 ms.reviewer: mattcall
-
 ---
 
 # Antivirus policy for endpoint security in Microsoft Intune
@@ -26,18 +25,19 @@ Applies to:
 - Windows Server *(through the [Microsoft Defender for Endpoint Security settings management](../../device-security/microsoft-defender/security-settings-management.md) scenario)*
 
 > [!IMPORTANT]
-> [!INCLUDE [windows-10-support](../../includes/windows-10-support.md)]
-
+>
+> On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
 
 ## Prerequisites for antivirus policy
 
 **Support for Intune (MDM) enrolled devices**:
 
 - **macOS**
-  - Any supported version of macOS
-  - For Intune to manage antivirus settings on a device, Defender for Endpoint must be installed on that device. See [Microsoft Defender for Endpoint for macOS](/defender-endpoint/microsoft-defender-endpoint-mac) (In the Defender for Endpoint documentation).
 
+  - Any supported version of macOS
+  - For Intune to manage antivirus settings on a device, Defender for Endpoint must be installed on that device. See [Microsoft Defender for Endpoint for macOS](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-mac) (In the Defender for Endpoint documentation).
 - **Windows**
+
   - No additional prerequisites are required.
 
 **Support for Microsoft Configuration Manager clients**:
@@ -54,7 +54,7 @@ Applies to:
 
 ### Role-based access controls (RBAC)
 
-For guidance on assigning the right level of permissions and rights to manage Intune antivirus policy, see [Role-based access control for endpoint security](./manage-policies.md#role-based-access-control-for-endpoint-security).
+For guidance on assigning the right level of permissions and rights to manage Intune antivirus policy, see [Role-based access control for endpoint security](manage-policies.md#role-based-access-control-for-endpoint-security).
 
 ### Prerequisites for tamper protection
 
@@ -64,14 +64,15 @@ Intune supports managing tamper protection on devices that run one of the follow
 - Windows 10 and 11 (including Enterprise multi-session)
 - Windows Server 2016 and later
 - Windows Server, version 1803 or later
-- Windows Server 2012 R2 ([using the modern, unified solution](/defender-endpoint/onboard-server#functionality-in-the-modern-unified-solution-for-windows-server-2016-and-windows-server-2012-r2))
+- Windows Server 2012 R2 ([using the modern, unified solution](https://learn.microsoft.com/en-us/defender-endpoint/onboard-server#functionality-in-the-modern-unified-solution-for-windows-server-2016-and-windows-server-2012-r2))
 
-Defender for Endpoint supports tamper protection on additional platforms beyond those manageable through Intune policy. For the full list, see [Tamper protection prerequisites](/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection#supported-operating-systems).
+Defender for Endpoint supports tamper protection on additional platforms beyond those manageable through Intune policy. For the full list, see [Tamper protection prerequisites](https://learn.microsoft.com/en-us/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection#supported-operating-systems).
 
 > [!NOTE]
+>
 > Devices are required to be onboarded to Microsoft Defender for Endpoint (P1 or P2). Devices might see a delay enabling tamper protection if previously not onboarded to Microsoft Defender for Endpoint. Tamper protection will enable on the first device check-in after onboarding to Microsoft Defender for Endpoint.
 
-For more information about tamper protection behavior, including which settings are protected and troubleshooting options, see [What is tamper protection?](/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection) in the Defender for Endpoint documentation.
+For more information about tamper protection behavior, including which settings are protected and troubleshooting options, see [What is tamper protection?](https://learn.microsoft.com/en-us/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection) in the Defender for Endpoint documentation.
 
 You can use Intune to manage tamper protection on Windows devices as part of Windows Security Experience profile (an Antivirus policy). This includes both devices you manage with Intune, and devices you manage with Configuration Manager through the tenant attach scenario. Tamper protection is also now available for Azure Virtual Desktop.
 
@@ -79,33 +80,35 @@ You can use Intune to manage tamper protection on Windows devices as part of Win
 
 Prerequisites to support tamper protection for devices managed by Intune:
 
-- Your environment must meet the [requirements for managing tamper protection in Intune](/defender-endpoint/manage-tamper-protection-intune#requirements-for-managing-tamper-protection-in-intune)
+- Your environment must meet the [requirements for managing tamper protection in Intune](https://learn.microsoft.com/en-us/defender-endpoint/manage-tamper-protection-intune#requirements-for-managing-tamper-protection-in-intune)
 - Devices are onboarded to Microsoft Defender for Endpoint (P1 or P2)
 
-Profiles for *Antivirus* policy that support tamper protection for [devices managed by Microsoft Intune](./deploy-edr.md#supported-platforms-and-profiles):
+Profiles for *Antivirus* policy that support tamper protection for [devices managed by Microsoft Intune](deploy-edr.md#supported-platforms-and-profiles):
 
 - Platform: **Windows**
+
   - Profile: **Windows Security experience**
 
   > [!NOTE]
+  >
   > On April 5, 2022, the *Windows 10 and later* platform was replaced by the *Windows* platform.
   >
   > The *Windows* platform supports devices communicating with Intune through Microsoft Intune or Microsoft Defender for Endpoint. These profiles also add support for the Windows Server platform which isn't supported through Microsoft Intune natively.
   >
   > Profiles for this new platform use the settings format as found in the Settings Catalog. Each new profile template for this new platform includes the same settings as the older profile template it replaces. With this change you can no longer create new versions of the old profiles. Your existing instances of the old profile remain available to use and edit.
 
-You can also use the [Endpoint protection](./configure-endpoint-protection.md) profile for *Device configuration* policy to configure tamper protection for devices managed by Intune.
+You can also use the [Endpoint protection](configure-endpoint-protection.md) profile for *Device configuration* policy to configure tamper protection for devices managed by Intune.
 
 #### Configuration Manager clients managed through the tenant attach scenario
 
 Prerequisites to support managing tamper protection with these profiles:
 
-- Your environment must meet the [requirements for managing tamper protection in Intune](/defender-endpoint/manage-tamper-protection-intune#requirements-for-managing-tamper-protection-in-intune) as detailed in the Defender for Endpoint documentation.
+- Your environment must meet the [requirements for managing tamper protection in Intune](https://learn.microsoft.com/en-us/defender-endpoint/manage-tamper-protection-intune#requirements-for-managing-tamper-protection-in-intune) as detailed in the Defender for Endpoint documentation.
 - You must use Configuration Manager current branch 2006 or later.
 - You must configure tenant attach to support endpoint protection policies. This includes configuring Configuration Manager device collections for synchronization with Intune.
 - Devices are onboarded to Microsoft Defender for Endpoint (P1 or P2)
 
- Profiles for *Antivirus* policy that support tamper protection for [devices managed by Configuration Manager](#devices-managed-by-configuration-manager):
+Profiles for *Antivirus* policy that support tamper protection for [devices managed by Configuration Manager](#devices-managed-by-configuration-manager):
 
 - Platform: **Windows (ConfigMgr)**
   - Profile: **Windows Security experience (preview)**
@@ -128,7 +131,7 @@ This capability is useful in two common scenarios:
 Controlled configuration is available as a dedicated setting in the **Windows Security experience** profile for Antivirus policy. Under the **Defender** section, the **Controlled Configuration (Device)** setting supports the following values:
 
 | Value | Description |
-|---|---|
+| --- | --- |
 | **Not configured** | No change to the device's current state. |
 | **Off (Default)** | Turns off both controlled configuration and tamper protection. |
 | **Tamper Protection (On)** | Turns on tamper protection and enforces tamper-protected settings to their secure defaults. This is the existing tamper protection behavior. |
@@ -136,12 +139,14 @@ Controlled configuration is available as a dedicated setting in the **Windows Se
 
 To enable controlled configuration, create or edit an Antivirus policy that uses the **Windows Security experience** profile. Set **Controlled Configuration (Device)** to **Controlled Configuration (On)**, and then deploy the policy to the devices you want to protect.
 
-- **CSP**: [Defender CSP > Configuration/TamperProtection](/windows/client-management/mdm/defender-csp#configurationtamperprotection)
+- **CSP**: [Defender CSP &gt; Configuration/TamperProtection](https://learn.microsoft.com/en-us/windows/client-management/mdm/defender-csp#configurationtamperprotection)
 
 > [!NOTE]
+>
 > Controlled configuration has the same [prerequisites as tamper protection](#prerequisites-for-tamper-protection).
 
 > [!IMPORTANT]
+>
 > Controlled configuration operates at the per-device level. You can opt individual devices in or out of the controlled state by changing the **Controlled Configuration (Device)** value in the policy that targets those devices. Switching from controlled configuration back to tamper protection (or off) takes effect on the next policy check-in.
 
 #### Scope and limitations
@@ -168,14 +173,14 @@ When a device is in the controlled configuration state, reporting behavior for t
 
 - For policies configured through a template that supports controlled configuration (Antivirus, ASR), per-setting status reports reflect the enforced configuration as expected.
 - For non-controlled configuration policies, such as Settings Catalog policies, that contain settings overlapping with a controlled configuration policy, the overlapping settings report as **Not applicable** on that device. The controlled configuration policy takes precedence for those settings, regardless of the configured value in the other policy.
-- In the **Unhealthy endpoints** (**Endpoint security** > **Antivirus** > **Unhealthy endpoints**) and **Antivirus agent status** (**Reports** > **Antivirus** > **Antivirus agent status**) reports, the **Tamper protection** column is renamed to **Controlled configuration**. The values reflect whether controlled configuration is enabled or disabled for MDM-enrolled devices. Defender-enrolled devices aren't included in these reports.
+- In the **Unhealthy endpoints** (**Endpoint security** &gt; **Antivirus** &gt; **Unhealthy endpoints**) and **Antivirus agent status** (**Reports** &gt; **Antivirus** &gt; **Antivirus agent status**) reports, the **Tamper protection** column is renamed to **Controlled configuration**. The values reflect whether controlled configuration is enabled or disabled for MDM-enrolled devices. Defender-enrolled devices aren't included in these reports.
 - When a device receives conflicting Intune policies—one enabling controlled configuration and another disabling or enabling tamper protection—the controlled configuration policy takes precedence.
 
-For more information about tamper protection and how controlled configuration extends it, see [Protect security settings with tamper protection](/microsoft-365/security/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection).
+For more information about tamper protection and how controlled configuration extends it, see [Protect security settings with tamper protection](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/prevent-changes-to-security-settings-with-tamper-protection).
 
 ## Antivirus profiles
 
-Find guidance for creating endpoint security profiles at [Create an endpoint security policy](./manage-policies.md).
+Find guidance for creating endpoint security profiles at [Create an endpoint security policy](manage-policies.md).
 
 ### Devices managed by Microsoft Intune
 
@@ -188,42 +193,43 @@ The following profiles are supported for devices you manage with Intune:
   - Profile: **Microsoft Defender Antivirus** - Manage Antivirus settings on Linux devices.
   - Profile: **Microsoft Defender Antivirus Exclusions** - Manage settings for Microsoft Defender Antivirus that define Antivirus exclusions for paths, extensions, and processes.
 
-  Antivirus exclusions are also managed by Microsoft Defender Antivirus policy, which includes identical settings for exclusions, and from other policies like Intune's Endpoint detection and response profile for [Microsoft Defender Global Exclusions (AV+EDR)](./deploy-edr.md#create-a-linux-global-exclusions-policy) for Linux, which includes both EDR and Antivirus exclusions. Settings from multiple sources are subject to policy merge, and create a super set of exclusions for applicable devices and users.
+  Antivirus exclusions are also managed by Microsoft Defender Antivirus policy, which includes identical settings for exclusions, and from other policies like Intune's Endpoint detection and response profile for [Microsoft Defender Global Exclusions (AV+EDR)](deploy-edr.md#create-a-linux-global-exclusions-policy) for Linux, which includes both EDR and Antivirus exclusions. Settings from multiple sources are subject to policy merge, and create a super set of exclusions for applicable devices and users.
 
   > [!IMPORTANT]
+  >
   > The *Microsoft Defender Global Exclusions (AV+EDR)* profile is supported only for Linux devices managed by Defender through the [Microsoft Defender for Endpoint security settings management](../../device-security/microsoft-defender/security-settings-management.md) scenario.
 
-  For more information about Linux exclusions, see [Configure and validate exclusions for Microsoft Defender for Endpoint on Linux](/defender-endpoint/linux-exclusions) in the Microsoft Defender documentation.
+  For more information about Linux exclusions, see [Configure and validate exclusions for Microsoft Defender for Endpoint on Linux](https://learn.microsoft.com/en-us/defender-endpoint/linux-exclusions) in the Microsoft Defender documentation.
 
 #### macOS
 
 - Platform: **macOS**
 
-  - Profile: **Antivirus** - Manage [Antivirus policy settings](./ref-antivirus-defender-settings-macos.md) for macOS.
+  - Profile: **Antivirus** - Manage [Antivirus policy settings](ref-antivirus-defender-settings-macos.md) for macOS.
 
-    When you use [Microsoft Defender for Endpoint for Mac](/defender-endpoint/microsoft-defender-endpoint-mac), you can configure and deploy Antivirus settings to your managed macOS devices through Intune instead of configuring those settings by use of `.plist` files.
+    When you use [Microsoft Defender for Endpoint for Mac](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-endpoint-mac), you can configure and deploy Antivirus settings to your managed macOS devices through Intune instead of configuring those settings by use of `.plist` files.
 
 #### Windows
 
 - Platform: **Windows**  
-  Profiles for this platform can be used with devices enrolled with Intune, and devices managed through [Security Management for Microsoft Defender for Endpoint](../../device-security/microsoft-defender/security-settings-management.md).
+   Profiles for this platform can be used with devices enrolled with Intune, and devices managed through [Security Management for Microsoft Defender for Endpoint](../../device-security/microsoft-defender/security-settings-management.md).
 
   > [!NOTE]
+  >
   > On April 5, 2022, the *Windows 10 and later* platform was replaced by the *Windows* platform.
   >
   > The *Windows* platform supports devices communicating with Intune through Microsoft Intune or Microsoft Defender for Endpoint. These profiles also add support for the Windows Server platform which isn't supported through Microsoft Intune natively.
   >
   > Profiles for this new platform use the settings format as found in the Settings Catalog. Each new profile template for this new platform includes the same settings as the older profile template it replaces. With this change you can no longer create new versions of the old profiles. Your existing instances of the old profile remain available to use and edit.
 
-  - Profile: **Microsoft Defender Antivirus** - [Manage Antivirus policy settings for Windows devices](/defender-endpoint/use-intune-config-manager-microsoft-defender-antivirus).
+  - Profile: **Microsoft Defender Antivirus** - [Manage Antivirus policy settings for Windows devices](https://learn.microsoft.com/en-us/defender-endpoint/use-intune-config-manager-microsoft-defender-antivirus).
 
     Defender Antivirus is the next-generation protection component of Microsoft Defender for Endpoint. Next-generation protection brings together technologies like machine learning and cloud infrastructure to protect devices in your enterprise organization.
 
     The *Microsoft Defender Antivirus* profile is a separate instance of the antivirus settings that are found in the *Device Restriction profile* for Device Configuration policy.
 
-    Unlike the antivirus settings in a *Device Restriction profile*, you can use these settings with devices that are co-managed. To use these settings, the [co-management workload slider](/configmgr/comanage/how-to-switch-workloads) for Endpoint Protection must be set to Intune.
-
-  - Profile: **Microsoft Defender Antivirus exclusions** - [Manage policy settings for only Antivirus exclusion](/defender-endpoint/configure-exclusions-microsoft-defender-antivirus#create-a-new-antivirus-policy-with-exclusions-in-intune).
+    Unlike the antivirus settings in a *Device Restriction profile*, you can use these settings with devices that are co-managed. To use these settings, the [co-management workload slider](https://learn.microsoft.com/en-us/configmgr/comanage/how-to-switch-workloads) for Endpoint Protection must be set to Intune.
+  - Profile: **Microsoft Defender Antivirus exclusions** - [Manage policy settings for only Antivirus exclusion](https://learn.microsoft.com/en-us/defender-endpoint/configure-exclusions-microsoft-defender-antivirus#create-a-new-antivirus-policy-with-exclusions-in-intune).
 
     With this policy, you can manage settings for the following Microsoft Defender Antivirus configuration service providers (CSPs) that define Antivirus exclusions:
 
@@ -231,26 +237,55 @@ The following profiles are supported for devices you manage with Intune:
     - Defender/ExcludedExtensions
     - Defender/ExcludedProcesses
 
-    These CSPs for antivirus exclusion are also managed by *Microsoft Defender Antivirus* policy, which includes identical settings for exclusions. Settings from both policy types  (*Antivirus* and *Antivirus exclusions*) are subject to [policy merge](#policy-merge-for-settings), and create a super set of exclusions for applicable devices and users.
+    These CSPs for antivirus exclusion are also managed by *Microsoft Defender Antivirus* policy, which includes identical settings for exclusions. Settings from both policy types (*Antivirus* and *Antivirus exclusions*) are subject to [policy merge](#policy-merge-for-settings), and create a super set of exclusions for applicable devices and users.
 
     > [!WARNING]
+    >
     > **Defining exclusions lowers the protection offered by Microsoft Defender Antivirus**. Always evaluate the risks that are associated with implementing exclusions. Only exclude files you know aren't malicious.
     >
-    > For more information, see [Exclusions overview](/defender-endpoint/navigate-defender-endpoint-antivirus-exclusions) in the Microsoft Defender documentation.
-
+    > For more information, see [Exclusions overview](https://learn.microsoft.com/en-us/defender-endpoint/navigate-defender-endpoint-antivirus-exclusions) in the Microsoft Defender documentation.
   - Profile: **Windows Security experience** - Manage the Windows Security app settings that end users can view in the Microsoft Defender Security center and the notifications they receive.
 
     The Windows security app is used by many Windows security features to provide notifications about the health and security of the machine. Security app notifications include firewalls, antivirus products, Windows Defender SmartScreen, and others.
+  - Profile: **Defender Update controls** - Manage update settings for Microsoft Defender, including the following settings that are taken directly from the [Defender CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/defender-csp):
 
-  - Profile: **Defender Update controls** - Manage update settings for Microsoft Defender, including the following settings that are taken directly from the [Defender CSP](/windows/client-management/mdm/defender-csp):
-
-    - [Engine Updates Channel](/windows/client-management/mdm/defender-csp?WT.mc_id=Portal-fx#configurationengineupdateschannel)
-    - [Platform Updates Channel](/windows/client-management/mdm/defender-csp?WT.mc_id=Portal-fx#configurationplatformupdateschannel)
-    - [Security Intelligence Updates Channel](/windows/client-management/mdm/defender-csp?WT.mc_id=Portal-fx#configurationsecurityintelligenceupdateschannel)
+    - [Engine Updates Channel](https://learn.microsoft.com/en-us/windows/client-management/mdm/defender-csp?WT.mc_id=Portal-fx#configurationengineupdateschannel)
+    - [Platform Updates Channel](https://learn.microsoft.com/en-us/windows/client-management/mdm/defender-csp?WT.mc_id=Portal-fx#configurationplatformupdateschannel)
+    - [Security Intelligence Updates Channel](https://learn.microsoft.com/en-us/windows/client-management/mdm/defender-csp?WT.mc_id=Portal-fx#configurationsecurityintelligenceupdateschannel)
 
 ### Devices managed by Configuration Manager
 
-[!INCLUDE [antivirus policy prerequisites](../../includes/tenant-attach-antivirus-prerequisites.md)]
+#### Antivirus
+
+Manage [Antivirus settings for Configuration Manager devices](ref-antivirus-defender-settings-windows-tenant-attach.md), when you use tenant attach.
+
+**Policy path**:
+
+- Endpoint security &gt; Antivirus &gt; Windows (ConfigMgr)
+
+**Profiles**:
+
+- Microsoft Defender Antivirus (preview)
+- Windows Security experience (preview)
+
+**Required version of Configuration Manager**:
+
+- Configuration Manager current branch version 2006 or later
+
+**Supported Configuration Manager device platforms**:
+
+- Windows 8.1 (x86, x64), starting in Configuration Manager version 2010
+- Windows
+- Windows Server 2012 R2 (x64), starting in Configuration Manager version 2010
+- Windows Server 2016 and later (x64)
+
+> [!IMPORTANT]
+>
+> On October 14, 2025, [Windows 10 reached end of support](https://learn.microsoft.com/en-us/lifecycle/announcements/windows-10-end-of-support) and won't receive quality and feature updates. Windows 10 is an **allowed** version in Intune. Devices running this version can still enroll in Intune and use eligible features, but functionality won't be guaranteed and can vary.
+
+> [!IMPORTANT]
+>
+> On October 22, 2022, Microsoft Intune ended support for devices running Windows 8.1. Technical assistance and automatic updates on these devices aren't available.
 
 ## Policy merge for settings
 
@@ -270,15 +305,15 @@ When processed separately, policy conflicts are resolved as follows:
 
 The following settings support policy merge:
 
-- **Excluded Processes** - CSP: [Defender/ExcludedProcesses](/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
-- **Excluded Extensions** - CSP: [Defender/ExcludedExtensions](/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
-- **Excluded Paths** - CSP: [Defender/ExcludedPaths](/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
+- **Excluded Processes** - CSP: [Defender/ExcludedProcesses](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-defender#defender-excludedprocesses)
+- **Excluded Extensions** - CSP: [Defender/ExcludedExtensions](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-defender#defender-excludedextensions)
+- **Excluded Paths** - CSP: [Defender/ExcludedPaths](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-defender#defender-excludedpaths)
 
 ## Antivirus policy reports
 
 Antivirus policy reports display status details about your endpoint security Antivirus policies and device status. These reports are available in the Endpoint security node of the Microsoft Intune admin center.
 
-To view the reports, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to  Endpoint security and select **Antivirus**. Selecting Antivirus opens the Summary page. Additional report and status views are available as additional pages.
+To view the reports, in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to Endpoint security and select **Antivirus**. Selecting Antivirus opens the Summary page. Additional report and status views are available as additional pages.
 
 In addition to reports detailed in the following sections, additional reports for Microsoft Defender Antivirus are found in the Reports node of the Microsoft Intune admin center, as documented in the Intune Reports article:
 
@@ -287,13 +322,13 @@ In addition to reports detailed in the following sections, additional reports fo
 
 ### Summary
 
-On the **Summary** page, you can [create new policies](./manage-policies.md#create-endpoint-security-policies) and view a list of the policies that were previously created. The list includes high-level details about the profile that policy includes (Policy Type), and if the policy is assigned.
+On the **Summary** page, you can [create new policies](manage-policies.md#create-endpoint-security-policies) and view a list of the policies that were previously created. The list includes high-level details about the profile that policy includes (Policy Type), and if the policy is assigned.
 
-![Summary page of antivirus policy](./media/antivirus/antivirus-summary.png)
+![Summary page of antivirus policy](media/antivirus/antivirus-summary.png)
 
 When you select a policy from the list, the *Overview* page for that policy instance opens and displays more information. After selecting a tile from this view, Intune displays additional details for that profile if they're available.
 
-![Overview page of antivirus policy](./media/antivirus/policy-overview.png)
+![Overview page of antivirus policy](media/antivirus/policy-overview.png)
 
 ### Unhealthy endpoints
 
@@ -303,17 +338,17 @@ Only devices with detected issues appear in this view. This view doesn't display
 
 The information for this report is based on details available from the following CSPs, which are documented in the Windows client-management documentation:
 
-- [Defender CSP](/windows/client-management/mdm/defender-csp)
-- [WindowsAdvancedThreatProtection CSP](/windows/client-management/mdm/windowsadvancedthreatprotection-csp).
+- [Defender CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/defender-csp)
+- [WindowsAdvancedThreatProtection CSP](https://learn.microsoft.com/en-us/windows/client-management/mdm/windowsadvancedthreatprotection-csp).
 
-:::image type="content" source="./media/antivirus/antivirus-unhealthy-endpoints.png" alt-text="Screenshot of the Unhealthy endpoints report.":::
+![Screenshot of the Unhealthy endpoints report.](media/antivirus/antivirus-unhealthy-endpoints.png)
 
 ## Next steps
 
-[Configure Endpoint security policies](./manage-policies.md#create-endpoint-security-policies)
+[Configure Endpoint security policies](manage-policies.md#create-endpoint-security-policies)
 
 View details for the Windows settings in the deprecated profiles for the deprecated *Windows 10 and later* platform:
 
-- [Antivirus policy settings](./ref-antivirus-defender-settings-windows.md)
-- [Antivirus exclusions](./ref-antivirus-defender-settings-windows.md#microsoft-defender-antivirus-exclusions)
-- [Windows Security app settings](./ref-security-experience-settings-windows.md)
+- [Antivirus policy settings](ref-antivirus-defender-settings-windows.md)
+- [Antivirus exclusions](ref-antivirus-defender-settings-windows.md#microsoft-defender-antivirus-exclusions)
+- [Windows Security app settings](ref-security-experience-settings-windows.md)

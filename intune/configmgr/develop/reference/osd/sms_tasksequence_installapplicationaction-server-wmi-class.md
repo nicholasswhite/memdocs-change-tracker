@@ -1,7 +1,7 @@
 ---
-title: SMS_TaskSequence_InstallApplicationAction class
+title: "SMS_TaskSequence_InstallApplicationAction server WMI class"
 description: The SMS_TaskSequence_InstallApplicationAction WMI class is an SMS Provider server class in Configuration Manager. It represents a task sequence action that installs an application.
-ms.date: 08/11/2020
+ms.date: "2020-08-11T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
@@ -50,7 +50,7 @@ Access type: Read/Write
 
 Qualifiers: `[variablename]`
 
-An array of [SMS_TaskSequence_ApplicationInfo server WMI class](../../../develop/reference/osd/sms_tasksequence_applicationinfo-server-wmi-class.md) class objects. Each element contains application details, such as display name, model name of the application, and description.
+An array of [SMS_TaskSequence_ApplicationInfo server WMI class](sms_tasksequence_applicationinfo-server-wmi-class.md) class objects. Each element contains application details, such as display name, model name of the application, and description.
 
 ### `ApplicationName`
 
@@ -88,7 +88,7 @@ Access type: Read/Write
 
 Qualifiers: none
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `ContinueOnError`
 
@@ -98,7 +98,7 @@ Access type: Read/Write
 
 Qualifiers: none
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `ContinueOnInstallError`
 
@@ -118,7 +118,7 @@ Access type: Read/Write
 
 Qualifiers: `[allowedlen]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Enabled`
 
@@ -128,7 +128,7 @@ Access type: Read/Write
 
 Qualifiers: none
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Name`
 
@@ -138,7 +138,7 @@ Access type: Read/Write
 
 Qualifiers: `[allowedlen]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `NumApps`
 
@@ -168,7 +168,7 @@ Access type: Read/Write
 
 Qualifiers: `[not_null, valuemap]`
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ### `Timeout`
 
@@ -178,7 +178,7 @@ Access type: Read/Write
 
 Qualifiers: none
 
-For more information, see [SMS_TaskSequence_Action server WMI class](../../../develop/reference/osd/sms_tasksequence_action-server-wmi-class.md).
+For more information, see [SMS_TaskSequence_Action server WMI class](sms_tasksequence_action-server-wmi-class.md).
 
 ## Remarks
 
@@ -190,14 +190,14 @@ Class qualifiers for this class include:
 ActionCategory{"Software,1,2"},     ActionUI{"AdminUI.TaskSequenceEditor.dll", "Microsoft.ConfigurationManagement.AdminConsole.TaskSequenceEditor", "InstallApplicationControl", "TaskSequenceOptionControl"}]
 ```
 
-For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager class and property qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager class and property qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime requirements
 
-For more information, see [Configuration Manager server runtime requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+For more information, see [Configuration Manager server runtime requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development requirements
 
-For more information, see [Configuration Manager server development requirements](../../../develop/core/reqs/server-development-requirements.md).
+For more information, see [Configuration Manager server development requirements](../../core/reqs/server-development-requirements.md).

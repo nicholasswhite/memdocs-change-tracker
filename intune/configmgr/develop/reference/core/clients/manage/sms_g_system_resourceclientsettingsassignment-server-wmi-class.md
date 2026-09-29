@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent resource-specific client agent settings assignments in Configuration Manager.
-title: SMS_G_SYSTEM_ResourceClientSettingsAssignment Class
-ms.date: 09/20/2016
+title: "SMS_G_SYSTEM_ResourceClientSettingsAssignment Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_G_SYSTEM_ResourceClientSettingsAssignment Server WMI Class
+
 The `SMS_G_System_ResourceClientSettingsAssignment` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents resource-specific (device or user) client agent settings assignments.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,81 +31,78 @@ Class SMS_G_System_ResourceClientSettingsAssignment : SMS_G_System
 ```
 
 ## Methods
- The `SMS_G_System_ResourceClientSettingsAssignment` class does not define any methods.
+
+The `SMS_G_System_ResourceClientSettingsAssignment` class does not define any methods.
 
 ## Properties
- `AssignmentUniqueID`
- Data type: `String`
 
- Access type: Read/Write
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Assignment Unique ID.
+Qualifiers: [key]
 
- `CollectionName`
- Data type: `String`
+Assignment Unique ID.
 
- Access type: Read/Write
+`CollectionName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the collection.
+Qualifiers: None
 
- `ID`
- Data type: `UInt32`
+Name of the collection.
 
- Access type: Read/Write
+`ID` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Identifier.
+Qualifiers: None
 
- `Priority`
- Data type: `UInt32`
+Identifier.
 
- Access type: Read/Write
+`Priority` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Identifier.
+Qualifiers: None
 
- `UniqueID`
- Data type: `String`
+Identifier.
 
- Access type: Read/Write
+`UniqueID` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Unique identifier for the settings.
+Qualifiers: None
 
- `ResourceID`
- Data type: `UInt32`
+Unique identifier for the settings.
 
- Access type: Read/Write
+`ResourceID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_G_System Server WMI Class](../../../../../develop/reference/core/clients/manage/sms_g_system-server-wmi-class.md).
+Qualifiers: [key]
 
- `Type`
- Data type: `UInt32`
+See [SMS_G_System Server WMI Class](sms_g_system-server-wmi-class.md).
 
- Access type: Read-only
+`Type` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read-only
 
- Settings type. Possible values are:
+Qualifiers: None
 
-|Value|Settings type|
-|-|-|
-|1|Device|
-|2|User|
+Settings type. Possible values are:
+
+| Value | Settings type |
+| --- | --- |
+| 1 | Device |
+| 2 | User |
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

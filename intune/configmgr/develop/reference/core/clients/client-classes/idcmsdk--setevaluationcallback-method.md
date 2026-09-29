@@ -1,13 +1,15 @@
 ---
-title: "IDCMSDK::SetEvaluationCallback"
+title: "IDCMSDK::SetEvaluationCallback Method"
 description: "In Configuration Manager, the IDCMSDK::SetEvaluationCallback method associates a callback object with an existing evaluation job specified by job ID."
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # IDCMSDK::SetEvaluationCallback Method
+
 The `IDCMSDK::SetEvaluationCallback` method, in Configuration Manager, associates a callback object with an existing evaluation job, specified by job ID.
 
 ## Syntax
@@ -21,37 +23,39 @@ HRESULT SetEvaluationCallback(
 ```
 
 #### Parameters
- `jobId`
- Data type: `JobIdRef`
 
- Qualifiers: [in]
+`jobId` Data type: `JobIdRef`
 
- ID of the evaluation job to retrieve.
+Qualifiers: [in]
 
- `pCallback`
- Data type: `IDCMAgentCallback`
+ID of the evaluation job to retrieve.
 
- Qualifiers: [in]
+`pCallback` Data type: `IDCMAgentCallback`
 
- Pointer to an [IDCMAgentCallback Interface](../../../../../develop/reference/core/clients/client-classes/idcmagentcallback-interface.md) object. This parameter can be set to `null` if no callback is available.
+Qualifiers: [in]
+
+Pointer to an [IDCMAgentCallback Interface](idcmagentcallback-interface.md) object. This parameter can be set to `null` if no callback is available.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but are not limited to, the following:
 
- S_OK
- The method succeeded. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but are not limited to, the following:
+
+S_OK The method succeeded. All other return values indicate failure.
 
 ## Remarks
- The typical way to use this method is to pass `null` for the `pCallback` parameter.
+
+The typical way to use this method is to pass `null` for the `pCallback` parameter.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [IDCMSDK Interface](../../../../../develop/reference/core/clients/client-classes/idcmsdk-interface.md)
- [IDCMAgentCallback Interface](../../../../../develop/reference/core/clients/client-classes/idcmagentcallback-interface.md)
+
+[IDCMSDK Interface](idcmsdk-interface.md) [IDCMAgentCallback Interface](idcmagentcallback-interface.md)

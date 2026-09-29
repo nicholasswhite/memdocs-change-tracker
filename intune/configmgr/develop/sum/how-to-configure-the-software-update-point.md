@@ -1,29 +1,29 @@
 ---
-title: Configure the Software Update Point
+title: "How to Configure the Software Update Point"
 description: You configure the software update point, in Configuration Manager, by modifying the site control file settings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Configure the Software Update Point
+
 You configure the software update point, in Configuration Manager, by modifying the site control file settings.
 
 ### To configure a software update point
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Make a connection to the software update point resources section of the site control file by using the [SMS_SCI_SysResUse](../../develop/reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) class.
-
-3.  Loop through the array of available properties, making changes as needed.
-
-4.  Commit the property changes to the site control file.
+1. Set up a connection to the SMS Provider.
+2. Make a connection to the software update point resources section of the site control file by using the [SMS_SCI_SysResUse](../reference/core/servers/configure/sms_sci_sysresuse-server-wmi-class.md) class.
+3. Loop through the array of available properties, making changes as needed.
+4. Commit the property changes to the site control file.
 
 ## Example
- The following example method configures various software update point settings by using the `SMS_SCI_SysResUse` class to connect to the site control file and change the software update point properties.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method configures various software update point settings by using the `SMS_SCI_SysResUse` class to connect to the site control file and change the software update point properties.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -200,48 +200,49 @@ public void ConfigureSoftwareUpdatePoint(WqlConnectionManager connection,
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`swbemContext`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code.|
-|`SUPServerName`|-   Managed: `String`|The name of the software update point server.|
-|`newUseProxy`|-   Managed: `String`<br />-   VBScript: `String`|Determines whether to use a proxy server.<br /><br /> Possible values:<br /><br /> "0" = `false`<br /><br /> "1" = `true`|
-|`newProxyName`|-   Managed: `String`<br />-   VBScript: `String`|The proxy server name.|
-|`newProxyServerPort`|-   Managed: `String`<br />-   VBScript: `String`|The proxy server port.|
-|`newAnonymousProxyAccess`|-   Managed: `String`<br />-   VBScript: `String`|Determines whether to use credentials to connect to the proxy server. If this value is set to true, then the account used to connect needs to be set in the Configuration Manager 2007 Administrator Console.<br /><br /> Possible values:<br /><br /> "0" = `true`<br /><br /> "1" = `false`|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `swbemContext` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code. |
+| `SUPServerName` | - Managed: `String` | The name of the software update point server. |
+| `newUseProxy` | - Managed: `String` - VBScript: `String` | Determines whether to use a proxy server.   Possible values:   "0" = `false`   "1" = `true` |
+| `newProxyName` | - Managed: `String` - VBScript: `String` | The proxy server name. |
+| `newProxyServerPort` | - Managed: `String` - VBScript: `String` | The proxy server port. |
+| `newAnonymousProxyAccess` | - Managed: `String` - VBScript: `String` | Determines whether to use credentials to connect to the proxy server. If this value is set to true, then the account used to connect needs to be set in the Configuration Manager 2007 Administrator Console.   Possible values:   "0" = `true`   "1" = `false` |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [About Software Updates Setup and Configuration](../../develop/sum/about-software-updates-setup-and-configuration.md)
- [About the Configuration Manager Site Control File](../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
- [SMS_SCI_Component Server WMI Class](../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
- [How to Add a Configuration Manager Context Qualifier by Using WMI](../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md)
+
+[About Software Updates Setup and Configuration](about-software-updates-setup-and-configuration.md) [About the Configuration Manager Site Control File](../core/understand/about-the-configuration-manager-site-control-file.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md) [SMS_SCI_Component Server WMI Class](../reference/core/servers/configure/sms_sci_component-server-wmi-class.md) [How to Add a Configuration Manager Context Qualifier by Using WMI](../core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md)

@@ -1,16 +1,18 @@
 ---
-title: SMS_AppDeploymentRequirementsNotMetStatus Class
+title: "SMS_AppDeploymentRequirementsNotMetStatus Server WMI Class"
 description: The SMS_AppDeploymentRequirementsNotMetStatus WMI class is an SMS Provider server class that represents the status of application deployment where requirements are not met.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_AppDeploymentRequirementsNotMetStatus Server WMI Class
+
 The `SMS_AppDeploymentRequirementsNotMetStatus` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the status of application deployment where requirements are not met.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -41,232 +43,216 @@ Class SMS_AppDeploymentRequirementsNotMetStatus : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AppDeploymentRequirementsNotMetStatus` class does not define any methods.
+
+The `SMS_AppDeploymentRequirementsNotMetStatus` class does not define any methods.
 
 ## Properties
- `AppCI`
- Data type: `UInt32`
 
- Access type: Read-only
+`AppCI` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `AppName`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`AppName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [read]
 
- `AppStatusType`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`AppStatusType` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `AssignmentID`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `AssignmentUniqueID`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`AssignmentUniqueID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `CollectionID`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`CollectionID` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `CollectionName`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`CollectionName` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `DeploymentIntent`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`DeploymentIntent` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [read]
 
- `DTCI`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`DTCI` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `DTModelID`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`DTModelID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- `DTName`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`DTName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [read]
 
- `EnforcementState`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`EnforcementState` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [key, not_null, read]
 
- Enforcement state. Possible values are:
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
-|Value|Enforcement state|
-|-|-|
-|0|Enforcement State Unknown|
-|1|Enforcement started|
-|2|Enforcement waiting for content|
-|3|Waiting for another installation to complete|
-|4|Waiting for maintenance window before installing|
-|5|Restart required before installing|
-|6|General failure|
-|7|Pending installation|
-|8|Installing update|
-|9|Pending system restart|
-|10|Successfully installed update|
-|11|Failed to install update|
-|12|Downloading update|
-|13|Downloaded update|
-|14|Failed to download update|
+Enforcement state. Possible values are:
 
- `PolicyModelID`
- Data type: `UInt32`
+| Value | Enforcement state |
+| --- | --- |
+| 0 | Enforcement State Unknown |
+| 1 | Enforcement started |
+| 2 | Enforcement waiting for content |
+| 3 | Waiting for another installation to complete |
+| 4 | Waiting for maintenance window before installing |
+| 5 | Restart required before installing |
+| 6 | General failure |
+| 7 | Pending installation |
+| 8 | Installing update |
+| 9 | Pending system restart |
+| 10 | Successfully installed update |
+| 11 | Failed to install update |
+| 12 | Downloading update |
+| 13 | Downloaded update |
+| 14 | Failed to download update |
 
- Access type: Read-only
+`PolicyModelID` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `RequirementName`
- Data type: `String`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`RequirementName` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Name of the requirement.
+Qualifiers: [not_null, read]
 
- `RequirementType`
- Data type: `UInt32`
+Name of the requirement.
 
- Access type: Read-only
+`RequirementType` Data type: `UInt32`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Type of requirement that has not been met. Possible values are:
+Qualifiers: [read]
 
-|Value|Type of requirement violation|
-|-|-|
-|0|Constraint violation|
-|1|Conflict violation|
-|2|Enforcement violation|
-|3|Requirement violation|
-|4|Dependency violation|
+Type of requirement that has not been met. Possible values are:
 
- `RuleID`
- Data type: `UInt32`
+| Value | Type of requirement violation |
+| --- | --- |
+| 0 | Constraint violation |
+| 1 | Conflict violation |
+| 2 | Enforcement violation |
+| 3 | Requirement violation |
+| 4 | Dependency violation |
 
- Access type: Read-only
+`RuleID` Data type: `UInt32`
 
- Qualifiers: [key, not_null, read]
+Access type: Read-only
 
- Rule ID of the requirement that has not been met.
+Qualifiers: [key, not_null, read]
 
- `StartTime`
- Data type: `DateTime`
+Rule ID of the requirement that has not been met.
 
- Access type: Read-only
+`StartTime` Data type: `DateTime`
 
- Qualifiers: [read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [read]
 
- `StatusType`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`StatusType` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- Status type.
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
-|Value|Status type|
-|-|-|
-|1|Success|
-|2|InProgress|
-|4|Unknown|
-|5|Error|
+Status type.
 
- `Technology`
- Data type: `String`
+| Value | Status type |
+| --- | --- |
+| 1 | Success |
+| 2 | InProgress |
+| 4 | Unknown |
+| 5 | Error |
 
- Access type: Read-only
+`Technology` Data type: `String`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: [not_null, read]
 
- `Total`
- Data type: `UInt32`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read-only
+`Total` Data type: `UInt32`
 
- Qualifiers: [not_null, read]
+Access type: Read-only
 
- Total number of systems that do not meet the requirements.
+Qualifiers: [not_null, read]
+
+Total number of systems that do not meet the requirements.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

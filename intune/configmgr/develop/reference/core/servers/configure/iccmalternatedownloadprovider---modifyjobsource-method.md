@@ -1,13 +1,15 @@
 ---
 description: Learn how to instruct the provider to modify the source location for a given job in Configuration Manager.
-title: "ICcmAlternateDownloadProvider: ModifyJobSource"
-ms.date: 07/25/2017
+title: "ICcmAlternateDownloadProvider: ModifyJobSource Method"
+ms.date: "2017-07-25T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # ICcmAlternateDownloadProvider: ModifyJobSource Method
+
 The **ICcmAlternateDownloadProvider::ModifyJobSource** method, in Configuration Manager, instructs the provider to modify the source location for a given job.
 
 ## Syntax
@@ -22,44 +24,45 @@ HRESULT ModifyJobSource(
 ```
 
 #### Parameters
- `JobID`
- Data type: `REFGUID`
 
- Qualifiers: [in]
+`JobID` Data type: `REFGUID`
 
- The job on which to take action.
+Qualifiers: [in]
 
- `szSourceURL`
- Data type: `LPCWSTR`
+The job on which to take action.
 
- Qualifiers: [in]
+`szSourceURL` Data type: `LPCWSTR`
 
- The new source location.
+Qualifiers: [in]
 
- `dwFlags`
- Data type: `DWORD`
+The new source location.
 
- Qualifiers: [in]
+`dwFlags` Data type: `DWORD`
 
- The new job flags. This can be ignored by alternate providers.
+Qualifiers: [in]
+
+The new job flags. This can be ignored by alternate providers.
 
 ## Return Values
- An `HRESULT` code. Possible values include, but aren't limited to, the following one:
 
- S_OK
- Success implies that discovery was triggered successfully. All other return values indicate failure.
+An `HRESULT` code. Possible values include, but aren't limited to, the following one:
+
+S_OK Success implies that discovery was triggered successfully. All other return values indicate failure.
 
 ## Remarks
 
 > [!NOTE]
->  An error should be returned if the job is not found or if modification of the source location failed or if the provider is using the old location and cannot handle the new location.
 >
->  If the provider is not using the source location provided in the call to **ICcmAlternateDownloadProvider::DownloadContent** method, it can safely ignore this call, but it should not report an error.
+> An error should be returned if the job is not found or if modification of the source location failed or if the provider is using the old location and cannot handle the new location.
+>
+> If the provider is not using the source location provided in the call to **ICcmAlternateDownloadProvider::DownloadContent** method, it can safely ignore this call, but it should not report an error.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).

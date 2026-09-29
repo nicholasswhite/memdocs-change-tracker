@@ -1,16 +1,18 @@
 ---
-title: GetAutoUpgradeConfigs Method
+title: "GetAutoUpgradeConfigs Method in Class SMS_Site"
 description: A Windows Management Instrumentation class method that gets configurations for autoupgrade settings.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # GetAutoUpgradeConfigs Method in Class SMS_Site
+
 The `GetAutoUpgradeConfigs` Windows Management Instrumentation (WMI) class method, in Configuration Manager, gets configurations for autoupgrade settings.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -34,126 +36,117 @@ SInt32 GetAutoUpgradeConfigs(
 ```
 
 #### Parameters
- `ClientVersion`
- Data type: `String`
 
- Qualifiers: [out]
+`ClientVersion` Data type: `String`
 
- The version of the client.
+Qualifiers: [out]
 
- `IsProgramEnabled`
- Data type: `Boolean`
+The version of the client.
 
- Qualifiers: [out]
+`IsProgramEnabled` Data type: `Boolean`
 
- `true` if the program is enabled.
+Qualifiers: [out]
 
- `AdvertisementDuration`
- Data type: `UInt32`
+`true` if the program is enabled.
 
- Qualifiers: [out]
+`AdvertisementDuration` Data type: `UInt32`
 
- Advertisement duration in days.
+Qualifiers: [out]
 
- `ValidationInterval`
- Data type: `UInt32`
+Advertisement duration in days.
 
- Qualifiers: [out]
+`ValidationInterval` Data type: `UInt32`
 
- Validation interval in hours, if the previous validation is successful.
+Qualifiers: [out]
 
- `ValidationFailureInterval`
- Data type: `UInt32`
+Validation interval in hours, if the previous validation is successful.
 
- Qualifiers: [out]
+`ValidationFailureInterval` Data type: `UInt32`
 
- Validation interval in hours, if the previous validation is failed.
+Qualifiers: [out]
 
- `AllowPrestage`
- Data type: `Boolean`
+Validation interval in hours, if the previous validation is failed.
 
- Qualifiers: [out]
+`AllowPrestage` Data type: `Boolean`
 
- `true` if autoupgrade package distributed to pre-stage distribution point is allowed.
+Qualifiers: [out]
 
- `AllowFallbackToContentSource`
- Data type: `Boolean`
+`true` if autoupgrade package distributed to pre-stage distribution point is allowed.
 
- Qualifiers: [out]
+`AllowFallbackToContentSource` Data type: `Boolean`
 
- `true` if fallback to content source is allowed.
+Qualifiers: [out]
 
- `DownloadOptionInSlowNetwork`
- Data type: `UInt32`
+`true` if fallback to content source is allowed.
 
- Qualifiers: [out]
+`DownloadOptionInSlowNetwork` Data type: `UInt32`
 
- Download options in slow network. Possible values are:
+Qualifiers: [out]
 
-|Value|Download option|
-|-|-|
-|0|Do not download.|
-|1|Download from distribution point and run locally.|
-|2|Run from distribution point.|
+Download options in slow network. Possible values are:
 
- `ExcludeServers`
- Data type: `Boolean`
+| Value | Download option |
+| --- | --- |
+| 0 | Do not download. |
+| 1 | Download from distribution point and run locally. |
+| 2 | Run from distribution point. |
 
- Qualifiers: [out]
+`ExcludeServers` Data type: `Boolean`
 
- Indicates whether autoupgrade should be skipped on servers.
+Qualifiers: [out]
 
- `OverrideServiceWindow`
- Data type: `Boolean`
+Indicates whether autoupgrade should be skipped on servers.
 
- Qualifiers: [out]
+`OverrideServiceWindow` Data type: `Boolean`
 
- Indicates whether the upgrade on the client will occur in service window.
+Qualifiers: [out]
 
- `IgnoreNonPersistableVM`
- Data type: `Boolean`
+Indicates whether the upgrade on the client will occur in service window.
 
- Qualifiers: [out]
+`IgnoreNonPersistableVM` Data type: `Boolean`
 
- Indicates whether autoupgrade should be skipped on non-persistent virtual machines.
+Qualifiers: [out]
 
- `IsInitialized`
- Data type: `Boolean`
+Indicates whether autoupgrade should be skipped on non-persistent virtual machines.
 
- Qualifiers: [out]
+`IsInitialized` Data type: `Boolean`
 
- `true` if autoupgrade settings are initialized.
+Qualifiers: [out]
 
- `LastModifiedTime`
- Data type: `DateTime`
+`true` if autoupgrade settings are initialized.
 
- Qualifiers: [out]
+`LastModifiedTime` Data type: `DateTime`
 
- Last modified time.
+Qualifiers: [out]
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+Last modified time.
 
- `LastModifiedBy`
- Data type: `String`
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
- Qualifiers: [out]
+`LastModifiedBy` Data type: `String`
 
- The name of the user that made the last modification.
+Qualifiers: [out]
 
- This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
+The name of the user that made the last modification.
+
+This information applies to System Center 2012 Configuration Manager SP1 or later, and System Center 2012 R2 Configuration Manager or later.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Site Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_site-server-wmi-class.md)
+
+[SMS_Site Server WMI Class](sms_site-server-wmi-class.md)

@@ -1,16 +1,18 @@
 ---
 description: Learn how to notify the administrator console that an alert has changed its status with SMS_InstanceChangeNotification class.
-title: SMS_InstanceChangeNotification Class
-ms.date: 09/20/2016
+title: "SMS_InstanceChangeNotification Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_InstanceChangeNotification Server WMI Class
+
 The `SMS_InstanceChangeNotification` WMI class is an SMS Provider server class, in Configuration Manager, that notifies the administrator console that an alert has changed its status.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -26,69 +28,69 @@ Class SMS_InstanceChangeNotification : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_InstanceChangeNotification` class does not define any methods.
+
+The `SMS_InstanceChangeNotification` class does not define any methods.
 
 ## Properties
- `Action`
- Data type: `String`
 
- Access type: Read/Write
+`Action` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The action that caused the change notification.
+Qualifiers: None
 
-|Possible values|
-|----|
-|Insert|
-|Update|
-|Delete|
+The action that caused the change notification.
 
- `ClassName`
- Data type: `String`
+| Possible values |
+| --- |
+| Insert |
+| Update |
+| Delete |
 
- Access type: Read/Write
+`ClassName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the class that caused the change notification. For example, for an alert, the name of the class is SMS_Alert.
+Qualifiers: None
 
- `InstancePath`
- Data type: `ref:SMS_BaseClass`
+Name of the class that caused the change notification. For example, for an alert, the name of the class is SMS_Alert.
 
- Access type: Read/Write
+`InstancePath` Data type: `ref:SMS_BaseClass`
 
- Qualifiers: None
+Access type: Read/Write
 
- The instance path of the object that caused the change notification.
+Qualifiers: None
 
- `SECURITY_DESCRIPTOR`
- Data type: `UInt8[]`
+The instance path of the object that caused the change notification.
 
- Access type: Read/Write
+`SECURITY_DESCRIPTOR` Data type: `UInt8[]`
 
- Qualifiers: None
+Access type: Read/Write
 
- For internal use only.
+Qualifiers: None
 
- `TIME_CREATED`
- Data type: `UInt64`
+For internal use only.
 
- Access type: Read/Write
+`TIME_CREATED` Data type: `UInt64`
 
- Qualifiers: None
+Access type: Read/Write
 
- For internal use only.
+Qualifiers: None
+
+For internal use only.
 
 ## Remarks
- This class allows alert tiles to be updated with the most recent status information.
 
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+This class allows alert tiles to be updated with the most recent status information.
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).

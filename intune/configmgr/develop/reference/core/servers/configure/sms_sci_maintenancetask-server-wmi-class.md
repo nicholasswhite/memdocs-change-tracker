@@ -1,16 +1,18 @@
 ---
 description: Learn how to use the SMS_SCI_MaintenanceTask class to represent a site control item maintenance task.
-title: SMS_SCI_MaintenanceTask Class
-ms.date: 09/20/2016
+title: "SMS_SCI_MaintenanceTask Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_SCI_MaintenanceTask Server WMI Class
+
 The `SMS_SCI_MaintenanceTask` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a site control item maintenance task.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,138 +35,131 @@ Class SMS_SCI_MaintenanceTask : SMS_SiteControlItem
 ```
 
 ## Methods
- The `SMS_SCI_MaintenanceTask` class does not define any methods.
+
+The `SMS_SCI_MaintenanceTask` class does not define any methods.
 
 ## Properties
- `BackupLocation`
- Data type: `String`
 
- Access type: Read/Write
+`BackupLocation` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The location of the backup for the maintenance task.
+Qualifiers: None
 
- `BeginTime`
- Data type: `DateTime`
+The location of the backup for the maintenance task.
 
- Access type: Read/Write
+`BeginTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Beginning time for execution of the maintenance task. The default value is "00000000000000.000000+***". Only the hours and minutes of this property are used.
+Qualifiers: None
 
- `DaysOfWeek`
- Data type: `UInt32`
+Beginning time for execution of the maintenance task. The default value is "00000000000000.000000+\*\*\*". Only the hours and minutes of this property are used.
 
- Access type: Read/Write
+`DaysOfWeek` Data type: `UInt32`
 
- Qualifiers: [bits]
+Access type: Read/Write
 
- Days of the week on which the maintenance task executes. Possible values are listed below. The default value is SUNDAY (0).
+Qualifiers: [bits]
 
-|Value|Maintenance task day|
-|-|-|
-|0|SUNDAY|
-|1|MONDAY|
-|2|TUESDAY|
-|3|WEDNESDAY|
-|4|THURSDAY|
-|5|FRIDAY|
-|6|SATURDAY|
+Days of the week on which the maintenance task executes. Possible values are listed below. The default value is SUNDAY (0).
 
- `Enabled`
- Data type: `Boolean`
+| Value | Maintenance task day |
+| --- | --- |
+| 0 | SUNDAY |
+| 1 | MONDAY |
+| 2 | TUESDAY |
+| 3 | WEDNESDAY |
+| 4 | THURSDAY |
+| 5 | FRIDAY |
+| 6 | SATURDAY |
 
- Access type: Read/Write
+`Enabled` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the maintenance task is activated.
+Qualifiers: None
 
- `FileType`
- Data type: `UInt32`
+`true` if the maintenance task is activated.
 
- Access type: Read/Write
+`FileType` Data type: `UInt32`
 
- Qualifiers: [key, enumeration:ToSubClass]
+Access type: Read/Write
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, enumeration:ToSubClass]
 
- `ItemName`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemName` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `ItemType`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read-only
+`ItemType` Data type: `String`
 
- Qualifiers: [key, read]
+Access type: Read-only
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, read]
 
- `LatestBeginTime`
- Data type: `DateTime`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read/Write
+`LatestBeginTime` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- Latest beginning time of execution for the maintenance task. The default value is "00000000000000.000000+***". Only the hours and minutes of this property are used.
+Qualifiers: None
 
- `NumRefreshDays`
- Data type: `UInt32`
+Latest beginning time of execution for the maintenance task. The default value is "00000000000000.000000+\*\*\*". Only the hours and minutes of this property are used.
 
- Access type: Read/Write
+`NumRefreshDays` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Number of days between maintenance task executions. The default value is 0.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+Number of days between maintenance task executions. The default value is 0.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: [key, SizeLimit("3")]
+Access type: Read/Write
 
- See [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md).
+Qualifiers: [key, SizeLimit("3")]
 
- `TaskName`
- Data type: `String`
+See [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md).
 
- Access type: Read/Write
+`TaskName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Name of the maintenance task.
+Qualifiers: None
 
- `TaskType`
- Data type: `UInt32`
+Name of the maintenance task.
 
- Access type: Read/Write
+`TaskType` Data type: `UInt32`
 
- Qualifiers: [enumeration]
+Access type: Read/Write
 
- Type of maintenance task. Currently the only possible value is BACKUP (1).
+Qualifiers: [enumeration]
+
+Type of maintenance task. Currently the only possible value is BACKUP (1).
 
 ## Remarks
- There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+
+There are no special class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [Configuration Manager Site Configuration Server WMI Classes](../../../../../develop/reference/core/servers/configure/site-configuration-server-wmi-classes.md)
- [SMS_SiteControlItem Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_sitecontrolitem-server-wmi-class.md)
+
+[Configuration Manager Site Configuration Server WMI Classes](site-configuration-server-wmi-classes.md) [SMS_SiteControlItem Server WMI Class](sms_sitecontrolitem-server-wmi-class.md)

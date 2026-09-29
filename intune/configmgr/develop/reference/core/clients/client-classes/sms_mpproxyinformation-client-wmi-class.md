@@ -1,16 +1,18 @@
 ---
-title: SMS_MPProxyInformation Class
+title: "SMS_MPProxyInformation Client WMI Class"
 description: A client Windows Management Instrumentation class that represents information about a proxy management point.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_MPProxyInformation Client WMI Class
+
 The `SMS_MPProxyInformation` class is a client Windows Management Instrumentation (WMI) class, in Configuration Manager, that represents information about a proxy management point.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -28,79 +30,77 @@ Class SMS_MPProxyInformation
 ```
 
 ## Methods
- The `SMS_MPProxyInformation` class does not define any methods.
+
+The `SMS_MPProxyInformation` class does not define any methods.
 
 ## Properties
- `Capabilities`
- Data type: `String`
 
- Access type: Read/Write
+`Capabilities` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Capabilities of the proxy management point.
+Qualifiers: None
 
- `Index`
- Data type: `UInt32`
+Capabilities of the proxy management point.
 
- Access type: Read/Write
+`Index` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- For proxy Management Point rotation.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+For proxy Management Point rotation.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The name of the proxy management point.
+Qualifiers: None
 
- `Protocol`
- Data type: `String`
+The name of the proxy management point.
 
- Access type: Read/Write
+`Protocol` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The network protocol used by the proxy management point.
+Qualifiers: None
 
- `SiteCode`
- Data type: `String`
+The network protocol used by the proxy management point.
 
- Access type: Read/Write
+`SiteCode` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The site code of the site for the proxy management point.
+Qualifiers: None
 
- `State`
- Data type: `String`
+The site code of the site for the proxy management point.
 
- Access type: Read/Write
+`State` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The state of the proxy management point.
+Qualifiers: None
 
- `Version`
- Data type: `UInt32`
+The state of the proxy management point.
 
- Access type: Read/Write
+`Version` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The version of the proxy management point.
+Qualifiers: None
+
+The version of the proxy management point.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md)

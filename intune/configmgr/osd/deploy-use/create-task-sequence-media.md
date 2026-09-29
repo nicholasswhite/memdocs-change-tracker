@@ -1,7 +1,7 @@
 ---
 title: Create task sequence media
 description: Create task sequence media to deploy an OS to a destination computer in your Configuration Manager environment.
-ms.date: 12/14/2023
+ms.date: "2023-12-14T00:00:00Z"
 ms.subservice: osd
 ms.topic: article
 ms.collection: tier3
@@ -19,18 +19,20 @@ Media is used mostly to deploy an OS on computers that don't have a network conn
 Deployment media includes bootable media, standalone media, and prestaged media. The content of the media varies, depending on what type of media that you use. For example, standalone media contains the task sequence that deploys the OS. Other types of media retrieve task sequences from the management point.
 
 > [!IMPORTANT]
+>
 > As a security best practice, always assign a password to help protect the task sequence media. Assigning a password to the media not only prevents someone without the password from running a task sequence when using the media, but it also properly encrypts the task sequence environment on the media. The task sequence environment includes the task sequence steps and their variables.
 >
 > Using a password doesn't encrypt the remaining content of the task sequence media such as packages. Don't include any sensitive information in task sequence packages such as scripts. Store and implement all sensitive information by using task sequence variables.
 
 > [!IMPORTANT]
+>
 > To create task sequence media, you must be an administrator on the computer where you run the Configuration Manager console. If you're not an administrator, you're prompted for administrator credentials when you start the Create Task Sequence Media wizard.
 
-## <a name="BKMK_PlanCaptureMedia"></a> Capture media
+## Capture media
 
 Capture media allows you to capture an OS image from a reference computer. Capture media contains the boot image that starts the reference computer and the task sequence that captures the OS image.
 
-## <a name="BKMK_PlanBootableMedia"></a> Bootable media
+## Bootable media
 
 Bootable media contains the following components:
 
@@ -40,9 +42,9 @@ Bootable media contains the following components:
 
 When the destination computer starts, it connects to the network and retrieves the task sequence, the OS image, and any other required content from the network. Because the task sequence isn't on the media, you can change the task sequence or content without having to recreate the media.
 
-Starting in version 2006, bootable media can download cloud-based content. The device still needs an intranet connection to the management point. It can get content from a content-enabled cloud management gateway (CMG).<!--6209223--> For more information, see [Bootable media support for cloud-based content](deploy-task-sequence-over-internet.md#bootable-media-support-for-cloud-based-content).
+Starting in version 2006, bootable media can download cloud-based content. The device still needs an intranet connection to the management point. It can get content from a content-enabled cloud management gateway (CMG). For more information, see [Bootable media support for cloud-based content](deploy-task-sequence-over-internet.md#bootable-media-support-for-cloud-based-content).
 
-## <a name="BKMK_PlanPrestagedMedia"></a> Prestaged media
+## Prestaged media
 
 Prestaged media allows you to apply bootable media and an OS image to a hard disk before the provisioning process. The prestaged media is a Windows Image (WIM) file. The manufacturer can install it to the bare-metal computer during their build process. Or you can use it in a staging center that's not connected to the production Configuration Manager environment.
 
@@ -50,7 +52,7 @@ Prestaged media contains the boot image used to start the destination computer a
 
 You apply prestaged media to the hard drive of a new computer before you send the computer to the user. When the computer starts for the first time after you've applied the prestaged media, the computer starts in Windows PE. It connects to a management point to locate the task sequence that completes the OS deployment process.
 
-## <a name="BKMK_PlanStandaloneMedia"></a> Standalone media
+## Standalone media
 
 Standalone media contains everything that's required to deploy the OS. This content includes the task sequence and any other required content. Because everything is on the media, the required disk space is larger than for other types of media.
 
@@ -59,15 +61,11 @@ Standalone media contains everything that's required to deploy the OS. This cont
 When you configure your management points and distribution points to use HTTPS, create boot media and prestaged media at a primary site, not the central administration site. Also, consider the following point to help you determine whether to configure the media as dynamic or site-based:
 
 - To configure the media as dynamic media, all primary sites must have the root certificate authority (CA) of the site from which you created the media. You can import the root CA to all primary sites in your hierarchy.
-
 - When primary sites in your Configuration Manager hierarchy use different root CAs, you must use site-based media at each site.
 
 ## Next steps
 
 - [Create capture media](create-capture-media.md)
-
 - [Create bootable media](create-bootable-media.md)
-
 - [Create prestaged media](create-prestaged-media.md)
-
 - [Create standalone media](create-stand-alone-media.md)

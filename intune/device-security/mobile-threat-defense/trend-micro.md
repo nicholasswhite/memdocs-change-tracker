@@ -1,7 +1,7 @@
 ---
-title: Trend Micro Mobile Security and Microsoft Intune
+title: "Use Trend Micro Mobile Security as a Service with Microsoft Intune"
 description: How to set up Trend Micro Mobile Threat Defense with with Microsoft Intune to control mobile device access to your corporate resources
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -39,9 +39,9 @@ The Trend Micro Mobile Security as a Service mobile agent app for Android and iO
 
 - **Support for enrolled devices** - Intune device compliance policy includes a rule for MTD, which can use risk assessment information from Trend Micro. When the MTD rule is enabled, Intune evaluates device compliance with the policy that you enabled. If the device is found noncompliant, users are blocked access to corporate resources, such as Exchange Online and SharePoint Online. Users also receive guidance from the Trend Micro Mobile Security as a Service mobile agent app installed on their devices to resolve the issue and regain access to corporate resources. To support using Trend Micro with enrolled devices:
 
-  - [Add MTD apps to devices](./assign-apps.md) (This is done automatically when setting up Trend Micro Mobile Security as a Service integration)
-  - [Create a device compliance policy that supports MTD](./create-compliance-policy.md)
-  - [Enable the MTD connector in Intune](./enable-connector.md)
+  - [Add MTD apps to devices](assign-apps.md) (This is done automatically when setting up Trend Micro Mobile Security as a Service integration)
+  - [Create a device compliance policy that supports MTD](create-compliance-policy.md)
+  - [Enable the MTD connector in Intune](enable-connector.md)
 
 ## Sample scenarios
 
@@ -57,11 +57,11 @@ When malicious apps such as malware are detected on devices, you can block devic
 
 *Block when malicious apps are detected:*
 
-:::image type="content" source="./media/trend-micro/trend-micro-malicious-apps-blocked.png" alt-text="Product flow for blocking access due to malicious apps.":::
+![Product flow for blocking access due to malicious apps.](media/trend-micro/trend-micro-malicious-apps-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/trend-micro/trend-micro-malicious-apps-unblocked.png" alt-text="Product flow for granting access when malicious apps are remediated.":::
+![Product flow for granting access when malicious apps are remediated.](media/trend-micro/trend-micro-malicious-apps-unblocked.png)
 
 ### Control access based on threat to network
 
@@ -69,11 +69,11 @@ Detect threats like **Man-in-the-middle** in network, and protect access to Wi-F
 
 *Block network access through Wi-Fi:*
 
-:::image type="content" source="./media/trend-micro/trend-micro-network-wifi-blocked.png" alt-text="Product flow for blocking access through Wi-Fi due to an alert.":::
+![Product flow for blocking access through Wi-Fi due to an alert.](media/trend-micro/trend-micro-network-wifi-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/trend-micro/trend-micro-network-wifi-unblocked.png" alt-text=" Product flow for granting access through Wi-Fi after the alert is remediated. ":::
+![ Product flow for granting access through Wi-Fi after the alert is remediated. ](media/trend-micro/trend-micro-network-wifi-unblocked.png)
 
 ### Control access to SharePoint Online based on threat to network
 
@@ -81,15 +81,15 @@ Detect threats like **Man-in-the-middle** in network and prevent synchronization
 
 *Block SharePoint Online when network threats are detected:*
 
-:::image type="content" source="./media/trend-micro/trend-micro-network-spo-blocked.png" alt-text="Product flow for blocking access to the organizations files due to an alert.":::
+![Product flow for blocking access to the organizations files due to an alert.](media/trend-micro/trend-micro-network-spo-blocked.png)
 
 *Access granted on remediation:*
 
-:::image type="content" source="./media/trend-micro/trend-micro-network-spo-unblocked.png" alt-text="Product flow for granting access to the organizations files after the alert is remediated.":::
+![Product flow for granting access to the organizations files after the alert is remediated.](media/trend-micro/trend-micro-network-spo-unblocked.png)
 
 ## Next steps
 
-- [Integrate Trend Micro Mobile Security as a Service with Intune](./setup-trend-micro.md)
-- [Set up Trend Micro Mobile Security as a Service mobile agent app](./assign-apps.md)
-- [Create Trend Micro Mobile Security as a Service device compliance policy](./create-compliance-policy.md)
-- [Enable Trend Micro Mobile Security as a Service MTD connector](./enable-connector.md)
+- [Integrate Trend Micro Mobile Security as a Service with Intune](setup-trend-micro.md)
+- [Set up Trend Micro Mobile Security as a Service mobile agent app](assign-apps.md)
+- [Create Trend Micro Mobile Security as a Service device compliance policy](create-compliance-policy.md)
+- [Enable Trend Micro Mobile Security as a Service MTD connector](enable-connector.md)

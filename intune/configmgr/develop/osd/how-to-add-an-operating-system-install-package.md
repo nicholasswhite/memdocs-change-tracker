@@ -1,29 +1,29 @@
 ---
-title: Add an OS Install Package
+title: "How to Add an Operating System Install Package in Configuration Manager"
 description: Creates and populates an instance of SMS_OperatingSystemInstallPackage.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Add an Operating System Install Package in Configuration Manager
-You add an operating system install package to Configuration Manager by creating and populating an instance of [SMS_OperatingSystemInstallPackage](../../develop/reference/osd/sms_operatingsysteminstallpackage-server-wmi-class.md).
+
+You add an operating system install package to Configuration Manager by creating and populating an instance of [SMS_OperatingSystemInstallPackage](../reference/osd/sms_operatingsysteminstallpackage-server-wmi-class.md).
 
 ### To add an operating system install package
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Create an instance of [SMS_OperatingSystemInstallPackage](../../develop/reference/osd/sms_operatingsysteminstallpackage-server-wmi-class.md).
-
-3.  Set at least the *Name*, *PkgSourceFlag*, and *PkgSourcePath* properties.
-
-4.  Commit the changes.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Create an instance of [SMS_OperatingSystemInstallPackage](../reference/osd/sms_operatingsysteminstallpackage-server-wmi-class.md).
+3. Set at least the *Name*, *PkgSourceFlag*, and *PkgSourcePath* properties.
+4. Commit the changes.
 
 ## Example
- The following example method adds an operating system install package.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example method adds an operating system install package.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub AddOSInstallPackage(connection, name, description, path)
@@ -74,40 +74,45 @@ public void AddOSInstallPackage(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`name`|-   Managed: `String`<br />-   VBScript: `String`|Name for the new operating system image package.|
-|`description`|-   Managed: `String`<br />-   VBScript: `String`|Description for the operating system image package.|
-|`path`|-   Managed: `Integer`<br />-   VBScript: `Integer`|Universal Naming Convention (UNC) path to the image Windows Image (WIM) file.|
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `name` | - Managed: `String` - VBScript: `String` | Name for the new operating system image package. |
+| `description` | - Managed: `String` - VBScript: `String` | Description for the operating system image package. |
+| `path` | - Managed: `Integer` - VBScript: `Integer` | Universal Naming Convention (UNC) path to the image Windows Image (WIM) file. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See Also
- [How to Assign a Package to a Distribution Point](../../develop/core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md)
- [About image management](about-operating-system-deployment-image-management.md)
+
+[How to Assign a Package to a Distribution Point](../core/servers/configure/how-to-assign-a-package-to-a-distribution-point.md) [About image management](about-operating-system-deployment-image-management.md)

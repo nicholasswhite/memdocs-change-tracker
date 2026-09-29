@@ -1,7 +1,7 @@
 ---
-title: Toolkit reference - Microsoft Deployment Toolkit (MDT) Support Files
+title: "Support Files"
 description: Reference details for Microsoft Deployment Toolkit (MDT) Support Files
-ms.date: 09/09/2016
+ms.date: "2016-09-09T00:00:00Z"
 ms.subservice: mdt
 ms.topic: reference
 ms.collection: tier3
@@ -12,18 +12,14 @@ ms.service: configuration-manager
 
 The utilities and scripts used in LTI and ZTI deployments reference external configuration files to determine the process steps and configuration settings used during the deployment process.
 
- The following information is provided for each utility:
+The following information is provided for each utility:
 
 - **Name**. Specifies the name of the file
-
 - **Description**. Provides a description of the purpose of the file
-
 - **Location**. Indicates the folder where the file can be found; in the information for the location, the following variables are used:
 
   - **program_files**. This variable points to the location of the Program Files folder on the computer where MDT is installed.
-
   - **distribution**. This variable points to the location of the Distribution folder for the deployment share.
-
   - **platform**. This variable is a placeholder for the operating system platform (x86 or x64).
 
 ## ApplicationGroups.xml
@@ -32,9 +28,9 @@ The utilities and scripts used in LTI and ZTI deployments reference external con
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## Applications.xml
 
@@ -42,25 +38,25 @@ The utilities and scripts used in LTI and ZTI deployments reference external con
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## BootStrap.ini
 
 The configuration file used when the target computer is not able to connect to the appropriate deployment share. This situation occurs in the New Computer and the Replace Computer scenarios.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## CustomSettings.ini
 
 The primary configuration file for the MDT processing rules used in all scenarios.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## Deploy.xml
 
@@ -68,9 +64,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*program_files*\Microsoft Deployment Toolkit\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *program_files*\Microsoft Deployment Toolkit\Control |
 
 ## DriverGroups.xml
 
@@ -78,9 +74,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## Drivers.xml
 
@@ -88,9 +84,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|Description|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | Description |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## LinkedDeploymentShares.xml
 
@@ -98,9 +94,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## ListOfLanguages.xml
 
@@ -108,9 +104,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## MediaGroups.xml
 
@@ -118,9 +114,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## Medias.xml
 
@@ -128,9 +124,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## OperatingSystemGroups.xml
 
@@ -138,9 +134,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## OperatingSystems.xml
 
@@ -148,9 +144,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## PackageGroups.xml
 
@@ -158,9 +154,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## Packages.xml
 
@@ -168,9 +164,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## SelectionProfileGroups.xml
 
@@ -178,9 +174,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## SelectionProfiles.xml
 
@@ -188,9 +184,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## ServerManager.xml
 
@@ -198,9 +194,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*program_files*\Microsoft Deployment Toolkit\Bin|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *program_files*\Microsoft Deployment Toolkit\Bin |
 
 ## Settings.xml
 
@@ -208,9 +204,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## TaskSequenceGroups.xml
 
@@ -218,9 +214,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## TaskSequences.xml
 
@@ -228,9 +224,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control |
 
 ## TS.xml
 
@@ -238,9 +234,9 @@ The primary configuration file for the MDT processing rules used in all scenario
 >
 > This XML file is managed by MDT and should not require modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Control\\*task_sequence_id*|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Control\*task_sequence_id* |
 
 > [!NOTE]
 >
@@ -250,27 +246,27 @@ The primary configuration file for the MDT processing rules used in all scenario
 
 This .ini file is an ImageX configuration file that contains the list of folders and files that will be excluded from an image. It is referenced by ImageX during the LTI Capture Phase.
 
- For assistance with customizing this file, see the section, "Create an ImageX Configuration File," in the *Windows Preinstallation Environment (Windows PE) User's Guide*.
+For assistance with customizing this file, see the section, "Create an ImageX Configuration File," in the *Windows Preinstallation Environment (Windows PE) User's Guide*.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Tools\\*platform*|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Tools\*platform* |
 
 ## ZTIBIOSCheck.xml
 
-This XML file contains metadata about BIOSes for target computers. This file is edited manually and is read by [ZTIBIOSCheck.wsf](scripts.md#ztibioscheckwsf). Extract the necessary information from a target computer to create an entry in this XML file using the Microsoft Visual Basic&reg; Scripting Edition (VBScript) program (ZTIBIOS_Extract_Utility.vbs) that is embedded in this XML file.
+This XML file contains metadata about BIOSes for target computers. This file is edited manually and is read by [ZTIBIOSCheck.wsf](scripts.md#ztibioscheckwsf). Extract the necessary information from a target computer to create an entry in this XML file using the Microsoft Visual Basic® Scripting Edition (VBScript) program (ZTIBIOS_Extract_Utility.vbs) that is embedded in this XML file.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## ZTIConfigure.xml
 
 This XML file is used by the [ZTIConfigure.wsf](scripts.md#zticonfigurewsf) script to translate property values (specified earlier in the deployment process) to configure settings in the Unattend.xml file. This file is already customized to make the appropriate translations and should not require further modification.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## ZTIGather.xml
 
@@ -278,49 +274,38 @@ This XML file is used by the [ZTIConfigure.wsf](scripts.md#zticonfigurewsf) scri
 >
 > This XML file is preconfigured and should not require modification. Define custom properties in the CustomSettings.ini file or the MDT DB.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## ZTIUserState_config.xml
 
-This XML file is used by the [ZTIUserState.wsf](scripts.md#ztiuserstatewsf) script as a default USMT configuration file. This file is used by default if no custom configuration file is specified by the [USMTConfigFile](properties.md#usmtconfigfile) property. See the [Config.xml File](/windows/deployment/usmt/usmt-configxml-file) topic in the USMT documentation for more information on syntax and use.
+This XML file is used by the [ZTIUserState.wsf](scripts.md#ztiuserstatewsf) script as a default USMT configuration file. This file is used by default if no custom configuration file is specified by the [USMTConfigFile](properties.md#usmtconfigfile) property. See the [Config.xml File](https://learn.microsoft.com/en-us/windows/deployment/usmt/usmt-configxml-file) topic in the USMT documentation for more information on syntax and use.
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## ZTITatoo.mof
 
 This .mof file, when imported into the WMI repository of the target computer using Mofcomp.exe, creates the **Microsoft_BDD_Info** WMI class. This class contains deployment-related information, such as:
 
 - DeploymentMethod
-
 - DeploymentType
-
 - DeploymentTimestamp
-
 - BuildID
-
 - BuildName
-
 - BuildVersion
-
 - OSDPackageID
-
 - OSDProgramName
-
 - OSDAdvertisementID
-
 - TaskSequenceID
-
 - TaskSequenceName
-
 - TaskSequenceVersion
 
-|**Value**|**Description**|
-|-|-|
-|**Location**|*distribution*\Scripts|
+| **Value** | **Description** |
+| --- | --- |
+| **Location** | *distribution*\Scripts |
 
 ## Related articles
 

@@ -1,16 +1,18 @@
 ---
-title: SMS_OSDeploymentKitWinPEOptionalComponent Class
+title: "SMS_OSDeploymentKitWinPEOptionalComponent Server WMI Class"
 description: In Configuration Manager, the SMS_OSDeploymentKitWinPEOptionalComponent WMI class is an SMS Provider server class that Maps Assessment and Deployment Kit versions to supported optional components.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_OSDeploymentKitWinPEOptionalComponent Server WMI Class
+
 The `SMS_OSDeploymentKitWinPEOptionalComponent` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that Maps Assessment and Deployment Kit (ADK) versions to supported optional components.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,112 +34,106 @@ Class SMS_OSDeploymentKitWinPEOptionalComponent : SMS_WinPEOptionalComponentInfo
 ```
 
 ## Methods
- The `SMS_OSDeploymentKitWinPEOptionalComponent`  class does not define any methods.
+
+The `SMS_OSDeploymentKitWinPEOptionalComponent` class does not define any methods.
 
 ## Properties
- `Architecture`
- Data type: `String`
 
- Access type: Read
+`Architecture` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: none
 
- `DependentComponentNames`
- Data type: `String Array`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
- Access type: Read
+`DependentComponentNames` Data type: `String Array`
 
- Qualifiers: none
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: none
 
- `DependentIds`
- Data type: `UInt32 Array`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
- Access type: Read
+`DependentIds` Data type: `UInt32 Array`
 
- Qualifiers: none
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md)>.
+Qualifiers: none
 
- `DeploymentKitVersion`
- Data type: `String`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md)&gt;.
 
- Access type: Read
+`DeploymentKitVersion` Data type: `String`
 
- Qualifiers: [not_null]
+Access type: Read
 
- The version of the deployment kit with which this property is associated.
+Qualifiers: [not_null]
 
- `IsRequired`
- Data type: `Boolean`
+The version of the deployment kit with which this property is associated.
 
- Access type: Read
+`IsRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: none
 
- `LanguageID`
- Data type: `Unit32`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
- Access type: Read
+`LanguageID` Data type: `Unit32`
 
- Qualifiers: [key]
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: [key]
 
- `Name`
- Data type: `String`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
- Access type: Read
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: none
 
- `RelativePath`
- Data type: `String`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
- Access type: Read
+`RelativePath` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: none
 
- `Size`
- Data type: `UInt34`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
- Access type: Read
+`Size` Data type: `UInt34`
 
- Qualifiers: none
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: none
 
- `UniqueID`
- Data type: `UInt32`
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
- Access type: Read
+`UniqueID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- See [SMS_WinPEOptionalComponentInfo Server WMI Class](../../../develop/reference/osd/sms_winpeoptionalcomponentinfo-server-wmi-class.md).
+Qualifiers: [key]
+
+See [SMS_WinPEOptionalComponentInfo Server WMI Class](sms_winpeoptionalcomponentinfo-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Dynamic
-
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

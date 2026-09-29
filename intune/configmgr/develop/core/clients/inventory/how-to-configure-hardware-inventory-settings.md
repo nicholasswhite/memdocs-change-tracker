@@ -1,7 +1,7 @@
 ---
-title: "Configure Hardware Inventory Settings"
+title: "How to Configure Hardware Inventory Settings"
 description: "Set the Hardware Inventory Client Agent settings by modifying the necessary site control file settings."
-ms.date: "09/20/2016"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,25 +9,25 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Configure Hardware Inventory Settings
-You set the Hardware Inventory Client Agent settings, in Configuration Manager, by modifying the necessary site control file settings.  
 
-### To modify the Hardware Inventory Client Agent settings  
+You set the Hardware Inventory Client Agent settings, in Configuration Manager, by modifying the necessary site control file settings.
 
-1.  Set up a connection to the SMS Provider.  
+### To modify the Hardware Inventory Client Agent settings
 
-2.  Make a connection to the Hardware Inventory Client Agent section of the site control file by using the [SMS_SCI_ClientComp](../../../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class.  
+1. Set up a connection to the SMS Provider.
+2. Make a connection to the Hardware Inventory Client Agent section of the site control file by using the [SMS_SCI_ClientComp](../../../reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class.
+3. Loop through the array of available properties, making changes as needed.
+4. Commit the changes to the site control file.
 
-3.  Loop through the array of available properties, making changes as needed.  
+## Example
 
-4.  Commit the changes to the site control file.  
+The following example sets the Hardware Inventory Client Agent settings by using the [SMS_SCI_ClientComp](../../../reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class to connect to the site control file and change properties.
 
-## Example  
- The following example sets the Hardware Inventory Client Agent settings by using the [SMS_SCI_ClientComp](../../../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md) class to connect to the site control file and change properties.  
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).  
-
-```vbs  
+```vbs
 
 Sub ConfigureHardwareInventoryClientAgentSettings(swbemServices,        _  
                                                   swbemContext,         _  
@@ -107,9 +107,9 @@ Sub ConfigureHardwareInventoryClientAgentSettings(swbemServices,        _
     swbemServices.ExecMethod "SMS_SiteControlFile", "CommitSCF", InParams, , swbemContext  
 
 End Sub  
-```  
+```
 
-```c#  
+```c#
 
 public void ConfigureHardwareInventoryClientAgentSettings(WqlConnectionManager connection,  
                                                     string siteCode,  
@@ -190,50 +190,55 @@ public void ConfigureHardwareInventoryClientAgentSettings(WqlConnectionManager c
 
 }  
 
-```  
+```
 
- The example method has the following parameters:  
+The example method has the following parameters:
 
 | Parameter | Type | Description |
-| --------- | ---- | ----------- |
-|-   `connection`<br />-   `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|  
-|`swbemContext`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|  
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code.|  
-|`enableDisableClientAgent`|-   Managed: `String`<br />-   VBScript: `String`|A value to enable or disable the client agent.<br /><br /> Disabled - 0<br /><br /> Enabled - 1|  
-|`newInventorySchedule`|-   Managed: `String`<br />-   VBScript: `String`|A value to set the inventory schedule.|  
-|`newMIFSize`|-   Managed: `String`<br />-   VBScript: `String`|A value to set the maximum size of the hardware inventory MIF.<br /><br /> Default is 512.|  
-|`newMIFCollection`|-   Managed: `String`<br />-   VBScript: `String`|A value to enable or disable MIF collection.<br /><br /> Collect:<br /><br /> No (MIF) files - 0<br /><br /> NOIDMIF files - 4<br /><br /> IDMIF files - 8<br /><br /> Both NOIDMIF and IDMIF files - 12|  
+| --- | --- | --- |
+| - `connection` - `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `swbemContext` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code. |
+| `enableDisableClientAgent` | - Managed: `String` - VBScript: `String` | A value to enable or disable the client agent.   Disabled - 0   Enabled - 1 |
+| `newInventorySchedule` | - Managed: `String` - VBScript: `String` | A value to set the inventory schedule. |
+| `newMIFSize` | - Managed: `String` - VBScript: `String` | A value to set the maximum size of the hardware inventory MIF.   Default is 512. |
+| `newMIFCollection` | - Managed: `String` - VBScript: `String` | A value to enable or disable MIF collection.   Collect:   No (MIF) files - 0   NOIDMIF files - 4   IDMIF files - 8   Both NOIDMIF and IDMIF files - 12 |
 
-## Compiling the Code  
- This C# example requires:  
+## Compiling the Code
 
-### Namespaces  
- System  
+This C# example requires:
 
- System.Collections.Generic  
+### Namespaces
 
- System.Text  
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider  
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine  
+System.Text
 
-### Assembly  
- adminui.wqlqueryengine  
+Microsoft.ConfigurationManagement.ManagementProvider
 
- microsoft.configurationmanagement.managementprovider  
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
-## Robust Programming  
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).  
+### Assembly
 
-## .NET Framework Security  
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).  
+adminui.wqlqueryengine
 
-## See Also  
- [About Configuration Manager Inventory](../../../../develop/core/clients/inventory/about-configuration-manager-inventory.md)   
- [About the Configuration Manager Site Control File](../../../../develop/core/understand/about-the-configuration-manager-site-control-file.md)   
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)   
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)   
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)   
- [About schedules](../../understand/about-configuration-manager-schedules.md)
- [How to Create a Schedule Token](../../../../develop/core/understand/how-to-create-a-schedule-token.md)
+microsoft.configurationmanagement.managementprovider
+
+## Robust Programming
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
+
+## .NET Framework Security
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../servers/configure/role-based-administration.md).
+
+## See Also
+
+[About Configuration Manager Inventory](about-configuration-manager-inventory.md)  
+ [About the Configuration Manager Site Control File](../../understand/about-the-configuration-manager-site-control-file.md)  
+ [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)  
+ [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)  
+ [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)  
+ [About schedules](../../understand/about-configuration-manager-schedules.md) [How to Create a Schedule Token](../../understand/how-to-create-a-schedule-token.md)

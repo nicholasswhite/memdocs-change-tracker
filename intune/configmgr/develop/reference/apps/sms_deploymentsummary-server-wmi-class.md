@@ -1,16 +1,18 @@
 ---
-title: SMS_DeploymentSummary Class
+title: "SMS_DeploymentSummary Server WMI Class"
 description: In Configuration Manager, the SMS_DeploymentSummary Windows Management Instrumentation class is an SMS Provider server class that represents an application, SUM or classic program deployment summary.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_DeploymentSummary Server WMI Class
+
 The `SMS_DeploymentSummary` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents an application, SUM or classic program deployment summary.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -49,292 +51,268 @@ Class SMS_DeploymentSummary : SMS_BaseClass
 ```
 
 ## Methods
- The following table lists the methods in the `SMS_DeploymentSummary` class.
 
-|Method|Description|
-|------------|-----------------|
-|[UpdateClassicDeployment Method in Class SMS_DeploymentSummary](../../../develop/reference/apps/updateclassicdeployment-method-in-class-sms_deploymentsummary.md)|Updates the summarized results for a specific Classic Deployment.|
-|[UpdateDeployment Method in Class SMS_DeploymentSummary](../../../develop/reference/apps/updatedeployment-method-in-class-sms_deploymentsummary.md)|Updates the summarized results for a specific Classic Deployment.|
+The following table lists the methods in the `SMS_DeploymentSummary` class.
+
+| Method | Description |
+| --- | --- |
+| [UpdateClassicDeployment Method in Class SMS_DeploymentSummary](updateclassicdeployment-method-in-class-sms_deploymentsummary.md) | Updates the summarized results for a specific Classic Deployment. |
+| [UpdateDeployment Method in Class SMS_DeploymentSummary](updatedeployment-method-in-class-sms_deploymentsummary.md) | Updates the summarized results for a specific Classic Deployment. |
 
 ## Properties
- `ApplicationName`
- Data type: `String`
 
- Access type: Read/Write
+`ApplicationName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the application.
+Qualifiers: none
 
- `AssignmentID`
- Data type: `UInt32`
+Name of the application.
 
- Access type: Read/Write
+`AssignmentID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
+Qualifiers: none
 
- `CI_ID`
- Data type: `UInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](../compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`CI_ID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: none
 
- `CollectionID`
- Data type: `String`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`CollectionID` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Identifier for the collection where the deployment was deployed.
+Qualifiers: none
 
- `CollectionName`
- Data type: `String`
+Identifier for the collection where the deployment was deployed.
 
- Access type: Read/Write
+`CollectionName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the collection to which the deployment was deployed.
+Qualifiers: none
 
- `CreationTime`
- Data type: `DateTime`
+Name of the collection to which the deployment was deployed.
 
- Access type: Read/Write
+`CreationTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- See  [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
+Qualifiers: none
 
- `DeploymentID`
- Data type: `String`
+See [SMS_CIAssignmentBaseClass Server WMI Class](../compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`DeploymentID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- Unique auto-generated key to identify the deployment.
+Qualifiers: [key]
 
- `DeploymentIntent`
- Data type: `UInt32`
+Unique auto-generated key to identify the deployment.
 
- Access type: Read/Write
+`DeploymentIntent` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_AppDeploymentAssetDetails Server WMI Class](../../../develop/reference/apps/sms_appdeploymentassetdetails-server-wmi-class.md).
+Qualifiers: none
 
- `DeploymentTime`
- Data type: `DateTime`
+See [SMS_AppDeploymentAssetDetails Server WMI Class](sms_appdeploymentassetdetails-server-wmi-class.md).
 
- Access type: Read/Write
+`DeploymentTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Time that the deployment started.
+Qualifiers: none
 
- `DesiredConfigType`
- Data type: `SInt32`
+Time that the deployment started.
 
- Access type: Read-only
+`DesiredConfigType` Data type: `SInt32`
 
- Qualifiers: [enumeration, read]
+Access type: Read-only
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
+Qualifiers: [enumeration, read]
 
- `EnforcementDeadline`
- Data type: `DateTime`
+See [SMS_CIAssignmentBaseClass Server WMI Class](../compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`EnforcementDeadline` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_CIAssignmentBaseClass Server WMI Class](../../../develop/reference/compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
+Qualifiers: none
 
- `FeatureType`
- Data type: `UInt32`
+See [SMS_CIAssignmentBaseClass Server WMI Class](../compliance/sms_ciassignmentbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`FeatureType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Feature type. Possible values are:
+Qualifiers: none
 
-|Value|Feature type|
-|-|-|
-|1|Application|
-|2|Program|
-|3|MobileProgram|
-|4|Script|
-|5|SoftwareUpdate|
-|6|Baseline|
-|7|TaskSequence|
-|8|ContentDistribution|
-|9|DistributionPointGroup|
-|10|DistributionPointHealth|
-|11|ConfigurationPolicy|
-|28|AbstractConfigurationItem|
+Feature type. Possible values are:
 
- `ModelName`
- Data type: `String`
+| Value | Feature type |
+| --- | --- |
+| 1 | Application |
+| 2 | Program |
+| 3 | MobileProgram |
+| 4 | Script |
+| 5 | SoftwareUpdate |
+| 6 | Baseline |
+| 7 | TaskSequence |
+| 8 | ContentDistribution |
+| 9 | DistributionPointGroup |
+| 10 | DistributionPointHealth |
+| 11 | ConfigurationPolicy |
+| 28 | AbstractConfigurationItem |
 
- Access type: Read/Write
+`ModelName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../../../develop/reference/compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
+Qualifiers: none
 
- `ModificationTime`
- Data type: `DateTime`
+See [SMS_ConfigurationItemLatestBaseClass Server WMI Class](../compliance/sms_configurationitemlatestbaseclass-server-wmi-class.md).
 
- Access type: Read/Write
+`ModificationTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Time that the deployment was last modified.
+Qualifiers: none
 
- `NumberErrors`
- Data type: `SInt32`
+Time that the deployment was last modified.
 
- Access type: Read/Write
+`NumberErrors` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients with an error when installing the deployment.
+Qualifiers: none
 
- `NumberInProgress`
- Data type: `SInt32`
+Number of clients with an error when installing the deployment.
 
- Access type: Read/Write
+`NumberInProgress` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients with the deployment in progress.
+Qualifiers: none
 
- `NumberOther`
- Data type: `SInt32`
+Number of clients with the deployment in progress.
 
- Access type: Read/Write
+`NumberOther` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients where the requirements are not met for the deployment.
+Qualifiers: none
 
- `NumberSuccess`
- Data type: `SInt32`
+Number of clients where the requirements are not met for the deployment.
 
- Access type: Read/Write
+`NumberSuccess` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients that successfully installed the deployment.
+Qualifiers: none
 
- `NumberTargeted`
- Data type: `SInt32`
+Number of clients that successfully installed the deployment.
 
- Access type: Read/Write
+`NumberTargeted` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients targeted for installation of the deployment.
+Qualifiers: none
 
- `NumberUnknown`
- Data type: `SInt32`
+Number of clients targeted for installation of the deployment.
 
- Access type: Read/Write
+`NumberUnknown` Data type: `SInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Number of clients whose compliance state is unknown for the deployment.
+Qualifiers: none
 
- `ObjectTypeID`
- Data type: `UInt32`
+Number of clients whose compliance state is unknown for the deployment.
 
- Access type: Read/Write
+`ObjectTypeID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Secured object class ID. Possible values are:
+Qualifiers: none
 
-|Value|Secured object class ID|
-|-|-|
-|200|SMS_CIAssignment|
-|201|SMS_Advertisement|
+Secured object class ID. Possible values are:
 
- `PackageID`
- Data type: `String`
+| Value | Secured object class ID |
+| --- | --- |
+| 200 | SMS_CIAssignment |
+| 201 | SMS_Advertisement |
 
- Access type: Read-only
+`PackageID` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Identifier of the program (for Configuration Manager 2007 deployments).
+Qualifiers: [read]
 
- `PolicyModelID`
- Data type: `UInt32`
+Identifier of the program (for Configuration Manager 2007 deployments).
 
- Access type: Read/Write
+`PolicyModelID` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Policy model identifier.
+Qualifiers: none
 
- `ProgramName`
- Data type: `String`
+Policy model identifier.
 
- Access type: Read-only
+`ProgramName` Data type: `String`
 
- Qualifiers: [read]
+Access type: Read-only
 
- Name of the program (for Configuration Manager 2007 deployments).
+Qualifiers: [read]
 
- `SecuredObjectId`
- Data type: `String`
+Name of the program (for Configuration Manager 2007 deployments).
 
- Access type: Read/Write
+`SecuredObjectId` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- ID of the secured object.
+Qualifiers: none
 
- `SoftwareName`
- Data type: `String`
+ID of the secured object.
 
- Access type: Read/Write
+`SoftwareName` Data type: `String`
 
- Qualifiers: none
+Access type: Read/Write
 
- Name of the software.
+Qualifiers: none
 
- `SummarizationTime`
- Data type: `DateTime`
+Name of the software.
 
- Access type: Read/Write
+`SummarizationTime` Data type: `DateTime`
 
- Qualifiers: none
+Access type: Read/Write
 
- Summarization time.
+Qualifiers: none
 
- `SummaryType`
- Data type: `UInt32`
+Summarization time.
 
- Access type: Read/Write
+`SummaryType` Data type: `UInt32`
 
- Qualifiers: none
+Access type: Read/Write
 
- Summary type.
+Qualifiers: none
+
+Summary type.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

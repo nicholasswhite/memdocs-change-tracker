@@ -1,32 +1,17 @@
 ---
-title: Configure compliance policies
+title: "Step 3 – Plan for compliance policies"
 description: Description for configuring compliance policies
 author: lenewsad
 ms.author: lanewsad
-ms.date: 11/22/2023
+ms.date: "2023-11-22T00:00:00Z"
 ms.topic: how-to
 ---
-<!-- >
-# Configure compliance policies
-
-## Recommended compliance policies - basic
-
-## Recommended compliance policies - advanced?
-
-### tunnel?
-
-### certificates?
-
-### Defender for Endpoint
-
-### Conditional Access ?
--->
 
 # Step 3 – Plan for compliance policies
 
 Previously, you set up your Intune subscription and created app protection policies. Next, plan for and configure device compliance settings and policies to help protect organizational data by requiring devices to meet requirements that you set.
 
-:::image type="content" source="./media/deploy-compliance-step-3/deployment-plan-compliance-conditional-access.png" alt-text="Diagram that shows getting started with Microsoft Intune with step 3, which is creating compliance and Conditional Access policies.":::
+![Diagram that shows getting started with Microsoft Intune with step 3, which is creating compliance and Conditional Access policies.](media/deploy-compliance-step-3/deployment-plan-compliance-conditional-access.png)
 
 If you're not yet familiar with compliance policies, see [Compliance overview](../device-security/compliance/overview.md).
 
@@ -49,8 +34,7 @@ When devices fail to meet the requirements of a compliance policy, that policy c
 
 - Remotely locking the noncompliant device.
 - Send email or notifications to the device or user about the compliance issue, so a device user can bring it back into compliance.
-- Identify a device that might be ready for retirement should it remain out of compliance for an extended time.
-When you're planning for and deploying your compliance policies, it can help to approach compliance policies through our recommendations through different levels. We recommend starting with the minimal compliance settings, which are common to most or all platforms, and then expanding by adding more advanced configurations and integrations that provide more capabilities.
+- Identify a device that might be ready for retirement should it remain out of compliance for an extended time. When you're planning for and deploying your compliance policies, it can help to approach compliance policies through our recommendations through different levels. We recommend starting with the minimal compliance settings, which are common to most or all platforms, and then expanding by adding more advanced configurations and integrations that provide more capabilities.
 
 Because different device platforms support different compliance capabilities or use different names for similar settings, listing each option is beyond this deployment plan. Instead, we provide categories and examples of settings in those categories for each of the following levels:
 
@@ -71,10 +55,10 @@ The following articles can help you understand the settings that Intune policies
 
 ## Level 1 - Minimal device compliance
 
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Configure tenant-wide Compliance policy settings**  
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Set up responses for noncompliance devices (Actions for noncompliance)**  
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Understand how device compliance and device configuration policies interact**  
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Use a core set of minimal compliance settings across platforms you support**
+![](../media/icons/16/check.svg) **Configure tenant-wide Compliance policy settings**  
+ ![](../media/icons/16/check.svg) **Set up responses for noncompliance devices (Actions for noncompliance)**  
+ ![](../media/icons/16/check.svg) **Understand how device compliance and device configuration policies interact**  
+ ![](../media/icons/16/check.svg) **Use a core set of minimal compliance settings across platforms you support**
 
 The minimal device compliance settings include the following subjects that all tenants who plan to use compliance policies should understand and be prepared to use:
 
@@ -86,10 +70,10 @@ In addition, we recommend you be familiar with how device compliance policies an
 
 ### Compliance policy settings
 
-All organizations should review and set the tenant-wide  *compliance policy settings*. These settings are foundational to supporting platform specific policies. They can also mark devices that haven't evaluated a compliance policy as noncompliant, which can help you protect your organization from new or unknown devices that might fail to meet your security expectations.
+All organizations should review and set the tenant-wide *compliance policy settings*. These settings are foundational to supporting platform specific policies. They can also mark devices that haven't evaluated a compliance policy as noncompliant, which can help you protect your organization from new or unknown devices that might fail to meet your security expectations.
 
 - Compliance policy settings are a few configurations you make at the tenant-level that then apply to all devices. They establish how the Intune compliance service functions for your tenant.
-- These settings are configured directly in the Microsoft Intune admin center and are distinct from  device compliance policies that you create for specific platforms and deploy to discreet groups of devices or users.
+- These settings are configured directly in the Microsoft Intune admin center and are distinct from device compliance policies that you create for specific platforms and deploy to discreet groups of devices or users.
 
 To learn more about Compliance Policy Settings at the tenant level, and how to configure them, see [Compliance policy settings](../device-security/compliance/overview.md#compliance-policy-settings).
 
@@ -107,7 +91,7 @@ Available actions you can configure include the following, but not all are avail
 - **Remotely lock the noncompliant device**
 - **Retire the noncompliant device**
 
-Policy administrators should understand the available options for each action and complete supporting configurations before deploying a policy that requires them. For example, before you can add the  *send email*  action, you must first create one or more email templates with the messages you might want to send. Such an email might include resources to help the user bring their device into compliance. Later, when defining an email action for a policy you can select one of your templates to use with a specific action.
+Policy administrators should understand the available options for each action and complete supporting configurations before deploying a policy that requires them. For example, before you can add the *send email* action, you must first create one or more email templates with the messages you might want to send. Such an email might include resources to help the user bring their device into compliance. Later, when defining an email action for a policy you can select one of your templates to use with a specific action.
 
 Because each non-default action can be added to a policy multiple times, each with a separate configuration, you can customize how the actions apply.
 
@@ -119,12 +103,12 @@ To learn more, see [Actions for noncompliance](../device-security/compliance/con
 
 ### Understand how device compliance and device configuration policies interact
 
-Before diving into compliance policy recommendations by levels, it's important  to understand the sometimes-close relationship between compliance policies and device configuration policies. With awareness of these interactions, you can better plan for and deploy successful policies for both feature areas.
+Before diving into compliance policy recommendations by levels, it's important to understand the sometimes-close relationship between compliance policies and device configuration policies. With awareness of these interactions, you can better plan for and deploy successful policies for both feature areas.
 
 - Device configuration policies configure devices to use specific configurations. These settings can range across all aspects of the device.
 - Device compliance policies focus on a subset of device configurations that are related to security.
 
-Devices that receive compliance policies are  evaluated against the compliance policy configurations with results returned to Intune for possible actions. Some compliance configurations like password requirements result in enforcement on the device, even when device configurations are more lenient.
+Devices that receive compliance policies are evaluated against the compliance policy configurations with results returned to Intune for possible actions. Some compliance configurations like password requirements result in enforcement on the device, even when device configurations are more lenient.
 
 When a device receives conflicting configurations for a setting either different or similar policy types, conflicts can occur. To help prepare for this scenario, see [Compliance and device configuration policies that conflict](../device-configuration/troubleshoot-device-profiles.md#compliance-and-device-configuration-policies-that-conflict)
 
@@ -138,15 +122,15 @@ Review the platform specific policies in the Microsoft Intune admin center to id
 
 We recommend using the following settings in your minimal device compliance policies:
 
-| Minimal device compliance categories and examples    | Information     |
-|------------------------------------------------------|-----------------|
-| **Antivirus**, **Antispyware**, and **Antimalware** </br></br> **Windows**: </br> Evaluate devices for solutions that register with Windows Security Center to be on and monitoring for: </br>- Antivirus </br>- Antispyware </br>- Microsoft Defender Antimalware </br></br> **Other platforms**: </br> Compliance policies for platforms other than Windows don't include evaluation for these solutions. | Active solutions for Antivirus, Antispyware, and Antimalware solutions are important.</br></br> Windows compliance policy can assess the state of these solutions when they're active and registered  register with Windows Security Center on a device. </br></br>Non-Windows platforms should still run solutions for antivirus, antispyware, and antimalware, even though Intune compliance policies lack options to evaluate their active presence.  |
-| **Operating System versions** </br></br> **All devices**: </br> Evaluate settings and values for operating system versions, including: </br> - Maximum OS </br> - Minimum OS  </br>- Minor and Major build versions  </br>- OS patch levels | Use available settings that define a minimum allowed OS version or build and important patch levels to ensure device operating systems are current and secure. </br></br> Maximum OS settings can help identify new but untested results, and beta or developer OS builds that could introduce unknown risks. </br></br> Linux supports an option to define the Linux distribution type, like Ubuntu. </br></br> Windows supports another setting to set supported build ranges.  |
-| **Password configurations** </br></br> **All devices**:</br> - Enforce settings that lock the screen after a period of inactivity, requiring a password or PIN to unlock. </br>  - Require complex passwords that use combinations of letters, numbers, and symbols. </br>- Require a password  or Pin to unlock devices. </br> - Set requirements for a minimum password length. | Use compliance to evaluate devices for password structure and length, and to identify devices that lack passwords or use simple passwords. These settings can help protect access to the device. </br></br> Other options like password reuse or length of time before a password must be changed are explicitly included at the enhanced compliance level.  |
+| Minimal device compliance categories and examples | Information |
+| --- | --- |
+| **Antivirus**, **Antispyware**, and **Antimalware**    **Windows**:   Evaluate devices for solutions that register with Windows Security Center to be on and monitoring for:  - Antivirus  - Antispyware  - Microsoft Defender Antimalware    **Other platforms**:   Compliance policies for platforms other than Windows don't include evaluation for these solutions. | Active solutions for Antivirus, Antispyware, and Antimalware solutions are important.   Windows compliance policy can assess the state of these solutions when they're active and registered register with Windows Security Center on a device.   Non-Windows platforms should still run solutions for antivirus, antispyware, and antimalware, even though Intune compliance policies lack options to evaluate their active presence. |
+| **Operating System versions**    **All devices**:   Evaluate settings and values for operating system versions, including:   - Maximum OS   - Minimum OS  - Minor and Major build versions  - OS patch levels | Use available settings that define a minimum allowed OS version or build and important patch levels to ensure device operating systems are current and secure.    Maximum OS settings can help identify new but untested results, and beta or developer OS builds that could introduce unknown risks.    Linux supports an option to define the Linux distribution type, like Ubuntu.    Windows supports another setting to set supported build ranges. |
+| **Password configurations**    **All devices**:  - Enforce settings that lock the screen after a period of inactivity, requiring a password or PIN to unlock.   - Require complex passwords that use combinations of letters, numbers, and symbols.  - Require a password or Pin to unlock devices.   - Set requirements for a minimum password length. | Use compliance to evaluate devices for password structure and length, and to identify devices that lack passwords or use simple passwords. These settings can help protect access to the device.    Other options like password reuse or length of time before a password must be changed are explicitly included at the enhanced compliance level. |
 
 ## Level 2 - Enhanced device compliance settings
 
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Use enhanced device configuration policies for supported platform types**
+![](../media/icons/16/check.svg) **Use enhanced device configuration policies for supported platform types**
 
 ### Enhanced compliance settings
 
@@ -156,30 +140,27 @@ Review the platform specific policies in the Microsoft Intune admin center to id
 
 We recommend using the following settings in your enhanced device compliance policies:
 
-| Enhanced device compliance categories and examples    | Information     |
-|-------------------------------------------------------|-----------------|
-| **Applications** </br></br> **Android Enterprise**:</br> - Block apps from unknown sources</br> - Company Portal app runtime integrity </br>  - Manage source locations for apps </br>  - Google Play services  </br> - SafteyNet options for attestation and evaluation  </br></br> **iOS/iPadOS** </br> - Restricted apps</br></br> **macOS**:</br> - Allow apps from specific locations</br> - Block apps from unknown sources</br> - Firewall settings</br></br> **Windows**:</br> - Block apps from unknown sources</br> - Firewall settings  |  Configure  requirements for various applications. </br></br> For Android, manage the use and operation of  applications like Google Play, SafteyNet, and evaluation of the Company Portal app runtime integrity. </br></br> For all platforms, when supported,  manage where apps can be installed from, and which apps shouldn't be allowed on devices that access your organizations resources. </br></br> For macOS and Windows, compliance settings support requiring an active and configured Firewall.  |
-| **Encryption**</br></br> **Android Enterprise**:</br> - Require encryption of data storage</br></br> **Android AOSP**:</br> - Require encryption of data storage</br></br> **macOS**:</br> - Require encryption of data storage</br></br> **Linux**: </br> - Require encryption of data storage</br></br> **Windows**:</br> - Require encryption of data storage</br> - BitLocker  | Add compliance settings that require the encryption of data storage. Windows also supports requiring use of BitLocker.  |
-| **Password configurations** </br></br> **Android Enterprise**:</br> - Password expiration, and reuse</br></br> **iOS/iPadOS**: </br> - Password expiration, and reuse</br></br> **macOS**: </br> - Password expiration, and reuse</br></br> **Windows**: </br>- Password expiration, and reuse  | Add password compliance settings to ensure passwords are rotated periodically, and that passwords aren't reused frequently.  |
-| **System level file and boot protection** </br></br> **Android AOSP**:</br> - Rooted devices </br></br> **Android Enterprise**: </br> - Block USB debugging on device</br> - Rooted devices  </br></br> **iOS/iPadOS** </br> - Jailbroken devices</br></br> **macOS**:</br> - Require system integrity protection </br></br> **Windows**:</br>  - Require code integrity</br> - Require Secure Boot to be enabled on the device</br> - Trusted Platform Module (TPM)  | Configure the platform specific options that evaluate devices for system level or kernel level risks.  |
+| Enhanced device compliance categories and examples | Information |
+| --- | --- |
+| **Applications**    **Android Enterprise**:  - Block apps from unknown sources  - Company Portal app runtime integrity   - Manage source locations for apps   - Google Play services   - SafteyNet options for attestation and evaluation    **iOS/iPadOS**   - Restricted apps   **macOS**:  - Allow apps from specific locations  - Block apps from unknown sources  - Firewall settings   **Windows**:  - Block apps from unknown sources  - Firewall settings | Configure requirements for various applications.    For Android, manage the use and operation of applications like Google Play, SafteyNet, and evaluation of the Company Portal app runtime integrity.    For all platforms, when supported, manage where apps can be installed from, and which apps shouldn't be allowed on devices that access your organizations resources.    For macOS and Windows, compliance settings support requiring an active and configured Firewall. |
+| **Encryption**   **Android Enterprise**:  - Require encryption of data storage   **Android AOSP**:  - Require encryption of data storage   **macOS**:  - Require encryption of data storage   **Linux**:   - Require encryption of data storage   **Windows**:  - Require encryption of data storage  - BitLocker | Add compliance settings that require the encryption of data storage. Windows also supports requiring use of BitLocker. |
+| **Password configurations**    **Android Enterprise**:  - Password expiration, and reuse   **iOS/iPadOS**:   - Password expiration, and reuse   **macOS**:   - Password expiration, and reuse   **Windows**:  - Password expiration, and reuse | Add password compliance settings to ensure passwords are rotated periodically, and that passwords aren't reused frequently. |
+| **System level file and boot protection**    **Android AOSP**:  - Rooted devices    **Android Enterprise**:   - Block USB debugging on device  - Rooted devices    **iOS/iPadOS**   - Jailbroken devices   **macOS**:  - Require system integrity protection    **Windows**:  - Require code integrity  - Require Secure Boot to be enabled on the device  - Trusted Platform Module (TPM) | Configure the platform specific options that evaluate devices for system level or kernel level risks. |
 
 ## Level 3 - Advanced device compliance configurations
 
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Add data from Mobile Threat Defense partners to your device compliance policies**  
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Integrate a third-party compliance partner with Intune**  
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Define custom compliance settings for Windows and Linux**  
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Use compliance data with Conditional Access to gate access to your organization's resources**  
-:::image type="icon" source="../media/icons/16/check.svg" border="false"::: **Use advanced device configuration policies for supported platform types**
+![](../media/icons/16/check.svg) **Add data from Mobile Threat Defense partners to your device compliance policies**  
+ ![](../media/icons/16/check.svg) **Integrate a third-party compliance partner with Intune**  
+ ![](../media/icons/16/check.svg) **Define custom compliance settings for Windows and Linux**  
+ ![](../media/icons/16/check.svg) **Use compliance data with Conditional Access to gate access to your organization's resources**  
+ ![](../media/icons/16/check.svg) **Use advanced device configuration policies for supported platform types**
 
 With robust device compliance policies in place, you can then implement more advanced compliance options that go beyond only configuring settings in device compliance policies, including:
 
-- Using data from *Mobile Threat Defense partners* as part of your device compliance policies, and in your Conditional Access policies.  <!-- [Mobile Threat Defense partners](../device-security/mobile-threat-defense/overview.md) -->
-
+- Using data from *Mobile Threat Defense partners* as part of your device compliance policies, and in your Conditional Access policies.
 - Integrating device compliance status with *Conditional Access* to help gate which devices are allowed to access email, other cloud services, or on-premises resources.
-
 - Including compliance data from *third-party compliance partners*. With such a configuration, compliance data from those devices can be used with your [Conditional Access policies](../device-security/compliance/overview.md#integrate-with-conditional-access).
-
-- Expanding on built-in device compliance policies by defining custom compliance settings that aren't available natively through the Intune compliance policy UI. <!-- [Custom compliance settings](../device-security/compliance/custom-settings.md) -->
+- Expanding on built-in device compliance policies by defining custom compliance settings that aren't available natively through the Intune compliance policy UI.
 
 ### Integrate data from a Mobile Threat Defense partner
 
@@ -187,7 +168,7 @@ A Mobile Threat Defense (MTD) solution is software for mobile devices that helps
 
 When integrated, Intune supports use of MTD solutions with enrolled devices, and when supported by the MTD solution, unenrolled devices by using [Microsoft Intune protected apps](../app-management/ref-protected-apps.md) and app protection policies.
 
-Be sure to use an MTD partner that is  [supported by Intune](../device-security/mobile-threat-defense/overview.md#mobile-threat-defense-partners) and that supports the capabilities your organization needs on the full range of platforms you use.
+Be sure to use an MTD partner that is [supported by Intune](../device-security/mobile-threat-defense/overview.md#mobile-threat-defense-partners) and that supports the capabilities your organization needs on the full range of platforms you use.
 
 For example, [Microsoft Defender for Endpoint](../device-security/microsoft-defender/overview.md) is a Mobile Threat Defense solution you might already use that can be used with the Android, iOS/iPadOS, and Windows platforms. Other solutions, typically support Android and iOS/iPadOS. See [Mobile Threat Defense partners](../device-security/mobile-threat-defense/overview.md) to view the list of supported MTD partners.
 
@@ -219,7 +200,7 @@ Conditional Access is a Microsoft Entra capability that works with Intune to hel
 
 Combine Conditional Access policy with:
 
-- [Device compliance policies](/entra/identity/conditional-access/policy-all-users-device-compliance) can require a device be marked as compliant before that device can be used to access your organization's resources. The Conditional Access policies specify apps services you want to protect, conditions under which the apps or services can be accessed, and the users the policy applies to.
+- [Device compliance policies](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-all-users-device-compliance) can require a device be marked as compliant before that device can be used to access your organization's resources. The Conditional Access policies specify apps services you want to protect, conditions under which the apps or services can be accessed, and the users the policy applies to.
 - [App protection policies](../device-security/conditional-access-integration/app-based-policies.md) can add a security layer that ensures only client apps that support Intune app protection policies can access your online resources, like Exchange or other Microsoft 365 services.
 
 Conditional Access also works with the following to help you keep devices secure:
@@ -238,9 +219,9 @@ To configure policies, see [Create a compliance policy](../device-security/compl
 
 We recommend using the following settings in your enhanced device compliance policies:
 
-| Advanced device compliance categories and examples    | Information     |
-|-------------------------------------------------------|-----------------|
-| **Runtime defenses** </br></br> **Android Enterprise**: </br> - Require the device to be at or under the Device Threat Level </br> - Require the device to be at or under the machine risk score </br></br> **iOS/iPadOS**:</br>  - Require the device to be at or under the Device Threat Level </br> - Require the device to be at or under the machine risk score</br></br> **Windows**: </br> - Require the device to be at or under the machine risk score |When you integrate Intune with a Mobile Threat Defense partner, you can use that partners device threat level evaluation as criteria in your compliance policies.  </br></br> When you've integrated Microsoft Defender for Endpoint with Intune, you can use the risk score from Defender as a compliance check.  |
+| Advanced device compliance categories and examples | Information |
+| --- | --- |
+| **Runtime defenses**    **Android Enterprise**:   - Require the device to be at or under the Device Threat Level   - Require the device to be at or under the machine risk score    **iOS/iPadOS**:  - Require the device to be at or under the Device Threat Level   - Require the device to be at or under the machine risk score   **Windows**:   - Require the device to be at or under the machine risk score | When you integrate Intune with a Mobile Threat Defense partner, you can use that partners device threat level evaluation as criteria in your compliance policies.    When you've integrated Microsoft Defender for Endpoint with Intune, you can use the risk score from Defender as a compliance check. |
 
 ## Follow the minimum recommended baseline policies
 

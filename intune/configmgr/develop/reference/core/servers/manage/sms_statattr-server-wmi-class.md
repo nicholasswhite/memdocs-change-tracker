@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent a high performance version of SMS StatMsgAttributes Server class with SMS_StatAttr.
-title: SMS_StatAttr Class
-ms.date: 09/20/2016
+title: "SMS_StatAttr Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
-# SMS_StatAttr Server WMI Class
-The `SMS_StatAttr` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a high-performance version of [SMS_StatMsgAttributes Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statmsgattributes-server-wmi-class.md).
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+# SMS_StatAttr Server WMI Class
+
+The `SMS_StatAttr` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a high-performance version of [SMS_StatMsgAttributes Server WMI Class](sms_statmsgattributes-server-wmi-class.md).
+
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,53 +27,52 @@ Class SMS_StatAttr : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_StatAttr` class does not define any methods.
+
+The `SMS_StatAttr` class does not define any methods.
 
 ## Properties
- `AttributeID`
- Data type: `UInt32`
 
- Access type: Read
+`AttributeID` Data type: `UInt32`
 
- Qualifiers:
+Access type: Read
 
- [key]
+Qualifiers:
 
- ID of the type of attribute that is defined by the `AttributeValue` property. See the `AttributeID` property of [SMS_StatMsgAttributes Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statmsgattributes-server-wmi-class.md).
+[key]
 
- `AttributeTime`
- Data type: `DateTime`
+ID of the type of attribute that is defined by the `AttributeValue` property. See the `AttributeID` property of [SMS_StatMsgAttributes Server WMI Class](sms_statmsgattributes-server-wmi-class.md).
 
- Access type: Read
+`AttributeTime` Data type: `DateTime`
 
- Qualifiers: [none]
+Access type: Read
 
- Date and time, in Universal Coordinated Time (UTC), when the message was generated.
+Qualifiers: [none]
 
- `AttributeValue`
- Data type: `String`
+Date and time, in Universal Coordinated Time (UTC), when the message was generated.
 
- Access type: Read
+`AttributeValue` Data type: `String`
 
- Qualifiers: [none]
+Access type: Read
 
- Attribute value that is determined by the type indicated by the `AttributeID` property.
+Qualifiers: [none]
 
- `RecordID`
- Data type: `SInt64`
+Attribute value that is determined by the type indicated by the `AttributeID` property.
 
- Access type: Read
+`RecordID` Data type: `SInt64`
 
- Qualifiers: none
+Access type: Read
 
- Record ID of the status message with which the attribute is associated.
+Qualifiers: none
+
+Record ID of the status message with which the attribute is associated.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   Use this class to associate specific information with a message. The attribute data is not displayed in the message text. Typically, the attribute values are used to query for status messages that reference a particular object. For example, your application can query for the attribute that retrieves all the messages associated with a particular Configuration Manager package.
 
@@ -80,10 +81,13 @@ Class SMS_StatAttr : SMS_BaseClass
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_StatMsgAttributes Server WMI Class](../../../../../develop/reference/core/servers/manage/sms_statmsgattributes-server-wmi-class.md)
+
+[SMS_StatMsgAttributes Server WMI Class](sms_statmsgattributes-server-wmi-class.md)

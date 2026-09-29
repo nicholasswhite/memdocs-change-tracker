@@ -1,16 +1,18 @@
 ---
-title: SMS_TaskSequence_WMIConditionExpression Class
+title: "SMS_TaskSequence_WMIConditionExpression Server WMI Class"
 description: Represents a condition expression to check for the existence of results of a WMI query.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_TaskSequence_WMIConditionExpression Server WMI Class
+
 The `SMS_TaskSequence_WMIConditionExpression` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents a condition expression to check for the existence of results of a WMI query.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -23,40 +25,43 @@ Class SMS_TaskSequence_WMIConditionExpression : SMS_TaskSequence_ConditionExpres
 ```
 
 ## Methods
- The `SMS_TaskSequence_WMIConditionExpression` class does not define any methods.
+
+The `SMS_TaskSequence_WMIConditionExpression` class does not define any methods.
 
 ## Properties
- `Namespace`
- Data type: `String`
 
- Access type: Read/Write
+`Namespace` Data type: `String`
 
- Qualifiers: [Not_Null]
+Access type: Read/Write
 
- Namespace for the query.
+Qualifiers: [Not_Null]
 
- `Query`
- Data type: `String`
+Namespace for the query.
 
- Access type: Read/Write
+`Query` Data type: `String`
 
- Qualifiers: [Not_Null, AllowedLen("1-16384")]
+Access type: Read/Write
 
- The WQL query for the condition expression. The length is between 1 and 16,384 characters.
+Qualifiers: [Not_Null, AllowedLen("1-16384")]
+
+The WQL query for the condition expression. The length is between 1 and 16,384 characters.
 
 ## Remarks
- The query result set is the results that satisfy the condition. For example, if you need to identify if a computer has at least one NTFS partition, you would use the following query:
+
+The query result set is the results that satisfy the condition. For example, if you need to identify if a computer has at least one NTFS partition, you would use the following query:
 
 ```
 Select * from win32_logicaldisk where FileSystem='NTFS'
 ```
 
- There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+There are no class qualifiers for this class. For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

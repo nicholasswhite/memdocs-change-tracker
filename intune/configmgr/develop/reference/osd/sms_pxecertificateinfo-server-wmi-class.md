@@ -1,16 +1,18 @@
 ---
 description: Learn how to define a media certificate that is registered by Configuration Manager and used by PXE clients to communicate with a management point.
-title: SMS_PXECertificateInfo Class
-ms.date: 09/20/2016
+title: "SMS_PXECertificateInfo Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_PXECertificateInfo Server WMI Class
+
 The `SMS_PXECertificateInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that defines a media certificate that is registered by Configuration Manager and used by PXE clients to communicate with a management point.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -33,131 +35,124 @@ Class SMS_PXECertificateInfo : SMS_CertificateInfo
 ```
 
 ## Methods
- The `SMS_PXECertificateInfo` class does not define any methods.
+
+The `SMS_PXECertificateInfo` class does not define any methods.
 
 ## Properties
- `Certificate`
- Data type: `String`
 
- Access type: Read/Write
+`Certificate` Data type: `String`
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: [large, lazy]
 
- `IsApproved`
- Data type: `Boolean`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`IsApproved` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: None
 
- `IsBlocked`
- Data type: `Boolean`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`IsBlocked` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: None
 
- `IssuedTo`
- Data type: `String`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`IssuedTo` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: None
 
- `KeyType`
- Data type: `SInt32`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`KeyType` Data type: `SInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: None
 
- `PublicKey`
- Data type: `String`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`PublicKey` Data type: `String`
 
- Qualifiers: [lazy]
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: [lazy]
 
- `PXEServerName`
- Data type: `String`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`PXEServerName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The name of the PXE server to which the PXE certificate belongs.
+Qualifiers: None
 
- `SMSID`
- Data type: `String`
+The name of the PXE server to which the PXE certificate belongs.
 
- Access type: Read/Write
+`SMSID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: [key]
 
- `Thumbprint`
- Data type: `String`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`Thumbprint` Data type: `String`
 
- Qualifiers: [Lazy]
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: [Lazy]
 
- `Type`
- Data type: `UInt32`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`Type` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: None
 
- `ValidFrom`
- Data type: `DateTime`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`ValidFrom` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: None
 
- `ValidUntil`
- Data type: `DateTime`
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
- Access type: Read/Write
+`ValidUntil` Data type: `DateTime`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [SMS_CertificateInfo Server WMI Class](../../../develop/reference/osd/sms_certificateinfo-server-wmi-class.md).
+Qualifiers: None
+
+See [SMS_CertificateInfo Server WMI Class](sms_certificateinfo-server-wmi-class.md).
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See also
 

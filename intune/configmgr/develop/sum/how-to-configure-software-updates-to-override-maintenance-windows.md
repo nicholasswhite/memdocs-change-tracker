@@ -1,32 +1,33 @@
 ---
-title: Configure Software Updates to Override Maintenance Windows
-ms.date: 09/20/2016
+title: "How to Configure Software Updates to Override Maintenance Windows"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 description: Learn about how to update the OverrideServiceWindows property of deployment to configure software updates to override maintenance windows.
 ms.service: configuration-manager
 ---
+
 # How to Configure Software Updates to Override Maintenance Windows
+
 You configure software updates to override maintenance windows, in Configuration Manager, by updating the `OverrideServiceWindows` property of an assignment (deployment).
 
 ### To configure software updates to override maintenance windows
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Load the specific assignment (deployment) to modify using the `SMS_UpdatesAssignment` class.
-
-3.  Set the `OverrideServiceWindows` value to `true`.
-
-4.  Save the assignment (deployment) and properties.
+1. Set up a connection to the SMS Provider.
+2. Load the specific assignment (deployment) to modify using the `SMS_UpdatesAssignment` class.
+3. Set the `OverrideServiceWindows` value to `true`.
+4. Save the assignment (deployment) and properties.
 
 ## Example
- The following example method shows how to configure software updates to override maintenance windows by using the `SMS_UpdatesAssignment` class and class properties.
+
+The following example method shows how to configure software updates to override maintenance windows by using the `SMS_UpdatesAssignment` class and class properties.
 
 > [!NOTE]
->  This task only applies to mandatory deployments.
+>
+> This task only applies to mandatory deployments.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -77,37 +78,42 @@ public void ConfigureSoftwareUpdatestoOverrideMaintenanceWindow(WqlConnectionMan
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------|----|-----------|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingAssignmentID`|-   Managed: `Integer`<br />-   VBScript: `Integer`|An existing Assignment ID to modify.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingAssignmentID` | - Managed: `Integer` - VBScript: `Integer` | An existing Assignment ID to modify. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See also
 

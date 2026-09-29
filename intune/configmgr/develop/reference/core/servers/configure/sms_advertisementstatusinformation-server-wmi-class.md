@@ -1,16 +1,18 @@
 ---
 description: Learn how to represent the state and description for a software distribution or software update status message in Configuration Manager.
-title: SMS_AdvertisementStatusInformation Class
-ms.date: 09/20/2016
+title: "SMS_AdvertisementStatusInformation Server WMI Class"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_AdvertisementStatusInformation Server WMI Class
+
 The `SMS_AdvertisementStatusInformation` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the state and description for a software distribution or software update status message.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -25,79 +27,81 @@ Class SMS_AdvertisementStatusInformation : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_AdvertisementStatusInformation` class does not define any methods.
+
+The `SMS_AdvertisementStatusInformation` class does not define any methods.
 
 ## Properties
- `MessageID`
- Data type: `UInt32`
 
- Access type: Read/write
+`MessageID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read/write
 
- Software distribution or software update message ID.
+Qualifiers: [key]
 
- `MessageName`
- Data type: `String`
+Software distribution or software update message ID.
 
- Access type: Read/Write
+`MessageName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Short description of the status message.
+Qualifiers: None
 
- `MessageState`
- Data type: `UInt32`
+Short description of the status message.
 
- Access type: Read/write
+`MessageState` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/write
 
- Numeric category (software update states >= 100, software distribution < 100). For more information, see the Remarks section later in this topic.
+Qualifiers: None
 
- `MessageStateName`
- Data type: `String`
+Numeric category (software update states &gt;= 100, software distribution &lt; 100). For more information, see the Remarks section later in this topic.
 
- Access type: Read/Write
+`MessageStateName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Short description of the message state.
+Qualifiers: None
+
+Short description of the message state.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../misc/class-and-property-qualifiers.md).
 
   The `MessageState` property can have one of the following values:
 
-|MessageState|Type|MessageStateName|
-|------------------|----------|----------------------|
-|-1|Delivery|Accepted - No further status|
-|0|Acceptance/Delivery|No Status|
-|1|Acceptance|Accepted|
-|2|Acceptance|Rejected|
-|3|Acceptance|Expired|
-|4|Delivery|Will Not Rerun|
-|5|Delivery|Download in Progress|
-|6|Delivery|Download Complete|
-|7|Delivery|Canceled|
-|8|Delivery|Waiting|
-|9|Delivery|Running|
-|10|Delivery|Retrying|
-|11|Delivery|Failed|
-|12|Delivery|Reboot Pending|
-|13|Delivery|Succeeded|
+| MessageState | Type | MessageStateName |
+| --- | --- | --- |
+| -1 | Delivery | Accepted - No further status |
+| 0 | Acceptance/Delivery | No Status |
+| 1 | Acceptance | Accepted |
+| 2 | Acceptance | Rejected |
+| 3 | Acceptance | Expired |
+| 4 | Delivery | Will Not Rerun |
+| 5 | Delivery | Download in Progress |
+| 6 | Delivery | Download Complete |
+| 7 | Delivery | Canceled |
+| 8 | Delivery | Waiting |
+| 9 | Delivery | Running |
+| 10 | Delivery | Retrying |
+| 11 | Delivery | Failed |
+| 12 | Delivery | Reboot Pending |
+| 13 | Delivery | Succeeded |
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_Advertisement Server WMI Class](../../../../../develop/reference/core/servers/configure/sms_advertisement-server-wmi-class.md)
+
+[SMS_Advertisement Server WMI Class](sms_advertisement-server-wmi-class.md)

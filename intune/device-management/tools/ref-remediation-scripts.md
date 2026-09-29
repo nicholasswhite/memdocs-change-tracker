@@ -1,7 +1,7 @@
 ---
 title: PowerShell Scripts for Remediations
 description: PowerShell script reference for Remediations.
-ms.date: 04/30/2024
+ms.date: "2024-04-30T00:00:00Z"
 ms.topic: reference
 ---
 
@@ -13,11 +13,11 @@ This article includes sample scripts that customers can implement or use as temp
 
 This table shows the script names, descriptions, detections, remediations, and configurable items. Script files whose names start with `Detect` are detection scripts. Remediation scripts start with `Remediate`. These scripts can be copied from the next section in this article.
 
-|Script name|Description|
-|---|---|
-|**Check network certificates** </br>`Detect_Expired_Issuer_Certificates.ps1` </br>`Remediate_Expired_Issuer_Certificates.ps1`|Detects certificates issued by a CA in either the Machine's or User's personal store that are expired, or near expiry.</br> Specify the CA by changing the value for `$strMatch` in the detection script. Specify 0 for `$expiringDays` to find expired certificates, or specify another number of days to find certificates near expiry. </br></br>Remediates by raising a toast notification to the user.</br> Specify the `$Title` and `$msgText` values with the message title and text you want users to see. </br> </br> Notifies users of expired certificates that might need to be renewed.</br> </br> **Run the script using the logged-on credentials**: Yes|
-|**Clear stale certificates** </br>`Detect_Expired_User_Certificates.ps1` </br> `Remediate_Expired_User_Certificates.ps1`| Detects expired certificates issued by a CA in the current user's personal store.</br> Specify the CA by changing the value for `$certCN` in the detection script.</br> </br> Remediates by deleting expired certificates issued by a CA from the current user's personal store.</br> Specify the CA by changing the value for `$certCN` in the remediation script. </br> </br> Finds and deletes expired certificates issued by a CA from the current user's personal store. </br> </br> **Run the script using the logged-on credentials**: Yes|
-|**Update stale Group Policies** (built-in) </br>`Detect_stale_Group_Policies.ps1` </br> `Remediate_stale_GroupPolicies.ps1`| Detects if last Group Policy refresh is greater than `7 days` ago. </br>This script package is included with Remediations, but a copy is provided if you want to change the threshold. Customize the seven day threshold by changing the value for `$numDays` in the detection script. </br></br>Remediates by running `gpupdate /target:computer /force` and `gpupdate /target:user /force`  </br> </br>Can help reduce network connectivity-related support calls when certificates and configurations are delivered via Group Policy. </br> </br> **Run the script using the logged-on credentials**: Yes|
+| Script name | Description |
+| --- | --- |
+| **Check network certificates**  `Detect_Expired_Issuer_Certificates.ps1`  `Remediate_Expired_Issuer_Certificates.ps1` | Detects certificates issued by a CA in either the Machine's or User's personal store that are expired, or near expiry.  Specify the CA by changing the value for `$strMatch` in the detection script. Specify 0 for `$expiringDays` to find expired certificates, or specify another number of days to find certificates near expiry.   Remediates by raising a toast notification to the user.  Specify the `$Title` and `$msgText` values with the message title and text you want users to see.     Notifies users of expired certificates that might need to be renewed.    **Run the script using the logged-on credentials**: Yes |
+| **Clear stale certificates**  `Detect_Expired_User_Certificates.ps1`   `Remediate_Expired_User_Certificates.ps1` | Detects expired certificates issued by a CA in the current user's personal store.  Specify the CA by changing the value for `$certCN` in the detection script.    Remediates by deleting expired certificates issued by a CA from the current user's personal store.  Specify the CA by changing the value for `$certCN` in the remediation script.     Finds and deletes expired certificates issued by a CA from the current user's personal store.     **Run the script using the logged-on credentials**: Yes |
+| **Update stale Group Policies** (built-in)  `Detect_stale_Group_Policies.ps1`   `Remediate_stale_GroupPolicies.ps1` | Detects if last Group Policy refresh is greater than `7 days` ago.  This script package is included with Remediations, but a copy is provided if you want to change the threshold. Customize the seven day threshold by changing the value for `$numDays` in the detection script.   Remediates by running `gpupdate /target:computer /force` and `gpupdate /target:user /force`    Can help reduce network connectivity-related support calls when certificates and configurations are delivered via Group Policy.     **Run the script using the logged-on credentials**: Yes |
 
 ## Check network certificates script package
 

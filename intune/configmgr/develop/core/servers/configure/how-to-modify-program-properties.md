@@ -1,29 +1,29 @@
 ---
 description: Learn how the following will modify a program, in Configuration Manager, by using the SMS_Package and SMS_Program classes and properties.
-title: Modify Program Properties
-ms.date: 09/20/2016
+title: "How to Modify Program Properties"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Modify Program Properties
+
 The following example shows how to modify a program, in Configuration Manager, by using the `SMS_Package` and `SMS_Program` classes and properties.
 
 ### To modify program properties
 
-1.  Set up a connection to the SMS Provider.
-
-2.  Get the program instance using the package ID and program name provided.
-
-3.  Replace the program description property with the one passed into the method.
-
-4.  Save the program object and properties.
+1. Set up a connection to the SMS Provider.
+2. Get the program instance using the package ID and program name provided.
+3. Replace the program description property with the one passed into the method.
+4. Save the program object and properties.
 
 ## Example
- The following example method modifies program properties for software distribution.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method modifies program properties for software distribution.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -75,34 +75,39 @@ public void ModifyProgram(WqlConnectionManager connection, string existingPackag
 
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`existingPackageID`|-   Managed: `String`<br />-   VBScript: `String`|The ID of an existing package with which to associate the program.|
-|`existingProgramNameToModify`|-   Managed: `String`<br />-   VBScript: `String`|The name for the program to modify.|
-|`newProgramDescription`|-   Managed: `String`<br />-   VBScript: `String`|The description for the new program.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `existingPackageID` | - Managed: `String` - VBScript: `String` | The ID of an existing package with which to associate the program. |
+| `existingProgramNameToModify` | - Managed: `String` - VBScript: `String` | The name for the program to modify. |
+| `newProgramDescription` | - Managed: `String` - VBScript: `String` | The description for the new program. |
 
 ## Compiling the Code
- The C# example requires:
+
+The C# example requires:
 
 ### Namespaces
- System
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
 
- mscorlib
+microsoft.configurationmanagement.managementprovider
+
+mscorlib
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
+
+[Software distribution overview](software-distribution-overview.md)

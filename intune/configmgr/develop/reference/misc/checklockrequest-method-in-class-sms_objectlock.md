@@ -1,16 +1,18 @@
 ---
-title: CheckLockRequest Method
+title: "CheckLockRequest Method in Class SMS_ObjectLock"
 description: The CheckLockRequest Windows Management Instrumentation (WMI) class method checks a lock request.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CheckLockRequest Method in Class SMS_ObjectLock
+
 The `CheckLockRequest` Windows Management Instrumentation (WMI) class method, in Configuration Manager, checks a lock request.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -29,108 +31,104 @@ SInt32 CheckLockRequest(
 ```
 
 #### Parameters
- `RequestID`
- Data type: `String`
 
- Qualifiers: [in, out]
+`RequestID` Data type: `String`
 
- Unique identifier of the request.
+Qualifiers: [in, out]
 
- `Timeout`
- Data type: `UInt32`
+Unique identifier of the request.
 
- Qualifiers: [in, optional]
+`Timeout` Data type: `UInt32`
 
- Seconds to wait for lock request response.
+Qualifiers: [in, optional]
 
- `RequestState`
- Data type: `UInt32`
+Seconds to wait for lock request response.
 
- Qualifiers: [out]
+`RequestState` Data type: `UInt32`
 
- The state of the lock request. Possible values are:
+Qualifiers: [out]
+
+The state of the lock request. Possible values are:
 
 | Value | Request state |
-| ----- | ------------- |
-|0|Unknown|
-|2|Requested|
-|3|RequestCanceled|
-|4|ResponseReceived|
-|10|Granted|
-|11|GrantedAfterTimeout|
-|12|GrantedLockWasOrphaned|
-|20|DeniedLockAlreadyAssigned|
-|21|DeniedInvalidObjectVersion|
-|22|DeniedLockNotFound|
-|23|DeniedLockNotLocal|
-|24|DeniedRequestTimedOut|
-|50|Error|
-|52|ErrorRequestNotFound|
-|53|ErrorRequestTimedOut|
+| --- | --- |
+| 0 | Unknown |
+| 2 | Requested |
+| 3 | RequestCanceled |
+| 4 | ResponseReceived |
+| 10 | Granted |
+| 11 | GrantedAfterTimeout |
+| 12 | GrantedLockWasOrphaned |
+| 20 | DeniedLockAlreadyAssigned |
+| 21 | DeniedInvalidObjectVersion |
+| 22 | DeniedLockNotFound |
+| 23 | DeniedLockNotLocal |
+| 24 | DeniedRequestTimedOut |
+| 50 | Error |
+| 52 | ErrorRequestNotFound |
+| 53 | ErrorRequestTimedOut |
 
- `LockState`
- Data type: `UInt32`
+`LockState` Data type: `UInt32`
 
- Qualifiers: [out]
+Qualifiers: [out]
 
- Indicates the current state of the requested lock. Possible values are:
+Indicates the current state of the requested lock. Possible values are:
 
 | Value | Lock state |
-| ----- | ---------- |
-|0|Unassigned|
-|1|Assigned|
-|2|Requested|
-|3|PendingAssignment|
-|4|TimedOut|
-|5|NotFound|
+| --- | --- |
+| 0 | Unassigned |
+| 1 | Assigned |
+| 2 | Requested |
+| 3 | PendingAssignment |
+| 4 | TimedOut |
+| 5 | NotFound |
 
- `AssignedUser`
- Data type: `String`
+`AssignedUser` Data type: `String`
 
- Qualifiers: [out]
+Qualifiers: [out]
 
- Indicates the currently assigned user of the requested lock.
+Indicates the currently assigned user of the requested lock.
 
- `AssignedObjectLockContext`
- Data type: `String`
+`AssignedObjectLockContext` Data type: `String`
 
- Qualifiers: [out]
+Qualifiers: [out]
 
- Indicates the unique string identifier of the requested lock.
+Indicates the unique string identifier of the requested lock.
 
- `AssignedMachine`
- Data type: `String`
+`AssignedMachine` Data type: `String`
 
- Qualifiers: [out]
+Qualifiers: [out]
 
- Indicates ObjectLockContext the lock is currently assigned to.
+Indicates ObjectLockContext the lock is currently assigned to.
 
- `AssignedSiteCode`
- Data type: `String`
+`AssignedSiteCode` Data type: `String`
 
- Qualifiers: [out]
+Qualifiers: [out]
 
- Indicates the current site of the requested lock.
+Indicates the current site of the requested lock.
 
- `AssignedTimeUTC`
- Data type: `DateTime`
+`AssignedTimeUTC` Data type: `DateTime`
 
- Qualifiers: [out]
+Qualifiers: [out]
 
- Indicates the time at which the requested lock was assigned.
+Indicates the time at which the requested lock was assigned.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_ObjectLock Server WMI Class](../../../develop/reference/misc/sms_objectlock-server-wmi-class.md)
+
+[SMS_ObjectLock Server WMI Class](sms_objectlock-server-wmi-class.md)

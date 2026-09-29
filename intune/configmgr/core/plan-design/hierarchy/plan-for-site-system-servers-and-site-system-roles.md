@@ -1,7 +1,7 @@
 ---
-title: Plan site system roles
+title: "Plan for site system servers and site system roles in Configuration Manager"
 description: Consider site system servers and site system roles as you plan your Configuration Manager hierarchy.
-ms.date: 03/29/2022
+ms.date: "2022-03-29T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
@@ -14,21 +14,18 @@ ms.service: configuration-manager
 
 Each Configuration Manager site you install includes a site server that's a **site system server**. The site can also include additional site system servers on computers that are remote from the site server. Site system servers (the site server or a remote site system server) support **site system roles**.
 
-## <a name="bkmk_siteservers"></a> Site system servers
+## Site system servers
 
 When you install a site system role on a computer, that computer becomes a site system server. At each site, you can install one or more additional site system servers. You don't have to install additional site system servers, and can choose to run all site system roles directly on the site server computer. Each site system server supports one or more site system roles. Additional servers can help expand the capabilities and capacity of a site by sharing the processing load that site system roles place on a server.
 
 When considering the addition of a site system server, ensure the server meets prerequisites for the intended use. Also add it on a network location that has sufficient bandwidth to communicate with expected endpoints. These endpoints include the site server, domain resources, a cloud-based location, site system servers, and clients.
 
-
-## <a name="bkmk_planroles"></a> Site system roles
+## Site system roles
 
 Install site system roles on a server to provide additional capabilities to the site. Examples include:
 
 - Additional management points so that the site can support more devices, up to the site's supported capacity.
-
 - Additional distribution points to expand your content infrastructure, improving the performance of content distributions to devices.
-
 - One or more feature-specific site system roles. For example, a software update point lets you manage software updates for managed devices. A reporting services point lets you run reports to monitor, understand, and share information about your environment.
 
 Different Configuration Manager sites can support different sets of site system roles. The supported set of site system roles depends on the type of site. (The types of sites include a central administration site, primary sites, or secondary sites.) The topology of your hierarchy can limit the placement of some roles at certain site types. For example, the service connection point is only supported at the top-tier site of the hierarchy. The top-tier site might be a central administration site or a standalone primary site. This role isn't supported at a child primary site or at secondary sites.
@@ -60,7 +57,8 @@ To install additional providers, run Configuration Manager setup to [Manage the 
 ### Asset Intelligence synchronization point
 
 > [!IMPORTANT]
-> Starting in November 2021, this feature of Configuration Manager is deprecated.<!-- 12454890 --> For more information, see [Asset intelligence deprecation](../../clients/manage/asset-intelligence/deprecation.md).
+>
+> Starting in November 2021, this feature of Configuration Manager is deprecated. For more information, see [Asset intelligence deprecation](../../clients/manage/asset-intelligence/deprecation.md).
 
 A site system role that connects to Microsoft to download information for the Asset Intelligence catalog. This role also uploads uncategorized titles, so that Microsoft can consider them for future inclusion in the catalog. A hierarchy supports only a single instance of this role at the top-tier site of your hierarchy. If you expand a standalone primary site into a larger hierarchy, uninstall this role from the primary site. Then install it at the central administration site.
 
@@ -69,7 +67,8 @@ For more information, see [Asset Intelligence in Configuration Manager](../../cl
 ### Certificate registration point
 
 > [!WARNING]
-> Starting in version 2203, the certificate registration point is no longer supported.<!--13951253--> For more information, see [Frequently asked questions about resource access deprecation](../../../protect/plan-design/resource-access-deprecation-faq.yml).
+>
+> Starting in version 2203, the certificate registration point is no longer supported. For more information, see [Frequently asked questions about resource access deprecation](../../../protect/plan-design/resource-access-deprecation-faq.yml).
 
 A site system role that communicates with a server that runs the Network Device Enrollment Service (NDES). This role manages device certificate requests that use the Simple Certificate Enrollment Protocol (SCEP). This role is supported only at primary sites and the central administration site.
 
@@ -104,7 +103,8 @@ A site system role that Configuration Manager uses to accept the Endpoint Protec
 ### Enrollment point
 
 > [!IMPORTANT]
-> With the deprecation of on-premises MDM and the Configuration Manager client for macOS, this site system role is also deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../changes/deprecated/removed-and-deprecated-cmfeatures.md).<!-- 12454901,12927803 -->
+>
+> With the deprecation of on-premises MDM and the Configuration Manager client for macOS, this site system role is also deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
 A site system role that uses PKI certificates for Configuration Manager to enroll mobile devices and macOS computers. Although this role is supported only at primary sites, you can install multiple instances of this role at a site, or at multiple sites in the same hierarchy.
 
@@ -113,7 +113,8 @@ If a user enrolls mobile devices by using Configuration Manager, and the user's 
 ### Enrollment proxy point
 
 > [!IMPORTANT]
-> With the deprecation of on-premises MDM and the Configuration Manager client for macOS, this site system role is also deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../changes/deprecated/removed-and-deprecated-cmfeatures.md).<!-- 12454901,12927803 -->
+>
+> With the deprecation of on-premises MDM and the Configuration Manager client for macOS, this site system role is also deprecated. For more information, see [Removed and deprecated features for Configuration Manager](../changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
 A site system role that manages Configuration Manager enrollment requests from mobile devices and macOS computers. Although this role is supported only at primary sites, you can install multiple instances of this role at a site, or at multiple sites in the same hierarchy.
 
@@ -136,7 +137,8 @@ By default, this role installs on the site server when you install a new primary
 Set up management points to support either HTTP or HTTPs. They can also support mobile devices that you manage with Configuration Manager on-premises mobile device management (MDM). To help reduce the processing load placed on the site database server by management points as they service requests from clients, use [Database replicas for management points](../../servers/deploy/configure/database-replicas-for-management-points.md).
 
 > [!IMPORTANT]
-> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).<!-- 9390933,9572265 -->
+>
+> Starting in Configuration Manager version 2103, sites that allow HTTP client communication are deprecated. Configure the site for HTTPS or Enhanced HTTP. For more information, see [Enable the site for HTTPS-only or enhanced HTTP](../../servers/deploy/install/list-of-prerequisite-checks.md#enable-site-system-roles-for-https-or-enhanced-http).
 
 ### Reporting services point
 
@@ -151,9 +153,7 @@ A site system role that uploads usage data from your site, and is required to ma
 A site system role that integrates with Windows Server Update Services (WSUS) to provide software updates to Configuration Manager clients. This role is supported at all sites:
 
 - Install this site system at the central administration site to synchronize with WSUS.
-
 - Set up each instance of this role at child primary sites to synchronize with the central administration site.
-
 - When data transfer across the network is slow, consider installing a software update point in secondary sites.
 
 For more information, see [Plan for software updates](../../../sum/plan-design/plan-for-software-updates.md).
@@ -161,7 +161,6 @@ For more information, see [Plan for software updates](../../../sum/plan-design/p
 ### State migration point
 
 When you migrate a computer to a new operating system, this site system role stores user state data. This role is supported at primary sites and at secondary sites. Install multiple instances of this role at a site, and at multiple sites in the same hierarchy. For more information about storing user state when you deploy an OS, see [Manage user state](../../../osd/get-started/manage-user-state.md).
-
 
 ## Next steps
 

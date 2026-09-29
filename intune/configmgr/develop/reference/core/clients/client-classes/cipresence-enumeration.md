@@ -1,13 +1,15 @@
 ---
 description: Learn how to define configuration item presence types used in the discovery process with CIPresence enumeration.
 title: CIPresence Enumeration
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CIPresence Enumeration
+
 In Configuration Manager, the `CIPresence` enumeration defines configuration item presence types used in the discovery process.
 
 ## Syntax
@@ -25,26 +27,23 @@ typedef enum tagCIPresence
 ```
 
 ## Elements
- `ciNotPresent, ciNonCompliant`
- Configuration item not present or not compliant.
 
- `ciPresent, ciCompliant`
- Configuration item present or compliant.
+`ciNotPresent, ciNonCompliant` Configuration item not present or not compliant.
 
- `ciNotApplicable`
- Configuration item not applicable.
+`ciPresent, ciCompliant` Configuration item present or compliant.
 
- `ciPresenceUnknown, ciComplianceUnknown`
- Configuration item presence or compliance unknown.
+`ciNotApplicable` Configuration item not applicable.
 
- `ciEvaluationError`
- Configuration item evaluation error.
+`ciPresenceUnknown, ciComplianceUnknown` Configuration item presence or compliance unknown.
 
- `ciNotEvaluated`
- Configuration item not evaluated.
+`ciEvaluationError` Configuration item evaluation error.
+
+`ciNotEvaluated` Configuration item not evaluated.
 
 ## Remarks
- This enumeration is used by the [ICIINFO Interface](../../../../../develop/reference/core/clients/client-classes/iciinfo-interface.md).
+
+This enumeration is used by the [ICIINFO Interface](iciinfo-interface.md).
 
 ## See Also
- [ICIINFO Interface](../../../../../develop/reference/core/clients/client-classes/iciinfo-interface.md)
+
+[ICIINFO Interface](iciinfo-interface.md)

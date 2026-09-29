@@ -1,7 +1,7 @@
 ---
-title: Set up Pradeo Mobile Threat Defense to integrate with Intune
+title: "Integrate Pradeo Mobile Threat Defense with Intune"
 description: How to set up the Pradeo Mobile Threat Protection solution with Microsoft Intune to control mobile device access to your corporate resources.
-ms.date: 08/27/2024
+ms.date: "2024-08-27T00:00:00Z"
 ms.topic: how-to
 ---
 
@@ -10,11 +10,13 @@ ms.topic: how-to
 Complete the following steps to integrate the Pradeo Mobile Threat Defense solution with Intune.
 
 > [!NOTE]
+>
 > This Mobile Threat Defense vendor is not supported for unenrolled devices.
 
 ## Before you begin
 
 > [!NOTE]
+>
 > The following steps are to be completed in the [Pradeo Security console](https://pradeo-security.com/).
 
 The process of integrating Pradeo with Intune requires the following subscriptions and account permissions:
@@ -39,29 +41,19 @@ The Pradeo app authorization process follows:
 ## To set up Pradeo integration
 
 1. Go to [Pradeo Security console](https://pradeo-security.com/) and sign in with your credentials.
-
 2. Choose **Administration - Enterprise Mobility Management** from the menu.
-
 3. Choose the **Intune logo**.
-
 4. In the **EMM (Enterprise mobility management) - Intune** window, under **Step 1**, choose the **Pradeo Connector** button.
 
-   ![Screenshot of the Pradeo EMM Intune window](./media/setup-pradeo/pradeo_setup.png)
-
+   ![Screenshot of the Pradeo EMM Intune window](media/setup-pradeo/pradeo_setup.png)
 5. In the Microsoft Intune connection window, enter your Intune credentials.
-
 6. The Pradeo web page reopens. Under **Step 2**, choose the **Pradeo Device Health** button.
-
 7. In the Pradeo-Intune Connector window, select **Accept**.
-
 8. In the Pradeo device API connector window, select **Accept**.
-
 9. The Pradeo web page reopens. Under **Step 3**, choose the **Connect to Microsoft** button.
-
 10. In the Microsoft Intune authentication window, enter your Intune credentials.
-
 11. When the message **Successful Integration** appears, integration is complete.
 
 ## Next steps
 
-- [Set up Pradeo apps for enrolled devices](./assign-apps.md)
+- [Set up Pradeo apps for enrolled devices](assign-apps.md)

@@ -1,16 +1,18 @@
 ---
-title: SMS_CertificateInfo Class
+title: "SMS_CertificateInfo Server WMI Class"
 description: The SMS_CertificateInfo WMI class is an SMS Provider server class, in Configuration Manager, that defines a media certificate registered by Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_CertificateInfo Server WMI Class
+
 The `SMS_CertificateInfo` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that defines a media certificate registered by Configuration Manager and used by client computers to communicate with a management point.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -32,138 +34,132 @@ Class SMS_CertificateInfo : SMS_BaseClass
 ```
 
 ## Methods
- The following table shows the methods in `SMS_CertificateInfo`.
 
-|Name|Description|
-|----------|-----------------|
-|[BlockCertificate Method in Class SMS_CertificateInfo](../../../develop/reference/osd/blockcertificate-method-in-class-sms_certificateinfo.md)|Blocks or unblocks the specified certificate.|
+The following table shows the methods in `SMS_CertificateInfo`.
+
+| Name | Description |
+| --- | --- |
+| [BlockCertificate Method in Class SMS_CertificateInfo](blockcertificate-method-in-class-sms_certificateinfo.md) | Blocks or unblocks the specified certificate. |
 
 ## Properties
- `Certificate`
- Data type: `String`
 
- Access type: Read/Write
+`Certificate` Data type: `String`
 
- Qualifiers: [large, lazy]
+Access type: Read/Write
 
- The certification content.
+Qualifiers: [large, lazy]
 
- `IsApproved`
- Data type: `Boolean`
+The certification content.
 
- Access type: Read/Write
+`IsApproved` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the certificate is approved.
+Qualifiers: None
 
- `IsBlocked`
- Data type: `Boolean`
+`true` if the certificate is approved.
 
- Access type: Read/Write
+`IsBlocked` Data type: `Boolean`
 
- Qualifiers: None
+Access type: Read/Write
 
- `true` if the certificate is blocked. A blocked certificate is rejected by the site database. See the [BlockCertificate Method in Class SMS_CertificateInfo](../../../develop/reference/osd/blockcertificate-method-in-class-sms_certificateinfo.md).
+Qualifiers: None
 
- `IssuedTo`
- Data type: `String`
+`true` if the certificate is blocked. A blocked certificate is rejected by the site database. See the [BlockCertificate Method in Class SMS_CertificateInfo](blockcertificate-method-in-class-sms_certificateinfo.md).
 
- Access type: Read/Write
+`IssuedTo` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- The identity of the client.
+Qualifiers: None
 
- `KeyType`
- Data type: `SInt32`
+The identity of the client.
 
- Access type: Read/Write
+`KeyType` Data type: `SInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- The public key type for the certificate. Possible values are:
+Qualifiers: None
+
+The public key type for the certificate. Possible values are:
 
 | Value | Key type |
-| ----- | -------- |
-|1|self-sign|
-|2|issued|
+| --- | --- |
+| 1 | self-sign |
+| 2 | issued |
 
- `PublicKey`
- Data type: `String`
+`PublicKey` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [lazy]
+Qualifiers: [lazy]
 
- Public key of the certificate, which reflects the globally unique SHA-1 hash thumbprint indicated by the `Thumbprint` property.
+Public key of the certificate, which reflects the globally unique SHA-1 hash thumbprint indicated by the `Thumbprint` property.
 
- `SMSID`
- Data type: `String`
+`SMSID` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [key]
+Qualifiers: [key]
 
- The GUID used to identify the certificate.
+The GUID used to identify the certificate.
 
- `Thumbprint`
- Data type: `String`
+`Thumbprint` Data type: `String`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: [Lazy]
+Qualifiers: [Lazy]
 
- Hash value of the certificate.
+Hash value of the certificate.
 
- `Type`
- Data type: `UInt32`
+`Type` Data type: `UInt32`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- The type of certificate. Possible values are:
+The type of certificate. Possible values are:
 
 | Value | Certificate type |
-| ----- | ---------------- |
-|1|Boot Media|
-|2|PXE|
-|3|ISVProxy|
+| --- | --- |
+| 1 | Boot Media |
+| 2 | PXE |
+| 3 | ISVProxy |
 
- `ValidFrom`
- Data type: `DateTime`
+`ValidFrom` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Date and time when the certificate becomes effective.
+Date and time when the certificate becomes effective.
 
- `ValidUntil`
- Data type: `DateTime`
+`ValidUntil` Data type: `DateTime`
 
- Access type: Read/Write
+Access type: Read/Write
 
- Qualifiers: None
+Qualifiers: None
 
- Date and time when the certificate expires.
+Date and time when the certificate expires.
 
 ## Remarks
- Class qualifiers for this class include:
+
+Class qualifiers for this class include:
 
 - Read (read-only)
 
-  For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../../../develop/reference/misc/class-and-property-qualifiers.md).
+  For more information about both the class qualifiers and the property qualifiers that are included in the Properties section, see [Configuration Manager Class and Property Qualifiers](../misc/class-and-property-qualifiers.md).
 
 ## Requirements
 
 ### Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ### Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [BlockCertificate Method in Class SMS_CertificateInfo](../../../develop/reference/osd/blockcertificate-method-in-class-sms_certificateinfo.md)
- [SMS_PXECertificateInfo Server WMI Class](../../../develop/reference/osd/sms_pxecertificateinfo-server-wmi-class.md)
+
+[BlockCertificate Method in Class SMS_CertificateInfo](blockcertificate-method-in-class-sms_certificateinfo.md) [SMS_PXECertificateInfo Server WMI Class](sms_pxecertificateinfo-server-wmi-class.md)

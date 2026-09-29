@@ -1,7 +1,7 @@
 ---
-title: Optional diagnostic data that is collected by Intune client apps
+title: "Optional diagnostic data from Intune Client apps"
 description: Learn about the optional diagnostic data that Intune Client apps collect.
-ms.date: 04/08/2022
+ms.date: "2022-04-08T00:00:00Z"
 ms.topic: reference
 ms.reviewer: angerobe
 ms.collection:
@@ -10,10 +10,9 @@ ms.collection:
 - sub-data-privacy
 ---
 
-
 # Optional diagnostic data from Intune Client apps
 
-Intune collects various optional data to detect, diagnose, and fix problems from users through various Intune client apps.  These optional diagnostic data we collect help to proactively detect problems in your organization so they can be addressed before they become an issue. Intune client apps include:
+Intune collects various optional data to detect, diagnose, and fix problems from users through various Intune client apps. These optional diagnostic data we collect help to proactively detect problems in your organization so they can be addressed before they become an issue. Intune client apps include:
 
 - iOS/iPadOS Company Portal
 - macOS Company Portal
@@ -86,4 +85,4 @@ Users can [turn off usage data collection](../../user-help/privacy/disable-usage
 
 ## Next steps
 
-[Find out more about data collection in Intune.](../data-handling/data-collection.md)
+[Find out more about data collection in Intune.](data-collection.md)

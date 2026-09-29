@@ -1,7 +1,7 @@
 ---
-title: SMS_TaskSequence_UpgradeOperatingSystemAction class
+title: "SMS_TaskSequence_UpgradeOperatingSystemAction server WMI class"
 description: Details of the SMS_TaskSequence_UpgradeOperatingSystemAction server WMI class.
-ms.date: 10/01/2021
+ms.date: "2021-10-01T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3

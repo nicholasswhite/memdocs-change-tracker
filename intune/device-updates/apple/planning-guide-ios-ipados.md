@@ -1,7 +1,7 @@
 ---
-title: Admin checklist for iOS/iPadOS software updates in Microsoft Intune
+title: "Software updates planning guide and scenarios for supervised iOS/iPadOS devices in Microsoft Intune"
 description: Guidance and advice for administrators that create and manage software updated for iOS/iPadOS devices using Microsoft Intune. See sample policy for different industry scenarios, including shared devices, kiosk, manufacturing, and information worker.
-ms.date: 07/24/2025
+ms.date: "2025-07-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: beflamm, ahamil, rogerso
 ---
@@ -21,7 +21,7 @@ This article applies to:
 > [!TIP]
 >
 > - If your devices are personally owned, then go to the [software updates planning guide for personal devices](../byod-planning-guide.md).
-> - [!INCLUDE [Apple MDM software updates deprecation](includes/apple-mdm-updates-deprecation.md)]
+> - Apple has deprecated MDM‑based software update workloads. To align with this change, Microsoft Intune will soon end support for MDM‑based Apple software update policies. Microsoft recommends using declarative device management (DDM) to manage and install Apple software updates. For more information about this transition, see the [Intune Customer Success blog: Move to declarative device management for Apple software updates](https://techcommunity.microsoft.com/blog/intunecustomersuccess/support-tip-move-to-declarative-device-management-for-apple-software-updates/4432177).
 
 ## Admin checklist for organization owned devices
 
@@ -31,14 +31,12 @@ This section lists the Microsoft-recommended guidance and strategies to install 
 
 Microsoft recommends you create policies that update your devices.
 
-By default, users receive notifications and/or see the latest updates available on their devices (Settings > General > Software Updates). Users can choose to download and install updates whenever they want.
+By default, users receive notifications and/or see the latest updates available on their devices (Settings &gt; General &gt; Software Updates). Users can choose to download and install updates whenever they want.
 
 When users install their own updates (instead of admins managing the updates), it can disrupt user productivity and business tasks. For example:
 
 - Users can start an update when they want, and might not be able to work while an update is installing.
-
 - Users can apply updates that your organization hasn't approved. This decision can cause issues with application compatibility, changes to the operating system, or changes to the user experience that disrupt device use.
-
 - Users can avoid applying required updates that affect security or app compatibility. This situation can leave the devices at risk and/or prevent the devices from functioning.
 
 ### ✅ Keep automatic updates enabled
@@ -51,11 +49,11 @@ To use this automatic patching and install updates faster, make sure the devices
 - Plugged in
 - Connected to the Internet
 
-When the devices are powered on, plugged in, and connected to the Internet, then the updates automatically download & install, and the device reboots. If the device doesn't meet these conditions, then the updates won't automatically download and install.
+When the devices are powered on, plugged in, and connected to the Internet, then the updates automatically download &amp; install, and the device reboots. If the device doesn't meet these conditions, then the updates won't automatically download and install.
 
 To keep your devices on the most current version and with minimal effort from you, keep the automatic updates feature enabled:
 
-:::image type="content" source="media/planning-guide-ios-ipados/automatic-update-settings.png" alt-text="Screenshot that shows automatic update settings on iOS/iPadOS Apple devices." lightbox="media/planning-guide-ios-ipados/automatic-update-settings.png":::
+[![Screenshot that shows automatic update settings on iOS/iPadOS Apple devices.](media/planning-guide-ios-ipados/automatic-update-settings.png)](media/planning-guide-ios-ipados/automatic-update-settings.png#lightbox)
 
 Automatic updates work together with other update policies, which can provide a positive experience for admins and end users.
 
@@ -67,8 +65,7 @@ Using Intune policies, you can also force users to update their devices:
 
 #### What you need to know
 
-- If the automatic updates feature is disabled, then due to an OS limitation, it can't be changed using policies. The setting must be manually changed on the device or the device must be reset & reprovisioned.
-
+- If the automatic updates feature is disabled, then due to an OS limitation, it can't be changed using policies. The setting must be manually changed on the device or the device must be reset &amp; reprovisioned.
 - If devices are configured with a PIN, then to start the software update, you must enter the PIN. Entering the PIN typically isn't an issue for information worker 1:1 devices.
 
   When planning for updates on kiosks, factory floor, or userless scenarios, you might need to adjust your processes to accommodate for the PIN behavior.
@@ -76,27 +73,26 @@ Using Intune policies, you can also force users to update their devices:
 ### ✅ Use the built-in settings
 
 > [!NOTE]
-> [!INCLUDE [Apple MDM software updates deprecation](includes/apple-mdm-updates-deprecation.md)]
+>
+> Apple has deprecated MDM‑based software update workloads. To align with this change, Microsoft Intune will soon end support for MDM‑based Apple software update policies. Microsoft recommends using declarative device management (DDM) to manage and install Apple software updates. For more information about this transition, see the [Intune Customer Success blog: Move to declarative device management for Apple software updates](https://techcommunity.microsoft.com/blog/intunecustomersuccess/support-tip-move-to-declarative-device-management-for-apple-software-updates/4432177).
 
 To manage updates, Apple has the following options:
 
 - **Declarative device management (DDM)**
 
-  On iOS/iPadOS 17.0 and later, use Apple's declarative device management (DDM) to manage software updates. DDM is the modern way to manage devices with an improved user experience, as the device handles the entire software update lifecycle. It prompts users that an update is available and also downloads the update, prepares the device for the installation, & installs the update.
+  On iOS/iPadOS 17.0 and later, use Apple's declarative device management (DDM) to manage software updates. DDM is the modern way to manage devices with an improved user experience, as the device handles the entire software update lifecycle. It prompts users that an update is available and also downloads the update, prepares the device for the installation, &amp; installs the update.
 
-  The DDM settings are configurable in the [Microsoft Intune admin center]. For more information, go to [Managed software updates with the settings catalog](index.md).
-
+  The DDM settings are configurable in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431). For more information, go to [Managed software updates with the settings catalog](index.md).
 - **Software update policies**
 
   These MDM policies offer a controlled roll-out of a specific version. You can also force devices on older versions to upgrade. Admins can enter the iOS/iPadOS version to install and schedule the installation.
 
-  These settings are configurable in the [Microsoft Intune admin center]. For more information, go to [Manage iOS/iPadOS software update policies in Intune](deprecated-mdm-policies-ios.md).
-
+  These settings are configurable in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431). For more information, go to [Manage iOS/iPadOS software update policies in Intune](deprecated-mdm-policies-ios.md).
 - **Software update deferral policies**
 
   These MDM policies hide updates for up to 90 days. They prevent users from manually updating their device to a version that isn't approved. This feature doesn't control when the updates are applied.
 
-  These settings are configurable in the [Microsoft Intune admin center]. For more information, go to [Manage iOS/iPadOS software update policies in Intune](deprecated-mdm-policies-ios.md).
+  These settings are configurable in the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431). For more information, go to [Manage iOS/iPadOS software update policies in Intune](deprecated-mdm-policies-ios.md).
 
 With these features, admins can make sure their Apple devices are running a specific software version and can control the release of updates across their devices.
 
@@ -115,7 +111,6 @@ When you create software update policies, be aware of the broader effect of the 
 For example:
 
 - You configure a policy that delays updates for 90 days. If an enrollment restriction policy requires devices have a recent iOS/iPadOS version, then after a device reset, devices could be blocked from enrolling.
-
 - You create a compliance policy that requires a minimum iOS/iPadOS version that's recent. With this policy, devices on older releases become noncompliant. If you use Conditional Access to enforce compliance, then users are blocked and can't work.
 
 ## Common industry scenarios
@@ -131,7 +126,7 @@ The following table includes common industry terminology that this article uses:
 | Industry | Terminology | Use case |
 | --- | --- | --- |
 | Enterprise | Knowledge worker | 1:1 |
-| Retail | Kiosk  | Dedicated |
+| Retail | Kiosk | Dedicated |
 | Manufacturing | Factory machine | Mission critical |
 | Education | Assigned device | Shared |
 
@@ -147,11 +142,9 @@ In scenarios like knowledge worker devices, the primary goal is for the update p
 
 An update strategy and priorities for these devices typically include:
 
-> [!div class="checklist"]
->
-> * Basic update configuration
-> * The latest most up-to-date version
-> * Automatic updates
+- Basic update configuration
+- The latest most up-to-date version
+- Automatic updates
 
 **Scenario example**:
 
@@ -165,7 +158,7 @@ As an admin, you're comfortable with:
 
 To accomplish these goals, you can use a policy with the following default settings:
 
-:::image type="content" source="media/planning-guide-ios-ipados/knowledge-worker-policy-settings.png" alt-text="Screenshot that shows the select version to install and schedule type software update settings for iOS/iPadOS devices in the Microsoft Intune admin center." lightbox="media/planning-guide-ios-ipados/knowledge-worker-policy-settings.png":::
+[![Screenshot that shows the select version to install and schedule type software update settings for iOS/iPadOS devices in the Microsoft Intune admin center.](media/planning-guide-ios-ipados/knowledge-worker-policy-settings.png)](media/planning-guide-ios-ipados/knowledge-worker-policy-settings.png#lightbox)
 
 ### Kiosks
 
@@ -179,11 +172,9 @@ In kiosk-like scenarios, the primary goals for updating the devices are:
 
 An update strategy and priorities for these devices typically include:
 
-> [!div class="checklist"]
->
-> * Basic update configuration
-> * Predictable version control
-> * Predictable release cycles
+- Basic update configuration
+- Predictable version control
+- Predictable release cycles
 
 **Scenario example**:
 
@@ -195,21 +186,19 @@ You chose an overnight servicing window of 10 hours where updates can be downloa
 
 To accomplish this task, create a policy with the following settings:
 
-:::image type="content" source="media/planning-guide-ios-ipados/kiosks-policy-settings.png" alt-text="Screenshot that shows the specific version to install and installing the updates on Monday nights for iOS/iPadOS devices in the Microsoft Intune admin center." lightbox="media/planning-guide-ios-ipados/kiosks-policy-settings.png":::
+[![Screenshot that shows the specific version to install and installing the updates on Monday nights for iOS/iPadOS devices in the Microsoft Intune admin center.](media/planning-guide-ios-ipados/kiosks-policy-settings.png)](media/planning-guide-ios-ipados/kiosks-policy-settings.png#lightbox)
 
 ### Factory machines
 
-These devices are often single purpose devices. They're used in mission critical areas, like manufacturing lines or specialized equipment control & monitoring. For example, it could be an Android tablet running control or monitoring software for a device that welds components.
+These devices are often single purpose devices. They're used in mission critical areas, like manufacturing lines or specialized equipment control &amp; monitoring. For example, it could be an Android tablet running control or monitoring software for a device that welds components.
 
 In factory machine scenarios, the primary goal is to make sure devices behave in a consistent manner. Updates might need to be delayed so all application compatibility testing can complete. Installation and reboots occur at specific times and are typically deployed in a phased approach.
 
 An update strategy and priorities for these devices typically include:
 
-> [!div class="checklist"]
->
-> * Advanced policy configuration
-> * Strict version control
-> * Slow release cycles
+- Advanced policy configuration
+- Strict version control
+- Slow release cycles
 
 **Scenario example**:
 
@@ -223,7 +212,7 @@ You want to schedule updates during a two hour downtime window overnight on a Su
 
 To accomplish this task, create a policy with the following settings:
 
-:::image type="content" source="media/planning-guide-ios-ipados/factory-machines-policy-settings.png" alt-text="Screenshot that shows the specific version to install and installing the updates on Sundays for iOS/iPadOS devices in the Microsoft Intune admin center." lightbox="media/planning-guide-ios-ipados/factory-machines-policy-settings.png":::
+[![Screenshot that shows the specific version to install and installing the updates on Sundays for iOS/iPadOS devices in the Microsoft Intune admin center.](media/planning-guide-ios-ipados/factory-machines-policy-settings.png)](media/planning-guide-ios-ipados/factory-machines-policy-settings.png#lightbox)
 
 ### Shared devices
 
@@ -235,11 +224,9 @@ For iOS/iPadOS shared devices, to apply updates, all users must be signed out. T
 
 An update strategy and priorities for these devices typically include:
 
-> [!div class="checklist"]
->
-> * Advanced policy configuration
-> * Predictable version control
-> * Controlled update behavior
+- Advanced policy configuration
+- Predictable version control
+- Controlled update behavior
 
 **Scenario example**:
 
@@ -253,11 +240,10 @@ To accomplish this task, this scenario involves two policies:
 
 - In the first policy, you want all users signed out or want to reboot the device after a set amount of time. You can create an Apple Business enrollment profile to sign out any users who are idle for more than 15 minutes (900 seconds):
 
-  :::image type="content" source="media/planning-guide-ios-ipados/shared-devices-maximum-seconds-policy-settings.png" alt-text="Screenshot that shows how to enroll iOS/iPadOS devices without user affinity and setting the inactivity value in the Microsoft Intune admin center." lightbox="media/planning-guide-ios-ipados/shared-devices-maximum-seconds-policy-settings.png":::
-
+  [![Screenshot that shows how to enroll iOS/iPadOS devices without user affinity and setting the inactivity value in the Microsoft Intune admin center.](media/planning-guide-ios-ipados/shared-devices-maximum-seconds-policy-settings.png)](media/planning-guide-ios-ipados/shared-devices-maximum-seconds-policy-settings.png#lightbox)
 - In the second policy, schedule the update using the following settings:
 
-  :::image type="content" source="media/planning-guide-ios-ipados/shared-devices-outside-scheduled-time-policy-settings.png" alt-text="Screenshot that shows installing the latest version and outside scheduled time software update settings for iOS/iPadOS devices in the Microsoft Intune admin center." lightbox="media/planning-guide-ios-ipados/shared-devices-outside-scheduled-time-policy-settings.png":::
+  [![Screenshot that shows installing the latest version and outside scheduled time software update settings for iOS/iPadOS devices in the Microsoft Intune admin center.](media/planning-guide-ios-ipados/shared-devices-outside-scheduled-time-policy-settings.png)](media/planning-guide-ios-ipados/shared-devices-outside-scheduled-time-policy-settings.png#lightbox)
 
 ## Related articles
 
@@ -265,7 +251,3 @@ To accomplish this task, this scenario involves two policies:
 - [Software updates planning guide and scenarios for BYOD and personal devices](../byod-planning-guide.md)
 - [Software updates planning guide for managed Android devices](../android/planning-guide.md)
 - [Software updates planning guide for managed macOS devices](planning-guide-macos.md)
-
-<!--links-->
-
-[Microsoft Intune admin center]: https://go.microsoft.com/fwlink/?linkid=2109431

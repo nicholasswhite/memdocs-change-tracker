@@ -1,13 +1,14 @@
 ---
 title: Managed work and school apps for Android
 description: Learn about managed apps and where to get Android apps for work or school.
-ms.date: 01/27/2025
+ms.date: "2025-01-27T00:00:00Z"
 ms.reviewer: esmich
 ---
 
 # Managed work and school apps for Android
 
 > [!NOTE]
+>
 > Managed apps are not currently supported on AOSP devices.
 
 Intune-managed apps (*managed* apps for short) are work-approved apps managed by your organization and configured to prevent intentional or unintentional data loss. When signed in to a managed app with your work or school account, you might encounter your organization's requirements and restrictions for access. This article provides an overview of Intune-managed apps, how to get the ones you need for work or school, and their restrictions and requirements.
@@ -22,41 +23,31 @@ On a device with a work profile, a work app is marked with a briefcase badge. Fo
 
 Managed apps enforce your organization's app and data-protection policies, which might restrict or require:
 
-* Access to specific websites
-
-* Access to internal company websites using Microsoft Edge and the Microsoft Entra ID proxy
-
-* Minimum app and OS version
-
-* Ability to share and transfer data between apps
-
-* How and where you save work files
-
-* Copy and paste functionality
-
-* PIN access
-
-* How you sign in, using workplace credentials
-
-* Ability to back up data to the cloud
-
-* Ability to take screenshots
-
-* Data encryption requirements
+- Access to specific websites
+- Access to internal company websites using Microsoft Edge and the Microsoft Entra ID proxy
+- Minimum app and OS version
+- Ability to share and transfer data between apps
+- How and where you save work files
+- Copy and paste functionality
+- PIN access
+- How you sign in, using workplace credentials
+- Ability to back up data to the cloud
+- Ability to take screenshots
+- Data encryption requirements
 
 These policies prevent sensitive work information from being shared or leaked outside of your org. Restrictions and requirements are only enforced when using an app for work or school, such as when:
 
-* You're signed in to an app with your work account.
-* You try to access work files in OneDrive, Teams, or SharePoint.
-* You're using apps in the work profile area on your device.
+- You're signed in to an app with your work account.
+- You try to access work files in OneDrive, Teams, or SharePoint.
+- You're using apps in the work profile area on your device.
 
 ## How do I install work or school apps?
 
 There are three ways to get work apps:
 
-* Install an app from the Google Play store, and then sign in to the app with your work or school account.
-* Your organization configures apps to install automatically at the time of device enrollment.
-* Your organization makes apps available to you in Company Portal.
+- Install an app from the Google Play store, and then sign in to the app with your work or school account.
+- Your organization configures apps to install automatically at the time of device enrollment.
+- Your organization makes apps available to you in Company Portal.
 
 You don't need to enroll your device in Intune to use work or school apps unless your organization requires it, but you do need to have the Intune Company Portal app installed on your device.
 
@@ -64,8 +55,8 @@ You don't need to enroll your device in Intune to use work or school apps unless
 
 You can only associate one work or school account with the managed apps on your device. This policy is enforced in the following scenarios:
 
-* If you try to add a second work or school account, Company Portal prompts you to remove the work account you're not using.
-* If your IT admin assigns a policy to your second account, Company Portal prompts you to remove the work account you're not using.
+- If you try to add a second work or school account, Company Portal prompts you to remove the work account you're not using.
+- If your IT admin assigns a policy to your second account, Company Portal prompts you to remove the work account you're not using.
 
 ### Available apps
 
@@ -86,5 +77,5 @@ For more information about AIP, see [View protected files with Microsoft Purview
 Company Portal securely saves and stores your default app selections for managed apps. To view and remove your default selections:
 
 1. Open Company Portal.
-2. Tap the main menu > **Settings**.
+2. Tap the main menu &gt; **Settings**.
 3. Scroll down to **Default Apps** and tap **See Defaults** to view and remove your current defaults.

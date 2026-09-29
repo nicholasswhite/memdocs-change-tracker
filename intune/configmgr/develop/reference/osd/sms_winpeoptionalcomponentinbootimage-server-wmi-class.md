@@ -1,16 +1,18 @@
 ---
-title: SMS_WinPEOptionalComponentInBootImage Class
+title: "SMS_WinPEOptionalComponentInBootImage Server WMI Class"
 description: This is an SMS Provider server class in Configuration Manager. It represents the association between a boot image package and a WinPE optional component.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # SMS_WinPEOptionalComponentInBootImage Server WMI Class
+
 The `SMS_WinPEOptionalComponentInBootImage` Windows Management Instrumentation (WMI) class is an SMS Provider server class, in Configuration Manager, that represents the association between a boot image package and a WinPE optional component.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -29,87 +31,83 @@ Class SMS_WinPEOptionalComponentInBootImage : SMS_BaseClass
 ```
 
 ## Methods
- The `SMS_WinPEOptionalComponentInBootImage` class does not define any methods.
+
+The `SMS_WinPEOptionalComponentInBootImage` class does not define any methods.
 
 ## Properties
- `Architecture`
- Data type: `String`
 
- Access type: Read
+`Architecture` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The architecture of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
+Qualifiers: [key]
 
- `ComponentID`
- Data type: `UInt32`
+The architecture of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
 
- Access type: Read
+`ComponentID` Data type: `UInt32`
 
- Qualifiers: [key]
+Access type: Read
 
- The unique identifier of the WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
+Qualifiers: [key]
 
- `DependentComponentNames`
- Data type: `String` Array
+The unique identifier of the WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
 
- Access type: Read
+`DependentComponentNames` Data type: `String` Array
 
- Qualifiers: none
+Access type: Read
 
- The name of dependent WinPE optional components associated with the SMS_WinPEOptionalComponentInfo object.
+Qualifiers: none
 
- `DependentIds`
- Data type: `UInt32` Array
+The name of dependent WinPE optional components associated with the SMS_WinPEOptionalComponentInfo object.
 
- Access type: Read
+`DependentIds` Data type: `UInt32` Array
 
- Qualifiers: none
+Access type: Read
 
- The unique identifier of dependent WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
+Qualifiers: none
 
- `IsRequired`
- Data type: `Boolean`
+The unique identifier of dependent WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
 
- Access type: Read
+`IsRequired` Data type: `Boolean`
 
- Qualifiers: none
+Access type: Read
 
- The required flag of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
+Qualifiers: none
 
- `Name`
- Data type: `String`
+The required flag of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
 
- Access type: Read
+`Name` Data type: `String`
 
- Qualifiers: none
+Access type: Read
 
- The name of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
+Qualifiers: none
 
- `PackageID`
- Data type: `String`
+The name of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
 
- Access type: Read
+`PackageID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read
 
- The unique identifier of the boot image associated with the SMS_BootImagePackage object.
+Qualifiers: [key]
 
- `Size`
- Data type: `UInt64`
+The unique identifier of the boot image associated with the SMS_BootImagePackage object.
 
- Access type: Read
+`Size` Data type: `UInt64`
 
- Qualifiers: none
+Access type: Read
 
- The size of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
+Qualifiers: none
+
+The size of WinPE optional component associated with the SMS_WinPEOptionalComponentInfo object.
 
 ## Remarks
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).

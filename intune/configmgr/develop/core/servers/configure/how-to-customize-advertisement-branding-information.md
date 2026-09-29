@@ -1,29 +1,29 @@
 ---
-title: Customize Advertisement Branding Information
+title: "How to Customize Advertisement Branding Information in Configuration Manager"
 description: You set the software distribution branding information for the Configuration Manager client by changing the SWDBrandingSubTitle property of the client agent component section in the site control file.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Customize Advertisement Branding Information in Configuration Manager
+
 You set the software distribution branding information for the Configuration Manager client by changing the `SWDBrandingSubTitle` property of the client agent component section in the site control file.
 
 ### To customize advertisement branding information
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
-
-2.  Get the Client Agent site control file `Client Component` object from [SMS_SCI_ClientComp Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md).
-
-3.  Set the `SWDBrandingSubtitle` property to the value you want.
-
-4.  Commit the changes back to the site control file.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../../understand/sms-provider-fundamentals.md).
+2. Get the Client Agent site control file `Client Component` object from [SMS_SCI_ClientComp Server WMI Class](../../../reference/core/servers/configure/sms_sci_clientcomp-server-wmi-class.md).
+3. Set the `SWDBrandingSubtitle` property to the value you want.
+4. Commit the changes back to the site control file.
 
 ## Example
- The following example method changes the software distribution branding text to the supplied value.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../../../develop/core/understand/calling-code-snippets.md).
+The following example method changes the software distribution branding text to the supplied value.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../understand/calling-code-snippets.md).
 
 ```vbs
 
@@ -99,44 +99,45 @@ public void SetAdvertBranding(WqlConnectionManager connection, string siteCode, 
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|---------------|----------|-----------------|
-|`connection`<br /><br /> `swbemServices`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`swbemContext`|-   VBScript: `SWbemContext`|A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../../../develop/core/understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md).|
-|`siteCode`|-   Managed: `String`<br />-   VBScript: `String`|The site code for the Configuration Manager site.|
-|`brandingText`|-   Managed: `String`<br />-   VBScript: `String`|The text used to update the branding text.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection`   `swbemServices` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `swbemContext` | - VBScript: `SWbemContext` | A valid context object. For more information, see [How to Add a Configuration Manager Context Qualifier by Using WMI](../../understand/how-to-add-a-configuration-manager-context-qualifier-by-using-wmi.md). |
+| `siteCode` | - Managed: `String` - VBScript: `String` | The site code for the Configuration Manager site. |
+| `brandingText` | - Managed: `String` - VBScript: `String` | The text used to update the branding text. |
 
 ## Compiling the Code
- This C# example requires:
+
+This C# example requires:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- adminui.wqlqueryengine
 
- microsoft.configurationmanagement.managementprovider
+adminui.wqlqueryengine
+
+microsoft.configurationmanagement.managementprovider
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../../understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](role-based-administration.md).
 
 ## See Also
- [Software distribution overview](software-distribution-overview.md)
- [About software distribution setup and configuration](about-software-distribution-setup-and-configuration.md)
- [About the Configuration Manager Site Control File](../../../../develop/core/understand/about-the-configuration-manager-site-control-file.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md)
- [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../../../develop/core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md)
- [SMS_SCI_Component Server WMI Class](../../../../develop/reference/core/servers/configure/sms_sci_component-server-wmi-class.md)
+
+[Software distribution overview](software-distribution-overview.md) [About software distribution setup and configuration](about-software-distribution-setup-and-configuration.md) [About the Configuration Manager Site Control File](../../understand/about-the-configuration-manager-site-control-file.md) [How to Read and Write to the Configuration Manager Site Control File by Using Managed Code](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) [How to Read and Write to the Configuration Manager Site Control File by Using WMI](../../understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md) [SMS_SCI_Component Server WMI Class](../../../reference/core/servers/configure/sms_sci_component-server-wmi-class.md)

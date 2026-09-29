@@ -1,7 +1,7 @@
 ---
-title: Extend hardware inventory
+title: "How to extend hardware inventory in Configuration Manager"
 description: Learn ways to extend hardware inventory in Configuration Manager.
-ms.date: 12/01/2021
+ms.date: "2021-12-01T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
@@ -23,11 +23,12 @@ When Configuration Manager clients request policy, the Configuration.mof is atta
 In Configuration Manager current branch, you don't edit the sms_def.mof file as with earlier versions. Instead, make these changes with client settings. Configuration Manager provides the following methods to extend hardware inventory.
 
 > [!NOTE]
-> If you changed the state of classes in client settings, when you update the site, some classes may revert to a default state. For example, if you disable the `SMS_Windows8Application` or `SMS_Windows8ApplicationUserInfo` classes, they're enabled after installing a Configuration Manager update. When you customize hardware inventory classes, make sure to review their configuration before and after a site update.<!-- 12613335 -->
+>
+> If you changed the state of classes in client settings, when you update the site, some classes may revert to a default state. For example, if you disable the `SMS_Windows8Application` or `SMS_Windows8ApplicationUserInfo` classes, they're enabled after installing a Configuration Manager update. When you customize hardware inventory classes, make sure to review their configuration before and after a site update.
 >
 > If you've manually changed the Configuration.mof file to add custom inventory classes, these changes will be overwritten when you update the site. To keep using custom classes after you update, add them to the **Added extensions** section of the Configuration.mof file. Don't modify anything above this section. The other sections are reserved for modification by Configuration Manager. The site backs up your custom Configuration.mof in the `data\hinvarchive\` folder of the Configuration Manager installation directory on the site server.
 
-Starting in version 2107, you can use the administration service to set custom properties on devices.<!--8939867--> You can then use the custom properties in Configuration Manager for reporting or to create collections. For more information, see [Custom properties for devices](../../../../develop/adminservice/custom-properties.md).
+Starting in version 2107, you can use the administration service to set custom properties on devices. You can then use the custom properties in Configuration Manager for reporting or to create collections. For more information, see [Custom properties for devices](../../../../develop/adminservice/custom-properties.md).
 
 ## Methods
 
@@ -41,15 +42,13 @@ If a WMI class exists on the client and is known to the site, this action includ
 
 ### Extend
 
-Add a new WMI class to the client. To manually extend hardware inventory, edit the configuration.mof on the top-level site.<!-- SCCMDocs#1073 -->
+Add a new WMI class to the client. To manually extend hardware inventory, edit the configuration.mof on the top-level site.
 
 If the WMI class doesn't already exist on the client, you need to extend the WMI schema:
 
 1. Edit the configuration.mof on the top-level site. Review **dataldr.log** to see the site add it.
-
-1. Refresh policy on a client, and wait for the new class to compile.
-
-1. Use default client settings to [Add](#add) the new class to hardware inventory. You don't have to enable this class in default client settings. You can then enable it in a custom device client setting.
+2. Refresh policy on a client, and wait for the new class to compile.
+3. Use default client settings to [Add](#add) the new class to hardware inventory. You don't have to enable this class in default client settings. You can then enable it in a custom device client setting.
 
 ### Import and export
 
@@ -70,16 +69,13 @@ These procedures help you to configure the default client settings for hardware 
 ### Enable or disable existing classes
 
 1. In the Configuration Manager console, go to the **Administration** workspace, and select the **Client Settings** node.
-
-1. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
-
-1. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
-
-1. In the **Device Settings** list, select **Set Classes**.
-
-1. In the **Hardware Inventory Classes** dialog box, select or clear the classes and class properties to be collected by hardware inventory. You can expand classes to select or clear individual properties within that class. Use the **Search for inventory classes** field to search for individual classes.
+2. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
+3. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
+4. In the **Device Settings** list, select **Set Classes**.
+5. In the **Hardware Inventory Classes** dialog box, select or clear the classes and class properties to be collected by hardware inventory. You can expand classes to select or clear individual properties within that class. Use the **Search for inventory classes** field to search for individual classes.
 
 > [!IMPORTANT]
+>
 > When you add new classes to Configuration Manager hardware inventory, the size of the inventory file that is collected and sent to the site server will increase. This might negatively affect the performance of your network and Configuration Manager site. Enable only the inventory classes that you want to collect.
 
 ### Add a new class
@@ -87,27 +83,17 @@ These procedures help you to configure the default client settings for hardware 
 You can only add inventory classes from the hierarchy's top-level server by modifying the default client settings. This option isn't available when you create custom device settings.
 
 1. In the Configuration Manager console, go to the **Administration** workspace, and select the **Client Settings** node.
-
-1. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
-
-1. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
-
-1. In the **Device Settings** list, choose **Set Classes**.
-
-1. In the **Hardware Inventory Classes** dialog box, choose **Add**.
-
-1. In the **Add Hardware Inventory Class** dialog box, select **Connect**.
-
-1. In the **Connect to Windows Management Instrumentation (WMI)** dialog box, specify the name of the computer from which you'll get the WMI classes and the WMI namespace to use to get the classes. If you want to get all classes below the specified WMI namespace, select **Recursive**. If the computer you're connecting to isn't the local computer, supply credentials for an account that has permission to access WMI on the remote computer.
-
-1. Choose **Connect**.
-
-1. In the **Add Hardware Inventory Class** dialog box, in the **Inventory classes** list, select the WMI classes that you want to add to Configuration Manager hardware inventory.
-
-1. If you want to edit information about the selected WMI class, choose **Edit**, and in the **Class qualifiers** dialog box, provide the following information:
+2. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
+3. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
+4. In the **Device Settings** list, choose **Set Classes**.
+5. In the **Hardware Inventory Classes** dialog box, choose **Add**.
+6. In the **Add Hardware Inventory Class** dialog box, select **Connect**.
+7. In the **Connect to Windows Management Instrumentation (WMI)** dialog box, specify the name of the computer from which you'll get the WMI classes and the WMI namespace to use to get the classes. If you want to get all classes below the specified WMI namespace, select **Recursive**. If the computer you're connecting to isn't the local computer, supply credentials for an account that has permission to access WMI on the remote computer.
+8. Choose **Connect**.
+9. In the **Add Hardware Inventory Class** dialog box, in the **Inventory classes** list, select the WMI classes that you want to add to Configuration Manager hardware inventory.
+10. If you want to edit information about the selected WMI class, choose **Edit**, and in the **Class qualifiers** dialog box, provide the following information:
 
     - **Display name**: This name will be displayed in Resource Explorer.
-
     - **Properties**: Specify the units in which each property of the WMI class will be displayed.
 
       You can also set properties as a key property to help uniquely identify each instance of the class. If no key is defined for the class, and multiple instances of the class are reported from the client, only the latest instance that's found is stored in the database.
@@ -119,57 +105,43 @@ You can only add inventory classes from the hierarchy's top-level server by modi
 You can only import inventory classes when you modify the default client settings. However, you can use custom client settings to import information that doesn't include a schema change, such as changing the property of an existing class from **True** to **False**.
 
 1. In the Configuration Manager console, go to the **Administration** workspace, and select the **Client Settings** node.
-
-1. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
-
-1. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
-
-1. In the **Device Settings** list, choose **Set Classes**.
-
-1. In the **Hardware Inventory Classes** dialog box, choose **Import**.
-
-1. In the **Import** dialog box, select the Managed Object Format (MOF) file that you want to import, and then choose **OK**. Review the items that will be imported, and then select **Import**.
+2. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
+3. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
+4. In the **Device Settings** list, choose **Set Classes**.
+5. In the **Hardware Inventory Classes** dialog box, choose **Import**.
+6. In the **Import** dialog box, select the Managed Object Format (MOF) file that you want to import, and then choose **OK**. Review the items that will be imported, and then select **Import**.
 
 ### How to export classes
 
 1. In the Configuration Manager console, go to the **Administration** workspace, and select the **Client Settings** node.
+2. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
+3. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
+4. In the **Device Settings** list, choose **Set Classes**.
+5. In the **Hardware Inventory Classes** dialog box, choose **Export**.
 
-1. Select the **Default Client Settings**. On the **Home** tab, in the **Properties** group, choose **Properties**.
-
-1. In the **Default Client Settings** dialog box, choose **Hardware Inventory**.
-
-1. In the **Device Settings** list, choose **Set Classes**.
-
-1. In the **Hardware Inventory Classes** dialog box, choose **Export**.
-
-    > [!NOTE]
-    > When you export classes, all currently selected classes will be exported.
-
-1. In the **Export** dialog box, specify the Managed Object Format (MOF) file that you want to export the classes to, and then choose **Save**.
+   > [!NOTE]
+   >
+   > When you export classes, all currently selected classes will be exported.
+6. In the **Export** dialog box, specify the Managed Object Format (MOF) file that you want to export the classes to, and then choose **Save**.
 
 ### Collect strings larger than 255 characters
 
-You can specify the length of strings to be greater than 255 characters for hardware inventory properties. This action applies only to newly added classes and for hardware inventory properties that aren't keys.<!-- 1357389 -->
+You can specify the length of strings to be greater than 255 characters for hardware inventory properties. This action applies only to newly added classes and for hardware inventory properties that aren't keys.
 
 1. In the **Administration** workspace, select **Client Settings**. Choose a client device setting to edit, then select **Properties**.
-
-1. Select **Hardware Inventory**, then **Set Classes**, and **Add**.
-
-1. Select **Connect**.
-
-1. Fill in **Computer Name**, **WMI namespace**, select **recursive** if needed. Provide credentials if necessary to connect. Select **Connect** to view the namespace classes.
-
-1. Select a new class, then select **Edit**.
-
-1. Change the **Length** of your property that's a string, other than the key, to be greater than 255. Select **OK**.
-
-1. Make sure that the edited property is selected for **Add Hardware Inventory Class**, and select **OK**.
+2. Select **Hardware Inventory**, then **Set Classes**, and **Add**.
+3. Select **Connect**.
+4. Fill in **Computer Name**, **WMI namespace**, select **recursive** if needed. Provide credentials if necessary to connect. Select **Connect** to view the namespace classes.
+5. Select a new class, then select **Edit**.
+6. Change the **Length** of your property that's a string, other than the key, to be greater than 255. Select **OK**.
+7. Make sure that the edited property is selected for **Add Hardware Inventory Class**, and select **OK**.
 
 ## Use MIF files
 
 Use Management Information Format (MIF) files to extend hardware inventory information collected from clients by Configuration Manager. During hardware inventory, the information stored in MIF files is added to the client inventory report and stored in the site database, where you can use the data in the same ways that you use default client inventory data. There are two types of MIF files: NOIDMIF and IDMIF.
 
 > [!IMPORTANT]
+>
 > Before you can add information from MIF files to the Configuration Manager database, create or import the class. For more information, see [Add a new class](#add-a-new-class) or [How to import classes](#how-to-import-classes) in this article.
 
 ### Create NOIDMIF files
@@ -179,6 +151,7 @@ NOIDMIF files can be used to add information to a client hardware inventory that
 For more information about creating NOIDMIF files, see [About inventory](../../../../develop/core/clients/inventory/about-configuration-manager-inventory.md#about-noidmif-and-idmif-files) in the Configuration Manager SDK documentation.
 
 > [!IMPORTANT]
+>
 > When you create a NOIDMIF file, save it in an ANSI-encoded format. If you save NOIDMIF files in UTF-8 encoded format, Configuration Manager can't read it.
 
 After you create a NOIDMIF file, store it in the `%Windir%\CCM\Inventory\noidmifs` folder on each client. Configuration Manager collects information from NODMIF files in this folder during the next scheduled hardware inventory cycle.
@@ -192,4 +165,5 @@ For more information about creating IDMIF files, see [About inventory](../../../
 After you create an IDMIF file, store it in the `%Windir%\CCM\Inventory\idmifs` folder on client computers. Configuration Manager collects information from this file during the next scheduled hardware inventory cycle. Declare new classes for information contained in the file by adding or importing them.
 
 > [!NOTE]
+>
 > MIF files could contain large amounts of data and collecting this data could negatively affect the performance of your site. Enable MIF collection only when required. Configure the option **Maximum custom MIF file size (KB)** in the hardware inventory settings. For more information, see [Introduction to hardware inventory](introduction-to-hardware-inventory.md).

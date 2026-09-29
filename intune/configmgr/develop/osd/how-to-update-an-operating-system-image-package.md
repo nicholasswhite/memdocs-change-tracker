@@ -1,29 +1,29 @@
 ---
-title: Update an OS Image Package
+title: "How to Update an Operating System Image Package in Configuration Manager"
 description: Update an operating system using a Windows Image file that is associated with the operating system package in Configuration Manager.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # How to Update an Operating System Image Package in Configuration Manager
-In Configuration Manager, you update the Windows Image (WIM) file that is associated with the operating system package by calling the image package's [SMS_ImagePackage](../../develop/reference/osd/sms_imagepackage-server-wmi-class.md) class instance [ReloadImageProperties](../../develop/reference/osd/reloadimageproperties-method-in-class-sms_imagepackage.md) method. The image is updated based on the location defined in the `pkgSourcePath` property.
+
+In Configuration Manager, you update the Windows Image (WIM) file that is associated with the operating system package by calling the image package's [SMS_ImagePackage](../reference/osd/sms_imagepackage-server-wmi-class.md) class instance [ReloadImageProperties](../reference/osd/reloadimageproperties-method-in-class-sms_imagepackage.md) method. The image is updated based on the location defined in the `pkgSourcePath` property.
 
 ### To update an operating system image package
 
-1.  Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
-
-2.  Get the `SMS_ImagePackage` class instance you want to update.
-
-3.  Call the `ReloadImageProperties` class instance method.
-
-4.  Commit the `SMS_ImagePackage` class instance.
+1. Set up a connection to the SMS Provider. For more information, see [SMS Provider fundamentals](../core/understand/sms-provider-fundamentals.md).
+2. Get the `SMS_ImagePackage` class instance you want to update.
+3. Call the `ReloadImageProperties` class instance method.
+4. Commit the `SMS_ImagePackage` class instance.
 
 ## Example
- The following example updates an operating system image package.
 
- For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../../develop/core/understand/calling-code-snippets.md).
+The following example updates an operating system image package.
+
+For information about calling the sample code, see [Calling Configuration Manager Code Snippets](../core/understand/calling-code-snippets.md).
 
 ```vbs
 Sub UpdateOSImage(connection,imagePackageID, sourcePath)
@@ -65,38 +65,43 @@ public void UpdateOSImage(
 }
 ```
 
- The example method has the following parameters:
+The example method has the following parameters:
 
-|Parameter|Type|Description|
-|-|-|-|
-|`connection`|-   Managed: `WqlConnectionManager`<br />-   VBScript: [SWbemServices](/windows/win32/wmisdk/swbemservices)|A valid connection to the SMS Provider.|
-|`imagePackageID`|-   Managed: `String`<br />-   VBScript: `String`|The package image identifier. It is available from `SMS_ImagePackage. PackageID`.|
-|`sourcePath`|-   Managed: `String`<br />-   VBScript: `String`|The path to the image package source in Universal Naming Convention (UNC) format.|
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `connection` | - Managed: `WqlConnectionManager` - VBScript: [SWbemServices](https://learn.microsoft.com/en-us/windows/win32/wmisdk/swbemservices) | A valid connection to the SMS Provider. |
+| `imagePackageID` | - Managed: `String` - VBScript: `String` | The package image identifier. It is available from `SMS_ImagePackage. PackageID`. |
+| `sourcePath` | - Managed: `String` - VBScript: `String` | The path to the image package source in Universal Naming Convention (UNC) format. |
 
 ## Compiling the Code
- The C# example has the following compilation requirements:
+
+The C# example has the following compilation requirements:
 
 ### Namespaces
- System
 
- System.Collections.Generic
+System
 
- System.Text
+System.Collections.Generic
 
- Microsoft.ConfigurationManagement.ManagementProvider
+System.Text
 
- Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
+Microsoft.ConfigurationManagement.ManagementProvider
+
+Microsoft.ConfigurationManagement.ManagementProvider.WqlQueryEngine
 
 ### Assembly
- microsoft.configurationmanagement.managementprovider
 
- adminui.wqlqueryengine
+microsoft.configurationmanagement.managementprovider
+
+adminui.wqlqueryengine
 
 ## Robust Programming
- For more information about error handling, see [About Configuration Manager Errors](../../develop/core/understand/about-configuration-manager-errors.md).
+
+For more information about error handling, see [About Configuration Manager Errors](../core/understand/about-configuration-manager-errors.md).
 
 ## .NET Framework Security
- For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../../develop/core/servers/configure/role-based-administration.md).
+
+For more information about securing Configuration Manager applications, see [Configuration Manager role-based administration](../core/servers/configure/role-based-administration.md).
 
 ## See also
 

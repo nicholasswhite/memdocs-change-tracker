@@ -1,7 +1,7 @@
 ---
-title: Setup wizard
+title: "Use the Setup Wizard to install Configuration Manager sites"
 description: Use the Configuration Manager setup wizard to install a new site.
-ms.date: 12/16/2024
+ms.date: "2024-12-16T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: overview
 ms.collection: tier3
@@ -26,7 +26,8 @@ Before you install a site, be familiar with the details in the following article
 - [Release notes](release-notes.md)
 
 > [!TIP]
-> If you need assistance with site installation, see the [Support options and community resources](../../../understand/find-help.md#support-options-and-community-resources). For example, the Microsoft Q&A forum for [Configuration Manager site and client deployment](/answers/topics/mem-cm-site-deployment.html).
+>
+> If you need assistance with site installation, see the [Support options and community resources](../../../understand/find-help.md#support-options-and-community-resources). For example, the Microsoft Q&amp;A forum for [Configuration Manager site and client deployment](https://learn.microsoft.com/en-us/answers/topics/mem-cm-site-deployment.html).
 
 When you're ready to get started, see the following articles for the specific processes:
 

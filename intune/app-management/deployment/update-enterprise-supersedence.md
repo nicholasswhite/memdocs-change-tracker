@@ -1,7 +1,7 @@
 ---
 title: Guided Update Supersedence for Enterprise App Management
 description: Learn how to update an Enterprise App Catalog app using supersedence with Microsoft Intune.
-ms.date: 11/06/2025
+ms.date: "2025-11-06T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: nicolezhao
 ms.custom:
@@ -19,36 +19,34 @@ Guided update supersedence for Enterprise App Management allows you to check for
 In the **Overview** pane for a selected Enterprise App Catalog app, you can view the available updates by selecting the tile **Enterprise App Catalog apps with available updates**.
 
 > [!NOTE]
-> Microsoft has established Service Level Objectives (SLOs) for app update availability. Most app updates are available within 24 hours of vendor release, while those requiring manual validation typically become available within seven days. For details, see [Enterprise App Management overview](./enterprise-app-management.md).
+>
+> Microsoft has established Service Level Objectives (SLOs) for app update availability. Most app updates are available within 24 hours of vendor release, while those requiring manual validation typically become available within seven days. For details, see [Enterprise App Management overview](enterprise-app-management.md).
 
 The **Enterprise App Catalog apps with updates** pane provides a list of Enterprise App Catalog apps that can be updated. This list provides the following app details:
+
 - **App name**: - The name of the app.
 - **Publisher**: - The publisher of the app.
 - **Provisioned version**: - The currently installed app version.
 - **Latest available version**: - The new version that is available.
 
-:::image type="content" alt-text="Screenshot the Enterprise App Catalog app list with available updates." source="./media/update-enterprise-supersedence/apps-eam-supersedence-02.png" lightbox="./media/update-enterprise-supersedence/apps-eam-supersedence-02.png" :::
+[![Screenshot the Enterprise App Catalog app list with available updates.](media/update-enterprise-supersedence/apps-eam-supersedence-02.png)](media/update-enterprise-supersedence/apps-eam-supersedence-02.png#lightbox)
 
 ## Update an Enterprise App Catalog app
 
 1. To update an Enterprise App Catalog app, select the *app name* to display additional options.
 
-    You can update a specific app. This option allows you to update the app with a newer app version. Intune uses information from the Enterprise App Catalog to define properties and settings. You can review and define custom settings as needed. You should consider downloading and exporting the properties of the app before updated.
+   You can update a specific app. This option allows you to update the app with a newer app version. Intune uses information from the Enterprise App Catalog to define properties and settings. You can review and define custom settings as needed. You should consider downloading and exporting the properties of the app before updated.
 
-    Superseding an app creates a new app with the latest app package and sets up the supersedence relationship. Some settings, such as scope tags and assignments won't be copied to the new app.
+   Superseding an app creates a new app with the latest app package and sets up the supersedence relationship. Some settings, such as scope tags and assignments won't be copied to the new app.
+2. Select the **Update** option for the specific app. The **Update application** pane is displayed.
 
-2. Select the **Update** option for the specific app.
-   The **Update application** pane is displayed.
-
-    :::image type="content" alt-text="Screenshot an Enterprise App Catalog app list the supersedence option." source="./media/update-enterprise-supersedence/apps-eam-supersedence-04.png" lightbox="./media/update-enterprise-supersedence/apps-eam-supersedence-04.png" :::
-
+   [![Screenshot an Enterprise App Catalog app list the supersedence option.](media/update-enterprise-supersedence/apps-eam-supersedence-04.png)](media/update-enterprise-supersedence/apps-eam-supersedence-04.png#lightbox)
 3. Select **Supersede app**.
-
 4. Select your app **Assignments**, then **Review + create** the superseded app.
 
 ## Next steps
 
-- [Microsoft Intune Enterprise Application Management](./enterprise-app-management.md)
-- [Add an Enterprise App Catalog app to Microsoft Intune](./add-enterprise-catalog-app.md)
-- [Troubleshoot Win32 app issues](./troubleshoot-win32.md)
+- [Microsoft Intune Enterprise Application Management](enterprise-app-management.md)
+- [Add an Enterprise App Catalog app to Microsoft Intune](add-enterprise-catalog-app.md)
+- [Troubleshoot Win32 app issues](troubleshoot-win32.md)
 - [Monitor app information and assignments with Microsoft Intune](../monitor-assignments.md)

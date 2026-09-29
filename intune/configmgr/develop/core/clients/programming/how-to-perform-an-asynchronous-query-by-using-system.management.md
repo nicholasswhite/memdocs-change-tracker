@@ -1,7 +1,7 @@
 ---
 description: To perform an asynchronous query on a Configuration Manager client Windows Instrumentation (WMI) namespace, create a ManagementObjectSearcher object that specifies a WQL query.
-title: "Perform an Asynchronous Query by Using System.Management"
-ms.date: "09/20/2016"
+title: "How to Perform an Asynchronous Query by Using System.Management"
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
@@ -9,33 +9,30 @@ ms.collection: tier3
 
 ms.service: configuration-manager
 ---
+
 # How to Perform an Asynchronous Query by Using System.Management
-To perform an asynchronous query on a Configuration Manager client Windows Instrumentation (WMI) namespace, create a `ManagementObjectSearcher` object that specifies a WQL query. You then create a `ManagementOperationObserver` that specifies an event handler for each query result and also for the end of the query.  
 
- The asynchronous query is run when the `ManagementObjectSearcher` object Get method is called with the `ManagementOperationObserver` object.  
+To perform an asynchronous query on a Configuration Manager client Windows Instrumentation (WMI) namespace, create a `ManagementObjectSearcher` object that specifies a WQL query. You then create a `ManagementOperationObserver` that specifies an event handler for each query result and also for the end of the query.
 
-### To perform an asynchronous query  
+The asynchronous query is run when the `ManagementObjectSearcher` object Get method is called with the `ManagementOperationObserver` object.
 
-1.  Set up a connection to the Configuration Manager client WMI namespace. For more information, see [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](../../../../develop/core/clients/programming/how-to-connect-to-the-client-wmi-namespace.md).  
+### To perform an asynchronous query
 
-2.  Create a `ManagementObjectSearcher` object.  
+1. Set up a connection to the Configuration Manager client WMI namespace. For more information, see [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](how-to-connect-to-the-client-wmi-namespace.md).
+2. Create a `ManagementObjectSearcher` object.
+3. Create a `ManagementOperationObserver` object.
+4. Add an `ObjectReadyEventHandler` method the `ManagementOperationObserver` object.
+5. Add a `CompletedEventHandler` method to the `ManagementOperationObserver`.
+6. Call the `ManagementObjectSearcher` object Get method and supply the `ManagmentOperationObserver` object as a parameter.
+7. Ensure your application still runs while the query is run.
 
-3.  Create a `ManagementOperationObserver` object.  
+## Example
 
-4.  Add an `ObjectReadyEventHandler` method the `ManagementOperationObserver` object.  
+The following C# code example asynchronously queries for components that are installed on a client.
 
-5.  Add a `CompletedEventHandler` method to the `ManagementOperationObserver`.  
+For information about calling the sample code, see [How to Call a WMI Class Method by Using System.Management](how-to-call-a-wmi-class-method-by-using-system.management.md).
 
-6.  Call the `ManagementObjectSearcher` object Get method and supply the `ManagmentOperationObserver` object as a parameter.  
-
-7.  Ensure your application still runs while the query is run.  
-
-## Example  
- The following C# code example asynchronously queries for components that are installed on a client.  
-
- For information about calling the sample code, see [How to Call a WMI Class Method by Using System.Management](../../../../develop/core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md).  
-
-```c#  
+```c#
 
 public void EnumerateInstancesAsync(ManagementScope scope)  
 {  
@@ -119,30 +116,34 @@ private void Done(object sender,
     isCompleted = true;  
 }  
 
-```  
+```
 
- This example method has the following parameters:  
+This example method has the following parameters:
 
-|Parameter|Type|Description|  
-|---------------|----------|-----------------|  
-|`Scope`|`ManagementScope`|A valid `ManagementScope`. The path should be root\ccm.|  
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `Scope` | `ManagementScope` | A valid `ManagementScope`. The path should be root\ccm. |
 
-## Compiling the Code  
+## Compiling the Code
 
-### Namespaces  
- System.  
+### Namespaces
 
- System.Management.  
+System.
 
-### Assembly  
- System.Management.  
+System.Management.
 
-## Robust Programming  
- The exception that can be raised is [System.Management.ManagementException](/dotnet/api/system.management.managementexception).  
+### Assembly
 
-## See Also  
- [About Configuration Manager WMI Programming](../../../../develop/core/clients/programming/about-configuration-manager-wmi-programming.md)   
- [How to Call a WMI Class Method by Using System.Management](../../../../develop/core/clients/programming/how-to-call-a-wmi-class-method-by-using-system.management.md)   
- [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](../../../../develop/core/clients/programming/how-to-connect-to-the-client-wmi-namespace.md)   
- [How to Perform a Synchronous Query by Using System.Management](../../../../develop/core/clients/programming/how-to-perform-a-synchronous-query-by-using-system.management.md)   
- [How to Read a WMI Object Using System.Management](../../../../develop/core/clients/programming/how-to-read-a-wmi-object-by-using-system.management.md)
+System.Management.
+
+## Robust Programming
+
+The exception that can be raised is [System.Management.ManagementException](https://learn.microsoft.com/en-us/dotnet/api/system.management.managementexception).
+
+## See Also
+
+[About Configuration Manager WMI Programming](about-configuration-manager-wmi-programming.md)  
+ [How to Call a WMI Class Method by Using System.Management](how-to-call-a-wmi-class-method-by-using-system.management.md)  
+ [How to Connect to the Configuration Manager Client WMI Namespace by Using System.Management](how-to-connect-to-the-client-wmi-namespace.md)  
+ [How to Perform a Synchronous Query by Using System.Management](how-to-perform-a-synchronous-query-by-using-system.management.md)  
+ [How to Read a WMI Object Using System.Management](how-to-read-a-wmi-object-by-using-system.management.md)

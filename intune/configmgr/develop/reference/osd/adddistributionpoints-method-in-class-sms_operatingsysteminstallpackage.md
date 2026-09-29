@@ -1,16 +1,18 @@
 ---
-title: AddDistributionPoints Method in SMS_OperatingSystemInstallPackage
+title: "AddDistributionPoints Method in Class SMS_OperatingSystemInstallPackage"
 description: A Windows Management Instrumentation class method that adds the distribution points for the operating system install package.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # AddDistributionPoints Method in Class SMS_OperatingSystemInstallPackage
+
 The `AddDistributionPoints` Windows Management Instrumentation (WMI) class method, in Configuration Manager, adds the distribution points for the operating system install package.
 
- The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
+The following syntax is simplified from Managed Object Format (MOF) code and defines the method.
 
 ## Syntax
 
@@ -22,35 +24,39 @@ SInt32 AddDistributionPoints(
 ```
 
 #### Parameters
- `SiteCode`
- Data type: `String` Array
 
- Qualifiers: [in]
+`SiteCode` Data type: `String` Array
 
- The code for the site to which to add the distribution points.
+Qualifiers: [in]
 
- `NALPath`
- Data type: `String` Array
+The code for the site to which to add the distribution points.
 
- Qualifiers: [in]
+`NALPath` Data type: `String` Array
 
- Network abstraction layer (NAL) path to the distribution points.
+Qualifiers: [in]
+
+Network abstraction layer (NAL) path to the distribution points.
 
 ## Return Values
- An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
 
- For information about handling returned errors, see [About Configuration Manager Errors](../../../develop/core/understand/about-configuration-manager-errors.md).
+An `SInt32` data type that is 0 to indicate success or non-zero to indicate failure.
+
+For information about handling returned errors, see [About Configuration Manager Errors](../../core/understand/about-configuration-manager-errors.md).
 
 ## Remarks
- It is not necessary to refresh the distribution points when using this method.
+
+It is not necessary to refresh the distribution points when using this method.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Server Runtime Requirements](../../../develop/core/reqs/server-runtime-requirements.md).
+
+For more information, see [Configuration Manager Server Runtime Requirements](../../core/reqs/server-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Server Development Requirements](../../../develop/core/reqs/server-development-requirements.md).
+
+For more information, see [Configuration Manager Server Development Requirements](../../core/reqs/server-development-requirements.md).
 
 ## See Also
- [SMS_OperatingSystemInstallPackage Server WMI Class](../../../develop/reference/osd/sms_operatingsysteminstallpackage-server-wmi-class.md)
+
+[SMS_OperatingSystemInstallPackage Server WMI Class](sms_operatingsysteminstallpackage-server-wmi-class.md)

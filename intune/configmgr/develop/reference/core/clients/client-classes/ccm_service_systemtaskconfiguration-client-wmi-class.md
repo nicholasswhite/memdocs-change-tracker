@@ -1,19 +1,22 @@
 ---
-title: CCM_Service_SystemTaskConfiguration Class
+title: "CCM_Service_SystemTaskConfiguration Client WMI Class"
 description: In Configuration Manager, the CCM_Service_SystemTaskConfiguration class is a client WMI class that supports system task configuration for the CCMEXEC service.
-ms.date: 09/20/2016
+ms.date: "2016-09-20T00:00:00Z"
 ms.subservice: sdk
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
 ---
+
 # CCM_Service_SystemTaskConfiguration Client WMI Class
+
 > [!IMPORTANT]
->  This class supports the Configuration Manager 2007 infrastructure and is not intended to be used directly from your code.
+>
+> This class supports the Configuration Manager 2007 infrastructure and is not intended to be used directly from your code.
 
- in Configuration Manager, the `CCM_Service_SystemTaskConfiguration` class is a client Windows Management Instrumentation (WMI) class that supports system task configuration for the CCMEXEC service.
+in Configuration Manager, the `CCM_Service_SystemTaskConfiguration` class is a client Windows Management Instrumentation (WMI) class that supports system task configuration for the CCMEXEC service.
 
- The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
+The following syntax is simplified from Managed Object Format (MOF) code and includes all inherited properties.
 
 ## Syntax
 
@@ -36,127 +39,121 @@ Class CCM_Service_SystemTaskConfiguration : CCM_Policy
 ```
 
 ## Methods
- The `CCM_Service_SystemTaskConfiguration` class does not define any methods.
+
+The `CCM_Service_SystemTaskConfiguration` class does not define any methods.
 
 ## Properties
- `CoClass`
- Data type: `String`
 
- Access type: Read/Write
+`CoClass` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Class ID or program ID of the COM class that implements the system task.
+Qualifiers: None
 
- `DisplayName`
- Data type: `String`
+Class ID or program ID of the COM class that implements the system task.
 
- Access type: Read/Write
+`DisplayName` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Display name of the system task.
+Qualifiers: None
 
- `Event`
- Data type: `String`
+Display name of the system task.
 
- Access type: Read/Write
+`Event` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Event on which the system task should be invoked.
+Qualifiers: None
 
- `Name`
- Data type: `String`
+Event on which the system task should be invoked.
 
- Access type: Read/Write
+`Name` Data type: `String`
 
- Qualifiers: [Realkey]
+Access type: Read/Write
 
- Name of the system task, which must be unique on the computer.
+Qualifiers: [Realkey]
 
- `Order`
- Data type: `UInt32`
+Name of the system task, which must be unique on the computer.
 
- Access type: Read/Write
+`Order` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- Order value of the task. Tasks with lower order values run before tasks with higher values. Tasks with the same order value run simultaneously (no ordering between them is guaranteed).This value defaults to 0 if a value is not specified.
+Qualifiers: None
 
- `PolicyID`
- Data type: `String`
+Order value of the task. Tasks with lower order values run before tasks with higher values. Tasks with the same order value run simultaneously (no ordering between them is guaranteed).This value defaults to 0 if a value is not specified.
 
- Access type: Read/Write
+`PolicyID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyInstanceID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyInstanceID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyPrecedence`
- Data type: `UInt32`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyPrecedence` Data type: `UInt32`
 
- Qualifiers: None
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: None
 
- `PolicyRuleID`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyRuleID` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicySource`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicySource` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `PolicyVersion`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`PolicyVersion` Data type: `String`
 
- Qualifiers: [key]
+Access type: Read/Write
 
- See [CCM_Policy Client WMI Class](../../../../../develop/reference/core/clients/client-classes/ccm_policy-client-wmi-class.md).
+Qualifiers: [key]
 
- `ThreadType`
- Data type: `String`
+See [CCM_Policy Client WMI Class](ccm_policy-client-wmi-class.md).
 
- Access type: Read/Write
+`ThreadType` Data type: `String`
 
- Qualifiers: None
+Access type: Read/Write
 
- Thread type on which the endpoint should be invoked.
+Qualifiers: None
+
+Thread type on which the endpoint should be invoked.
 
 ## Remarks
- There is an instance of this class for each system task on the computer.
+
+There is an instance of this class for each system task on the computer.
 
 ## Requirements
 
 ## Runtime Requirements
- For more information, see [Configuration Manager Client Runtime Requirements](../../../../../develop/core/reqs/client-runtime-requirements.md).
+
+For more information, see [Configuration Manager Client Runtime Requirements](../../../../core/reqs/client-runtime-requirements.md).
 
 ## Development Requirements
- For more information, see [Configuration Manager Client Development Requirements](../../../../../develop/core/reqs/client-development-requirements.md).
+
+For more information, see [Configuration Manager Client Development Requirements](../../../../core/reqs/client-development-requirements.md).
 
 ## See Also
- [Client Framework and Data Transfer Client WMI Classes](../../../../../develop/reference/core/clients/client-classes/client-framework-and-data-transfer-client-wmi-classes.md)
+
+[Client Framework and Data Transfer Client WMI Classes](client-framework-and-data-transfer-client-wmi-classes.md)
