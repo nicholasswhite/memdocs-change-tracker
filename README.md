@@ -1,67 +1,18 @@
-# Overview
+# MemDocs community archive
 
-## Learn how to contribute
+Microsoft Intune, Configuration Manager, and Windows Autopilot documentation, with a community-maintained history of changes observed on Microsoft Learn.
 
-Anyone who is interested can contribute to the topics. When you contribute, your work will go directly into the content set after being merged. It will then be published to [Microsoft Learn](https://learn.microsoft.com/) and you will be listed as a contributor at: <https://github.com/MicrosoftDocs/memdocs/graphs/contributors>.
+- [Microsoft Intune](intune/index.yml)
+- [Configuration Manager](intune/configmgr/index.yml)
+- [Windows Autopilot](autopilot/index.yml)
+- [Documentation changes](https://github.com/nicholasswhite/memdocs-change-tracker/commits/main/)
 
-### Quickly update an article using GitHub.com
+The original public MemDocs history is preserved through September 2, 2026 at the `archive-source` tag. Later commits record publicly published content, including newly discovered articles, moves, and images. Commit dates identify when a change was observed; they do not claim to be Microsoft's private edit timestamps. Daily checks can capture the difference between observations, but cannot recover intermediate edits made and reverted between checks.
 
-Contributors who only make infrequent or small updates can edit the file directly on GitHub.com without having to install any additional software. This article shows you how. [This two-minute video](https://learn-video.azurefd.net/vod/player?id=b5167c5a-9c69-499b-99ac-e5467882bc92) also covers how to contribute.
+Articles and media use the MemDocs folder layout. Current article content is reconstructed from Microsoft Learn; unpublished authoring markup, comments, includes, and private files cannot be recovered. Supporting files that have no public equivalent remain from the archive. The first refreshed-content commit establishes this representation; some initial differences are formatting changes.
 
-1. Make sure you're signed in to GitHub.com with your GitHub account.
-2. Browse to the page you want to edit on Microsoft Learn.
-3. On the right-hand side of the page, click **Edit** (pencil icon).
+This is an independent community mirror. Changes here do not publish to Microsoft Learn. The original [September archive](https://github.com/nicholasswhite/memdocs) remains unchanged. Automation and detailed observation records live separately in the [sync engine](https://github.com/nicholasswhite/memdocs-sync-engine).
 
-   ![Edit button on Microsoft Learn.](https://learn.microsoft.com/compliance/media/quick-update-edit.png)
+## Attribution and licenses
 
-4. The corresponding topic file on GitHub opens, where you need to click the **Edit this file** pencil icon.
-
-   ![Edit button on github.com.](https://learn.microsoft.com/compliance/media/quick-update-github.png)
-
-5. The topic opens in a line-numbered editing page where you can make changes to the file. Files in GitHub are written and edited using Markdown language. For help on using Markdown, see [Mastering Markdown](https://guides.github.com/features/mastering-markdown/). Select the **Preview changes** tab to view your changes as you go.
-
-6. When you're finished making changes, go to the **Commit changes...** button at the upper right part of the page:
-
-   - A brief title is required. By default, the title is the name of the file, but you can change it.
-   - Optionally, you can enter more details in the **Add an optional extended description** box.
-
-   When you're ready, click the green **Propose file change** button.
-
-   ![Propose file change section.](https://learn.microsoft.com/compliance/media/propose-file-change.png)
-
-7. On the **Comparing changes** page that appears, click the green **Create pull request** button.
-
-   ![Comparing changes page.](https://learn.microsoft.com/compliance/media/comparing-changes-page.png)
-
-8. On the **Open a pull request** page that appears, click the green **Create pull request** button.
-
-   ![Open a pull request page.](https://learn.microsoft.com/compliance/media/open-a-pull-request-page.png)
-
-> [!NOTE]
-> Your permissions in the repo determine what you see in the last several steps. People with no special privileges will see the **Propose file change** section and subsequent confirmation pages as described. People with permissions to create and approve their own pull requests will see a similar **Commit changes** section with extra options for creating a new branch and fewer confirmation pages.<br/><br/>The point is: click any green buttons that are presented to you until there are no more.
-
-The writer identified in the metadata of the topic will be notified and will eventually review and approve your changes so the topic will be updated on Microsoft Learn. If there are questions or issues with the updates, the writer will contact you.
-
-## Microsoft Open Source Code of Conduct
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-### Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.microsoft.com>.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
-
-### Legal Notices
-
-Microsoft and any contributors grant you a license to the Microsoft documentation and other content in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode), see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the [LICENSE-CODE](LICENSE-CODE) file.
-
-Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the documentation may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries.
-
-The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks. Microsoft's general trademark guidelines can be found at <https://go.microsoft.com/fwlink/?LinkID=254653>.
-
-Privacy information can be found at <https://privacy.microsoft.com/>
-
-Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents, or trademarks, whether by implication, estoppel or otherwise.
+Documentation is authored by Microsoft and its contributors. Documentation is licensed under [Creative Commons Attribution 4.0](LICENSE); code samples retain the [MIT license](LICENSE-CODE). See [Third-party notices](ThirdPartyNotices.md). Microsoft product names and marks belong to their respective owners.
