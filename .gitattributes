@@ -15,3 +15,6 @@
 # Keep documentation diffs consistent across Windows and Linux.
 *.md text eol=lf
 *.yml text eol=lf
+
+# Preserve published SVG bytes while retaining readable diffs.
+*.[sS][vV][gG] -text
