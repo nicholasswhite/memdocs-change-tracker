@@ -63,7 +63,7 @@ To configure the grace period, take the following actions:
 
 The experience for performing remote device actions from the Configuration Manager console has been improved. Common actions such as **Retire/Wipe**, **Reset Passcode**, **Remote Lock**, and **Bypass Activation Lock** can now be found in the **Remote Device Actions** menu accessed from the **Assets and Compliance** workspace.
 
-![New Remote Device Actions screenshot](media/new-remote-device-actions.png)
+![New Remote Device Actions screenshot](media/New-Remote-Device-Actions.png)
 
 You can find the status for each of these operations in the following places:
 

@@ -330,7 +330,7 @@ Each UDI stage used in the MDT deployment scenarios is discussed in a subsequent
 
 Figure 1 illustrates the use of the NEWCOMPUTER stage in a task sequence created using the User-Driven Installation Task Sequence task sequence template. The primary difference between the task sequences calling the NEWCOMPUTER stage and the NEWCOMPUTER.Prestaged stage is that the task sequence calling the NEWCOMPUTER.Prestaged stage does not run the **Apply Operating System Image** task sequence step, because the operating system image is already located on the target computer.
 
-![UDI Reference 1](media/udireference1.jpg)
+![UDI Reference 1](media/UDIReference1.jpg)
 
 **Figure SEQ Figure \\* ARABIC 1. Process flow for the NEWCOMPUTER stage**
 
@@ -338,7 +338,7 @@ Figure 1 illustrates the use of the NEWCOMPUTER stage in a task sequence created
 
 Figure 2 illustrates the high-level process flow for the NEWCOMPUTER.Prestaged stage in a task sequence created using the User-Driven Installation Task Sequence task sequence template. The primary difference between the task sequences calling the NEWCOMPUTER stage and the NEWCOMPUTER.Prestaged stage is that the task sequence calling the NEWCOMPUTER.Prestaged stage does not run the **Apply Operating System Image** task sequence step, because the operating system image is already located on the target computer.
 
-![UDI Reference 2](media/udireference2.jpg)
+![UDI Reference 2](media/UDIReference2.jpg)
 
 **Figure 2. Process flow for the NEWCOMPUTER.Prestaged stage**
 
@@ -346,7 +346,7 @@ Figure 2 illustrates the high-level process flow for the NEWCOMPUTER.Prestaged s
 
 Figure 3 illustrates the high-level process flow for the REFRESH stage in a task sequence created using the User-Driven Installation Task Sequence task sequence template.
 
-![UDI Reference 3](media/udireference3.jpg)
+![UDI Reference 3](media/UDIReference3.jpg)
 
 **Figure SEQ Figure \\* ARABIC 3. Process flow for the REFRESH stage**
 
@@ -354,7 +354,7 @@ Figure 3 illustrates the high-level process flow for the REFRESH stage in a task
 
 Figure 4 illustrates the high-level process flow for the REPLACE and REPLACE.WinPE stages in a task sequence created using the User-Driven Installation Replace Task Sequence task sequence template.
 
-![UDI Reference 4](media/udireference4.jpg)
+![UDI Reference 4](media/UDIReference4.jpg)
 
 **Figure 4. Process flow for the REPLACE and REPLACE.WinPE stages**
 
@@ -1004,7 +1004,7 @@ You can add any combination of these controls to your custom wizard page based o
 
 Figure 5 provides an example of a custom wizard page and the Build Your Own Page toolbox.
 
-![UDI Reference 5](media/udireference5.jpg)
+![UDI Reference 5](media/UDIReference5.jpg)
 
 **Figure SEQ Figure \\* ARABIC 5. Example custom wizard page**
 

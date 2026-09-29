@@ -56,7 +56,7 @@ If you enable this option, you can subscribe to third-party update catalogs in t
 2. Select the top-level site in the hierarchy. In the ribbon, select **Configure Site Components**, and select **Software Update Point**.
 3. Switch to the **Third-Party Updates** tab. Select the option **Enable third-party software updates**.
 
-   ![Third-party updates SUP properties screenshot](media/third-party-sup-properties.png)
+   ![Third-party updates SUP properties screenshot](media/third-party-sup-properties.PNG)
 
 ## Configure the WSUS signing certificate
 
@@ -95,7 +95,7 @@ Enable third-party updates on the clients in the client settings. The setting se
 
 1. Go to the **Software Updates Library** workspace, expand **Software updates**, and select the **Third-Party Software Update Catalogs** node.
 
-   ![Third-party updates node screenshot](media/third-party-updates-node.png)
+   ![Third-party updates node screenshot](media/third-party-updates-node.PNG)
 2. select **Add Custom Catalog** in the ribbon.
 
    ![Third-party updates add custom catalog](media/third-party-updates-custom-catalog.png)
@@ -129,7 +129,7 @@ When you subscribe to a third-party catalog in the Configuration Manager console
 8. Once the product information is synchronized, [Configure the SUP to synchronize the desired product](../get-started/configure-classifications-and-products.md#to-configure-classifications-and-products-to-synchronize) into Configuration Manager.
 9. [Manually start the software updates synchronization](../get-started/synchronize-software-updates.md#manually-start-software-updates-synchronization) to synchronize the new product's updates into Configuration Manager.
 10. When the synchronization completes, you can see the third-party updates in the **All Updates** node. These updates are published as **metadata-only** updates until you choose to publish them.
-    - The icon with the blue arrow represents a metadata-only software update. ![Metadata only software update icon](media/metadataonly.png)
+    - The icon with the blue arrow represents a metadata-only software update. ![Metadata only software update icon](media/MetadataOnly.png)
 
 ## Publish and deploy third-party software updates
 

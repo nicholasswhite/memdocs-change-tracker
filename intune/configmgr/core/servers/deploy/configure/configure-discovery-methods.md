@@ -113,7 +113,7 @@ Although each of these discovery methods is independent of the others, they shar
 
 ### Configure Active Directory System Discovery
 
-1. On the **General** tab of the Active Directory System Discovery Properties window, select the **New** icon ![New icon](media/disc_new_icon.gif) to specify a new Active Directory container. In the **Active Directory Container** dialog box, finish the following configurations:
+1. On the **General** tab of the Active Directory System Discovery Properties window, select the **New** icon ![New icon](media/Disc_new_Icon.gif) to specify a new Active Directory container. In the **Active Directory Container** dialog box, finish the following configurations:
 
    1. Type or browse to a location for the **Path**. This value is a valid LDAP path to a container or organizational unit (OU). The site queries this path for resources. For example, `LDAP://CN=Computers,DC=contoso,DC=com`
    2. Specify options that change the search behavior:
@@ -144,7 +144,7 @@ Although each of these discovery methods is independent of the others, they shar
 
 ### Configure Active Directory User Discovery
 
-1. On the **General** tab of the Active Directory User Discovery Properties window, select the **New** icon ![New icon](media/disc_new_icon.gif) to specify a new Active Directory container. In the **Active Directory Container** dialog box, finish the following configurations:
+1. On the **General** tab of the Active Directory User Discovery Properties window, select the **New** icon ![New icon](media/Disc_new_Icon.gif) to specify a new Active Directory container. In the **Active Directory Container** dialog box, finish the following configurations:
 
    1. Specify one or more locations to search.
    2. For each location, specify options that change the search behavior.
@@ -360,14 +360,14 @@ Use the following procedures to first discover only your network topology, and t
 
      > [!TIP]
      >
-     > If you know the specific subnets that constitute your network, deselect the **Search local subnets** checkbox. Then select the **New** icon ![New icon](media/disc_new_icon.gif), and add the specific subnets that you want to search. For large networks, search only one or two subnets at a time to minimize the use of network bandwidth.
+     > If you know the specific subnets that constitute your network, deselect the **Search local subnets** checkbox. Then select the **New** icon ![New icon](media/Disc_new_Icon.gif), and add the specific subnets that you want to search. For large networks, search only one or two subnets at a time to minimize the use of network bandwidth.
    - On the **Domains** tab, select the option to **Search local domain**.
    - On the **SNMP** tab, select an option from the **Maximum hops** drop-down list. This option specifies how many router hops Network Discovery can take in mapping your topology.
 
      > [!TIP]
      >
      > When you first map your network topology, configure just a few router hops to minimize the use of network bandwidth.
-4. On the **Schedule** tab, select the **New** icon ![New icon](media/disc_new_icon.gif), and set a schedule for running discovery. The **Duration** is the period of time that Network Discovery has to complete the search for resources. On smaller subnets, an hour may be enough, but searching across an enterprise network with multiple router hops will take longer. If Network Discovery runs out of time, a message is logged in **Netdisc.log**.
+4. On the **Schedule** tab, select the **New** icon ![New icon](media/Disc_new_Icon.gif), and set a schedule for running discovery. The **Duration** is the period of time that Network Discovery has to complete the search for resources. On smaller subnets, an hour may be enough, but searching across an enterprise network with multiple router hops will take longer. If Network Discovery runs out of time, a message is logged in **Netdisc.log**.
 
    > [!NOTE]
    >
@@ -388,22 +388,22 @@ Use the following procedures to first discover only your network topology, and t
    - To run discovery on subnets that are local to the computer that runs discovery, enable the option to **Search local subnets**.
    - To search a specific subnet, make sure that the subnet is listed in **Subnets to search** and has a **Search** value of **Enabled**:
 
-     1. If the subnet isn't listed, select the **New** icon ![New icon](media/disc_new_icon.gif). In the **New Subnet Assignment** dialog box, enter the **Subnet** and **Mask** information, and then select **OK**. By default, a new subnet is enabled for search.
+     1. If the subnet isn't listed, select the **New** icon ![New icon](media/Disc_new_Icon.gif). In the **New Subnet Assignment** dialog box, enter the **Subnet** and **Mask** information, and then select **OK**. By default, a new subnet is enabled for search.
      2. To change the **Search** value for a listed subnet, select it in the list. Then select the **Toggle** icon to switch the value between **Disabled** and **Enabled**.
 6. To configure discovery to search domains, switch to the **Domains** tab. Then configure one or more of the following options:
 
    - To run discovery on the domain of the computer that runs discovery, enable the option to **Search local domain**.
    - To search a specific domain, make sure that the domain is listed in **Domains** and has a **Search** value of **Enabled**:
 
-     1. If the domain isn't listed, select the **New** icon ![New icon](media/disc_new_icon.gif). In the **Domain Properties** dialog box, enter the **Domain** information, and then select **OK**. By default, a new domain is enabled for search.
+     1. If the domain isn't listed, select the **New** icon ![New icon](media/Disc_new_Icon.gif). In the **Domain Properties** dialog box, enter the **Domain** information, and then select **OK**. By default, a new domain is enabled for search.
      2. To change the **Search** value for a listed domain, select it in the list. Then select the **Toggle** icon to switch the value between **Disabled** and **Enabled**.
 7. To configure discovery to search specific SNMP community names for SNMP devices, switch to the **SNMP** tab. Then configure one or more of the following options:
 
-   - To add an SNMP community name to the list of **SNMP Community names**, select the **New** icon ![New icon](media/disc_new_icon.gif). In the **New SNMP Community Name** dialog box, specify the **Name** of the SNMP community, and then select **OK**.
-   - To remove an SNMP community name, select the community name, and then select the **Delete** icon ![Delete icon](media/disc_delete_icon.gif).
-   - To adjust the search order of SNMP community names, select a community name from the list. Then select the **Move Item Up** icon ![Move UP Icon](media/disc_moveup_icon.gif) or the **Move Item Down** icon ![Move Down Icon](media/disc_movedown_icon.gif). When discovery runs, community names are searched in a top-to-bottom order.
+   - To add an SNMP community name to the list of **SNMP Community names**, select the **New** icon ![New icon](media/Disc_new_Icon.gif). In the **New SNMP Community Name** dialog box, specify the **Name** of the SNMP community, and then select **OK**.
+   - To remove an SNMP community name, select the community name, and then select the **Delete** icon ![Delete icon](media/Disc_delete_Icon.gif).
+   - To adjust the search order of SNMP community names, select a community name from the list. Then select the **Move Item Up** icon ![Move UP Icon](media/Disc_moveUp_Icon.gif) or the **Move Item Down** icon ![Move Down Icon](media/Disc_moveDown_Icon.gif). When discovery runs, community names are searched in a top-to-bottom order.
    - To configure the maximum number of router hops for use by SNMP searches, select the number of hops from the **Maximum hops** drop-down list.
-8. To configure an SNMP device, switch to the **SNMP Devices** tab. If the device isn't listed, select the **New** icon ![New icon](media/disc_new_icon.gif). In the **New SNMP Device** dialog box, specify the IP address or device name of the SNMP device, and then select **OK**.
+8. To configure an SNMP device, switch to the **SNMP Devices** tab. If the device isn't listed, select the **New** icon ![New icon](media/Disc_new_Icon.gif). In the **New SNMP Device** dialog box, specify the IP address or device name of the SNMP device, and then select **OK**.
 
    > [!NOTE]
    >
@@ -415,12 +415,12 @@ Use the following procedures to first discover only your network topology, and t
      > [!NOTE]
      >
      > To use this option, the server must lease its IP address from a DHCP server and can't use a static IP address.
-   - To query a specific DHCP server, select the **New** icon ![New icon](media/disc_new_icon.gif). In the **New DHCP Server** dialog box, specify the IP address or server name of the DHCP server, and then select **OK**.
+   - To query a specific DHCP server, select the **New** icon ![New icon](media/Disc_new_Icon.gif). In the **New DHCP Server** dialog box, specify the IP address or server name of the DHCP server, and then select **OK**.
 
      > [!NOTE]
      >
      > If you specify a server name, Configuration Manager must be able to resolve the NetBIOS name to an IP address.
-10. To configure when discovery runs, switch to the **Schedule** tab. Then select the **New** icon ![New icon](media/disc_new_icon.gif) to set a schedule for running Network Discovery. You can configure multiple recurring schedules, and multiple schedules that have no recurrence.
+10. To configure when discovery runs, switch to the **Schedule** tab. Then select the **New** icon ![New icon](media/Disc_new_Icon.gif) to set a schedule for running Network Discovery. You can configure multiple recurring schedules, and multiple schedules that have no recurrence.
 
     > [!NOTE]
     >

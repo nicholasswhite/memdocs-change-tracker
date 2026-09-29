@@ -23,7 +23,7 @@ To open the Surface device dashboard, use the following steps:
 2. Select the **Monitoring** workspace.
 3. To load the dashboard, select the **Surface Devices** node.
 
-![An example view of the Surface device dashboard.](media/surface-device-dashboard.png)
+![An example view of the Surface device dashboard.](media/Surface-device-dashboard.PNG)
 
 ## Review information
 
@@ -31,17 +31,17 @@ The Surface device dashboard shows three graphs:
 
 - **Percent of Surface devices**: The percentage of Surface devices throughout your environment.
 
-  ![Percent of Surface devices graph.](media/percent-surface-devices.png)
+  ![Percent of Surface devices graph.](media/Percent-Surface-Devices.PNG)
 - **Surface Models**: The number of devices per Surface model. Hover over a graph section to see the percentage of Surface devices for that model.
 
-  ![Surface models graph.](media/surface-models-hover.png)
+  ![Surface models graph.](media/Surface-Models-Hover.PNG)
 
   - Select a graph section to go through to a device list for that model.
 
-    ![Surface model device list.](media/surface-model-device-list.png)
+    ![Surface model device list.](media/Surface-Model-Device-List.PNG)
 - **Top five firmware versions**: The top five firmware models in your environment. Hover over a graph section to see the number of Surface devices with that firmware version. Select a graph section to go through to a device list.
 
-  ![Surface top five firmware versions graph.](media/surface-firmware-hover.png)
+  ![Surface top five firmware versions graph.](media/Surface-Firmware-Hover.PNG)
 
 ## Next steps
 

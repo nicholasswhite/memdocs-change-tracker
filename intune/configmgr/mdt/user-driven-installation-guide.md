@@ -1532,7 +1532,7 @@ You can add any combination of these controls to your custom wizard page based o
 
 For the purposes of this example, you will create a custom wizard page as illustrated in Figure 1.
 
-![Figure 1. Custom wizard page to be created](media/quickstartguideforudi.jpg) Figure 1. Custom wizard page to be created
+![Figure 1. Custom wizard page to be created](media/QuickStartGuideforUDI.jpg) Figure 1. Custom wizard page to be created
 
 **Figure 1. Custom wizard page to be created**
 

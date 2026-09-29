@@ -32,7 +32,7 @@ Before Configuration Manager version 1806, the WSUS cleanup option runs the foll
 
 - The **Expired updates** option from the WSUS cleanup wizard on the top-level site's WSUS server only.
 
-  ![WSUS expired update cleanup screenshot](media/wsus-cleanup-expired.png)
+  ![WSUS expired update cleanup screenshot](media/wsus-cleanup-expired.PNG)
 - A cleanup for software update configuration items in the Configuration Manager database occurs every seven days and removes unneeded updates from the console.
 
   - This cleanup won't remove expired updates from the Configuration Manager console if they're currently deployed.

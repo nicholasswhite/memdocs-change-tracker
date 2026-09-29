@@ -37,7 +37,7 @@ CMG Setup now uses managed identities and third party **Server App** to interact
 - Hence storage account key access is disabled for new CMG setup.
 - For sessions upgrading from earlier versions to 2411 tp, the **CMG Enhance Security** button is shown as enabled.
 
-  [![Screenshot of cm enhanced window in the console.](media/27297018-cmg-enhanced.png)](media/27297018-cmg-enhanced.png#lightbox)
+  [![Screenshot of cm enhanced window in the console.](media/27297018-Cmg-Enhanced.png)](media/27297018-Cmg-Enhanced.png#lightbox)
 - When the enhanced security option is selected, the VMSS OS Auto Upgrade feature is also activated. An extra panel appears, prompting the admin to provide maintenance window details. Azure uses this information to schedule upgrades whenever new OS images become available.
 
   [![Screenshot of service window in the console.](media/27297018-service-window.png)](media/27297018-service-window.png#lightbox)

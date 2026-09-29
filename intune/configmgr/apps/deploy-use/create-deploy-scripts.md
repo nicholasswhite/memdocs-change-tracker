@@ -75,7 +75,7 @@ Scripts must be approved, by the *script approver* role, before they can be run.
 2. In the **Software Library** workspace, click **Scripts**.
 3. In the **Script** list, choose the script you want to approve or deny and then, on the **Home** tab, in the **Script** group, click **Approve/Deny**.
 4. In the **Approve or deny script** dialog box, select **Approve**, or **Deny** for the script. Optionally, enter a comment about your decision. If you deny a script, it can't be run on client devices.   
-    ![Script - Approval](media/run-scripts/rs-approval.png)
+    ![Script - Approval](media/run-scripts/RS-approval.png)
 5. Complete the wizard. In the **Script** list, you see the **Approval State** column change depending on the action you took.
 
 ### Allow users to approve their own scripts
@@ -146,7 +146,7 @@ The three security roles used for running scripts aren't created by default in C
 
 **Example of SMS Scripts permissions for the script authors role**
 
-![Example of SMS Scripts permissions for the script authors role](media/run-scripts/script_authors_permissions.png)
+![Example of SMS Scripts permissions for the script authors role](media/run-scripts/script_authors_permissions.PNG)
 
 ## Folder support for scripts
 
@@ -199,7 +199,7 @@ Each parameter in your script has a **Script Parameter Properties** dialog for y
 
 In this example, you're able to set the properties of the string parameter, *FirstName*.
 
-![Script parameters - string](media/run-scripts/rs-parameters-string.png)
+![Script parameters - string](media/run-scripts/RS-parameters-string.png)
 
 The validation section of the **Script Parameter Properties** dialog contains the following fields for your use:
 
@@ -309,13 +309,13 @@ The script is executed as the *system* or *computer* account on the targeted cli
 
 After you have initiated running a script on a collection of devices, use the following procedure to monitor the operation. You are able to monitor a script in real time as it executes, and later return to the status and results for a given Run Script execution. Script status data is cleaned up as part of the [Delete Aged Client Operations maintenance task](../../core/servers/manage/reference-for-maintenance-tasks.md) or deletion of the script.
 
-![Script monitor - Script Run Status](media/run-scripts/rs-monitoring-three-bar.png)
+![Script monitor - Script Run Status](media/run-scripts/RS-monitoring-three-bar.png)
 
 1. In the Configuration Manager console, click **Monitoring**.
 2. In the **Monitoring** workspace, click **Script Status**.
 3. In the **Script Status** list, you view the results for each script you ran on client devices. A script exit code of **0** generally indicates that the script ran successfully.
 
-   ![Script monitor - Truncated Script](media/run-scripts/script-monitoring-truncated.png)
+   ![Script monitor - Truncated Script](media/run-scripts/Script-monitoring-truncated.png)
 
 ### Schedule script Monitoring on a collection
 
@@ -337,7 +337,7 @@ Client's return script output using JSON formatting by piping the script's resul
 - Avoid returning large script output since it's truncated to 4 KB.
 - Convert an enum object to a string value in scripts so they're properly displayed in JSON formatting.
 
-  ![Convert enum object to a sting value](media/run-scripts/enum-tostring-json.png)
+  ![Convert enum object to a sting value](media/run-scripts/enum-tostring-JSON.PNG)
 
 You can view detailed script output in raw or structured JSON format. This formatting makes the output easier to read and analyze. If the script returns valid JSON-formatted text or the output can be converted to JSON using the [ConvertTo-Json](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-json) PowerShell cmdlet, then view the detailed output as either **JSON Output** or **Raw Output**. Otherwise the only option is **Script Output**.
 

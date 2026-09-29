@@ -65,7 +65,7 @@ In the 1512 Technical Preview we have added the following new settings in Endpoi
 
     For example, the following shows the Windows Defender setting in Windows 10 set by the administrator as enabled, and the user isn't allowed to modify it:
 
-    ![Windows Defender - Automatic sample submission](media/techref_windefender.png)
+    ![Windows Defender - Automatic sample submission](media/TechRef_WinDefender.png)
 
   Additionally, the existing **Exclude files and folders** setting in the "Exclusion settings" section of endpoint protection antimalware policy is improved to allow device exclusions. For example, you can now specify the following as an exclusion: **\device\mvfs** (for Multiversion File System). The policy doesn't validate the device path; the endpoint protection policy is provided to the antimalware engine on the client which must be able to interpret the device string.
 

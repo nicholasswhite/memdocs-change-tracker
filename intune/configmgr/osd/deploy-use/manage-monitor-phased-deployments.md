@@ -37,7 +37,7 @@ When you select the setting, **Manually begin the second phase of deployment**, 
 3. In the details pane, switch to the **Phased Deployments** tab.
 4. Select the phased deployment, and click **Move to next phase** in the ribbon.
 
-   ![Right-click menu showing actions on a phased deployment.](media/suspend-phased-deployment.png)
+   ![Right-click menu showing actions on a phased deployment.](media/Suspend-phased-deployment.PNG)
 
 Optionally, use the following Windows PowerShell cmdlet for this task: [Move-CMPhasedDeploymentToNext](https://learn.microsoft.com/en-us/powershell/module/configurationmanager/move-cmphaseddeploymenttonext).
 

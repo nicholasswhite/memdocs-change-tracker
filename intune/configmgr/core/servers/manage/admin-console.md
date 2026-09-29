@@ -33,10 +33,10 @@ To connect to a different site server, use the following steps:
 
 1. Select the arrow at the top of the [ribbon](#ribbon), and choose **Connect to a New Site**.
 
-   ![Connect the console to a new site.](media/connect-to-a-new-site.png)
+   ![Connect the console to a new site.](media/connect-to-a-new-site.PNG)
 2. Type in the FQDN of the site server. If you've previous session to site server, select the server from the drop-down list.
 
-   ![Site Connection window, enter the FQDN of the site server.](media/site-server-fqdn.png)
+   ![Site Connection window, enter the FQDN of the site server.](media/site-server-fqdn.PNG)
 3. Select **Connect**.
 
 > [!TIP]
@@ -60,7 +60,7 @@ The Configuration Manager console has four **workspaces**:
 
 Reorder workspace buttons by selecting the down arrow and choosing **Navigation Pane Options**. Select an item to **Move Up** or **Move Down**. Select **Reset** to restore the default button order.
 
-![Navigation Pane Options window to reorder workspaces.](media/navigation-pane-options.png)
+![Navigation Pane Options window to reorder workspaces.](media/navigation-pane-options.PNG)
 
 Minimize a workspace button by selecting **Show Fewer Buttons**. The last workspace in the list is minimized first. Select a minimized button and choose **Show More Buttons** to restore the button to its original size.
 
@@ -111,7 +111,7 @@ You can add, remove, reorder, and resize columns. These actions allow you to dis
 
 At the bottom of the column context menu, you can sort or group by a column. Additionally, you can sort by a column by selecting its header.
 
-![Configuration Manager group by column.](media/column-group-by.png)
+![Configuration Manager group by column.](media/column-group-by.PNG)
 
 ## Reclaim lock for editing objects
 

@@ -26,7 +26,7 @@ In each scenario, you'll create a configuration item that performs a specific ta
 2. On the **Home** tab, in the **Create** group, select **Create Configuration Item**.
 3. On the **General** page of the Create Configuration Item Wizard, shown in the following screenshot, specify a name and description for the configuration item. Then choose the appropriate configuration item type for each scenario in this article.
 
-   ![General page of the Create Configuration Item Wizard](../../mdm/deploy-use/media/compliance-settings-wizard---1.png)
+   ![General page of the Create Configuration Item Wizard](../../mdm/deploy-use/media/Compliance-Settings-Wizard---1.png)
 
 ## Scenario: Disable Bluetooth on Windows 10 or later devices
 

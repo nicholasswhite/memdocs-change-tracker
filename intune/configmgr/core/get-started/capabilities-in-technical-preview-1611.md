@@ -44,7 +44,7 @@ The pre-cache content feature gives you the option to allow the client to only d
    The architecture and language values are used to match task sequence step conditions that you'll create in the next step to determine whether the operating system upgrade package should be pre-cached.
 2. Create a task sequence with conditional steps for the different languages and architectures. For example, for the English version you could create a step like:
 
-   ![pre-cache properties](media/precacheproperties2.png)
+   ![pre-cache properties](media/PrecacheProperties2.png)
 
    ![pre-cache options](media/precacheoptions2.png)
 3. Deploy the task sequence. For the pre-cache feature, do the following configuration:

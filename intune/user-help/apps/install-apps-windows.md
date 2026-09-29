@@ -94,7 +94,7 @@ Share and recommend apps to your work or school contacts. The following steps de
 
 Request an app that's unavailable in the Company Portal app. Go to **Help &amp; support** for your organization's helpdesk details. The same contact information is available on the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980).
 
-![Screenshot of the Company Portal app for Windows, Help & Support page, highlighting the Helpdesk section.](media/install-apps-windows/1812_ucp_help_support_helpdesk.png)
+![Screenshot of the Company Portal app for Windows, Help & Support page, highlighting the Helpdesk section.](media/install-apps-windows/1812_UCP_Help_Support_helpdesk.png)
 
 ## Uninstall apps
 

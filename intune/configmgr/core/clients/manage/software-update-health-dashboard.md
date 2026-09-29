@@ -18,7 +18,7 @@ The Troubleshooting dashboard gives you information about different scenarios, w
 
 In the Configuration Manager console, go to the **Monitoring** workspace. Expand **Troubleshooting dashboard** node.
 
-[![Screenshot of an example of the updated Troubleshooting Dashboard in version 2403 or later.](media/17668422-troubleshooting-dashboard.png)](media/17668422-troubleshooting-dashboard.png#lightbox)
+[![Screenshot of an example of the updated Troubleshooting Dashboard in version 2403 or later.](media/17668422-Troubleshooting-dashboard.png)](media/17668422-Troubleshooting-dashboard.png#lightbox)
 
 ## Software update health dashboard
 

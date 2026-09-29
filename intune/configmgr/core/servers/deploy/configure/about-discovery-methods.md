@@ -353,15 +353,15 @@ For example, a topology-only discovery with **0** (zero) router hops discovers t
 
 The following diagram shows what a topology-only network discovery query finds when it runs on Server 1 with 0 router hops specified: subnet D and Router 1.
 
-![Image of discovery with zero router jumps.](media/disc-0.gif)
+![Image of discovery with zero router jumps.](media/Disc-0.gif)
 
 The following diagram shows what a topology and client network discovery query finds when it runs on Server 1 with 0 router hops specified: subnet D and Router 1, and all potential clients on subnet D.
 
-![Image of discovery with one router jump.](media/disc-1.gif)
+![Image of discovery with one router jump.](media/Disc-1.gif)
 
 To get a better idea of how more router hops can increase the amount of network resources that are discovered, consider the following network:
 
-![Image of discovery with two router jumps.](media/disc-2.gif)
+![Image of discovery with two router jumps.](media/Disc-2.gif)
 
 Running a topology-only network discovery from Server 1 with one router hop discovers the following entities:
 

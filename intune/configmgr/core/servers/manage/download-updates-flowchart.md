@@ -14,4 +14,4 @@ ms.service: configuration-manager
 
 This data flow displays the process by which a site with an on-line service connection point downloads in-console updates.
 
-![Flowchart - Download updates](media/flowchart---download-updates.png)
+![Flowchart - Download updates](media/Flowchart---Download-updates.png)

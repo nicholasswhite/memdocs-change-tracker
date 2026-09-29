@@ -51,7 +51,7 @@ You can create custom client settings and then assign them to collections. Membe
 
 The following diagram shows an example of how you create and apply custom client settings.
 
-![Client settings](media/clientsettings.gif)
+![Client settings](media/ClientSettings.gif)
 
 To learn more about client settings, see the following articles:
 

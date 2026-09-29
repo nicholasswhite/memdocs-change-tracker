@@ -76,7 +76,7 @@ Create a task sequence with conditional steps for the different languages and ar
 
 For example, the following **Upgrade OS** step uses the English version:
 
-![Task sequence editor showing multiple Upgrade OS steps for ENU, DEU, and JPN](../media/precacheproperties2.png)
+![Task sequence editor showing multiple Upgrade OS steps for ENU, DEU, and JPN](../media/PrecacheProperties2.png)
 
 ![Task sequence editor, Options tab, displaying the WMI WQL query for Locale and OSArchitecture](../media/precacheoptions2.png)
 

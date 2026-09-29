@@ -287,7 +287,7 @@ You add the network locations of your clients as boundaries to only the BG_A bou
 
   Example of boundary groups and fallback times:
 
-  ![BG_Fallack](media/bg_fallback.png)
+  ![BG_Fallack](media/BG_Fallback.png)
 
 With this configuration:
 
@@ -383,7 +383,7 @@ You can now customize an operating system deployment task sequence with a new va
 In an existing task sequence to install an operating system, you'll add a new group with steps to do the BIOS to UEFI conversion.
 
 1. Create a new task sequence group after the steps to capture files and settings, and before the steps to install the operating system. For example, create a group after the **Capture Files and Settings** group named **BIOS-to-UEFI**.
-2. On the **Options** tab of the new group, add a new task sequence variable as a condition where **_SMSTSBootUEFI** is **not equal** to **true**. This prevents the steps in the group from running when a computer is already in UEFI mode. ![BIOS to UEFI group](media/bios-to-uefi-group.png)
+2. On the **Options** tab of the new group, add a new task sequence variable as a condition where **_SMSTSBootUEFI** is **not equal** to **true**. This prevents the steps in the group from running when a computer is already in UEFI mode. ![BIOS to UEFI group](media/BIOS-to-UEFI-group.png)
 3. Under the new group, add the **Restart Computer** task sequence step. In **Specify what to run after restart**, select **The boot image assigned to this task sequence is selected** to start the computer in Windows PE.
 4. On the **Options** tab, add a task sequence variable as a condition where **_SMSTSInWinPE equals false**. This prevents this step from running if the computer is already in Windows PE.
 

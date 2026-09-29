@@ -40,7 +40,7 @@ The **Prerequisites** pane lists any required items needed to run the selected i
 
 For example, the following screenshot shows an example of the **All Rules** tab for the **Cloud Services** group:
 
-![Management insights: All rules and prerequisites for Cloud Services group.](media/management-insights-all-cloud-rules.png)
+![Management insights: All rules and prerequisites for Cloud Services group.](media/Management-insights-all-cloud-rules.PNG)
 
 To see the details, select an insight, and then select **More Details**.
 

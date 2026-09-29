@@ -19,7 +19,7 @@ Synchronized software updates are represented by one of the following icons.
 
 ### Normal Icon
 
-![Normal icon](../media/normal.jpg) The icon with the green arrow represents a normal software update.
+![Normal icon](../media/Normal.jpg) The icon with the green arrow represents a normal software update.
 
 **Description:**
 
@@ -31,7 +31,7 @@ There are no operational concerns.
 
 ### Expired Icon
 
-![Expired icon](../media/expired.jpg) The icon with the black X represents an expired software update. You can also identify expired software updates by viewing the **Expired** column for the software update when it displays in the Configuration Manager console.
+![Expired icon](../media/Expired.jpg) The icon with the black X represents an expired software update. You can also identify expired software updates by viewing the **Expired** column for the software update when it displays in the Configuration Manager console.
 
 **Description:**
 
@@ -43,7 +43,7 @@ There are no operational concerns.
 
 ### Superseded Icon
 
-![Superseded icon](../media/superseded.jpg) The icon with the yellow star represents a superseded software update. You can also identify superseded software updates by viewing the **Superseded** column for the software update when it displays in the Configuration Manager console.
+![Superseded icon](../media/Superseded.jpg) The icon with the yellow star represents a superseded software update. You can also identify superseded software updates by viewing the **Superseded** column for the software update when it displays in the Configuration Manager console.
 
 **Description:**
 
@@ -59,7 +59,7 @@ Superseded software updates have been replaced with newer versions of the softwa
 
 ### Invalid Icon
 
-![Invalid icon](../media/invalid.jpg) The icon with the red X represents an invalid software update.
+![Invalid icon](../media/Invalid.jpg) The icon with the red X represents an invalid software update.
 
 **Description:**
 
@@ -74,7 +74,7 @@ Invalid software updates are in an active deployment, but for some reason the co
 
 ### Metadata-Only Icon
 
-![Metadata-only icon](../media/metadataonly.png) The icon with the blue arrow represents a metadata-only software update.
+![Metadata-only icon](../media/MetadataOnly.png) The icon with the blue arrow represents a metadata-only software update.
 
 **Description:**
 
@@ -90,7 +90,7 @@ Software update groups are represented by one of the following icons.
 
 ### Normal Icon
 
-![Software Update Groups - Normal icon](../media/normal.jpg) The icon with the green arrow represents a software update group that contains only normal software updates.
+![Software Update Groups - Normal icon](../media/Normal.jpg) The icon with the green arrow represents a software update group that contains only normal software updates.
 
 **Operational Concerns:**
 
@@ -98,7 +98,7 @@ There are no operational concerns.
 
 ### Expired Icon
 
-![Software Update Groups - Expired icon](../media/expired.jpg) The icon with the black X represents a software update group that contains one or more expired software updates.
+![Software Update Groups - Expired icon](../media/Expired.jpg) The icon with the black X represents a software update group that contains one or more expired software updates.
 
 **Operational Concerns:**
 
@@ -106,7 +106,7 @@ Remove or replace expired software updates in the software update group when pos
 
 ### Superseded Icon
 
-![Software Update Groups - Superseded icon](../media/superseded.jpg) The icon with the yellow star represents a software update group that contains one or more superseded software updates.
+![Software Update Groups - Superseded icon](../media/Superseded.jpg) The icon with the yellow star represents a software update group that contains one or more superseded software updates.
 
 **Operational Concerns:**
 
@@ -114,7 +114,7 @@ Replace the superseded software update in the software update group with the sup
 
 ### Invalid Icon
 
-![Software Update Groups - Invalid icon](../media/invalid.jpg) The icon with the red X represents a software update group that contains one or more invalid software updates.
+![Software Update Groups - Invalid icon](../media/Invalid.jpg) The icon with the red X represents a software update group that contains one or more invalid software updates.
 
 **Operational Concerns:**
 

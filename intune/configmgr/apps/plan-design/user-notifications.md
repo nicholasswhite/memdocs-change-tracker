@@ -28,7 +28,7 @@ When users receive required software, and select the **Snooze and remind me** se
 - **Later**: Specifies that notifications are scheduled based on the notification settings configured in client settings.
 - **Fixed time**: Specifies that the notification is scheduled to display again after the selected time. For example, if you select 30 minutes, the notification displays again in 30 minutes.
 
-![Computer Agent group in default client settings](media/computeragentsettings.png)
+![Computer Agent group in default client settings](media/ComputerAgentSettings.png)
 
 The maximum snooze time is always based on the notification values configured in the client settings at every time along the deployment timeline. For example:
 

@@ -34,7 +34,7 @@ In addition to installing and configuring the data warehouse database, several n
 
 ### Data Warehouse Dataflow
 
-![Datawarehouse_flow](media/datawarehouse.png)
+![Datawarehouse_flow](media/Datawarehouse.png)
 
 | Step | Details |
 | --- | --- |

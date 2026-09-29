@@ -38,7 +38,7 @@ Shows the number of client devices per OS by version. It uses the following grou
 
 Hover over a graph section to show the percentage of devices in that OS group.
 
-![Client OS distribution tile](media/co-management-dashboard/co-management-os-distribution-graph.png)
+![Client OS distribution tile](media/co-management-dashboard/Co-management-OS-distribution-graph.PNG)
 
 ### Co-management status
 
@@ -74,7 +74,7 @@ Displays a bar chart with the number of devices that you've transitioned to Micr
 
 Hover over a chart section to show the number of devices transitioned for the workload.
 
-![Workload transition bar graph](media/co-management-dashboard/workload-transition.png)
+![Workload transition bar graph](media/co-management-dashboard/Workload-Transition.PNG)
 
 ### Enrollment errors
 

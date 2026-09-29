@@ -61,7 +61,7 @@ The purpose of MDT is to help automate the deployment of Windows operating syste
 
 Figure 1 illustrates the high-level LTI, ZTI, and UDI deployment processes.
 
-![Figure 1 illustrates the high-level LTI, ZTI, and UDI deployment processes.](media/mdtdevtoolkit1.jpg)
+![Figure 1 illustrates the high-level LTI, ZTI, and UDI deployment processes.](media/MDTDevToolkit1.jpg)
 
 **Figure 1. High-level deployment process**
 
@@ -5390,13 +5390,13 @@ For the New Computer Deployment Wizard, the operating system images can be in th
 
   Task sequences created using the **User Driven Installation Task Sequence** task sequence template automatically detect which method to use and perform the deployment accordingly. The New Computer deployment scenario always begins with the target computer running Windows PE, which is how the tasks sequence knows the difference between the New Computer deployment scenario and the Refresh Computer deployments scenario. Figure 2 illustrates how UDI is used in the New Computer deployment scenario using the traditional OSD deployment methodology in Configuration Manager with the operating system image located on a distribution point.
 
-  ![Figure 2. Process flow for UDI performing the New Computer deployment scenario for images stored on distribution points](media/mdtdevtoolkit2.jpg)
+  ![Figure 2. Process flow for UDI performing the New Computer deployment scenario for images stored on distribution points](media/MDTDevToolkit2.jpg)
 
   **Figure 2. Process flow for UDI performing the New Computer deployment scenario for images stored on distribution points**
 
   Figure 3 illustrates how UDI is used in the New Computer deployment scenario using the prestaged media feature in Configuration Manager with the operating system image located on a local disk on the target computer.
 
-  ![Figure 3. Process flow for UDI performing the New Computer deployment scenario for prestaged media](media/mdtdevtoolkit3.jpg)
+  ![Figure 3. Process flow for UDI performing the New Computer deployment scenario for prestaged media](media/MDTDevToolkit3.jpg)
 
   **Figure 3. Process flow for UDI performing the New Computer deployment scenario for prestaged media**
 
@@ -5404,7 +5404,7 @@ For the New Computer Deployment Wizard, the operating system images can be in th
 
 Task sequences used to perform the Refresh Computer scenario use the same task sequence template as the New Computer scenario, the **User Driven Installation Task Sequence** task sequence template. The Refresh Computer deployment scenario always begins with the target computer running the existing Windows operating system, which is how the tasks sequence knows the difference between the Refresh Computer deployment scenario and the New Computer deployments scenario. Figure 4 illustrates how UDI is used in the Refresh Computer deployment scenario.
 
-![Figure 4. Process flow for UDI performing the Refresh Computer deployment scenario](media/mdtdevtoolkit4.jpg)
+![Figure 4. Process flow for UDI performing the Refresh Computer deployment scenario](media/MDTDevToolkit4.jpg)
 
 Figure 4. Process flow for UDI performing the Refresh Computer deployment scenario
 
@@ -5417,7 +5417,7 @@ The Replace Computer scenario requires the following task sequences.
 
   Figure 5 illustrates how UDI is used in the Replace Computer deployment scenario.
 
-  ![Figure 5. Process flow for UDI performing the Replace Computer deployment scenario](media/mdtdevtoolkit5.jpg)
+  ![Figure 5. Process flow for UDI performing the Replace Computer deployment scenario](media/MDTDevToolkit5.jpg)
 
   **Figure 5. Process flow for UDI performing the Replace Computer deployment scenario**
 
@@ -5876,7 +5876,7 @@ The primary tool for administering UDI is the UDI Wizard designer. The UDI Wizar
 
 Figure 6 illustrates the high-level overview of the UDI administrative process.
 
-![Figure 6 illustrates the high-level overview of the UDI administrative process.](media/mdtdevtoolkit6.jpg)
+![Figure 6 illustrates the high-level overview of the UDI administrative process.](media/MDTDevToolkit6.jpg)
 
 **Figure 6. Overview of UDI administration process**
 
@@ -6028,7 +6028,7 @@ Table 143 lists the UDI deployment process components and a brief description of
 
 For each wizard page displayed in the UDI Wizard, there is a corresponding wizard page editor that can be used to configure that wizard page using the UDI Wizard Designer. The UDI Wizard configuration file (UDIWizard_Config.xml) is used to store the configuration settings for each wizard page. Figure 7 illustrates the relationship between UDI wizard pages, UDI wizard page editors, and the UDI Wizard configuration file.
 
-![Figure 7. Relationship between UDI wizard pages, UDI wizard page editors, and the UDI Wizard configuration file](media/mdtdevtoolkit7.jpg)
+![Figure 7. Relationship between UDI wizard pages, UDI wizard page editors, and the UDI Wizard configuration file](media/MDTDevToolkit7.jpg)
 
 **Figure 7. Relationship between UDI wizard pages, UDI wizard page editors, and the UDI Wizard configuration file**
 
@@ -6065,7 +6065,7 @@ The UDI Wizard Designer is used to customize the user experience in the UDI Wiza
 
 Figure 8 illustrates the UDI Wizard Designer high-level UI elements.
 
-![Figure 8. UDI Wizard Designer high-level UI elements](media/mdtdevtoolkit8.jpg)
+![Figure 8. UDI Wizard Designer high-level UI elements](media/MDTDevToolkit8.jpg)
 
 **Figure 8. UDI Wizard Designer high-level UI elements**
 
@@ -6083,7 +6083,7 @@ Table 144 lists the high-level UI elements illustrated in Figure 8 and provides 
 
 Figure 9 illustrates the UI elements in the Page Library pane in the UDI Wizard Designer.
 
-![Figure 9. UI elements in the Page Library pane](media/mdtdevtoolkit9.jpg)
+![Figure 9. UI elements in the Page Library pane](media/MDTDevToolkit9.jpg)
 
 **Figure 9. UI elements in the Page Library pane**
 
@@ -6106,7 +6106,7 @@ Figure 10 illustrates the UI elements in the **Flow** tab in the details pane. T
 1. Wizard pages that will be displayed in the UDI Wizard for a specific stage within a specific stage group
 2. Sequence of the wizard pages as they are displayed in the UDI Wizard
 
-   ![Figure 10. Flow tab in the UDI Wizard Designer](media/mdtdevtoolkit10.jpg)
+   ![Figure 10. Flow tab in the UDI Wizard Designer](media/MDTDevToolkit10.jpg)
 
    **Figure 10. Flow tab in the UDI Wizard Designer**
 
@@ -6129,7 +6129,7 @@ Figure 11 illustrates the UI elements in the **Configure** tab in the details pa
 >
 > Any changes made to the settings on the **Configure** tab affect the instance of that wizard page in the Page Library. The result is any stage groups or stages that contain the same instance of that wizard page will also reflect the changes in the configuration settings.
 
-![Figure 11. Configure tab in the UDI Wizard Designer](media/mdtdevtoolkit11.jpg)
+![Figure 11. Configure tab in the UDI Wizard Designer](media/MDTDevToolkit11.jpg)
 
 **Figure 11. Configure tab in the UDI Wizard Designer**
 
@@ -6145,7 +6145,7 @@ Table 147 lists the UI elements on the **Flow** tab, which is illustrated in Fig
 
 If you expand a subsection, you can see the controls within that subsection. Figure 12 illustrates the UI elements for a control beneath a subsection. A subsection may contain multiple controls.
 
-![Figure 12. UI elements for a control on the Configure tab in the UDI Wizard Designer](media/mdtdevtoolkit12.jpg)
+![Figure 12. UI elements for a control on the Configure tab in the UDI Wizard Designer](media/MDTDevToolkit12.jpg)
 
 **Figure 12. UI elements for a control on the Configure tab in the UDI Wizard Designer**
 
@@ -6584,7 +6584,7 @@ You can add any combination of these controls to your custom wizard page based o
 
 Figure 13 provides an example of a custom wizard page and the Build Your Own Page toolbox.
 
-![Figure 13. Example custom wizard page](media/mdtdevtoolkit13.jpg)
+![Figure 13. Example custom wizard page](media/MDTDevToolkit13.jpg)
 
 Figure 13. Example custom wizard page
 
@@ -7901,7 +7901,7 @@ Select any combination of the following methods for creating folder structures:
 
   Figure 14 illustrates the folder structure Woodgrove Bank created.
 
-  ![Dev Toolkit 14](media/devtoolkit14.png "DevToolkit14")
+  ![Dev Toolkit 14](media/DevToolkit14.png "DevToolkit14")
 
   **Figure 14. Device driver folder structure created by Woodgrove Bank**
 

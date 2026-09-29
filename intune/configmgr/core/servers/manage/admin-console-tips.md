@@ -484,7 +484,7 @@ Copy information from the **Asset Details** pane for the following monitoring no
 - **Content Distribution Status**
 - **Deployment Status**
 
-![Deployment Status view, copy asset details](media/1810-deployment-status.png)
+![Deployment Status view, copy asset details](media/1810-deployment-status.PNG)
 
 ## Administration workspace
 

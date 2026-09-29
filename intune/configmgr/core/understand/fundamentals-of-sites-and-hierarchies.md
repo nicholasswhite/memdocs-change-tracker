@@ -32,7 +32,7 @@ A *secondary site* can only be installed as a child site below a primary site. T
 
 The following diagrams show some example site designs.
 
-![Hierarchy examples](media/hierarchy_examples.png)
+![Hierarchy examples](media/Hierarchy_examples.png)
 
 For more information, see the following topics:
 

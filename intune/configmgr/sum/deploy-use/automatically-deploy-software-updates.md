@@ -91,7 +91,7 @@ Automatically approve and deploy software updates by using an ADR. The rule can 
    - To manually run the ADR, select the rule in the **Automatic Deployment Rule** node of the console, and then click **Run Now** in the ribbon.
    - ADRs can be scheduled to evaluate offset from a base day. For example, if Patch Tuesday actually falls on Wednesday for you, set the evaluation schedule for the second Tuesday of the month offset by one day.
 
-     - When scheduling evaluation with an offset during the last week of the month, if you choose an offset that continues into the next month, the site schedules evaluation for the last day of the month. ![ADR custom evaluation schedule offset from base day](media/adr-evaluation-schedule-offset.png)
+     - When scheduling evaluation with an offset during the last week of the month, if you choose an offset that continues into the next month, the site schedules evaluation for the last day of the month. ![ADR custom evaluation schedule offset from base day](media/ADR-evaluation-schedule-offset.PNG)
 7. On the **Deployment Schedule** page, configure the following settings:
 
    - **Schedule evaluation**: Specify the time that Configuration Manager evaluates the available time and installation deadline times. Choose to use Coordinated Universal Time (UTC) or the local time of the computer that runs the Configuration Manager console.

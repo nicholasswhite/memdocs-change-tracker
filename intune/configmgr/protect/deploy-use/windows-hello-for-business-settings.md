@@ -91,7 +91,7 @@ Configuration Manager integrates with Windows Hello for Business in the followin
 
 The following screenshot is an example of Windows Hello for Business profile settings:
 
-![Windows Hello for Business Policy wizard, showing the list of available settings](../media/hello-for-business-settings.png)
+![Windows Hello for Business Policy wizard, showing the list of available settings](../media/Hello-for-Business-settings.png)
 
 ## Configure permissions
 

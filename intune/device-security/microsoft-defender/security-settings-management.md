@@ -327,7 +327,7 @@ In the Microsoft Defender portal, as a security administrator:
    > As of July 3, 2025, dynamic asset rules are supported for defining the devices in the MDE-Management tag in public preview.
 3. Configure the feature for Microsoft Defender for Cloud onboarded devices and Configuration Manager authority settings to fit your organization's needs:
 
-   [![Configure Pilot mode for Endpoint settings management in the Microsoft Defender portal.](media/security-settings-management/pilot-cmauthority-mde-settings-management-defender.png)](media/security-settings-management/pilot-cmauthority-mde-settings-management-defender.png#lightbox)
+   [![Configure Pilot mode for Endpoint settings management in the Microsoft Defender portal.](media/security-settings-management/pilot-CMAuthority-mde-settings-management-defender.png)](media/security-settings-management/pilot-CMAuthority-mde-settings-management-defender.png#lightbox)
 
    > [!TIP]
    >

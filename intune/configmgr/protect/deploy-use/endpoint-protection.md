@@ -67,7 +67,7 @@ Configuration Manager manages and monitors Microsoft Defender for Endpoint, form
 
 Use the following diagram to help you understand the workflow to implement Endpoint Protection in your Configuration Manager hierarchy.
 
-![Endpoint protection workflow.](../media/endpoint-protection-workflow.gif)
+![Endpoint protection workflow.](../media/Endpoint-Protection-Workflow.gif)
 
 ## Recommendations
 
