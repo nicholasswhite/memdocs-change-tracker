@@ -33,7 +33,7 @@ The *restart* action triggers a restart (usually begins within 5 minutes) and mi
 
 > [!NOTE]
 >
-> Restart is only available for kiosk devices and managed guest session devices. The restart fails on any other type of device. For more information, see [Kiosk apps, managed guest sessions, and smart cards](https://support.google.com/chrome/a/topic/6128720?) (opens Google Chrome Enterprise Help).
+> Restart is only available for kiosk devices and managed guest session devices. The restart fails on any other type of device. For more information, see [Kiosk apps, managed guest sessions, and smart cards](https://support.google.com/chrome/a/topic/6128720) (opens Google Chrome Enterprise Help).
 
 ::: zone-end
 

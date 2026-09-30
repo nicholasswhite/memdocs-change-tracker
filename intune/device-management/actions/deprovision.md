@@ -33,7 +33,7 @@ The *deprovision* device action in Microsoft Intune enables IT administrators to
 2. From the devices list, select a device.
 3. At the top of the device overview pane, find the row of action icons. Select **Deprovision**. To confirm, select **Yes**.
 
-After you deprovision a device, it remains in the Intune admin center and the Google Admin console. In the **System info** pane, the device status changes to **Deprovisioned**. The device can't be enrolled again until you restore it to factory settings. For more information about the deprovision action, such as how to select the best reason for deprovisioning, see the [Chrome Enterprise and Education Help documentation](https://support.google.com/chrome/a/answer/3523633?).
+After you deprovision a device, it remains in the Intune admin center and the Google Admin console. In the **System info** pane, the device status changes to **Deprovisioned**. The device can't be enrolled again until you restore it to factory settings. For more information about the deprovision action, such as how to select the best reason for deprovisioning, see the [Chrome Enterprise and Education Help documentation](https://support.google.com/chrome/a/answer/3523633).
 
 ## Reference links
 

@@ -110,7 +110,7 @@ After saving the changes, you'll need to completely regenerate the boot images.
 
 After you updated your MDT boot image to [ADK for Windows 11](https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install), you might see popups in Windows PE (WinPE) multicast enabled environments prompting wdscommonlib.dll and imagelib.dll are missing in WinPE.
 
-The right way to add WDS multicast to WinPE is to install WinPE-WDS-Tools OC ([WinPE optional components](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference?#winpe-optional-components--)) into WinPE.
+The right way to add WDS multicast to WinPE is to install WinPE-WDS-Tools OC ([WinPE optional components](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference#winpe-optional-components--)) into WinPE.
 
 Follow this example to install WinPE-WDS-Tools OC in WinPE (assuming the mount folder E:\mnt exists).
 

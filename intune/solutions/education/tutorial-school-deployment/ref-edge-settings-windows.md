@@ -194,6 +194,6 @@ Content-Type: application/json
 
 If you leave the default configuration, when users open a new tab page they'll see a combination of the Microsoft 365 feed and news. You can control the visibility of news from the Microsoft 365 admin center.
 
-1. In the Microsoft 365 admin center (<https://admin.microsoft.com>), go to **Settings** &gt; **Org settings** &gt; **Services** &gt; [News](https://admin.microsoft.com/adminportal/home?).
+1. In the Microsoft 365 admin center (<https://admin.microsoft.com>), go to **Settings** &gt; **Org settings** &gt; **Services** &gt; [News](https://admin.microsoft.com/adminportal/home).
 2. In the **News** panel, click **Microsoft Edge new tab page**.
 3. Untick **Show company information and industry news on the new tab page**.

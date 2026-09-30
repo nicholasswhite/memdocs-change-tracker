@@ -50,7 +50,7 @@ You can now define a **Script Execution Timeout (seconds)** when configuring [cl
 
 ## Microsoft Defender for Endpoint onboarding for Windows Server 2012 R2 and Windows Server 2016
 
-Configuration Manager will now utilize the [Windows Server 2012 R2 and Windows Server 2016 unified](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-server-endpoints?#new-windows-server-2012-r2-and-2016-functionality-in-the-modern-unified-solution) solution for anti-virus and endpoint detection and response. From this technical preview, devices that are targeted with Microsoft Defender for Endpoint onboarding policy use the unified agent versus the previous Microsoft Monitoring Agent based solution (where applicable).
+Configuration Manager will now utilize the [Windows Server 2012 R2 and Windows Server 2016 unified](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-server-endpoints#new-windows-server-2012-r2-and-2016-functionality-in-the-modern-unified-solution) solution for anti-virus and endpoint detection and response. From this technical preview, devices that are targeted with Microsoft Defender for Endpoint onboarding policy use the unified agent versus the previous Microsoft Monitoring Agent based solution (where applicable).
 
 > [!NOTE]
 >

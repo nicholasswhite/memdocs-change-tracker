@@ -79,7 +79,7 @@ Runs only one app on the device, such as a web browser or Store app.
       - **Public browsing (InPrivate)**: Runs a limited multi-tab version of Microsoft Edge. Users can browse publicly, or end their browsing session.
 
     For more information on these options, see [Deploy Microsoft Edge kiosk mode](https://learn.microsoft.com/en-us/microsoft-edge/deploy/microsoft-edge-kiosk-mode-deploy#supported-configuration-types).
-  - **Add Kiosk browser**: Select **Kiosk browser settings**. These settings control a web browser app on the kiosk. Be sure you get the [Kiosk browser app](https://apps.microsoft.com/detail/9ngb5s5xg2kp?) from the Store, add it to Intune as a [Client App](../../app-management/deployment/index.md). Then, assign the app to the kiosk devices.
+  - **Add Kiosk browser**: Select **Kiosk browser settings**. These settings control a web browser app on the kiosk. Be sure you get the [Kiosk browser app](https://apps.microsoft.com/detail/9ngb5s5xg2kp) from the Store, add it to Intune as a [Client App](../../app-management/deployment/index.md). Then, assign the app to the kiosk devices.
 
     Enter the following settings:
 

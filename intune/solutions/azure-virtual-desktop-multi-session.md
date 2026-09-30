@@ -174,13 +174,13 @@ You can use the [settings catalog](../device-configuration/settings-catalog/inde
 The following settings are available in the catalog, with the links opening the Windows CSP documentation:
 
 - [Active Hours End](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-activehoursend)
-- [Active Hours Max Range](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update?#update-activehoursmaxrange)
+- [Active Hours Max Range](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-activehoursmaxrange)
 - [Active Hours Start](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-activehoursstart)
 - [Block "Pause Updates" ability](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-setdisablepauseuxaccess)
 - [Configure Deadline Grace Period](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-configuredeadlinegraceperiod)
 - [Defer Quality Updates Period (Days)](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-deferqualityupdatesperiodindays)
 - [Pause Quality Updates Start Time](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-pausequalityupdatesstarttime)
-- [Quality Update Deadline Period (Days)](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update?#update-configuredeadlineforqualityupdates)
+- [Quality Update Deadline Period (Days)](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-Update#update-configuredeadlineforqualityupdates)
 
 ## Remote actions
 
