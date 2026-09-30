@@ -1,4 +1,4 @@
-# MemDocs Change Tracker — unofficial
+# MemDocs Change Tracker
 
 **This is an independent, read-only change tracker. It is not the Microsoft MemDocs repository and is not maintained or endorsed by Microsoft.**
 
