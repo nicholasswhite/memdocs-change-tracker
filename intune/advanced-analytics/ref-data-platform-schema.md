@@ -427,7 +427,7 @@ For entities that include Android data, the following platforms are supported:
 
 > [!NOTE]
 >
-> `SimInfo` isn't supported for Android Enterprise personally owned devices with a work profile (BYOD).
+> `SimInfo` isn't supported for Android Enterprise personally owned devices with a work profile (BYOD). ICCID isn't supported on Windows.
 
 ## `SystemEnclosure`
 
