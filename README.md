@@ -1,6 +1,6 @@
 # MemDocs Change Tracker
 
-**This is an independent, read-only change tracker. It is not the Microsoft MemDocs repository and is not maintained or endorsed by Microsoft.**
+**This is an independent, read-only change tracker. It is not maintained or endorsed by Microsoft.**
 
 Use this repository to review changes observed in public Microsoft Learn documentation for Microsoft Intune, Configuration Manager, and Windows Autopilot. For the official documentation, visit [Microsoft Learn](https://learn.microsoft.com/en-us/intune/).
 
