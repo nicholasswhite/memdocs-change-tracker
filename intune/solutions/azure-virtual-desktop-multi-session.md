@@ -4,8 +4,20 @@ description: Guidelines for using Azure Virtual Desktop multi-session with Micro
 ms.date: "2025-02-13T00:00:00Z"
 ms.topic: article
 ms.reviewer: madakeva
-ms.collection:
-- M365-identity-device-management
+ms.collection: M365-identity-device-management
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/7814ca69-56be-4667-8a46-86327796c328
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/f15dfcd0-2664-48ba-bb88-f1f86eadbfd1
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Windows Enterprise multi-session remote desktops

@@ -4,8 +4,7 @@ titleSuffix: Windows Autopilot
 description: Use Windows Autopilot to enroll Microsoft Entra hybrid joined devices in Microsoft Intune.
 ms.date: "2025-05-29T00:00:00Z"
 ms.topic: how-to
-ms.collection:
-  - M365-identity-device-management
+ms.collection: M365-identity-device-management
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 10</a>
@@ -13,6 +12,22 @@ appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/windows-server-release-info" target="_blank">Windows Server 2022</a>
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/windows-server-release-info" target="_blank">Windows Server 2019</a>
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/windows-server-release-info" target="_blank">Windows Server 2016</a>
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/37da4cc9-0cfc-42a9-ba5e-805706b01ef8
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.reviewer: madakeva
+ms.service: windows-client
+ms.subservice: autopilot
+ms.suite: ems
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/2d0723c1-cf38-4c30-ab3d-5df787b33270
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/3661fb96-d414-4a4e-b7ad-9370637790dd
 ---
 
 # Deploy Microsoft Entra hybrid joined devices by using Intune and Windows Autopilot

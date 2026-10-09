@@ -3,6 +3,16 @@ title: "Tutorial: deploy and manage devices in a school"
 description: Introduction to deployment and management of devices in education environments.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
+author: scottbreenmsft
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: scbree
+ms.service: microsoft-intune
+ms.subservice: education
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Tutorial: deploy and manage devices in a school

@@ -6,6 +6,20 @@ ms.subservice: core-infra
 ms.topic: upgrade-and-migration-article
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/60bfc045-f127-4841-9d00-ea35495a5800
 ---
 
 # Plan for migration to Configuration Manager current branch

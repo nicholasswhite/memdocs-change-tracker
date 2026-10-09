@@ -6,6 +6,20 @@ ms.subservice: compliance
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Create configuration items in Configuration Manager

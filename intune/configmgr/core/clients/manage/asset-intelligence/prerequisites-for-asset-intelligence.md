@@ -6,6 +6,20 @@ ms.subservice: core-infra
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/691e3042-55ad-4ce1-b5e9-649b1cc47b5c
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/b7d11190-096c-4ddb-87db-63764f603aac
 ---
 
 # Prerequisites for Asset Intelligence in Configuration Manager

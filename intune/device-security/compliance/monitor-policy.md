@@ -5,6 +5,24 @@ ms.date: "2026-07-02T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ilwu
 ai-usage: ai-assisted
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection:
+- M365-identity-device-management
+- compliance
+- sub-device-compliance
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/12e559b9-eaf6-4aee-9af7-62334e15f863
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/67b2ba1a-6f74-4044-a48a-f0f8ad076b8f
 ---
 
 # Monitor results of your Intune device compliance policies

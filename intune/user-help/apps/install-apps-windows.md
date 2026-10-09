@@ -2,7 +2,18 @@
 title: "Install and share apps on your device"
 description: Sign in to the Company Portal app for Windows to browse and install work or school-related apps on your enrolled device.
 ms.date: "2024-10-07T00:00:00Z"
-ms.reviewer:
+ms.reviewer: ''
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Install and share apps on your device

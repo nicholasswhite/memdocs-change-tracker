@@ -6,8 +6,12 @@ ms.topic: whats-new
 ai-usage: ai-assisted
 
 ROBOTS: NOINDEX,NOFOLLOW
-ms.collection:
-- M365-identity-device-management
+ms.collection: M365-identity-device-management
+author: lenewsad
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
 ---
 
 # What's new in the Microsoft Intune - previous months

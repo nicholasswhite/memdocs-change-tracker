@@ -4,6 +4,21 @@ description: Use Microsoft Intune to configure common Platform SSO scenarios for
 ms.date: "2026-05-11T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: arnab, veenasoman
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/1433a524-c01f-4b87-beab-670c040dea4f
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/37da4cc9-0cfc-42a9-ba5e-805706b01ef8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: configuration
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/312f1f05-a431-4193-8a4d-e6245d5966de
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/3661fb96-d414-4a4e-b7ad-9370637790dd
 ---
 
 # Common Platform SSO scenarios for macOS devices in Microsoft Intune

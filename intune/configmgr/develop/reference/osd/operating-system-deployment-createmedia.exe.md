@@ -7,6 +7,24 @@ ms.topic: reference
 ms.collection: tier3
 ms.custom: sfi-ropc-nochange
 ms.service: configuration-manager
+author: sccmavenger
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
+- https://authoring-docs-microsoft.poolparty.biz/devrel/68cb9039-df60-49b0-8ef8-89ad96497f63
+- https://authoring-docs-microsoft.poolparty.biz/devrel/97159432-14a9-4307-a469-d2f2c75f0e33
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/12e559b9-eaf6-4aee-9af7-62334e15f863
+- https://authoring-docs-microsoft.poolparty.biz/devrel/50565c62-5f6b-4687-be38-323113c72c2e
+- https://authoring-docs-microsoft.poolparty.biz/devrel/725b6df3-93e8-472d-834e-e7e0d2953d35
 ---
 
 # OS deployment CreateMedia.exe

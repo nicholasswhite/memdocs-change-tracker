@@ -4,6 +4,17 @@ description: Use App Control for Business policies and a managed installer to ma
 ms.date: "2025-09-17T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: nicolezhao
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: configuration
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Manage approved apps for Windows devices with App Control for Business policy and Managed Installers for Microsoft Intune

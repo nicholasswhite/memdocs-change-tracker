@@ -7,6 +7,16 @@ ms.topic: reference
 ROBOTS: NOINDEX
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # Levels of diagnostic usage data collection for version 1602 of Configuration Manager

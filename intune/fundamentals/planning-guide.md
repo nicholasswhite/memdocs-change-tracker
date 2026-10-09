@@ -4,6 +4,21 @@ description: Plan, design, implement, adopt, and move to Microsoft Intune. Get g
 ms.date: "2026-05-28T00:00:00Z"
 ms.topic: upgrade-and-migration-article
 ms.reviewer: davguy
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: fundamentals
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8ca32b3f-fa14-46df-b09a-9c4a591d6396
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Microsoft Intune planning guide

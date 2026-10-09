@@ -5,8 +5,20 @@ ms.date: "2025-06-12T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: beflamm
 ms.collection:
-- M365-identity-device-management
 - Android
+- M365-identity-device-management
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
+- https://authoring-docs-microsoft.poolparty.biz/devrel/cf9b82c5-b6dc-45f3-b005-b1bc5fc03bea
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/0c85d34e-bfd2-4466-957c-f0b61e9692df
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8ca32b3f-fa14-46df-b09a-9c4a591d6396
 ---
 
 # Manage Messaging Collaboration Access by Using Outlook for iOS and Android With Microsoft Intune

@@ -3,6 +3,18 @@ title: "Backup and restore scenarios for iOS/iPadOS"
 description: Learn about backup and restore scenarios for iOS/iPadOS devices.
 ms.date: "2024-08-28T00:00:00Z"
 ms.topic: how-to
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/aebdc4a3-c54b-4eea-94e3-663d5e166f57
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.reviewer: annovich
+ms.service: microsoft-intune
+ms.subservice: enrollment
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/1baec8e6-ab38-4b56-bb59-f6282d94f311
 ---
 
 # Backup and restore scenarios for iOS/iPadOS

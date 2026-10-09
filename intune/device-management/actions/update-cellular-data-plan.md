@@ -8,6 +8,20 @@ ms.custom: msecd-doc-authoring-1023
 zone_pivot_groups: 22f7442d-9384-49c8-abff-aaa058b30589
 
 #customer intent: As an Intune administrator, I want to activate or remove eSIM cellular plans so that I can manage cellular connectivity on supported devices.
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.reviewer: mattcall
+ms.service: microsoft-intune
+ms.subservice: remote-actions
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/67b2ba1a-6f74-4044-a48a-f0f8ad076b8f
 ---
 
 # Manage eSIM cellular plans with Microsoft Intune device actions

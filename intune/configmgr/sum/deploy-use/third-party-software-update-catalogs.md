@@ -5,6 +5,23 @@ ms.date: "2024-04-18T00:00:00Z"
 ms.subservice: software-updates
 ms.topic: reference
 ms.collection: tier3
+author: sccmavenger
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/aa9d0281-4c35-44bb-8c75-a0920bde2014
+- https://authoring-docs-microsoft.poolparty.biz/devrel/c7ddd0ba-08b8-4055-8ab8-0da61f3dfbb3
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+ms.service: configuration-manager
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5cf7e60a-ca26-4c6f-befd-5e90eae977f5
+- https://authoring-docs-microsoft.poolparty.biz/devrel/c7449412-70b0-48ea-831f-3b132eafb97e
 ---
 
 # Available third-party software update catalogs

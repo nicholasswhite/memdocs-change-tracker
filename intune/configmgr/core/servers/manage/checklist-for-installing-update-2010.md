@@ -7,6 +7,18 @@ ms.topic: checklist
 ROBOTS: NOINDEX
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/f1499c3b-793f-48c3-a9ce-20285bcc6541
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # Checklist for installing update 2010 for Configuration Manager

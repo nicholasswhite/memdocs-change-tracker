@@ -11,6 +11,16 @@ metadata:
   ms.date: '2021-09-23T00:00:00Z'
   ms.collection: tier3
   ms.service: configuration-manager
+  author: sccmavenger
+  manager: laurawi
+  moniker_range_name: ''
+  ms.author: dannygu
+  ms.reviewer:
+  - brianhun
+  - hugowu
+  - payur
+  - qiani
+  - umaikhan
 landingContent:
 - title: Fundamentals
   linkLists:

@@ -1,9 +1,26 @@
 ---
 title: "Microsoft Intune for US Government GCC High and DoD service description"
 description: Learn more about the Intune government service offerings and features. This article is designed to serve as an overview of the Microsoft Intune offering for government community cloud (GCC) High and United States Department of Defense (DoD) environments.
-ms.date: "2026-09-08T00:00:00Z"
+ms.date: '2026-10-02T00:00:00Z'
 ms.topic: concept-article
 ms.reviewer: acabello
+ai-usage: ai-assisted
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/1dd701e0-441f-4b0a-9806-aa47decc4e35
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.custom: msecd-doc-authoring-1017
+ms.service: microsoft-intune
+ms.subservice: fundamentals
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/0a2fc935-5977-4aa6-9f55-0be03bd2acb8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Microsoft Intune for US Government GCC High and DoD service description
@@ -58,7 +75,7 @@ The following features are available and supported in Microsoft GCC High and/or 
 | --- | --- |
 | Log Analytics | You can send Intune log data to Azure Storage, Event Hubs, or Log Analytics.    For more information on this feature, see [Send log data to storage, event hubs, or log analytics from Intune](../governance/integrate-azure-monitor.md). |
 | Microsoft Defender for Endpoint security settings management | On devices onboarded to Defender but not enrolled in Intune, you can use Intune endpoint security policies to manage Defender security settings.   This support extends to the US Government Community Cloud (GCC), US Government Community High (GCC High), and Department of Defense (DoD) environments.   For more information on this feature, see [Defender for Endpoint security settings management](../device-security/microsoft-defender/security-settings-management.md). |
-| Microsoft Intune advanced capabilities | The following Intune advanced capabilities support the GCC High and DoD environments:  - [Advanced Analytics](../advanced-analytics/index.md) - [Endpoint Privilege Management](../epm/overview.md) - [Enterprise Application Management (EAM)](../app-management/deployment/enterprise-app-management.md) - [Firmware-over-the-air update](../device-updates/android/manage-fota.md) - [Microsoft Tunnel for Mobile Application Management](../device-security/microsoft-tunnel/mam.md) - [Specialty devices management](../device-management/specialty-devices.md)  The following Intune advanced capabilities support GCC High environments only and aren't supported in DoD:  - [Cloud PKI](../cloud-pki/index.md) - [Remote Help](../remote-help/index.md) |
+| Microsoft Intune advanced capabilities | The following Intune advanced capabilities support GCC High and/or DoD. Review the linked documentation for cloud-specific availability:  - [Advanced Analytics](../advanced-analytics/index.md) - [Endpoint Privilege Management](../epm/overview.md) - [Enterprise Application Management (EAM)](../app-management/deployment/enterprise-app-management.md) - [Firmware-over-the-air update](../device-updates/android/manage-fota.md). Samsung Knox E-FOTA integration supports GCC High. - [Microsoft Tunnel for Mobile Application Management](../device-security/microsoft-tunnel/mam.md) - [Specialty devices management](../device-management/specialty-devices.md)  The following Intune advanced capabilities support GCC High environments only and aren't supported in DoD:  - [Cloud PKI](../cloud-pki/index.md) - [Remote Help](../remote-help/index.md) |
 | Mobile Threat Defense (MTD) | Mobile Threat Defense (MTD) connectors for Android and iOS/iPadOS devices with MTD vendors that **also support** the GCC High environment can be used. When you sign in to a GCC High tenant, you see the connectors that are available in these environments. |
 | Platform support | You can use the same operating systems - Android, Android Open Source Project (AOSP), iOS/iPadOS, Linux, macOS, and Windows.   - **Android (AOSP)**: There are some device restrictions. For more information, see [Supported operating systems and browsers in Intune - AOSP](ref-supported-platforms.md#android).  - **Linux**: Generally available. |
 | Standard MDM features | You can use app policies, device configuration profiles, compliance policies, and more. |

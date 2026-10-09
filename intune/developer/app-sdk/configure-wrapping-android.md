@@ -4,8 +4,23 @@ description: Learn how to wrap your Android apps without changing the code of th
 ms.date: "2024-11-18T00:00:00Z"
 ms.topic: reference
 ms.collection:
-- M365-identity-device-management
 - Android
+- M365-identity-device-management
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/9bdc1705-9b40-49d6-8377-caa0b71fda66
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.reviewer: jamiesil
+ms.service: microsoft-intune
+ms.subservice: developer
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/686ed158-d915-41e9-9760-efa46ba88f6d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Prepare Android Apps for App Protection Policies With the Intune App Wrapping Tool

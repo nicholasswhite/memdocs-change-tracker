@@ -6,6 +6,16 @@ ms.subservice: protect
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # Enable Endpoint Protection malware definitions to download from Microsoft Updates

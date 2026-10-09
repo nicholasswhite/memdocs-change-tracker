@@ -8,6 +8,19 @@ ms.collection:
 - M365-identity-device-management
 - privacy
 - sub-data-privacy
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/e9e4163d-5abc-4b31-8602-bd8826f5d740
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/a225912b-c498-48b4-a85f-d3e64981cbdc
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ee561821-1ac7-45a8-9409-6ba5eb7a5b97
 ---
 
 # Data collection in Intune

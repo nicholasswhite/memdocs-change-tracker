@@ -3,6 +3,23 @@ title: "Set up the Certificate Connector for Microsoft Intune to support the Dig
 description: Install and configure the Certificate Connector for Microsoft Intune to issue PKCS certificates from DigiCert PKI Platform to Intune-managed devices.
 ms.date: "2024-10-09T00:00:00Z"
 ms.topic: how-to
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/a101c485-5d78-47d4-acb8-5cecd163b5b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection:
+- M365-identity-device-management
+- certificates
+- sub-certificates
+ms.reviewer: wicale
+ms.service: microsoft-intune
+ms.subservice: fundamentals
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43a4fac3-c2aa-4267-87e4-add0300397fa
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Set up the Certificate Connector for Microsoft Intune to support the DigiCert PKI Platform

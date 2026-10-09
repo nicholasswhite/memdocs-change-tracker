@@ -5,8 +5,22 @@ ms.date: "2026-03-02T00:00:00Z"
 ms.topic: article
 ms.reviewer: demerson
 ms.collection:
-- M365-identity-device-management
 - Android
+- M365-identity-device-management
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
+- https://authoring-docs-microsoft.poolparty.biz/devrel/aebdc4a3-c54b-4eea-94e3-663d5e166f57
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/06e86142-34c2-4b94-ab9c-9477c21f7152
+- https://authoring-docs-microsoft.poolparty.biz/devrel/1baec8e6-ab38-4b56-bb59-f6282d94f311
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8ca32b3f-fa14-46df-b09a-9c4a591d6396
 ---
 
 # Android App Protection Policy Settings in Microsoft Intune

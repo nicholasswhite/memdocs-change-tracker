@@ -4,6 +4,17 @@ description: Review the settings in the *Windows Security experience* profile fo
 ms.date: "2025-03-28T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mattcall
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/691e3042-55ad-4ce1-b5e9-649b1cc47b5c
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: configuration
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/b7d11190-096c-4ddb-87db-63764f603aac
 ---
 
 # Settings for Windows Security experience Antivirus policy for tenant attached devices in Microsoft Intune

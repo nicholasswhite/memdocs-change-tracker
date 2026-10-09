@@ -4,8 +4,23 @@ description: Learn how you can use Intune to make it easier to install built-in 
 ms.date: "2024-11-21T00:00:00Z"
 ms.topic: how-to
 ms.collection:
-- M365-identity-device-management
 - FocusArea_Apps_Add
+- M365-identity-device-management
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e2c9f30c-00ec-44c0-846c-b20dbfb3283f
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.reviewer: bryanke
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8ca32b3f-fa14-46df-b09a-9c4a591d6396
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/702271fe-87d7-4493-828b-2d6fde3de8ab
 ---
 
 # Add Built-In Apps to Microsoft Intune

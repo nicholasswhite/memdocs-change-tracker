@@ -1,11 +1,26 @@
 ---
 title: Understand compliance in Configuration Manager
 ms.topic: concept-article
-ms.collection: 
- - tier1
- - essentials-compliance
+ms.collection:
+- essentials-compliance
+- tier1
 description: Learn about compliance certifications, dependencies, and features in Configuration Manager supporting data protection and regulatory requirements.
 ms.date: "2024-12-03T00:00:00Z"
+author: sccmavenger
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+ms.service: configuration-manager
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Understand compliance in Configuration Manager

@@ -3,6 +3,17 @@ title: "Check compliance on your iOS device"
 description: Initiate a manual device check-in in Company Portal to update your device settings status and regain access to your work or school resources.
 ms.date: "2025-02-18T00:00:00Z"
 ms.reviewer: kakyker
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Check compliance on your iOS device

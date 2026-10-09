@@ -3,6 +3,22 @@ title: Reference for Policy Entities
 description: Reference topic for the Policy category of entity collections in the Intune Data Warehouse API.
 ms.date: "2024-10-30T00:00:00Z"
 ms.topic: reference
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
+- https://authoring-docs-microsoft.poolparty.biz/devrel/e0ffb20c-01c6-407b-a9bd-29111652a1dc
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/1433a524-c01f-4b87-beab-670c040dea4f
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.collection: M365-identity-device-management
+ms.reviewer: jamiesil
+ms.service: microsoft-intune
+ms.subservice: developer
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3904bce4-d817-48cf-85fd-b6146fca83b7
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8c09e0ef-0fde-4b6d-bf1b-b517e4db7f80
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/312f1f05-a431-4193-8a4d-e6245d5966de
 ---
 
 # Reference for Policy Entities

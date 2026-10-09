@@ -5,8 +5,15 @@ ms.date: "2024-12-11T00:00:00Z"
 ms.topic: how-to
 
 
-ROBOTS:
+ROBOTS: ''
 ms.reviewer: damionw
+author: lenewsad
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: enrollment
 ---
 
 # Require multifactor authentication for Intune device enrollments

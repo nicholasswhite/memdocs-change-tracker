@@ -3,6 +3,16 @@ title: "Get support for endpoint analytics"
 description: Get support for Microsoft Intune endpoint analytics, including technical troubleshooting, online help, and product feedback options.
 ms.date: "2025-10-09T00:00:00Z"
 ms.topic: how-to
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: endpoint-analytics
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Get support for endpoint analytics

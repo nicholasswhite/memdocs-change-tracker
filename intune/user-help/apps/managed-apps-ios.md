@@ -3,6 +3,21 @@ title: "Work or school apps for iOS"
 description: Learn how to access work or school apps on your iOS device.
 ms.date: "2024-05-15T00:00:00Z"
 ms.reviewer: amanh
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d20613c5-ede1-42ed-b6cc-1f39332ae70e
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/06e86142-34c2-4b94-ab9c-9477c21f7152
+- https://authoring-docs-microsoft.poolparty.biz/devrel/af64080b-70a9-4efa-8078-59a46ddbdaa4
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Work or school apps for iOS

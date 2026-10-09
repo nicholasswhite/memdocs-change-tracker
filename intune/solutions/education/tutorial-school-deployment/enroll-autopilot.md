@@ -3,6 +3,16 @@ title: "Windows Autopilot"
 description: Learn how to join Microsoft Entra ID and enroll in Intune using Windows Autopilot.
 ms.date: "2024-06-27T00:00:00Z"
 ms.topic: tutorial
+author: scottbreenmsft
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
+manager: laurawi
+moniker_range_name: ''
+ms.author: scbree
+ms.service: microsoft-intune
+ms.subservice: education
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
 ---
 
 # Windows Autopilot

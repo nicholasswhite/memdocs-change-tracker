@@ -4,6 +4,16 @@ description: Learn how to configure software update policies for Apple devices u
 ms.date: "2026-02-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: beflamm
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Configure update policies for Apple devices

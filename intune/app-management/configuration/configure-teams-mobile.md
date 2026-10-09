@@ -5,10 +5,24 @@ ms.date: "2026-06-10T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: beflamm
 ms.collection:
-- M365-identity-device-management
-- iOS/iPadOS
 - Android
 - FocusArea_Apps_SpecificApp
+- M365-identity-device-management
+- iOS/iPadOS
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/1dd701e0-441f-4b0a-9806-aa47decc4e35
+- https://authoring-docs-microsoft.poolparty.biz/devrel/63959238-cb90-4871-a33d-4a5519097e47
+- https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/0a2fc935-5977-4aa6-9f55-0be03bd2acb8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/78d87f42-5582-4a6b-90be-7db2f12b34e6
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8c09e0ef-0fde-4b6d-bf1b-b517e4db7f80
 ---
 
 # Manage Collaboration Experiences in Teams for iOS and Android With Microsoft Intune

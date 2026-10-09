@@ -4,6 +4,16 @@ description: Learn about Windows feature update polies and how to manage them in
 ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: davidmeb; bryanke; davguy
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Configure Windows feature update policies

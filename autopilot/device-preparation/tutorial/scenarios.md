@@ -3,10 +3,23 @@ title: Windows Autopilot device preparation scenarios
 description: Describes the different Windows Autopilot device preparation scenarios.
 ms.date: "2025-11-21T00:00:00Z"
 ms.topic: tutorial
-ms.collection:
-  - essentials-get-started
+ms.collection: essentials-get-started
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/72cb4d1c-66f7-4281-99d5-e04a64d084fc
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.reviewer: madakeva
+ms.service: windows-client
+ms.subservice: autopilot
+ms.suite: ems
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/d9ebaec0-4879-449e-9781-0afdce99fe0a
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
 ---
 
 # Windows Autopilot device preparation scenarios

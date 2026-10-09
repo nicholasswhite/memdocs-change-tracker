@@ -3,6 +3,17 @@ title: "Store your personal FileVault key"
 description: Upload and store your device recovery key from the Company Portal website.
 ms.date: "2024-11-18T00:00:00Z"
 ms.reviewer: annochiva
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Store your personal FileVault key

@@ -7,6 +7,19 @@ ms.topic: article
 ai-usage: ai-assisted
 ms.reviewer: davidra
 #ms.custom:
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5fc61396-d075-4560-aece-fdbda73d243f
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/12e559b9-eaf6-4aee-9af7-62334e15f863
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/ad9437c1-8cda-4537-ad69-b4b263652e13
 ---
 
 # Intune Reports and Properties Available Using Graph API

@@ -4,8 +4,23 @@ description: Understand App participation features when incorporating Intune mob
 ms.date: "2026-03-27T00:00:00Z"
 ms.topic: reference
 ms.collection:
-- M365-identity-device-management
 - Android
+- M365-identity-device-management
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/486161dc-fa28-4625-9b1c-1a21d690bc8d
+- https://authoring-docs-microsoft.poolparty.biz/devrel/aebdc4a3-c54b-4eea-94e3-663d5e166f57
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.reviewer: jamiesil
+ms.service: microsoft-intune
+ms.subservice: developer
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/1baec8e6-ab38-4b56-bb59-f6282d94f311
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5dd28c86-729c-4723-ab5a-57e26fcec2a8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ee561821-1ac7-45a8-9409-6ba5eb7a5b97
 ---
 
 # Intune App SDK for Android - App Participation Features

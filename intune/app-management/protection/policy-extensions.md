@@ -4,6 +4,19 @@ description: This topic describes the app protection policy (APP) for extensions
 ms.date: "2025-01-06T00:00:00Z"
 ms.topic: article
 ms.reviewer: demerson
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/aec7dc3e-0dad-4b82-accf-63218d8767d5
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8ca32b3f-fa14-46df-b09a-9c4a591d6396
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f260444a-7ec6-4768-8e41-ad2438092724
 ---
 
 # Protecting Application Extensions

@@ -4,6 +4,21 @@ description: Learn how to audit authorization failure message in administration 
 ms.date: "2023-03-30T00:00:00Z"
 ms.topic: how-to
 ms.custom: sfi-image-nochange
+author: sccmavenger
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+ms.service: configuration-manager
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/12e559b9-eaf6-4aee-9af7-62334e15f863
 ---
 
 # How to view authorization failure message in administration service.

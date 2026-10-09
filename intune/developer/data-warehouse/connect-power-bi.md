@@ -4,6 +4,18 @@ description: You can download a file for use with Microsoft Power BI that allows
 ms.date: "2026-03-31T00:00:00Z"
 ms.topic: reference
 ai-usage: ai-assisted
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d3197845-b4ce-44c6-a237-cd4be160e76c
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.collection: M365-identity-device-management
+ms.reviewer: jamiesil
+ms.service: microsoft-intune
+ms.subservice: developer
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/aea905fb-0a9d-4d46-b30f-e9cbaf772d1b
 ---
 
 # Connect to the Data Warehouse With Power BI

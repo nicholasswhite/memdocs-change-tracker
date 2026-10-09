@@ -5,6 +5,13 @@ ms.topic: concept-article
 ms.custom: msecd-doc-authoring-1012
 ms.date: "2026-05-21T00:00:00Z"
 robots: NOINDEX, NOFOLLOW
+author: paolomatarazzo
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: fundamentals
 ---
 
 # Microsoft Intune account moves overview

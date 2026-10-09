@@ -7,6 +7,18 @@ ms.reviewer: arnab
 ms.collection:
 - M365-identity-device-management
 - macOS
+author: nicholasswhite
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e2c9f30c-00ec-44c0-846c-b20dbfb3283f
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/702271fe-87d7-4493-828b-2d6fde3de8ab
 ---
 
 # Assign Microsoft 365 to macOS Devices With Microsoft Intune

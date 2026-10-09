@@ -3,6 +3,17 @@ title: "Report a problem in Company Portal or Intune app for Android"
 description: Share app diagnostics with your support person to diagnose a problem with the Microsoft Intune or Company Portal app for Android.
 ms.date: "2025-02-06T00:00:00Z"
 ms.reviewer: esmich
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Report a problem in Company Portal or Intune app for Android

@@ -4,6 +4,22 @@ description: View a list of the settings in the Microsoft Intune security baseli
 ms.date: "2026-06-24T00:00:00Z"
 ms.topic: reference
 zone_pivot_groups: m365-app-baseline-versions
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
+- https://authoring-docs-microsoft.poolparty.biz/devrel/60932d05-feee-4685-a73b-595e25dd9318
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection:
+- M365-identity-device-management
+- sub-secure-endpoints
+ms.reviewer: aanavath
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8ca32b3f-fa14-46df-b09a-9c4a591d6396
+- https://authoring-docs-microsoft.poolparty.biz/devrel/c43bb58b-1190-419b-8d18-e6052371b599
 ---
 
 # Microsoft 365 Apps for Enterprise security baseline settings reference for Microsoft Intune

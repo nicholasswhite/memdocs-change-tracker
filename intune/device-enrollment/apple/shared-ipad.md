@@ -3,6 +3,20 @@ title: "Set up Shared iPad"
 description: Learn about Shared iPad devices.
 ms.date: "2024-01-23T00:00:00Z"
 ms.topic: overview
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.reviewer: annovich
+ms.service: microsoft-intune
+ms.subservice: enrollment
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/67b2ba1a-6f74-4044-a48a-f0f8ad076b8f
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ee561821-1ac7-45a8-9409-6ba5eb7a5b97
 ---
 
 # Set up Shared iPad

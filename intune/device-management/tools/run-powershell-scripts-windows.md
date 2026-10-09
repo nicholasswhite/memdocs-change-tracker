@@ -4,9 +4,19 @@ description: Create and run PowerShell scripts, assign the script policy to Micr
 ms.date: "2025-10-02T00:00:00Z"
 ms.topic: how-to
 ms.collection:
+- FocusArea_Apps_Win32
 - M365-identity-device-management
 - Windows
-- FocusArea_Apps_Win32
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Use PowerShell Scripts on Windows Devices in Intune

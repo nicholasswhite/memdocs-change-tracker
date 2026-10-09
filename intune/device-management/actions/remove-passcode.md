@@ -4,6 +4,18 @@ description: Microsoft Intune remove passcode action helps you unlock devices re
 #customer intent: As a help desk operator, I want to remove a forgotten passcode from a managed iOS device so that the user can regain access without wiping the device.
 ms.date: "2026-04-21T00:00:00Z"
 ms.topic: how-to
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.reviewer: mattcall
+ms.service: microsoft-intune
+ms.subservice: remote-actions
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Device action: remove passcode

@@ -5,6 +5,17 @@ ms.date: "2024-11-28T00:00:00Z"
 ms.topic: whats-new
 ROBOTS: NOINDEX, NOFOLLOW
 ms.collection: tier3
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+ms.service: configuration-manager
 ---
 
 # Features in Configuration Manager technical preview version 2411

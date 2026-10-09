@@ -5,8 +5,17 @@ ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 author: yegor-a
 ms.author: egorabr
-ms.collection:
-- graph-interactive
+ms.collection: graph-interactive
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/7428317a-e6c2-4461-ad3e-8a8ad3608734
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.service: microsoft-intune
+ms.subservice: education
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/e4f59707-f107-48f2-8d75-0afd91868cd7
 ---
 
 # OneDrive Known Folder Move

@@ -4,6 +4,22 @@ description: See a list of all the settings you can use when setting compliance 
 ms.date: "2026-09-17T00:00:00Z"
 ms.topic: reference
 ms.reviewer: tycast
+ai-usage: ai-assisted
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection:
+- M365-identity-device-management
+- compliance
+- sub-device-compliance
+ms.custom: msecd-doc-authoring-1023
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Device compliance settings for Windows in Intune

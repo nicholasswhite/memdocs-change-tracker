@@ -6,6 +6,17 @@ ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
 - iOS/iPadOS
+author: nicholasswhite
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.reviewer: bryanke
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Use iOS App Provisioning Profiles to Prevent Your Apps From Expiring

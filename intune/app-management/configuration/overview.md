@@ -6,8 +6,18 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ms.reviewer: bryanke
 ms.collection:
-- M365-identity-device-management
 - FocusArea_Apps_Configure
+- M365-identity-device-management
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8c09e0ef-0fde-4b6d-bf1b-b517e4db7f80
 ---
 
 # App Configuration Policies for Microsoft Intune

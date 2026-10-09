@@ -10,6 +10,13 @@ metadata:
   ms.custom: intro-hub-or-landing
   title: Microsoft Intune documentation
   description: Explore guides, tutorials, and references for Microsoft Intune.
+  cmProducts:
+  - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+  manager: laurawi
+  moniker_range_name: ''
+  ms.service: microsoft-intune
+  spProducts:
+  - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 highlightedContent:
   items:
   - title: What is Microsoft Intune?

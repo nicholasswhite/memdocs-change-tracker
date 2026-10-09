@@ -4,6 +4,21 @@ description: List of data that Intune sends to Zebra.
 ms.date: "2023-12-07T00:00:00Z"
 ms.topic: reference
 ms.reviewer: jieyan
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/7cf8f81d-2989-4e5d-aa91-5191d10a3323
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection:
+- M365-identity-device-management
+- privacy
+- sub-data-privacy
+ms.service: microsoft-intune
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/1cb9c90f-9a3f-4389-8367-0a20c542621f
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Data Intune sends to Zebra

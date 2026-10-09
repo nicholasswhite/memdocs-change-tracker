@@ -3,7 +3,21 @@ title: Step 6. Understand Microsoft Edge for Business End User Experience for Wi
 description: Step 6. Understand Microsoft Edge for Business end user experience Windows.
 ms.date: "2026-01-23T00:00:00Z"
 ms.topic: how-to
-ms.custom:
+ms.custom: ''
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.collection: FocusArea_Apps_AppManagement
+ms.reviewer: samarti
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/06e86142-34c2-4b94-ab9c-9477c21f7152
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Step 6. Understand Microsoft Edge for Business End User Experience for Windows

@@ -3,8 +3,14 @@ title: "Software update agent error codes and descriptions in Microsoft Intune"
 description: Reference article with a list of the Software Update agent error code in Microsoft Intune, including the symbolic name and error description.
 ms.date: "2026-01-14T00:00:00Z"
 ms.topic: reference
-ROBOTS:
+ROBOTS: ''
 ms.reviewer: mghadial
+author: paolomatarazzo
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: protect
 ---
 
 # Software update agent error codes and descriptions in Microsoft Intune

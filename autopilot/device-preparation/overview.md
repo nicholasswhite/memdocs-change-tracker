@@ -4,11 +4,23 @@ description: Windows Autopilot device preparation is used to set up and configur
 ms.date: "2026-08-07T00:00:00Z"
 ms.topic: overview
 ms.collection:
-  - M365-modern-desktop
-  - m365initiative-coredeploy
-  - essentials-overview # this is the only article in Autopilot with this value
+- M365-modern-desktop
+- essentials-overview
+- m365initiative-coredeploy
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.reviewer: madakeva
+ms.service: windows-client
+ms.subservice: autopilot
+ms.suite: ems
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
 ---
 
 # Overview of Windows Autopilot device preparation

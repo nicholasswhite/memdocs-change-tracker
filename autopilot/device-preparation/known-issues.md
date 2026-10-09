@@ -2,11 +2,22 @@
 title: "Windows Autopilot device preparation - known issues"
 description: Information regarding known issues that might occur during a Windows Autopilot device preparation deployment. # RSS subscription is based on this description so don't change. If the description needs to change, update RSS URL in the Tip in the article.
 ms.date: "2026-09-14T00:00:00Z"
-ms.collection:
-  - M365-modern-desktop
+ms.collection: M365-modern-desktop
 ms.topic: troubleshooting
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.reviewer: madakeva
+ms.service: windows-client
+ms.subservice: autopilot
+ms.suite: ems
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
 ---
 
 # Windows Autopilot device preparation - known issues

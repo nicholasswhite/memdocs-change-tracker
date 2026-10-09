@@ -3,9 +3,23 @@ title: "Prerequisites for the Microsoft Tunnel in Intune"
 description: Review the prerequisites for installation and use of the Microsoft Tunnel Gateway. These include Linux servers, network, and firewall configurations.
 ms.date: "2026-09-03T00:00:00Z"
 ms.topic: how-to
-ms.custom: msecd-doc-authoring-1025
+ms.custom: msecd-doc-authoring-1026
 ai-usage: ai-assisted
 #customer intent: As an IT administrator, I want to review and configure Microsoft Tunnel prerequisites so that I can prepare my environment for a successful deployment.
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection:
+- M365-identity-device-management
+- sub-infrastructure
+ms.reviewer: ochukwunyere
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Prerequisites for the Microsoft Tunnel in Intune

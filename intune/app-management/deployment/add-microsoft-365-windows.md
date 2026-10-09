@@ -5,9 +5,21 @@ ms.date: "2026-04-23T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: craigma
 ms.collection:
+- FocusArea_Apps_Add
 - M365-identity-device-management
 - Windows
-- FocusArea_Apps_Add
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e2c9f30c-00ec-44c0-846c-b20dbfb3283f
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/702271fe-87d7-4493-828b-2d6fde3de8ab
 ---
 
 # Add Microsoft 365 Apps to Windows Devices Using Microsoft Intune

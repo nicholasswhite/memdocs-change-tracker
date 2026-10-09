@@ -3,8 +3,20 @@ title: "Set up Android device with Company Portal and Intercede"
 description: Enroll an Android device and set up derived credential authentication with Intercede.
 ms.date: "2026-09-09T00:00:00Z"
 ms.reviewer: jieyan
-ms.collection:
-- M365-identity-device-management
+ms.collection: M365-identity-device-management
+ai-usage: ai-assisted
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.custom: msecd-doc-authoring-1023
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Set up Android device with Company Portal and Intercede

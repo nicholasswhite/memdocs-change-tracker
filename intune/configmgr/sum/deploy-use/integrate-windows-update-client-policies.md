@@ -10,14 +10,15 @@ author: sccmavenger
 ms.author: dannygu
 manager: laurawi
 ms.reviewer:
-  - umaikhan
-  - brianhun
-  - payur
-  - hugowu
-  - qiani
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ms.collection: tier3
 appliesto:
   - ✅ Configuration Manager (current branch)
+moniker_range_name: ''
 ---
 
 # Integrate Windows Update client policies with Configuration Manager

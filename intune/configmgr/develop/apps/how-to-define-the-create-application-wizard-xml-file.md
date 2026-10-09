@@ -6,6 +6,16 @@ ms.topic: how-to
 ms.collection: tier3
 description: How to create a custom deployment technology XML File for the Create Application Wizard/.
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # How to Define the Create Application Wizard XML File

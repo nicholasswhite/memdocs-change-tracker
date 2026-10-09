@@ -4,10 +4,23 @@ description: Learn how to deploy a Windows update package (.msu file) in Intune.
 ms.date: "2026-04-14T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.custom:
+ms.custom: ''
 ms.collection:
-- M365-identity-device-management
 - FocusArea_Apps_Win32
+- M365-identity-device-management
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/caec7b7f-4941-4578-b79f-c63b1c1f5af4
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.reviewer: bryanke
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/754dea88-f800-4835-b6b5-280cb5d81e88
 ---
 
 # Deploy Windows Update Packages in Intune

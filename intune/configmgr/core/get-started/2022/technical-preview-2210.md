@@ -5,6 +5,16 @@ ms.date: "2022-10-12T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # Features in Configuration Manager technical preview version 2210

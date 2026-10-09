@@ -2,6 +2,14 @@
 title: "Known issues with deployments in Microsoft Intune (preview)"
 description: "Review known issues and limitations for deployments during public preview in Microsoft Intune."
 ms.date: "2026-08-26T00:00:00Z"
+author: paolomatarazzo
+manager: laurawi
+moniker_range_name: ''
+ms.author: wicale
+ms.collection: M365-identity-device-management
+ms.reviewer: wicale
+ms.service: microsoft-intune
+ms.topic: reference
 ---
 
 # Known issues with deployments in Microsoft Intune (preview)

@@ -3,6 +3,17 @@ title: "Reset device in Company Portal app for Windows"
 description: Reset a used, lost, or stolen device in Company Portal for Windows.
 ms.date: "2024-10-16T00:00:00Z"
 ms.reviewer: madakeva
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Reset device in Company Portal app for Windows

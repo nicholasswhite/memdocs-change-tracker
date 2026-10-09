@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Protect Exchange Online email on managed iOS devices with Microsoft Intune"
 description: Secure Exchange Online email on iOS devices by using Microsoft Intune compliance policies and Microsoft Entra Conditional Access to require managed devices and the Outlook app.
-ms.author: lanewsad
+ms.author: paoloma
 ms.date: "2026-04-20T00:00:00Z"
 ms.topic: tutorial
 ms.reviewer: demerson
@@ -9,6 +9,18 @@ ai-usage: ai-assisted
 ms.collection:
 - M365-identity-device-management
 - sub-device-compliance
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
+- https://authoring-docs-microsoft.poolparty.biz/devrel/cf9b82c5-b6dc-45f3-b005-b1bc5fc03bea
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.service: microsoft-intune
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/0c85d34e-bfd2-4466-957c-f0b61e9692df
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8ca32b3f-fa14-46df-b09a-9c4a591d6396
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Tutorial: Protect Exchange Online email on managed iOS devices with Microsoft Intune

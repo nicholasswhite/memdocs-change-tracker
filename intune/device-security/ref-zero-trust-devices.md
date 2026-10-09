@@ -5,8 +5,18 @@ ms.topic: reference
 ms.date: "2025-10-20T00:00:00Z"
 ms.reviewer: ramical
 ms.collection:
-- tier 1
 - M365-identity-device-management
+- tier 1
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Configure Microsoft Intune for Zero Trust: Secure devices (Preview)

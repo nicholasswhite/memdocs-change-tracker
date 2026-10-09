@@ -6,6 +6,18 @@ ms.subservice: sdk
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/3a3185cb-221a-4e17-9d7d-57120807d2e5
 ---
 
 # How to Handle Configuration Manager Synchronous Errors by Using WMI

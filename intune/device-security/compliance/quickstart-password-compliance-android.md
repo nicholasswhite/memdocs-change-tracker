@@ -1,15 +1,23 @@
 ---
 title: "Step 6 - Create a password compliance policy for Android Enterprise devices"
 description: Create a password compliance policy in Microsoft Intune for Android Enterprise devices. Learn to require specific password lengths to meet your organization's security requirements.
-author: nicholasswhite
-ms.author: nwhite
+author: lenewsad
+ms.author: lanewsad
 ms.date: "2026-01-15T00:00:00Z"
 ms.topic: article
 ms.reviewer: andreibiswas
 ms.collection:
-- M365-identity-device-management
 - Android
+- M365-identity-device-management
 - sub-device-compliance
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Step 6 - Create a password compliance policy for Android Enterprise devices

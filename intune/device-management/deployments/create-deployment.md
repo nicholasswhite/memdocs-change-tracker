@@ -2,6 +2,14 @@
 title: "Create and manage a deployment in Microsoft Intune"
 description: "Create, pause, resume, and cancel ring-based deployments of Intune apps and policies, and understand deleted-group behavior."
 ms.date: "2026-08-26T00:00:00Z"
+author: paolomatarazzo
+manager: laurawi
+moniker_range_name: ''
+ms.author: wicale
+ms.collection: M365-identity-device-management
+ms.reviewer: wicale
+ms.service: microsoft-intune
+ms.topic: how-to
 ---
 
 # Create and manage a deployment in Microsoft Intune

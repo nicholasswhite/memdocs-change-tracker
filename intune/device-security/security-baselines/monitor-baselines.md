@@ -3,6 +3,22 @@ title: "Monitor security baselines and profiles in Microsoft Intune"
 description: Monitor device and per-setting results of security baselines you deploy with Microsoft Intune, and identify conflicts for devices.
 ms.date: "2024-08-22T00:00:00Z"
 ms.topic: how-to
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection:
+- M365-identity-device-management
+- sub-secure-endpoints
+ms.reviewer: aanavath
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/12e559b9-eaf6-4aee-9af7-62334e15f863
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Monitor security baselines and profiles in Microsoft Intune

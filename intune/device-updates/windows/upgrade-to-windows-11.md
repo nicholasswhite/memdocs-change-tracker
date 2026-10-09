@@ -3,7 +3,19 @@ title: "Upgrade devices to Windows 11 using feature updates"
 description: Learn how to upgrade Windows 10 devices to Windows 11 using feature updates in Microsoft Intune.
 ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
-ms.reviewer:
+ms.reviewer: ''
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/e0ffb20c-01c6-407b-a9bd-29111652a1dc
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/19ec6774-09b8-473e-a17e-b17b518bbad7
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3904bce4-d817-48cf-85fd-b6146fca83b7
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ade36b61-c646-4bd8-87ee-f3a843461962
 ---
 
 # Upgrade devices to Windows 11 using feature updates

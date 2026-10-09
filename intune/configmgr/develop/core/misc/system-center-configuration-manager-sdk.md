@@ -6,6 +6,18 @@ ms.subservice: sdk
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/0cd81463-f0c2-4fca-b28e-124c97775c20
 ---
 
 # Configuration Manager SDK

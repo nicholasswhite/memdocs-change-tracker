@@ -5,6 +5,14 @@ ms.date: "2026-09-01T00:00:00Z"
 ms.topic: concept-article
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
+author: lenewsad
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.reviewer: madakeva
+ms.service: windows-client
+ms.subservice: autopilot
+ms.suite: ems
 ---
 
 # Device association lifecycle management

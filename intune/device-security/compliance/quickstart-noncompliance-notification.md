@@ -1,14 +1,24 @@
 ---
 title: "Step 7 - Send notifications to noncompliant devices using Microsoft Intune"
 description: Learn how to create notification templates and send email alerts to users with noncompliant devices in Microsoft Intune. Configure actions for noncompliance.
-author: nicholasswhite
-ms.author: nwhite
+author: lenewsad
+ms.author: lanewsad
 ms.date: "2026-01-20T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: tycast
 ms.collection:
 - M365-identity-device-management
 - sub-device-compliance
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.service: microsoft-intune
+ms.subservice: protect
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/67b2ba1a-6f74-4044-a48a-f0f8ad076b8f
 ---
 
 # Step 7 - Send notifications to noncompliant devices using Microsoft Intune

@@ -6,6 +6,22 @@ ms.subservice: mdt
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/545d40c6-c50c-444b-b422-1c707eeab28e
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e3e53a21-5c86-4f87-b1fb-893b77a777ba
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/b908d601-32e8-445a-b044-a507b5d1689e
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/383e0c27-53d0-4bef-b930-1e0b0ae37c07
 ---
 
 # Tables and Views in the MDT DB

@@ -2,7 +2,18 @@
 title: "Set up work or school access on company device"
 description: Describes how to enroll a company or school-owned iOS/iPadOS device in Microsoft Intune so that you can access Wi-Fi, files, and apps for work.
 ms.date: "2023-11-21T00:00:00Z"
-ms.reviewer:
+ms.reviewer: ''
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Set up work or school access on company device

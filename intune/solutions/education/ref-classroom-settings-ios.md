@@ -1,12 +1,25 @@
 ---
 title: "How to configure Intune settings for the iOS/iPadOS Classroom app"
 description: Learn the Intune settings you can use to control settings for the Classroom app on iOS/iPadOS devices.
-author: lenewsad
-ms.author: lanewsad
+author: paolomatarazzo
+ms.author: paoloma
 ms.date: "2019-11-14T00:00:00Z"
 ms.topic: archived
 
 ms.reviewer: derriw
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/6ab7faaf-d791-4a26-96a2-3b11738538e7
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/1433a524-c01f-4b87-beab-670c040dea4f
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: education
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/302e28b0-1f09-4811-9a9b-2a72e0770581
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/312f1f05-a431-4193-8a4d-e6245d5966de
 ---
 
 # How to configure Intune settings for the iOS/iPadOS Classroom app

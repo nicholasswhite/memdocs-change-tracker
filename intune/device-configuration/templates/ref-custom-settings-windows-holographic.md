@@ -4,6 +4,17 @@ description: Add or create a custom profile to use the OMA-URI settings for devi
 ms.date: "2024-04-16T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mikedano
+author: paolomatarazzo
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: configuration
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Use custom settings for Windows Holographic for Business devices in Intune

@@ -1,11 +1,24 @@
 ---
 title: "Use Policy Sets to Group Collections of Management Objects"
 description: Use policy sets to group collections of management objects in Microsoft Intune.
-author: nicholasswhite
-ms.author: nwhite
+author: paolomatarazzo
+ms.author: paoloma
 ms.date: "2024-04-10T00:00:00Z"
 ms.topic: article
 ms.reviewer: DaGerrit
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: fundamentals
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/8c09e0ef-0fde-4b6d-bf1b-b517e4db7f80
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
 ---
 
 # Use Policy Sets to Group Collections of Management Objects

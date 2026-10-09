@@ -7,6 +7,16 @@ ms.topic: how-to
 ROBOTS: NOINDEX
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # How to use the Package Conversion Manager plug-in

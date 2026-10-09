@@ -4,9 +4,19 @@ description: Step 1 for deploying or setting up Intune. The starting point is to
 ms.date: "2026-03-18T00:00:00Z"
 ms.topic: install-set-up-deploy
 ms.collection:
-- M365-identity-device-management
 - ContentFreshnessFY24
+- M365-identity-device-management
 title: "Step 1: Set up Microsoft Intune"
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: fundamentals
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Step 1: Set up Microsoft Intune

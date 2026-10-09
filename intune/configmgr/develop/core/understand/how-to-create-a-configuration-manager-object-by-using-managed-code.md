@@ -6,6 +6,16 @@ ms.topic: how-to
 ms.collection: tier3
 description: Learn how to create a configuration manager object by using managed code, with included examples and links.
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # How to Create a Configuration Manager Object by Using Managed Code

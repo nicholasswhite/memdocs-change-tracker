@@ -5,8 +5,15 @@ ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 author: yegor-a
 ms.author: egorabr
-ms.collection:
-- graph-interactive
+ms.collection: graph-interactive
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
+manager: laurawi
+moniker_range_name: ''
+ms.service: microsoft-intune
+ms.subservice: education
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/06e86142-34c2-4b94-ab9c-9477c21f7152
 ---
 
 # Microsoft Edge

@@ -7,6 +7,16 @@ ms.topic: whats-new
 ROBOTS: NOINDEX
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
 ---
 
 # Features in Configuration Manager technical preview version 1912

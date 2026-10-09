@@ -3,6 +3,17 @@ title: "Report Company Portal app problems"
 description: Report an enrollment or app problem in the Intune Company Portal app for Mac devices.
 ms.date: "2025-02-04T00:00:00Z"
 ms.reviewer: elocholi
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Report Company Portal app problems

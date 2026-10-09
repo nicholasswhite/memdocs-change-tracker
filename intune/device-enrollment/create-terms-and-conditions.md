@@ -3,6 +3,17 @@ title: "Terms and conditions for user access"
 description: Set terms and conditions that users see in the Company Portal for Intune.
 ms.date: "2025-01-27T00:00:00Z"
 ms.topic: how-to
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: enrollment
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Terms and conditions for user access

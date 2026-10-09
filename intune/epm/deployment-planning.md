@@ -3,6 +3,22 @@ title: Plan and Prepare for Endpoint Privilege Management Deployment
 description: Plan your Endpoint Privilege Management deploying by understanding requirements, fundamentals, and security recommendations.
 ms.date: "2026-01-26T00:00:00Z"
 ms.topic: how-to
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/e0ffb20c-01c6-407b-a9bd-29111652a1dc
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/19ec6774-09b8-473e-a17e-b17b518bbad7
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.reviewer: mikedano
+ms.service: microsoft-intune
+ms.subservice: suite
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/3904bce4-d817-48cf-85fd-b6146fca83b7
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ade36b61-c646-4bd8-87ee-f3a843461962
 ---
 
 # Plan and Prepare for Endpoint Privilege Management Deployment

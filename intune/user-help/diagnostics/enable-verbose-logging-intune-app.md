@@ -3,6 +3,17 @@ title: Turn on verbose logging in Microsoft Intune app
 description: Turn on verbose logging in the Microsoft Intune app to improve troubleshooting on Android devices.
 ms.date: "2024-11-08T00:00:00Z"
 ms.reviewer: esmich
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Turn on verbose logging in Microsoft Intune app

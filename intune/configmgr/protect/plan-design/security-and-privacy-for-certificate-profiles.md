@@ -6,6 +6,18 @@ ms.subservice: protect
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
+author: sccmavenger
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5e8ad6db-8b8c-452c-b81a-f285ec58edd4
 ---
 
 # Security and privacy for certificate profiles in Configuration Manager

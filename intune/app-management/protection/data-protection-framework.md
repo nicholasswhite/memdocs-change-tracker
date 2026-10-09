@@ -4,7 +4,18 @@ description: Learn how app protection policies ensure an organization's data rem
 ms.date: "2025-06-12T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: beflamm
-ms.custom:
+ms.custom: ''
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Data Protection Framework Using App Protection Policies

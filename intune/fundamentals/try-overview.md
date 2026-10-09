@@ -1,11 +1,20 @@
 ---
 title: "Prerequisites and tasks to try and evaluate Microsoft Intune for free"
 description: Evaluate Microsoft Intune with a free trial. Step through common settings, enroll devices, create policies, and learn about cloud-based device management. Start your trial today.
-author: nicholasswhite
-ms.author: nwhite
+author: paolomatarazzo
+ms.author: paoloma
 ms.date: "2026-01-20T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: tycast
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: fundamentals
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Prerequisites and tasks to try and evaluate Microsoft Intune for free

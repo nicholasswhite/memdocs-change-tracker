@@ -3,6 +3,18 @@ title: "Device action: remove user"
 description: Learn how to remove a user from a Shared iPad with Microsoft Intune.
 ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.reviewer: mattcall
+ms.service: microsoft-intune
+ms.subservice: remote-actions
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Device action: remove user

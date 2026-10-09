@@ -7,6 +7,16 @@ ms.reviewer: ankurgoyal, rashok
 ms.collection:
 - M365-identity-device-management
 - msec-ai-copilot
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/46e3c7c4-fe77-4a6e-b40a-44c569819fa5
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.update-cycle: 180-days
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/d0c6fab8-2d7d-4bb0-bf40-589e08d7c132
 ---
 
 # Microsoft Copilot in Intune FAQ

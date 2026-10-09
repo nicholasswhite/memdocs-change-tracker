@@ -3,6 +3,16 @@ title: "Device scopes"
 description: Learn how to use device scopes in Microsoft Intune with scope tags for custom device reporting and targeted insights.
 ms.date: "2026-03-24T00:00:00Z"
 ms.topic: concept-article
+author: paolomatarazzo
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.service: microsoft-intune
+ms.subservice: suite
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Device scopes

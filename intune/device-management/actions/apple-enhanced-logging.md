@@ -11,6 +11,10 @@ ms.service: microsoft-intune
 ms.topic: how-to
 ms.date: "2026-08-20T00:00:00Z"
 ms.reviewer: beflamm
+manager: laurawi
+moniker_range_name: ''
+ms.collection: M365-identity-device-management
+ms.subservice: remote-actions
 ---
 
 # Device action: Enhanced logging

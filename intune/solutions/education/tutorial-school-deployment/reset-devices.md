@@ -4,6 +4,18 @@ description: Learn about the reset and wipe options for Windows devices using In
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 zone_pivot_groups: platforms-windows-ios
+author: scottbreenmsft
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: scbree
+ms.service: microsoft-intune
+ms.subservice: education
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
 ---
 
 # Reset and wipe devices

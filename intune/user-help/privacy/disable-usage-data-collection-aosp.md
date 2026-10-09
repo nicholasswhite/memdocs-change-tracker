@@ -2,7 +2,18 @@
 title: "Turn off Microsoft data collection on AOSP device"
 description: Learn how to turn off Microsoft data collection in the Microsoft Intune app for AOSP.
 ms.date: "2024-10-10T00:00:00Z"
-ms.reviewer:
+ms.reviewer: ''
+author: lenewsad
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.service: microsoft-intune
+ms.subservice: end-user
+ms.topic: end-user-help
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Turn off Microsoft data collection on AOSP device

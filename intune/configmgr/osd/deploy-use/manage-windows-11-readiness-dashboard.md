@@ -5,6 +5,21 @@ ms.date: "2023-09-18T00:00:00Z"
 ms.subservice: software-updates
 ms.topic: article
 ms.collection: tier3
+author: sccmavenger
+cmProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/19ec6774-09b8-473e-a17e-b17b518bbad7
+manager: laurawi
+moniker_range_name: ''
+ms.author: dannygu
+ms.reviewer:
+- brianhun
+- hugowu
+- payur
+- qiani
+- umaikhan
+ms.service: configuration-manager
+spProducts:
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ade36b61-c646-4bd8-87ee-f3a843461962
 ---
 
 # Manage Windows 11 readiness dashboard using Configuration Manager

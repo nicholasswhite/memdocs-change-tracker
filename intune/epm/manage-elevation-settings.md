@@ -3,6 +3,18 @@ title: "Managing elevation settings with Endpoint Privilege Management"
 description: View guidance on how to manage the Endpoint Privilege Management client, including reporting level and default elevation response.
 ms.date: "2025-09-10T00:00:00Z"
 ms.topic: how-to
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.collection: M365-identity-device-management
+ms.reviewer: mikedano
+ms.service: microsoft-intune
+ms.subservice: suite
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 ---
 
 # Managing elevation settings with Endpoint Privilege Management

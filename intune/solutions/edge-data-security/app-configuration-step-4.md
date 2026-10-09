@@ -3,8 +3,24 @@ title: "Step 4: App Configuration Policies for Microsoft Edge for Business"
 description: Step 4. Create app configuration policies for Microsoft Edge for Business across Windows, Android, and iOS platforms.
 ms.date: "2026-01-23T00:00:00Z"
 ms.topic: how-to
-ms.custom:
+ms.custom: ''
 zone_pivot_groups: app-protection-platforms
+author: nicholasswhite
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
+- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/12ed19f9-ebdf-4c8a-8bcd-7a681836774d
+manager: laurawi
+moniker_range_name: ''
+ms.author: nwhite
+ms.collection: FocusArea_Apps_AppManagement
+ms.reviewer: samarti
+ms.service: microsoft-intune
+ms.subservice: apps
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/06e86142-34c2-4b94-ab9c-9477c21f7152
+- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/3a764584-4f97-452b-8f1d-36f19b12f6ae
 ---
 
 # Step 4: App Configuration Policies for Microsoft Edge for Business

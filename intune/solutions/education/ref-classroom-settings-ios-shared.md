@@ -1,11 +1,24 @@
 ---
 title: "Configure Intune education settings for shared iPad devices"
 description: Learn the Intune settings you can use to control settings for the Classroom app on shared iOS/iPadOS devices.
-author: lenewsad
-ms.author: lanewsad
+author: paolomatarazzo
+ms.author: paoloma
 ms.date: "2018-12-06T00:00:00Z"
 ms.topic: archived
 ms.reviewer: heenamac
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/6ab7faaf-d791-4a26-96a2-3b11738538e7
+- https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/1433a524-c01f-4b87-beab-670c040dea4f
+manager: laurawi
+moniker_range_name: ''
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: education
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/302e28b0-1f09-4811-9a9b-2a72e0770581
+- https://authoring-docs-microsoft.poolparty.biz/devrel/b31948f4-2f38-404b-ac93-c3c8c5b3ae33
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/312f1f05-a431-4193-8a4d-e6245d5966de
 ---
 
 # Configure Intune education settings for shared iPad devices

@@ -2,8 +2,7 @@
 title: Windows Autopilot customer consent
 description: Learn how a cloud service provider (CSP) partner or an OEM can get customer authorization to register Windows Autopilot devices on the customer's behalf.
 ms.date: "2025-06-13T00:00:00Z"
-ms.collection:
-  - M365-modern-desktop
+ms.collection: M365-modern-desktop
 ms.topic: reference
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -11,6 +10,22 @@ appliesto:
 ms.custom:
   - sfi-ga-nochange
   - sfi-image-nochange
+author: lenewsad
+cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/486161dc-fa28-4625-9b1c-1a21d690bc8d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/b1515367-9f16-464a-875b-f8be3ed7154a
+manager: laurawi
+moniker_range_name: ''
+ms.author: lanewsad
+ms.reviewer: madakeva
+ms.service: windows-client
+ms.subservice: autopilot
+ms.suite: ems
+spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/5dd28c86-729c-4723-ab5a-57e26fcec2a8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/803ddb93-80fd-4a15-aea5-c9d217aa1f76
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
 ---
 
 # Windows Autopilot customer consent

@@ -5,6 +5,13 @@ ms.date: "2025-10-14T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mikedano
 ROBOTS: NOINDEX, NOFOLLOW
+author: paolomatarazzo
+manager: laurawi
+moniker_range_name: ''
+ms.author: paoloma
+ms.collection: M365-identity-device-management
+ms.service: microsoft-intune
+ms.subservice: configuration
 ---
 
 # Windows 10 Team settings to allow or restrict features on Surface Hub devices using Intune
