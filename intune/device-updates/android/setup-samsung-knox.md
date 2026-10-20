@@ -1,11 +1,11 @@
 ---
 title: "Samsung Knox E-FOTA integration with Microsoft Intune"
 description: Learn how to integrate Samsung Knox E-FOTA with Microsoft Intune to register Samsung devices, configure firmware updates, and monitor campaigns.
-ms.date: '2026-10-02T00:00:00Z'
+ms.date: '2026-10-16T00:00:00Z'
 ms.topic: how-to
 ms.reviewer: grwilso
 ai-usage: ai-generated
-ms.custom: msecd-doc-authoring-1017
+ms.custom: msecd-doc-authoring-1030
 author: paolomatarazzo
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
@@ -77,6 +77,8 @@ The Microsoft Intune integration brings Knox E-FOTA capabilities into the admin 
 ![](../../media/icons/16/tenant-administration.svg) **Tenant configuration requirements**
 
 > You must configure Managed Google Play for your tenant. For setup instructions, see [Set up Managed Google Play](../../device-enrollment/android/connect-managed-google-play.md).
+>
+> Each Intune tenant supports only one connected Samsung Knox E-FOTA account. You can't connect multiple Samsung Knox E-FOTA accounts to the same tenant, including separate accounts for different regions.
 
 ![](../../media/icons/16/cloud.svg) **Cloud requirements**
 
@@ -97,6 +99,10 @@ After the devices are registered with Samsung, you can create an E-FOTA deployme
 ### ![](media/setup-samsung-knox/connector.svg) Set up the Samsung connector
 
 In the Microsoft Intune admin center, link Intune and Samsung Knox E-FOTA by creating a connector. The connector allows Intune to communicate with Samsung Knox E-FOTA and manage firmware updates for eligible Samsung devices.
+
+> [!IMPORTANT]
+>
+> Connect the Samsung Knox E-FOTA account and region where your devices are registered. A device's Knox E-FOTA client might enroll in a different account or region from the one connected to Intune. In that case, device registration in Intune can fail even when the connector status is **Connected**.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **[Tenant administration](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/%7E/tenantStatus)** &gt; **[Connectors and tokens](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminMenu/%7E/connectorsAndTokens)** &gt; **[Firmware over-the-air update](https://go.microsoft.com/fwlink/?linkid=2109431#view/Microsoft_Intune_DeviceSettings/TenantAdminConnectorsMenu/%7E/fotaUpdate)**.

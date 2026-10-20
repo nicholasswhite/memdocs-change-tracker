@@ -8,8 +8,8 @@ ai-usage: ai-assisted
 author: lenewsad
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/837687b0-8846-4eb2-adb6-2b853e8c70c4
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
 ms.author: lanewsad
@@ -18,7 +18,7 @@ ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/8c797fa2-4419-46e7-a4e3-4c97d0a1f2a0
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ee561821-1ac7-45a8-9409-6ba5eb7a5b97
 ---
 
@@ -60,7 +60,7 @@ At the end of this procedure, you can assign this policy to Microsoft Entra devi
 
 > [!IMPORTANT]
 >
-> This article reflects the updated policy creation experience (**Enrollment program tokens** &gt; **Enrollment policies**) for devices going through automated device enrollment. The older experience (**Enrollment program tokens** &gt; **Profiles**) differs and will eventually be retired. The older experience won't receive new features, so be sure to create new policies under **Enrollment policies**. For more information, see [New iOS/iPadOS, visionOS, tvOS and macOS ADE enrollment policies experience](https://techcommunity.microsoft.com/blog/intunecustomersuccess/new-iosipados-visionos-tvos-and-macos-ade-enrollment-policies-experience/4393531).
+> This article reflects the updated policy creation experience (**Enrollment program tokens** &gt; **Enrollment policies**) for devices going through automated device enrollment. The older experience (**Enrollment program tokens** &gt; **Profiles**) differs and will eventually be retired. The older experience won't receive new features, so be sure to create new policies under **Enrollment policies**. For more information, see [New iOS/iPadOS, visionOS, tvOS and macOS ADE enrollment policies experience](https://techcommunity.microsoft.com/blog/intunecustomersuccess/new-iosipados-visionos-tvos-and-macos-ade-enrollment-policies-experience/4393531). A script to migrate older enrollment profiles to new enrollment policies is available in the [Microsoft shell-intune-samples repository](https://github.com/microsoft/shell-intune-samples/tree/master/macOS/Tools/EnrollmentProfileMigrationToPolicy).
 
 1. In the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431), go to **Devices**.
 2. Expand **Device onboarding**, and then select **Enrollment**.
@@ -90,7 +90,7 @@ At the end of this procedure, you can assign this policy to Microsoft Entra devi
 
     > [!IMPORTANT]
     >
-    > Do not target Platform SSO (PSSO) configuration profiles that enable PSSO registration during Setup Assistant to userless Automated Device Enrollment (ADE) devices. Doing so can cause unexpected enrollment behavior and results in the device losing expected affinity. See [Configure platform SSO during enrollment](https://learn.microsoft.com/en-us/configure-platform-sso-during-enrollment)
+    > Do not target Platform SSO (PSSO) configuration profiles that enable PSSO registration during Setup Assistant to userless Automated Device Enrollment (ADE) devices. Doing so can cause unexpected enrollment behavior and results in the device losing expected affinity. See [Configure platform SSO during enrollment](../../device-configuration/settings-catalog/configure-platform-sso-during-enrollment.md)
 
     - **Enroll with User Affinity**: Enroll devices that are associated with an assigned user. Choose this option for work devices that belong to users, and if you want to require users to have the Company Portal app to install apps. Multifactor authentication (MFA) is available with this option. Enrolling with user affinity is also referred to as enrolling with a *user*.
 

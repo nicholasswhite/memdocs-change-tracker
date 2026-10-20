@@ -1,13 +1,14 @@
 ---
 title: "Prerequisites for the Microsoft Tunnel in Intune"
 description: Review the prerequisites for installation and use of the Microsoft Tunnel Gateway. These include Linux servers, network, and firewall configurations.
-ms.date: "2026-09-03T00:00:00Z"
+ms.date: '2026-10-15T00:00:00Z'
 ms.topic: how-to
-ms.custom: msecd-doc-authoring-1026
+ms.custom: msecd-doc-authoring-1030
 ai-usage: ai-assisted
 #customer intent: As an IT administrator, I want to review and configure Microsoft Tunnel prerequisites so that I can prepare my environment for a successful deployment.
 author: lenewsad
 cmProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
@@ -19,6 +20,7 @@ ms.reviewer: ochukwunyere
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
@@ -108,6 +110,8 @@ Set up a Linux based virtual machine or a physical server on which to install th
   - Podman version 3.0 or 4.0 depending on the version of RHEL.
 
   Microsoft Tunnel requires Docker or Podman on the Linux server to provide support for containers. Containers provide a consistent execution environment, health monitoring and proactive remediation, and a clean upgrade experience.
+
+  Encryption at rest is optional, but we strongly recommend configuring your Docker or Podman environment to encrypt files used by Microsoft Tunnel containers. For information about available options, see the documentation for your Linux distribution and container platform.
 
   For information about installing and configuring Docker or Podman, see:
 

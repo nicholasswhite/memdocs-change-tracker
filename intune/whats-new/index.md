@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Intune
 description: Find out what's new in Microsoft Intune.
-ms.date: "2026-10-05T00:00:00Z"
+ms.date: '2026-10-12T00:00:00Z'
 ms.topic: whats-new
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1030
@@ -45,6 +45,18 @@ You can also read:
 > - [Windows Autopilot: What's new](../../autopilot/whats-new.md)
 
 You can use RSS to be notified when this page is updated. For more information, see [How to use the docs](../fundamentals/use-docs.md#notifications).
+
+## Week of October 12, 2026
+
+### Advanced capabilities (formerly "Microsoft Intune Suite")
+
+#### New Remote Help for Windows version available
+
+Remote Help for Windows version 5.2.1210.0 is now available. This release includes stability and observability improvements.
+
+Applies to:
+
+- Windows
 
 ## Week of October 5, 2026
 
