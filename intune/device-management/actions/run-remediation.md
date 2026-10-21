@@ -1,5 +1,5 @@
 ---
-title: "Device action: run remediation"
+title: 'Device action: run remediation (preview)'
 description: Learn how to initiate on demand remediations with Microsoft Intune.
 ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
@@ -17,7 +17,7 @@ spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
-# Device action: run remediation
+# Device action: run remediation (preview)
 
 The *run remediation* action in Microsoft Intune allows IT administrators to proactively detect and resolve support issues on managed devices. This action triggers a remediation script that checks for specific conditions and applies a fix if needed—without requiring user interaction.
 
