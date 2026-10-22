@@ -47,6 +47,8 @@ landingContent:
       url: 2603/38982839.md
     - text: KB 39398030 Security update for scripts, SMS Provider, MPE, and DDR
       url: 2603/39398030.md
+    - text: KB 39169655 Update rollup for Microsoft Configuration Manager version 2603
+      url: 2603/39169655.md
 - title: Configuration Manager 2509
   linkLists:
   - linkListType: overview
