@@ -4,9 +4,8 @@ description: "Learn about actions to take before updating to Configuration Manag
 ms.date: "2026-09-18T00:00:00Z"
 author: sccmavenger
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/1e69816a-aaaa-474e-a36f-3ec7790fadc3
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-- https://authoring-docs-microsoft.poolparty.biz/devrel/cbe4ca68-43ac-4375-aba5-5945a6394c20
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 manager: laurawi
 moniker_range_name: ''
 ms.author: dannygu
@@ -22,8 +21,7 @@ ms.subservice: core-infra
 ms.topic: checklist
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
-- https://authoring-docs-microsoft.poolparty.biz/devrel/ae012320-d2b3-47d8-abdc-898a64d069a9
-- https://authoring-docs-microsoft.poolparty.biz/devrel/ced846cc-6a3c-4c8f-9dfb-3de0e90e2742
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/6a8c83be-f1de-4e90-bde0-bd097999a60c
 ---
 
 # Checklist for installing update 2609 for Configuration Manager
@@ -73,31 +71,7 @@ The first time you use a Configuration Manager console after finishing the insta
 
 ### Early update ring
 
-At this time, version 2609 is released for the early update ring. To install this update, you need to opt in. The version 2609 early update ring PowerShell script adds your hierarchy or standalone primary site to the early update ring.
-
-[Version 2609 opt-in script](https://aka.ms/KB2377842_EnableEarlyRing)
-
-Microsoft digitally signs the script and bundles it inside a signed self-extracting executable.
-
-> [!NOTE]
->
-> The version 2609 update is only applicable to sites running version 2503 or later.
-
-To opt in to the early update ring:
-
-1. Open a Windows PowerShell session **as administrator**.
-2. Run the **EnableEarlyUpdateRing2609.ps1** script, using the following syntax:
-
-   `EnableEarlyUpdateRing2609.ps1 <SiteServer_Name> | SiteServer_IP`
-
-   Where `SiteServer` refers to the central administration site or standalone primary site server. For example, `EnableEarlyUpdateRing2609.ps1 cmprimary01`.
-3. Check for updates. For more information, see [Get available updates](install-in-console-updates.md).
-
-The version 2609 update should now be available in the console.
-
-> [!IMPORTANT]
->
-> This script only adds your site to the early update ring for version 2609. It's not a permanent change.
+As of October 26, 2026, version 2609 is globally available for all customers to install.
 
 ## Pre-update checklist
 

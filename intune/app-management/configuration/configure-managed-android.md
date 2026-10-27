@@ -1,7 +1,8 @@
 ---
-title: Add App Configuration Policies for Managed Android Enterprise Devices
-description: Use app configuration policies in Microsoft Intune to supply settings when users run a Managed Google Play app.
-ms.date: "2026-04-23T00:00:00Z"
+title: Add app configuration policies for managed Android devices in Microsoft Intune
+description: Use Microsoft Intune app configuration policies to supply settings to Managed Google Play, Android LOB, and AOSP
+  referenced apps on managed devices.
+ms.date: '2026-10-21T00:00:00Z'
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.reviewer: esalter
@@ -12,6 +13,7 @@ ms.collection:
 author: nicholasswhite
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
 ms.author: nwhite
@@ -19,11 +21,15 @@ ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/8c09e0ef-0fde-4b6d-bf1b-b517e4db7f80
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ms.custom: msecd-doc-authoring-1030
 ---
 
-# Add App Configuration Policies for Managed Android Enterprise Devices
+# Add app configuration policies for managed Android devices in Microsoft Intune
 
-App configuration policies in Microsoft Intune supply settings to Managed Google Play apps and directly deployed line-of-business (LOB) apps on managed Android Enterprise devices. The app developer exposes Android-managed app configuration settings. Intune uses these exposed setting to let the admin configure features for the app. The app configuration policy is assigned to your user groups. The policy settings are used when the app checks for them, typically the first time the app runs.
+App configuration policies in Microsoft Intune supply settings to Managed Google Play apps and directly deployed line-of-business (LOB) apps on managed Android Enterprise devices, and to AOSP referenced apps on Android Open Source Project (AOSP) devices.
+
+The app developer exposes the settings that you can configure. Assign an app configuration policy to user or device groups to supply those settings to the app. The app uses the policy settings when it checks for them, typically the first time it runs.
 
 > [!IMPORTANT]
 >
@@ -50,6 +56,8 @@ Android Enterprise has several enrollment methods. The enrollment type depends o
 
 ## Create an app configuration policy
 
+Use this procedure to create an app configuration policy for managed Android Enterprise or AOSP devices.
+
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Choose the **Apps** &gt; **Configuration** &gt; **Create** &gt; **Managed devices**. You can choose between **Managed devices** and **Managed apps**. For more information, see [Apps that support app configuration](overview.md#apps-that-support-app-configuration).
 3. On the **Basics** page, set the following details:
@@ -57,7 +65,11 @@ Android Enterprise has several enrollment methods. The enrollment type depends o
    - **Name** - The name of the profile that appears in the portal.
    - **Description** - The description of the profile that appears in the portal.
    - **Device enrollment type** - This setting is set to **Managed devices**.
-4. Select **Android Enterprise** as the **Platform**.
+4. Select **Android Enterprise &amp; AOSP** as the **Platform**.
+
+   > [!NOTE]
+   >
+   > For AOSP referenced apps, select **All** or **Corporate owned devices** as the **Profile type**.
 5. Select **Select app** next to **Targeted app**. The **Associated app** pane is displayed.
 6. On the **Associated app** pane, choose the managed app to associate with the configuration policy and select **OK**.
 7. Select **Next** to display the **Settings** page.
@@ -85,17 +97,21 @@ Android Enterprise has several enrollment methods. The enrollment type depends o
     - **Use configuration designer**
     - **Enter JSON data**
 
-    For details about using the configuration designer, see [Use configuration designer](#use-the-configuration-designer). For details about entering XML data, see [Enter JSON data](#enter-json-data).
+    > [!NOTE]
+    >
+    > AOSP referenced apps support JSON configuration only. Configuration designer isn't supported because Intune doesn't have an uploaded APK from which to read the app's configuration schema. Get the supported configuration keys, value types, and values from the app vendor or device manufacturer.
+
+    For details about using the configuration designer, see [Use configuration designer](#use-the-configuration-designer). For details about entering JSON data, see [Enter JSON data](#enter-json-data).
 12. If you need to enable users to connect the targeted app across both the work and personal profiles, select **Enabled** next to **Connected apps**.
 
     ![Screenshot of configuration policy - Settings](media/configure-managed-android/app-configuration-policies-use-android-01.png)
 
     > [!NOTE]
     >
-    > This setting only works for personally owned work profile and corporate-owned work profile devices.
+    > This setting only works for personally owned work profile and corporate-owned work profile devices. Connected apps isn't supported for AOSP referenced apps.
     >
     > Changing the **Connected apps** setting to **Not Configured** won't remove the configuration policy from the device. To remove the **Connected apps** functionality from a device, you must unassign the related configuration policy.
-13. To allow specific apps to act as a system credential provider, select **Credential provider**. By default, Android blocks third-party credential providers from providing credentials. For more information, see [Allow an app to be a credential provider](#allow-an-app-to-be-a-credential-provider).
+13. For supported Android Enterprise devices, select **Credential provider** to allow specific apps to act as a system credential provider. By default, Android blocks third-party credential providers from providing credentials. For more information, see [Allow an app to be a credential provider](#allow-an-app-to-be-a-credential-provider).
 14. Select **Next** to display the **Scope tags** page.
 15. [Optional] You can configure scope tags for your app configuration policy. For more information about scope tags, see [Use role-based access control and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
 16. Select **Next** to display the **Assignments** page.
@@ -120,6 +136,8 @@ Android Enterprise has several enrollment methods. The enrollment type depends o
 ## Use the configuration designer
 
 You can use the configuration designer for Managed Google Play apps when the app is designed to support configuration settings. Configuration applies to devices enrolled in Intune. The designer lets you configure specific configuration values for the settings exposed by the app.
+
+Configuration designer isn't supported for AOSP referenced apps. For these apps, use [Enter JSON data](#enter-json-data).
 
 1. Select **Add**. Choose the list of configuration settings that you want to enter for the app.
 
@@ -175,6 +193,8 @@ As the Microsoft Intune administrator, you can control which work or school acco
 
 Some configuration settings on apps (such as apps with Bundle types) can't be configured with the configuration designer. Use the JSON editor for those values. Settings are supplied to apps automatically when the app is installed.
 
+For AOSP referenced apps, JSON is the only supported configuration format. Follow [Create an app configuration policy](#create-an-app-configuration-policy) and use configuration settings supplied by the app vendor or device manufacturer.
+
 1. For **Configuration settings format**, select **Enter JSON editor**.
 2. In the editor, you can define JSON values for configuration settings. You can choose **Download JSON template** to download a sample file that you can then configure.
 3. Choose **OK**, and then choose **Add**.
@@ -187,6 +207,8 @@ When the assigned app is run on a device, it runs with the settings that you con
 
 Applies to:  
  Android 11+
+
+Connected apps isn't supported for AOSP referenced apps.
 
 Personally owned work profile users must have Company Portal version 5.0.5291.0 or newer. Corporate-owned work profile users don't need a specific version of the Microsoft Intune app for support.
 
@@ -224,7 +246,7 @@ Android's Credential Provider capability allows you to control which application
 
 By default, Android blocks third-party credential provider apps from providing credentials. Use the **Credential provider** setting to allow specific apps (such as a third-party password manager) to act as the system credential provider. Microsoft Authenticator is allowed automatically.
 
-To configure credential provider permissions, go to **Apps** &gt; **Configuration** &gt; **Create** &gt; **Managed devices**, and choose **Android Enterprise** as the platform. Select **Credential provider** in the settings to allow specific apps to act as credential providers.
+To configure credential provider permissions, go to **Apps** &gt; **Configuration** &gt; **Create** &gt; **Managed devices**, and choose **Android Enterprise &amp; AOSP** as the platform. Select **Credential provider** in the settings to allow specific apps to act as credential providers.
 
 This setting lets you:
 
@@ -273,7 +295,7 @@ For example, an app uses the device's microphone. The user is prompted to grant 
    - **Name**: Enter a descriptive name for the policy. Name your policies so you can easily identify them later. For example, a good policy name is **Android Enterprise prompt permissions app policy for entire company**.
    - **Description**. Enter a description for the profile. This setting is optional, but recommended.
    - **Device enrollment type**: This setting is set to **Managed devices**.
-   - **Platform**: Select **Android Enterprise**.
+   - **Platform**: Select **Android Enterprise &amp; AOSP**.
 3. Select **Profile Type**:
 4. Select **Targeted App**. Choose the app that you want to associate a configuration policy with. Select from the list of Android Enterprise fully managed work profile apps that you approve and synchronized with Intune.
 5. Select **Permissions** &gt; **Add**. From the list, select the available app permissions &gt; **OK**.

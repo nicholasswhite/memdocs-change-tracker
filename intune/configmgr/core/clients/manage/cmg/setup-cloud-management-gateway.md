@@ -8,9 +8,9 @@ ms.collection: tier3
 ms.service: configuration-manager
 author: sccmavenger
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/486161dc-fa28-4625-9b1c-1a21d690bc8d
 - https://authoring-docs-microsoft.poolparty.biz/devrel/68ec7f3a-2bc6-459f-b959-19beb729907d
 - https://authoring-docs-microsoft.poolparty.biz/devrel/96f6b0a2-2fd7-4de1-936d-89ad6e0eb7cc
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 manager: laurawi
 moniker_range_name: ''
 ms.author: dannygu
@@ -21,9 +21,9 @@ ms.reviewer:
 - qiani
 - umaikhan
 spProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/5dd28c86-729c-4723-ab5a-57e26fcec2a8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/90370425-aca4-4a39-9533-d52e5e002a5d
 - https://authoring-docs-microsoft.poolparty.biz/devrel/ef8b0a5a-ba0a-4ec0-8636-48246ccd954f
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/6a8c83be-f1de-4e90-bde0-bd097999a60c
 ---
 
 # Set up CMG for Configuration Manager
@@ -89,11 +89,11 @@ Do this procedure on the top-level site. That site is either a standalone primar
 
       - If you choose **Use existing**, then select an existing resource group from the list. This resource group needs to already exist in the same region you selected for the CMG. If you select an existing resource group, and it's in a different region than the previously selected region, the CMG will fail to deploy.
       - If you choose **Create new**, then enter the new resource group name.
-   4. By default, the **VM Size** is **Standard (A2_V2)**. Select another option as your design specifies. For example, **Large (A4_v2)** for increased client capacity per VM, or **Lab (B2s)** in a small test environment.
+   4. Select the **VM Size** as your design specifies. For VM sizes by Configuration Manager version, client capacity, and upgrade requirements, see [Size and scale for CMG](perf-scale.md#size-and-scale-for-cmg).
 
       > [!IMPORTANT]
       >
-      > The **Lab (B2s)** size VM is only intended for lab testing and small proof-of-concept environments. For example, with the Configuration Manager technical preview branch. The B2s VMs aren't intended for production use with the CMG. They are low cost and low performing.
+      > The **Small** tier (previously **Lab (B2s)**) is only intended for lab testing and small proof-of-concept environments, such as the Configuration Manager technical preview branch. It isn't intended for production use with the CMG.
    5. In the **VM Instance** field, enter the number of VMs for this service. The default is one, but you can scale up to 16 VMs per CMG.
    6. If you're using client authentication certificates, select **Certificates** to add trusted root certificates. Add all of the certificates in the trust chain.
 
