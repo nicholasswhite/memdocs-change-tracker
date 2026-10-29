@@ -6,7 +6,6 @@ ms.topic: how-to
 ms.reviewer: grwilso
 author: lenewsad
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/68cb9039-df60-49b0-8ef8-89ad96497f63
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
@@ -15,7 +14,6 @@ ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/725b6df3-93e8-472d-834e-e7e0d2953d35
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 

@@ -5,8 +5,6 @@ ms.date: "2025-04-01T00:00:00Z"
 ms.topic: reference
 author: nicholasswhite
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/7696cda6-0510-47f6-8302-71bb5d2e28cf
-- https://authoring-docs-microsoft.poolparty.biz/devrel/f0c462af-0ef9-4821-b36f-ba3d94736e2b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
@@ -16,8 +14,6 @@ ms.reviewer: jamiesil
 ms.service: microsoft-intune
 ms.subservice: developer
 spProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/1209ac18-fe8e-4ac6-b056-073f0e2c78ab
-- https://authoring-docs-microsoft.poolparty.biz/devrel/69c76c32-967e-4c65-b89a-74cc527db725
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 

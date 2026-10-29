@@ -8,7 +8,6 @@ ai-usage: ai-assisted
 #customer intent: As an IT administrator, I want to review and configure Microsoft Tunnel prerequisites so that I can prepare my environment for a successful deployment.
 author: lenewsad
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
@@ -20,7 +19,6 @@ ms.reviewer: ochukwunyere
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 

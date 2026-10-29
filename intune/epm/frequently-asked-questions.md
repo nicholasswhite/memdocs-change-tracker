@@ -5,8 +5,7 @@ ms.date: "2026-01-26T00:00:00Z"
 ms.topic: how-to
 author: lenewsad
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/7814ca69-56be-4667-8a46-86327796c328
-- https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/49ede7b2-2f56-4945-b7e6-22fec420737b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
@@ -16,8 +15,7 @@ ms.reviewer: mikedano
 ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
-- https://authoring-docs-microsoft.poolparty.biz/devrel/f15dfcd0-2664-48ba-bb88-f1f86eadbfd1
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/103d59ae-20d6-4a29-babb-43fe986b6c52
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 

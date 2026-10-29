@@ -6,7 +6,6 @@ ms.topic: tutorial
 author: scottbreenmsft
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c6f99e62-1cf6-4b71-af9b-649b05f80cce
 manager: laurawi
 moniker_range_name: ''
 ms.author: scbree
@@ -14,7 +13,6 @@ ms.service: microsoft-intune
 ms.subservice: education
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/3f56b378-07a9-4fa1-afe8-9889fdc77628
 ---
 
 # Enroll devices with Automated Device Enrollment

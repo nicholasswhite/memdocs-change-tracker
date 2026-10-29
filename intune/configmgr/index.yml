@@ -4,7 +4,7 @@ summary: Official product documentation for Configuration Manager
 metadata:
   ms.topic: hub-page
   ms.subservice: core-infra
-  ms.date: '2024-06-10T00:00:00Z'
+  ms.date: '2026-10-20T00:00:00Z'
   ms.collection:
   - essentials-navigation
   - highpri
@@ -14,7 +14,6 @@ metadata:
   description: Official product documentation for Configuration Manager
   author: sccmavenger
   cmProducts:
-  - https://authoring-docs-microsoft.poolparty.biz/devrel/e0ffb20c-01c6-407b-a9bd-29111652a1dc
   - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
   manager: laurawi
   moniker_range_name: ''
@@ -26,7 +25,6 @@ metadata:
   - qiani
   - umaikhan
   spProducts:
-  - https://authoring-docs-microsoft.poolparty.biz/devrel/3904bce4-d817-48cf-85fd-b6146fca83b7
   - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/6a8c83be-f1de-4e90-bde0-bd097999a60c
 highlightedContent:
   items:
@@ -61,7 +59,7 @@ conceptualContent:
     - text: Endpoint analytics
       url: ../endpoint-analytics/index.md
       itemType: overview
-    - text: Overview of cloud management gateway (CMG)
+    - text: Overview of cloud management gateway
       url: core/clients/manage/cmg/overview.md
       itemType: overview
     - text: Plan for Microsoft Entra ID
@@ -108,7 +106,7 @@ conceptualContent:
     - text: Deploy clients
       url: core/clients/deploy/deploy-clients-to-windows-computers.md
       itemType: deploy
-    - text: Stay current with ConfigMgr and Windows 10
+    - text: Configuration Manager and Windows as a service
       url: core/understand/configuration-manager-and-windows-as-service.md
       itemType: learn
     footerLink:
@@ -133,7 +131,7 @@ conceptualContent:
       url: apps/index.yml
   - title: OS deployment
     links:
-    - text: Upgrade to Windows 10
+    - text: Upgrade the Windows operating system
       url: osd/deploy-use/upgrade-windows-to-the-latest-version.md
       itemType: overview
     - text: Phased deployments
@@ -153,7 +151,7 @@ conceptualContent:
     - text: Deploy software updates
       url: sum/deploy-use/deploy-software-updates.md
       itemType: deploy
-    - text: Optimize Windows 10 updates
+    - text: Optimize Windows updates
       url: sum/deploy-use/optimize-windows-10-update-delivery.md
       itemType: learn
     - text: Update Microsoft 365

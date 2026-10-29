@@ -7,6 +7,7 @@ ai-usage: ai-assisted
 author: nicholasswhite
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/d3197845-b4ce-44c6-a237-cd4be160e76c
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
 ms.author: nwhite
@@ -16,6 +17,7 @@ ms.service: microsoft-intune
 ms.subservice: developer
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/aea905fb-0a9d-4d46-b30f-e9cbaf772d1b
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
 # Connect to the Data Warehouse With Power BI

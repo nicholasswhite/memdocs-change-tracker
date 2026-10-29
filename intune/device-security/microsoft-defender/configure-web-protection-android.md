@@ -153,6 +153,10 @@ To configure web protection on devices, use the following procedures to create a
 6. In **Assignments**, specify the groups that receive the profile. For more information on assigning profiles, see [Assign user and device profiles](../../device-configuration/assign-device-profile.md).
 7. In **Review + create**, when you're done, select **Create**. The new profile is displayed in the list when you select the policy type for the profile you created.
 
+> [!IMPORTANT]
+>
+> Google restricts accessibility permissions for apps that aren't registered as accessibility tools. Defender isn't registered as an accessibility tool, so **when Android Advanced Protection is enabled, Defender web protection can't run**. Admins can disable web protection and continue using other supported Defender for Endpoint features.
+
 ## Next steps
 
 - [Monitor device compliance status for risk levels](monitor.md)

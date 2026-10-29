@@ -11,7 +11,7 @@ ms.collection:
 #Customer intent: As an administrator, I want an alternative to Android device administrator that doesn't require enrollment, because my organization doesn't require mobile device management capabilities like deploying Wi-Fi or email configuration profiles.
 author: lenewsad
 cmProducts:
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 manager: laurawi
 moniker_range_name: ''
@@ -19,8 +19,8 @@ ms.author: lanewsad
 ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/67b2ba1a-6f74-4044-a48a-f0f8ad076b8f
 ---
 
 # Move from device administrator management to mobile application management
