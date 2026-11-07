@@ -3,12 +3,11 @@ title: Manage Volume-Purchased Apps and Books with Microsoft Intune
 description:  Learn about how you can use Microsoft Intune to manage and monitor your use of volume-purchased apps and books from stores."
 ms.date: "2024-05-16T00:00:00Z"
 ms.topic: how-to
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: bryanke
 ms.service: microsoft-intune

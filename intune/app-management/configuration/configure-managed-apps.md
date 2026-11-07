@@ -4,13 +4,12 @@ description: Learn how to configure policies for Intune App SDK managed apps.
 ms.date: "2025-04-28T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: bryanke
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

@@ -3,12 +3,11 @@ title: "Turn off Microsoft data collection on Android device"
 description: Learn how to turn off Microsoft data collection in the Microsoft Intune and Company Portal apps for Android.
 ms.date: "2024-11-08T00:00:00Z"
 ms.reviewer: esmich
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

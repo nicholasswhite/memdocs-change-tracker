@@ -6,14 +6,13 @@ ms.subservice: core-infra
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/d56bfe0c-ecd5-4d90-854f-35482bbb1314
 - https://authoring-docs-microsoft.poolparty.biz/devrel/e93f3d5f-c77d-4365-a7fb-c9f2234416c7
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c6f99e62-1cf6-4b71-af9b-649b05f80cce
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

@@ -4,13 +4,12 @@ description: Utilize Apple device enrollment to enroll and manage user-owned iOS
 ms.date: "2025-12-08T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: rishitasarin
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

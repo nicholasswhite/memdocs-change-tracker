@@ -3,14 +3,13 @@ title: Get the Intune Company Portal app
 description: Learn where to get the Company Portal app and how to sign in.
 ms.date: "2025-01-27T00:00:00Z"
 ms.reviewer: esmich
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

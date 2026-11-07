@@ -8,10 +8,9 @@ ms.collection: tier3
 
 
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

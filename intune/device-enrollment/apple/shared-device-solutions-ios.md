@@ -3,14 +3,13 @@ title: "Overview of shared device solutions for iOS/iPadOS"
 description: Learn about Shared iOS and iPadOS devices.
 ms.date: "2024-09-16T00:00:00Z"
 ms.topic: overview
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: annovich
 ms.service: microsoft-intune

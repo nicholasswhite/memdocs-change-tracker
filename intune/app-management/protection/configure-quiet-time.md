@@ -5,14 +5,13 @@ ms.date: "2026-04-29T00:00:00Z"
 ms.topic: overview
 ms.reviewer: cdemello
 ms.collection: ''
-author: nicholasswhite
+author: c-demello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
 - https://authoring-docs-microsoft.poolparty.biz/devrel/63959238-cb90-4871-a33d-4a5519097e47
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: cdemello
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

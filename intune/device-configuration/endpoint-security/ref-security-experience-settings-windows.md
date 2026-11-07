@@ -4,13 +4,12 @@ description: Endpoint security Antivirus policy settings for the Windows Securit
 ms.date: "2025-03-28T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mattcall
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/691e3042-55ad-4ce1-b5e9-649b1cc47b5c
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

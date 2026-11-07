@@ -4,13 +4,12 @@ description: Learn how to manage frontline worker devices using iOS and iPadOS d
 ms.date: "2024-03-28T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: cbernier
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 spProducts:

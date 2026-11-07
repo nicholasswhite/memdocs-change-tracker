@@ -5,14 +5,13 @@ ms.date: "2026-08-25T00:00:00Z"
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.reviewer: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
@@ -137,6 +136,7 @@ In the **Configuration settings** page:
    > - [Microsoft Store](../../../../intune/app-management/deployment/add-microsoft-store.md) - only Microsoft Store apps that support WinGet are supported.
    > - [Microsoft 365](../../../../intune/app-management/deployment/add-microsoft-365-windows.md).
    > - [Enterprise App Catalog](../../../../intune/app-management/deployment/add-enterprise-catalog-app.md).
+   > - [Enterprise App Catalog auto-update apps](../../../../intune/app-management/deployment/enterprise-app-management.md#auto-update-for-enterprise-app-catalog-apps).
    >
    > In addition, Windows Autopilot device preparation supports deploying both Win32 and line-of-business (LOB) applications in the same deployment.
 4. Expand the **Scripts** section by selecting it:
@@ -155,15 +155,6 @@ In the **Configuration settings** page:
       3. Once all of the desired PowerShell scripts are selected, select **Save**.
 
    All of the selected PowerShell scripts should display under **Allowed Scripts**.
-
-> [!IMPORTANT]
->
-> If a device is registered as a Windows Autopilot device, whether the Windows Autopilot deployment or the Windows Autopilot device preparation deployment runs depends on the device's association state:
->
-> - **The device isn't associated with your tenant.** Windows Autopilot registration takes precedence, and the Windows Autopilot deployment runs instead of the device preparation deployment.
-> - **The device is associated with your tenant.** Device association takes precedence, and the Windows Autopilot device preparation deployment runs.
->
-> To run device preparation on a registered device without associating it, first remove the device's Windows Autopilot registration. For more information, see [Deregister a device](../../../registration-overview.md#deregister-a-device).
 
 ## Policy priority
 

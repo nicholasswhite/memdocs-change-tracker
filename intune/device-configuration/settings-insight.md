@@ -1,14 +1,13 @@
 ---
 title: Settings insight
 description: Settings insight provides peer benchmarking information during security baseline configuration, showing when organizations similar to yours use Microsoft's recommended default values.
-ms.author: paoloma
+ms.author: acabello
 ms.date: "2026-02-10T00:00:00Z"
 ms.topic: overview
 ms.reviewer: Lavanya.lakshman
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune

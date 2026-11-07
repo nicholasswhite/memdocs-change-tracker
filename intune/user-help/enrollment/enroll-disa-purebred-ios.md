@@ -3,13 +3,12 @@ title: "Set up iOS or iPadOS device with Company Portal and DISA Purebred"
 description: Learn how to enroll an iOS or iPadOS device and set up derived credential authentication with DISA Purebred.
 ms.date: "2025-09-15T00:00:00Z"
 ms.reviewer: rishitasarin
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

@@ -4,12 +4,11 @@ description: See common issues and resolutions when using StageNow on Android de
 ms.date: "2024-06-27T00:00:00Z"
 ms.topic: troubleshooting
 ms.reviewer: jieyan
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

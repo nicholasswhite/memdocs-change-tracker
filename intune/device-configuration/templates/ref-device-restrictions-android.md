@@ -4,13 +4,12 @@ description: See a list of all the Android device administrator settings you can
 ms.date: "2025-06-09T00:00:00Z"
 ms.topic: reference
 ms.reviewer: anuragjain
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

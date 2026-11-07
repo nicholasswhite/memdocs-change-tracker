@@ -5,14 +5,13 @@ ms.date: "2022-04-08T00:00:00Z"
 ms.topic: install-set-up-deploy
 ms.subservice: software-updates
 ms.collection: tier3
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/12ed19f9-ebdf-4c8a-8bcd-7a681836774d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c6f99e62-1cf6-4b71-af9b-649b05f80cce
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

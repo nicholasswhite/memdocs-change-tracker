@@ -3,14 +3,13 @@ title: Bulk enrollment for Windows devices
 description: Create a bulk enrollment package for Microsoft Intune
 ms.date: "2025-09-29T00:00:00Z"
 ms.topic: how-to
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: maholdaa
 ms.service: microsoft-intune
@@ -69,7 +68,7 @@ Microsoft Entra users are standard users on these devices and receive assigned I
 
    ![Screenshot of specifying name and product key in the Windows Configuration Designer app](media/create-bulk-package/bulk-enroll-device.png)
 5. Optionally, you can configure the Wi-Fi network devices connect to when they first start. If the network devices aren't configured, a wired network connection is required when the device is first started. ![Screenshot of enabling Wi-Fi including Network SSID and Network type options in the Windows Configuration Designer app](media/create-bulk-package/bulk-enroll-network.png)
-6. Select **Enroll in Azure AD**, enter a **Bulk Token Expiry** date, and then select **Get Bulk Token**. The token validity period is 180 days.
+6. Select **Enroll in Azure AD**, enter a **Bulk Token Expiry** date, and then select **Get Bulk Token**. The token validity period is 90 days.
 
    > [!NOTE]
    >

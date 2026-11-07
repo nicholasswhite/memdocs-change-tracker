@@ -4,14 +4,13 @@ description: Learn how to monitor device compliance and onboarding status for Mi
 ms.date: "2026-04-28T00:00:00Z"
 ms.topic: how-to
 ms.custom: msecd-doc-authoring-1012
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/8b9ae643-2e85-42b8-beb2-eef4bae8c4bc
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints

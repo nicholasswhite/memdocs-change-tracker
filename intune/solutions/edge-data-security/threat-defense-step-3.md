@@ -4,14 +4,13 @@ description: Step 3. Integrate Mobile Threat Defense signals with Microsoft Edge
 ms.date: "2026-04-30T00:00:00Z"
 ms.topic: how-to
 ms.custom: ''
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/8e3fdb08-a059-4277-98f6-c0e21e940707
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: FocusArea_Apps_AppManagement
 ms.reviewer: samarti
 ms.service: microsoft-intune

@@ -3,12 +3,11 @@ title: "Microsoft Intune Data Warehouse API"
 description: You can use the Intune Data Warehouse API to build reports that provide insight into your enterprise mobile environment.
 ms.date: "2024-10-30T00:00:00Z"
 ms.topic: reference
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: jamiesil
 ms.service: microsoft-intune

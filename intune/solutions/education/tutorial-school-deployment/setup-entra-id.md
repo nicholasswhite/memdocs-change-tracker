@@ -3,14 +3,13 @@ title: Set up Microsoft Entra ID
 description: Learn how to create and prepare your Microsoft Entra tenant for an education environment.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: scottbreenmsft
+author: nicolezhao-msftdocs
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/1dd701e0-441f-4b0a-9806-aa47decc4e35
 - https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/1433a524-c01f-4b87-beab-670c040dea4f
-manager: laurawi
 moniker_range_name: ''
-ms.author: scbree
+ms.author: nicolezhao
 ms.service: microsoft-intune
 ms.subservice: education
 spProducts:

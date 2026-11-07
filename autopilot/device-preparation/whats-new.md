@@ -1,18 +1,17 @@
 ---
 title: "Windows Autopilot device preparation: What's new"
 description: News and resources about the latest updates of Windows Autopilot device preparation. # RSS subscription is based on this description so don't change. If the description needs to change, update RSS URL in the Tip in the article.
-ms.date: "2026-09-14T00:00:00Z"
+ms.date: '2026-10-29T00:00:00Z'
 ms.collection: M365-modern-desktop
 ms.topic: whats-new
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/72cb4d1c-66f7-4281-99d5-e04a64d084fc
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.reviewer: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
@@ -35,6 +34,14 @@ spProducts:
 > This example includes the `&locale=en-us` variable. The `locale` variable is required, but it can be changed to another supported locale. For example, `&locale=es-es`.
 >
 > For more information on using RSS for notifications, see [How to use the docs](https://learn.microsoft.com/en-us/intune/use-docs#notifications) in the Intune documentation.
+
+## Block on Enterprise App Management auto-update apps in Windows Autopilot device preparation policies
+
+Date added: *October 29, 2026*
+
+You can now select Microsoft Intune Enterprise App Management (EAM) auto-update apps in Windows Autopilot device preparation policies to block device setup until the selected apps are installed. This helps ensure required apps are available before users access the desktop.
+
+For related information, see [Add an Enterprise App Catalog app to Microsoft Intune](../../intune/app-management/deployment/add-enterprise-catalog-app.md).
 
 ## Performance and reliability improvements for Windows Autopilot device preparation
 

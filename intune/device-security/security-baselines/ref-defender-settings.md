@@ -5,14 +5,13 @@ ms.date: "2026-05-13T00:00:00Z"
 ms.topic: reference
 ai-usage: ai-assisted
 zone_pivot_groups: atp-baseline-versions
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/8b9ae643-2e85-42b8-beb2-eef4bae8c4bc
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c671beaa-a830-4c9f-aceb-97379ee031ca
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints

@@ -7,14 +7,13 @@ ms.topic: checklist
 ROBOTS: NOINDEX
 ms.collection: tier3
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/24b7ebe9-095d-4850-bde9-cb2f45c0701c
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7696cda6-0510-47f6-8302-71bb5d2e28cf
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

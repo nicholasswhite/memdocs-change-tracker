@@ -6,14 +6,13 @@ ms.topic: reference
 ms.collection: tier3
 description: An overview of SMS_G_System_AdvancedThreatProtectionHealthStatus Server WMI Class
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/8b9ae643-2e85-42b8-beb2-eef4bae8c4bc
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

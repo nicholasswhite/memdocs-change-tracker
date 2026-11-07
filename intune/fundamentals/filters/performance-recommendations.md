@@ -4,12 +4,11 @@ description: Optimize Microsoft Intune performance with assignment filters. Lear
 ms.date: "2026-06-30T00:00:00Z"
 ms.topic: article
 ms.reviewer: mattcall
-author: paolomatarazzo
+author: wicale
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: fundamentals

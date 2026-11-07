@@ -3,12 +3,11 @@ title: "Fix common issues with your Samsung Knox device"
 description: Troubleshoot your Samsung Knox device.
 ms.date: "2025-02-07T00:00:00Z"
 ms.reviewer: arnab
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

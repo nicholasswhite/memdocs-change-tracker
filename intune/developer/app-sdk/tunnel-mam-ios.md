@@ -7,14 +7,13 @@ ms.reviewer: ochukwunyere, wicale
 ms.collection:
 - M365-identity-device-management
 - iOS/iPadOS
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/64b65f6c-101f-411a-9b83-9f577fab52d0
 - https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: developer
 spProducts:

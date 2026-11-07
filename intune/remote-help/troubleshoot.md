@@ -7,14 +7,13 @@ ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1023
 ms.reviewer: Karawang
 #customer intent: As an IT administrator, I want to monitor and troubleshoot Remote Help so that I can maintain reliable remote assistance.
-author: lenewsad
+author: kara-wang
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: karawang
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: suite

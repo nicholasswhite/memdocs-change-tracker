@@ -7,10 +7,9 @@ ms.topic: reference
 ms.collection: tier3
 descriptions: Learn about the simplified syntax, methods, properties, and requirements of the SMS_AdminUIContent server class.
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

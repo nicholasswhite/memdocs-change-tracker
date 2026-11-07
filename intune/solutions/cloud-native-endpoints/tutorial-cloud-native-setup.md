@@ -2,11 +2,11 @@
 title: "Tutorial: Set up cloud-native Windows endpoints with Microsoft Intune"
 description: Step-by-step tutorial to set up a cloud-native Windows endpoint - Microsoft Entra joined, Intune enrolled, secured, and deployed with Windows Autopilot.
 ms.keywords: cloud native Windows, cloud-native Windows endpoint, Intune cloud native, Windows Autopilot cloud native, cloud native endpoint setup
-author: paolomatarazzo
-ms.author: paoloma
+author: jasonsandys-microsoft
+ms.author: jasandys
 ms.date: "2026-05-19T00:00:00Z"
 ms.topic: tutorial
-ms.reviewer: scbree;rogerso
+ms.reviewer: rogerso
 ms.collection:
 - M365-identity-device-management
 - graph-interactive
@@ -17,7 +17,6 @@ cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 spProducts:

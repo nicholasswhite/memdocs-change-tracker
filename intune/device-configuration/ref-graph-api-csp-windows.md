@@ -1,8 +1,8 @@
 ---
 title: "Graph APIs and matching Windows CSPs used in Intune"
 description: See a list of all the Graph API entities with the matching Windows CSP and offset URI on Windows 10 devices and newer used when configuring devices in Microsoft Intune. See the matching API and CSP for shared PCs, endpoint protection, Microsoft Defender for Endpoint, identity protection, Windows 10 Teams, kiosk, and Windows Update client policies.
-author: nicholasswhite
-ms.author: paoloma
+author: iceorbital
+ms.author: acabello
 ms.date: "2026-06-22T00:00:00Z"
 ms.topic: reference
 ms.reviewer: jamiesil
@@ -12,7 +12,6 @@ ms.collection:
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: configuration

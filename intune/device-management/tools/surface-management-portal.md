@@ -1,13 +1,12 @@
 ---
 title: "What is Microsoft Surface Management Portal?"
 description: Learn more about the features and capabilities of Microsoft Surface Management Portal.
-author: paolomatarazzo
-ms.author: paoloma
+author: iceorbital
+ms.author: acabello
 ms.date: "2021-10-28T00:00:00Z"
 ms.topic: concept-article
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/062d60c9-ee0f-402e-a046-b4e67c3572d6
-manager: laurawi
 moniker_range_name: ''
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune

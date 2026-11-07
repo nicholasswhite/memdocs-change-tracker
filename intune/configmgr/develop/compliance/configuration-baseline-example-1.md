@@ -6,10 +6,9 @@ ms.topic: article
 ms.collection: tier3
 description: This Baseline Configuration Item Instance example references an application configuration item that checks whether the Configuration Manager client and Notepad are installed on systems that are running Windows XP SP2.
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

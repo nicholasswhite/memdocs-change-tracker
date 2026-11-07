@@ -8,13 +8,12 @@ ms.collection:
 - FocusArea_Apps_Win32
 - M365-identity-device-management
 - Windows
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

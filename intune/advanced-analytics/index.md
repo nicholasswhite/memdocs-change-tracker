@@ -3,12 +3,11 @@ title: "Advanced Analytics overview"
 description: Discover what Microsoft Intune Advanced Analytics is, how it extends endpoint analytics with advanced device insights, proactive troubleshooting, and enhanced reporting.
 ms.date: "2026-03-24T00:00:00Z"
 ms.topic: concept-article
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:

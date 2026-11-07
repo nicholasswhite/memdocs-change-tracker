@@ -1,19 +1,17 @@
 ---
 title: "How to enable TLS 1.2 on the site servers and remote site systems"
 description: Information about how to enable Transport Layer Security (TLS) 1.2 for Configuration Manager site servers and remote site systems.
-ms.date: "2024-06-20T00:00:00Z"
+ms.date: '2026-10-27T00:00:00Z'
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7696cda6-0510-47f6-8302-71bb5d2e28cf
-- https://authoring-docs-microsoft.poolparty.biz/devrel/cbe4ca68-43ac-4375-aba5-5945a6394c20
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu
@@ -22,7 +20,6 @@ ms.reviewer:
 - umaikhan
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/69c76c32-967e-4c65-b89a-74cc527db725
-- https://authoring-docs-microsoft.poolparty.biz/devrel/ced846cc-6a3c-4c8f-9dfb-3de0e90e2742
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/6a8c83be-f1de-4e90-bde0-bd097999a60c
 ---
 
@@ -30,7 +27,7 @@ spProducts:
 
 *Applies to: Configuration Manager (Current Branch)*
 
-When enabling TLS 1.2 for your Configuration Manager environment, start with [enabling TLS 1.2 for the clients](enable-tls-1-2-client.md) first. Then, enable TLS 1.2 on the site servers and remote site systems second. Finally, test client to site system communications before potentially disabling the older protocols on the server side. The following tasks are needed for enabling TLS 1.2 on the site servers and remote site systems:
+When enabling TLS 1.2 for your Configuration Manager environment, start by [enabling TLS 1.2 for the clients](enable-tls-1-2-client.md). Then, enable TLS 1.2 on the site servers and remote site systems. Finally, test client-to-site system communications before potentially disabling the older protocols on the server side. The following tasks are needed to enable TLS 1.2 on the site servers and remote site systems:
 
 - Ensure that TLS 1.2 is enabled as a protocol for SChannel at the operating system level
 - Update and configure the .NET Framework to support TLS 1.2
@@ -41,7 +38,7 @@ For more information about dependencies for specific Configuration Manager featu
 
 ## Ensure that TLS 1.2 is enabled as a protocol for SChannel at the operating system level
 
-For the most part, protocol usage is controlled at three levels, the operating system level, the framework or platform level, and the application level. TLS 1.2 is enabled by default at the operating system level. Once you ensure that the .NET registry values are set to enable TLS 1.2 and verify the environment is properly utilizing TLS 1.2 on the network, you may want to edit the `SChannel\Protocols` registry key to disable the older, less secure protocols. For more information on disabling TLS 1.0 and 1.1, see [Configuring Schannel protocols in the Windows Registry](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry).
+For the most part, protocol usage is controlled at three levels, the operating system level, the framework or platform level, and the application level. TLS 1.2 is enabled by default at the operating system level. After you ensure that the .NET registry values are set to enable TLS 1.2 and verify the environment is properly using TLS 1.2 on the network, you might want to edit the `SChannel\Protocols` registry key to disable the older, less secure protocols. For more information about disabling TLS 1.0 and 1.1, see [Configuring Schannel protocols in the Windows Registry](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry).
 
 ## Update and configure the .NET Framework to support TLS 1.2
 
@@ -53,15 +50,15 @@ First, determine the installed .NET versions. For more information, see [Determi
 
 Install the .NET updates so you can enable strong cryptography. Some versions of .NET Framework might require updates to enable strong cryptography. Use these guidelines:
 
-- NET Framework 4.6.2 and later supports TLS 1.1 and TLS 1.2. Confirm the registry settings, but no additional changes are required.
+- .NET Framework 4.6.2 and later support TLS 1.1 and TLS 1.2. Confirm the registry settings, but make no other changes.
 
   > [!NOTE]
   >
   > Starting in version 2107, Configuration Manager requires Microsoft .NET Framework version 4.6.2 for site servers, specific site systems, clients, and the console. If possible in your environment, install the latest version of .NET version 4.8.
-- Update NET Framework 4.6 and earlier versions to support TLS 1.1 and TLS 1.2. For more information, see [.NET Framework versions and dependencies](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies).
-- If you're using .NET Framework 4.5.1 or 4.5.2 on Windows 8.1, Windows Server 2012 R2, or Windows Server 2012, it's highly recommended that you install the latest security updates for the .Net Framework 4.5.1 and 4.5.2 to ensure TLS 1.2 can be enabled properly.
+- Update .NET Framework 4.6 and earlier versions to support TLS 1.1 and TLS 1.2. For more information, see [.NET Framework versions and dependencies](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies).
+- If you use .NET Framework 4.5.1 or 4.5.2 on Windows 8.1, Windows Server 2012 R2, or Windows Server 2012, Microsoft recommends that you install the latest security updates for the .NET Framework 4.5.1 and 4.5.2 to ensure TLS 1.2 can be enabled properly.
 
-  For your reference, TLS 1.2 was first introduced into .Net Framework 4.5.1 and 4.5.2 with the following hotfix rollups:
+  For your reference, TLS 1.2 was first introduced into .NET Framework 4.5.1 and 4.5.2 with the following hotfix rollups:
 
   - For Windows 8.1 and Server 2012 R2: Hotfix rollup 3099842
   - For Windows Server 2012: Hotfix rollup 3099844
@@ -72,7 +69,7 @@ Configure .NET Framework to support strong cryptography. Set the `SchUseStrongCr
 
 Make sure to set the following registry keys on any computer that communicates across the network with a TLS 1.2-enabled system. For example, Configuration Manager clients, remote site system roles not installed on the site server, and the site server itself.
 
-For 32-bit applications that are running on 32-bit OSs and for 64-bit applications that are running on 64-bit OSs, update the following subkey values:
+Update the following subkey values for 32-bit applications that run on 32-bit operating systems and for 64-bit applications that run on 64-bit operating systems:
 
 ```Registry
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]
@@ -83,7 +80,7 @@ For 32-bit applications that are running on 32-bit OSs and for 64-bit applicatio
       "SchUseStrongCrypto" = dword:00000001
 ```
 
-For 32-bit applications that are running on 64-bit OSs, update the following subkey values:
+Update the following subkey values for 32-bit applications that run on 64-bit operating systems:
 
 ```Registry
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v2.0.50727]
@@ -100,7 +97,7 @@ For 32-bit applications that are running on 64-bit OSs, update the following sub
 
 ## Update SQL Server and client components
 
-All SQL Server versions currently supported by Configuration Manager support TLS 1.1 and TLS 1.2. Dependent libraries might still require updates. For more information, see [KB 3135244: TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/topic/kb3135244-tls-1-2-support-for-microsoft-sql-server-e4472ef8-90a9-13c1-e4d8-44aad198cdbe).
+SQL Server versions currently supported by Configuration Manager support TLS 1.1 and TLS 1.2. Dependent libraries might still require updates. For more information, see [KB 3135244: TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/topic/kb3135244-tls-1-2-support-for-microsoft-sql-server-e4472ef8-90a9-13c1-e4d8-44aad198cdbe).
 
 Secondary site servers need to use at least SQL Server 2017 Express with Cumulative Update 2 (CU2) or later.
 
@@ -110,7 +107,7 @@ Secondary site servers need to use at least SQL Server 2017 Express with Cumulat
 >
 > [KB 3135244](https://support.microsoft.com/topic/kb3135244-tls-1-2-support-for-microsoft-sql-server-e4472ef8-90a9-13c1-e4d8-44aad198cdbe) also describes requirements for SQL Server client components.
 
-Make sure to also update the SQL Server Native Client to at least version SQL Server 2012 SP4 (11.\*.7001.0). This requirement is a [prerequisite check (warning)](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
+Ensure you update the SQL Server Native Client to at least SQL Server 2012 SP4 (11.\*.7001.0). This requirement is a [prerequisite check (warning)](../../servers/deploy/install/list-of-prerequisite-checks.md#sql-server-native-client).
 
 Configuration Manager uses SQL Server Native Client on the following site system roles:
 
@@ -132,25 +129,27 @@ Configuration Manager uses SQL Server Native Client on the following site system
 
 ## Enable TLS 1.2 at-scale using Automanage Machine Configuration and Azure Arc
 
-Automatically configures TLS 1.2 across both client and server for machines running in Azure, on-prem, or multi-cloud environments. To get started configuring TLS 1.2 across your machines, [connect them to Azure using Azure Arc-enabled servers](https://learn.microsoft.com/en-us/azure/azure-arc/servers/learn/quick-enable-hybrid-vm), which comes with the Machine Configuration prerequisite by default. Once connected, TLS 1.2 can be configured with point-and-click simplicity by deploying the built-in policy definition in Azure Portal: [Configure secure communication protocols (TLS 1.1 or TLS 1.2) on Windows servers](https://ms.portal.azure.com/#view/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F828ba269-bf7f-4082-83dd-633417bc391d). The policy scope can be assigned at the subscription, resource group, or management group level, as well as exclude any resources from the policy definition.
+Automatically configure TLS 1.2 across both client and server for machines that run in Azure, on-premises, or multicloud environments. To get started configuring TLS 1.2 across your machines, [connect them to Azure by using Azure Arc-enabled servers](https://learn.microsoft.com/en-us/azure/azure-arc/servers/learn/quick-enable-hybrid-vm), which comes with the Machine Configuration prerequisite by default.
 
-After the configuration has been assigned, the compliance status of your resources can be viewed in detail by navigating to the Guest Assignments page and scoping down to the impacted resources.
+After you connect, configure TLS 1.2 with point-and-click simplicity by deploying the built-in policy definition in Azure portal: [Configure secure communication protocols (TLS 1.1 or TLS 1.2) on Windows servers](https://ms.portal.azure.com/#view/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F828ba269-bf7f-4082-83dd-633417bc391d). Assign the policy scope at the subscription, resource group, or management group level, and exclude any resources from the policy definition.
+
+After the configuration has been assigned, you can view the compliance status of your resources by navigating to the Guest Assignments page and scoping down to the impacted resources.
 
 For a detailed, step-by-step tutorial, see [Consistently upgrade your server TLS protocol using Azure Arc and Automanage Machine Configuration](https://techcommunity.microsoft.com/t5/azure-arc-blog/consistently-upgrade-your-server-tls-protocol-using-azure-arc/ba-p/3664217).
 
 ## Update Windows Server Update Services (WSUS)
 
-TLS 1.2 is supported by default for WSUS on all [currently supported version](https://learn.microsoft.com/en-us/windows-server/get-started/windows-server-release-info) of Windows Server.
+WSUS supports TLS 1.2 by default on all [currently supported versions](https://learn.microsoft.com/en-us/windows-server/get-started/windows-server-release-info) of Windows Server.
 
 To support TLS 1.2 in earlier versions of WSUS, install the following update on the WSUS server:
 
-- For WSUS server that's running Windows Server 2012, install [update 4022721](https://support.microsoft.com/topic/june-27-2017-kb4022721-preview-of-monthly-rollup-16a4b074-5202-c1c3-2c8a-34c1edd452f8) or a later rollup update.
-- For WSUS server that's running Windows Server 2012 R2, install [update 4022720](https://support.microsoft.com/topic/june-27-2017-kb4022720-preview-of-monthly-rollup-b98970bb-6f11-46c3-8681-a6b85d5d8eb4) or a later rollup update.
+- For WSUS servers that run Windows Server 2012, install [update 4022721](https://support.microsoft.com/topic/june-27-2017-kb4022721-preview-of-monthly-rollup-16a4b074-5202-c1c3-2c8a-34c1edd452f8) or a later rollup update.
+- For WSUS servers that run Windows Server 2012 R2, install [update 4022720](https://support.microsoft.com/topic/june-27-2017-kb4022720-preview-of-monthly-rollup-b98970bb-6f11-46c3-8681-a6b85d5d8eb4) or a later rollup update.
 
 > [!NOTE]
 >
-> On October 10th, 2023, Windows Server 2012 and Windows Server 2012 R2 entered the Extended Support Updates phase. Microsoft will no longer provide support for Configuration Manager site servers or roles installed to these Operating Systems. For more information, see **[Extended Security Updates and Configuration Manager](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices)**.
+> On October 10, 2023, Windows Server 2012 and Windows Server 2012 R2 entered the Extended Support Updates phase. Microsoft no longer provides support for Configuration Manager site servers or roles installed to these operating systems. For more information, see **[Extended Security Updates and Configuration Manager](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/configs/supported-operating-systems-for-clients-and-devices)**.
 
-## Next steps
+## Next step
 
 - [Common issues when enabling TLS 1.2](enable-tls-1-2-troubleshoot.md)

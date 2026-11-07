@@ -7,14 +7,13 @@ ms.subservice: suite
 ms.collection:
 - M365-identity-device-management
 - sub-intune-suite
-author: lenewsad
+author: OluchiC
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
 - https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: ochukwunyere
 ms.reviewer: ochukwunyere
 ms.service: microsoft-intune
 spProducts:

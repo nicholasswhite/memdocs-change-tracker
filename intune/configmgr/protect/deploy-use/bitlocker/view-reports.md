@@ -7,13 +7,12 @@ ms.topic: reference
 ms.collection: tier3
 ms.custom: sfi-image-nochange
 ms.service: configuration-manager
-author: sccmavenger
+author: aanavath
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7cbaac1e-1137-4825-819f-cd751d73c036
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: aanavath
 ms.reviewer:
 - brianhun
 - hugowu

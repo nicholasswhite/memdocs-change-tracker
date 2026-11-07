@@ -3,12 +3,11 @@ title: "Trusted root certificate profiles for Microsoft Intune"
 description: Create and deploy trusted certificate profiles to deploy a trusted root certificate to managed devices in Intune. Trusted certificate profiles support use of Simple Certificate Enrollment Protocol (SCEP) and Public Key Cryptography Standards (PKCS) certificate profiles with Microsoft Intune.
 ms.date: "2024-09-23T00:00:00Z"
 ms.topic: how-to
-author: paolomatarazzo
+author: wicale
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: wicale
 ms.collection:
 - M365-identity-device-management
 - certificates

@@ -3,14 +3,13 @@ title: "Set up automatic enrollment for Windows devices"
 description: Enable Intune automatic enrollment for Windows devices joining or registering with your Microsoft Entra ID.
 ms.date: "2026-03-06T00:00:00Z"
 ms.topic: how-to
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: maholdaa
 ms.service: microsoft-intune

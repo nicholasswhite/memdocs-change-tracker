@@ -5,12 +5,11 @@ ms.date: "2026-01-23T00:00:00Z"
 ms.topic: how-to
 ms.custom: ''
 zone_pivot_groups: platforms-windows-macos
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: FocusArea_Apps_AppManagement
 ms.reviewer: samarti
 ms.service: microsoft-intune

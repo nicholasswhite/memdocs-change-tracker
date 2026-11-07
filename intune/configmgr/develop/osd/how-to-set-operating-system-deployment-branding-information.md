@@ -6,10 +6,9 @@ ms.topic: how-to
 ms.collection: tier3
 description: Learn how to set operating system deployment branding information in the configuration manager by changing the property of the client agent component section.
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

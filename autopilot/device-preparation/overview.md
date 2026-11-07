@@ -10,12 +10,11 @@ ms.collection:
 - m365initiative-coredeploy
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.reviewer: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
@@ -81,7 +80,12 @@ New features in Windows Autopilot device preparation include:
   - Deployment time
 
   For more information, see [Windows Autopilot device preparation reporting and monitoring](reporting-monitoring.md).
-- **Support for Government Community Cloud High (GCCH) and Department of Defense (DoD) environments**. Windows Autopilot device preparation supports [GCCH and DoD](../../intune/fundamentals/government-service.md) environments.
+
+### Cloud environments
+
+Windows Autopilot device preparation supports [Government Community Cloud High (GCCH) and Department of Defense (DoD)](../../intune/fundamentals/government-service.md) environments.
+
+The device association capability isn't yet available in sovereign cloud environments.
 
 > [!IMPORTANT]
 >
@@ -157,7 +161,16 @@ Windows Autopilot device preparation only requires corporate identifiers for Win
 
 ### Device association
 
-Windows Autopilot device preparation supports device association, which binds a physical Windows 11 device to your tenant before enrollment. Associated devices are automatically marked as corporate-owned and can receive device-targeted policy assignments and additional OOBE customizations. For more information, see [Overview of Windows Autopilot device association](device-association/overview.md).
+Device association uses a device's Trusted Platform Module (TPM)-backed identity to establish a trusted relationship with your tenant before enrollment. The association is stored in the device's Unified Extensible Firmware Interface (UEFI) firmware and verified during onboarding.
+
+Use device association to:
+
+- Assign a device preparation policy directly to a device, regardless of which user signs in. A device-based policy assignment takes precedence over a user-based assignment.
+- Automatically mark the device as corporate-owned.
+- Apply a device name template during enrollment.
+- Customize OOBE settings, such as language and keyboard configuration, and hide selected setup pages.
+
+Device association is optional. For the full capabilities and lifecycle, see [Overview of Windows Autopilot device association](device-association/overview.md).
 
 ## Tutorial
 

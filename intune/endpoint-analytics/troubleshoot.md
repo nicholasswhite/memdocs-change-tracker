@@ -3,13 +3,12 @@ title: "Troubleshooting endpoint analytics"
 description: Troubleshoot Microsoft Intune endpoint analytics, including device enrollment issues, startup performance, and data collection problems.
 ms.date: "2025-10-09T00:00:00Z"
 ms.topic: troubleshooting
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: endpoint-analytics
 spProducts:

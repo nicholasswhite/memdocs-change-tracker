@@ -8,13 +8,12 @@ ms.collection:
 - identity-protection
 - sub-secure-endpoints
 ms.reviewer: mattcall
-author: lenewsad
+author: maholdaa
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/798bd9d1-9cc5-4fc7-b0e5-8699d1f6ce2a
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: maholdaa
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

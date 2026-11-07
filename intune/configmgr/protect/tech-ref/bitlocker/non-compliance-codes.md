@@ -6,10 +6,9 @@ ms.subservice: protect
 ms.topic: reference
 ms.collection: tier3
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: aanavath
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: aanavath
 ms.reviewer:
 - brianhun
 - hugowu

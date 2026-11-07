@@ -1,17 +1,16 @@
 ---
 title: Zero Trust deployment approach with Microsoft Intune
 description: Learn the recommended seven-layer deployment progression for implementing Zero Trust device security with Microsoft Intune, from app protection to endpoint data loss prevention.
-ms.author: paoloma
+ms.author: acabello
 ms.date: "2026-02-24T00:00:00Z"
 ms.topic: concept-article
 ms.collection:
 - M365-identity-device-management
 - zerotrust-services
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: fundamentals

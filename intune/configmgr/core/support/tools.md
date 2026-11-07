@@ -1,19 +1,18 @@
 ---
-title: Configuration Manager Tools
+title: Configuration Manager tools
 description: Learn about the tools to help you manage and troubleshoot your Configuration Manager infrastructure.
-ms.date: "2024-12-04T00:00:00Z"
+ms.date: '2026-10-26T00:00:00Z'
 ms.subservice: core-infra
 ms.topic: overview
 ms.collection:
 - essentials-manage
 - tier3
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu
@@ -24,53 +23,53 @@ spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/6a8c83be-f1de-4e90-bde0-bd097999a60c
 ---
 
-# Configuration Manager Tools
+# Configuration Manager tools
 
 *Applies to: Configuration Manager (current branch)*
 
 The Configuration Manager tools primarily include [client-based](#client-tools) and [server-based tools](#server-tools). Use these tools to help support and troubleshoot your Configuration Manager infrastructure.
 
-These tools are included in the `CD.Latest\SMSSETUP\Tools` folder on the site server. No further installation is required. Use these versions of the tools with supported versions of Configuration Manager current branch.
+You can find these tools in the `CD.Latest\SMSSETUP\Tools` folder on the site server. No further installation is required. Use these versions of the tools with supported versions of Configuration Manager current branch.
 
-All Windows operating systems listed as supported clients in [Supported operating systems for clients and devices](../plan-design/configs/supported-operating-systems-for-clients-and-devices.md) are supported for use with these tools.
+You can use these tools with all Windows operating systems that are listed as supported clients in [Supported operating systems for clients and devices](../plan-design/configs/supported-operating-systems-for-clients-and-devices.md).
 
 > [!NOTE]
 >
-> For supported versions of Configuration Manager current branch, use the versions of the tools in the CD.Latest folder on the site server. Some tools were formerly in the toolkit but not included current branch. These legacy tools are no longer supported.
+> For supported versions of Configuration Manager current branch, use the versions of the tools in the `CD.Latest` folder on the site server. Some tools that were formerly in the toolkit aren't included in current branch. These legacy tools are no longer supported.
 
 ## Client tools
 
 These tools are in the `ClientTools` subfolder:
 
-- [Client Spy](clispy.md): Troubleshoot issues related to software distribution, inventory, and metering
-- [Deployment Monitoring Tool](deployment-monitoring-tool.md): Troubleshoot applications, updates, and baseline deployments
-- [Policy Spy](policy-spy.md): View policy assignments
-- [Power Viewer Tool](power-viewer-tool.md): View status of power management feature
-- [Send Schedule Tool](send-schedule-tool.md): Trigger schedules and evaluations of configuration baselines
+- [Client Spy](clispy.md): Troubleshoot issues related to software distribution, inventory, and metering.
+- [Deployment Monitoring Tool](deployment-monitoring-tool.md): Troubleshoot applications, updates, and baseline deployments.
+- [Policy Spy](policy-spy.md): View policy assignments.
+- [Power Viewer Tool](power-viewer-tool.md): View status of power management feature.
+- [Send Schedule Tool](send-schedule-tool.md): Trigger schedules and evaluations of configuration baselines.
 
 > [!NOTE]
 >
-> The `ClientTools` folder also includes the file Microsoft.Diagnostics.Tracing.EventSource.dll. Several client tools require this library. You can't directly use it.
+> The `ClientTools` folder also includes the file `Microsoft.Diagnostics.Tracing.EventSource.dll`. Several client tools require this library. You can't directly use it.
 
 ## Server tools
 
 These tools are in the `ServerTools` subfolder:
 
-- [DP Job Queue Manager](dp-job-manager.md): Troubleshoots content distribution jobs to distribution points
-- [Collection Evaluation Viewer](ceviewer.md): View collection evaluation details
+- [DP Job Queue Manager](dp-job-manager.md): Troubleshoots content distribution jobs to distribution points.
+- [Collection Evaluation Viewer](ceviewer.md): View collection evaluation details.
 
   > [!IMPORTANT]
   >
-  > Starting in Configuration Manager version 2103, this standalone tool isn't supported. The tool is no longer included with the Configuration Manager installation source. Starting in version 2010, its functionality is built-in to the console. For more information, see, [How to view collection evaluation](../clients/manage/collections/collection-evaluation-view.md).
-- [Content Library Explorer](content-library-explorer.md): View contents of the content library single instance store
-- [Content Library Transfer](content-library-transfer.md): Transfers content library between drives
+  > Starting in Configuration Manager version 2103, this standalone tool isn't supported. The tool is no longer included with the Configuration Manager installation source. Starting in version 2010, its functionality is built-in to the console. For more information, see [How to view collection evaluation](../clients/manage/collections/collection-evaluation-view.md).
+- [Content Library Explorer](content-library-explorer.md): View contents of the content library single instance store.
+- [Content Library Transfer](content-library-transfer.md): Transfers content library between drives.
 - [Content Ownership Tool](content-ownership-tool.md): Changes ownership of orphaned packages. These packages exist in the site without an owning site server.
-- [Role-based Administration and Auditing Tool](rbaviewer.md): Helps administrators audit roles configuration
+- [Role-based Administration and Auditing Tool](rbaviewer.md): Helps administrators audit roles configuration.
 
   > [!NOTE]
   >
-  > Starting in version 2107, RBAViewer has moved from `<installdir>\tools\servertools\rbaviewer.exe`. It's now located in the Configuration Manager console directory. After you install the console, RBAViewer.exe will be in the same directory. The default location is `C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\rbaviewer.exe`.
-- [Run Meter Summarization Tool](run-meter-summ.md): Run metering summarization task and analyze metering data
+  > Starting in version 2107, RBAViewer moved from `<installdir>\tools\servertools\rbaviewer.exe`. It's now located in the Configuration Manager console directory. After you install the console, `RBAViewer.exe` is in the same directory. The default location is `C:\Program Files (x86)\Microsoft Endpoint Manager\AdminConsole\bin\rbaviewer.exe`.
+- [Run Meter Summarization Tool](run-meter-summ.md): Run metering summarization task and analyze metering data.
 
 > [!NOTE]
 >

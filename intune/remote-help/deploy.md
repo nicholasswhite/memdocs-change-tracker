@@ -10,14 +10,13 @@ ms.collection:
 - M365-identity-device-management
 - graph-interactive
 #customer intent: As an IT administrator, I want to configure and deploy Remote Help so that authorized users can provide support across supported platforms.
-author: lenewsad
+author: kara-wang
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7814ca69-56be-4667-8a46-86327796c328
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: karawang
 ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:

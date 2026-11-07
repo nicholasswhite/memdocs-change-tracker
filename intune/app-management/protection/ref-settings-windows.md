@@ -4,14 +4,13 @@ description: This article describes the app protection policy (APP) settings for
 ms.date: "2025-11-06T00:00:00Z"
 ms.topic: article
 ms.reviewer: demerson
-author: nicholasswhite
+author: c-demello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: cdemello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

@@ -5,10 +5,9 @@ ms.date: "2026-01-14T00:00:00Z"
 ms.topic: reference
 ROBOTS: ''
 ms.reviewer: mghadial
-author: paolomatarazzo
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: protect
 ---

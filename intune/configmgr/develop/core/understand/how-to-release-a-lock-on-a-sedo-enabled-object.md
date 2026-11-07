@@ -6,10 +6,9 @@ ms.topic: how-to
 ms.collection: tier3
 description: Learn about how to release a locked SEDO-enabled object using its object path by creating a ReleaseLock method.
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

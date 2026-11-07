@@ -1,16 +1,14 @@
 ---
 title: Security update status dashboard
 description: Learn how the Security update status dashboard helps administrators assess update risk, investigate gaps, and prioritize remediation across supported workloads.
-author: sccmavenger
-ms.author: dannygu
-ms.reviewer: paoloma
+author: iceorbital
+ms.author: acabello
 ms.topic: concept-article
 ms.date: "2026-06-15T00:00:00Z"
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e2c9f30c-00ec-44c0-846c-b20dbfb3283f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: protect

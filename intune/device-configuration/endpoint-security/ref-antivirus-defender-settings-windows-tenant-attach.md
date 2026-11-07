@@ -7,14 +7,13 @@ ms.reviewer: mattcall
 ms.custom: msecd-doc-authoring-1015
 ai-usage: ai-assisted
 #customer intent: As an Intune administrator, I want to understand Microsoft Defender Antivirus policy settings for tenant-attached devices so that I can configure the intended protection behavior.
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c671beaa-a830-4c9f-aceb-97379ee031ca
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

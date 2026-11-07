@@ -4,12 +4,11 @@ description: Use compatibility reports for Windows devices in Intune to identify
 ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: zadvor
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

@@ -6,14 +6,13 @@ ms.subservice: protect
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
-author: sccmavenger
+author: aanavath
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: aanavath
 ms.reviewer:
 - brianhun
 - hugowu

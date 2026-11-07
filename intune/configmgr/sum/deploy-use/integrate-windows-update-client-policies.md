@@ -6,9 +6,8 @@ ms.date: "2026-08-31T00:00:00Z"
 ms.service: configuration-manager
 ms.subservice: software-updates
 ms.topic: how-to
-author: sccmavenger
-ms.author: dannygu
-manager: laurawi
+author: iceorbital
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

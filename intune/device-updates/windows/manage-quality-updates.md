@@ -4,13 +4,12 @@ description: Learn how to manage Windows quality updates in Microsoft Intune usi
 ms.date: "2026-01-06T00:00:00Z"
 ms.reviewer: mobattul
 ms.topic: how-to
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

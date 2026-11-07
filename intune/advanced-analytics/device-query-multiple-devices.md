@@ -6,14 +6,13 @@ ms.topic: how-to
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1026
 #customer intent: As an IT administrator, I want to query inventory data across multiple managed devices so that I can identify fleet-wide trends and take informed action.
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c6f99e62-1cf6-4b71-af9b-649b05f80cce
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:

@@ -3,12 +3,11 @@ title: "Set up iOS/iPadOS device enrollment with Apple Configurator"
 description: Use Apple Configurator to enroll corporate-owned iOS/iPadOS devices with Setup Assistant.
 ms.date: "2025-02-27T00:00:00Z"
 ms.topic: how-to
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: annovich
 ms.service: microsoft-intune

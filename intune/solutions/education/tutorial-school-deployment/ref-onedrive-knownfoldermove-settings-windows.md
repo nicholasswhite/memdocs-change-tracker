@@ -9,7 +9,6 @@ ms.collection: graph-interactive
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7428317a-e6c2-4461-ad3e-8a8ad3608734
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: education

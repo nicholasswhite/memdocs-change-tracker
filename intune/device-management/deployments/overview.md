@@ -2,10 +2,9 @@
 title: "Deployment plans and deployments in Microsoft Intune"
 description: "Learn how deployment plans and deployments provide gradual, controlled, ring-based rollouts of apps and policies in Microsoft Intune."
 ms.date: "2026-08-26T00:00:00Z"
-author: paolomatarazzo
+author: wicale
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.author: wicale
 ms.collection: M365-identity-device-management

@@ -3,14 +3,13 @@ title: "Built-in role permissions for Microsoft Intune"
 description: Permissions reference for built-in roles for Microsoft Intune.
 ms.date: "2026-02-04T00:00:00Z"
 ms.topic: reference
-author: lenewsad
+author: shmokash
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7ebba99b-05c3-4387-8883-f7bbf6632cb8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/062d60c9-ee0f-402e-a046-b4e67c3572d6
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: shmokash
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: fundamentals

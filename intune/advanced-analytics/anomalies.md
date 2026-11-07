@@ -3,14 +3,13 @@ title: "Anomalies report"
 description: Use the anomalies report in Advanced Analytics to monitor device health, identify issues early, and prioritize fixes to improve endpoint reliability.
 ms.date: "2026-03-24T00:00:00Z"
 ms.topic: concept-article
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://authoring-docs-microsoft.poolparty.biz/devrel/63959238-cb90-4871-a33d-4a5519097e47
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:

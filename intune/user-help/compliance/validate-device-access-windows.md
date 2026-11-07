@@ -3,12 +3,11 @@ title: "Check access from Company Portal app for Windows"
 description: Check device access to find out if your device meets requirements, and is able to access work or school resources.
 ms.date: "2025-09-03T00:00:00Z"
 ms.reviewer: madakeva
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

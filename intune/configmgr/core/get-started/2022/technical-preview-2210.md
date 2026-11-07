@@ -5,10 +5,9 @@ ms.date: "2022-10-12T00:00:00Z"
 ms.subservice: core-infra
 ms.topic: whats-new
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

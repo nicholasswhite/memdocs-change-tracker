@@ -4,13 +4,12 @@ description: This article describes how to monitor app protection policies in In
 ms.date: "2024-06-16T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ilwu
-author: nicholasswhite
+author: c-demello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: cdemello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

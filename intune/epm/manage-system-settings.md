@@ -3,14 +3,13 @@ title: "Manage system settings with Endpoint Privilege Management"
 description: "Use an elevation system settings policy with Endpoint Privilege Management to let standard users change network settings, like IPv4, IPv6, and DNS, that normally require administrator rights."
 ms.date: "2026-06-24T00:00:00Z"
 ai-usage: ai-assisted
-author: lenewsad
+author: MikeDano
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/49ede7b2-2f56-4945-b7e6-22fec420737b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: mikedano
 ms.collection:
 - M365-identity-device-management
 - sub-intune-suite

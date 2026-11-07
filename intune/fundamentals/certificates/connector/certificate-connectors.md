@@ -4,10 +4,9 @@ description: Learn about certificate connectors for Simple Certificate Enrollmen
 ms.date: "2022-04-13T00:00:00Z"
 ms.topic: how-to
 ROBOTS: NOINDEX
-author: paolomatarazzo
-manager: laurawi
+author: wicale
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: wicale
 ms.collection:
 - M365-identity-device-management
 - certificates

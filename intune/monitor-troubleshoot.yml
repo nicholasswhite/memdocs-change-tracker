@@ -7,13 +7,12 @@ metadata:
     Remote Help, and reports.
   ms.topic: landing-page
   ms.date: '2026-04-27T00:00:00Z'
-  author: paolomatarazzo
-  ms.author: paoloma
+  author: iceorbital
+  ms.author: acabello
   cmProducts:
   - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
   - https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
   - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-  manager: laurawi
   moniker_range_name: ''
   ms.service: microsoft-intune
   spProducts:

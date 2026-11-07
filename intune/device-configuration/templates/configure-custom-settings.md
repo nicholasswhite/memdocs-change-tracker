@@ -4,12 +4,11 @@ description: Add or create a profile to use custom settings for Windows 10/11 cl
 ms.date: "2026-02-05T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: mikedano
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

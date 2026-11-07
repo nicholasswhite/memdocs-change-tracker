@@ -4,13 +4,12 @@ description: Explore application reliability in Microsoft Intune endpoint analyt
 ms.date: "2025-12-03T00:00:00Z"
 ms.topic: concept-article
 zone_pivot_groups: manage-intune-cm
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/d56bfe0c-ecd5-4d90-854f-35482bbb1314
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: endpoint-analytics
 spProducts:

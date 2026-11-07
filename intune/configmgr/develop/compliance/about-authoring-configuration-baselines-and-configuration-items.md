@@ -6,10 +6,9 @@ ms.topic: concept-article
 ms.collection: tier3
 description: Learn about how to configure data through the Configuration Manager console or directly editing the DCM Digest XML file.
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

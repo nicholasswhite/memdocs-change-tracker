@@ -1,8 +1,8 @@
 ---
 title: "Deployment guide: Manage Linux devices in Microsoft Intune"
 description: Use our platform deployment guide to set up Linux device management in Microsoft Intune.
-author: paolomatarazzo
-ms.author: paoloma
+author: iceorbital
+ms.author: acabello
 ms.date: "2024-11-04T00:00:00Z"
 ms.topic: install-set-up-deploy
 ms.reviewer: ''
@@ -10,7 +10,6 @@ cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune

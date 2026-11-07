@@ -4,12 +4,11 @@ description: List of data that Google sends to Intune when Android enterprise de
 ms.date: "2022-04-08T00:00:00Z"
 ms.topic: reference
 ms.reviewer: ''
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - privacy

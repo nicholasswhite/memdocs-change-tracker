@@ -4,13 +4,12 @@ description: Learn how to upgrade Windows 10 devices to Windows 11 using feature
 ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ''
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/e0ffb20c-01c6-407b-a9bd-29111652a1dc
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/19ec6774-09b8-473e-a17e-b17b518bbad7
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

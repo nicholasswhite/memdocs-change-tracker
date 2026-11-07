@@ -1,18 +1,17 @@
 ---
 title: "How to Manage iOS and macOS Apps Purchased Through Apple Business Manager with Microsoft Intune"
 description: Learn how to sync apps you bought in volume through Apple Business Manager with Microsoft Intune. Then manage and track these apps on iOS/iPadOS and macOS devices.
-ms.date: "2026-01-13T00:00:00Z"
+ms.date: '2026-10-26T00:00:00Z'
 ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
 - iOS/iPadOS
 - macOS
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.reviewer: bryanke
 ms.service: microsoft-intune
 ms.subservice: apps
@@ -28,7 +27,7 @@ Microsoft Intune helps you manage apps purchased through this program by:
 
 - Synchronizing location tokens you download from Apple Business Manager.
 - Tracking how many licenses are available and used for purchased apps.
-- Installing apps up to the number of licenses you own.
+- Installing apps up to the number of licenses you own, or without a fixed license quantity for apps with unlimited licenses.
 
 You can synchronize, manage, and assign books you purchased from Apple Business Manager with Intune to iOS/iPadOS devices. For more information, see [How to manage iOS/iPadOS eBooks you purchased through a volume-purchase program](manage-ebooks-ios.md).
 
@@ -69,6 +68,26 @@ Purchased apps can be assigned to groups using two types of licenses that Apple 
 > [!NOTE]
 >
 > Don't assign both device licenses and user licenses to the same device or user. This scenario isn't supported and can result in issues with app installation and updates.
+
+### Unlimited assets
+
+Intune supports assigning VPP apps with unlimited licenses from Apple Business Manager and Apple School Manager on iOS/iPadOS and macOS devices. For these apps, you don't need to acquire additional license quantities as your deployment grows.
+
+Apple refers to apps and books that an organization owns as *assets*. Free apps and books support unlimited assignment by default. However, organizations can choose to retain their existing fixed inventory for an organizational unit. Don't assume that every free app has unlimited licenses for every location. Paid apps still require sufficient purchased licenses for your assignments.
+
+To deploy an app with unlimited licenses:
+
+1. In Apple Business Manager or Apple School Manager, acquire the free app for the location associated with your Intune location token.
+2. In the Intune admin center, select **Tenant administration** &gt; **Connectors and tokens** &gt; **Apple VPP tokens**, select the token, and choose **Sync**. For more information, see [Synchronize a VPP token](#synchronize-a-vpp-token).
+3. Assign the synchronized app to your groups as described in [Assign a volume-purchased app](#assign-a-volume-purchased-app).
+
+Unlimited licenses remove the need to manage a fixed license quantity. They don't change the device and user licensing requirements or assignment restrictions described in this article.
+
+> [!NOTE]
+>
+> Apple's Get Assets API can represent an unlimited asset with a `totalCount` of `2147483647` when the request doesn't specify the `unlimited` parameter. This value represents unlimited inventory, not a purchased license quantity. For details about Apple's asset model and API behavior, see [Managing assets](https://developer.apple.com/documentation/devicemanagement/managing-assets) in the Apple Developer documentation.
+
+For more information about acquiring free apps without specifying a license quantity, see [Intro to app and book licenses in Apple Business](https://support.apple.com/guide/business/intro-to-app-and-book-licenses-axme19b23f7f/web) in the Apple documentation.
 
 ## What app types are supported?
 

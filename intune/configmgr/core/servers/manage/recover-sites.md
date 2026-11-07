@@ -6,14 +6,13 @@ ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/aebdc4a3-c54b-4eea-94e3-663d5e166f57
 - https://authoring-docs-microsoft.poolparty.biz/devrel/cbe4ca68-43ac-4375-aba5-5945a6394c20
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu
@@ -56,7 +55,8 @@ Use one of the following procedures to clean an existing server:
 #### Clean an existing server for site server recovery only
 
 1. Delete SMS registry keys: `HKLM\Software\Microsoft\SMS`
-2. Delete any registry entries starting with `SMS` from `HKLM\System\CurrentControlSet\Services`. For example:
+2. Delete only registry entries that belong to Configuration Manager from `HKLM\System\CurrentControlSet\Services`. For example:
+
    - SMS_DISCOVERY_DATA_MANAGER
    - SMS_EXECUTIVE
    - SMS_INBOX_MONITOR
@@ -72,8 +72,10 @@ Use one of the following procedures to clean an existing server:
    - SMS_STATE_SYSTEM
    - SMS_STATUS_MANAGER
    - SMS_WSUS_SYNC_MANAGER
-   - SMSvcHost 3.0.0.0
-   - SMSvcHost 4.0.0.0
+
+   > [!IMPORTANT]
+   >
+   > Don't delete the `SMSvcHost 3.0.0.0` or `SMSvcHost 4.0.0.0` registry entries. These entries belong to .NET Framework, not Configuration Manager.
 3. Uninstall the Configuration Manager console
 4. Restart the server
 5. Confirm that all of the above registry keys are deleted.

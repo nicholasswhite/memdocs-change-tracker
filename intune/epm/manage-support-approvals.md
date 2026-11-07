@@ -3,12 +3,11 @@ title: "Support approved file elevations for Endpoint Privilege Management"
 description: Manage support approvals for elevation requests when you use Endpoint Privilege Management for Microsoft Intune.
 ms.date: "2026-04-27T00:00:00Z"
 ms.topic: how-to
-author: lenewsad
+author: MikeDano
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: mikedano
 ms.collection: M365-identity-device-management
 ms.reviewer: mikedano
 ms.service: microsoft-intune

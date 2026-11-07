@@ -6,12 +6,11 @@ ms.topic: reference
 ai-usage: ai-assisted
 ms.custom: msecd-doc-authoring-1023
 #customer intent: As an IT administrator, I want to review the settings and default values in the Windows 365 for Agents security baseline so that I can understand the security configuration before I deploy or customize the baseline.
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints

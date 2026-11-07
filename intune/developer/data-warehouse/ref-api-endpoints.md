@@ -3,13 +3,12 @@ title: Intune Data Warehouse API Endpoint
 description: This reference topic describes the Microsoft Intune Data Warehouse API URL structure. Filter examples are provided.
 ms.date: "2024-10-30T00:00:00Z"
 ms.topic: reference
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: jamiesil
 ms.service: microsoft-intune

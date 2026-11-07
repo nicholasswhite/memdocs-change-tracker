@@ -4,12 +4,11 @@ description: Discover how to use Microsoft Intune to remotely manage, wipe, lock
 ms.date: "2026-09-16T00:00:00Z"
 ms.topic: overview
 ai-usage: ai-assisted
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.custom: msecd-doc-authoring-1023
 ms.reviewer: mattcall

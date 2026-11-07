@@ -1,14 +1,13 @@
 ---
 title: "What's new in version 2609 of Configuration Manager current branch"
 description: "Get details about changes and new capabilities introduced in version 2609 of Configuration Manager current branch."
-ms.date: "2026-09-18T00:00:00Z"
-author: sccmavenger
+ms.date: '2026-11-05T00:00:00Z'
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/cbe4ca68-43ac-4375-aba5-5945a6394c20
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.collection: tier3
 ms.reviewer:
 - brianhun
@@ -100,6 +99,12 @@ Configuration Manager updates Microsoft Visual C++ Redistributable to version 14
 ### Shared key access automatically disabled for CMG storage
 
 Shared key access is automatically disabled for cloud management gateway (CMG) storage, even if you haven't previously selected the option to disable it in the console.
+
+> [!IMPORTANT]
+>
+> Before updating a site that has a CMG, verify that the CMG server application's service principal has the required Azure role-assignment permissions at the CMG resource group, and that **Microsoft.Maintenance** is registered in the subscription. Existing CMGs that previously used shared-key access also need these prerequisites. Missing permissions or provider registration can cause the CMG deployment update to fail.
+>
+> For the required permissions and verification steps, see [Configure Azure RBAC permissions for the server app](../../clients/manage/cmg/configure-azure-ad.md#configure-azure-rbac-permissions-for-the-server-app) and [Configure Azure resource providers](../../clients/manage/cmg/configure-azure-ad.md#configure-azure-resource-providers).
 
 ### CMG virtual machine scale set image uses Windows Server 2022
 

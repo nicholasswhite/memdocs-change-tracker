@@ -3,12 +3,11 @@ title: "Deployment guide: Mobile Application Management (MAM) for unenrolled dev
 description: Use mobile application management without enrollment to deploy apps, and protect organization data within the apps. Get an overview of the administrator and end user tasks for this enrollment option.
 ms.date: "2024-04-22T00:00:00Z"
 ms.topic: article
-author: nicholasswhite
+author: c-demello
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: cdemello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

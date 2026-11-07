@@ -1,18 +1,17 @@
 ---
 title: "Windows Autopilot device preparation in automatic mode for Windows 365: Create a Windows Autopilot device preparation policy"
 description: How to - Windows Autopilot device preparation in automatic mode for Windows 365 - Step 4 of 6 - Create a Windows Autopilot device preparation policy.
-ms.date: "2025-06-11T00:00:00Z"
+ms.date: '2026-11-03T00:00:00Z'
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/72cb4d1c-66f7-4281-99d5-e04a64d084fc
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.reviewer: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
@@ -59,7 +58,7 @@ To create an automatic mode for Windows 365 Windows Autopilot device preparation
 9. In the **Device group** page, select the **Search by group name..** box, and then either select or search for the device group created in [Step 3: Create an assigned device group](automatic-device-group.md). Once the correct device group is selected, select **Next**.
 10. In the **Configuration settings** page:
 
-    1. The **Apps** section allows selection of up to 10 managed applications reference with the deployment. The applications specified here should be the essential applications that should be installed on the device before the end-user can start using the device. Under the **Apps** section:
+    1. The **Apps** section lets you select up to 25 managed applications to install during deployment. Select the essential applications that must be installed before the end user can use the device. Under the **Apps** section:
 
        1. Select **Add**. The **Select Apps** pane opens.
 
@@ -82,6 +81,8 @@ To create an automatic mode for Windows 365 Windows Autopilot device preparation
        > - [Win32](../../../../intune/app-management/deployment/create-win32-package.md).
        > - [Microsoft Store](../../../../intune/app-management/deployment/add-microsoft-store.md) - only Microsoft Store apps that support WinGet are supported.
        > - [Microsoft 365](../../../../intune/app-management/deployment/add-microsoft-365-windows.md).
+       > - [Enterprise App Catalog](../../../../intune/app-management/deployment/add-enterprise-catalog-app.md).
+       > - [Enterprise App Catalog auto-update apps](../../../../intune/app-management/deployment/enterprise-app-management.md#auto-update-for-enterprise-app-catalog-apps).
        >
        > In addition, Windows Autopilot device preparation supports deploying both Win32 and line-of-business (LOB) applications in the same deployment.
     2. The **Scripts** section allows selection of up to 10 PowerShell scripts to install during the deployment. The PowerShell scripts specified here should be the essential PowerShell scripts that should run on the device before the end-user can start using the device. Under the **Scripts** section:

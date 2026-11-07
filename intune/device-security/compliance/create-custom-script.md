@@ -4,14 +4,13 @@ description: Create scripts for Linux, macOS, or Windows devices to discover the
 ms.date: "2025-09-04T00:00:00Z"
 ms.topic: concept-article
 ms.reviewer: ilwu
-author: lenewsad
+author: ilwu-microsoft
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/5cf46315-b33f-4e99-8224-a1592697eff9
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: ilwu
 ms.collection:
 - M365-identity-device-management
 - compliance

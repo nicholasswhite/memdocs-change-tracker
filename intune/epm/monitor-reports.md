@@ -4,14 +4,13 @@ description: View reports for managed and unmanaged file elevations when you use
 ms.date: "2026-05-26T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
-author: lenewsad
+author: MikeDano
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/49ede7b2-2f56-4945-b7e6-22fec420737b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: mikedano
 ms.collection: M365-identity-device-management
 ms.reviewer: mikedano
 ms.service: microsoft-intune

@@ -6,10 +6,9 @@ ms.topic: how-to
 ms.collection: tier3
 description: Learn how to create and start a configuration manager console node that displays available collections.
 ms.service: configuration-manager
-author: sccmavenger
-manager: laurawi
+author: iceorbital
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

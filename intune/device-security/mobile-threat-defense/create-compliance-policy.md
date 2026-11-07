@@ -3,12 +3,11 @@ title: "Create Mobile Threat Defense device compliance policy with Intune"
 description: Create an Intune device compliance policy that uses your MTD partner threat levels to determine if a mobile device can access company resources.
 ms.date: "2024-09-30T00:00:00Z"
 ms.topic: how-to
-author: lenewsad
+author: ilwu-microsoft
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: ilwu
 ms.collection:
 - M365-identity-device-management
 - sub-mtd-apps

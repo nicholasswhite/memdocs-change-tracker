@@ -8,13 +8,12 @@ ms.collection:
 - FocusArea_Apps_Add
 - M365-identity-device-management
 - macOS
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

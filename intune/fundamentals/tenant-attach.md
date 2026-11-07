@@ -1,18 +1,17 @@
 ---
 title: "Configure tenant attach to support endpoint security policies from Intune"
 description: Use tenant attach to add Configuration Manager devices to Microsoft Intune and then deploy Intune policies to those devices.
-ms.author: paoloma
+ms.author: acabello
 ms.date: "2024-10-10T00:00:00Z"
 ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
 - sub-infrastructure
 ms.reviewer: mattsha
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: fundamentals

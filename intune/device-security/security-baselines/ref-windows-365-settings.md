@@ -4,12 +4,11 @@ description: View a list of the settings in the Microsoft Intune security baseli
 ms.date: "2024-09-10T00:00:00Z"
 ms.topic: reference
 zone_pivot_groups: windows-365-versions
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints

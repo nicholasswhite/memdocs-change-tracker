@@ -7,14 +7,13 @@ ms.collection:
 - FocusArea_Apps_Win32
 - M365-identity-device-management
 - Windows
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/5cf46315-b33f-4e99-8224-a1592697eff9
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:
@@ -36,7 +35,7 @@ Use the Microsoft Intune management extension to upload PowerShell scripts in In
 - Scripts set to user context with administrator rights run PowerShell by default under administrator privilege.
 - End users aren't required to sign in to the device to execute PowerShell scripts.
 - The Intune management extension checks after every reboot for any new scripts or changes. After you assign the policy to the Microsoft Entra groups, the PowerShell script runs, and the run results are reported. Once the script executes, it doesn't execute again unless there's a change in the script or policy. If the script fails, the Intune management extension retries the script three times for the next three consecutive Intune management extension check-ins.
-- PowerShell scripts assigned to the device run for every new user that signs in, except on multi-session SKUs where user check-in is disabled.
+- PowerShell scripts assigned to the device run for every new user that signs in.
 - PowerShell scripts are executed before Win32 apps run. In other words, PowerShell scripts execute first. Then, Win32 apps execute.
 - PowerShell scripts time out after 30 minutes.
 

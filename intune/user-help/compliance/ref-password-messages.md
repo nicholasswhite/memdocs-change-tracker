@@ -3,14 +3,13 @@ title: "Device password messages in Company Portal"
 description: This article lists the Company Portal device password messages for devices running Windows, Android, macOS, and iOS/iPadOS, with information about how to resolve them.
 ms.date: "2024-10-08T00:00:00Z"
 ms.reviewer: anuragjain
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f3e14dd4-3b72-445a-a3c6-dc32ea965a1a
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

@@ -4,14 +4,13 @@ description: Configure your  Windows Holographic for Business devices as single-
 ms.date: "2026-06-23T00:00:00Z"
 ms.topic: reference
 ms.reviewer: mikedano
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/9caa9725-5b9f-4f97-acd0-f62cd841a1c0
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

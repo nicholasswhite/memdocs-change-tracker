@@ -6,12 +6,11 @@ ms.topic: how-to
 ms.collection:
   - M365-identity-device-management
   - intune-scenario
-author: paolomatarazzo
+author: jasonsandys-microsoft
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: jasandys
 ms.reviewer: ahamil, jasandys, wicale
 ms.service: microsoft-intune
 spProducts:

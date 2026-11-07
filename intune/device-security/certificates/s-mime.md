@@ -7,12 +7,11 @@ ms.collection:
 - M365-identity-device-management
 - certificates
 - sub-certificates
-author: lenewsad
+author: wicale
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: wicale
 ms.reviewer: wicale
 ms.service: microsoft-intune
 ms.subservice: protect

@@ -3,12 +3,11 @@ title: "Prepare Line-of-Business Apps for App Protection Policies"
 description: The information in this article helps you decide when you should use the App wrapping tool and the App SDK to enable your custom line-of-business apps to use the mobile app management policies.
 ms.date: "2025-12-03T00:00:00Z"
 ms.topic: reference
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: jamiesil
 ms.service: microsoft-intune

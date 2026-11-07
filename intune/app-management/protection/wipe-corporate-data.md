@@ -4,12 +4,11 @@ description: Learn how to selectively wipe only corporate data from Intune-manag
 ms.date: "2024-06-12T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: bryanke
-author: nicholasswhite
+author: c-demello
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: cdemello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

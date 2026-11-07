@@ -1,8 +1,8 @@
 ---
 title: "Integrate Trustd Mobile with Microsoft Intune"
 description: How to set up Trustd Mobile Threat Defense with Microsoft Intune to control mobile device access to your corporate resources.
-author: lenewsad
-ms.author: lanewsad
+author: ilwu-microsoft
+ms.author: ilwu
 ms.date: "2026-06-24T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ilwu
@@ -12,7 +12,6 @@ ms.collection:
 - sub-mtd-apps
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: protect

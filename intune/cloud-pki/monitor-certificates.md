@@ -3,13 +3,12 @@ title: "Monitoring for Microsoft Cloud PKI"
 description: Monitor reports for certificates issued via Microsoft Intune cloud PKI.
 ms.date: "2024-12-06T00:00:00Z"
 ms.topic: how-to
-author: paolomatarazzo
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: wicale
 ms.collection:
 - M365-identity-device-management
 - certificates

@@ -3,12 +3,11 @@ title: "Get an Apple token for school devices"
 description: Get the Apple token needed to set up Apple School Manager and Microsoft Intune for corporate-owned devices.
 ms.date: "2025-01-07T00:00:00Z"
 ms.topic: how-to
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: annovich
 ms.service: microsoft-intune

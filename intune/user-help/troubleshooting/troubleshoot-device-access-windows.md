@@ -3,13 +3,12 @@ title: "Troubleshoot Windows device access"
 description: Resolve access or account connection issues for an enrolled Windows device.
 ms.date: "2024-04-30T00:00:00Z"
 ms.reviewer: amanh
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

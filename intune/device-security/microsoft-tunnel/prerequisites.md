@@ -6,12 +6,11 @@ ms.topic: how-to
 ms.custom: msecd-doc-authoring-1030
 ai-usage: ai-assisted
 #customer intent: As an IT administrator, I want to review and configure Microsoft Tunnel prerequisites so that I can prepare my environment for a successful deployment.
-author: lenewsad
+author: OluchiC
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: ochukwunyere
 ms.collection:
 - M365-identity-device-management
 - sub-infrastructure

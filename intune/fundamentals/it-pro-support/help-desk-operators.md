@@ -1,14 +1,13 @@
 ---
 title: "Use the Troubleshooting Dashboard to Help Users at Your Company"
 description: Help desk staff use the troubleshooting pane to solve users' technical problems.
-author: paolomatarazzo
-ms.author: paoloma
+author: iceorbital
+ms.author: acabello
 ms.date: "2024-06-14T00:00:00Z"
 ms.topic: troubleshooting
 ms.reviewer: jlynn
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune

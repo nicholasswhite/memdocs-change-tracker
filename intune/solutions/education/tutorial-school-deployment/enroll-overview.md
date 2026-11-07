@@ -4,12 +4,11 @@ description: Learn about the different options to enroll Windows devices in Micr
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
 zone_pivot_groups: platforms-windows-ios
-author: scottbreenmsft
+author: nicolezhao-msftdocs
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: scbree
+ms.author: nicolezhao
 ms.service: microsoft-intune
 ms.subservice: education
 spProducts:

@@ -1,18 +1,17 @@
 ---
 title: "Upgrade Microsoft Tunnel for Microsoft Intune"
 description: Understand how Microsoft Tunnel Gateway upgrades to new versions of the tunnel software for Microsoft Intune.
-ms.date: "2026-09-22T00:00:00Z"
+ms.date: '2026-10-30T00:00:00Z'
 ms.topic: how-to
-ms.custom: msecd-doc-authoring-1028
+ms.custom: msecd-doc-authoring-1030
 ai-usage: ai-assisted
 #customer intent: As an IT administrator, I want to understand and control Microsoft Tunnel server upgrades so that I can keep tunnel servers supported and minimize user disruption.
-author: lenewsad
+author: OluchiC
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: ochukwunyere
 ms.collection:
 - M365-identity-device-management
 - sub-infrastructure
@@ -138,6 +137,15 @@ After an update releases, it rolls out to tenants over the following days. This 
 > [!IMPORTANT]
 >
 > Container releases take place in stages. If you notice that your container images aren't the most recent, please be assured that they will be updated and delivered within the following week.
+
+### November 2, 2026
+
+Version Number: 20261028.3
+
+Image hash values:
+
+- **agentImageDigest**: sha256:760c240d6b25bfa18330617e4517ac95afe652556bc720744491905cfc459190
+- **serverImageDigest**: sha256:f8773f5a82b815159142985ef50af0e343082363394d2ee5bc872ba01cd503e4
 
 ### September 9, 2026
 

@@ -8,14 +8,13 @@ metadata:
     policies and rings.
   ms.topic: landing-page
   ms.date: '2026-05-04T00:00:00Z'
-  author: paolomatarazzo
+  author: iceorbital
   cmProducts:
   - https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
   - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
   - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-  manager: laurawi
   moniker_range_name: ''
-  ms.author: paoloma
+  ms.author: acabello
   ms.service: microsoft-intune
   ms.subservice: protect
   spProducts:
@@ -93,10 +92,8 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: iOS/iPadOS update policies
-      url: apple/deprecated-mdm-policies-ios.md
-    - text: macOS update policies
-      url: apple/deprecated-mdm-policies-macos.md
+    - text: Configure update policies for Apple devices
+      url: apple/index.md
     - text: Apple software update reports
       url: apple/monitor-reports.md
   - linkListType: concept

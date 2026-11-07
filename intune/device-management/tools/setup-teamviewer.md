@@ -1,13 +1,12 @@
 ---
 title: "Use the TeamViewer integration in Microsoft Intune"
 description: Learn how to use the latest TeamViewer integration in Microsoft Intune to initiate remote assistance sessions for managed devices.
-author: paolomatarazzo
-ms.author: paoloma
+author: iceorbital
+ms.author: acabello
 ms.date: "2026-04-07T00:00:00Z"
 ms.topic: how-to
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune

@@ -4,12 +4,11 @@ description: Learn how to selectively wipe data using app protection policy cond
 ms.date: "2025-01-16T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: aanavath
-author: nicholasswhite
+author: c-demello
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: cdemello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

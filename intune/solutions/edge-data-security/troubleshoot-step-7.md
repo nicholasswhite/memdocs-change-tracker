@@ -4,13 +4,12 @@ description: Step 7. Troubleshoot Microsoft Edge for Business corporate data sec
 ms.date: "2026-01-23T00:00:00Z"
 ms.topic: troubleshooting
 ms.custom: ''
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: FocusArea_Apps_AppManagement
 ms.reviewer: samarti
 ms.service: microsoft-intune

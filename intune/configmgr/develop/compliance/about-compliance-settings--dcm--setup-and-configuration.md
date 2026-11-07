@@ -6,12 +6,11 @@ ms.topic: concept-article
 ms.collection: tier3
 description: Learn about how to configure compliance settings and the custom configuration requirements using the Configuration Manager site.
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu

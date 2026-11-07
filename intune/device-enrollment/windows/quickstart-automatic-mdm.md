@@ -4,13 +4,12 @@ description: Enable Intune automatic enrollment of Windows devices that join or 
 services: microsoft-intune
 ms.topic: how-to
 ms.date: "2026-01-27T00:00:00Z"
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: maholdaa
 ms.service: microsoft-intune

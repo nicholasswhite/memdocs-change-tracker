@@ -1,18 +1,17 @@
 ---
 title: "About discovery methods for Configuration Manager"
 description: Learn about the available discovery methods to find devices on your network, from Active Directory, or Microsoft Entra ID.
-ms.date: "2022-03-23T00:00:00Z"
+ms.date: '2026-10-29T00:00:00Z'
 ms.subservice: core-infra
 ms.topic: concept-article
 ms.collection: tier3
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/37da4cc9-0cfc-42a9-ba5e-805706b01ef8
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu
@@ -412,6 +411,10 @@ When discovery searches an untrusted forest for resources, the discovery agent m
 
 - To discover a computer resource by using Active Directory system discovery, the discovery agent must be able to resolve the FQDN of the resource. If it can't resolve the FQDN, it then tries to resolve the resource by its NetBIOS name.
 - To discover a user or group resource by using Active Directory user discovery or Active Directory group discovery, the discovery agent must be able to resolve the FQDN of the domain controller name that you specify for the Active Directory location.
+
+> [!NOTE]
+>
+> All discovery methods require the target resource account to be enabled. Disabled accounts are filtered during the discovery.
 
 For each location that you specify, you can configure individual search options, like enabling a recursive search of the location's Active Directory child containers. You can also configure a unique account to use when it searches that location. This account provides flexibility in configuring a discovery method at one site to search multiple Active Directory locations across multiple forests. You don't have to configure a single account that has permissions to all locations.
 

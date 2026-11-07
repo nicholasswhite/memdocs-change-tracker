@@ -1,8 +1,8 @@
 ---
 title: "How to get support in the Microsoft Intune admin center"
 description: Get online and telephone support for Microsoft Intune and other device management cloud services from within the Microsoft Intune admin center.
-author: paolomatarazzo
-ms.author: paoloma
+author: iceorbital
+ms.author: acabello
 ms.date: "2025-02-28T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: hipethe
@@ -13,7 +13,6 @@ cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/70ad186b-c3cb-4d23-8d14-b674bd113441
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: fundamentals

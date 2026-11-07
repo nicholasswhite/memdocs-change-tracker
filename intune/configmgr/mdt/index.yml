@@ -8,15 +8,14 @@ metadata:
     desktop and server deployments.
   ms.subservice: mdt
   ms.topic: landing-page
-  ms.date: '2021-09-23T00:00:00Z'
+  ms.date: '2026-10-26T00:00:00Z'
   ms.collection: openauth
   ms.service: configuration-manager
-  author: sccmavenger
+  author: iceorbital
   cmProducts:
   - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e3e53a21-5c86-4f87-b1fb-893b77a777ba
-  manager: laurawi
   moniker_range_name: ''
-  ms.author: dannygu
+  ms.author: acabello
   ms.reviewer:
   - brianhun
   - hugowu
@@ -30,8 +29,6 @@ landingContent:
   linkLists:
   - linkListType: download
     links:
-    - text: Download MDT
-      url: https://aka.ms/mdtdownload
     - text: Release notes
       url: release-notes.md
     - text: Known issues

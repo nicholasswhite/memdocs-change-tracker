@@ -3,12 +3,11 @@ title: "Endpoint analytics scores, baselines, and insights"
 description: Understand endpoint analytics scores, baselines, and insights in Microsoft Intune to measure and improve device performance metrics.
 ms.date: "2025-10-09T00:00:00Z"
 ms.topic: concept-article
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: endpoint-analytics
 spProducts:

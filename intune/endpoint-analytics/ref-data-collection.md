@@ -3,14 +3,13 @@ title: "Endpoint analytics data collection"
 description: Understand endpoint analytics data collection in Microsoft Intune, including data flow, privacy, and how to stop gathering device data.
 ms.date: "2025-10-09T00:00:00Z"
 ms.topic: reference
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/1ae5c491-970a-4062-8301-6336e69f9026
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: endpoint-analytics
 spProducts:

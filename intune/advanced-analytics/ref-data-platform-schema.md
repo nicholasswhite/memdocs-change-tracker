@@ -3,12 +3,11 @@ title: "Intune data platform schema"
 description: Review the Microsoft Intune data platform schema for device queries and inventory. Discover supported properties and data types to efficiently manage and report on your devices with Intune.
 ms.date: '2026-10-26T00:00:00Z'
 ms.topic: reference
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:

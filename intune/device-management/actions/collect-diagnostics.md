@@ -5,12 +5,11 @@ ms.date: "2025-10-27T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: jlynn
 zone_pivot_groups: d4b2a9c3-d659-4922-8403-9b50d065fc07
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: remote-actions

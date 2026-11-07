@@ -4,13 +4,12 @@ description: Discover how Microsoft Intune endpoint analytics provides actionabl
 ms.date: "2025-11-26T00:00:00Z"
 ms.topic: overview
 zone_pivot_groups: manage-intune-cm
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: endpoint-analytics
 spProducts:

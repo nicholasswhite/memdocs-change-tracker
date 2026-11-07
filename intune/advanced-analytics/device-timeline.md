@@ -3,12 +3,11 @@ title: "Device timeline report"
 description: Use the device timeline report in Intune to review device event history, identify issues faster, and correlate incidents to start troubleshooting now.
 ms.date: "2026-03-24T00:00:00Z"
 ms.topic: concept-article
-author: paolomatarazzo
+author: dagerrit
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:

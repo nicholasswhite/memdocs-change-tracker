@@ -7,14 +7,13 @@ ms.reviewer: ramical
 ms.collection:
 - M365-identity-device-management
 - tier 1
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:
@@ -237,7 +236,7 @@ Enforcing macOS update policies ensures devices receive timely patches, reducing
 
 Configure and assign macOS update policies in Intune to enforce timely patching and reduce risk from unpatched vulnerabilities:
 
-- [Manage macOS software updates in Intune](../device-updates/apple/deprecated-mdm-policies-macos.md)
+- [Manage macOS software updates in Intune](../device-updates/apple/index.md)
 
 ### Update policies for iOS/iPadOS are enforced to reduce risk from unpatched vulnerabilities
 

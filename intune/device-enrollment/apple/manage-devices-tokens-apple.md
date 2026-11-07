@@ -4,12 +4,11 @@ description: Sync devices, distribute devices, and re-enroll devices for Apple a
 ms.date: "2026-04-29T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: annovich
 ms.service: microsoft-intune

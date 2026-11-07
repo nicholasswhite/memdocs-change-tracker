@@ -4,14 +4,13 @@ description: Evaluate WSL attributes on a host device for compliance.
 ms.date: "2024-11-19T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: arnab
-author: lenewsad
+author: ilwu-microsoft
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/caec7b7f-4941-4578-b79f-c63b1c1f5af4
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: ilwu
 ms.collection:
 - M365-identity-device-management
 - compliance

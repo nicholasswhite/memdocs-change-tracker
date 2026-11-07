@@ -5,12 +5,11 @@ ms.date: "2026-09-30T00:00:00Z"
 ms.topic: reference
 zone_pivot_groups: windows-mdm-versions
 ai-usage: ai-assisted
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints

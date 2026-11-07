@@ -4,12 +4,11 @@ description: Learn how to configure policies with Microsoft Intune in preparatio
 zone_pivot_groups: platforms-windows-ios
 ms.topic: tutorial
 ms.date: "2024-05-02T00:00:00Z"
-author: scottbreenmsft
+author: nicolezhao-msftdocs
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: scbree
+ms.author: nicolezhao
 ms.service: microsoft-intune
 ms.subservice: education
 spProducts:
@@ -248,11 +247,10 @@ For more information, see [Updates and upgrade](https://learn.microsoft.com/en-u
 
 
 
-It is important to keep iOS devices up to date with the latest security updates. You can create control updates with Intune using three different methods:
+It is important to keep iOS devices up to date with the latest security updates. You can control updates with Intune using these methods:
 
-- **Option 1** - iOS and iPadOS 17.0 and newer devices (recommended) - [Managed software update policy](../../../device-updates/apple/index.md).
-- **Option 2** - iOS and iPadOS 17.0 and older (recommended) - [Software update policy](../../../device-updates/apple/deprecated-mdm-policies-ios.md).
-- **Option 3** (not recommended) - End users manually install the updates.
+- **Option 1** - [Configure update policies for Apple devices](../../../device-updates/apple/index.md).
+- **Option 2** - End users manually install the updates.
 
 At **Devices** &gt; **Manage devices** &gt; **Configuration** &gt; **Create** &gt; **Settings catalog** &gt; **Restrictions**, you can use the following settings to delay how long after an update is released that users can manually install the updates.
 

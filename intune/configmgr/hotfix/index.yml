@@ -8,14 +8,13 @@ metadata:
     for new releases.
   ms.subservice: core-infra
   ms.topic: landing-page
-  ms.date: '2026-09-10T00:00:00Z'
+  ms.date: '2026-11-03T00:00:00Z'
   ms.service: configuration-manager
-  author: sccmavenger
+  author: iceorbital
   cmProducts:
   - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-  manager: laurawi
   moniker_range_name: ''
-  ms.author: dannygu
+  ms.author: acabello
   ms.reviewer:
   - brianhun
   - hugowu
@@ -49,6 +48,8 @@ landingContent:
       url: 2603/39398030.md
     - text: KB 39169655 Update rollup for Microsoft Configuration Manager version 2603
       url: 2603/39169655.md
+    - text: KB 40345593 Bulk registration token verification fails after 2603 update rollup
+      url: 2603/40345593.md
 - title: Configuration Manager 2509
   linkLists:
   - linkListType: overview

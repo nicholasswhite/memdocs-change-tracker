@@ -5,14 +5,13 @@ ms.date: "2025-02-13T00:00:00Z"
 ms.topic: article
 ms.reviewer: madakeva
 ms.collection: M365-identity-device-management
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7814ca69-56be-4667-8a46-86327796c328
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
@@ -50,7 +49,7 @@ User configuration support in Microsoft Intune for Windows Enterprise multi-sess
 
 - Configure user scope policies using **Settings catalog** and assign to groups of users. You can use the search bar to search all configurations with scope set to "user".
 - Configure user certificates and assign to users.
-- Configure PowerShell scripts to install in the user context and assign to users.
+- Configure PowerShell scripts to install in the user context.
 
 ## Prerequisites
 
@@ -175,9 +174,7 @@ All Windows apps can be deployed to Windows Enterprise multi-session with the fo
 
 ## Script deployment
 
-Scripts configured to run in the system context and assigned to devices are supported on Windows Enterprise multi-session. This can be configured under Script settings by setting **Run this script using the logged on credentials** to **No**.
-
-Scripts configured to run in the user context and assigned to users are supported on Windows Enterprise multi-session. This can be configured under Script settings by setting **Run this script using the logged on credentials** to **Yes**.
+Scripts must be targeted to devices. Under Script settings, set **Run this script using the logged on credentials** to **No** to run scripts in the system context, or set to **Yes** to run in the user context.
 
 ## Windows Update client policies
 

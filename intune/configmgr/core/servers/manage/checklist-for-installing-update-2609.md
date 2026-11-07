@@ -1,14 +1,13 @@
 ---
 title: "Checklist for installing update 2609 for Configuration Manager"
 description: "Learn about actions to take before updating to Configuration Manager version 2609."
-ms.date: "2026-09-18T00:00:00Z"
-author: sccmavenger
+ms.date: '2026-11-05T00:00:00Z'
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.collection: tier3
 ms.reviewer:
 - brianhun
@@ -114,6 +113,16 @@ Starting in version 2309, Configuration Manager requires Microsoft ODBC Driver f
 > Microsoft ODBC Driver for SQL Server version **18.7.1.1** has a known issue with Configuration Manager version 2603 and earlier that can block site configuration. If you're updating from one of these versions, don't install ODBC driver version 18.7.1.1 before the update. Complete the Configuration Manager update to version 2609 before you install this ODBC driver version.
 
 For minimum required versions, validated versions, and versions with known blocking issues, see [Prerequisite checks - ODBC driver for SQL Server](../deploy/install/list-of-prerequisite-checks.md#odbc-driver-for-sql-server).
+
+### Verify Azure prerequisites for existing CMGs
+
+If your hierarchy uses a cloud management gateway (CMG), verify its Azure prerequisites before updating the site. Version 2609 automatically disables shared-key access for CMG storage, including deployments where you haven't previously selected that option.
+
+- Verify that the CMG **server/web application's service principal** has the required resource-management and storage role-assignment permissions at the CMG resource group. Contributor alone doesn't grant permission to create role assignments. Use appropriately constrained permissions as described in [Configure Azure RBAC permissions for the server app](../../clients/manage/cmg/configure-azure-ad.md#configure-azure-rbac-permissions-for-the-server-app).
+- Verify that **Microsoft.Maintenance** is registered in every subscription containing a CMG, along with the other [required resource providers](../../clients/manage/cmg/configure-azure-ad.md#configure-azure-resource-providers). Wait until registration is complete.
+- Allow time for permission changes to propagate, then verify the effective access for each CMG server application and resource group. Check production separately from staging: role assignments are scoped to Azure resources, and provider registration is subscription-scoped. Neither change is tenant-wide.
+
+These prerequisites apply to existing deployments even if earlier CMG updates succeeded. Missing permissions or registration can cause the CMG deployment update to fail. For error details, review **CloudMgr.log** and the failed Azure deployment operations.
 
 ### Review the site and hierarchy status for unresolved issues
 
@@ -257,6 +266,10 @@ After the site updates, use the following checklist to complete common tasks and
 Make sure each site server and site system role is updated to version 2609. In the console, add the **Version** column to the **Sites** and **Distribution Points** nodes in the **Administration** workspace. When necessary, a site system role automatically reinstalls to update to the new version.
 
 Consider restarting remote site systems that don't successfully update at first. Review your site infrastructure and make sure that applicable site servers and remote site system servers successfully restarted. Typically, site servers restart only when Configuration Manager installs .NET as a prerequisite for a site system role.
+
+### Verify CMG deployment and client communication
+
+After updating a site that has a CMG, verify that the CMG deployment update completes successfully. Review **CloudMgr.log** and any failed Azure deployment operations. After the CMG is running, use the [CMG connection analyzer](../../clients/manage/cmg/monitor-clients-cloud-management-gateway.md#connection-analyzer) to verify communication.
 
 ### Review SQL Server client components
 

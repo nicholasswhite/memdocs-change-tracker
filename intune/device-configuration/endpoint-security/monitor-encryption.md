@@ -3,16 +3,15 @@ title: "Monitor device encryption with Intune"
 description: Use the Microsoft Intune admin center to view reports for device encryption status across macOS FileVault and Windows BitLocker encrypted devices that you manage with Microsoft Intune.
 ms.date: "2024-10-14T00:00:00Z"
 ms.topic: how-to
-ms.author: lanewsad
+ms.author: acabello
 ms.reviewer: aanavath
 ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: configuration

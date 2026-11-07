@@ -5,12 +5,11 @@ ms.date: "2026-05-14T00:00:00Z"
 ms.topic: reference
 ms.reviewer: beflamm, jayeren
 zone_pivot_groups: platforms-apple
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration
@@ -537,6 +536,10 @@ You can also **Import** a CSV file with the list of app names and their bundle I
   - iPadOS 13.0 and newer
 - **Defer software updates**: **Enable** delays when software updates show up on devices, from 1-90 days. This setting doesn't control when updates are or aren't installed.
 
+  > [!IMPORTANT]
+  >
+  > These settings are no longer supported for Apple software update management. Use Declarative Device Management (DDM) update settings in the settings catalog instead. For more information, go to [Configure update policies for Apple devices](../../device-updates/apple/index.md).
+
   When set to **Not configured** (default), Intune doesn't change or update this setting. By default, the OS might show software updates on devices as Apple releases them. For example, if an iOS/iPadOS update gets released by Apple on a specific date, then that update naturally shows up on devices around the release date.
 
   - **Delay visibility of software updates**: Enter a value from 1-90 days. When the delay expires, users get notified to update to the earliest OS version available when the delay is triggered. Don't set this value to zero (`0`) days.
@@ -568,6 +571,10 @@ You can also **Import** a CSV file with the list of app names and their bundle I
 ### Settings apply to: User approved device enrollment, Automated device enrollment (supervised)
 
 - **Defer software updates**: This setting defers the visibility of software updates on devices for up to 90 days. For example, if Apple releases a macOS update on a specific date, it naturally shows on devices around the release date. This setting can hide the update so that users don't see it as soon as it's available.
+
+  > [!IMPORTANT]
+  >
+  > These settings are no longer supported for Apple software update management. Use Declarative Device Management (DDM) update settings in the settings catalog instead. For more information, go to [Configure update policies for Apple devices](../../device-updates/apple/index.md).
 
   This setting doesn't control when updates are installed and doesn't impact scheduled updates. Seed build updates are allowed without delay.
 

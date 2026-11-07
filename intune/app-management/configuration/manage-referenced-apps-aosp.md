@@ -7,7 +7,6 @@ ai-usage: ai-generated
 author: abigail-stein2
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.author: abigailstein
 ms.collection:

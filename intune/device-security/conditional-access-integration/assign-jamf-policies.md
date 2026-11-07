@@ -3,13 +3,12 @@ title: "Enforce compliance on Macs managed with Jamf Pro"
 description: Create Intune compliance policies and Microsoft Entra Conditional Access to help secure Jamf-managed devices.
 ms.date: "2023-08-30T00:00:00Z"
 ms.topic: how-to
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - conditional-access

@@ -3,12 +3,11 @@ title: "Line-of-Business App Versioning"
 description: Introduces how app versions are used in Intune when an app is added or updated.
 ms.date: "2024-11-18T00:00:00Z"
 ms.topic: reference
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: bryanke
 ms.service: microsoft-intune

@@ -1,20 +1,19 @@
 ---
 title: Configure Microsoft Entra ID for CMG
 description: Integrate the Configuration Manager site with Microsoft Entra ID to support the cloud management gateway.
-ms.date: "2022-09-26T00:00:00Z"
+ms.date: '2026-11-05T00:00:00Z'
 ms.subservice: core-infra
 ms.topic: how-to
 ms.collection: tier3
 ms.custom: sfi-ga-nochange
 ms.service: configuration-manager
-author: sccmavenger
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/68ec7f3a-2bc6-459f-b959-19beb729907d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
-manager: laurawi
 moniker_range_name: ''
-ms.author: dannygu
+ms.author: acabello
 ms.reviewer:
 - brianhun
 - hugowu
@@ -135,6 +134,38 @@ If your devices are in a Microsoft Entra tenant that's separate from the tenant 
 
 For more information, see [Configure Azure services](../../../servers/deploy/configure/azure-services-wizard.md#disable-authentication).
 
+## Configure Azure RBAC permissions for the server app
+
+The CMG uses the **server/web application's service principal** to deploy and manage its Azure resources. These Azure role-based access control (RBAC) permissions are separate from the Microsoft Entra directory roles used to create app registrations. Assign permissions to the server application's service principal, not the native/client application or the user who runs the console.
+
+Starting in version 2609, shared-key access is automatically disabled for CMG storage. Existing CMGs that previously used shared-key access also need the permissions for Microsoft Entra-authenticated storage and storage role assignments. A successful deployment or update on an earlier version doesn't confirm that these permissions are present.
+
+Verify the following effective permissions at each CMG resource group:
+
+- **Resource management:** Retain the **Contributor** role or equivalent approved permissions that allow the server application to manage the CMG resources.
+- **Storage role assignments:** Allow the server application to manage assignments of the **Storage Blob Data Contributor** and **Storage Table Data Contributor** roles. Contributor alone doesn't grant `Microsoft.Authorization/roleAssignments/write`.
+
+To provide the storage role-assignment permissions with limited delegation:
+
+1. In the Azure portal, open the CMG's resource group and select **Access control (IAM)**.
+2. Identify the service principal for the CMG server application. Verify its application (client) ID and service-principal object ID against the application used by Configuration Manager.
+3. Review its existing role assignments, including inherited assignments and their conditions. If equivalent effective permissions already exist, don't add a duplicate grant.
+4. If the required storage role-assignment permissions are missing, assign **Role Based Access Control Administrator** to this service principal at the CMG resource group. Add a role-assignment condition that allows both `Microsoft.Authorization/roleAssignments/write` and `Microsoft.Authorization/roleAssignments/delete` only for these role definitions:
+
+   - **Storage Blob Data Contributor**: `ba92f5b4-2d11-453d-a403-e96b0029c9fe`
+   - **Storage Table Data Contributor**: `0a9a7e1f-b9d0-4cc4-a60d-0319b160aaa3`
+
+   For instructions to select the allowed roles when configuring the condition, see [Delegate Azure role assignment management to others with conditions](https://learn.microsoft.com/en-us/azure/role-based-access-control/delegate-role-assignments-portal). Don't use an unrestricted Owner or administrator grant as a shortcut.
+5. Allow time for changes to propagate, then verify that the server application has the required effective permissions. If a custom condition or deny assignment prevents access, have the Azure resource administrator review it rather than broadening permissions or removing the restriction.
+
+The administrator making the assignment needs Azure RBAC permission to create this constrained administrator assignment at the target scope. Permission to create only storage data-role assignments doesn't necessarily authorize the administrator to delegate the **Role Based Access Control Administrator** role. These operator permissions are separate from the permissions granted to the CMG server application.
+
+> [!IMPORTANT]
+>
+> A grant at a staging resource group doesn't automatically grant access to a different production resource group or a different service principal. Verify each CMG application and resource group, including any inherited permissions and conditions. Being in the same Microsoft Entra tenant isn't sufficient.
+
+If a CMG deployment update fails with HTTP **403**, `DeploymentFailed`, and a denied `Microsoft.Authorization/roleAssignments/write` action in **CloudMgr.log**, review the application object ID and Azure scope in the error. Verify that the indicated service principal can create the required role assignments at that scope. The signed-in administrator having access doesn't establish that the CMG application has access. Also review the failed deployment operations in the Azure portal.
+
 ## Configure Azure resource providers
 
 The CMG service requires that you register specific resource providers in your Azure subscription. When you deploy the CMG to a virtual machine scale set, register the following resource providers:
@@ -143,6 +174,9 @@ The CMG service requires that you register specific resource providers in your A
 - Microsoft.Storage
 - Microsoft.Network
 - Microsoft.Compute
+- Microsoft.Maintenance
+
+**Microsoft.Maintenance** is used for CMG VM scale set maintenance configurations and configuration assignments. Before updating to version 2609, verify its registration for existing CMGs as well as new deployments. Provider registration is subscription-scoped, not tenant-scoped: registering it in a staging subscription doesn't register it in a different production subscription.
 
 > [!NOTE]
 >
@@ -153,7 +187,7 @@ The CMG service requires that you register specific resource providers in your A
 >
 > Starting in version 2203, the option to deploy a CMG as a **cloud service (classic)** is removed. All CMG deployments should use a [virtual machine scale set](plan-cloud-management-gateway.md#virtual-machine-scale-sets). For more information, see [Removed and deprecated features](../../../plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md).
 
-Your Microsoft Entra account needs permission to do the `/register/action` operation for the resource provider. By default, the **Contributor** and **Owner** roles include this permission.
+The account registering a provider needs permission to do the `/register/action` operation for that provider at the subscription scope, for example, `Microsoft.Maintenance/register/action`. By default, the **Contributor** and **Owner** roles include this permission when assigned at that scope. A Contributor assignment on only the CMG resource group doesn't grant subscription-level provider-registration permission.
 
 The following steps summarize the process to register a resource provider. For more information, see [Azure resource providers and types](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal).
 
@@ -162,6 +196,7 @@ The following steps summarize the process to register a resource provider. For m
 3. Select the subscription you want to view.
 4. On the left menu, under **Settings**, select **Resource providers**.
 5. Find the resource provider you want to register, and select **Register**. To maintain least privileges in your subscription, only register those resource providers that you're ready to use.
+6. Wait until the provider's registration state is **Registered** before proceeding with the CMG deployment or update. If the state is **Registering**, allow the registration to complete. Repeat this verification for each subscription containing CMG resources.
 
 ## Automate with PowerShell
 

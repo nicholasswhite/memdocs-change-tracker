@@ -4,13 +4,12 @@ description: Guidance and advice for administrators that create and manage softw
 ms.date: "2025-04-07T00:00:00Z"
 ms.topic: how-to
 ms.reviewer: ahamil, talima
-author: paolomatarazzo
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: paoloma
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

@@ -3,12 +3,11 @@ title: "Deploying Apps Using Intune on the GCC High and DoD Environments"
 description: Learn about apps involving GCC High and DoD environments using Microsoft Intune.
 ms.date: "2024-11-18T00:00:00Z"
 ms.topic: how-to
-author: nicholasswhite
+author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: nwhite
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.reviewer: bryanke
 ms.service: microsoft-intune

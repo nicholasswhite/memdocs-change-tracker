@@ -1,8 +1,8 @@
 ---
 title: "Tutorial: Walkthrough Microsoft Intune Admin Center"
 description: In this tutorial, you will tour Microsoft Intune in the Microsoft Intune admin center to better understand how to accomplish tasks.
-author: paolomatarazzo
-ms.author: paoloma
+author: iceorbital
+ms.author: acabello
 ms.date: "2025-02-04T00:00:00Z"
 ms.topic: tutorial
 ms.reviewer: tycast
@@ -11,7 +11,6 @@ ms.collection:
 - essentials-manage
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: fundamentals

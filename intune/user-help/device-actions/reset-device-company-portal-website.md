@@ -3,13 +3,12 @@ title: "Reset device from Company Portal website"
 description: Learn how to factory reset a lost or stolen device from the Intune Company Portal website.
 ms.date: "2024-10-08T00:00:00Z"
 ms.reviewer: coferro
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

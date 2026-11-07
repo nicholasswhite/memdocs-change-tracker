@@ -1,25 +1,24 @@
 ---
 title: "Set up automated device enrollment for macOS"
 description: Learn how to enroll corporate-owned Macs into Microsoft Intune with Apple Automated Device Enrollment (ADE).
-ms.date: "2026-05-18T00:00:00Z"
+ms.date: '2026-10-28T00:00:00Z'
 ms.topic: how-to
 ms.reviewer: beflamm
 ai-usage: ai-assisted
-author: lenewsad
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/837687b0-8846-4eb2-adb6-2b853e8c70c4
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
+- https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/8c797fa2-4419-46e7-a4e3-4c97d0a1f2a0
+- https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
-- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/ee561821-1ac7-45a8-9409-6ba5eb7a5b97
 ---
 
 # Set up automated device enrollment for macOS
@@ -94,7 +93,7 @@ At the end of this procedure, you can assign this policy to Microsoft Entra devi
 
     - **Enroll with User Affinity**: Enroll devices that are associated with an assigned user. Choose this option for work devices that belong to users, and if you want to require users to have the Company Portal app to install apps. Multifactor authentication (MFA) is available with this option. Enrolling with user affinity is also referred to as enrolling with a *user*.
 
-      Option 2 requires more configurations. Users must authenticate themselves before enrollment to confirm their identity. Select one of the following authentication methods:
+      Enrollment with user affinity requires more configurations. Users must authenticate themselves before enrollment to confirm their identity. Select **Setup Assistant with modern authentication**:
 
       - **Setup Assistant with modern authentication** (recommended): This method requires users to complete all Setup Assistant screens and sign in to the Company Portal app with their Microsoft Entra credentials before they can access resources. After they sign in to Company Portal, the device:
 
@@ -105,13 +104,11 @@ At the end of this procedure, you can assign this policy to Microsoft Entra devi
 
         If the user doesn't sign in to the Company Portal to complete registration, they'll be redirected to the Company Portal app each time they try to open a managed app with Conditional Access protection.
 
-        Devices running macOS 10.15 and later can use this method. Older macOS devices fall back to using the legacy Setup Assistant method. For more information about how to get the Company Portal app to Mac users, see [Add the Company Portal for macOS app](../../app-management/deployment/add-company-portal-macos.md).
+        Devices running macOS 10.15 and later can use this method. For more information about how to get the Company Portal app to Mac users, see [Add the Company Portal for macOS app](../../app-management/deployment/add-company-portal-macos.md).
 
       > [!IMPORTANT]
       >
-      > We recommend using **Setup Assistant with modern authentication** for your Apple devices for ADE (automated device enrollment) scenarios with user device affinity. While use of the legacy authentication remains available, we don't recommend its use.
-
-      - **Setup Assistant (legacy)** (no longer recommended): Use the legacy Setup Assistant if you want users to experience the typical out-of-box-experience for Apple products. This method installs standard preconfigured settings when the device enrolls with Intune management. If you're using Active Directory Federation Services and you're using Setup Assistant to authenticate, a [WS-Trust 1.3 Username/Mixed endpoint](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff608241(v=ws.10)) is required. For more information about retrieving the ADFS endpoint, see [Get-ADfsEndpoint](https://learn.microsoft.com/en-us/powershell/module/adfs/get-adfsendpoint?view=win10-ps&preserve-view=true).
+      > Intune has ended support for **Setup Assistant (legacy)** authentication for ADE with user affinity with the October 2026 (2610) service release. Existing profiles that use this method are automatically updated to **Setup Assistant with modern authentication**, and the legacy option is no longer available when creating or editing profiles. Already-enrolled devices aren't affected and remain enrolled. Review your profiles and test modern authentication in your environment. For more information, see [Retirement of Setup Assistant (legacy)](ref-automated-authentication-methods.md#option-4-setup-assistant-legacy).
 12. **Await final configuration** enables a locked experience at the end of Setup Assistant to ensure your most critical device configuration policies are installed on the device. This setting is applied once during the out-of-box Apple automated device enrollment experience in Setup Assistant. The device user doesn't experience it again unless they re-enroll their Mac.
 
     Your options:
@@ -124,7 +121,6 @@ At the end of this procedure, you can assign this policy to Microsoft Entra devi
     The locked experience is supported on Macs running macOS 10.11 or later. It works on Macs targeted with new or existing enrollment policies set up for these scenarios:
 
     - Enrollment via Setup Assistant with modern authentication
-    - Enrollment with Setup Assistant (legacy)
     - Enrollment without user device affinity
 13. You can enforce **Locked enrollment** to prevent users from unenrolling their devices from Intune. Select **Yes** to disable the Mac settings in System Preferences and Terminal that allow users to remove the management policy. After the device enrolls, you can't change this setting without wiping the device.
 14. Optionally, under **Account settings**, configure the local administrator and user accounts on targeted Macs.
@@ -150,15 +146,12 @@ At the end of this procedure, you can assign this policy to Microsoft Entra devi
       - {{username}} - for example, John@contoso.com
       - {{serialNumber}} - for example, F4KN99ZUG5V2
       - {{OnPremisesSamAccountName}} - for example, contoso\John
-    - **Restrict editing**: The default configuration is set to **Yes** so that device users can't edit the account name and full name configured for them. To allow device users to edit the account name and full name, select **Not configured**. If you're only using Setup Assistant (legacy) to enroll devices running macOS 10.15 and later, you can expect the following end user experience:
-
-      - **Yes**: The account creation screen in Setup Assistant never appears. Instead, the local user account is automatically created based on the other setting configurations, and the password is automatically populated from the Microsoft Entra authentication screen. The device user can't edit these fields.
-      - **Not configured**: The local user account screen is shown to the end user in Setup Assistant and is populated with the configured account values, and the password from the Microsoft Entra authentication screen. The device user can edit these fields during Setup Assistant.
+    - **Restrict editing**: The default configuration is set to **Yes** so that device users can't edit the account name and full name configured for them. To allow device users to edit the account name and full name, select **Not configured**.
 
     For account settings to work as intended, your enrollment policy must have the following configurations:
 
     - **User affinity**: Select **Enroll with User affinity**.
-    - **Authentication method**: Select **Setup Assistant with modern authentication** or **Setup Assistant (legacy)**.
+    - **Authentication method**: Select **Setup Assistant with modern authentication**.
     - **Await final configuration**: Select **Yes**.
 
     Local accounts depend on the await final configuration feature when they're being created. As a result, if you configure any local admin or user account settings, this setting is always enabled. Even if you don't touch the await final configuration setting, it's always enabled in the background and applied to the enrollment policy.
@@ -178,7 +171,7 @@ At the end of this procedure, you can assign this policy to Microsoft Entra devi
 The following table describes the Setup Assistant screens shown during automated device enrollment for Macs. You can show or hide these screens on supported devices during enrollment. For more information about how each Setup Assistant screen affects the user experience, see these Apple resources:
 
 - [Apple Platform Deployment guide: Manage Setup Assistant for Apple devices](https://support.apple.com/en-mide/guide/deployment/depdeff4a547/web)
-- [Apple Developer documentation: ShipKeys](https://developer.apple.com/documentation/devicemanagement/skipkeys)
+- [Apple Developer documentation: SkipKeys](https://developer.apple.com/documentation/devicemanagement/skipkeys)
 
 | Setup Assistant screen | What happens when visible |
 | --- | --- |

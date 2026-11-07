@@ -7,14 +7,13 @@ ms.collection:
 - M365-identity-device-management
 - identity-protection
 - sub-secure-endpoints
-author: lenewsad
+author: maholdaa
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/798bd9d1-9cc5-4fc7-b0e5-8699d1f6ce2a
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: maholdaa
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

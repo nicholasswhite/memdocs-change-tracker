@@ -4,13 +4,12 @@ description: View the device compliance settings for macOS devices that you can 
 ms.date: "2025-09-05T00:00:00Z"
 ms.topic: article
 ms.reviewer: tycast
-author: lenewsad
+author: ilwu-microsoft
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
-manager: laurawi
 moniker_range_name: ''
-ms.author: lanewsad
+ms.author: ilwu
 ms.collection:
 - M365-identity-device-management
 - compliance

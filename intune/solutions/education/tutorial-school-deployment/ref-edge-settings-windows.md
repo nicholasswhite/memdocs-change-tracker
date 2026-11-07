@@ -8,7 +8,6 @@ ms.author: egorabr
 ms.collection: graph-interactive
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
-manager: laurawi
 moniker_range_name: ''
 ms.service: microsoft-intune
 ms.subservice: education
