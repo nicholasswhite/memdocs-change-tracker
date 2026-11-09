@@ -1,7 +1,7 @@
 ---
 title: "User-driven Microsoft Entra hybrid join: Install the Intune Connector for Active Directory"
 description: How to - Windows Autopilot user-driven Microsoft Entra hybrid join - Step 2 of 10 - Install the Intune Connector for Active Directory.
-ms.date: "2025-05-29T00:00:00Z"
+ms.date: '2026-10-23T00:00:00Z'
 ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
@@ -44,7 +44,7 @@ Windows Autopilot user-driven Microsoft Entra hybrid join steps:
 - Step 9: [Assign Windows Autopilot device to a user (optional)](hybrid-azure-ad-join-assign-device-to-user.md)
 - Step 10: [Deploy the device](hybrid-azure-ad-join-deploy-device.md)
 
-For an overview of the Windows Autopilot user-driven Microsoft Entra hybrid join workflow, see [Windows Autopilot user-driven Microsoft Entra hybrid join overview](hybrid-azure-ad-join-workflow.md#workflow).
+For an overview, see [Windows Autopilot user-driven Microsoft Entra hybrid join overview](hybrid-azure-ad-join-workflow.md#workflow).
 
 > [!NOTE]
 >

@@ -1,7 +1,8 @@
 ---
 title: "OEM registration"
-description: How OEMs add devices to Windows Autopilot.
-ms.date: "2025-06-13T00:00:00Z"
+description: Windows Autopilot OEM registration lets manufacturers register devices on your behalf. Learn how the process
+  works in your tenant.
+ms.date: '2026-10-30T00:00:00Z'
 ms.topic: how-to
 ms.collection:
   - M365-modern-desktop
@@ -28,21 +29,21 @@ spProducts:
 
 ## Device registration process
 
-When devices are purchased from an OEM, the OEM can automatically register the devices with the Windows Autopilot. For the list of OEMs that support registration, see the **Participant device manufacturers and resellers** section of the [Windows Autopilot page](https://aka.ms/windowsautopilot).
+When devices are purchased from an OEM, the manufacturer can automatically register the devices with the Windows Autopilot. For the list of manufacturers that support registration, see the **Participant device manufacturers and resellers** section of the [Windows Autopilot page](https://aka.ms/windowsautopilot).
 
 > [!NOTE]
 >
-> While the hardware hashes, also known as hardware IDs, are generated as part of the OEM device manufacturing process, the hardware hashes aren't normally provided directly to customers or Cloud Solution Partners (CSPs). Instead, the OEM should register devices on the customer's behalf. In cases where CSPs register devices, OEMs might provide PKID information to those partners to support the device registration process.
+> While the hardware hashes, also known as hardware IDs, are generated as part of the device manufacturing process, the hardware hashes aren't normally provided directly to customers or Cloud Solution Partners (CSPs). Instead, the manufacturer should register devices on the customer's behalf. In cases where CSPs register devices, manufacturers might provide PKID information to those partners to support the device registration process.
 
-OEMs must follow [device guidelines](autopilot-device-guidelines.md) for Windows Autopilot devices.
+Manufacturers must follow [device guidelines](autopilot-device-guidelines.md) for Windows Autopilot devices.
 
 ### Service data
 
-Microsoft manages and maintains Windows Autopilot. This service provides the backend database that associates hardware hashes with customer tenants. When an OEM registers devices for a customer, they're writing that data to this database and not directly to the customer's tenant. No permissions to the customer's tenant are granted or required for OEMs to register devices on the customer's behalf.
+Microsoft manages and maintains Windows Autopilot. This service provides the backend database that associates hardware hashes with customer tenants. When an manufacturer registers devices for a customer, they're writing that data to this database and not directly to the customer's tenant. No permissions to the customer's tenant are granted or required for manufacturers to register devices on the customer's behalf.
 
 ### Customer consent
 
-Before an OEM can register devices for an organization, the organization's Microsoft Entra Global Administrator must approve the OEM. For more information, see [OEM authorization](registration-auth.md#oem-authorization).
+Before manufacturer can register devices for an organization, the organization's Microsoft Entra Global Administrator must approve the OEM. For more information, see [OEM authorization](registration-auth.md#oem-authorization).
 
 > [!IMPORTANT]
 >

@@ -1,9 +1,10 @@
 ---
 title: "Export Intune Reports Using Graph APIs"
-description: Learn about exporting Intune reports using Graph APIs.
+description: Export Intune reports with Microsoft Graph APIs. Learn how to submit export requests, check job status, and download
+  report data as CSV or JSON files.
 ms.topic: how-to
 author: iceorbital
-ms.date: "2025-02-28T00:00:00Z"
+ms.date: '2026-11-09T00:00:00Z'
 ms.reviewer: davidra
 #ms.custom:
 cmProducts:
@@ -20,13 +21,13 @@ spProducts:
 
 # Export Intune Reports Using Graph APIs
 
-All reports that have been migrated to the Intune reporting infrastructure will be available for export from a single top-level export API. You must use the Microsoft Graph API to make the HTTP call. Microsoft Graph is a RESTful web API that enables you to access Microsoft Cloud service resources.
+You can export all reports that are migrated to the Intune reporting infrastructure from a single top-level export API. Use the Microsoft Graph API to make the HTTP call. Microsoft Graph is a RESTful web API that you can use to access Microsoft Cloud service resources.
 
 > [!NOTE]
 >
 > For information about making REST API calls, including tools for interacting with Microsoft Graph, see [Use the Microsoft Graph API](https://learn.microsoft.com/en-us/graph/use-the-api).
 
-Microsoft Intune will export reports using the following Microsoft Graph API endpoint:
+Microsoft Intune exports reports by using the following Microsoft Graph API endpoint:
 
 ```http
 https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs
@@ -35,11 +36,11 @@ https://graph.microsoft.com/v1.0/deviceManagement/reports/exportJobs
 
 ## Example devices report request and response
 
-When making the request, you must provide a `reportName` parameter as part of the request body based on the report that you would like to export. Below is an example of an export request for the **Devices** report. You must use the POST HTTP method on your request. The POST method is used to create a new resource or perform an action.
+When you make the request, include a `reportName` parameter in the request body that corresponds to the report you want to export. The following example shows an export request for the **Devices** report. Use the POST HTTP method in your request. The POST method creates a new resource or performs an action.
 
 ### Request example
 
-The below request contains the HTTP method used on the request to Microsoft Graph.
+The following request contains the HTTP method used in the request to Microsoft Graph.
 
 ```http
 {
@@ -63,11 +64,11 @@ The below request contains the HTTP method used on the request to Microsoft Grap
 
 > [!NOTE]
 >
-> To retrieve data, select specific columns, such as those specified in the above example. Don't build automation around default columns of any report export. You should build your automation to explicitly select relevant columns.
+> To retrieve data, select specific columns, such as those specified in the preceding example. Don't build automation around default columns of any report export. Build your automation to explicitly select relevant columns.
 
 ### Response example
 
-Based on the above POST request, Graph returns a response message. The response message is the data that you requested or the result of the operation.
+Based on the preceding POST request, Graph returns a response message. The response message contains the data you requested or the result of the operation.
 
 ```http
 {
@@ -96,7 +97,7 @@ Based on the above POST request, Graph returns a response message. The response 
 }
 ```
 
-You can then use the `id` field to query the status of the export with a GET request:
+You can use the `id` field to query the status of the export with a GET request.
 
 For example: `https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs('Devices_05e62361-783b-4cec-b635-0aed0ecf14a3')` or `https://graph.microsoft.com/beta/deviceManagement/reports/exportJobs/Devices_05e62361-783b-4cec-b635-0aed0ecf14a3`
 
@@ -137,7 +138,7 @@ There are five main parameters you can submit in your request body to define the
 
 - `reportName`: Required. This parameter is the name of the report you want to specify.
 - `filter`: Not required for most reports. The filter parameter is a string.
-- `select`: Not required. Specify which columns from the report you want. Only valid column names relevant to the report you're calling will be accepted.
+- `select`: Not required. Specify which columns from the report you want. Only valid column names relevant to the report you're calling are accepted.
 - `format`: Not required. By default, the data is output in `csv` format. Specify `json` to output the file in JSON format.
 - `localizationType`: This parameter controls localization behavior for the report. Possible values are `LocalizedValuesAsAdditionalColumn` and `ReplaceLocalizableValues`.
 
@@ -149,8 +150,8 @@ The `localizationType` parameter controls localization behavior for the report. 
 
 This value for the `localizationType` parameter is the default value. It's inserted automatically if the `localizationType` parameter isn't specified. This value specifies that Intune provides two columns for each localizable column.
 
-- *enum value*: The *enum value* column contains either a raw string, or a set of numbers that don't change, regardless of locale. This column is under the original column name (see example).
-- *localized string value*: This column is the original column name with _loc appended. It contains string values that are human readable, and locale conditional (see example).
+- *enum value*: The *enum value* column contains either a raw string, or a set of numbers that don't change, regardless of locale. This column is under the original column name, as in the example.
+- *localized string value*: This column is the original column name with `_loc` appended. It contains string values that are human readable, and locale conditional, as in the example.
 
 #### Example
 
@@ -186,13 +187,14 @@ For columns without localized values, only a single column with the true column 
 
 ## API throttling conditions
 
-To ensure that the `exportJobs` API doesn't have too many concurrent requests, which would impact the API's response rate, the below throttling limits are applied.
+To ensure that the `exportJobs` API doesn't have too many concurrent requests, which would impact the API's response rate, the following throttling limits are applied.
 
-- **The APIs will support up to 100 requests per tenant per minute**: This support covers all users and apps in a tenant. Any additional requests initiated by either users or apps in the tenant within the same minute will be throttled.
-  - If the APIs are initiated by a user, up to 8 requests will be allowed by the same user within a minute. Subsequent requests by the same user within the same minute will be throttled.
-  - If the APIs are initiated by an app, then up to 48 requests will be allowed by the same app within a minute. Subsequent requests by the same app within the same minute will be throttled.
+- **The APIs will support up to 100 requests per tenant per minute**: This support covers all users and apps in a tenant. Any additional requests initiated by either users or apps in the tenant within the same minute are throttled.
 
-## Next steps
+  - If the APIs are initiated by a user, up to 8 requests are allowed by the same user within a minute. Subsequent requests by the same user within the same minute are throttled.
+  - If the APIs are initiated by an app, then up to 48 requests are allowed by the same app within a minute. Subsequent requests by the same app within the same minute are throttled.
+
+## Related content
 
 - [Microsoft Graph documentation](https://learn.microsoft.com/en-us/graph/)
 - [Intune reports](overview.md)
