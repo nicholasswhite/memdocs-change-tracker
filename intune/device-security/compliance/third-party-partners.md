@@ -1,5 +1,5 @@
 ---
-title: "Support third-party device compliance partners in Intune"
+title: Using third-party device compliance partners with Intune
 description: Use a third-party device compliance partner as a source of compliance data for devices you manage with Intune.
 ms.date: "2026-06-24T00:00:00Z"
 ms.topic: overview
@@ -19,7 +19,7 @@ spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 ---
 
-# Support third-party device compliance partners in Intune
+# Using third-party device compliance partners with Intune
 
 Microsoft Intune supports integration with several third-party device compliance partners. When you use a [third-party device compliance partner](#supported-device-compliance-partners), the partner adds the compliance state data it collects to Microsoft Entra ID. You can use device compliance data from the partner alongside the compliance results you collect with Intune. Together, these signals power [Conditional Access policies](overview.md#integrate-with-conditional-access) that help to protect your organization and data.
 
