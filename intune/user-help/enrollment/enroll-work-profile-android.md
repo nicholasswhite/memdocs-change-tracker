@@ -1,8 +1,8 @@
 ---
 title: "Enroll device with Android work profile"
-description: How create a work profile and enroll device with Intune Company Portal.
-ms.date: "2024-11-13T00:00:00Z"
-ms.reviewer: ''
+description: Create an Android work profile with Intune Company Portal and enroll your personal device. Follow this guide
+  to access work apps and resources.
+ms.date: '2026-11-03T00:00:00Z'
 author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
@@ -19,32 +19,32 @@ spProducts:
 
 # Enroll device with Android work profile
 
-Enroll your personal Android device to get access to work emails, apps, Wi-Fi, and other resources. During enrollment, you will:
+Enroll your personal Android device to get access to work emails, apps, Wi-Fi, and other resources. During enrollment, you:
 
-1. Create a work profile.
-2. Activate the work profile.
-3. Update device settings.
+- Create a work profile.
+- Activate the work profile.
+- Update device settings.
 
-This article describes how to enroll your device using the Intune Company Portal app. For more information about the work profile and its features, see [Introduction to Android work profile](work-profile-android.md).
+This article describes how to enroll your device by using the Intune Company Portal app. For more information, see [Introduction to Android work profile](work-profile-android.md).
 
 [Embedded video](https://www.youtube-nocookie.com/embed/9Dl8HsGk4tI)
 
 ## Before you begin
 
-[Install the Intune Company Portal app from Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). The Company Portal app is used to enroll and manage your device, install work apps, and get IT support.
+[Install the Intune Company Portal app from Google Play](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal). Use the Company Portal app to enroll and manage your device, install work apps, and get IT support.
 
 ## Enroll device
 
-Make sure you're signed in to the primary user account on your device. Work profile enrollment isn't supported on secondary user accounts.
+Ensure you sign in to the primary user account on your device. The system doesn't support work profile enrollment on secondary user accounts.
 
 1. Open the Intune Company Portal app and sign in with your work or school account.
-2. On the **Company Access Setup** screen, review the tasks required to enroll your device. Then tap **BEGIN**.
+2. On the **Company Access Setup** screen, review the tasks required to enroll your device. Then select **BEGIN**.
 
    ![Screenshot of Company Access Setup screen highlighting the Begin button.](media/enroll-work-profile-android/access-setup-work-profile-1911.png)
-3. On the privacy information screen, review the list of items that your organization can and can't see on your device. Then tap **CONTINUE**.
+3. On the privacy information screen, review the list of items that your organization can and can't see on your device. Then select **CONTINUE**.
 
    ![Screenshot of Company Portal's We care about your privacy screen, highlighting the Continue button.](media/enroll-company-portal-android/android-privacy-screen-1911.png)
-4. Review the Google terms for creating a work profile. Accept the terms to continue. The appearance of this screen varies based on OS version.
+4. Review the Google terms for creating a work profile. Accept the terms to continue. The appearance of this screen varies based on operating system version.
 
    ![Screenshot of Company Portal showing link to Google terms, and highlighting the Accept & continue button.](media/enroll-work-profile-android/google-terms-screen-work-profile.png)
 5. Review the Samsung Knox privacy policy. Select **Agree** to continue. This screen only appears if you're using a Samsung device.
@@ -53,21 +53,20 @@ Make sure you're signed in to the primary user account on your device. Work prof
 6. Wait a few minutes while your work profile is set up. Then select **Next**.
 
    ![Screenshot of Company Portal highlighting the Next button.](media/enroll-work-profile-android/work-profile-setup-next-2307.png)
-7. On the **Company Access Setup** screen, confirm that you created the profile. Then tap **CONTINUE** to proceed to the next enrollment task.
+7. On the **Company Access Setup** screen, confirm that you created the profile. Then select **CONTINUE** to proceed to the next enrollment task.
 
    ![Screenshot of Company Access Setup showing work profile is created.](media/enroll-work-profile-android/work-profile-complete-1911.png)
 8. Wait while the app registers your device. When prompted to, sign in with your work account.
-9. On the **Company Access Setup** screen, confirm that the work profile is active. Then tap **CONTINUE** to proceed to the next enrollment task.
+9. On the **Company Access Setup** screen, confirm that the work profile is active. Then select **CONTINUE** to proceed to the next enrollment task.
 
    ![Screenshot of Company Access Setup showing work profile is active.](media/enroll-work-profile-android/work-profile-active-1911.png)
-10. In the Company Portal app, review the list of settings your organization requires. Update the settings on your device if necessary. Tap **RESOLVE** to open the setting on your device. After you're done updating settings, tap **CONFIRM DEVICE SETTINGS**.
+10. In the Company Portal app, review the list of settings your organization requires. Update the settings on your device if necessary. Select **RESOLVE** to open the setting on your device. After you're done updating settings, select **CONFIRM DEVICE SETTINGS**.
 
-![Screenshot of Company Portal's Update device settings screen highlighting the RESOLVE button and CONFIRM DEVICE SETTINGS button.](media/enroll-work-profile-android/confirm-device-settings-work-profile-2307.png)
-
-11. When setup and enrollment are complete, you're sent back to the setup list, where you should see a green checkmark next to each enrollment task. Tap **DONE**.
+    ![Screenshot of Company Portal's Update device settings screen highlighting the RESOLVE button and CONFIRM DEVICE SETTINGS button.](media/enroll-work-profile-android/confirm-device-settings-work-profile-2307.png)
+11. When setup and enrollment are complete, you return to the setup list, where you should see a green checkmark next to each enrollment task. Select **DONE**.
 
     ![Screenshot of Company Portal's Company Access Setup screen, showing completed setup and highlighting Done button.](media/enroll-work-profile-android/work-profile-done-1911.png)
-12. Optionally, when prompted to view suggested work apps in Google Play Store, tap **OPEN**. If you're not ready to install apps, you can do it later by going to the Play Store app in your work profile.
+12. Optionally, when prompted to view suggested work apps in Google Play Store, select **OPEN**. If you're not ready to install apps, you can do it later by going to the Play Store app in your work profile.
 
     ![Screenshot of Company Portal prompt to open badged version of Google Play.](media/enroll-work-profile-android/get-apps-banner-android-2005.png)
 
@@ -81,7 +80,7 @@ Work profiles are supported in [countries and regions where Android Enterprise i
 
 ## Update Google Play services
 
-If the version of Google Play services on your device is outdated, you may be unable to enroll your device. [Open Google Play services](https://play.google.com/store/apps/details?id=com.google.android.gms) on your device to check for available updates. For more information about how to update Android apps, see [Update your Android apps](https://support.google.com/googleplay/answer/113412)(opens Google Support website).
+If the version of Google Play services on your device is outdated, you might be unable to enroll your device. [Open Google Play services](https://play.google.com/store/apps/details?id=com.google.android.gms) on your device to check for available updates. For more information about how to update Android apps, see [Update your Android apps](https://support.google.com/googleplay/answer/113412)(opens Google Support website).
 
 ## Next steps
 
