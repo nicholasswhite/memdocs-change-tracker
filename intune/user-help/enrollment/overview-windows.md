@@ -2,14 +2,13 @@
 title: "About Windows device enrollment with Intune Company Portal"
 description: Describes what happens after you enroll your device in Intune, for Windows.
 ms.date: "2025-09-03T00:00:00Z"
-ms.reviewer: madakeva
-author: iceorbital
+author: maholdaa
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: maholdaa
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

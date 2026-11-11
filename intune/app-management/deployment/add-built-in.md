@@ -12,7 +12,6 @@ cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e2c9f30c-00ec-44c0-846c-b20dbfb3283f
 moniker_range_name: ''
 ms.author: acabello
-ms.reviewer: bryanke
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

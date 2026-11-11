@@ -3,12 +3,12 @@ title: "Automatic Intune enrollment via Microsoft Entra join"
 description: Learn how to join devices to Microsoft Entra ID from OOBE and automatically get them enrolled in Intune.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: nicolezhao-msftdocs
+author: maholdaa
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: nicolezhao
+ms.author: maholdaa
 ms.service: microsoft-intune
 ms.subservice: education
 spProducts:

@@ -2,13 +2,12 @@
 title: "Using Microsoft Tunnel for iOS"
 description: Learn how to connect over VPN using Microsoft Tunnel for iOS.
 ms.date: "2023-11-14T00:00:00Z"
-ms.reviewer: shthilla
-author: iceorbital
+author: OluchiC
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/8b9ae643-2e85-42b8-beb2-eef4bae8c4bc
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: ochukwunyere
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

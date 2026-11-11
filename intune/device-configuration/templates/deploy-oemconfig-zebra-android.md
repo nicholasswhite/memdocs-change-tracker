@@ -3,12 +3,11 @@ title: "Deploy OEMConfig profiles to Zebra devices in Microsoft Intune"
 description: Use Microsoft Intune to create and deploy multiple OEMConfig device configuration profiles on Zebra devices running Android Enterprise. Use Zebra actions and steps to order your profiles.
 ms.date: "2024-06-27T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: akritis
-author: iceorbital
+author: CharlotteChristenson-MSFT
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: cchristenson
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

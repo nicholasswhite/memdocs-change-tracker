@@ -13,7 +13,6 @@ cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 moniker_range_name: ''
 ms.author: jasandys
-ms.reviewer: ahamil, jasandys, wicale
 ms.service: microsoft-intune
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8

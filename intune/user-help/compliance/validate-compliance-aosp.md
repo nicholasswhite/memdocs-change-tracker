@@ -2,12 +2,11 @@
 title: Check compliance in Microsoft Intune app for AOSP
 description: Use the Intune app to confirm that the settings on your device meet your organization's requirements.
 ms.date: "2024-11-07T00:00:00Z"
-ms.reviewer: abigailstein
-author: iceorbital
+author: ilwu-microsoft
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: ilwu
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

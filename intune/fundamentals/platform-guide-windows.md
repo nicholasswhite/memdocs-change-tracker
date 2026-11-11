@@ -1,11 +1,10 @@
 ---
 title: "Deployment guide: Manage devices running Windows"
 description: Use our platform deployment guide to set up Windows device management in Microsoft Intune.
-author: iceorbital
-ms.author: acabello
+author: jasonsandys-microsoft
+ms.author: jasandys
 ms.date: "2024-08-21T00:00:00Z"
 ms.topic: install-set-up-deploy
-ms.reviewer: acabello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d

@@ -1,11 +1,10 @@
 ---
 title: "Step 2 - Add, Configure, and Protect Apps with Intune"
 description: Add, configure, and protect apps with Intune.
-author: iceorbital
-ms.author: acabello
+author: c-demello
+ms.author: cdemello
 ms.date: "2024-04-16T00:00:00Z"
 ms.topic: article
-ms.reviewer: demerson
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''

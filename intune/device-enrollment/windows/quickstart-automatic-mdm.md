@@ -11,7 +11,6 @@ cmProducts:
 moniker_range_name: ''
 ms.author: acabello
 ms.collection: M365-identity-device-management
-ms.reviewer: maholdaa
 ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:

@@ -3,16 +3,15 @@ title: Add App Configuration Policies for Managed iOS/iPadOS Devices
 description: Learn how to use app configuration policies to provide configuration data to an iOS/iPadOS app when it's run.
 ms.date: "2024-11-20T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: bryanke
 ms.collection:
 - M365-identity-device-management
 - iOS/iPadOS
-author: iceorbital
+author: c-demello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: cdemello
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

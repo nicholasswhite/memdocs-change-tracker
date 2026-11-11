@@ -3,13 +3,13 @@ title: "Install mobile threat defense app"
 description: Find out what mobile threat defense apps are and how to set one up to meet work or school requirements.
 ms.date: "2025-01-27T00:00:00Z"
 ms.reviewer: ilwu
-author: iceorbital
+author: ilwu-microsoft
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/8b9ae643-2e85-42b8-beb2-eef4bae8c4bc
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: ilwu
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

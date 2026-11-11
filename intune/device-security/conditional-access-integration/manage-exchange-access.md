@@ -3,17 +3,16 @@ title: "Protect Microsoft 365 Exchange Online without requiring device managemen
 description: Use Microsoft Intune to give employees access to their Microsoft 365 Exchange Online email without setting up a device management system.
 ms.date: "2024-11-07T00:00:00Z"
 ms.topic: archived
-ms.reviewer: demerson
 ms.collection:
 - M365-identity-device-management
 - sub-device-compliance
-author: iceorbital
+author: c-demello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/cf9b82c5-b6dc-45f3-b005-b1bc5fc03bea
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: cdemello
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

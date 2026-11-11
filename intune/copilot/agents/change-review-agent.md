@@ -3,14 +3,13 @@ title: "Change Review Agent overview"
 description: Learn about the Change Review Agent in Microsoft Intune, its prerequisites, and how it works.
 ms.date: "2025-11-10T00:00:00Z"
 ms.topic: overview
-ms.reviewer: zinebtakafi
-author: iceorbital
+author: MikeDano
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/03921bea-3752-4ddc-98c2-5aa70db91565
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/c671beaa-a830-4c9f-aceb-97379ee031ca
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mikedano
 ms.service: microsoft-intune
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/09911d3e-3eb9-4c8d-ab86-ce80d8d36bbd

@@ -3,12 +3,11 @@ title: "Enrollment guide: Enroll Linux desktop devices in Microsoft Intune"
 description: Enroll Linux devices in Intune using the Intune app. Set an overview of the administrator and end user tasks to enroll devices.
 ms.date: "2026-03-31T00:00:00Z"
 ms.topic: article
-ms.reviewer: arnab
-author: iceorbital
+author: arnabbiswas
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: arnab
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

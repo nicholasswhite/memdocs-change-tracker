@@ -3,12 +3,11 @@ title: "Set up Intune enrollment for Android (AOSP) corporate-owned user-associa
 description: Set up Intune for corporate-owned user-associated devices built on the Android Open Source Project (AOSP) platform.
 ms.date: "2025-05-15T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: jieyan
-author: iceorbital
+author: mihughesms
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mihughes
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

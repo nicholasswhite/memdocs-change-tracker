@@ -5,15 +5,14 @@ ms.date: "2026-04-23T00:00:00Z"
 ms.topic: how-to
 ms.custom: ''
 zone_pivot_groups: app-protection-platforms
-author: iceorbital
+author: CharlotteChristenson-MSFT
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 moniker_range_name: ''
-ms.author: acabello
+ms.author: cchristenson
 ms.collection: FocusArea_Apps_AppManagement
-ms.reviewer: samarti
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

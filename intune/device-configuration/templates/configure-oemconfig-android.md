@@ -3,13 +3,12 @@ title: "Use and manage Android Enterprise devices with OEMConfig in Microsoft In
 description: Use Microsoft Intune to manage and use devices running Android Enterprise with OEMConfig. See all the steps, including an overview, see the prerequisites, create the configuration profile in Intune, and see a list of supported OEMConfig apps.
 ms.date: "2026-09-15T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: akritis
 ai-usage: ai-assisted
-author: iceorbital
+author: CharlotteChristenson-MSFT
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: cchristenson
 ms.collection: M365-identity-device-management
 ms.custom: msecd-doc-authoring-1023
 ms.service: microsoft-intune

@@ -3,17 +3,16 @@ title: "Learn about Conditional Access and Intune"
 description: Combine Conditional Access with Intune compliance policies to define the requirements that users and devices must meet before gaining access to your organization's resources.
 ms.date: "2024-04-25T00:00:00Z"
 ms.topic: overview
-author: iceorbital
+author: ilwu-microsoft
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: ilwu
 ms.collection:
 - M365-identity-device-management
 - conditional-access
 - sub-device-compliance
-ms.reviewer: ilwu
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

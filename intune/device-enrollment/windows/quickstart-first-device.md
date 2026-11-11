@@ -4,15 +4,14 @@ description: Learn how to enroll a Windows device into Microsoft Intune. Follow 
 services: microsoft-intune
 ms.date: "2026-01-20T00:00:00Z"
 ms.topic: how-to
-author: iceorbital
+author: maholdaa
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: maholdaa
 ms.collection: M365-identity-device-management
-ms.reviewer: maholdaa
 ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:

@@ -2,13 +2,12 @@
 title: "Check status in Microsoft Intune app for Linux"
 description: Verify work access and resolve compliance issues in the Intune app for Linux.
 ms.date: "2024-10-08T00:00:00Z"
-ms.reviewer: arnab
-author: iceorbital
+author: arnabbiswas
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: arnab
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

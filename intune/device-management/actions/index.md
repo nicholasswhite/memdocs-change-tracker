@@ -11,7 +11,6 @@ moniker_range_name: ''
 ms.author: acabello
 ms.collection: M365-identity-device-management
 ms.custom: msecd-doc-authoring-1023
-ms.reviewer: mattcall
 ms.service: microsoft-intune
 ms.subservice: remote-actions
 spProducts:

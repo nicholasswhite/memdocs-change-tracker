@@ -13,7 +13,6 @@ ms.collection:
 - M365-identity-device-management
 - conditional-access
 - sub-device-compliance
-ms.reviewer: ilwu
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

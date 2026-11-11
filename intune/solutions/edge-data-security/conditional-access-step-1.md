@@ -4,13 +4,12 @@ description: Step 1. Create Microsoft Entra Conditional Access with Microsoft Ed
 ms.date: "2026-01-23T00:00:00Z"
 ms.topic: how-to
 ms.custom: ''
-author: iceorbital
+author: CharlotteChristenson-MSFT
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 moniker_range_name: ''
-ms.author: acabello
+ms.author: cchristenson
 ms.collection: FocusArea_Apps_AppManagement
-ms.reviewer: samarti
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

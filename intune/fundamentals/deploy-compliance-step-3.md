@@ -1,8 +1,8 @@
 ---
 title: "Step 3 – Plan for compliance policies"
 description: Description for configuring compliance policies
-author: iceorbital
-ms.author: acabello
+author: ilwu-microsoft
+ms.author: ilwu
 ms.date: "2023-11-22T00:00:00Z"
 ms.topic: how-to
 cmProducts:

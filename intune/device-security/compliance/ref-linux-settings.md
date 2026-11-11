@@ -3,18 +3,17 @@ title: "Device compliance settings for Linux in Intune"
 description: View the device compliance settings for Linux that you can manage with Microsoft Intune compliance policies.
 ms.date: "2025-08-15T00:00:00Z"
 ms.topic: concept-article
-ms.reviewer: arnab
 ms.collection:
 - M365-identity-device-management
 - compliance
 - highpri
 - highseo
 - sub-device-compliance
-author: ilwu-microsoft
+author: arnabbiswas
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: ilwu
+ms.author: arnab
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

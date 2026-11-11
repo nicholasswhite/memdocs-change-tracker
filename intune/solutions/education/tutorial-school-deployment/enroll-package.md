@@ -3,12 +3,12 @@ title: "Enrollment with provisioning packages"
 description: Learn about how to enroll Windows devices with provisioning packages using SUSPCs and Windows Configuration Designer.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: nicolezhao-msftdocs
+author: maholdaa
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: nicolezhao
+ms.author: maholdaa
 ms.service: microsoft-intune
 ms.subservice: education
 spProducts:

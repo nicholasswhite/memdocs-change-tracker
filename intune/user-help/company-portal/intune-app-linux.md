@@ -2,12 +2,11 @@
 title: Get the Microsoft Intune app for Linux
 description: Describes how to install, update, and remove the Microsoft Intune app for Linux.
 ms.date: "2026-03-31T00:00:00Z"
-ms.reviewer: arnab
-author: iceorbital
+author: arnabbiswas
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: arnab
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

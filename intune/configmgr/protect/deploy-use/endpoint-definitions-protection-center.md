@@ -6,9 +6,9 @@ ms.subservice: protect
 ms.topic: article
 ms.collection: tier3
 ms.service: configuration-manager
-author: iceorbital
+author: MikeDano
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mikedano
 ms.reviewer:
 - brianhun
 - hugowu

@@ -2,13 +2,12 @@
 title: Turn off Microsoft data collection on Windows device
 description: Learn how to turn off Microsoft data collection in the Microsoft Intune and Company Portal apps for Windows.
 ms.date: "2024-10-16T00:00:00Z"
-ms.reviewer: priyar
-author: iceorbital
+author: dagerrit
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: dagerrit
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

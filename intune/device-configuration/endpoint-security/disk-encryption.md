@@ -4,13 +4,13 @@ description: Configure and deploy Microsoft Intune endpoint security policy disk
 ms.date: "2024-09-23T00:00:00Z"
 ms.topic: article
 ms.reviewer: aanavath
-author: iceorbital
+author: aanavath
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/837687b0-8846-4eb2-adb6-2b853e8c70c4
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: aanavath
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

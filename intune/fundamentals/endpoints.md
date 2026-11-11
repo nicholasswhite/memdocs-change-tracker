@@ -35,7 +35,7 @@ To manage devices behind firewalls and proxy servers, you must enable communicat
 > The information in this section also applies to the [Microsoft Intune Certificate Connector](certificates/connector/prerequisites.md). The connector has the same network requirements as managed devices.
 
 - The endpoints in this article allow access to the ports identified in the following tables.
-- For some tasks, Intune requires unauthenticated proxy server access to manage.microsoft.com, \*.azureedge.net, and graph.microsoft.com.
+- For some tasks, Intune requires unauthenticated proxy server access to manage.microsoft.com, and graph.microsoft.com.
 
   > [!NOTE]
   >

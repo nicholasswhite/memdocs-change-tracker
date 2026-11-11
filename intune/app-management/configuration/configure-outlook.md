@@ -3,17 +3,16 @@ title: "Manage Messaging Collaboration Access by Using Outlook for iOS and Andro
 description: Use Intune app protection and configuration policies with Outlook for iOS and Android to ensure team collaboration experiences are always accessed with safeguards in place.
 ms.date: "2025-06-12T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: beflamm
 ms.collection:
 - Android
 - M365-identity-device-management
-author: iceorbital
+author: c-demello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: cdemello
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

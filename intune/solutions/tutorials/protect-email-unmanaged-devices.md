@@ -1,14 +1,13 @@
 ---
 title: "Tutorial: Protect Exchange Online email on unmanaged iOS devices with Microsoft Intune"
 description: Learn how to use Microsoft Intune app protection policies and Conditional Access to prevent unmanaged iOS devices from accessing Exchange Online.
-ms.author: acabello
+ms.author: cdemello
 ms.date: "2025-06-30T00:00:00Z"
 ms.topic: tutorial
-ms.reviewer: demerson
 ms.collection:
 - M365-identity-device-management
 - sub-device-compliance
-author: iceorbital
+author: c-demello
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/3e34b70d-bca0-4369-a01b-71d1edfd427b
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d

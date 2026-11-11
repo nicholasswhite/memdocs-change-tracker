@@ -1,8 +1,8 @@
 ---
 title: "Use TeamViewer to remotely administer Intune devices"
 description: Install the previous TeamViewer connector to remotely administer devices using Microsoft Intune.    
-author: iceorbital
-ms.author: acabello
+author: kara-wang
+ms.author: karawang
 ms.date: "2026-04-07T00:00:00Z"
 ms.topic: how-to
 cmProducts:

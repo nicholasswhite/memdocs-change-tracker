@@ -3,13 +3,12 @@ title: "Identify devices as corporate-owned"
 description: Add corporate identifiers (enrollment method, IMEI, and serial numbers) to Microsoft Intune.
 ms.date: "2025-04-11T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: maholdaa
-author: iceorbital
+author: maholdaa
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: maholdaa
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment
