@@ -3,12 +3,11 @@ title: "Set up user enrollment with Company Portal"
 description: Set up the profile based Apple User Enrollment option for personal devices enrolling in Microsoft Intune.
 ms.date: "2024-12-06T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: rishitasarin
-author: iceorbital
+author: rishitasarin-ms
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: rishitasarin
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

@@ -3,12 +3,11 @@ title: "Use Android Management API for personally owned devices with work profil
 description: Learn about the transition to Android Management API for personally owned work profile devices, including web-based enrollment, migration steps, and what IT admins need to know.
 ms.date: "2026-06-18T00:00:00Z"
 ms.topic: overview
-ms.reviewer: priyar, grwilso
-author: iceorbital
+author: abigail-stein2
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: abigailstein
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

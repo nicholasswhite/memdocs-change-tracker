@@ -2,12 +2,11 @@
 title: "Manually sync Android device with Intune"
 description: Sync a device in the Intune Company Portal app to get the latest updates and policies for work.
 ms.date: "2025-02-06T00:00:00Z"
-ms.reviewer: esmichel
-author: iceorbital
+author: abigail-stein2
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: abigailstein
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

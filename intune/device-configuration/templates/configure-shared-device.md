@@ -3,11 +3,11 @@ title: "Control access, accounts, and power features on shared PC or multi-user 
 description: Add and use Windows 10/11 and Windows Holographic for Business devices that are shared, or used by multiple users in Microsoft Intune. See a list of all the settings and what they do on the devices, including Microsoft HoloLens. Control guest accounts, manage accounts and delete inactive accounts, allow or prevent saving to local storage, set power and sleep options, choose when updates are installed, and use devices in education environments in a device configuration profile.
 ms.date: "2024-04-22T00:00:00Z"
 ms.topic: how-to
-author: iceorbital
+author: MayurJadhav1802
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mayurjadhav
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

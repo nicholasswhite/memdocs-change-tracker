@@ -3,12 +3,11 @@ title: "Set up just-in-time registration in Microsoft Intune"
 description: Set up JIT registration in Intune for devices enrolling via a supported Apple device enrollment or user enrollment method.
 ms.date: "2024-07-22T00:00:00Z"
 ms.topic: install-set-up-deploy
-ms.reviewer: rishitasarin
-author: iceorbital
+author: AnyaNovicheva1
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: annovich
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

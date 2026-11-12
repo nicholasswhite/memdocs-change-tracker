@@ -3,13 +3,12 @@ title: "Upgrade Windows editions or switch out of S mode on devices using Micros
 description: Use Microsoft Intune to upgrade Windows 10/11 client devices to a different edition, or switch S mode. Administrators can use a device configuration profile to upgrade Windows client Professional to Windows client Enterprise, and switch out of S mode. See the supported upgrade paths for Windows 10/11 Pro, N Edition, Education, Cloud, Enterprise, Core, and Holographic.
 ms.date: "2024-04-22T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: mikedano
-author: iceorbital
+author: MayurJadhav1802
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mayurjadhav
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

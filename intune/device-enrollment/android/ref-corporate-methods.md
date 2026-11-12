@@ -3,12 +3,11 @@ title: "Enroll your Android Enterprise dedicated, fully managed, or corporate-ow
 description: Learn how to enroll Android Enterprise dedicated, fully managed, or corporate-owned work profile devices in Intune.
 ms.date: "2026-10-02T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: grwilson
-author: iceorbital
+author: AnyaNovicheva1
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: annovich
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

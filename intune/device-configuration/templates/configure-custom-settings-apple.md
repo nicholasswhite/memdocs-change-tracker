@@ -3,13 +3,12 @@ title: "Use custom settings for Apple devices in Microsoft Intune"
 description: Export iOS, iPadOS, and macOS settings from Apple Configurator or Apple Profile Manager tools, and then import these settings into Microsoft Intune. These settings can create, use, and control custom settings and features on iOS, iPadOS, and macOS devices. This custom profile can then be assigned or distributed to iOS, iPadOS, and macOS devices in your organization to create a baseline or standard.
 ms.date: "2026-02-09T00:00:00Z"
 ms.topic: article
-ms.reviewer: beflamm
 zone_pivot_groups: platforms-apple
-author: iceorbital
+author: MayurJadhav1802
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mayurjadhav
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

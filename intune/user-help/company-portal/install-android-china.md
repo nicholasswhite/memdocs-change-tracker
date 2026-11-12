@@ -2,12 +2,11 @@
 title: "Install Company Portal app in People's Republic of China"
 description: Lists the app stores where you can install Company Portal in the People's Republic of China.
 ms.date: "2024-07-01T00:00:00Z"
-ms.reviewer: jeyang
-author: iceorbital
+author: abigail-stein2
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: abigailstein
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

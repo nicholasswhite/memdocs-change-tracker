@@ -2,13 +2,12 @@
 title: "Android device enrollment overview"
 description: Learn about device enrollment for Android devices, including the benefits and why workplaces and schools require it.
 ms.date: "2025-09-03T00:00:00Z"
-ms.reviewer: esmich
-author: iceorbital
+author: AnyaNovicheva1
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: annovich
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

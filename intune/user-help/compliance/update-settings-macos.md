@@ -2,13 +2,12 @@
 title: "Company Portal device setting requirements for Macs"
 description: Learn more about Intune Company Portal device setting requirements for Macs.
 ms.date: "2024-03-04T00:00:00Z"
-ms.reviewer: esmich
-author: iceorbital
+author: rishitasarin-ms
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: rishitasarin
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

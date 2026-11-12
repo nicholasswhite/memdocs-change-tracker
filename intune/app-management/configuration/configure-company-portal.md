@@ -4,16 +4,15 @@ description: Learn how you can configure the Intune Company Portal apps, Company
 ms.date: "2025-10-02T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.reviewer: abstarr
 ms.collection:
 - FocusArea_Apps_SpecificApp
 - M365-identity-device-management
-author: iceorbital
+author: rishitasarin-ms
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: rishitasarin
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

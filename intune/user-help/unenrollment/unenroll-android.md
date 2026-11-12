@@ -2,13 +2,12 @@
 title: "Remove device from Company Portal for Android"
 description: Learn how to remove a device from Company Portal for Android and uninstall the Company Portal app.
 ms.date: "2024-07-01T00:00:00Z"
-ms.reviewer: esalter
-author: iceorbital
+author: abigail-stein2
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: abigailstein
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

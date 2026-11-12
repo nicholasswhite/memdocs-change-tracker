@@ -3,14 +3,13 @@ title: View enrollment reports
 description: Monitor and troubleshoot issues with enrollment restrictions and enrollment status page assignments.
 ms.date: "2025-10-20T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: maholdaa
-author: iceorbital
+author: AnyaNovicheva1
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: annovich
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

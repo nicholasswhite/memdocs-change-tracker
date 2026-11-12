@@ -6,10 +6,9 @@ ms.topic: how-to
 
 
 ROBOTS: ''
-ms.reviewer: damionw
-author: iceorbital
+author: AnyaNovicheva1
 moniker_range_name: ''
-ms.author: acabello
+ms.author: annovich
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

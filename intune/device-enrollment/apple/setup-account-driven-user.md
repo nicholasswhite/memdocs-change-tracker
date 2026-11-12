@@ -4,12 +4,11 @@ description: Set up account driven Apple User Enrollment for personal devices en
   enrollment by signing in to their work account.
 ms.date: '2026-10-27T00:00:00Z'
 ms.topic: how-to
-ms.reviewer: rishitasarin
-author: iceorbital
+author: rishitasarin-ms
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: rishitasarin
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

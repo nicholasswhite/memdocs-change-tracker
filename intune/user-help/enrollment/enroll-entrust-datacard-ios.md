@@ -3,13 +3,12 @@ title: "Set up iOS or iPadOS device with Company Portal and Entrust"
 description: Set up an Entrust derived credential on your iPhone or iPad with Intune Company Portal. Learn how to use your
   smart card to access work resources on mobile.
 ms.date: '2026-11-03T00:00:00Z'
-ms.reviewer: tisilver
-author: iceorbital
+author: rishitasarin-ms
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: rishitasarin
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

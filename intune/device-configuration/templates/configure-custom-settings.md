@@ -3,12 +3,11 @@ title: "Create a profile with custom settings in Intune"
 description: Add or create a profile to use custom settings for Windows 10/11 client, Android device administrator, Android Enterprise, macOS, and iOS/iPadOS devices using Microsoft Intune.
 ms.date: "2026-02-05T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: mikedano
-author: iceorbital
+author: MayurJadhav1802
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mayurjadhav
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

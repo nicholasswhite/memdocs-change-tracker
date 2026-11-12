@@ -3,12 +3,11 @@ title: "Configure device restriction settings in Microsoft Intune"
 description: Add a device configuration profile to restrict features on Android device administrator, Android Enterprise, AOSP, macOS, iOS, iPadOS, and Windows 10/11 client devices in Microsoft Intune.
 ms.date: "2025-10-14T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: mikedano
-author: iceorbital
+author: MayurJadhav1802
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mayurjadhav
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

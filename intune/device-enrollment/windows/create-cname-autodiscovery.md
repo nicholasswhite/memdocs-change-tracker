@@ -3,12 +3,12 @@ title: "Enable auto-discovery of Intune enrollment server"
 description: Simplify enrollment for users by enabling automatic discovery of the Intune enrollment server.
 ms.date: "2025-11-21T00:00:00Z"
 ms.topic: how-to
-author: iceorbital
+author: AnyaNovicheva1
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: annovich
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

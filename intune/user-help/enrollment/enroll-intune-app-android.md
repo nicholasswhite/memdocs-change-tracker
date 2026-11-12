@@ -2,12 +2,11 @@
 title: "Enroll your corporate device with the Microsoft Intune app"
 description: Describes how to enroll a corporate Android device in Intune
 ms.date: "2024-11-07T00:00:00Z"
-ms.reviewer: esmich
-author: iceorbital
+author: AnyaNovicheva1
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: annovich
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

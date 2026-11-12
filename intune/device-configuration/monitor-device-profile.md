@@ -4,16 +4,15 @@ description: See and manage the device configuration policy details in Microsoft
 ms.date: "2026-04-16T00:00:00Z"
 ms.update-cycle: 180-days
 ms.topic: how-to
-ms.reviewer: laarrizz
 ms.collection:
 - M365-identity-device-management
 - msec-ai-copilot
-author: iceorbital
+author: MayurJadhav1802
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/46e3c7c4-fe77-4a6e-b40a-44c569819fa5
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mayurjadhav
 ms.service: microsoft-intune
 ms.subservice: configuration
 spProducts:

@@ -4,15 +4,14 @@ description: Common questions, answers, and scenarios with device policies and p
 ms.date: "2026-05-19T00:00:00Z"
 ms.update-cycle: 180-days
 ms.topic: troubleshooting
-ms.reviewer: ''
 ms.collection:
 - M365-identity-device-management
 - msec-ai-copilot
-author: iceorbital
+author: MayurJadhav1802
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: mayurjadhav
 ms.service: microsoft-intune
 ms.subservice: configuration
 spProducts:

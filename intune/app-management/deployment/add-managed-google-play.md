@@ -3,18 +3,17 @@ title: "Add Managed Google Play Apps to Android Enterprise Devices With Intune"
 description: Understand how to synchronize and assign apps to Android Enterprise devices from the Managed Google Play store.
 ms.date: "2026-04-23T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: ilwu
 ai-usage: ai-assisted
 ms.collection:
 - Android
 - FocusArea_Apps_Add
 - M365-identity-device-management
 ms.custom: intune-classic
-author: iceorbital
+author: abigail-stein2
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: abigailstein
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:
