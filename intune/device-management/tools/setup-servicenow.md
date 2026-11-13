@@ -5,7 +5,6 @@ author: iceorbital
 ms.author: acabello
 ms.date: "2025-02-27T00:00:00Z"
 ms.topic: troubleshooting
-ms.reviewer: Dave Randall
 ms.subservice: suite
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

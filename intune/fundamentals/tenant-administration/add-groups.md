@@ -3,13 +3,12 @@ title: "Use groups to organize users and devices for Microsoft Intune"
 description: Create Microsoft Entra groups to organize users and devices for use with Microsoft Intune.
 ms.date: "2026-05-19T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: mattcall
-author: iceorbital
+author: wicale
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: fundamentals

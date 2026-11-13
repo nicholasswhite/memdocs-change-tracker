@@ -3,7 +3,6 @@ title: "Service information for Microsoft Intune release updates"
 description: Learn more about the frequency of the Microsoft Intune service updates, the release cadence, and how to check your tenant release version.
 ms.date: "2025-04-10T00:00:00Z"
 ms.topic: overview
-ms.reviewer: acabello
 author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

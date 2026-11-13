@@ -3,15 +3,14 @@ title: "Set up automated device enrollment for macOS"
 description: Learn how to enroll corporate-owned Macs into Microsoft Intune with Apple Automated Device Enrollment (ADE).
 ms.date: '2026-10-28T00:00:00Z'
 ms.topic: how-to
-ms.reviewer: beflamm
 ai-usage: ai-assisted
-author: iceorbital
+author: iye-ms
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/837687b0-8846-4eb2-adb6-2b853e8c70c4
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: iye
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

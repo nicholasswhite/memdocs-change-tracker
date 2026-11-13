@@ -12,7 +12,6 @@ ms.collection:
 - M365-identity-device-management
 - certificates
 - sub-certificates
-ms.reviewer: wicale
 ms.service: microsoft-intune
 ms.subservice: fundamentals
 spProducts:

@@ -6,11 +6,11 @@ ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
 - iOS/iPadOS
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

@@ -3,13 +3,12 @@ title: "Add and use Wi-Fi settings on your devices in Microsoft Intune"
 description: See the steps to create a Wi-Fi device configuration profile in Microsoft Intune. Create profiles for Android device administrator, Android Enterprise, Android kiosk, iOS, iPadOS, macOS, Windows 10/11, and Windows Holographic for Business. Use these profiles to create a WiFi connection to use certificates, choose an EAP type, select an authentication method, enable a proxy, and more.
 ms.date: "2024-07-22T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: abalwan
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

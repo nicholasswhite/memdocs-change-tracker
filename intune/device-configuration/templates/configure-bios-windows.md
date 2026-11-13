@@ -3,12 +3,11 @@ title: "Use BIOS configuration profiles on Windows devices in Microsoft Intune"
 description: Learn more about the BIOS configuration profile that can manage traditional BIOS settings in Microsoft Intune. You use an OEM tool to create a configuration file with the settings. You deploy an OEM Win32 app to the devices to read the configuration file and BIOS passwords. Then, you create a BIOS configuration policy in Intune to add the configuration file and assign the policy to your devices.
 ms.date: "2024-06-06T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: madakeva
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: madakeva
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

@@ -3,8 +3,6 @@ title: "Manage security baseline profiles in Microsoft Intune"
 description: Deploy security baselines that establish a default and recommended security postures on Windows devices you manage with Microsoft Intune.
 ms.date: "2025-06-02T00:00:00Z"
 ms.topic: concept-article
-ms.reviewer: aanavath
-  - intune-azure
 ms.collection:
 - ContentEnagagementFY24
 - M365-identity-device-management

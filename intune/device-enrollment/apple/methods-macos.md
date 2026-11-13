@@ -3,12 +3,11 @@ title: "Set up enrollment for macOS devices in Intune"
 description: Set up enrollment for macOS devices in Intune.
 ms.date: "2024-05-15T00:00:00Z"
 ms.topic: overview
-ms.reviewer: beflamm
-author: iceorbital
+author: iye-ms
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: iye
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

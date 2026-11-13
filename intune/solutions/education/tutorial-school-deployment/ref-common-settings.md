@@ -4,8 +4,8 @@ description: Learn about common configuration used by Education organizations in
 #zone_pivot_groups: platforms-windows-ios
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: yegor-a
-ms.author: egorabr
+author: nicolezhao-msftdocs
+ms.author: nicolezhao
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''

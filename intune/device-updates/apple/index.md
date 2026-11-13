@@ -3,12 +3,11 @@ title: "Configure update policies for Apple devices"
 description: Learn how to configure software update policies for Apple devices using Apple's Declarative Device Management (DDM) model. Improve security, reduce user disruption, and ensure compliance with reliable, automated updates across your organization.
 ms.date: "2026-02-24T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: beflamm
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

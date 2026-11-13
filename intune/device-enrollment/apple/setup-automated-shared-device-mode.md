@@ -3,13 +3,13 @@ title: "Set up enrollment for devices in shared device mode"
 description: Learn how to set up Apple automated device enrollment for iOS/iPadOS devices in shared device mode, a feature of Microsoft Entra.
 ms.date: "2023-11-15T00:00:00Z"
 ms.topic: how-to
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/68cb9039-df60-49b0-8ef8-89ad96497f63
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

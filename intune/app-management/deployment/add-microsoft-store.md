@@ -4,13 +4,13 @@ description: Learn about adding Microsoft Store apps to Microsoft Intune.
 ms.date: "2026-06-25T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
-author: iceorbital
+author: nicolezhao-msftdocs
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/caec7b7f-4941-4578-b79f-c63b1c1f5af4
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/12ed19f9-ebdf-4c8a-8bcd-7a681836774d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: nicolezhao
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

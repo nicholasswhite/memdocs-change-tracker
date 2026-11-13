@@ -4,12 +4,12 @@ description: Learn about automated device enrollment (ADE) for Apple mobile devi
 ms.date: '2026-10-28T00:00:00Z'
 ms.topic: concept-article
 ai-usage: ai-assisted
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/837687b0-8846-4eb2-adb6-2b853e8c70c4
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

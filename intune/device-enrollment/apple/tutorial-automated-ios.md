@@ -5,11 +5,11 @@ description: In this tutorial, you set up Apple corporate device enrollment feat
 ms.date: '2026-10-28T00:00:00Z'
 ms.topic: tutorial
 Customer intent: As an Intune admin, I want to set up automated device enrollment for iOS/iPadOS devices I purchased through Apple Business.
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: enrollment

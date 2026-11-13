@@ -3,15 +3,14 @@ title: "Single sign-on (SSO) overview and options for Apple devices in Microsoft
 description: Overview of Microsoft Enterprise SSO plug-in in Microsoft Intune, Jamf Pro, and other MDM solution providers. The Enterprise SSO plug-in is available on iOS/iPadOS and macOS devices.
 ms.date: "2026-02-10T00:00:00Z"
 ms.topic: overview
-ms.reviewer: beflamm, arnab
 zone_pivot_groups: apple-enterprise-sso
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/1433a524-c01f-4b87-beab-670c040dea4f
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

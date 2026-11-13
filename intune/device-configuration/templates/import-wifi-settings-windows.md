@@ -3,13 +3,12 @@ title: "Import Wi-Fi settings for Windows devices in Intune"
 description: Export Wi-Fi settings from a Windows device as an XML file using the network shell (netsh wlan) command. Then, import this file in Intune to create a Wi-Fi profile for devices running Windows 10/11 and Windows Holographic for Business.
 ms.date: "2024-07-22T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: abalwan
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

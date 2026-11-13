@@ -3,7 +3,6 @@ title: Create device platform restrictions
 description: Restrict personally owned devices, and specific device platforms and OS versions from enrolling in Intune.
 ms.date: "2024-07-01T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: maholdaa
 author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8

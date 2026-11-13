@@ -8,13 +8,12 @@ ms.collection: essentials-get-started
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 10</a>
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 moniker_range_name: ''
-ms.author: acabello
-ms.reviewer: madakeva
+ms.author: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
 ms.suite: ems

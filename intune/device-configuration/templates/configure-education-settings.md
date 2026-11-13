@@ -1,11 +1,10 @@
 ---
 title: "Use the Take a Test app on Windows devices in Microsoft Intune"
 description: Use the Take a Test app in a device configuration profile on Windows devices in Microsoft Intune. Create a configuration profile using the Education settings, and enter a test app URL, choose how users sign-in, monitor the screen during the test, and allow or prevent text suggestions during the test.
-author: iceorbital
-ms.author: acabello
+author: nicolezhao-msftdocs
+ms.author: nicolezhao
 ms.date: "2026-06-22T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: heenamac
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

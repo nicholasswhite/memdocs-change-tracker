@@ -13,7 +13,6 @@ ms.author: acabello
 ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints
-ms.reviewer: aanavath
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

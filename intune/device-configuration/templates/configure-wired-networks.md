@@ -3,13 +3,12 @@ title: "Add and use wired networks settings on your devices in Microsoft Intune"
 description: Create or add a wired network device configuration profile or policy using the IEEE 802.1X standard for macOS, iOS/iPadOS, Windows 10, and Windows 11 devices and computers. See the different settings, add certificates, choose an EAP type, and select an authentication method in Microsoft Intune.
 ms.date: "2026-06-04T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: wicale
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

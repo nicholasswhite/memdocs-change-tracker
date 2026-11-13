@@ -3,13 +3,12 @@ title: "Work or school apps for iOS"
 description: Get work or school apps on your iPhone or iPad. Find out how to install managed apps, identify protected apps,
   and request new ones through Company Portal.
 ms.date: '2026-11-03T00:00:00Z'
-ms.reviewer: amanh
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

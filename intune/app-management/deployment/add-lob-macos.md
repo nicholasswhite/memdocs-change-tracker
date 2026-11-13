@@ -4,16 +4,15 @@ description: Learn about how to add macOS line-of-business (LOB) apps to Microso
 ms.date: "2026-04-14T00:00:00Z"
 ms.topic: how-to
 ai-usage: ai-assisted
-ms.reviewer: arnab
 ms.collection:
 - FocusArea_Apps_LOB
 - M365-identity-device-management
 - macOS
-author: iceorbital
+author: iye-ms
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: iye
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

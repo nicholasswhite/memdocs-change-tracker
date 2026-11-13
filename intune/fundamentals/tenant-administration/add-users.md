@@ -3,7 +3,6 @@ title: "Add and manage users for Microsoft Intune"
 description: Learn how to add and managing Microsoft Entra user accounts from within Microsoft Intune.
 ms.date: "2025-03-04T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: mattcall
 author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8

@@ -3,14 +3,13 @@ title: "Create and assign device categories in Microsoft Intune"
 description: "Create device categories in Microsoft Intune, use them to populate dynamic Microsoft Entra security groups, and assign a category to a device."
 ms.date: "2026-07-05T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: mattcall
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/68cb9039-df60-49b0-8ef8-89ad96497f63
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/57eae307-c3a1-4cac-b645-1a899934bac8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 spProducts:

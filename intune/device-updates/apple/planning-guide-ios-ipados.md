@@ -3,12 +3,11 @@ title: "Software updates planning guide and scenarios for supervised iOS/iPadOS 
 description: Guidance and advice for administrators that create and manage software updated for iOS/iPadOS devices using Microsoft Intune. See sample policy for different industry scenarios, including shared devices, kiosk, manufacturing, and information worker.
 ms.date: "2025-07-24T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: beflamm, ahamil, rogerso
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

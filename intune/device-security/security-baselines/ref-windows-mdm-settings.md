@@ -14,7 +14,6 @@ ms.collection:
 - M365-identity-device-management
 - sub-secure-endpoints
 ms.custom: msecd-doc-authoring-1030
-ms.reviewer: aanavath
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

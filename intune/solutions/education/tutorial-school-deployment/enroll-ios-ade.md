@@ -3,11 +3,11 @@ title: "Enroll devices with Automated Device Enrollment"
 description: Learn how to automatically enroll devices through Apple School Manager with Automated Device Enrollment during Setup Assistant on iOS/iPadOS devices.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: nicolezhao-msftdocs
+author: beflamm
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: nicolezhao
+ms.author: beflamm
 ms.service: microsoft-intune
 ms.subservice: education
 spProducts:

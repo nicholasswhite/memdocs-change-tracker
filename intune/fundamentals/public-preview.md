@@ -3,7 +3,6 @@ title: "Public preview in Microsoft Intune"
 description: Learn about public preview features in Microsoft Intune, and see an example. See a list of limitations, restrictions, and more in the Microsoft Intune admin center.
 ms.date: "2025-02-20T00:00:00Z"
 ms.topic: concept-article
-ms.reviewer: scottduf
 author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

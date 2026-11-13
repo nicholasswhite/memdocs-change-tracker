@@ -2,12 +2,11 @@
 title: "What happens if you install the Company Portal app and enroll your macOS device in Intune?"
 description: What happens if you install the Company Portal app and enroll your macOS device in Intune.
 ms.date: "2024-11-09T00:00:00Z"
-ms.reviewer: esmich
-author: iceorbital
+author: iye-ms
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: iye
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

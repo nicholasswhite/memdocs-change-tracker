@@ -8,13 +8,12 @@ ms.collection:
   - m365initiative-coredeploy
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/07bb3e10-d135-43ff-bc8b-360497cb39fa
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 moniker_range_name: ''
-ms.author: acabello
-ms.reviewer: madakeva
+ms.author: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
 ms.suite: ems

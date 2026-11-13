@@ -2,13 +2,12 @@
 title: "Report a problem in Company Portal for Windows"
 description: Share app diagnostics with your support person to diagnose a problem with the Company Portal app for Windows.
 ms.date: "2025-12-02T00:00:00Z"
-ms.reviewer: scottduf
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: madakeva
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

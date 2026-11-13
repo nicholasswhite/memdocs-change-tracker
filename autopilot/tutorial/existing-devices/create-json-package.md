@@ -6,13 +6,12 @@ ms.topic: tutorial
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 10</a>
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 moniker_range_name: ''
-ms.author: acabello
-ms.reviewer: madakeva
+ms.author: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
 ms.suite: ems

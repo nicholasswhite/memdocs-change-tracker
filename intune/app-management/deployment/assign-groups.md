@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.collection:
 - FocusArea_Apps_Deploy
 - M365-identity-device-management
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/aebdc4a3-c54b-4eea-94e3-663d5e166f57
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

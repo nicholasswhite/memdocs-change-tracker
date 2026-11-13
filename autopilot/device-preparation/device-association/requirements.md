@@ -1,18 +1,17 @@
 ---
 title: Requirements for Windows Autopilot device association
-description: Software, networking, licensing, and RBAC requirements for Windows Autopilot device association.
-ms.date: "2026-08-25T00:00:00Z"
+description: Software, hardware, networking, licensing, and RBAC requirements for Windows Autopilot device association.
+ms.date: '2026-10-01T00:00:00Z'
 ms.collection: M365-modern-desktop
 ms.topic: article
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/windows/release-health/supported-versions-windows-client" target="_blank">Windows 11</a>
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/19ec6774-09b8-473e-a17e-b17b518bbad7
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 moniker_range_name: ''
-ms.author: acabello
-ms.reviewer: madakeva
+ms.author: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
 ms.suite: ems
@@ -23,9 +22,10 @@ spProducts:
 
 # Requirements for Windows Autopilot device association
 
-The list of requirements for Windows Autopilot device association is organized into four categories:
+The list of requirements for Windows Autopilot device association is organized into five categories:
 
 - **Software** - OS requirements.
+- **Hardware** - Physical device and Trusted Platform Module (TPM) requirements.
 - **Networking** - Networking requirements.
 - **Licensing** - Licensing requirements.
 - **RBAC** - RBAC permissions required for Windows Autopilot device association.
@@ -33,6 +33,7 @@ The list of requirements for Windows Autopilot device association is organized i
 Select the appropriate tab to see the relevant requirements:
 
 - [![](../../images/icons/software-18.svg) **Software**](#tabpanel_1_software)
+- [![](../../images/icons/configuration-18.svg) **Hardware**](#tabpanel_1_hardware)
 - [![](../../images/icons/wifi-ethernet-18.svg) **Networking**](#tabpanel_1_networking)
 - [![](../../images/icons/license-18.svg) **Licensing**](#tabpanel_1_licensing)
 - [![](../../images/icons/permissions-18.svg) **RBAC**](#tabpanel_1_rbac)
@@ -42,10 +43,6 @@ Select the appropriate tab to see the relevant requirements:
 
 
 ### Software requirements
-
-> [!IMPORTANT]
->
-> Device association requires a **physical device**. Virtual machines aren't supported.
 
 #### Windows 11
 
@@ -61,9 +58,26 @@ The following editions are supported:
 - Windows 11 Education.
 - [Windows 11 Enterprise LTSC](https://learn.microsoft.com/en-us/windows/whats-new/ltsc/overview).
 
+<a id="tabpanel_1_hardware"></a>
+
+
+
+### Hardware requirements
+
+> [!IMPORTANT]
+>
+> Device association requires a **physical device**. Virtual machines aren't supported.
+
 #### Trusted Platform Module (TPM)
 
-Device association requires a **physical device**—virtual machines aren't supported. Each device must have **TPM 2.0**, enabled and in a good state. The TPM shouldn't be in **Reduced Functionality Mode**. TPM attestation is enforced during association: device association uses the TPM to attest the device's identity before enrollment.
+TPM attestation is enforced during association: device association uses the TPM to attest the device's identity before enrollment.
+
+TPM requirements:
+
+- Each device must have TPM 2.0, enabled and in a good state.
+- The TPM shouldn't be in Reduced Functionality Mode.
+- TPM must be [FIPS 186-3](https://csrc.nist.gov/publications/fips) or newer compliant.
+- TPM must support [TLS 1.3](https://www.rfc-editor.org/rfc/rfc9846#section-4.3.3).
 
 <a id="tabpanel_1_networking"></a>
 

@@ -2,13 +2,12 @@
 title: "Check status on Intune Company Portal website"
 description: Check device status to verify whether or not your device has access to work resources.
 ms.date: "2024-11-08T00:00:00Z"
-ms.reviewer: ''
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: madakeva
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

@@ -3,14 +3,13 @@ title: "Create VPN profiles to connect to VPN servers in Intune"
 description: On Android device administrator, Android Enterprise, iOS, iPadOS, macOS, and Windows devices, use built-in settings to create virtual private network (VPN) connections in Microsoft Intune.
 ms.date: "2026-06-18T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: wicale
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

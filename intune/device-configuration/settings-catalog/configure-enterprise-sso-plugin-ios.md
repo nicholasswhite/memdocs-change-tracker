@@ -3,14 +3,13 @@ title: "Use the Microsoft Enterprise SSO plug-in on iOS/iPadOS devices"
 description: Learn more about the Microsoft Enterprise single sign-on (SSO) plug-in. Add or create an iOS or iPadOS device configuration profile using the Microsoft Enterprise SSO plug-in app extension in Microsoft Intune, Jamf Pro, and other MDM solution providers.
 ms.date: "2025-07-14T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: miepping, tbc, alessanc
-author: iceorbital
+author: beflamm
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5686b492-7c45-4088-8291-ecc0458747d3
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5f286262-a4cb-47f4-92d3-dc24f172492b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: beflamm
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

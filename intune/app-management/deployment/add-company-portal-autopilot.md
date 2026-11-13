@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.collection:
 - M365-identity-device-management
 - Windows
-author: iceorbital
+author: nicolezhao-msftdocs
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: nicolezhao
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

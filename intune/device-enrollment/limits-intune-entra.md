@@ -3,7 +3,6 @@ title: Understand Intune and Microsoft Entra device limit restrictions
 description: Learn the differences between Intune device limit restrictions and Microsoft Entra device limit restrictions.
 ms.date: "2024-10-14T00:00:00Z"
 ms.topic: concept-article
-ms.reviewer: maholdaa
 author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8

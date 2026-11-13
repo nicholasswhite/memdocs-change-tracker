@@ -2,13 +2,12 @@
 title: "Set up iOS or iPadOS device with Company Portal and Intercede"
 description: Learn how to enroll an iOS or iPadOS device and set up derived credential authentication with Intercede.
 ms.date: "2019-10-31T00:00:00Z"
-ms.reviewer: tisilver
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

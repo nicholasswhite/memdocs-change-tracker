@@ -3,15 +3,14 @@ title: "Windows Enterprise multi-session remote desktops"
 description: Guidelines for using Azure Virtual Desktop multi-session with Microsoft Intune
 ms.date: "2025-02-13T00:00:00Z"
 ms.topic: article
-ms.reviewer: madakeva
 ms.collection: M365-identity-device-management
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7814ca69-56be-4667-8a46-86327796c328
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: madakeva
 ms.service: microsoft-intune
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8

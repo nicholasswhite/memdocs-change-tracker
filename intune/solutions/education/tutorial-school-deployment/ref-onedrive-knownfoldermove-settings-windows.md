@@ -3,8 +3,8 @@ title: "OneDrive Known Folder Move"
 description: Learn about common OneDrive Known Folder Move configuration used by Education organizations in Intune.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: yegor-a
-ms.author: egorabr
+author: iceorbital
+ms.author: acabello
 ms.collection: graph-interactive
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/7428317a-e6c2-4461-ad3e-8a8ad3608734

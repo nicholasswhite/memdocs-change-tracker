@@ -3,7 +3,6 @@ title: "Migration guide: Set up or move to Microsoft Intune"
 description: Deployment guide to set up, onboard, or move to Intune. These steps include moving from partner MDM providers, using co-management, moving from on-premises group policy, and moving from Office 365 device management.
 ms.date: "2025-12-15T00:00:00Z"
 ms.topic: upgrade-and-migration-article
-ms.reviewer: jamiesil
 author: iceorbital
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1

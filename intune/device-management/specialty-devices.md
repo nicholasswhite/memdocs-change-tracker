@@ -5,7 +5,6 @@ author: iceorbital
 ms.author: acabello
 ms.date: "2026-05-12T00:00:00Z"
 ms.topic: article
-ms.reviewer: priyar
 ms.subservice: suite
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

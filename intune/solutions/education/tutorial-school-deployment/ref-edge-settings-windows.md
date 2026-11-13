@@ -3,8 +3,8 @@ title: "Microsoft Edge"
 description: Learn about common Microsoft Edge configuration used by Education organizations in Intune.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: yegor-a
-ms.author: egorabr
+author: nicolezhao-msftdocs
+ms.author: nicolezhao
 ms.collection: graph-interactive
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c

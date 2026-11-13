@@ -3,8 +3,8 @@ title: "Start menu customization"
 description: Learn about common Start menu configuration used by Education organizations in Intune.
 ms.date: "2024-05-02T00:00:00Z"
 ms.topic: tutorial
-author: yegor-a
-ms.author: egorabr
+author: nicolezhao-msftdocs
+ms.author: nicolezhao
 ms.collection: graph-interactive
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8

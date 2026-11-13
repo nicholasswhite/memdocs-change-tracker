@@ -3,14 +3,13 @@ title: "Use Device Firmware Configuration Interface (DFCI) profiles on Windows d
 description: Learn more about the Device Firmware Configuration Interface (DFCI) profile to manage UEFI settings in Microsoft Intune. To use DFCI profiles, create Microsoft Entra security groups, the Windows Autopilot deployment profile, and the Enrollment State Page profile.
 ms.date: "2026-06-23T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: madakeva
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4b132a0c-342a-42eb-91ff-8159e1ed413d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: madakeva
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

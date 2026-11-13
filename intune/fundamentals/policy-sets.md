@@ -5,7 +5,6 @@ author: iceorbital
 ms.author: acabello
 ms.date: "2024-04-10T00:00:00Z"
 ms.topic: article
-ms.reviewer: DaGerrit
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/80beb97b-18aa-44f8-9420-8f2a4cd448eb
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

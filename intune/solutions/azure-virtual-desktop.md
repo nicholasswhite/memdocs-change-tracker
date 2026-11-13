@@ -3,7 +3,6 @@ title: "Using Azure Virtual Desktop with Intune"
 description: Guidelines for using Azure Virtual Desktop single-session with Microsoft Intune.
 ms.date: "2025-10-14T00:00:00Z"
 ms.topic: article
-ms.reviewer: madakeva
 ms.collection: M365-identity-device-management
 author: iceorbital
 cmProducts:

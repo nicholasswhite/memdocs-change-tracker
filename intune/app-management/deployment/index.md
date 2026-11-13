@@ -7,11 +7,11 @@ ai-usage: ai-assisted
 ms.collection:
 - FocusArea_Apps_Add
 - M365-identity-device-management
-author: iceorbital
+author: nicolezhao-msftdocs
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: nicolezhao
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

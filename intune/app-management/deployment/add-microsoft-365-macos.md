@@ -3,17 +3,16 @@ title: "Assign Microsoft 365 to macOS Devices With Microsoft Intune"
 description: Learn how you can use Microsoft Intune to install Microsoft 365 apps on macOS devices.
 ms.date: "2025-10-02T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: arnab
 ms.collection:
 - M365-identity-device-management
 - macOS
-author: iceorbital
+author: iye-ms
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/e93f3d5f-c77d-4365-a7fb-c9f2234416c7
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/e2c9f30c-00ec-44c0-846c-b20dbfb3283f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: iye
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

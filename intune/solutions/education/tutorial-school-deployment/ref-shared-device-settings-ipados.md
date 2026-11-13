@@ -3,8 +3,8 @@ title: "iPads with no user affinity"
 description: Learn about common iPads with no user affinity configuration used by Education organizations in Intune.
 ms.date: "2024-10-16T00:00:00Z"
 ms.topic: tutorial
-author: yegor-a
-ms.author: egorabr
+author: nicolezhao-msftdocs
+ms.author: nicolezhao
 ms.collection: graph-interactive
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

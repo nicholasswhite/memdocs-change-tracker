@@ -6,12 +6,12 @@ ms.subservice: core-infra
 ms.topic: troubleshooting
 ms.collection: tier3
 ms.service: configuration-manager
-author: iceorbital
+author: nicolezhao-msftdocs
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/540ac133-a371-4dbb-8f94-28d6cc77a70b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/4c50f262-d533-4ba4-9d4a-08899ec3a3d1
 moniker_range_name: ''
-ms.author: acabello
+ms.author: nicolezhao
 ms.reviewer:
 - brianhun
 - hugowu

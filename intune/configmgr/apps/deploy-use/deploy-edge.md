@@ -7,11 +7,11 @@ ms.topic: install-set-up-deploy
 ms.collection: tier3
 ms.custom: sfi-image-nochange
 ms.service: configuration-manager
-author: iceorbital
+author: nicolezhao-msftdocs
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/5287f575-02f0-405f-92b7-800456526b0c
 moniker_range_name: ''
-ms.author: acabello
+ms.author: nicolezhao
 ms.reviewer:
 - brianhun
 - hugowu

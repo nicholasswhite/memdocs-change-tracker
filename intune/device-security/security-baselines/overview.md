@@ -4,8 +4,6 @@ description: Deploy security baselines that have preset and recommended configur
 ms.date: "2026-09-30T00:00:00Z"
 ms.topic: overview
 ai-usage: ai-assisted
-ms.reviewer: aanavath
-  - intune-azure
 author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8

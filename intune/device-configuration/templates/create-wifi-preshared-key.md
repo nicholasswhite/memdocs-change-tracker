@@ -3,13 +3,12 @@ title: "Use a custom device profile to create a Wi-Fi profile with a preshared k
 description: Use a custom profile to create a Wi-Fi profile with a preshared key (PSK), and get sample XML code for Android, Android Enterprise, Windows, and EAP-based Wi-Fi profiles in Microsoft Intune.
 ms.date: "2025-05-28T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: abalwan
-author: iceorbital
+author: wicale
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration

@@ -3,7 +3,6 @@ title: Microsoft Intune architecture
 description: Reference architecture for a Microsoft Intune deployment, including cloud and on-premises components and Microsoft and third-party integrations.
 ms.date: "2026-05-12T00:00:00Z"
 ms.topic: concept-article
-ms.reviewer: davidra
 ms.collection:
 - M365-identity-device-management
 - triage

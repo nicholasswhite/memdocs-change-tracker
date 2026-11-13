@@ -17,7 +17,6 @@ cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/b1515367-9f16-464a-875b-f8be3ed7154a
 moniker_range_name: ''
 ms.author: acabello
-ms.reviewer: madakeva
 ms.service: windows-client
 ms.subservice: autopilot
 ms.suite: ems

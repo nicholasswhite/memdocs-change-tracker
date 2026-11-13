@@ -3,13 +3,12 @@ title: "Software updates planning guide for managed macOS devices in Microsoft I
 description: Guidance and advice for administrators that create and manage software updates for macOS devices using Microsoft Intune. Use this article to help manage software updates on your organization-owned devices, including how to create policies, manage updates, and review update status.
 ms.date: "2025-07-23T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: beflamm, ahamil, rogerso
-author: iceorbital
+author: iye-ms
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: iye
 ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:

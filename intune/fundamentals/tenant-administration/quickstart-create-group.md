@@ -3,12 +3,11 @@ title: "Step 3 - Create a group to manage users"
 description: Learn how to create a group in Microsoft Intune and add users to the groups. Use groups to manage user access to company resources and assign policies.
 ms.date: "2026-01-14T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: mattcall
-author: iceorbital
+author: wicale
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: fundamentals

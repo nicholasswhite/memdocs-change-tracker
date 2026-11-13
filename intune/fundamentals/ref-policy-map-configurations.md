@@ -3,7 +3,6 @@ title: Configurations policy mapping from Basic Mobility and Security to Intune
 description: A detailed list of the policy map between Basic Mobility and Security configurations and Intune.
 ms.date: "2025-12-03T00:00:00Z"
 ms.topic: article
-ms.reviewer: dagerrit
 author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8

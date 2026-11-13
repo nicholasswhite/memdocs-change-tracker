@@ -1,11 +1,10 @@
 ---
 title: "Deployment guide: Manage iOS/iPadOS devices in Microsoft Intune"
 description: A guide to managing iOS/iPadOS devices in Microsoft Intune.
-author: iceorbital
-ms.author: acabello
+author: beflamm
+ms.author: beflamm
 ms.date: "2024-07-22T00:00:00Z"
 ms.topic: install-set-up-deploy
-ms.reviewer: beflamm
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f

@@ -3,17 +3,16 @@ title: Guided Update Supersedence for Enterprise App Management
 description: Learn how to update an Enterprise App Catalog app using supersedence with Microsoft Intune.
 ms.date: "2025-11-06T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: nicolezhao
 ms.custom: ''
 ms.collection:
 - FocusArea_Apps_EAM
 - M365-identity-device-management
-author: iceorbital
+author: nicolezhao-msftdocs
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/a3955c7b-f5ee-420d-aff5-d7119738f38b
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: nicolezhao
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:

@@ -3,11 +3,11 @@ title: Include and Exclude App Assignments in Microsoft Intune
 description: Learn how you can use Microsoft Intune to include and exclude app assignments.
 ms.date: "2025-10-29T00:00:00Z"
 ms.topic: how-to
-author: iceorbital
+author: wicale
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: wicale
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: apps

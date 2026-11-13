@@ -2,14 +2,13 @@
 title: "Get help and support in Company Portal app for Windows"
 description: Access help and support options in the Intune Company Portal app for Windows.
 ms.date: "2024-10-16T00:00:00Z"
-ms.reviewer: ''
-author: iceorbital
+author: madakeva
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: madakeva
 ms.service: microsoft-intune
 ms.subservice: end-user
 ms.topic: end-user-help

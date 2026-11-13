@@ -3,21 +3,20 @@ title: "Common Platform SSO scenarios for macOS devices in Microsoft Intune"
 description: Use Microsoft Intune to configure common Platform SSO scenarios for macOS devices. You can enable Kerberos SSO to on-premises Active Directory and cloud-based Microsoft Entra ID, use Touch ID biometric policy with Secure Enclave authentication, and enable SSO on non-Microsoft apps. You can also configure end user experience settings.
 ms.date: "2026-05-11T00:00:00Z"
 ms.topic: how-to
-ms.reviewer: arnab, veenasoman
-author: iceorbital
+author: iye-ms
 cmProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/1433a524-c01f-4b87-beab-670c040dea4f
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: acabello
+ms.author: iye
 ms.collection: M365-identity-device-management
 ms.service: microsoft-intune
 ms.subservice: configuration
 spProducts:
-- https://authoring-docs-microsoft.poolparty.biz/devrel/2d0723c1-cf38-4c30-ab3d-5df787b33270
 - https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+- https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/312f1f05-a431-4193-8a4d-e6245d5966de
 ---
 
 # Common Platform SSO scenarios for macOS devices in Microsoft Intune
