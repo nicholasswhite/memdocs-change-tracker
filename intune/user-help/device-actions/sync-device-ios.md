@@ -1,7 +1,7 @@
 ---
 title: "Check compliance on your iOS device"
 description: Initiate a manual device check-in in Company Portal to update your device settings status and regain access to your work or school resources.
-ms.date: "2025-02-18T00:00:00Z"
+ms.date: '2026-10-03T00:00:00Z'
 author: ilwu-microsoft
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
@@ -33,3 +33,8 @@ If your device is noncompliant or blocked from accessing workplace resources, ch
 4. Tap **Check status**. Wait while Company Portal checks your settings. After the check, the device settings status tells you if you have access to workplace resources.
 
 Still need help? Contact your IT support person. Check for your organization's support details in the [Company Portal website](https://go.microsoft.com/fwlink/?linkid=2010980) or Company Portal app for iOS.
+
+## Related content
+
+- [Company Portal device setting requirements for iOS/iPadOS](../compliance/device-settings-ios.md)
+- [Remove device from Company Portal for iOS app](../unenrollment/unenroll-ios.md)
