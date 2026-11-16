@@ -27,6 +27,8 @@ spProducts:
 
 # Automatic registration of existing devices
 
+You can automatically register existing devices with Windows Autopilot through Intune or another MDM service.
+
 ## Requirements
 
 An existing device can automatically register if it meets the following criteria:

@@ -26,6 +26,8 @@ spProducts:
 
 # OEM registration
 
+Windows Autopilot OEM registration lets manufacturers register devices on your behalf.
+
 ## Device registration process
 
 When devices are purchased from an OEM, the manufacturer can automatically register the devices with the Windows Autopilot. For the list of manufacturers that support registration, see the **Participant device manufacturers and resellers** section of the [Windows Autopilot page](https://aka.ms/windowsautopilot).
