@@ -3,11 +3,11 @@ title: "Microsoft Cloud PKI audit logs"
 description: Get audit logs for Microsoft cloud public key infrastructure (PKI) activity in the admin center.
 ms.date: "2024-12-06T00:00:00Z"
 ms.topic: how-to
-author: wicale
+author: sdeines-msft
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: wicale
+ms.author: sdeines
 ms.collection:
 - M365-identity-device-management
 - certificates

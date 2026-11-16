@@ -3,11 +3,11 @@ title: "Delete Microsoft Cloud PKI certification authority"
 description: Delete certificates issued via Microsoft Intune cloud PKI.
 ms.date: "2024-12-06T00:00:00Z"
 ms.topic: how-to
-author: wicale
+author: sdeines-msft
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: wicale
+ms.author: sdeines
 ms.collection:
 - M365-identity-device-management
 - certificates

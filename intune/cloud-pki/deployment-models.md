@@ -3,13 +3,13 @@ title: "Microsoft Cloud PKI deployment for Microsoft Intune"
 description: Describes the deployment options for Microsoft Intune cloud PKI.
 ms.date: "2024-12-06T00:00:00Z"
 ms.topic: concept-article
-author: wicale
+author: sdeines-msft
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/b1cfdec6-b0c3-4209-818c-736879856e0e
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/37da4cc9-0cfc-42a9-ba5e-805706b01ef8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: wicale
+ms.author: sdeines
 ms.collection:
 - M365-identity-device-management
 - certificates
