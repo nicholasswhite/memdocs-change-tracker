@@ -1,7 +1,7 @@
 ---
 title: "Advanced Analytics overview"
 description: Discover what Microsoft Intune Advanced Analytics is, how it extends endpoint analytics with advanced device insights, proactive troubleshooting, and enhanced reporting.
-ms.date: "2026-03-24T00:00:00Z"
+ms.date: '2026-11-12T00:00:00Z'
 ms.topic: concept-article
 author: dagerrit
 cmProducts:
@@ -12,6 +12,8 @@ ms.service: microsoft-intune
 ms.subservice: suite
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # Advanced Analytics overview
@@ -52,7 +54,7 @@ Advanced Analytics enhances endpoint analytics with the following reports and ca
 
 ## Prerequisites
 
-To use Advanced Analytics features, devices must meet the [endpoint analytics prerequisites](../endpoint-analytics/index.md#prerequisites) and you must [configure endpoint analytics](../endpoint-analytics/configure.md) in your tenant.
+To use Advanced Analytics features in endpoint analytics, devices must meet the [endpoint analytics prerequisites](../endpoint-analytics/index.md#prerequisites) and you must [configure endpoint analytics](../endpoint-analytics/configure.md) in your tenant.
 
 This section details **additional prerequisites** specific to Advanced Analytics. Certain features may have their own additional prerequisites; see the individual feature articles for more information.
 
@@ -96,7 +98,7 @@ When license requirements are met, then Advanced Analytics capabilities are auto
 >
 > It might take up to 48 hours after you buy licenses or start a trial to see Advanced Analytics features in your tenant.
 
-For the extra reports and capabilities on Windows devices:
+For the endpoint analytics reports and capabilities on Windows devices:
 
 - Devices must be enrolled in Intune and onboarded to endpoint analytics.
 - [Device query for multiple devices](device-query-multiple-devices.md) requires a properties catalog policy to be configured and deployed.
@@ -118,6 +120,7 @@ Advanced Analytics is built into Microsoft Intune and appears in the **Reports**
 - Additional capabilities:
   - [Device query for multiple devices](device-query-multiple-devices.md) under the **Devices** node in the Intune admin center
   - [STIG audit baseline](../device-security/security-baselines/stig-audit-baseline.md) to assess Windows device compliance against Department of Defense (DoD) Security Technical Implementation Guide requirements
+  - [CIS audit baseline (preview)](../device-security/security-baselines/cis-audit-baseline.md) to assess Windows 11 device configurations against the Center for Internet Security (CIS) benchmark
 
 ### Integrate Advanced Analytics into business processes
 

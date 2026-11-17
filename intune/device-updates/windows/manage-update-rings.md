@@ -1,7 +1,7 @@
 ---
 title: "Manage Windows Update ring policies"
 description: Learn about Windows Update ring policies for Windows devices, how to create and manage them, and improve update deployment.
-ms.date: "2026-01-12T00:00:00Z"
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: how-to
 ms.reviewer: davguy; davidmeb; bryanke
 author: iceorbital
@@ -15,6 +15,8 @@ ms.subservice: protect
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Manage Windows Update ring policies
@@ -50,6 +52,7 @@ In Microsoft Intune, update rings are configured through **update ring policies*
 > - Enterprise
 > - Education
 > - Windows IoT Enterprise
+> - Eligible Windows Server Insider Preview devices, for nonproduction evaluation only. See [Get started with Windows Server management (Insider preview)](../../solutions/end-to-end-guides/windows-server-endpoints-get-started.md#phase-4---configure-windows-server-updates) for requirements and update limitations.
 > - Windows Team - for Surface Hub devices
 > - Windows Holographic for Business - Supports a suset of settings for Windows updates, including:
 >   - **Automatic update behavior**

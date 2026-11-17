@@ -2,7 +2,7 @@
 title: "Enrollment guide: Enroll Windows client devices in Microsoft Intune"
 description: Enroll Windows devices using Automatic enrollment, Windows Autopilot, group policy, and co-management enrollment
   options in Microsoft Intune.
-ms.date: '2026-11-04T00:00:00Z'
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: article
 author: maholdaa
 cmProducts:
@@ -18,11 +18,15 @@ spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/2d0723c1-cf38-4c30-ab3d-5df787b33270
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Enrollment guide: Enroll Windows client devices in Microsoft Intune
 
 You can enroll both personal and organization-owned devices in Intune. After enrollment, devices receive the policies and profiles you create.
+
+For nonproduction evaluation on eligible Windows Server Insider Preview devices, use [Get started with Windows Server management (Insider preview)](../../solutions/end-to-end-guides/windows-server-endpoints-get-started.md). Windows client enrollment options aren't automatically applicable to Windows Server.
 
 You have the following options for enrolling Windows devices:
 
@@ -60,7 +64,7 @@ You can use this enrollment option to:
 
 | Feature | Use this enrollment option when |
 | --- | --- |
-| You use Windows client. | ✅    Configuration Manager supports Windows Server. |
+| You use Windows client. | ✅    Configuration Manager supports released Windows Server versions. For eligible Insider Preview devices, see [Windows Server enrollment guidance](../../solutions/end-to-end-guides/windows-server-endpoints-get-started.md#phase-2---enroll-a-test-server). |
 | You have Microsoft Entra ID P1 or P2 | ✅ |
 | You use Conditional Access (CA) on devices enrolled using [bulk enrollment](create-bulk-package.md) with a provisioning package. | ✅ On Windows, CA is available for Windows devices enrolled using bulk enrollment. |
 | You have remote workers. | ✅ |

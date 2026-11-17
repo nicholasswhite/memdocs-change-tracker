@@ -1,15 +1,15 @@
 ---
 title: "Monitor Microsoft Tunnel"
 description: Monitor the status of Microsoft Tunnel Gateway, a VPN server that runs on Linux. Microsoft Tunnel enables your Intune managed cloud-based devices to reach your on-premises infrastructure.
-ms.date: "2024-10-14T00:00:00Z"
+ms.date: '2026-11-16T00:00:00Z'
 ms.topic: how-to
-author: OluchiC
+author: CharlotteChristenson-MSFT
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/fcc3cd4a-59ea-47a2-9cc1-784142a5a25d
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/68e4b2d8-b70c-4019-b49a-d1f8881e2aea
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: ochukwunyere
+ms.author: CharlotteChristenson-MSFT
 ms.collection:
 - M365-identity-device-management
 - sub-infrastructure
@@ -20,6 +20,8 @@ spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/67b2ba1a-6f74-4044-a48a-f0f8ad076b8f
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # Monitor Microsoft Tunnel
@@ -172,6 +174,26 @@ Use the **mst-cli** command-line tool to get information about the Microsoft Tun
 
 For more information and command-line examples, see [mst-cli command-line tool for Microsoft Tunnel](ref-file-commands.md#mst-cli-command-line-tool-for-microsoft-tunnel-gateway).
 
+### Run diagnostics on the Tunnel server
+
+Use `mst-cli diagnose` on an installed Tunnel server to check known prerequisites and configuration requirements, including those required for logging. Run diagnostics when expected logs are missing or a log upload fails.
+
+To run diagnostics and review the logging checks:
+
+1. Connect to the Linux server that hosts the affected Tunnel Gateway.
+2. Run the following command on the server:
+
+   ```bash
+   mst-cli diagnose
+   ```
+3. Review the logging results. Each logging check reports a pass or fail status and the expected result. The output also includes fixes for some common failures. Checks and corrective steps vary with the server's operating system and installation.
+4. For a failed check, compare the result with the expected result and follow the corrective guidance provided for your configuration. Run `mst-cli diagnose` again after making changes.
+5. [View the Tunnel logs](#view-microsoft-tunnel-logs) to check whether the expected entries are present. If you're investigating an upload failure, follow [Troubleshoot missing logs or failed uploads](#troubleshoot-missing-logs-or-failed-uploads) to verify collection and upload separately.
+
+The command creates a report named `diagnosticReport.txt` in `/etc/mstunnel/diagnostic`. You can share this report with Microsoft support for further analysis.
+
+Diagnostics identify known unmet prerequisites. They don't identify or interpret every operating system customization or hardening setting that might affect Tunnel. A pass result applies to the check performed; it doesn't confirm that every customization is compatible or that logs were uploaded successfully.
+
 ## View Microsoft Tunnel logs
 
 Microsoft Tunnel logs information to the Linux server logs in the *syslog* format. To view log entries, use the **journalctl -t** command followed by one or more tags that are specific to Microsoft Tunnel entries:
@@ -262,6 +284,16 @@ After you reproduce an issue during verbose log collection phase, Microsoft can 
   - **ocserv** (Server logs)
 
 The *ocserv-access* logs aren't collected or uploaded.
+
+### Troubleshoot missing logs or failed uploads
+
+If expected Tunnel logs are missing or **Send logs** reports a failed upload, use the following steps:
+
+1. [Run diagnostics on the affected Tunnel server](#run-diagnostics-on-the-tunnel-server). Review the logging checks and address failures using the guidance in the output.
+2. Check the [logging prerequisites](prerequisites.md#validate-logging-prerequisites), including access to the required upload endpoints. If the server uses a customized or hardened operating system, review whether those changes affect the requirements identified by diagnostics.
+3. [View the local Tunnel logs](#view-microsoft-tunnel-logs). Local log entries and passing diagnostic checks don't confirm that logs reached Microsoft.
+4. After addressing the identified failures, repeat the [Send logs procedure](#easy-upload-of-diagnostic-logs-for-tunnel-servers). Reproduce the issue during the eight-hour verbose collection period, and check the status of each log set in the admin center. An **in progress** status isn't a completed upload. The second log set is collected and uploaded after the eight-hour period.
+5. If collection or upload still fails, contact Microsoft support. Include the diagnostic report, the failed checks, and the collection times and statuses shown in the admin center.
 
 ## Known issues
 

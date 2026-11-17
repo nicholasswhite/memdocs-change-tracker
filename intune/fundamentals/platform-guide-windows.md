@@ -3,7 +3,7 @@ title: "Deployment guide: Manage devices running Windows"
 description: Use our platform deployment guide to set up Windows device management in Microsoft Intune.
 author: jasonsandys-microsoft
 ms.author: jasandys
-ms.date: "2024-08-21T00:00:00Z"
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: install-set-up-deploy
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
@@ -17,6 +17,8 @@ spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/d7a55faf-a992-4e27-aa3a-eadc9830e778
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Deployment guide: Manage devices running Windows
@@ -24,6 +26,8 @@ spProducts:
 This guide describes how to protect and manage Windows apps and endpoints using Microsoft Intune, and includes our setup recommendations and resources from prerequisites to enrollment.
 
 For each section in this guide, review the associated tasks. Some tasks are required and some, like setting up Microsoft Entra Conditional Access, are optional. Select the provided links in each section to go to our recommended help docs on Microsoft Learn, where you can find more detailed information and how-to instructions.
+
+For nonproduction evaluation on eligible Windows Server Insider Preview devices, use [Get started with Windows Server management (Insider preview)](../solutions/end-to-end-guides/windows-server-endpoints-get-started.md). Windows client workflows aren't automatically applicable to Windows Server.
 
 ## Step 1: Prerequisites
 

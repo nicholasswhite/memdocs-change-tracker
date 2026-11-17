@@ -1,7 +1,7 @@
 ---
 title: Create device platform restrictions
 description: Restrict personally owned devices, and specific device platforms and OS versions from enrolling in Intune.
-ms.date: "2024-07-01T00:00:00Z"
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: how-to
 author: iceorbital
 cmProducts:
@@ -15,6 +15,9 @@ ms.subservice: enrollment
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ms.reviewer: maholdaa
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Create device platform restrictions
@@ -61,6 +64,25 @@ Since Intune supports two Android platforms, it's important to understand how OS
 > [!IMPORTANT]
 >
 > Android device administrator (DA) management is deprecated and no longer available for devices with access to Google Mobile Services (GMS). If you currently use DA management, we recommend switching to another Android management option. Support and help documentation remain available for some Android 15 and earlier devices without GMS. For more information, see [Ending support for Android device administrator on GMS devices](https://techcommunity.microsoft.com/t5/intune-customer-success/microsoft-intune-ending-support-for-android-device-administrator/ba-p/3915443).
+
+## Best practice - Windows Server platform restrictions
+
+> [!NOTE]
+>
+> Only [Windows Server Insider preview builds](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) can be enrolled in Microsoft Intune. Server enrollment is not supported in production Intune environments.
+>
+> This is prerelease software. Windows Server Insider Preview builds may be substantially modified before they are commercially released. These builds are for testing purposes only, and not for production use. Microsoft is not obligated to provide any support services for this preview software.
+
+Servers are blocked from enrollment by default. [Automatic MDM enrollment](windows/enable-automatic-mdm.md#enable-windows-automatic-enrollment) through [Add Work Account from Windows Server Settings](https://learn.microsoft.com/en-us/azure/active-directory/user-help/user-help-register-device-on-network) requires both **server devices** and **personally owned devices** to be allowed.
+
+**Allow servers and personally owned Windows devices:** Allow both settings in the enrollment restrictions profile.
+
+**Allow servers but block personally owned Windows devices:** Allow server devices, then choose one option:
+
+- Block personally owned devices and configure corporate identifiers for the servers before enrollment. See [Supported corporate identifiers](add-corporate-identifiers.md#supported-corporate-identifiers).
+- Allow personally owned devices and use an assignment filter based on `deviceOwnership` to block personally owned Windows devices from enrolling.
+
+For more information, see [Blocking server devices](restrictions.md#blocking-server-devices).
 
 ## Create a device platform restriction
 

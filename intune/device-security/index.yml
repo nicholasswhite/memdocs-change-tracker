@@ -7,12 +7,14 @@ metadata:
   description: Manage device compliance, security baselines, Microsoft Defender integration, VPN tunnels, identity protection,
     and threat defense with Microsoft Intune.
   ms.topic: landing-page
-  ms.date: '2026-05-04T00:00:00Z'
+  ms.date: '2026-11-10T00:00:00Z'
   author: iceorbital
   ms.author: acabello
+  ai-usage: ai-assisted
   cmProducts:
   - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
   moniker_range_name: ''
+  ms.custom: msecd-doc-authoring-1032
   ms.service: microsoft-intune
   ms.subservice: protect
   spProducts:
@@ -68,6 +70,8 @@ landingContent:
     links:
     - text: Configure security baseline policies
       url: security-baselines/configure-baselines.md
+    - text: Audit Windows devices against CIS benchmarks (preview)
+      url: security-baselines/cis-audit-baseline.md
   - linkListType: reference
     links:
     - text: Windows security baseline settings

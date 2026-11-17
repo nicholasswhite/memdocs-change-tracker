@@ -1,7 +1,7 @@
 ---
 title: "Intune Management Extension for Windows"
 description: Understand Microsoft Intune management extension for Windows.
-ms.date: "2026-09-24T00:00:00Z"
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: how-to
 ms.reviewer: bryanke
 ms.collection:
@@ -19,6 +19,8 @@ ms.subservice: apps
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Intune Management Extension for Windows
@@ -32,6 +34,9 @@ The Intune Management Extension (IME) is an installer agent that enhances Window
 This feature applies to:
 
 - [Supported Windows versions](../../fundamentals/ref-supported-platforms.md) (excluding Windows Home and Windows devices running in S mode).
+- Eligible Windows Server Insider Preview devices for Win32 app deployment in nonproduction environments. See [Get started with Windows Server management (Insider preview)](../../solutions/end-to-end-guides/windows-server-endpoints-get-started.md) for requirements and limitations.
+
+For Windows Server, follow the enrollment and Win32 app guidance in the preview guide. Don't assume that every Windows client enrollment method or feature that uses the Intune management extension is included in the Server preview.
 
 > [!NOTE]
 >

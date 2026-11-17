@@ -33,10 +33,14 @@ You can enable protected Mobile Application Management (MAM) access to org data 
 - Windows Security app client threat defense integrated with Intune APP to detect local health threats on personal Windows devices
 - Application Protection Conditional Access to ensure the device is protected and healthy before granting protected service access via Microsoft Entra ID
 
+> [!IMPORTANT]
+>
+> Windows App support for Windows MAM is in preview. Availability and supported environments can differ from generally available scenarios. For more information about the Windows App on Windows public preview, including configuration requirements and supported scenarios, see [Require local client device security compliance](https://learn.microsoft.com/en-us/windows-app/require-device-security-compliance-intune).
+
 ## Before you begin
 
-- Intune Mobile Application Management (MAM) for Windows is available for [supported Windows versions](../../fundamentals/ref-supported-platforms.md). This includes the supporting changes for Microsoft Edge (Stable and Extended Stable releases for Windows) and Windows Security app. App Protection Conditional Access is generally available.
-- Windows MAM is supported in government cloud environments. For related information, see [Deploying apps using Intune on the GCC High and DoD Environments](../deployment/deploy-gcc-dod.md).
+- Intune Mobile Application Management (MAM) for Windows is available for [supported Windows versions](../../fundamentals/ref-supported-platforms.md). This includes the supporting changes for Microsoft Edge (Stable and Extended Stable releases for Windows), Windows App and Windows Security app. App Protection Conditional Access is generally available.
+- Windows MAM is supported in government cloud environments for Microsoft Edge. For related information, see [Deploying apps using Intune on the GCC High and DoD Environments](../deployment/deploy-gcc-dod.md).
 
   For more information about MAM, see [Mobile Application Management (MAM) basics](../overview.md#mobile-application-management-mam-basics).
 - The Mobile Threat Defense (MTD) Connector for the Windows Security Center (WSC) component is only supported on Windows 11 version 22631 (23H2) or later.
@@ -69,7 +73,7 @@ Members of your organization (end-users) expect to have the following functional
 
 ## Conditional Access Compliance
 
-Preventing data loss is a part of protecting your organizational data. Data loss prevention (DLP) is only effective if your org data cannot be accessed from any unprotected system or device. App Protection Conditional Access uses Conditional Access (CA) to ensure app protection policies are supported and enforced in a client application before allowing access to protected resources (such as org data). App Protection Conditional Access will allow end-users with personal Windows devices to use app protection policies managed applications, including Microsoft Edge, to access Microsoft Entra resources without fully managing their personal device.
+Preventing data loss is a part of protecting your organizational data. Data loss prevention (DLP) is only effective if your org data cannot be accessed from any unprotected system or device. App Protection Conditional Access uses Conditional Access (CA) to ensure app protection policies are supported and enforced in a client application before allowing access to protected resources (such as org data). App Protection Conditional Access will allow end-users with personal Windows devices to use app protection policies managed applications, including Microsoft Edge and Windows App, to access Microsoft Entra resources without fully managing their personal device.
 
 This MAM service syncs compliance state per user, per app, and per device to the Microsoft Entra CA service. This includes the threat information received from the Mobile Threat Defense (MTD) vendors starting with Windows Security Center.
 

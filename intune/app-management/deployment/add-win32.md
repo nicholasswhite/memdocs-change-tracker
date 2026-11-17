@@ -1,25 +1,26 @@
 ---
 title: "Add, Assign, and Monitor a Win32 App in Microsoft Intune"
 description: Learn how to add, assign, and manage Win32 apps with Microsoft Intune.
-ms.date: "2026-04-14T00:00:00Z"
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: how-to
 ai-usage: ai-assisted
 ms.collection:
 - FocusArea_Apps_Win32
 - M365-identity-device-management
-author: nicolezhao-msftdocs
+author: iceorbital
 cmProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/caec7b7f-4941-4578-b79f-c63b1c1f5af4
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: nicolezhao
+ms.author: acabello
 ms.service: microsoft-intune
 ms.subservice: apps
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 - https://authoring-docs-microsoft.poolparty.biz/devrel/754dea88-f800-4835-b6b5-280cb5d81e88
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Add, Assign, and Monitor a Win32 App in Microsoft Intune
@@ -34,7 +35,7 @@ After you've [prepared a Win32 app to be uploaded to Intune](create-win32-packag
 
 To use Win32 app management, be sure you meet the following criteria:
 
-- Use a [supported Windows version](../../fundamentals/ref-supported-platforms.md) (Enterprise, Pro, and Education versions).
+- Use a [supported Windows version](../../fundamentals/ref-supported-platforms.md) (Enterprise, Pro, and Education versions), or an eligible Windows Server Insider Preview device for nonproduction evaluation. For Server-specific requirements and limitations, see [Get started with Windows Server management (Insider preview)](../../solutions/end-to-end-guides/windows-server-endpoints-get-started.md).
 - Devices must be joined or registered to Microsoft Entra ID and be auto-enrolled. The Intune management extension supports devices that are Microsoft Entra joined, Microsoft Entra registered, hybrid domain joined, or group policy enrolled. For Intune management extension prerequisites and version requirements, see [Intune Management Extension for Windows](../../device-management/tools/management-extension-windows.md#prerequisites).
 
   > [!NOTE]

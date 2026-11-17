@@ -1,7 +1,7 @@
 ---
 title: "Monitor security baselines and profiles in Microsoft Intune"
 description: Monitor device and per-setting results of security baselines you deploy with Microsoft Intune, and identify conflicts for devices.
-ms.date: "2024-08-22T00:00:00Z"
+ms.date: '2026-11-12T00:00:00Z'
 ms.topic: how-to
 author: iceorbital
 cmProducts:
@@ -17,6 +17,8 @@ ms.subservice: protect
 spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/12e559b9-eaf6-4aee-9af7-62334e15f863
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # Monitor security baselines and profiles in Microsoft Intune
@@ -30,6 +32,8 @@ Intune provides several options to monitor security baselines. You can:
 You can also view the [Device configuration report](../../device-management/reports/overview.md#device-configuration-operational) to see which device configuration based policies apply to individual devices, which include security baselines.
 
 For more information about the feature, see [Security baselines in Intune](overview.md).
+
+This article covers configuration baseline reports. Audit-only profiles use **Audit report** instead of standard configuration reports. See [Center for Internet Security (CIS) audit results (preview)](cis-audit-baseline.md#review-cis-audit-results) or [Security Technical Implementation Guide (STIG) audit results](stig-audit-baseline.md#review-stig-audit-results) for audit-report procedures.
 
 > [!NOTE]
 >

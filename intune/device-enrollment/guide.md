@@ -2,7 +2,7 @@
 title: "Enrollment guide: Microsoft Intune enrollment"
 description: Enroll Android, Android Enterprise, iOS, iPadOS, Linux, macOS, and Windows devices in Intune. Decide which enrollment
   method to use.
-ms.date: '2026-11-04T00:00:00Z'
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: article
 author: AnyaNovicheva1
 cmProducts:
@@ -14,6 +14,8 @@ ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Enrollment guide: Microsoft Intune enrollment
@@ -37,8 +39,9 @@ You can enroll devices running on the following platforms. For a list of support
 - Linux
 - macOS
 - Windows
+- Windows Server Insider Preview (nonproduction testing only)
 
-Enrollment is enabled for all platforms by default, but you can restrict specific platforms from enrolling by using an Intune [enrollment restriction policy](restrictions.md).
+Enrollment is enabled for these platforms by default, except Windows Server, which is blocked by default. You can restrict specific platforms from enrolling by using an Intune [enrollment restriction policy](restrictions.md).
 
 This article describes the supported device scenarios and enrollment prerequisites, has information about using other MDM providers, and includes links to platform-specific enrollment guidance.
 
@@ -124,6 +127,7 @@ There's an enrollment guide for every platform. Choose your scenario, and get st
 - [Linux](guide-linux.md)
 - [macOS](apple/guide-macos.md)
 - [Windows](windows/guide.md)
+- [Windows Server Insider Preview (nonproduction testing only)](../solutions/end-to-end-guides/windows-server-endpoints-get-started.md#phase-2---enroll-a-test-server)
 
 ## Download the visual enrollment guide
 

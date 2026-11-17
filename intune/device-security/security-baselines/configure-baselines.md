@@ -1,7 +1,7 @@
 ---
 title: "Manage security baseline profiles in Microsoft Intune"
 description: Deploy security baselines that establish a default and recommended security postures on Windows devices you manage with Microsoft Intune.
-ms.date: "2025-06-02T00:00:00Z"
+ms.date: '2026-11-12T00:00:00Z'
 ms.topic: concept-article
 ms.collection:
 - ContentEnagagementFY24
@@ -16,6 +16,9 @@ ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ms.reviewer: aanavath - intune-azure
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # Manage security baseline profiles in Microsoft Intune
@@ -23,6 +26,8 @@ spProducts:
 To help protect your users and Windows devices, you can configure and deploy distinct instances of Microsoft Intune security baseline profiles to different groups of Windows devices and users. There are different baselines for different products, and each is a group of preconfigured settings that represent the recommended security posture from that products security team. You can deploy a default (unmodified) baseline or customize your profiles to configure devices with the settings that your organization requires.
 
 For a list of available security baselines, see [Security baselines overview](overview.md#available-security-baselines).
+
+This article covers baselines that configure and enforce settings. Audit-only baselines have separate prerequisites and procedures. See [Center for Internet Security (CIS) auditing (preview)](cis-audit-baseline.md) or [Security Technical Implementation Guide (STIG) auditing](stig-audit-baseline.md) to assess configurations without changing them.
 
 This feature applies to:
 
@@ -85,7 +90,7 @@ The least privileged built-in Intune role that supports managing security baseli
 
 ## Create a profile for a security baseline
 
-The following guidance can be used anytime you create a new security baseline profile.
+Use the following guidance to create a configuration baseline profile. For an audit-only profile, follow the CIS or STIG auditing guide.
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Endpoint security** &gt; **Security baselines** to view the list of available baselines.

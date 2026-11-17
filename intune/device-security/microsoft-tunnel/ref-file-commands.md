@@ -1,13 +1,13 @@
 ---
 title: "Command-line Reference for Microsoft Tunnel Gateway"
 description: Find file and command-line references for tools you use to install or manage the Microsoft Tunnel Gateway, a VPN server that runs on Linux.
-ms.date: "2025-03-27T00:00:00Z"
+ms.date: '2026-11-16T00:00:00Z'
 ms.topic: reference
-author: OluchiC
+author: CharlotteChristenson-MSFT
 cmProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/a72e95ff-4b4f-4cc1-90c6-7dcba67ff05f
 moniker_range_name: ''
-ms.author: ochukwunyere
+ms.author: CharlotteChristenson-MSFT
 ms.collection:
 - M365-identity-device-management
 - sub-infrastructure
@@ -16,6 +16,8 @@ ms.service: microsoft-intune
 ms.subservice: protect
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # Command-line Reference for Microsoft Tunnel Gateway
@@ -27,6 +29,7 @@ The information in this reference for Microsoft Tunnel Gateway is provided to su
 **Mst-cli** is a command-line tool for use with Microsoft Tunnel Gateway. This tool is available on the Linux server after the tunnel completes installation and is found at **/usr/sbin/mst-cli**. Some tasks you can use this tool to complete include:
 
 - Get information about the tunnel server.
+- Diagnose known prerequisite and configuration problems, including logging requirements.
 - Set or update the configuration of the tunnel server.
 - Restart the tunnel server.
 - Uninstall the tunnel server.
@@ -41,6 +44,7 @@ The following are common command line uses of the tool.
 
   - `agent` - Operate on the agent component.
   - `server` - Operate on the server component.
+  - `diagnose` - Check known prerequisites and configuration requirements. See [Run diagnostics](#run-diagnostics).
   - `uninstall` - Uninstall the Microsoft Tunnel.
   - `eula` - Show the End-User License Agreement (EULA).
   - `import_cert` - Import or update the TLS certificate.
@@ -108,6 +112,18 @@ The following are common command line uses of the tool.
   - `show events` - Provides information about connecting users.
   - `show cookies all` - Alias for show sessions all.
   - `show cookies valid` - Alias for show sessions valid.
+
+### Run diagnostics
+
+Run the following command on the Linux server where Microsoft Tunnel is installed:
+
+```bash
+mst-cli diagnose
+```
+
+The command checks known prerequisites and configuration requirements, including those required for logging. Logging checks report a pass or fail status and the expected result. The output includes fixes for some common failures. Checks and corrective steps vary by operating system and installation.
+
+For the procedure, diagnostic report location, and limitations, see [Run diagnostics on the Tunnel server](monitor.md#run-diagnostics-on-the-tunnel-server).
 
 ## Environment variables
 
