@@ -1,7 +1,7 @@
 ---
 title: "Tasks you can complete using the Settings Catalog in Intune"
 description: Use the settings catalog in Microsoft Intune to configure common features. You can create a Universal Print policy, configure Microsoft Edge and Google Chrome web browsers, and use built in settings instead of plist files for macOS devices.
-ms.date: "2026-03-24T00:00:00Z"
+ms.date: '2026-11-12T00:00:00Z'
 ms.topic: how-to
 ms.reviewer: laarrizz, mayurjadhav, beflamm
 author: iceorbital
@@ -18,6 +18,8 @@ spProducts:
 - https://authoring-docs-microsoft.poolparty.biz/devrel/06e86142-34c2-4b94-ab9c-9477c21f7152
 - https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # Tasks you can complete using the Settings Catalog in Intune
@@ -30,6 +32,7 @@ For more information on the settings catalog, and what it is, go to [Use the set
 
 This feature applies to:
 
+- Android Enterprise
 - iOS/iPadOS
 - macOS
 - Windows
@@ -48,6 +51,18 @@ These web browser settings are built in, and can be configured &amp; deployed to
 Previously, to configure Google Chrome settings on Windows devices, you created a custom OMA-URI device configuration policy.
 
 For a sample Microsoft Edge scenario, see [Create a Microsoft Edge policy](configure-edge.md).
+
+## Require Google Workspace authentication on Android devices
+
+This feature applies to:
+
+- Android Enterprise corporate-owned fully managed devices
+- Android Enterprise corporate-owned devices with a work profile
+- Android Enterprise personally owned devices with a work profile (using a device configuration template)
+
+For corporate-owned devices, use the settings catalog to require users to authenticate with a managed Google Account from your organization's Google Workspace domain. For personally owned devices with a work profile, use a device configuration template.
+
+For prerequisites and steps, see [Require Google Workspace authentication on Android Enterprise devices](require-google-workspace-authentication-android.md).
 
 ## Manage AI features on Android devices
 

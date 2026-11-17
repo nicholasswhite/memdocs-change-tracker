@@ -1,7 +1,7 @@
 ---
 title: "Android template device settings list to restrict features using Intune"
 description: On Android Enterprise or Android for Work devices owned by your organization, you can restrict settings on the device using Microsoft Intune. Allow copy and paste, notifications, app permissions, data sharing, password length, sign in failures, use fingerprint to unlock, reuse passwords, and enable bluetooth sharing of work contacts. Configure devices as a dedicated device kiosk to run one app, or multiple apps.
-ms.date: "2026-10-02T00:00:00Z"
+ms.date: '2026-11-12T00:00:00Z'
 ms.topic: reference
 params:
   siblings_only: true
@@ -14,7 +14,7 @@ cmProducts:
 moniker_range_name: ''
 ms.author: acabello
 ms.collection: M365-identity-device-management
-ms.custom: msecd-doc-authoring-1028
+ms.custom: msecd-doc-authoring-1032
 ms.service: microsoft-intune
 ms.subservice: configuration
 spProducts:
@@ -38,6 +38,10 @@ This article applies to:
 - Android Open Source Project (AOSP) corporate-owned user-associated devices (single user)
 
 ## Before you begin
+
+To require Google Workspace authentication on corporate-owned fully managed devices or corporate-owned devices with a work profile, use the [Google Workspace authentication setting in the settings catalog](../settings-catalog/require-google-workspace-authentication-android.md). This policy is separate from the account-addition settings in this template.
+
+For personally owned devices with a work profile, you must use a device configuration template instead of the settings catalog to require Google Workspace authentication.
 
 - Create a [device restrictions profile](configure-device-restrictions.md) in the [Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431). When you create the profile, select the following options:
 

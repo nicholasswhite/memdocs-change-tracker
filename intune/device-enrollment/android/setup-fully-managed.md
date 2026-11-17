@@ -1,7 +1,7 @@
 ---
 title: Set up enrollment for Android Enterprise fully managed devices
 description: Set up enrollment in Intune for devices using the Android Enterprise fully managed device management solution.
-ms.date: "2026-05-19T00:00:00Z"
+ms.date: '2026-11-12T00:00:00Z'
 ms.topic: how-to
 author: AnyaNovicheva1
 cmProducts:
@@ -13,6 +13,8 @@ ms.service: microsoft-intune
 ms.subservice: enrollment
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # Set up enrollment for Android Enterprise fully managed devices
@@ -152,6 +154,8 @@ After you set up the enrollment profile, token, and dynamic group, you can use a
 - Samsung Knox Mobile Enrollment
 
 For the next steps, including how to enroll devices with each provisioning method, see [Enroll Android Enterprise corporate-owned devices](ref-corporate-methods.md).
+
+Optionally, [require Google Workspace authentication](../../device-configuration/settings-catalog/require-google-workspace-authentication-android.md) with a settings catalog policy. You can assign the policy before enrollment or to devices that are already enrolled. The authentication prompt appears after enrollment or after an enrolled device receives the policy. The policy doesn't change the Microsoft Entra account associated with the device.
 
 ## Token types
 

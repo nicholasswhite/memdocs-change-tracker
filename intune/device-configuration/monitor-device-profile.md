@@ -1,7 +1,7 @@
 ---
 title: "View and monitor device configuration policies in Microsoft Intune"
 description: See and manage the device configuration policy details in Microsoft Intune. Look at a graphical chart of the number of devices assigned to a policy, and see which devices have policies assigned or deployed. Can also troubleshoot policies that have conflict settings.
-ms.date: "2026-04-16T00:00:00Z"
+ms.date: '2026-11-12T00:00:00Z'
 ms.update-cycle: 180-days
 ms.topic: how-to
 ms.collection:
@@ -18,6 +18,8 @@ ms.subservice: configuration
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/d0c6fab8-2d7d-4bb0-bf40-589e08d7c132
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1032
 ---
 
 # View and monitor device configuration policies in Microsoft Intune
@@ -79,6 +81,10 @@ After you create your device configuration policy, Intune provides reporting dat
    - **Conflict**: Two settings are applied to the same device, and Intune can't sort out the conflict. An administrator should review.
    - **Pending**: The device hasn't checked in with Intune to receive the policy yet.
    - **Not applicable**: The device can't receive the policy. For example, the policy updates a setting specific to iOS 11.1, but the device is using iOS 10.
+
+   > [!NOTE]
+   >
+   > The Android Enterprise setting **Require users to authenticate with a Google Workspace account** reports **Error** until the user completes authentication. This setting's noncompliance doesn't change the device's overall compliance state. Before troubleshooting a deployment failure, check whether the user has completed the prompt. For more information, see [Require Google Workspace authentication on Android Enterprise devices](settings-catalog/require-google-workspace-authentication-android.md).
 3. Select **Device assignment status**:
 
    ![Screenshot that shows the device assignment status report in Microsoft Intune and Intune admin center.](media/monitor-device-profile/device-assignment-status.png)
