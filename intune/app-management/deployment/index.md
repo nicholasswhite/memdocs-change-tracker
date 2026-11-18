@@ -59,26 +59,26 @@ The following table lists the specific app types and how you can add them in the
 
 | **App-specific type** | **General type** | **App-specific procedures** |
 | --- | --- | --- |
-| [Android store apps](add-store-android.md) | Store app | Select **Android store app** as the **App type**, click **Select**, then enter the Google Play store URL for the app. |
+| [Android store apps](add-store-android.md) | Store app | Select **Android** for **Platform**, **Store app** for **Category**, and **Android Store app** for **App type**, click **Select**, then enter the Google Play store URL for the app. |
 | [iOS/iPadOS store apps](add-store-ios.md) | Store app | Select **iOS store app** as the **app type**, search for the app, and select the app in Intune. |
 | [Microsoft store apps](add-microsoft-store.md) | Store app | Select **Microsoft store app** as the **app type**, and enter the Microsoft store URL for the app. |
-| [Managed Google Play apps](add-managed-google-play.md) | Store app | Select **Managed Google Play** as the **app type**, search for the app, and select the app in Intune. |
-| [Android Enterprise apps](add-managed-google-play.md) | Store app | Select **Managed Google Play** as the **app type**, search for the app, and select the app in Intune. <sup>1</sup> |
+| [Managed Google Play apps](add-managed-google-play.md) | Store app | Select **Android** for **Platform**, **Store app** for **Category**, and **Managed Google Play app** for **App type**, search for the app, and select the app in Intune. |
+| [Android Enterprise apps](add-managed-google-play.md) | Store app | Select **Android** for **Platform**, **Store app** for **Category**, and **Managed Google Play app** for **App type**, search for the app, and select the app in Intune. <sup>1</sup> |
 | [Microsoft 365 apps for Windows](add-microsoft-365-windows.md) | Store app (Microsoft 365) | Select **Windows 10 and later** under **Microsoft 365 Apps** as the **app type**, and then select the Microsoft 365 app that you want to install. |
 | [Microsoft 365 apps for macOS](add-microsoft-365-macos.md) | Store app (Microsoft 365) | Select **macOS** under **Microsoft 365 Apps** as the **app type**, and then select the Microsoft 365 app suite. |
 | [Microsoft Edge, version 77 and later for Windows](add-edge-windows.md) | Store app | Select **Windows 10 and later** under **Microsoft Edge, version 77 and later** as the **app type**. |
 | [Microsoft Edge, version 77 and later for macOS](add-edge-macos.md) | Store app | Select **macOS** under **Microsoft Edge, version 77 and later** as the **app type**. |
-| [Android line-of-business (LOB) apps](add-lob-android.md) | LOB app | Select **Line-of-business app** app as the **app type**, select the **App package file**, and then enter an Android installation file with the extension **.apk**. For Android Enterprise fully managed and dedicated devices, you can deploy required LOB apps directly without Managed Google Play. |
+| [Android line-of-business (LOB) apps](add-lob-android.md) | LOB app | Select **Android** for **Platform**, **Line-of-business app** for **Category**, and **Intune** for **App type**, select the **App package file**, and then enter an Android installation file with the extension **.apk**. For Android Enterprise fully managed and dedicated devices, you can deploy required LOB apps directly without Managed Google Play. |
 | [iOS/iPadOS LOB apps](add-lob-ios.md) | LOB app | Select **Line-of-business** app as the **app type**, select the **App package file**, and then enter an iOS/iPadOS installation file with the extension **.ipa**. |
 | [Windows LOB apps](add-lob-windows.md) | LOB app | Select **Line-of-business app** app as the app type, select the **App package file**, and then enter a Windows installation file with the extension **.msi**, **.appx**, **.appxbundle**, **.msix**, and **.msixbundle**. |
 | [Built-in iOS/iPadOS app](add-built-in.md) | Built-in app | Select **Built-In app** as the **app type**, and then select the built-in app in the list of provided apps. |
-| [Built-in Android app](add-built-in.md) | Built-in app | Select **Built-In app** as the **app type**, and then select the built-in app in the list of provided apps. |
-| [Web apps](add-web.md) | Web app | Select **Web link** as the **app type**, and then enter a valid URL pointing to the web app. |
+| [Built-in Android app](add-built-in.md) | Built-in app | Select **Android** for **Platform**, **Built-in app** for **Category**, and **Built-in app** for **App type**, and then select the built-in app in the list of provided apps. |
+| [Web apps](add-web.md) | Web app | For Android, select **Android** for **Platform**, **Web link** for **Category**, and **Web link** for **App type**; for other platforms, select **Web link** as the **app type**, and then enter a valid URL pointing to the web app. |
 | [iOS/iPadOS web clip](add-web.md) | Web app | Select **iOS/iPadOS web clip** as the **app type**, and then enter a valid URL pointing to the web app. Note that this app type applies only for the iOS/iPadOS platform. |
 | [macOS web clip](add-web.md) | Web app | Select **macOS web clip** as the **app type**, and then enter a valid URL pointing to the web app. Note that this app type applies only for the macOS platform. |
 | [Windows web link](add-web.md) | Web app | Select **Windows web link** as the **app type**, and then enter a valid URL pointing to the web app. Note that this app type applies only for the Windows platform. |
-| [Cross platform web apps](add-web.md) | Web app | Select **Web link** as the **app type**, and then enter a valid URL pointing to the web app. |
-| [Android Enterprise system apps](../configuration/manage-system-apps-android.md) | Store app | Select **Android Enterprise system app** as the **app type**, and then enter the app name, publisher, and package file. |
+| [Cross platform web apps](add-web.md) | Web app | For Android, select **Android** for **Platform**, **Web link** for **Category**, and **Web link** for **App type**; for other platforms, select **Web link** as the **app type**, and then enter a valid URL pointing to the web app. |
+| [Android Enterprise system apps](../configuration/manage-system-apps-android.md) | Store app | Select **Android** for **Platform**, **Referenced app** for **Category**, and **Android Enterprise system app** for **App type**, and then enter the app name, publisher, and package file. |
 | [Windows app (Win32)](add-win32.md) | LOB app | Select **Windows app (Win32)** as the **app type**, select the **App package file**, and then select an installation file with the extension **.intunewin**. |
 | [Enterprise App Catalog app (Win32)](add-enterprise-catalog-app.md) | LOB app | Select **Enterprise App Catalog app (Win32)** as the **app type**, select the app from the **Enterprise App Catalog**, and then set the app information, installation commands, requirements, and detection rules. |
 | [macOS LOB apps](add-lob-macos.md) | LOB app | Select **Line-of-business app** as the **app type**, select the **App package file**, and then select an installation file with the extension **.pkg**. |
@@ -88,7 +88,7 @@ The following table lists the specific app types and how you can add them in the
 
 <sup>1</sup> For more information about Android Enterprise and Android work profiles, see [Understanding licensed apps](#understanding-licensed-apps).
 
-You can add an app in Microsoft Intune by selecting **Apps** &gt; **All Apps** &gt; **Create**. The **Select app type** pane is displayed and allows you to select the **App type**.
+You can add an app in Microsoft Intune by selecting **Apps** &gt; **All Apps** &gt; **Create**. For Android, the **Select app type** pane allows you to select **Platform**, **Category**, and **App type**. For other platforms, the **Select app type** pane allows you to select the **App type**.
 
 > [!TIP]
 >

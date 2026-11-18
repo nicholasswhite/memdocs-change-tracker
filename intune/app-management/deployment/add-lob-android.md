@@ -41,7 +41,7 @@ Apps for Android Enterprise devices can be deployed by using either Managed Goog
 
 1. Sign in to the [Microsoft Intune admin center](https://go.microsoft.com/fwlink/?linkid=2109431).
 2. Select **Apps** &gt; **All Apps** &gt; **Create**.
-3. In the **Select app type** pane, select the **Android** platform, and then select **Line-of-business app**.
+3. In the **Select app type** pane, select **Android** for **Platform**, **Line-of-business app** for **Category**, and **Intune** for **App type**.
 4. Choose **Select**. The **Add app** steps are displayed.
 
 ## Step 1 - App information
