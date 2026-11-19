@@ -1,7 +1,7 @@
 ---
 title: "Windows Autopilot - known issues"
 description: Be informed about known issues that might occur during Windows Autopilot deployment. # RSS subscription is based on this description so don't change. If the description needs to change, update RSS URL in the Tip in the article.
-ms.date: "2026-09-08T00:00:00Z"
+ms.date: '2026-11-16T00:00:00Z'
 ms.collection: M365-modern-desktop
 ms.topic: troubleshooting
 appliesto:
@@ -42,6 +42,16 @@ This article describes known issues that can often be resolved with configuratio
 > For issues with Windows Autopilot with Co-management, see [Windows Autopilot with co-management](../intune/configmgr/comanage/autopilot-enrollment.md).
 
 ## Known issues
+
+### Windows Autopilot deployment report shows failure after successful pre-provisioning
+
+Date added: *November 16, 2026*
+
+After Windows Autopilot pre-provisioning and the device enrollment status page (ESP) complete successfully, the deployment report might incorrectly show **Failure**. The report shows a deployment duration of **0-1 seconds**. This issue appears under **Windows &gt; Monitor &gt; Windows Autopilot deployment status** in the Microsoft Intune admin center.
+
+This issue occurs when the report treats an installation error from a nonblocking, best-effort Win32 app as an ESP-blocking failure. It affects deployment reporting, not enrollment. The device is enrolled and works normally.
+
+The report should show **Success** and the actual deployment duration. The individual app's installation error should still appear in app reporting.
 
 ### Pre-provisioning fails for Microsoft Entra hybrid join when policy conflict resolution requires domain controller connectivity
 

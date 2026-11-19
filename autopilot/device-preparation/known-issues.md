@@ -1,7 +1,7 @@
 ---
 title: "Windows Autopilot device preparation - known issues"
 description: Information regarding known issues that might occur during a Windows Autopilot device preparation deployment. # RSS subscription is based on this description so don't change. If the description needs to change, update RSS URL in the Tip in the article.
-ms.date: "2026-09-14T00:00:00Z"
+ms.date: '2026-11-18T00:00:00Z'
 ms.collection: M365-modern-desktop
 ms.topic: troubleshooting
 appliesto:
@@ -18,6 +18,8 @@ ms.suite: ems
 spProducts:
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/24dc3ccd-591a-4415-a1fe-8759afafcb12
 - https://microsoft-devrel.poolparty.biz/DevRelOfferingOntology/f2b71146-ce8e-46a8-9965-8aa8b3aa8235
+ai-usage: ai-assisted
+ms.custom: msecd-doc-authoring-1030
 ---
 
 # Windows Autopilot device preparation - known issues
@@ -41,6 +43,16 @@ This article describes known issues that can often be resolved with:
 > For more information on using RSS for notifications, see [How to use the docs](https://learn.microsoft.com/en-us/intune/use-docs#notifications) in the Intune documentation.
 
 ## Known issues
+
+### OOBE experience settings for associated devices may not apply immediately after a reset
+
+Date added: *November 18, 2026*
+
+This issue affects associated devices after a reset. When the device reboots into the out-of-box experience (OOBE), users might advance through setup before organizational settings are downloaded and applied. For example, users might see OOBE pages that their organization configured to skip. The device might not be renamed as configured.
+
+The device needs to complete Trusted Platform Module (TPM) attestation and local device association before it can retrieve the correct organizational policy. Retrieving the policy can take about a minute. During this time, settings that customize OOBE pages or rename the device might not yet be applied.
+
+This issue will be resolved in a future OS release.
 
 ### Device preparation deployments on Windows 365 devices time out after 60 minutes
 
