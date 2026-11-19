@@ -19,6 +19,10 @@ spProducts:
 
 # Configure local actions for Android devices in Microsoft Intune
 
+> [!NOTE]
+>
+> The local actions feature is rolling out gradually, so some tenants might see it before others. It's expected to be available to all customers by the end of November 2026. Rollout timing might change to help ensure quality and reliability.
+
 Android local actions let you configure actions that run directly on managed Android devices when supported device events occur. By pairing triggers with actions, you can make devices respond to events such as a device reboot, a Managed Home Screen sign-in, or a change in the device's power connection.
 
 You can use local actions to launch apps, send broadcasts to apps, initiate a global sign-out, or exit Managed Home Screen from kiosk mode.
