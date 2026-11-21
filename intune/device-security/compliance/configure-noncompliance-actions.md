@@ -1,7 +1,8 @@
 ---
 title: "Configure actions for noncompliant devices in Intune"
-description: Configure your compliance policies with one or more actions for noncompliance to protect devices and your organization from unprotected devices. Actions can remotely lock devices, send email or notifications to device users, and more.
-ms.date: "2024-01-23T00:00:00Z"
+description: Configure your compliance policies with one or more actions for noncompliance to protect devices and your organization
+  from unprotected devices.
+ms.date: '2026-11-11T00:00:00Z'
 ms.topic: how-to
 ms.reviewer: ilwu
 ms.collection:
@@ -73,19 +74,21 @@ The following actions are available for noncompliance:
   - Android device administrator
   - Android (AOSP)
   - Android Enterprise:
+
     - Fully Managed
     - Dedicated
     - Corporate-Owned Work Profile
     - Personally Owned Work Profile
   - iOS/iPadOS
   - macOS
-- **Add device to retire list**: When this action is performed on a device, the device is added to a list of retired, noncompliant devices in the Intune admin center. You can go to **Devices** &gt; **Compliance** and select the **Retire noncompliant devices** tab to view the list. However, the device isn't retired until an administrator explicitly initiates the retirement process. When an admin retires the device from that list, retirement removes all company data from the device and removes that device from Intune management.
+- **Add device to retire list**: When this action is performed on a device, the device is added to a list of retired, noncompliant devices in the Intune admin center. You can go to **Devices** &gt; **Compliance** and select the **Retire noncompliant devices** tab to view the list. The device isn't retired until an administrator explicitly initiates the retirement process. When an admin retires the device from that list, retirement removes all company data from the device and removes that device from Intune management.
 
   The following platforms support this action:
 
   - Android device administrator
   - Android (AOSP)
   - Android Enterprise:
+
     - Fully Managed
     - Dedicated
     - Corporate-Owned Work Profile
@@ -96,9 +99,9 @@ The following actions are available for noncompliance:
 
   > [!NOTE]
   >
-  > Only devices to which the **Add device to retire list** action is triggered appear in the **Retire selected devices** tab. To see a list of all devices that aren't compliant, see the **Noncompliant devices** report mentioned in [Monitor device compliance policy](monitor-policy.md#other-compliance-reports).
+  > Only devices for which you trigger the **Add device to retire list** action appear in the **Retire selected devices** tab. To see a list of all devices that aren't compliant, see the **Noncompliant devices** report mentioned in [Monitor device compliance policy](monitor-policy.md#other-compliance-reports).
 
-  To retire one or more devices from the list, select devices to retire and then select **Retire selected devices**. When you choose an action that retires devices, a confirmation dialog appears. It's only after confirming the intent to retire the devices that they're cleared of company data and removed from Intune management.
+  To retire devices from the list, select devices to retire and then select **Retire selected devices**. When you choose an action that retires devices, a confirmation dialog box appears. You must confirm the intent to retire the devices before Intune clears company data and removes the devices from management.
 
   Other options include *Retire all devices*, *Clear all devices retire state*, and *Clear selected devices retire state*. Clearing the retire state for a device removes the device from the list of devices that can be retired until the action to *Add device to retire list* is applied to that device again.
 
@@ -109,6 +112,7 @@ The following actions are available for noncompliance:
 
   - Android device administrator
   - Android Enterprise:
+
     - Fully Managed
     - Dedicated
     - Corporate-Owned Work Profile
@@ -182,10 +186,10 @@ Add variables to the message to create a personalized email with dynamic content
 
    Your options:
 
-   - **Email header – Show company logo** (default = *Enable*) - Upload a logo to add your organization's branding to the email templates. For more information about Company Portal branding, see [Company identity branding customization](../../app-management/configuration/configure-company-portal.md#customizing-the-user-experience).
-   - **Email footer – Show company name** (default = *Enable*) - Enable this setting to show your company name in the email. See **Tenant Value** to review the company name on record.
-   - **Email footer – Show contact information** (default = *Enable*) - Enable this setting to show your organization's contact information, such as name, phone number, and email address, in the email. See **Tenant Value** to review the contact information on record.
-   - **Email footer - Show company portal website link** (default = *Disable*) - Enable this setting to include a link to the Company Portal website in the email. See **Tenant Value** to review the website link shown to users.
+   - **Email header – Show company logo** (default = *Enable*): Upload a logo to add your organization's branding to the email templates. For more information about Company Portal branding, see [Company identity branding customization](../../app-management/configuration/configure-company-portal.md#customizing-the-user-experience).
+   - **Email footer – Show company name** (default = *Enable*): Enable this setting to show your company name in the email. See **Tenant Value** to review the company name on record.
+   - **Email footer – Show contact information** (default = *Enable*): Enable this setting to show your organization's contact information, such as name, phone number, and email address, in the email. See **Tenant Value** to review the contact information on record.
+   - **Email footer - Show company portal website link** (default = *Disable*): Enable this setting to include a link to the Company Portal website in the email. See **Tenant Value** to review the website link shown to users.
 
    Select **Next** to continue.
 5. On **Notification message templates**, configure one or more messages. For each message, specify the following details:
@@ -207,7 +211,7 @@ Add variables to the message to create a personalized email with dynamic content
    > [!NOTE]
    >
    > Intune converts Windows-style new line characters to `<br>` HTML tags but ignores all other types of new line characters, including those for macOS and Linux. To ensure line breaks render properly in templates, we recommend using the `<br>` tag to indicate the end of a line.
-6. Select the checkbox for **Is Default** for one of the messages. Intune sends your default message to users that haven't set a preferred language, or when the template doesn't include a specific message for their locale. Only one message can be set as default. To delete a message, select the ellipsis (...) and then **Delete**.
+6. Select **Is Default** for one of the messages. Intune sends your default message to users that haven't set a preferred language, or when the template doesn't include a specific message for their locale. Only one message can be set as default. To delete a message, select the ellipsis (...) and then **Delete**.
 
    Select **Next** to continue.
 7. On **Scope tags**, select tags to limit visibility and management of this message to specific Intune admin groups, such as `US-NC IT Team` or `JohnGlenn_ITDepartment`. For more information about scope tags, see [Use RBAC and scope tags for distributed IT](../../fundamentals/role-based-access-control/scope-tags.md).
@@ -260,6 +264,6 @@ You can add optional actions when you create a compliance policy, or update an e
    For more information on compliance, and the built-in actions, see the [compliance overview](overview.md).
 7. When finished, select **Add** &gt; **OK** to save your changes.
 
-## Next steps
+## Next step
 
-[Monitor your policies](monitor-policy.md).
+[Monitor your policies](monitor-policy.md)
