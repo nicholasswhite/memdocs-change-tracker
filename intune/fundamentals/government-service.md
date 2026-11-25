@@ -110,7 +110,7 @@ The following features aren't available and there's currently no planning to sup
 | [eSIM cellular support on Windows](../device-configuration/templates/configure-esim-download-server.md) | n/a |
 | [Intune PowerBI connector for DWH](https://learn.microsoft.com/en-us/power-query/connectors/) | n/a |
 | [Microsoft Connected Cache for Enterprise and Education](https://learn.microsoft.com/en-us/windows/deployment/do/mcc-ent-edu-overview) | n/a |
-| [Microsoft Store for Business](https://learn.microsoft.com/en-us/windows/configuration/store/?tabs=intune) | n/a |
+| [Microsoft Store](https://learn.microsoft.com/en-us/windows/configuration/store/?tabs=intune) | n/a |
 | On-premises Exchange Connector | n/a |
 | [Remediations](../device-management/tools/deploy-remediations.md) | n/a |
 | [Reports for feature update policies](../device-updates/windows/monitor-feature-updates.md) | n/a |
